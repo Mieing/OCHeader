@@ -1,0 +1,8 @@
+@interface FlowCard.FlowMapKits : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ a;
+    void /* unknown type, empty encoding */ ee;
+    void /* unknown type, empty encoding */ pi;
+    void /* unknown type, empty encoding */ xPi;
+}
+
+@end

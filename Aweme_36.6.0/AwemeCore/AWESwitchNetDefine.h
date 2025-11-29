@@ -1,0 +1,3 @@
+@interface AWESwitchNetDefine : NSObject
+
+@end

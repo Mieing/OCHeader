@@ -1,0 +1,74 @@
+@class WCPlayerPlayArgs, WCCanvasClickEventManager, WCCanvasAdControlView, WCMediaItem, WCCanvasFullScreenVideoViewController, NSString, WCPlayerView;
+
+@interface WCCanvasVideoBaseComponent : WCCanvasComponent <WCCanvasImageLoaderObserver, VoiceComponentExt, WCCanvasAdControlViewDelegate, WCCanvasFullScreenVideoViewControllerDelegate, WCCanvasClickEventManagerDelegate>
+
+@property (retain, nonatomic) WCCanvasClickEventManager *clickManager;
+@property (retain, nonatomic) WCPlayerPlayArgs *playInfo;
+@property (retain, nonatomic) WCCanvasAdControlView *controlView;
+@property (retain, nonatomic) WCPlayerView *wcplayerView;
+@property (retain, nonatomic) WCMediaItem *mediaData;
+@property (retain, nonatomic) WCCanvasFullScreenVideoViewController *fullscreenVC;
+@property (nonatomic) BOOL isInFullScreen;
+@property (nonatomic) BOOL isVideoPauseByUserOperation;
+@property (nonatomic) struct CGSize { double width; double height; } videoPlayerSize;
+@property (nonatomic) BOOL componentHasInit;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)configureWithCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
+- (BOOL)isPlaying;
+- (BOOL)isPause;
+- (void)showControlView;
+- (void)hideControlView;
+- (void)showFloatJumpView:(BOOL)a0;
+- (BOOL)shouldForbidDelegateShowArrowDown;
+- (BOOL)shouldForbidDelegateShowFloatActionBtn;
+- (id)createPlayerArgsWithPlayMode:(unsigned long long)a0;
+- (BOOL)tryToPlayVideo;
+- (BOOL)tryToPauseVideo;
+- (void)doOnPlayEnd;
+- (void)initAllSubviews;
+- (long long)fetchWCPlayerContentMode;
+- (BOOL)isForbiddenControlViewShow;
+- (BOOL)isAllowVoice;
+- (id)createMediaItem;
+- (void)setAllowVoiceFlag:(BOOL)a0;
+- (id)fetchFloatBarActionItem;
+- (BOOL)shouldLandscapeWhenTurnToFullscreen;
+- (void)componentWillResumeState:(BOOL)a0;
+- (void)componentWillDisappearInMainScreen:(BOOL)a0;
+- (BOOL)shouldVideoComponentTryToPlay;
+- (void)onToolViewAutoClose;
+- (void)onUpdateCurrentVideoTime:(double)a0;
+- (void)onVideoPlay;
+- (void)onVideoPause;
+- (void)onLoopPlayToEnd;
+- (void)onGetVideoSize:(struct CGSize { double x0; double x1; })a0;
+- (BOOL)shouldAdaptProgressBarFrame;
+- (BOOL)shouldHideVoiceBtn;
+- (id)createControlViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 andPlayerMode:(unsigned long long)a1;
+- (void)onCanvasFullscreenVideoCloseBtnClick;
+- (void)onFullscreenVideoDisappearAndResetVideoPlayer:(id)a0 andControlView:(id)a1 andAutoPlay:(BOOL)a2;
+- (void)onComponentClickForCid:(id)a0;
+- (void)reportFloatAreaExposedDataWithFloatAreaStayTime:(unsigned long long)a0 floatAreaExposureCount:(unsigned int)a1 buttonStayTime:(unsigned long long)a2 buttonExposureCount:(unsigned int)a3;
+- (void)reportFloatAreaClickWithFullClick:(BOOL)a0;
+- (void)reportFullscreenVideoPlayEnd;
+- (void)reportFullscreenVideoPlayStart;
+- (id)fetchRelatedComponent;
+- (void)onVoiceComponentHasPlayWithSound:(id)a0;
+- (void)showOrHideControllerViewInner:(BOOL)a0;
+- (void)showOrHideDownArrowIconInner:(BOOL)a0;
+- (void)clearWCSightView;
+- (void)turnToFullScreen;
+- (void)quitFromFullScreen;
+- (BOOL)shouldVideoLayerRasterize;
+- (void)standardizedPlayerView:(id)a0;
+- (void)standardizedPlayerArgsInfo:(id)a0 mute:(BOOL)a1;
+- (void).cxx_destruct;
+
+@end

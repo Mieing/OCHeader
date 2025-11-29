@@ -1,0 +1,92 @@
+@class NSDictionary, IESRelatedFeatures, IESECommerceFeatures, IESPitayaFeatures, IESRPBFeatures, IESSeqPlayFeatures, IESSensorFeatures, IESFeedFeatures, IESCombineFeatures, NSMutableDictionary, IESPhoneFeatures, IESADFeatures, IESFeatureAppEventTracker, IESCommentFeatures, IESFeatureBizModelRecorder, IESPortraitFeatures, IESAppExitFeatures, IESUserPageFeatures, IESFollowFeatures, IESSessionFeatures, IESPlayFeatures, AWEStorage, IESUserInfoFeatures, IESFinishPlayFeatures;
+
+@interface IESFeatureCenter : NSObject {
+    struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } _eventObserverLock;
+}
+
+@property (retain, nonatomic) AWEStorage *commonTrackInfoStorage;
+@property (retain, nonatomic) IESFeatureBizModelRecorder *bizModelRecorder;
+@property (retain, nonatomic) IESPlayFeatures *playFeatures;
+@property (retain, nonatomic) NSMutableDictionary *trackConfigDict;
+@property (retain, nonatomic) NSDictionary *eventMap;
+@property (retain, nonatomic) IESPlayFeatures *playFeatures;
+@property (retain, nonatomic) IESPhoneFeatures *phoneFeatures;
+@property (retain, nonatomic) IESPortraitFeatures *portraitFeatures;
+@property (retain, nonatomic) IESSeqPlayFeatures *seqPlayFeatures;
+@property (retain, nonatomic) IESADFeatures *adFeatures;
+@property (retain, nonatomic) IESSessionFeatures *sessionFeatures;
+@property (retain, nonatomic) IESFeedFeatures *feedFeatures;
+@property (retain, nonatomic) IESAppExitFeatures *appExitFeatures;
+@property (retain, nonatomic) IESCombineFeatures *combineFeatures;
+@property (retain, nonatomic) IESUserInfoFeatures *userFeatures;
+@property (retain, nonatomic) IESECommerceFeatures *eCommerceFeatures;
+@property (retain, nonatomic) IESFollowFeatures *followFeatures;
+@property (retain, nonatomic) IESRelatedFeatures *relatedFeatures;
+@property (retain, nonatomic) IESUserPageFeatures *userPageFeatures;
+@property (retain, nonatomic) IESCommentFeatures *commentFeatures;
+@property (retain, nonatomic) IESFinishPlayFeatures *finishPlayFeatures;
+@property (retain, nonatomic) IESPitayaFeatures *pitayaFeatures;
+@property (retain, nonatomic) IESSensorFeatures *sensorFeatures;
+@property (retain, nonatomic) IESRPBFeatures *RPBFeatures;
+@property (nonatomic) long long trackType;
+@property (retain, nonatomic) NSMutableDictionary *monitorDataDict;
+@property (retain, nonatomic) NSMutableDictionary *monitorStorageDict;
+@property (retain, nonatomic) AWEStorage *commonTrackInfoStorage;
+@property (nonatomic) long long lastAppLaunchTimeMs;
+@property (nonatomic) long long lastCheckRealTimeMs;
+@property (nonatomic) long long lastRunTimeMs;
+@property (nonatomic) BOOL hasInit;
+@property (nonatomic) BOOL globalSwitch;
+@property (retain, nonatomic) IESFeatureBizModelRecorder *bizModelRecorder;
+@property (retain, nonatomic) NSMutableDictionary *eventObserverDict;
+@property (retain, nonatomic) IESFeatureAppEventTracker *appEventTracker;
+
++ (BOOL)timeSeriesFeatureEnable;
++ (id)shareInstance;
+
+- (void)trackEvent:(unsigned long long)a0 withParams:(id)a1;
+- (void)appWillEnterForegroundNotification:(id)a0;
+- (void)addObserver:(id)a0 forEvents:(id)a1;
+- (void)updateCombineFeaturesWithScene:(id)a0 config:(id)a1 model:(id)a2 isNew:(BOOL)a3 isForce:(BOOL)a4;
+- (BOOL)fillFeatures:(id)a0 withJSONConfig:(id)a1 inputData:(id)a2 enableCloudScore:(BOOL)a3;
+- (void)addFullTrackConfigWithJSONDict:(id)a0 enableCloudScore:(BOOL)a1;
+- (void)addLocalTrackWithJSONDict:(id)a0;
+- (void)onSceneTrigger:(unsigned long long)a0 inputData:(id)a1;
+- (BOOL)fillFeatures:(id)a0 withJSONConfig:(id)a1 inputData:(id)a2;
+- (BOOL)fillFeatures:(id)a0 withConfig:(id)a1 inputData:(id)a2;
+- (void)addLocalTrack:(id)a0;
+- (void)removerObserver:(id)a0 forEvents:(id)a1;
+- (void)notifyEvent:(unsigned long long)a0 params:(id)a1;
+- (void)fillTrackInfoWithModel:(id)a0 aid:(id)a1;
+- (void)onEvent:(id)a0 parameter:(id)a1;
+- (void)privateNotifyEvent:(unsigned long long)a0 params:(id)a1;
+- (void)addTrackConfigWithJSONDict:(id)a0 enableCloudScore:(BOOL)a1;
+- (BOOL)isReportEnabled;
+- (void)initFeatureCenterIfNeeded;
+- (void)configTrackFeatures:(id)a0;
+- (void)initFeatures;
+- (void)appWillBecomeActive:(id)a0;
+- (id)trackConfigForScene:(id)a0;
+- (BOOL)shoudReportWithSceneID:(long long)a0 predictScene:(id)a1;
+- (void)handleOneSceneMonitorDataWithSceneID:(long long)a0 inputData:(id)a1 trackConfig:(id)a2;
+- (void)handleRealMonitorDataWithInputData:(id)a0 trackConfig:(id)a1;
+- (void)handlePredictMonitorDataWithSceneID:(long long)a0 inputData:(id)a1 trackConfig:(id)a2;
+- (id)monitorInfoForScene:(id)a0;
+- (id)zipZeroDict:(id)a0;
+- (void)notifyEvent:(unsigned long long)a0 model:(id)a1 enterFrom:(id)a2;
+- (void)updateSpecialCombineFeaturesWithInputData:(id)a0 isForce:(BOOL)a1;
+- (void)reportFeaturesWithSceneID:(long long)a0 inputData:(id)a1;
+- (BOOL)isNewCombineSession;
+- (void)removerObserver:(id)a0 forEvent:(unsigned long long)a1;
+- (void)_notifyEvent:(unsigned long long)a0 params:(id)a1;
+- (void)addFullTrackConfigWithJSONDict:(id)a0;
+- (BOOL)shoudReportWithSceneID:(long long)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)appDidEnterBackground:(id)a0;
+- (void)appWillResignActive:(id)a0;
+- (void)dealloc;
+- (void)appWillTerminate:(id)a0;
+- (void)addObserver:(id)a0 forEvent:(unsigned long long)a1;
+
+@end

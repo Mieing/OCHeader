@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureCameraFilter : MTLModel
+
+@end

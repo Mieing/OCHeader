@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface BattleArimesRanklistResult_PromptInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int promptType;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

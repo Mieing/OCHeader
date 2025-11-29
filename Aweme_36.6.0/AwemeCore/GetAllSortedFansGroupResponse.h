@@ -1,0 +1,10 @@
+@class GetAllSortedFansGroupResponse_ResponseData;
+
+@interface GetAllSortedFansGroupResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetAllSortedFansGroupResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

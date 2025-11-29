@@ -1,0 +1,12 @@
+@class HTSLivePKIconBubble, HTSLiveCommon;
+
+@interface HTSLivePKIconBubbleMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLivePKIconBubble *bubbleInfo;
+@property (nonatomic) BOOL hasBubbleInfo;
+
++ (id)descriptor;
+
+@end

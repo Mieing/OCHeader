@@ -1,0 +1,10 @@
+@class GetSilenceBlockTypeResponse_ResponseData;
+
+@interface GetSilenceBlockTypeResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetSilenceBlockTypeResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

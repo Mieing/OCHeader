@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveMemberGoal : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isSetGoal;
+@property (nonatomic) long long initialMemberCount;
+@property (nonatomic) long long targetMemberCount;
+@property (nonatomic) long long currentMemberCount;
+@property (copy, nonatomic) NSString *operateTip;
+@property (copy, nonatomic) NSString *goalId;
+
++ (id)descriptor;
+
+@end

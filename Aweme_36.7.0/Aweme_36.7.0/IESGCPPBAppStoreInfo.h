@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESGCPPBAppStoreInfo : GPBMessage
+
+@property (nonatomic) int seventyPercentScreen;
+@property (copy, nonatomic) NSString *appStoreId;
+@property (copy, nonatomic) NSString *appStoreURL;
+@property (copy, nonatomic) NSString *bundleId;
+
++ (id)descriptor;
+
+@end

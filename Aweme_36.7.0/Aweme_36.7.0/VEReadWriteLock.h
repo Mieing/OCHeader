@@ -1,0 +1,13 @@
+@interface VEReadWriteLock : NSObject {
+    struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } rwlock;
+}
+
+- (int)trywrlock;
+- (int)unlock;
+- (id)init;
+- (void)dealloc;
+- (int)wrlock;
+- (int)tryrdlock;
+- (int)rdlock;
+
+@end

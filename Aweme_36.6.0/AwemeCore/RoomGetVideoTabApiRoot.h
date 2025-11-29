@@ -1,0 +1,3 @@
+@interface RoomGetVideoTabApiRoot : GPBRootObject
+
+@end

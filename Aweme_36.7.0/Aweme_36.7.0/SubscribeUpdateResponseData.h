@@ -1,0 +1,8 @@
+@interface SubscribeUpdateResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int subscribeStatus;
+@property (nonatomic) int responseStatus;
+
++ (id)descriptor;
+
+@end

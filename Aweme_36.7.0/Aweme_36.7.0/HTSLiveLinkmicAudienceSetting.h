@@ -1,0 +1,11 @@
+@class HTSLiveLinkmicAudienceSettingValue;
+
+@interface HTSLiveLinkmicAudienceSetting : IESLivePBBaseMessage
+
+@property (nonatomic) int key;
+@property (retain, nonatomic) HTSLiveLinkmicAudienceSettingValue *value;
+@property (nonatomic) BOOL hasValue;
+
++ (id)descriptor;
+
+@end

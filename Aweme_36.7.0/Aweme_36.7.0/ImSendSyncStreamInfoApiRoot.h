@@ -1,0 +1,3 @@
+@interface ImSendSyncStreamInfoApiRoot : GPBRootObject
+
+@end

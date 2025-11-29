@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLivePaidLinkmicDiscountInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int discountMode;
+@property (nonatomic) long long discountAmount;
+@property (copy, nonatomic) NSString *discountText;
+
++ (id)descriptor;
+
+@end

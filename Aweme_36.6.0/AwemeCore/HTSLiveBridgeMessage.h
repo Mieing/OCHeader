@@ -1,0 +1,12 @@
+@class HTSLiveBridgeData, HTSLiveCommon;
+
+@interface HTSLiveBridgeMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveBridgeData *bridge;
+@property (nonatomic) BOOL hasBridge;
+
++ (id)descriptor;
+
+@end

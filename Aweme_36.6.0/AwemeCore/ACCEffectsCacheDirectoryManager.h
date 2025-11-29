@@ -1,0 +1,7 @@
+@interface ACCEffectsCacheDirectoryManager : NSObject
+
++ (id)effectCacheDirectory;
++ (void)clearGenericTemplateCache;
++ (void)clearCache;
+
+@end

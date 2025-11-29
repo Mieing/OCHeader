@@ -1,0 +1,3 @@
+@interface DUXBaseTabBar : UITabBar
+
+@end

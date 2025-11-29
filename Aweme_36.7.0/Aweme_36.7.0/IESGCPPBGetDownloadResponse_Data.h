@@ -1,0 +1,10 @@
+@class NSMutableDictionary;
+
+@interface IESGCPPBGetDownloadResponse_Data : GPBMessage
+
+@property (retain, nonatomic) NSMutableDictionary *gamePlatformInfos;
+@property (readonly, nonatomic) unsigned long long gamePlatformInfos_Count;
+
++ (id)descriptor;
+
+@end

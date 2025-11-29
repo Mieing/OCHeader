@@ -1,0 +1,3 @@
+@interface HTSLiveTogetherLiveChangeMemberRoot : GPBRootObject
+
+@end

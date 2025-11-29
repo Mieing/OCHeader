@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface HTSLiveVideoModelContainer : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *json;
+
++ (id)descriptor;
+
+@end

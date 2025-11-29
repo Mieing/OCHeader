@@ -1,0 +1,51 @@
+@interface MJPublisherRouter : NSObject
+
++ (void)presentShootComposingVCForRedPacketWithPublisher:(id)a0 fromVC:(id)a1 delegate:(id)a2;
++ (void)presentShootComposingVCWithPublisher:(id)a0 fromVC:(id)a1 delegate:(id)a2;
++ (void)presentMovieComposingVCWithPublisher:(id)a0 delegate:(id)a1 assetInfos:(id)a2 fromVC:(id)a3 picker:(id)a4 completionHandler:(id /* block */)a5;
++ (void)presentFinderPostVCWithImage:(id)a0 imageData:(id)a1 frontCamera:(BOOL)a2 editImageAttr:(id)a3 composingVC:(id)a4 publisher:(id)a5 fromVC:(id)a6 postDelegate:(id)a7;
++ (void)presentFinderPostVCWithVideoFilePath:(id)a0 thumbImg:(id)a1 editVideoAttr:(id)a2 paramModel:(id)a3 composingVC:(id)a4 publisher:(id)a5 fromVC:(id)a6 postDelegate:(id)a7;
++ (void)presentFinderPostVCWithVideoFileURL:(id)a0 userInfo:(id)a1 composingVC:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)presentFinderPostVCWithActionFlow:(id)a0 movieComposingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)presentFinderPostVCWithSightDraft:(id)a0 isAsyncComposite:(BOOL)a1 composingVC:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)presentFinderPostVCWithImageAttr:(id)a0 composingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)presentFinderPostVCWithActionFlow:(id)a0 composingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)presentFinderPostVCWithSightDraft:(id)a0 composingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)presentFinderPostVCWithPostSession:(id)a0 composingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)_processWithSightDraft:(id)a0 finderTask:(id)a1 appliedMusicInfo:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)_presentFinderPostViewControllerWithPostSession:(id)a0 publisher:(id)a1 fromVC:(id)a2 postDelegate:(id)a3;
++ (id)_getUsername;
++ (void)anchor_presentShootComposingVCWithPublisher:(id)a0 fromVC:(id)a1 delegate:(id)a2;
++ (void)anchor_presentMovieComposingVCWithPublisher:(id)a0 delegate:(id)a1 assetInfos:(id)a2 fromVC:(id)a3 picker:(id)a4 completionHandler:(id /* block */)a5;
++ (void)anchor_presentFinderPostVCWithRecordedVideoFilePath:(id)a0 thumbImg:(id)a1 editVideoAttr:(id)a2 paramModel:(id)a3 composingVC:(id)a4 publisher:(id)a5 fromVC:(id)a6 postDelegate:(id)a7;
++ (void)anchor_presentFinderPostVCWithImageAttr:(id)a0 composingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)anchor_presentFinderPostVCWithVideoFileURL:(id)a0 userInfo:(id)a1 composingVC:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)handleVideoFileURL:(id)a0 userInfo:(id)a1 composingVC:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)handleActionFlow:(id)a0 userInfo:(id)a1 composingVC:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)handleMJAppProducedVideoWithPostSession:(id)a0 composingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)anchor_presentFinderPostVCWithActionFlow:(id)a0 shootComposingVC:(id)a1 userInfo:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)anchor_presentFinderPostVCWithActionFlow:(id)a0 movieComposingVC:(id)a1 userInfo:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)anchor_presentFinderPostVCWithPostSession:(id)a0 shootComposingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)anchor_presentFinderPostVCWithPostSession:(id)a0 movieComposingVC:(id)a1 publisher:(id)a2 fromVC:(id)a3 postDelegate:(id)a4;
++ (void)anchor_processWithSightDraft:(id)a0 finderTask:(id)a1 publisherPostInfo:(id)a2 publisher:(id)a3 fromVC:(id)a4 postDelegate:(id)a5;
++ (void)anchor_presentFinderPostViewControllerWithPostSession:(id)a0 publisher:(id)a1 fromVC:(id)a2 postDelegate:(id)a3;
++ (id)anchor_getUsername;
++ (BOOL)ableToOpenMJPublisher;
++ (void)presentShootComposingVCWithDraftID:(id)a0 publisher:(id)a1 fromVC:(id)a2 delegate:(id)a3 completion:(id /* block */)a4;
++ (void)presentFinderPostVCWithPublisher:(id)a0 fromVC:(id)a1 completion:(id /* block */)a2;
++ (void)presentMovieComposingVCWithPublisher:(id)a0 fromVC:(id)a1 delegate:(id)a2 completion:(id /* block */)a3;
++ (void)presentFinderPostVCWithActionFlow:(id)a0 publisher:(id)a1 fromVC:(id)a2 completion:(id /* block */)a3;
++ (void)showMovieComposingDraftTipsIfExists:(id)a0 publisherSessionMetrics:(id)a1 fromVC:(id)a2 didSkipDraftHandler:(id /* block */)a3 didOpenDraftHandler:(id /* block */)a4;
++ (void)checkMovieComposingDraftWithEntryScene:(long long)a0 publisherContext:(id)a1 publisherSessionMetrics:(id)a2 completionHandler:(id /* block */)a3;
++ (void)removeMovieComposingDraftWithEntryScene:(long long)a0 publisherContext:(id)a1;
++ (void)showImageComposingFromPicker:(id)a0 mjPublisher:(id)a1 assetInfos:(id)a2 delegate:(id)a3 completionHandler:(id /* block */)a4;
++ (void)showImageComposingFromVC:(id)a0 musicInfo:(id)a1 assetInfos:(id)a2 delegate:(id)a3 completionHandler:(id /* block */)a4;
++ (void)showImageComposingFromVC:(id)a0 mjPublisher:(id)a1 musicInfo:(id)a2 assetInfos:(id)a3 delegate:(id)a4 completionHandler:(id /* block */)a5;
++ (void)presentMovieTemplateWithAssetInfos:(id)a0 publisher:(id)a1 delegate:(id)a2 fromAssetPicker:(id)a3 showRegularGuideIfNeeded:(BOOL)a4 startHandler:(id /* block */)a5 completionHandler:(id /* block */)a6;
++ (void)presentMovieTemplateWithAssetInfos:(id)a0 publisher:(id)a1 createSameTemplateId:(id)a2 createSameMusicId:(id)a3 delegate:(id)a4 fromAssetPicker:(id)a5 showRegularGuideIfNeeded:(BOOL)a6 isJumpMJAppEnabled:(BOOL)a7 templateScene:(unsigned long long)a8 startHandler:(id /* block */)a9 completionHandler:(id /* block */)a10;
++ (void)_presentMovieTemplateWithAssetInfos:(id)a0 publisher:(id)a1 createSameTemplateId:(id)a2 createSameMusicId:(id)a3 delegate:(id)a4 fromAssetPicker:(id)a5 isJumpMJAppEnabled:(BOOL)a6 templateScene:(unsigned long long)a7 completionHandler:(id /* block */)a8;
++ (void)enterMovieComposingInActionSheetWithFromVC:(id)a0 mjPublisher:(id)a1 composingDelegate:(id)a2 showPickerCompletion:(id /* block */)a3;
++ (void)fixWCTimelinePlaybackIssueIfNeededWithFromVC:(id)a0;
++ (void)pauseCellIfNeeded:(id)a0;
+
+@end

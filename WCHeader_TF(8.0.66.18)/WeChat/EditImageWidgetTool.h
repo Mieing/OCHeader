@@ -1,0 +1,98 @@
+@class UILongPressGestureRecognizer, UITapGestureRecognizer, NSString, UIPinchGestureRecognizer, UIRotationGestureRecognizer, EditImageBorderView, UIPanGestureRecognizer, EditImageModView;
+@protocol EditImageWidgetToolDelegate;
+
+@interface EditImageWidgetTool : EditImageUIView <UIGestureRecognizerDelegate> {
+    BOOL _activeTouches;
+    unsigned int _gestureMonitor;
+    BOOL _isPressing;
+    double _swipeLength;
+    struct CGPoint { double x; double y; } _startPanGesturePoint;
+    BOOL _hasSaveAttr;
+    BOOL _isMoveToTop;
+    EditImageModView *_saveView;
+    BOOL _hasAddView;
+    double _viewBorder;
+    double _maxFrameScaleWhileSelect;
+    BOOL _hasPreClicked;
+    BOOL _isSpecialPaning;
+}
+
+@property (nonatomic) BOOL isAdsort;
+@property (nonatomic) double currentAdsortRadian;
+@property (nonatomic) struct { double viewScale; double widgetScale; struct CGAffineTransform { double a; double b; double c; double d; double tx; double ty; } transForm; struct CGPoint { double x; double y; } anchorPoint; struct CGPoint { double x; double y; } viewCenter; BOOL isHidden; } gestureStartState;
+@property (nonatomic) unsigned long long handleGestureCount;
+@property (nonatomic) BOOL ignoreShock;
+@property (weak, nonatomic) id<EditImageWidgetToolDelegate> _delegate;
+@property (nonatomic) BOOL _isSelected;
+@property (nonatomic) double _viewScale;
+@property (nonatomic) double _widgetScale;
+@property (nonatomic) double _viewAngle;
+@property (retain, nonatomic) EditImageBorderView *_borderView;
+@property (nonatomic) unsigned int _viewArrayIndex;
+@property (nonatomic) double _screenScale;
+@property (nonatomic) double _zoomScale;
+@property (retain, nonatomic) UITapGestureRecognizer *_tapGesture;
+@property (retain, nonatomic) UIPinchGestureRecognizer *_pinchGesture;
+@property (retain, nonatomic) UIPanGestureRecognizer *_panGesture;
+@property (retain, nonatomic) UIRotationGestureRecognizer *_rotateGesture;
+@property (retain, nonatomic) UILongPressGestureRecognizer *_longPressGesture;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)generateWidgetFromState:(id)a0;
+
+- (id)init;
+- (void)initBorderView;
+- (void)handleTapGesture:(id)a0;
+- (void)handlePinchGesture:(id)a0;
+- (void)handlePanGesture:(id)a0;
+- (void)handleRotateGesture:(id)a0;
+- (void)saveWidgetStateInGestureStartIfNeeded;
+- (BOOL)checkAllGestureEnd;
+- (BOOL)needAdsorb:(double)a0;
+- (double)angleOfRadian:(double)a0;
+- (double)getAdsorbAngle:(double)a0;
+- (void)_realPlayShock;
+- (void)forceCancelGesture;
+- (void)startGesture;
+- (void)endGesture;
+- (void)saveAttr;
+- (void)resetHasAddViewState;
+- (void)setHasSaveAttr;
+- (struct { double x0; double x1; struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; } x2; struct CGPoint { double x0; double x1; } x3; struct CGPoint { double x0; double x1; } x4; BOOL x5; })getCurrentWidgetState;
+- (struct { double x0; double x1; struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; } x2; struct CGPoint { double x0; double x1; } x3; struct CGPoint { double x0; double x1; } x4; BOOL x5; })getWidgetStartGestureState;
+- (void)restoreWidgetState:(struct { double x0; double x1; struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; } x2; struct CGPoint { double x0; double x1; } x3; struct CGPoint { double x0; double x1; } x4; BOOL x5; })a0;
+- (void)printToolState:(struct { double x0; double x1; struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; } x2; struct CGPoint { double x0; double x1; } x3; struct CGPoint { double x0; double x1; } x4; BOOL x5; })a0;
+- (void)sendStartGestureToDelegate;
+- (void)sendEndGestureToDelegate;
+- (void)sendShowSelectedTextToolBorderViewToDelegate;
+- (void)sendShowNilTextToolBorderViewToDelegate;
+- (void)showBorderView;
+- (void)hideBorderView;
+- (void)reloadFrame;
+- (void)reloadFrameWithZoomScale:(double)a0;
+- (void)judgeFromDeleteBar:(id)a0;
+- (double)originalScaleFactor;
+- (double)maxScaleFactor;
+- (double)maxFrameScaleWhileSelect;
+- (BOOL)startEditingText;
+- (double)widgetWidth;
+- (double)widgetHeight;
+- (double)widgetViewBorder;
+- (void)subclassLargeTouchFrame;
+- (void)subclassReloadFrame;
+- (BOOL)needHighQuality;
+- (void)setScreenCenter:(struct CGPoint { double x0; double x1; })a0;
+- (id)exportAnimatedLayer;
+- (void)onWidgitDeleted;
+- (void)freezeWidget;
+- (void)reviveWidget;
+- (void)seekWidgetToTimeSec:(double)a0;
+- (void)resetWidget;
+- (id)exportWidgetStateForEditorFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 assetPreviewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)dealloc;
+- (void).cxx_destruct;
+
+@end

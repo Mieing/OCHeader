@@ -1,0 +1,3 @@
+@interface AWEECommerceSwiftImpl.AWEECMarkAnchorCommentLoadingViewModel : _TtCs12_SwiftObject
+
+@end

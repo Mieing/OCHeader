@@ -1,0 +1,3 @@
+@interface ACCTemplateTextStickerViewStorageModel : ACCTextStickerViewStorageModel
+
+@end

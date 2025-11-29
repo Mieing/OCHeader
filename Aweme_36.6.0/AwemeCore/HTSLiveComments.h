@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveComments : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) int count;
+@property (nonatomic) BOOL hasMore;
+@property (copy, nonatomic) NSString *jumpSchema;
+@property (retain, nonatomic) NSMutableArray *textsArray;
+@property (readonly, nonatomic) unsigned long long textsArray_Count;
+
++ (id)descriptor;
+
+@end

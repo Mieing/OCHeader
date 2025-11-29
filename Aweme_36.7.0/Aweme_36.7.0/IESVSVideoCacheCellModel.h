@@ -1,0 +1,25 @@
+@class NSString, NSArray, UIImage, NSAttributedString;
+
+@interface IESVSVideoCacheCellModel : IESLiveDynamicModel
+
+@property (copy, nonatomic) NSString *episodeID;
+@property (copy, nonatomic) NSAttributedString *attrTitle;
+@property (copy, nonatomic) NSArray *coverImageURLs;
+@property (copy, nonatomic) NSString *currentSize;
+@property (copy, nonatomic) NSString *totalSize;
+@property (copy, nonatomic) NSString *netSpeedTitle;
+@property (copy, nonatomic) NSAttributedString *desc;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic) float progress;
+@property (nonatomic) float watchProgress;
+@property (nonatomic) BOOL isPlaying;
+@property (retain, nonatomic) UIImage *statusImage;
+@property (retain, nonatomic) UIImage *downloadOrPlayImage;
+@property (nonatomic) BOOL isRightSizeLabelShow;
+@property (nonatomic) BOOL isInfoLabelShow;
+@property (nonatomic) BOOL isProgressShow;
+
+- (id)initWithSaveModel:(id)a0;
+- (id)initWithEpisode:(id)a0;
+
+@end

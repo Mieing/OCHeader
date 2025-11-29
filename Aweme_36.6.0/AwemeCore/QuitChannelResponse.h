@@ -1,0 +1,10 @@
+@class QuitChannelResponse_ResponseData;
+
+@interface QuitChannelResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) QuitChannelResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

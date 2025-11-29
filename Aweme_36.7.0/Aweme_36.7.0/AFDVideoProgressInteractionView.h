@@ -1,0 +1,83 @@
+@class AWEProgressPreviewSlider, AFDPreviewProgressIndicatorView, UIVisualEffectView, NSMutableArray, UIView, AWEProgressChapterCollectionView, NSString, AWEFeedProgressSlider, AWEProgressChapterController, AWEAwemeModel, AWEGradientView, AFDAlbumPreviewPanStillGuideView, UIImageView;
+
+@interface AFDVideoProgressInteractionView : UIView
+
+@property (retain, nonatomic) UIView *bottomMaskView;
+@property (retain, nonatomic) UIView *progressBarContainerView;
+@property (retain, nonatomic) UIView *progressBarBackgroundView;
+@property (retain, nonatomic) UIView *progressBarView;
+@property (retain, nonatomic) AWEGradientView *backgroundGradientView;
+@property (retain, nonatomic) UIView *seekerView;
+@property (retain, nonatomic) AFDPreviewProgressIndicatorView *timeView;
+@property (retain, nonatomic) UIImageView *previewImageView;
+@property (retain, nonatomic) AWEProgressPreviewSlider *previewSlider;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) double duration;
+@property (retain, nonatomic) AWEProgressChapterController *chapterController;
+@property (retain, nonatomic) AWEProgressChapterCollectionView *chapterCollectionView;
+@property (retain, nonatomic) AWEFeedProgressSlider *chapterProgressSlider;
+@property (retain, nonatomic) UIVisualEffectView *effectView;
+@property (retain, nonatomic) NSMutableArray *pointViewArray;
+@property (retain, nonatomic) UIView *chapterLoopProgressView;
+@property (retain, nonatomic) UIView *chapterLoopProgressBackgroundView;
+@property (retain, nonatomic) AFDAlbumPreviewPanStillGuideView *panStillGuideView;
+@property (readonly, nonatomic) double currentProgressPercentage;
+@property (nonatomic) struct CGPoint { double x; double y; } lastLocation;
+@property (retain, nonatomic) NSString *referString;
+@property (nonatomic) BOOL isMultiView;
+@property (nonatomic) BOOL isPanStillGuideViewHidden;
+
++ (Class)aAWEBrandColorAdapterClass;
++ (Class)aAFDPureModePageViewControllerAdapterClass;
+
+- (id)aAWEBrandColorAdapter;
+- (void)p_setupViews;
+- (id)aAFDPureModePageViewControllerAdapter;
+- (BOOL)enablePinchProgressDown;
+- (BOOL)isChapterStyle;
+- (BOOL)hasVideoAbstract;
+- (BOOL)isHighLightStyle;
+- (void)setupChapterLoopProgressView;
+- (BOOL)avoidSearchVideoSectionWithScene:(id)a0;
+- (unsigned long long)sentenceStyle;
+- (BOOL)isChapterLoop;
+- (BOOL)optimizeProgressBigFont;
+- (void)closeChapterLoop;
+- (id)sliderThemeColor;
+- (void)updatePreviewViewHidden:(BOOL)a0;
+- (void)resetPreviewImageView;
+- (void)updatePreviewImageForOriginalImage:(id)a0;
+- (void)updatePreviewImageByCommonLogicWithOriginalImage:(id)a0;
+- (void)updateProgressBarViewWidthWithSize:(struct CGSize { double x0; double x1; })a0;
+- (void)updateProgressBarViewWidthWithProgress:(double)a0;
+- (void)updateWithModel:(id)a0 duration:(double)a1;
+- (void)setupGradientViewIfNeeded;
+- (void)showInView:(id)a0 fromFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 animations:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)updateProgressBarViewWidthWithOffsetX:(double)a0;
+- (void)dismissToFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 animations:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)updateChapterLoopWithPlayTime:(double)a0;
+- (double)adjustChapterLoopSeekTimeIfNeedWithOriginSeekTime:(double)a0;
+- (double)p_bottomMaskViewHeight;
+- (double)p_progressBarWidth;
+- (BOOL)optimizeLayout;
+- (void)setupPreviewSliderLayout;
+- (void)setDefaultProgressBarColor;
+- (void)removeChapterView;
+- (void)updateProgressBarColorWhenChapterLoopChanged;
+- (void)p_setupChapterInfo;
+- (void)p_setupChapterPointView;
+- (void)updateChapterCollectionViewLayout;
+- (void)p_updatePreviewLayout;
+- (void)updateSeekerViewLayout;
+- (double)realSliderValueWithChapterSlider:(id)a0;
+- (void)p_showChapterCollectionView:(BOOL)a0;
+- (void)p_updateChapterPointWithPlayTime:(double)a0;
+- (void)updatePreviewSlider;
+- (void)p_updateViewsWithDuration:(long long)a0;
+- (BOOL)shouldShowPreviewSlider;
+- (id)indexPathAtCollectionView:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)updateViews;
+
+@end

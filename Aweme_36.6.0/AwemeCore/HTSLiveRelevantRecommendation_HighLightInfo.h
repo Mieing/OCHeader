@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveRelevantRecommendation_HighLightInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *mainURL;
+@property (copy, nonatomic) NSString *bakURL;
+
++ (id)descriptor;
+
+@end

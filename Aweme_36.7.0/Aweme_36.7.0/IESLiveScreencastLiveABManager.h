@@ -1,0 +1,51 @@
+@interface IESLiveScreencastLiveABManager : NSObject
+
++ (BOOL)liveAnchorScreencastEnableRestart;
++ (long long)liveAnchorRestartTempCriticalInterval;
++ (BOOL)liveScreencastFrequencyMethodOpt;
++ (id)liveScreenMirroringGuideWebUrlConfig;
++ (BOOL)liveGmcpMountOpt;
++ (BOOL)liveGmcpPromoteHalfPageUsePopUp;
++ (BOOL)liveCooperationPartnerServerPassPromoteInfo;
++ (BOOL)liveScreencastMultiDeviceEnable;
++ (id)liveScreencastMultiDeviceConfig;
++ (BOOL)liveScreencastDiABFrequencyOpt;
++ (BOOL)liveMicStopRecordWhenException;
++ (id)liveFeatureCollectionConfig;
++ (BOOL)liveScreencastLiveCoreLazyLoading;
++ (BOOL)liveScreenRecordObserveActive;
++ (BOOL)liveEnableOriginCanvasOnRotation;
++ (BOOL)liveEnableCacheOriginBuffer;
++ (long long)liveRotationColorMatrixStrategy;
++ (id)livePushBitrateRatio;
++ (BOOL)liveDisableBFrameFixDts;
++ (BOOL)liveLimitFactorForPushBitRateEnabled;
++ (double)liveLimitFactorForPushBitRate;
++ (BOOL)liveScreenshotResolutionOptimizeEnabled;
++ (BOOL)liveScreencastExtensionCrashMonitor;
++ (id)liveScreenshotResolutionOptimizeList;
++ (long long)liveAnchorScreencastMemoryTraceDuration;
++ (long long)liveAnchorScreencastRenderDelayOptDuration;
++ (id)liveScreencastVideoProcessOptParam;
++ (BOOL)livePauseImageMemoryDowngrade;
++ (BOOL)liveAnchorScreenRecordDenoiseEnabled;
++ (BOOL)liveAnchorScreenRecordDenoiseStreamRatioEnabled;
++ (id)liveAnchorScreenRecordDenoiseParams;
++ (id)liveAnchorScreencastCaeConfigParams;
++ (BOOL)liveAnchorScreencastEnableCae;
++ (BOOL)liveAnchorScreencastCaeEnableForIpad;
++ (long long)liveEnableExtensionPerformance;
++ (long long)screencastPushStuckFpsThreshold;
++ (BOOL)livePreviewStarTaskEnterPoint;
++ (id)timorLiveSeiMessageConfig;
++ (BOOL)liveScreenRecordBitrateMonitorEnable;
++ (id)liveScreenshotExceptionTipsConfig;
++ (long long)liveAnchorScreencastRestartReceiveNoti;
++ (long long)liveAnchorScreencastRestartTimeOut;
++ (BOOL)liveScreencastStartCancelRoomOpt;
++ (BOOL)liveScreencastLivePerfOpt;
++ (BOOL)liveScreencastRouteOutEnable;
++ (id)liveScreencastRouteOutCertID;
++ (BOOL)liveScreencastBroadCastSetSceneEnable;
+
+@end

@@ -1,0 +1,46 @@
+@interface MMFinderLiveGiftResourceBaseMgr : MMUserService
+
+- (void)loadGiftResForURL:(id)a0 resType:(long long)a1 productId:(id)a2 fileMD5:(id)a3 memoryCacheOptions:(unsigned long long)a4 oberver:(id)a5;
+- (void)loadGiftResForURL:(id)a0 resType:(long long)a1 productId:(id)a2 fileMD5:(id)a3 memoryCacheOptions:(unsigned long long)a4 oberver:(id)a5 extra:(id)a6;
+- (void)loadGiftResForURL:(id)a0 resType:(long long)a1 productId:(id)a2 fileMD5:(id)a3 memoryCacheOptions:(unsigned long long)a4 isPreload:(BOOL)a5 oberver:(id)a6;
+- (void)loadGiftResForURL:(id)a0 resType:(long long)a1 productId:(id)a2 fileMD5:(id)a3 memoryCacheOptions:(unsigned long long)a4 isPreload:(BOOL)a5 oberver:(id)a6 extra:(id)a7;
+- (void)cancelLoadForResourceId:(id)a0 targetURL:(id)a1 resourceType:(long long)a2 oberver:(id)a3;
+- (void)cancelLoadAllURLs:(id)a0;
+- (void)stopAllPreloadDownLoad;
+- (unsigned long long)currentDownloadingCount;
+- (BOOL)checkGiftResExistenceWithResourceID:(id)a0 fileMD5:(id)a1 resType:(long long)a2;
+- (void)clearGiftResourceWithResourceID:(id)a0 fileMD5:(id)a1 resType:(long long)a2;
+- (id)getFullPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getFullRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getLandscapeFullPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getLandscapeFullRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getPreviewPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getPreviewRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getThumbnailWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getTextCustomizationPreviewPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getForegroundPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getForegroundRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (id)getTextCustomizationPreviewRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (void)getFullPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getFullRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getLandscapeFullPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getLandscapeFullRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getPreviewPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getPreviewRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getThumbnailWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getTextCustomizationPreviewPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getForegroundPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getForegroundRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)getTextCustomizationPreviewRfxPagFileWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (void)cleanUnusedGiftResources;
+- (void)cleanGiftResourceCaches;
+- (void)getInteractionGiftFileWithResourceID:(id)a0 fileMD5:(id)a1 maybeAsyncBlock:(id /* block */)a2;
+- (id)getInteractionGiftFileWithResourceID:(id)a0 fileMD5:(id)a1;
+- (id)getAttackGiftFileWithResourceID:(id)a0 fileMD5:(id)a1;
+- (void)getAttackGiftFileWithResourceID:(id)a0 fileMD5:(id)a1 maybeAsyncBlock:(id /* block */)a2;
+- (id)getAnchorCustomizeImageWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2;
+- (void)getAnchorCustomizeImageWithResourceID:(id)a0 fileMD5:(id)a1 memoryCacheOptions:(unsigned long long)a2 maybeAsyncBlock:(id /* block */)a3;
+- (id)filterInvalidateCatalogue:(id)a0;
+- (id)unzipPathForProductID:(id)a0 fileMD5:(id)a1 resType:(long long)a2;
+
+@end

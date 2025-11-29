@@ -1,0 +1,3 @@
+@interface AWEStudioComposerPublishUndefinedFeature : AWEStudioComposerBaseFeatureConfig
+
+@end

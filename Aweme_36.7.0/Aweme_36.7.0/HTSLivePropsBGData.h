@@ -1,0 +1,14 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLivePropsBGData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *imageUri;
+@property (nonatomic) int imgType;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (retain, nonatomic) HTSLiveImage *imageThumbnail;
+@property (nonatomic) BOOL hasImageThumbnail;
+
++ (id)descriptor;
+
+@end

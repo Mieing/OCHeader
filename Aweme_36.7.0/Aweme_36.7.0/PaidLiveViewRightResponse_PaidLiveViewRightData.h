@@ -1,0 +1,11 @@
+@class HTSLiveUser;
+
+@interface PaidLiveViewRightResponse_PaidLiveViewRightData : IESLivePBBaseMessage
+
+@property (nonatomic) long long viewRight;
+@property (retain, nonatomic) HTSLiveUser *fromUser;
+@property (nonatomic) BOOL hasFromUser;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEPOIDetailLocationBottomBarComponentView : DitoComponentView
+
+@end

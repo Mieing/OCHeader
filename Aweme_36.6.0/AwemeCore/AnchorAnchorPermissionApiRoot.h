@@ -1,0 +1,3 @@
+@interface AnchorAnchorPermissionApiRoot : GPBRootObject
+
+@end

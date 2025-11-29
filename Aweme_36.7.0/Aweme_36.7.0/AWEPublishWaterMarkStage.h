@@ -1,0 +1,74 @@
+@class AWECompileRequest, AWEUserModel, NSString, NSURL, AWEVideoPublishViewModel, IESMMTransProcessData, AWEVETranscodeControl;
+@protocol AWEPublishEditServiceManagerProtocol, ACCEditServiceProtocol;
+
+@interface AWEPublishWaterMarkStage : AWEPublishBaseStage <AWEPublishTaskMessage>
+
+@property (retain, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (retain, nonatomic) AWEVideoPublishViewModel *publishViewModel;
+@property (retain, nonatomic) AWEVideoPublishViewModel *mergePublishViewModel;
+@property (retain, nonatomic) AWEVideoPublishViewModel *originPublishViewModel;
+@property (nonatomic) BOOL appInBackground;
+@property (nonatomic) long long backgroundCount;
+@property (nonatomic) long long retryCount;
+@property (copy, nonatomic) id /* block */ restartBlock;
+@property (nonatomic) BOOL enforceReencode;
+@property (retain, nonatomic) AWECompileRequest *request;
+@property (retain, nonatomic) NSURL *watermarkVideoURL;
+@property (retain, nonatomic) IESMMTransProcessData *transConfig;
+@property (nonatomic) BOOL hasSendMessage;
+@property (retain, nonatomic) id<AWEPublishEditServiceManagerProtocol> editServiceManager;
+@property (retain, nonatomic) AWEVETranscodeControl *transcodeControl;
+@property (nonatomic) BOOL isNotFromEditPageOfEditService;
+@property (nonatomic) BOOL useDownloadIconProfile;
+@property (copy, nonatomic) id /* block */ customEnableWatermarkBlock;
+@property (nonatomic) BOOL isSlidesSubStage;
+@property (retain, nonatomic) AWEUserModel *customerWatermarkAuthorInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)task:(id)a0 didEndWithResult:(long long)a1 error:(id)a2;
+- (void)appWillResignActiveNotification;
+- (void)appDidBecomeActiveNotification;
+- (void)setupWithFlowModelIfNeeded;
+- (void)updateFlowModelIfNeeded;
+- (id)initWithModel:(id)a0 editService:(id)a1;
+- (void)configWatermarkBackground:(id)a0;
+- (void)p_run;
+- (void)configEditServiceManager:(id)a0;
+- (void)cancelForAcceptRemoteVid;
+- (void)cancelRestartEditing;
+- (void)checkCompileSessionAndRun;
+- (void)prepareEditServiceWithCompletion:(id /* block */)a0;
+- (void)p_transCode:(id)a0 transParam:(id)a1 config:(id)a2 videoProcess:(id)a3;
+- (void)addProgressObserver;
+- (void)playerDidFinishVideoProcessingWithResult:(id)a0;
+- (void)restartEditing;
+- (void)updatePublishModelIfNeeded;
+- (BOOL)enableAddMetaBugfix;
+- (BOOL)hasMergeFile;
+- (void)resetInfosWithCompletion:(id /* block */)a0;
+- (BOOL)needMergeWaterMarkVideo;
+- (BOOL)shouldBuildNewEditService;
+- (void)handleVideoDataUpdateAndTransCodeWithTransVideoData:(id)a0 transParam:(id)a1 config:(id)a2 videoProcess:(id)a3;
+- (void)getAIWaterMarkConfig:(id)a0 completion:(id /* block */)a1;
+- (void)addLivePhotoWaterMarkWithConfig:(id)a0 transParam:(id)a1 completion:(id /* block */)a2;
+- (void)getConfigWaterMark:(id)a0;
+- (BOOL)hadApplyCanvasWithoutEdge;
+- (BOOL)p_saveAlbumWatermarkABValue;
+- (struct CGSize { double x0; double x1; })getVideoTargetSize;
+- (double)getVideoDurationFromModel:(id)a0;
+- (id)getAIWaterMarkDataArrayWithSize:(struct CGSize { double x0; double x1; })a0 videoDuration:(double)a1 iconInfos:(id)a2;
+- (id)livePlaybackWaterMarkIfNeededWithVideoSize:(struct CGSize { double x0; double x1; })a0;
+- (BOOL)addEndWaterMarkWithConfig:(id)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (id)originImage:(id)a0 scaleToSize:(struct CGSize { double x0; double x1; })a1;
+- (void).cxx_destruct;
+- (void)handleEvent:(id)a0;
+- (id)init;
+- (void)run;
+- (void)addNotificationObservers;
+- (void)dealloc;
+- (void)cancel;
+
+@end

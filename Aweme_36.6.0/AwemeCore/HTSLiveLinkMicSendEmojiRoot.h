@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicSendEmojiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface KtvProfitGetKaraokeLyricsTempListApiRoot : GPBRootObject
+
+@end

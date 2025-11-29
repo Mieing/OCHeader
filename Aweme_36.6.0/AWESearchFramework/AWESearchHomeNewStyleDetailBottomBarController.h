@@ -1,0 +1,88 @@
+@class AWESearchHomePageInspirationViewController, AWESearchHomeNewStyleSearchBarQueryContext, NSObject, NSString, AWESearchHomeNewStyleSearchBarController, AWESearchHomePageInspirationManager, UIViewController;
+@protocol AWEAwemePlayInteractionPlayDelegate, AWEAwemePlayInteractionUIDisplayDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEAwemeBizPlayVideoProtocol, AWEPlayInteractionViewControllerProtocol, AWEAwemePlayInteractionCommerceDelegate, AWEAwemeBaseViewControllerProtocol, AWEAwemePlayInteractionPanelDelegate, AWEPlayVideoViewControllerProtocol, AWEPlayInteractionUIControlProtocol, AWEAwemeDetailBottomBarCommonContextProtocol;
+
+@interface AWESearchHomeNewStyleDetailBottomBarController : NSObject <AWESearchHomeNewStyleSearchBarControllerDelegate, AWESearchHomePageInspirationProtocol, AWEAwemeDetailBottomBarController>
+
+@property (retain, nonatomic) AWESearchHomeNewStyleSearchBarController *searchBarController;
+@property (weak, nonatomic) UIViewController<AWEPlayVideoViewControllerProtocol> *currentMutePlayVC;
+@property (weak, nonatomic) UIViewController<AWEPlayInteractionUIControlProtocol> *currentInnerDetailVC;
+@property (weak, nonatomic) UIViewController<AWEAwemeBaseViewControllerProtocol> *cellVC;
+@property (weak, nonatomic) id<AWEAwemeBizPlayVideoProtocol> interactionController;
+@property (weak, nonatomic) id<AWEAwemePlayInteractionPlayDelegate, AWEAwemePlayInteractionPanelDelegate, AWEAwemePlayInteractionCommerceDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEAwemePlayInteractionUIDisplayDelegate, AWEPlayInteractionViewControllerProtocol> speedController;
+@property (retain, nonatomic) AWESearchHomePageInspirationManager *inspirationVCManager;
+@property (retain, nonatomic) AWESearchHomePageInspirationManager *inspirationShareManager;
+@property (retain, nonatomic) AWESearchHomePageInspirationViewController *inspirationVC;
+@property (retain, nonatomic) AWESearchHomeNewStyleSearchBarQueryContext *query;
+@property (nonatomic) long long lastIndexInFeed;
+@property (nonatomic) BOOL isInspirationInit;
+@property (copy, nonatomic) id /* block */ originRespondSingleClickBlock;
+@property (copy, nonatomic) id /* block */ longPressSpeedUpHandler;
+@property (retain, nonatomic) NSObject<AWEAwemeDetailBottomBarCommonContextProtocol> *context;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (Class)aAWEFeedModuleServiceDOUYINSSAdapterClass;
+
+- (void)updateBottomBarWithAweme:(id)a0 updateTiming:(long long)a1;
+- (void)cellWillDisplay:(id)a0 forRowAtIndexPath:(id)a1 tableView:(id)a2;
+- (BOOL)canShowBottomBarForAweme:(id)a0;
+- (void)updateCurrentIndexPath:(long long)a0;
+- (void)cellDidDisplay:(id)a0 forRowAtIndexPath:(long long)a1;
+- (void)resumeVideo;
+- (void)currentPlayVideoDidChangePlayState:(long long)a0;
+- (BOOL)isInnerFeed;
+- (void)addNotification;
+- (void)unMuteVideo;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (id)aAWEFeedModuleServiceDOUYINSSAdapter;
+- (void)voiceInputEntranceLongPressBegan;
+- (void)voiceInputEntranceLongPressEnd;
+- (void)voiceInputEntranceLongPressCancel;
+- (void)searchBarSendQuery:(id)a0;
+- (void)handleSearchKeywordDidChangedNotification:(id)a0;
+- (void)p_requestLoginActionWithCompletion:(id /* block */)a0;
+- (BOOL)enableSSEAISearch;
+- (void)dismissInspiration;
+- (void)dismissInspirationWithParams:(id)a0;
+- (void)updateInspirationViewFrame:(struct CGSize { double x0; double x1; })a0;
+- (void)searchBarControllerVoice;
+- (void)searchBarControllerInspiration;
+- (void)willExpandInputViewController;
+- (void)sendInspirationPreRequest:(id)a0;
+- (void)scanCircleTapGestureWithParams:(id)a0;
+- (void)updateSearchBarStatus:(BOOL)a0 closeReason:(id)a1 animation:(BOOL)a2;
+- (void)searchBarControllerShowLottieIfNeed;
+- (id)disableVoiceType;
+- (void)addSpeedUpHandler;
+- (id)getVideoDetailContainer;
+- (void)setupInspirationManager;
+- (void)getVideoDetailViewController;
+- (id)getSearchVideoCellViewCell;
+- (void)updateInspirationViewWithStatus:(BOOL)a0 reason:(id)a1 animation:(BOOL)a2;
+- (void)resetSingleClickBlockWithCell:(id)a0;
+- (void)showVideoPanels;
+- (void)hideVideoPanels;
+- (void)handleLongPressShowSharePanelNotification:(id)a0;
+- (void)p_preGotoSearch;
+- (void)p_gotoSearchWithParams:(id)a0;
+- (void)searchWithInspirationParam:(id)a0;
+- (void)searchBarSendQuery:(id)a0 isInspiration:(BOOL)a1;
+- (void)updateSearchResultBegin;
+- (void)scanCircleTapTrack;
+- (void).cxx_destruct;
+- (id)init;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)appDidEnterBackground;
+- (Class)contextClass;
+- (id)bottomBarView;
+- (void)muteVideo;
+
+@end

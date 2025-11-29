@@ -1,0 +1,3 @@
+@interface HTSLiveHighlightCommentPositionRoot : GPBRootObject
+
+@end

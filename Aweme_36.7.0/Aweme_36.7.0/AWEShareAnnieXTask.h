@@ -1,0 +1,3 @@
+@interface AWEShareAnnieXTask : AWEShareCommonTask
+
+@end

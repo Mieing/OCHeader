@@ -1,0 +1,7 @@
+@interface FlowKit.ConnectAccountInfoModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ platform;
+    void /* unknown type, empty encoding */ platform_screen_name;
+    void /* unknown type, empty encoding */ platform_email;
+}
+
+@end

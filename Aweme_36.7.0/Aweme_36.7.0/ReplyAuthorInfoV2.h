@@ -1,0 +1,14 @@
+@class UrlStructV2;
+
+@interface ReplyAuthorInfoV2 : GPBMessage
+
+@property (nonatomic) long long id_p;
+@property (nonatomic) BOOL hasId_p;
+@property (nonatomic) long long itemId;
+@property (nonatomic) BOOL hasItemId;
+@property (retain, nonatomic) UrlStructV2 *avatar;
+@property (nonatomic) BOOL hasAvatar;
+
++ (id)descriptor;
+
+@end

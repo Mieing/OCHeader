@@ -1,0 +1,3 @@
+@interface IESLiveUserMyLiveTabApiRoot : GPBRootObject
+
+@end

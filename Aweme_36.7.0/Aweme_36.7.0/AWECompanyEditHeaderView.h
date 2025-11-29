@@ -1,0 +1,3 @@
+@interface AWECompanyEditHeaderView : UICollectionReusableView
+
+@end

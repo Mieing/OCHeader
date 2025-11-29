@@ -1,0 +1,92 @@
+@class NSString, MMLimitedModeDataPB;
+
+@interface MMLimitedModeMgr : MMUserService <IOplogExt, IUpdateProfileMgrExt, IMsgExt, MMServiceProtocol> {
+    MMLimitedModeDataPB *m_limitedModeData;
+}
+
+@property (nonatomic) BOOL isLimitedModeOn;
+@property (nonatomic) long long finderBizLevel;
+@property (nonatomic) long long weappBizLevel;
+@property (nonatomic) long long brandBizLevel;
+@property (nonatomic) long long emoticonLevel;
+@property (nonatomic) long long recentEntryScene;
+@property (nonatomic) BOOL isChangingSwitch;
+@property (nonatomic) BOOL isChangingLevel;
+@property (nonatomic) BOOL syncSwitch;
+@property (nonatomic) long long syncBizType;
+@property (nonatomic) long long syncLevel;
+@property (copy, nonatomic) NSString *passwordResetApplyKey;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (long long)finderLimitModeLevel;
++ (BOOL)isFinderLimitModeLevelAllow;
++ (BOOL)isFinderLimitModeLevelBlock;
++ (BOOL)isFinderLimitModeLevelLimited;
++ (BOOL)isFinderNearbyLimitModeLevelAllow;
++ (BOOL)isFinderLiveLimitModeLevelAllow;
+
+- (void)reportBindGuardianAction:(unsigned int)a0 stepAction:(unsigned int)a1 roleCode:(unsigned int)a2 targetUserName:(id)a3;
+- (void)reportAuthorizeAction:(unsigned int)a0 roleCode:(unsigned int)a1 requestType:(unsigned int)a2 requestID:(id)a3 requestResource:(id)a4 requestResourceExtra:(id)a5;
+- (void)reportAuthorizeAction:(unsigned int)a0 roleCode:(unsigned int)a1 requestID:(id)a2 bizType:(unsigned int)a3 accessMessage:(id)a4;
+- (void)doReportAuthorizeAction:(unsigned int)a0 roleCode:(unsigned int)a1 requestID:(id)a2 bizType:(unsigned int)a3 accessMessage:(id)a4;
+- (unsigned int)getRequestTypeWithBizType:(unsigned int)a0;
+- (id)getRequestResourceWithBizType:(unsigned int)a0 accessMessage:(id)a1;
+- (id)getRequestResourceExtraWithBizType:(unsigned int)a0 accessMessage:(id)a1;
+- (void)onServiceInitInGuardian;
+- (void)clickLimitedModeMessageCell:(id)a0 viewController:(id)a1;
+- (void)showLimitedModeBindGuardian:(id)a0 viewController:(id)a1;
+- (void)checkContactIsAdultAgeWithNewLogicBlock:(id /* block */)a0 oldLogicBlock:(id /* block */)a1;
+- (void)showLimitedModeAuthorizeRequest:(id)a0 viewController:(id)a1;
+- (void)showResultViewControllerWithLogoSVGImage:(id)a0 headTitle:(id)a1 headContent:(id)a2 inView:(id)a3;
+- (void)showResultViewControllerWithLogoSVGImage:(id)a0 headTitle:(id)a1 headContent:(id)a2 actionButtonTitle:(id)a3 inView:(id)a4;
+- (void)showResultViewControllerWithLogoSVGImage:(id)a0 headTitle:(id)a1 headContent:(id)a2 inView:(id)a3 block:(id /* block */)a4;
+- (void)showResultViewControllerWithLogoSVGImage:(id)a0 headTitle:(id)a1 headContent:(id)a2 inView:(id)a3 actionButtonTitle:(id)a4 block:(id /* block */)a5;
+- (BOOL)checkIsRequestBindGuardianValid:(id)a0;
+- (BOOL)checkIsRequestAuthorizeValid:(id)a0;
+- (BOOL)checkIsRequestAuthorizeAgreenAuthorizationValid:(id)a0;
+- (BOOL)checkIsQuestTimeValid:(unsigned int)a0;
+- (void)deleteExpiredAuthorizeAgreen;
+- (void)deleteExpiredBecomeGuardianInfo;
+- (BOOL)checkAccessAuthorizationHadApproveWithBizKey:(id)a0 bizType:(long long)a1;
+- (void)saveAgreenAuthorizationInfo:(id)a0;
+- (void)saveBecomeGuardianInfo:(id)a0;
+- (BOOL)checkHadGuardian;
+- (id)getLimitedModeAuthorizeRequestDisplayViewController:(id)a0;
+- (id)getLimitedModeGuardianSetAuthorizationWaitViewController;
+- (unsigned int)getAntiAddictInterval;
+- (id)getAccessAuthorizationSendDesc:(unsigned int)a0;
+- (id)getAccessAuthorizationSendAgreenDesc:(unsigned int)a0;
+- (id)getAccessAuthorizationSendInvalidAgreenDesc:(unsigned int)a0;
+- (id)getAccessAuthorizationAcceptTitle:(id)a0;
+- (id)getAccessAuthorizationTitle:(unsigned int)a0;
+- (id)getAccessAuthorizationAcceptDesc:(id)a0;
+- (id)getAccessAuthorizationAcceptAgreenDesc:(id)a0;
+- (id)getAccessAuthorizationAcceptInvalidAgreenDesc:(unsigned int)a0 accessTime:(unsigned int)a1;
+- (void)makeTeenagerModeBecomeGuardianWithSystemMsgWrap:(id)a0;
+- (void)makeTeenagerModeAuthorizationWithSystemMsgWrap:(id)a0;
+- (void)OnGetNewXmlMsg:(id)a0 Type:(id)a1 MsgWrap:(id)a2;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (BOOL)canShowLimitedModeEntry;
+- (BOOL)isLimitedModeOnCore;
+- (void)setLimitedModeOn:(BOOL)a0 ticket:(id)a1;
+- (long long)levelForBiz:(long long)a0;
+- (void)changeLevel:(long long)a0 forBiz:(long long)a1 ticket:(id)a2;
+- (BOOL)isBizTypeAllowed:(long long)a0;
+- (BOOL)shouldBlockUrlInLimitedMode:(id)a0;
+- (id)encryptIndependentPwd:(id)a0;
+- (void)reportLimitedModeNoticeStatusOpen:(BOOL)a0;
+- (id)p_getLimitedModeDataFilePath;
+- (void)saveLimitedModeToDataFileInternal;
+- (void)p_loadLimitedModeInternal;
+- (void)oplogRet:(int)a0 errMsg:(id)a1 eventID:(unsigned int)a2 cgiWrap:(id)a3;
+- (void)onProfileChange;
+- (void)checkUpdateAndNotify;
+- (void)checkInvalidLogic;
+- (void)updateLimitedModeEntryScene:(long long)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,27 @@
+@class NSString;
+
+@interface TempoiOS.TempoRootView : TempoiOS.TempoBaseView {
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ template;
+    void /* unknown type, empty encoding */ debugTagView;
+    void /* unknown type, empty encoding */ card;
+    void /* unknown type, empty encoding */ viewPool;
+    void /* unknown type, empty encoding */ monitorWillShowViewPool;
+    void /* unknown type, empty encoding */ monitorCompleteShowViewPool;
+    void /* unknown type, empty encoding */ monitorEndShowViewPool;
+    void /* unknown type, empty encoding */ hasCompleteShow;
+}
+
+@property (nonatomic, readonly) NSString *geckoID;
+
+- (void)tapDebugTag;
+- (void)sendEventWithName:(id)a0 parameters:(id)a1;
+- (void)updateGlobalDataWithData:(id)a0;
+- (id)selectUIWithId:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+
+@end

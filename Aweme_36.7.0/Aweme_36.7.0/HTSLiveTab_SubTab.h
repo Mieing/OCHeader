@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveTab_SubTab : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) long long rankType;
+
++ (id)descriptor;
+
+@end

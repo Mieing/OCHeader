@@ -1,0 +1,13 @@
+@class HTSLiveEpisode, HTSLiveRoom;
+
+@interface SchemaInfoData : IESLivePBBaseMessage
+
+@property (nonatomic) int episodeStage;
+@property (retain, nonatomic) HTSLiveEpisode *episode;
+@property (nonatomic) BOOL hasEpisode;
+@property (retain, nonatomic) HTSLiveRoom *room;
+@property (nonatomic) BOOL hasRoom;
+
++ (id)descriptor;
+
+@end

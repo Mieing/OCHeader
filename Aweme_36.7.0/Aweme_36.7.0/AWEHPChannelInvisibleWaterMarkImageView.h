@@ -1,0 +1,3 @@
+@interface AWEHPChannelInvisibleWaterMarkImageView : UIImageView
+
+@end

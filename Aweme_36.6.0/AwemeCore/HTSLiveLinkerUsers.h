@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkerUsers : IESLivePBBaseMessage
+
+@property (nonatomic) long long count;
+@property (retain, nonatomic) NSMutableArray *usersInfoArray;
+@property (readonly, nonatomic) unsigned long long usersInfoArray_Count;
+
++ (id)descriptor;
+
+@end

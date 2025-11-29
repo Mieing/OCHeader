@@ -1,0 +1,7 @@
+@interface ACCMVPageStyleABHelper : NSObject
+
++ (id)acc_cutsameNameText;
++ (id)acc_cutsameTitleText;
++ (id)acc_cutsameSelectHintText;
+
+@end

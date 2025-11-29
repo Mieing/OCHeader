@@ -1,0 +1,3 @@
+@interface IESLiveNativeAppHelper : NSObject
+
+@end

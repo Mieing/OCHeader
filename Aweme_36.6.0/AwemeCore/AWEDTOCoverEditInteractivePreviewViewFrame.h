@@ -1,0 +1,18 @@
+@class NSString;
+
+@interface AWEDTOCoverEditInteractivePreviewViewFrame : MTLModel <MTLJSONSerializing>
+
+@property (nonatomic) double coverEditInteractivePreviewViewFrameX;
+@property (nonatomic) double coverEditInteractivePreviewViewFrameY;
+@property (nonatomic) double coverEditInteractivePreviewViewFrameW;
+@property (nonatomic) double coverEditInteractivePreviewViewFrameH;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })frame;
+
+@end

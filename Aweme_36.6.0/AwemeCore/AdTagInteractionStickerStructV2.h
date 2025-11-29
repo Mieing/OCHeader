@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface AdTagInteractionStickerStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *openURL;
+@property (nonatomic) BOOL hasOpenURL;
+@property (copy, nonatomic) NSString *webURL;
+@property (nonatomic) BOOL hasWebURL;
+@property (copy, nonatomic) NSString *lynxSchema;
+@property (nonatomic) BOOL hasLynxSchema;
+
++ (id)descriptor;
+
+@end

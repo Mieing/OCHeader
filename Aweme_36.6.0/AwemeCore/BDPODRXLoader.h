@@ -1,0 +1,93 @@
+@class NSFileHandle, NSMutableDictionary, BDPODRXModel, NSObject, BDPODRXHeaderInfo, NSMutableArray, NSString, BDPQueue, NSRecursiveLock, NSMutableSet, BDPODRXHeaderParser, BDPODRXFileBasicModel, NSError, BDPODRXResolveResult;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore, BDPODRXLoaderDelegate;
+
+@interface BDPODRXLoader : NSObject <BDPFileHandleProtocol, BDPODRXResolveDelegate> {
+    char _index;
+    float _loadProgress;
+    int _progressBlkIndex;
+    NSMutableDictionary *_loadProgressBlkDic;
+    NSError *_parseError;
+    unsigned long long _lastFileOffset;
+    NSMutableSet *_readDataTasksSet;
+    NSMutableSet *_observeTasksSet;
+    BDPQueue *_checkFileInfoBlkQueue;
+    BDPQueue *_completedBlkQueue;
+    BDPQueue *_headerParsedBlkQueue;
+    BDPODRXResolveResult *_observeResult;
+}
+
+@property (weak, nonatomic) id<BDPODRXLoaderDelegate> delegate;
+@property (retain, nonatomic) BDPODRXModel *ttModel;
+@property (retain, nonatomic) BDPODRXFileBasicModel *basic;
+@property (nonatomic) double createTime;
+@property (retain, nonatomic) BDPODRXHeaderParser *parser;
+@property (nonatomic) unsigned long long originalFileOffset;
+@property (retain, nonatomic) NSMutableSet *chunkDataTasksSet;
+@property (retain, nonatomic) NSMutableSet *syncApiSemaphores;
+@property (retain, nonatomic) NSMutableSet *loadedFileNames;
+@property (retain, nonatomic) NSMutableArray *fileRecords;
+@property (copy, nonatomic) NSString *pkgPath;
+@property (retain, nonatomic) NSFileHandle *fileHandle;
+@property (retain, nonatomic) BDPODRXHeaderInfo *fileInfo;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue;
+@property (retain, nonatomic) NSRecursiveLock *readDataTasksLock;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *syncApiLock;
+@property (nonatomic) long long createLoadStatus;
+@property (nonatomic) long long loadStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (unsigned long long)loadTimeout;
++ (id)headerInfoFromFileHandle:(id)a0 fileOffset:(unsigned long long)a1;
++ (long long)loadStatusForModel:(id)a0;
++ (long long)loadStatusForPKgPath:(id)a0;
++ (id)loaderWithModel:(id)a0 delegate:(id)a1 error:(id *)a2;
++ (void)initialize;
+
+- (BOOL)usedCacheMeta;
+- (void)readDataWithFilePath:(id)a0 syncIfDownloaded:(BOOL)a1 dispatchQueue:(id)a2 completion:(id /* block */)a3;
+- (id)urlOfDataWithFilePath:(id)a0 error:(id *)a1;
+- (void)readDataWithFilePath:(id)a0 dispatchQueue:(id)a1 completion:(id /* block */)a2;
+- (id)readDataWithFilePath:(id)a0 error:(id *)a1;
+- (void)fileHandleDidLoadFromCache;
+- (void)addCompletionByPagePath:(id)a0 blk:(id /* block */)a1;
+- (long long)fileSizeInPkgAtPath:(id)a0;
+- (void)readDataURLWithFilePath:(id)a0 dispatchQueue:(id)a1 completion:(id /* block */)a2;
+- (void)addPkgHeaderDidParseBlk:(id /* block */)a0;
+- (void)appContainerWillBeClosed;
+- (void)cancelAllReadDataCompletionBlks;
+- (void)tryHandleTasks;
+- (void)addLoadProgressBlk:(id /* block */)a0;
+- (void)removeAllLoadProgressBlks;
+- (void)checkExistedFileInPkg:(id)a0 withCompletion:(id /* block */)a1;
+- (void)getFileSizeInPkg:(id)a0 withCompletion:(id /* block */)a1;
+- (void)getContentsOfDirAtPath:(id)a0 withCompletion:(id /* block */)a1;
+- (void)addCompletionBlk:(id /* block */)a0;
+- (BOOL)fileExistsInPkgAtPath:(id)a0;
+- (id)contentsOfPkgDirAtPath:(id)a0;
+- (BOOL)fileIsDirectoryInPkgAtPath:(id)a0;
+- (void)observeFileDidDownloadWithPath:(id)a0 dispatchQueue:(id)a1 callbackBlk:(id /* block */)a2;
+- (long long)httpRangeOffset;
+- (void)ttpkgDownloadTaskWillBegin:(id)a0;
+- (void)pkgDownloadTask:(id)a0 receivedData:(id)a1 totalBytes:(long long)a2 httpStatus:(unsigned long long)a3 error:(id)a4;
+- (void)pkgDownloadTask:(id)a0 didFinishWithResult:(id)a1;
+- (void)pkgDownloadTask:(id)a0 didCancelWithResult:(id)a1;
+- (id)handleRecvDataQueue;
+- (id)allFileInfosOfPkg;
+- (void)monitorHeaderParseWithLoadStatus:(long long)a0 beginDate:(id)a1 endDate:(id)a2;
+- (void)resetFileHandleAndCache;
+- (void)updateBasicInfoWithFlag:(BOOL)a0;
+- (void)writeAppFileData:(id)a0 withTotalBytes:(long long)a1;
+- (void)trackDonwloadResultForTask:(id)a0 result:(id)a1;
+- (void)appFileHasNoMoreDataToWrite;
+- (void)handleDownloadFinishedTask:(id)a0 withError:(id)a1;
+- (void)tryHandleCompletedBlksWithError:(id)a0;
+- (void)triggerCompletionBlkOfTask:(id)a0;
+- (id)writeAuxiliaryFileWithData:(id)a0 appId:(id)a1 versionMark:(id)a2 filePath:(id)a3;
+- (id)getDataWithFilePath:(id)a0 offset:(unsigned long long)a1 size:(unsigned long long)a2 error:(id *)a3;
+- (void)getAllFileInfosOfPkgWithCompletion:(id /* block */)a0;
+- (void).cxx_destruct;
+
+@end

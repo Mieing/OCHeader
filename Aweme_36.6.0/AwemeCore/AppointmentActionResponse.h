@@ -1,0 +1,10 @@
+@class AppointmentActionResponse_Data;
+
+@interface AppointmentActionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AppointmentActionResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface DeviceParameter : GPBMessage
+
+@property (nonatomic) long long diskSize;
+@property (nonatomic) long long diskUsageSize;
+@property (nonatomic) long long memorySize;
+@property (nonatomic) long long memoryUsageSize;
+@property (copy, nonatomic) NSString *cpuType;
+@property (nonatomic) long long totalMemorySize;
+@property (nonatomic) long long storageSize;
+
++ (id)descriptor;
+
+@end

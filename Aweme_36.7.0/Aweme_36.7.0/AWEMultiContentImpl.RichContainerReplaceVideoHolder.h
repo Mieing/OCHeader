@@ -1,0 +1,7 @@
+@interface AWEMultiContentImpl.RichContainerReplaceVideoHolder : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ replaceVideoController;
+    void /* unknown type, empty encoding */ didReplaceVideoControllerBlock;
+    void /* unknown type, empty encoding */ aweme;
+}
+
+@end

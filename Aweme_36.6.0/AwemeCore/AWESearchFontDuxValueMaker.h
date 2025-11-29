@@ -1,0 +1,3 @@
+@interface AWESearchFontDuxValueMaker : NSObject
+
+@end

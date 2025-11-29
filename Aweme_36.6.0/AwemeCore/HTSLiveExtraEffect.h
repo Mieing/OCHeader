@@ -1,0 +1,8 @@
+@interface HTSLiveExtraEffect : IESLivePBBaseMessage
+
+@property (nonatomic) long long assetId;
+@property (nonatomic) int displayForm;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,87 @@
+@class AWEMVDataRequestContext, AWEMVDataPluginDispatcher, NSString, AWEMVChannelPageContext, AWEMVChannelDataControllerConfig, AWEMVChannelDataMergeTool, HMDThreadSafeDictionary, NSNumber;
+@protocol AWEHttpTask, AWEMVChannelDataFetcher;
+
+@interface AWEMVChannelDataController : AWEListDataController <AWEDCFeedTidyModelInnerDataControllerProtocol, AWEMVDataControllerProtocol>
+
+@property (weak, nonatomic) AWEMVChannelPageContext *context;
+@property (retain, nonatomic) AWEMVChannelDataControllerConfig *config;
+@property (retain, nonatomic) AWEMVDataPluginDispatcher *pluginDispatcher;
+@property (retain, nonatomic) HMDThreadSafeDictionary *requestNumsMap;
+@property (retain, nonatomic) HMDThreadSafeDictionary *maxCursorMap;
+@property (retain, nonatomic) HMDThreadSafeDictionary *minCursorMap;
+@property (retain, nonatomic) NSNumber *offset;
+@property (retain, nonatomic) NSNumber *authorListOffset;
+@property (retain, nonatomic) id<AWEMVChannelDataFetcher> currentFetcher;
+@property (retain, nonatomic) AWEMVDataRequestContext *currentRequestContext;
+@property (retain, nonatomic) AWEMVChannelDataMergeTool *dataMergeTool;
+@property (retain, nonatomic) id<AWEHttpTask> tidyInnerTask;
+@property (copy, nonatomic) NSString *taskItemID;
+@property (nonatomic) long long lastRequestCardCount;
+@property (nonatomic) BOOL useToPrefetch;
+@property (nonatomic) BOOL enableDataShardParser;
+@property (nonatomic) BOOL enableChunkFetcher;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) long long requestNums;
+@property (readonly, nonatomic) BOOL isRequestOnAir;
+
++ (Class)aAWEPadBizUIAdapterClass;
++ (Class)aAWEFeedModuleServiceDOUYINJXAdapterClass;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)fetchDataWithRequestParams:(id)a0 args:(id)a1 completion:(id /* block */)a2;
+- (void)refreshDataWithRequestParams:(id)a0 args:(id)a1 completion:(id /* block */)a2;
+- (void)refreshDataWithRequestParams:(id)a0 useUnconsumedVideos:(BOOL)a1 unconsumedVideos:(id)a2 args:(id)a3 completion:(id /* block */)a4;
+- (void)loadMoreDataWithRequestParams:(id)a0 args:(id)a1 completion:(id /* block */)a2;
+- (void)cancelRequestTask;
+- (id)maxCursor;
+- (id)minCursor;
+- (void)setupNotification;
+- (id)aAWEPadBizUIAdapter;
+- (id)aAWEFeedModuleServiceDOUYINJXAdapter;
+- (void)clearDataSource;
+- (void)initFetchInnerDataWithTidyAweme:(id)a0 outerDataController:(id)a1 completion:(id /* block */)a2;
+- (void)requestFullAwemeWithTidyAweme:(id)a0 outerDataController:(id)a1 completion:(id /* block */)a2;
+- (void)refreshHistoryWithCompletion:(id /* block */)a0;
+- (id)initWithContext:(id)a0 config:(id)a1;
+- (void)setupPlugins;
+- (void)playerStopNotification:(id)a0;
+- (void)playerPauseNotification:(id)a0;
+- (void)recordPlayProgress:(id)a0;
+- (void)fetchHistoryListWithCompletion:(id /* block */)a0 fetchType:(unsigned long long)a1 count:(id)a2;
+- (void)fetchAuthorListWithCompletion:(id /* block */)a0 fetchType:(unsigned long long)a1;
+- (void)fetchWithContext:(id)a0 completion:(id /* block */)a1;
+- (void)cancelCurrentTaskIfNeed;
+- (void)trackInflowLoadMoreIfNeeded:(id)a0;
+- (void)appendFirstLoadMore:(id)a0 inTableView:(id)a1;
+- (void)deleteRowsAtIndexes:(id)a0 inTableView:(id)a1;
+- (id)buildCommonRequestBodyParamsWithContext:(id)a0;
+- (id)buildCommonRequestQueryParamsWithContext:(id)a0;
+- (BOOL)redirectFirstFetch:(id)a0 toAdvanceFetch:(id)a1 firstFetchCompletion:(id /* block */)a2;
+- (void)onRequestComplete:(id)a0 responseModel:(id)a1 error:(id)a2 completion:(id /* block */)a3;
+- (void)buildRequestParamsWith:(id)a0;
+- (void)onResponseDidUpdate:(id)a0 responseModel:(id)a1 error:(id)a2;
+- (void)trackListFetchIfNeededWithRequestContext:(id)a0;
+- (id)tryMatchFetcherFromCache:(id)a0;
+- (BOOL)matchFetcherRequestContext:(id)a0 withRequestContext:(id)a1 errorKey:(id *)a2;
+- (long long)requestNumsWithVerticalID:(id)a0;
+- (void)updateRequestNums:(long long)a0 verticalID:(id)a1;
+- (void)updateMaxCursor:(id)a0 verticalID:(id)a1;
+- (void)updateMinCursor:(id)a0 verticalID:(id)a1;
+- (void)appendDataSourceFromArray:(id)a0;
+- (BOOL)enableChunkMergeData;
+- (long long)getCurrentChannelIndex;
+- (id)buildInflowRequestQueryParamsWithContext:(id)a0;
+- (id)buildOutflowRequestQueryParamsWithContext:(id)a0;
+- (id)buildFollowOutflowRequestQueryParamsWithContext:(id)a0;
+- (id)inflowEntranceCard;
+- (id)currentVerticalID;
+- (void)resetWhenLoginStatusChanged;
+- (void)refreshAuthorListWithCompletion:(id /* block */)a0;
+- (void).cxx_destruct;
+- (void)reset;
+- (void)refreshWithCompletion:(id /* block */)a0;
+
+@end

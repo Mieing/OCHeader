@@ -1,0 +1,11 @@
+@class AudienceEntranceInfo;
+
+@interface EntranceInfoResponse_Data_EntranceInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AudienceEntranceInfo *entrances;
+@property (nonatomic) BOOL hasEntrances;
+@property (nonatomic) BOOL disableEntrance;
+
++ (id)descriptor;
+
+@end

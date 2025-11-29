@@ -1,0 +1,85 @@
+@class UILabel, AWEIMGroupMemberListModel, UIButton, UIView, NSString, IESIMContactPickerRelationTagView, AWEIMFansTagsView, UIStackView, CAShapeLayer, AWEIMUser, AWEUserModel, AWEIMGroupMemberListUserCollectionCellContext, UIImageView;
+@protocol AWEIMGroupMemberListUserCollectionCellDelegate, AWEIMMessageCellTagViewInterface, IESIMGroupParticipantTagContainerViewProtocol;
+
+@interface AWEIMGroupMemberListUserCollectionCell : UICollectionViewCell <UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) AWEIMGroupMemberListUserCollectionCellContext *context;
+@property (retain, nonatomic) AWEIMGroupMemberListModel *model;
+@property (retain, nonatomic) AWEIMUser *user;
+@property (retain, nonatomic) AWEUserModel *fullDetailUser;
+@property (copy, nonatomic) NSString *groupAlias;
+@property (nonatomic) unsigned long long type;
+@property (nonatomic) BOOL shouldShowRightView;
+@property (nonatomic) BOOL shouldUseColorfulRoleTag;
+@property (nonatomic) BOOL isOnline;
+@property (retain, nonatomic) UIView *onlineIndicatorView;
+@property (retain, nonatomic) UIImageView *avatarTagImageView;
+@property (retain, nonatomic) CAShapeLayer *notchLayer;
+@property (retain, nonatomic) UIView<AWEIMMessageCellTagViewInterface> *officialAccountTagLabel;
+@property (retain, nonatomic) UIView<AWEIMMessageCellTagViewInterface> *roleTagView;
+@property (retain, nonatomic) IESIMContactPickerRelationTagView *relationTag;
+@property (retain, nonatomic) UIView<IESIMGroupParticipantTagContainerViewProtocol> *participantTag;
+@property (retain, nonatomic) UIView *highlightMaskView;
+@property (retain, nonatomic) UIView<AWEIMMessageCellTagViewInterface> *messageActiveTagView;
+@property (retain, nonatomic) UIImageView *fansClubIconImageView;
+@property (retain, nonatomic) UILabel *fansClubLevelLabel;
+@property (retain, nonatomic) UIView<AWEIMMessageCellTagViewInterface> *liveFansSubscriptionDateLabel;
+@property (nonatomic) BOOL isMessageActiveStyleWithoutFollowStatus;
+@property (retain, nonatomic) AWEIMFansTagsView *fansTagsView;
+@property (retain, nonatomic) UIStackView *rightButtonRegion;
+@property (retain, nonatomic) UIButton *moreButton;
+@property (retain, nonatomic) UIButton *rightReplyButton;
+@property (retain, nonatomic) UIImageView *avatarView;
+@property (retain, nonatomic) UIImageView *nextTapImageView;
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UILabel *followStateLabel;
+@property (retain, nonatomic) UIImageView *selectStateImageView;
+@property (weak, nonatomic) id<AWEIMGroupMemberListUserCollectionCellDelegate> delegate;
+@property (nonatomic) BOOL isMultiselect;
+@property (nonatomic) BOOL isSelected;
+@property (nonatomic) BOOL isSearchMode;
+@property (nonatomic) BOOL enableAvatarTapAction;
+@property (copy, nonatomic) NSString *conversationID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })itemSize:(id)a0;
++ (id)identifier;
+
+- (void)renderModel:(id)a0 context:(id)a1;
+- (void)__updateFansClubLevelLabelWithText:(id)a0;
+- (void)p_updateSigLabelWithString:(id)a0 format:(id)a1;
+- (void)__updateFansClubTagWithModel:(id)a0;
+- (void)p_addHighlightToAttributedString:(id)a0 inRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (BOOL)p_isLightStyle;
+- (void)__setupTagsWithModel:(id)a0 context:(id)a1;
+- (void)__observeFollowStatus;
+- (void)p_updateUIWithModel:(id)a0 context:(id)a1;
+- (void)__updateActiveTagWithModel:(id)a0;
+- (void)updateLabelLayoutWithModel:(id)a0 context:(id)a1;
+- (void)__updateLiveFansSubscriptionDateTagWithModel:(id)a0;
+- (void)__updateRightReplayButton;
+- (void)__didShowLiveFansSubscriptionDateTagWithModel:(id)a0 context:(id)a1;
+- (void)p_updateAvatarTagWithModel:(id)a0;
+- (id)p_createNotchLayerWithAvatarWidth:(double)a0;
+- (long long)p_followStatus;
+- (id)__getReplayTitleColorWithIsOnline:(BOOL)a0;
+- (id)__getReplayBackgroundColorWithIsOnline:(BOOL)a0;
+- (id)__getFollowStatusTitle;
+- (void)__handleChangeFollowStatus;
+- (void)__handletransferToMessageVC;
+- (void)__modifyAdminStatus:(BOOL)a0;
+- (void)__onRightReplayTapped;
+- (id)__assignAdminAction;
+- (id)__removeFromConAction;
+- (id)__modifyAliasAction;
+- (id)__removeBotsAction;
+- (void)setHighlighted:(BOOL)a0;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupUI;
+
+@end

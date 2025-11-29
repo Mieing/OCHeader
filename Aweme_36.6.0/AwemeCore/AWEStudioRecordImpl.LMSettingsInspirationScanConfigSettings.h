@@ -1,0 +1,3 @@
+@interface AWEStudioRecordImpl.LMSettingsInspirationScanConfigSettings : _TtCs12_SwiftObject
+
+@end

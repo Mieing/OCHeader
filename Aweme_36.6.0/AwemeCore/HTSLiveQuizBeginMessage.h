@@ -1,0 +1,16 @@
+@class NSString, HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveQuizBeginMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long quizId;
+@property (nonatomic) int status;
+@property (retain, nonatomic) NSMutableArray *quizInfosArray;
+@property (readonly, nonatomic) unsigned long long quizInfosArray_Count;
+@property (nonatomic) long long errorCode;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

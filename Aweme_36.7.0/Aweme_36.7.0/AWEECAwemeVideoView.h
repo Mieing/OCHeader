@@ -1,0 +1,73 @@
+@class NSString, UIImageView, AWEECAwemeVideoDataController, AWEAwemeModel, NSDictionary, UIViewController;
+@protocol AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol, IESECAwemeVideoViewDelegate;
+
+@interface AWEECAwemeVideoView : UIView <AWEModernFullscreenTransitionOuterContextProvider, AWEPlayVideoDelegate, AWEPlayVideoViewControllerStatusDelegate, IESVideoPlayerDelegate, IESECAwemeVideoViewProtocol>
+
+@property (retain, nonatomic) AWEECAwemeVideoDataController *dataController;
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol> *playVideoViewController;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (nonatomic) BOOL inTransition;
+@property (copy, nonatomic) NSString *playerTag;
+@property (copy, nonatomic) NSString *playerSubTag;
+@property (readonly, nonatomic) AWEAwemeModel *model;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol> *playerController;
+@property (weak, nonatomic) id<IESECAwemeVideoViewDelegate> delegate;
+@property (nonatomic, getter=playbackRate, setter=setPlaybackRate:) double playbackRate;
+@property (nonatomic) BOOL repeat;
+@property (nonatomic) BOOL mute;
+@property (nonatomic) BOOL needToPauseLive;
+@property (nonatomic) long long videoScaleMode;
+@property (nonatomic) long long coverContentMode;
+@property (readonly, nonatomic) unsigned long long playState;
+@property (readonly, copy, nonatomic) NSString *videoID;
+@property (retain, nonatomic) NSDictionary *logExtraDict;
+
+- (id)liveTransitionContext;
+- (void)player:(id)a0 playbackFailedWithError:(id)a1;
+- (void)playerDidReadyForDisplay:(id)a0;
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (void)player:(id)a0 didChangeStallState:(long long)a1;
+- (void)player:(id)a0 onSubtitleInfoCallBack:(id)a1 context:(id)a2;
+- (void)resetPauseIcon;
+- (void)hidePauseIcon;
+- (void)setDefaultSeekToTime:(double)a0;
+- (double)customTimerPeriodic:(id)a0;
+- (void)player:(id)a0 updatePlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (void)player:(id)a0 didUpdateFromPlayViewController:(id)a1;
+- (id)modernTransitionContext;
+- (double)currentPlayTime;
+- (void)setLoopPlayerWithLoopState:(BOOL)a0 loopWay:(long long)a1 loopStartTime:(double)a2 loopEndTime:(double)a3;
+- (void)hideGradientView;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (void)modernTransitionDidCompleteWithOffset:(long long)a0;
+- (BOOL)shouldModernTransitionUpdatePlayerControllerWithFromContext:(id)a0;
+- (long long)preferScaleMode;
+- (void)videoUpdatePlayerControllerWithPlayVideoVC:(id)a0;
+- (void)updateReferString:(id)a0;
+- (void)p_updateVideoPlayerAwemeModel:(id)a0;
+- (void)p_videoUpdatePlayerControllerWithNewPlayState:(long long)a0;
+- (void)updateAwemeInfos:(id)a0;
+- (void)setCoverImageUrlList:(id)a0;
+- (void)setPlayerControllerBackgroundColor:(id)a0;
+- (void)setCacheSecondDuration:(int)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)endTransition;
+- (void)stop;
+- (double)duration;
+- (void)beginTransition;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)reset;
+- (void)layoutSubviews;
+- (void)setSubTitle:(id)a0;
+- (void)prepareToPlay;
+- (void)addPeriodicTimeObserverForInterval:(double)a0 queue:(id)a1 usingBlock:(id /* block */)a2;
+- (double)playableDuration;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

@@ -1,0 +1,10 @@
+@class HTSLiveDressListResponse_Data;
+
+@interface HTSLiveDressListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveDressListResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

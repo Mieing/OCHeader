@@ -1,0 +1,8 @@
+@interface HTSLiveComment_DressInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long coverId;
+@property (nonatomic) long long badgeId;
+
++ (id)descriptor;
+
+@end

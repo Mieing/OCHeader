@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveCameraPaidInfo_PriceInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *amount;
+@property (copy, nonatomic) NSString *currency;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveCommonBizInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *jumpSchema;
+@property (retain, nonatomic) NSMutableArray *contentsArray;
+@property (readonly, nonatomic) unsigned long long contentsArray_Count;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

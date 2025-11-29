@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveSubscribeResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *eventsArray;
+@property (readonly, nonatomic) unsigned long long eventsArray_Count;
+
++ (id)descriptor;
+
+@end

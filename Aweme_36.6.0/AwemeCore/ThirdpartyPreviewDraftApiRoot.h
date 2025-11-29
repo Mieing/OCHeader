@@ -1,0 +1,3 @@
+@interface ThirdpartyPreviewDraftApiRoot : GPBRootObject
+
+@end

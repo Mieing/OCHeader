@@ -1,0 +1,73 @@
+@class DVEVCContext, NSString, DVETrackerPreviewGesture, DVECanvasVideoBorderView, NSMutableArray, UIGestureRecognizer;
+@protocol DVEPreviewRotationDelegate, DVECoreCanvasProtocol, DVENLEInterfaceProtocol, DVEPreviewEdgeDelegate, DVEPreviewAlignmentDelegate;
+
+@interface DVEPreview : UIView <UIGestureRecognizerDelegate, DVECoreActionDelegate>
+
+@property (nonatomic) double scale;
+@property (nonatomic) struct CGPoint { double x; double y; } translation;
+@property (nonatomic) double angle;
+@property (weak, nonatomic) id<DVECoreCanvasProtocol> canvasEditor;
+@property (weak, nonatomic) id<DVENLEInterfaceProtocol> nle;
+@property (nonatomic) double magnetDistance;
+@property (nonatomic) double magnetEscapeDistance;
+@property (nonatomic) unsigned long long hMagState;
+@property (nonatomic) unsigned long long vMagState;
+@property (nonatomic) double hMagingDistance;
+@property (nonatomic) double vMagingDistance;
+@property (nonatomic) double horizontalEdgeMagnetDistance;
+@property (nonatomic) double verticalEdgeMagnetDistance;
+@property (retain, nonatomic) NSMutableArray *megneticEdgePan;
+@property (retain, nonatomic) NSMutableArray *megneticEdgePinch;
+@property (nonatomic) BOOL isRotateEnd;
+@property (nonatomic) BOOL isScaleEnd;
+@property (nonatomic) double originalScale;
+@property (retain, nonatomic) DVETrackerPreviewGesture *tracker;
+@property (nonatomic) double maximumScale;
+@property (nonatomic) double minimumScale;
+@property (weak, nonatomic) DVEVCContext *vcContext;
+@property (retain, nonatomic) DVECanvasVideoBorderView *canvasBorderView;
+@property (weak, nonatomic) id<DVEPreviewAlignmentDelegate> alignDelegate;
+@property (weak, nonatomic) id<DVEPreviewRotationDelegate> rotationDelegate;
+@property (weak, nonatomic) id<DVEPreviewEdgeDelegate> edgeDelegate;
+@property (nonatomic) BOOL isFullscreen;
+@property (nonatomic) BOOL autoSelectSlotWhenTap;
+@property (retain, nonatomic) UIGestureRecognizer *tapGR;
+@property (retain, nonatomic) UIGestureRecognizer *pinchGR;
+@property (retain, nonatomic) UIGestureRecognizer *rotateGR;
+@property (retain, nonatomic) UIGestureRecognizer *panGR;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)isShow;
+- (void)nleEditorDidChange;
+- (void)undoRedoClikedByUser;
+- (void)showCanvasBorderEnableGesture:(BOOL)a0;
+- (void)hideCanvasBorder;
+- (void)initDataDefault;
+- (void)updateCanvasBorderWithSlot:(id)a0;
+- (void)setupCanvasGestures:(id)a0;
+- (void)dispatchGesture:(id)a0;
+- (void)handleTranslation:(id)a0 view:(id)a1 pan:(id)a2;
+- (void)handleScaleFotSlot:(id)a0 pinch:(id)a1;
+- (void)handleRotationForSlot:(id)a0 view:(id)a1 rotation:(id)a2;
+- (void)setCanvasStyleForSlotIfNeed:(id)a0;
+- (void)magnetEdgeForPinch:(double)a0 pinch:(id)a1 maximumScale:(double)a2 minimumScale:(double)a3;
+- (void)magnetState:(unsigned long long *)a0 isHorAligh:(BOOL)a1 magingDistance:(double *)a2 trans:(struct CGPoint { double x0; double x1; })a3 inMagArea:(BOOL)a4 alignLineDistance:(double)a5;
+- (void)magnetEdgeForPan:(double)a0 View:(id)a1 Point:(struct CGPoint { double x0; double x1; })a2;
+- (void)selectSegment:(id)a0 touchPoint:(struct CGPoint { double x0; double x1; })a1 inView:(id)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })calculateFrame:(id)a0 inBounds:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (double)MagnetRotationForPositive:(double)a0;
+- (double)MagnetRotationForNegative:(double)a0;
+- (void)disableGesture:(BOOL)a0;
+- (void)updateCanvasEditorWithSlot:(id)a0;
+- (BOOL)needShow;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)refresh;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)handleTapGesture:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWECodeGenCommitFeedbackResponseModel : AWEBaseResponseModel
+
+@end

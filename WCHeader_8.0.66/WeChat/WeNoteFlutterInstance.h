@@ -1,0 +1,73 @@
+@interface WeNoteFlutterInstance : NSObject {
+    struct TaskIdConvertor { struct map<zidl::TaskIdConvertor::ClientIdContext, unsigned long long, std::less<zidl::TaskIdConvertor::ClientIdContext>, std::allocator<std::pair<const zidl::TaskIdConvertor::ClientIdContext, unsigned long long>>> { struct __tree<std::__value_type<zidl::TaskIdConvertor::ClientIdContext, unsigned long long>, std::__map_value_compare<zidl::TaskIdConvertor::ClientIdContext, std::__value_type<zidl::TaskIdConvertor::ClientIdContext, unsigned long long>, std::less<zidl::TaskIdConvertor::ClientIdContext>>, std::allocator<std::__value_type<zidl::TaskIdConvertor::ClientIdContext, unsigned long long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<zidl::TaskIdConvertor::ClientIdContext, unsigned long long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<zidl::TaskIdConvertor::ClientIdContext, std::__value_type<zidl::TaskIdConvertor::ClientIdContext, unsigned long long>, std::less<zidl::TaskIdConvertor::ClientIdContext>>> { unsigned long long __value_; } __pair3_; } __tree_; } client_to_server_map_id; struct map<unsigned long long, zidl::TaskIdConvertor::ClientIdContext, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, zidl::TaskIdConvertor::ClientIdContext>>> { struct __tree<std::__value_type<unsigned long long, zidl::TaskIdConvertor::ClientIdContext>, std::__map_value_compare<unsigned long long, std::__value_type<unsigned long long, zidl::TaskIdConvertor::ClientIdContext>, std::less<unsigned long long>>, std::allocator<std::__value_type<unsigned long long, zidl::TaskIdConvertor::ClientIdContext>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long long, zidl::TaskIdConvertor::ClientIdContext>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long long, std::__value_type<unsigned long long, zidl::TaskIdConvertor::ClientIdContext>, std::less<unsigned long long>>> { unsigned long long __value_; } __pair3_; } __tree_; } server_to_client_map_id; struct mutex { struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } __m_; } mtx; struct atomic<unsigned long long> { struct __cxx_atomic_impl<unsigned long long, std::__cxx_atomic_base_impl<unsigned long long>> { _Atomic unsigned long long __a_value; } __a_; } cur_task_id; } task_id_convertor;
+    struct shared_ptr<wenote::WeNoteFlutterInstanceCppCover> { struct WeNoteFlutterInstanceCppCover *__ptr_; struct __shared_weak_count *__cntrl_; } cpp_cover;
+    struct weak_ptr<wenote::WeNoteFlutterInstanceDispatcher> { struct WeNoteFlutterInstanceDispatcher *__ptr_; struct __shared_weak_count *__cntrl_; } cpp_dispatcher;
+}
+
++ (id)buildZidlObjForHolder:(const void *)a0 svrIdentity:(const void *)a1 refCntManager:(void *)a2;
+
+- (struct shared_ptr<wenote::WeNoteFlutterInstanceDispatcher> { struct WeNoteFlutterInstanceDispatcher *x0; struct __shared_weak_count *x1; })getDispatcher;
+- (void)setDispatcher:(const void *)a0;
+- (id)initForZidlPrivate;
+- (id)initWithZidlImpl:(id)a0;
+- (id)init:(id)a0 createName:(const void *)a1 svrIdentity:(const void *)a2;
+- (id)zidlObjToHolder;
+- (void)reloadAttachmentAsync:(id)a0 completion:(id /* block */)a1;
+- (void)reloadAttachmentAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)onEndPlayVoiceAsync:(id)a0 completion:(id /* block */)a1;
+- (void)onEndPlayVoiceAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)onStartPlayVoiceAsync:(id)a0 completion:(id /* block */)a1;
+- (void)onStartPlayVoiceAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)onVoicePlayingAsync:(id)a0 offsetInMs:(float)a1 completion:(id /* block */)a2;
+- (void)onVoicePlayingAsync:(id)a0 offsetInMs:(float)a1 on:(id)a2 completion:(id /* block */)a3;
+- (void)onUpdateRecordDetailAsync:(int)a0 completion:(id /* block */)a1;
+- (void)onUpdateRecordDetailAsync:(int)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)onEndRecordAsync:(id)a0 completion:(id /* block */)a1;
+- (void)onEndRecordAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)beginParseHTMLAsync:(id)a0 htmlDownloadTime:(long long)a1 completion:(id /* block */)a2;
+- (void)beginParseHTMLAsync:(id)a0 htmlDownloadTime:(long long)a1 on:(id)a2 completion:(id /* block */)a3;
+- (void)translateFullContentAsync:(id /* block */)a0;
+- (void)translateFullContentAsync:(id)a0 completion:(id /* block */)a1;
+- (void)cancelTranslateAsync:(id /* block */)a0;
+- (void)cancelTranslateAsync:(id)a0 completion:(id /* block */)a1;
+- (void)onChangeTranslationLanguageFinishedAsync:(id /* block */)a0;
+- (void)onChangeTranslationLanguageFinishedAsync:(id)a0 completion:(id /* block */)a1;
+- (void)showTranslationTitleBtnAsync:(id /* block */)a0;
+- (void)showTranslationTitleBtnAsync:(id)a0 completion:(id /* block */)a1;
+- (void)getAttachmentRectAsync:(id)a0 completion:(id /* block */)a1;
+- (void)getAttachmentRectAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)openContentSearchBarAsync:(id /* block */)a0;
+- (void)openContentSearchBarAsync:(id)a0 completion:(id /* block */)a1;
+- (void)convertToImageAsync:(id /* block */)a0;
+- (void)convertToImageAsync:(id)a0 completion:(id /* block */)a1;
+- (void)setAttachmentVisibleAsync:(id)a0 visible:(BOOL)a1 completion:(id /* block */)a2;
+- (void)setAttachmentVisibleAsync:(id)a0 visible:(BOOL)a1 on:(id)a2 completion:(id /* block */)a3;
+- (void)showNoteAlertAsync:(int)a0 exitOnConfirm:(BOOL)a1 completion:(id /* block */)a2;
+- (void)showNoteAlertAsync:(int)a0 exitOnConfirm:(BOOL)a1 on:(id)a2 completion:(id /* block */)a3;
+- (void)showNoteCustomAlertAsync:(id)a0 exitOnConfirm:(BOOL)a1 completion:(id /* block */)a2;
+- (void)showNoteCustomAlertAsync:(id)a0 exitOnConfirm:(BOOL)a1 on:(id)a2 completion:(id /* block */)a3;
+- (void)exitNotePageAsync:(id /* block */)a0;
+- (void)exitNotePageAsync:(id)a0 completion:(id /* block */)a1;
+- (void)insertAttributeInfosAsync:(id)a0 completion:(id /* block */)a1;
+- (void)insertAttributeInfosAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)insertTextAsync:(id)a0 completion:(id /* block */)a1;
+- (void)insertTextAsync:(id)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)getToolViewHeightAsync:(id /* block */)a0;
+- (void)getToolViewHeightAsync:(id)a0 completion:(id /* block */)a1;
+- (void)reloadNoteAsync:(id /* block */)a0;
+- (void)reloadNoteAsync:(id)a0 completion:(id /* block */)a1;
+- (void)setKeyboradHiddenAsync:(BOOL)a0 completion:(id /* block */)a1;
+- (void)setKeyboradHiddenAsync:(BOOL)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)changeLoadingUIVisibilityAsync:(BOOL)a0 completion:(id /* block */)a1;
+- (void)changeLoadingUIVisibilityAsync:(BOOL)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)onNoteExpiredAsync:(id /* block */)a0;
+- (void)onNoteExpiredAsync:(id)a0 completion:(id /* block */)a1;
+- (void)onDictationUIStateChangeAsync:(int)a0 text:(id)a1 completion:(id /* block */)a2;
+- (void)onDictationUIStateChangeAsync:(int)a0 text:(id)a1 on:(id)a2 completion:(id /* block */)a3;
+- (void)onDictationLevelMeterChangeAsync:(float)a0 completion:(id /* block */)a1;
+- (void)onDictationLevelMeterChangeAsync:(float)a0 on:(id)a1 completion:(id /* block */)a2;
+- (void)dealloc;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

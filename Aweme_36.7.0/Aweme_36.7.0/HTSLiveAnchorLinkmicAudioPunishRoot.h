@@ -1,0 +1,3 @@
+@interface HTSLiveAnchorLinkmicAudioPunishRoot : GPBRootObject
+
+@end

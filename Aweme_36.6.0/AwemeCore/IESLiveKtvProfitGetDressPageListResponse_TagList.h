@@ -1,0 +1,12 @@
+@class NSMutableArray, HTSLiveImage;
+
+@interface IESLiveKtvProfitGetDressPageListResponse_TagList : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *tagsArray;
+@property (readonly, nonatomic) unsigned long long tagsArray_Count;
+@property (retain, nonatomic) HTSLiveImage *avatar;
+@property (nonatomic) BOOL hasAvatar;
+
++ (id)descriptor;
+
+@end

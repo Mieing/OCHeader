@@ -1,0 +1,3 @@
+@interface UserAdminApiRoot : GPBRootObject
+
+@end

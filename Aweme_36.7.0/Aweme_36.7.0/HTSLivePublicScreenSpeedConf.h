@@ -1,0 +1,10 @@
+@interface HTSLivePublicScreenSpeedConf : IESLivePBBaseMessage
+
+@property (nonatomic) long long updateInterval;
+@property (nonatomic) int scrollSize;
+@property (nonatomic) int foldSize;
+@property (nonatomic) int scrollSpeed;
+
++ (id)descriptor;
+
+@end

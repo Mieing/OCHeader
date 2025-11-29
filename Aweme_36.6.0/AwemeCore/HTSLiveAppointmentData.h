@@ -1,0 +1,8 @@
+@interface HTSLiveAppointmentData : IESLivePBBaseMessage
+
+@property (nonatomic) long long appointmentId;
+@property (nonatomic) BOOL isSubscribe;
+
++ (id)descriptor;
+
+@end

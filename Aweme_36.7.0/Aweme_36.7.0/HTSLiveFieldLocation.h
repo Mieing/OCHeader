@@ -1,0 +1,8 @@
+@interface HTSLiveFieldLocation : IESLivePBBaseMessage
+
+@property (nonatomic) int locationX;
+@property (nonatomic) int locationY;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveEmojiPermission : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasPermission;
+@property (copy, nonatomic) NSString *toastWithoutPermission;
+@property (copy, nonatomic) NSString *bottomText;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

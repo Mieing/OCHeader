@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESLiveProfileSkin_Skin_SuitShopEnterButton : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *textColor;
+@property (copy, nonatomic) NSString *bgColor;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

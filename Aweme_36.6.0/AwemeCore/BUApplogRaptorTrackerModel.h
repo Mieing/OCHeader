@@ -1,0 +1,11 @@
+@interface BUApplogRaptorTrackerModel : BURaptorTrackerModel
+
+- (id)req_id;
+- (BOOL)isStationShowOrClick;
+- (id)customDebugInfo;
+- (id)keyDictionayKey;
+- (id)realTimeTrackerArray;
+- (id)debugTrackerArray;
+- (id)eventExtraInfoKey;
+
+@end

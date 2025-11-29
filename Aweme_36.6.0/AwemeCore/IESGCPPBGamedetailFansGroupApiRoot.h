@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailFansGroupApiRoot : GPBRootObject
+
+@end

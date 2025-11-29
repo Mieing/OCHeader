@@ -1,0 +1,3 @@
+@interface HTSLivePrivilegeTouchApiRoot : GPBRootObject
+
+@end

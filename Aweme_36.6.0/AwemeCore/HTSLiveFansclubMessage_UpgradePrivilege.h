@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveFansclubMessage_UpgradePrivilege : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *description_p;
+@property (nonatomic) int buttonType;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface PaidLiveTicketBindingApiRoot : GPBRootObject
+
+@end

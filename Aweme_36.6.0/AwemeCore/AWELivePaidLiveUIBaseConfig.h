@@ -1,0 +1,30 @@
+@class NSString, AWEURLModel;
+
+@interface AWELivePaidLiveUIBaseConfig : AWEBaseApiModel
+
+@property (nonatomic) long long paidLiveType;
+@property (retain, nonatomic) AWEURLModel *paidLiveIcon;
+@property (copy, nonatomic) NSString *paidLiveIconTitle;
+@property (nonatomic) long long duration;
+@property (copy, nonatomic) NSString *noRightEndTitle;
+@property (copy, nonatomic) NSString *noRightEndSubTitle;
+@property (copy, nonatomic) NSString *hasRightEndTitle;
+@property (copy, nonatomic) NSString *hasRightEndSubTitle;
+@property (copy, nonatomic) NSString *paidConversionJumpURL;
+@property (copy, nonatomic) NSString *panelSixJumpURL;
+@property (copy, nonatomic) NSString *feedPagePurchaseBtnWord;
+@property (copy, nonatomic) NSString *purchaseBtnWord;
+@property (copy, nonatomic) NSString *imShareTopTitle;
+@property (copy, nonatomic) NSString *imShareBottomTitle;
+@property (copy, nonatomic) NSString *searchCardTopTitle;
+@property (copy, nonatomic) NSString *panelFeedJumpURL;
+@property (copy, nonatomic) NSString *panelImCardJumpURL;
+@property (copy, nonatomic) NSString *panelInRoomJumpURL;
+@property (copy, nonatomic) NSString *panelSearchCardJumpURL;
+
++ (id)paidLiveIconJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

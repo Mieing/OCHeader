@@ -1,0 +1,77 @@
+@class NSString, AWEVideoPublishViewModel, ACCStickerContainerView, NSAttributedString;
+@protocol AEKMegaEditor, AEKNewTextStickerEditor, AWEEditKit, AEKVideoEditor, AEKTextStickerEditor, AEKRuntimeStickerEditor, ACCTextStickerConfigProvider, AEKPreviewEditor;
+
+@interface ACCTextStickerViewModel : NSObject <ACCTextStickerApplyServiceProtocol>
+
+@property (weak, nonatomic) id<ACCTextStickerConfigProvider> configProvider;
+@property (weak, nonatomic) id<AWEEditKit> editKit;
+@property (weak, nonatomic) id<AEKMegaEditor> megaEditor;
+@property (weak, nonatomic) AWEVideoPublishViewModel *repository;
+@property (nonatomic) BOOL isSocialTextScene;
+@property (retain, nonatomic) NSAttributedString *editingAttributedPlaceholder;
+@property (readonly, weak, nonatomic) id<AEKVideoEditor> videoEditor;
+@property (readonly, weak, nonatomic) id<AEKTextStickerEditor> textStickerEditor;
+@property (readonly, weak, nonatomic) id<AEKNewTextStickerEditor> textNewStickerEditor;
+@property (readonly, weak, nonatomic) id<AEKRuntimeStickerEditor> runtimeSticker;
+@property (readonly, weak, nonatomic) id<AEKPreviewEditor> preview;
+@property (readonly, weak, nonatomic) ACCStickerContainerView *stickerContainer;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)addStickerWithTextModel:(id)a0 locationModel:(id)a1;
+- (id)wrapperViewWithNewTextSticker:(id)a0 config:(id)a1;
+- (id)wrapperViewWithTextSticker:(id)a0 config:(id)a1;
+- (id)wrapperViewWithNewTextSticker:(id)a0;
+- (id)locationModelWithData:(id)a0;
+- (id)updateColor:(id)a0 stickerId:(id)a1 atClipIndex:(long long)a2;
+- (id)updateTextStyle:(unsigned long long)a0 stickerId:(id)a1 atClipIndex:(long long)a2;
+- (id)updateTextAlignment:(long long)a0 stickerId:(id)a1 atClipIndex:(long long)a2;
+- (id)updateTextFont:(id)a0 stickerId:(id)a1 atClipIndex:(long long)a2;
+- (void)syncRenderWithStickerId:(id)a0;
+- (void)deselectSticker:(id)a0;
+- (void)selectSticker:(id)a0;
+- (id)textModelWithStickerId:(id)a0;
+- (id)initWithMegaEditor:(id)a0 editKit:(id)a1 configProvider:(id)a2;
+- (id)wrapperViewWithTextSticker:(id)a0;
+- (void)stickerBeginEdit:(id)a0;
+- (id)baseTextStickerWithId:(id)a0;
+- (id)defaultTextModel;
+- (void)stickerEndEdit:(id)a0;
+- (id)validExtraModel:(id)a0 content:(id)a1 needCheckCount:(BOOL)a2;
+- (void)continuousGestureStartWithStickerId:(id)a0;
+- (void)continuousGestureEndWithStickerId:(id)a0;
+- (void)panWithStickerId:(id)a0 anchor:(struct CGPoint { double x0; double x1; })a1;
+- (void)pinchWithStickerId:(id)a0 scaleFactor:(double)a1 anchor:(struct CGPoint { double x0; double x1; })a2;
+- (void)rotationStickerId:(id)a0 rotation:(double)a1 anchor:(struct CGPoint { double x0; double x1; })a2;
+- (id)textDidChange:(id)a0 textRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 stickerId:(id)a2 atClipIndex:(long long)a3 isPlaceholder:(BOOL)a4;
+- (id)transformTextFromStickerId:(id)a0 urs:(id)a1 selectEffect:(id)a2 extraParams:(id)a3 indexPath:(id)a4 categoryIdentifier:(id)a5 isTextPlaceholder:(BOOL)a6 targetPointInScreen:(id)a7;
+- (id)addNewTextFromSticker:(id)a0 textResource:(id)a1;
+- (long long)restMentionCount;
+- (long long)restHashtagCount;
+- (id)validClipsContentWithStickerData:(id)a0 inputViewText:(id)a1;
+- (void)saveEditingSocialContentWithSticker:(id)a0 textModel:(id)a1;
+- (id)selectConfigWithSticker:(id)a0 index:(unsigned long long)a1;
+- (void)configActionsOfStickerId:(id)a0 dataType:(long long)a1;
+- (id)configWithSticker:(id)a0;
+- (id)wrapperViewWithSimpleTextSticker:(id)a0;
+- (id)addOnlyNewTextWithTextModel:(id)a0 locationModel:(id)a1;
+- (void)addTextEditMaskSticker;
+- (void)removeTextEditMaskSticker;
+- (id)resetTextTemplateWithId:(id)a0 toTargetPoint:(struct CGPoint { double x0; double x1; })a1;
+- (void)forceRefreshBboxWithStickerId:(id)a0;
+- (void)syncTextInfoWithSticker:(id)a0 newSticker:(id)a1 isTextPlaceholder:(BOOL)a2;
+- (id)validCountWithExtraModel:(id)a0;
+- (id)addNewTextTemplateStickerWithResource:(id)a0;
+- (id)addNewTextTemplateFromNewSticker:(id)a0 textResource:(id)a1 isTextPlaceholder:(BOOL)a2;
+- (id)addNewTextTemplateFromOldSticker:(id)a0 textResource:(id)a1 isTextPlaceholder:(BOOL)a2;
+- (id)addTextTemplateStickerWithResource:(id)a0;
+- (id)addTextTemplateFromNewSticker:(id)a0 textResource:(id)a1 isTextPlaceholder:(BOOL)a2;
+- (id)addTextTemplateFromSticker:(id)a0 textResource:(id)a1 isTextPlaceholder:(BOOL)a2;
+- (void)updateValidTimeWithLocationModel:(id)a0 renderType:(long long)a1;
+- (id)addStickerViewWithSticker:(id)a0 config:(id)a1;
+- (id)addStickerWithTextModel:(id)a0 config:(id)a1 stickerId:(id)a2 stickerViewId:(id)a3;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,72 @@
+@class AWEAwemeModel, NSString, WKWebView, AWENativeVideoContext, UIImageView, NSDictionary, UIViewController, AWENativeVideoElement;
+@protocol AWEAwemePlayVideoProtocol, BDMixVideoPlayerDelegate, AWEPlayVideoViewControllerProtocol, AWEAwemePlayVideoTrackProtocol, AWEAwemePlayVideoControllerProtocol;
+
+@interface BDNativeVideoView : UIView <IESVideoPlayerDelegate, AWEPlayVideoDelegate, AWEPlayVideoViewControllerStatusDelegate, AWENativeVideoElementDelegate, AWEModernFullscreenTransitionOuterContextProvider>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (nonatomic) BOOL isPlayCalled;
+@property (retain, nonatomic) AWENativeVideoContext *videoContext;
+@property (retain, nonatomic) AWENativeVideoElement *videoElement;
+@property (weak, nonatomic) WKWebView *superWebview;
+@property (nonatomic) BOOL takeBackFlag;
+@property (copy, nonatomic) NSString *fitMode;
+@property (weak, nonatomic) id<BDMixVideoPlayerDelegate> delegate;
+@property (retain, nonatomic) UIViewController<AWEPlayVideoViewControllerProtocol, AWEAwemePlayVideoControllerProtocol, AWEAwemePlayVideoProtocol, AWEAwemePlayVideoTrackProtocol> *playVideoViewController;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *recordContainerID;
+@property (copy, nonatomic) NSString *recordCacheKey;
+@property (nonatomic) long long recordIndex;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)player:(id)a0 playbackFailedWithError:(id)a1;
+- (void)playerDidReadyForDisplay:(id)a0;
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (void)player:(id)a0 playbackFailedForURL:(id)a1 error:(id)a2;
+- (void)player:(id)a0 didChangeStallState:(long long)a1 actionType:(long long)a2 reason:(unsigned long long)a3;
+- (void)player:(id)a0 didChangePlaybackRate:(double)a1;
+- (void)player:(id)a0 updatePlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (id)modernTransitionContext;
+- (void)setCoverImage:(id)a0;
+- (void)preloadPlayerWithModel:(id)a0;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (void)modernTransitionDidCompleteWithOffset:(long long)a0;
+- (BOOL)shouldModernTransitionUpdatePlayerControllerWithFromContext:(id)a0;
+- (long long)preferScaleMode;
+- (BOOL)updateScaleModeBeforeAnimation;
+- (void)modernMagnifyTransitionDidCompleteWithToContext:(id)a0;
+- (void)videoController:(id)a0 playerPlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (void)videoUpdatePlayerControllerWithPlayVideoVC:(id)a0;
+- (void)videoUpdatePlayerControllerWithPlayState:(long long)a0;
+- (void)updateLogExtra:(id)a0;
+- (void)showCoverImage;
+- (void)videoUpdatePlayerControllerWithNewPlayState:(long long)a0;
+- (void)didExitLandscapeFeed;
+- (void)willEnterLandscapeFeed;
+- (BOOL)isInScreen;
+- (void)takeBackElement;
+- (void)containerDealloc:(id)a0;
+- (BOOL)allowFetchData;
+- (void)restoreReusePlayer;
+- (void)stashReusePlayer;
+- (BOOL)isInView:(id)a0;
+- (void)playerWillLoopPlaying:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)play;
+- (void)pause;
+- (void)removeFromSuperview;
+- (void)stop;
+- (void)didMoveToSuperview;
+- (id)transitionContext;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)setupUI;
+- (void)updateWithModel:(id)a0;
+
+@end

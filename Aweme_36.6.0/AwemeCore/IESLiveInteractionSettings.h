@@ -1,0 +1,77 @@
+@class IESLiveInteractionSettingsEventTracker, NSString;
+@protocol IESLiveInteractionBusinessSettings, IESLiveLinkmicSettingService, IESLiveInteractionAudienceSettings, IESLiveRoomService, IESLiveInteractionBaseSettings, IESLiveInteractionSettingsAnchorInterface, IESLiveInteractionKTVSettings, IESLiveInteractionSettingsABConfig, IESLiveInteractionSettingsAudienceInterface;
+
+@interface IESLiveInteractionSettings : NSObject <IESLiveInteractionBaseSettings, IESLiveInteractionBusinessSettings, IESLiveInteractionKTVSettings, IESLiveInteractionSettingsAnchorInterface, IESLiveInteractionSettingsAudienceInterface, IESLiveInteractionAudienceSettings, IESLiveInteractionSettingsABConfig, IESLiveInteractionSettingsRouter>
+
+@property (weak, nonatomic) id<IESLiveRoomService> room;
+@property (weak, nonatomic) id<IESLiveLinkmicSettingService> settingService;
+@property (retain, nonatomic) IESLiveInteractionSettingsEventTracker *eventTracker;
+@property (nonatomic) BOOL allowAudiencePreapply;
+@property (nonatomic) BOOL allowAudienceApplyInteraction;
+@property (nonatomic) BOOL onlyFansCanApplyInteraction;
+@property (nonatomic) BOOL onlyJoinInteractionViaInvitation;
+@property (nonatomic) BOOL needVerifyInteractionApplication;
+@property (nonatomic) BOOL allowAudienceApplyInPriorityQueue;
+@property (nonatomic) BOOL allowAudienceSendGiftToGuest;
+@property (nonatomic) BOOL allowAdminOperateGuest;
+@property (nonatomic) BOOL autoMuteGuestAfterJoinInteraction;
+@property (nonatomic) BOOL allowGuestOpenCamera;
+@property (nonatomic) BOOL guestJoinInteractionWithVideoModeByDefault;
+@property (nonatomic) BOOL enlargeGuestFullScreen;
+@property (nonatomic) BOOL enableGuestLink;
+@property (nonatomic) BOOL enableGuestLinkSetting;
+@property (nonatomic) BOOL enlargeAudioChatEnable;
+@property (nonatomic) BOOL cleanGiftValueAfterGuestLeaveInteraction;
+@property (nonatomic) BOOL allowSendAudioEmoji;
+@property (nonatomic) BOOL singerAutoLeaveInteractionAfterSongEnds;
+@property (nonatomic) BOOL enableKTVAtmosphereEffect;
+@property (nonatomic) BOOL enableKTVColdBootSongList;
+@property (nonatomic) BOOL alreadyCreateKTVFriendGroup;
+@property (nonatomic) BOOL enableKTVLyricMode;
+@property (nonatomic) BOOL enableKTVMidiMode;
+@property (nonatomic) BOOL audienceAllowDistributeInteraction;
+@property (nonatomic) long long interactionDistributionScope;
+@property (copy, nonatomic) NSString *audienceInteractionDistributionPrompts;
+@property (nonatomic) BOOL audienceEnableTriggerFastMatchByShakingPhone;
+@property (nonatomic) BOOL currentRoomEnableTriggerFastMatchByShakingPhone;
+@property (copy, nonatomic) NSString *seatDressButtonData;
+@property (nonatomic) BOOL hasFetchSettings;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) id<IESLiveInteractionAudienceSettings> audienceSettings;
+@property (readonly, nonatomic) BOOL isAdminThatCanOperateGuest;
+@property (readonly, nonatomic) BOOL isAdminThatCanEnlargeGuest;
+@property (readonly, nonatomic) BOOL enableSwitchOfOnlyJoinInteractionViaInvitation;
+@property (readonly, nonatomic) BOOL enableSwitchOfAllowAdminOperateGuest;
+@property (readonly, nonatomic) BOOL enableSwitchOfAutoMuteGuestAfterJoinInteraction;
+@property (readonly, nonatomic) BOOL enableSwitchOfCleanGiftValueAfterGuestLeaveInteraction;
+@property (readonly, nonatomic) BOOL enableSwitchOfSingerAutoLeaveInteractionAfterSongEnds;
+@property (readonly, nonatomic) BOOL enableAudiencePreapplyAbility;
+@property (readonly, nonatomic) id<IESLiveInteractionBaseSettings> baseSettings;
+@property (readonly, nonatomic) id<IESLiveInteractionBusinessSettings> businessSettings;
+@property (readonly, nonatomic) id<IESLiveInteractionKTVSettings> KTVSettings;
+@property (readonly, nonatomic) id<IESLiveInteractionSettingsABConfig> ABConfig;
+@property (readonly, nonatomic) id<IESLiveInteractionSettingsAnchorInterface> anchorInterface;
+@property (readonly, nonatomic) id<IESLiveInteractionSettingsAudienceInterface> audienceInterface;
+@property (readonly, nonatomic) BOOL audienceCanPreapplyNow;
+
+- (void)didSetAttachingDIContext;
+- (void)fetchLatestSettingsWithCallback:(id /* block */)a0 ignoreLocalCache:(BOOL)a1;
+- (void)updateSetting:(id)a0 source:(long long)a1;
+- (void)updateSettingWithKey:(long long)a0 boolValue:(BOOL)a1 callback:(id /* block */)a2;
+- (void)updateAudienceInteractionDistributionScope:(long long)a0 callback:(id /* block */)a1;
+- (int)transferAudienceInteractionDistributionScopeToSettingStatus:(long long)a0;
+- (void)fetchLatestAudienceSettings:(id)a0 fromServerWithCallback:(id /* block */)a1;
+- (id)initWithEventContext:(id)a0 room:(id)a1;
+- (BOOL)isInVideoNormal;
+- (BOOL)isInAudioNormal;
+- (BOOL)isAudioRadioChat;
+- (void)fetchAllLatestAudienceSettingsFromServerWithCallback:(id /* block */)a0;
+- (void)updateAudienceSettingWithKey:(long long)a0 boolValue:(BOOL)a1 callback:(id /* block */)a2;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)updateSetting:(id)a0;
+
+@end

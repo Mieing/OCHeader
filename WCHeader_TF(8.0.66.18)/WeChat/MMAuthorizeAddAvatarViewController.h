@@ -1,0 +1,77 @@
+@class UIBarButtonItem, UIView, UIImage, MMTableViewInfo, NSString, WCTableViewNormalCellManager, MMTipsViewController, AddAvatarUploadImageTask, OauthAvatarInfo, UILabel, WCUITextField;
+@protocol MMAuthorizeAddAvatarViewControllerDelegate;
+
+@interface MMAuthorizeAddAvatarViewController : MMUIViewController <PBMessageObserverDelegate, MMImagePickerManagerDelegate, UITextFieldDelegate, AddAvatarUploadImageTaskDelegate>
+
+@property (retain, nonatomic) MMTableViewInfo *tableViewInfo;
+@property (retain, nonatomic) WCTableViewNormalCellManager *nickNameCellInfo;
+@property (retain, nonatomic) UIView *headTitleView;
+@property (retain, nonatomic) UILabel *headTitleLabel;
+@property (retain, nonatomic) WCUITextField *nickNameTextField;
+@property (retain, nonatomic) UIBarButtonItem *saveBtn;
+@property (retain, nonatomic) UIImage *pickerImage;
+@property (retain, nonatomic) NSString *randomAvatarUrl;
+@property (retain, nonatomic) NSString *randomAvatarFileId;
+@property (retain, nonatomic) NSString *imageCdnUrl;
+@property (retain, nonatomic) NSString *imageCdnFileId;
+@property (nonatomic) BOOL isBlockingToSave;
+@property (retain, nonatomic) MMTipsViewController *tipsVC;
+@property (retain, nonatomic) AddAvatarUploadImageTask *uploadTask;
+@property (nonatomic) unsigned long long stepStartTime;
+@property (nonatomic) BOOL addSuccess;
+@property (nonatomic) BOOL isEdit;
+@property (retain, nonatomic) OauthAvatarInfo *editedAvatarInfo;
+@property (copy, nonatomic) NSString *navTitle;
+@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *defaultAvatarUrl;
+@property (copy, nonatomic) NSString *defaultAvatarFileId;
+@property (weak, nonatomic) id<MMAuthorizeAddAvatarViewControllerDelegate> delegate;
+@property (nonatomic) unsigned int fromScene;
+@property (nonatomic) unsigned int sessionId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)viewDidTransitionToNewSize;
+- (id)navigationBarBackgroundColor;
+- (void)initNavigationBar;
+- (void)initTitleView;
+- (void)onCancelButtonClicked;
+- (void)initTableView;
+- (void)makeTableViewInfo;
+- (void)makeHeaderCell:(id)a0 cellInfo:(id)a1;
+- (void)makeNickNameCell:(id)a0 cellInfo:(id)a1;
+- (void)textFieldDidEndEditing:(id)a0 reason:(long long)a1;
+- (BOOL)textField:(id)a0 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementString:(id)a2;
+- (void)keyboardHide:(id)a0;
+- (void)textFieldEditChange:(id)a0;
+- (void)onClickHeaderCell;
+- (void)onCamera;
+- (void)onPhotoLibrary;
+- (void)showImagePicker:(long long)a0;
+- (void)onSightPictureTaken:(id)a0 imageData:(id)a1 withFrontCamera:(BOOL)a2 editImageAttr:(id)a3;
+- (void)onSightCameraCancel:(id)a0;
+- (void)MMImagePickerManager:(id)a0 didFinishPickingImageWithInfo:(id)a1;
+- (void)MMImagePickerManagerDidCancel:(id)a0;
+- (void)startUploadImage:(id)a0;
+- (void)onUploadImageCompleted:(id)a0 task:(id)a1;
+- (void)onUploadImageFail:(unsigned int)a0 errMsg:(id)a1 task:(id)a2;
+- (void)onGetRandomAvatarBtnClicked;
+- (void)onDoneBtnClick;
+- (void)sendReq;
+- (void)sendModAvatarReq;
+- (void)sendAddAvatarReq;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)handleGetRandomAvatarResp:(id)a0;
+- (void)handleAddAvatarResp:(id)a0;
+- (void)handleModAvatarResp:(id)a0;
+- (void)onSaveAvatarFailAndStopLoading:(id)a0;
+- (void)showErrMsg:(id)a0 title:(id)a1;
+- (void)reportAuthCostTime:(unsigned int)a0 errCode:(int)a1;
+- (void).cxx_destruct;
+
+@end

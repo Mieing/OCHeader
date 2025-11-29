@@ -1,0 +1,3 @@
+@interface LuckyboxCommonRoot : GPBRootObject
+
+@end

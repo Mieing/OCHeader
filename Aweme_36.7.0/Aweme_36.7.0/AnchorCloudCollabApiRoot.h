@@ -1,0 +1,3 @@
+@interface AnchorCloudCollabApiRoot : GPBRootObject
+
+@end

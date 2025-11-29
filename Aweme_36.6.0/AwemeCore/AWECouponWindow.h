@@ -1,0 +1,3 @@
+@interface AWECouponWindow : UIWindow
+
+@end

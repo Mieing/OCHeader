@@ -1,0 +1,8 @@
+@interface FeaturePlatform.ComponentRegistry : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ phase;
+    void /* unknown type, empty encoding */ stateType;
+    void /* unknown type, empty encoding */ componentType;
+    void /* unknown type, empty encoding */ featureTag;
+}
+
+@end

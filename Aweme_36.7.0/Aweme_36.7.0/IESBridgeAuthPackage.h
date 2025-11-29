@@ -1,0 +1,19 @@
+@class NSString, NSDictionary, IESOverriddenMethodPackage, NSNumber;
+
+@interface IESBridgeAuthPackage : NSObject <NSCoding>
+
+@property (nonatomic) long long type;
+@property (copy, nonatomic) NSString *channel;
+@property (copy, nonatomic) NSDictionary *content;
+@property (readonly, nonatomic) IESOverriddenMethodPackage *overriddenMethodPackage;
+@property (readonly, nonatomic, getter=isBridgeAuthInfo) BOOL bridgeAuthInfo;
+@property (readonly, copy, nonatomic) NSNumber *packageVersion;
+@property (readonly, copy, nonatomic) NSString *namespace;
+
+- (id)validatedContentWithDict:(id)a0;
+- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (id)initWithDictionary:(id)a0;
+
+@end

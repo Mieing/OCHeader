@@ -1,0 +1,3 @@
+@interface HTSLiveCustomTopicRoot : GPBRootObject
+
+@end

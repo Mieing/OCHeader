@@ -1,0 +1,72 @@
+@interface AWETeenPlayerNewSuperResolutionManager : NSObject
+
+@property (nonatomic) BOOL enableSuperResolution;
+@property (nonatomic) long long minFpsThreshold;
+@property (nonatomic) long long minBatteryThreshold;
+@property (nonatomic) long long percentForCommon;
+@property (nonatomic) long long percentFor540;
+@property (nonatomic) long long percentFor720;
+@property (nonatomic) BOOL adOnly;
+@property (nonatomic) long long longlower;
+@property (nonatomic) long long longupper;
+@property (nonatomic) long long shortlower;
+@property (nonatomic) long long shortupper;
+@property (nonatomic) long long superResolution540Count;
+@property (nonatomic) long long unSuperResolution540Count;
+@property (nonatomic) long long superResolution720Count;
+@property (nonatomic) long long unSuperResolution720Count;
+@property (nonatomic) long long superResolutionCommonCount;
+@property (nonatomic) long long unSuperResolutionCommonCount;
+@property (nonatomic) BOOL enableDowngradeGearToSuperResolution;
+@property (nonatomic) BOOL preloadUseMax720P;
+@property (nonatomic) BOOL preloadResultHighest;
+@property (nonatomic) long long vrMinFpsThreshold;
+@property (nonatomic) long long vrMinBatteryThreshold;
+@property (nonatomic) long long vrPercentForCommon;
+@property (nonatomic) long long vrLonglower;
+@property (nonatomic) long long vrLongupper;
+@property (nonatomic) long long vrShortlower;
+@property (nonatomic) long long vrShortupper;
+@property (nonatomic) long long vrSuperResolutionCommonCount;
+@property (nonatomic) long long vrUnSuperResolutionCommonCount;
+@property (nonatomic) long long superResolution720Count_preload;
+@property (nonatomic) long long unSuperResolution720Count_preload;
+
++ (id)sharedInstance;
+
+- (id)preloadDowngradeIfNeededWithBitrateModel:(id)a0;
+- (void)trackPreloadSRResultWithModel:(id)a0;
+- (void)checkSuperResolutionWithVC:(id)a0;
+- (void)configSuperResolutionWithVC:(id)a0;
+- (BOOL)__enableOwnPlayerWithModel:(id)a0;
+- (BOOL)isDashWithModel:(id)a0;
+- (id)__targetDowngradeSuperResolutionWithModel:(id)a0;
+- (BOOL)__isDynamicLinkWithModel:(id)a0 bsModel:(id)a1;
+- (BOOL)__check720PWithModel:(id)a0;
+- (BOOL)__check720PercentWithModel:(id)a0;
+- (id)__AWEPlayVideoViewController_ModelURLArrayWithModel:(id)a0 bsModel:(id)a1;
+- (id)__AWEPlayVideoViewController_PlayURLArrayWithModel:(id)a0 bsModel:(id)a1;
+- (BOOL)p_isFromFamiliarCacheWithModel:(id)a0;
+- (BOOL)enableDowngradeGearWithSR;
+- (BOOL)is720PWithVC:(id)a0;
+- (id)p_isFromFamiliarCacheNumberWithModel:(id)a0;
+- (void)trackerInfoWithVC:(id)a0 checked:(BOOL)a1;
+- (void)configSuperResolutionForVR:(id)a0;
+- (BOOL)isDynamicLinkWithVC:(id)a0;
+- (BOOL)checkCommonPAvailable;
+- (BOOL)checkCommonPercentWithVC:(id)a0;
+- (void)setBMFProcessConfig:(id)a0;
+- (BOOL)check540PWithVC:(id)a0;
+- (BOOL)check540PercentWithVC:(id)a0;
+- (BOOL)check720PWithVC:(id)a0;
+- (BOOL)check720PercentWithVC:(id)a0;
+- (BOOL)isLowBattery:(long long)a0;
+- (BOOL)checkVRCommonPercentWithVC:(id)a0;
+- (BOOL)nunki_getEnalbeSR;
+- (BOOL)enableStrategyAlgoSuperResolution;
+- (void)trackerVideoPlayInfoWithVC:(id)a0 checked:(BOOL)a1 isEndEvent:(BOOL)a2;
+- (BOOL)isLowBattery;
+- (id)init;
+- (void)setupData;
+
+@end

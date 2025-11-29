@@ -1,0 +1,12 @@
+@class HTSLiveText;
+
+@interface VirtualGameUserCommandResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) long long actorId;
+@property (retain, nonatomic) HTSLiveText *displayText;
+@property (nonatomic) BOOL hasDisplayText;
+
++ (id)descriptor;
+
+@end

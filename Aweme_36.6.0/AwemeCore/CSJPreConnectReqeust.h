@@ -1,0 +1,3 @@
+@interface CSJPreConnectReqeust : BUNetworkRequest
+
+@end

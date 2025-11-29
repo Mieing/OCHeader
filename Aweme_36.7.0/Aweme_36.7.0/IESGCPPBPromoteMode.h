@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface IESGCPPBPromoteMode : GPBMessage
+
+@property (nonatomic) int promoteMode;
+@property (copy, nonatomic) NSString *modeName;
+@property (copy, nonatomic) NSString *modeRecharge;
+@property (copy, nonatomic) NSString *modeValuation;
+@property (copy, nonatomic) NSString *shareRatio;
+@property (copy, nonatomic) NSString *subModeName;
+
++ (id)descriptor;
+
+@end

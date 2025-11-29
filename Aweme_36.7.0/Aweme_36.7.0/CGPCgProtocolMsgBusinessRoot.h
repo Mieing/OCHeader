@@ -1,0 +1,3 @@
+@interface CGPCgProtocolMsgBusinessRoot : GPBRootObject
+
+@end

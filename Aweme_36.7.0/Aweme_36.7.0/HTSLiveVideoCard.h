@@ -1,0 +1,26 @@
+@class NSString, HTSLiveVideoSize;
+
+@interface HTSLiveVideoCard : IESLivePBBaseMessage
+
+@property (nonatomic) int cardType;
+@property (copy, nonatomic) NSString *coverURL;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+@property (copy, nonatomic) NSString *uid;
+@property (copy, nonatomic) NSString *rid;
+@property (copy, nonatomic) NSString *epid;
+@property (copy, nonatomic) NSString *tag;
+@property (copy, nonatomic) NSString *creatorId;
+@property (retain, nonatomic) HTSLiveVideoSize *size;
+@property (nonatomic) BOOL hasSize;
+@property (copy, nonatomic) NSString *backgroundURL;
+@property (copy, nonatomic) NSString *cardId;
+@property (copy, nonatomic) NSString *videoResource;
+@property (nonatomic) int linkType;
+@property (copy, nonatomic) NSString *openId;
+@property (copy, nonatomic) NSString *creatorOpenId;
+
++ (id)descriptor;
+
+@end

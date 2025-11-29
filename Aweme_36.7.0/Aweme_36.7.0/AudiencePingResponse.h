@@ -1,0 +1,10 @@
+@class AudiencePingResponse_ResponseData;
+
+@interface AudiencePingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AudiencePingResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

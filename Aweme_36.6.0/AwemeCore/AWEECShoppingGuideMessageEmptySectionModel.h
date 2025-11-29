@@ -1,0 +1,3 @@
+@interface AWEECShoppingGuideMessageEmptySectionModel : AWEECShoppingGuideMessageSectionModel
+
+@end

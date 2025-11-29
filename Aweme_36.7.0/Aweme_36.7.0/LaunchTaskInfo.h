@@ -1,0 +1,15 @@
+@class NSString, LotteryRegularlyConfig;
+
+@interface LaunchTaskInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long launchTaskId;
+@property (copy, nonatomic) NSString *launchTaskIdStr;
+@property (nonatomic) long long launchTaskStatus;
+@property (nonatomic) long long hadLaunchCount;
+@property (nonatomic) long long lastLotteryId;
+@property (retain, nonatomic) LotteryRegularlyConfig *regularlyConfig;
+@property (nonatomic) BOOL hasRegularlyConfig;
+
++ (id)descriptor;
+
+@end

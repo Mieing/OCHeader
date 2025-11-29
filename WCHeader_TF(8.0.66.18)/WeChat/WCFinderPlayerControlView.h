@@ -1,0 +1,71 @@
+@class WCFinderAnimationLoadingView, NSString, WCPlayerVolumeObserver, WXVideoSlider, UIView, UIImageView, WCPlayerView;
+@protocol WCFinderPlayerControlViewDelegate;
+
+@interface WCFinderPlayerControlView : UIView <WCPlayerVolumeObserverDelegate, WCPlayerControlProtocol>
+
+@property (retain, nonatomic) WCPlayerVolumeObserver *volumeObserver;
+@property (retain, nonatomic) WXVideoSlider *volumeSlider;
+@property (retain, nonatomic) UIView *volumePanel;
+@property (retain, nonatomic) UIView *volumeBgView;
+@property (retain, nonatomic) UIImageView *volumeIconView;
+@property (nonatomic) double maxPlayVideoTime;
+@property (weak, nonatomic) id<WCFinderPlayerControlViewDelegate> delegate;
+@property (retain, nonatomic) UIView *coverMask;
+@property (retain, nonatomic) WCFinderAnimationLoadingView *loadingView;
+@property (nonatomic) double progress;
+@property (nonatomic) BOOL isBufferingViewLoading;
+@property (nonatomic) unsigned long long loadingLocation;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) WCPlayerView *playerView;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)prepareForReuse;
+- (void)addWCPlayerSubview;
+- (void)layoutSubviews;
+- (id)getVolumeIconName;
+- (void)onPlayerRestoreUserInterfaceForPictureInPictureStop:(id)a0;
+- (void)onPlayerView:(id)a0 pictureInPictureStateDidChange:(long long)a1;
+- (void)onPlayerView:(id)a0 pipSeekFromTime:(double)a1 toTime:(double)a2;
+- (void)onPipStatePlayWithPlayerView:(id)a0;
+- (void)onPipStatePauseWithPlayerView:(id)a0;
+- (void)onPipStateRePlayWithPlayerView:(id)a0;
+- (void)onPlayerView:(id)a0 startDisplayOnPipWindow:(long long)a1;
+- (void)onPlayerView:(id)a0 stopDisplayOnPipWindow:(long long)a1;
+- (void)onPlayerStateChanged:(unsigned long long)a0;
+- (void)onPlayerProxyIsUnAvaiable;
+- (void)onVideoPrepareToPlay:(id)a0;
+- (void)startObserveVolume;
+- (void)stopObserveVolume;
+- (void)onVideoPlay;
+- (void)onVideoPause;
+- (void)onVideoPlayFinish;
+- (void)onVideoPlayFail:(unsigned long long)a0 errorCode:(int)a1 LocalizedErrorDes:(id)a2;
+- (void)onVideoDidPlayToEndTime;
+- (void)onCreateThumbImage:(id)a0;
+- (void)showBufferingView;
+- (void)hiddenBufferingView;
+- (void)showPercentView;
+- (void)hiddenPercentView;
+- (void)showThumbImageView;
+- (void)hiddenThumbImageView;
+- (double)getPlayVideoTotalTime;
+- (void)updateVideoCurrentTime:(double)a0;
+- (void)reset;
+- (void)updateVideoTotalTime:(double)a0;
+- (void)updateVideoBufferPercent:(double)a0;
+- (void)onPlayerVideoFrameOut:(id)a0;
+- (void)onDataSourceChangeStart:(id)a0;
+- (void)onDataSourceChangeSucc:(id)a0;
+- (void)onPlayerMuteByAudioModuleInterruptionBegin:(id)a0;
+- (void)onPlayerUnMuteByAudioModuleInterruptionEnd:(id)a0;
+- (id)progressBarStatus;
+- (void)setProgressBarStatus:(id)a0;
+- (BOOL)hasPlayToAppearTime;
+- (void)onVolumeDidChange:(double)a0;
+- (void)hiddenVolumePanel;
+- (void).cxx_destruct;
+
+@end

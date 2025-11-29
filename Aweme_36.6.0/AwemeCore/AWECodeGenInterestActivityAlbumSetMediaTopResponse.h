@@ -1,0 +1,3 @@
+@interface AWECodeGenInterestActivityAlbumSetMediaTopResponse : AWEBaseResponseModel
+
+@end

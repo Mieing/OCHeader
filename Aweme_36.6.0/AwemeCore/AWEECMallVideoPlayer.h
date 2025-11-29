@@ -1,0 +1,70 @@
+@class NSString, UIImageView, AWEAwemeModel, UIViewController;
+@protocol IESECMallVideoDelegate, AWEPlayVideoViewControllerProtocol, AWEAwemePlayVideoViewControllerProtocol, AWEAwemePlayVideoProtocol;
+
+@interface AWEECMallVideoPlayer : UIView <AWEPlayVideoDelegate, IESVideoPlayerDelegate, AWEPlayVideoViewControllerStatusDelegate, AWEECMallGoodsDetailZoomOuterContextProvider, IESECMallVideoProtocol>
+
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol, AWEAwemePlayVideoProtocol> *playerController;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (nonatomic) unsigned long long playState;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) BOOL isSameVideoBack;
+@property (nonatomic) long long innerScalingMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL repeat;
+@property (nonatomic) BOOL mute;
+@property (copy, nonatomic) NSString *fitMode;
+@property (copy, nonatomic) NSString *posterURL;
+@property (nonatomic) BOOL autoPlay;
+@property (nonatomic) double startTime;
+@property (nonatomic) double volume;
+@property (nonatomic) BOOL inTransition;
+@property (nonatomic) double currentPlaybackTime;
+@property (nonatomic) double totalPlayTime;
+@property (weak, nonatomic) id<IESECMallVideoDelegate> delegate;
+
+- (void)player:(id)a0 playbackFailedWithError:(id)a1;
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (void)player:(id)a0 playbackFailedForURL:(id)a1 error:(id)a2;
+- (void)player:(id)a0 didChangeStallState:(long long)a1 actionType:(long long)a2 reason:(unsigned long long)a3;
+- (void)setLogExtra:(id)a0;
+- (void)showPauseIcon;
+- (void)hidePauseIcon;
+- (BOOL)forceDisableVideoViewUp;
+- (double)customTimerPeriodic:(id)a0;
+- (void)player:(id)a0 updatePlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (void)player:(id)a0 didUpdateFromPlayViewController:(id)a1;
+- (id)modernTransitionContext;
+- (void)setPlayerSubTag:(id)a0;
+- (void)setPlayerTag:(id)a0;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (void)modernTransitionDidCompleteWithOffset:(long long)a0;
+- (BOOL)shouldModernTransitionUpdatePlayerControllerWithFromContext:(id)a0;
+- (long long)preferScaleMode;
+- (void)videoUpdatePlayerControllerWithPlayVideoVC:(id)a0;
+- (id)zoomTransitionStartViewToInner:(BOOL)a0;
+- (double)ipadSizeScale;
+- (BOOL)zoomOuterWithShrink;
+- (double)transitionCornerRadius;
+- (unsigned long long)playStateAfterTransition;
+- (void)updatePlayerControllerPlayState:(long long)a0;
+- (void)transferPlayStateFromPlaybackAction:(long long)a0;
+- (void)videoUpdatePlayerControllerWithPlayState:(long long)a0;
+- (void)calculateInnerScaleModelWithAweme:(id)a0 width:(long long)a1 height:(long long)a2;
+- (void)updateVideoPlayerAwemeModel:(id)a0;
+- (void)playerWillLoopPlaying:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)endTransition;
+- (void)stop;
+- (void)beginTransition;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)reset;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface VideoTabResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *tabListArray;
+@property (readonly, nonatomic) unsigned long long tabListArray_Count;
+@property (nonatomic) int defaultType;
+
++ (id)descriptor;
+
+@end

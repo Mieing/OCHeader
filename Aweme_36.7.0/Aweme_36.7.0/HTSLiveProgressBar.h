@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveProgressBar : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *currentValue;
+@property (copy, nonatomic) NSString *targetValue;
+@property (nonatomic) long long progressRate;
+@property (copy, nonatomic) NSString *color;
+
++ (id)descriptor;
+
+@end

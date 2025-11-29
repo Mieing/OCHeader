@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureCameraSpeed : MTLModel
+
+@end

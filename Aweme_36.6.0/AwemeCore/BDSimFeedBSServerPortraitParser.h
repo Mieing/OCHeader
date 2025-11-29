@@ -1,0 +1,3 @@
+@interface BDSimFeedBSServerPortraitParser : NSObject
+
+@end

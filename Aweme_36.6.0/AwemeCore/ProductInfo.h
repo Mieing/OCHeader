@@ -1,0 +1,26 @@
+@class NSString, ProductPriceInfo, JumpSetting, NSMutableArray;
+
+@interface ProductInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *productId;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *imgURL;
+@property (retain, nonatomic) NSMutableArray *introductionListArray;
+@property (readonly, nonatomic) unsigned long long introductionListArray_Count;
+@property (retain, nonatomic) NSMutableArray *labelListArray;
+@property (readonly, nonatomic) unsigned long long labelListArray_Count;
+@property (retain, nonatomic) ProductPriceInfo *price;
+@property (nonatomic) BOOL hasPrice;
+@property (copy, nonatomic) NSString *actionText;
+@property (nonatomic) BOOL isShow;
+@property (retain, nonatomic) JumpSetting *jumpSetting;
+@property (nonatomic) BOOL hasJumpSetting;
+
++ (id)descriptor;
+
+- (id)memoryData;
+- (id)labelTypesWithSupplementLabels:(id)a0;
+- (id)getMergedLabelList:(id)a0;
+- (id)initWithDict:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface FlowInstruction.TranslatorInstructionDataHandler : FlowInstruction.FlowInstructionDataHandler
+
+@end

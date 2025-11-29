@@ -1,0 +1,16 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveJoinGroupChatGuideContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long groupId;
+@property (copy, nonatomic) NSString *conversationId;
+@property (copy, nonatomic) NSString *headerText;
+@property (copy, nonatomic) NSString *bodyText;
+@property (retain, nonatomic) NSMutableArray *iconsArray;
+@property (readonly, nonatomic) unsigned long long iconsArray_Count;
+@property (nonatomic) int groupType;
+@property (nonatomic) int guideSource;
+
++ (id)descriptor;
+
+@end

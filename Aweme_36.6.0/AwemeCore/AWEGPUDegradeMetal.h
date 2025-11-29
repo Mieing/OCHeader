@@ -1,0 +1,19 @@
+@protocol MTLBuffer, MTLDevice, MTLComputePipelineState, MTLCommandQueue;
+
+@interface AWEGPUDegradeMetal : NSObject {
+    id<MTLDevice> _mDevice;
+    id<MTLComputePipelineState> _mAddFunctionPSO;
+    id<MTLCommandQueue> _mCommandQueue;
+    id<MTLBuffer> _mBufferA;
+    id<MTLBuffer> _mBufferB;
+    id<MTLBuffer> _mBufferResult;
+}
+
+- (void)generateRandomFloatData:(id)a0;
+- (void)encodeAddCommand:(id)a0;
+- (void)sendComputeCommand;
+- (void).cxx_destruct;
+- (id)initWithDevice:(id)a0;
+- (void)prepareData;
+
+@end

@@ -1,0 +1,84 @@
+@class NSDate, NSString, NSRecursiveLock, NSArray, BDPXPlaySingleSettingsModel, NSMutableDictionary, BDPUniqueID, BDPXPlayNetworkSignalView, BDPXPlaySettingsView_HG;
+@protocol XPLayQualityStats, XPlayItemProtocol;
+
+@interface BDPXPlaySingleGameInstance : BDPXPlayInstance <BDPXPlaySettingsViewDelegateProtocol, BDPXPlayInstanceProtocol>
+
+@property (retain, nonatomic) BDPXPlaySingleSettingsModel *settings;
+@property (retain, nonatomic) BDPXPlayNetworkSignalView *networkSignalView;
+@property (nonatomic) BOOL isShowingBadNetToast;
+@property (retain, nonatomic) NSDate *lastClosedBadNetAlertData;
+@property (nonatomic) BOOL hasShowedToolbarAnimation;
+@property (nonatomic) BOOL hasRegistedGetOnChange;
+@property (retain, nonatomic) NSArray *supportTMAMethodList;
+@property (retain, nonatomic) NSArray *supportTMAOnChangeMethodList;
+@property (retain, nonatomic) NSArray *supportTMAInstanceMethodList;
+@property (retain, nonatomic) NSArray *supportNativeCustomOnChangeMethodList;
+@property (retain, nonatomic) NSMutableDictionary *nativeCustomerOnChangeMap;
+@property (retain, nonatomic) NSRecursiveLock *onChangeMapLock;
+@property (retain, nonatomic) id<XPLayQualityStats> lastQualityStats;
+@property (nonatomic) long long lastNetworkStatus;
+@property (retain, nonatomic) BDPXPlaySettingsView_HG *settingsView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) BDPUniqueID *uniqueID;
+@property (readonly, nonatomic) id<XPlayItemProtocol> xPlayItem;
+@property unsigned long long loadState;
+@property BOOL isXplayFirstFrameReached;
+@property (nonatomic) BOOL isExitUnusual;
+
++ (id)getSettings;
++ (BOOL)shouldLoadGame:(id)a0;
++ (BOOL)isMixEngine:(id)a0 schema:(id)a1;
+
+- (void)didReceiveRTCCustomMessageWithString:(id)a0;
+- (void)playItem:(id)a0 playQualityStats:(id)a1;
+- (void)playItem:(id)a0 netStatus:(long long)a1 rtt:(long long)a2 needToast:(BOOL)a3 needNotification:(BOOL)a4;
+- (BOOL)isWeakNet;
+- (void)item:(id)a0 cloudPlayer:(id)a1 playStatusDidUpdated:(unsigned long long)a2 info:(id)a3;
+- (id)getContainerVC;
+- (void)resetGame;
+- (void)updateNetworkStatus:(long long)a0;
+- (void)handleAppChange:(BOOL)a0;
+- (void)closeGame:(id)a0;
+- (void)loadGame:(id)a0 model:(id)a1 isPreload:(BOOL)a2 isMixLaunch:(BOOL)a3 completion:(id /* block */)a4;
+- (void)sendMsg:(id)a0 result:(id)a1 error:(id)a2;
+- (void)sendMsg:(id)a0 result:(id)a1 extra:(id)a2;
+- (BOOL)isAllConditionReadyAfterVCShow:(id)a0;
+- (void)initSettings;
+- (void)showExitAlertWithTitle:(id)a0 description:(id)a1 completion:(id /* block */)a2;
+- (void)buildConfiguration:(id)a0 model:(id)a1 xplayModel:(id)a2 completion:(id /* block */)a3;
+- (void)showLongTimeNoOperationAlert:(id /* block */)a0;
+- (void)onSwitchNetworkIconShow:(BOOL)a0;
+- (void)onChangeClarity:(id)a0;
+- (void)initModePanelItem;
+- (void)updatePlayQualityView:(id)a0;
+- (void)showBadNetConditionIfNeed;
+- (BOOL)isBadNetAlertOverMinDuration;
+- (void)showBadNetConditionToast;
+- (void)allFrameConditionReady;
+- (id)resetRTCMsg:(id)a0 apiParams:(id)a1;
+- (id)getTMAParamsType:(id)a0;
+- (BOOL)isOnListener:(id)a0;
+- (void)addListenerWithName:(id)a0 listenerId:(id)a1;
+- (void)removeListenerWithName:(id)a0 listenerId:(id)a1;
+- (id)resetJSBCallbackResult:(id)a0 result:(id)a1;
+- (void)startToolbarAnimationIfNeed;
+- (void)reportInvokeApiEndEvent:(id)a0;
+- (BOOL)getNetworkIconStorageValue;
+- (void)refreshNetworkIcon:(id)a0 networkStatus:(long long)a1;
+- (void)addOrRemoveNetworkIcon:(BOOL)a0;
+- (void)setNetworkIconStorageValue:(BOOL)a0;
+- (id)getGameXplayStorageKey;
+- (void)initiativeToExit;
+- (void)trackAlertClickWithTitle:(id)a0 content:(id)a1 operation:(unsigned long long)a2;
+- (void)trackAlertShowWithTitle:(id)a0 content:(id)a1;
+- (void)handleChangeToForeground;
+- (void)sendMsgOnAppChange:(BOOL)a0;
+- (BOOL)isContainListenersWithName:(id)a0;
+- (id)getTargetListeners:(id)a0;
+- (BOOL)isContainListenerWithName:(id)a0 listenerId:(id)a1;
+- (void).cxx_destruct;
+
+@end

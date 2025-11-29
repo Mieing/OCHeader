@@ -1,0 +1,12 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveOChannelLastestShowMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long startTs;
+@property (copy, nonatomic) NSString *showlistSchema;
+
++ (id)descriptor;
+
+@end

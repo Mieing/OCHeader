@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceGetUserWaitingOffsetResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceGetUserWaitingOffsetResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetUserWaitingOffsetResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

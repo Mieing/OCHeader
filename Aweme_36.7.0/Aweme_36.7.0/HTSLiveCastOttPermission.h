@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveCastOttPermission : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL enable;
+@property (copy, nonatomic) NSString *failureToast;
+
++ (id)descriptor;
+
+@end

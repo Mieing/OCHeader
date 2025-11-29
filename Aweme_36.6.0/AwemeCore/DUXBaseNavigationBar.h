@@ -1,0 +1,3 @@
+@interface DUXBaseNavigationBar : UINavigationBar
+
+@end

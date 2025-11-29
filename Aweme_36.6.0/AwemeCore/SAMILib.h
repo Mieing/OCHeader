@@ -1,0 +1,3 @@
+@interface SAMILib : NSObject
+
+@end

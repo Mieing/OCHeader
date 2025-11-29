@@ -1,0 +1,3 @@
+@interface RoomNowOfficialChannelApiRoot : GPBRootObject
+
+@end

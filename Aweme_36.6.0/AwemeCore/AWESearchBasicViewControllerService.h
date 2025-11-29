@@ -1,0 +1,3 @@
+@interface AWESearchBasicViewControllerService : AWESearchBaseContainerService
+
+@end

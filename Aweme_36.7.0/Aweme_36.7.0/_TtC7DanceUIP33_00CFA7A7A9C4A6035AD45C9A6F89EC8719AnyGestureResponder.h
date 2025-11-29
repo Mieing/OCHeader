@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_00CFA7A7A9C4A6035AD45C9A6F89EC8719AnyGestureResponder : DanceUI.UnaryViewResponder
+
+@end

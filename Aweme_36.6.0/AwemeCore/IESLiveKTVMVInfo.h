@@ -1,0 +1,13 @@
+@class IESLiveMVBaseInfo;
+
+@interface IESLiveKTVMVInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveMVBaseInfo *mvBaseInfo;
+@property (nonatomic) BOOL hasMvBaseInfo;
+@property (nonatomic) long long count;
+@property (nonatomic) long long createTime;
+@property (nonatomic) int ktvMvType;
+
++ (id)descriptor;
+
+@end

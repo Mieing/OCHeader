@@ -1,0 +1,78 @@
+@class ACCAIGCRecordEmptyView, UILabel, NSDictionary, ACCAIGCLoraProfileModel, ACCAIGCLoraHelper, ACCAIGCLoraPersonInfo, ACCAnimatedButton, UIView, DUXButton, NSString, ACCAIGCRecordListDataSource, ACCAIGCRecordListView, UIImageView;
+@protocol _TtP9AWELottie13AWELottieView_;
+
+@interface ACCAIGCRecordViewController : UIViewController <ACCAIGCMoreLoraInfoCollectionViewCellDelegate, ACCAIGCRecordListView, ACCAIGCRecordViewControllerProtocol>
+
+@property (retain, nonatomic) ACCAIGCLoraProfileModel *profileModel;
+@property (nonatomic) long long profileStatus;
+@property (retain, nonatomic) UIView *navigationBar;
+@property (retain, nonatomic) ACCAnimatedButton *closeButton;
+@property (retain, nonatomic) DUXButton *pointsButton;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *labelContentView;
+@property (retain, nonatomic) UIImageView *avatarView;
+@property (retain, nonatomic) UIImageView *avatarCenterView;
+@property (retain, nonatomic) UIImageView *avatarStarView;
+@property (retain, nonatomic) UILabel *AILabel;
+@property (retain, nonatomic) UILabel *timeLabel;
+@property (retain, nonatomic) UIImageView *nextView;
+@property (retain, nonatomic) UILabel *createLabel;
+@property (retain, nonatomic) UIView<_TtP9AWELottie13AWELottieView_> *guideAnimationView;
+@property (retain, nonatomic) ACCAIGCRecordEmptyView *emptyView;
+@property (retain, nonatomic) ACCAIGCRecordListView *recordListView;
+@property (retain, nonatomic) ACCAIGCRecordListDataSource *dataSource;
+@property (retain, nonatomic) UIView *limitTipView;
+@property (retain, nonatomic) ACCAnimatedButton *limitCancelButton;
+@property (retain, nonatomic) UIImageView *tipIconView;
+@property (retain, nonatomic) UILabel *countTipLabel;
+@property (nonatomic) BOOL refreshWhenExitFlag;
+@property (retain, nonatomic) ACCAIGCLoraHelper *loraHelper;
+@property (retain, nonatomic) ACCAIGCLoraPersonInfo *currentSelectPersonInfo;
+@property (nonatomic) BOOL hasTrack;
+@property (nonatomic) long long totalAIGCPoints;
+@property (retain, nonatomic) NSDictionary *trackInfo;
+@property (nonatomic) unsigned long long enterSource;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)transition_shouldStartInteractiveTranstionToVC:(id)a0;
+- (void)onThemeChanged;
+- (void)closeButtonClick;
+- (void)bindObserver;
+- (id)getLoraCreateTime;
+- (BOOL)shouldUseAICreationUIStyle;
+- (BOOL)shouldUseLightModeUI;
+- (void)updateWaiting;
+- (void)trackShowAIGCRoleManagePage;
+- (id)initWithDataSource:(id)a0 from:(unsigned long long)a1;
+- (void)clearSelectLoraInfo:(id)a0;
+- (void)setupUGCFusionCreationHistoryUI;
+- (void)reloadListView;
+- (long long)getProfileStatus;
+- (void)loadHistoryIfNeeded;
+- (void)updateWithModel;
+- (void)updateListView;
+- (void)trackEnterLoraAIRecordPage;
+- (void)trackAIGCRoleEntranceShow;
+- (void)loadAIGCPoints;
+- (void)reloadBannerCell;
+- (void)updateLayoutShowingTipView;
+- (BOOL)shouldShowCreateLabel;
+- (void)updateLayoutAfterHidingTipView;
+- (void)trackEnterUGCFusionHistory;
+- (void)pointsAction;
+- (void)profileAction;
+- (void)createProfileAction;
+- (void)backAction;
+- (void).cxx_destruct;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)setupUI;
+- (void)setupNavigationBar;
+
+@end

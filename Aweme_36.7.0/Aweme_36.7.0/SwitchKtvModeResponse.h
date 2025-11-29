@@ -1,0 +1,10 @@
+@class SwitchKtvModeResponse_ResponseData;
+
+@interface SwitchKtvModeResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SwitchKtvModeResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

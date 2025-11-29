@@ -1,0 +1,3 @@
+@interface IESLiveMultiLinkerInstanceFactory : NSObject
+
+@end

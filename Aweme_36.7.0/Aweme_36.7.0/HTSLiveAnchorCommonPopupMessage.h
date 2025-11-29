@@ -1,0 +1,12 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveAnchorCommonPopupMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *dialogInfo;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

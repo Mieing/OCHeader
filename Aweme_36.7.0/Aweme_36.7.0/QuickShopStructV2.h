@@ -1,0 +1,16 @@
+@class NSString, QuickShopSecondFloorV2;
+
+@interface QuickShopStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *quickShopURL;
+@property (nonatomic) BOOL hasQuickShopURL;
+@property (copy, nonatomic) NSString *quickShopName;
+@property (nonatomic) BOOL hasQuickShopName;
+@property (nonatomic) BOOL withTextEntry;
+@property (nonatomic) BOOL hasWithTextEntry;
+@property (retain, nonatomic) QuickShopSecondFloorV2 *secondFloorInfo;
+@property (nonatomic) BOOL hasSecondFloorInfo;
+
++ (id)descriptor;
+
+@end

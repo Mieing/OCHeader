@@ -1,0 +1,94 @@
+@class NSString, NSMutableDictionary, NSObject, WAFileSpaceTraceLogic;
+@protocol OS_dispatch_queue;
+
+@interface WAFileStorageMgr : MMUserService <WAFileSpaceTraceLogicScanDataSource, WAAppTaskMgrExt, MMServiceProtocol> {
+    WAFileSpaceTraceLogic *_usrFileTraceLogic;
+    NSObject<OS_dispatch_queue> *_fileTraceQueue;
+    unsigned long long _usrFileTraceScanFrequency;
+    NSObject<OS_dispatch_queue> *_workerQueue;
+    NSMutableDictionary *_dicFileStorageInfo;
+    NSMutableDictionary *_dicAppHasReportTempLimit;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getFormatPathWithMediaIdentifier:(id)a0;
++ (id)getTempVideoPathWithMediaIdentifier:(id)a0;
+
+- (void)checkAndClearUsrStoreAndStorageData;
+- (unsigned long long)getUsrStoreDataSpaceWithAppId:(id)a0;
+- (void)clearUsrSpaceOfAppId:(id)a0;
+- (void)clearStoreSpaceOfAppId:(id)a0;
+- (void)clearOpenDataSpaceOfAppId:(id)a0;
+- (void)clearStorageSpaceOfAppId:(id)a0;
+- (void)clearSinglePageSpaceOfAppId:(id)a0;
+- (void)clearWxPrivateSpaceOfAppId:(id)a0;
+- (void)insertIntoSortedArray:(id)a0 withItem:(id)a1;
+- (void)removeGeneratedKeysFromKeychainWithAppId:(id)a0;
+- (void)initFileTraceLogic;
+- (BOOL)isScanning;
+- (void)addUsrFileStatWithFilePath:(id)a0 appId:(id)a1;
+- (void)asyncScanFile;
+- (void)addUsrFileStatWithDirectory:(id)a0 appId:(id)a1;
+- (void)addUsrFileStatWithFileSize:(unsigned long long)a0 appId:(id)a1;
+- (void)removeUsrFileStatWithFileSize:(unsigned long long)a0 appId:(id)a1;
+- (void)removeUsrItemAndUpdateTotalSize:(id)a0;
+- (unsigned long long)usrFileSizeOfappId:(id)a0;
+- (void)saveStatus;
+- (id)appIdsThatHaveDirectoryWithPrefix:(id)a0;
+- (id)directoryOfAppId:(id)a0 prefix:(id)a1;
+- (unsigned long long)scanIntervalWithPrefix:(id)a0;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (id)getQueue;
+- (id)usrRealPath:(id)a0 appID:(id)a1 error:(id *)a2;
+- (void)saveFileWithAppID:(id)a0 tempLocalID:(id)a1 usrPath:(id)a2 handler:(id /* block */)a3;
+- (void)saveFileWithAppID:(id)a0 tempLocalID:(id)a1 handler:(id /* block */)a2;
+- (void)removeSavedFileWithAppID:(id)a0 storeLocalID:(id)a1 handler:(id /* block */)a2;
+- (void)getSavedFileListWithAppID:(id)a0 handler:(id /* block */)a1;
+- (void)getSavedFileInfoWithAppID:(id)a0 storeLocalID:(id)a1 handler:(id /* block */)a2;
+- (void)getFileInfoWithAppID:(id)a0 localID:(id)a1 digestAlgorithm:(id)a2 handler:(id /* block */)a3;
+- (void)readFileToBase64WithAppID:(id)a0 localID:(id)a1 handler:(id /* block */)a2;
+- (void)writeFileFromBase64WithAppID:(id)a0 localID:(id)a1 base64:(id)a2 handler:(id /* block */)a3;
+- (void)readFileDataWithAppID:(id)a0 localID:(id)a1 fromPosition:(unsigned long long)a2 length:(unsigned long long)a3 handler:(id /* block */)a4;
+- (void)writeFileDataWithAppID:(id)a0 localID:(id)a1 isAppend:(BOOL)a2 data:(id)a3 handler:(id /* block */)a4;
+- (void)unzipWithAppID:(id)a0 localID:(id)a1 targetDirectory:(id)a2 handler:(id /* block */)a3;
+- (void)unzipAsTempWithAppID:(id)a0 localID:(id)a1 handler:(id /* block */)a2;
+- (void)readZipEntryWithAppID:(id)a0 localID:(id)a1 entries:(id)a2 needReadAll:(BOOL)a3 globalEncoding:(id)a4 handler:(id /* block */)a5;
+- (void)reportFileSizeByAppId:(id)a0;
+- (void)workThread_saveFileWithAppID:(id)a0 tempLocalID:(id)a1 usrPath:(id)a2 handler:(id /* block */)a3;
+- (void)workThread_saveFileWithAppID:(id)a0 tempLocalID:(id)a1 handler:(id /* block */)a2;
+- (void)workThread_removeSavedFileWithAppID:(id)a0 storeLocalID:(id)a1 handler:(id /* block */)a2;
+- (void)workThread_getSavedFileListWithAppID:(id)a0 handler:(id /* block */)a1;
+- (void)workThread_getSavedFileInfoWithAppID:(id)a0 storeLocalID:(id)a1 handler:(id /* block */)a2;
+- (void)workThread_getFileInfoWithAppID:(id)a0 localID:(id)a1 digestAlgorithm:(id)a2 handler:(id /* block */)a3;
+- (void)workThread_updateFileStorageConfigWithAppID:(id)a0;
+- (id)getFileStorageInfoWithAppID:(id)a0;
+- (void)workthread_readFileToBase64WithAppID:(id)a0 localID:(id)a1 handler:(id /* block */)a2;
+- (void)workthread_writeFileFromBase64WithAppID:(id)a0 localID:(id)a1 base64:(id)a2 handler:(id /* block */)a3;
+- (void)workthread_readFileDataWithAppID:(id)a0 localID:(id)a1 fromPosition:(unsigned long long)a2 length:(unsigned long long)a3 handler:(id /* block */)a4;
+- (BOOL)haveFreeSpace:(id)a0 writeSize:(long long)a1 localID:(id)a2 error:(id *)a3;
+- (void)workthread_writeFileDataWithAppID:(id)a0 localID:(id)a1 isAppend:(BOOL)a2 data:(id)a3 handler:(id /* block */)a4;
+- (void)workThread_reportFileSizeByAppId:(id)a0;
+- (void)workThread_unzipWithAppID:(id)a0 localID:(id)a1 targetDirectory:(id)a2 handler:(id /* block */)a3;
+- (void)workThread_readZipEntryWithAppID:(id)a0 localID:(id)a1 entries:(id)a2 needReadAll:(BOOL)a3 globalEncoding:(id)a4 handler:(id /* block */)a5;
+- (void)workThread_unzipAsTempWithAppID:(id)a0 localID:(id)a1 handler:(id /* block */)a2;
+- (id)moveFolderFilesToTemp:(id)a0 withAppID:(id)a1;
+- (BOOL)moveFolderFiles:(id)a0 intoFolder:(id)a1 error:(id *)a2;
+- (void)workthread_removeSinglePageDirWithAppID:(id)a0;
+- (BOOL)setReportFlag:(id)a0;
+- (void)clearReportFlag:(id)a0;
+- (id)decodeData:(id)a0 withEncoding:(id)a1;
+- (id)getZipEntryDicOfCurrentFile:(id)a0 length:(unsigned int)a1 position:(unsigned int)a2 encoding:(id)a3;
+- (void)onAppTaskDidFinishColdLaunchWithAppId:(id)a0;
+- (void)onAppTaskTerminate:(id)a0;
+- (void).cxx_destruct;
+
+@end

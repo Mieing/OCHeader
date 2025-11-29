@@ -1,0 +1,82 @@
+@class NSString, BDXBridgeEventSubscriber, BDPThreadSafeArray, BDPUniqueID;
+
+@interface AWEPluginDynamicContainerImpl : NSObject <BDPDynamicContainerPluginDelegate, BDXContainerLifecycleProtocol, BDPWebViewPageLifeCycleMessage, BDPElementFullscreenMessage, BDXMonitorInterceptor, BDPXScreenSizeChangeMessage, BDPBootLifeCycleMessage, BDXHostNavigationProtocol, BDPAppRouteChangeMessage, BDPNativeAppSubscribeDispatchMessage>
+
+@property (retain, nonatomic) BDPThreadSafeArray *containers;
+@property (retain, nonatomic) BDPThreadSafeArray *componentContainers;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *clientSubscriber;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *jssdkSubscriber;
+@property (retain, nonatomic) BDPUniqueID *uniqueID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedPlugin;
+
+- (void)container:(id)a0 didFinishLoadWithURL:(id)a1;
+- (void)container:(id)a0 didLoadFailedWithUrl:(id)a1 error:(id)a2;
+- (void)containerOnShow:(id)a0 sourceParam:(id)a1;
+- (void)containerDidStartLoading:(id)a0;
+- (void)containerDidFirstScreen:(id)a0;
+- (void)containerDidClose:(id)a0;
+- (void)container:(id)a0 didReceivePerformanceFirstLoad:(id)a1 bulletPerfDict:(id)a2;
+- (id)gurdAccessKey;
+- (void)xMonitor:(id)a0 didReportWithEventName:(id)a1 bizTag:(id)a2 commonParams:(id)a3 metric:(id)a4 category:(id)a5 extra:(id)a6 platform:(long long)a7 aid:(id)a8 maySample:(BOOL)a9 urlString:(id)a10;
+- (void)bdxPushViewController:(id)a0 animated:(BOOL)a1;
+- (void)bdxPresentViewController:(id)a0 animated:(BOOL)a1 completion:(id /* block */)a2;
+- (id)__platformStrWithplatform:(long long)a0;
+- (void)executeContainerOptimizeWithEvent:(id)a0 schema:(id)a1;
+- (void)publishBDXEventWithName:(id)a0 params:(id)a1;
+- (void)applicationReadyToBoot:(id)a0;
+- (void)updateLiveVideoContainer:(id)a0 status:(long long)a1;
+- (void)__subscribe;
+- (void)pageWillDestroy:(id)a0 pageID:(long long)a1;
+- (void)enterFullscreenWithPageID:(long long)a0 orientation:(long long)a1 element:(id)a2 uniqueID:(id)a3;
+- (void)exitFullscreenWithPageID:(long long)a0 element:(id)a1 uniqueID:(id)a2;
+- (void)XScreenWindowResizeWithController:(id)a0 translateToValue:(double)a1 contentHeight:(double)a2 contentHeightRate:(double)a3 adjustContent:(BOOL)a4;
+- (void)XScreenWindowSizeModeChangeWithController:(id)a0 mode:(unsigned long long)a1 animated:(BOOL)a2;
+- (void)XScreenWindowWillCloseWithController:(id)a0;
+- (void)AppPageResizeWithController:(id)a0 params:(id)a1;
+- (void)onAppRouteChangePageWithPageID:(long long)a0 pageURL:(id)a1 uniqueID:(id)a2;
+- (void)dispatchTMAEvent:(id)a0 uniqueID:(id)a1 containers:(id)a2 pagePath:(id)a3 dest:(unsigned long long)a4 data:(id)a5;
+- (void)p_unregisterContainerEvent:(id)a0;
+- (id)modelWithContainerID:(id)a0;
+- (double)calculateWithDict:(id)a0 value:(id)a1 total:(double)a2;
+- (void)startTimeoutTimerIfNeeded:(id)a0;
+- (void)_openBulletContainerWithSchema:(id)a0 uniqueID:(id)a1 params:(id)a2 type:(long long)a3 completion:(id /* block */)a4;
+- (void)addComponentContainer:(id)a0 tag:(id)a1;
+- (void)updateComponentContainer:(id)a0;
+- (void)removeComponentContainer:(id)a0;
+- (id)frontUniqueID;
+- (void)publishContainerInfoEventWithUniqueID:(id)a0;
+- (void)sendBulletEventWithEventName:(id)a0 params:(id)a1 uniqueID:(id)a2;
+- (void)closeBulletContainer:(id)a0;
+- (id)getContainerInfosWithUniqueID:(id)a0 params:(id)a1;
+- (id)generateContainerInfoWithModel:(id)a0;
+- (id)generateComponentContainerInfoWithModel:(id)a0;
+- (id)calculateCoordinateWithContainer:(id)a0;
+- (void)receiveBulletEventWithParams:(id)a0;
+- (BOOL)needAdjustAppCardXScreenChangeWithUniqueID:(id)a0 model:(id)a1;
+- (BOOL)needAdjustPageCardXScreenChangeWithUniqueID:(id)a0 model:(id)a1;
+- (void)publishPageResizeEventWithPage:(id)a0 uniqueID:(id)a1;
+- (id)modelWithSessionID:(id)a0;
+- (void)_injectTimorMethodWithContainer:(id)a0;
+- (void)removeModelWithSessionID:(id)a0;
+- (id)modelsWithContainerType:(long long)a0;
+- (void)removeBulletContainerWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)showBulletCardWithSchema:(id)a0 uniqueID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
+- (void)showBulletPopupWithSchema:(id)a0 uniqueID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
+- (void)showBulletPageWithSchema:(id)a0 uniqueID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
+- (void)publishBulletContainerWithParams:(id)a0 completion:(id /* block */)a1;
+- (id)extraInfoWithContainerId:(id)a0;
+- (long long)containerTypeWithContainerId:(id)a0;
+- (void)applicationReadyToBootNoti:(id)a0;
+- (void)preloadResourceWith:(id)a0 completion:(id /* block */)a1;
+- (void)prefetchResourceWith:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)addObservers;
+
+@end

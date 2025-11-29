@@ -1,0 +1,11 @@
+@class NSString, HTSLiveAstRuleDetail;
+
+@interface HTSLiveRuleDetail : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveAstRuleDetail *astRule;
+@property (nonatomic) BOOL hasAstRule;
+@property (copy, nonatomic) NSString *jsonRule;
+
++ (id)descriptor;
+
+@end

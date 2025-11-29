@@ -1,0 +1,12 @@
+@class CGPSignalData;
+
+@interface CGPBusinessSignalSync : GPBMessage
+
+@property (retain, nonatomic) CGPSignalData *mobile;
+@property (nonatomic) BOOL hasMobile;
+@property (retain, nonatomic) CGPSignalData *wifi;
+@property (nonatomic) BOOL hasWifi;
+
++ (id)descriptor;
+
+@end

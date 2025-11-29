@@ -1,0 +1,87 @@
+@class UIView, NSString, NSArray, UIImageView, UIButton, NSDictionary, NSMutableArray, UICollectionView, UILabel;
+@protocol AWESearchPhotosPreviewControllerDelegate;
+
+@interface AWESearchPhotosPreviewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate, AWESearchPhotosPreviewCollectionViewCellDelegate, AWESearchPhotosPreviewFadeOutTransitionContextProvider>
+
+@property (retain, nonatomic) NSArray *thumbnailURLs;
+@property (retain, nonatomic) NSArray *imageURLs;
+@property (retain, nonatomic) NSArray *titles;
+@property (retain, nonatomic) NSArray *watermarks;
+@property (retain, nonatomic) NSArray *linkList;
+@property (nonatomic) long long currentIndex;
+@property (retain, nonatomic) NSMutableArray *zoomScales;
+@property (retain, nonatomic) NSMutableArray *contentOffsets;
+@property (retain, nonatomic) NSArray *imageReqConfigs;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UILabel *pageLabel;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIButton *backButton;
+@property (retain, nonatomic) UIView *maskView;
+@property (retain, nonatomic) UIView *pageIndexBgView;
+@property (nonatomic) BOOL showSourceView;
+@property (retain, nonatomic) UIView *sourceBgView;
+@property (retain, nonatomic) UIImageView *sourceIcon;
+@property (retain, nonatomic) UILabel *sourceLabel;
+@property (retain, nonatomic) UIView *footerView;
+@property (copy, nonatomic) id /* block */ scrollToMoreCallback;
+@property (nonatomic) BOOL enableFooterView;
+@property (nonatomic) BOOL isWillScrollToDetail;
+@property (nonatomic) BOOL disableZoomTransition;
+@property (nonatomic) BOOL showBackButton;
+@property (nonatomic) double startTime;
+@property (nonatomic) BOOL allowLoop;
+@property (retain, nonatomic) NSDictionary *trackParamDict;
+@property (nonatomic) BOOL canReportParams;
+@property (copy, nonatomic) NSString *btmPageId;
+@property (copy, nonatomic) NSString *btmId;
+@property (copy, nonatomic) NSString *uniqueId;
+@property (retain, nonatomic) NSMutableArray *exposureArray;
+@property (copy, nonatomic) NSDictionary *extraParams;
+@property (weak, nonatomic) id<AWESearchPhotosPreviewControllerDelegate> delegate;
+@property (nonatomic) BOOL shouldUsePopDismiss;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
+
+- (void)duxGrid_viewDidChangeBreakPointFrom:(struct { long long x0; long long x1; })a0 toBreakPoint:(struct { long long x0; long long x1; })a1;
+- (unsigned long long)fadeOutTransitionAllowedTriggerDirection;
+- (id)fadeOutTransitionEndView;
+- (BOOL)btm_autoManaged;
+- (id)btm_pageIdentifier;
+- (id)aAWEPadModuleAdapter;
+- (void)p_setupLabel;
+- (void)p_setupLoopData;
+- (void)p_setupCollectionView;
+- (long long)fakeCurrentIndex;
+- (void)updateLabelAndCurrentIndex;
+- (BOOL)shouldAddFakeLoopData;
+- (id)p_addFakeObjectToArray:(id)a0;
+- (void)backButtonClick;
+- (void)photosPreviewControllerDismiss;
+- (void)photosPreviewCollectionViewCell:(id)a0 didUpdateScrollViewWithZoomScale:(double)a1 contentOffset:(struct CGPoint { double x0; double x1; })a2;
+- (void)p_setupBackButton;
+- (void)p_setupSourceView;
+- (void)tapSourceView;
+- (void)trackImageDisplayEvent:(long long)a0;
+- (void)updatePageIndexConstraints;
+- (void)updateSourceViewDisplay;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (BOOL)prefersStatusBarHidden;
+- (id)initWithConfiguration:(id)a0;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)dismissSelf;
+
+@end

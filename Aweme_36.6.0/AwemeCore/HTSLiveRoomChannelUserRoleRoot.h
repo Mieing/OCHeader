@@ -1,0 +1,3 @@
+@interface HTSLiveRoomChannelUserRoleRoot : GPBRootObject
+
+@end

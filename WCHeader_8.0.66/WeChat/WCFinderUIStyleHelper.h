@@ -1,0 +1,50 @@
+@interface WCFinderUIStyleHelper : NSObject
+
++ (double)bulletSettingWidth;
++ (double)pauseVideoTipsLabelWidth;
++ (double)pauseImageMusicTipsLabelWidth;
++ (id)currentFinderLogoStyleColor;
++ (id)loadingColor;
++ (BOOL)isSquareFriendLikeAvator;
++ (double)friendLikeAvatorCornerRadius;
++ (BOOL)isNearbyPrivateMsgShow;
++ (BOOL)isNearbyDetailGoToRelated;
++ (BOOL)isSnSLiveHeaderEnable;
++ (BOOL)isDiceMachine;
++ (BOOL)isSnSPOIGoToRelated;
++ (unsigned long long)calcFinderCellMaxTitleLengthLeftRedDot:(BOOL)a0 redDotNumber:(unsigned long long)a1;
++ (unsigned long long)calcFinderCellMaxTitleLengthLeftRedDot:(BOOL)a0 redDotNumber:(unsigned long long)a1 entryScene:(unsigned long long)a2;
++ (unsigned long long)finderCellDoubleLineMaxTitleLengthLeftRedDot:(BOOL)a0 redDotNumber:(unsigned long long)a1 entryScene:(unsigned long long)a2;
++ (unsigned long long)finderCellSingleLineMaxTitleLengthLeftRedDot:(BOOL)a0 redDotNumber:(unsigned long long)a1;
++ (unsigned long long)finderCellSingleLineMaxTitleLengthLeftRedDot:(BOOL)a0 redDotNumber:(unsigned long long)a1 entryScene:(unsigned long long)a2;
++ (unsigned long long)calcFinderTimelineBubbleMaxSingleTitleLength;
++ (unsigned long long)calcFinderTimelineRecommendBubbleMaxSingleTitleLength;
++ (id)genTestTitle;
++ (id)genEnglisthTextTitle;
++ (unsigned long long)calcMaxTextLength:(int)a0 font:(id)a1 width:(double)a2;
++ (unsigned long long)calcFinderCellLineNumWithTitle:(id)a0 leftRedDot:(BOOL)a1 redDotNumber:(unsigned long long)a2;
++ (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getFindEntryCellRemainRect:(unsigned long long)a0 leftRedDot:(BOOL)a1 redDotNumber:(unsigned long long)a2;
++ (double)getCurrentMainScreenWidth;
++ (double)iPadFullScreenContentWidth:(id)a0;
++ (double)iPadScreenWidth:(id)a0;
++ (double)iPadPopoverWidth:(id)a0;
++ (double)screenHeightIsSubScene:(BOOL)a0;
++ (BOOL)curViewIsOnSubScene:(id)a0;
++ (BOOL)stringIsEqual:(id)a0 stringB:(id)a1;
++ (BOOL)finderIsMainScreenOnSubScene;
++ (BOOL)isInFinderScene;
++ (BOOL)finderIsOnSubScene;
++ (id)getViewTopWindow:(id)a0;
++ (id)getViewTopViewController:(id)a0;
++ (id)dynamicIconPathWithKey:(id)a0;
++ (double)getHalfScreenPercentHeightByMediaWidHeightRatio:(double)a0;
++ (void)removeAndHiddenView:(id)a0;
++ (id)findLowestVisibleSubviewInContainer:(id)a0;
++ (void)addShadowToTLViewItem:(id)a0;
++ (id)topViewController;
++ (double)findPageCellSafeMargin;
++ (BOOL)isViewVisibleOnWindow:(id)a0;
++ (BOOL)targetViewIsShow:(id)a0;
++ (double)calculateSolidColorRatioForImage:(id)a0;
+
+@end

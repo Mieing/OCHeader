@@ -1,0 +1,52 @@
+@interface MMMusicPlayerUtility : MMObject
+
++ (void)getThumbWithPostingTrack:(id)a0 completion:(id /* block */)a1;
++ (id)genTmpThumbImageWithLocalVideoPath:(id)a0 clipOffsetMs:(unsigned long long)a1;
++ (void)getFinderDataItemWithTrack:(id)a0 completion:(id /* block */)a1;
++ (void)getFinderDataItemWithMVModel:(id)a0 ignoreLocalModel:(BOOL)a1 completion:(id /* block */)a2;
++ (void)getFinderDataItemWithObjectId:(unsigned long long)a0 nonceId:(id)a1 completion:(id /* block */)a2;
++ (id)getMvCoverUrlWithMvModel:(id)a0;
++ (id)getMusicIconFromSource:(id)a0 size:(struct CGSize { double x0; double x1; })a1;
++ (id)getMusicIconFromSource:(id)a0 size:(struct CGSize { double x0; double x1; })a1 cornerRadius:(double)a2;
++ (id)resizeImage:(id)a0 toMaxWidth:(int)a1 andMaxHeight:(int)a2 cornerRadius:(double)a3;
++ (id)getMusicGrayIconWithAppId:(id)a0;
++ (id)getMusicGrayIconWithAppId:(id)a0 size:(struct CGSize { double x0; double x1; })a1;
++ (id)getMusicGrayIconPathWithAppId:(id)a0;
++ (id)getAppSourceNameWithAppId:(id)a0;
++ (id)getMusicSourceNameWithAppId:(id)a0;
++ (id)getMusicCoverImageData:(id)a0;
++ (void)fillMusicShareItemWithSongInfo:(id)a0 songInfo:(id)a1;
++ (void)fillMusicShareItemSDKData:(id)a0 originShareItem:(id)a1;
++ (void)setStatusOpenMusicInfoData:(id)a0;
++ (BOOL)shouldShowLyrics:(id)a0;
++ (id)generateMessageWrapWithMusicInfo:(id)a0 shareItem:(id)a1 coverImageData:(id)a2 pushFromType:(unsigned long long)a3;
++ (id)musicVideoMainDir;
++ (id)pathToMusicMVData;
++ (id)genTmpThumbWithLocalVideoPath:(id)a0 clipOffsetMs:(unsigned long long)a1;
++ (id)compressedThumbImage:(id)a0;
++ (id)getMusicAlbumImageData:(id)a0 mvModel:(id)a1;
++ (struct CGSize { double x0; double x1; })getVideoSizeByAvAsset:(id)a0;
++ (id)loadCoverImageWithUrl:(id)a0 observerIfLoadAsync:(id)a1;
++ (BOOL)isValidLocalVideoForPost:(id)a0;
++ (void)showMusicCantPlayAlertWithCustomWording:(id)a0;
++ (id)musicAlbumVideoCellModelArray:(id)a0 getModelById:(id)a1;
++ (id)musicFinderVideoCellModelArray:(id)a0 getModelById:(id)a1;
++ (void)genFlexClipMVModelWithSelectedViewModelArr:(id)a0 baseMvModel:(id)a1 completion:(id /* block */)a2;
++ (id)convertSelectedItemModelToTrackItem:(id)a0;
++ (void)reArrangeTrackItemInMVModel:(id)a0 shouldSetVideoDuration:(BOOL)a1;
++ (void)__genFlexClipMVModelWithSelectedViewModelArr:(id)a0 baseMvModel:(id)a1 completion:(id /* block */)a2;
++ (void)fillTrackItem:(id)a0 withFinderDataItem:(id)a1;
++ (void)fillTrackItem:(id)a0 withReportData:(id)a1;
++ (unsigned int)imageAnimationTypeWithWidth:(double)a0 height:(double)a1;
++ (id)genGapTrackItemWithTimeOffsetInMvMs:(unsigned int)a0 timeLengthInMvMs:(unsigned int)a1;
++ (void)updateGapTrackItem:(id)a0 withTimeOffsetInMvMs:(unsigned int)a1 timeLengthInMvMs:(unsigned int)a2;
++ (long long)mavImageAnimationTypeWithMVAnimationType:(int)a0;
++ (int)mvInfoAnimationTypeWithMavAnimationType:(long long)a0;
++ (BOOL)canAddItemWithAssetInfo:(id)a0 minDuration:(double)a1 errMsg:(id *)a2;
++ (void)addOrUpdateGapTrackItemInMvModel:(id)a0;
++ (BOOL)isDefaultTransition:(id)a0;
++ (BOOL)shouldShowRawPlayerVC;
++ (BOOL)hasShowTextStateTip;
++ (void)markTextStateTipShown;
+
+@end

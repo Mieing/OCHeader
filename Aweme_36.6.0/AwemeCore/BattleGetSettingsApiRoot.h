@@ -1,0 +1,3 @@
+@interface BattleGetSettingsApiRoot : GPBRootObject
+
+@end

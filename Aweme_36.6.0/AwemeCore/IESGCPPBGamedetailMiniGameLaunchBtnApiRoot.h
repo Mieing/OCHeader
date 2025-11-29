@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailMiniGameLaunchBtnApiRoot : GPBRootObject
+
+@end

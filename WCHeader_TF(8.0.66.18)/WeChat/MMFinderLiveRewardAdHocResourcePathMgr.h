@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface MMFinderLiveRewardAdHocResourcePathMgr : NSObject <MMFinderLiveResPathManagerProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)zipPath:(id)a0;
+- (id)cachePath:(id)a0;
+
+@end

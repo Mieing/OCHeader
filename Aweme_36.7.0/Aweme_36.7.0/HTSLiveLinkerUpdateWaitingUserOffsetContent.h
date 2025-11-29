@@ -1,0 +1,9 @@
+@interface HTSLiveLinkerUpdateWaitingUserOffsetContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long offset;
+@property (nonatomic) int sortStrategy;
+@property (nonatomic) long long totalCount;
+
++ (id)descriptor;
+
+@end

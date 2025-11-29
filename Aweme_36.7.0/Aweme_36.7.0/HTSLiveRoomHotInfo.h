@@ -1,0 +1,9 @@
+@interface HTSLiveRoomHotInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int localHotStrategy;
+@property (nonatomic) int publicAreaLevel;
+@property (nonatomic) int giftLevel;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,54 @@
+@interface MMCPUtil : NSObject
+
++ (id)cpKeyForNickname:(id)a0;
++ (BOOL)isNicknameUnsafe:(id)a0;
++ (id)cpKeyForMessageWrap:(id)a0;
++ (BOOL)isMessageWrapUnsafe:(id)a0;
++ (id)cpKeyForRecordDataItem:(id)a0;
++ (id)cpKeyForWCTimeLineContent:(id)a0;
++ (BOOL)isWCTimeLineContentUnsafe:(id)a0;
++ (id)cpKeyForWCTimeLineLikeUsers:(id)a0;
++ (BOOL)isWCTimeLineLikeUsersUnsafe:(id)a0;
++ (id)cpKeyForWCTimeLineComment:(id)a0;
++ (BOOL)isWCTimeLineCommentUnsafe:(id)a0;
++ (id)cpKeyForWXPicConvert:(id)a0;
++ (BOOL)isWXPicConvertUnsafe:(id)a0;
++ (id)cpKeyForClientCheckKvReportCalculateMd5;
++ (id)cpKeyForClientCheckCgiReportCalculateMd5;
++ (id)cpKeyForCameraScanCombineLogic;
++ (BOOL)isCameraScanCombineLogicUnsafe;
++ (id)cpKeyForCameraScanCombineBizDistributeLogic:(id)a0;
++ (BOOL)isCameraScanCombineBizDistributeLogicUnsafe:(id)a0;
++ (id)cpKeyForImageScanQRCode:(id)a0;
++ (BOOL)isImageScanQRCodeUnsafe:(id)a0;
++ (id)cpKeyForImageScanCodeOCRReport:(id)a0;
++ (BOOL)isImageScanCodeOCRReportUnsafe:(id)a0;
++ (id)cpKeyForTingImageClientId:(id)a0;
++ (id)cpKeyForTingImageUrl:(id)a0;
++ (id)cpKeyForCurrentVersionWithIdentifier:(id)a0;
++ (BOOL)isCurrentVersionUnsafeWithIdentifier:(id)a0;
++ (id)cpKeyForCameraScanOperateLogic;
++ (BOOL)isCameraScanOperateLogicUnsafe;
++ (BOOL)isUnsafeWithKey:(id)a0;
++ (void)increaseCrashCountWithKey:(id)a0;
++ (void)decreaseCrashCountWithKey:(id)a0;
++ (void)clearCrashCountWithKey:(id)a0;
++ (id)cpKeyForOpenIMDesc:(id)a0;
++ (id)cpKeyForHeadImage:(id)a0;
++ (BOOL)isHeadImageUnsafe:(id)a0;
++ (id)cpKeyForSignature:(id)a0;
++ (BOOL)isSignatureUnsafe:(id)a0;
++ (id)cpKeyForHelloMsg:(id)a0 content:(id)a1;
++ (BOOL)isHelloMsgUnsafe:(id)a0 content:(id)a1;
++ (id)cpKeyForChatRoomDisplayName:(id)a0 userName:(id)a1;
++ (BOOL)isChatRoomDisplayNameUnsafe:(id)a0 userName:(id)a1;
++ (BOOL)isChatRoomUnsafe:(id)a0;
++ (id)cpKeyForWebviewURL:(id)a0;
++ (BOOL)isWebviewURLUnsafe:(id)a0;
++ (id)cpKeyForEmoticonMd5:(id)a0;
++ (id)cpKeyForAnimateEmoji:(id)a0;
++ (BOOL)isAnimateEmojiUnsafe:(id)a0;
++ (id)cpKeyForSVGData:(id)a0;
++ (BOOL)isSVGDataUnsafe:(id)a0;
+
+@end

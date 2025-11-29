@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceGetKTVUserSongContributorRankResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceGetKTVUserSongContributorRankResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetKTVUserSongContributorRankResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

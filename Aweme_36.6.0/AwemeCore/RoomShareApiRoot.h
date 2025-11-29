@@ -1,0 +1,3 @@
+@interface RoomShareApiRoot : GPBRootObject
+
+@end

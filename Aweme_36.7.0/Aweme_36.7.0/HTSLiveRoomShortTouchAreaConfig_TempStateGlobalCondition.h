@@ -1,0 +1,12 @@
+@class GPBInt32Array;
+
+@interface HTSLiveRoomShortTouchAreaConfig_TempStateGlobalCondition : IESLivePBBaseMessage
+
+@property (nonatomic) int durationGap;
+@property (nonatomic) int allowCount;
+@property (retain, nonatomic) GPBInt32Array *ignoreStrategyTypesArray;
+@property (readonly, nonatomic) unsigned long long ignoreStrategyTypesArray_Count;
+
++ (id)descriptor;
+
+@end

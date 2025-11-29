@@ -1,0 +1,83 @@
+@class UIStackView, UIView, AWEIMScaleTapGesture, UILongPressGestureRecognizer, AWEIMCommentShareSectionItemModel, UIImageView, UIButton, AWEIMShareModel, YYLabel, AWEIMShareSendMessageIconView, NSString, UILabel;
+@protocol AWEIMTranspondListCellActionDelegate, AWEIMStreakDisplayManagerProtocol;
+
+@interface AWEIMTranspondListCollectionViewCell : UICollectionViewCell <UIGestureRecognizerDelegate, AWEIMStreakDisplayManagerDelegate, AWEIMTranspondListCollectionViewCellProtocol>
+
+@property (retain, nonatomic) id<AWEIMStreakDisplayManagerProtocol> imStreakDisplayManager;
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UIView *sendAMessageBackView;
+@property (retain, nonatomic) UIButton *sendAMessageButton;
+@property (retain, nonatomic) UIView *onlineDotView;
+@property (retain, nonatomic) UILabel *activeTimeLabel;
+@property (retain, nonatomic) YYLabel *subtitleLabel;
+@property (retain, nonatomic) UIStackView *subtitleStackView;
+@property (nonatomic) BOOL isShowingReplyAuthor;
+@property (retain, nonatomic) UIImageView *redPackView;
+@property (retain, nonatomic) UIImageView *redPackIconView;
+@property (retain, nonatomic) UILabel *redPackLabel;
+@property (retain, nonatomic) AWEIMShareSendMessageIconView *sendImageView;
+@property (retain, nonatomic) AWEIMScaleTapGesture *tapGes;
+@property (retain, nonatomic) UILongPressGestureRecognizer *longpressGes;
+@property (nonatomic) BOOL canShowShareSuccessSendMessage;
+@property (nonatomic) BOOL notShowShareSuccessRedMark;
+@property (weak, nonatomic) id<AWEIMTranspondListCellActionDelegate> delegate;
+@property (retain, nonatomic) UIImageView *avatarView;
+@property (retain, nonatomic) AWEIMShareModel *shareModel;
+@property (retain, nonatomic) AWEIMCommentShareSectionItemModel *itemModel;
+@property (retain, nonatomic) UIImageView *fcoinGoldImageView;
+@property (nonatomic) BOOL isWhiteBG;
+@property (nonatomic) BOOL needEnlargeAvatarAndIconView;
+@property (nonatomic) BOOL enableShowOnlineStatus;
+@property (nonatomic) BOOL isFromSharePanel;
+@property (nonatomic) BOOL isFromFansGroupManage;
+@property (nonatomic) BOOL shouldAlwaysKeepOldShareLogic;
+@property (copy, nonatomic) id /* block */ updateUserInfoBlock;
+@property (nonatomic) BOOL isEcommerceRedPackShareIM;
+@property (nonatomic) BOOL needDisplaySelectStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)configWithIsHot:(BOOL)a0;
++ (Class)aAWEUGKitModuleDOUYINAdapterClass;
++ (id)identifier;
+
+- (id)customIMStreakTextPreferTheme;
+- (id)customIMStreakTextFont;
+- (void)asyncDidUpdateIMStreakView;
+- (id)authorUserId;
+- (BOOL)hitStreakUpdateExp;
+- (void)p_addGesture;
+- (void)p_refreshUI;
+- (void)turnLabelToPassAMessage:(BOOL)a0;
+- (BOOL)p_shouldAdpatBigFontMode;
+- (void)configWithItemModel:(id)a0;
+- (id)aAWEUGKitModuleDOUYINAdapter;
+- (void)configWithShareModel:(id)a0;
+- (void)p_addLongPressGesForAvatar;
+- (void)p_updateOnlineStatusUIWithType:(long long)a0;
+- (void)enlargeAvatarAndIconSize;
+- (void)p_refreshUIShowAirplane:(BOOL)a0;
+- (void)p_refreshUIRedPack:(id)a0;
+- (id)p_titleLabelAdaptedFont;
+- (double)p_titleLabelAdpatedHeight;
+- (void)adaptBigFontTitle;
+- (id)p_getSubtitleAttributes;
+- (BOOL)shouldShowReplyAuthor;
+- (void)setUpSubtitleStackViewWithShareModel:(id)a0 completion:(id /* block */)a1;
+- (void)fetchSubTitleAttributedStringWithShareModel:(id)a0 completion:(id /* block */)a1;
+- (void)fetchConversationWithShareModel:(id)a0 completion:(id /* block */)a1;
+- (id)p_redPacketAttrStrWithImage:(id)a0 font:(id)a1 attachmentHeight:(double)a2 spacing:(double)a3;
+- (void)p_longPressGesHandler:(id)a0;
+- (void)updateSendIconSelected:(BOOL)a0 animated:(BOOL)a1;
+- (void)showSendAMessageAppearAnimation;
+- (void)setHighlighted:(BOOL)a0;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (id)gestureRecognizers;
+- (void)prepareForReuse;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)avatarTapped:(id)a0;
+
+@end

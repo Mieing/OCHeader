@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveMatchLive : IESLivePBBaseMessage
+
+@property (nonatomic) int agLiveStatus;
+@property (copy, nonatomic) NSString *appointmentId;
+@property (copy, nonatomic) NSString *roomId;
+@property (nonatomic) BOOL hasSubscribe;
+@property (copy, nonatomic) NSString *cameraId;
+
++ (id)descriptor;
+
+@end

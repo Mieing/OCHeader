@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveGrowthTaskCondDef : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *operator_p;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

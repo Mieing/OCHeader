@@ -1,0 +1,3 @@
+@interface HTSLiveDiamondScoreRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AWESearchBasicContainerContext : AWEPageContext
+
+@end

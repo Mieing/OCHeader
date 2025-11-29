@@ -1,0 +1,71 @@
+@class UIView, AWEOpenPlatformFSAuthHeaderView, NSArray, NSString, UIImageView, UITableView, BDPlatformAuthParamsModel, DUXButton, AWEOpenPlatformAuthFlowManager, UILabel, DUXCheckBox;
+@protocol AWEOpenAuthInfoScopeLevelItemDataProtocol;
+
+@interface AWEOpenPlatformAuthIdentityViewController : UIViewController <AWEOpenPlatformAuthFlowManagerDelegate, UITableViewDataSource, UITableViewDelegate, TTTAttributedLabelDelegate, AWEOpenPlatformScopeDelegate>
+
+@property (retain, nonatomic) AWEOpenPlatformAuthFlowManager *flowManager;
+@property (copy, nonatomic) NSArray *scopeItems;
+@property (retain, nonatomic) BDPlatformAuthParamsModel *authParamsModel;
+@property (retain, nonatomic) UITableView *scopeTableView;
+@property (retain, nonatomic) AWEOpenPlatformFSAuthHeaderView *headerView;
+@property (retain, nonatomic) DUXButton *authButton;
+@property (retain, nonatomic) DUXButton *declineButton;
+@property (retain, nonatomic) UILabel *identityLabel;
+@property (retain, nonatomic) UILabel *reminderLabel;
+@property (retain, nonatomic) UIView *reminderView;
+@property (retain, nonatomic) UIImageView *reminderImageView;
+@property (retain, nonatomic) DUXCheckBox *followCheckBox;
+@property (retain, nonatomic) UILabel *followDescLabel;
+@property (nonatomic) unsigned long long authScene;
+@property (copy, nonatomic) id /* block */ bridgeAuthCompletionBlock;
+@property (retain, nonatomic) id<AWEOpenAuthInfoScopeLevelItemDataProtocol> scopeModel;
+@property (nonatomic) unsigned long long scopeType;
+@property (nonatomic) BOOL hasEnterBack;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)attributedLabel:(id)a0 didSelectLinkWithURL:(id)a1;
+- (void)didFinishLoginWithUid:(id)a0;
+- (id)trackerManager;
+- (void)configUI;
+- (void)updateRealNameVerifyStatus:(id)a0;
+- (id)choosedScopes;
+- (void)authNextStep:(unsigned long long)a0;
+- (void)authorizeComplated:(id)a0 error:(id)a1;
+- (void)cancelAuthorizeError:(id)a0;
+- (void)fetchAuthUserInfoCompleted:(id)a0;
+- (void)willCancelFromRiskForFlowManager:(id)a0;
+- (void)addNotifySubmitTracker:(unsigned long long)a0 refuseType:(id)a1;
+- (void)addOrRemoveEnterBackgroundNotification:(BOOL)a0;
+- (void)setupCustomNavigationBar;
+- (void)followCheckBoxTapped;
+- (void)authButtonTapped;
+- (void)sdkAuthorizeComplated:(id)a0 error:(id)a1;
+- (void)jsbAuthorizeComplated:(id)a0 error:(id)a1;
+- (void)scanQRAuthorizeComplated:(id)a0 error:(id)a1;
+- (void)schemaAuthorizeCompleted:(id)a0 error:(id)a1;
+- (void)sdkCancelAuthorizeError:(id)a0;
+- (void)jsbCancelAuthorizeError:(id)a0;
+- (void)scanQRCancelAuthorizeError:(id)a0;
+- (void)schemaCancelAuthorizeError:(id)a0;
+- (void)existAuthViewController;
+- (void)tapScopeQuestionMarkEvent:(id)a0;
+- (void)tapHalfViewScopeQuestionMark;
+- (void).cxx_destruct;
+- (void)didEnterBackground;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)initWithConfiguration:(id)a0;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)declineButtonTapped;
+- (void)cancelTapped;
+
+@end

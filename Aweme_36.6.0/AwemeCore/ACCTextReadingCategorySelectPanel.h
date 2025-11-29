@@ -1,0 +1,3 @@
+@interface ACCTextReadingCategorySelectPanel : ACCVoiceEffectSelectPanel
+
+@end

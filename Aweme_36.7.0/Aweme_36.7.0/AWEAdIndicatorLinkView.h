@@ -1,0 +1,87 @@
+@class AWEAwemeModel, UIView, CADisplayLink, AWEAdConversionAreaView, NSString, CAShapeLayer, UIImageView, AWEAdIndicatorLinkPositionModel, AWEAdIndicatorLinkModel;
+@protocol AWEFeedAdInteractiveViewDelegate;
+
+@interface AWEAdIndicatorLinkView : UIView <CAAnimationDelegate, AWEFeedAdInteractiveViewProtocol>
+
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIView *iconBackgroundView;
+@property (retain, nonatomic) UIView *iconInnerView;
+@property (retain, nonatomic) CAShapeLayer *iconBorderLayer;
+@property (retain, nonatomic) UIImageView *icon;
+@property (retain, nonatomic) UIView *indicatorDotSmall;
+@property (retain, nonatomic) UIView *indicatorDotLarge;
+@property (retain, nonatomic) UIView *indicatorLine;
+@property (retain, nonatomic) CAShapeLayer *lineAnimationLayer;
+@property (retain, nonatomic) AWEAdConversionAreaView *conversionView;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) AWEAdIndicatorLinkModel *indicatorModel;
+@property (nonatomic) BOOL isRightMode;
+@property (nonatomic) BOOL isModeChanging;
+@property (nonatomic) BOOL didFolded;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL isAnimating;
+@property (nonatomic) long long lastValidPositionTime;
+@property (nonatomic) long long indicatorShowTime;
+@property (nonatomic) long long animationType;
+@property (nonatomic) struct CGPoint { double x; double y; } targetOrigin;
+@property (copy, nonatomic) id /* block */ showCompletionBlock;
+@property (nonatomic) struct CGPoint { double x; double y; } ratio;
+@property (copy, nonatomic) NSString *eventName;
+@property (weak, nonatomic) id<AWEFeedAdInteractiveViewDelegate> delegate;
+@property (readonly, nonatomic) AWEAdIndicatorLinkPositionModel *startPosition;
+@property (nonatomic) long long scalingMode;
+@property (copy, nonatomic) id /* block */ acquireLeftBottomViewBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldShowInteractiveViewWithAwemeModel:(id)a0;
+
+- (BOOL)shouldResponseTapEventOnLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)configWithAwemeModel:(id)a0;
+- (void)updateLayouts;
+- (void)addBorderToView:(id)a0;
+- (BOOL)shouldShowTextLink;
+- (void)calculateLastValidPosition;
+- (struct CGPoint { double x0; double x1; })centerWithCoordinate:(id)a0 needChangeModelIfNeeded:(BOOL)a1;
+- (BOOL)changeIndicatorModeWithCenterIfNeeded:(struct CGPoint { double x0; double x1; })a0 needUpdateUI:(BOOL)a1;
+- (void)startShowAnimation;
+- (void)startMoving;
+- (void)showConversionViewWhenFoldCompletion:(BOOL)a0;
+- (id)dotAnimationGroupWithDuration:(double)a0;
+- (id)strokeLineAnimationWithDuration:(double)a0;
+- (id)iconAnimationGroupForView:(id)a0 duration:(double)a1 scaleFromValue:(double)a2;
+- (void)stopMoving;
+- (void)handleDisplayCallback;
+- (void)foldAnimated:(BOOL)a0;
+- (void)disappearIconAnimation;
+- (void)foldAnimationForFirstStep;
+- (void)resetIndicator;
+- (id)dotAnimationGroupWithDuration:(double)a0 isShowAnimation:(BOOL)a1;
+- (void)expandConversionViewIfNeeded;
+- (void)pauseAnimationWithView:(id)a0;
+- (void)resumeAnimationWithView:(id)a0;
+- (void)resetAnimationView:(id)a0;
+- (void)resetAnimationLayer;
+- (void)changeModeAnimation;
+- (void)foldSecondStepToShowConversionView;
+- (BOOL)isPointInIndicatorArea:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)changeIndicatorModeWithCenterIfNeeded:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)configRightMode:(BOOL)a0 needUpdateUI:(BOOL)a1;
+- (void)showInteractiveViewWithCompletionBlock:(id /* block */)a0;
+- (void)handleTappedEventOnLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (void)removeAllAnimations;
+- (void)resumeAnimation;
+- (void)pauseAnimation;
+- (void)hide;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)reset;
+- (void)show;
+- (void)setupSubviews;
+
+@end

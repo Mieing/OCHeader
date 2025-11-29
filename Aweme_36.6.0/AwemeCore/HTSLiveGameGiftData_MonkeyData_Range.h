@@ -1,0 +1,9 @@
+@interface HTSLiveGameGiftData_MonkeyData_Range : IESLivePBBaseMessage
+
+@property (nonatomic) int min;
+@property (nonatomic) int max;
+@property (nonatomic) int result;
+
++ (id)descriptor;
+
+@end

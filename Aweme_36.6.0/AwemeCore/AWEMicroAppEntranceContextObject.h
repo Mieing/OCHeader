@@ -1,0 +1,72 @@
+@class NSString, NSMutableDictionary;
+
+@interface AWEMicroAppEntranceContextObject : NSObject <AWEMicroAppEntranceContextProtocol>
+
+@property (retain, nonatomic) NSMutableDictionary *bdpLog;
+@property (retain, nonatomic) NSMutableDictionary *customParams;
+@property (copy, nonatomic) NSString *host;
+@property (copy, nonatomic) NSString *schemaPrefix;
+@property (nonatomic) long long ironManType;
+@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *appName;
+@property (readonly, copy, nonatomic) NSString *scene;
+@property (copy, nonatomic) NSString *sceneSuffix;
+@property (copy, nonatomic) NSString *launch_from;
+@property (copy, nonatomic) NSString *location;
+@property (copy, nonatomic) NSString *entrance_form;
+@property (copy, nonatomic) NSString *enter_from_merge;
+@property (copy, nonatomic) NSString *enter_position;
+@property (nonatomic) BOOL isHasTraceMpShow;
+@property (nonatomic) BOOL isHasTraceMpClick;
+@property (nonatomic) BOOL isHasPreload;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)traceMpShowWithModel:(id)a0 LogExtra:(id)a1;
+- (void)traceMpClickWithModel:(id)a0 LogExtra:(id)a1;
+- (void)updateParamsWithLogExtra:(id)a0;
+- (BOOL)invokeOpenSchema;
+- (void)updateParamsByAwemeModel:(id)a0;
+- (void)updateParamsByIronManModel:(id)a0;
+- (void)setSceneSuffix:(id)a0;
+- (void)setLaunch_from:(id)a0;
+- (void)setEnter_from_merge:(id)a0;
+- (void)setEntrance_form:(id)a0;
+- (void)setEnter_position:(id)a0;
+- (void)traceAnchorStyleShow;
+- (void)updateParamsBySchema:(id)a0;
+- (void)updateBdpLog:(id)a0 customParams:(id)a1;
+- (id)getEntranceInfo;
+- (id)containerController;
+- (void)updateParamsByCMCAwemeContext:(id)a0;
+- (void)updateParamsByCMCAdContext:(id)a0;
+- (BOOL)isCanOpen;
+- (void)traceMpClick;
+- (void)preloadIfNeeded;
+- (void)traceMpShowWithLogExtra:(id)a0;
+- (void)traceMpClickWithLogExtra:(id)a0;
+- (id)launch_from;
+- (BOOL)isTimorApp;
+- (BOOL)isTimorGame;
+- (id)sceneSuffix;
+- (id)enter_from_merge;
+- (void)p_tracePreLaunchEvent:(id)a0;
+- (void)p_tracePreLaunchEvent:(id)a0 model:(id)a1 logExtra:(id)a2;
+- (id)enter_position;
+- (BOOL)isTimor;
+- (id)p_getSchemaBeforeInvoke;
+- (id)entrance_form;
+- (void)traceMpShow;
+- (void)updateSceneParamsBySceneType:(long long)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setLocation:(id)a0;
+- (id)scene;
+- (id)appId;
+- (void)setAppId:(id)a0;
+- (id)location;
+- (id)generateSchema;
+
+@end

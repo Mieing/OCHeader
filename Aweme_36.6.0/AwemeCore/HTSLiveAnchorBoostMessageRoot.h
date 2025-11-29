@@ -1,0 +1,3 @@
+@interface HTSLiveAnchorBoostMessageRoot : GPBRootObject
+
+@end

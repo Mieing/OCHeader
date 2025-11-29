@@ -1,0 +1,17 @@
+@class HTSLiveCombinedText, HTSLiveCommon;
+
+@interface HTSLiveCarnivalMessage : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isRedPacketEgg;
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveCombinedText *text;
+@property (nonatomic) BOOL hasText;
+@property (nonatomic) long long carnivalSeqId;
+@property (nonatomic) long long danmakuStyleType;
+@property (nonatomic) int specialMark;
+@property (nonatomic) long long priority;
+
++ (id)descriptor;
+
+@end

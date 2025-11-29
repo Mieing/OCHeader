@@ -1,0 +1,86 @@
+@class NSMutableDictionary, NSString, IESLiveLinkmicLinkerAnchorModel, IESLiveLinkmicLinkerAnchorLayoutModel, NSDate, IESLiveLinkmicLinkerAnchor, HTSLiveMediaDoubleInteractionTitleBar;
+@protocol IESLiveCompoundSubscription, IESLiveMediaLinkParticipationInfo, IESLiveInteractiveExtendUserService, IESLiveRoomService;
+
+@interface IESLiveMultiLinkerMediaAudienceFragment : IESLiveRoomComponent <IESLiveLinkmicLinkerAnchorDelegate, IESLiveMediaMultiLinkerProvider, IESLiveDataSyncDelegate, IESLiveLinkmicLinkerAnchorDataSource, IESLiveCommunityInteractionSubInterface>
+
+@property (retain, nonatomic) NSDate *startTime;
+@property (retain, nonatomic) id<IESLiveCompoundSubscription> disposable;
+@property (retain, nonatomic) NSString *focusLinkmicId;
+@property (nonatomic) long long preCount;
+@property (nonatomic) BOOL linkWillEnd;
+@property (nonatomic) BOOL isPC;
+@property (nonatomic) BOOL shouldShowFullScreenBtn;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isAnchor;
+@property (nonatomic) BOOL isOptimizedPad;
+@property (nonatomic) long long regionCount;
+@property (nonatomic) long long status;
+@property (retain, nonatomic) IESLiveLinkmicLinkerAnchorModel *mlinkerModel;
+@property (retain, nonatomic) id<IESLiveRoomService> roomModel;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } renderFrame;
+@property (retain, nonatomic) id<IESLiveMediaLinkParticipationInfo> participationInfo;
+@property (retain, nonatomic) NSString *toastString;
+@property (retain, nonatomic) IESLiveLinkmicLinkerAnchorLayoutModel *layoutModel;
+@property (retain, nonatomic) IESLiveLinkmicLinkerAnchor *linker;
+@property (retain, nonatomic) IESLiveLinkmicLinkerAnchorLayoutModel *forthDefaultLayoutModel;
+@property (retain, nonatomic) NSString *requestID;
+@property (retain, nonatomic) HTSLiveMediaDoubleInteractionTitleBar *titleBar;
+@property (retain, nonatomic) NSMutableDictionary *infoViewsMap;
+@property (retain, nonatomic) id<IESLiveInteractiveExtendUserService> userService;
+
++ (BOOL)componentShouldActive:(id)a0;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)subscribedSyncDataWithValue:(id)a0 version:(long long)a1;
+- (void)subscribedSyncDataUpdatedWithValue:(id)a0 oldVersion:(long long)a1 newVersion:(long long)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })streamRect;
+- (double)watchDuration;
+- (id)buildCommonTrackParams;
+- (BOOL)isMultiLinkerProcessing;
+- (BOOL)isProcessingWaitingToFinish;
+- (long long)currentStreamRegionCount;
+- (void)onDidLinkmicUserListUpdatedWithLinker:(id)a0;
+- (void)linkmicLinker:(id)a0 onActiveChanged:(BOOL)a1 linkmicID:(id)a2;
+- (void)linkmicLinker:(id)a0 userStateDidChangedFrom:(long long)a1 to:(long long)a2;
+- (void)linkmicLinker:(id)a0 onQuitWithError:(id)a1;
+- (void)linkmicLinker:(id)a0 onReceivedLinkMicSEIParserResult:(id)a1;
+- (void)onWillLinkmicLayoutWithLinker:(id)a0;
+- (void)onDidUpdateUserPositionWithLinker:(id)a0;
+- (BOOL)isSelfLinkerAdmin;
+- (BOOL)isFocusingInRange:(long long)a0 uid:(id)a1;
+- (BOOL)isPadAndLandscape;
+- (void)linkmicLinker:(id)a0 onReceivedLinkLeaveMessage:(id)a1 user:(id)a2;
+- (void)setupLinker;
+- (void)showLayoutCanvas;
+- (void)p_trackWatchEvent;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })linkViewContainerRect;
+- (void)updateLayoutWithType:(long long)a0 uid:(id)a1 range:(long long)a2;
+- (void)loadTitleBar:(BOOL)a0;
+- (void)resumePublicScreenLayout;
+- (void)enableFullScreenButtonIfNeed;
+- (void)disableFullScreenButton;
+- (void)updateUserInfosWithLinker:(id)a0;
+- (void)updateUserPositionsIfNeed;
+- (void)updatePublicScreenLayout;
+- (void)updateInfoViewWithLinker:(id)a0 onLinkmicCanvasElement:(id)a1 ofUser:(id)a2;
+- (void)onLayoutModelChanged;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })p_currentTitleBarFrame;
+- (void)updateTitleBarHiddenShowStatus:(BOOL)a0;
+- (void)setupLayoutCanvas;
+- (void)setupTrebleLayoutCanvas;
+- (void)setupQuadrupleLayoutCanvas;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })linkViewDoubleContainerRect;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })linkViewTrebleContainerRect;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })linkViewQuadrupleContainerRect;
+- (void).cxx_destruct;
+- (void)addObservers;
+- (long long)currentLayoutType;
+
+@end

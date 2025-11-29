@@ -1,0 +1,3 @@
+@interface GroupAssistantSettingsViewControllerRouterRegister : NSObject
+
+@end

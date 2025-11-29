@@ -1,0 +1,78 @@
+@class NSError, VEPixelBufferCopyUtils, NSString, AVAssetWriter, NSCondition, VEMVPRenderer, NSObject, VETransData, NSMutableArray, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor;
+@protocol OS_dispatch_queue, VEProcessSampleDelegate;
+
+@interface VECompileWriterUnit : IESMMObject <IVECompileWriter>
+
+@property (retain, nonatomic) NSError *error;
+@property (retain, nonatomic) VETransData *transData;
+@property (retain, nonatomic) AVAssetWriter *writer;
+@property (retain, nonatomic) AVAssetWriterInput *videoInput;
+@property (retain, nonatomic) AVAssetWriterInputPixelBufferAdaptor *videoPixelBufferInput;
+@property (retain, nonatomic) AVAssetWriterInput *audioInput;
+@property (retain, nonatomic) NSMutableArray *metaData;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } startTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastVideoFrameTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastAudioFrameTime;
+@property (nonatomic) unsigned long long videoWriteStatus;
+@property (nonatomic) unsigned long long audioWriteStatus;
+@property (nonatomic) unsigned long long transStatus;
+@property (nonatomic) BOOL isVideoWriterFinish;
+@property (nonatomic) BOOL isAudioWriterFinish;
+@property (nonatomic) long long writeVideoBufCount;
+@property (nonatomic) double lastProgress;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *videoQueue;
+@property (nonatomic) BOOL transStatusEnd;
+@property (nonatomic) BOOL needAssetWriterEncode;
+@property (retain, nonatomic) VEPixelBufferCopyUtils *pCopyUtils;
+@property (retain, nonatomic) VEMVPRenderer *pixelbufferMvpRenderer;
+@property (retain, nonatomic) NSCondition *videoStateControlCond;
+@property (retain, nonatomic) NSCondition *audioStateControlCond;
+@property (retain, nonatomic) NSMutableArray *audioPTSLog;
+@property (copy, nonatomic) id /* block */ progressBlock;
+@property (copy, nonatomic) id /* block */ completeBlock;
+@property (weak, nonatomic) id<VEProcessSampleDelegate> downstream;
+@property (weak, nonatomic) id<VEProcessSampleDelegate> audioDataProvider;
+@property (weak, nonatomic) id<VEProcessSampleDelegate> videoDataProvider;
+@property (copy, nonatomic) id /* block */ customAudioProcessBlock;
+@property (copy, nonatomic) id /* block */ encodeDataCB;
+@property (retain, nonatomic) NSString *route;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long curVideoStage;
+@property (nonatomic) long long curAudioStage;
+
+- (BOOL)prepareWriter;
+- (BOOL)startVideoWriter;
+- (BOOL)prepareVideoWriter;
+- (void)completeVideoWriterInput;
+- (void)completeAudioWriterInput;
+- (BOOL)completeWriterWithBlock:(id /* block */)a0;
+- (BOOL)processAudioSamplebuf:(struct opaqueCMSampleBuffer { } *)a0;
+- (BOOL)getVideoWriterFinish;
+- (BOOL)getAudioWriterFinish;
+- (BOOL)startAudioWriter;
+- (BOOL)prepareAudioWriter;
+- (id)getAudioSetting;
+- (BOOL)isAudioVideoComplete;
+- (void)packerPixelBufWithSampleData:(id)a0;
+- (void)packerSampleBuf:(struct opaqueCMSampleBuffer { } *)a0;
+- (BOOL)startLoopWriter;
+- (BOOL)cancelWriterWithError:(id)a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getWritedDuration;
+- (double)getCompileProgress;
+- (void)pauseForBackground;
+- (void)resumeForBackground;
+- (BOOL)processSampleData:(id)a0;
+- (id)getMetadataItem;
+- (BOOL)setConfig:(id)a0;
+- (void).cxx_destruct;
+- (void)pause;
+- (id)init;
+- (void)setMetadata:(id)a0;
+- (void)resume;
+- (void)dealloc;
+- (BOOL)startWriter;
+
+@end

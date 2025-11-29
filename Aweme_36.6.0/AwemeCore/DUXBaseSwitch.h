@@ -1,0 +1,3 @@
+@interface DUXBaseSwitch : UISwitch
+
+@end

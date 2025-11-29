@@ -1,0 +1,7 @@
+@interface GrabMicShowResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long status;
+
++ (id)descriptor;
+
+@end

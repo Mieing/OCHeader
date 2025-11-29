@@ -1,0 +1,12 @@
+@class HTSLiveRoomShortTouchAreaConfig_TempStateType, NSString;
+
+@interface HTSLiveRoomShortTouchAreaConfig_TempStateStrategy_TempStateStrategyInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveRoomShortTouchAreaConfig_TempStateType *type;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) int duration;
+@property (copy, nonatomic) NSString *strategyMethod;
+
++ (id)descriptor;
+
+@end

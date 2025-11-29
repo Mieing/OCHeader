@@ -1,0 +1,78 @@
+@class HTSEventForwardingView, NSMutableDictionary, HTSLiveRoom, IESLiveModalDialog, UIVisualEffectView, UIViewController, UIView, IESLiveBackgroundView, NSString, CAGradientLayer, NSTimer, AWELivePreStreamContext, AWEAwemeModel, UIImageView;
+@protocol IESLiveHierarchyContainerView, IESLivePlayerProtocol;
+
+@interface AWELivePreStreamView : UIView <UIGestureRecognizerDelegate, AWELiveSplashStreamViewProtocol, AWELivePreStreamViewProtocol>
+
+@property (retain, nonatomic) UIView *playerContainerView;
+@property (retain, nonatomic) HTSEventForwardingView *abovePlayerContainerView;
+@property (retain, nonatomic) UIView *abovePlayerContainerViewWrapper;
+@property (retain, nonatomic) UIView *belowPlayerContainerView;
+@property (retain, nonatomic) UIView *gradientContainerView;
+@property (retain, nonatomic) IESLiveBackgroundView *liveBackgroundView;
+@property (retain, nonatomic) UIImageView *topDarkWatermark;
+@property (retain, nonatomic) UIImageView *bottomDarkWatermark;
+@property (retain, nonatomic) UIView *controlContainer;
+@property (retain, nonatomic) UIView *danmakuContainer;
+@property (retain, nonatomic) CAGradientLayer *gradient;
+@property (retain, nonatomic) IESLiveModalDialog *modalDialog;
+@property (retain, nonatomic) UIView *fakePlayerContainer;
+@property (nonatomic) BOOL isAnimatingFakePlayer;
+@property (nonatomic) BOOL isRemovingFakeBizView;
+@property (retain, nonatomic) UIVisualEffectView *gaussMaskView;
+@property (retain, nonatomic) NSMutableDictionary *centerConainerBottomLayoutDic;
+@property (retain, nonatomic) NSTimer *cardShowTimer;
+@property (retain, nonatomic) NSTimer *cardHideTimer;
+@property (retain, nonatomic) UIView *accessibilityView;
+@property (nonatomic) BOOL enableFixCenter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) HTSLiveRoom *room;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) BOOL didEndedLive;
+@property (retain, nonatomic) id<IESLivePlayerProtocol> fakePlayer;
+@property (retain, nonatomic) UIView *fakeBizView;
+@property (copy, nonatomic) id /* block */ enterRoomAction;
+@property (retain, nonatomic) UIView *topDesView;
+@property (readonly, nonatomic) UIImageView *liveCoverImageView;
+@property (readonly, nonatomic) UIView *liveCoverBlurView;
+@property (retain, nonatomic) UIView *leftContainer;
+@property (retain, nonatomic) UIView *centerContainer;
+@property (retain, nonatomic) UIView *bottomGradientView;
+@property (weak, nonatomic) UIView *streamPlayerView;
+@property (copy, nonatomic) id /* block */ addWatermarkBlock;
+@property (nonatomic) BOOL needSecureContent;
+@property (weak, nonatomic) UIViewController *rootViewController;
+@property (weak, nonatomic) AWELivePreStreamContext *preStreamContext;
+@property (weak, nonatomic) UIView<IESLiveHierarchyContainerView> *contentContainer;
+
+- (void)setupReuseSubViews:(id)a0;
+- (void)unregisterCenterContainerLayoutWithType:(unsigned long long)a0;
+- (void)registerCenterContainerLayoutWithModel:(id)a0;
+- (void)streamPlayerPlay:(id)a0;
+- (void)smoothBackWithFakeBizView:(id)a0;
+- (void)normalCenterContainerLayout;
+- (void)reusePlayerFromLiveRoom;
+- (void)updateUIWithRoomStatus:(BOOL)a0;
+- (void)prepareForPreReuse;
+- (void)enterLiveEnd;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 pageContext:(id)a1;
+- (void)awe_nunkiForbidLiveCoverView;
+- (void)removeFakeStreamPlayer;
+- (void)removeFakeBizViewSmoothBack;
+- (void)watchTapped:(id)a0;
+- (void)addWatermark;
+- (void)layoutCenterContainer;
+- (void)showEnterOtherRoomDialog:(id)a0 actionBlock:(id /* block */)a1 cancelBlock:(id /* block */)a2;
+- (void)changePayCradShowStatus:(BOOL)a0;
+- (void)removeFakeBizViewSmoothBackProtect;
+- (id)createGaussMaskView;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)reset;
+- (void)setupUI;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0;
+
+@end

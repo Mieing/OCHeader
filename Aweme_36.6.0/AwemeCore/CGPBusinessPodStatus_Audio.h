@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface CGPBusinessPodStatus_Audio : GPBMessage
+
+@property (copy, nonatomic) NSString *uid;
+@property (nonatomic) int audioZone;
+@property (copy, nonatomic) NSString *audioFocusedApp;
+@property (nonatomic) int eventType;
+@property (nonatomic) int result;
+
++ (id)descriptor;
+
+@end

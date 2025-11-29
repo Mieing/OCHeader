@@ -1,0 +1,16 @@
+@class IESLiveListTagFansClubContent, IESLiveListTagHonorLevelContent, IESLiveListTagEcomViewContent, IESLiveListTagFansContent, IESLiveListTagEcomFansClubContent, IESLiveListTagFriendContent;
+
+@interface IESLiveListTag : IESLivePBBaseMessage
+
+@property (nonatomic) int listTagType;
+@property (readonly, nonatomic) int tagOneOfCase;
+@property (retain, nonatomic) IESLiveListTagFansClubContent *fansClubTag;
+@property (retain, nonatomic) IESLiveListTagHonorLevelContent *honorLevelTag;
+@property (retain, nonatomic) IESLiveListTagFriendContent *friendTag;
+@property (retain, nonatomic) IESLiveListTagFansContent *fansTag;
+@property (retain, nonatomic) IESLiveListTagEcomViewContent *ecomViewTag;
+@property (retain, nonatomic) IESLiveListTagEcomFansClubContent *ecomFansClubTag;
+
++ (id)descriptor;
+
+@end

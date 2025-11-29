@@ -1,0 +1,15 @@
+@class IESGCPPBGameImage;
+
+@interface IESGCPPBGameImageBundler : GPBMessage
+
+@property (readonly, nonatomic) IESGCPPBGameImage *preferredImage;
+@property (retain, nonatomic) IESGCPPBGameImage *originImage;
+@property (nonatomic) BOOL hasOriginImage;
+@property (retain, nonatomic) IESGCPPBGameImage *thumbImage;
+@property (nonatomic) BOOL hasThumbImage;
+@property (retain, nonatomic) IESGCPPBGameImage *thumbHeifImage;
+@property (nonatomic) BOOL hasThumbHeifImage;
+
++ (id)descriptor;
+
+@end

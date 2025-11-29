@@ -1,0 +1,84 @@
+@class NSNumber, NSString, NSArray, NSDictionary, NSMutableArray, AFDMomentCameraContext;
+
+@interface AFDMomentCameraDraftModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *tick;
+@property (retain, nonatomic) NSMutableArray *relativeMultiImagePathMutableArray;
+@property (readonly, nonatomic) NSString *draftID;
+@property (nonatomic) unsigned long long type;
+@property (nonatomic) long long brushContentType;
+@property (nonatomic) BOOL isPainted;
+@property (nonatomic) BOOL isTextMode;
+@property (nonatomic) BOOL isHasTextSticker;
+@property (nonatomic) BOOL isUpload;
+@property (nonatomic) BOOL isMomentLivePhoto;
+@property (nonatomic) BOOL isMomentStory;
+@property (retain, nonatomic) AFDMomentCameraContext *cameraContext;
+@property (nonatomic) BOOL isPublishSuccess;
+@property (nonatomic) double timeStamp;
+@property (nonatomic) double canvasWidth;
+@property (nonatomic) double canvasHeight;
+@property (copy, nonatomic) NSString *filterID;
+@property (readonly, nonatomic) NSString *relativeImagePath;
+@property (readonly, nonatomic) NSString *relativeOriginalImagePath;
+@property (copy, nonatomic) NSString *momentText;
+@property (retain, nonatomic) NSString *audioAverageWaveArrString;
+@property (nonatomic) double audioDuration;
+@property (readonly, nonatomic) NSArray *relativeMultiImagePathArray;
+@property (readonly, nonatomic) NSString *relativeCoverPath;
+@property (readonly, nonatomic) NSString *relativeVideoPath;
+@property (retain, nonatomic) NSNumber *activityVideoType;
+@property (copy, nonatomic) NSString *activityExtraJson;
+@property (retain, nonatomic) NSNumber *partOfVisibleStatus;
+@property (retain, nonatomic) NSNumber *privacyType;
+@property (retain, nonatomic) NSString *partOfVisibleUsersJSON;
+@property (nonatomic) BOOL isLargeRatio;
+@property (copy, nonatomic) NSString *imageText;
+@property (copy, nonatomic) NSDictionary *closeFriendsTrackInfo;
+@property (retain, nonatomic) NSArray *samplingFrames;
+@property (nonatomic) BOOL needUploadOriginalFrames;
+@property (copy, nonatomic) NSString *framesTaskID;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *shootWay;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) NSString *shootEnterFrom;
+@property (copy, nonatomic) NSString *maskShootWay;
+@property (nonatomic) BOOL isShootToMomentCamera;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)p_createDraftID;
++ (id)p_tick;
++ (id)p_dateFormatter;
++ (id)draftsRootPath;
++ (id)liteCameraRootPath;
++ (void)p_clearCacheImpl;
++ (void)clearCacheIfNeeded;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (id)transformPublishModelWithIsFormDraft:(BOOL)a0;
+- (id)draftFolder;
+- (void)updateImageArrayWithImageArray:(id)a0;
+- (BOOL)updateImageWithImage:(id)a0;
+- (BOOL)updateOriginalImageWithImage:(id)a0;
+- (id)absoluteOriginalImagePath;
+- (BOOL)updateCoverWithImage:(id)a0;
+- (BOOL)updateVideoWithPath:(id)a0;
+- (id)relativeMultiImagePathArray;
+- (id)absoluteImagePath;
+- (id)absoluteMultiImagePathArray;
+- (id)absoluteVideoPath;
+- (id)awe_currentMomentType;
+- (id)absoluteCoverPath;
+- (id)multiImageArray;
+- (id)initWithDictionary:(id)a0 error:(id *)a1;
+- (void).cxx_destruct;
+- (double)fileSize;
+- (BOOL)isValid;
+- (id)init;
+- (id)image;
+- (BOOL)isEqual:(id)a0;
+
+@end

@@ -1,0 +1,26 @@
+@interface IvyKit.IvyKitConfig : NSObject {
+    void /* unknown type, empty encoding */ appId;
+    void /* unknown type, empty encoding */ appVersion;
+    void /* unknown type, empty encoding */ channel;
+    void /* unknown type, empty encoding */ deviceId;
+    void /* unknown type, empty encoding */ installId;
+    void /* unknown type, empty encoding */ isOversea;
+    void /* unknown type, empty encoding */ gurdENV;
+    void /* unknown type, empty encoding */ gurdAck;
+    void /* unknown type, empty encoding */ gurdDomain;
+    void /* unknown type, empty encoding */ hybridMonitorHosts;
+    void /* unknown type, empty encoding */ bizId;
+    void /* unknown type, empty encoding */ errorIcon;
+    void /* unknown type, empty encoding */ seclinkScene;
+    void /* unknown type, empty encoding */ seclinkHost;
+    void /* unknown type, empty encoding */ lynxTemplateIntercept;
+    void /* unknown type, empty encoding */ enableWebviewSccHostWhiteList;
+    void /* unknown type, empty encoding */ i18nBlock;
+    void /* unknown type, empty encoding */ customUA;
+    void /* unknown type, empty encoding */ imageLoadBlock;
+}
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

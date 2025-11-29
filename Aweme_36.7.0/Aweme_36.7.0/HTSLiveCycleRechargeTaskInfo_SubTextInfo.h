@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveCycleRechargeTaskInfo_SubTextInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *color;
+
++ (id)descriptor;
+
+@end

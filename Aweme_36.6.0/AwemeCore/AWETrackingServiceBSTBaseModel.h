@@ -1,0 +1,3 @@
+@interface AWETrackingServiceBSTBaseModel : BSTCommonBaseModel
+
+@end

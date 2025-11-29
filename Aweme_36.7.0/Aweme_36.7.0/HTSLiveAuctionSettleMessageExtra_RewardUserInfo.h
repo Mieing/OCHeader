@@ -1,0 +1,11 @@
+@class HTSLiveMysteryUserInfo;
+
+@interface HTSLiveAuctionSettleMessageExtra_RewardUserInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveMysteryUserInfo *userInfo;
+@property (nonatomic) BOOL hasUserInfo;
+@property (nonatomic) long long score;
+
++ (id)descriptor;
+
+@end

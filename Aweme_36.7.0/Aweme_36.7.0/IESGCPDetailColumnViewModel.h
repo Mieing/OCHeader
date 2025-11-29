@@ -1,0 +1,3 @@
+@interface IESGCPDetailColumnViewModel : IESGCPDetailBaseViewModel
+
+@end

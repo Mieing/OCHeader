@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESGCPPBGameDetailTabV3 : GPBMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *jumpTarget;
+@property (nonatomic) int jumpType;
+@property (copy, nonatomic) NSString *alias;
+
++ (id)descriptor;
+
+@end

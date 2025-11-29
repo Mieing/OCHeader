@@ -1,0 +1,3 @@
+@interface HTSLivePkIconBubbleRoot : GPBRootObject
+
+@end

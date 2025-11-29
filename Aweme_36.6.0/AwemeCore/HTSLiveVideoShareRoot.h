@@ -1,0 +1,3 @@
+@interface HTSLiveVideoShareRoot : GPBRootObject
+
+@end

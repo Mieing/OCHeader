@@ -1,0 +1,3 @@
+@interface AWEStudioStickerApplyFFilterHandler : AWEStickerApplyBaseHandler
+
+@end

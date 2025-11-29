@@ -1,0 +1,3 @@
+@interface ACCNewLivePhotoEffectViewModel : ACCRecorderViewModel
+
+@end

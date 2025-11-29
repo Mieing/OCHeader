@@ -1,0 +1,10 @@
+@class TextErrorCorrectionResponse_Data;
+
+@interface TextErrorCorrectionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) TextErrorCorrectionResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

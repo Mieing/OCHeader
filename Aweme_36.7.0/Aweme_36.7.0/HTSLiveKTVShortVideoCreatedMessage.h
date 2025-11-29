@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveKTVShortVideoCreatedMessage_ShortVideoStruct;
+
+@interface HTSLiveKTVShortVideoCreatedMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveKTVShortVideoCreatedMessage_ShortVideoStruct *shortVideoInfo;
+@property (nonatomic) BOOL hasShortVideoInfo;
+
++ (id)descriptor;
+
+@end

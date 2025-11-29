@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNCheckMessagePerUserRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *checksArray;
+@property (readonly, nonatomic) unsigned long long checksArray_Count;
+
++ (id)descriptor;
+
+@end

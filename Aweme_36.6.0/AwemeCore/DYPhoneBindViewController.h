@@ -1,0 +1,81 @@
+@class NSTimer, NSString, NSArray, AWEUserProtocolBubbleAdapter, DYRouterModel, NSDictionary, DYPhoneBindView, UILabel;
+@protocol DYPhoneBindManagerProtocol;
+
+@interface DYPhoneBindViewController : UIViewController <DYPhoneBindViewDelegate, UIGestureRecognizerDelegate, DYUserAuthBindProtocol, AWEUserMessage, AWEUserProtocolBubbleAdapterDelegate>
+
+@property (retain, nonatomic) DYPhoneBindView *phoneBindView;
+@property (retain, nonatomic) UILabel *naviLabel;
+@property (retain, nonatomic) DYRouterModel *routerModel;
+@property (retain, nonatomic) id<DYPhoneBindManagerProtocol> phoneBindManager;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (nonatomic) unsigned long long platform;
+@property (nonatomic) BOOL isFirstSendMessage;
+@property (nonatomic) BOOL isFirstSendVoiceMessage;
+@property (retain, nonatomic) NSTimer *countDownTimer;
+@property (nonatomic) unsigned long long countDown;
+@property (retain, nonatomic) NSDictionary *extraDic;
+@property (copy, nonatomic) NSArray *notificationObservers;
+@property (nonatomic) BOOL shouldHandleTransformForKeyboardCovering;
+@property (nonatomic) BOOL isFirstHandleTransformForKeyboardCovering;
+@property (nonatomic) BOOL enableShowAlert;
+@property (retain, nonatomic) AWEUserProtocolBubbleAdapter *bubbleAdapter;
+@property (copy, nonatomic) id /* block */ completionBlock;
+@property (copy, nonatomic) NSString *sendMethod;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEUserModuleServiceDOUYINDSAdapterClass;
++ (Class)aAWEUserModuleConfigCommonAdapterClass;
++ (Class)aAWEUserModuleAgreementInfoCommonAdapterClass;
+
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)didFinishBindPhone;
+- (id)trackParams;
+- (void)skipAction;
+- (void)tapToDismiss:(id)a0;
+- (id)aAWEUserModuleServiceDOUYINDSAdapter;
+- (id)aAWEUserModuleConfigCommonAdapter;
+- (void)finishAuthProcess;
+- (void)cancelAuthProcess;
+- (void)helpAction;
+- (id)initWithContext:(id)a0 completionBlock:(id /* block */)a1;
+- (id)initWithContext:(id)a0 cancelBlock:(id /* block */)a1 finishBlock:(id /* block */)a2;
+- (void)clickBubbleWithAdapter:(id)a0;
+- (void)showBubbleWithAdapter:(id)a0;
+- (id)aAWEUserModuleAgreementInfoCommonAdapter;
+- (id)uidType;
+- (void)sendVoiceCode:(BOOL)a0;
+- (void)sendSMSCode;
+- (void)bindPhoneNumber;
+- (void)configNavigationButton;
+- (void)startCountdownTimer:(long long)a0;
+- (void)handleKeyboardAnimationWithShow:(BOOL)a0 keyboardRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)trackBindVerifyClickWithError:(id)a0 clickType:(id)a1;
+- (BOOL)isSafeMobileForNonBusinessAccount;
+- (void)trackBindSubmit;
+- (id)protocolDictionaryWithType:(long long)a0;
+- (void)bindSafePhoneNumber;
+- (void)bindNormalPhoneNumber;
+- (void)showBindSuccessToastIsSafeMobile:(BOOL)a0;
+- (void)__processBindSafeMobileResult;
+- (void)showAddressBookViewController;
+- (id)protocolText:(id)a0;
+- (void)countDownTimerTriggle;
+- (void)__resetPassword:(id)a0;
+- (id)subTitleLabelText;
+- (void)backAction;
+- (void).cxx_destruct;
+- (void)closeAction;
+- (id)initWithContext:(id)a0;
+- (long long)preferredStatusBarStyle;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)showError:(id)a0;
+- (id)titleLabelText;
+
+@end

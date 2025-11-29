@@ -1,0 +1,10 @@
+@class QueryPopularCardResponse_CardInfo;
+
+@interface QueryPopularCardResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) QueryPopularCardResponse_CardInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

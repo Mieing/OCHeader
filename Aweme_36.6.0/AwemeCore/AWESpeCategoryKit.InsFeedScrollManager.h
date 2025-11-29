@@ -1,0 +1,14 @@
+@interface AWESpeCategoryKit.InsFeedScrollManager : NSObject {
+    void /* unknown type, empty encoding */ smallSlideMinDistance;
+    void /* unknown type, empty encoding */ bottomSafeArea;
+    void /* unknown type, empty encoding */ draggingScrollSafeArea;
+    void /* unknown type, empty encoding */ scrollThreshold;
+    void /* unknown type, empty encoding */ dataSource;
+    void /* unknown type, empty encoding */ scrollDirection;
+    void /* unknown type, empty encoding */ beginDraggingOffset;
+}
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

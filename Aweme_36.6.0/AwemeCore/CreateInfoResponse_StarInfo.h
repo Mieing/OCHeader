@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CreateInfoResponse_StarInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL showIcon;
+@property (copy, nonatomic) NSString *nextPage;
+
++ (id)descriptor;
+
+@end

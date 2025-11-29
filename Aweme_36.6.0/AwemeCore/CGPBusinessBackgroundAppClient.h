@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CGPBusinessBackgroundAppClient : GPBMessage
+
+@property (nonatomic) int action;
+@property (copy, nonatomic) NSString *packageName;
+@property (nonatomic) int reason;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,76 @@
+@class UITableViewCell, NSString, NSArray, AWELocationEditResult, AWELocationServicePersistModel, NSDictionary, AWEProfileLocationSegment, NSMutableArray, UITableView, AWEUILoadingView;
+@protocol AWESettingsTableViewCellProtocol;
+
+@interface AWELocationEditViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) UITableViewCell<AWESettingsTableViewCellProtocol> *hideLocationCell;
+@property (retain, nonatomic) UITableViewCell *currentLocationHeaderCell;
+@property (retain, nonatomic) UITableViewCell<AWESettingsTableViewCellProtocol> *currentLocationCell;
+@property (retain, nonatomic) UITableViewCell *otherLocationCell;
+@property (retain, nonatomic) UITableViewCell *emptyCell;
+@property (retain, nonatomic) NSMutableArray *cellArray;
+@property (retain, nonatomic) NSArray *sectionTitles;
+@property (retain, nonatomic) NSDictionary *sections;
+@property (retain, nonatomic) AWEProfileLocationSegment *previousSelectedSegment;
+@property (retain, nonatomic) AWELocationServicePersistModel *placemark;
+@property (retain, nonatomic) NSArray *locationStruct;
+@property (retain, nonatomic) NSArray *locationSegments;
+@property (nonatomic) BOOL isFromH5;
+@property (nonatomic) BOOL isBecomeActiveFromLocationPermission;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (nonatomic) BOOL isSubpage;
+@property (nonatomic) BOOL needCurrentLocation;
+@property (nonatomic) BOOL isInitial;
+@property (nonatomic) BOOL hasHideLocation;
+@property (retain, nonatomic) AWELocationEditResult *editResult;
+@property (copy, nonatomic) id /* block */ completionBlock;
+@property (copy, nonatomic) id /* block */ hideBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)aweui_emptyPagePrimaryButtonTapped:(id)a0;
+- (void)setStatusBarBackgroundColor:(id)a0;
+- (void)_onApplicationDidBecomeActiveNotification:(id)a0;
+- (BOOL)hasLocationPermission;
+- (void)__openSettings;
+- (id)initFromH5;
+- (void)fetchDataFromGecko;
+- (void)configCurrentLocationLabelWithPlacemark:(id)a0;
+- (void)getCurrentPlacemarkWitchCompletion:(id /* block */)a0;
+- (id)getLocationSegmentWithIndexPath:(id)a0;
+- (void)clearEditResultWithLocationSegment:(id)a0;
+- (void)configEditResultWithLocationSegment:(id)a0;
+- (void)popAllLocationEditViewController;
+- (void)selectHideLocation;
+- (void)__setupLocation;
+- (void)configEditResult:(id)a0 withPlacemark:(id)a1;
+- (id)__locationCertWithToken:(id)a0;
+- (void)generateSections;
+- (void)trackLoadLocationGeckoResourceWithStartTime:(double)a0 filePath:(id)a1 fileResolved:(BOOL)a2 error:(id)a3;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)tableView:(id)a0 willDisplayHeaderView:(id)a1 forSection:(long long)a2;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)sectionIndexTitlesForTableView:(id)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)setupDataSource;
+- (long long)tableView:(id)a0 sectionForSectionIndexTitle:(id)a1 atIndex:(long long)a2;
+- (void)viewWillDisappear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)selectCurrentLocation;
+- (void)back;
+
+@end

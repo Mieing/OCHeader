@@ -1,0 +1,78 @@
+@class UIView, NSString, NSAttributedString, UITapGestureRecognizer, AWEMultiAvatarView, UIImageView, UIFont, UIButton, MASConstraint, UIImage, UILabel;
+
+@interface AWEAntiAddictedNoticeBarView : UIView <UIGestureRecognizerDelegate, AWEAntiAddictedNoticeBarViewProtocol>
+
+@property (nonatomic) BOOL shouldUseTwoLines;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGes;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) MASConstraint *tipsLabelXConstraintToArrowView;
+@property (retain, nonatomic) MASConstraint *tipsLabelXConstraintToSelf;
+@property (retain, nonatomic) UILabel *rightDescLabel;
+@property (retain, nonatomic) UIView *detailView;
+@property (nonatomic) int tipsAlphaNumber;
+@property (copy, nonatomic) NSString *tips;
+@property (copy, nonatomic) NSAttributedString *attrTips;
+@property (copy, nonatomic) NSString *rightDesc;
+@property (copy, nonatomic) NSString *urlString;
+@property (nonatomic) long long noticeMode;
+@property (copy, nonatomic) id /* block */ noticeTapped;
+@property (nonatomic) BOOL enableTwoLines;
+@property (nonatomic) BOOL enableTitleLayout;
+@property (nonatomic) BOOL enableAjustHotArea;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) UIImageView *arrowView;
+@property (retain, nonatomic) AWEMultiAvatarView *avatarView;
+@property (readonly, nonatomic) UIFont *tipsFont;
+@property (copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *separatorView;
+@property (retain, nonatomic) UIButton *rightBtn;
+@property (retain, nonatomic) UIImageView *newArrowView;
+@property (copy, nonatomic) id /* block */ rightBtnTapped;
+@property (retain, nonatomic) UIImage *normalImage;
+@property (retain, nonatomic) UIImage *highlighted;
+@property (retain, nonatomic) UIView *separatorLine;
+@property (nonatomic) BOOL removeInnerPadding;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)layoutSubviews;
+- (id)tipsLabelColor_ReminderOrWarning;
+- (id)tipsLabelFont_ReminderOrWarning;
+- (id)imageViewImage_RemindeOrWarning;
+- (id)backgroundColor_FriendVideo;
+- (void)p_setNoticeMode_layoutSubviews:(long long)a0;
+- (double)p_suggestedHeight:(long long)a0;
+- (BOOL)isTwoLine;
+- (BOOL)p_isAccessibilityElement;
+- (double)tipsLabelSize;
+- (id)p_makeDetailViewWithTitle:(id)a0;
+- (double)mainIconSize;
+- (double)rightIconSize;
+- (void)showRightTip:(id)a0 attributeTip:(id)a1 animated:(BOOL)a2 style:(long long)a3;
+- (void)updateAvatarImageViewArray:(id)a0;
+- (void)removeButtonAccessibilityTraits;
+- (void)switchEnableToStatus:(id)a0;
+- (void)updateUIStyleWithLayoutAdjuster:(id)a0;
+- (void)updateUIQualityStyleWithLayoutAdjuster:(id)a0;
+- (void)showRightBtnWithTitle:(id)a0 animatied:(BOOL)a1 isTheLastEpisode:(BOOL)a2;
+- (void)showRightPopoverWithText:(id)a0;
+- (void)removeRightBtn;
+- (void)updateSubViewLayoutForMode:(long long)a0;
+- (void)updateContainerHeightForMode:(long long)a0;
+- (void)addTapGesture;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
+- (void)updateLayout;
+- (void).cxx_destruct;
+- (unsigned long long)accessibilityTraits;
+- (id)init;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)tapped;
+- (void)setupSubviews;
+- (double)suggestedHeight;
+
+@end

@@ -1,0 +1,12 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveInteractOpenFollowingMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *itemsArray;
+@property (readonly, nonatomic) unsigned long long itemsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface LynxUITextAreaShadowNode : LynxUIBaseInputShadowNode
+
+@end

@@ -1,0 +1,3 @@
+@interface KtvCloseKtvComponentApiRoot : GPBRootObject
+
+@end

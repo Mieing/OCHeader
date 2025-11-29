@@ -1,0 +1,6 @@
+@interface _TtCCV28AWECommentPanelListSwiftImpl6NEWAPI36CommentCellContentContainerComponentP33_0ACB196944910C67CD553C62BDF34E4023QualityStampVirtualView : AWECommentPanelListSwiftImpl.CommentVirtualImageView
+
+- (id)createViewToRender;
+- (void)updateAttributesForRenderedView:(id)a0;
+
+@end

@@ -1,0 +1,73 @@
+@class CJPayBDCreateOrderResponse, NSArray, NSMutableDictionary, CJPayAssetPayMethodListViewController, CJPayQueryPayTypeResponse, CJPayAssetInfoModel, CJPayDefaultChannelShowConfig;
+@protocol CJPayAssetListManagerDelegate, CJPayAssetContextStoreDelegate;
+
+@interface CJPayAssetPayMethodListManager : NSObject
+
+@property (nonatomic) BOOL hasFetchPayMethodList;
+@property (retain, nonatomic) CJPayAssetInfoModel *assetInfo;
+@property (retain, nonatomic) CJPayQueryPayTypeResponse *queryPayTypeResponse;
+@property (copy, nonatomic) NSArray *payMethodSortList;
+@property (retain, nonatomic) NSMutableDictionary *methodGroupModels;
+@property (copy, nonatomic) NSArray *allChannelConfigs;
+@property (copy, nonatomic) NSArray *recChannelConfigs;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *curSelectConfig;
+@property (retain, nonatomic) CJPayAssetPayMethodListViewController *methodListVC;
+@property (nonatomic) BOOL needHandleOutDefaulfConfig;
+@property (retain, nonatomic) NSMutableDictionary *extraRequestParams;
+@property (weak, nonatomic) id<CJPayAssetListManagerDelegate> delegate;
+@property (weak, nonatomic) id<CJPayAssetContextStoreDelegate> assetContextDelegate;
+@property (retain, nonatomic) CJPayBDCreateOrderResponse *response;
+@property (nonatomic) BOOL isForceUpdateData;
+@property (nonatomic) double payMethodViewHeight;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *outDefaultConfig;
+@property (nonatomic) long long scene;
+@property (retain, nonatomic) NSMutableDictionary *subGroupMethodViewFoldStatus;
+
+- (void)p_stopLoading;
+- (id)p_filterAndSortMethodList:(id)a0 subPayTypeIndexList:(id)a1;
+- (id)p_initGroupViewFoldStatus:(id)a0;
+- (void)p_didSelectPayMethod:(id)a0 loadingView:(id)a1;
+- (void)setExtraRequestPreTradeParams:(id)a0;
+- (id)getListManagerDefaultSelectConfig;
+- (id)getListManagerCurSelectConfig;
+- (void)getMethodGroupsWithConditionParams:(id)a0 completion:(id /* block */)a1;
+- (id)getAllPayMethodShowConfigs;
+- (BOOL)isAssetUnderSameParentWithAsset:(id)a0 withAnotherAsset:(id)a1;
+- (void)gotoAssetListPageWithSelectConfig:(id)a0 needExtraHandle:(BOOL)a1 isCombineMode:(BOOL)a2;
+- (id)getDefaultToCombineInfoByAsset:(id)a0;
+- (id)initWithOrderResponse:(id)a0;
+- (void)updateAssetInfoModel:(id)a0;
+- (BOOL)p_isShowCombineSingleStyle;
+- (void)gotoAssetListPageWithSelectConfig:(id)a0;
+- (void)createPayTypeResponse;
+- (BOOL)p_handlePayMethodListByAssetInfo:(id)a0;
+- (id)p_getOutDefaulfConfig;
+- (void)p_setSelectedPayMethod:(id)a0;
+- (id)p_createChoosePayMethodVC;
+- (void)p_tryPushChoosePayMethodVC:(id)a0;
+- (id)p_getTopAssetShowConfigWithParams:(id)a0;
+- (void)p_requestMethodListNeedLoading:(id)a0 topAssetShowConfig:(id)a1 isNewAssetRefresh:(BOOL)a2 completion:(id /* block */)a3;
+- (id)p_getCombineDetailGroupModel;
+- (id)p_getGroupModelsWithConfigFilterList:(id)a0;
+- (id)p_getGroupModelsWithFilterGroupInfoList:(id)a0;
+- (id)p_getAllMethodGroupListWithParams:(id)a0;
+- (BOOL)p_isEqualCurAsset:(id)a0 otherAsset:(id)a1;
+- (id)p_payMethodGroupTypeStrWithShowConfig:(id)a0;
+- (void)p_updateMethodSortOrderBySelectedConfig:(id)a0;
+- (BOOL)p_needShowGroupModelWithType:(long long)a0 isCombineMode:(BOOL)a1;
+- (void)p_setLocalContextWithConfig:(id)a0;
+- (void)p_injectCommonTrackParams;
+- (BOOL)p_isAssetExpandVoucher:(id)a0;
+- (void)p_setLocalDisabledStatusWithConfig:(id)a0;
+- (void)p_startLoadingWithType:(id)a0;
+- (id)p_cardListParamsWithTopAssetShowConfig:(id)a0 isNewAssetRefresh:(BOOL)a1;
+- (id)p_updateAssetCombineAssetInfoWithShowConfig:(id)a0;
+- (BOOL)p_assetCanSelectAsDefault:(id)a0;
+- (void)p_modifyMethodSortBetweenGroup:(id)a0;
+- (void)p_modifyMethodSortInsideGroup:(id)a0;
+- (id)p_sortShowConfig:(id)a0 inList:(id)a1;
+- (id)p_buildPreTradeParamsWithTopAssetShowConfig:(id)a0 isNewAssetRefresh:(BOOL)a1;
+- (id)searchSuperAssetInfoByConfig:(id)a0;
+- (void).cxx_destruct;
+
+@end

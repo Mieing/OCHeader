@@ -1,0 +1,75 @@
+@class NSString, NSMutableDictionary, IESLiveCountTimer, IESLiveRevenueInteractAioPublisher, IESLiveInteractiveLinkService, HTSLiveLinkMessage, IESLiveRevenueInteractLynxLinkCenter;
+@protocol IESLiveNoticeActions, IESLiveRevenueInteractLynxLinkerAnchorBuilderDelegate;
+
+@interface IESLiveRevenueInteractLynxLinkerAnchorBuilder : NSObject <IESLiveInteractiveLinkServiceDelegate, IESLiveSEIListener, IESLiveRevenueInteractInnerAction>
+
+@property (weak, nonatomic) IESLiveInteractiveLinkService *linkService;
+@property (retain, nonatomic) IESLiveRevenueInteractLynxLinkCenter *lynxLinkCenter;
+@property (nonatomic) long long passiveRejectReason;
+@property (retain, nonatomic) NSMutableDictionary *connectParams;
+@property (retain, nonatomic) HTSLiveLinkMessage *cacheReplyMsg;
+@property (retain, nonatomic) HTSLiveLinkMessage *previousReplyMsg;
+@property (retain, nonatomic) IESLiveCountTimer *replySEIRepeatTimer;
+@property (retain, nonatomic) IESLiveCountTimer *replySEITimeOutTimer;
+@property (nonatomic) BOOL isInFinishNetworkProcess;
+@property (nonatomic) BOOL isProcessingApplication;
+@property (retain, nonatomic) id<IESLiveNoticeActions> noticeActionCreator;
+@property (weak, nonatomic) id<IESLiveRevenueInteractLynxLinkerAnchorBuilderDelegate> delegate;
+@property (retain, nonatomic) IESLiveRevenueInteractAioPublisher *aioPublisher;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (unsigned long long)supportSeiTypes;
+- (void)onParseredWithSEIResult:(id)a0;
+- (void)logInfoWithCategory:(unsigned long long)a0 event:(id)a1 extra:(id)a2;
+- (void)didRevenueInteractPlayStart:(BOOL)a0;
+- (void)leaveChannelWithSource:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)onReceivedLinkInviteMessage:(id)a0;
+- (void)onReceivedLinkReplyMessage:(id)a0;
+- (void)onReceivedLinkSwitchChannelInviteMessage:(id)a0;
+- (void)onReceivedLinkSwitchChannelReplyMessage:(id)a0;
+- (void)onReceivedLinkSwitchChannelCancelMessage:(id)a0;
+- (void)onReceivedLinkCancelApplyMessage:(id)a0;
+- (void)onReceivedLinkCancelInviteMessage:(id)a0;
+- (void)onReceivedLinkBanMessage:(id)a0;
+- (void)onReceiveAudienceCameraOpenReply:(id)a0;
+- (void)onReceivedLinkApplyMessage:(id)a0;
+- (void)onReceivedLinkPermitMessage:(id)a0;
+- (void)onReceivedLinkCrossRoomRtcInfoMessage:(id)a0;
+- (id)businessMonitorParameters;
+- (id)businessMonitorParamsFromMessage:(id)a0;
+- (id)businessMonitorParamsFromResponse:(id)a0;
+- (id)linkerModel;
+- (void)interruptLinkProcess;
+- (void)turnOffInteractionWithSource:(unsigned long long)a0;
+- (void)invite:(id)a0 toUser:(id)a1 serverExtraParams:(id)a2;
+- (void)reply:(id)a0 toUserID:(id)a1 toUserSecID:(id)a2 channelID:(id)a3 inviteType:(long long)a4 inviteSource:(long long)a5 serverExtraParams:(id)a6;
+- (void)permit:(id)a0 applyUID:(id)a1 applySecUID:(id)a2 channelID:(id)a3 replyType:(unsigned long long)a4 serverExtraParams:(id)a5;
+- (void)apply:(id)a0 toUser:(id)a1 toRoomID:(id)a2 channelID:(id)a3 serverExtraParams:(id)a4;
+- (void)cancel:(id)a0 toUserID:(id)a1 toUserSecUID:(id)a2 toRoomID:(id)a3 isApply:(BOOL)a4 channelID:(id)a5 source:(unsigned long long)a6 serverExtraParams:(id)a7;
+- (BOOL)isMultiLinkmicAutoMatchForMatchType:(long long)a0;
+- (void)updateConnectParams:(unsigned long long)a0 fromStatus:(long long)a1 oppositeStatus:(long long)a2;
+- (void)replyReject:(id)a0 toUserID:(id)a1 toUserSecID:(id)a2 channelID:(id)a3 serverExtraParams:(id)a4;
+- (void)logEvent:(id)a0 withParams:(id)a1;
+- (void)cancelReplySEITimeOutTimer;
+- (BOOL)unavailableInMultiInteract;
+- (void)setupReplySEITimeOutTimer;
+- (void)preBuilderReadyToInit;
+- (void)preBuilderReadyToBussinessPrepare;
+- (id)initWithDIContext:(id)a0 aioPublisher:(id)a1;
+- (void)onReceivedDoublePKInviteMessage:(id)a0 messageExtra:(id)a1;
+- (void)onReceivedMultiInviteMessage:(id)a0 messageExtra:(id)a1;
+- (BOOL)inviteMessageTimeOutEnableWithCreatTime:(long long)a0 fetchTime:(long long)a1;
+- (BOOL)autoRejectDoublePKInviteMessage:(id)a0 messageExtra:(id)a1;
+- (void)onReceivedLinkMessage:(id)a0;
+- (BOOL)autoRejectMultiInviteMessage:(id)a0 messageExtra:(id)a1;
+- (void)replyAcceptDouble:(id)a0 toUserID:(id)a1 toUserSecID:(id)a2 channelID:(id)a3 inviteType:(long long)a4 inviteSource:(long long)a5 serverExtraParams:(id)a6;
+- (void)replyAccept:(id)a0 toUserID:(id)a1 toUserSecID:(id)a2 channelID:(id)a3 serverExtraParams:(id)a4;
+- (void)removeUserFromServiceByID:(id)a0 forceOrNot:(BOOL)a1;
+- (void).cxx_destruct;
+- (id)provider;
+
+@end

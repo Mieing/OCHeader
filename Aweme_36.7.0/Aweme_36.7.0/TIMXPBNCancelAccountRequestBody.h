@@ -1,0 +1,8 @@
+@interface TIMXPBNCancelAccountRequestBody : GPBMessage
+
+@property (nonatomic) long long userId;
+@property (nonatomic) BOOL hasUserId;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,85 @@
+@class AWESearchGeneralSearchDualColumnActiveLinePlayRule, NSString, AWESearchCachalotLiveLynxPipeline, AWESearchMuteView, DUXBottomNotification;
+
+@interface AWESearchCachalotLiveViewController : AWESearchResultVerticalBaseViewController <AFDMuteAwemeMessage, AWELiveSearchOutterRoomTransitionContextProvider>
+
+@property (retain, nonatomic) AWESearchCachalotLiveLynxPipeline *lynxPipeline;
+@property (nonatomic) BOOL shouldAutoPlayVideo;
+@property (retain, nonatomic) AWESearchGeneralSearchDualColumnActiveLinePlayRule *dualColumnActiveLineAutoPlayRule;
+@property (nonatomic) BOOL finishFirstTrack;
+@property (copy, nonatomic) NSString *lastSearchID;
+@property (nonatomic) double muteStatusInterval;
+@property (retain, nonatomic) AWESearchMuteView *cancelMuteView;
+@property (retain, nonatomic) DUXBottomNotification *cancelMuteTip;
+@property (nonatomic) long long transitionIndex;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (long long)syncGetSearchLiveVerticalUIOpt;
++ (BOOL)syncGetSearchLiveVerticalDualAutoPlayEnable;
++ (long long)syncGetSearchLiveVerticalStyleOpt;
++ (void)preprocessModel:(id)a0;
++ (BOOL)enableLiveWithCustomConfig;
+
+- (id)zoomTransitionStartViewForOffset:(long long)a0;
+- (void)muteAwemeCanceled;
+- (id)aweui_emptyPageBelowView;
+- (id)fetchComponentOfComponentViewModel:(long long)a0;
+- (void)customFeedRecieveRequestWithResponseParams:(id)a0 isLoadMore:(BOOL)a1;
+- (void)customHandleNodeViewModelsReady:(id)a0 withResponseParams:(id)a1 isLoadmore:(BOOL)a2;
+- (void)customComponentWillDisplay:(id)a0 withViewModel:(id)a1;
+- (id)customBtmPageIdentifier;
+- (id)customAutoplayRules;
+- (void)trackDeepesetRankCardShowInfo;
+- (void)autoPlayDidActiveCard:(id)a0;
+- (void)searchADOperationToolViewWillDisplay:(id)a0 aweme:(id)a1;
+- (void)searchADOperationToolViewDidEndDisplay:(id)a0;
+- (id)customEnterFrom;
+- (id)getCurrentLiveViewWithOffset:(long long)a0;
+- (void)onStartLeaveRoomAnimationWithOffset:(long long)a0;
+- (id)customSearchType;
+- (id)customContainerConfig;
+- (id)customTabConfig;
+- (id)customPageScrollFpsSceneName;
+- (id)customContainerId;
+- (id)customBusinesssId;
+- (Class)customDataControllerClass;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })customContentInsets;
+- (BOOL)customPageEnableAutoPlay;
+- (BOOL)customInnerFlowShouldShowDataModel:(id)a0;
+- (id)customOuterDataModels;
+- (void)customFeedWillBeginDragging:(id)a0;
+- (void)customFeedwillRequestNetwork;
+- (void)customComponentDidEndDisplay:(id)a0;
+- (void)customHandleResponseDataModelsReadyBlock:(id)a0 withParams:(id)a1 isLoadMore:(BOOL)a2;
+- (void)updateDataCompletionWithOuterModelArray:(id)a0 isLoadMore:(BOOL)a1;
+- (BOOL)p_currentAllowAutoPlay;
+- (void)p_setupAutoplay;
+- (unsigned long long)customStayTimeStatisticsTabType;
+- (void)correctSearchMuteStatus;
+- (void)searchMuteIconShow;
+- (id)fetchAutoPlayComponent:(long long)a0;
+- (void)didTappedMuteView;
+- (void)searchMuteIconClick:(BOOL)a0;
+- (void)reopenMuteView;
+- (void)updateEngineData;
+- (BOOL)customEnableVerticalNewCommonSearchBackground;
+- (void)p_coldStreamCDNPreSchedulingWithCurrentCard:(id)a0;
+- (BOOL)shieldClearCacheSize;
+- (double)isAutoPlayFlingStrategy;
+- (void)becomeActive;
+- (BOOL)isPad;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)reset;
+- (id)initWithNibName:(id)a0 bundle:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (double)containerWidth;
+
+@end

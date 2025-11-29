@@ -1,0 +1,72 @@
+@class ACCCameraSubscription, AWERequestVidFeatureModel, NSString, ACCMVTemplatesTransitionDelegate, AWEVideoPublishViewModel, AWEModalTransitionDelegate, UIViewController;
+@protocol ACCRecordSwitchModeService, ACCDUXLoadingInstance, ACCMVSelectService, AWERecordInspirationDataProviderProtocol, AWERecordResourceDownloadTaskProtocol, AWERecordInspirationTrackerService, ACCAIGCSelectServiceProtocol, AWERecordInspirationServiceDelegate, IESServiceProvider;
+
+@interface AWERecordInspirationServiceImpl : NSObject <AWEAwemeDetailTableViewControllerDelegate, AWERecordInspirationServiceProtocol>
+
+@property (retain, nonatomic) ACCCameraSubscription *subscription;
+@property (retain, nonatomic) id<ACCAIGCSelectServiceProtocol> aigcService;
+@property (retain, nonatomic) ACCMVTemplatesTransitionDelegate *transitionDelegate;
+@property (retain, nonatomic) id<ACCDUXLoadingInstance> duxLoading;
+@property (retain, nonatomic) id<ACCMVSelectService> mvService;
+@property (nonatomic) BOOL handleCancelLoading;
+@property (weak, nonatomic) UIViewController *fromViewController;
+@property (weak, nonatomic) id<AWERecordInspirationDataProviderProtocol> inspirationProvider;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) id<AWERecordInspirationTrackerService> trackerService;
+@property (retain, nonatomic) AWERequestVidFeatureModel *featureModel;
+@property (retain, nonatomic) id<AWERecordResourceDownloadTaskProtocol> downloadTask;
+@property (retain, nonatomic) AWEModalTransitionDelegate *transDelegate;
+@property (weak, nonatomic) AWEVideoPublishViewModel *publishViewModel;
+@property (weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (weak, nonatomic) id<AWERecordInspirationServiceDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)detailTableViewControllerWillAppear:(id)a0 currentAwemeModel:(id)a1;
+- (void)dismissLoadingView;
+- (void)enterInspirationFeedWithDataProvider:(id)a0 publishModel:(id)a1;
+- (void)enterOldTemplateFeedWithDataProvider:(id)a0 publishModel:(id)a1;
+- (void)inspirationCardFlowShootWithDetail:(id)a0 categoryItem:(id)a1 detailIndex:(long long)a2 clickEvent:(long long)a3;
+- (void)inspirationFeedClickTakeFlowAweme:(id)a0 trackPassInfoDict:(id)a1;
+- (void)inspirationFeedClickFriendLoraAweme:(id)a0 trackPassInfoDict:(id)a1;
+- (void)onInspirationBottomKeyWordModifyButtonClick:(id)a0 trackPassInfoDict:(id)a1;
+- (void)backInspirationCardListPage;
+- (void)writeAssetToLocalPath:(id)a0 completion:(id /* block */)a1;
+- (BOOL)checkPropUnavailable:(id)a0;
+- (void)willExitEffectTaskSame;
+- (void)exitEffectTaskSame;
+- (void)preloadEffectResourceWithEffect:(id)a0;
+- (id)commonTemplateTrackParams:(id)a0 materialType:(unsigned long long)a1;
+- (void)sendClickCardWithParam:(id)a0 collectionStatus:(BOOL)a1;
+- (void)sendClickCardWithParam:(id)a0;
+- (void)sendMVClickCardTrackWithParams:(id)a0;
+- (void)handleResultWithPublishViewModel:(id)a0 context:(id)a1 creationData:(id)a2 uiControlHandler:(id)a3 fromViewController:(id)a4;
+- (void)enterEditPageWithEffectId:(id)a0 filePaths:(id)a1 autoApply:(BOOL)a2 editInsert:(BOOL)a3;
+- (void)enterRecordPageWithDetail:(id)a0 detailIndex:(long long)a1 categoryItem:(id)a2;
+- (void)enterAlbumWithEffectId:(id)a0;
+- (void)jumpToVideoTemplateWithTemplate:(id)a0 templateType:(long long)a1 mvSource:(id)a2;
+- (void)jumpToImageTemplateWithTemplate:(id)a0 templateType:(long long)a1;
+- (void)sendClickInspiationFeedWithParam:(id)a0 collectionStatus:(BOOL)a1;
+- (void)sendClickInspiationFeedWithParam:(id)a0;
+- (void)sendMVClickShootSameTrack:(id)a0;
+- (void)flowShootWithAweme:(id)a0 trackPassInfoDict:(id)a1;
+- (BOOL)shouldEnterAIGCUGCFusionPageWithEffect:(id)a0 aigcUgcFusionParam:(id)a1;
+- (void)openCreationWithEffectId:(id)a0 fromViewController:(id)a1;
+- (void)jumpToAIGCWith:(id)a0 trackPassInfoDict:(id)a1 extraPassInfo:(id)a2;
+- (void)switchToStory;
+- (void)jumpToEffectWith:(id)a0 categoryName:(id)a1;
+- (void)enterRecordPageWithAweme:(id)a0 trackPassInfoDict:(id)a1;
+- (void)showToastWithPropFetchError:(id)a0;
+- (void)jumpJianYinTemplateWith:(id)a0;
+- (void)jumpOldVimoTemplateWith:(id)a0;
+- (void)appendMetricsInfoToCKTemplateModel:(id)a0 fromTemplateModel:(id)a1;
+- (void)enterEffectTakeSame;
+- (void)sendClickCardEnterTemplateFeedWithParam:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)addSubscriber:(id)a0;
+- (void)showLoadingView;
+
+@end

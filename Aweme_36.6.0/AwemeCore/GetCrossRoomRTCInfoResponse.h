@@ -1,0 +1,10 @@
+@class GetCrossRoomRTCInfoResponse_ResponseData;
+
+@interface GetCrossRoomRTCInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetCrossRoomRTCInfoResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

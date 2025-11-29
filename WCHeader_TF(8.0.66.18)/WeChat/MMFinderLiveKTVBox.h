@@ -1,0 +1,83 @@
+@class UIView, NSString, MMFinderLiveKTVStateInfo, MMLiveKtvResourceState, MMFinderLiveKTVReporter, MMFinderLiveKTVContext, WCFinderDataItem, MMFinderLiveKTVPerfAdjustLogic, MMFinderLiveKTVManageLogic, MMFinderLiveConnectMicUsersInfo, NSMutableDictionary;
+@protocol MMLiveUniqueTaskId;
+
+@interface MMFinderLiveKTVBox : NSObject <MMLiveAnchorSEISynchronizeExt, MMLiveCDNPlayerItemExt>
+
+@property (retain, nonatomic) id<MMLiveUniqueTaskId> taskId;
+@property (nonatomic) BOOL isKTVMode;
+@property (retain, nonatomic) MMFinderLiveKTVManageLogic *ktvManageLogic;
+@property (retain, nonatomic) MMLiveKtvResourceState *ktvResourceState;
+@property (retain, nonatomic) MMFinderLiveKTVPerfAdjustLogic *ktvPerfAdjustLogic;
+@property (retain, nonatomic) MMFinderLiveKTVContext *ktvContext;
+@property (retain, nonatomic) MMFinderLiveConnectMicUsersInfo *allConnectedMicUsersInfo;
+@property (retain, nonatomic) WCFinderDataItem *finderDataItem;
+@property (retain, nonatomic) MMFinderLiveKTVReporter *reporter;
+@property (nonatomic) BOOL isDelayToResetAudioSession;
+@property (nonatomic) BOOL hasPreparedToEnterKTV;
+@property (nonatomic) BOOL isTransitionEnd;
+@property (retain, nonatomic) NSString *transitionContextId;
+@property (weak, nonatomic) UIView *transitionView;
+@property (weak, nonatomic) MMFinderLiveKTVBox *transitionKTXBox;
+@property (nonatomic) BOOL isInLive;
+@property (retain, nonatomic) NSMutableDictionary *songPrepareRecordDict;
+@property (readonly, nonatomic) MMFinderLiveKTVStateInfo *ktvStateInfo;
+@property (copy, nonatomic) id /* block */ ktvManageLogicCreateCallback;
+@property (readonly, nonatomic) unsigned long long liveId;
+@property (readonly, copy, nonatomic) NSString *anchorSdkUserId;
+@property (nonatomic) int commentScene;
+@property (copy, nonatomic) id /* block */ ktvGetAnchorSdkUserIdCallback;
+@property (copy, nonatomic) id /* block */ singStateChangeCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)reportPlayFailWithTaskId:(id)a0 error:(unsigned long long)a1 extra:(long long)a2 role:(unsigned long long)a3 uniqueId:(id)a4 songId:(id)a5 viewScene:(unsigned long long)a6;
++ (void)reportPlayResult:(id)a0 taskId:(id)a1 role:(unsigned long long)a2 uniqueId:(id)a3 songId:(id)a4 viewScene:(unsigned long long)a5;
++ (void)reportPositionMistakeLagWithTaskId:(id)a0 cnt:(unsigned long long)a1 allDuration:(int)a2 averMaxAcceptMistake:(int)a3 averPositionUpdateInterval:(int)a4 mistakeRecords:(id)a5 role:(unsigned long long)a6 uniqueId:(id)a7 viewScene:(unsigned long long)a8;
++ (id)getValidLiveTask:(id)a0;
++ (unsigned long long)getLiveId:(id)a0;
++ (unsigned long long)getObjectId:(id)a0;
++ (id)getAnchorNickName:(id)a0;
++ (id)getMistakeRecordsDetail:(id)a0;
++ (id)replaceCommaToSemicolon:(id)a0;
++ (unsigned long long)getKTVViewScene:(id)a0;
+
+- (void)onSongPrepareBegin:(id)a0;
+- (void)onSongPrepareEnd:(id)a0;
+- (int)getSongPrepareCostTime:(id)a0;
+- (id)initWithTaskId:(id)a0;
+- (void)dealloc;
+- (void)registerExtensions;
+- (void)unRegisterExtensions;
+- (void)createKTVResourceState;
+- (void)loadKTVResources;
+- (void)createKTVManageLogic;
+- (void)configKTVManageCallbacks;
+- (void)createKTVPerfAdjustLogic;
+- (void)createDefaultDatas;
+- (void)enterKTVMode;
+- (void)exitKTVMode;
+- (void)updateAllConnectedMicUsersInfo:(id)a0;
+- (void)updateFinderDataItem:(id)a0;
+- (id)ktvReporter;
+- (void)delayResetTXLiveCategorySetParamForA2dpClosedIfNeed:(id)a0;
+- (void)resetTXLiveCategorySetParamForA2dpClosedIfNeed:(id)a0;
+- (void)cancelAllActions;
+- (void)addTransitionContext:(id)a0;
+- (void)onEnterLive;
+- (void)notifyEndTransitionOnEnterLive;
+- (void)processSEIPBForKTVSyncRecv:(id)a0;
+- (BOOL)isCurrInTransition;
+- (BOOL)preferCdnQualityUlStream;
+- (BOOL)preferEnterBeforeJoinLive;
+- (void)prepareToEnterKTV;
+- (BOOL)isSupportEnterLive;
+- (void)endTransition:(long long)a0;
+- (id)liveTask;
+- (BOOL)supportEnterBeforeJoinLive;
+- (void)onSynchronizedSEIAnchoInfo:(id)a0 taskId:(id)a1;
+- (void)onLiveCDNPlayerItem:(id)a0 customExtraPramDestroy:(id)a1;
+- (void).cxx_destruct;
+
+@end

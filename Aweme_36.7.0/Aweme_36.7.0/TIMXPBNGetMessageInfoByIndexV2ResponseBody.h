@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface TIMXPBNGetMessageInfoByIndexV2ResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *infos;
+@property (readonly, nonatomic) unsigned long long infos_Count;
+
++ (id)descriptor;
+
+@end

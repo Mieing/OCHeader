@@ -1,0 +1,12 @@
+@class LiveTabResponse_Extra, LiveTabResponse_Resp;
+
+@interface LiveTabResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LiveTabResponse_Resp *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) LiveTabResponse_Extra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

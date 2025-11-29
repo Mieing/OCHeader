@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface FormatChatMessage : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *role;
+@property (copy, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *contentType;
+@property (nonatomic) long long time;
+
++ (id)descriptor;
+
+@end

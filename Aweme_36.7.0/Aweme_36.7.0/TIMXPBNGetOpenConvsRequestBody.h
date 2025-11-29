@@ -1,0 +1,12 @@
+@interface TIMXPBNGetOpenConvsRequestBody : GPBMessage
+
+@property (nonatomic) long long openConvVersion;
+@property (nonatomic) BOOL hasOpenConvVersion;
+@property (nonatomic) BOOL openConvReverse;
+@property (nonatomic) BOOL hasOpenConvReverse;
+@property (nonatomic) int openConvLimit;
+@property (nonatomic) BOOL hasOpenConvLimit;
+
++ (id)descriptor;
+
+@end

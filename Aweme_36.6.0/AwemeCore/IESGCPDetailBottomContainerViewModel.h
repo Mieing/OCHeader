@@ -1,0 +1,3 @@
+@interface IESGCPDetailBottomContainerViewModel : IESGCPDetailBaseViewModel
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TIMXPBNReactionMessageResponseBody : GPBMessage
+
+@property (nonatomic) long long serverMessageId;
+@property (nonatomic) BOOL hasServerMessageId;
+@property (copy, nonatomic) NSString *clientMessageId;
+@property (nonatomic) BOOL hasClientMessageId;
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+
++ (id)descriptor;
+
+@end

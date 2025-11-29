@@ -1,0 +1,7 @@
+@interface WAJSEventHandler_operateWebRTCVoiceRecord : WAJSEventHandler_BaseEvent
+
+- (void)handleJSEvent:(id)a0;
+- (id)init;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface WXOfflinePayResp : BaseResp
+
+@end

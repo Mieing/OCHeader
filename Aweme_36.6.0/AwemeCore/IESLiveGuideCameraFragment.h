@@ -1,0 +1,73 @@
+@class NSString, NSHashTable, IESLiveGuideCameraMicroChecker, IESLiveGuideToolBarItem, NSNumber;
+@protocol IESLiveVideoEffectProcessing, IESLiveGuideToolBarProvider, IESLiveAnchorDynamicClarityPreferenceService, IESLivePerfSampler;
+
+@interface IESLiveGuideCameraFragment : IESLiveGuideComponent <IESLiveGuideCameraRouter, IESLiveGuideActions, IESLiveAnchorCameraPermissionProtocol, IESLiveVRSwitchRouter, IESLiveAnchorDynamicClarityObserver, IESLiveGuideStartLiveEvent>
+
+@property (retain, nonatomic) NSHashTable *permissionHandlerTable;
+@property (copy, nonatomic) NSString *originCaptureSessionPreset;
+@property (copy, nonatomic) NSString *waitingCaptureSessionPreset;
+@property (nonatomic) BOOL isCaptureResetting;
+@property (retain, nonatomic) id<IESLiveGuideToolBarProvider> toolbarProvider;
+@property (retain, nonatomic) id<IESLiveAnchorDynamicClarityPreferenceService> clarityService;
+@property (retain, nonatomic) id<IESLiveVideoEffectProcessing> videoEffectProcessProvider;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (retain, nonatomic) IESLiveGuideToolBarItem *cameraSwitchItem;
+@property (nonatomic) long long captureDevicePosition;
+@property (retain, nonatomic) IESLiveGuideCameraMicroChecker *permissionCheckerNew;
+@property (nonatomic) BOOL isWillEnterLive;
+@property (retain, nonatomic) NSHashTable *permissionHandlers;
+@property (nonatomic) unsigned long long reportType;
+@property (nonatomic) BOOL hasCheckDirtyCamera;
+@property (retain, nonatomic) NSNumber *recorderOriginFrameRate;
+@property (nonatomic) BOOL isVRLiveMode;
+@property (nonatomic) unsigned long long liveType;
+@property (nonatomic) double enterLiveTabTime;
+@property (nonatomic) BOOL componentAllAppear;
+@property (nonatomic) BOOL isVCInLiveTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentDidAppear;
+- (void)registerCameraPermissionHandler:(id)a0;
+- (void)removeCameraPermissionHandler:(id)a0;
+- (void)willSwitchToOtherTab;
+- (void)willSwitchToLiveTab;
+- (void)liveTypeDidChange:(unsigned long long)a0;
+- (void)willStartLive;
+- (void)cameraDidSet;
+- (id)trackClickParams:(id)a0;
+- (void)switchVRLiveMode:(BOOL)a0;
+- (void)checkDirtyCamera;
+- (void)changeResolutionAtKey:(id)a0 toKey:(id)a1;
+- (BOOL)canSetCameraActive;
+- (void)changeCameraPosition;
+- (void)startLiveCheckDirtyCamera;
+- (void)cancelReportDirtyInfo;
+- (void)resetCapturePreset:(id)a0;
+- (void)beginStartLiveRequesting;
+- (void)initCaptureDevicePosition;
+- (BOOL)isHitResolutionSyncOptStrategy;
+- (void)switchCameraPositionDidClick:(id)a0;
+- (BOOL)liveTypeNeedsCamera;
+- (BOOL)enableResolutionSyncOpt;
+- (void)handleLiveTypeChange:(unsigned long long)a0;
+- (void)isolateRecorderConfig;
+- (void)checkShouldResetCapturePreset;
+- (void)resetCameraPositionWithoutAnimation;
+- (void)trackPreviewLoadingDuration;
+- (void)updateVRLive;
+- (void)updateHorizontalLive;
+- (id)getDirtyCameraTipDict;
+- (void)setReportDirtyCameraType:(unsigned long long)a0;
+- (void)originRecorderConfig;
+- (void).cxx_destruct;
+- (void)startVideoCapture;
+- (void)stopVideoCapture;
+- (void)setCameraActive:(BOOL)a0;
+
+@end

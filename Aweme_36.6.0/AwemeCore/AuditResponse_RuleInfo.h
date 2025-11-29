@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AuditResponse_RuleInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *paperText;
+@property (copy, nonatomic) NSString *linkURL;
+@property (copy, nonatomic) NSString *picURL;
+
++ (id)descriptor;
+
+@end

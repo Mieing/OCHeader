@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface PaidLiveProjectionResponse_ProjectionData_streamData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *sdkKey;
+@property (copy, nonatomic) NSString *hlsURL;
+
++ (id)descriptor;
+
+@end

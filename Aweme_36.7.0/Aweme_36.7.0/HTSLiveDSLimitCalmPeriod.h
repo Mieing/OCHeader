@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveDSLimitCalmPeriod : IESLivePBBaseMessage
+
+@property (nonatomic) int leftTimeSecond;
+@property (copy, nonatomic) NSString *popupText;
+@property (nonatomic) BOOL needFaceRecognition;
+@property (nonatomic) BOOL twoElementsVerified;
+@property (nonatomic) int verifyType;
+
++ (id)descriptor;
+
+@end

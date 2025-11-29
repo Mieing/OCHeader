@@ -1,0 +1,32 @@
+@class NSString, NSMutableDictionary, NSMutableIndexSet;
+@protocol RxCollectionLayoutAuxillaryOffsets;
+
+@interface RxCollectionPreferredSizes : NSObject <RxCollectionPreferredSizes, NSCopying> {
+    NSMutableDictionary *_sizes;
+    NSMutableIndexSet *_indexes;
+    NSMutableDictionary *_supplementarySizesDict;
+}
+
+@property (nonatomic) long long frameOffset;
+@property (retain, nonatomic) id<RxCollectionLayoutAuxillaryOffsets> supplementaryBaseOffsets;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setObject:(id)a0 atIndexedSubscript:(unsigned long long)a1;
+- (void).cxx_destruct;
+- (id)objectAtIndexedSubscript:(long long)a0;
+- (BOOL)containsSupplementaryOffsets:(id)a0;
+- (void)addPreferredSize:(id)a0 forSupplementaryWithElementKind:(id)a1 atIndex:(unsigned long long)a2;
+- (id)init;
+- (BOOL)hasSizes;
+- (id)objectForKeyedSubscript:(id)a0;
+- (id)preferredSizesApplyingFrameOffset:(long long)a0 supplementaryBaseOffsets:(id)a1;
+- (id)elementKinds;
+- (id)initWithSizes:(id)a0 indexes:(id)a1 supplementarySizesDict:(id)a2 frameOffset:(long long)a3 supplementaryBaseOffsets:(id)a4;
+- (id)indexes;
+- (id)copyByDirtyingPreferredSizes;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

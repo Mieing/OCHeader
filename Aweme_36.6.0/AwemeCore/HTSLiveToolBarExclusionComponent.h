@@ -1,0 +1,9 @@
+@interface HTSLiveToolBarExclusionComponent : IESLivePBBaseMessage
+
+@property (nonatomic) long long componentType;
+@property (nonatomic) long long opTypeAnchor;
+@property (nonatomic) long long opTypeAudience;
+
++ (id)descriptor;
+
+@end

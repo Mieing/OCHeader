@@ -1,0 +1,7 @@
+@interface LivePushStatusData : IESLivePBBaseMessage
+
+@property (nonatomic) int pushStatus;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveNoticeRoot : GPBRootObject
+
+@end

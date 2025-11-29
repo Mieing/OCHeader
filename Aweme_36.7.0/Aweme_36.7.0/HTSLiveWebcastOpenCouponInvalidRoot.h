@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastOpenCouponInvalidRoot : GPBRootObject
+
+@end

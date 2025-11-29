@@ -1,0 +1,12 @@
+@class HTSLiveImage, IESLiveImageFormat;
+
+@interface IESLiveTextPieceImage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (retain, nonatomic) IESLiveImageFormat *imageFormat;
+@property (nonatomic) BOOL hasImageFormat;
+
++ (id)descriptor;
+
+@end

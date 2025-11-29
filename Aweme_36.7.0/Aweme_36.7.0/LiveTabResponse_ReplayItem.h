@@ -1,0 +1,13 @@
+@class HTSLiveEpisode, LiveTabResponse_CommerceData;
+
+@interface LiveTabResponse_ReplayItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveEpisode *episode;
+@property (nonatomic) BOOL hasEpisode;
+@property (retain, nonatomic) LiveTabResponse_CommerceData *commerceData;
+@property (nonatomic) BOOL hasCommerceData;
+@property (nonatomic) long long roomCreateTime;
+
++ (id)descriptor;
+
+@end

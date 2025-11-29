@@ -1,0 +1,3 @@
+@interface BDXRefreshView : UIView
+
+@end

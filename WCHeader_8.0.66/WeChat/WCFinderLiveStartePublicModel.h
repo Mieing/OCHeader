@@ -1,0 +1,70 @@
+@class CContact, WCFinderLiveShareItem, UIViewController, NSMutableArray, MMFinderLiveModeModel, FinderLiveNoticeInfo, UIImage, FinderLivePromptInfo, NSString, WCFinderDataItem, NSArray, MMFinderLiveTask, FinderLiveTagInfo, WCFinderLiveStarterSwitchModeItem, FinderLiveErrorPage, NSData, MMFinderLiveCreateLotteryViewModel, FinderJumpInfo, WCLocationInfo, MMFinderLiveAudioModeBackgroundUploadModel, MMLiveTaskId, FinderLiveStreamDecor, WCFinderLiveStarteSceneInitialModel, FinderLiveGuideInfo;
+
+@interface WCFinderLiveStartePublicModel : NSObject
+
+@property (retain, nonatomic) WCFinderLiveStarterSwitchModeItem *switchModeItem;
+@property (retain, nonatomic) MMFinderLiveModeModel *modeModel;
+@property (nonatomic) BOOL enableNewStartController;
+@property (retain, nonatomic) MMLiveTaskId *liveTaskId;
+@property (retain, nonatomic) WCFinderDataItem *dataItem;
+@property (retain, nonatomic) WCFinderLiveShareItem *shareItem;
+@property (retain, nonatomic) FinderLiveNoticeInfo *liveNoticeInfo;
+@property (retain, nonatomic) FinderLiveTagInfo *audioTagInfo;
+@property (retain, nonatomic) FinderLiveTagInfo *videoTagInfo;
+@property (nonatomic) long long visibilityMode;
+@property (nonatomic) int chargeFlag;
+@property (nonatomic) unsigned int chargeUnitPriceInWecoin;
+@property (nonatomic) long long purchaseLivePreviewType;
+@property (nonatomic) unsigned int trialTimeHour;
+@property (nonatomic) unsigned int trialTimeMinute;
+@property (retain, nonatomic) NSArray *freeOfChargeUsernameList;
+@property (retain, nonatomic) NSArray *freeOfChargeChatroomIdList;
+@property (retain, nonatomic) NSArray *fullFreeOfChargeContactList;
+@property (retain, nonatomic) NSArray *selectedFreeRosterList;
+@property (retain, nonatomic) NSArray *selectedFreeTagList;
+@property (retain, nonatomic) UIImage *selfHeadImg;
+@property (retain, nonatomic) NSString *selfHeadImgPath;
+@property (retain, nonatomic) MMFinderLiveAudioModeBackgroundUploadModel *audioModeBackgroundUploadModel;
+@property (retain, nonatomic) NSArray *roomContacts;
+@property (retain, nonatomic) CContact *groupContact;
+@property (nonatomic) BOOL didVisibilityModeManullyChoosed;
+@property (retain, nonatomic) NSArray *visibilityFileList;
+@property (nonatomic) unsigned int maxVisibilityChatroomCount;
+@property (nonatomic) unsigned int maxVisibilityFriendContactCount;
+@property (nonatomic) long long lastSelectMode;
+@property (retain, nonatomic) FinderLivePromptInfo *promptInfo;
+@property (retain, nonatomic) FinderJumpInfo *opPromptInfo;
+@property (nonatomic) unsigned long long action;
+@property (nonatomic) int liveMode;
+@property (retain, nonatomic) FinderLiveStreamDecor *liveDecor;
+@property (retain, nonatomic) FinderLiveErrorPage *createLiveErrorPage;
+@property (copy, nonatomic) id /* block */ noticeInfoUpdatedCallback;
+@property (retain, nonatomic) UIImage *coverImageOrigin;
+@property (retain, nonatomic) UIImage *coverImage4Vs3;
+@property (retain, nonatomic) WCLocationInfo *poiInfo;
+@property (retain, nonatomic) NSArray *liveNoticeList;
+@property (retain, nonatomic) FinderLiveNoticeInfo *normalNoticeInfo;
+@property (retain, nonatomic) FinderLiveNoticeInfo *memberNoticeInfo;
+@property (retain, nonatomic) NSMutableArray *visibilityFileIdLists;
+@property (retain, nonatomic) NSArray *visibilityChatRoomIdList;
+@property (retain, nonatomic) NSArray *visibilityUsernameList;
+@property (retain, nonatomic) NSArray *selectedTagNameList;
+@property (nonatomic) BOOL isMemberFree;
+@property (retain, nonatomic) NSData *spamCheckInfo;
+@property (retain, nonatomic) FinderLiveGuideInfo *liveGuideInfo;
+@property (retain, nonatomic) MMFinderLiveCreateLotteryViewModel *createLotteryViewModel;
+@property (retain, nonatomic) NSMutableArray *lotteryArray;
+@property (weak, nonatomic) UIViewController *currentStarterVC;
+@property (readonly, nonatomic) MMFinderLiveTask *currentLiveTask;
+@property (nonatomic) unsigned long long initialSelectAudioSubType;
+@property (retain, nonatomic) WCFinderLiveStarteSceneInitialModel *sceneInitialModel;
+@property (nonatomic) long long createLivePageMode;
+@property (nonatomic) unsigned long long lastSimpleVersionType;
+@property (nonatomic) unsigned long long eventTopicId;
+@property (retain, nonatomic) NSString *eventName;
+@property (retain, nonatomic) NSString *eventCreatorNickName;
+@property (nonatomic) unsigned int createLiveScene;
+
+- (void).cxx_destruct;
+
+@end

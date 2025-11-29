@@ -1,0 +1,5 @@
+@interface AddSongCancelPrepareApplyResponse_ResponseData : IESLivePBBaseMessage
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class GetGoldRewardResponse_ResponseData;
+
+@interface GetGoldRewardResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetGoldRewardResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

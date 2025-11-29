@@ -1,0 +1,10 @@
+@class NSString, IESLiveOpenExplainCardSettingDialogOpenPlatformModel;
+
+@interface IESLiveOpenExplainCardSettingDialogParamModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) IESLiveOpenExplainCardSettingDialogOpenPlatformModel *openPlatform;
+@property (copy, nonatomic) NSString *payload;
+
++ (id)modelCustomPropertyMapper;
+
+@end

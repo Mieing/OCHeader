@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface LiveKtvGetHighScoreSungSongsResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *totoalCount;
+@property (retain, nonatomic) NSMutableArray *songsArray;
+@property (readonly, nonatomic) unsigned long long songsArray_Count;
+@property (nonatomic) BOOL hasMore;
+
++ (id)descriptor;
+
+@end

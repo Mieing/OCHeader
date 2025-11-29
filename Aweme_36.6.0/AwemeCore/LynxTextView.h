@@ -1,0 +1,95 @@
+@class LynxUIText, UITapGestureRecognizer, LynxLayer, CALayer, UILongPressGestureRecognizer, NSString, LynxTextLayerRender, UIPanGestureRecognizer, LynxTextRenderer, UIColor;
+
+@interface LynxTextView : UIView <UIGestureRecognizerDelegate> {
+    LynxTextLayerRender *_layerRender;
+}
+
+@property (retain, nonatomic) LynxLayer *selectionLayer;
+@property (retain, nonatomic) LynxLayer *startDot;
+@property (retain, nonatomic) LynxLayer *endDot;
+@property (retain, nonatomic) UIColor *selectColor;
+@property (retain, nonatomic) UIColor *handleColor;
+@property (nonatomic) double handleSize;
+@property (nonatomic) long long selectionStart;
+@property (nonatomic) long long selectionEnd;
+@property (nonatomic) long long lastSelectionStart;
+@property (nonatomic) long long lastSelectionEnd;
+@property (nonatomic) struct CGPoint { double x; double y; } selectStartPoint;
+@property (nonatomic) struct CGPoint { double x; double y; } selectEndPoint;
+@property (nonatomic) struct CGPoint { double x; double y; } handleStartPoint;
+@property (nonatomic) struct CGPoint { double x; double y; } handleEndPoint;
+@property (nonatomic) BOOL trackingLongPress;
+@property (nonatomic) BOOL menuShowing;
+@property (nonatomic) BOOL isInSelection;
+@property (nonatomic) BOOL isAdjustStartPoint;
+@property (nonatomic) BOOL isAdjustEndPoint;
+@property (retain, nonatomic) UILongPressGestureRecognizer *longPressGesture;
+@property (retain, nonatomic) UIPanGestureRecognizer *hoverGesture;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (nonatomic) BOOL isSelectionForward;
+@property (nonatomic) BOOL isShowStartHandle;
+@property (nonatomic) BOOL isShowEndHandle;
+@property (retain, nonatomic) CALayer *contentLayer;
+@property (weak, nonatomic) LynxUIText *ui;
+@property (weak, nonatomic) LynxTextRenderer *textRenderer;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } border;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } padding;
+@property (nonatomic) BOOL enableTextSelection;
+@property (nonatomic) BOOL enableCustomContextMenu;
+@property (nonatomic) BOOL enableCustomTextSelection;
+@property (copy, nonatomic) id /* block */ selectionChangeEventCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)layerClass;
+
+- (BOOL)perfFMP_hasContent;
+- (void)setOverflowOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)handleMove:(id)a0;
+- (void)resetSelectionState;
+- (void)updateSelectionHighlights;
+- (void)setupSelectionGesture;
+- (void)installGestures;
+- (void)unInstallGestures;
+- (long long)getTextRenderGlyphCount;
+- (struct CGPoint { double x0; double x1; })convertPointToLayout:(struct CGPoint { double x0; double x1; })a0;
+- (long long)getGlyphOffsetByPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)updateSelectionRange:(long long)a0 widthSelectEnd:(long long)a1;
+- (void)updateSelectStartEnd;
+- (id)getTextBoundingBoxes:(long long)a0 withEnd:(long long)a1;
+- (void)onSelectionChange;
+- (void)initSelectionLayers;
+- (void)calcSelectionPosition;
+- (void)clearOtherSelection;
+- (void)adjustEndPosition:(struct CGPoint { double x0; double x1; })a0;
+- (void)performEndSelection:(struct CGPoint { double x0; double x1; })a0;
+- (double)distanceBetweenPoints:(struct CGPoint { double x0; double x1; })a0 withAnother:(struct CGPoint { double x0; double x1; })a1;
+- (void)adjustStartPosition:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)shouldRecognizeIndividuallyWithGestureRecognizer:(id)a0;
+- (void)updateSelectionColor:(id)a0;
+- (void)updateHandleColor:(id)a0;
+- (void)updateHandleSize:(double)a0;
+- (void)initSelectionGesture;
+- (id)getSelectedText;
+- (id)setTextSelection:(double)a0 startY:(double)a1 endX:(double)a2 endY:(double)a3 showStartHandle:(BOOL)a4 showEndHandle:(BOOL)a5;
+- (id)getHandlesInfo;
+- (void)layoutSublayersOfLayer:(id)a0;
+- (void)copy:(id)a0;
+- (void)handleLongPress:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)canBecomeFirstResponder;
+- (id)init;
+- (id)text;
+- (void)hideMenu;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (void)selectAll:(id)a0;
+- (void)showMenu;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizer:(id)a0 shouldRequireFailureOfGestureRecognizer:(id)a1;
+- (void)handleCancelTap:(id)a0;
+- (void)clearSelectionHighlight;
+
+@end

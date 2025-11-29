@@ -1,0 +1,16 @@
+@class ACLCommonStructV2;
+
+@interface AwemeACLStructV2 : GPBMessage
+
+@property (retain, nonatomic) ACLCommonStructV2 *downloadGeneral;
+@property (nonatomic) BOOL hasDownloadGeneral;
+@property (retain, nonatomic) ACLCommonStructV2 *downloadMaskPanel;
+@property (nonatomic) BOOL hasDownloadMaskPanel;
+@property (retain, nonatomic) ACLCommonStructV2 *downloadSharePanel;
+@property (nonatomic) BOOL hasDownloadSharePanel;
+
++ (id)descriptor;
+
+- (id)downloadMaskPanel;
+
+@end

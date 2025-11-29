@@ -1,0 +1,85 @@
+@class NSDictionary, NSArray, NSString;
+
+@interface AWEIMRecentSharedDataManager : NSObject <IESIMRecentSharedInterface, AWEUserMessage>
+
+@property (copy, nonatomic) NSDictionary *invalidExposureInfoCache;
+@property (copy, nonatomic) NSArray *recentSharedInfoCache;
+@property (retain, nonatomic) NSArray *mixRecentShareInfoModels;
+@property (retain, nonatomic) NSArray *groupRecentShareInfoModels;
+@property (retain, nonatomic) NSArray *sortedRecentShareGroups;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)updateRecentSharedWithShareModelList:(id)a0;
++ (void)updateRecentMutualExposure:(id)a0;
++ (void)setRecentSharedInfoModels:(id)a0;
++ (id)recentMutualExposure_getInfoDict;
++ (void)recentMutualExposure_setInfoModel:(id)a0;
++ (id)exposure_getInfoDict;
++ (id)getInfoModelKeyWithShareModel:(id)a0;
++ (id)getAccumulateRecentSharedInfoModels;
++ (id)p_transToSortedInfoModelList:(id)a0;
++ (id)consecutive_getInfoModels;
++ (id)getAccumulateRecentSendInfoModels;
++ (id)getRecentSharedInfoModelsWithShareContext:(id)a0;
++ (void)asyncGetShareModelListWithRecentSharedInfoModels:(id)a0 completion:(id /* block */)a1;
++ (void)asyncGetURLsWithsharedModels:(id)a0 completion:(id /* block */)a1;
++ (id)p_currentUserRecentSharedInfoModelsStorageKeyWithUid:(id)a0;
++ (id)p_transDictListToModelList:(id)a0;
++ (id)p_filterRecentShareUser:(id)a0;
++ (void)setRecentSharedInfoModels:(id)a0 uid:(id)a1;
++ (id)p_changeToInfoModelWithShareModel:(id)a0;
++ (void)addAccumulateRecentSharedInfoModels:(id)a0;
++ (void)updateRecentMutualExposureCount:(long long)a0 shareModels:(id)a1;
++ (long long)p_getCurrentUserUpdateTimeStamp;
++ (void)p_setCurrentUserUpdateTimeStamp:(long long)a0;
++ (BOOL)p_isSameChatWithShareModel:(id)a0 recentShareInfoModel:(id)a1;
++ (void)asyncGetURLWithSharedModel:(id)a0 completion:(id /* block */)a1;
++ (id)p_currentUserUpdateTimeStampStorageKey;
++ (void)markShareModel:(id)a0 isRecentSharedWithRecentSharedInfoModels:(id)a1;
++ (id)p_currentUserRecentSharedAccumulateInfoModelsStorageKey;
++ (id)p_currentUserRecentSharedAccumulateInfoModelsStorageKeyWithUID:(id)a0;
++ (id)p_currentUserRecentSendAccumulateInfoModelsStorageKey;
++ (id)p_currentUserRecentSendAccumulateInfoModelsStorageKeyWithUID:(id)a0;
++ (id)p_consecutive_currentUserInfoModelsStorageKey;
++ (void)consecutive_setInfoModels:(id)a0;
++ (void)exposure_setInfoModel:(id)a0;
++ (id)p_exposure_currentUserInfoModelsStorageKey;
++ (id)p_recentMutualExposure_currentUserInfoModelsStorageKey;
++ (id)getRecentSharedInfoModels;
++ (void)addAccumulateRecentSendInfoModels:(id)a0;
++ (void)cacheInvalidExposureWithShareModelList:(id)a0;
++ (void)updateInvalidExposureWithShareModelList:(id)a0;
++ (void)removeInvalidExposureWithShareModelList:(id)a0;
++ (id)allocWithZone:(struct _NSZone { } *)a0;
++ (id)sharedInstance;
+
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)markShareModel:(id)a0;
+- (id)getGroupRecentShareInfoModels;
+- (id)getMixRecentShareInfoModels;
+- (id)getSortedRecentShareGroups;
+- (void)addMixRecentShareInfoModels:(id)a0;
+- (void)addGroupRecentShareInfoModels:(id)a0;
+- (void)addSortedRecentSharedGroupInfoModels:(id)a0;
+- (void)replaceMixRecentShareInfoModels:(id)a0;
+- (void)replaceGroupRecentShareInfoModels:(id)a0;
+- (void)replaceSortedRecentSharedGroupInfoModels:(id)a0;
+- (void)handleRecentSharedInfoDict:(id)a0 uid:(id)a1;
+- (void)handleMixRecentShareInfoArr:(id)a0;
+- (void)handleGroupRecentShareInfoArr:(id)a0;
+- (void)handleSortedRecentShareGroupInfos:(id)a0;
+- (void)handleAccumulateRecentSharedInfoDict:(id)a0 uid:(id)a1;
+- (void)consecutive_handleInfoDict:(id)a0;
+- (id)p_currentUserMixRecentShareInfoModelsStorageKey;
+- (id)p_currentUserGroupRecentShareInfoModelsStorageKey;
+- (id)p_currentUserSortedRecentSharedGroupInfoModelsStorageKey;
+- (void).cxx_destruct;
+- (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { } *)a0;
+- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

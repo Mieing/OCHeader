@@ -1,0 +1,16 @@
+@class TIMXPBNSyncContent, TIMXPBNReactionContent;
+
+@interface TIMXPBNMessagePropertyContent : GPBMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+@property (retain, nonatomic) TIMXPBNSyncContent *syncContent;
+@property (nonatomic) BOOL hasSyncContent;
+@property (retain, nonatomic) TIMXPBNReactionContent *reactionContent;
+@property (nonatomic) BOOL hasReactionContent;
+@property (nonatomic) long long indexInMessage;
+@property (nonatomic) BOOL hasIndexInMessage;
+
++ (id)descriptor;
+
+@end

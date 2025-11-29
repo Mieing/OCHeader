@@ -1,0 +1,3 @@
+@interface _TtC24AWESpeCategoryKitAdapterP33_B548C45879F6D0C2897C18750E99150220AwemeModelCardHelper : _TtCs12_SwiftObject
+
+@end

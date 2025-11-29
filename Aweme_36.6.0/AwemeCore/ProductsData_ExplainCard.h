@@ -1,0 +1,13 @@
+@class NSString, HTSLiveProduct;
+
+@interface ProductsData_ExplainCard : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *cardJumpURL;
+@property (nonatomic) int lastDuration;
+@property (retain, nonatomic) HTSLiveProduct *product;
+@property (nonatomic) BOOL hasProduct;
+
++ (id)descriptor;
+
+@end

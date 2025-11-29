@@ -1,0 +1,10 @@
+@class HTSLiveLinkerInviteContent;
+
+@interface HTSLiveLinkerSwitchChannelInviteContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkerInviteContent *content;
+@property (nonatomic) BOOL hasContent;
+
++ (id)descriptor;
+
+@end

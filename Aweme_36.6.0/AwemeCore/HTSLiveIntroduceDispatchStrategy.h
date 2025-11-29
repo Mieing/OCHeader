@@ -1,0 +1,10 @@
+@interface HTSLiveIntroduceDispatchStrategy : IESLivePBBaseMessage
+
+@property (nonatomic) int strategyType;
+@property (nonatomic) int maxRetryTimes;
+@property (nonatomic) int minRandomMs;
+@property (nonatomic) int maxRandomMs;
+
++ (id)descriptor;
+
+@end

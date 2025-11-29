@@ -1,0 +1,3 @@
+@interface HTSLiveFeaturedAiMessageRoot : GPBRootObject
+
+@end

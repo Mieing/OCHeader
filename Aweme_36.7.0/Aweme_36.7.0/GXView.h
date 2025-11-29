@@ -1,0 +1,3 @@
+@interface GXView : UIView
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveCameraDirectorRoot : GPBRootObject
+
+@end

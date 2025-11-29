@@ -1,0 +1,8 @@
+@interface AWEPaySwiftImpl.FKMMainDataContext : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ invokeURLString;
+    void /* unknown type, empty encoding */ source;
+    void /* unknown type, empty encoding */ activateRetainPopupInfo;
+    void /* unknown type, empty encoding */ bizData;
+}
+
+@end

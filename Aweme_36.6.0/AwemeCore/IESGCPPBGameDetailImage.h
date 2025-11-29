@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface IESGCPPBGameDetailImage : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+@property (copy, nonatomic) NSString *uri;
+@property (nonatomic) long long height;
+@property (nonatomic) long long width;
+
++ (id)descriptor;
+
+@end

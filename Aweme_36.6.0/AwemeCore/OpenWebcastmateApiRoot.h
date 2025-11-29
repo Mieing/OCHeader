@@ -1,0 +1,3 @@
+@interface OpenWebcastmateApiRoot : GPBRootObject
+
+@end

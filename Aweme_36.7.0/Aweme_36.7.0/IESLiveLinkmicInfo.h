@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveLinkmicInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (copy, nonatomic) NSString *liveCoreInfo;
+
++ (id)descriptor;
+
+@end

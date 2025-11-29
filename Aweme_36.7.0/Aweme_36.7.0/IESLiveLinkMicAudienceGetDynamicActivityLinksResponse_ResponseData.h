@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface IESLiveLinkMicAudienceGetDynamicActivityLinksResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *activityLinks;
+@property (readonly, nonatomic) unsigned long long activityLinks_Count;
+
++ (id)descriptor;
+
+@end

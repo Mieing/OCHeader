@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface CardImage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *customerImage;
+@property (nonatomic) BOOL hasCustomerImage;
+@property (retain, nonatomic) HTSLiveImage *defaultImage;
+@property (nonatomic) BOOL hasDefaultImage;
+
++ (id)descriptor;
+
+@end

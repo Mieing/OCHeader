@@ -1,0 +1,71 @@
+@class NSString, NSArray, IESECMallListKitCellData, IESECMallFeedbackMaskView, NSDictionary, IESECLynxCardBridgeEventSubscriber, IESECListKitCellFeedbackData, IESECMallNativeRreloadMonitor;
+@protocol IESECMallNativeCardDelegate;
+
+@interface IESECMallNativeCardCell : UICollectionViewCell <IESECMallCollectionCellPlayerContainer>
+
+@property (retain, nonatomic) IESECMallFeedbackMaskView *feedbackCoverView;
+@property (retain, nonatomic) IESECListKitCellFeedbackData *feedback;
+@property (retain, nonatomic) IESECLynxCardBridgeEventSubscriber *subscriber;
+@property (copy, nonatomic) NSString *successMsg;
+@property (copy, nonatomic) NSDictionary *mallNativeCardConfig;
+@property (copy, nonatomic) id /* block */ videoClick;
+@property (copy, nonatomic) id /* block */ liveHeaderClick;
+@property (copy, nonatomic) id /* block */ moreClick;
+@property (copy, nonatomic) id /* block */ maskViewCloseClick;
+@property (copy, nonatomic) id /* block */ feedbackClick;
+@property (copy, nonatomic) id /* block */ feedbackShow;
+@property (copy, nonatomic) id /* block */ newFeedbackShow;
+@property (copy, nonatomic) id /* block */ playerPlayResult;
+@property (copy, nonatomic) id /* block */ nativeCardPreload;
+@property (copy, nonatomic) id /* block */ muteClick;
+@property (copy, nonatomic) id /* block */ feedbackButtonClick;
+@property (retain, nonatomic) IESECMallListKitCellData *model;
+@property (retain, nonatomic) IESECListKitCellFeedbackData *data;
+@property (copy, nonatomic) NSString *nativeCellEnvIdentifier;
+@property (nonatomic) BOOL canSendNoti;
+@property (nonatomic) BOOL isMute;
+@property (nonatomic) BOOL bigFontEnabled;
+@property (nonatomic) double fontSizeScale;
+@property (nonatomic) double ipadSizeScale;
+@property (nonatomic) double borderRadius;
+@property (copy, nonatomic) NSArray *borderRadiusList;
+@property (copy, nonatomic) NSString *pageName;
+@property (nonatomic) long long tabId;
+@property (weak, nonatomic) id<IESECMallNativeCardDelegate> delegate;
+@property (retain, nonatomic) IESECMallNativeRreloadMonitor *nativePreloadMonitor;
+@property (copy, nonatomic) NSDictionary *globalPropsExtra;
+@property (copy, nonatomic) NSDictionary *rootGlobalPropsExtra;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)handleNoti:(id)a0;
+- (void)reportPlayerPlayResult:(id)a0;
+- (void)longPressGestureAction:(id)a0;
+- (void)hideFeedback:(id)a0;
+- (void)updateVoiceMute:(BOOL)a0;
+- (void)addLongPressGesture:(id)a0;
+- (void)liveLinkViewClicked;
+- (void)updateWithWindVaneData:(id)a0;
+- (id)currentEnvIdentifierForCard;
+- (void)resetFeedbackList;
+- (void)maskViewMoreBtnClicked;
+- (void)setupFeedbackView;
+- (void)setGreyStyleWithExtraData:(id)a0 globalGrey:(BOOL)a1 needRevertColorful:(BOOL)a2;
+- (BOOL)isUseNewDisLikeStyle;
+- (void)showNewFeedback;
+- (void)sendNoti;
+- (void)reportFeedbackShow;
+- (id)dataIdentity;
+- (void)liveHeaderViewClicked;
+- (void).cxx_destruct;
+- (void)setIndex:(long long)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)updateWithFeedback:(id)a0;
+- (void)setItemId:(id)a0;
+- (void)updateWithModel:(id)a0;
+- (void)hideFeedbackView;
+
+@end

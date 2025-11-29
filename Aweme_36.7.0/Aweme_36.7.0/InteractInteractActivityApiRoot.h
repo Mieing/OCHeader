@@ -1,0 +1,3 @@
+@interface InteractInteractActivityApiRoot : GPBRootObject
+
+@end

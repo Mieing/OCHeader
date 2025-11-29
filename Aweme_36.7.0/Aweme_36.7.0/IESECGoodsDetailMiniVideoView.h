@@ -1,0 +1,85 @@
+@class UIView, IESECommerceSpeakerView, IESECGoodsDetailMiniVideoModel, IESECGradientView, IESECGoodsDetailTracker, NSString, NSDictionary, UIPanGestureRecognizer, IESECUIImageView, UILabel;
+@protocol IESECVideoPlayerProtocol, IESECGoodsDetailMiniVideoViewDelegate, IESECVideoPlayerViewDelegate, IESECPDPVideoPlayerViewProtocol;
+
+@interface IESECGoodsDetailMiniVideoView : UIView <IESECVideoPlayerControllerDelegate, IESECVideoPlayerViewDelegate, IESECPDPVideoPlayerDelegateProtocol>
+
+@property (retain, nonatomic) id<IESECVideoPlayerProtocol> playerWrapper;
+@property (retain, nonatomic) UIView<IESECPDPVideoPlayerViewProtocol> *sharedPlayerView;
+@property (weak, nonatomic) UIView *sharedPlayerSuperView;
+@property (weak, nonatomic) id<IESECVideoPlayerViewDelegate> sharedPlayerOriginDelegate;
+@property (nonatomic) struct CGPoint { double x; double y; } topRight;
+@property (retain, nonatomic) UIView *speakerContainerView;
+@property (retain, nonatomic) IESECommerceSpeakerView *speakerView;
+@property (retain, nonatomic) UIView *closeView;
+@property (retain, nonatomic) UILabel *replayTextLabel;
+@property (retain, nonatomic) IESECGradientView *gradientView;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (readonly, nonatomic) unsigned long long currentPlayState;
+@property (nonatomic) long long startPlayTime;
+@property (retain, nonatomic) UIView *playView;
+@property (retain, nonatomic) IESECUIImageView *playImageView;
+@property (retain, nonatomic) UILabel *timeLabel;
+@property (retain, nonatomic) IESECUIImageView *playImageViewOpt;
+@property (retain, nonatomic) UIView *playImageViewOptBgView;
+@property (retain, nonatomic) IESECUIImageView *backgroundImageView;
+@property (nonatomic) unsigned long long storedPlayState;
+@property (nonatomic) BOOL needResumePlay;
+@property (nonatomic) BOOL isPlayOver;
+@property (nonatomic) double prePlayTime;
+@property (readonly, nonatomic) IESECGoodsDetailMiniVideoModel *videoModel;
+@property (readonly, nonatomic) UIView<IESECPDPVideoPlayerViewProtocol> *currentPlayerView;
+@property (weak, nonatomic) id<IESECGoodsDetailMiniVideoViewDelegate> delegate;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } panableZone;
+@property (retain, nonatomic) IESECGoodsDetailTracker *tracker;
+@property (nonatomic) BOOL resetPlayerWhenHidden;
+@property (copy, nonatomic) NSDictionary *trackMeta;
+@property (copy, nonatomic) NSString *playerTag;
+@property (copy, nonatomic) NSString *playerSubTag;
+@property (nonatomic) BOOL mute;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })miniWindowSizeWithVideoSize:(struct CGSize { double x0; double x1; })a0 fixSize:(BOOL)a1;
+
+- (void)playerPlayTime:(double)a0 canPlayTime:(double)a1 totalTime:(double)a2;
+- (void)playerMuteStateDidChanged:(BOOL)a0;
+- (void)playerDidChangePlaybackStateWithAction:(unsigned long long)a0;
+- (void)createPlayerView;
+- (void)addObserve;
+- (void)realPlay;
+- (void)addPeriodicTimeObserver;
+- (void)playViewWillResignActive:(id)a0;
+- (void)playerViewDidBecomeActive:(id)a0;
+- (void)playerController:(id)a0 playbackStateDidChange:(unsigned long long)a1;
+- (void)playerController:(id)a0 playerDidFinishError:(id)a1;
+- (void)panAction:(id)a0;
+- (double)oncePlayTime;
+- (void)pdpPlayer:(id)a0 didChangeStateTo:(unsigned long long)a1 preState:(unsigned long long)a2;
+- (void)resetSharedPlayerToOriginSuperView;
+- (void)updateMiniVideoWithPlayerView:(id)a0 videoFrameSize:(struct CGSize { double x0; double x1; })a1 videoSuperView:(id)a2 bottomRight:(struct CGPoint { double x0; double x1; })a3 fixSize:(BOOL)a4;
+- (void)muteAction;
+- (void)updatePlaybackTime:(double)a0;
+- (void)updatePlayButtonState;
+- (id)initWithBottomRight:(struct CGPoint { double x0; double x1; })a0 videoModel:(id)a1;
+- (id)initWithTopRight:(struct CGPoint { double x0; double x1; })a0;
+- (void)updateMiniVideoWithPlayerView:(id)a0 videoFrameSize:(struct CGSize { double x0; double x1; })a1 videoSuperView:(id)a2 fixSize:(BOOL)a3;
+- (void)setSmallVideoWindowTop:(double)a0;
+- (void)setLeftBottomText:(id)a0 leftOffset:(double)a1 hideMuteButton:(BOOL)a2;
+- (void)close;
+- (void).cxx_destruct;
+- (BOOL)play;
+- (BOOL)pause;
+- (void)closeAction;
+- (BOOL)stop;
+- (void)setHidden:(BOOL)a0;
+- (void)recover;
+- (void)setBackgroundImage:(id)a0;
+- (void)store;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)playAction;
+- (void)tapAction;
+
+@end

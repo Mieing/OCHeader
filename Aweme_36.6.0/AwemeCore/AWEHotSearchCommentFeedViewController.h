@@ -1,0 +1,71 @@
+@class UIView, NSString, AWEHotSearchCommentFeedPageContext, AWECommonFeedContainerViewController, AWEHotSearchCommentFeedDataController, AWEUILoadingView, NSMutableArray;
+
+@interface AWEHotSearchCommentFeedViewController : UIViewController
+
+@property (retain, nonatomic) AWECommonFeedContainerViewController *commonContainerVC;
+@property (retain, nonatomic) AWEHotSearchCommentFeedDataController *dataController;
+@property (retain, nonatomic) AWEHotSearchCommentFeedPageContext *context;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (nonatomic) BOOL hasInitFetched;
+@property (retain, nonatomic) NSMutableArray *displayItems;
+@property (nonatomic) BOOL hasScrolled;
+@property (nonatomic) BOOL hasExtendDiscussion;
+@property (nonatomic) double enterPageTime;
+@property (retain, nonatomic) UIView *networkErrorPage;
+@property (retain, nonatomic) UIView *emptyPage;
+@property (nonatomic) BOOL hasAppeared;
+@property (copy, nonatomic) NSString *responseStatusMsg;
+@property (nonatomic) long long tabType;
+@property (nonatomic) unsigned long long currState;
+@property (copy, nonatomic) id /* block */ dataInitFetchCompletionBlock;
+@property (copy, nonatomic) id /* block */ contextUpdateCompletionBlock;
+@property (nonatomic) BOOL isEmptyCommentCase;
+
+- (id)getScrollView;
+- (void)p_initialFetch;
+- (void)p_insertDisplayObjectsFromArray:(id)a0 animated:(BOOL)a1 intoIndex:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)p_addEmptyPage;
+- (void)p_removeErrorOrEmptyPageIfNeeded;
+- (void)updateContainerVC:(id)a0;
+- (void)insertPublishComment:(id)a0;
+- (void)p_configUIComponent;
+- (void)p_loadPlaceholderView;
+- (void)p_updateContextWithResponseModel:(id)a0;
+- (void)p_updateUserVoteWithUserVoteTags:(id)a0;
+- (id)p_durationKey;
+- (void)p_trackPageDurationAction;
+- (void)p_dataControllerLoadMoreWithCompletionBlock:(id /* block */)a0;
+- (double)p_bottomInsetWithNeedFooter:(BOOL)a0;
+- (void)p_didDeleteAweme:(id)a0;
+- (void)p_handleConnectionChanged:(id)a0;
+- (void)p_commentDeleteNotification:(id)a0;
+- (void)p_commentLikeActionNotification:(id)a0;
+- (void)p_didDeleteAwemeID:(id)a0 shouldSyncDataSource:(BOOL)a1;
+- (void)p_deleteItemAtIndex:(long long)a0;
+- (long long)p_findIndexForCommentInDataController:(id)a0;
+- (void)p_loadingViewStart:(BOOL)a0;
+- (void)p_clearSkeletonStyle;
+- (void)p_handleCommentWhenInitFetched;
+- (BOOL)p_haveInsertComment;
+- (void)p_insertCardModel:(id)a0 animated:(BOOL)a1;
+- (void)p_putCommentFirstIfNeeded;
+- (void)p_preLoadLatestData;
+- (void)p_insertAndDeleteModel;
+- (void)p_insertPublishComment:(id)a0 ordered:(BOOL)a1 completion:(id /* block */)a2;
+- (void)p_configEndRefreshFooter;
+- (void)p_loadMoreAddList:(id)a0 completion:(id /* block */)a1;
+- (id)p_updateCellModel:(id)a0;
+- (void)p_refreshTrackerPosition;
+- (void)p_configVoteInfoWithCardModel:(id)a0;
+- (void)p_hiddenScrollViewFooter;
+- (void)p_addNetworkErrorEmptyPage;
+- (id)initWithContext:(id)a0 tabType:(long long)a1;
+- (void)updateScrollState:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)p_addObservers;
+
+@end

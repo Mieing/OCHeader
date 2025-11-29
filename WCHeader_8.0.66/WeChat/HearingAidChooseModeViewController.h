@@ -1,0 +1,71 @@
+@class NSTimer, UIView, RoundButton, HearingAidChooseModePairView, UIScreenEdgePanGestureRecognizer, UIImageView, NSString, MMUILabel, AbandonTextView;
+
+@interface HearingAidChooseModeViewController : MMUIViewController <MMTipsViewControllerDelegate, PariViewDelegate, RoundButtonDelegate, AbandonTextViewDelegate>
+
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) UIView *chooseModeView;
+@property (retain, nonatomic) UIView *chooseModeViewAB;
+@property (retain, nonatomic) UIView *chooseModeViewCD;
+@property (retain, nonatomic) HearingAidChooseModePairView *pairAB;
+@property (retain, nonatomic) HearingAidChooseModePairView *pairCD;
+@property (nonatomic) unsigned long long audioA;
+@property (nonatomic) unsigned long long audioB;
+@property (nonatomic) unsigned long long audioC;
+@property (nonatomic) unsigned long long audioD;
+@property (retain, nonatomic) RoundButton *confirmBtn;
+@property (retain, nonatomic) UIImageView *confirmBtnImage;
+@property (retain, nonatomic) AbandonTextView *abandonBtn;
+@property (nonatomic) int isClickLeft;
+@property (nonatomic) int lastIsClickLeft;
+@property (nonatomic) unsigned char isAlready;
+@property (nonatomic) unsigned char currentIsAB;
+@property (retain, nonatomic) MMUILabel *tipsView;
+@property (nonatomic) BOOL isInit;
+@property (retain, nonatomic) NSTimer *hideTimer;
+@property (nonatomic) BOOL isAudioInterruption;
+@property (retain, nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgePanGesture;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithAudio1:(unsigned long long)a0 audio2:(unsigned long long)a1;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)initUI;
+- (void)initTitle;
+- (void)initChooseModeView;
+- (void)initConfrimButton;
+- (void)genGesture;
+- (void)genAbandonBtn;
+- (void)genTipsView;
+- (void)updateLayout;
+- (void)onPairABChoosed:(BOOL)a0;
+- (void)startCD:(BOOL)a0;
+- (void)onPairCDChoosed:(BOOL)a0;
+- (void)showTipsView:(id)a0;
+- (BOOL)useTransparentNavibar;
+- (BOOL)useBlackStatusbar;
+- (void)handleScreenEdgePanGesture:(id)a0;
+- (void)updateBtnBackGround:(BOOL)a0;
+- (void)viewDidBeInteractivePoped;
+- (void)onBackClick;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1;
+- (void)showTipsAboutVoiceChange;
+- (void)dataReport:(BOOL)a0 processResult:(int)a1 audioAutoPlay:(BOOL)a2;
+- (void)onReceiveTouch:(BOOL)a0;
+- (void)isAllPlayed:(BOOL)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (void)onResponseAudioInterruptionBegin;
+- (void)onResponseAudioInterruptionEnd;
+- (BOOL)judgeSelfIsPopVC;
+- (void)appDidEnterBackground;
+- (void)RoundButton_touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)RoundButton_touchesEnded:(id)a0 withEvent:(id)a1;
+- (void)AbandonTextView_touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)AbandonTextView_touchesEnded:(id)a0 withEvent:(id)a1;
+- (void).cxx_destruct;
+
+@end

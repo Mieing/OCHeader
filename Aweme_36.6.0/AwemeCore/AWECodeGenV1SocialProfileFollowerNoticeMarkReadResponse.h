@@ -1,0 +1,3 @@
+@interface AWECodeGenV1SocialProfileFollowerNoticeMarkReadResponse : AWEBaseResponseModel
+
+@end

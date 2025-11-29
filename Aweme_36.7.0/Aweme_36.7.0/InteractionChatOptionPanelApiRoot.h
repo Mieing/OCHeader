@@ -1,0 +1,3 @@
+@interface InteractionChatOptionPanelApiRoot : GPBRootObject
+
+@end

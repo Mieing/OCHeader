@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveRoomBattleThemeParam : IESLivePBBaseMessage
+
+@property (nonatomic) long long themeId;
+@property (nonatomic) int themeType;
+@property (copy, nonatomic) NSString *themeTitle;
+@property (copy, nonatomic) NSString *themeDescription;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface TIMXPBNConversationPingResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *messagesArray;
+@property (readonly, nonatomic) unsigned long long messagesArray_Count;
+@property (nonatomic) long long onlineCount;
+@property (nonatomic) BOOL hasOnlineCount;
+
++ (id)descriptor;
+
+@end

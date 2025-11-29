@@ -1,0 +1,10 @@
+@interface AWEFeedLRUNode : NSObject {
+    AWEFeedLRUNode *_preNode;
+    AWEFeedLRUNode *_nextNode;
+    id _key;
+    id _value;
+}
+
+- (void).cxx_destruct;
+
+@end

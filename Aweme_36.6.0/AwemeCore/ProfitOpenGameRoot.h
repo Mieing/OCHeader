@@ -1,0 +1,3 @@
+@interface ProfitOpenGameRoot : GPBRootObject
+
+@end

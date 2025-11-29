@@ -1,0 +1,3 @@
+@interface AWEMaskWindowTapGestureRecognizer : UITapGestureRecognizer
+
+@end

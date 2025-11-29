@@ -1,0 +1,3 @@
+@interface HTSLiveInteractEffectSyncdataRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveInteractionPlayBanRoot : GPBRootObject
+
+@end

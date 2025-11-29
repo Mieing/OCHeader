@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GetRecommendContentResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *recommendContentListArray;
+@property (readonly, nonatomic) unsigned long long recommendContentListArray_Count;
+
++ (id)descriptor;
+
+@end

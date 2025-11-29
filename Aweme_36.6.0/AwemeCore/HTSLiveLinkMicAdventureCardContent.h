@@ -1,0 +1,14 @@
+@class IESLiveAdventureUserInfo, NSMutableArray;
+
+@interface HTSLiveLinkMicAdventureCardContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveAdventureUserInfo *fromUser;
+@property (nonatomic) BOOL hasFromUser;
+@property (retain, nonatomic) IESLiveAdventureUserInfo *toUser;
+@property (nonatomic) BOOL hasToUser;
+@property (retain, nonatomic) NSMutableArray *cardListArray;
+@property (readonly, nonatomic) unsigned long long cardListArray_Count;
+
++ (id)descriptor;
+
+@end

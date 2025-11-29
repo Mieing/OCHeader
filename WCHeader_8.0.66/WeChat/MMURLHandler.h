@@ -1,0 +1,93 @@
+@class NSString, NSDictionary, NSMutableDictionary, UIViewController;
+
+@interface MMURLHandler : MMObject <WCActionSheetDelegate, MFMailComposeViewControllerDelegate, contactInfoDelegate, MMWebViewDelegate, IMsgRevokeExt> {
+    NSMutableDictionary *m_urlToViewController;
+    NSMutableDictionary *m_urlToBackupURL;
+}
+
+@property (nonatomic) BOOL isShowingSaftyTips;
+@property (retain, nonatomic) NSDictionary *extraInfo;
+@property (nonatomic) BOOL m_bPresentViewController;
+@property (nonatomic) BOOL m_bOpenInNewWindow;
+@property (weak, nonatomic) UIViewController *m_viewController;
+@property (nonatomic) BOOL m_isDisableShare;
+@property (nonatomic) BOOL m_shouldShowDomain;
+@property (nonatomic) BOOL m_disalbeStartLoadGetA8Key;
+@property (nonatomic) int m_urlSource;
+@property (nonatomic) unsigned int m_urlPermittedSet;
+@property (nonatomic) BOOL m_isShouldShowGoBackBtn;
+@property (retain, nonatomic) NSString *m_url;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedInstance;
++ (void)presentUrlWithoutShare:(id)a0;
++ (void)handleUrl:(id)a0 withBackupURL:(id)a1 withExtraInfo:(id)a2;
++ (BOOL)containsString:(id)a0 withRegex:(id)a1;
++ (BOOL)containsHTTPString:(id)a0;
++ (BOOL)containsHTTPSString:(id)a0;
++ (BOOL)containsLocalPathString:(id)a0;
++ (BOOL)containsWeixinString:(id)a0;
++ (BOOL)containsWXPayLinkString:(id)a0;
++ (BOOL)containsMoaString:(id)a0;
++ (BOOL)containEmailString:(id)a0;
++ (BOOL)containsPhoneLinkString:(id)a0;
++ (BOOL)containsTextLinkString:(id)a0;
++ (BOOL)containsAppStoreLinkString:(id)a0;
++ (BOOL)containsAppMusicLinkString:(id)a0;
++ (BOOL)containsApplePodcastsLinkString:(id)a0;
++ (BOOL)containsProtocalHead:(id)a0;
++ (id)grepString:(id)a0 withRegex:(id)a1;
++ (id)grepPhoneNumber:(id)a0;
++ (id)grepTextNumber:(id)a0;
++ (id)grepAppStoreIDFromUrl:(id)a0;
++ (id)grepSMSNumberAndBody:(id)a0;
++ (BOOL)canHandleNativeUrl:(id)a0;
+
+- (void)initData;
+- (id)init;
+- (id)getViewController;
+- (id)getNavigationController;
+- (void)popViewController:(id)a0;
+- (id)constructContactInfoView:(id)a0 withUserName:(id)a1;
+- (id)constructSetHeaderImageViewController:(id)a0;
+- (id)openQQMailPlugin:(id)a0;
+- (id)showBlackList:(id)a0;
+- (void)showAppStore;
+- (void)showAlert:(id)a0;
+- (id)webViewFailToLoad:(id)a0 Error:(id)a1;
+- (void)webViewReturn:(id)a0;
+- (void)handleInnerJumpURL:(id)a0;
+- (void)handleHttpURL:(id)a0 withExtraInfo:(id)a1;
+- (void)handleDeepLinkURL:(id)a0 withExtraInfo:(id)a1;
+- (void)handleEmailURL:(id)a0;
+- (void)handleLocalResource:(id)a0;
+- (BOOL)isInnerWXPayURL:(id)a0;
+- (BOOL)isInnerAppURL:(id)a0;
+- (BOOL)isSystemAppURL:(id)a0;
+- (void)handleInnerWXPayURL:(id)a0 withExtraInfo:(id)a1;
+- (void)handleInnerAppURL:(id)a0;
+- (void)handleSystemAppURL:(id)a0;
+- (void)handleOutterAppURL:(id)a0 withExtraInfo:(id)a1;
+- (void)showConfirmAlertViewWithTitle:(id)a0 andMessage:(id)a1 url:(id)a2;
+- (void)handleURL:(id)a0 withExtraInfo:(id)a1;
+- (id)handlePreviewURL:(id)a0 withExtraInfo:(id)a1;
+- (void)handleURL:(id)a0 withBackupURL:(id)a1 withExtraInfo:(id)a2;
+- (BOOL)isURLRegistered:(id)a0;
+- (void)writeEmailWithQQMail;
+- (void)writeEmailWithSystemMail;
+- (void)sendEmailTo:(id)a0 withSubject:(id)a1 withBody:(id)a2;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)mailComposeController:(id)a0 didFinishWithResult:(long long)a1 error:(id)a2;
+- (void)newMessageFromContactInfo:(id)a0;
+- (void)handleNativeUrl:(id)a0 withViewController:(id)a1;
+- (void)openWeixinHB;
+- (void)openDeviceRankView;
+- (void)openRankMyHomepage;
+- (void)nextFeedback:(id)a0;
+- (void)OnMsgRevoked:(id)a0 n64MsgId:(long long)a1;
+- (void).cxx_destruct;
+
+@end

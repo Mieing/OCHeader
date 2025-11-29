@@ -1,0 +1,3 @@
+@interface IESLiveKTVSearchView : UIView
+
+@end

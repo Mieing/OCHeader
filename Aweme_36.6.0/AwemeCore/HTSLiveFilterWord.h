@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveFilterWord : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (nonatomic) BOOL isSelected;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

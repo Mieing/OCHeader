@@ -1,0 +1,84 @@
+@class NSString, TempoFlexLayoutProxy;
+@protocol TempoFlexLayoutDataSource;
+
+@interface TempoFlexLayout : NSObject
+
+@property (readonly, nonatomic) struct YGNode { } *node;
+@property (copy, nonatomic) NSString *nodeID;
+@property (retain, nonatomic) TempoFlexLayoutProxy *layoutProxy;
+@property (weak, nonatomic) id<TempoFlexLayoutDataSource> dataSource;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } frame;
+@property (nonatomic, setter=setIncludedInLayout:) BOOL isIncludedInLayout;
+@property (nonatomic, setter=setEnabled:) BOOL isEnabled;
+@property (nonatomic) BOOL sizeToFits;
+@property (nonatomic) BOOL adjustBaseline;
+@property (nonatomic) int direction;
+@property (nonatomic) int flexDirection;
+@property (nonatomic) int justifyContent;
+@property (nonatomic) int alignContent;
+@property (nonatomic) int alignItems;
+@property (nonatomic) int alignSelf;
+@property (nonatomic) int position;
+@property (nonatomic) int flexWrap;
+@property (nonatomic) int overflow;
+@property (nonatomic) int display;
+@property (nonatomic) double flex;
+@property (nonatomic) double flexGrow;
+@property (nonatomic) double flexShrink;
+@property (nonatomic) struct YGValue { float x0; int x1; } flexBasis;
+@property (nonatomic) struct YGValue { float x0; int x1; } left;
+@property (nonatomic) struct YGValue { float x0; int x1; } top;
+@property (nonatomic) struct YGValue { float x0; int x1; } right;
+@property (nonatomic) struct YGValue { float x0; int x1; } bottom;
+@property (nonatomic) struct YGValue { float x0; int x1; } start;
+@property (nonatomic) struct YGValue { float x0; int x1; } end;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginLeft;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginTop;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginRight;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginBottom;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginStart;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginEnd;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginHorizontal;
+@property (nonatomic) struct YGValue { float x0; int x1; } marginVertical;
+@property (nonatomic) struct YGValue { float x0; int x1; } margin;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingLeft;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingTop;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingRight;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingBottom;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingStart;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingEnd;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingHorizontal;
+@property (nonatomic) struct YGValue { float x0; int x1; } paddingVertical;
+@property (nonatomic) struct YGValue { float x0; int x1; } padding;
+@property (nonatomic) double borderLeftWidth;
+@property (nonatomic) double borderTopWidth;
+@property (nonatomic) double borderRightWidth;
+@property (nonatomic) double borderBottomWidth;
+@property (nonatomic) double borderStartWidth;
+@property (nonatomic) double borderEndWidth;
+@property (nonatomic) double borderWidth;
+@property (nonatomic) struct YGValue { float x0; int x1; } width;
+@property (nonatomic) struct YGValue { float x0; int x1; } height;
+@property (nonatomic) struct YGValue { float x0; int x1; } minWidth;
+@property (nonatomic) struct YGValue { float x0; int x1; } minHeight;
+@property (nonatomic) struct YGValue { float x0; int x1; } maxWidth;
+@property (nonatomic) struct YGValue { float x0; int x1; } maxHeight;
+@property (nonatomic) double aspectRatio;
+@property (readonly, nonatomic) int resolvedDirection;
+@property (readonly, nonatomic) struct CGSize { double x0; double x1; } intrinsicSize;
+@property (readonly, nonatomic) unsigned long long numberOfChildren;
+@property (readonly, nonatomic) BOOL isLeaf;
+@property (readonly, nonatomic) BOOL isDirty;
+
++ (void)initialize;
+
+- (id)initWithNodeID:(id)a0;
+- (void)applyLayoutPreservingOrigin:(BOOL)a0 dimensionFlexibility:(long long)a1;
+- (void)applyLayoutPreservingOrigin:(BOOL)a0;
+- (struct CGSize { double x0; double x1; })calculateLayoutWithSize:(struct CGSize { double x0; double x1; })a0;
+- (void)applyLayout;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)markDirty;
+
+@end

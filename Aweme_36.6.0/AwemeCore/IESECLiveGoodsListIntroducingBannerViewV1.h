@@ -1,0 +1,71 @@
+@class UIImageView, IESECLiveGradientView, UILabel, IESECLiveContext, UIView, IESECLiveGoodsViewModel, NSString, IESECLiveListHotSaleView, IESECLiveGoodsTitleLabel, IESECLivePromotionCardBusinessParams, NSAttributedString, IESECLivePriceLabel, IESECLivePromotionCardConfigModel, IESECLiveStateBannerView;
+@protocol IESECLivePromotionCardViewActionDelegate, IESECLivePromotionCardBuyViewProtocol;
+
+@interface IESECLiveGoodsListIntroducingBannerViewV1 : UIView <IESECLiveListHotSaleViewDelegate, IESECLivePromotionCardViewProtocol>
+
+@property (retain, nonatomic) UIView *container;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) IESECLiveGoodsTitleLabel *titleLabel;
+@property (retain, nonatomic) IESECLivePriceLabel *priceLabel;
+@property (retain, nonatomic) UIView<IESECLivePromotionCardBuyViewProtocol> *buyButton;
+@property (retain, nonatomic) IESECLiveListHotSaleView *hotsaleView;
+@property (retain, nonatomic) IESECLiveStateBannerView *introducingView;
+@property (retain, nonatomic) IESECLiveGradientView *buyButtonGradientView;
+@property (retain, nonatomic) IESECLivePromotionCardConfigModel *configModel;
+@property (retain, nonatomic) IESECLiveContext *liveContext;
+@property (retain, nonatomic) IESECLivePromotionCardBusinessParams *bizParams;
+@property (retain, nonatomic) IESECLiveGoodsViewModel *goodsViewModel;
+@property (weak, nonatomic) id<IESECLivePromotionCardViewActionDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long viewStyle;
+@property (nonatomic) long long cardScene;
+@property (readonly, copy, nonatomic) NSAttributedString *priceAttributedText;
+@property (retain, nonatomic) UIView *goodsContainerView;
+@property (readonly, nonatomic) UILabel *indexLabel;
+@property (readonly, nonatomic) UIView *baseColorView;
+@property (readonly, nonatomic) UIView *coverContainer;
+
+- (void)trackShowEvent;
+- (void)getTagTrackModelsWithBlock:(id /* block */)a0;
+- (struct CGPoint { double x0; double x1; })addToCartButtonCenterToView:(id)a0;
+- (struct CGPoint { double x0; double x1; })addToCoverContainerCenterToView:(id)a0;
+- (void)updateCountDownModule:(id)a0;
+- (void)clickBlank;
+- (void)updateWithGoodsViewModel:(id)a0;
+- (void)updatePriceWithGoodsViewModelV1:(id)a0;
+- (void)updateCoverWithGoodsViewModelV1:(id)a0;
+- (void)updateTitleWithGoodsViewModelV1:(id)a0;
+- (void)updateBuyButtonWithGoodsViewModelV1:(id)a0;
+- (void)updateIntroducingViewWithGoodsViewModelV1:(id)a0;
+- (void)updateHotSaleViewWithGoodsViewModelV1:(id)a0;
+- (void)p_delegateDidShowViewWithType:(long long)a0 extraInfo:(id)a1;
+- (void)p_setBuyButtonEnabeled:(BOOL)a0 goodsViewModel:(id)a1;
+- (BOOL)p_buyButtonEnabled;
+- (void)hotsaleView:(id)a0 changeToState:(long long)a1 hotsaleInfo:(id)a2;
+- (void)p_delegateDidClickViewWithType:(long long)a0 extraInfo:(id)a1 completion:(id /* block */)a2;
+- (id)similarConfig;
+- (void)clickBuyButton;
+- (void)setupGoodsViewModel:(id)a0;
+- (void)appendGroupBuyAvatarWithURLString:(id)a0;
+- (void)setGoodsInfoSoldOutState;
+- (void)showFavoriteFlagIfNeeded;
+- (BOOL)isShowingReplayButton;
+- (BOOL)isShowingIntroducingView;
+- (BOOL)isShowingComboBuyView;
+- (id)getReplayButtonStatus;
+- (void)updateCloseViewType:(long long)a0;
+- (void)resizeIndexLabelInPlayback;
+- (void)setPlayBackCardStyle;
+- (void)setLiveReplayCardStyle;
+- (void)updatePlayBackRights:(BOOL)a0;
+- (void)setLiveSearchListCardStyle;
+- (id)initWithLiveContext:(id)a0 config:(id)a1 bizParams:(id)a2;
+- (void).cxx_destruct;
+- (void)hide;
+- (void)show;
+- (void)setupUI;
+
+@end

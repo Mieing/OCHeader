@@ -1,0 +1,3 @@
+@interface TIMXOTemplateQuery : TIMXOQuery
+
+@end

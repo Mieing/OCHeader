@@ -1,0 +1,76 @@
+@class MMRollableLabelView, MMUIButton, UIFont, UILabel, MMFinderLiveTaskId, MMFinderLiveGiftGoalModel, UIView, NSString, MMTimer, MMFinderLiveRewardGiftItem, MMFinderLiveSpinnerLabel, NSDateComponentsFormatter, UIImageView;
+@protocol MMFinderLiveGiftGoalViewDelegate, MMLiveRewardGiftSendingMoreLogicDelegate;
+
+@interface MMFinderLiveGiftGoalView : UIView <MMFinderLiveGiftResourceMgrExt, MMFinderLiveRewardRecievingLogicExt, MMLiveRewardGiftRecievingAnimationExt, MMFinderLiveGiftSendMoreBubbleHosting>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (retain, nonatomic) MMFinderLiveGiftGoalModel *model;
+@property (retain, nonatomic) MMTimer *countdownTimer;
+@property (retain, nonatomic) NSDateComponentsFormatter *countdownFormatter;
+@property (nonatomic) unsigned long long sendButtonState;
+@property (nonatomic) BOOL exposureReported;
+@property (nonatomic) BOOL isAnchorOrAssistant;
+@property (nonatomic) BOOL comboStaging;
+@property (retain, nonatomic) MMFinderLiveRewardGiftItem *currentComboGiftItem;
+@property (retain, nonatomic) NSString *currentComboId;
+@property (nonatomic) unsigned long long currentSendingCount;
+@property (nonatomic) BOOL isInterrupted;
+@property (nonatomic) BOOL useRapidComboRepeat;
+@property (retain, nonatomic) UIView *scaleContainer;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) UIImageView *thumbnailView;
+@property (retain, nonatomic) UIFont *countLabelsFont;
+@property (retain, nonatomic) UILabel *currentCountLabel;
+@property (retain, nonatomic) UILabel *slashLabel;
+@property (retain, nonatomic) UILabel *targetCountLabel;
+@property (retain, nonatomic) MMRollableLabelView *fulfilledHeaderLabel;
+@property (retain, nonatomic) MMRollableLabelView *descriptionLabel;
+@property (retain, nonatomic) UILabel *statusLabel;
+@property (retain, nonatomic) MMFinderLiveSpinnerLabel *statusCountdownSpinnerLabel;
+@property (retain, nonatomic) MMUIButton *sendButton;
+@property (retain, nonatomic) UIView *sendButtonBackgroundView;
+@property (retain, nonatomic) UIView *sendButtonBorderView;
+@property (weak, nonatomic) id<MMFinderLiveGiftGoalViewDelegate> delegate;
+@property (weak, nonatomic) id<MMLiveRewardGiftSendingMoreLogicDelegate> logicDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)dealloc;
+- (void)updateWithGoal:(id)a0;
+- (void)updateWithGoalImpl:(id)a0 raiseFulfilledEventOnCompletion:(BOOL)a1;
+- (void)revertStagedSendings;
+- (void)reportExposure;
+- (void)setEnableSendAgainWithGiftItem:(id)a0 comboId:(id)a1 targetHost:(unsigned long long)a2;
+- (void)closeCurrentGiftSendingBatchForTargetHost:(unsigned long long)a0;
+- (void)setInterruptedFlag:(BOOL)a0 targetHost:(unsigned long long)a1;
+- (void)sendFirstGiftComboCountDirectly:(unsigned long long)a0;
+- (struct CGSize { double x0; double x1; })sizeThatFits:(struct CGSize { double x0; double x1; })a0;
+- (void)layoutSubviews;
+- (void)onLiveGiftResDownloadCompleted:(id)a0 retry:(unsigned long long)a1 totalLength:(unsigned long long)a2 resType:(long long)a3 productId:(id)a4 downloadUrl:(id)a5;
+- (void)onReceivingGiftAnimationPlayCommand:(id)a0 forTaskId:(id)a1 vetoFlag:(BOOL *)a2;
+- (void)onGiftAnimationPlayCommandExecuted:(id)a0;
+- (void)onCloseTapped;
+- (void)onSendButtonTapped;
+- (void)onSendButtonHeld:(id)a0;
+- (void)onTimerTick;
+- (void)initializeComponents;
+- (void)setCurrentCountLabelText:(id)a0 animated:(BOOL)a1;
+- (void)updateDescriptionLabel;
+- (void)updateStatusLabel;
+- (void)setStatusCountdownSpinnerLabelText:(id)a0;
+- (void)updateSendButton;
+- (void)invokeSendButtonHoldRepeatAction;
+- (void)invokeSendButtonAnimationWithDuration:(double)a0;
+- (void)startContinuousSendButtonAnimation;
+- (void)startSendButtonAnimationWithDuration:(double)a0 repeatCount:(float)a1;
+- (void)stopSendButtonAnimation;
+- (void)resetSendButtonState;
+- (id)giftSentFlagsKv;
+- (void)setGiftSentForCurrentGoal;
+- (BOOL)giftSentForCurrentGoal;
+- (void).cxx_destruct;
+
+@end

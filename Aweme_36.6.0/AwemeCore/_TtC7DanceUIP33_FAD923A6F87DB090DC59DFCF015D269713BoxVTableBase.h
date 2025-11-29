@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_FAD923A6F87DB090DC59DFCF015D269713BoxVTableBase : _TtCs12_SwiftObject
+
+@end

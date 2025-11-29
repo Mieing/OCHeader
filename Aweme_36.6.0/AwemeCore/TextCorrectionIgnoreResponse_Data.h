@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface TextCorrectionIgnoreResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int statusCode;
+@property (copy, nonatomic) NSString *statusMsg;
+
++ (id)descriptor;
+
+@end

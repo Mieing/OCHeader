@@ -1,0 +1,73 @@
+@class MMWebCanvasRenderJsEngine, NSMutableDictionary, MMUIViewController, MemoryMappedKV, NSString, MMWebCanvasPkgInfo, MMWebCanvasLogicJsEngine;
+@protocol WXCustomWebViewControllerProtocol;
+
+@interface MMWebCanvasJsEngineMgr : MMUserService <MMWebCanvasLogicJsEngineDelegate, MMWebCanvasRenderJsEngineDelegate, WCMainWindowExt, MMServiceProtocol>
+
+@property (retain, nonatomic) MMWebCanvasLogicJsEngine *logicEngine;
+@property (retain, nonatomic) MMWebCanvasRenderJsEngine *renderEngine;
+@property (retain, nonatomic) MMWebCanvasPkgInfo *canvasPkgInfo;
+@property (weak, nonatomic) MMUIViewController<WXCustomWebViewControllerProtocol> *contextViewController;
+@property (retain, nonatomic) NSMutableDictionary *logicClientAddQueueMap;
+@property (retain, nonatomic) MemoryMappedKV *layoutDataSlotKv;
+@property (nonatomic) BOOL isSettingUpLogicEngine;
+@property (nonatomic) BOOL reflowWhenEnterForeground;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)observeKeyPaths:(id)a0 selector:(SEL)a1;
+- (void)dealloc;
+- (void)setupEngine;
+- (void)setupLogicJsEngine:(id /* block */)a0;
+- (void)setupRenderJsEngine;
+- (void)releaseAllEngine;
+- (BOOL)isClientContextActive:(id)a0;
+- (id)getClientContextPerfInfo:(id)a0;
+- (BOOL)isClientContextInLaunchWaitingQueue:(id)a0;
+- (void)addOrUpdateClientContext:(id)a0 viewDelegate:(id)a1 deleteHandler:(id /* block */)a2;
+- (void)addOrUpdateClientContext:(id)a0 viewDelegate:(id)a1 deleteHandler:(id /* block */)a2 fromPreload:(BOOL)a3;
+- (void)addOrUpdateClientContext:(id)a0 viewDelegate:(id)a1 prepareCompletion:(id /* block */)a2 deleteHandler:(id /* block */)a3 fromPreload:(BOOL)a4;
+- (void)resetClientContextViewDelegateAndCallback:(id)a0 fromViewDelegate:(id)a1;
+- (void)checkGetLogicClientWaitingQueue;
+- (id)createCanvasViewWithItem:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 viewDelegate:(id)a2;
+- (void)updateCanvasRenderClientWithCanvasId:(id)a0 withViewDelegate:(id)a1;
+- (BOOL)isMediaPlaying;
+- (id)getContextViewController;
+- (void)resetContextViewController:(id)a0;
+- (double)getCanvasLayoutHeightWithId:(id)a0;
+- (id)getLayoutDataForCanvasId:(id)a0;
+- (void)saveLayoutData:(id)a0 forCanvasId:(id)a1;
+- (void)saveCanvasHeight:(double)a0 forCanvasId:(id)a1;
+- (void)clearAllLayoutData;
+- (void)attatch:(id)a0;
+- (void)detach:(id)a0;
+- (void)pause;
+- (void)pause:(id)a0;
+- (void)resume;
+- (void)resume:(id)a0;
+- (void)stop;
+- (void)stop:(id)a0;
+- (void)repaint:(id)a0;
+- (void)destory:(id)a0 viewDelegate:(id)a1;
+- (void)enterHotZone:(id)a0;
+- (void)exitHotZone:(id)a0;
+- (void)onScroll:(id)a0;
+- (void)reflow:(id)a0;
+- (void)reflowAllClient;
+- (void)enterPage;
+- (void)exitPage;
+- (void)enterBackground;
+- (void)enterForeground;
+- (id)basePkgInfo;
+- (id)bizPkgInfo;
+- (void)didTakeScreenshot;
+- (void)onLogicJsEngineTransferMessage:(id)a0 targetOrigin:(id)a1;
+- (void)onRenderJsEngineTransferMessage:(id)a0 targetOrigin:(id)a1;
+- (void)onTouchEvent:(id)a0 withEvent:(id)a1 canvasView:(id)a2;
+- (void)onFirstFrameRendered:(id)a0;
+- (void)mm_onColorAppearanceDidChange;
+- (void).cxx_destruct;
+
+@end

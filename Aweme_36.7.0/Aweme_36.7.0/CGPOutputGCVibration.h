@@ -1,0 +1,9 @@
+@interface CGPOutputGCVibration : GPBMessage
+
+@property (nonatomic) int index;
+@property (nonatomic) int l;
+@property (nonatomic) int r;
+
++ (id)descriptor;
+
+@end

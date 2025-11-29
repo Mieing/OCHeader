@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESECUpdatedCouponInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *tag;
+@property (copy, nonatomic) NSString *couponURL;
+@property (copy, nonatomic) NSString *couponApplet;
+@property (nonatomic) BOOL isValid;
+@property (copy, nonatomic) NSString *couponMetaId;
+
++ (id)descriptor;
+
+@end

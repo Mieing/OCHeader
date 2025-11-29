@@ -1,0 +1,76 @@
+@class IESLiveLayoutPlaceholderView, IESLiveInteractionLayout, IESLiveRightBottomMutuallyExclusiveItem, UITapGestureRecognizer, IESLiveInteractThemeManager, IESLiveAudiencePauseTipView, NSString, IESLiveBigPartyEqualGuestListViewModel, IESLiveAudioBackgroundViewModel, HTSEventContext, IESLiveAudioBackgroundView, IESLiveComponentContext, IESLiveBigPartyEqualGuestListView;
+@protocol IESLiveMultiAudioSceneControllerDataSource, IESLiveSubscription, IESLiveMultiAudioSceneControllerDelegate, IESLiveRoomService, IESLiveInteractionLinkerService;
+
+@interface IESLiveMultiAudioBigPartyStageSceneController : NSObject <IESLiveBigPartyEqualGuestListViewDataSource, IESLiveBigPartyEqualGuestsListViewDelegate, IESLiveInteractionLinkerServiceAction, IESLiveInteractEditSeatReaction, IESLiveBigPartyEqualGuestListViewBackgroundUpdator, HTSLiveCleanScreenActions, IESLiveSocialInteractAction, IESLiveMultiAudioSceneControllerProtocol>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (weak, nonatomic) id<IESLiveMultiAudioSceneControllerDataSource> dataSource;
+@property (weak, nonatomic) id<IESLiveMultiAudioSceneControllerDelegate> delegate;
+@property (retain, nonatomic) IESLiveBigPartyEqualGuestListViewModel *guestListViewModel;
+@property (retain, nonatomic) IESLiveBigPartyEqualGuestListView *guestListView;
+@property (retain, nonatomic) UITapGestureRecognizer *avatarTapGestureRecognizer;
+@property (retain, nonatomic) IESLiveAudioBackgroundView *bgView;
+@property (retain, nonatomic) IESLiveAudioBackgroundViewModel *bgViewModel;
+@property (retain, nonatomic) IESLiveLayoutPlaceholderView *placeholderView;
+@property (retain, nonatomic) IESLiveRightBottomMutuallyExclusiveItem *bigPartyItem;
+@property (retain, nonatomic) id<IESLiveSubscription> anchorAfkDisposable;
+@property (retain, nonatomic) IESLiveAudiencePauseTipView *indicatorView;
+@property (retain, nonatomic) IESLiveInteractThemeManager *manager;
+@property (weak, nonatomic) id<IESLiveInteractionLinkerService> linker;
+@property (retain, nonatomic) IESLiveInteractionLayout *layout;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)roomModel;
+- (void)interactionModeStartedWithLayout:(id)a0;
+- (void)linkmicDidStart;
+- (void)updateWithTheme:(id)a0;
+- (void)changeCleanScreenMode:(long long)a0;
+- (id)allSeatProviderViews;
+- (id)emojiContainerForUserID:(id)a0 isInteractiveEmoji:(BOOL)a1;
+- (void)updateGuestListWithAppData:(id)a0;
+- (void)willLoad;
+- (void)updateAnchorInfo:(id)a0;
+- (BOOL)isLinking;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })frameOfSlotView;
+- (id)guestBattleUIAdaptor;
+- (id)teamFightDelegate;
+- (BOOL)isCustomizeAudioRoom;
+- (id)emojiContainerForUserID:(id)a0;
+- (void)interactionLinkerService:(id)a0 serverUserListDidChangeFrom:(id)a1 to:(id)a2;
+- (void)interactionLinkerService:(id)a0 userStateDidChangedFrom:(long long)a1 to:(long long)a2;
+- (void)joinIconDidChangeWithURLs:(id)a0;
+- (void)willUnLoad;
+- (void)interactionDidUpdateAllSeats:(id)a0;
+- (void)guestListView:(id)a0 didTapGuestInfoView:(id)a1;
+- (void)guestListView:(id)a0 didTapAcceptLink:(id)a1;
+- (void)updateBackgroundViewWithCurrentLayout;
+- (void)loadGuestListView;
+- (BOOL)isRadioChatRoom;
+- (void)p_showPublicScreenPlaceHolder;
+- (void)sceneControllerInit;
+- (void)sceneWillLoad;
+- (void)sceneWillUnload;
+- (void)updateGuestList:(id)a0;
+- (void)updateRootPanelViewModel:(id)a0;
+- (void)didClickTopRightBtn;
+- (BOOL)couldChangePosition;
+- (void)linkmicDidLeaveChannel;
+- (BOOL)hasEmptySeat;
+- (void)handleUserListChange:(id)a0;
+- (void)addRadioAvatarClickEvent;
+- (void)getTheme;
+- (void)p_clearPublicScreenPlaceHolder;
+- (void)removeRadioAvatarClickEvent;
+- (void)updateAnchorAfkObserveIfNeed;
+- (void)didTapRadioAvatar;
+- (id)anchorSeatView;
+- (void).cxx_destruct;
+- (BOOL)isAnchor;
+- (id)initWithDataSource:(id)a0 delegate:(id)a1;
+
+@end

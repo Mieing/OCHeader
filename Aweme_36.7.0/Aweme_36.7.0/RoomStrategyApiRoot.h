@@ -1,0 +1,3 @@
+@interface RoomStrategyApiRoot : GPBRootObject
+
+@end

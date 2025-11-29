@@ -1,0 +1,15 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveChatMatchGroupInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *groupId;
+@property (nonatomic) long long tagId;
+@property (nonatomic) long long disbandTime;
+@property (nonatomic) int status;
+@property (retain, nonatomic) NSMutableArray *groupUserListArray;
+@property (readonly, nonatomic) unsigned long long groupUserListArray_Count;
+@property (nonatomic) long long version;
+
++ (id)descriptor;
+
+@end

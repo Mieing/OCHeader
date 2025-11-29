@@ -1,0 +1,16 @@
+@class NSString, HTSLiveRoomBattleThemeParam;
+
+@interface HTSLiveRoomBattleSettingContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long battleDuration;
+@property (nonatomic) BOOL acceptInvite;
+@property (nonatomic) BOOL onlyAcceptFollowingInvite;
+@property (nonatomic) BOOL notAcceptLessThanThreeLinkedInvite;
+@property (retain, nonatomic) HTSLiveRoomBattleThemeParam *roomBattleThemeParam;
+@property (nonatomic) BOOL hasRoomBattleThemeParam;
+@property (copy, nonatomic) NSString *introductionContent;
+@property (nonatomic) int scoreType;
+
++ (id)descriptor;
+
+@end

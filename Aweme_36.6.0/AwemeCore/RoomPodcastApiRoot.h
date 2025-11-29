@@ -1,0 +1,3 @@
+@interface RoomPodcastApiRoot : GPBRootObject
+
+@end

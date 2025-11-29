@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESECBarrageBuyInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *nickName;
+@property (nonatomic) long long purchaseCnt;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *icon;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@interface HTSLiveStreamVideoMeta_StreamLocation : IESLivePBBaseMessage
+
+@property (nonatomic) long long offset;
+@property (nonatomic) long long timestamp;
+
++ (id)descriptor;
+
+@end

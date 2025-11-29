@@ -1,0 +1,3 @@
+@interface AWEMusicLyricsConst : NSObject
+
+@end

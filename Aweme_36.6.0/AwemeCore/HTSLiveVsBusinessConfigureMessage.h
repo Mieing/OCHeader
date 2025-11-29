@@ -1,0 +1,14 @@
+@class HTSLiveBusinessConfigure, HTSLiveCommon;
+
+@interface HTSLiveVsBusinessConfigureMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveBusinessConfigure *businessConfigure;
+@property (nonatomic) BOOL hasBusinessConfigure;
+@property (nonatomic) BOOL allInfo;
+@property (nonatomic) long long scatterTime;
+
++ (id)descriptor;
+
+@end

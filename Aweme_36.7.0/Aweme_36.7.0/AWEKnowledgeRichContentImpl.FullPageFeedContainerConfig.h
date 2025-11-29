@@ -1,0 +1,3 @@
+@interface AWEKnowledgeRichContentImpl.FullPageFeedContainerConfig : AWEKnowledgeSwiftBasic.FullPageContainerConfig
+
+@end

@@ -1,0 +1,88 @@
+@class ACCLyricsStickerHandler, ACCEditLyricsStickerViewController, NSString, ACCEditLyricStickerViewModel, AWEEditStickerHintView;
+@protocol ACCStickerServiceProtocol, ACCSelectTemplateServiceProtocol, ACCEditCutMusicServiceProtocol, ACCEditorRecoverServiceProtocol, ACCTextStickerServiceProtocol, ACCEditMusicServiceProtocol, ACCEditorOneClickFilmingExitServiceProtocol, ACCStickerPanelServiceProtocol, ACCEditVideoFilterServiceProtocol, ACCEditViewContainer, ACCEditTransitionServiceProtocol, ACCEditorDraftService, ACCEditServiceProtocol, AWEStudioEditMusicFeaturePublicAPI;
+
+@interface ACCEditLyricStickerComponent : ACCFeatureComponent <ACCEditLyricsStickerDatasource, ACCEditLyricsStickerDelegate, ACCStickerPannelObserver, ACCDraftResourceRecoverProtocol, ACCStickerMigrationProtocol>
+
+@property (retain, nonatomic) ACCLyricsStickerHandler *lyricsStickerHandler;
+@property (nonatomic) BOOL isFirstTimeToCallAddLyricOnEditPageShowWithMusicId;
+@property (nonatomic) BOOL isFirstTimeToCallPresentMusicStickerSearchVCFromLyricEdit;
+@property (nonatomic) BOOL isRecordLyricSticker;
+@property (retain, nonatomic) ACCEditLyricsStickerViewController *lyricStickerViewController;
+@property (copy, nonatomic) NSString *lyricStickerChallengeId;
+@property (retain, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (nonatomic) BOOL isFromMusicPanel;
+@property (retain, nonatomic) ACCEditLyricStickerViewModel *viewModel;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCEditorDraftService> draftService;
+@property (weak, nonatomic) id<ACCStickerServiceProtocol> stickerService;
+@property (weak, nonatomic) id<ACCEditCutMusicServiceProtocol> cutMusicService;
+@property (weak, nonatomic) id<ACCEditMusicServiceProtocol> musicService;
+@property (weak, nonatomic) id<ACCStickerPanelServiceProtocol> stickerPanelService;
+@property (weak, nonatomic) id<ACCSelectTemplateServiceProtocol> selectTemplateService;
+@property (weak, nonatomic) id<ACCEditTransitionServiceProtocol> transitionService;
+@property (weak, nonatomic) id<ACCEditVideoFilterServiceProtocol> filterService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmingExitServiceProtocol> oneClickFilmExitService;
+@property (weak, nonatomic) id<ACCEditorRecoverServiceProtocol> recoverService;
+@property (weak, nonatomic) id<ACCTextStickerServiceProtocol> textStickerService;
+@property (weak, nonatomic) id<AWEStudioEditMusicFeaturePublicAPI> musicFeatureAPI;
+@property (retain, nonatomic) AWEEditStickerHintView *hintView;
+@property (nonatomic) BOOL isKaraoke;
+@property (nonatomic) BOOL discardUnselectTrackEvent;
+@property (retain, nonatomic) NSString *coordinateRatioString;
+@property (copy, nonatomic) id /* block */ dismissPanelHandle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)updateUserInfo:(id *)a0 repoModel:(id)a1 byCrossPlatformSlot:(id)a2;
++ (BOOL)fillCrossPlatformStickerByUserInfo:(id)a0 repository:(id)a1 context:(id)a2 sticker:(id *)a3;
++ (void)updateRelatedResourcesFor:(id)a0 withPublishModel:(id)a1 completion:(id /* block */)a2;
++ (void)updateWithDownloadedEffects:(id)a0 publishViewModel:(id)a1 completion:(id /* block */)a2;
+
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)bindViewModel;
+- (id)serviceBinding;
+- (void)p_trackEvent:(id)a0 params:(id)a1;
+- (void)bindServices:(id)a0;
+- (BOOL)handleSelectSticker:(id)a0 fromTab:(id)a1 willSelectHandle:(id /* block */)a2 dismissPanelHandle:(id /* block */)a3;
+- (unsigned long long)stickerPriority;
+- (void)editLyricsViewController:(id)a0 addLyricsSticker:(id)a1 path:(id)a2 tabName:(id)a3 completion:(id /* block */)a4;
+- (void)editLyricsViewController:(id)a0 didSelectMusic:(id)a1 error:(id)a2;
+- (void)p_removeMusicLyricSticker;
+- (void)editLyricsViewControllerShowAudioClipView:(id)a0;
+- (void)editLyricsViewControllerClipMusic:(struct _HTSAudioRange { double x0; double x1; })a0 repeatCount:(long long)a1;
+- (void)p_updateMusicLyricStickerAudioRange:(struct _HTSAudioRange { double x0; double x1; })a0;
+- (void)editLyricsViewControllerAddAudioClipView:(id)a0;
+- (void)editLyricsViewControllerRemoveMusicLyricSticker:(id)a0;
+- (void)editLyricsViewControllerDidDismiss:(id)a0;
+- (void)p_didAddMusic:(id)a0 withRemoveLyricSticker:(BOOL)a1;
+- (BOOL)supportLyricSticker;
+- (void)p_dismissHintTextWithAnimation:(BOOL)a0;
+- (void)p_removeBindChallenge;
+- (void)p_addLyricStickerFromMusicPanelWithMusic:(id)a0 coordinateRatio:(id)a1;
+- (void)p_recoveryLyricsSticker;
+- (void)p_recoveryLyricsStickerIfNeeded;
+- (void)p_downloadFontForLyricSticker;
+- (void)p_addLyricOnEditPageShowWithMusicId:(id)a0 baseMusicModel:(id)a1;
+- (void)p_updateFontIfNeeded;
+- (void)p_showLyricsStickerHint;
+- (void)p_addLyricsSticker:(id)a0 path:(id)a1 tabName:(id)a2 completion:(id /* block */)a3;
+- (void)p_addLyricsSticker:(id)a0 path:(id)a1 tabName:(id)a2 locationModel:(id)a3 effectInfos:(id)a4 isFromMusicShare:(BOOL)a5 completion:(id /* block */)a6;
+- (void)p_bindChallengeWithChallengeId:(id)a0;
+- (void)p_applyLyricsSticker:(long long)a0 isFromMusicShare:(BOOL)a1;
+- (void)p_checkMusicOrShowLyricMusicViewControllerWithIsFromMusicShare:(BOOL)a0 Completion:(id /* block */)a1;
+- (void)p_updateEditLyricsViewControllerWithStickerId:(long long)a0;
+- (void)p_checkMusicOrShowLyricMusicViewControllerWithMusicModel:(id)a0 isFromMusicShare:(BOOL)a1 completion:(id /* block */)a2;
+- (void)p_addLyricOnEditPageShowWithMusicModel:(id)a0;
+- (id)p_applyLyricsStickerWithId:(long long)a0 props:(id)a1 editSize:(struct CGSize { double x0; double x1; })a2 isFromMusicShare:(BOOL)a3 configBlock:(id /* block */)a4;
+- (void)p_recoveryLyricsStickerWithStickerInfo:(id)a0;
+- (void)p_showHintViewWithStickerWrapperView:(id)a0;
+- (void)p_dismissHintView;
+- (void)p_startEditLyricSticker:(long long)a0;
+- (void)p_addLyricStickerFromExpressWithLyricsEditorConfig:(id)a0;
+- (void)p_setLyricStickerIDInPublishModel;
+- (void).cxx_destruct;
+
+@end

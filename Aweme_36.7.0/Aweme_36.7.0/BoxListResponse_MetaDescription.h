@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface BoxListResponse_MetaDescription : IESLivePBBaseMessage
+
+@property (nonatomic) long long giftId;
+@property (nonatomic) long long number;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (copy, nonatomic) NSString *text;
+
++ (id)descriptor;
+
+@end

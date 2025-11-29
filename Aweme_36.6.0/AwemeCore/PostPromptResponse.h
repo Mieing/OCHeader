@@ -1,0 +1,10 @@
+@class PromptInfo;
+
+@interface PostPromptResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PromptInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

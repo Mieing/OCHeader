@@ -1,0 +1,12 @@
+@class NSString, HTSLiveText;
+
+@interface HTSLiveDIYPageEnterButton : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveText *text;
+@property (nonatomic) BOOL hasText;
+@property (copy, nonatomic) NSString *schema;
+@property (nonatomic) BOOL locked;
+
++ (id)descriptor;
+
+@end

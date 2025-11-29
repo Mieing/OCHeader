@@ -1,0 +1,3 @@
+@interface IESECPDPVideoPlayerPlayStrategyService : NSObject
+
+@end

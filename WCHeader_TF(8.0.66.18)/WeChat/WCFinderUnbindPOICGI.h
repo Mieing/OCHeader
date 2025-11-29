@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface WCFinderUnbindPOICGI : WCFinderBaseCgi
+
+@property (retain, nonatomic) NSString *poiId;
+@property (retain, nonatomic) NSString *finderUsername;
+@property (copy, nonatomic) id /* block */ successBlock;
+@property (copy, nonatomic) id /* block */ failureBlock;
+
+- (id)initWithId:(id)a0 finderUsername:(id)a1 successBlock:(id /* block */)a2 failureBlock:(id /* block */)a3;
+- (void)createRequest;
+- (void)didGetResponse:(id)a0;
+- (void)finderCgiDidFailWithError:(id)a0 response:(id)a1;
+- (void).cxx_destruct;
+
+@end

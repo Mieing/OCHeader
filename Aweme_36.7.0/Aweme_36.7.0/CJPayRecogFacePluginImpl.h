@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface CJPayRecogFacePluginImpl : NSObject <CJPaySDKHTTPRequestCustomHeaderProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)registerPlugin;
++ (id)commonCJPaySDKInfoString;
++ (id)p_getFaceRecogSupportStr;
++ (void)appendCustomRequestHeaderFor:(id)a0;
+
+
+@end

@@ -1,0 +1,72 @@
+@class WCPayGPCustomizeLaunchCgi, NSString, WCPaySolitairePageSheet, NSMutableArray;
+@protocol WCPayGPLaunchControlLogicDelegate;
+
+@interface WCPayGPLaunchControlLogic : WCPayControlLogic <WCPayGPSelectMemberControllerDelegate, PBMessageObserverDelegate, WCBaseControlLogicDeleagte, WCPayGPMemberFillMoneyControllerDelegate, ICdnComMgrExt, WCPayGPCustomizeLaunchCgiDelegate, WCPayGPLaunchViewControllerV2Delegate, WCPaySolitairePageSheetDelegate, SolitaireDisplayViewControllerDelegate>
+
+@property (nonatomic) BOOL bEnableReportLocation;
+@property (nonatomic) BOOL bEnableReportSSID;
+@property (nonatomic) unsigned long long launchTimeStamp;
+@property (retain, nonatomic) NSMutableArray *solitaireList;
+@property (retain, nonatomic) WCPaySolitairePageSheet *solitairePageSheet;
+@property (weak, nonatomic) id<WCPayGPLaunchControlLogicDelegate> launchDelegate;
+@property (retain, nonatomic) NSString *currentUploadCliMsgId;
+@property (retain, nonatomic) WCPayGPCustomizeLaunchCgi *customizeLaunchCgi;
+@property (nonatomic) BOOL bIsLaunchSucc;
+@property (retain, nonatomic) NSString *launchBillNo;
+@property (nonatomic) long long launchPayerCount;
+@property (nonatomic) BOOL bIsSoliThemeCut;
+@property (retain, nonatomic) NSString *soliMemContentInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithChatroomContact:(id)a0 fromScene:(unsigned long long)a1;
+- (id)initWithChatroomContact:(id)a0 fromScene:(unsigned long long)a1 amount:(long long)a2 title:(id)a3;
+- (id)initWithQueryPfInfoData:(id)a0;
+- (void)setLaunchLogicDelegate:(id)a0;
+- (void)stopLogic;
+- (void)startLogic;
+- (void)setupGroupPayOperationData;
+- (void)loadConfigDataCache;
+- (void)setupPfData;
+- (void)reportLocationAndWifi;
+- (void)onWCPayGPLaunchViewControllerCancel;
+- (void)onWCPayGPLaunchVCClickSelectMemberBtn:(id)a0 withIgnoreContact:(id)a1 withSelectMemberSource:(unsigned long long)a2;
+- (void)onWCPayGPLaunchVCClickToMemberFillMoneyMode;
+- (void)onWCPayGPLaunchVCClickToMemberFillMoneyVCWithSelectedContact:(id)a0 withUserPayAmountDict:(id)a1;
+- (id)getGroupPayReportData:(unsigned long long)a0 launchTheme:(id)a1;
+- (void)launchCommonAARequestWithMemberCount:(unsigned int)a0 perMemberAmount:(unsigned long long)a1 activityTheme:(id)a2 payerUsernameArray:(id)a3;
+- (void)launchActivityAARequestWithActivityTheme:(id)a0 totalAmount:(unsigned long long)a1 payerItems:(id)a2;
+- (void)launchCustomizeAARequestWithActivityTheme:(id)a0;
+- (void)onWCPayGPLaunchVCClickOrderHistoryEntry;
+- (void)onWCPayGPLaunchVCNeedUploadImage:(id)a0;
+- (void)continueUploadCdnWithClientMsgId:(id)a0 filePath:(id)a1;
+- (void)OnCdnUpload:(id)a0;
+- (void)onWCPayGPSelectViewControllerCancel;
+- (void)onWCPayGPSelectViewControllerFinish:(id)a0;
+- (void)onWCPayGPMemberFillMoneyControllerCancel;
+- (void)onWCPayGPMemberFillMoneyControllerBackWithSelectContact:(id)a0 withUserPayAmountDict:(id)a1;
+- (void)sendGroupPaySvrConfigRequest;
+- (void)onGetGroupPaySvrConfigResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)onGetCommonAALaunchResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)onGetActivityAALaunchResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)onGetCustomizeLaunchResp:(id)a0;
+- (void)addAAC2CMsgWithMsgContent:(id)a0;
+- (void)saveGroupPaySvrConfig:(id)a0;
+- (void)dismissAndStopLogic;
+- (id)genWCRealnameInfoFromRealnameItem:(id)a0;
+- (void)openH5WithUrl:(id)a0;
+- (void)notifyViewControllerAfterLaunchSucc;
+- (BOOL)showImportFromSolitaireEntry;
+- (void)onWCPayGPLaunchVCClickImportFromSolitaire;
+- (void)showSolitairePageSheet;
+- (void)onSolitairePageSheetClickCancel;
+- (void)onSolitairePageSheetClickShowDetail:(id)a0;
+- (void)onSolitairePageSheetClickImport:(id)a0;
+- (void)onSolitaireDisplayViewControllerDismiss;
+- (void).cxx_destruct;
+
+@end

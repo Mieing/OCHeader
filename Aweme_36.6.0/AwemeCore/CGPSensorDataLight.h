@@ -1,0 +1,7 @@
+@interface CGPSensorDataLight : GPBMessage
+
+@property (nonatomic) int luminance;
+
++ (id)descriptor;
+
+@end

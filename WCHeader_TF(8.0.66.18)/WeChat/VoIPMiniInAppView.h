@@ -1,0 +1,70 @@
+@class UIView, XImageViewRenderer, MultiTalkHDHeadView, VoIPHeadImageBlurView, UIButton, VOIPVideoRender, VoipMinimizeView, CContact, UILabel;
+@protocol VoIPMiniInAppViewDelegate;
+
+@interface VoIPMiniInAppView : UIView
+
+@property (retain, nonatomic) UIView *mainView;
+@property (retain, nonatomic) VoipMinimizeView *minimizeView;
+@property (retain, nonatomic) VOIPVideoRender *m_peerRender;
+@property (retain, nonatomic) XImageViewRenderer *rciLocalRenderer;
+@property (retain, nonatomic) XImageViewRenderer *rciRemoteRenderer;
+@property (retain, nonatomic) UIView *m_peerRenderView;
+@property (retain, nonatomic) VOIPVideoRender *m_selfRender;
+@property (retain, nonatomic) UIView *m_selfRenderView;
+@property (retain, nonatomic) MultiTalkHDHeadView *headImageView;
+@property (retain, nonatomic) VoIPHeadImageBlurView *localHeadImageBlurView;
+@property (retain, nonatomic) VoIPHeadImageBlurView *remoteHeadImageBlurView;
+@property (retain, nonatomic) UIButton *mainButton;
+@property (retain, nonatomic) UIView *speratorLineView;
+@property (retain, nonatomic) UIView *extendView;
+@property (retain, nonatomic) UILabel *extendLabel;
+@property (retain, nonatomic) VoipMinimizeView *extendMinimizeView;
+@property (retain, nonatomic) UIButton *extendButton;
+@property (weak, nonatomic) id<VoIPMiniInAppViewDelegate> delegate;
+@property (retain, nonatomic) CContact *remoteContact;
+@property (nonatomic) BOOL isAudioMode;
+@property (nonatomic) BOOL isLocalCaptureBack;
+@property (nonatomic) BOOL isLocalCaptureSuspend;
+@property (nonatomic) BOOL isRemoteCaptureSuspend;
+@property (nonatomic) BOOL isSplit;
+@property (nonatomic) BOOL isSplitLocalOnTop;
+@property (nonatomic) unsigned long long talkingStatus;
+@property (nonatomic) unsigned long long extendStatus;
+@property (nonatomic) double rotateDegree;
+@property (nonatomic) BOOL isLocalRendered;
+@property (nonatomic) BOOL isRemoteRendered;
+@property (nonatomic) BOOL isOnLeftSide;
+
+- (id)mainRender;
+- (id)smallRender;
+- (id)localViewRenderer;
+- (id)remoteViewRenderer;
+- (void)reset;
+- (void)setupDuration:(double)a0;
+- (void)updateDescMode:(unsigned long long)a0 withDisplayTime:(double)a1;
+- (void)clearDesc;
+- (void)layoutContentView;
+- (void)layoutMinimizeView;
+- (void)layoutPeerRenderView;
+- (void)layoutSelfRenderView;
+- (void)layoutHeadImageView;
+- (void)layoutLocalHeadImageBlurView;
+- (void)layoutRemoteHeadImageBlurView;
+- (void)layoutMainButton;
+- (void)onMainButtonClick:(id)a0;
+- (void)layoutSperatorLineView;
+- (void)layoutExtendView;
+- (void)layoutExtendMinimizeView;
+- (void)layoutExtendLabel;
+- (void)layoutExtendButton;
+- (void)onExtendButtonClick:(id)a0;
+- (struct CGSize { double x0; double x1; })defaultContentViewSize;
+- (struct CGSize { double x0; double x1; })contentViewSize;
+- (struct CGSize { double x0; double x1; })preferredSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (void)onMiniInAppViewOnMainAreaClick;
+- (void).cxx_destruct;
+
+@end

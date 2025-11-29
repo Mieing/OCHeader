@@ -1,0 +1,3 @@
+@interface TaskCenterTaskCenterEntranceApiRoot : GPBRootObject
+
+@end

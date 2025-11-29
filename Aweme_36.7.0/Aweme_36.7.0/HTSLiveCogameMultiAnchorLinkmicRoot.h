@@ -1,0 +1,3 @@
+@interface HTSLiveCogameMultiAnchorLinkmicRoot : GPBRootObject
+
+@end

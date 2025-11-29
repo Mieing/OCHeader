@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface AnchorPermissionApplyResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *desc;
+
++ (id)descriptor;
+
+@end

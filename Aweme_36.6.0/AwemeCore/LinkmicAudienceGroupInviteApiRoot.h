@@ -1,0 +1,3 @@
+@interface LinkmicAudienceGroupInviteApiRoot : GPBRootObject
+
+@end

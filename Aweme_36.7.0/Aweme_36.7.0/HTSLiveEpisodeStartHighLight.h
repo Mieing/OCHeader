@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveEpisodeStartHighLight : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL standard;
+@property (copy, nonatomic) NSString *description_p;
+@property (nonatomic) long long location;
+
++ (id)descriptor;
+
+@end

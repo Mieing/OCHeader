@@ -1,0 +1,3 @@
+@interface RoomGetStreamurlPulldatasApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,85 @@
+@class NSString, NSTimer, AWECyclePagerViewLayout, UICollectionView, UIView;
+@protocol AWECyclePagerViewDataSource, AWECyclePagerViewDelegate;
+
+@interface AWECyclePagerView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWECyclePagerTransformLayoutDelegate> {
+    struct { unsigned char pagerViewDidScroll : 1; unsigned char didScrollFromIndexToNewIndex : 1; unsigned char initializeTransformAttributes : 1; unsigned char applyTransformToAttributes : 1; } _delegateFlags;
+    struct { unsigned char cellForItemAtIndex : 1; unsigned char layoutForPagerView : 1; } _dataSourceFlags;
+}
+
+@property (weak, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) AWECyclePagerViewLayout *layout;
+@property (retain, nonatomic) NSTimer *timer;
+@property (nonatomic) long long numberOfItems;
+@property (nonatomic) long long beginDragIndex;
+@property (nonatomic) long long firstScrollIndex;
+@property (nonatomic) BOOL needClearLayout;
+@property (nonatomic) BOOL didReloadData;
+@property (nonatomic) BOOL didLayout;
+@property (nonatomic) BOOL needResetIndex;
+@property (nonatomic) long long curIndex;
+@property (nonatomic) double currentOffsetX;
+@property (nonatomic) double currentOffsetY;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (weak, nonatomic) id<AWECyclePagerViewDataSource> dataSource;
+@property (weak, nonatomic) id<AWECyclePagerViewDelegate> delegate;
+@property (nonatomic) double autoScrollInterval;
+@property (nonatomic) BOOL reloadDataNeedResetIndex;
+@property (readonly, nonatomic) struct CGPoint { double x0; double x1; } contentOffset;
+@property (readonly, nonatomic) BOOL tracking;
+@property (readonly, nonatomic) BOOL dragging;
+@property (readonly, nonatomic) BOOL decelerating;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)removeTimer;
+- (double)caculateOffsetXAtIndex:(long long)a0;
+- (void)scrollToItemAtIndex:(long long)a0 animate:(BOOL)a1;
+- (void)addTimer;
+- (void)configureProperty;
+- (void)pagerViewTransformLayout:(id)a0 initializeTransformAttributes:(id)a1;
+- (void)pagerViewTransformLayout:(id)a0 applyTransformToAttributes:(id)a1;
+- (void)addCollectionView;
+- (void)scrollToNearlyIndexAtDirection:(unsigned long long)a0 animate:(BOOL)a1;
+- (void)setNeedClearLayout;
+- (void)clearLayout;
+- (void)resetPagerViewAtIndex:(long long)a0;
+- (long long)nearlyIndexPathAtDirection:(unsigned long long)a0;
+- (BOOL)isValidIndexSection:(long long)a0;
+- (long long)nearlyIndexPathForIndex:(long long)a0 direction:(unsigned long long)a1;
+- (long long)caculateIndexWithOffsetX:(double)a0;
+- (double)caculateOffsetYAtIndex:(long long)a0;
+- (void)setNeedUpdateLayout;
+- (id)curIndexCell;
+- (id)visibleIndexs;
+- (long long)caculateIndexWithOffsetY:(double)a0;
+- (id)visibleCells;
+- (void)timerFired:(id)a0;
+- (void)reloadData;
+- (void)updateLayout;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)layoutSubviews;
+- (void)willMoveToSuperview:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)registerClass:(Class)a0 forCellWithReuseIdentifier:(id)a1;
+- (void)registerNib:(id)a0 forCellWithReuseIdentifier:(id)a1;
+- (void)updateData;
+- (id)dequeueReusableCellWithReuseIdentifier:(id)a0 forIndex:(long long)a1;
+- (void)updateCurrentIndex;
+
+@end

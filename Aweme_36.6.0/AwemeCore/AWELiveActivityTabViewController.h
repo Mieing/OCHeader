@@ -1,0 +1,82 @@
+@class NSDate, NSString, AWELiveLoadActivityErrorView, NSTimer, UIView, UIPanGestureRecognizer, NSDictionary;
+@protocol IESHYContainerProtocol;
+
+@interface AWELiveActivityTabViewController : UIViewController <IESHYHybridViewLifecycleProtocol, UIGestureRecognizerDelegate, AWEUserMessage, AWEFeedTabItemViewControllerProtocol>
+
+@property (retain, nonatomic) UIView<IESHYContainerProtocol> *activityView;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *originSchema;
+@property (retain, nonatomic) UIView<IESHYContainerProtocol> *preloadedActivityView;
+@property (copy, nonatomic) NSString *preloadedSchema;
+@property (nonatomic) BOOL isShowing;
+@property (retain, nonatomic) UIPanGestureRecognizer *lynxPanGes;
+@property (retain, nonatomic) AWELiveLoadActivityErrorView *errorView;
+@property (nonatomic) BOOL appearZeroTimes;
+@property (copy, nonatomic) id /* block */ animatedRefreshCompletion;
+@property (nonatomic) BOOL isWaitingPreload;
+@property (retain, nonatomic) NSTimer *destroyTimer;
+@property (nonatomic) BOOL fromLanding;
+@property (copy, nonatomic) NSDictionary *landingParams;
+@property (nonatomic) BOOL isLogining;
+@property (retain, nonatomic) NSDate *loadStartTime;
+@property (retain, nonatomic) NSString *referString;
+@property (readonly, nonatomic) BOOL disableShake;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) long long type;
+
++ (id)preloadSchemaWithSchema:(id)a0;
+
+- (void)viewDidConstructJSRuntime:(id)a0;
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)willStartLogin;
+- (void)didCancelLogin;
+- (void)didFinishUpdateCurrentFullUserForReason:(unsigned long long)a0;
+- (void)pauseWithAnimation;
+- (void)animatedRefreshWithCompletion:(id /* block */)a0;
+- (BOOL)currentTabIsTop;
+- (void)channelLandingTabWithParams:(id)a0;
+- (void)viewDidFinishLoadWithURL:(id)a0;
+- (void)viewDidStartLoading;
+- (void)viewDidLoadFailedWithUrl:(id)a0 error:(id)a1;
+- (void)registerBridge:(id)a0;
+- (void)selfPanned:(id)a0;
+- (id)liveActivityPageUrl;
+- (void)setupSchema:(id)a0;
+- (void)setupUIWithInitialData:(id)a0;
+- (void)invalidateDestroyTimer;
+- (void)rebuildActivityViewWithSchema:(id)a0 initialData:(id)a1;
+- (void)destoryActivityViewIfNeeded;
+- (id)getPreloadActivityViewWithSchema:(id)a0;
+- (id)createActivityView:(id)a0 initialData:(id)a1 isPreload:(BOOL)a2;
+- (void)clearPreloadedActivityView;
+- (void)clearActivityView;
+- (void)feedTableViewDidAppear:(id)a0;
+- (void)preloadActivityView;
+- (void)stopMainAnimatedRefresh;
+- (void)p_addInitialPropsParamsToInitialData:(id)a0;
+- (void)pageRefreshedWithCompletion;
+- (id)initWithSchema:(id)a0 extraParams:(id)a1;
+- (BOOL)canRefresh;
+- (void).cxx_destruct;
+- (void)setScrollEnabled:(BOOL)a0;
+- (void)play;
+- (void)pause;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)viewDidLayoutSubviews;
+- (void)reload;
+- (void)stop;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRequireFailureOfGestureRecognizer:(id)a1;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)addObservers;
+- (void)settingBackgroundColor;
+
+@end

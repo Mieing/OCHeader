@@ -1,0 +1,3 @@
+@interface ShowGetFunctionStatusApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicStarwishRoot : GPBRootObject
+
+@end

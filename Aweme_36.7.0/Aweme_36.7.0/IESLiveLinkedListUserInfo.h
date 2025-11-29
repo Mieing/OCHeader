@@ -1,0 +1,9 @@
+@interface IESLiveLinkedListUserInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long joinChannelTime;
+@property (nonatomic) long long expectedLeaveTime;
+@property (nonatomic) long long currentTime;
+
++ (id)descriptor;
+
+@end

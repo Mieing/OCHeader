@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface CGPSeiList : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *seiNodeArray;
+@property (readonly, nonatomic) unsigned long long seiNodeArray_Count;
+
++ (id)descriptor;
+
+@end

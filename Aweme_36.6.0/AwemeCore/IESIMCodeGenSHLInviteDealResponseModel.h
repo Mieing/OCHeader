@@ -1,0 +1,3 @@
+@interface IESIMCodeGenSHLInviteDealResponseModel : AWEBaseResponseModel
+
+@end

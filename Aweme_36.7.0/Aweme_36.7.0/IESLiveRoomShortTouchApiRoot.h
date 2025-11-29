@@ -1,0 +1,3 @@
+@interface IESLiveRoomShortTouchApiRoot : GPBRootObject
+
+@end

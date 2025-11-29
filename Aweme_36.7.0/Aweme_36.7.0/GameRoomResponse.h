@@ -1,0 +1,10 @@
+@class GameRoomResponse_Data;
+
+@interface GameRoomResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GameRoomResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

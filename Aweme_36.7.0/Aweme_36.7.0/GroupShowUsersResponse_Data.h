@@ -1,0 +1,10 @@
+@class HTSLiveGroupShowInfo;
+
+@interface GroupShowUsersResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGroupShowInfo *info;
+@property (nonatomic) BOOL hasInfo;
+
++ (id)descriptor;
+
+@end

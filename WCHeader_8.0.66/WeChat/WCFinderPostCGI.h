@@ -1,0 +1,20 @@
+@class WCFinderUploadTask;
+
+@interface WCFinderPostCGI : WCFinderBaseCgi
+
+@property (retain, nonatomic) WCFinderUploadTask *task;
+@property (nonatomic) BOOL noNeedResponseInfo;
+@property (copy, nonatomic) id /* block */ successBlock;
+@property (copy, nonatomic) id /* block */ failBlock;
+
++ (int)getPostSceneByTask:(id)a0;
+
+- (id)initWithUploadTask:(id)a0 successBlock:(id /* block */)a1 failBlock:(id /* block */)a2;
+- (void)createRequest;
+- (void)preCheckPostRequestValid:(id)a0;
+- (void)start;
+- (void)didGetResponse:(id)a0;
+- (void)finderCgiDidFailWithError:(id)a0 response:(id)a1;
+- (void).cxx_destruct;
+
+@end

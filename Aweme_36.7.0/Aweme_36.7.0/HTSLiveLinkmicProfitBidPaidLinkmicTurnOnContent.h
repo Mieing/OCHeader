@@ -1,0 +1,13 @@
+@class HTSLiveBidPaidLinkmicContent, NSString;
+
+@interface HTSLiveLinkmicProfitBidPaidLinkmicTurnOnContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveBidPaidLinkmicContent *bidPaidLinkmicInfo;
+@property (nonatomic) BOOL hasBidPaidLinkmicInfo;
+@property (copy, nonatomic) NSString *prompts;
+@property (nonatomic) BOOL waitingUserNeedLeave;
+@property (copy, nonatomic) NSString *waitingUserToast;
+
++ (id)descriptor;
+
+@end

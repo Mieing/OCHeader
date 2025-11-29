@@ -1,0 +1,8 @@
+@interface MySubscribeListResponse_ResponseExtra : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) long long offset;
+
++ (id)descriptor;
+
+@end

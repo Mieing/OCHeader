@@ -1,0 +1,15 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetConfigsResponseBody : GPBMessage
+
+@property (nonatomic) int version;
+@property (nonatomic) BOOL hasVersion;
+@property (retain, nonatomic) NSMutableArray *configsArray;
+@property (readonly, nonatomic) unsigned long long configsArray_Count;
+
++ (id)descriptor;
+
+- (id)configsArray;
+- (int)version;
+
+@end

@@ -1,0 +1,10 @@
+@class HTSLiveChatCarnivalMessage;
+
+@interface HTSLiveChatCarnivalSyncData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveChatCarnivalMessage *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

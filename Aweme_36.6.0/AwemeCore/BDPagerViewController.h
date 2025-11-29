@@ -1,0 +1,3 @@
+@interface BDPagerViewController : BDPageViewController
+
+@end

@@ -1,0 +1,13 @@
+@class NSMutableArray, NSMutableDictionary;
+
+@interface HTSLiveCardTriggerConfig : IESLivePBBaseMessage
+
+@property (nonatomic) unsigned int strategy;
+@property (retain, nonatomic) NSMutableArray *commonTriggerListArray;
+@property (readonly, nonatomic) unsigned long long commonTriggerListArray_Count;
+@property (retain, nonatomic) NSMutableDictionary *customTriggerMap;
+@property (readonly, nonatomic) unsigned long long customTriggerMap_Count;
+
++ (id)descriptor;
+
+@end

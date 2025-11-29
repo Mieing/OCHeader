@@ -1,0 +1,3 @@
+@interface HTSLivePreviewCjrpRoot : GPBRootObject
+
+@end

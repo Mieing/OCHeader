@@ -1,0 +1,3 @@
+@interface FlowVESDKWrapper : NSObject
+
+@end

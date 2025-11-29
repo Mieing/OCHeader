@@ -1,0 +1,76 @@
+@class DUXTipUIConfigModel, NSString, UIImageView, DUXButton, UIView, UILabel, UITapGestureRecognizer;
+
+@interface DUXTip : UIView <IESIMTipProtocol>
+
+@property (nonatomic) unsigned long long iesimType;
+@property (nonatomic) unsigned long long iesimColorType;
+@property (copy, nonatomic) NSString *iconName;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *buttonText;
+@property (copy, nonatomic) id /* block */ linkAction;
+@property (copy, nonatomic) id /* block */ buttonAction;
+@property (copy, nonatomic) id /* block */ closeAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UIImageView *iconView;
+@property (retain, nonatomic) UIView *contentConatinerView;
+@property (retain, nonatomic) UILabel *contentLabel;
+@property (retain, nonatomic) DUXButton *textButton;
+@property (retain, nonatomic) UIView *rightActionView;
+@property (retain, nonatomic) UIImageView *rightActionImageView;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (nonatomic) double scrollSpeed;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } prefixFrame;
+@property (retain, nonatomic) DUXTipUIConfigModel *uiConfig;
+@property (nonatomic) unsigned long long type;
+@property (nonatomic) unsigned long long colorType;
+@property (copy, nonatomic) NSString *iconName;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *buttonText;
+@property (nonatomic) BOOL enableScrolling;
+@property (nonatomic) BOOL autoScrolling;
+@property (nonatomic) unsigned long long enlargeType;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } interactionZoneEnlargeInsets;
+@property (copy, nonatomic) id /* block */ linkAction;
+@property (copy, nonatomic) id /* block */ buttonAction;
+@property (copy, nonatomic) id /* block */ closeAction;
+
+- (void)didClickActionButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 enlargeType:(unsigned long long)a1;
+- (struct CGSize { double x0; double x1; })lastLineSizeForAttributeString:(id)a0 constraintSize:(struct CGSize { double x0; double x1; })a1;
+- (id)getTextColor;
+- (void)didClickCloseButton;
+- (unsigned long long)p_iesimTipTypeWithDUXType:(unsigned long long)a0;
+- (unsigned long long)p_duxTipTypeWithIESIMType:(unsigned long long)a0;
+- (unsigned long long)p_iesimTipColorTypeWithDUXType:(unsigned long long)a0;
+- (unsigned long long)p_duxTipColorTypeWithIESIMType:(unsigned long long)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 type:(unsigned long long)a1 content:(id)a2;
+- (void)didClickLinkButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 type:(unsigned long long)a1 colorType:(unsigned long long)a2 content:(id)a3;
+- (BOOL)canInteractToPoint:(struct CGPoint { double x0; double x1; })a0 onViewRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 withEdgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2;
+- (void)setupContentContainerView;
+- (void)startRollingText;
+- (id)getTipBackgroundColor;
+- (void)setupRightActionView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 type:(unsigned long long)a1 colorType:(unsigned long long)a2 content:(id)a3 enlargeType:(unsigned long long)a4;
+- (BOOL)shouldAutoScrolling;
+- (void)setTextButtonUI;
+- (id)getIconColor;
+- (void)setIconViewWithIconName;
+- (void)pauseRollingText;
+- (void)resumeRollingText;
+- (void)stopRollingTextWithCompletion:(id /* block */)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)setup;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)resetUI;
+- (id)initWithType:(unsigned long long)a0 content:(id)a1;
+- (double)leftPadding;
+- (double)rightPadding;
+
+@end

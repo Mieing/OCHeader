@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface IESLiveThemedCompetitionInfo_Score : IESLivePBBaseMessage
+
+@property (nonatomic) long long score;
+@property (copy, nonatomic) NSString *scoreFuzz;
+@property (nonatomic) int winType;
+@property (nonatomic) long long rank;
+@property (nonatomic) BOOL showEffect;
+@property (copy, nonatomic) NSString *dressId;
+
++ (id)descriptor;
+
+@end

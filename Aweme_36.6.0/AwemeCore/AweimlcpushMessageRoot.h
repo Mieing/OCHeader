@@ -1,0 +1,3 @@
+@interface AweimlcpushMessageRoot : GPBRootObject
+
+@end

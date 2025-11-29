@@ -1,0 +1,3 @@
+@interface LinkmicSendSignalApiRoot : GPBRootObject
+
+@end

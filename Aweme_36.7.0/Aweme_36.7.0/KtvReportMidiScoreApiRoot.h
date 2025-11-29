@@ -1,0 +1,3 @@
+@interface KtvReportMidiScoreApiRoot : GPBRootObject
+
+@end

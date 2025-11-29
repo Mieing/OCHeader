@@ -1,0 +1,78 @@
+@class UILabel, RACDisposable, UIView, HTSLiveMidiSkinDressInfo, IESLiveKTVMidiStore, UIImageView, IESLiveGCDTimer, HTSEventForwardingView, NSString, IESLiveKTVMIDIView, IESLiveMultiKTVMidiModeIndicatorView;
+@protocol IESLiveCompoundSubscription, IESLiveMultiKTVChallengeRouter, IESLiveMultiKTVStageProvider;
+
+@interface IESLiveMultiKTVMidiPlugin : IESLiveMultiKTVStagePluginBase <IESLiveKTVActions, IESLiveMultiKTVEndAndHotRankActions, CAAnimationDelegate, IESLiveMultiKTVStagePluginProtocol>
+
+@property (retain, nonatomic) HTSEventForwardingView *midiBgView;
+@property (retain, nonatomic) IESLiveKTVMidiStore *midiStore;
+@property (retain, nonatomic) IESLiveKTVMIDIView *midiView;
+@property (retain, nonatomic) IESLiveMultiKTVMidiModeIndicatorView *indicatorView;
+@property (retain, nonatomic) UILabel *noMidiLabel;
+@property (retain, nonatomic) id<IESLiveCompoundSubscription> userDisposable;
+@property (retain, nonatomic) id<IESLiveCompoundSubscription> midiDisposable;
+@property (nonatomic) double lastScore;
+@property (nonatomic) double lastAnimiationTime;
+@property (nonatomic) BOOL isShowFeedback;
+@property (nonatomic) BOOL isMVMode;
+@property (retain, nonatomic) UIImageView *comboBGImageView;
+@property (nonatomic) BOOL comboBGShowing;
+@property (retain, nonatomic) UIImageView *normalScorePanelView;
+@property (retain, nonatomic) UIImageView *highScorePanelView;
+@property (retain, nonatomic) UILabel *scoreLabelV2;
+@property (nonatomic) BOOL highScoreLabelAnimeShowing;
+@property (nonatomic) BOOL highScoreLabelExisting;
+@property (retain, nonatomic) IESLiveGCDTimer *timer;
+@property (nonatomic) double curScore;
+@property (nonatomic) BOOL isPause;
+@property (retain, nonatomic) RACDisposable *decorateDisposable;
+@property (retain, nonatomic) UIView *container;
+@property (nonatomic) long long isCPUOptimize;
+@property (nonatomic) double timerInterval;
+@property (weak, nonatomic) id<IESLiveMultiKTVStageProvider> multiKTVStageProvider;
+@property (weak, nonatomic) id<IESLiveMultiKTVChallengeRouter> challengeRouter;
+@property (retain, nonatomic) HTSLiveMidiSkinDressInfo *dressInfo;
+@property (copy, nonatomic) NSString *currentUserId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isActive;
+
+- (void)didSetAttachingDIContext;
+- (void)dealWithOpenCamera:(BOOL)a0;
+- (void)updateScore:(double)a0;
+- (void)updateListenerPlayingTime:(double)a0;
+- (void)didPausePlayMusicWithMusicID:(id)a0;
+- (void)didResumePlayMusicWithMusicID:(id)a0;
+- (void)handleMultiKTVSEIModel:(id)a0;
+- (void)updateSingerPlayingTime:(double)a0;
+- (void)clearMidiView;
+- (void)loadMidiView;
+- (void)startMidiWithMusic:(id)a0;
+- (void)didUpdateDecorate:(id)a0;
+- (id)createZoomAnimeWithDuration:(double)a0 fromValue:(id)a1 toValue:(id)a2 beginTime:(double)a3;
+- (BOOL)shouldShowMidiView;
+- (void)enterDynamicStageMode;
+- (void)didActivateInKTVStageContainerView:(id)a0;
+- (void)didDeactivated;
+- (void)didPluginUnload;
+- (void)willStartPlayingMusic:(id)a0 afterTime:(long long)a1;
+- (void)didStartPlayingMusic:(id)a0;
+- (void)didStopPlayingMusic:(id)a0;
+- (void)updatePlayingUser:(id)a0;
+- (void)willDisplayEndAndHotRankView:(id)a0 style:(unsigned long long)a1;
+- (void)willEndDisplayEndAndHotRankView:(id)a0 style:(unsigned long long)a1;
+- (void)changeOriginBGShowStatus:(BOOL)a0;
+- (void)updateIndicatorViewWithUser:(id)a0;
+- (void)updateProgressWithPlayingTime:(double)a0;
+- (void)resumeMidiIfNeeded;
+- (void)startMidiScore;
+- (void)endMidiScore;
+- (void)trackMidiShow;
+- (void)startAnimationWithScore:(double)a0;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (void)cancelTimer;
+- (void)dealloc;
+
+@end

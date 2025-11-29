@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface ActivityDeclaration : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isShow;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

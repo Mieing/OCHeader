@@ -1,0 +1,11 @@
+@interface TTNetworkHTTPErrorCodeMapper : NSObject
+
++ (id)getCodeMapper;
++ (id)keyForCode:(long long)a0;
++ (id)getErrnoMapper;
++ (id)keyForErrno:(long long)a0;
++ (long long)mapErrorCode:(long long)a0;
++ (long long)mapErrno:(long long)a0;
++ (long long)unknonwErrorMapcode;
+
+@end

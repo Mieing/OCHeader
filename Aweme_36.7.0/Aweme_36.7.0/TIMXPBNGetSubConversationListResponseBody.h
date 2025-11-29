@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetSubConversationListResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *subConversationListArray;
+@property (readonly, nonatomic) unsigned long long subConversationListArray_Count;
+
++ (id)descriptor;
+
+@end

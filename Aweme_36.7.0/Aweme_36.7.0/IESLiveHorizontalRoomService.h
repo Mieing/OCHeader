@@ -1,0 +1,26 @@
+@class UIImage, NSString;
+
+@interface IESLiveHorizontalRoomService : IESLiveGeneralBaseService <IESLiveAnchorHorizontalService>
+
+@property (retain, nonatomic) UIImage *bgBlurImage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)ieslivekit_register_generalServiceAction;
++ (BOOL)serviceShouldActive:(id)a0;
++ (id)serviceProtocolsWithParam:(id)a0;
+
+- (id)takeShotForView:(id)a0;
+- (unsigned long long)getCurrentLiveRatio;
+- (BOOL)isHorizontalLiveRatio;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getCameraViewRect;
+- (void)setupHorizontalRecoderPreset;
+- (void)setupHorizontalLiveCoreConfig;
+- (void)setupBlurBackgroundView;
+- (void)cleanupBlurBackgroundView;
+- (void).cxx_destruct;
+- (double)topOffset;
+
+@end

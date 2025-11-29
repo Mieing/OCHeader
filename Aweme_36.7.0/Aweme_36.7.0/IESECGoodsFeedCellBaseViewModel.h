@@ -1,0 +1,88 @@
+@class IESECRecommendReasonModel, IESECFeedLiveRecommendModel, IESECGoodsDetailParameters, IESECGoodsCommentViewModel, NSDictionary, IESECVideoRecommendModel, IESECRelationFeedCommentInfo, NSMutableArray, IESECContext, NSString, IGListSectionController, IESECGoodsFeedRankingCardModel, NSArray, IESECGoodsFeedContext, IESECFeedResourceCardModel, IESECHeadVideoModel, IESECRecommendCommonProductModel;
+@protocol IESECGoodsFeedSectionControllerProtocol;
+
+@interface IESECGoodsFeedCellBaseViewModel : NSObject <IGListDiffable, IESECGoodsFeedCellBaseViewModelProtocol> {
+    NSArray *_tagModels;
+}
+
+@property (nonatomic) long long index;
+@property (weak, nonatomic) id delegate;
+@property (weak, nonatomic) IGListSectionController *sectionDelegate;
+@property (nonatomic) struct CGSize { double width; double height; } cachedSize;
+@property (nonatomic) long long cardType;
+@property (retain, nonatomic) IESECGoodsDetailParameters *parameters;
+@property (retain, nonatomic) IESECGoodsDetailParameters *globalParameters;
+@property (nonatomic) long long carouselIndex;
+@property (retain, nonatomic) NSMutableArray *sectionsInfo;
+@property (nonatomic) long long entryLocation;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } containerInsets;
+@property (retain, nonatomic) IESECFeedLiveRecommendModel *liveModel;
+@property (retain, nonatomic) IESECVideoRecommendModel *videoModel;
+@property (retain, nonatomic) IESECGoodsFeedRankingCardModel *rankingModel;
+@property (retain, nonatomic) IESECFeedResourceCardModel *resourceCardModel;
+@property (retain, nonatomic) IESECHeadVideoModel *headVideo;
+@property (retain, nonatomic) IESECRecommendCommonProductModel *productModel;
+@property (copy, nonatomic) NSString *resourceBarData;
+@property (copy, nonatomic) NSString *resourceBarDataRequestID;
+@property (readonly, nonatomic) NSArray *tagModels;
+@property (retain, nonatomic) NSArray *bulletTags;
+@property (nonatomic) BOOL danmakuState;
+@property (copy, nonatomic) NSString *bizTag;
+@property (copy, nonatomic) NSString *sceneTag;
+@property (nonatomic) BOOL hideShopButton;
+@property (nonatomic) BOOL isShowActivityImage;
+@property (nonatomic) BOOL isManualSlided;
+@property (nonatomic) BOOL shouldStartAutoSlide;
+@property (copy, nonatomic) NSString *exposedMessage;
+@property (copy, nonatomic) NSString *indemnificationMessage;
+@property (copy, nonatomic) NSString *indemnificationMessageOnRight;
+@property (nonatomic) BOOL isFirstCard;
+@property (nonatomic) double messageDisplayAlpha;
+@property (nonatomic) double recommendTagViewAlpha;
+@property (nonatomic) BOOL indemnificationOnRight;
+@property (nonatomic) BOOL hasShownCommentCount;
+@property (retain, nonatomic) IESECRelationFeedCommentInfo *commentInfo;
+@property (copy, nonatomic) NSDictionary *storeTrackInfo;
+@property (retain, nonatomic) IESECGoodsCommentViewModel *goodsCommentViewModel;
+@property (nonatomic) BOOL tagViewDisplayed;
+@property (copy, nonatomic) NSString *headerText;
+@property (nonatomic) BOOL shouldShowSameGoodEntrance;
+@property (nonatomic) double tagImageHeight;
+@property (nonatomic) BOOL showSkeleton;
+@property (copy, nonatomic) NSString *discountContent;
+@property (retain, nonatomic) IESECRecommendReasonModel *recReason;
+@property (nonatomic) BOOL hasLayoutImage;
+@property (nonatomic) long long searchSameGoodsShow;
+@property (nonatomic) long long searchSameGoodsShowPosition;
+@property (nonatomic) long long searchResourceCardStyle;
+@property (nonatomic) long long searchCardFrequency;
+@property (nonatomic) long long windowEntryPriority;
+@property (retain, nonatomic) IESECGoodsFeedContext *context;
+@property (weak, nonatomic) IESECContext *globalContext;
+@property (copy, nonatomic) id /* block */ bstBindAction;
+@property (copy, nonatomic) NSDictionary *videoGuideSearchBCM;
+@property (nonatomic) struct CGSize { double width; double height; } newSize;
+@property (weak, nonatomic) id<IESECGoodsFeedSectionControllerProtocol> sectionContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)diffIdentifier;
+- (BOOL)isEqualToDiffableObject:(id)a0;
+- (void)listAdapter:(id)a0 willDisplaySectionController:(id)a1 cell:(id)a2 atIndex:(long long)a3;
+- (void)configBaseViewModel:(id)a0;
+- (struct CGSize { double x0; double x1; })calculateCellSizeForContaineSize:(struct CGSize { double x0; double x1; })a0;
+- (id)commonSceneTag;
+- (id)initWithModel:(id)a0 context:(id)a1 useToInsert:(BOOL)a2;
+- (struct CGSize { double x0; double x1; })cellSizeForContaineSize:(struct CGSize { double x0; double x1; })a0;
+- (BOOL)showRecReason;
+- (BOOL)isAvaliable;
+- (id)detailParametersFromProductModel:(id)a0;
+- (void)configInsertResourceViewModel:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)reloadSection:(BOOL)a0 completion:(id /* block */)a1;
+- (void)updateSize:(struct CGSize { double x0; double x1; })a0;
+
+@end

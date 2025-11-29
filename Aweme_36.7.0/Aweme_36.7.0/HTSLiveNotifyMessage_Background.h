@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveNotifyMessage_Background : IESLivePBBaseMessage
+
+@property (nonatomic) int width;
+@property (nonatomic) int height;
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+@property (copy, nonatomic) NSString *uri;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,41 @@
+@interface ACCAlbumExtension : NSObject
+
+- (void)albumDidShowViewController:(id)a0;
+- (void)albumScrollViewDidEndDecelerating:(id)a0 albumListVC:(id)a1 scrollView:(id)a2;
+- (void)albumDidClickNavigationSelectAlbumBtn:(id)a0;
+- (void)albumDidCloseRequestAccessHintView:(id)a0;
+- (void)albumWillShowViewController:(id)a0;
+- (void)albumViewControllerFetchAlbumAssetsCompeleted:(id)a0;
+- (void)albumViewControllerEndPreview:(id)a0;
+- (void)albumDidClickSelectAssetsButtonWithSelectedAssetes:(id)a0 targetAsset:(id)a1 isSelected:(BOOL)a2;
+- (BOOL)albumExtensionShouldBeLoaded:(id)a0;
+- (void)albumDidLoadExtension:(id)a0 albumViewController:(id)a1;
+- (void)albumDidHiddenViewController:(id)a0;
+- (void)albumDidSelectAssetes:(id)a0 targetAsset:(id)a1;
+- (void)albumDidDeleteAssetFromBottomView:(id)a0;
+- (void)albumWillShowPreviewControllerBottomView:(id)a0 previewAsset:(id)a1;
+- (void)albumDidLoadPreviewControllerBottomView:(id)a0 previewAsset:(id)a1;
+- (void)albumDidHiddenPreviewControllerBottomView:(id)a0 previewAsset:(id)a1;
+- (void)albumUpdateBottomNextButtonWithAlbumVC:(id)a0;
+- (void)albumDidLoadBottomView:(id)a0;
+- (void)albumDidSelectTabListViewController:(id)a0 index:(long long)a1;
+- (void)albumScrollViewDidScroll:(id)a0 albumListVC:(id)a1 scrollView:(id)a2;
+- (void)albumDidDeselectAsset:(id)a0;
+- (void)albumDidSwitchMultiSelectStatus:(BOOL)a0;
+- (void)previewControllerScrollViewDidEndDeceleratingWithAlbumAsset:(id)a0;
+- (void)albumDidFinishFirstRender:(id)a0;
+- (void)albumDidClickNextButton:(id)a0;
+- (void)albumDidShowAlbumAssetCell:(id)a0 withAsset:(id)a1 indexPath:(id)a2;
+- (void)albumDidShowSearchResultViewController:(id)a0;
+- (void)albumViewControllerDidEndDragging:(id)a0 albumListVC:(id)a1 draggingView:(id)a2 willDecelerate:(BOOL)a3;
+- (void)albumDidSelect:(id)a0 albumModel:(id)a1;
+- (void)albumEarlyDidLoadPreviewController;
+- (void)selectedAssetsViewDidClickAsset:(id)a0;
+- (void)albumDidClickCancelButton:(id)a0;
+- (void)albumDidClickAIMemoriesButtonWithAssets:(id)a0;
+- (void)albumDidRequestAlbumAuthorizationWithStatus:(long long)a0;
+- (void)albumViewControllerPreviewCellStatusDidChange;
+- (void)albumViewControllerSelectedAssetsViewOrderDidChange;
+- (void)albumEarlyDidLoadViewController:(id)a0;
+
+@end

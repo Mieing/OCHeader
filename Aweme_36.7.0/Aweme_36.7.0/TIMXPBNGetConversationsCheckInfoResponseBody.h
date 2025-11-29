@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetConversationsCheckInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *conversationCheckinfoListArray;
+@property (readonly, nonatomic) unsigned long long conversationCheckinfoListArray_Count;
+
++ (id)descriptor;
+
+@end

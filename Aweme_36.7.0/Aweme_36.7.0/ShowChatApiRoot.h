@@ -1,0 +1,3 @@
+@interface ShowChatApiRoot : GPBRootObject
+
+@end

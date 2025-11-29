@@ -1,0 +1,3 @@
+@interface HTSLiveProfitInteractionSocreRoot : GPBRootObject
+
+@end

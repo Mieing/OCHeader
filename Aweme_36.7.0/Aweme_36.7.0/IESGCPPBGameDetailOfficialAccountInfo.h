@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESGCPPBGameDetailOfficialAccountInfo : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *officialAccountArray;
+@property (readonly, nonatomic) unsigned long long officialAccountArray_Count;
+
++ (id)descriptor;
+
+@end

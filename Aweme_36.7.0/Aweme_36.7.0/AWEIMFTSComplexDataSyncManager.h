@@ -1,0 +1,96 @@
+@class IESIMStorage, NSMutableDictionary, IESIMFTSDataManager, AWEIMFTSComplexDataCache, NSString, AWEIMBatchFetchUserSession, NSObject;
+@protocol AWEIMFTSTrackProtocol, OS_dispatch_semaphore;
+
+@interface AWEIMFTSComplexDataSyncManager : NSObject <IESIMChatDataManagerDelegate, AWEIMBatchFetchUserSessionDelegate, AWEIMContactMessage, AWEIMNewMessageProtocol> {
+    long long _p_pagingFetchOnceToken;
+}
+
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore;
+@property (retain, nonatomic) NSMutableDictionary *convPeerUidLastChatTimeMap;
+@property (retain, nonatomic) NSMutableDictionary *convIDToLastChatTimeMap;
+@property (nonatomic) BOOL convPeerUidLastChatTimeMapReady;
+@property (retain, nonatomic) AWEIMBatchFetchUserSession *fetchUserSession;
+@property (retain, nonatomic) IESIMStorage *messageSyncTimeStore;
+@property (retain, nonatomic) IESIMFTSDataManager *dataManager;
+@property (retain, nonatomic) AWEIMFTSComplexDataCache *dataCache;
+@property (retain, nonatomic) id<AWEIMFTSTrackProtocol> trackCenter;
+@property (nonatomic) long long nextUpdateTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)messageQueue;
+
+- (void)iesim_chatDataManager:(id)a0 chatDidUpdate:(id)a1;
+- (void)iesim_onConversationDataSourceConversationsDeleted:(id)a0;
+- (void)iesim_onConversationDataSourceMessagesCreated:(id)a0 belongingConversationMap:(id)a1 reason:(id)a2;
+- (void)iesim_onConversationDataSourceMessagesUpdated:(id)a0 belongingConversationMap:(id)a1;
+- (void)iesim_onConversationDataSourceMessagesDeleted:(id)a0 belongingConversationMap:(id)a1;
+- (void)iesim_onConversationDataSourceConversationCleared:(id)a0;
+- (void)iesim_chatDataManager:(id)a0 chatListDidUpdateWithRealDeletedChats:(id)a1 notDisplayChats:(id)a2 insertedChats:(id)a3 firstPage:(BOOL)a4 reason:(long long)a5;
+- (void)didLoadNewMessages:(id)a0;
+- (void)didLoadOfficialChats:(id)a0;
+- (void)didDeleteUserOfUid:(id)a0;
+- (id)convPeerUidLastChatTimeDict;
+- (id)convIDToLastChatTimeDict;
+- (id)initWithDataManager:(id)a0 dataCache:(id)a1 trackCenter:(id)a2;
+- (void)didSaveUsers:(id)a0;
+- (void)didClearAllUsers;
+- (void)migrateFriendsDataIfNeed;
+- (void)insertFTSDataWithMessageList:(id)a0;
+- (void)syncOfficialDataList:(id)a0;
+- (id)transFTSDataForMessageObject:(id)a0;
+- (id)lastMessageSyncTimestampKeyForType:(long long)a0;
+- (id)messageTypeKeyMap;
+- (void)p_migrateFriendData_old;
+- (long long)latestSyncFTSDataTimeOfType:(long long)a0 extType:(long long)a1;
+- (void)cacheLatestSyncFTSDataTime:(long long)a0 type:(long long)a1 extType:(long long)a2;
+- (id)p_generateSyncId;
+- (void)syncFriendsDataList:(id)a0 completion:(id /* block */)a1;
+- (void)syncFriendsDataList:(id)a0;
+- (void)syncParticipantDataList:(id)a0 completion:(id /* block */)a1;
+- (void)syncParticipantDataList:(id)a0;
+- (id)lastChatTimeOfUser:(id)a0;
+- (BOOL)p_hasFollowRelation:(id)a0;
+- (void)syncUsersDataList:(id)a0 filterBlock:(id /* block */)a1 completion:(id /* block */)a2;
+- (id)p_FTSTableItemsWithUser:(id)a0;
+- (void)p_configFTSData:(id)a0 withUser:(id)a1;
+- (id)p_firstLettersJoinBySpaceOfPinyin:(id)a0 origin:(id)a1;
+- (void)__syncOfficialDataList:(id)a0;
+- (id)createFTSData:(id)a0 contentType:(long long)a1 conent:(id)a2;
+- (void)syncGroupConversationDataList:(id)a0;
+- (void)p_configFTSData:(id)a0 withConvORM:(id)a1;
+- (void)p_configFTSData:(id)a0 withConv:(id)a1;
+- (void)syncGroupConversationDataList:(id)a0 completion:(id /* block */)a1;
+- (void)p_didSyncNormalConversationDataList;
+- (void)syncNormalConversationDataList:(id)a0 completion:(id /* block */)a1;
+- (void)migrateParticipantDataIfNeed;
+- (void)insertFTSDataWithMessage:(id)a0;
+- (void)syncConversationData:(id)a0;
+- (void)syncAllConversationFromDB;
+- (void)removeConversationsData:(id)a0;
+- (void)removeFriendData:(id)a0;
+- (BOOL)p_hasParticipantRelationWithUser:(id)a0;
+- (BOOL)p_conversationShouldCareOnFullUpdate:(id)a0;
+- (void)p_syncGroupConversationLastChatTime:(id)a0;
+- (void)syncNormalConversationDataList:(id)a0 latestUpdateTime:(long long)a1 hasMore:(BOOL)a2 completion:(id /* block */)a3;
+- (void)syncNormalConversationDataList:(id)a0 latestUpdateTime:(long long)a1 hasMore:(BOOL)a2;
+- (void)syncMessagesFTSDatas;
+- (void)__didSaveUsers:(id)a0;
+- (void)syncUsersDataList:(id)a0 filterBlock:(id /* block */)a1;
+- (void)removeAllFriendData;
+- (id)latestSyncFTSDataKeyOfType:(long long)a0 extType:(long long)a1;
+- (void)batchFetchUserSessionDidFinished:(id)a0;
+- (id)initWithDataManager:(id)a0 dataCache:(id)a1;
+- (void)syncFriendsData:(id)a0;
+- (void)p_syncGroupConversationORMLastChatTime:(id)a0;
+- (void)syncGroupConversationORMDataList:(id)a0 completion:(id /* block */)a1;
+- (void)removeAllConversationData;
+- (void)syncNormalConversationDataList:(id)a0;
+- (void)syncNormalConversationORMDataList:(id)a0 latestUpdateTime:(long long)a1 hasMore:(BOOL)a2 completion:(id /* block */)a3;
+- (BOOL)p_conversationORMShouldCareOnFullUpdate:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

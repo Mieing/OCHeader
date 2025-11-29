@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface LotteryGiftGuide : IESLivePBBaseMessage
+
+@property (nonatomic) long long giftId;
+@property (nonatomic) long long giftDiamondCount;
+@property (copy, nonatomic) NSString *giftName;
+
++ (id)descriptor;
+
+@end

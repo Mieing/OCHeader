@@ -1,0 +1,10 @@
+@class InGroupDelegateResponse_ResponseData;
+
+@interface InGroupDelegateResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) InGroupDelegateResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

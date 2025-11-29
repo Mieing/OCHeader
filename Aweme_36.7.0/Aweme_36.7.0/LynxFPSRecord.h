@@ -1,0 +1,27 @@
+@class NSString;
+@protocol NSCopying;
+
+@interface LynxFPSRecord : NSObject <NSCopying> {
+    struct { unsigned int frames; double duration; unsigned int drop1Count; double drop1Duration; unsigned int drop3Count; double drop3Duration; unsigned int drop7Count; double drop7Duration; unsigned int drop25Count; double drop25Duration; double hitchDuration; } _totalMetrics;
+    double timeoutInterval;
+    id /* block */ timeoutCompletion;
+}
+
+@property (readonly, nonatomic) unsigned char state;
+@property (readonly, nonatomic) id<NSCopying> key;
+@property (readonly, nonatomic) NSString *name;
+@property (readonly, nonatomic) unsigned long long frames;
+@property (readonly, nonatomic) double duration;
+@property (readonly, nonatomic) double framesPerSecond;
+@property (nonatomic) long long maximumFramesPerSecond;
+@property (readonly, nonatomic) struct { unsigned int x0; double x1; unsigned int x2; double x3; unsigned int x4; double x5; unsigned int x6; double x7; unsigned int x8; double x9; double x10; } metrics;
+@property (readonly, nonatomic) struct { double x0; double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; } derivedMetrics;
+
+- (void)setTimeout:(double)a0 completion:(id /* block */)a1;
+- (void).cxx_destruct;
+- (id)description;
+- (void)reset;
+- (id)initWithKey:(id)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

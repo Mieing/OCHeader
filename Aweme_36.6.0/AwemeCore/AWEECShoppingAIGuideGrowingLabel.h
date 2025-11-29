@@ -1,0 +1,80 @@
+@class NSTimer, NSAttributedString, NSString, UIFont, NSMutableDictionary, AWEECShoppingAIGuideMessageGroupViewModel, NSMutableArray, AWEECShoppingAIGuideContext, TTAMarkDownRender, YYTextContainer, UIColor;
+@protocol AWEECShoppingAIGuideGrowingLabelDelegate;
+
+@interface AWEECShoppingAIGuideGrowingLabel : YYLabel <TTAMarkDownActionDelegate>
+
+@property (retain, nonatomic) AWEECShoppingAIGuideContext *context;
+@property (retain, nonatomic) TTAMarkDownRender *markdownRender;
+@property (nonatomic) double preHeight;
+@property (retain, nonatomic) NSTimer *typewriterTimer;
+@property (nonatomic) unsigned long long typewriterCursor;
+@property (retain, nonatomic) NSMutableArray *paragraphs;
+@property (retain, nonatomic) NSMutableDictionary *paragraphCurrentStyle;
+@property (copy, nonatomic) NSString *currentParagraphTag;
+@property (copy, nonatomic) NSString *preParagraphTag;
+@property (retain, nonatomic) NSMutableArray *tagStack;
+@property (copy, nonatomic) NSAttributedString *itemPrefix;
+@property (copy, nonatomic) NSAttributedString *searchPostfix;
+@property (copy, nonatomic) NSAttributedString *recomPrefix;
+@property (copy, nonatomic) NSAttributedString *loadingPostfix;
+@property (retain, nonatomic) YYTextContainer *calcLineContainer;
+@property (nonatomic) BOOL isPrinting;
+@property (copy, nonatomic) NSString *targetText;
+@property (retain, nonatomic) NSString *textCardID;
+@property (weak, nonatomic) id<AWEECShoppingAIGuideGrowingLabelDelegate> delegate;
+@property (nonatomic) BOOL enableTypewriterEffect;
+@property (retain, nonatomic) UIFont *plainTextFont;
+@property (retain, nonatomic) UIColor *plainTextColor;
+@property (nonatomic) BOOL appendLoading;
+@property (nonatomic) BOOL shouldProcessAttributedString;
+@property (nonatomic) long long limitLine;
+@property (nonatomic) BOOL useStdMarkdown;
+@property (weak, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *weakGroupMessageViewModel;
+@property (copy, nonatomic) NSString *location;
+@property (copy, nonatomic) id /* block */ retryBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)styleTags;
++ (id)paragraphTags;
+
+- (void)resumeTypewriter;
+- (void)pauseTypewriter;
+- (void)resetTypewriter;
+- (void)skipTypewriter;
+- (void)enableFullTextPopup;
+- (void)setTargetText:(id)a0 callTrace:(id)a1;
+- (BOOL)useMarkdownRender;
+- (void)setTruncationTokenWithFont:(id)a0;
+- (void)markdown_processTextWithAppendingString:(id)a0 callTrace:(id)a1;
+- (id)textConvertedFromString:(id)a0;
+- (void)processTextWithAppendingString:(id)a0 callTrace:(id)a1;
+- (id)markdownGenerateAttrStrWithOriginalStr:(id)a0 callTrace:(id)a1;
+- (id)getAttributedStringWithAppendingString:(id)a0 withAttributes:(id)a1;
+- (id)markdownUIParams;
+- (void)openSearchResultPageWithQuery:(id)a0;
+- (void)typewriterPrintCharacter;
+- (void)postTyperWriterStateChange:(id)a0 stateAction:(id)a1;
+- (void)postTextRenderEndEvent;
+- (void)typewriterReadNextCursor;
+- (void)reprocessTextWithString:(id)a0;
+- (id)markdownTextConvertedFromString:(id)a0;
+- (BOOL)isRangeValidForString:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (id)textHTMLTagAnalysisWithString:(id)a0;
+- (void)showFullTextPopup;
+- (void)markdownLinkDidClick:(id)a0 linkText:(id)a1;
+- (struct CGSize { double x0; double x1; })imageSizeWithURL:(id)a0;
+- (void)appendText:(id)a0 callTrace:(id)a1;
+- (id)generateLayoutWithText:(id)a0 callTrace:(id)a1;
+- (id)markdownTransformerPrefer;
+- (void).cxx_destruct;
+- (id)defaultParagraphStyle;
+- (void)setPreferredMaxLayoutWidth:(double)a0;
+- (void)setText:(id)a0;
+- (void)setAttributedText:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 context:(id)a1;
+- (void)setupUI;
+
+@end

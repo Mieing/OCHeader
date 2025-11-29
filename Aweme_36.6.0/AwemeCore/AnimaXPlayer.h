@@ -1,0 +1,84 @@
+@class NSString, AnimaXContext, AnimaXResourceLoaderHolder, AnimaXPropertyUpdater;
+@protocol AnimaXCompositionListenerProtocol;
+
+@interface AnimaXPlayer : NSObject <AnimaXPlayerProtocol> {
+    struct shared_ptr<lynx::animax::AnimaXPlayer> { struct AnimaXPlayer *__ptr_; struct __shared_weak_count *__cntrl_; } _player;
+    AnimaXPropertyUpdater *_propertyUpdater;
+    double _width;
+    double _height;
+}
+
+@property (retain, nonatomic) AnimaXResourceLoaderHolder *resourceLoader;
+@property (retain, nonatomic) AnimaXContext *context;
+@property (weak, nonatomic) id<AnimaXCompositionListenerProtocol> compositionListener;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onShow:(unsigned long long)a0;
+- (void)onHide:(unsigned long long)a0;
+- (void)onEvent:(unsigned char)a0 params:(id)a1;
+- (id)initWithContext:(id)a0 scale:(double)a1;
+- (void)createPlayerWithScale:(double)a0;
+- (void)setSrc:(id)a0 inBundle:(id)a1;
+- (void)setupResourceLoader;
+- (void)setJson:(id)a0 inBundle:(id)a1;
+- (void)updateLayerProperty:(id)a0 propertyType:(unsigned long long)a1 value:(id)a2 callback:(id)a3;
+- (void)executePropertyOperation:(id)a0 operation:(id /* block */)a1;
+- (void)updateResourceProperty:(id)a0 propertyType:(unsigned long long)a1 value:(id)a2 callback:(id)a3;
+- (void)addLayerPropertyCallback:(unsigned long long)a0 keyPath:(id)a1 valueCallback:(id)a2 callback:(id)a3;
+- (void)ensurePropertyUpdater;
+- (void)getKeysForKeyPath:(id)a0 callback:(id)a1;
+- (void)setImageFolder:(id)a0;
+- (void)setPolyfill:(id)a0;
+- (void)setDynamicResource:(BOOL)a0;
+- (void)setAutoReverse:(BOOL)a0;
+- (void)setObjectfit:(id)a0;
+- (void)setObjectPosition:(id)a0;
+- (void)playFrom:(double)a0 to:(double)a1;
+- (void)adoptAnimaXSurfaceDrawable:(id)a0;
+- (void)setFPSEventInterval:(long long)a0;
+- (void)subscribeUpdateEvent:(int)a0;
+- (void)unsubscribeUpdateEvent:(int)a0;
+- (void)subscribeUpdateEvents:(id)a0 subscribe:(BOOL)a1;
+- (void)addAnimationEventListener:(id)a0;
+- (void)removeAnimationEventListener:(id)a0;
+- (id)getAnimaXContext;
+- (void *)getPlayerRaw;
+- (struct shared_ptr<lynx::animax::AnimaXPlayer> { struct AnimaXPlayer *x0; struct __shared_weak_count *x1; })getPlayerShared;
+- (void)prf_onEvent:(unsigned char)a0 params:(id)a1;
+- (void)prf_setSrc:(id)a0;
+- (id)prfSrc;
+- (void)setPrfSrc:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)enterBackground;
+- (void)reload;
+- (BOOL)isAnimating;
+- (id)initWithContext:(id)a0;
+- (void)setEndFrame:(double)a0;
+- (void)setJson:(id)a0;
+- (void)stop;
+- (id).cxx_construct;
+- (void)setMaxFrameRate:(double)a0;
+- (void)resume;
+- (void)enterForeground;
+- (void)setSpeed:(double)a0;
+- (void)dealloc;
+- (void)setProgress:(double)a0;
+- (void)setSrc:(id)a0;
+- (void)setStartFrame:(double)a0;
+- (void)setComposition:(id)a0;
+- (double)currentFrame;
+- (void)seekTo:(double)a0;
+- (double)durationInMS;
+- (void)handleTapAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)setLoop:(BOOL)a0;
+- (void)setAutoplay:(BOOL)a0;
+- (double)lastCheckTime;
+- (void)setLastCheckTime:(double)a0;
+- (void)setLoopCount:(int)a0;
+
+@end

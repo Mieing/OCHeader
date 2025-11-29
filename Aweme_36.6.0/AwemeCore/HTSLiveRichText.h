@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveRichText : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *text;
+@property (retain, nonatomic) HTSLiveImage *img;
+@property (nonatomic) BOOL hasImg;
+@property (nonatomic) long long fontSize;
+@property (copy, nonatomic) NSString *fontColor;
+@property (nonatomic) long long weight;
+
++ (id)descriptor;
+
+@end

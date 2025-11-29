@@ -1,0 +1,91 @@
+@class NSString, NSMutableDictionary, NSOperationQueue, EmoticonStoreMainTabExptSetting, EmoticonStoreSession, EmoticonListUpdateLogic, EmoticonStoreSecondTabExptSetting, NSMutableSet;
+
+@interface EmoticonStoreMgr : MMUserService <StoreEmotionExchangeEmotionPackCgiDelegate, EmoticonStoreWeCoinPurchaseLogicDelegate, EmoticonListUpdateLogicDelegate, EmoticonStorePackDownloadLogicDelegate, MMServiceProtocol, PBMessageObserverDelegate, IAPExt, ICdnComMgrExt, IMMLanguageMgrExt> {
+    NSMutableSet *m_requestDetailForPids;
+    NSMutableDictionary *m_getListEventIdDic;
+}
+
+@property (retain, nonatomic) NSMutableDictionary *m_skProducts;
+@property (retain, nonatomic) EmoticonStoreSession *m_session;
+@property (retain, nonatomic) NSMutableDictionary *getDetailCgiDic;
+@property (retain, nonatomic) NSMutableDictionary *m_waitForExchangePackItemDic;
+@property (retain, nonatomic) NSOperationQueue *m_installPackageQueue;
+@property (retain, nonatomic) EmoticonListUpdateLogic *emoticonListUpdateLogic;
+@property (retain, nonatomic) NSMutableDictionary *IAPPurchaseDic;
+@property (retain, nonatomic) NSMutableDictionary *weCoinPurchaseDic;
+@property (retain, nonatomic) NSMutableDictionary *emoticonDownloadDic;
+@property (retain, nonatomic) EmoticonStoreMainTabExptSetting *mainTabExptSetting;
+@property (retain, nonatomic) NSString *mainTabExptConfig;
+@property (retain, nonatomic) EmoticonStoreSecondTabExptSetting *secondTabExptSetting;
+@property (retain, nonatomic) NSString *secondTabExptConfig;
+@property (retain, nonatomic) NSMutableDictionary *downloadingStoreItemCache;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (unsigned int)getIdKeyIdEmoticon;
++ (unsigned int)getIdKeyDownloadFailed;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)dealloc;
+- (unsigned long long)beginStoreSession:(unsigned int)a0 withReqType:(unsigned int)a1;
+- (id)beginStoreSessionWithItem:(id)a0;
+- (void)endStoreSession:(unsigned int)a0;
+- (BOOL)GetEmotionListFromStore:(unsigned int)a0 withReqType:(unsigned int)a1;
+- (id)mergeSessionForItemList:(id)a0;
+- (void)tryUpdateDetailFromServerWithProductID:(id)a0 Scence:(unsigned int)a1 isLimited:(BOOL)a2;
+- (void)callStoreItemUpdateExt:(id)a0;
+- (void)callStoreItemGetDetailFailedFor:(id)a0;
+- (void)processUpdatedItem:(id)a0;
+- (void)updateItemInSession:(id)a0;
+- (void)updateItemInSession:(id)a0 isFromDetail:(BOOL)a1;
+- (unsigned long long)buyEmoticonItem:(id)a0;
+- (id)getWeCoinPurchaseLogicForItem:(id)a0;
+- (void)onRestoreSuccessForProduct:(id)a0;
+- (void)onRestoreFail;
+- (BOOL)reDownloadAndInstallEmoticonItem:(id)a0 isAutomatic:(BOOL)a1;
+- (BOOL)cancelDownloadAndInstallEmoticonItem:(id)a0;
+- (void)tryInstallEmoticonPackage:(id)a0;
+- (id)getStoreAdvertismentForSession:(unsigned int)a0;
+- (BOOL)updateTailForSessionScence:(unsigned int)a0 withReqType:(unsigned int)a1;
+- (id)updateItemDetailWithProductID:(id)a0 Scence:(unsigned int)a1 ShouldLimitFrequency:(BOOL)a2;
+- (void)startBoughtListSession;
+- (void)updateBoughtListTailFromServer;
+- (id)findEmoticonItemByProductID:(id)a0;
+- (void)notifyDownloadErrorWithItem:(id)a0;
+- (id)rootPathForStoreListCache;
+- (id)pathForStoreListCacheWithReqType:(unsigned int)a0;
+- (id)getStoreListCacheWithReqType:(unsigned int)a0;
+- (void)setStoreListCacheWithItemList:(id)a0 Advertisment:(id)a1 withReqType:(unsigned int)a2;
+- (void)setStoreListCacheWithItemList:(id)a0 Advertisment:(id)a1 withReqType:(unsigned int)a2 withTopNum:(unsigned int)a3;
+- (void)setStoreListCacheWithCache:(id)a0 withReqType:(unsigned int)a1;
+- (void)saveStoreItemCacheForDownload:(id)a0;
+- (void)onLanguageChange;
+- (void)saveEmoticonExpt:(id)a0 reqType:(unsigned int)a1;
+- (void)saveMainTabExptSetting:(id)a0;
+- (void)saveSecondTabExptSetting:(id)a0;
+- (BOOL)getBoughtListFromServer;
+- (void)onPurchaseFailedForItem:(id)a0;
+- (void)onPurchaseSuccessForItem:(id)a0 paidBefore:(BOOL)a1;
+- (void)tryStartDownloadItem:(id)a0 WithScene:(int)a1 isAutomatic:(BOOL)a2;
+- (void)onWeCoinShowFirstBuyTipForItem:(id)a0;
+- (void)onWeCoinPurchasePrepareStartedForItem:(id)a0;
+- (void)onWeCoinPreparePurchaseFailedForItem:(id)a0;
+- (void)onWeCoinConsumeFailedForItem:(id)a0;
+- (void)onWeCoinPurchaseSuccessForItem:(id)a0 paidBefore:(BOOL)a1;
+- (void)onWeCoinDepositFailedWhenPurchasing:(id)a0;
+- (void)onWeCoinPurchaseCanceledForItem:(id)a0;
+- (void)onWeCoinPurchaseStartedForItem:(id)a0;
+- (void)onWeCoinPurchasePrepareFinishedForItem:(id)a0;
+- (void)onEmoticonExchangeSuccessForItem:(id)a0;
+- (void)onEmoticonExchangeFailForItem:(id)a0 isNetworkError:(BOOL)a1;
+- (void)onCdnDownloadStartFailedForItem:(id)a0;
+- (void)onCdnDownloadFailForItem:(id)a0;
+- (void)onCdnDownloadSuccessForItem:(id)a0;
+- (id)forceUpdateForListUpdateWithItemList:(id)a0;
+- (void)onGetExptConfig:(id)a0 reqType:(unsigned int)a1;
+- (void).cxx_destruct;
+
+@end

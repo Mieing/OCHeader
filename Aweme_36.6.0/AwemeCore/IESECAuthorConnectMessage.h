@@ -1,0 +1,14 @@
+@class NSString, GPBInt64Array, NSMutableArray;
+
+@interface IESECAuthorConnectMessage : GPBMessage
+
+@property (nonatomic) int msgType;
+@property (copy, nonatomic) NSString *toast;
+@property (retain, nonatomic) GPBInt64Array *ecomLinkmicRoomIdsArray;
+@property (readonly, nonatomic) unsigned long long ecomLinkmicRoomIdsArray_Count;
+@property (retain, nonatomic) NSMutableArray *linkmicPopRoomsArray;
+@property (readonly, nonatomic) unsigned long long linkmicPopRoomsArray_Count;
+
++ (id)descriptor;
+
+@end

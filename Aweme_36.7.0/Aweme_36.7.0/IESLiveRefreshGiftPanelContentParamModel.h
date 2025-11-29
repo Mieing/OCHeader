@@ -1,0 +1,3 @@
+@interface IESLiveRefreshGiftPanelContentParamModel : IESLiveBridgeModel
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveAssetEffectUtilMessageRoot : GPBRootObject
+
+@end

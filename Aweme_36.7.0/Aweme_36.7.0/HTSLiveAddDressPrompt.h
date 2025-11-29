@@ -1,0 +1,8 @@
+@interface HTSLiveAddDressPrompt : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasAddDress;
+@property (nonatomic) long long addDressVersion;
+
++ (id)descriptor;
+
+@end

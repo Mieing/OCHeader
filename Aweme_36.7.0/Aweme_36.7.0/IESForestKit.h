@@ -1,0 +1,98 @@
+@class NSSet, NSMutableDictionary, IESForestConfig, IESForestRequestOperationManager, NSMutableArray, IESForestMemoryCacheManager;
+@protocol IESForestEventMonitor;
+
+@interface IESForestKit : NSObject
+
+@property (class, retain, nonatomic) id<IESForestEventMonitor> eventMonitor;
+
+@property (retain, nonatomic) NSSet *web_allowResourceExtensions;
+@property (retain, nonatomic) IESForestRequestOperationManager *operationManager;
+@property (retain, nonatomic) NSMutableArray *interceptors;
+@property (retain, nonatomic) NSMutableDictionary *sessionIDToChannelList;
+@property (nonatomic) BOOL isSharedInstance;
+@property (retain) IESForestConfig *forestConfig;
+@property (nonatomic) BOOL isAlive;
+@property (retain, nonatomic) IESForestMemoryCacheManager *memoryCacheManager;
+@property (retain, nonatomic) id<IESForestEventMonitor> eventMonitor;
+
++ (id)addCommonParamsForCDNMultiVersionURLString:(id)a0;
++ (id)cdnMultiVersionCommonParameters;
++ (void)registerGlobalInterceptor:(id)a0;
++ (BOOL)isGeckoResource:(id)a0;
++ (id)extractSourceUrl:(id)a0;
++ (id)urlStringWithoutQueryAndFragment:(id)a0;
++ (BOOL)isUrlString:(id)a0 resourceScene:(id)a1 inList:(id)a2;
++ (void)registerPostProcessorSharedInstance:(id)a0 ForProcessType:(id)a1;
++ (void)updatePreloadMemoryCacheLimit:(long long)a0;
++ (void)updateMemoryCacheLimit:(long long)a0;
++ (id)numberWithUrlString:(id)a0 resourceScene:(id)a1 inList:(id)a2 defaultValue:(id)a3;
++ (BOOL)isCDNMultiVersionResource:(id)a0;
++ (id)p_addPreloadResource:(id)a0 isMainResource:(BOOL)a1 schemeQuery:(id)a2;
++ (id)addPreloadResource:(id)a0 isMainResource:(BOOL)a1;
++ (id)postProcessorSharedInstanceDictionary;
++ (BOOL)isPreloadResource:(id)a0;
++ (void)finishTopLevelRequest:(id)a0 response:(id)a1 forestKit:(id)a2 error:(id)a3 operation:(id)a4 completionHandler:(id /* block */)a5;
++ (void)invokeBlock:(id)a0 isForestAlive:(BOOL)a1 completion:(id /* block */)a2;
++ (void)dispatchCompleteWithRequest:(id)a0 response:(id)a1 forestKit:(id)a2 callbackExecuteFinish:(id)a3 error:(id)a4;
++ (void)completeWithRequest:(id)a0 response:(id)a1 forestKit:(id)a2 eventTrackData:(id)a3 error:(id)a4;
++ (void)reportFullLinkTrackData:(id)a0;
++ (void)invokeDidFetchWithRequest:(id)a0 response:(id)a1 forestKit:(id)a2 error:(id)a3;
++ (void)monitorEvent:(id)a0 eventTrackData:(id)a1;
++ (id)extractGeckoResourceInfo:(id)a0;
++ (id)defalutCDNMultiVersionDomains;
++ (id)fetcherDictionary;
++ (id)globalInterceptors;
++ (id)generateCdnMultiVersionCommonParams;
++ (id)generateBucketWithDeviceID:(id)a0;
++ (void)reportCustomMonitorEvent:(id)a0 request:(id)a1 eventTrackData:(id)a2 category:(id)a3 metrics:(id)a4 sampleLevel:(long long)a5;
++ (void)reportPreloadTrackData:(id)a0 withRequest:(id)a1;
++ (void)reportComponentTrackData:(id)a0;
++ (id)forestWithBlock:(id /* block */)a0;
++ (id)geckoResourcePathForURLString:(id)a0;
++ (BOOL)isSuitableForForest:(id)a0;
++ (void)addDefaultCDNMultiVersionDomains:(id)a0;
++ (long long)registerCustomFetcher:(Class)a0;
++ (void)unregisterGlobalInterceptor:(id)a0;
++ (id)createFetcherWithType:(id)a0 request:(id)a1 forestKit:(id)a2;
++ (id)fetcherNames:(id)a0;
++ (id)sharedInstance;
++ (id)preloadResources;
+
+- (void)preload:(id)a0;
+- (id)fetchResourceAsync:(id)a0 parameters:(id)a1 completion:(id /* block */)a2;
+- (void)preloadWithUrlString:(id)a0 parameters:(id)a1 needSubResources:(BOOL)a2;
+- (void)preloadSubResources:(id)a0 parameters:(id)a1;
+- (id)initWithForestConfig:(id)a0;
+- (id)fetchResourceSync:(id)a0 parameters:(id)a1 error:(id *)a2;
+- (id)fetchResourceSync:(id)a0 parameters:(id)a1;
+- (void)registerInterceptor:(id)a0;
+- (id)createRequestWithURLString:(id)a0 parameters:(id)a1;
+- (void)preloadWithUrlString:(id)a0 parameters:(id)a1 isMainDoc:(BOOL)a2 redirectHandler:(id /* block */)a3 headerHandler:(id /* block */)a4 dataHandler:(id /* block */)a5 completionHandler:(id /* block */)a6;
+- (id)getPreloadConfig:(id)a0 parameters:(id)a1;
+- (id)fetchResourceSyncWithRequest:(id)a0 error:(id *)a1;
+- (id)fetchResourceWithRequest:(id)a0 completion:(id /* block */)a1;
+- (id)fetchImageWithRequest:(id)a0 completion:(id /* block */)a1;
+- (id)fetchResourceWithRequest:(id)a0 redirectHandler:(id /* block */)a1 headerHandler:(id /* block */)a2 dataHandler:(id /* block */)a3 completionHandler:(id /* block */)a4;
+- (BOOL)containsChannelInChannelListWithSessionID:(id)a0 andAccessKey:(id)a1 andChannel:(id)a2;
+- (BOOL)addChannelToChannelListWithSessionID:(id)a0 andAccessKey:(id)a1 andChannel:(id)a2;
+- (void)preload:(id)a0 parameters:(id)a1;
+- (void)preloadWithUrlString:(id)a0 parameters:(id)a1 isMainResource:(BOOL)a2;
+- (long long)resourceSceneWithUrlString:(id)a0 isMainResource:(BOOL)a1 schemeQuery:(id)a2 formattedUrlString:(id)a3 parameters:(id)a4;
+- (void)preloadImageWithUrlString:(id)a0 parameters:(id)a1;
+- (id)mergedInterceptors;
+- (id)fetchResourceAsyncWithRequest:(id)a0 completion:(id /* block */)a1;
+- (id)fetchLocalResourceSync:(id)a0 skipMonitor:(BOOL)a1;
+- (id)fetchLocalResourceSync:(id)a0 parameters:(id)a1;
+- (id)p_oldFetchImageWithRequest:(id)a0 completion:(id /* block */)a1;
+- (void)updateForestConfig:(id)a0;
+- (id)createRequestWithURLRequest:(id)a0 parameters:(id)a1;
+- (id)fetchLocalResourceSync:(id)a0;
+- (void)unregisterInterceptor:(id)a0;
+- (void)clearMemoryCacheFor:(id)a0;
+- (id)openSession:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)closeSession:(id)a0;
+
+@end

@@ -1,0 +1,10 @@
+@class JoinChannelResponse_ResponseData;
+
+@interface JoinChannelResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) JoinChannelResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

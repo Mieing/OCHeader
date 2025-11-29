@@ -1,0 +1,13 @@
+@class NSString, HTSLiveTaskConditionExtra;
+
+@interface HTSLiveTaskCondition : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (nonatomic) long long value;
+@property (copy, nonatomic) NSString *operator_p;
+@property (retain, nonatomic) HTSLiveTaskConditionExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

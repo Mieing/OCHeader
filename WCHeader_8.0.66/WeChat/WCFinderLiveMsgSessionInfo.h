@@ -1,0 +1,88 @@
+@class NSString;
+
+@interface WCFinderLiveMsgSessionInfo : MMBaseSessionInfo <WCTTableCoding>
+
+@property (retain, nonatomic) NSString *realChatUserName;
+@property (nonatomic) unsigned long long liveId;
+@property (nonatomic) unsigned int liveIdentity;
+@property (retain, nonatomic) NSString *selfUserName;
+@property (retain, nonatomic) NSString *selfEncryptedUsername;
+@property (nonatomic) unsigned int comparePriority;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)sessionId;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_sessionId;
++ (const void *)liveId;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_liveId;
++ (const void *)liveIdentity;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_liveIdentity;
++ (const void *)selfUserName;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_selfUserName;
++ (const void *)selfEncryptedUsername;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_selfEncryptedUsername;
++ (const void *)realChatUserName;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_realChatUserName;
++ (const void *)unreadCount;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_unreadCount;
++ (const void *)lastMsgUpdateTime;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (id)swift_lastMsgUpdateTime;
++ (const void *)draftMsg;
++ (const void *)__wcdb_synthesize_8:(void *)a0;
++ (id)swift_draftMsg;
++ (const void *)draftMsgTime;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (id)swift_draftMsgTime;
++ (const void *)sessionFlag;
++ (const void *)__wcdb_synthesize_10:(void *)a0;
++ (id)swift_sessionFlag;
++ (const void *)outUnreadCount;
++ (const void *)__wcdb_synthesize_11:(void *)a0;
++ (id)swift_outUnreadCount;
++ (const void *)sessionTopTime;
++ (const void *)__wcdb_synthesize_12:(void *)a0;
++ (id)swift_sessionTopTime;
++ (const void *)pbLastMessage;
++ (const void *)__wcdb_synthesize_13:(void *)a0;
++ (id)swift_pbLastMessage;
++ (const void *)sessionUnTopTime;
++ (const void *)__wcdb_synthesize_14:(void *)a0;
++ (id)swift_sessionUnTopTime;
++ (const void *)outUnreadMsgTime;
++ (const void *)__wcdb_synthesize_15:(void *)a0;
++ (id)swift_outUnreadMsgTime;
++ (const void *)jumpMsgLocalId;
++ (const void *)__wcdb_synthesize_16:(void *)a0;
++ (id)swift_jumpMsgLocalId;
++ (void)__wcdb_column_constraint_17:(void *)a0;
++ (void)__wcdb_index_18:(void *)a0;
++ (void)__wcdb_index_19:(void *)a0;
++ (void)__wcdb_index_20:(void *)a0;
++ (id)GetSelfUserNameFromSession:(id)a0;
+
+- (id)initWithPbSessionInfo:(id)a0 realChatUserName:(id)a1 selfEncryptedUsername:(id)a2;
+- (id)initWithPbSessionInfo:(id)a0 realChatUserName:(id)a1 selfEncryptedUsername:(id)a2 lastMsg:(id)a3 needUpdateUnreadCount:(BOOL)a4;
+- (id)initWithSessionId:(id)a0 liveId:(unsigned long long)a1 selfUserName:(id)a2 liveIdentity:(unsigned int)a3 realChatUserName:(id)a4 selfEncryptedUsername:(id)a5 lastMsg:(id)a6 needUpdateUnreadCount:(BOOL)a7;
+- (long long)compare:(id)a0;
+- (void)setLastMessage:(id)a0;
+- (void)setPbLastMessage:(id)a0;
+- (void)updateWithNewMsg:(id)a0 needUpdateUnreadCount:(BOOL)a1;
+- (void).cxx_destruct;
+
+@end

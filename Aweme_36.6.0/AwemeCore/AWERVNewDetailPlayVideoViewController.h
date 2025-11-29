@@ -1,0 +1,74 @@
+@class AWEAwemeModel, UIView, AWERVNewDetailPageContext, CADisplayLink, NSString, NSDictionary, UIViewController, AWERVNewDetailPlayInteractionView, NSNumber;
+@protocol AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol, AWEAwemeBizPlayVideoProtocol;
+
+@interface AWERVNewDetailPlayVideoViewController : UIViewController <AWEPlayVideoViewControllerContainerProtocol, AWEPlayVideoDelegate, IESVideoPlayerDelegate, AWERVNewDetailPlayInteractionViewDelegate>
+
+@property (retain, nonatomic) UIView *clipContainerView;
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEAwemeBizPlayVideoProtocol, AWEPlayVideoViewControllerProtocol> *playerViewController;
+@property (retain, nonatomic) AWERVNewDetailPlayInteractionView *playInteractionView;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) AWERVNewDetailPageContext *context;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (copy, nonatomic) NSDictionary *logExtraDict;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) NSNumber *defaultStartPlayTime;
+@property (nonatomic) double stopTime;
+@property (nonatomic) double currentPlayTime;
+@property (nonatomic) unsigned long long playerScaleMode;
+@property (nonatomic) BOOL isFirstCard;
+@property (copy, nonatomic) id /* block */ playButtonClicked;
+@property (copy, nonatomic) id /* block */ controlViewHandler;
+@property (retain, nonatomic) NSString *referString;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)player:(id)a0 playbackFailedWithError:(id)a1;
+- (void)playerDidReadyForDisplay:(id)a0;
+- (void)player:(id)a0 didChangeStallState:(long long)a1;
+- (void)player:(id)a0 playbackFailedForURL:(id)a1 error:(id)a2;
+- (void)player:(id)a0 updatePlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (void)playerWillStartNextLoop:(id)a0;
+- (void)player:(id)a0 didChangePlaybackToAction:(long long)a1;
+- (void)updateLogExtraDict:(id)a0;
+- (void)resetDisplayLink;
+- (void)removeFromParentVC;
+- (id)relatedViewControllerForPrefetch;
+- (void)configSubviews;
+- (void)updatePlayerViewFrame;
+- (void)resetToBeginTime;
+- (void)playResumeDisplayLink;
+- (long long)userActionPlayState;
+- (long long)videoActionState;
+- (BOOL)isPlayerUnplayedStatus;
+- (void)hidePlayerGradienView;
+- (void)showPlayerGradienView;
+- (void)seekVideoStartToDefault;
+- (void)updateWithModel:(id)a0 context:(id)a1 logExtraDict:(id)a2;
+- (void)removeVideoViewController;
+- (void)playAndStopLoadingAnimation:(BOOL)a0;
+- (void)clearDefaultStartPlayTime;
+- (void)setStopPlayTime:(double)a0;
+- (void)refreshLogExtraDict:(id)a0;
+- (void)updateStartLeftTime;
+- (void)updateClipContainerViewFrame;
+- (void)clipPlayControllerView;
+- (double)playerVerticalFrameOffset:(id)a0;
+- (void)updateFakeLandscapeVideoScalingMode;
+- (void)controlViewClicked;
+- (void)videoActionButtonClicked;
+- (void)changeVideoActionButttonStatusWithPlayState;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (BOOL)play;
+- (BOOL)pause;
+- (BOOL)stop;
+- (void)replay;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillLayoutSubviews;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

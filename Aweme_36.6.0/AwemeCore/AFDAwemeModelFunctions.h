@@ -1,0 +1,3 @@
+@interface AFDAwemeModelFunctions : NSObject
+
+@end

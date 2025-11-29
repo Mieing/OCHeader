@@ -1,0 +1,3 @@
+@interface KtvPermitWantToListenApiRoot : GPBRootObject
+
+@end

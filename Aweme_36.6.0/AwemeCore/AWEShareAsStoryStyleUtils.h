@@ -1,0 +1,50 @@
+@interface AWEShareAsStoryStyleUtils : NSObject
+
++ (void)styleJsonWithContent:(id)a0 publishModel:(id)a1 completion:(id /* block */)a2;
++ (void)styleJsonWithStoryModel:(id)a0 completion:(id /* block */)a1;
++ (void)styleJsonV2WithStoryModel:(id)a0 completion:(id /* block */)a1;
++ (void)middleImageStyleJsonWithStoryModel:(id)a0 middleImage:(id)a1 completion:(id /* block */)a2;
++ (void)commentShareBubblePagesWithStoryModel:(id)a0 commentImage:(id)a1 completion:(id /* block */)a2;
++ (void)enhancePostscriptPageWithStoryModel:(id)a0 needPlaceholder:(BOOL)a1 completion:(id /* block */)a2;
++ (void)liveEnhancePostscriptPageWithStoryModel:(id)a0 needPlaceholder:(BOOL)a1 completion:(id /* block */)a2;
++ (struct CGSize { double x0; double x1; })contentSizeWithAwemeModel:(id)a0;
++ (struct CGSize { double x0; double x1; })contentMaxSizeForCanvasSize:(struct CGSize { double x0; double x1; })a0 publishTitle:(id)a1;
++ (struct CGSize { double x0; double x1; })awemeSizeForCanvasSize:(struct CGSize { double x0; double x1; })a0 storySize:(struct CGSize { double x0; double x1; })a1;
++ (struct CGSize { double x0; double x1; })noTitleStyleAwemeSizeForCanvasSize:(struct CGSize { double x0; double x1; })a0 storySize:(struct CGSize { double x0; double x1; })a1;
++ (struct CGSize { double x0; double x1; })noTitleStyleContentMaxSizeForCanvasSize:(struct CGSize { double x0; double x1; })a0 publishTitle:(id)a1;
++ (struct CGSize { double x0; double x1; })imageSizeWithCanvasSize:(struct CGSize { double x0; double x1; })a0 image:(id)a1;
++ (void)getCardViewImageWithStoryModel:(id)a0 completion:(id /* block */)a1;
++ (id)contentDictArrayWithStoryModel:(id)a0 avatarImagePath:(id)a1;
++ (void)getAvatarImageWithCompletion:(id /* block */)a0;
++ (id)postscriptEnhanceContentDictArrayWithInputContent:(id)a0 publishModel:(id)a1;
++ (id)contentDictArrayWithInputContent:(id)a0 publishModel:(id)a1;
++ (void)getCardViewImageWithContent:(id)a0 publishModel:(id)a1 completion:(id /* block */)a2;
++ (id)saveImage:(id)a0 imageName:(id)a1;
++ (struct CGSize { double x0; double x1; })middleImageSizeWithCanvasSize:(struct CGSize { double x0; double x1; })a0 image:(id)a1;
++ (double)minimumHeightRatioWithString:(id)a0 totalWidth:(double)a1;
++ (id)attributedStringWithContent:(id)a0;
++ (id)attributedStringWithContent:(id)a0 font:(id)a1 emojiFontSize:(double)a2;
++ (BOOL)awemeIsImageWithAwemeModel:(id)a0;
++ (struct CGSize { double x0; double x1; })awemeImageAlbumSizeWithAwemeModel:(id)a0;
++ (struct CGSize { double x0; double x1; })awemeVideoSizeWithAwemeModel:(id)a0;
++ (id)awemeImageAlbumCurrentImageModelWithAwemeModel:(id)a0;
++ (id)snapshotTransparentBackgroundForView:(id)a0;
++ (struct CGSize { double x0; double x1; })awemeSizeV2ForCanvasSize:(struct CGSize { double x0; double x1; })a0 storySize:(struct CGSize { double x0; double x1; })a1;
++ (struct CGSize { double x0; double x1; })contentMaxSizeV2ForCanvasSize:(struct CGSize { double x0; double x1; })a0 publishTitle:(id)a1;
++ (id)stringOfContentType:(long long)a0;
++ (void)syncLoadShareContentImageWithTextInput:(id)a0 publishModel:(id)a1 completion:(id /* block */)a2;
++ (id)buildMainShareContentJsonWithShareItemSize:(struct CGSize { double x0; double x1; })a0 canvasSize:(struct CGSize { double x0; double x1; })a1 postscript:(id)a2 needPlaceholder:(BOOL)a3;
++ (struct CGSize { double x0; double x1; })textSizeWithString:(id)a0 font:(id)a1 emojiFontSize:(double)a2 totalWidth:(double)a3;
++ (void)loadUserAvatar:(id)a0 completion:(id /* block */)a1;
++ (void)loadShareContentImageWithTextInput:(id)a0 completion:(id /* block */)a1;
++ (id)nonPostscriptEnhanceContentDictArrayWithStoryModel:(id)a0 avatarImagePath:(id)a1 needPlaceholder:(BOOL)a2 contentImageViewImage:(id)a3 contentImageViewPath:(id)a4;
++ (BOOL)deleteImageWithName:(id)a0;
++ (id)buildNonPostscriptMainShareContentJsonWithShareItemSize:(struct CGSize { double x0; double x1; })a0 canvasSize:(struct CGSize { double x0; double x1; })a1 postscript:(id)a2 needPlaceholder:(BOOL)a3;
++ (void)loadContentImageWithUserName:(id)a0 commentContent:(id)a1 commentImage:(id)a2 completion:(id /* block */)a3;
++ (id)commentShareBubbleContentDictArrayWithStoryModel:(id)a0 avatarImagePath:(id)a1 commentImageViewImage:(id)a2 commentImageViewPath:(id)a3;
++ (long long)textLinesCountWithString:(id)a0 font:(id)a1 emojiFontSize:(double)a2 totalWidth:(double)a3;
++ (id)attributedStringWithContent:(id)a0 fontSize:(double)a1 textColor:(id)a2;
++ (id)postscriptEnhanceContentDictArrayWithStoryModel:(id)a0 avatarImagePath:(id)a1 needPlaceholder:(BOOL)a2 contentImageViewImage:(id)a3 contentImageViewPath:(id)a4;
++ (struct CGSize { double x0; double x1; })canvasSize;
+
+@end

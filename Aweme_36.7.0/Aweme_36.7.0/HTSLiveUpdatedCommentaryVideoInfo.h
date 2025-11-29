@@ -1,0 +1,7 @@
+@interface HTSLiveUpdatedCommentaryVideoInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long action;
+
++ (id)descriptor;
+
+@end

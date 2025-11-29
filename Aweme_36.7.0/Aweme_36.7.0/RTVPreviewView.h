@@ -1,0 +1,71 @@
+@class UIView, NSString, RTVInteractionMessageBubble, RTVParticipatorPreviewViewModel, UIImageView, __RTVPreviewAvatarBackgroundView, RTVPreviewViewContext, RTVInteractionAvatarView;
+@protocol RTVUserProfileManagerInterface, RTVVoipConfigureManagerInterface, RxSchedulerCancellable, RxInjector, RTVXRControllerInjector, RTVSessionPreviewProcotol, RTVPreviewViewDelegate;
+
+@interface RTVPreviewView : RTVBasePreviewView <RTVXREngineDelegate, RTVInteractionMessageBubbleDelegate, RTVVoipSessionObserver>
+
+@property (retain, nonatomic) UIView *remoteVideoLastFrameView;
+@property (readonly, nonatomic) id<RTVUserProfileManagerInterface> profileManager;
+@property (nonatomic) BOOL firstFrameArrived;
+@property (retain, nonatomic) __RTVPreviewAvatarBackgroundView *avatarBackgroundView;
+@property (retain, nonatomic) RTVInteractionMessageBubble *bubble;
+@property (retain, nonatomic) id<RxSchedulerCancellable> didVideoEnabledCancellable;
+@property (retain, nonatomic) UIImageView *backgroundBlurView;
+@property (readonly, nonatomic) id<RTVVoipConfigureManagerInterface> voipConfigManager;
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (readonly, weak, nonatomic) id<RTVXRControllerInjector> controllerInjector;
+@property (readonly, weak, nonatomic) id<RTVSessionPreviewProcotol> session;
+@property (readonly, nonatomic) UIView *container;
+@property (readonly, nonatomic) RTVInteractionAvatarView *avatarView;
+@property (readonly, nonatomic) UIView *videoContentView;
+@property (readonly, nonatomic) RTVParticipatorPreviewViewModel *participatorPreviewViewModel;
+@property (weak, nonatomic) id<RTVPreviewViewDelegate> delegate;
+@property (readonly, nonatomic) RTVPreviewViewContext *context;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)rtv_awakeFromControllerInjector;
+- (void)renderModel:(id)a0 context:(id)a1;
+- (void)__createComponents;
+- (void)__layoutComponents;
+- (BOOL)useVoipSendMessage;
+- (void)rtvSession:(id)a0 contextKeyPathChange:(id)a1 fromValue:(id)a2 toValue:(id)a3;
+- (void)xrEngine:(id)a0 didRenderFirstLocalVideoFrame:(struct CGSize { double x0; double x1; })a1;
+- (void)xrEngine:(id)a0 didLeaveRoom:(id)a1;
+- (void)xrEngine:(id)a0 didUserOffline:(id)a1 reason:(unsigned long long)a2;
+- (void)xrEngine:(id)a0 firstRemoteVideoDidRenderOfUid:(id)a1;
+- (void)xrEngine:(id)a0 didVideoEnabled:(BOOL)a1 byUid:(id)a2;
+- (void)xrEngine:(id)a0 didVideoMuted:(BOOL)a1 byUid:(id)a2;
+- (void)__configureComponents;
+- (void)__createDependencies;
+- (void)willAdjustScale;
+- (void)didAdjustScale;
+- (void)__observe;
+- (void)__layoutVideoContentView;
+- (void)__createUIComponents;
+- (void)dismissBubbleWithAnimated:(BOOL)a0;
+- (void)dismissMessageBubble;
+- (void)showMessageBubbleWithAttributedContent:(id)a0 direction:(unsigned long long)a1 offset:(struct CGPoint { double x0; double x1; })a2 container:(id)a3;
+- (void)showMessageBubbleWithAttributedContent:(id)a0 direction:(unsigned long long)a1;
+- (void)showMessageBubbleWithAttributedContent:(id)a0 direction:(unsigned long long)a1 duration:(double)a2;
+- (void)didClickedInteractionMessageBubble:(id)a0;
+- (void)__setupVideoPreviewView;
+- (void)__setupAvatarView;
+- (void)__configureContainerCornerRadius;
+- (void)__layoutAvatarView;
+- (double)__avatarViewScale;
+- (void)__handleCameraOff:(BOOL)a0;
+- (id)__remoteVideoLastFrameView;
+- (void)__removeRemoteVideoLastFrameIfNeeded;
+- (void)__showRemoteVideoLastFrameIfNeeded;
+- (void)hideAvatarView:(BOOL)a0;
+- (double)__preferredContentWidhtForAttributedString:(id)a0;
+- (void)showMessageBubbleWithAttributedContent:(id)a0 direction:(unsigned long long)a1 offset:(struct CGPoint { double x0; double x1; })a2;
+- (id)model;
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)setAlpha:(double)a0;
+
+@end

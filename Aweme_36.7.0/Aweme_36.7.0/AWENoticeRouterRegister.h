@@ -1,0 +1,3 @@
+@interface AWENoticeRouterRegister : NSObject
+
+@end

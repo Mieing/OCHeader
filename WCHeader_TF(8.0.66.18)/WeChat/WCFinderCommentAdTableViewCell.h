@@ -1,0 +1,87 @@
+@class MMWebImageView, WCFinderFeedContentTextView, UIImageView, UILabel, NSIndexPath, UIButton, UIView, WCDownloadArgsWrap, WCFinderLiveNowView, UIColor, NSString, WCFinderCommentSectionViewModel, NSMutableSet, WCFinderHeadImageView, WCFinderJumpInfoPanelView, WCPlayerView, MMUIButton;
+@protocol WCFinderCommentAdTableViewCellDelegate;
+
+@interface WCFinderCommentAdTableViewCell : UITableViewCell <WCFinderHeadImageViewDelegate, WCFinderFeedContentTextClickActionDelegate, WCFinderJumpInfoPanelViewDelegate, WCGeneralMonitorCellProtocol, WCPlayerControlProtocol, WCPlayerEventExt>
+
+@property (retain, nonatomic) WCFinderCommentSectionViewModel *commentVM;
+@property (retain, nonatomic) WCFinderHeadImageView *avatarImageView;
+@property (retain, nonatomic) UILabel *nickNameLabel;
+@property (retain, nonatomic) MMWebImageView *identityView;
+@property (retain, nonatomic) UIButton *feedbackButton;
+@property (retain, nonatomic) WCFinderFeedContentTextView *textView;
+@property (retain, nonatomic) WCFinderJumpInfoPanelView *jumpInfoPanelView;
+@property (retain, nonatomic) UIImageView *adImageView;
+@property (retain, nonatomic) WCFinderLiveNowView *liveNowView;
+@property (retain, nonatomic) UIView *cardContainer;
+@property (retain, nonatomic) MMUIButton *cardActionButton;
+@property (nonatomic) unsigned long long startExposeTimestamp;
+@property (nonatomic) unsigned long long startDecodeTimestamp;
+@property (nonatomic) unsigned long long playCount;
+@property (nonatomic) unsigned long long videoExposeTime;
+@property (nonatomic) unsigned long long playTotoalTime;
+@property (nonatomic) BOOL isExposing;
+@property (retain, nonatomic) WCDownloadArgsWrap *playerArgsWrap;
+@property (retain, nonatomic) NSMutableSet *lastBufferEventArray;
+@property (nonatomic) unsigned long long preloadPercent;
+@property (nonatomic) unsigned long long startPlayTime;
+@property (weak, nonatomic) id<WCFinderCommentAdTableViewCellDelegate> delegate;
+@property (retain, nonatomic) NSIndexPath *indexPath;
+@property (nonatomic) BOOL isOnFirstScreen;
+@property (retain, nonatomic) UIColor *customBgColor;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) WCPlayerView *playerView;
+
++ (double)sectionHeightWith:(id)a0 width:(double)a1 halfScreenHeight:(double)a2;
++ (double)textViewMaxWidthWith:(double)a0 avatarLeftMargin:(double)a1;
++ (double)heightForMediaWithRatio:(double)a0 commentViewHeight:(double)a1 maxHeightPercentage:(long long)a2 width:(double)a3 minArea:(unsigned long long)a4;
++ (struct CGSize { double x0; double x1; })sizeForCardMediaWithCardInfo:(id)a0;
++ (id)commentInViewModel:(id)a0;
+
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)prepareForReuse;
+- (void)dealloc;
+- (void)resetCellData;
+- (void)updateWithModel:(id)a0 width:(double)a1;
+- (void)checkPlayerExposeState;
+- (void)startPlayIfCan;
+- (void)seekToTime:(double)a0;
+- (void)pausePlayIfCan;
+- (BOOL)canReportWithReportScene:(long long)a0;
+- (id)commentAdReportDictWithReportScene:(long long)a0;
+- (id)commentAdReportDictWithReportScene:(long long)a0 clickArea:(unsigned long long)a1;
+- (id)loadingMonitorInfo;
+- (void)updateAccountInfoWithJumpInfoStyle:(id)a0;
+- (void)updateAvatarCornerWithAuthorFlag:(BOOL)a0;
+- (void)updateLiveLogoIfNeeded;
+- (void)layoutUI;
+- (void)updateImageViewWithCommentImageInfo:(id)a0 imgInfo:(id)a1;
+- (void)updatePlayerViewWithCommentInfo:(id)a0 videoInfo:(id)a1;
+- (double)heightForMediaWithRatio:(double)a0 maxHeightPercentage:(long long)a1 minArea:(unsigned long long)a2;
+- (void)clickNickname;
+- (id)getComment;
+- (void)clickContentLink;
+- (void)clickADContentActionWithArea:(unsigned long long)a0;
+- (void)feedbackButtonClicked;
+- (void)longPress:(id)a0;
+- (void)showCommentMenuView;
+- (id)getWaitDetailsWith:(id)a0;
+- (id)replaceCommaToSemicolon:(id)a0;
+- (BOOL)isVideoExist;
+- (long long)hitPreloadPercent;
+- (void)finderHeadImageViewDidClick:(id)a0;
+- (void)updateFeedbackButtonLayout;
+- (void)onFinderJumpInfoViewDidClick:(id)a0;
+- (void)onFinderJumpInfoViewDidClick:(id)a0 inArea:(unsigned long long)a1;
+- (double)jumpInfoPanelViewRelateMediaWidth:(id)a0;
+- (void)onFeedContentTextView:(id)a0 clickReadMore:(BOOL)a1;
+- (void)onVideoDidPlayToEndTime;
+- (void)onPlayerStartDownload:(id)a0;
+- (void)onPlayerDownloadMoovReady:(id)a0 progressInfo:(id)a1;
+- (void)onPlayerStartPlay:(id)a0;
+- (id)getGeneralMonitorCellBizId;
+- (void).cxx_destruct;
+
+@end

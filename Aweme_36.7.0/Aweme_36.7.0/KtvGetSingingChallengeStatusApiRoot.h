@@ -1,0 +1,3 @@
+@interface KtvGetSingingChallengeStatusApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,76 @@
+@class UIFont, NSString, UIView, UIImageView, CAShapeLayer, UIButton, UILabel, NSNumber;
+@protocol AWEUIProgressLoadingViewDelegate;
+
+@interface AWEProgressLoadingView : UIView <IESIMProgressLoadingViewProtocol, ACCProcessViewProtcol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) double acclt_dalay;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) double progress;
+@property (nonatomic) BOOL cancelable;
+@property (copy, nonatomic) id /* block */ cancelBlock;
+@property (retain, nonatomic) NSString *customProgressText;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) UIView *weakBaseView;
+@property (nonatomic) BOOL allowUserInteract;
+@property (retain, nonatomic) UIImageView *progressView;
+@property (retain, nonatomic) UIView *progressLayerWrappedView;
+@property (retain, nonatomic) CAShapeLayer *progressLayer;
+@property (retain, nonatomic) UILabel *progressLabel;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIButton *cancelButton;
+@property (nonatomic) long long type;
+@property (nonatomic) long long status;
+@property (retain, nonatomic) UIFont *progressTextFont;
+@property (retain, nonatomic) NSNumber *progressCircleWidth;
+@property (weak, nonatomic) id<AWEUIProgressLoadingViewDelegate> delegate;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) double progress;
+@property (nonatomic) BOOL cancelable;
+@property (copy, nonatomic) id /* block */ cancelBlock;
+@property (retain, nonatomic) NSString *customProgressText;
+
+- (void)dismissWithAnimated:(BOOL)a0;
+- (void)showOnView:(id)a0 animated:(BOOL)a1;
+- (void)allowUserInteraction:(BOOL)a0;
+- (void)_startLoadingAnim;
+- (void)_stopLoadingAnim;
+- (id)initWithType:(long long)a0 title:(id)a1 progressTextFont:(id)a2 progressCircleWidth:(id)a3;
+- (void)_setupSelfFrame;
+- (id)_createBaseView;
+- (void)_showOnView:(id)a0 animated:(BOOL)a1;
+- (void)_showOnViewWithParams:(id)a0;
+- (void)_removeBaseViewIfNeeded;
+- (void)showOnView:(id)a0 animated:(BOOL)a1 afterDelay:(double)a2;
+- (void)showAnimated:(BOOL)a0 afterDelay:(double)a1;
+- (void)setAcclt_loadingStartTime:(double)a0;
+- (double)acclt_loadingStartTime;
+- (long long)acclt_scene;
+- (void)setAcclt_scene:(long long)a0;
+- (void)applicationWillEnterForeground:(id)a0;
+- (void)stopAnimating;
+- (void)_addObservers;
+- (void)startAnimating;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)_removeObservers;
+- (void)dismissAnimated:(BOOL)a0;
+- (void)setHidden:(BOOL)a0;
+- (void)_updateProgress;
+- (void)applicationDidEnterBackground:(id)a0;
+- (void)cancelButtonClicked:(id)a0;
+- (void)willMoveToWindow:(id)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)_showAnimated:(id)a0;
+- (double)circleWidth;
+- (id)initWithType:(long long)a0 title:(id)a1;
+- (void)showAnimated:(BOOL)a0;
+
+@end

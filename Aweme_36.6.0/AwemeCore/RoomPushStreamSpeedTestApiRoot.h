@@ -1,0 +1,3 @@
+@interface RoomPushStreamSpeedTestApiRoot : GPBRootObject
+
+@end

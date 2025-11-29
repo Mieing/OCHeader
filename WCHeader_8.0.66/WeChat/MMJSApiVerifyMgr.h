@@ -1,0 +1,83 @@
+@class NSString, NSMutableDictionary, JSAPIAuthWrap, NSArray, NSMutableArray;
+@protocol MMJSApiVerifyMgrDelegate;
+
+@interface MMJSApiVerifyMgr : NSObject <PBMessageObserverDelegate> {
+    NSMutableDictionary *_dictUrl2JSApiPermissions;
+    NSMutableDictionary *_dictApiName2Index;
+    NSMutableDictionary *_dictRealTimeVerify;
+    NSMutableDictionary *_dictOfflineVerify;
+    NSMutableDictionary *_dictApiAuthInfo;
+    NSMutableArray *_jsAuthQueue;
+    BOOL _isHandlingJSAuth;
+    NSMutableDictionary *_dictAuthFuncBlock;
+    NSString *_alertTile;
+    JSAPIAuthWrap *_makingAuthWrap;
+    NSMutableDictionary *_dictVerifyOverhead;
+    NSArray *_groupAuthInfoList;
+    NSMutableDictionary *_dictHidedMenuitemByPage;
+    NSMutableDictionary *_dictScopeAuthInfo;
+    NSMutableDictionary *_dictUrl2AppId;
+    NSMutableDictionary *_dictUrl2BrandIconUrl;
+    NSMutableDictionary *_dictUrl2VerifyInfoList;
+    NSMutableDictionary *_dictUrl2DomainPathList;
+    NSMutableDictionary *_dicPageStateChangeUrl;
+}
+
+@property (weak, nonatomic) id<MMJSApiVerifyMgrDelegate> mgrDelegate;
+@property (nonatomic) unsigned long long preverifyScene;
+@property (nonatomic) long long entryScene;
+@property (retain, nonatomic) NSString *miniProgramAppid;
+
+- (id)init;
+- (void)dealloc;
+- (void)setPageStateChangeUrl:(id)a0 baseUrl:(id)a1;
+- (id)getPageStateChangeBaseUrlForUrl:(id)a0;
+- (void)saveJSApiPermissions:(id)a0 url:(id)a1;
+- (void)saveJSApiPermissions:(id)a0 url:(id)a1 WithCheckedPreVerifyList:(BOOL)a2;
+- (unsigned char)getJSApiPermission:(id)a0 url:(id)a1;
+- (id)getUrlWithoutFragment:(id)a0;
+- (BOOL)canFixWkWebviewPermissionWithUrl:(id)a0 permissionRet:(id *)a1;
+- (void)startupPreVerifyJSAPI:(id)a0 url:(id)a1 failHandleBlock:(id /* block */)a2;
+- (void)startupPreVerifyJSAPI:(id)a0 url:(id)a1 mainFrameSessionId:(id)a2 failHandleBlock:(id /* block */)a3;
+- (void)startupRealTimeVerifyJSAPI:(id)a0 url:(id)a1 functionDef:(id)a2 funcBlock:(id /* block */)a3 failHandleBlock:(id /* block */)a4;
+- (void)saveJSAPIAuthInfo:(id)a0;
+- (void)saveScopeAuthInfo:(id)a0;
+- (void)checkJSAPIAuth:(id)a0 url:(id)a1 functionDef:(id)a2 funcBlock:(id /* block */)a3 failHandleBlock:(id /* block */)a4;
+- (id)getPermissionedWebEventsForOfflineH5:(id)a0;
+- (id)getCustomDomainsForUrl:(id)a0;
+- (BOOL)compartHashUrl:(id)a0 other:(id)a1;
+- (id)getAuthorizedWebMonitorEvents:(id)a0 withCurEvent:(id)a1;
+- (void)hideMenuitemBatch:(id)a0;
+- (void)showMenuitemBatch:(id)a0;
+- (void)showAllNonBaseMenuItem;
+- (void)hideAllNonBaseMenuItem;
+- (BOOL)isMenuItemHidenByPage:(id)a0;
+- (id)getAppIdForUrl:(id)a0;
+- (id)getAppHeadImgUrlForUrl:(id)a0;
+- (unsigned int)a8keyRequestID;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (id)failHandleBlockKey:(id)a0;
+- (id)funcBlockKey:(id)a0;
+- (void)askUsrToMakeAuth:(id /* block */)a0 authWrap:(id)a1 failBlock:(id /* block */)a2;
+- (void)addJSAuthToQueue:(id)a0 funcBlock:(id /* block */)a1 failHandleBlock:(id /* block */)a2;
+- (void)checkJSAuthQueue;
+- (id)getApiAuthInfo:(id)a0;
+- (id)getScopeAuthInfo:(id)a0 apiName:(id)a1;
+- (void)handleJSAuthFail:(id)a0 errDesc:(id)a1 authWrap:(id)a2;
+- (void)handleJSOAuth:(id)a0;
+- (void)handleSetAuth:(id)a0;
+- (void)handleRealtimeVerifyJSAPI:(id)a0;
+- (void)mergeJSAPIPermission:(id)a0 withVerifyList:(id)a1;
+- (void)handlePreVerifyJSAPI:(id)a0;
+- (long long)getPermissionIndexFromApiName:(id)a0;
+- (long long)getPermissionIndex:(id)a0;
+- (void)sendSetAuthRequest:(id)a0;
+- (void)handleJSAPICallBack:(id)a0 err_msg:(id)a1 failBlock:(id /* block */)a2;
+- (void)__setObject:(id)a0 forUrl:(id)a1 inNoFragmentDictionary:(id)a2;
+- (void)__removeObjForUrl:(id)a0 inNoFragmentDictionary:(id)a1;
+- (id)__mutableArrayForUrl:(id)a0 inNoFragmentDictionary:(id)a1;
+- (void)kvJSCallReport:(id)a0 permissionValue:(unsigned char)a1 isSuccess:(BOOL)a2 errorCode:(long long)a3 baseErrorCode:(long long)a4 funcName:(id)a5;
+- (void)idKeyReportForVerifyFail:(id)a0;
+- (void).cxx_destruct;
+
+@end

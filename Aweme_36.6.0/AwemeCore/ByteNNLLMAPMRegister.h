@@ -1,0 +1,3 @@
+@interface ByteNNLLMAPMRegister : NSObject
+
+@end

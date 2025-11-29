@@ -1,0 +1,77 @@
+@class UIView, UILabel, NSArray, ACCAIGCRecordListDataSource, ACCAIGCLoraProfileModel, UIImageView, AWEVideoPublishViewModel, NSString, UICollectionView, DUXLoadingParticleView, ACCAIGCLibraryActionView, ACCAIGCPhotoWallView;
+@protocol AWERecordInspirationServiceProtocol, IESServiceProvider, AWECreativeInspirationServiceProtocol;
+
+@interface ACCAIGCLibraryViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWERecordInspirationCardCellDelegate, ACCAIGCPhotoWallViewDelegate>
+
+@property (retain, nonatomic) ACCAIGCLoraProfileModel *profileModel;
+@property (retain, nonatomic) ACCAIGCLibraryActionView *actionView;
+@property (retain, nonatomic) ACCAIGCPhotoWallView *wallView;
+@property (retain, nonatomic) UIView *navigationBar;
+@property (retain, nonatomic) NSArray *imageArray;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *noMoreLabel;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UIImageView *backView;
+@property (retain, nonatomic) DUXLoadingParticleView *loading;
+@property (retain, nonatomic) ACCAIGCRecordListDataSource *dataSource;
+@property (nonatomic) BOOL isLoading;
+@property (nonatomic) BOOL isFromFirstLoad;
+@property (nonatomic) BOOL updateHeaderOffset;
+@property (retain, nonatomic) id<AWERecordInspirationServiceProtocol> inspirationService;
+@property (retain, nonatomic) id<AWECreativeInspirationServiceProtocol> creativeInspirationService;
+@property (retain, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (retain, nonatomic) AWEVideoPublishViewModel *publishViewModel;
+@property (retain, nonatomic) ACCAIGCLoraProfileModel *aigcLoraProfileModel;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)transition_shouldStartInteractiveTranstionToVC:(id)a0;
+- (void)avatarViewClicked;
+- (id)accui_emptyPageConfigForState:(unsigned long long)a0;
+- (void)accui_emptyPagePrimaryButtonTapped:(id)a0;
+- (id)accui_emptyPageOnView;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })accui_emptyPageEdgeInsets;
+- (void)bindObserver;
+- (void)triggerRefresh;
+- (void)updateCollectionHeader:(BOOL)a0;
+- (void)nextPageViewClicked;
+- (void)customKeyWordViewClicked;
+- (void)initServiceInject;
+- (void)removeData;
+- (void)loadInspirationWithLoadType:(unsigned long long)a0;
+- (void)trackEnterLoraAIPage;
+- (void)queryUnreadTaskPoolUI;
+- (void)updateEmpteStateWithError:(id)a0 count:(long long)a1;
+- (long long)createRoleStatus;
+- (void)trackShowAIGCRoleManagePage;
+- (void)avatarAction;
+- (void)nextPageAction;
+- (void)customKeyWordAction;
+- (void)enterInspirationFeedWithDetail:(id)a0 fromWall:(BOOL)a1;
+- (void)inspirationCardCellClickTakeSame:(id)a0;
+- (void)wallViewClicked:(long long)a0;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (void)backAction;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (id)initWithDataSource:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)loadModel;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)setupNavigationBar;
+
+@end

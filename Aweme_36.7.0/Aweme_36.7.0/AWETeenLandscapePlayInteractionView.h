@@ -1,0 +1,86 @@
+@class UIImageView, AWEElementContainer, UILabel, AWETeenModePlayerProgressSlider, AWETeenPlayInteractionContext, AWETeenPlayInteractionMiniProgressView, AWETeenPlayInteractionProgressHelper, UIViewController, UIView, UIButton, AWETeenLandscapeSpeedPlayView, NSString, NSTimer, AWEMinorAlbum, AWEAwemeModel, AWEGradientView, AWETeenCastPopover, AWETeenPlayInteractionMaximumProgressView;
+@protocol AWETeenLandscapePlayInteractionViewDelegate;
+
+@interface AWETeenLandscapePlayInteractionView : NSObject <AWETeenPlayInteractionProgressHelperObserver, AWETeenPlayInteractionDispatcherProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) AWEMinorAlbum *albumModel;
+@property (weak, nonatomic) UIViewController<AWETeenLandscapePlayInteractionViewDelegate> *viewController;
+@property (weak, nonatomic) AWETeenPlayInteractionContext *context;
+@property (nonatomic) unsigned long long interactionStatus;
+@property (retain, nonatomic) AWETeenPlayInteractionProgressHelper *progressHelper;
+@property (retain, nonatomic) AWETeenModePlayerProgressSlider *progressSlider;
+@property (retain, nonatomic) AWETeenPlayInteractionMaximumProgressView *centerProgressView;
+@property (retain, nonatomic) AWETeenPlayInteractionMiniProgressView *miniProgressView;
+@property (retain, nonatomic) AWEGradientView *topMaskView;
+@property (retain, nonatomic) AWEGradientView *bottomMaskView;
+@property (retain, nonatomic) AWETeenLandscapeSpeedPlayView *speedPlayContainer;
+@property (retain, nonatomic) UIView *seekMaskView;
+@property (retain, nonatomic) UIImageView *previewImageView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIButton *backButton;
+@property (retain, nonatomic) UIButton *playButton;
+@property (retain, nonatomic) UIButton *nextEpisodeButton;
+@property (retain, nonatomic) UIButton *screenCastButton;
+@property (retain, nonatomic) AWETeenCastPopover *castPopover;
+@property (nonatomic) double lastPlayDuration;
+@property (retain, nonatomic) NSTimer *enterImmersiveTimer;
+@property (weak, nonatomic) AWEElementContainer *bottomContainer;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) double bottomMargin;
+@property (nonatomic) unsigned long long playerStatus;
+
++ (Class)aAWEBrandColorAdapterClass;
++ (Class)aAWETeenModeSettingsViewModelCommonAdapterClass;
+
+- (void)setHide:(BOOL)a0;
+- (void)videoDidActivity;
+- (void)p_updateInteractionElementsStatus;
+- (void)p_updateDataForContainerElements:(id)a0;
+- (id)aAWEBrandColorAdapter;
+- (id)sliderThemeColor;
+- (void)updatePlayProgressWithTime:(double)a0 totalDuration:(double)a1;
+- (void)setPlayProgressWithTime:(double)a0 totalDuration:(double)a1;
+- (void)screenCastButtonClicked;
+- (void)updateUIAccordingtoModel:(id)a0;
+- (void)setHide:(BOOL)a0 animated:(BOOL)a1;
+- (void)p_setupEvent;
+- (void)p_startEnterImmersiveTimer;
+- (void)p_stopEnterImmersiveTimer;
+- (id)aAWETeenModeSettingsViewModelCommonAdapter;
+- (void)playerSeekingBegin;
+- (void)playerSeekingEnd;
+- (void)updateProgressSliderWithPlayableTime:(double)a0 totalDuration:(double)a1;
+- (void)changeImmersiveStatus:(unsigned long long)a0;
+- (void)p_setupScreenCastEntrance;
+- (void)p_setupRightBottomButtons;
+- (id)bottomContainerElements;
+- (void)exitLandscapeClicked;
+- (void)nextEpisodeButtonClicked;
+- (void)progressTapSeek;
+- (void)progressPanSeekBegin;
+- (void)progressPanSeekChanged:(double)a0 previewImage:(id)a1;
+- (void)progressPanSeekEnd;
+- (void)closePlaybackRatePanel;
+- (void)p_setupUI;
+- (void)viewDidAppear;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)pause;
+- (void)setData:(id)a0;
+- (void)viewWillAppear;
+- (id)view;
+- (void)reset;
+- (void)resume;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)didEndDisplaying;
+- (void)viewDidDisappear;
+- (void)willDisplay;
+- (id)initWithContext:(id)a0 viewController:(id)a1;
+- (void)viewWillDisappear;
+
+@end

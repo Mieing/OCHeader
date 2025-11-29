@@ -1,0 +1,88 @@
+@class NSString, NSArray, AWEPOIFeedUgcTagModel, AWEWeakAssociatedObjectWrapper, NSValue, NSNumber, NSDictionary;
+@protocol AWEPOIDetailFeedUgcTagItemModelProtocol;
+
+@interface AWEPOIFeedUgcHeaderModel : MTLModel <AWEPOIDetailFeedUgcModelABParamsProtocol, MTLJSONSerializing>
+
+@property (nonatomic) BOOL isExpanded;
+@property (nonatomic) BOOL hasExpandButton;
+@property (nonatomic) BOOL forceHideExpandButton;
+@property (retain, nonatomic) AWEPOIFeedUgcTagModel *expandButtonTag;
+@property (readonly, nonatomic) double cellHeight;
+@property (retain, nonatomic) NSNumber *collapsedCellHeight;
+@property (retain, nonatomic) NSNumber *expandedCellHeight;
+@property (retain, nonatomic) NSNumber *collapsedCellHeightFromIsolated;
+@property (retain, nonatomic) NSNumber *expandedCellHeightFromIsolated;
+@property (nonatomic) BOOL hiddenInfo;
+@property (retain, nonatomic) NSNumber *infoCardHeight;
+@property (retain, nonatomic) NSNumber *infoHeight;
+@property (retain, nonatomic) NSNumber *infoCardHeightFromIsolated;
+@property (retain, nonatomic) NSNumber *infoHeightFromIsolated;
+@property (retain, nonatomic) NSNumber *impressionTagsHeight;
+@property (retain, nonatomic) NSNumber *collapsedTagsHeight;
+@property (retain, nonatomic) NSNumber *expandedTagsHeight;
+@property (retain, nonatomic) NSArray *impureTags;
+@property (readonly, nonatomic) NSArray *integratedTags;
+@property (retain, nonatomic) NSArray *truncatedImpressionTags;
+@property (retain, nonatomic) AWEWeakAssociatedObjectWrapper *containerBeforeReload;
+@property (retain, nonatomic) NSValue *contentOffsetBeforeReload;
+@property (retain, nonatomic) id<AWEPOIDetailFeedUgcTagItemModelProtocol> scrollToTagBeforeReload;
+@property (nonatomic) BOOL hasTrackedShow;
+@property (nonatomic) BOOL hasTrackedExpandingTagShow;
+@property (nonatomic) BOOL hasShownUgcReachZero;
+@property (copy, nonatomic) NSDictionary *abParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long visitedCount;
+@property (nonatomic) long long effectiveTagRatesCount;
+@property (nonatomic) unsigned long long recommendedLevel;
+@property (copy, nonatomic) NSString *recommendedScore;
+@property (retain, nonatomic) NSArray *tags;
+@property (retain, nonatomic) NSArray *userAvatars;
+@property (copy, nonatomic) NSString *recommendedPopupUrl;
+@property (retain, nonatomic) NSArray *impressions;
+@property (copy, nonatomic) NSString *loadMoreTextTopRight;
+@property (copy, nonatomic) NSString *loadMoreTextBottom;
+@property (nonatomic) long long validCount;
+@property (copy, nonatomic) NSString *headerModuleTitle;
+@property (copy, nonatomic) NSDictionary *mobParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)tagsJSONTransformer;
++ (id)impressionsJSONTransformer;
++ (id)userAvatarsJSONTransformer;
++ (id)mobParamsJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (id)trackingParams;
+- (id)trackingParamsWithConstData:(id)a0;
+- (double)cellHeightWithIsolatedStatus:(BOOL)a0;
+- (BOOL)hitHeaderAB;
+- (BOOL)hitTagAB;
+- (double)impressionTagsTopWithIsolatedStatus:(BOOL)a0;
+- (double)tagsTopWithIsolatedStatus:(BOOL)a0;
+- (double)tagsHeightWithIsolatedStatus:(BOOL)a0;
+- (double)lineTopWithIsolatedStatus:(BOOL)a0;
+- (long long)indexOfTag:(id)a0;
+- (id)integratedTagsWithIsolatedStatus:(BOOL)a0;
+- (BOOL)isSameSelectedWithTagModel:(id)a0;
+- (id)defaultMixTag;
+- (id)selectWithTagModel:(id)a0;
+- (id)selectedTagModel;
+- (unsigned long long)ugcDisplayStyle;
+- (id)selectWithConstData:(id)a0;
+- (void)decreaseTagCountWithKey:(id)a0;
+- (id)resetToSelectDefaultMixTag;
+- (double)floatingBottomWithIsolatedStatus:(BOOL)a0;
+- (BOOL)hitPOIScoreInRateListAB;
+- (void)resetTagsTrackStatus;
+- (BOOL)hitTitleAB;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)recalculateSize;
+
+@end

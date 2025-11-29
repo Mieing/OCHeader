@@ -1,0 +1,81 @@
+@class NSString, NSDictionary, NSDate, NSNumber, BDECPigeonReferMessageInfo;
+
+@interface BDECPigeonParseMessage : NSObject <BDECPigeonMessageInterface>
+
+@property (nonatomic) long long roleType;
+@property (copy, nonatomic) NSString *identifier;
+@property (copy, nonatomic) NSString *bizConversationID;
+@property (retain, nonatomic) NSNumber *indexInConversation;
+@property (nonatomic) long long indexInConversationV2;
+@property (retain, nonatomic) NSNumber *orderInConversation;
+@property (copy, nonatomic) NSString *sender;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) long long messageType;
+@property (copy, nonatomic) NSString *pigeonMessageType;
+@property (copy, nonatomic) NSString *createTime;
+@property (copy, nonatomic) NSString *talkId;
+@property (copy, nonatomic) NSString *visibilityType;
+@property (copy, nonatomic) NSString *csSpecialContent;
+@property (copy, nonatomic) NSString *source;
+@property (copy, nonatomic) NSString *src;
+@property (copy, nonatomic) NSString *removeTips;
+@property (copy, nonatomic) NSString *serverMessageID;
+@property (nonatomic) BOOL hideAndShowUpgrade;
+@property (copy, nonatomic) NSString *hintContent;
+@property (nonatomic) BOOL isRiskControlled;
+@property (copy, nonatomic) NSString *riskControlledContent;
+@property (copy, nonatomic) NSDictionary *originExt;
+@property (copy, nonatomic) NSDictionary *bizExt;
+@property (nonatomic) long long status;
+@property (nonatomic) BOOL frontendNeedHidden;
+@property (nonatomic) BOOL isRecalled;
+@property (copy, nonatomic) NSString *serviceAttitude;
+@property (copy, nonatomic) NSString *serviceAttitudeAsynAlertContent;
+@property (copy, nonatomic) NSString *footDescInfo;
+@property (copy, nonatomic) NSString *clientMessageIDInExt;
+@property (copy) id /* block */ statusChangedBlock;
+@property (readonly, copy) NSString *pigeonBizType;
+@property (readonly, copy, nonatomic) NSString *hideUpgrade;
+@property (readonly, copy, nonatomic) NSString *hintContentCustomer;
+@property (readonly, nonatomic) long long sharkState;
+@property (readonly, copy, nonatomic) NSString *belongingConversationIdentifier;
+@property (readonly, copy, nonatomic) NSString *belongingBizConversationIdentifier;
+@property (readonly, nonatomic) BOOL isSelf;
+@property (readonly, copy, nonatomic) NSString *receiverSpecialContent;
+@property (readonly, copy, nonatomic) NSString *sharkSpecialContent;
+@property (readonly, copy, nonatomic) NSString *bizRole;
+@property (readonly) NSDate *createdAt;
+@property (readonly, copy, nonatomic) NSString *noticeType;
+@property (readonly, copy, nonatomic) NSString *strongRiskControlledContent;
+@property (readonly, copy, nonatomic) NSString *riskTopMsgInfoContent;
+@property (readonly, copy, nonatomic) NSString *srcUserId;
+@property (readonly, copy, nonatomic) NSString *srcCreateTime;
+@property (readonly, copy, nonatomic) NSString *wsCreateTime;
+@property (readonly, copy, nonatomic) NSString *recalledTime;
+@property (readonly, nonatomic) BOOL robotAutoAnswer;
+@property (readonly, nonatomic) NSDictionary *localExt;
+@property (readonly, nonatomic) NSString *customerHint;
+@property (readonly, nonatomic) BOOL isWelcomeSystemMessage;
+@property (readonly, nonatomic) BOOL isCustomerServiceAccessMessage;
+@property (readonly, nonatomic) BOOL isOffLineStartMessage;
+@property (readonly) NSDictionary *syncedExt;
+@property (readonly) NSDictionary *syncedExtInternal;
+@property (nonatomic) long long selfUserId;
+@property (readonly, nonatomic) BDECPigeonReferMessageInfo *referMessageInfo;
+@property (readonly, copy, nonatomic) NSString *markdownMessage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)messageWithDataDict:(id)a0;
++ (id)messageWithDataDict:(id)a0 is1v1Chant:(BOOL)a1;
+
+- (id)diffIdentifier;
+- (BOOL)isEqualToDiffableObject:(id)a0;
+- (void)setLocalExtEntry:(id)a0 value:(id)a1 completion:(id /* block */)a2;
+- (void)deleteWithMode:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)updateMessageBody:(id)a0 completion:(id /* block */)a1;
+- (void).cxx_destruct;
+
+@end

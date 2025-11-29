@@ -1,0 +1,82 @@
+@class VeRTCRoomProxy, VeRTCEngineProxy, VeCoreConfigObject, UIView, NSString, VeCoreEngineManager, VeLlamaProxy, VeGameConfigObject, NSURLSessionDataTask;
+@protocol VeGameManagerDelegate;
+
+@interface VeGameManager : NSObject <VeCoreEngineManagerDelegate>
+
+@property (retain, nonatomic) VeLlamaProxy *llamaProxy;
+@property (retain, nonatomic) VeRTCEngineProxy *rtcEngineProxy;
+@property (retain, nonatomic) VeRTCRoomProxy *rtcRoomProxy;
+@property (nonatomic) BOOL isStarted;
+@property (nonatomic) BOOL isPodStartRequesting;
+@property (nonatomic) BOOL isPodStatusRequesting;
+@property (retain, nonatomic) NSURLSessionDataTask *podStartRequestTask;
+@property (retain, nonatomic) NSURLSessionDataTask *podStatusRequestTask;
+@property (retain, nonatomic) VeGameConfigObject *configObj;
+@property (retain, nonatomic) VeCoreConfigObject *coreConfig;
+@property (retain, nonatomic) VeCoreEngineManager *engineManager;
+@property (weak, nonatomic) id<VeGameManagerDelegate> delegate;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIView *touchView;
+@property (nonatomic) double seiInterval;
+@property (nonatomic) BOOL vibratorEnable;
+@property (nonatomic) BOOL localKeyboardEnable;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)serviceDeviceId;
++ (id)currentDeviceId;
++ (id)currentVersion;
++ (id)sharedInstance;
+
+- (id)sendTextMessage:(id)a0;
+- (void)startWithConfig:(id)a0;
+- (id)sendBinaryMessage:(id)a0;
+- (void)reportTouchDelay:(id)a0;
+- (void)onErrorWithCode:(unsigned long long)a0;
+- (id)getRTCEngineDelegate;
+- (id)getRTCRoomDelegate;
+- (id)getEngineEventHandler;
+- (void)setupGlobalConfig;
+- (void)startGameWithConfig:(id)a0;
+- (void)muteVideo:(BOOL)a0;
+- (void)engineManager:(id)a0 operationDelay:(long long)a1 checkFrames:(long long)a2 intervalMs:(long long)a3 frameIndex:(long long)a4;
+- (void)engineManager:(id)a0 onError:(unsigned long long)a1;
+- (void)engineManager:(id)a0 onRemoteMccStatus:(unsigned long long)a1 channelId:(id)a2;
+- (void)firstRemoteVideoFrameArrivedFromEngineManager:(id)a0;
+- (void)engineManager:(id)a0 receivedBinaryMessage:(id)a1;
+- (void)engineManager:(id)a0 onReceiveMessage:(id)a1;
+- (void)engineManager:(id)a0 onRawSEIMessageReceived:(id)a1;
+- (void)engineManager:(id)a0 onAudioRouteChanged:(unsigned long long)a1;
+- (void)engineManager:(id)a0 onUserLeave:(unsigned long long)a1;
+- (void)engineManager:(id)a0 connectionChangedToState:(unsigned long long)a1;
+- (void)engineManager:(id)a0 onRemoteStreamStats:(id)a1;
+- (void)engineManager:(id)a0 mediaStreamError:(unsigned long long)a1;
+- (void)muteAudio:(BOOL)a0;
+- (void)switchPaused:(BOOL)a0;
+- (void)startAudioStream;
+- (void)setLocalAudioPlaybackVolume:(long long)a0;
+- (void)configEngineDelegateToProxy;
+- (id)currentRTCEngine;
+- (id)currentRTCRoom;
+- (void)setRTCEngineDelegate:(id)a0;
+- (void)ve_stop:(BOOL)a0;
+- (void)onWarningWithCode:(unsigned long long)a0 originCode:(long long)a1;
+- (void)onErrorWithCode:(unsigned long long)a0 originErrCode:(long long)a1 report:(BOOL)a2;
+- (void)onMessageChannelErrorWithErrCode:(unsigned long long)a0;
+- (void)onPodExitWithErrCode:(unsigned long long)a0 originErrCode:(long long)a1 report:(BOOL)a2;
+- (void)initWithAccountId:(id)a0;
+- (void)sendTouchARMMessage:(id)a0;
+- (void)sendTouchMessage:(id)a0;
+- (void)switchVideoStreamParameterWithWidth:(int)a0 height:(int)a1 frameRate:(int)a2 maxKbps:(int)a3 minKbps:(int)a4;
+- (void)requestPodStatus:(unsigned long long)a0 successBlock:(id /* block */)a1 failureBlock:(id /* block */)a2;
+- (id)getOptionsString:(id)a0;
+- (void)destroyRTCEngine;
+- (void)setAudioPlaybackDevice:(unsigned long long)a0;
+- (void)setRTCRoomDelegate:(id)a0;
+- (void).cxx_destruct;
+- (void)stop;
+- (void)stopAudioStream;
+
+@end

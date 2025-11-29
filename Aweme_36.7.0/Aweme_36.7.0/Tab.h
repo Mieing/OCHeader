@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface Tab : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *title;
+
++ (id)descriptor;
+
+@end

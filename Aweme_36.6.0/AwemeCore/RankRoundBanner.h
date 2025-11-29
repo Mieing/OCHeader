@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface RankRoundBanner : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *rankListArray;
+@property (readonly, nonatomic) unsigned long long rankListArray_Count;
+@property (nonatomic) long long changeTime;
+
++ (id)descriptor;
+
+@end

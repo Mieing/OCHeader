@@ -1,0 +1,74 @@
+@class AWEMusicSegmentedControl, NSString, NSArray, AWEUserModel, AWEMusicSingleTabTopView, AWEMusicDataManager, UIButton, AWEMusicMainFeedMusicServiceManager, AWEMusicDSPEventModel, AWESlidingViewController;
+@protocol MusicService;
+
+@interface AWEMusicFeedContainerNewViewController : UIViewController <AWEMusicBottomPlayerCanAutoShowProtocol, AWESlidingViewControllerDelegate, AWEMusicSegmentedControlDelegate, AWEMusicServiceDelegate, AWEMusicContainerDelegateProtocol, AWERouterViewControllerProtocol>
+
+@property (retain, nonatomic) AWESlidingViewController *slidingVC;
+@property (retain, nonatomic) AWEMusicSegmentedControl *segmentControl;
+@property (retain, nonatomic) AWEMusicSingleTabTopView *singleTabTopView;
+@property (retain, nonatomic) UIButton *darkBackBtn;
+@property (retain, nonatomic) UIButton *lightBackBtn;
+@property (retain, nonatomic) AWEMusicDataManager *dataManager;
+@property (retain, nonatomic) NSArray *itemArray;
+@property (retain, nonatomic) id<MusicService> musicService;
+@property (retain, nonatomic) id<MusicService> secondaryMusicService;
+@property (retain, nonatomic) AWEUserModel *userModel;
+@property (nonatomic) unsigned long long currentTabIndex;
+@property (retain, nonatomic) AWEMusicMainFeedMusicServiceManager *musicServiceManager;
+@property (nonatomic) long long defaultTabIndex;
+@property (nonatomic) BOOL previousKeepAlive;
+@property (nonatomic) BOOL isClickToDiscovery;
+@property (nonatomic) BOOL shouldRecommendTagAutoPlay;
+@property (nonatomic) BOOL canShowPrivacyPopGuide;
+@property (nonatomic) BOOL canAutoCreatePlaylist;
+@property (retain, nonatomic) NSArray *entranceModels;
+@property (nonatomic) unsigned long long initTabType;
+@property (nonatomic) BOOL shouldCollectTagAutoPlay;
+@property (retain, nonatomic) AWEMusicDSPEventModel *eventModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (BOOL)awe_shouldAutorotate;
+- (unsigned long long)awe_supportedInterfaceOrientations;
+- (void)musicService:(id)a0 playStatusChanged:(long long)a1;
+- (void)musicServiceDidPlay:(id)a0;
+- (long long)numberOfControllers:(id)a0;
+- (id)slidingViewController:(id)a0 viewControllerAtIndex:(long long)a1;
+- (void)slidingViewController:(id)a0 didSelectIndex:(long long)a1 transitionType:(long long)a2;
+- (void)receiveNotification:(id)a0;
+- (void)configSubviews;
+- (id)currentPageName;
+- (void)p_setupSegmentControl;
+- (void)tabChangedProgress:(double)a0 fromIndex:(long long)a1 toIndex:(long long)a2;
+- (BOOL)isHiddenSeperateView:(long long)a0;
+- (id)p_itemAtIndex:(long long)a0;
+- (void)changeToTabType:(unsigned long long)a0 from:(id)a1;
+- (void)p_configItems;
+- (void)p_updateTabPlayStatus;
+- (void)et_reportTabShow;
+- (void)onBackButtonClicked;
+- (void)et_reportChangeTabFromIndex:(long long)a0 toIndex:(long long)a1 isClickToDiscovery:(BOOL)a2 transitionType:(long long)a3;
+- (void)p_notifyShowingIndex:(long long)a0;
+- (BOOL)isDarkThemeOfIndex:(long long)a0;
+- (void)p_setupSlidingVC;
+- (void)p_setupBackBtn;
+- (void)p_setupTitleArea;
+- (id)etPageName;
+- (id)autoShowWithMusicService;
+- (void)onNavigationSearchClicked;
+- (id)p_makeBackButtonWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 imageName:(id)a1;
+- (void)et_myMyMusicExitInfo;
+- (void).cxx_destruct;
+- (id)childViewControllerForStatusBarStyle;
+- (id)initWithUserModel:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (BOOL)hidesBottomBarWhenPushed;
+- (BOOL)isCurrentUser;
+
+@end

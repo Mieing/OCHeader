@@ -1,0 +1,3 @@
+@interface HTSLiveGiftVoteRoot : GPBRootObject
+
+@end

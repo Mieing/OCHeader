@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveShortTouchBigCard : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *bigCardURL;
+@property (nonatomic) int containerType;
+@property (nonatomic) int width;
+@property (nonatomic) int height;
+@property (nonatomic) int duration;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface HTSLiveAvatarBorderConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *avatarBorder;
+@property (nonatomic) BOOL hasAvatarBorder;
+@property (retain, nonatomic) HTSLiveImage *thumbAvatarBorder;
+@property (nonatomic) BOOL hasThumbAvatarBorder;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEProfilePostRecommendModelFunctions : NSObject
+
+@end

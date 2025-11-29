@@ -1,0 +1,18 @@
+@class NSMutableArray;
+
+@interface IESLiveLinkMicAudienceGetSettingsResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int isTurnOn;
+@property (nonatomic) BOOL bigPartyAcceptNeedVerified;
+@property (nonatomic) BOOL bigPartyOnlyAcceptFollowerApply;
+@property (nonatomic) BOOL intimateChatOnlyAcceptFollowerApply;
+@property (nonatomic) BOOL intimateChatOnlyJoinThroughInvitation;
+@property (nonatomic) BOOL intimateChatAcceptNeedVerified;
+@property (nonatomic) BOOL audioChatAcceptNeedVerified;
+@property (nonatomic) BOOL audioChatOnlyAcceptFollowerApply;
+@property (retain, nonatomic) NSMutableArray *settingsArray;
+@property (readonly, nonatomic) unsigned long long settingsArray_Count;
+
++ (id)descriptor;
+
+@end

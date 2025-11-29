@@ -1,0 +1,70 @@
+@class NSString, IESLiveOpenPlatformEntranceHandler, IESLiveGameOpenPlatformAudienceEntranceMsgModel;
+@protocol IESLiveAnchorGameFuncPanelSceneMonitor, IESLiveAAIGamePacketDelegate, IESLiveGameOpenPlatformAudienceAppInstance;
+
+@interface IESLiveGameOpenPlatformAudienceAppManager : IESLiveGameOpenPlatformAppManager <IESLiveOpenPlatformMessageChannelObserver, IESLiveGameOpenPlatformAppInstanceLifeCycleObserver, IESLiveAudienceMoreToolsTempStateAreaActions, IESLiveOpenPlatformExplainCardActions, IESLiveGameOpenPlatformInterractGameAudienceManagerInterface>
+
+@property (retain, nonatomic) id<IESLiveAnchorGameFuncPanelSceneMonitor> sceneMonitor;
+@property (retain, nonatomic) IESLiveOpenPlatformEntranceHandler *entranceHandler;
+@property (retain, nonatomic) id<IESLiveAAIGamePacketDelegate> entranceMsg;
+@property (retain, nonatomic) id<IESLiveGameOpenPlatformAudienceAppInstance> entranceAppInstance;
+@property (retain, nonatomic) IESLiveGameOpenPlatformAudienceEntranceMsgModel *currentToolbarEntranceModel;
+@property (copy, nonatomic) NSString *certAppId;
+@property (nonatomic) BOOL hasXplayWatched;
+@property (nonatomic) BOOL allLevelComponentMount;
+@property (copy, nonatomic) id /* block */ handleEntranceMessageBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)handleOrientationChanged:(long long)a0;
+- (void)loadWithSchema:(id)a0;
+- (void)syncCertificationStatusHandler:(id)a0;
+- (void)addToolbarItemWith:(id)a0;
+- (void)bringAppToForeground:(id)a0;
+- (void)startCertificateWithAppid:(id)a0;
+- (void)onXplayStartLinkGameInfo:(id)a0 clientAttachedInfo:(id)a1;
+- (void)preloadOpenPlatformGame:(id)a0;
+- (void)closeOpenPlatformGame:(id)a0;
+- (void)openOpenPlatformGame:(id)a0 startParmaMap:(id)a1 launchResultBlock:(id /* block */)a2;
+- (BOOL)isOpenPlatformGameInRunning:(id)a0;
+- (void)appInstance:(id)a0 didSwitchStateFrom:(unsigned long long)a1 to:(unsigned long long)a2;
+- (void)didReceiveOpenPlatformAudienceMessage:(id)a0 msgType:(long long)a1;
+- (id)_createAppInstanceIfNeededWithAppId:(id)a0;
+- (void)_dispatchMessageToApp:(id)a0 message:(id)a1;
+- (void)_handleAppStateChangeToIdle:(id)a0;
+- (void)_handleAppStateChangeToLaunchedSuccess:(id)a0;
+- (void)_handleAppStateChangeToRunningInForeground:(id)a0;
+- (void)_handleAppStateChangeToRunningInBackground:(id)a0;
+- (void)_handleAppStateChangeToStartQuitting:(id)a0;
+- (void)_handleAppStateChangeToTerminated:(id)a0;
+- (void)_handleAppStateChangeToStartLaunching:(id)a0;
+- (void)_cleanAppInstance:(id)a0;
+- (id)_bootstrapNewAppInstanceWithAppID:(id)a0;
+- (id)initWithRoom:(id)a0 componentContext:(id)a1 eventContext:(id)a2;
+- (void)closeExplainCardWithAppId:(id)a0;
+- (void)tapExplainCardWithAppId:(id)a0 schema:(id)a1;
+- (void)explainCardDidShowOvertime:(id)a0;
+- (void)shouldShowExplainCard:(id)a0;
+- (void)loadWithLastEntranceMsg;
+- (id)appInstanceWithAppId:(id)a0;
+- (void)handleEntranceMessageWithAppInstance:(id)a0 entranceMsg:(id)a1 msgType:(unsigned long long)a2 source:(id)a3;
+- (void)_handleEntranceMsg:(id)a0;
+- (void)didReceiveOpenPlatformCardMessage:(id)a0;
+- (void)onXplayStartMsg:(id)a0;
+- (void)onXplayEndMsg:(id)a0;
+- (void)setupContextWithBarrageTypeEntranceMessage:(id)a0;
+- (void)handleBarrageTypeEntranceMessage:(id)a0;
+- (void)_hideExplainCard;
+- (void)trackIntegratedPluginShow:(id)a0 collected:(BOOL)a1;
+- (void)trackIntegratedPluginClick:(id)a0 collected:(BOOL)a1;
+- (void)_handleAppStateChangeToStartLoadingResource:(id)a0;
+- (void)loadMessageIfNeed;
+- (void)loadWithAppID:(id)a0 schema:(id)a1 source:(id)a2 name:(id)a3;
+- (id)xplayErrorWithCode:(long long)a0 errorMsg:(id)a1 msgBody:(id)a2;
+- (void)_setupObserver;
+- (void).cxx_destruct;
+- (void)_setup;
+
+@end

@@ -1,0 +1,28 @@
+@class NSString, NSMutableArray, HTSLiveFansclubBadge;
+
+@interface HTSLiveUserFansclubInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long intimacy;
+@property (nonatomic) long long level;
+@property (nonatomic) int status;
+@property (retain, nonatomic) NSMutableArray *taskInfosArray;
+@property (readonly, nonatomic) unsigned long long taskInfosArray_Count;
+@property (nonatomic) long long nextLevelIntimacy;
+@property (nonatomic) BOOL autoLightUpStatus;
+@property (copy, nonatomic) NSString *clubName;
+@property (retain, nonatomic) HTSLiveFansclubBadge *badge;
+@property (nonatomic) BOOL hasBadge;
+@property (nonatomic) long long curLevelMinIntimacy;
+@property (nonatomic) long long watchingDuration;
+@property (nonatomic) long long participateTime;
+@property (copy, nonatomic) NSString *intimacyStr;
+@property (nonatomic) long long autoLightDownTime;
+@property (nonatomic) long long temporaryIntimacy;
+@property (nonatomic) long long lightUpLevel;
+@property (nonatomic) long long increasedIntimacyToday;
+@property (copy, nonatomic) NSString *userAvatarURL;
+@property (copy, nonatomic) NSString *anchorId;
+
++ (id)descriptor;
+
+@end

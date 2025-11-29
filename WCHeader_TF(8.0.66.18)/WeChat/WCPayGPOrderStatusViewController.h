@@ -1,0 +1,76 @@
+@class WCPayNoticeItemView, MMTipsViewController, NSString, WCPayGPPhotoViewController, WCPayGPOrderStatusHeaderView, AAQueryDetailRes, NSMutableArray, WCPayRemarkPageSheet, WCActionSheet, WCPayWebImageView, MMTableView;
+@protocol WCPayGPOrderStatusViewControllerDelegate;
+
+@interface WCPayGPOrderStatusViewController : WCPayBaseViewController <UITableViewDelegate, UITableViewDataSource, ILinkEventExt, MMTipsViewControllerDelegate, WCPayWebImageViewDelegate, WCPayGPPhotoViewControllerDelegate, WCActionSheetDelegate, WCPayRemarkPageSheetDelegate>
+
+@property (weak, nonatomic) id<WCPayGPOrderStatusViewControllerDelegate> delegate;
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) AAQueryDetailRes *orderDetailData;
+@property (retain, nonatomic) NSMutableArray *sectionOneData;
+@property (retain, nonatomic) NSMutableArray *sectionTwoData;
+@property (nonatomic) BOOL bIsAllPayerHasPay;
+@property (retain, nonatomic) NSString *payerSolitaireContent;
+@property (retain, nonatomic) MMTipsViewController *payNotifyConfirmTipsView;
+@property (retain, nonatomic) WCPayWebImageView *remarkImageView;
+@property (retain, nonatomic) WCPayGPPhotoViewController *photoViewController;
+@property (nonatomic) BOOL bIsLoadingImage;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } picImgFromRect;
+@property (retain, nonatomic) WCPayRemarkPageSheet *remarkPageSheet;
+@property (retain, nonatomic) WCPayGPOrderStatusHeaderView *tableHeaderView;
+@property (nonatomic) BOOL bIsHeaderViewThemeExpand;
+@property (retain) WCActionSheet *m_actionSheet;
+@property (retain, nonatomic) WCPayNoticeItemView *noticeItemView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)navigationBarBackgroundColor;
+- (void)refreshViewCotnrollerWithControlData:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (void)setupData;
+- (void)setupReportData;
+- (void)setupContentView;
+- (id)genTableHeaderView;
+- (void)refreshHeaderView;
+- (void)genTableFooterViewAfterReloadData;
+- (id)genTableFooterView;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)getSectionTtileContent;
+- (void)makeSectionTitleContentView:(id)a0 indexPath:(id)a1;
+- (id)getAAPayerWithIndexPath:(id)a0;
+- (void)makeSectionContactContentView:(id)a0 withIndexPath:(id)a1;
+- (void)orderDetailVCCancel;
+- (id)getContactFromUsername:(id)a0;
+- (void)rightBarButtonPress;
+- (BOOL)bHasCloseOrderItem;
+- (void)pressCloseOrder;
+- (void)confirmToCloseOrder;
+- (void)handlePayBtnPress;
+- (void)handleViewBalanceLinkClick;
+- (void)pressLaunchNewGroupPay;
+- (BOOL)isCommonAAType;
+- (BOOL)isActivityAAType;
+- (id)genOrderStatusSubLabel;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)pressSendPayNotify;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1;
+- (void)handleViewRemarkImage;
+- (void)onLoadWCPayWebImageOK:(id)a0;
+- (void)showPhotoViewController;
+- (void)onLoadWCPayWebImageFail:(id)a0;
+- (BOOL)shouldShowDeleteMenu;
+- (void)onPhtotViewControllerClickSaveImage:(id)a0;
+- (void)handleSetPayerRemark;
+- (void)handleAmountInfoBtnClick;
+- (void)pageSheetConfirmWithRemark:(id)a0;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)onClickJumpInfo:(id)a0;
+- (void).cxx_destruct;
+
+@end

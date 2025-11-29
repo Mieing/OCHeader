@@ -1,0 +1,71 @@
+@class AWELifeFeedsPageContext, NSString, NSArray, AWELifeFeedsBaseComponentView, NSDictionary, AWELifeFeedsNode, NSNumber, UIColor;
+
+@interface AWELifeFeedsBaseComponentVM : NSObject <AWELifeFeedsPageScrollProtocol>
+
+@property (readonly, nonatomic) NSString *cardId;
+@property (readonly, nonatomic) NSNumber *cardType;
+@property (readonly, nonatomic) NSString *cardRawDataStr;
+@property (readonly, nonatomic) NSDictionary *cardRawData;
+@property (readonly, nonatomic) NSDictionary *controlInfo;
+@property (readonly, nonatomic) NSDictionary *bizData;
+@property (readonly, nonatomic) BOOL isAd;
+@property (readonly, nonatomic) NSDictionary *adData;
+@property (readonly, nonatomic) NSDictionary *rawAdData;
+@property (readonly, nonatomic) NSDictionary *adExtraTrackData;
+@property (readonly, nonatomic) NSDictionary *uiData;
+@property (readonly, nonatomic) NSString *updateRequestInfo;
+@property (nonatomic) BOOL isHighlightShowed;
+@property (nonatomic) unsigned long long type;
+@property (copy, nonatomic) NSString *subType;
+@property (copy, nonatomic) NSString *tag;
+@property (weak, nonatomic) AWELifeFeedsNode *node;
+@property (retain, nonatomic) UIColor *backgroundColor;
+@property (nonatomic) double showRatio;
+@property (nonatomic) BOOL didTrackShow;
+@property (nonatomic) BOOL didTrackTwoThirdsShow;
+@property (nonatomic) long long indexInContainer;
+@property (nonatomic) BOOL showingRecommendData;
+@property (nonatomic) BOOL firstShowRecommendData;
+@property (copy, nonatomic) NSDictionary *recommendData;
+@property (copy, nonatomic) NSDictionary *cardRawData;
+@property (copy, nonatomic) NSDictionary *rawAdData;
+@property (nonatomic) double startShowTime;
+@property (copy, nonatomic) NSNumber *startShowTwoThirdsTime;
+@property (nonatomic) BOOL didTrackShowTwoThirdsTime;
+@property (copy, nonatomic) NSArray *eventList;
+@property (weak, nonatomic) AWELifeFeedsPageContext *pageContext;
+@property (weak, nonatomic) AWELifeFeedsBaseComponentView *componentView;
+@property (readonly, nonatomic) BOOL isFullRow;
+@property (readonly, nonatomic) BOOL isLife;
+@property (readonly, nonatomic) BOOL isRight;
+@property (readonly, nonatomic) struct CGSize { double x0; double x1; } size;
+@property (readonly, nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } frameInContainer;
+@property (nonatomic) BOOL autoTrackShow;
+@property (nonatomic) BOOL tapGestureEnable;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)commonTrackParams;
+- (id)customTrackParams;
+- (void)p_parseNode:(id)a0;
+- (id)componentReuseIdentifier;
+- (struct CGSize { double x0; double x1; })componentSizeWithMaxWidth:(double)a0 presetHeight:(double)a1;
+- (void)updateNode:(id)a0;
+- (void)bindStateAndAction;
+- (void)componentStartShow:(unsigned long long)a0;
+- (void)componentStartShowTwoThirds:(unsigned long long)a0;
+- (void)componentDidCompleteShow:(unsigned long long)a0;
+- (void)componentStartEndShow:(unsigned long long)a0;
+- (void)componentStartEndShowTwoThirds:(unsigned long long)a0;
+- (void)componentDidEndShow:(unsigned long long)a0;
+- (void)setupIndexInContainer:(long long)a0;
+- (id)cardIdFromRecommendData;
+- (void)updatePriceInfo:(id)a0;
+- (void)updateIncrementalNodeData:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithNode:(id)a0;
+- (id)init;
+
+@end

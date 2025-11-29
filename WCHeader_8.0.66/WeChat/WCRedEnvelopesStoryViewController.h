@@ -1,0 +1,97 @@
+@class WCRedEnvelopesStoryDargUtil, UIImageView, UILabel, UIPanGestureRecognizer, WCPayWebImageView, MMUIButton, UIPageControl, NSMutableArray, UIButton, UIScrollView, UIView, NSString, WCRedEnvelopesControlData, MMTimer, WCRedEnvelopesStoryPageView, WCPayWebPagView;
+@protocol WCRedEnvelopesStoryViewControllerDelegate;
+
+@interface WCRedEnvelopesStoryViewController : MMUIViewController <UIScrollViewDelegate, PAGViewListener, WCPayWebPagViewDelegate, UIGestureRecognizerDelegate, WCPayWebImageViewDelegate, WCRedEnvelopesStoryPageViewDelegate> {
+    WCRedEnvelopesControlData *m_data;
+    MMUIButton *m_closeBtn;
+}
+
+@property (nonatomic) BOOL bHasManulTapMute;
+@property (retain, nonatomic) WCRedEnvelopesStoryPageView *m_redSkinStoryPage;
+@property (retain, nonatomic) UIScrollView *m_scrollView;
+@property (retain, nonatomic) UIView *m_scrollViewContentView;
+@property (retain, nonatomic) NSMutableArray *m_storysArr;
+@property (retain, nonatomic) UIPageControl *m_pageControl;
+@property (retain, nonatomic) WCPayWebImageView *m_redSkinCorpLogo;
+@property (retain, nonatomic) UIView *m_redSkinTitleInfoView;
+@property (retain, nonatomic) UILabel *m_redSkinDescLabel;
+@property (retain, nonatomic) UIImageView *m_bottomMaskView;
+@property (retain, nonatomic) WCRedEnvelopesStoryDargUtil *m_storyDragAnimationUtil;
+@property (weak, nonatomic) id<WCRedEnvelopesStoryViewControllerDelegate> delegate;
+@property (retain, nonatomic) NSMutableArray *m_storyPageArr;
+@property (retain, nonatomic) WCPayWebImageView *m_storyViewMaskView;
+@property (retain, nonatomic) WCPayWebPagView *m_storyPagView;
+@property (retain, nonatomic) UIButton *m_enterMPBtn;
+@property (retain, nonatomic) UIImageView *enterMPBkgView;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (nonatomic) BOOL canSwipeUp;
+@property (nonatomic) BOOL isPreviewMode;
+@property (retain, nonatomic) NSString *sessionId;
+@property (nonatomic) BOOL isNeedDelayPlayVideo;
+@property (nonatomic) BOOL isAutoPlayNow;
+@property (nonatomic) long long autoPlayInterval;
+@property (nonatomic) long long firstFramePlayInterval;
+@property (nonatomic) BOOL isMaskViewShouldStop;
+@property (nonatomic) BOOL bHasAutoMove;
+@property (nonatomic) BOOL bHasAutoPlay;
+@property (retain, nonatomic) MMTimer *storyPicTimer;
+@property (nonatomic) BOOL isSecondTimeAutoShowStory;
+@property (nonatomic) unsigned int exposeType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isNetworkTypeBetter4G;
++ (double)getRedSkinBeginY;
+
+- (id)initWithData:(id)a0;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotate;
+- (void)initTopButton;
+- (void)hideSelf;
+- (void)setupWithData:(id)a0;
+- (void)refreshViewWithData:(id)a0;
+- (void)updateScrollView;
+- (void)onJumpAction;
+- (void)prepareForScrollView;
+- (void)onLoadWCPayWebPagOK:(id)a0;
+- (BOOL)isNotchScreen;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)scrollViewDidEndScroll:(struct CGPoint { double x0; double x1; } *)a0;
+- (void)changeRedSkinPageFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setCloseBtnHidden:(BOOL)a0;
+- (void)panGestureRecognize:(id)a0;
+- (void)reset;
+- (double)getCurrentViewBeginY;
+- (void)setupAutoPlayWithMute:(BOOL)a0;
+- (void)startAutoCarouselTimer;
+- (void)autoPlayFirstImageTypeMedia;
+- (void)onPlayerStop;
+- (void)stopAutoCarousel;
+- (void)onNextStory;
+- (void)resetAutoPlayElemAlpha;
+- (void)setMaskViewY:(double)a0 hasStory:(BOOL)a1;
+- (double)getSpaceLabelHeight:(id)a0 withAttrDict:(id)a1 withWidth:(double)a2;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)stopAllVideo;
+- (void)setUnMuteIfNeed;
+- (void)playVideoIfNeeded;
+- (void)playVideoIfNeeded:(BOOL)a0;
+- (void)dealloc;
+- (void)setMaskViewAlpha:(double)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)onScrollViewSwipeUp:(id)a0;
+- (void)onLoadWCPayWebImageOK:(id)a0;
+- (void)onLoadWCPayWebImageFail:(id)a0;
+- (void)setFrontElementHidden:(BOOL)a0;
+- (void)onTapMuteBtn:(BOOL)a0;
+- (void)reportWhenPageReturn;
+- (void)setPageControlAndInfoViewAlpha:(double)a0;
+- (void)onTapWxAppInfo:(id)a0;
+- (void)reportExpose;
+- (BOOL)hasStoryInfo;
+- (void).cxx_destruct;
+
+@end

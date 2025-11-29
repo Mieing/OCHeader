@@ -1,0 +1,3 @@
+@interface AWELifeFeedsSingleContainerView : UIView
+
+@end

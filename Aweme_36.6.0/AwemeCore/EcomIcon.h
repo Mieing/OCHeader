@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface EcomIcon : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *URL;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveKtvAtmosphereVideoInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *vid;
+@property (copy, nonatomic) NSString *playAuthToken;
+@property (nonatomic) int videoType;
+@property (retain, nonatomic) NSMutableArray *frameColorDataArray;
+@property (readonly, nonatomic) unsigned long long frameColorDataArray_Count;
+@property (retain, nonatomic) NSMutableArray *videoURLArray;
+@property (readonly, nonatomic) unsigned long long videoURLArray_Count;
+
++ (id)descriptor;
+
+@end

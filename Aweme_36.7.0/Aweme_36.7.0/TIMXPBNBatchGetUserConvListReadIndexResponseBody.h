@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNBatchGetUserConvListReadIndexResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *readInfoArray;
+@property (readonly, nonatomic) unsigned long long readInfoArray_Count;
+
++ (id)descriptor;
+
+@end

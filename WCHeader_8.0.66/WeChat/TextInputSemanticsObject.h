@@ -1,0 +1,84 @@
+@class FlutterInactiveTextInput, NSString, NSDictionary, UITextPosition, UIView, UITextRange, UITextInputPasswordRules;
+@protocol UITextInputDelegate, UITextInputTokenizer;
+
+@interface TextInputSemanticsObject : SemanticsObject <UITextInput> {
+    FlutterInactiveTextInput *_inactive_text_input;
+}
+
+@property (copy) UITextRange *selectedTextRange;
+@property (readonly, nonatomic) UITextRange *markedTextRange;
+@property (copy, nonatomic) NSDictionary *markedTextStyle;
+@property (readonly, nonatomic) UITextPosition *beginningOfDocument;
+@property (readonly, nonatomic) UITextPosition *endOfDocument;
+@property (weak, nonatomic) id<UITextInputDelegate> inputDelegate;
+@property (readonly, nonatomic) id<UITextInputTokenizer> tokenizer;
+@property (readonly, nonatomic) UIView *textInputView;
+@property (nonatomic) long long selectionAffinity;
+@property (readonly, nonatomic) id insertDictationResultPlaceholder;
+@property (nonatomic) BOOL supportsAdaptiveImageGlyph;
+@property (readonly, nonatomic, getter=isEditable) BOOL editable;
+@property (readonly, nonatomic) BOOL hasText;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
+@property (nonatomic) long long spellCheckingType;
+@property (nonatomic) long long smartQuotesType;
+@property (nonatomic) long long smartDashesType;
+@property (nonatomic) long long smartInsertDeleteType;
+@property (nonatomic) long long inlinePredictionType;
+@property (nonatomic) long long mathExpressionCompletionType;
+@property (nonatomic) long long keyboardType;
+@property (nonatomic) long long keyboardAppearance;
+@property (nonatomic) long long returnKeyType;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
+@property (copy, nonatomic) NSString *textContentType;
+@property (copy, nonatomic) UITextInputPasswordRules *passwordRules;
+@property long long writingToolsBehavior;
+@property unsigned long long allowedWritingToolsResultOptions;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithBridge:(struct WeakPtr<flutter::AccessibilityBridgeIos> { struct AccessibilityBridgeIos *x0; struct RefPtr<fml::internal::WeakPtrFlag> { struct WeakPtrFlag *x0; } x1; struct DebugThreadChecker { } x2; })a0 uid:(int)a1;
+- (void)setSemanticsNode:(const void *)a0;
+- (id)textInputSurrogate;
+- (void)accessibilityElementDidBecomeFocused;
+- (void)accessibilityElementDidLoseFocus;
+- (BOOL)accessibilityElementIsFocused;
+- (BOOL)accessibilityActivate;
+- (id)accessibilityLabel;
+- (id)accessibilityHint;
+- (id)accessibilityValue;
+- (unsigned long long)accessibilityTraits;
+- (id)textInRange:(id)a0;
+- (void)replaceRange:(id)a0 withText:(id)a1;
+- (BOOL)shouldChangeTextInRange:(id)a0 replacementText:(id)a1;
+- (void)setMarkedText:(id)a0 selectedRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)unmarkText;
+- (id)textRangeFromPosition:(id)a0 toPosition:(id)a1;
+- (id)positionFromPosition:(id)a0 offset:(long long)a1;
+- (id)positionFromPosition:(id)a0 inDirection:(long long)a1 offset:(long long)a2;
+- (long long)comparePosition:(id)a0 toPosition:(id)a1;
+- (long long)offsetFromPosition:(id)a0 toPosition:(id)a1;
+- (id)positionWithinRange:(id)a0 farthestInDirection:(long long)a1;
+- (id)characterRangeByExtendingPosition:(id)a0 inDirection:(long long)a1;
+- (long long)baseWritingDirectionForPosition:(id)a0 inDirection:(long long)a1;
+- (void)setBaseWritingDirection:(long long)a0 forRange:(id)a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })firstRectForRange:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })caretRectForPosition:(id)a0;
+- (id)closestPositionToPoint:(struct CGPoint { double x0; double x1; })a0;
+- (id)closestPositionToPoint:(struct CGPoint { double x0; double x1; })a0 withinRange:(id)a1;
+- (id)selectionRectsForRange:(id)a0;
+- (id)characterRangeAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)insertText:(id)a0;
+- (void)deleteBackward;
+- (void)cut:(id)a0;
+- (void)copy:(id)a0;
+- (void)paste:(id)a0;
+- (void)selectAll:(id)a0;
+- (void)delete:(id)a0;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (void).cxx_destruct;
+
+@end

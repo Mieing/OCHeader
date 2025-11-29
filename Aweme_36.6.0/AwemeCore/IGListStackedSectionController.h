@@ -1,0 +1,77 @@
+@class NSCountedSet, NSOrderedSet, NSArray, NSString;
+@protocol IGListBatchContext;
+
+@interface IGListStackedSectionController : IGListSectionController <IGListBatchContext, IGListCollectionContext, IGListDisplayDelegate, IGListScrollDelegate, IGListWorkingRangeDelegate>
+
+@property (readonly, nonatomic) NSOrderedSet *sectionControllers;
+@property (copy, nonatomic) NSArray *sectionControllersForItems;
+@property (copy, nonatomic) NSArray *sectionControllerOffsets;
+@property (nonatomic) long long flattenedNumberOfItems;
+@property (readonly, nonatomic) NSCountedSet *visibleSectionControllers;
+@property (retain, nonatomic) id<IGListBatchContext> forwardingBatchContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) struct CGSize { double x0; double x1; } containerSize;
+@property (readonly, nonatomic) struct UIEdgeInsets { double x0; double x1; double x2; double x3; } containerInset;
+@property (readonly, nonatomic) struct UIEdgeInsets { double x0; double x1; double x2; double x3; } adjustedContainerInset;
+@property (readonly, nonatomic) struct CGSize { double x0; double x1; } insetContainerSize;
+
+- (void)listAdapter:(id)a0 didScrollSectionController:(id)a1;
+- (void)listAdapter:(id)a0 willBeginDraggingSectionController:(id)a1;
+- (void)listAdapter:(id)a0 didEndDraggingSectionController:(id)a1 willDecelerate:(BOOL)a2;
+- (void)listAdapter:(id)a0 didEndDeceleratingSectionController:(id)a1;
+- (id)cellForItemAtIndex:(long long)a0;
+- (id)visibleCellsForSectionController:(id)a0;
+- (id)dequeueReusableCellOfClass:(Class)a0 withReuseIdentifier:(id)a1 forSectionController:(id)a2 atIndex:(long long)a3;
+- (id)dequeueReusableSupplementaryViewOfKind:(id)a0 forSectionController:(id)a1 class:(Class)a2 atIndex:(long long)a3;
+- (void)listAdapter:(id)a0 willDisplaySectionController:(id)a1;
+- (void)listAdapter:(id)a0 didEndDisplayingSectionController:(id)a1;
+- (void)listAdapter:(id)a0 willDisplaySectionController:(id)a1 cell:(id)a2 atIndex:(long long)a3;
+- (void)listAdapter:(id)a0 didEndDisplayingSectionController:(id)a1 cell:(id)a2 atIndex:(long long)a3;
+- (void)listAdapter:(id)a0 sectionControllerWillEnterWorkingRange:(id)a1;
+- (void)listAdapter:(id)a0 sectionControllerDidExitWorkingRange:(id)a1;
+- (void)didUpdateToObject:(id)a0;
+- (void)didHighlightItemAtIndex:(long long)a0;
+- (void)didUnhighlightItemAtIndex:(long long)a0;
+- (BOOL)canMoveItemAtIndex:(long long)a0;
+- (void)invalidateLayoutForSectionController:(id)a0 completion:(id /* block */)a1;
+- (void)scrollToSectionController:(id)a0 atIndex:(long long)a1 scrollPosition:(unsigned long long)a2 animated:(BOOL)a3;
+- (void)reloadSectionController:(id)a0;
+- (id)cellForItemAtIndex:(long long)a0 sectionController:(id)a1;
+- (void)deleteInSectionController:(id)a0 atIndexes:(id)a1;
+- (void)insertInSectionController:(id)a0 atIndexes:(id)a1;
+- (void)moveInSectionController:(id)a0 fromIndex:(long long)a1 toIndex:(long long)a2;
+- (void)performBatchAnimated:(BOOL)a0 updates:(id /* block */)a1 completion:(id /* block */)a2;
+- (id)visibleIndexPathsForSectionController:(id)a0;
+- (id)supplementaryViewSource;
+- (id)dequeueReusableCellOfClass:(Class)a0 forSectionController:(id)a1 atIndex:(long long)a2;
+- (long long)indexForCell:(id)a0 sectionController:(id)a1;
+- (void)didDeselectItemAtIndex:(long long)a0;
+- (BOOL)canMoveItemAtIndex:(long long)a0 toIndex:(long long)a1;
+- (void)moveInSectionControllerInteractive:(id)a0 fromIndex:(long long)a1 toIndex:(long long)a2;
+- (void)revertInvalidInteractiveMoveFromIndexPath:(id)a0 toIndexPath:(id)a1;
+- (void)moveSectionControllerInteractive:(id)a0 fromIndex:(long long)a1 toIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })containerSizeForSectionController:(id)a0;
+- (void)deselectItemAtIndex:(long long)a0 sectionController:(id)a1 animated:(BOOL)a2;
+- (void)selectItemAtIndex:(long long)a0 sectionController:(id)a1 animated:(BOOL)a2 scrollPosition:(unsigned long long)a3;
+- (id)dequeueReusableCellWithNibName:(id)a0 bundle:(id)a1 forSectionController:(id)a2 atIndex:(long long)a3;
+- (id)dequeueReusableCellFromStoryboardWithIdentifier:(id)a0 forSectionController:(id)a1 atIndex:(long long)a2;
+- (id)dequeueReusableSupplementaryViewFromStoryboardOfKind:(id)a0 withIdentifier:(id)a1 forSectionController:(id)a2 atIndex:(long long)a3;
+- (id)dequeueReusableSupplementaryViewOfKind:(id)a0 forSectionController:(id)a1 nibName:(id)a2 bundle:(id)a3 atIndex:(long long)a4;
+- (void)reloadInSectionController:(id)a0 atIndexes:(id)a1;
+- (long long)offsetForSectionController:(id)a0;
+- (id)sectionControllerForObjectIndex:(long long)a0;
+- (long long)_localIndexForSectionController:(id)a0 index:(long long)a1;
+- (long long)_relativeIndexForSectionController:(id)a0 fromLocalIndex:(long long)a1;
+- (id)_itemIndexesForSectionController:(id)a0 indexes:(id)a1;
+- (id)initWithSectionControllers:(id)a0;
+- (long long)numberOfItems;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (void)didSelectItemAtIndex:(long long)a0;
+- (void)moveObjectFromIndex:(long long)a0 toIndex:(long long)a1;
+- (struct CGSize { double x0; double x1; })sizeForItemAtIndex:(long long)a0;
+
+@end

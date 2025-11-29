@@ -1,0 +1,14 @@
+@class NSIndexPath;
+@protocol AWEIMChatRecVideoHorizontalFlowLayoutDelegate;
+
+@interface AWEIMChatRecommendVideoHorizontalFlowLayout : UICollectionViewFlowLayout
+
+@property (copy, nonatomic) NSIndexPath *centerIndexPath;
+@property (weak, nonatomic) id<AWEIMChatRecVideoHorizontalFlowLayoutDelegate> delegate;
+
+- (void).cxx_destruct;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct CGPoint { double x0; double x1; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x0; double x1; })a0 withScrollingVelocity:(struct CGPoint { double x0; double x1; })a1;
+
+@end

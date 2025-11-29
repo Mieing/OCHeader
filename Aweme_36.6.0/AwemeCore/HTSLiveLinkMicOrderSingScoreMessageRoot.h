@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicOrderSingScoreMessageRoot : GPBRootObject
+
+@end

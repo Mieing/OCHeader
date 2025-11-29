@@ -1,0 +1,86 @@
+@class UICollectionView, AWESearchMerchandiseFilterOptionView, DUXAbandonedButton, NSMutableArray, UIButton, UIView, AWEDoubleColumnSearchMerchandiseFilterComponentModel, CAGradientLayer, UIScrollView, AWEDoubleColumnSearchMerchandiseFilterManager, AWEUITheme, NSMutableSet, NSString, NSArray, UIImageView;
+
+@interface AWESearchMerchandiseFilterExpandView : UIView <UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (retain, nonatomic) AWEDoubleColumnSearchMerchandiseFilterComponentModel *model;
+@property (retain, nonatomic) AWEDoubleColumnSearchMerchandiseFilterManager *manager;
+@property (retain, nonatomic) UIView *optionViewContainerView;
+@property (retain, nonatomic) UIScrollView *optionViewScrollView;
+@property (retain, nonatomic) AWESearchMerchandiseFilterOptionView *lastOptionView;
+@property (retain, nonatomic) UIButton *resetButton;
+@property (nonatomic) BOOL resetButtonHasShowed;
+@property (retain, nonatomic) DUXAbandonedButton *confirmButton;
+@property (retain, nonatomic) NSMutableArray *optionViews;
+@property (nonatomic) double offSetCacheForKeyboardShow;
+@property (retain, nonatomic) UIView *topView;
+@property (retain, nonatomic) UIView *bottomView;
+@property (retain, nonatomic) UIImageView *xMarkImageView;
+@property (retain, nonatomic) UICollectionView *guideCollectionView;
+@property (copy, nonatomic) NSArray *guideTitles;
+@property (nonatomic) unsigned long long currentSelectedIndex;
+@property (nonatomic) BOOL isProgrammaticScroll;
+@property (retain, nonatomic) CAGradientLayer *gradientLayerWithConfirmButton;
+@property (retain, nonatomic) NSMutableSet *exposedIdsSet;
+@property (retain, nonatomic) UIView *overlayView;
+@property (nonatomic) long long resetID;
+@property (retain, nonatomic) AWEUITheme *currentTheme;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)safeAreaBottomOffset;
++ (id)findFirstResponderWithView:(id)a0;
+
+- (double)containerViewHeight;
+- (void)setupBottomView;
+- (id)initWithModel:(id)a0 manager:(id)a1;
+- (BOOL)isNewUIEnabled;
+- (void)setupGestureView;
+- (void)setupGuideCollectionView;
+- (void)setupTopView;
+- (void)setupOptionViews;
+- (void)setupOverlayView;
+- (double)bottomViewHeight;
+- (BOOL)guideCollectionViewEnabled;
+- (id)appendFilterOptionViewWithModel:(id)a0 parentView:(id)a1;
+- (void)optionViewShowTrack;
+- (void)scrollGuideCollectionViewAtIndex:(unsigned long long)a0;
+- (void)scrollOptionScrollViewAtIndex:(unsigned long long)a0;
+- (double)bottomButtonHeight;
+- (void)resetButtonClickAction;
+- (void)confirmButtonClickAction;
+- (void)updateBottomButtonState;
+- (void)bgViewClickAction;
+- (void)adjustGuideCollectionViewIfNeeded;
+- (void)trackSidebarCellClickAtIndex:(unsigned long long)a0;
+- (void)trackSidebarCellShowAtIndex:(unsigned long long)a0;
+- (id)resetButtonTitleColorWithSelectedState:(BOOL)a0;
+- (void)confirmButtonClickTrack;
+- (void)resetButtonClickTrack;
+- (void)bgViewClickTrack;
+- (void)displayWithAnimation;
+- (void)resetButtonShowTrack;
+- (void)optionViewShowTrackWithOptionView:(id)a0 index:(long long)a1 subIndex:(long long)a2;
+- (void)endRequestWithEmptyFlag:(BOOL)a0;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (void)hideKeyboard;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (void)keyboardWillShow:(id)a0;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)dismissWithCompletion:(id /* block */)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)show;
+- (void)setupUI;
+- (void)beginRequest;
+
+@end

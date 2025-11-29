@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.LivePhotoContentAdapterCellConfig : BDMultiContentContainer.LivePhotoContentCellConfig
+
+@end

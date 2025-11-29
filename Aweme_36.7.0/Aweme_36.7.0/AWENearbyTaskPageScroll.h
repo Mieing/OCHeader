@@ -1,0 +1,3 @@
+@interface AWENearbyTaskPageScroll : NSObject
+
+@end

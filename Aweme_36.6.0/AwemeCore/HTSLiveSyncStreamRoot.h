@@ -1,0 +1,3 @@
+@interface HTSLiveSyncStreamRoot : GPBRootObject
+
+@end

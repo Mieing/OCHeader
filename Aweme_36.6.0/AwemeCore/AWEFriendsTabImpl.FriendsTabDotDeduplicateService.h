@@ -1,0 +1,3 @@
+@interface AWEFriendsTabImpl.FriendsTabDotDeduplicateService : AWEFriendsTabImpl.FriendsTabDotBasicService
+
+@end

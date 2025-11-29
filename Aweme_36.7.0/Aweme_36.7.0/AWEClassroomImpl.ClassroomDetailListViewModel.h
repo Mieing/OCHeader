@@ -1,0 +1,16 @@
+@interface AWEClassroomImpl.ClassroomDetailListViewModel : AWEBaseListViewModel {
+    void /* unknown type, empty encoding */ recommendCursor;
+    void /* unknown type, empty encoding */ recommendHasMore;
+    void /* unknown type, empty encoding */ isJoinSubscribeIMLoading;
+    void /* unknown type, empty encoding */ tracker;
+    void /* unknown type, empty encoding */ courseId;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_infoSection;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_unitSection;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_recommendSection;
+}
+
+- (void)setupViewModel;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,86 @@
+@class NSString, UIView, NSNumber, AWEStoryProgressContainerView;
+@protocol AWEPadKeyboardProgressControlProtocol, AFDRichContainerProgressControllerProtocol;
+
+@interface AWEPlayInteractionPaginatedProgressController : AWEPlayInteractionNewBaseController <AWEStoryProgressContainerViewDelegate, AWEPlayInteractionPaginatedProgressControllerProtocol, AWEPlayInteractionProgressCommonProtocol, AFDRichContentProgressControllerDelegate>
+
+@property (retain, nonatomic) NSNumber *volumeHandlerID;
+@property (retain, nonatomic) AWEStoryProgressContainerView *paginatedProgressView;
+@property (retain, nonatomic) UIView *richContainerProgressView;
+@property (nonatomic) BOOL isAppear;
+@property (nonatomic) BOOL isDisplaying;
+@property (nonatomic) long long longDotsProgressPosition;
+@property (nonatomic) double lastPlayInteractionViewHeight;
+@property (nonatomic) double lastContainerGridMargin;
+@property (retain, nonatomic) id<AWEPadKeyboardProgressControlProtocol> padKeyboradProgressControl;
+@property (copy, nonatomic) id /* block */ paginatedProgressBarClickedEventBlock;
+@property (copy, nonatomic) id /* block */ paginatedProgressBarDidSelectedItemEventBlock;
+@property (copy, nonatomic) id /* block */ downloadPageDidSelectAlbumPreviewItemEventBlock;
+@property (weak, nonatomic) id<AFDRichContainerProgressControllerProtocol> richContainerProgressController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (BOOL)shouldReduceHotZoneForNoteProgressViewWith:(id)a0;
++ (long long)progressViewTypeOptWithAB:(id)a0;
++ (BOOL)leftContainerHasBulletWithContainer:(id)a0;
++ (BOOL)shouldShowProgressViewDefaultWith:(id)a0;
+
+- (void)setHide:(BOOL)a0;
+- (void)richContainerDidCreateProgressView:(id)a0;
+- (BOOL)shouldRecognizeWindowGesture;
+- (void)didUpdatePaginatedProgressWithIndex:(long long)a0 totalCount:(long long)a1;
+- (id)progressConfig;
+- (BOOL)canPlayerPlayAfterTouch;
+- (void)didUpdatePaginatedProgressWithDuration:(double)a0 totalCount:(long long)a1 currentIndex:(long long)a2 currentProcess:(double)a3 needAnimation:(BOOL)a4;
+- (void)previewInteractionDidStart;
+- (void)containerStartPlaying;
+- (void)scrollToIndex:(long long)a0;
+- (void)swipeToLastStory;
+- (void)swipeToNextStory;
+- (id)accessibilityLabels;
+- (id)aAWEPadModuleAdapter;
+- (void)updateAllSubViews;
+- (void)splitStatusChanged;
+- (BOOL)isShowingPanels;
+- (void)setContainerHidden:(BOOL)a0;
+- (id)progressViewInUse;
+- (BOOL)progressContainerIsVisiable;
+- (void)registerPadKeyboardBindings;
+- (void)setProgressContainerViewHidden:(BOOL)a0;
+- (BOOL)shouldShowPaginatedProgress;
+- (void)updateUIWithSpeedUp;
+- (id)paginatedProgressPayload;
+- (void)updatePaginateProgressView:(BOOL)a0;
+- (long long)paginatedProgressBarType;
+- (BOOL)isSlidingAd;
+- (BOOL)shouldShowPaginatedProgressInRichAwemeVC;
+- (double)calculateDescriptionLabelWithImageOffset;
+- (double)progressContainerViewHeight;
+- (id)storyBottomContainer;
+- (double)p_progressContainerYOffset;
+- (double)calculateLeftContainerOffset:(double)a0;
+- (void)pureAction;
+- (BOOL)seekOffset:(double)a0 completion:(id /* block */)a1;
+- (BOOL)isPlayerOnScreen;
+- (void)updatePaginatedProgressWithIndex:(long long)a0 progress:(double)a1 duration:(double)a2 animated:(BOOL)a3;
+- (void)updatePaginatedProgressWithIndex:(long long)a0 totalCount:(long long)a1;
+- (void)updatePaginatedProgressWithDuration:(double)a0 totalCount:(long long)a1 currentIndex:(long long)a2 currentProcess:(double)a3 needAnimation:(BOOL)a4;
+- (long long)addSpaceBetweenLeftAndBottomInteraction;
+- (void)viewDidAppear;
+- (id)progressView;
+- (void).cxx_destruct;
+- (void)pause;
+- (void)setData:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)updateUI;
+- (void)didEndDisplaying;
+- (void)viewDidDisappear;
+- (void)previewInteractionDidEnd;
+- (void)willDisplay;
+- (void)viewWillDisappear;
+
+@end

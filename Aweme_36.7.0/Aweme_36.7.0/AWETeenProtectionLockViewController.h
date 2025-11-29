@@ -1,0 +1,83 @@
+@class AWETeenModePasswordInputView, NSString, TTTAttributedLabel, AWEDigitalWellbeingLockViewConfiguration, UILabel, UIView, UIButton;
+@protocol AWELoginButtonProtocol;
+
+@interface AWETeenProtectionLockViewController : UIViewController <TTTAttributedLabelDelegate, AWEDigitalWellbeingMessage, AWEPadUITrackerProtocol, AWETeenProtectionLockViewControllerProtocol>
+
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *hintLabel;
+@property (retain, nonatomic) UILabel *passwordHintLabel;
+@property (retain, nonatomic) UIButton<AWELoginButtonProtocol> *closeBtn;
+@property (retain, nonatomic) TTTAttributedLabel *retrievePasswordLabel;
+@property (retain, nonatomic) AWETeenModePasswordInputView *passwordInputView;
+@property (retain, nonatomic) NSString *inputPassword;
+@property (retain, nonatomic) UIButton *appealButton;
+@property (retain, nonatomic) UILabel *appealHintLabel;
+@property (retain, nonatomic) UIButton *helpAndSettingBtn;
+@property (nonatomic) BOOL shouldShowChildRequestBindingEntry;
+@property (retain, nonatomic) UIView *childRequestBindingEntryView;
+@property (readonly, nonatomic) unsigned long long type;
+@property (retain, nonatomic) AWEDigitalWellbeingLockViewConfiguration *configuration;
+@property (copy, nonatomic) id /* block */ completion;
+@property (nonatomic) BOOL shouldDismissWhenAppear;
+@property (nonatomic) unsigned long long originInterfaceOrientation;
+@property (nonatomic) BOOL shouldDelayShowKeyboard;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy, nonatomic) NSString *awe_padUITrackerPageEnterFrom;
+@property (nonatomic) BOOL awe_padUITrackerIgnoreStayTime;
+
++ (Class)aAWEChildModeModuleServiceCommonAdapterClass;
+
+- (void)trackEvent:(id)a0 params:(id)a1;
+- (void)attributedLabel:(id)a0 didSelectLinkWithURL:(id)a1;
+- (BOOL)awe_shouldAutorotate;
+- (unsigned long long)awe_supportedInterfaceOrientations;
+- (void)teenModeDidChange:(BOOL)a0 isLogout:(BOOL)a1;
+- (void)handleBroadcastNotification:(id)a0;
+- (void)onApplicationWillEnterForeground:(id)a0;
+- (void)trackIfNeeded;
+- (id)aAWEChildModeModuleServiceCommonAdapter;
+- (void)setUpNotifications;
+- (id)clickEventName;
+- (void)trackPageAppear;
+- (void)setDelayShowKeyboard:(BOOL)a0;
+- (id)initWithType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (BOOL)shouldShowRetrievePasswordLabel;
+- (void)p_didTapGuardianPlatformBindingButton;
+- (BOOL)needShowVerificationEntrance;
+- (id)initWithConfiguration:(id)a0 completion:(id /* block */)a1;
+- (id)configurationByType:(unsigned long long)a0;
+- (void)adaptSubviews;
+- (void)p_trackGuardianPlatformEventsIfNeededWithActionType:(id)a0;
+- (void)trackPageClick:(BOOL)a0;
+- (unsigned long long)verifyPasswordEnterfrom;
+- (void)trackAppealClick;
+- (id)timeLockDynamicPasswordStr;
+- (id)constructBackgroundView;
+- (id)hintLabelColor;
+- (id)passwordHintLabelColor;
+- (id)passwordInputViewTintColor;
+- (void)p_nextAction;
+- (void)closeBtnPressed;
+- (void)appealBtnClicked;
+- (void)helpAndSettingBtnPressed;
+- (id)showEventName;
+- (id)nextBtnImageName;
+- (void)setupSubViews;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)initWithType:(unsigned long long)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (id)titleLabelColor;
+- (void)keyboardWillHideNotification:(id)a0;
+- (void)onApplicationDidEnterBackground:(id)a0;
+- (void)keyboardWillShowNotification:(id)a0;
+- (id)commonDict;
+
+@end

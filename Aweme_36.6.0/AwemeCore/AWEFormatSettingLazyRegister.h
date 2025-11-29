@@ -1,0 +1,3 @@
+@interface AWEFormatSettingLazyRegister : NSObject
+
+@end

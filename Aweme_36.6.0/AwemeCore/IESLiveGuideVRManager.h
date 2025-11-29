@@ -1,0 +1,74 @@
+@class HTSEventContext, UIView, NSString, VRTools, CAShapeLayer, NSDictionary, UIPanGestureRecognizer, IESLiveGuideVRSwitchModeView;
+@protocol IESLiveVideoEffectProcessing;
+
+@interface IESLiveGuideVRManager : NSObject <PanoramaToolsDelegate, IESLiveVRLiveProcessService, IESLiveFishEyeService, IESLiveGuideActions, UIGestureRecognizerDelegate, IESLiveAnchorRoomStatusChangeEvents>
+
+@property (retain, nonatomic) VRTools *VRInstance;
+@property (retain, nonatomic) UIView *previewView;
+@property (weak, nonatomic) UIView *linkView;
+@property (nonatomic) BOOL lastDetectResult;
+@property (copy, nonatomic) NSDictionary *fishEyeParams;
+@property (nonatomic) unsigned long long currentVRMode;
+@property (nonatomic) BOOL needResume;
+@property (retain, nonatomic) NSDictionary *panoramaParams;
+@property (nonatomic) long long circleDetectFailCount;
+@property (retain, nonatomic) UIView *circleView;
+@property (retain, nonatomic) CAShapeLayer *circleLayer;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) struct CGPoint { double x; double y; } prePoint;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (nonatomic) struct CGSize { double width; double height; } inputSize;
+@property (nonatomic) struct CGSize { double width; double height; } outputSize;
+@property (nonatomic) unsigned long long mode;
+@property (retain, nonatomic) id<IESLiveVideoEffectProcessing> videoEffectProcessProvider;
+@property (nonatomic) BOOL isInLiveTab;
+@property (retain, nonatomic) IESLiveGuideVRSwitchModeView *switchView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)fillDetectCircleParams:(BOOL)a0 circleCenter:(struct CGPoint { double x0; double x1; })a1 circleRadius:(double)a2 panoramaParam:(id)a3 isChangeCircle:(BOOL)a4 isChangeParams:(BOOL)a5;
+- (void)setFisheyeSDKParam:(id)a0;
+- (id)getDefaultParams;
+- (void)setDetectCircleInterval:(int)a0;
+- (void)updateFisheyeToErpParam:(id)a0;
+- (void)setFisheyeOutputSize:(struct CGSize { double x0; double x1; })a0;
+- (void)setFisheyeInputSize:(struct CGSize { double x0; double x1; })a0;
+- (void)setProcessMode:(unsigned long long)a0;
+- (struct __CVBuffer { } *)processPixelbuffer:(struct __CVBuffer { } *)a0;
+- (void)panoramaWithPitch:(double)a0 yaw:(double)a1;
+- (void)showGuideViewIfNeeded;
+- (void)pauseAnchorLiveWithType:(unsigned long long)a0;
+- (void)resumeAnchorLiveWithType:(long long)a0;
+- (void)willSwitchToOtherTab;
+- (void)willSwitchToLiveTab;
+- (struct CGSize { double x0; double x1; })fisheyeOutputSize;
+- (void)forceSwitchVRLiveModePanoramic;
+- (void)resumeVRLiveMode;
+- (BOOL)canResponseLiveRealTimeDataGesture;
+- (void)switchFishEyeAndPanoramicMode:(unsigned long long)a0;
+- (void)setupVRLiveConfig;
+- (void)cleanupVRLiveConfig;
+- (unsigned long long)currentVRLiveSubMode;
+- (void)resetFishEyePreviewView:(id)a0;
+- (void)hideFisheyeCircleView:(BOOL)a0;
+- (void)sendVRLiveSEIInfo;
+- (BOOL)getCircleDetectResult;
+- (BOOL)vrLiveIsEnable;
+- (id)initWithFishEyeParams:(id)a0 trackContext:(id)a1 diContext:(id)a2;
+- (void)setupVRInstance;
+- (void)rotateCameraView:(id)a0;
+- (void)changeCircleLayerWithCenter:(struct CGPoint { double x0; double x1; })a0 radius:(double)a1 color:(id)a2;
+- (void)showCircleDetectToastWithResult:(BOOL)a0;
+- (void)changeVRLiveMode;
+- (id)fisheyeSEIInfoWithSize:(struct CGSize { double x0; double x1; })a0;
+- (void)trackErrorMessgaeShowWithContent:(id)a0;
+- (void).cxx_destruct;
+- (void)cleanup;
+- (struct CGPoint { double x0; double x1; })convertPoint:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (void)dealloc;
+- (void)setupUI;
+
+@end

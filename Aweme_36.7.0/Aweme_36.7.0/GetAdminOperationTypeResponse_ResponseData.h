@@ -1,0 +1,11 @@
+@class WindowsPrompt;
+
+@interface GetAdminOperationTypeResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long operationType;
+@property (retain, nonatomic) WindowsPrompt *windowsPrompt;
+@property (nonatomic) BOOL hasWindowsPrompt;
+
++ (id)descriptor;
+
+@end

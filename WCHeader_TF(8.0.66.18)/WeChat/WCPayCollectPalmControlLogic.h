@@ -1,0 +1,75 @@
+@class NSString, PalmMd5Info, NSObject, PalmTotalInfo;
+@protocol OS_dispatch_semaphore, WCPayCollectPalmControlLogicDelegate;
+
+@interface WCPayCollectPalmControlLogic : WCPayControlLogic <WCPayOpenPalmServiceAuthCgiDelegate, WCPayCheckPalmUserResouceCgiDelegate, ICdnComMgrExt, WCPayUploadOnlinePalmResourceCgiDelegate>
+
+@property (weak, nonatomic) id<WCPayCollectPalmControlLogicDelegate> logicDelegate;
+@property (retain, nonatomic) NSString *currentAppId;
+@property (retain, nonatomic) NSString *currentCdnMediaId;
+@property (nonatomic) BOOL isCdnUploading;
+@property (nonatomic) BOOL isNeedUploadBypass;
+@property (nonatomic) BOOL isNeedUploadCgi;
+@property (nonatomic) BOOL isNeedPalmInfoCallback;
+@property (nonatomic) unsigned int palmCaptureMode;
+@property (nonatomic) unsigned int uploadCdnType;
+@property (retain, nonatomic) PalmTotalInfo *finalPalmResult;
+@property (retain, nonatomic) PalmMd5Info *palmMd5Info;
+@property (retain, nonatomic) NSString *uploadVideoPath;
+@property (nonatomic) unsigned long long cdnUploadStartTime;
+@property (nonatomic) unsigned long long cdnUploadFileSize;
+@property (nonatomic) unsigned long long openPalmServiceAuthCgiStartTime;
+@property (nonatomic) unsigned long long checkPalmResourceCgiStartTime;
+@property (nonatomic) unsigned long long uploadOnlinePalmResourceCgiStartTime;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *onCdnUploadSemaphore;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *uploadOnlinePalmResourceCgiOkSemaphore;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithData:(id)a0 delegate:(id)a1;
+- (void)dealloc;
+- (void)cleanTmpFileWithKey:(id)a0;
+- (void)removeLastSavedTmpFiles;
+- (void)startLogic;
+- (int)getModelVersion:(id)a0;
+- (void)rewriteWePalmResource;
+- (void)startCheckPalmServiceAuth;
+- (void)onOpenPalmServiceAuthCgiOK:(int)a0 body:(id)a1 errorMessage:(id)a2;
+- (void)onPalmEntryViewControllerBack:(id)a0;
+- (id)wrapJSApiResult:(unsigned long long)a0 errorMessage:(id)a1;
+- (id)savedTmpFilesWithData:(id)a0 key:(id)a1;
+- (BOOL)saveTmpPalmImage:(id)a0 record:(id)a1;
+- (BOOL)saveTmpPalmLivenessImage:(id)a0 record:(id)a1;
+- (BOOL)saveTmpPalmVideo:(id)a0 record:(id)a1;
+- (BOOL)saveTmpPalmStatsInfo:(id)a0 record:(id)a1;
+- (id)wrapPalmInfoForCallback:(id)a0;
+- (void)onPalmEntryViewControllerGetFinalResult:(id)a0 uploadVideoPath:(id)a1;
+- (void)uploadResultToCdn:(id)a0 encryptFileKey:(id)a1;
+- (void)uploadResultToCdnAsync:(id)a0 encryptFileKey:(id)a1;
+- (void)doUploadResultToCdnAsync:(id)a0 encryptFileKey:(id)a1;
+- (id)encryptDataToFile:(id)a0 encryptFileKey:(id)a1;
+- (BOOL)startUploadCdnWithFilePath:(id)a0;
+- (void)processCdnUploadFail;
+- (void)OnCdnUpload:(id)a0;
+- (void)doUploadBypassResultAsync:(id)a0;
+- (void)doUploadBypassResult:(id)a0;
+- (void)onUploadOnlinePalmResourceCgiOK:(int)a0 errorMessage:(id)a1;
+- (void)handleTimeOutError:(unsigned int)a0;
+- (void)doCheckPalmResult:(id)a0;
+- (id)getPalmReportInfo;
+- (void)onCheckPalmUserResouceCgiOK:(int)a0 errorMessage:(id)a1;
+- (id)doSm2EncryptAndBase64:(id)a0;
+- (BOOL)isUploadedCorrectResource:(id)a0;
+- (void)handleError:(unsigned long long)a0 errorMessage:(id)a1;
+- (id)getCdnClientId:(id)a0;
+- (id)saveResultToFile:(id)a0 encryptFileKey:(id)a1;
+- (id)doEncrypt:(id)a0 data:(id)a1;
+- (void)uploadCdnOnTimeout:(id)a0 cdnType:(unsigned int)a1;
+- (void)onPalmEntryViewControllerTimeout:(id)a0 uploadVideoPath:(id)a1;
+- (void)onPalmEntryViewControllerRecordTimeout:(id)a0 uploadVideoPath:(id)a1;
+- (void)onPalmEntryViewControllerSetupFailed:(unsigned long long)a0 errorMessage:(id)a1;
+- (void)handleTimeoutVideoUpload;
+- (void).cxx_destruct;
+
+@end

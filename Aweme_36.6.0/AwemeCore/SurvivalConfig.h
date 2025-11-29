@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface SurvivalConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *stagesArray;
+@property (readonly, nonatomic) unsigned long long stagesArray_Count;
+@property (copy, nonatomic) NSString *outAnimationURL;
+
++ (id)descriptor;
+
+@end

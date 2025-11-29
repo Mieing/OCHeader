@@ -1,0 +1,10 @@
+@class CameraInfosResponse_Entry;
+
+@interface CameraInfosResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CameraInfosResponse_Entry *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

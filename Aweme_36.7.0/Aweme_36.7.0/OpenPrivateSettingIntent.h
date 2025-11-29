@@ -1,0 +1,3 @@
+@interface OpenPrivateSettingIntent : INIntent
+
+@end

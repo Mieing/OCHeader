@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveDouplusIndicatorMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long number;
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *toast;
+@property (copy, nonatomic) NSString *buyerNickname;
+
++ (id)descriptor;
+
+@end

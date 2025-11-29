@@ -1,0 +1,80 @@
+@class CJPayDataSecurity, CJPayForceHttpsModel, CJPayABSettingsModel, NSDictionary, CJPayBindCardUISettingsModel, CJPayMigrateH5PageToLynx, CJPayWebViewCommonConfigModel, CJPayBioConfig, CJPayAnnieConfigModel, CJPayCCMConfig, CJPayRDOptimizationConfig, CJPayLynxSchemaConfig, CJPayFKMConfig, CJPayIAPConfigModel, CJPayTripConfig, CJPayStandardUIComponentConfig, CJPayUploadMediaConfig, CJPayLynxSchemaParamsConfig, CJPayCodeCommonConfig, CJPayWebviewMonitorConfigModel, CJPayHostModel, CJPayContainerConfig, CJPayRestoreConfig, CJPayDeviceOptConfig, CJPaySecurityLockConfig, CJPaySignBizConfig, NSArray, CJPayLoadingConfig, CJPayHalfPageHybridConfig, NSString, CJPayAlogReportConfigModel, CJPayFastPayModel, CJPayAccountInsuranceEntrance, CJPaySKMConfig, CJPayGurdSettingsModel, CJPayGurdImgModel, CJPaySecurityLoadingConfig, CJPayBindCardUIConfig, CJPayJHInformationConfig, CJPayFaceVerifyModel;
+@protocol CJPayDegradeModel;
+
+@interface CJPaySettings : JSONModel
+
+@property (copy, nonatomic) NSArray<CJPayDegradeModel> *degradeModels;
+@property (copy, nonatomic) NSDictionary *themeModelDic;
+@property (retain, nonatomic) CJPayForceHttpsModel *forceHttpsModel;
+@property (retain, nonatomic) CJPayWebviewMonitorConfigModel *webviewMonitorConfigModel;
+@property (copy, nonatomic) NSArray *secDomains;
+@property (copy, nonatomic) NSArray *loadingPath;
+@property (copy, nonatomic) NSDictionary *webviewPrefetchConfig;
+@property (copy, nonatomic) NSDictionary *toastUrlConfig;
+@property (retain, nonatomic) CJPayHostModel *cjpayNewCustomHost;
+@property (copy, nonatomic) NSString *cjpayCustomHost;
+@property (retain, nonatomic) CJPayABSettingsModel *abSettingsModel;
+@property (copy, nonatomic) NSDictionary *abSettingsDic;
+@property (copy, nonatomic) NSDictionary *libraABSettingsDic;
+@property (retain, nonatomic) CJPayGurdSettingsModel *gurdFalconModel;
+@property (retain, nonatomic) CJPayFaceVerifyModel *faceVerifyModel;
+@property (retain, nonatomic) CJPayGurdImgModel *gurdImgModel;
+@property (retain, nonatomic) CJPayFastPayModel *fastPayModel;
+@property (retain, nonatomic) CJPayAccountInsuranceEntrance *accountInsuranceEntrance;
+@property (retain, nonatomic) CJPayDataSecurity *enableDataSecurity;
+@property (copy, nonatomic) NSArray *bankParamsArray;
+@property (nonatomic) BOOL performanceMonitorIsOpened;
+@property (nonatomic) BOOL isHitEventUploadSampled;
+@property (retain, nonatomic) CJPayWebViewCommonConfigModel *webviewCommonConfigModel;
+@property (retain, nonatomic) CJPayAnnieConfigModel *annieConfigModel;
+@property (retain, nonatomic) CJPayLoadingConfig *loadingConfig;
+@property (copy, nonatomic) NSArray *aid2PlatformIdMap;
+@property (retain, nonatomic) CJPayIAPConfigModel *iapConfigModel;
+@property (retain, nonatomic) CJPayJHInformationConfig *jhConfig;
+@property (copy, nonatomic) NSString *engimaVersion;
+@property (copy, nonatomic) NSString *oneKeyAssemble;
+@property (nonatomic) BOOL disableViolentClickPrevent;
+@property (retain, nonatomic) CJPayRDOptimizationConfig *rdOptimizationConfig;
+@property (retain, nonatomic) CJPayStandardUIComponentConfig *stdUIComponentConfig;
+@property (retain, nonatomic) CJPayBindCardUIConfig *bindCardUIConfig;
+@property (copy, nonatomic) NSString *topVCV2;
+@property (retain, nonatomic) CJPayBindCardUISettingsModel *bindCardUISettings;
+@property (copy, nonatomic) NSDictionary *rechargeWithdrawConfig;
+@property (retain, nonatomic) CJPaySecurityLoadingConfig *securityLoadingConfig;
+@property (copy, nonatomic) NSString *bindcardLynxUrl;
+@property (copy, nonatomic) NSString *deviceGroupStr;
+@property (retain, nonatomic) CJPayMigrateH5PageToLynx *migrateH5PageToLynx;
+@property (nonatomic) BOOL isVIP;
+@property (retain, nonatomic) CJPayAlogReportConfigModel *alogReportConfigModel;
+@property (retain, nonatomic) CJPayLynxSchemaConfig *lynxSchemaConfig;
+@property (copy, nonatomic) NSString *redpackBackgroundURL;
+@property (retain, nonatomic) CJPayContainerConfig *containerConfig;
+@property (retain, nonatomic) CJPayUploadMediaConfig *uploadMediaConfig;
+@property (copy, nonatomic) NSDictionary *dataDict;
+@property (retain, nonatomic) CJPayLynxSchemaParamsConfig *lynxSchemaParamsConfig;
+@property (retain, nonatomic) CJPayDeviceOptConfig *deviceOptConfig;
+@property (retain, nonatomic) CJPayBioConfig *bioConfig;
+@property (retain, nonatomic) CJPayHalfPageHybridConfig *halfPageHybridConfig;
+@property (nonatomic) double devicePPI;
+@property (retain, nonatomic) CJPaySKMConfig *skmConfig;
+@property (retain, nonatomic) CJPayCCMConfig *ccmConfig;
+@property (retain, nonatomic) CJPayRestoreConfig *restoreConfig;
+@property (retain, nonatomic) CJPayFKMConfig *fkmConfig;
+@property (retain, nonatomic) CJPaySecurityLockConfig *securityLockConfig;
+@property (retain, nonatomic) CJPayTripConfig *tripConfig;
+@property (nonatomic) BOOL ttpayCallbackFixDisable;
+@property (copy, nonatomic) NSDictionary *cjpayDegradeSettings;
+@property (retain, nonatomic) CJPayCodeCommonConfig *codeCommonConfig;
+@property (retain, nonatomic) CJPaySignBizConfig *signBizConfig;
+@property (copy, nonatomic) NSDictionary *abnormalPageCheck;
+@property (copy, nonatomic) NSDictionary *heartBeatConfig;
+@property (copy, nonatomic) NSDictionary *unifyRetainConfig;
+@property (copy, nonatomic) NSDictionary *signRetainConfig;
+
++ (id)keyMapper;
++ (BOOL)propertyIsOptional:(id)a0;
+
+- (id)getThemedH5PathList;
+- (void).cxx_destruct;
+
+@end

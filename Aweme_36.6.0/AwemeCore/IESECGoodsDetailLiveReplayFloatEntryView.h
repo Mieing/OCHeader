@@ -1,0 +1,73 @@
+@class IESECHeadVideoModel, UIStackView, IESECGoodsDetailLiveReplayFloatEntryTitleView, IESECGoodsDetailLiveReplayFloatEntryDataModel, IESECGCDTimer, IESECGoodsDetailLiveReplayFloatEntryMetaModel, UIPanGestureRecognizer, IESECGoodsDetailLiveReplayFloatEntryMediaView, IESECGoodsDetailLiveReplayFloatEntryViewModel;
+
+@interface IESECGoodsDetailLiveReplayFloatEntryView : UIView
+
+@property (nonatomic) BOOL normalStateEnable;
+@property (nonatomic) BOOL livingStateEnable;
+@property (nonatomic) BOOL replayStateEnable;
+@property (nonatomic) BOOL headMoreVideoStateEnable;
+@property (nonatomic) BOOL isVanished;
+@property (nonatomic) BOOL moveWithScrollEnable;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (nonatomic) double originCenterY;
+@property (retain, nonatomic) IESECGoodsDetailLiveReplayFloatEntryMetaModel *metaModel;
+@property (retain, nonatomic) IESECGoodsDetailLiveReplayFloatEntryViewModel *viewModel;
+@property (retain, nonatomic) IESECHeadVideoModel *headMoreVideo;
+@property (retain, nonatomic) UIStackView *stackView;
+@property (retain, nonatomic) IESECGoodsDetailLiveReplayFloatEntryTitleView *entryTitleView;
+@property (retain, nonatomic) IESECGCDTimer *animationTimer;
+@property (nonatomic) long long liveReplayFloatEntryStyle;
+@property (nonatomic) long long liveReplayFloatEntryState;
+@property (nonatomic) double animationTime;
+@property (nonatomic) BOOL firstShowAnimated;
+@property (nonatomic) BOOL viewDragableEnable;
+@property (readonly, nonatomic) BOOL floatEnable;
+@property (nonatomic) double scrollOffsetY;
+@property (nonatomic) BOOL slideVanishEnable;
+@property (nonatomic) double vanishedSlidePercent;
+@property (nonatomic) BOOL unshieldedFindSimilarEnable;
+@property (nonatomic) double additionOffsetY;
+@property (nonatomic) double containerModeHalfOffsetY;
+@property (nonatomic) double containerModeFullOffsetY;
+@property (retain, nonatomic) IESECGoodsDetailLiveReplayFloatEntryMediaView *entryMediaView;
+@property (retain, nonatomic) IESECGoodsDetailLiveReplayFloatEntryDataModel *dataModel;
+
+- (void)panAction:(id)a0;
+- (void)updateAccessibility;
+- (void)trackShow:(long long)a0;
+- (id)replayVideoPlayerView;
+- (BOOL)disableReplayState;
+- (struct CGSize { double x0; double x1; })replayVideoSize;
+- (void)animateToReplayState;
+- (void)replayShouldPause:(BOOL)a0;
+- (void)p_cancelAnimationTimer;
+- (void)tapFloatButton;
+- (void)setLiveReplayFloatEntryState:(long long)a0 WithAnimateDurition:(double)a1;
+- (void)updateStateEnableWithStyle:(long long)a0 State:(long long)a1;
+- (void)returnToScreenAnimation:(BOOL)a0 WithCompletion:(id /* block */)a1;
+- (void)p_handleAnimationTimer;
+- (void)animateToNormalState;
+- (void)animateToLivingState;
+- (void)animateToHeadMoreVideoState;
+- (void)updateScrollOffsetY;
+- (void)updateViewDragableEnable;
+- (void)updateNormalStateEnable;
+- (void)updateLivingStateEnable;
+- (void)updateReplayStateEnable;
+- (void)updateAdditionOffsetY;
+- (void)updateReplayFloatEntryWithVideoModel:(id)a0;
+- (void)updateReplayFloatEntryWithViewModel:(id)a0 WithState:(long long)a1;
+- (void)replayDataReady:(id)a0;
+- (void)cancelAnimationTimer;
+- (void)setupAnimationTimer;
+- (void)animateVanishWithDuration:(double)a0 completion:(id /* block */)a1;
+- (void)animateAppearWithDuration:(double)a0 completion:(id /* block */)a1;
+- (void)setLiveReplayFloatEntryState:(long long)a0 WithDelay:(long long)a1 WithAnimateDurition:(double)a2;
+- (void)resetFloatEnableWithOriginCenterY:(double)a0;
+- (void)setFloatEnable;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)setupUI;
+
+@end

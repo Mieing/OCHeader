@@ -1,0 +1,12 @@
+@class NSString, HTSLivePreviewExposeData_Meta_Host;
+
+@interface HTSLivePreviewExposeData_Meta : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (retain, nonatomic) HTSLivePreviewExposeData_Meta_Host *host;
+@property (nonatomic) BOOL hasHost;
+@property (copy, nonatomic) NSString *content;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface IESLiveSongCellTagLabelModel : IESLiveDynamicModel
+
+@property (nonatomic) long long labelType;
+@property (copy, nonatomic) NSString *title;
+
+@end

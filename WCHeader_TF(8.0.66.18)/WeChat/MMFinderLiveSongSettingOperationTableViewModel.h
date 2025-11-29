@@ -1,0 +1,77 @@
+@class MMFinderLiveSongManageTableViewCell, MMTableView, WCTimeLineFooterView, NSString, NSMutableArray, MMFinderLiveSongItem;
+@protocol MMFinderLiveSongSettingOperationTableDataDelegate;
+
+@interface MMFinderLiveSongSettingOperationTableViewModel : NSObject <MMFinderLiveMultiSelectTableViewCellDelegate, MMFinderLiveSongManageTableViewCellDelegate, MMTableViewDelegate, UITableViewDelegate, UITableViewDataSource, MMFinderLiveMusicTableViewBottomEditingDelegate>
+
+@property (retain, nonatomic) NSMutableArray *musicDataArray;
+@property (retain, nonatomic) NSMutableArray *musicDataCopyArray;
+@property (retain, nonatomic) NSMutableArray *selectedMusicDataItemArray;
+@property (nonatomic) BOOL isInEditingMode;
+@property (nonatomic) BOOL hasMusicData;
+@property (retain, nonatomic) MMFinderLiveSongItem *preSingingSongItem;
+@property (nonatomic) unsigned int indexOffset;
+@property (weak, nonatomic) MMFinderLiveSongManageTableViewCell *cellToReset;
+@property (nonatomic) BOOL isInLive;
+@property (nonatomic) BOOL isAudience;
+@property (nonatomic) BOOL singSongEnabled;
+@property (weak, nonatomic) MMTableView *tableView;
+@property (weak, nonatomic) WCTimeLineFooterView *footerView;
+@property (weak, nonatomic) id<MMFinderLiveSongSettingOperationTableDataDelegate> dataDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTableView:(id)a0;
+- (void)installTableView;
+- (BOOL)shouldAdaptToDarkLight;
+- (BOOL)mmTableView:(id)a0 shouldPassHitTest:(struct CGPoint { double x0; double x1; })a1 withEvent:(id)a2;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (id)getCellIdentifer;
+- (Class)getCellClass;
+- (double)getSeparatorLeftInset;
+- (double)getCellHeight;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 shouldIndentWhileEditingRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 canMoveRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 commitEditingStyle:(long long)a1 forRowAtIndexPath:(id)a2;
+- (id)tableView:(id)a0 targetIndexPathForMoveFromRowAtIndexPath:(id)a1 toProposedIndexPath:(id)a2;
+- (void)tableView:(id)a0 moveRowAtIndexPath:(id)a1 toIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)handleMakeCellForMultiSelect:(id)a0;
+- (void)handleSelectCellForMultiSelect:(id)a0;
+- (void)updateStateForDataSourceChanged;
+- (BOOL)checkIsEnableToMoveFromIndexPath:(id)a0 toIndexPath:(id)a1;
+- (void)notifyTableDataDeleteDidSelectChanged;
+- (void)notifyTableAllSelectStateChanged;
+- (void)makeCopyForCurrentMusicDataItemArray;
+- (void)recoverMusicDataItemArray;
+- (void)synchronizeCurrentSongIdArray;
+- (void)clearAllEditedData;
+- (void)updateSingingSongItem:(id)a0;
+- (id)getSingingSongItem:(id)a0;
+- (BOOL)isInMultiSelectEditingMode;
+- (void)onSongTableViewCellDidSelect:(id)a0;
+- (void)onSongTableViewCellDidFinishOrder:(id)a0;
+- (void)onSongTableViewCellNeedResetWhenReceiveNewTouches:(id)a0;
+- (void)onFinderLiveMusicDataAllSelected:(BOOL)a0;
+- (void)onFinderLiveMusicDataDelete;
+- (void)beginEditMode;
+- (void)endEditMode:(BOOL)a0;
+- (void)appendMusicData:(id)a0;
+- (void)resetMusicData:(id)a0;
+- (void)insertMusicData:(id)a0;
+- (unsigned long long)musicDataCount;
+- (id)getSongItem:(id)a0;
+- (void)scrollToMusicDataItem:(id)a0 animated:(BOOL)a1;
+- (void)checkIsSingingSongChange:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

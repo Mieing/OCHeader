@@ -1,0 +1,3 @@
+@interface IESLiveHidePKPanelParamModel : IESLiveBridgeModel
+
+@end

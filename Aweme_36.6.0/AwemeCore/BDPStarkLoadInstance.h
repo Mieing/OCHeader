@@ -1,0 +1,83 @@
+@class BDPStarkDownloadInfo, BDPStarkModel;
+
+@interface BDPStarkLoadInstance : BDPBaseLoadInstance
+
+@property (nonatomic) long long enterStartTimeMs;
+@property (nonatomic) long long domReadyTimeMs;
+@property (nonatomic) BOOL isDOMReady;
+@property (nonatomic) BOOL isNewUserPath;
+@property (nonatomic) long long reloadPageTimes;
+@property (nonatomic) BOOL isAddUserScript;
+@property (nonatomic) BOOL isFPCalled;
+@property (nonatomic) BOOL isFPReported;
+@property (nonatomic) BOOL useHighPerformancePlus;
+@property (nonatomic) BOOL enableCombineLoadingView;
+@property (retain, nonatomic) BDPStarkModel *scModel;
+@property (retain, nonatomic) BDPStarkDownloadInfo *downloadInfo;
+
++ (void)bootstrapLaunch;
++ (id)validateMeta:(id)a0;
++ (id)setupCustomMetaRequesterInfo:(id)a0;
++ (BOOL)shouldDownloadPkg:(id)a0;
++ (void)renamePackageIfNeed:(id)a0 inUseModel:(id)a1 updateModel:(id)a2;
++ (id)getUnityPkgMd5:(id)a0;
++ (long long)type;
+
+- (id)getCurrentPage;
+- (BOOL)isRV;
+- (id)businessParamForEvent:(id)a0;
+- (void)firstFrameDidShow:(BOOL)a0;
+- (void)setupTask:(id)a0;
+- (void)commonAndTaskSetupDone:(BOOL)a0;
+- (void)becomeReadyStatus;
+- (void)firstFrameDidShow;
+- (BOOL)canApplyUpdate;
+- (void)readyToLoadAppWithModel:(id)a0;
+- (void)workBeforeClose:(id)a0;
+- (void)updateCommonModel:(id)a0 withNewestModel:(id)a1;
+- (long long)getToolbarThemeStyleWithDefaultStyle:(long long)a0;
+- (void)asyncDownloadUnityPkg:(id)a0;
+- (BOOL)isCombineLoadingView;
+- (void)updateModelExtensionIfNeed;
+- (BOOL)enableUsePreloadHtmlPage;
+- (id)unzipFile:(id)a0 targetDir:(id)a1;
+- (void)buildODRMeta:(id)a0;
+- (BOOL)shouldResolveSCP:(id)a0;
+- (void)checkODR:(id)a0;
+- (void)updateCommonParamsWithMetaInner:(id)a0;
+- (void)cleanAllCachedStarks;
+- (void)getSCPIfNeeded:(id)a0;
+- (void)showAlertIfUnderIOS12;
+- (void)recordRunningAppWithId:(id)a0;
+- (BOOL)checkSCPHasReady;
+- (void)updateLoadingViewPercent:(double)a0;
+- (void)resolveSCP;
+- (void)resolveODRFile;
+- (id)readPackageMetaData;
+- (id)getSCPkgDir;
+- (id)checkPackageValid:(id)a0;
+- (id)checkODRValid:(id)a0;
+- (id)getSCBugfixConfig;
+- (void)resolveODRFileSimple;
+- (id)buildPkgEndCommonParams;
+- (id)buildNoCachePkgEndParamsWithPkgLoadInfo:(id)a0;
+- (void)writeSCMetaData;
+- (void)monitorFPTimeout;
+- (void)cacheSubNaviIfNecessary;
+- (id)getSCCoreODRMetaPath;
+- (id)getBaseName:(id)a0;
+- (id)getPackageMetaPath;
+- (void)onDOMReady;
+- (void)onLoadResult:(id)a0;
+- (void)onFirstPaint:(id)a0;
+- (id)getSCCoreODRInfoFromLocalFile;
+- (BOOL)writeSCCoreODRInfoToLocalFile:(id)a0;
+- (void)pr_trackerDomReadyEvent;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setProgress:(float)a0;
+- (void)loadPage;
+- (id)engineName;
+- (BOOL)shouldShowLoadingView;
+
+@end

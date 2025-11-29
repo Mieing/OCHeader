@@ -1,0 +1,10 @@
+@class StopGameResponse_ResponseData;
+
+@interface StopGameResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) StopGameResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

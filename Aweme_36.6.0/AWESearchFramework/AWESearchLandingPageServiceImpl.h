@@ -1,0 +1,86 @@
+@class UIView, NSString, DUXContentSheet, AnnieXNavigataionBarItem, DUXMultipeSelectionPanel, AWESearchLandingPageNavigationBar, AWESearchWebNoticeViewKit, NSDictionary, UIViewController, UILabel, AWESearchWebViewTranscodingManager;
+@protocol AnnieXUIServiceProtocol, BDXPageContainerProtocol;
+
+@interface AWESearchLandingPageServiceImpl : NSObject <DUXMultipeSelectionPanelDelegate, DUXSheetDelegate, DUXActionSheetDelegate, AnnieXUIServiceProtocol>
+
+@property (retain, nonatomic) id<AnnieXUIServiceProtocol> defaultService;
+@property (retain, nonatomic) AnnieXNavigataionBarItem *backBtn;
+@property (retain, nonatomic) AnnieXNavigataionBarItem *moreBtn;
+@property (retain, nonatomic) AnnieXNavigataionBarItem *searchBtn;
+@property (retain, nonatomic) AWESearchLandingPageNavigationBar *searchBar;
+@property (weak, nonatomic) UIView *naviBar;
+@property (retain, nonatomic) UIView *bottomLine;
+@property (retain, nonatomic) UILabel *titleTextLabel;
+@property (weak, nonatomic) UIViewController<BDXPageContainerProtocol> *containerVC;
+@property (retain, nonatomic) DUXContentSheet *feedBackSheet;
+@property (retain, nonatomic) DUXMultipeSelectionPanel *multipePanel;
+@property (retain, nonatomic) AWESearchWebViewTranscodingManager *transcodingManager;
+@property (retain, nonatomic) AWESearchWebNoticeViewKit *webNoticeViewKit;
+@property (copy, nonatomic) NSDictionary *shareInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)createService;
++ (BOOL)useAnnieXNavigationBarWithURL:(id)a0 context:(id)a1;
++ (BOOL)shouldUserStandardLongPressMenu:(id)a0;
++ (id)monitorCommonParamsWithContainer:(id)a0 context:(id)a1;
++ (unsigned long long)serviceScope;
++ (id)serviceBizID;
++ (long long)barStyleWithUrl:(id)a0 context:(id)a1;
++ (id)popoverShownCount;
++ (void)appendPopoverShownCount;
++ (BOOL)enableSearchLandingThirdPage;
++ (unsigned long long)serviceType;
+
+- (void)sheetDidClickMaskArea:(id)a0;
+- (void)sheetDidClickCloseButton:(id)a0;
+- (void)sheetDidDismiss:(id)a0;
+- (id)enterFrom;
+- (id)trackParams;
+- (id)searchId;
+- (id)searchResultId;
+- (void)actionSheet:(id)a0 didClickButtonAtIndex:(long long)a1;
+- (id)navigationLeftViewItemsWithContext:(id)a0 containerVC:(id)a1;
+- (void)onCreateNavigationContentView:(id)a0 navBarView:(id)a1 context:(id)a2 containerVC:(id)a3;
+- (id)navigationRightViewItemsWithContext:(id)a0 containerVC:(id)a1;
+- (void)onNavigationUpdateContentView:(id)a0 title:(id)a1 titleColor:(id)a2 context:(id)a3 containerVC:(id)a4;
+- (id)onNavigationUpdateLeftItemsWithNavigationBarItems:(id)a0 context:(id)a1 containerVC:(id)a2;
+- (id)onNavigationUpdateRightItemsWithNavigationBarItems:(id)a0 context:(id)a1 containerVC:(id)a2;
+- (id)searchKeyword;
+- (id)searchParams;
+- (void)addNotification;
+- (id)webMenusWithRootMenu:(id)a0 webView:(id)a1 schemaParams:(id)a2;
+- (void)onLongPressImageInWebView:(id)a0 schemaParams:(id)a1 imageURL:(id)a2;
+- (id)selectionPanel:(id)a0 optionNameAtRow:(long long)a1;
+- (id)originScheme;
+- (void)selectionPanelDidClickConfirmButton:(id)a0;
+- (void)selectionPanelDidClickSecondaryButton:(id)a0;
+- (void)showCloseDialog;
+- (void)showToast:(id)a0;
+- (id)schemeParams;
+- (id)searchGroupId;
+- (void)changeNavigationBarWithTheme:(id)a0;
+- (void)changeNavigationBarTheme:(id)a0;
+- (void)changeNavigationBarConfigShareInfo:(id)a0;
+- (void)showNavBar:(id)a0;
+- (void)showTranscodingToast:(id)a0;
+- (void)showNavBarMoreToast:(id)a0;
+- (BOOL)fixSearchLandingQueryLine;
+- (void)trackFeedBackPanelCancel;
+- (id)selectionPanelTitleMap;
+- (void)trackFeedBackPanelConfirm;
+- (id)feedbackItemDataSource;
+- (void)trackCloseSheetClick:(id)a0;
+- (void)showTransCodeConfirmInfoPanel;
+- (void)showCloseActionSheets;
+- (void)jumpMiddlePageFrom:(id)a0;
+- (void)jumpSearchResultPage;
+- (id)searchType;
+- (void).cxx_destruct;
+- (id)queryItems;
+- (id)tokenType;
+- (id)requestParams;
+
+@end

@@ -1,0 +1,12 @@
+@class RelationShowExtra, HTSLiveRoom;
+
+@interface RelationShowResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RelationShowExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+@property (retain, nonatomic) HTSLiveRoom *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

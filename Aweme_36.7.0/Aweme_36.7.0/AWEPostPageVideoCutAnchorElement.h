@@ -1,0 +1,82 @@
+@class AWENewPublishTableCell, NSDictionary, NSString, AWEPostPageAnchorViewModel;
+
+@interface AWEPostPageVideoCutAnchorElement : AWEPostPageCellElement <AWECommerceAnchorMessageProtocol, AWEPostPageAnchorProtocol>
+
+@property (retain, nonatomic) AWENewPublishTableCell *anchorCell;
+@property (nonatomic) BOOL isUserDelete;
+@property (nonatomic) BOOL anchorDisplayAlreadyTrack;
+@property (retain, nonatomic) NSDictionary *originalSourceInfo;
+@property (nonatomic) long long anchorType;
+@property (nonatomic) BOOL disableAnchor;
+@property (nonatomic) BOOL isABEnablePublishXingtuAnchor;
+@property (nonatomic) BOOL isABEnablePublishJianyingAnchor;
+@property (nonatomic) BOOL isVideoCutSeparateElement;
+@property (nonatomic) BOOL shouldUpdateSourceInfo;
+@property (nonatomic) BOOL shouldLimitReplaceForSDK;
+@property (nonatomic) BOOL isABEnableEditingRequestShareId;
+@property (nonatomic) BOOL isRequestingJianyingAnchorShareId;
+@property (nonatomic) BOOL isRequestingXingtuAnchorShareId;
+@property (nonatomic) BOOL isRequestingJiMengAnchorShareId;
+@property (retain, nonatomic) NSString *effectId;
+@property (retain, nonatomic) NSString *effectType;
+@property (nonatomic) BOOL ignoreRevertAnchorInformationSignal;
+@property (retain, nonatomic) AWEPostPageAnchorViewModel *serverAnchorVM;
+@property (copy, nonatomic) NSString *serverAnchorID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy, nonatomic) NSDictionary *extras;
+
++ (void)_aweLazyRegisterPostPage;
++ (id)type;
+
+- (void)updateViewModel;
+- (id)poiService;
+- (void)elementAppear;
+- (void)didSelectExternalAnchorWithType:(long long)a0 anchorDismissBlock:(id /* block */)a1 enterFromType:(long long)a2;
+- (void)refreshWithAnchorVM:(id)a0;
+- (BOOL)forceReceiveEvents;
+- (BOOL)isPassiveAnchorEnabled;
+- (long long)currentAnchorBusinessType;
+- (void)setupTrackGraphicsAnchorType;
+- (long long)graphicsAnchorTypeWithAnchorId:(id)a0;
+- (BOOL)useVideoCutElement;
+- (id)graphicsAnchorTypeString;
+- (void)setupPassiveAnchorViewModel;
+- (void)fetchJianyingAnchorShareIdIfNeeded;
+- (void)clickRemoveAnchor;
+- (id)jianyingAnchorTitle;
+- (void)didRemoveAnchor;
+- (void)trackDeleteAnchor;
+- (void)didAnchorCheckFail;
+- (void)trackAnchorDisplayIfNeeded;
+- (BOOL)isOpenPlatformAnchorWithID:(id)a0;
+- (id)buildAnchorViewModelWithType:(long long)a0;
+- (id)commonAnchorTrackParams;
+- (id)resolveJianyingShareIdAnchorExtra;
+- (void)updateAnchorInfo;
+- (void)resetAnchor;
+- (void)fetchShareIdIfNeed;
+- (void)updateAnchorVMIfNeed;
+- (void)updateAnchorType;
+- (void)updateDisableAnchor;
+- (void)updateSourceInfoIfNeed;
+- (BOOL)hasJianyingAnchor;
+- (BOOL)hasXingtuAnchor;
+- (BOOL)hasJiMengAnchor;
+- (id)xingtuAnchorTitle;
+- (id)jimengAnchorTitle;
+- (BOOL)isFromSDKUpload;
+- (void)fetchXingtuAnchorShareIdIfNeeded;
+- (void)fetchJiMengAnchorShareIdIfNeeded;
+- (void).cxx_destruct;
+- (id)init;
+- (BOOL)isVisible;
+- (BOOL)isEnabled;
+- (void)viewDidLoad;
+- (id)cellClass;
+- (id)cell;
+- (id)cellIdentifier;
+
+@end

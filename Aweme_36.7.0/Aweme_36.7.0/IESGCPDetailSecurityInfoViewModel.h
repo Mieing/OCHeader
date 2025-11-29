@@ -1,0 +1,3 @@
+@interface IESGCPDetailSecurityInfoViewModel : IESGCPDetailBaseViewModel
+
+@end

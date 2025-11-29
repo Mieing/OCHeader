@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveGlobalCustomIcons : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *staticIconURL;
+@property (copy, nonatomic) NSString *animatedIconURL;
+@property (copy, nonatomic) NSString *animatedCommonIconURL;
+
++ (id)descriptor;
+
+@end

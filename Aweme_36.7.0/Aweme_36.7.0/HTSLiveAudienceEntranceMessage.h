@@ -1,0 +1,12 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveAudienceEntranceMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *entrancesArray;
+@property (readonly, nonatomic) unsigned long long entrancesArray_Count;
+
++ (id)descriptor;
+
+@end

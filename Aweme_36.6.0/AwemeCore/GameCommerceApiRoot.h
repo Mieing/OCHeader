@@ -1,0 +1,3 @@
+@interface GameCommerceApiRoot : GPBRootObject
+
+@end

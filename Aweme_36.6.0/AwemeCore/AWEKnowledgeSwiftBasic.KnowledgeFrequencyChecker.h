@@ -1,0 +1,8 @@
+@interface AWEKnowledgeSwiftBasic.KnowledgeFrequencyChecker : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ storageKey;
+    void /* unknown type, empty encoding */ model;
+    void /* unknown type, empty encoding */ totalTimesLimit;
+    void /* unknown type, empty encoding */ dayPeriodTimesLimit;
+}
+
+@end

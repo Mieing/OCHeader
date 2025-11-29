@@ -1,0 +1,11 @@
+@class NSArray, NSString, NSDictionary;
+
+@interface AWESearchBarSingleConfig : NSObject
+
+@property (copy, nonatomic) NSArray *channel;
+@property (nonatomic) struct AWESearchEditViewStyleConfig { struct AWESearchStyleConfig { struct FrameStyle { NSString *color; double cornerRadius; } frameStyle; struct ActionStyle { NSString *color; NSString *text; BOOL enable; } actionStyle; struct ScanStyle { NSString *url; BOOL enable; } scanStyle; struct ActionExtra { NSString *actionType; NSString *schema; NSDictionary *extra; } srpActionStyle; } commonStyleConfig; struct AWESearchStyleConfig { struct FrameStyle { NSString *color; double cornerRadius; } frameStyle; struct ActionStyle { NSString *color; NSString *text; BOOL enable; } actionStyle; struct ScanStyle { NSString *url; BOOL enable; } scanStyle; struct ActionExtra { NSString *actionType; NSString *schema; NSDictionary *extra; } srpActionStyle; } sugStyleConfig; struct AWESearchStyleConfig { struct FrameStyle { NSString *color; double cornerRadius; } frameStyle; struct ActionStyle { NSString *color; NSString *text; BOOL enable; } actionStyle; struct ScanStyle { NSString *url; BOOL enable; } scanStyle; struct ActionExtra { NSString *actionType; NSString *schema; NSDictionary *extra; } srpActionStyle; } resultStyleConfig; } config;
+
+- (id)initWithChannel:(id)a0 Config:(struct AWESearchEditViewStyleConfig { struct AWESearchStyleConfig { struct FrameStyle { id x0; double x1; } x0; struct ActionStyle { id x0; id x1; BOOL x2; } x1; struct ScanStyle { id x0; BOOL x1; } x2; struct ActionExtra { id x0; id x1; id x2; } x3; } x0; struct AWESearchStyleConfig { struct FrameStyle { id x0; double x1; } x0; struct ActionStyle { id x0; id x1; BOOL x2; } x1; struct ScanStyle { id x0; BOOL x1; } x2; struct ActionExtra { id x0; id x1; id x2; } x3; } x1; struct AWESearchStyleConfig { struct FrameStyle { id x0; double x1; } x0; struct ActionStyle { id x0; id x1; BOOL x2; } x1; struct ScanStyle { id x0; BOOL x1; } x2; struct ActionExtra { id x0; id x1; id x2; } x3; } x2; })a1;
+- (void).cxx_destruct;
+
+@end

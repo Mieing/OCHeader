@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface HTSLiveAppearance_WideCover : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *cover;
+@property (nonatomic) BOOL hasCover;
+@property (nonatomic) long long coverType;
+
++ (id)descriptor;
+
+@end

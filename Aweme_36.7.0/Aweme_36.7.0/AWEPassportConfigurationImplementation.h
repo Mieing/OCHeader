@@ -1,0 +1,80 @@
+@class NSString;
+
+@interface AWEPassportConfigurationImplementation : NSObject <AWEPassportProductConfiguration, AWEPassportSettings, AWEPassportNetworkManager, AWEPassportAntiSpamDelegate, AWEPassportUtils, AWEPassportColor>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)trackData:(id)a0 logTypeStr:(id)a1;
++ (void)trackService:(id)a0 status:(long long)a1 extra:(id)a2;
++ (BOOL)isCurrentLanguage:(id)a0;
++ (void)trackEvent:(id)a0 params:(id)a1 needStagingFlag:(BOOL)a2;
++ (BOOL)enableMultiLogin;
++ (id)appKeyToutiao;
++ (id)appKeyXigua;
++ (id)appKeyDouyin;
++ (Class)aAWEDYThirdPartyAppIdManagerCommonAdapterClass;
++ (id)appKeyWeibo;
++ (id)appKeyQQ;
++ (id)appKeyWechat;
++ (id)appKeyGoogle;
++ (id)platformAppIdApple;
++ (id)appidChinaTelecom;
++ (id)translateString:(id)a0;
++ (BOOL)isInhouse;
++ (id)platformAppIdToutiao;
++ (id)platformAppIdXiGua;
++ (id)platformAppIdQQ;
++ (id)appidChinaMobile;
++ (id)appkeyChinaMobile;
++ (id)appkeyChinaTelecom;
++ (id)appidChinaUnion;
++ (id)appkeyChinaUnion;
++ (id)openAuthState;
++ (id)platformAppIdGoogle;
++ (BOOL)enableVirtualPhoneNumber;
++ (BOOL)enableCMCCSDK;
++ (BOOL)enableCarrierTypeProviders;
++ (unsigned long long)maxCountOfMultiLoginAccount;
++ (BOOL)enableAuthorizeInstagramWithEnglish;
++ (BOOL)enableCheckUserIDMismatch;
++ (BOOL)enableFixInstagramKeyboardAppearError;
++ (BOOL)enableStoreAccountInUserDefault;
++ (Class)aAWEUserModuleConfigCommonClass;
++ (id)standardColorS4;
++ (id)standardColorS1;
++ (id)standardColorS12;
++ (id)standardColorS11;
++ (id)standardColorS22;
++ (id)standardColorS14;
++ (id)standardColorS3;
++ (id)standardColorS2;
++ (id)standardColorS1_D;
++ (id)standardColorS10;
++ (id)standardColorS10_D;
++ (id)standardColorS11_D;
++ (id)standardColorS12_D;
++ (id)standardColorS13;
++ (id)standardColorS13_D;
++ (id)standardColorS20;
++ (id)standardColorS21;
++ (id)standardColorS30;
++ (id)standardColorS5;
++ (id)standardColorS64;
++ (id)wrapperColor_T5_M2;
++ (id)wrapperColor_T13_M14;
++ (id)appID;
++ (id)deviceID;
++ (id)appDisplayName;
++ (id)currentLanguage;
+
+- (id)aAWEDYThirdPartyAppIdManagerCommonAdapter;
+- (void)processMiddleCheckWithURL:(id)a0 originalParams:(id)a1 error:(id)a2 rawData:(id)a3 completion:(id /* block */)a4;
+- (void)GETJSONDictionary:(id)a0 parameters:(id)a1 headers:(id)a2 completion:(id /* block */)a3;
+- (void)POSTJSONDictionary:(id)a0 parameters:(id)a1 completion:(id /* block */)a2;
+- (id)aAWEUserModuleConfigCommon;
+- (id)domain;
+
+@end

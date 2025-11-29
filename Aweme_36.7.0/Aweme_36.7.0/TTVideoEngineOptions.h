@@ -1,0 +1,86 @@
+@class NSString, TTVideoEnginePlayer, NSMutableDictionary;
+
+@interface TTVideoEngineOptions : NSObject {
+    TTVideoEnginePlayer *_player;
+    NSMutableDictionary *_intOptions;
+}
+
+@property (nonatomic) BOOL vtbFlushKeepSesssion;
+@property (nonatomic) BOOL enableDropRASL;
+@property (nonatomic) BOOL isCheckVoiceInBufferingStart;
+@property (nonatomic) BOOL openVoiceInPrepare;
+@property (nonatomic) BOOL allAVViewHoldBackground;
+@property (nonatomic) BOOL isEnableNewOutlet;
+@property (nonatomic) BOOL enableSubtitleLoadOpt;
+@property (nonatomic) BOOL enableDisplayP3;
+@property (nonatomic) BOOL enableVideoTimestampMonotonic;
+@property (nonatomic) BOOL enableFlushSeek;
+@property (nonatomic) BOOL enableGetTimeOptimize;
+@property (readonly, nonatomic) long long videoCodecTypeId;
+@property (readonly, nonatomic) long long audioCodecTypeId;
+@property (readonly, copy, nonatomic) NSString *videoCodecName;
+@property (readonly, copy, nonatomic) NSString *audioCodecName;
+@property (readonly, copy, nonatomic) NSString *dashCurrentOffsetInfo;
+@property (nonatomic) long long subtitleOpenRetryTimes;
+@property (nonatomic) BOOL enableRecreateSubIfNeeded;
+@property (copy, nonatomic) NSString *subFormatQuery;
+@property (nonatomic) long long positionUpdateInterval;
+@property (nonatomic) long long preciseCache;
+@property (nonatomic) long long preciseCacheForDash;
+@property (nonatomic) BOOL enableAVOutsyncCallback;
+@property (nonatomic) BOOL isOptBluetoothRenderSync;
+@property (nonatomic) long long voiceWroteTimeoutMultiple;
+@property (nonatomic) long long audioSkipLimitedTimes;
+@property (nonatomic) BOOL forceAsyncPause;
+@property (nonatomic) BOOL enableStartUpAutoResolution;
+@property (nonatomic) BOOL enableOutletDropLimit;
+@property (nonatomic) BOOL enableVideo15SR;
+@property (nonatomic) long long srExtraMode;
+@property (nonatomic) long long threadSafeRefSwitcher;
+@property (nonatomic) BOOL enableOptSubSearch;
+@property (nonatomic) long long keepDurationBufferSize;
+@property (nonatomic) long long maxFps;
+@property (nonatomic) BOOL enableClockResumeResetEof;
+@property (nonatomic) long long currentAudioInfoId;
+@property (nonatomic) BOOL enableUIResponderLogOnPlay;
+@property (nonatomic) BOOL enableAudioOutletCpuTest;
+@property (nonatomic) BOOL enableBufferingDirectlyRenderStartReport;
+@property (nonatomic) BOOL enableDirectlyBufferingEndTimeMilliSeconds;
+@property (nonatomic) long long directlyBufferingEndTimeMilliSeconds;
+@property (nonatomic) BOOL enableDirectlyBufferingSendVideoPacket;
+@property (nonatomic) BOOL enableCacheMetalDevice;
+@property (nonatomic) BOOL enableFixVoiceLatency;
+@property (nonatomic) BOOL enableNativeMdlSeekReopen;
+@property (nonatomic) long long enableMp4Check;
+@property (nonatomic) BOOL enableDemuxNonblockRead;
+@property (nonatomic) BOOL forbidP2p;
+@property (nonatomic) BOOL enableDeinterlace;
+@property (nonatomic) BOOL enableGearStrategy;
+@property (nonatomic) long long precisePausePts;
+@property (nonatomic) long long framesDrop;
+@property (nonatomic) unsigned long long audioChannelType;
+@property (nonatomic) unsigned long long imageRotateType;
+@property (nonatomic) BOOL enableNativeMdlCheckTranscode;
+@property (nonatomic) unsigned long long seekMode;
+@property (nonatomic) long long fadeMode;
+@property (nonatomic) BOOL enableStrategyRangeControl;
+@property (nonatomic) BOOL enableStrategyAutoAddMedia;
+@property (nonatomic) BOOL enableStrategyVolumeBalance;
+@property (nonatomic) BOOL enableHookVoice;
+@property (nonatomic) BOOL enablePlaySpeedExtend;
+@property (nonatomic) BOOL enableMasterM3u8Optimize;
+@property (copy, nonatomic) NSString *playLoadConfig;
+@property (copy, nonatomic) NSString *playRangeConfig;
+@property (copy, nonatomic) NSString *playBufferConfig;
+@property (nonatomic) BOOL isDashSource;
+@property (nonatomic) long long checkSilenceInterval;
+
+- (void)applyToPlayer:(id)a0;
+- (void)setPreIntOptForKey:(long long)a0 value:(int)a1;
+- (void)setTraitObjectForKey:(long long)a0 value:(id)a1;
+- (id)getPreIntOptForKey:(id)a0;
+- (void).cxx_destruct;
+- (void)setDefaultValues;
+- (id)initWithPlayer:(id)a0;
+
+@end

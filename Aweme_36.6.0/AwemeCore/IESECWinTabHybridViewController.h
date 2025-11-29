@@ -1,0 +1,86 @@
+@class UIScrollView, IESECWinTabListModel, IESECWinHybridContext, IESECInfinitelyRefreshFooter, IESECGradientView, IESECRelationInlineManager, NSString, IESECWinContext, IESECWinFeedStatusCell, UICollectionView, IESECListKitBFFViewController, IESECServiceProxy;
+@protocol IESECWinLiveService, IESECWinDataStatusService, IESECWinTabLayoutService, IESECWinLynxCardService, IESECWinTabService, IESECWinGoodsService, IESECWinFeedService, IESECWinComponentService, IESECWinMainScrollService, IESECWinCategoryService, IESECWinCommonTrackService, IESECWinFeedLinkedService, IESECWinLynxPreloadService;
+
+@interface IESECWinTabHybridViewController : UIViewController <IESECListKitBFFViewControllerDelegate, IESECListKitLynxCardLifeCycle, UIScrollViewDelegate, IESECWinTabViewControllerProtocol> {
+    IESECWinContext *_context;
+    unsigned long long _currentLayout;
+}
+
+@property (retain, nonatomic) IESECWinTabListModel *listModel;
+@property (retain, nonatomic) IESECInfinitelyRefreshFooter *footer;
+@property (retain, nonatomic) IESECRelationInlineManager *inlineManager;
+@property (retain, nonatomic) IESECWinFeedStatusCell *statusCell;
+@property (retain, nonatomic) IESECGradientView *gradientView;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinTabService> *tabService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinFeedService> *feedService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinLiveService> *liveService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinGoodsService> *goodsService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinDataStatusService> *statusService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinFeedLinkedService> *linkedService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinMainScrollService> *scrollService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinLynxCardService> *lynxCardService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinCategoryService> *categoryService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinComponentService> *componentService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinTabLayoutService> *tabLayoutService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinLynxPreloadService> *preloadService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinDataStatusService> *dataStatusService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinCommonTrackService> *commonTrackService;
+@property (nonatomic) double lastListWidth;
+@property (nonatomic) BOOL needsAutoRefreshAfterLayout;
+@property (retain, nonatomic) IESECListKitBFFViewController *listVC;
+@property (readonly, nonatomic) IESECWinHybridContext *tabContext;
+@property (copy, nonatomic) id /* block */ getSortRect;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (nonatomic) unsigned long long tabDataStatus;
+@property (retain, nonatomic) UIScrollView *scrollView;
+
+- (void)initialData;
+- (id)listKitEnvIdentifier;
+- (void)lynxCardModelDidCreate:(id)a0 itemModel:(id)a1 itemConfig:(id)a2 index:(long long)a3;
+- (void)cellDidConfig:(id)a0 cell:(id)a1 section:(long long)a2 index:(long long)a3 isFirstShow:(BOOL)a4 lynxUrl:(id)a5;
+- (void)cellWillDisplay:(id)a0 source:(unsigned long long)a1 section:(long long)a2 index:(long long)a3 isFirstShow:(BOOL)a4 lynxUrl:(id)a5;
+- (void)scrollDidEnd;
+- (void)lynxCard:(id)a0 didUpdateDataWithLynxViewFromType:(unsigned long long)a1 resource:(id)a2 itemModel:(id)a3 perfDict:(id)a4;
+- (void)lynxCard:(id)a0 updatePerf:(id)a1 resource:(id)a2 itemModel:(id)a3 isPreloader:(BOOL)a4;
+- (void)lynxCard:(id)a0 setupPerf:(id)a1 resource:(id)a2 itemModel:(id)a3 isPreloader:(BOOL)a4;
+- (void)configTabLayout;
+- (void)registerHybridList;
+- (void)reloadViewController;
+- (id)ecExtraGlobalProps:(id)a0 index:(long long)a1;
+- (void)puzzleHybridPopControllerDismissedWithObject:(id)a0;
+- (void)updateWithTabList:(id)a0;
+- (id)initWithContext:(id)a0 tabList:(id)a1;
+- (void)tabVCWillShow;
+- (void)tabVCDidShow;
+- (void)initDL;
+- (void)updateTabLayout;
+- (void)p_addTablistObserver;
+- (void)loadFeedWithList:(id)a0 withStatusFinish:(BOOL)a1 completion:(id /* block */)a2;
+- (void)updateWithListModel:(id)a0;
+- (void)setComponent;
+- (void)setBackGroundGradientView;
+- (void)tryToLoadMoreAfterFirstRender;
+- (void)configFooterRefresh;
+- (void)updateStatusCell;
+- (id)getStatusObject;
+- (void)footerLoadMore;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)addObserver;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)viewWillDisappear:(BOOL)a0;
+- (BOOL)footerVisible;
+- (void)setUpViews;
+
+@end

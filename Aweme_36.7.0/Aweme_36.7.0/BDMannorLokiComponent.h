@@ -1,0 +1,78 @@
+@class BDALokiComponent, NSString, NSDate, BDMannorJSBManager, UIView, NSMutableDictionary, NSDictionary, BDMannorComponentManagerContext, BDALokiModel, BDMannorStyleTemplateComponentDataModel, BDMannorStyleTemplateComponentModel;
+
+@interface BDMannorLokiComponent : NSObject <BDALokiComponentDelegate, BDMannorJSBManagerDelegate, BDMannorAdComponentProtocol>
+
+@property (retain, nonatomic) BDMannorStyleTemplateComponentModel *componentModel;
+@property (retain, nonatomic) BDMannorStyleTemplateComponentDataModel *data;
+@property (retain, nonatomic) BDMannorJSBManager *jsbManager;
+@property (copy, nonatomic) NSDictionary *parsedTrackConfig;
+@property (copy, nonatomic) NSString *componentType;
+@property (copy, nonatomic) NSString *componentResourceFrom;
+@property (nonatomic) BOOL isShow;
+@property (nonatomic) BOOL downgrade;
+@property (retain, nonatomic) BDALokiModel *lokiModel;
+@property (retain, nonatomic) BDALokiComponent *lokiComponent;
+@property (copy, nonatomic) NSDictionary *layoutContext;
+@property (retain, nonatomic) NSDate *showDate;
+@property (nonatomic) BOOL didRender;
+@property (nonatomic) BOOL didShow;
+@property (nonatomic) BOOL hostHandleComponentRelation;
+@property (nonatomic) double startLoadTime;
+@property (nonatomic) double loadDuration;
+@property (nonatomic) BOOL isSheoComponent;
+@property (nonatomic) BOOL cardStatus;
+@property (retain, nonatomic) NSMutableDictionary *elementsDict;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) BDMannorComponentManagerContext *context;
+@property (readonly, nonatomic) UIView *componentView;
+@property (readonly, nonatomic) NSString *scene;
+@property (readonly, nonatomic) NSString *componentID;
+
+- (void)sendEvent:(id)a0 params:(id)a1 callback:(id /* block */)a2;
+- (id)initWithContext:(id)a0 componentType:(id)a1;
+- (void)createComponentViewAndConfig;
+- (void)checkHasShowOnce:(id /* block */)a0;
+- (BOOL)checkCardStatus;
+- (id)elementsDic;
+- (void)lokiStartLoad:(id)a0;
+- (void)lokiRenderFinishComponent:(id)a0;
+- (void)lokiJSRuntimeReady:(id)a0;
+- (void)lokiShowFinish:(id)a0;
+- (void)lokiClose:(id)a0;
+- (void)lokiComponent:(id)a0 didChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a1;
+- (id)getLayoutComponent:(id)a0;
+- (void)lokiComponent:(id)a0 didFetchedResourceModel:(id)a1 error:(id)a2;
+- (void)lokiLoadUrlSuccess:(id)a0;
+- (void)lokiComponent:(id)a0 didReceivePerformance:(id)a1;
+- (void)lokiComponent:(id)a0 didRecieveError:(id)a1;
+- (void)lokiDowngrade:(id)a0 errorMsg:(id)a1 type:(long long)a2;
+- (void)p_addEventHandler;
+- (void)sendLokiTrackWithAreaKey:(id)a0 eventName:(id)a1 params:(id)a2 adExtraParams:(id)a3;
+- (id)p_generateGlobalProps;
+- (id)mannorBridges;
+- (void)setupAnimationInitalState;
+- (void)resetElementDict;
+- (void)startShowComponent;
+- (void)startHideComponent;
+- (id)appStoreDownloadMethod;
+- (id)adInfoMethod;
+- (id)sendAdLogMethod;
+- (id)openOtherAppMethod;
+- (id)getCardDataMethod;
+- (id)feedbackMethod;
+- (id)getComponentDataMethod;
+- (id)broadToHostMethod;
+- (id)coreEventReportMethod;
+- (void)p_trackToShowToHideAnimation;
+- (void)sendATPTrackWithEventAreaKey:(id)a0 eventNameKey:(id)a1 extraData:(id)a2;
+- (void)changeCompoentStatus:(id)a0;
+- (void)destory;
+- (void).cxx_destruct;
+- (void)hide;
+- (void)show;
+- (void)render;
+
+@end

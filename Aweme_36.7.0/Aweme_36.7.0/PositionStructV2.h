@@ -1,0 +1,10 @@
+@interface PositionStructV2 : GPBMessage
+
+@property (nonatomic) int begin;
+@property (nonatomic) BOOL hasBegin;
+@property (nonatomic) int end;
+@property (nonatomic) BOOL hasEnd;
+
++ (id)descriptor;
+
+@end

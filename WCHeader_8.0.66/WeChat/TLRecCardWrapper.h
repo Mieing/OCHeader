@@ -1,0 +1,87 @@
+@class TLRecFinderCardWrapper, NSString, TLRecCardUserInfo_FeedbackInfoMsg, TLRecArticleWrapper, TLRecCard, BizRecommendArticleRecycleAttr;
+
+@interface TLRecCardWrapper : WXPBGeneratedMessage
+
+@property (retain, nonatomic) TLRecCard *recCard;
+@property (nonatomic) int pos;
+@property (nonatomic) int weight;
+@property (nonatomic) BOOL hasWeight;
+@property (nonatomic) unsigned long long msgSvrId;
+@property (nonatomic) unsigned int createTime;
+@property (nonatomic) unsigned long long recId;
+@property (nonatomic) int style;
+@property (retain, nonatomic) TLRecArticleWrapper *articleCardWrapper;
+@property (retain, nonatomic) TLRecCardUserInfo_FeedbackInfoMsg *feedbackInfo;
+@property (nonatomic) int redDotFlag;
+@property (nonatomic) BOOL isUseServerTime;
+@property (retain, nonatomic) NSString *extraData;
+@property (nonatomic) BOOL isCanvasCard;
+@property (retain, nonatomic) NSString *data;
+@property (retain, nonatomic) NSString *templatePathType;
+@property (retain, nonatomic) NSString *expType;
+@property (nonatomic) unsigned int packageVersion;
+@property (retain, nonatomic) TLRecFinderCardWrapper *finderCardWrapper;
+@property (nonatomic) unsigned int failureBehavior;
+@property (retain, nonatomic) BizRecommendArticleRecycleAttr *recycleAttr;
+@property (nonatomic) unsigned int topRightShowMode;
+@property (nonatomic) BOOL shouldCheckSubscription;
+@property (retain, nonatomic) NSString *recommendReason;
+@property (retain, nonatomic) NSString *resortBuffer;
+@property (retain, nonatomic) NSString *canvasRecInfo;
+
++ (void)initialize;
+
+- (void)setCanvasRecInfo:(id)a0;
+- (id)canvasRecInfo;
+- (void)setResortBuffer:(id)a0;
+- (id)resortBuffer;
+- (void)setRecommendReason:(id)a0;
+- (id)recommendReason;
+- (void)setShouldCheckSubscription:(BOOL)a0;
+- (BOOL)shouldCheckSubscription;
+- (void)setTopRightShowMode:(unsigned int)a0;
+- (unsigned int)topRightShowMode;
+- (void)setRecycleAttr:(id)a0;
+- (id)recycleAttr;
+- (void)setFailureBehavior:(unsigned int)a0;
+- (unsigned int)failureBehavior;
+- (void)setFinderCardWrapper:(id)a0;
+- (id)finderCardWrapper;
+- (void)setPackageVersion:(unsigned int)a0;
+- (unsigned int)packageVersion;
+- (void)setExpType:(id)a0;
+- (id)expType;
+- (void)setTemplatePathType:(id)a0;
+- (id)templatePathType;
+- (void)setData:(id)a0;
+- (id)data;
+- (void)setIsCanvasCard:(BOOL)a0;
+- (BOOL)isCanvasCard;
+- (void)setExtraData:(id)a0;
+- (id)extraData;
+- (void)setIsUseServerTime:(BOOL)a0;
+- (BOOL)isUseServerTime;
+- (void)setRedDotFlag:(int)a0;
+- (int)redDotFlag;
+- (void)setFeedbackInfo:(id)a0;
+- (id)feedbackInfo;
+- (void)setArticleCardWrapper:(id)a0;
+- (id)articleCardWrapper;
+- (void)setStyle:(int)a0;
+- (int)style;
+- (void)setRecId:(unsigned long long)a0;
+- (unsigned long long)recId;
+- (void)setCreateTime:(unsigned int)a0;
+- (unsigned int)createTime;
+- (void)setMsgSvrId:(unsigned long long)a0;
+- (unsigned long long)msgSvrId;
+- (void)setHasWeight:(BOOL)a0;
+- (BOOL)hasWeight;
+- (void)setWeight:(int)a0;
+- (int)weight;
+- (void)setPos:(int)a0;
+- (int)pos;
+- (void)setRecCard:(id)a0;
+- (id)recCard;
+
+@end

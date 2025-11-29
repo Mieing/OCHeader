@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLynxContainer : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *scheme;
+@property (copy, nonatomic) NSString *extraJson;
+
++ (id)descriptor;
+
+@end

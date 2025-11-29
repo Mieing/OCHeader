@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveWalletTopBlockInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+@property (retain, nonatomic) HTSLiveImage *blockIcon;
+@property (nonatomic) BOOL hasBlockIcon;
+@property (nonatomic) long long countDownSeconds;
+
++ (id)descriptor;
+
+@end

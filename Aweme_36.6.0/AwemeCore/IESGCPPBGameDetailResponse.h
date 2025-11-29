@@ -1,0 +1,10 @@
+@class IESGCPPBGameDetailResponse_Data;
+
+@interface IESGCPPBGameDetailResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBGameDetailResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

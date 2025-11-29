@@ -1,0 +1,3 @@
+@interface IESLiveOpenGameRoot : GPBRootObject
+
+@end

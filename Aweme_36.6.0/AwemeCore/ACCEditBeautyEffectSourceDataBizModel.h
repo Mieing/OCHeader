@@ -1,0 +1,17 @@
+@class NSString, NSMapTable;
+@protocol ACCEditBeautyEffectNodeProtocol;
+
+@interface ACCEditBeautyEffectSourceDataBizModel : NSObject <ACCEditBeautyEffectScorageBizModel>
+
+@property (retain, nonatomic) id<ACCEditBeautyEffectNodeProtocol> rootNode;
+@property (retain, nonatomic) NSMapTable *nodeFlatDict;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithRootNode:(id)a0;
+- (void)p_fillNodeFlatDictWithRootNode:(id)a0;
+- (void).cxx_destruct;
+
+@end

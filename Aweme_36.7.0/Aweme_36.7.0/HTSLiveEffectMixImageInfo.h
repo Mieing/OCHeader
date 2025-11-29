@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveEffectMixImageInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *imageKey;
+@property (retain, nonatomic) HTSLiveImage *mixImage;
+@property (nonatomic) BOOL hasMixImage;
+
++ (id)descriptor;
+
+@end

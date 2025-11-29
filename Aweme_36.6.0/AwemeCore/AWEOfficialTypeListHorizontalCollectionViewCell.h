@@ -1,0 +1,17 @@
+@class UILabel, AWEIMNoticeTypeStructModel, UIView;
+@protocol IESIMBadgeProtocol;
+
+@interface AWEOfficialTypeListHorizontalCollectionViewCell : UICollectionViewCell
+
+@property (retain, nonatomic) UILabel *typeNameLabel;
+@property (retain, nonatomic) UIView<IESIMBadgeProtocol> *redBadge;
+@property (retain, nonatomic) AWEIMNoticeTypeStructModel *typeModel;
+
++ (BOOL)fixTypeListAndFilterPanelAccessibility;
+
+- (void)configWithNoticeTypeModel:(id)a0;
+- (void).cxx_destruct;
+- (void)setSelected:(BOOL)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+
+@end

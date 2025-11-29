@@ -1,0 +1,9 @@
+@interface IESLiveOperateCommodityNoFilterDataModel : IESLiveBridgeModel
+
+@property (nonatomic) BOOL operateResult;
+@property (nonatomic) BOOL switchEnable;
+@property (nonatomic) BOOL switchDefaultEnable;
+
++ (id)modelCustomPropertyMapper;
+
+@end

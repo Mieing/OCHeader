@@ -1,0 +1,10 @@
+@class GetGroupVoteResponse_Data;
+
+@interface GetGroupVoteResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetGroupVoteResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

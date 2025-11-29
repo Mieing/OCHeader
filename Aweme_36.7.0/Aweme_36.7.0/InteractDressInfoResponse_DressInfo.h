@@ -1,0 +1,17 @@
+@class NSString, NSMutableArray, HTSLiveDressListTextConfig;
+
+@interface InteractDressInfoResponse_DressInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL bannerHasPaid;
+@property (copy, nonatomic) NSString *ticketPurchaseSchema;
+@property (copy, nonatomic) NSString *badgeTextConfig;
+@property (retain, nonatomic) HTSLiveDressListTextConfig *dressListText;
+@property (nonatomic) BOOL hasDressListText;
+@property (retain, nonatomic) NSMutableArray *coverInfoArray;
+@property (readonly, nonatomic) unsigned long long coverInfoArray_Count;
+@property (retain, nonatomic) NSMutableArray *badgeInfoArray;
+@property (readonly, nonatomic) unsigned long long badgeInfoArray_Count;
+
++ (id)descriptor;
+
+@end

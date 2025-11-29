@@ -1,0 +1,8 @@
+@interface BattleRivalSortInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long battleNumInSevenDays;
+@property (nonatomic) long long userCount;
+
++ (id)descriptor;
+
+@end

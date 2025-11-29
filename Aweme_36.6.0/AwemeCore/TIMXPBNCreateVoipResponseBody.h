@@ -1,0 +1,14 @@
+@class TIMXPBNVoipInfo;
+
+@interface TIMXPBNCreateVoipResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNVoipInfo *info;
+@property (nonatomic) BOOL hasInfo;
+@property (nonatomic) int statusCode;
+@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) int voipMode;
+@property (nonatomic) BOOL hasVoipMode;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,71 @@
+@class NSRecursiveLock, MMTimer, AudioRecorderUserData, NSString;
+
+@interface BaseAudioRecorder : NSObject <AudioRecorderDelegate>
+
+@property (retain, nonatomic) MMTimer *meterTimer;
+@property (retain, nonatomic) NSRecursiveLock *lock;
+@property (retain) AudioRecorderUserData *mUserData;
+@property (nonatomic) BOOL needNotifyOtherAudio;
+@property (readonly, retain, nonatomic) NSRecursiveLock *dataLock;
+@property (nonatomic) struct RecorderState { id x0; struct AudioStreamBasicDescription { double x0; unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; } x1; struct OpaqueAudioQueue *x2; struct AudioQueueBuffer *x3[3]; unsigned int x4; long long x5; long long x6; struct OpaqueAudioFileID *x7; BOOL x8; unsigned int x9; BOOL x10; BOOL x11; BOOL x12; id x13; id x14; id x15; struct AMREncodeFloat *x16; BOOL x17; id x18; id x19; struct OpaqueAudioFileID *x20; unsigned int x21; unsigned int x22; id x23; unsigned char x24[1280]; int x25; BOOL x26; struct AudioCoder *x27; BOOL x28; long long x29; } *pAqData;
+@property (nonatomic) BOOL needStopInBackground;
+@property (nonatomic) BOOL receivedHandleInputBufferCallback;
+@property (nonatomic) unsigned int receivedBufferCount;
+@property (nonatomic) BOOL bHadTryFixRecord;
+@property (nonatomic) int tryFixRecordFlag;
+@property (nonatomic) BOOL isInputMuted;
+@property (nonatomic) BOOL fixInputMutedFlag;
+@property (nonatomic) BOOL fixInputMutedResult;
+@property (nonatomic) BOOL shouldMixWithSpeaker;
+@property (readonly, nonatomic) unsigned int availableChannels;
+@property (readonly, nonatomic) struct AudioChannelLayout { unsigned int mChannelLayoutTag; unsigned int mChannelBitmap; unsigned int mNumberChannelDescriptions; struct AudioChannelDescription { unsigned int mChannelLabel; unsigned int mChannelFlags; float mCoordinates[3]; } mChannelDescriptions[1]; } availableChannelLayout;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)registerInter;
+- (void)unregisterInter;
+- (id)init;
+- (void)updateSession;
+- (void)dealloc;
+- (BOOL)initQueue;
+- (void)updateStatus;
+- (void)BeginNotifyOnMainThread:(id)a0;
+- (void)notifyAudioStart;
+- (void)reportAudioQueueStartError:(int)a0;
+- (void)reportAudioQueueRestartFailed;
+- (void)reportAudioQueueRestartOk;
+- (void)reportAudioQueueRestartError:(int)a0;
+- (BOOL)isArgumentError:(int)a0;
+- (BOOL)shouldAutoRestartWith:(int)a0;
+- (BOOL)canAutoRestart;
+- (int)real_record;
+- (void)record;
+- (void)asyncRecord:(id /* block */)a0;
+- (void)EndNotifyOnMainThread;
+- (void)createFile:(id)a0;
+- (void)setDelegate:(id)a0;
+- (BOOL)prepareRecord;
+- (void)ayncPrepareRecordWithBlock:(id /* block */)a0;
+- (BOOL)prepareRecordButNotNotify;
+- (void)stopButNotNotify;
+- (void)destoryQueue;
+- (void)stop;
+- (void)stopWithFail;
+- (void)cleanResource;
+- (void)stopInBackground;
+- (void)autostop;
+- (BOOL)isRecording;
+- (unsigned int)RecordStatus;
+- (void)setRecordStatus:(int)a0;
+- (long long)RecordingTime;
+- (void)setUserData:(id)a0;
+- (long long)getVoiceFormat;
+- (void)setForceDelete;
+- (void)setForTranslate;
+- (void)setBeginSendData;
+- (void)TimerCheckMeter;
+- (void).cxx_destruct;
+
+@end

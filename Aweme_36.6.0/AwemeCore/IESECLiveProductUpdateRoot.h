@@ -1,0 +1,3 @@
+@interface IESECLiveProductUpdateRoot : GPBRootObject
+
+@end

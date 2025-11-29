@@ -1,0 +1,83 @@
+@class AWESearchEventDispather, AWESearchStandardVideoPlayerComponentModel, UIImageView, NSDictionary, UIView, NSMutableArray, NSString;
+@protocol AWESearchComponentProtocol, AWESearchStandardVideoPlayerPaidComponentProvider, AWESearchVideoViewComponentProvider, AWESearchPlayerInteractorComponentProvider, AWESearchPlayStatusBarComponentProvider, AWESearchPlayerInteractorStackedShadowsContainerComponentProvider, AWESearchContainerProtocol;
+
+@interface AWESearchStandardVideoPlayerComponent : AWESearchComponent <AWESearchStandardVideoPlayerComponentProvider>
+
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) id<AWESearchVideoViewComponentProvider> videoViewComponent;
+@property (retain, nonatomic) id<AWESearchPlayerInteractorComponentProvider> interactorComponent;
+@property (retain, nonatomic) id<AWESearchStandardVideoPlayerPaidComponentProvider> paidComponent;
+@property (retain, nonatomic) AWESearchStandardVideoPlayerComponentModel *model;
+@property (weak, nonatomic) id<AWESearchPlayStatusBarComponentProvider> playStatusBarProvider;
+@property (retain, nonatomic) id<AWESearchPlayerInteractorStackedShadowsContainerComponentProvider> stackedShadowsContainerComponent;
+@property (retain, nonatomic) NSMutableArray *receiveProtocolArray;
+@property (retain, nonatomic) AWESearchEventDispather *eventDispather;
+@property (weak, nonatomic) id<AWESearchContainerProtocol> containerContext;
+@property (weak, nonatomic) id<AWESearchComponentProtocol> componentContext;
+@property (copy, nonatomic) NSDictionary *dictLogExtraInfo;
+@property (nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } frame;
+@property (nonatomic) BOOL hidden;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })componentSizeForModel:(id)a0 width:(double)a1;
++ (id)getCreatSubComponentsArrayWithModel:(id)a0;
+
+- (void)setLogExtra:(id)a0;
+- (id)logExtra;
+- (BOOL)pauseBySingleClick;
+- (void)setPauseBySingleClick:(BOOL)a0;
+- (void)setCoverImage:(id)a0;
+- (void)updateWithAwemeModel:(id)a0;
+- (void)setShowProgressBarAttribute:(BOOL)a0;
+- (void)setSyncPlayStatus:(BOOL)a0;
+- (void)videoPlayerViewDoubleTappedAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)startScroll;
+- (void)endScroll;
+- (void)updateLogExtra:(id)a0;
+- (void)resetPlayerViewControllerProps;
+- (BOOL)shouldExitFullScreenWithPlayStatus;
+- (BOOL)syncPlayStatus;
+- (void)updateWithModel:(id)a0 forceUpdate:(BOOL)a1;
+- (void)componentViewLayoutSubviews;
+- (id)provideProtocol;
+- (BOOL)reactHeadphonesChange;
+- (void)updateBtmInfo:(id)a0;
+- (void)setPlayerSeekTime:(double)a0 completion:(id /* block */)a1;
+- (void)openWatchedMonitor:(BOOL)a0;
+- (void)setReactHeadphonesChange:(BOOL)a0;
+- (void)resetPlayerViewController;
+- (void)registerSearchUserGuideWithBlock:(id /* block */)a0;
+- (void)setInteractorHidden:(BOOL)a0 area:(long long)a1 animation:(BOOL)a2;
+- (void)bottomContainerDisappear:(BOOL)a0;
+- (void)bottomContainerAppear:(BOOL)a0;
+- (void)updateInteractorWithModel:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })bottomContainerRect;
+- (void)p_loadComponent;
+- (void)handleTripleSpeedWithModel:(id)a0;
+- (void)updatePlayDurationDisplayStatusWithModel:(id)a0;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (BOOL)play;
+- (BOOL)pause;
+- (double)playbackRate;
+- (BOOL)stop;
+- (void)setVolume:(double)a0;
+- (id)transitionContext;
+- (id)videoView;
+- (void)didResignActive;
+- (double)currentPlaybackTime;
+- (void)setPlaybackRate:(double)a0;
+- (void)setMute:(BOOL)a0;
+- (id)componentView;
+- (void)addBoundaryTimeObserverForTimes:(id)a0 queue:(id)a1 usingBlock:(id /* block */)a2;
+- (long long)playState;
+- (void)setScaleMode:(long long)a0;
+- (long long)scaleMode;
+- (void)setRepeat:(BOOL)a0;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

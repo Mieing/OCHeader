@@ -1,0 +1,3 @@
+@interface AWEKnowledgeSwiftImpl.HangoutNiceWaterfallSectionViewModelFactory : _TtCs12_SwiftObject
+
+@end

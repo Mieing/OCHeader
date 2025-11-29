@@ -1,0 +1,9 @@
+@interface AppListNotUploadReason : GPBMessage
+
+@property (nonatomic) int noAppListForGmsInstalled;
+@property (nonatomic) int noAppListForGpsInstalled;
+@property (nonatomic) int noAppListForNoDiff;
+
++ (id)descriptor;
+
+@end

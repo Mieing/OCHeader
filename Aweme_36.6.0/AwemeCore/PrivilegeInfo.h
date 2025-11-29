@@ -1,0 +1,22 @@
+@class PrivilegeUrl, NSString, PaidLiveConfig, PaidLiveUIBaseConfig, PrivilegeBaseInfo, NSMutableArray;
+
+@interface PrivilegeInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long entityId;
+@property (retain, nonatomic) NSMutableArray *itemListArray;
+@property (readonly, nonatomic) unsigned long long itemListArray_Count;
+@property (nonatomic) int paidLiveType;
+@property (retain, nonatomic) PrivilegeBaseInfo *paidLiveInfo;
+@property (nonatomic) BOOL hasPaidLiveInfo;
+@property (copy, nonatomic) NSString *extra;
+@property (retain, nonatomic) PrivilegeUrl *privilegeURL;
+@property (nonatomic) BOOL hasPrivilegeURL;
+@property (retain, nonatomic) PaidLiveUIBaseConfig *uiConfig;
+@property (nonatomic) BOOL hasUiConfig;
+@property (retain, nonatomic) PaidLiveConfig *entityConfig;
+@property (nonatomic) BOOL hasEntityConfig;
+@property (copy, nonatomic) NSString *entityIdStr;
+
++ (id)descriptor;
+
+@end

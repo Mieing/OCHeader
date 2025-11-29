@@ -1,0 +1,3 @@
+@interface KtvMultiChorusPrepareApplyApiRoot : GPBRootObject
+
+@end

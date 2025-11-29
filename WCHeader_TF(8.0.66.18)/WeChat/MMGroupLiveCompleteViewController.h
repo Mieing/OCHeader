@@ -1,0 +1,76 @@
+@class UIView, NSString, MMLiveTask, UIButton, LiveInfo, MMUILabel, StatViewCell, MMUIButton;
+
+@interface MMGroupLiveCompleteViewController : MMLiveCompleteViewController <MMGroupLiveMgrExt, StatViewCellDelegate, MMAcceptAgreementResultViewControllerDelegate>
+
+@property (retain, nonatomic) LiveInfo *liveInfo;
+@property (retain, nonatomic) MMLiveTask *liveTask;
+@property (readonly, nonatomic) BOOL isReplayExpired;
+@property (readonly, nonatomic) unsigned int expiredDays;
+@property (retain, nonatomic) NSString *roomId;
+@property (nonatomic) BOOL isAudience;
+@property (retain, nonatomic) NSString *anchorIdentityId;
+@property (retain, nonatomic) NSString *liveName;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) MMUILabel *liveNameLabel;
+@property (retain, nonatomic) MMUILabel *liveVideoLengthLabel;
+@property (retain, nonatomic) MMUILabel *reportTitleEndingLabel;
+@property (retain, nonatomic) UIView *statView;
+@property (retain, nonatomic) StatViewCell *totalUsersCell;
+@property (retain, nonatomic) StatViewCell *totalCommentsCell;
+@property (retain, nonatomic) StatViewCell *totalLikesCell;
+@property (retain, nonatomic) UIView *replayStatusTopLine;
+@property (retain, nonatomic) UIView *replayStatusBottomLine;
+@property (retain, nonatomic) MMUILabel *replayStatusLabel;
+@property (retain, nonatomic) MMUIButton *replayStatusButton;
+@property (retain, nonatomic) UIView *replayStatusRightArrow;
+@property (retain, nonatomic) UIButton *doneButton;
+@property (nonatomic) long long closeButtonStyle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithLiveTask:(id)a0 closeButtonStyle:(long long)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)forceRotateToPortrait;
+- (long long)getCurrentOrientation;
+- (BOOL)useBlackStatusbar;
+- (long long)preferredStatusBarStyle;
+- (BOOL)shouldInteractivePop;
+- (void)loadData;
+- (void)updateWithLiveInfo:(id)a0;
+- (void)updateReplayStatus;
+- (void)updateReplayStatusForAudience;
+- (void)hideReplayStatusButtonView;
+- (void)updateReplayStatusButtonIfReplayIsReadyAudienceOnly;
+- (void)updateReplayStatusButtonIfReplayClosedAudienceOnly;
+- (void)updateReplayStatusButtonIfReplayErrorAnchorOnly;
+- (void)updateReplayStatusButtonIfReplayExpired;
+- (void)setupBlurBackground;
+- (void)setupUI;
+- (void)layoutTopLabels;
+- (void)layoutStatView;
+- (void)layoutDoneButton;
+- (void)onReplayStatusButtonClicked;
+- (void)onReplayStatusButtonClickedToReplayPageAuidenceOnlyClicked;
+- (void)onReplayStatusButtonIfReplayClosedAudienceOnlyClicked;
+- (void)onReplayStatusButtonIfReplayErrorAnchorOnlyClicked;
+- (void)onReplayStatusButtonIfReplayExpiredClicked;
+- (void)onDoneButtonClicked:(id)a0;
+- (void)onBackButtonClicked;
+- (void)onOpenLiveReplayResult:(id)a0 liveId:(unsigned long long)a1 andRoomId:(id)a2 enableLiveReplay:(BOOL)a3;
+- (void)onLiveClosedResult:(id)a0 andLiveId:(unsigned long long)a1;
+- (void)onGetLiveInfoWithResult:(id)a0 liveId:(unsigned long long)a1 andRoomId:(id)a2 andLiveInfo:(id)a3;
+- (void)onStatViewCellClicked:(id)a0;
+- (id)createReportLabel:(id)a0 withFontSize:(id)a1 withTextColor:(id)a2;
+- (id)createHorizontalSeperator;
+- (id)createVerticalSeperator;
+- (void)onClickMakeSureActionWithViewController:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,70 @@
+@class NSMutableArray, NSArray, AWEECShoppingAIGuidePageThemeModel, NSString, AWEECShoppingAIGuideContext, AWEECShoppingAIGuideMessageGroupViewModel, AWEECShoppingAIGuideDataManager;
+@protocol AWEECShoppingAIGuidePageViewModelVCDelegate, AWEECShoppingAIGuidePageViewModelDelegate;
+
+@interface AWEECShoppingAIGuidePageViewModel : NSObject <AWEECShoppingAIGuideDataManagerDelegate>
+
+@property (retain, nonatomic) AWEECShoppingAIGuideContext *context;
+@property (retain, nonatomic) AWEECShoppingAIGuideDataManager *dataManager;
+@property (retain, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *dynamicGroupMsgViewModel;
+@property (retain, nonatomic) NSMutableArray *dynamicGroupMsgViewModelBuffer;
+@property (nonatomic) BOOL dynamicModelReceiveEnd;
+@property (nonatomic) BOOL isCardPrinting;
+@property (copy, nonatomic) NSArray *cachedMessageModels;
+@property (nonatomic) struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } rwLock;
+@property (nonatomic) struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } bufferRwLock;
+@property (nonatomic) long long typingWriterJobCount;
+@property (retain, nonatomic) AWEECShoppingAIGuidePageThemeModel *pageThemeConfig;
+@property (weak, nonatomic) id<AWEECShoppingAIGuidePageViewModelVCDelegate> vcDelegate;
+@property (weak, nonatomic) id<AWEECShoppingAIGuidePageViewModelDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)getCachedMessageModels;
+- (void)refreshCachedMessageModelsAndContentViewAnimated:(BOOL)a0 preferParams:(id)a1 scrollToBottom:(BOOL)a2 callTrace:(id)a3 completion:(id /* block */)a4;
+- (void)didEndTextUpdatingWithTargetSingleViewModel:(id)a0;
+- (void)dataManagerDidUpdateMessage:(BOOL)a0 firstRender:(BOOL)a1;
+- (void)dataManagerDidStartReceive;
+- (void)dataManagerScrollToWelcomeInfo;
+- (void)dataManagerDidAppendWelcomeInfo:(BOOL)a0;
+- (void)dataManagerDidUpdateMessage:(BOOL)a0 firstRender:(BOOL)a1 completion:(id /* block */)a2;
+- (void)dataManagerDidReceiveTextInfo:(id)a0 operation:(id)a1;
+- (void)dataManagerUpdateSyncModel:(id)a0;
+- (void)dataManagerDidReceiveSearchKeyword:(id)a0 withPrompt:(id)a1;
+- (void)dataManagerDidReceiveProcessInfoWithPatchItem:(id)a0;
+- (void)dataManagerDidEndReceiveText;
+- (void)dataManagerDidEndReceive;
+- (void)dataManagerDidReceiveError:(id)a0;
+- (void)dataManagerDidReceiveNewBubble;
+- (void)dataManagerDidReceiveLynxData:(id)a0 operation:(id)a1;
+- (void)dataManagerDidReceiveSliceInfo:(id)a0 operation:(id)a1;
+- (void)dataManagerDidReceiveNativeInfo:(id)a0 operation:(id)a1;
+- (void)dataManagerDidReceiveMoreInfoData:(id)a0 operation:(id)a1;
+- (void)dataManagerDidReceiveFeedbackData:(id)a0;
+- (void)dataManagerDidReceiveTopFloatLynxData:(id)a0 operation:(id)a1;
+- (BOOL)dataManagerEnableAddBottomSug;
+- (void)cleanDataWithBlock:(id /* block */)a0 completion:(id /* block */)a1;
+- (void)endUpdatingWithType:(unsigned long long)a0 error:(id)a1;
+- (void)onTyperWriterStateChangeNoti:(id)a0;
+- (void)dynamicAppendTextToLastSection:(id)a0 replace:(BOOL)a1;
+- (BOOL)dynamicModelBufferClean;
+- (void)dynamicAppendSingleMsgWithViewModel:(id)a0;
+- (void)dataManagerDidEndReceiveTextWithViewModel:(id)a0 callTrace:(id)a1;
+- (id)firstTextCardID;
+- (void)dynamicReplaceSingleMsgWithViewModel:(id)a0;
+- (void)dynamicRemoveSingleMsgWithViewModel:(id)a0;
+- (BOOL)preDataHaslabelIsPrinting;
+- (void)refreshDynamicBufferAndReloadIfNeededWithCallTrace:(id)a0;
+- (id)generateMoreInfoLynxViewModel:(id)a0;
+- (void)cleanDynamicModelAndStoreWithType:(unsigned long long)a0 error:(id)a1 callTrace:(id)a2;
+- (void)p_refreshDynamicBufferAndReloadWithCallTrace:(id)a0;
+- (void)skipLastTextSectionTypeWriterWithModel:(id)a0 targetSection:(id)a1;
+- (id)initWithContext:(id)a0 extraInfo:(id)a1;
+- (void)executeInitTaskWithCompletion:(id /* block */)a0;
+- (long long)generateTextCardIndex;
+- (void)updateCardDataWithClientMsgID:(id)a0 cardID:(id)a1 cardData:(id)a2 saveDB:(BOOL)a3 completion:(id /* block */)a4;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,87 @@
+@class NSString;
+@protocol IESLCMessageHandlerProtocol;
+
+@interface AWEUGActivityModuleServiceImpl : HTSService <IESLCMessageHandlerService, AWEUGActivityModuleService>
+
+@property BOOL allowCustomsProbe;
+@property (weak, nonatomic) id<IESLCMessageHandlerProtocol> messageHandler;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEUGKitModuleDOUYINAdapterClass;
++ (Class)aNSObjectClass;
++ (Class)aAWEUGKitModuleCommonAdapterClass;
+
+- (void)ieslc_messageHandler:(id)a0 didReceiveMsg:(id)a1;
+- (id)accurateCurrentServerDate;
+- (id)activitySchema;
+- (BOOL)isInHouse;
+- (void)startMayDayManager;
+- (BOOL)isInMaydayActivity;
+- (void)updateDateCalibrator:(id)a0 context:(id)a1 fromRequest:(id)a2;
+- (id)multiTabSchemaWhitelist;
+- (Class)ugActivityUtils;
+- (id)pendantActivityEntranceManager;
+- (double)currentServerTimeStamp;
+- (double)calculateCurrentServerTime;
+- (id)stringOfTimeInterval:(double)a0;
+- (id)fcollectAdapter;
+- (id)pendantAdapter;
+- (BOOL)enableCustomNoticeActivity;
+- (BOOL)enableCustomF2Activity;
+- (BOOL)enableCustomRedPacketActivity;
+- (BOOL)enableCustomFCollectActivity;
+- (id)customFCollectInfos;
+- (id)customXTabEventInfo;
+- (id)getActivityNoticeTitleView;
+- (void)feedContainerDidDisapper;
+- (void)feedContainerDidAppear;
+- (void)setupUGPendantAdapterImpl;
+- (void)setupUGF2AdapterImpl;
+- (id)imCampaignManager;
+- (id)createNoticeHeaderVC;
+- (id)createNoticeLoadingVC;
+- (id)aweActivityStartupPopupManager;
+- (id)aweCampaignRedPacketController;
+- (id)ugStorage;
+- (id)ugFeedVideoStatusManager;
+- (Class)ugCountDownViewManager;
+- (void)updateResourceByByteSync:(id)a0;
+- (BOOL)feedCanPullRefresh:(id)a0;
+- (id)requestThemeIDForUndertake;
+- (id)getFCollectAchievementSchema;
+- (void)markSnackbarForbiddenForSceneType:(id)a0 params:(id)a1;
+- (void)trackDesktopChannelGuideIfNeededWithAction:(id)a0 params:(id)a1;
+- (void)trackDesktopChannelMidGuideWithAction:(id)a0 params:(id)a1;
+- (void)trackActionResultWithParams:(id)a0;
+- (void)trackActionCountWithParams:(id)a0 needShow:(BOOL)a1;
+- (void)startMonitorTabSwitchEvent;
+- (BOOL)isActivityTabShowing;
+- (id)widgetKindFromWidgetType:(id)a0;
+- (id)createWatchTaskModelWithDic:(id)a0;
+- (BOOL)backToMainVenueTabForID:(id)a0;
+- (id)kPopupViewWithModel:(id)a0 imgCacheName:(id)a1 activityStartTime:(id)a2;
+- (id)customNoticeInfos;
+- (id)customF2DataInfos;
+- (id)customRedPacketInfos;
+- (Class)activityMonitorClass;
+- (id)getPendantDataAdapter;
+- (id)getFinishTaskManager;
+- (id)fcollectShareManager;
+- (id)fcollectFollowManager;
+- (id)deviceDiscoverManager;
+- (void)injectStrategyWithSceneType:(id)a0 config:(id)a1 evadeStrategy:(id)a2;
+- (id)alertControlManager;
+- (id)triggersForModel:(id)a0 withDelegate:(id)a1;
+- (id)sceneServiceForModel:(id)a0;
+- (id)aAWEUGKitModuleDOUYINAdapter;
+- (id)aNSObject;
+- (id)aAWEUGKitModuleCommonAdapter;
+- (void)p_handlePushMessageWithMsg:(id)a0;
+- (void)updateCustomsAuthenticationConfig:(id)a0 context:(id)a1;
+- (id)init;
+- (void)dealloc;
+
+@end

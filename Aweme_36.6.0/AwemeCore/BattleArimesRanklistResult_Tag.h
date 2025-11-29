@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface BattleArimesRanklistResult_Tag : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *bgImage;
+@property (nonatomic) BOOL hasBgImage;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) int tagActionType;
+@property (copy, nonatomic) NSString *tagActionContent;
+
++ (id)descriptor;
+
+@end

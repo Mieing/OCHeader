@@ -1,0 +1,80 @@
+@class NSString, AWEMemoriesAssetsManager;
+@protocol AWEInTodayPhotoLibraryAggregateProtocol;
+
+@interface AWEInTodayEntranceManager : NSObject <AWEBasicModeMessage, AWEDigitalWellbeingMessage, AWEInTodayEntranceManagerProtocol>
+
+@property (retain, nonatomic) id<AWEInTodayPhotoLibraryAggregateProtocol> aggregateService;
+@property (retain, nonatomic) AWEMemoriesAssetsManager *memoriesAssetsManager;
+@property BOOL isScanTaskTriggered;
+@property (copy) NSString *memoriesRecallScanTaskId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)hasAuthorizationAggregatePhotoLibrary;
++ (BOOL)hasPhotoLibraryAccessAuthority;
++ (void)reportMemoriesShowWithId:(long long)a0 type:(unsigned long long)a1 scene:(unsigned long long)a2 themeId:(id)a3 level:(id)a4;
++ (void)checkAlbumValid:(id /* block */)a0;
++ (void)reportAggregatePhotoLibraruAuthorizationStatus;
++ (BOOL)readingPhotoLibrary;
++ (BOOL)isSystemAlbumIntelliAlbumSwitchOn;
++ (BOOL)hasMemoriesRecallAuthorization;
++ (void)setAuthorizationMemoriesRecall:(BOOL)a0;
++ (void)hasPhotoLibraryAccessAuthorityWithCompletion:(id /* block */)a0;
++ (id)storageServiceStudio;
++ (id)albumFromPhotoLibraryWithAggregateDone:(BOOL)a0 checkAssetsExist:(BOOL)a1;
++ (id)albumFromPhotoLibraryWithAggregateDone:(BOOL)a0 checkAssetsExist:(BOOL)a1 needAuthorization:(BOOL)a2;
++ (id)pastDayAlbum:(id)a0 checkAssetsExist:(BOOL)a1;
++ (BOOL)needShowMoreFlashBack;
++ (id)pastWeekAlbum:(id)a0 checkAssetsExist:(BOOL)a1;
++ (id)pastMonthAlbum:(id)a0 checkAssetsExist:(BOOL)a1;
++ (BOOL)hasAggregateDone:(id)a0;
++ (id)pastAlbumKey:(id)a0 checkAssetsExist:(BOOL)a1;
++ (void)aggregatePhotoLibraryWithDate:(id)a0 needAuthorization:(BOOL)a1 progress:(id /* block */)a2 hotSpotCallback:(id /* block */)a3 completion:(id /* block */)a4;
++ (void)aggregatePhotoLibraryWithConfig:(id)a0 shouldScan:(BOOL)a1 date:(id)a2 progress:(id /* block */)a3 hotSpotCallback:(id /* block */)a4 completion:(id /* block */)a5;
++ (void)setFirstShowInTodayDate:(id)a0;
++ (void)setAggregateDoneFor:(id)a0;
++ (void)aggregateDayPhotoLibraryWithDate:(id)a0 assets:(id)a1 needExtension:(BOOL)a2 progress:(id /* block */)a3 hotSpotCallback:(id /* block */)a4 completion:(id /* block */)a5;
++ (void)fetchAssetsByAlbumKey:(id)a0 pageOffset:(long long)a1 pageSize:(long long)a2 completion:(id /* block */)a3;
++ (void)preAggregatePhotoLibraryWithDate:(id)a0 needAuthorization:(BOOL)a1 completion:(id /* block */)a2;
++ (double)aggregateDoneTimeFor:(id)a0;
++ (BOOL)shouldScanAlbum;
++ (void)requestPastMemoriesWithCursor:(long long)a0 completion:(id /* block */)a1;
++ (void)aggregateWeekPhotoLibraryWithDate:(id)a0 assets:(id)a1 needExtension:(BOOL)a2 progress:(id /* block */)a3 hotSpotCallback:(id /* block */)a4 completion:(id /* block */)a5;
++ (void)aggregateMonthPhotoLibraryWithDate:(id)a0 assets:(id)a1 progress:(id /* block */)a2 hotSpotCallback:(id /* block */)a3 completion:(id /* block */)a4;
++ (void)setAuthorizationAggregatedPhotoLibrary:(BOOL)a0;
++ (void)checkAuthorizationAggregatePhotoLibrary;
++ (void)checkAuthorizationAggregatePhotoLibraryWithCompletion:(id /* block */)a0;
++ (id)inTodayBrandName;
++ (id)albumFromPhotoLibraryWithAggregateDone:(BOOL)a0 checkAssetsExist:(BOOL)a1 config:(id)a2;
++ (id)pastAlbumKey:(id)a0 aggregateDone:(BOOL)a1 checkAssetsExist:(BOOL)a2 needAuthorization:(BOOL)a3;
++ (void)aggregatePhotoLibraryWithDate:(id)a0 progress:(id /* block */)a1 hotSpotCallback:(id /* block */)a2 completion:(id /* block */)a3;
++ (void)aggregatePhotoLibraryWithConfig:(id)a0 progress:(id /* block */)a1 hotSpotCallback:(id /* block */)a2 completion:(id /* block */)a3;
++ (void)preAggregatePhotoLibraryWithDate:(id)a0 completion:(id /* block */)a1;
++ (BOOL)canCachePhotoLibraryAssetsMetaWithAlbumKey:(id)a0;
++ (void)cachePhotoLibraryAssetsMetaWithProgress:(id /* block */)a0 completion:(id /* block */)a1;
++ (void)requestPastMemoriesWithCursor:(long long)a0 pastType:(long long)a1 completion:(id /* block */)a2;
++ (long long)IMSkylightClickSelfIncreasingCounter;
++ (BOOL)isSameWeekWithDateOne:(id)a0 dateTwo:(id)a1;
++ (void)queryInTodayAwemeCoverWithComplete:(id /* block */)a0;
++ (BOOL)p_fastHasAuthorizationAggregatePhotoLibrary;
++ (void)scanPastMemories;
++ (id)shareInstance;
++ (void)cancelTask;
+
+- (void)teenModeDidChange:(BOOL)a0 isLogout:(BOOL)a1;
+- (void)basicModeDidChange:(BOOL)a0;
+- (void)memoriesSwitchDidChange:(id)a0;
+- (void)setupPhotoLibraryAggregate;
+- (void)setupAssetsManager;
+- (void)enterBackgroundNotification:(id)a0;
+- (void)enterForegroundNotification:(id)a0;
+- (id)pastYearAlbumKey:(id)a0 checkAssetsExist:(BOOL)a1;
+- (void)aggregateYearWithProgress:(id /* block */)a0 preloadCallBack:(id /* block */)a1 handledAssetsCallback:(id /* block */)a2 completion:(id /* block */)a3;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning:(id)a0;
+- (void)dealloc;
+- (id)appList;
+
+@end

@@ -1,0 +1,3 @@
+@interface KtvSearchSongApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveShareImageUrlToPanelParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *qrCodeScheme;
+@property (copy, nonatomic) NSString *worldCupLogoUrl;
+@property (copy, nonatomic) NSString *qrShareScene;
+
+@end

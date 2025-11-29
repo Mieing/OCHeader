@@ -1,0 +1,8 @@
+@interface HTSLivePermissionCheckTriggerSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long trigger;
+@property (nonatomic) long long maxDelayTime;
+
++ (id)descriptor;
+
+@end

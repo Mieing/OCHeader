@@ -1,0 +1,72 @@
+@class AWEMusicDetailHeaderDataHelper, AWEMusicDetailHeaderLayoutInspirationLayoutManager, AWELunaUgPopView, AWEMusicDetailMusicCardViewConfig, AWECollectionButton, UIButton;
+@protocol AWEMusicDetailMusicActionsViewDelegate;
+
+@interface AWEMusicDetailInspirationMusicActionsView : UIStackView
+
+@property (retain, nonatomic) AWEMusicDetailMusicCardViewConfig *cardConfig;
+@property (weak, nonatomic) AWEMusicDetailHeaderDataHelper *dataHelper;
+@property (retain, nonatomic) AWEMusicDetailHeaderLayoutInspirationLayoutManager *layoutManager;
+@property (retain, nonatomic) UIButton *completeMusicBtn;
+@property (retain, nonatomic) UIButton *lunaUgBtn;
+@property (retain, nonatomic) UIButton *inconspicuousLunaUgBtn;
+@property (retain, nonatomic) UIButton *miniLunaUgBtn;
+@property (retain, nonatomic) UIButton *inconspicuousMiniLunaUgBtn;
+@property (retain, nonatomic) UIButton *addPlaylistBtn;
+@property (retain, nonatomic) AWELunaUgPopView *lunaUgPopView;
+@property (nonatomic) BOOL appendPlaylistEntryBtnShowedOnce;
+@property (nonatomic) BOOL fullSongShowOnce;
+@property (nonatomic) BOOL collectToLunaShowedOnce;
+@property (nonatomic) BOOL isLunaUgEntryBtnAdded;
+@property (nonatomic) BOOL isMiniLunaUgEntryBtnAdded;
+@property (nonatomic) BOOL lunaUgEntryBtnShowedOnce;
+@property (nonatomic) BOOL miniLunaugEntryBtnShowedOnce;
+@property (retain, nonatomic) AWECollectionButton *collectBtn;
+@property (retain, nonatomic) UIButton *storyPublishBtn;
+@property (retain, nonatomic) AWECollectionButton *collectToLunaBtn;
+@property (weak, nonatomic) id<AWEMusicDetailMusicActionsViewDelegate> delegate;
+
+- (void)awe_themeDidChange:(long long)a0;
+- (void)p_updateAppendPlaylistButtonCollected:(id)a0;
+- (id)p_inconspicuousLunaButtonImage;
+- (id)p_colorWithLightColor:(id)a0 darkColor:(id)a1;
+- (id)plainButtonWithImage:(id)a0 text:(id)a1 textColor:(id)a2 backgroundColor:(id)a3;
+- (void)lunaUgBtnAction:(id)a0;
+- (void)weakBindDataHelper:(id)a0;
+- (BOOL)showStory2025PublishEntrance;
+- (void)updateMusicActionsView:(BOOL)a0;
+- (void)updateActionsViewConstraint;
+- (id)initWithConfig:(id)a0 layoutManager:(id)a1;
+- (void)p_checkLunaSongFaultStatus;
+- (void)p_arrangeCollectToLunaBtn;
+- (void)p_arrangeAddPlaylistBtn:(BOOL)a0;
+- (void)p_arrangeInconspicuousLunaBtn:(BOOL)a0;
+- (void)p_arrangeLunaBtn:(BOOL)a0;
+- (void)p_arrangeInconspicuousMiniLunaBtn:(BOOL)a0;
+- (void)p_arrangeMiniLunaBtn:(BOOL)a0;
+- (void)p_arrangeCompleteMusicBtnWithDummy:(BOOL)a0;
+- (void)p_updateCollectToLunaBtn;
+- (void)p_updateBtnTitleContent;
+- (id)p_musicDetailConfig;
+- (id)inconspicuousLunaBtnConfig;
+- (id)p_lunaAppendPlaylistButtonImageAfter;
+- (id)p_lunaAppendPlaylistButtonImage;
+- (id)p_notCollectedButtonImage;
+- (void)p_updateCompleteBtnColorWithTheme:(long long)a0;
+- (void)p_updateCollectBtnColorWithTheme:(long long)a0;
+- (void)p_updateInconspicuousLunaUgBtnColorWithTheme:(long long)a0;
+- (void)p_updateLunaBtnColorWithTheme:(long long)a0;
+- (void)buildStoryPublishButton;
+- (void)buildCollectButton;
+- (id)p_lunaButtonImage;
+- (id)p_musicModuleImageWithLight:(id)a0 darkImage:(id)a1 size:(double)a2;
+- (void)completeMusicBtnAction;
+- (void)miniLunaBtnAction;
+- (void)addPlaylistBtnAction;
+- (void)collectToLunaBtnAction;
+- (void)p_updateCollectToLunaBtnColorWithTheme:(long long)a0;
+- (void)updateCollectionBtnStyle;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setupUI;
+
+@end

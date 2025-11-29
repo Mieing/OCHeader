@@ -1,0 +1,3 @@
+@interface HTSLiveInteractionPluginGamePlusRoot : GPBRootObject
+
+@end

@@ -1,0 +1,12 @@
+@class NSString, IOSContainerLayoutRule;
+
+@interface IOSContainerLayout : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) IOSContainerLayoutRule *layoutRule;
+@property (nonatomic) BOOL hasLayoutRule;
+@property (nonatomic) int dsl;
+
++ (id)descriptor;
+
+@end

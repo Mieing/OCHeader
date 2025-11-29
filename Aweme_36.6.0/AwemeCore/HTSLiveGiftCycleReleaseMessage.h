@@ -1,0 +1,15 @@
+@class GPBInt64Array, HTSLiveCommon, HTSLiveGiftCycleReleaseMessage_GiftIcon;
+
+@interface HTSLiveGiftCycleReleaseMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long releaseId;
+@property (retain, nonatomic) HTSLiveGiftCycleReleaseMessage_GiftIcon *giftIcon;
+@property (nonatomic) BOOL hasGiftIcon;
+@property (retain, nonatomic) GPBInt64Array *giftIdsArray;
+@property (readonly, nonatomic) unsigned long long giftIdsArray_Count;
+
++ (id)descriptor;
+
+@end

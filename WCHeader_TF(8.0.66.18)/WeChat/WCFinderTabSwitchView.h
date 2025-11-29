@@ -1,0 +1,82 @@
+@class WCFinderTabSwitchCustomViewInfo, NSMutableDictionary, WCFinderTabFontFactory, NSMutableSet, UIView, NSMutableArray, UIScrollView;
+@protocol WCFinderTabSwitchViewDataSource, WCFinderTabSwitchViewDelegate;
+
+@interface WCFinderTabSwitchView : UIView
+
+@property (nonatomic) unsigned long long tabNumber;
+@property (retain, nonatomic) NSMutableArray *entryBtnArray;
+@property (retain, nonatomic) NSMutableSet *exposeItems;
+@property (nonatomic) BOOL dataSourceImplUniqueFunc;
+@property (nonatomic) BOOL delegateImplExposeFunc;
+@property (retain, nonatomic) UIView *bar;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIView *lineView;
+@property (retain, nonatomic) NSMutableDictionary *textColors;
+@property (nonatomic) BOOL ignoreScrollProcess;
+@property (retain, nonatomic) NSMutableDictionary *customViewInfos;
+@property (nonatomic) unsigned long long processDequeueIdx;
+@property (retain, nonatomic) WCFinderTabSwitchCustomViewInfo *dequeueUseInfo;
+@property (retain, nonatomic) NSMutableArray *reuseTabButtons;
+@property (retain, nonatomic) NSMutableArray *selectedStack;
+@property (retain, nonatomic) WCFinderTabFontFactory *fontFactory;
+@property (nonatomic) BOOL hasMoveToNavBar;
+@property (nonatomic) struct CGPoint { double x; double y; } navBarCenter;
+@property (weak, nonatomic) id<WCFinderTabSwitchViewDelegate> delegate;
+@property (weak, nonatomic) id<WCFinderTabSwitchViewDataSource> dataSource;
+@property (readonly, nonatomic) unsigned long long selected;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } contentInsets;
+@property (nonatomic) double itemPadding;
+@property (nonatomic) double cursorPaddingTitle;
+@property (nonatomic) BOOL allowEmptySelect;
+@property (nonatomic) double switchAnimationDuration;
+@property (nonatomic) double titleFontSize;
+@property (nonatomic) long long fontStyle;
+@property (nonatomic) double barExpandSize;
+@property (nonatomic) BOOL displayBottomLine;
+@property (nonatomic) BOOL enableSelectBack;
+@property (nonatomic) BOOL displayCursorBar;
+@property (nonatomic) BOOL positionInNavBar;
+@property (nonatomic) long long align;
+
++ (double)displayHeightWithInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
++ (double)displayHeightWithInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0 titleFontSize:(double)a1 cursorPaddingTitle:(double)a2;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupUI;
+- (void)setTextColor:(id)a0 forState:(unsigned long long)a1;
+- (id)containerView;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })scrollViewFrame;
+- (double)scrollOffsetX;
+- (void)setScrollOffsetX:(double)a0;
+- (void)reloadData;
+- (id)ensureDisplayTabItemAtIndex:(long long)a0;
+- (id)findReuseButton:(long long)a0 hash:(unsigned long long)a1;
+- (void)updateItemTextColor:(id)a0;
+- (void)updateCustomViewBtnColor:(id)a0;
+- (void)updateAllItemTextColor;
+- (id)selectedItemBtn;
+- (void)updateButtons;
+- (id)_findNavBar;
+- (void)reloadTab:(long long)a0;
+- (void)clearTabUnreadCount:(long long)a0;
+- (id)tabViewAtIdx:(long long)a0;
+- (void)selectedIdx:(long long)a0;
+- (void)selectedIdx:(long long)a0 animated:(BOOL)a1 context:(void *)a2 completion:(id /* block */)a3;
+- (void)onClickTabButton:(id)a0;
+- (void)updateSelectedWithButton:(id)a0 animated:(BOOL)a1 context:(void *)a2 completion:(id /* block */)a3;
+- (void)setSelectedItem:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })displayBarFrameForBtn:(id)a0;
+- (void)sizeToFit;
+- (void)didMoveToWindow;
+- (void)checkEposeItems;
+- (void)cleanExposeItem;
+- (void)layoutSubviews;
+- (void)showToastForItem:(long long)a0 toastView:(id)a1 bgColor:(id)a2 duration:(double)a3;
+- (void)updateScrollProgress:(double)a0;
+- (void)updateSelectedIndex:(long long)a0;
+- (long long)backSelected;
+- (void)registerCustomView:(Class)a0 forIdentifier:(id)a1 configer:(id /* block */)a2 updater:(id /* block */)a3;
+- (id)dequeueCustomView:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface PermissionData_BroadcastConfig : IESLivePBBaseMessage
+
+@property (nonatomic) int scheduledMasterSwitch;
+@property (nonatomic) int scheduledProfileSwitch;
+@property (copy, nonatomic) NSString *scheduledTime;
+@property (nonatomic) int scheduledDays;
+@property (copy, nonatomic) NSString *scheduledTimeText;
+@property (nonatomic) int scheduledNoticeSwitchDisplay;
+@property (nonatomic) int scheduledNoticeSwitch;
+
++ (id)descriptor;
+
+@end

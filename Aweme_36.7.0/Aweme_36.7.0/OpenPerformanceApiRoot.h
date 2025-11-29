@@ -1,0 +1,3 @@
+@interface OpenPerformanceApiRoot : GPBRootObject
+
+@end

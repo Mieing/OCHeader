@@ -1,0 +1,10 @@
+@class DSLPreviewResponse_PreviewResp;
+
+@interface DSLPreviewResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DSLPreviewResponse_PreviewResp *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

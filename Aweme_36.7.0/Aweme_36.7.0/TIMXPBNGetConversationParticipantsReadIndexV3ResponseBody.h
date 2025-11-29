@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetConversationParticipantsReadIndexV3ResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *indexesArray;
+@property (readonly, nonatomic) unsigned long long indexesArray_Count;
+
++ (id)descriptor;
+
+@end

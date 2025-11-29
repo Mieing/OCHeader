@@ -1,0 +1,19 @@
+@class NSString, NSNumber, HTSLiveRoom;
+
+@interface IESLiveSearchAwemeModel : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (retain, nonatomic) NSString *liveRoomRawData;
+@property (retain, nonatomic) HTSLiveRoom *rawDataRoomModel;
+@property (copy, nonatomic) NSString *groupId;
+@property (retain, nonatomic) NSNumber *rank;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)rawModelFromJsonString:(id)a0;
++ (id)rawDataRoomModelJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+
+@end

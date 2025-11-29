@@ -1,0 +1,3 @@
+@interface IESECCommentListKitFooterModel : IESECCommentListKitDiffableModel
+
+@end

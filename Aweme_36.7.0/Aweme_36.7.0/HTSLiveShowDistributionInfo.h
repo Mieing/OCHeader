@@ -1,0 +1,11 @@
+@class NSString, HTSLiveEpisodeStartHighLight;
+
+@interface HTSLiveShowDistributionInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *recommendText;
+@property (retain, nonatomic) HTSLiveEpisodeStartHighLight *modelMatchedHl;
+@property (nonatomic) BOOL hasModelMatchedHl;
+
++ (id)descriptor;
+
+@end

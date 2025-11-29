@@ -1,0 +1,22 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveEpisodeHighLight : IESLivePBBaseMessage
+
+@property (nonatomic) long long location;
+@property (copy, nonatomic) NSString *description_p;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (retain, nonatomic) HTSLiveImage *smallImage;
+@property (nonatomic) BOOL hasSmallImage;
+@property (nonatomic) long long locationEnd;
+@property (nonatomic) BOOL hot;
+@property (nonatomic) long long collectionId;
+@property (copy, nonatomic) NSString *pid;
+@property (copy, nonatomic) NSString *locationStr;
+
++ (id)descriptor;
+
+- (BOOL)live_containsLocation:(double)a0;
+- (BOOL)containsLocation:(double)a0;
+
+@end

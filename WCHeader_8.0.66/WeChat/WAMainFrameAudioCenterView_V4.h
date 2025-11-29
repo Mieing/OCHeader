@@ -1,0 +1,71 @@
+@class UILabel, WCMarqueeLabel, UIImageView, NSString, UIView, MMUIButton, MMUILabel;
+
+@interface WAMainFrameAudioCenterView_V4 : WAMainFrameAudioCenterBaseView <ITingPlayCenterMgrExt, UIGestureRecognizerDelegate, MMWebImageViewDelegate>
+
+@property (retain, nonatomic) MMUILabel *mainTitle;
+@property (retain, nonatomic) UIView *recentPlayArea;
+@property (retain, nonatomic) UIView *rightBackgroundContainerView;
+@property (retain, nonatomic) MMUIButton *playOrPauseButton;
+@property (retain, nonatomic) WCMarqueeLabel *audioTitleLabel;
+@property (retain, nonatomic) MMUILabel *rightPartTitleLabel;
+@property (retain, nonatomic) UILabel *recentPlayLabel;
+@property (retain, nonatomic) UIView *musicArea;
+@property (retain, nonatomic) MMUIButton *musicButton;
+@property (retain, nonatomic) MMUILabel *musicLabel;
+@property (retain, nonatomic) UIView *audioArea;
+@property (retain, nonatomic) MMUIButton *audioButton;
+@property (retain, nonatomic) MMUILabel *audioLabel;
+@property (retain, nonatomic) MMUIButton *notifyContainerBtn;
+@property (retain, nonatomic) MMUILabel *notifyLabel;
+@property (retain, nonatomic) UIView *redDotView;
+@property (retain, nonatomic) UIImageView *arrowIconView;
+@property (retain, nonatomic) UIImageView *loadingIconView;
+@property (nonatomic) BOOL removeAudio;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)contentHeight;
+- (int)taskBarVersion;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)applyLastSyncItem;
+- (void)initViews;
+- (void)initNotifyBtn;
+- (void)onNotifyClicked;
+- (double)rightPartDescLength;
+- (void)layoutSubviews;
+- (void)layoutNotfiyBtn;
+- (double)onelineLabelHeightForFontSize:(double)a0;
+- (void)updateCurPlayingInfo;
+- (void)tryShowFirstTask;
+- (void)willBecomeVisible;
+- (void)onBecomeVisible;
+- (void)onBecomeUnVisible;
+- (unsigned int)buttonIconStyle;
+- (id)musicButtonImage;
+- (id)audioButtonImage;
+- (void)updateEntryButtonsImageIfNeed;
+- (void)onPlayOrPauseButtonClicked;
+- (void)onRightBackgroundClicked;
+- (void)doOpenAppFromTaskBar;
+- (void)onMusicButtonClicked;
+- (void)onAudioButtonClicked;
+- (void)onShowClearActionSheet;
+- (void)onMusicButtonLongClicked;
+- (void)onAudioButtonLongClicked;
+- (void)onTingPlayingInfoUpdate:(id)a0;
+- (void)applyViewModel:(id)a0;
+- (void)onTingTaskBarSyncInfoChanged;
+- (void)updateUIComptsWithPlayInfo:(id)a0;
+- (void)updateStateWithPlayInfo:(id)a0;
+- (void)updateStateWithPlayInfo:(id)a0 enable:(BOOL)a1;
+- (id)playPauseParamsWithPlayInfo:(id)a0;
+- (id)dataReportParamsWithPlayInfo:(id)a0;
+- (void)setIsLoading:(BOOL)a0;
+- (void)onHideWAMainFrameTaskBar;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void).cxx_destruct;
+
+@end

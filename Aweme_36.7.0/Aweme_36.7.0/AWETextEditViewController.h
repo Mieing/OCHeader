@@ -1,0 +1,71 @@
+@class UITextView, NSString, UITextField, UIButton, UIView, AWEAnimatedButton, UILabel;
+
+@interface AWETextEditViewController : UIViewController <IESIMTextEditViewControllerProtocol, NSLayoutManagerDelegate, UITextFieldDelegate, UITextViewDelegate>
+
+@property (retain, nonatomic) UITextView *contentTextView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UITextView *contentCalculateHeightTextView;
+@property (retain, nonatomic) AWEAnimatedButton *idCopyButton;
+@property (nonatomic) BOOL hasShownKeyboard;
+@property (nonatomic) unsigned long long style;
+@property (copy, nonatomic) NSString *preTitle;
+@property (copy, nonatomic) NSString *contentText;
+@property (copy, nonatomic) NSString *numberText;
+@property (copy, nonatomic) NSString *tipText;
+@property (copy, nonatomic) NSString *placeholder;
+@property (nonatomic) BOOL emptyIsChanged;
+@property (nonatomic) BOOL shouldSaveChange;
+@property (copy, nonatomic) id /* block */ exitBlock;
+@property (retain, nonatomic) UITextField *contentTextField;
+@property (retain, nonatomic) UIView *sepView;
+@property (retain, nonatomic) UILabel *numberLabel;
+@property (retain, nonatomic) UILabel *tipLabel;
+@property (retain, nonatomic) UITextView *contentTextView;
+@property (retain, nonatomic) UIButton *saveButton;
+@property (retain, nonatomic) UILabel *preTitleLabel;
+@property (retain, nonatomic) UIButton *deleteButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)deleteButtonClicked;
+- (void)setStatusBarBackgroundColor:(id)a0;
+- (void)updateEditStyleWithShowKeyboard:(BOOL)a0;
+- (BOOL)isSettingEnable;
+- (void)p_finishEditing;
+- (void)p_saveButtonClicked;
+- (void)setTipLabelForContentTextView;
+- (void)saveButtonClicked;
+- (void)updateEmptyNumberText;
+- (void)editTextFieldDidChange:(id)a0;
+- (BOOL)isTextOverHeightLimit:(id)a0;
+- (void)editTextViewDidChange:(id)a0;
+- (void)idCopyButtonClicked;
+- (void)p_deleteButtonClicked;
+- (void)configWithStyle:(unsigned long long)a0 preTitle:(id)a1 contentText:(id)a2 numberText:(id)a3 tipText:(id)a4 placeholder:(id)a5 emptyIsChanged:(BOOL)a6;
+- (void)updateEditStyle;
+- (void)updateCopyButtonIfNeeded;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning;
+- (BOOL)prefersStatusBarHidden;
+- (id)init;
+- (void)textFieldDidEndEditing:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)textFieldDidBeginEditing:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)textViewDidBeginEditing:(id)a0;
+- (double)layoutManager:(id)a0 lineSpacingAfterGlyphAtIndex:(unsigned long long)a1 withProposedLineFragmentRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)textViewDidEndEditing:(id)a0;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)textFieldDidChange:(id)a0;
+- (void)_setupNavbar;
+- (void)_setUpUI;
+
+@end

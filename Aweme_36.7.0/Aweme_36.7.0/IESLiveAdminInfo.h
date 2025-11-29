@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface IESLiveAdminInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isAdmin;
+@property (retain, nonatomic) HTSLiveImage *adminBadge;
+@property (nonatomic) BOOL hasAdminBadge;
+
++ (id)descriptor;
+
+@end

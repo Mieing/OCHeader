@@ -1,0 +1,14 @@
+@class GPBInt32Int64Dictionary;
+
+@interface TIMXPBNMsgTrace : GPBMessage
+
+@property (retain, nonatomic) GPBInt32Int64Dictionary *metrics;
+@property (readonly, nonatomic) unsigned long long metrics_Count;
+@property (nonatomic) int path;
+@property (nonatomic) BOOL hasPath;
+@property (nonatomic) int connStatus;
+@property (nonatomic) BOOL hasConnStatus;
+
++ (id)descriptor;
+
+@end

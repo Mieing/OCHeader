@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveAnchorFaceConfig;
+
+@interface HTSLiveRoomAppConfigMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveAnchorFaceConfig *anchorFaceConfig;
+@property (nonatomic) BOOL hasAnchorFaceConfig;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface AWEThreadScheduleTask : NSObject <HTSBootTask>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)scheduleMainThreadIfNeeded;
++ (void)scheduleThread:(struct _opaque_pthread_t { long long x0; struct __darwin_pthread_handler_rec *x1; char x2[8176]; } *)a0 withPriority:(int)a1;
++ (void)execute;
+
+
+@end

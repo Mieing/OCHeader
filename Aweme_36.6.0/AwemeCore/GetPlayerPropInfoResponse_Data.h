@@ -1,0 +1,11 @@
+@class NSString, GPBInt64ObjectDictionary;
+
+@interface GetPlayerPropInfoResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *openId;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *propInfo;
+@property (readonly, nonatomic) unsigned long long propInfo_Count;
+
++ (id)descriptor;
+
+@end

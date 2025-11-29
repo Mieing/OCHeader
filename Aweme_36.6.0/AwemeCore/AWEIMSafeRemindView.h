@@ -1,0 +1,84 @@
+@class AWEIMMessageConversation, UIPanGestureRecognizer, UILabel, AWEIMSecurityToastConfigModel, NSMutableArray, UIButton, UIView, CAGradientLayer, NSString, NSTimer, UIStackView, AVAudioPlayer, YYLabel, UIImageView;
+@protocol IESIMSafeRemindViewDelegateProtocol, AWEIMSafeRemindViewDelegate;
+
+@interface AWEIMSafeRemindView : AWEIMBasePopupView <AVAudioPlayerDelegate>
+
+@property (retain, nonatomic) UIImageView *avatarImgView;
+@property (retain, nonatomic) YYLabel *titleLabel;
+@property (retain, nonatomic) YYLabel *contentLabel;
+@property (retain, nonatomic) UIStackView *checkboxStackView;
+@property (retain, nonatomic) UIImageView *selectImageView;
+@property (retain, nonatomic) UILabel *actionTipLabel;
+@property (retain, nonatomic) NSTimer *timer;
+@property (retain, nonatomic) NSMutableArray *selectViewArray;
+@property (retain, nonatomic) AWEIMSecurityToastConfigModel *toastConfig;
+@property (retain, nonatomic) UIPanGestureRecognizer *pan;
+@property (retain, nonatomic) AVAudioPlayer *player;
+@property (retain, nonatomic) UIView *audioBackgroundView;
+@property (retain, nonatomic) CAGradientLayer *audioBackgroundLayer;
+@property (retain, nonatomic) UIButton *audioButton;
+@property (retain, nonatomic) UIView *audioRedDot;
+@property (retain, nonatomic) id<IESIMSafeRemindViewDelegateProtocol> innerNotificationListerner;
+@property (weak, nonatomic) id<AWEIMSafeRemindViewDelegate> delegate;
+@property (retain, nonatomic) AWEIMMessageConversation *conversation;
+@property (nonatomic) double longestAudioPlayPercentage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isShowing;
+
+- (void)pauseAudio;
+- (BOOL)configWithModel:(id)a0;
+- (BOOL)bringToFront;
+- (void)addSubviews;
+- (void)handleAudioSessionInterruptionNotification:(id)a0;
+- (void)contentViewPanAction:(id)a0;
+- (id)colorInLightTheme:(long long)a0;
+- (double)__checkboxHeight;
+- (void)onTapGes:(id)a0;
+- (double)__contentBottom;
+- (void)maskViewTapAction:(id)a0;
+- (void)p_closeAction;
+- (BOOL)checkValid;
+- (void)panAction:(id)a0;
+- (void)setLabel:(id)a0 withAttributedText:(id)a1 preferredMaxLayoutWidth:(double)a2;
+- (double)textHeightWithPreferredMaxLayoutWidth:(double)a0 AttributedText:(id)a1;
+- (id)middleBodyAreaView;
+- (void)configBottomView:(id)a0 configModel:(id)a1;
+- (BOOL)hasCheckbox;
+- (void)observeEvents;
+- (void)unobserveEvents;
+- (BOOL)p_showModel:(id)a0 onViewController:(id)a1;
+- (void)__setupUITitle:(id)a0 subTitle:(id)a1 buttons:(id)a2 configModel:(id)a3;
+- (void)__configConfirmButtonModel:(id)a0;
+- (void)configCloseButtonWithModel:(id)a0;
+- (void)configHeaderPictureWithModel:(id)a0;
+- (void)configTitleWithAttributedTitle:(id)a0;
+- (void)configMiddleBodyAreaWithAttributedSubtitle:(id)a0 model:(id)a1;
+- (double)__titleTopMagin;
+- (double)audioButtonWidth;
+- (double)__titleAndContentMargin;
+- (double)audioRedDotWidth;
+- (double)__confirmButtonTop;
+- (void)setupConfirmButtonWithTitle:(id)a0 enabledState:(BOOL)a1;
+- (BOOL)__buttonEnableByCheckboxState;
+- (void)__updateConfirmButtonEnable:(BOOL)a0;
+- (void)__updateConfrimButtonColor;
+- (BOOL)__checkboxHasSelected;
+- (void)pressAudioBtn:(id)a0;
+- (BOOL)showModel:(id)a0;
+- (BOOL)showModel:(id)a0 onViewController:(id)a1;
+- (void)registerDelegate;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)hide;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)hasAudio;
+- (void)willMoveToWindow:(id)a0;
+- (void)dealloc;
+- (void)audioPlayerDidFinishPlaying:(id)a0 successfully:(BOOL)a1;
+- (void)appWillResignActive;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.VideoContentAdapterCellConfig : BDMultiContentContainer.VideoContentCellConfig
+
+@end

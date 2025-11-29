@@ -1,0 +1,98 @@
+@class NSObject, NSArray, NSString, NSMutableArray, NSNumber;
+@protocol OS_dispatch_queue, IESIMHttpTask, AWEIMDYNotificationListDataControllerDelegate;
+
+@interface AWEIMDYNotificationListDataController : IESIMListDataController <AWEIMDYNotificationListDataControllerProtocol> {
+    NSObject<OS_dispatch_queue> *_dexecuteQueue;
+}
+
+@property (nonatomic) long long topGroup;
+@property (nonatomic) long long count;
+@property (nonatomic) long long maxTime;
+@property (nonatomic) long long minTime;
+@property (nonatomic) BOOL showActivityOverdueToast;
+@property (nonatomic) long long originUnreadCount;
+@property (retain, nonatomic) id<IESIMHttpTask> requestingTask;
+@property (copy, nonatomic) NSArray *preloadNotices;
+@property (nonatomic) BOOL hasMore;
+@property (weak, nonatomic) id<AWEIMDYNotificationListDataControllerDelegate> delegate;
+@property (nonatomic) BOOL notClearOfficialChatUnreadCount;
+@property (nonatomic) BOOL clearOffcialChatUnreadCountByForce;
+@property (nonatomic) long long lastReadTime;
+@property (copy, nonatomic) NSString *vcdToastText;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) long long subsetScene;
+@property (nonatomic) long long displacementFromLastAlreadyReadMessage;
+@property (nonatomic) long long maxLimitCount;
+@property (nonatomic) long long noticeGroup;
+@property (copy, nonatomic) NSArray *noticeTabs;
+@property (copy, nonatomic) NSArray *noticeDisturbs;
+@property (copy, nonatomic) NSArray *noticeSubscribes;
+@property (copy, nonatomic) NSArray *noticeConfigs;
+@property (copy, nonatomic) NSArray *noticeSubCategories;
+@property (retain, nonatomic) NSMutableArray *foldGroupList;
+@property (retain, nonatomic) NSArray *noticeGroupDisturbs;
+@property (copy, nonatomic) NSArray *localNoticeDisableModels;
+@property (copy, nonatomic) NSArray *noticeTypeList;
+@property (nonatomic) BOOL canShowSettingEntrance;
+@property (retain, nonatomic) NSNumber *noticeType;
+@property (nonatomic) unsigned long long expType;
+@property (nonatomic) long long currentSelectedSubCategory;
+@property (nonatomic) BOOL isStickOnTop;
+@property (nonatomic) BOOL canDisturb;
+@property (nonatomic) BOOL disturb;
+@property (nonatomic) BOOL foldStatus;
+@property (nonatomic) BOOL enableFold;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWENoticeInteractorLiteAdapterClass;
++ (double)contentWidthWithContainerW:(double)a0 model:(id)a1;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)initFetchWithCompletion:(id /* block */)a0;
+- (id)getExpectedSizeInfo;
+- (id)aAWENoticeInteractorLiteAdapter;
+- (id)initWithNoticeGroup:(long long)a0 topGroup:(long long)a1 count:(long long)a2 maxTime:(double)a3 minTime:(double)a4;
+- (id)_getParamsForLoadMore:(BOOL)a0;
+- (void)setIsUnreadToNotiModel:(id)a0;
+- (void)__addNoticeSLOTrackWithNoticeType:(long long)a0 isEmpty:(BOOL)a1 error:(id)a2;
+- (void)p_addEmptyListMonitorWithResponse:(id)a0 group:(long long)a1 error:(id)a2;
+- (void)__dataSourceBackupProcess:(id)a0 error:(id)a1 completion:(id /* block */)a2;
+- (void)onRecallMsgChange;
+- (void)accountMigrateDenyWithModel:(id)a0 completion:(id /* block */)a1;
+- (id)initWithNoticeGroup:(long long)a0 topGroup:(long long)a1 count:(long long)a2 maxTime:(double)a3 minTime:(double)a4 showActivityOverdueToast:(BOOL)a5;
+- (id)initWithNoticeGroup:(long long)a0 topGroup:(long long)a1 noticeType:(id)a2 count:(long long)a3 maxTime:(double)a4 minTime:(double)a5 showActivityOverdueToast:(BOOL)a6;
+- (void)loadMoreWithLimitCount:(unsigned long long)a0 completion:(id /* block */)a1;
+- (id)changeAssistantNameInModel:(id)a0;
+- (void)__refreshCompletionBlock:(id /* block */)a0 model:(id)a1 error:(id)a2;
+- (void)p_addMonitorWithRequestID:(id)a0 group:(long long)a1 isError:(BOOL)a2;
+- (void)processNoticeArray:(id)a0 disturbModels:(id)a1 subscribeModels:(id)a2 tabModels:(id)a3 configModels:(id)a4;
+- (BOOL)__shouldFoldSameNotice;
+- (id)__tryFoldNoticeForModel:(id)a0 isFirstPage:(BOOL)a1 isFirstLoadMore:(BOOL)a2;
+- (id)__checkAllModelValidForArray:(id)a0;
+- (id)__checkAllModelValidForFoldModel:(id)a0;
+- (void)monitorInfoWithResponse:(id)a0 group:(long long)a1 error:(id)a2;
+- (long long)__getNoticeModelCount:(id)a0;
+- (id)__foldNoticeModelArray:(id)a0;
+- (id)__checkAndGetFinalArrayForHasMore:(BOOL)a0 showArray:(id)a1 preloadArray:(id)a2;
+- (id)__unfoldNoticeForNoMore:(id)a0;
+- (id)getWebImageExceptedSize:(struct CGSize { double x0; double x1; })a0;
+- (void)awenotice_setRecentRefreshDataToFileWithModels:(id)a0 forNoticeGroup:(long long)a1;
+- (id)awenotice_getRecentRefreshDataFromFileWithGroup:(long long)a0;
+- (id)officialChatDetailCacheKey;
+- (id)initWithNoticeGroup:(long long)a0 topGroup:(long long)a1 noticeType:(id)a2 count:(long long)a3 maxTime:(double)a4 minTime:(double)a5;
+- (void)noticeDetailForNotice:(id)a0 noticeGroup:(long long)a1 completion:(id /* block */)a2;
+- (id)headIndexPathForUnfoldModelAtIndexPath:(id)a0;
+- (id)onTapFoldModelAtIndexPath:(id)a0;
+- (id)onTapUnfoldModelAtIndexPath:(id)a0;
+- (id)foldModelforDeleteModelAtIndexPath:(id)a0;
+- (void)deleteFoldNoticeAtIndexPath:(id)a0 completion:(id /* block */)a1;
+- (void)__countAndFoldDataSource:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)refreshWithCompletion:(id /* block */)a0;
+
+@end

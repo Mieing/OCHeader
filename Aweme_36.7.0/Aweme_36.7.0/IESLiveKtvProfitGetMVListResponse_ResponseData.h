@@ -1,0 +1,15 @@
+@class NSMutableArray;
+
+@interface IESLiveKtvProfitGetMVListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *officialMvListArray;
+@property (readonly, nonatomic) unsigned long long officialMvListArray_Count;
+@property (retain, nonatomic) NSMutableArray *personalMvListArray;
+@property (readonly, nonatomic) unsigned long long personalMvListArray_Count;
+@property (nonatomic) long long minCursor;
+@property (nonatomic) long long maxCursor;
+@property (nonatomic) BOOL hasMore;
+
++ (id)descriptor;
+
+@end

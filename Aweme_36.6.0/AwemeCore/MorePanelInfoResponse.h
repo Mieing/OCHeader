@@ -1,0 +1,10 @@
+@class MorePanelInfoData;
+
+@interface MorePanelInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) MorePanelInfoData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

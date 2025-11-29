@@ -1,0 +1,86 @@
+@class CAMediaTimingFunction, NSString, UIGestureRecognizer, UIView, NSIndexPath, UIImageView, NSArray, NSMutableArray, UIColor;
+
+@interface MMBaseMultiMenuTableViewCell : MMTableViewCell <CAAnimationDelegate> {
+    UIView *_menuContentView;
+    UIView *_actualContentView;
+    UIGestureRecognizer *_panGestureRecognizer;
+    BOOL _shouldDisplayContextMenuView;
+    BOOL _contextMenuHidden;
+    UIImageView *_copyedBackgroundView;
+    BOOL m_bIsNeedUpdateMenu;
+    double _initialTouchPositionX;
+    double _lastTouchPositionX;
+    double _initialContentViewX;
+    BOOL bNotAddDeleteBtn;
+    NSArray *_currentMenuItems;
+    BOOL _inHideAnimation;
+    BOOL _panGestureHasBegin;
+    int _animationCounter;
+    double _menuContentLeftMargin;
+}
+
+@property (nonatomic) BOOL releaseToTriggerCurrItem;
+@property (retain, nonatomic) NSIndexPath *indexPath;
+@property (retain, nonatomic) NSMutableArray *arrMenuItems;
+@property (nonatomic) BOOL contextMenuEnabled;
+@property (nonatomic) BOOL disablePanOnHideAnimated;
+@property (retain, nonatomic) UIColor *menuBackgroundColor;
+@property (nonatomic) BOOL bNeedCopyBackgroundView;
+@property (nonatomic) double fCardRightMargin;
+@property (nonatomic) BOOL keepSwipeStateOnResue;
+@property (retain, nonatomic) UIView *rootContentView;
+@property (nonatomic) BOOL forbidDisplayMenuWithGestures;
+@property (retain, nonatomic) CAMediaTimingFunction *menuAnimateTimingFunction;
+@property (nonatomic) double menuAnimateDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (BOOL)isPointInMenu:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)isMenuHidden;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)checkAndAddDeleteItem;
+- (void)setMenuItemsWithNoDeleteBtn:(id)a0;
+- (void)setMenuItemsWithDefaultDeleteBtn:(id)a0;
+- (void)updateAction;
+- (id)FindTableView:(id)a0;
+- (void)updateMenuView;
+- (void)updateMenuView:(BOOL)a0;
+- (void)updateMenuViewForConfirm:(id)a0 originItem:(id)a1;
+- (void)updateCopyedBackgroundView;
+- (void)showMenuText:(id)a0 menuItem:(id)a1;
+- (BOOL)onActionOperated:(id)a0;
+- (void)onButtonClicked:(id)a0;
+- (void)onMenuOperated:(id)a0;
+- (void)onCommitEditingWithStyle:(long long)a0 tableView:(id)a1;
+- (void)layoutSubviews;
+- (void)touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)prepareForReuse;
+- (void)setSelected:(BOOL)a0 animated:(BOOL)a1;
+- (void)setHighlighted:(BOOL)a0 animated:(BOOL)a1;
+- (void)forceHideMenuOptionsAnimated:(BOOL)a0;
+- (void)forceHideMenuOptionsAnimated:(BOOL)a0 completionHandler:(id /* block */)a1;
+- (void)hideMenuOptionsAnimated:(BOOL)a0;
+- (id)contentView;
+- (void)onClearBackgroundView;
+- (long long)getButtonTitleLabelNumberOfLines;
+- (long long)getButtonTitleLabelTextAlignment;
+- (void)setMenuOptionsViewHidden:(BOOL)a0 animated:(BOOL)a1 completionHandler:(id /* block */)a2;
+- (double)getCurrentWidth;
+- (long long)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(long long)a0;
+- (long long)indexOfAccessibilityElement:(id)a0;
+- (void)onMenuTransitionToConfirmState:(long long)a0;
+- (void)onMultiMenuAppear;
+- (void)handlePan:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (id)swipeToTriggerItem;
+- (id)findMenuButtonWithItem:(id)a0;
+- (void)onMenuOffsetChange:(double)a0 menuWidth:(double)a1;
+- (void)checkTableViewEditingStyle;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveMagicGestureActivityMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *effectId;
+@property (nonatomic) int actionType;
+@property (copy, nonatomic) NSString *actionSchema;
+@property (copy, nonatomic) NSString *bizId;
+
++ (id)descriptor;
+
+@end

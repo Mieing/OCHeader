@@ -1,0 +1,3 @@
+@interface BDByteCastPPHeartbeatResponse : BDByteCastPPBaseCmdResponse
+
+@end

@@ -1,0 +1,3 @@
+@interface BattleUpdateSettingsApiRoot : GPBRootObject
+
+@end

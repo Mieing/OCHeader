@@ -1,0 +1,10 @@
+@class GetMoreReplayListResponse_ResponseData;
+
+@interface GetMoreReplayListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetMoreReplayListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

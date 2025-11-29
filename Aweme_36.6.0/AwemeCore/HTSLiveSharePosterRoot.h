@@ -1,0 +1,3 @@
+@interface HTSLiveSharePosterRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AWESearchPreRequestManagerParamsObject : NSObject
+
+@end

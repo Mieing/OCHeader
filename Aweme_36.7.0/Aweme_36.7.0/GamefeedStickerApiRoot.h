@@ -1,0 +1,3 @@
+@interface GamefeedStickerApiRoot : GPBRootObject
+
+@end

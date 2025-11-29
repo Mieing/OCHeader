@@ -1,0 +1,85 @@
+@class AWEIMNoticedetailResponseModel, AWENoticeCommonPushView, NSString, AWENoticePushViewModel, AWEInnerPushCommonView, AWEInnerPushCommonViewModel;
+@protocol AWEInnerNotificationContentOperator, AWEIMStreakDisplayManagerProtocol;
+
+@interface AWENoticeCommonPushModel : NSObject <AWEDigitalWellbeingMessage, AWEIMStreakDisplayManagerDelegate, AWEInnerNotificationContent, AWENoticeCommonPushViewDelegate>
+
+@property (retain, nonatomic) AWENoticePushViewModel *noticePushModel;
+@property (retain, nonatomic) id<AWEIMStreakDisplayManagerProtocol> imStreakDisplayManager;
+@property (retain, nonatomic) AWENoticeCommonPushView *oldView;
+@property (retain, nonatomic) AWEInnerPushCommonView *currentView;
+@property (retain, nonatomic) AWEInnerPushCommonViewModel *viewModel;
+@property (retain, nonatomic) AWEIMNoticedetailResponseModel *detailResponseModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWEInnerNotificationContentOperator> notificationOperator;
+
++ (Class)aAWENoticeModuleServiceDOUYINDSAdapterClass;
+
+- (void)teenModeDidChange:(BOOL)a0 isLogout:(BOOL)a1;
+- (BOOL)disablePullIndicatorView;
+- (id)titleAttributedText;
+- (void)renderModel:(id)a0 context:(id)a1;
+- (id)customIMStreakTextPreferTheme;
+- (id)avatars;
+- (void)handleTapAction;
+- (void)viewDidDisappearWithReason:(long long)a0;
+- (double)dismissTimerInterval;
+- (BOOL)disableUseBusinessTypeDeterminDismissTimerInterval;
+- (BOOL)tapGestureIsEnable:(id)a0;
+- (id)trackingModelForScene:(unsigned long long)a0;
+- (void)updateLeftIcon;
+- (void)updateLeftExtraIcon;
+- (void)updateRightActionAreaModel;
+- (void)updateTitleAreaItems;
+- (void)updateContentAttrString;
+- (id)trackEnterFrom;
+- (BOOL)hitStreakUpdateExp;
+- (void)__replyButtonClick;
+- (id)nonaggregatedDefaultAvatar;
+- (void)shouldShowOnlineViewWithCompletion:(id /* block */)a0;
+- (void)trackConsecutiveChatStatusShowWithColor:(id)a0;
+- (id)__imPushType;
+- (void)consecutiveChatStatusWithCompletion:(id /* block */)a0;
+- (void)streakFlameViewWithCompletion:(id /* block */)a0;
+- (id)aAWENoticeModuleServiceDOUYINDSAdapter;
+- (BOOL)isAggregatedPush;
+- (id)__imageForMultiAvatar;
+- (id)extTagConfig;
+- (id)p_getAwemeID;
+- (BOOL)p_shouldReplaceLightInteraction;
+- (BOOL)enableLightInteractionInCommentAndMentionForSecUid:(id)a0;
+- (BOOL)enableLightInteractionInDiggForSecUid:(id)a0;
+- (BOOL)__hitLightInteractionReverse;
+- (BOOL)__enableModularizedLightInteraction;
+- (void)p_transferToNotificationPage;
+- (void)p_raiseSnakeBar;
+- (void)performLightInteractionWithSource:(id)a0;
+- (id)specNoticeType:(id)a0;
+- (id)propListWithModel:(id)a0;
+- (void)trackInnerPushClicked;
+- (BOOL)shouldShowMultiAvatars;
+- (id)nonaggregatedAvatarUrl;
+- (void)extIconWithCompletion:(id /* block */)a0;
+- (id)dispatchTitleAttributedTextIsPrimary:(BOOL)a0;
+- (id)extTagText;
+- (BOOL)canShowRelationTagBackgroundColor;
+- (id)extTagTextColor;
+- (id)extTagBackgroundColor;
+- (BOOL)p_shouldShowReplyButton;
+- (void)buttonTextWithCompletion:(id /* block */)a0;
+- (void)p_prepareForRouterComplete:(id /* block */)a0;
+- (void)__trackEnterPersonalDetailIfNeeded;
+- (id)extTagTextFont;
+- (id)contentAttributedText;
+- (void).cxx_destruct;
+- (id)init;
+- (id)businessType;
+- (id)view;
+- (id)buttonTextColor;
+- (void)dealloc;
+- (void)updateProperties;
+- (id)__image;
+
+@end

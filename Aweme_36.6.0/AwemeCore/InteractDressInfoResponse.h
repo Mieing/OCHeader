@@ -1,0 +1,10 @@
+@class InteractDressInfoResponse_DressInfo;
+
+@interface InteractDressInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) InteractDressInfoResponse_DressInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

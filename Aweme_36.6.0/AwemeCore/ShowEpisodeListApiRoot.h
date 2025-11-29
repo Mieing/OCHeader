@@ -1,0 +1,3 @@
+@interface ShowEpisodeListApiRoot : GPBRootObject
+
+@end

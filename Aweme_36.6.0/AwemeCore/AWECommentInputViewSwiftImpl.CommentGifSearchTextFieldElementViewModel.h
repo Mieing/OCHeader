@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentGifSearchTextFieldElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

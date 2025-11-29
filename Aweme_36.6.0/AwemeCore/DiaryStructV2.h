@@ -1,0 +1,16 @@
+@class NSString, UrlStructV2;
+
+@interface DiaryStructV2 : GPBMessage
+
+@property (nonatomic) int id_p;
+@property (nonatomic) BOOL hasId_p;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *desc;
+@property (nonatomic) BOOL hasDesc;
+@property (retain, nonatomic) UrlStructV2 *icon;
+@property (nonatomic) BOOL hasIcon;
+
++ (id)descriptor;
+
+@end

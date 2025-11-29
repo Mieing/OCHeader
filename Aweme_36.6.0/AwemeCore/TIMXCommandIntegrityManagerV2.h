@@ -1,0 +1,72 @@
+@class NSMutableArray, NSString, TIMXSDKInstance, TIMXGCDTimer, NSObject, TIMXCommandMessageHandler;
+@protocol OS_dispatch_queue;
+
+@interface TIMXCommandIntegrityManagerV2 : NSObject <TIMXCommandMessageHandleEventProtocol>
+
+@property (weak, nonatomic) TIMXSDKInstance *r;
+@property (nonatomic) long long userID;
+@property (retain, nonatomic) TIMXCommandMessageHandler *handler;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *cmdIntegrityQueue;
+@property (retain, nonatomic) TIMXGCDTimer *cmdIntegrityTimer;
+@property (retain, nonatomic) TIMXGCDTimer *cmdReceivedIntegrityTimer;
+@property (copy, nonatomic) NSString *cmdIntegrityRangeReceivedIndexV2Key;
+@property (retain, nonatomic) NSMutableArray *cmdIndexV2Ranges;
+@property (copy, nonatomic) NSString *cmdIntegrityCheckedReceivedIndexV2Key;
+@property (nonatomic) long long previousCheckedV2Index;
+@property (copy, nonatomic) NSString *cmdIntegrityRangeIndexV2Key;
+@property (retain, nonatomic) NSMutableArray *cmdIndexReceivedV2Ranges;
+@property (copy, nonatomic) NSString *cmdIntegrityCheckedIndexV2Key;
+@property (nonatomic) long long previousCheckedReceivedV2Index;
+@property (nonatomic) BOOL appHasEnterBackground;
+@property (nonatomic) BOOL isRedeeming;
+@property (nonatomic) BOOL cmdChecked;
+@property (nonatomic) BOOL cmdReceivedChecked;
+@property (nonatomic) BOOL invalidated;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)resetCheckTimer;
+- (void)willHandleCommandMessageWithContext:(id)a0;
+- (void)didHandleCommandMessageWithContext:(id)a0 handleResult:(unsigned long long)a1 userInfo:(id)a2;
+- (void)setupAllKeys;
+- (void)startRedeemLeakCommandsIfNeed;
+- (void)resetCheckReceivedTimer;
+- (BOOL)p_checkRangeValidation:(id)a0;
+- (void)resetAllReceivedRanges;
+- (BOOL)p_resultForHandleCommandContext:(id)a0 userInfo:(id)a1 resultType:(unsigned long long)a2;
+- (void)recordCmd:(id)a0 messageSubtype:(long long)a1 result:(BOOL)a2;
+- (void)recordCmdReceived:(id)a0 messageSubtype:(long long)a1;
+- (id)p_rangesFormat:(id)a0;
+- (void)saveCmdIndexReceivedRange;
+- (void)recordReceivedCommandMessageIndex:(long long)a0;
+- (id)p_recordCmdIndex:(long long)a0 mergeToRanges:(id)a1;
+- (void)checkCmdReceivedContinuesIfNeed;
+- (long long)p_supposeCountWithRanges:(id)a0 previouseCheckIndex:(long long)a1;
+- (long long)p_leakCountWithRanges:(id)a0 previousCheckIndex:(long long)a1 supposeTotal:(long long)a2 rangeStringDesc:(id)a3;
+- (void)resetAllRecordedRanges;
+- (void)saveCmdIndexRange;
+- (void)recordExecutedCommandMessageIndex:(long long)a0;
+- (void)checkCmdContinuesIfNeed;
+- (id)p_getFirstEmptyRange:(id)a0;
+- (void)handleFetchedLeakMsgs:(id)a0 next:(long long)a1 error:(id)a2;
+- (void)fetchLeakMsgsWithRange:(id)a0 completion:(id /* block */)a1;
+- (void)aggregateMessagesAndRedeem:(id)a0;
+- (BOOL)commandSupportRedemptionWithType:(int)a0 commandType:(long long)a1;
+- (unsigned long long)redemptionTypeWithMessageType:(int)a0 commandType:(long long)a1;
+- (void)redeemAggregatedMsgs:(id)a0 indexesDic:(id)a1;
+- (void)redeemCommandMsg:(id)a0 completion:(id /* block */)a1;
+- (id)initWithRootObject:(id)a0 userID:(long long)a1;
+- (void)clearOriginRecords;
+- (void)syncCmdIndexFromKV;
+- (void)syncCmdReceivedIndexFromKV;
+- (id)integrityCheckVersion;
+- (BOOL)p_isUserValid;
+- (void)saveCmdIndexReceivedV2Range;
+- (void).cxx_destruct;
+- (void)appDidEnterBackground:(id)a0;
+- (void)dealloc;
+- (void)appWillEnterForeground:(id)a0;
+
+@end

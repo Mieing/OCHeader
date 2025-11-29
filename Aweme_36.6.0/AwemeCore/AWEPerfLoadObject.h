@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface AWEPerfLoadObject : NSObject {
+    _Atomic int _statusMask;
+    BOOL _optional;
+    NSString *_kind;
+    double _beginTime;
+    double _endTime;
+    id /* block */ _statusHandler;
+}
+
+- (void).cxx_destruct;
+- (id)description;
+- (id)initWithKind:(id)a0;
+
+@end

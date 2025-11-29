@@ -1,0 +1,3 @@
+@interface RoomVideoShareApiRoot : GPBRootObject
+
+@end

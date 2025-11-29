@@ -1,0 +1,3 @@
+@interface LarkMediaBaseObject : NSObject
+
+@end

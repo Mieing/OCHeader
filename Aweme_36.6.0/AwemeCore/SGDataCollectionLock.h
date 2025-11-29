@@ -1,0 +1,3 @@
+@interface SGDataCollectionLock : NSObject
+
+@end

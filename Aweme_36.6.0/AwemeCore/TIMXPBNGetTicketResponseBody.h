@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface TIMXPBNGetTicketResponseBody : GPBMessage
+
+@property (copy, nonatomic) NSString *ticket;
+@property (nonatomic) BOOL hasTicket;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TIMXPBNFailedInfo : GPBMessage
+
+@property (nonatomic) long long failedUserId;
+@property (nonatomic) BOOL hasFailedUserId;
+@property (nonatomic) int failedCode;
+@property (nonatomic) BOOL hasFailedCode;
+@property (copy, nonatomic) NSString *failedReason;
+@property (nonatomic) BOOL hasFailedReason;
+
++ (id)descriptor;
+
+@end

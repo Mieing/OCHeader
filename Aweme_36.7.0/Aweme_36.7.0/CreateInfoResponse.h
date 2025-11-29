@@ -1,0 +1,10 @@
+@class CreateInfoResponse_CreateInfo;
+
+@interface CreateInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CreateInfoResponse_CreateInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWERVUserGrowthController : AWERVBaseController
+
+@end

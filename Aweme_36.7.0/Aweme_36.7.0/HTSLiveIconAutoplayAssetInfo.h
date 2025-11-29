@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveIconAutoplayAssetInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *frequencyKey;
+@property (retain, nonatomic) HTSLiveImage *assetImg;
+@property (nonatomic) BOOL hasAssetImg;
+@property (nonatomic) int interval;
+@property (nonatomic) long long showCount;
+
++ (id)descriptor;
+
+@end

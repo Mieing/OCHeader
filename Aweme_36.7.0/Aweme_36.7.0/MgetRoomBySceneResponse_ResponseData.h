@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface MgetRoomBySceneResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *rooms;
+@property (readonly, nonatomic) unsigned long long rooms_Count;
+
++ (id)descriptor;
+
+@end

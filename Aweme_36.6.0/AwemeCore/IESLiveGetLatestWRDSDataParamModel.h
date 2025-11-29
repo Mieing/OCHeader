@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveGetLatestWRDSDataParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *wrdsKey;
+@property (copy, nonatomic) NSString *wrdsSubKey;
+
++ (id)modelCustomPropertyMapper;
+
+@end

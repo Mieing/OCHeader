@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureEditorQuickSave : MTLModel
+
+@end

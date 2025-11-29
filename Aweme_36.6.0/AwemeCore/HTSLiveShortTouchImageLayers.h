@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveShortTouchImageLayers : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *layersArray;
+@property (readonly, nonatomic) unsigned long long layersArray_Count;
+@property (nonatomic) int baseWidth;
+@property (nonatomic) int baseHeight;
+
++ (id)descriptor;
+
+@end

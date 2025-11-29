@@ -1,0 +1,3 @@
+@interface OpenRoomApiRoot : GPBRootObject
+
+@end

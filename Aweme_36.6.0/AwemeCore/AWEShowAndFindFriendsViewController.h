@@ -1,0 +1,78 @@
+@class UIView, NSString, NSArray, DUXActionSheet, UIButton, AWESlidingTabbarView, UIViewController, AWESlidingViewController;
+@protocol AFDFamiliarSearchFriendHolderViewProtocol, AWEFindFriendsViewControllerProtocol;
+
+@interface AWEShowAndFindFriendsViewController : UIViewController <AWESlidingViewControllerDelegate, AWERouterViewControllerProtocol, DUXActionSheetDelegate, AWEShowAndFindFriendsTransitionProtocol>
+
+@property (retain, nonatomic) AWESlidingTabbarView *tabView;
+@property (retain, nonatomic) AWESlidingViewController *slidingViewController;
+@property (retain, nonatomic) UIViewController<AFDFamiliarSearchFriendHolderViewProtocol> *showViewController;
+@property (retain, nonatomic) UIViewController<AWEFindFriendsViewControllerProtocol> *findViewController;
+@property (retain, nonatomic) UIViewController *fansViewController;
+@property (retain, nonatomic) NSArray *tabArray;
+@property (retain, nonatomic) NSArray *titlesArray;
+@property (nonatomic) unsigned long long configedIndex;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (retain, nonatomic) UIView *backButton;
+@property (copy, nonatomic) NSString *enterType;
+@property (nonatomic) unsigned long long entranceType;
+@property (retain, nonatomic) UIButton *naviMoreBtn;
+@property (copy, nonatomic) NSString *insertedTopUIDs;
+@property (copy, nonatomic) NSString *secTargetUID;
+@property (nonatomic) BOOL isFirstSelected;
+@property (nonatomic) BOOL hasDisappeared;
+@property (copy, nonatomic) NSString *ruleId;
+@property (copy, nonatomic) NSString *showedUserIDs;
+@property (copy, nonatomic) NSString *gdLabel;
+@property (copy, nonatomic) NSString *position;
+@property (nonatomic) BOOL useNewRecommendCount;
+@property (nonatomic) unsigned long long defaultType;
+@property (nonatomic) unsigned long long currentType;
+@property (nonatomic) long long yellowPointCompensate;
+@property (copy, nonatomic) NSString *topNoticeIDs;
+@property (weak, nonatomic) DUXActionSheet *recommendActionSheet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (BOOL)transition_gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)actionSheet:(id)a0 didClickButtonAtIndex:(long long)a1;
+- (long long)numberOfControllers:(id)a0;
+- (id)slidingViewController:(id)a0 viewControllerAtIndex:(long long)a1;
+- (void)slidingViewController:(id)a0 didSelectIndex:(long long)a1 transitionType:(long long)a2;
+- (id)transition_destinatedViewControllerForSlideDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (BOOL)transition_shouldStartInteractiveTranstionToVC:(id)a0;
+- (void)transition_didCancelPercentDrivenTransitionWithContext:(id)a0;
+- (void)backBtnClicked;
+- (void)configureUI;
+- (void)configNavigationBar;
+- (void)configureSlidingViewController;
+- (void)landingAfterDidCreatedNewAccount;
+- (BOOL)leftEdgePan:(id)a0;
+- (BOOL)shouldShowUnreadView;
+- (id)entrancePage;
+- (void)didChangedLanguage;
+- (double)tabViewWidth;
+- (BOOL)shouldHideFriendList;
+- (void)constructTabArray:(id)a0;
+- (unsigned long long)indexForTypeAndUpdateTabs:(unsigned long long)a0;
+- (BOOL)shouldShowFansNotice;
+- (void)enterPrivacySettings;
+- (void)moreBtnTapped;
+- (void)trackClickMoreButtonFindFriends;
+- (unsigned long long)listTypeWithIndex:(unsigned long long)a0;
+- (id)tabWithListType:(unsigned long long)a0;
+- (BOOL)enableShowFriendListInFansNoticeMixAddFriends;
+- (void)updateTitlesArray;
+- (unsigned long long)typeWithTabKey:(id)a0;
+- (void)updateTabArray;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (id)currentTab;
+
+@end

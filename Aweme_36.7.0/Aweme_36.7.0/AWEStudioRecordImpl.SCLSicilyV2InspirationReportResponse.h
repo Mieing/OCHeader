@@ -1,0 +1,3 @@
+@interface AWEStudioRecordImpl.SCLSicilyV2InspirationReportResponse : AWEStudioRecordImpl.CommonResponse
+
+@end

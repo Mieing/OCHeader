@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface MusicCardUrlModelV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *uri;
+@property (nonatomic) BOOL hasUri;
+@property (retain, nonatomic) NSMutableArray *urlsArray;
+@property (readonly, nonatomic) unsigned long long urlsArray_Count;
+@property (copy, nonatomic) NSString *templatePrefix;
+@property (nonatomic) BOOL hasTemplatePrefix;
+
++ (id)descriptor;
+
+@end

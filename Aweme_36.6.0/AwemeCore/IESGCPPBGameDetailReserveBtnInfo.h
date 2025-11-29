@@ -1,0 +1,9 @@
+@interface IESGCPPBGameDetailReserveBtnInfo : GPBMessage
+
+@property (nonatomic) long long reservedStatus;
+@property (nonatomic) long long supportReservePlatforms;
+@property (nonatomic) long long giftNum;
+
++ (id)descriptor;
+
+@end

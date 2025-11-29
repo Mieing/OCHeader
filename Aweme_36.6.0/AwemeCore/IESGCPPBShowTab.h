@@ -1,0 +1,8 @@
+@interface IESGCPPBShowTab : GPBMessage
+
+@property (nonatomic) int rankType;
+@property (nonatomic) BOOL isShowTab;
+
++ (id)descriptor;
+
+@end

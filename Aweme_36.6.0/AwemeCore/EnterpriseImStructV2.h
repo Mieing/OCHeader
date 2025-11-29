@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface EnterpriseImStructV2 : GPBMessage
+
+@property (nonatomic) BOOL hasImBtn_p;
+@property (nonatomic) BOOL hasHasImBtn_p;
+@property (copy, nonatomic) NSString *imSchemaURL;
+@property (nonatomic) BOOL hasImSchemaURL;
+
++ (id)descriptor;
+
+@end

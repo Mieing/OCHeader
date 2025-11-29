@@ -1,0 +1,10 @@
+@class GetRoomChangeTextResponse_Data;
+
+@interface GetRoomChangeTextResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetRoomChangeTextResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

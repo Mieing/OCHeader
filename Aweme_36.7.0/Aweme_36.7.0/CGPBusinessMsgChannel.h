@@ -1,0 +1,15 @@
+@class NSString, CGPBusinessMsgChannel_MsgChannelMsg;
+
+@interface CGPBusinessMsgChannel : GPBMessage
+
+@property (retain, nonatomic) CGPBusinessMsgChannel_MsgChannelMsg *payload;
+@property (nonatomic) BOOL hasPayload;
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *userId;
+@property (copy, nonatomic) NSString *ackId;
+@property (copy, nonatomic) NSString *version;
+@property (copy, nonatomic) NSString *destUserId;
+
++ (id)descriptor;
+
+@end

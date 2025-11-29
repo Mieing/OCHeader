@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface AWEYAPEntranceDummyAlert : NSObject <AWEAlertProtocol>
+
+@property (nonatomic) BOOL shouldBlockAlert;
+@property (copy, nonatomic) id /* block */ closeBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)canShow;
+- (void)showWithCloseCallback:(id /* block */)a0;
+- (void).cxx_destruct;
+
+@end

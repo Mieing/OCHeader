@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface HTSLiveWatchInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *count;
+@property (copy, nonatomic) NSString *countWithBackup;
+@property (nonatomic) int realCount;
+@property (nonatomic) long long realCountInt64;
+@property (nonatomic) int liveCountDisplayType;
+@property (nonatomic) long long displayTypeStartTime;
+@property (copy, nonatomic) NSString *formatCount;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@interface HTSLiveSubscribeInfoResponse_UserData : IESLivePBBaseMessage
+
+@property (nonatomic) long long expiredTime;
+@property (nonatomic) long long level;
+
++ (id)descriptor;
+
+@end

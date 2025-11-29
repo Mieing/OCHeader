@@ -1,0 +1,71 @@
+@class HTSVideoSpeedControl, AWEStickerHintView, NSString, ACCSpeedControlPanelViewController, UIView, ACCSpeedControlViewModel, ACCAnimatedButton;
+@protocol ACCRecordSwitchModeService, ACCRecordPropService, ACCRecorderViewContainer, ACCRecordUIHiddenStrategyService, ACCRecordSidebarService, ACCQuickStoryRecorderTipsService, ACCDuetSessionSwtichService, ACCRecordFlowService, ACCCameraService;
+
+@interface ACCSpeedControlComponent : ACCFeatureComponent <ACCEffectEvent, ACCRecordSwitchModeServiceSubscriber, ACCRecorderViewContainerItemsHideShowObserver, ACCRecordVideoEventHandler, ACCDuetSessionSwtichServiceSubscriber, ACCPanelViewDelegate>
+
+@property (retain, nonatomic) ACCAnimatedButton *speedControlButton;
+@property (retain, nonatomic) HTSVideoSpeedControl *speedControl;
+@property (retain, nonatomic) ACCSpeedControlPanelViewController *speedControlPanelController;
+@property (weak, nonatomic) id<ACCRecorderViewContainer> viewContainer;
+@property (retain, nonatomic) ACCSpeedControlViewModel *viewModel;
+@property (retain, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) id<ACCRecordFlowService> flowService;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) id<ACCRecordPropService> propService;
+@property (retain, nonatomic) id<ACCQuickStoryRecorderTipsService> quickStoryTipsService;
+@property (weak, nonatomic) id<ACCRecordSidebarService> sidebarService;
+@property (retain, nonatomic) id<ACCRecordUIHiddenStrategyService> hiddenStrategyService;
+@property (retain, nonatomic) id<ACCDuetSessionSwtichService> duetSessionSwtichService;
+@property (nonatomic) BOOL isFirstAppear;
+@property (retain, nonatomic) UIView *speedControlButtonCustomView;
+@property (nonatomic) BOOL originSpeedControlButtonSelected;
+@property (nonatomic) BOOL ifNeededShowHintView;
+@property (retain, nonatomic) AWEStickerHintView *propHintView;
+@property (copy, nonatomic) id /* block */ speedControlAccessibilityBlock;
+@property (copy, nonatomic) id /* block */ firstWillAppearBlock;
+@property (copy, nonatomic) id /* block */ currentDisableToast;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentWillAppear;
+- (void)switchModeServiceWillChangeToMode:(id)a0 oldMode:(id)a1;
+- (void)switchModeServiceDidChangeMode:(id)a0 oldMode:(id)a1;
+- (void)shouldItemsShow:(BOOL)a0 animated:(BOOL)a1;
+- (void)updateItemsHiddenWithAnimation:(BOOL)a0;
+- (void)panelViewController:(id)a0 willDismissPanelView:(id)a1;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)componentDidUnmount;
+- (unsigned long long)preferredLoadPhase;
+- (void)bindViewModel;
+- (id)serviceBinding;
+- (void)bindServices:(id)a0;
+- (void)removePropHint;
+- (void)p_bindViewModelObserver;
+- (void)onEffectMessageReceived:(id)a0;
+- (id)recordVideoEvent;
+- (void)willSwitchToDuetMode;
+- (void)willSwitchToNormalMode;
+- (BOOL)p_isPhotoModeAndSupportShootingVideo;
+- (void)initVariableSpeedData;
+- (void)speedComponentInit;
+- (void)addSpeedControlObserver;
+- (void)handleSpeedButtonHasChangedSelected:(BOOL)a0;
+- (void)showSpeedControlIfNeededWithAnimated:(BOOL)a0;
+- (void)handleClickSpeedControlAction;
+- (void)createSpeedControlIfNeed;
+- (void)externalSelectSpeed:(double)a0;
+- (void)showBottomSpeedPanelViewController;
+- (void)updateSpeedControlButtonSelectedState:(BOOL)a0;
+- (void)tryResetSpeed;
+- (void)showPropHintOn:(id)a0 withSpeed:(float)a1;
+- (void)disableWithKey:(id)a0 fixedSpeed:(double)a1;
+- (void)enableWithKey:(id)a0;
+- (void)hideWithKey:(id)a0 fixedSpeed:(double)a1;
+- (void)showWithKey:(id)a0;
+- (void).cxx_destruct;
+- (void)setupUI;
+
+@end

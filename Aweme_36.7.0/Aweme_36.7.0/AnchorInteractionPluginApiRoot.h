@@ -1,0 +1,3 @@
+@interface AnchorInteractionPluginApiRoot : GPBRootObject
+
+@end

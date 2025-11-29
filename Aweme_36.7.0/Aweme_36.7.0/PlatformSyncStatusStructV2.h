@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface PlatformSyncStatusStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *platformName;
+@property (nonatomic) BOOL hasPlatformName;
+@property (copy, nonatomic) NSString *nickname;
+@property (nonatomic) BOOL hasNickname;
+@property (nonatomic) BOOL fullSynced;
+@property (nonatomic) BOOL hasFullSynced;
+
++ (id)descriptor;
+
+@end

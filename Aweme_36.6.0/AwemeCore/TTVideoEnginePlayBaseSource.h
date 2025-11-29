@@ -1,0 +1,78 @@
+@class NSDictionary, TTVideoEngineInfoModel, NSString;
+@protocol TTVideoEngineNetClient;
+
+@interface TTVideoEnginePlayBaseSource : NSObject <TTVideoEnginePlaySource>
+
+@property (retain, nonatomic) id<TTVideoEngineNetClient> netClient;
+@property (nonatomic) BOOL cacheVideoModelEnable;
+@property (nonatomic) BOOL useFallbackApi;
+@property (nonatomic) BOOL useEphemeralSession;
+@property (retain, nonatomic) TTVideoEngineInfoModel *fetchData;
+@property (copy, nonatomic) NSDictionary *resolutionMap;
+@property (readonly, copy, nonatomic) NSString *currentUrl;
+@property (readonly, nonatomic) BOOL supportSSL;
+@property (readonly, nonatomic) BOOL supportDash;
+@property (readonly, nonatomic) BOOL supportMP4;
+@property (readonly, nonatomic) BOOL supportHLS;
+@property (readonly, nonatomic) BOOL supportHLSSeamlessSwitch;
+@property (nonatomic) BOOL supportBash;
+@property (readonly, nonatomic) BOOL isMbRefactor;
+@property (readonly, nonatomic) BOOL isSingleUrl;
+@property (readonly, nonatomic) BOOL isMainUrl;
+@property (readonly, nonatomic) BOOL isLivePlayback;
+@property (readonly, nonatomic) BOOL isLocalFile;
+@property (readonly, nonatomic) BOOL enableAdaptive;
+@property (readonly, nonatomic) BOOL canFetch;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)getValueInt:(long long)a0;
+- (id)getValueStr:(int)a0;
+- (double)getValueFloat:(int)a0;
+- (id)barrageMaskUrl;
+- (id)aiBarrageUrl;
+- (id)spade_a;
+- (long long)videoModelVersion;
+- (id)getVideoList;
+- (unsigned long long)autoResolution;
+- (id)decodingMode;
+- (BOOL)hasEmbeddedSubtitle;
+- (id)subtitleInfos;
+- (long long)getDefaultAudioInfo;
+- (id)supportResolutions;
+- (id)preloadItem;
+- (id)urlForResolution:(unsigned long long)a0;
+- (id)allUrlsForResolution:(unsigned long long *)a0;
+- (BOOL)skipToNext;
+- (long long)retryStrategyForRetryCount:(long long)a0;
+- (BOOL)preloadDataIsExpire;
+- (id)videoMemString;
+- (id)getDynamicType;
+- (id)supportQualityDesc;
+- (id)usingUrlInfo;
+- (id)urlInfoForResolution:(unsigned long long)a0 mediaType:(id)a1;
+- (id)urlInfoForResolution:(unsigned long long)a0 mediaType:(id)a1 params:(id)a2;
+- (id)proxyUrlExtraInfo;
+- (id)mediaFileKey;
+- (long long)videoSizeOfType:(unsigned long long)a0;
+- (long long)bitrateForDashSourceOfType:(unsigned long long)a0;
+- (id)checkInfo:(unsigned long long)a0;
+- (long long)currentUrlIndex;
+- (void)setParamMap:(id)a0;
+- (id)mediaFileHashOfType:(unsigned long long)a0;
+- (void)fetchUrlWithApiString:(id /* block */)a0 auth:(id /* block */)a1 params:(id /* block */)a2 apiVersion:(id /* block */)a3 result:(id /* block */)a4;
+- (id)refString;
+- (id)decryptionKey;
+- (void).cxx_destruct;
+- (BOOL)validate;
+- (id)deepCopy;
+- (id)init;
+- (id)videoId;
+- (BOOL)hasVideo;
+- (BOOL)isEqual:(id)a0;
+- (unsigned long long)currentResolution;
+- (void)cancelFetch;
+
+@end

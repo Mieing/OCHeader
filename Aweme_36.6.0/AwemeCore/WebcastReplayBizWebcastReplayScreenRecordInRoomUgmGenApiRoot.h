@@ -1,0 +1,3 @@
+@interface WebcastReplayBizWebcastReplayScreenRecordInRoomUgmGenApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,81 @@
+@class UIWindow, NSString, AWEUITextLoadingView, AWEPlatformSDKConfiguration, AWEUILoadingView, NSDictionary, AWEUserContext;
+
+@interface AWEPlatformSSOService : NSObject <BDPlatformSDKApiDelegate, BDPlatformSDKOAuthDelegate, AWEUserMessage, BDPlatformUIViewDelegate, BDPlatformAuthLogger>
+
+@property (retain, nonatomic) AWEPlatformSDKConfiguration *currentConfig;
+@property (copy, nonatomic) id /* block */ loginCompletionBlock;
+@property (retain, nonatomic) AWEUserContext *context;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) AWEUITextLoadingView *textloadingView;
+@property (nonatomic) BOOL isInAuthorzieLogin;
+@property (nonatomic) BOOL isInRequireLogin;
+@property (nonatomic) BOOL isInLoginExprired;
+@property (retain, nonatomic) UIWindow *keyWindow;
+@property (retain, nonatomic) UIWindow *oauthWindow;
+@property (copy, nonatomic) NSDictionary *oauthData;
+@property (copy, nonatomic) NSDictionary *openData;
+@property (copy, nonatomic) NSString *oauthMessage;
+@property (copy, nonatomic) NSDictionary *oauthV2Params;
+@property (copy, nonatomic) NSString *logId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isInAuthorizeLogin;
++ (BOOL)isInRequireLogin;
++ (void)startConfiguration;
++ (void)setUniqueConfig:(id)a0;
++ (void)nativeOAuthWithParams:(id)a0 loginCompletion:(id /* block */)a1;
++ (void)nativeOAuthV2WithParams:(id)a0 loginCompletion:(id /* block */)a1;
++ (id)concealArrayWithDic:(id)a0;
++ (id)sharedInstance;
++ (BOOL)handleOpenURL:(id)a0;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didCancelLogin;
+- (void)didLoginFailed;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)dismissLoadingView;
+- (BOOL)askForLoginDidReceiveReq:(id)a0 loginCompletion:(id /* block */)a1;
+- (id)setupCustomViewControllerWithAuthRequest:(id)a0;
+- (void)showLoadingViewWithTitle:(id)a0 onView:(id)a1;
+- (id)userHeadImage;
+- (void)authViewControllerViewDidLoadNotification:(id)a0;
+- (void)awe_endLoading;
+- (void)awe_handleLoginCompletion;
+- (void)awe_handleCancel;
+- (BOOL)awe_handleOpenURL:(id)a0;
+- (void)nativeOAuthWithParams:(id)a0 loginCompletion:(id /* block */)a1;
+- (void)nativeOAuthV2WithParams:(id)a0 loginCompletion:(id /* block */)a1;
+- (void)setUniqueTheme:(id)a0;
+- (void)handlerTheme;
+- (id)customViewControllerForAuthRequest:(id)a0;
+- (void)askForLoginWithAuthReq:(id)a0;
+- (void)askForLoginWithShareReq:(id)a0;
+- (void)goToFeedAfterPopToVC:(id)a0 completion:(id /* block */)a1;
+- (void)checkLoginWindow;
+- (void)p_reloginCauseLoginStateExpiredWithConcealArray:(id)a0;
+- (void)loginWithConcealArray:(id)a0 clientKey:(id)a1;
+- (id)joinedScopesString:(id)a0;
+- (BOOL)p_checkNeedSkipMobileBind:(id)a0;
+- (void)loginWithConcealArray:(id)a0 clientKey:(id)a1 scopes:(id)a2 notSkipConfirm:(BOOL)a3;
+- (void)handleBindMobileNumber:(id)a0;
+- (void)awe_handleRequestError:(id)a0;
+- (id)parpareEventWithUserInfo:(id)a0;
+- (id)constructPrivateProtocolConfig;
+- (void)onShowAuthViewController:(id)a0 userInfo:(id)a1;
+- (void)onCancelAuthorization:(id)a0;
+- (void)onCommitAuthorization:(id)a0 userInfo:(id)a1;
+- (void)onFinishAuthorization:(id)a0 type:(int)a1 userInfo:(id)a2 success:(BOOL)a3 error:(id)a4;
+- (void)onPopupShowedWithUserInfo:(id)a0;
+- (void)onPopupClickedWithUserInfo:(id)a0;
+- (void)askForLoginWithConsumerKey:(id)a0;
+- (id)customViewControllerForRouterParamDict:(id)a0;
+- (id)userName;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (id)parentViewController;
+
+@end

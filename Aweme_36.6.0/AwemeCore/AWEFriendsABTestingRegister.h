@@ -1,0 +1,3 @@
+@interface AWEFriendsABTestingRegister : NSObject
+
+@end

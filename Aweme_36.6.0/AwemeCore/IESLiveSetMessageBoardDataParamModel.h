@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveSetMessageBoardDataParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *value;
+
++ (id)modelCustomPropertyMapper;
+
+@end

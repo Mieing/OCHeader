@@ -1,0 +1,3 @@
+@interface GameliveRoomApiRoot : GPBRootObject
+
+@end

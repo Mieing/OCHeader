@@ -1,0 +1,13 @@
+@interface BDMultiContentContainer.ContentURL : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ urlStr;
+    void /* unknown type, empty encoding */ urlStrList;
+    void /* unknown type, empty encoding */ urlKey;
+    void /* unknown type, empty encoding */ playerAccessKey;
+    void /* unknown type, empty encoding */ materialURI;
+    void /* unknown type, empty encoding */ height;
+    void /* unknown type, empty encoding */ width;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_url;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_urlList;
+}
+
+@end

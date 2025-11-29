@@ -1,0 +1,7 @@
+@interface DesireInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isShowDesire;
+
++ (id)descriptor;
+
+@end

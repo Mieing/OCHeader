@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface AWENearbyUtilManagerDOUYINAdapter : NSObject <AWENearbyUtilManagerCommonAdapter>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)weakTargetClass;
+
+- (BOOL)isShowNearbyFullScreen;
+- (BOOL)enableNearbyFullScreenMode;
+- (id)weakTarget;
+
+@end

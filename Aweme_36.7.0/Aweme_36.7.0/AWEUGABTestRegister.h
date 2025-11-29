@@ -1,0 +1,3 @@
+@interface AWEUGABTestRegister : NSObject
+
+@end

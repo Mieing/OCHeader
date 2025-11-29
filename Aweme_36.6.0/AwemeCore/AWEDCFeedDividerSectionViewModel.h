@@ -1,0 +1,3 @@
+@interface AWEDCFeedDividerSectionViewModel : AWEDCFeedBaseSectionViewModel
+
+@end

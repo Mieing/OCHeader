@@ -1,0 +1,3 @@
+@interface AnchorFeedLiveIdeaApiRoot : GPBRootObject
+
+@end

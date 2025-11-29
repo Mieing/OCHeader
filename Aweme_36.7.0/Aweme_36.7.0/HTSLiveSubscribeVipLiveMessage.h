@@ -1,0 +1,11 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveSubscribeVipLiveMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long roomId;
+
++ (id)descriptor;
+
+@end

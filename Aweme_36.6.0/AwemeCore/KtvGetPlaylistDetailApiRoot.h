@@ -1,0 +1,3 @@
+@interface KtvGetPlaylistDetailApiRoot : GPBRootObject
+
+@end

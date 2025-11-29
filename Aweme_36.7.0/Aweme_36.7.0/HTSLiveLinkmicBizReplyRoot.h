@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicBizReplyRoot : GPBRootObject
+
+@end

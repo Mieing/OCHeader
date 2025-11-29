@@ -1,0 +1,10 @@
+@class AudienceStartAppletResponse_Data;
+
+@interface AudienceStartAppletResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AudienceStartAppletResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface ReviewUploadApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,70 @@
+@class FinderContactLiveInfo, FinderLiveErrorPage, OtherConfigItems, FinderLiveStickerFont, FinderLivePromotionEntrance, NSMutableArray, FinderLiveMicInfo, SongListInfo, FinderLiveAgreementInfo, FinderLiveBackgroundMusicInfo, FinderLiveKtvResourceAtmosphereBg, FinderLiveGuideInfo, FinderLiveStickerBubble, FinderLiveKtvResourceReverb, LiveWeappJumpInfo, FinderLiveTagInfo, NSData, FinderObject, FinderLiveAnchorQuestEntrance, FinderLiveNextLiveNotificationInfo, FinderJumpInfo, FinderLiveKtvSettingsInfo, FinderLiveStreamDecor, FinderRecoverLiveInfo, FinderLivePromptInfo, FinderLiveGamePlayTogetherEntranceInfo, FinderLiveQuestEntranceInfo, PageModePoiTopicControlInfo, FinderLiveFanClubInfo, LiveRoomImg, GameLiveJoinTeamSettingInfo, NSString, BaseResponse, FinderLiveFeedbackEntranceInfo, FinderLiveUserAttrUserSetting, FinderLiveModModifyLiveCoverImageResponse, FinderCoCertRewardInfo, SpamRisk;
+
+@interface FinderCreateLivePrepareResponse : WXPBGeneratedMessage
+
+@property (retain, nonatomic) BaseResponse *baseResponse;
+@property (retain, nonatomic) FinderLiveMicInfo *liveMicInfo;
+@property (nonatomic) unsigned int userFlag;
+@property (nonatomic) unsigned int liveGlobalFlag;
+@property (retain, nonatomic) FinderRecoverLiveInfo *recoverLiveInfo;
+@property (retain, nonatomic) FinderObject *recoverLiveObject;
+@property (retain, nonatomic) NSMutableArray *fullTagInfo;
+@property (retain, nonatomic) FinderLiveTagInfo *lastTagInfo;
+@property (retain, nonatomic) NSMutableArray *visibilityFileList;
+@property (nonatomic) unsigned int maxVisibleChatroomCount;
+@property (nonatomic) unsigned int maxRedpacketChatroomCount;
+@property (nonatomic) int redpacketChatroomSelectStatus;
+@property (nonatomic) unsigned int maxVisibleUserCount;
+@property (retain, nonatomic) SpamRisk *spamRiskInfo;
+@property (retain, nonatomic) GameLiveJoinTeamSettingInfo *gameLiveJoinTeamSettingInfo;
+@property (retain, nonatomic) FinderLiveBackgroundMusicInfo *bgMusicInfo;
+@property (retain, nonatomic) FinderLiveQuestEntranceInfo *questEntranceInfo;
+@property (nonatomic) unsigned int shoppingNotAvailable;
+@property (retain, nonatomic) NSMutableArray *questActivities;
+@property (retain, nonatomic) NSString *finderUsername;
+@property (nonatomic) unsigned int randomMicMatchInterval;
+@property (retain, nonatomic) FinderLiveFanClubInfo *fanClubInfo;
+@property (retain, nonatomic) FinderCoCertRewardInfo *cocertRewardInfo;
+@property (nonatomic) unsigned long long liveFunctionSwitchFlags;
+@property (retain, nonatomic) FinderContactLiveInfo *contactLiveInfo;
+@property (retain, nonatomic) FinderLiveUserAttrUserSetting *userSetting;
+@property (retain, nonatomic) SongListInfo *songListInfo;
+@property (retain, nonatomic) LiveWeappJumpInfo *promotionMiniappInfo;
+@property (retain, nonatomic) LiveRoomImg *liveRoomImg;
+@property (retain, nonatomic) FinderLiveFeedbackEntranceInfo *feedbackEntranceInfo;
+@property (retain, nonatomic) FinderLivePromptInfo *promptInfo;
+@property (retain, nonatomic) NSMutableArray *gestureList;
+@property (retain, nonatomic) OtherConfigItems *otherConfigItems;
+@property (retain, nonatomic) NSMutableArray *gestureOpenTagIdList;
+@property (retain, nonatomic) LiveWeappJumpInfo *opPromotionMiniappInfo;
+@property (retain, nonatomic) FinderJumpInfo *opPromotionLiteappInfo;
+@property (retain, nonatomic) NSData *createLiveroomPrepareInfo;
+@property (retain, nonatomic) FinderLivePromotionEntrance *promotionEntrance;
+@property (retain, nonatomic) FinderLiveStreamDecor *streamDecor;
+@property (retain, nonatomic) NSMutableArray *newLiveNoticeListInfo;
+@property (retain, nonatomic) FinderJumpInfo *creatorCenterEntrance;
+@property (retain, nonatomic) FinderLiveModModifyLiveCoverImageResponse *liveCoverImgModifyInfo;
+@property (retain, nonatomic) FinderJumpInfo *applyEligibilityJumpInfo;
+@property (retain, nonatomic) NSData *createliveToken;
+@property (retain, nonatomic) FinderJumpInfo *creatorCenterEntranceV2;
+@property (retain, nonatomic) FinderLiveErrorPage *errorPage;
+@property (retain, nonatomic) FinderLiveStickerBubble *stickerBubble;
+@property (retain, nonatomic) FinderLiveStickerFont *stickerFont;
+@property (retain, nonatomic) NSMutableArray *packageList;
+@property (retain, nonatomic) NSMutableArray *liveModeControlInfo;
+@property (retain, nonatomic) FinderLiveGuideInfo *guideInfo;
+@property (retain, nonatomic) FinderLiveKtvResourceAtmosphereBg *ktvResourceAb;
+@property (retain, nonatomic) FinderLiveKtvResourceReverb *ktvResourceRb;
+@property (retain, nonatomic) FinderLiveKtvSettingsInfo *ktvSettingsInfo;
+@property (retain, nonatomic) FinderLiveAnchorQuestEntrance *anchorQuestEntrance;
+@property (nonatomic) unsigned int createLivePageMode;
+@property (retain, nonatomic) PageModePoiTopicControlInfo *pageModePoiTopicControlInfo;
+@property (retain, nonatomic) FinderLiveGamePlayTogetherEntranceInfo *gamePlayTogetherEntranceInfo;
+@property (nonatomic) BOOL canUseCreateLivePageSimpleMode;
+@property (retain, nonatomic) FinderLiveNextLiveNotificationInfo *nextLiveNotificationInfo;
+@property (retain, nonatomic) FinderLiveAgreementInfo *agreementInfo;
+@property (retain, nonatomic) NSData *createLivePrepareBuffer;
+
++ (void)initialize;
+
+@end

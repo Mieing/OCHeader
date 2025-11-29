@@ -1,0 +1,80 @@
+@class CJPayBindCardSharedDataModel, NSString, NSMutableDictionary, CJPayFullPageBaseViewController, NSMutableArray;
+@protocol CJPayAPIDelegate;
+
+@interface CJPayBindCardManager : NSObject <CJPayCardManageModule>
+
+@property (retain, nonatomic) id<CJPayAPIDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) CJPayFullPageBaseViewController *bankCardListVC;
+@property (retain, nonatomic) CJPayBindCardSharedDataModel *bindCardCommonModel;
+@property (retain, nonatomic) NSMutableDictionary *pageTypes;
+@property (copy, nonatomic) NSString *entryName;
+@property (copy, nonatomic) NSString *geckoAccessKey;
+@property (nonatomic) double startBindTime;
+@property (retain, nonatomic) NSMutableArray *mutableControllers;
+@property (copy, nonatomic) id /* block */ stopLoadingBlock;
+@property (copy, nonatomic) id /* block */ bindCardSuccessBlock;
+@property (copy, nonatomic) id /* block */ verifySMSCompletionBlock;
+
++ (void)registerComponents;
++ (id)sharedInstance;
+
+- (void)closePage;
+- (BOOL)openPath:(id)a0 withParams:(id)a1;
+- (void)p_track:(id)a0 params:(id)a1;
+- (BOOL)wakeByUniversalPayDesk:(id)a0 withDelegate:(id)a1;
+- (void)i_openBankCardListWithMerchantId:(id)a0 appId:(id)a1 userId:(id)a2;
+- (void)i_bindCardAndPay:(id)a0;
+- (void)i_assetLynxBindCardIndependentlyWithSchema:(id)a0 params:(id)a1 delegate:(id)a2;
+- (void)openBankCardListWithMerchantId:(id)a0 appId:(id)a1 userId:(id)a2;
+- (void)assetLynxBindCardWithCommonModel:(id)a0 schema:(id)a1;
+- (void)bindCardWithCommonModel:(id)a0;
+- (id)bindCardTrackerBaseParams;
+- (void)p_openBankCardListWithMerchantId:(id)a0 appId:(id)a1 userId:(id)a2 inheritTheme:(id)a3;
+- (void)enterUnionBindCardAndCreateOrderWithFromVC:(id)a0 completionBlock:(id /* block */)a1;
+- (void)p_lynxBindCardWithCommonModel:(id)a0 schema:(id)a1;
+- (void)p_trackForContainerReadyWithIsNativeBindCard:(BOOL)a0;
+- (id)p_cardTradeScene:(unsigned long long)a0;
+- (id)p_teaSource:(unsigned long long)a0;
+- (BOOL)finishBindCard:(id)a0 completionBlock:(id /* block */)a1;
+- (id)p_tradeScene:(unsigned long long)a0;
+- (id)p_presentNavVCWithRootVC:(id)a0 fromVC:(id)a1;
+- (void)gotoThrottleViewController:(BOOL)a0 source:(id)a1 appId:(id)a2 merchantId:(id)a3;
+- (id)p_buildULSMSBizParam:(id)a0 cardModel:(id)a1;
+- (void)p_verifySMSViewControllerWithResponse:(id)a0 bizOrder:(id)a1 cardModel:(id)a2 baseParam:(id)a3;
+- (void)p_createNormalOrder:(id)a0 completion:(id /* block */)a1;
+- (void)createNormalOrderAndSendSMSWithModel:(id)a0 appId:(id)a1 merchantId:(id)a2;
+- (void)p_miroQuickBindCardSuccessWithParams:(id)a0;
+- (void)p_miroQuickBindCardFailWithParams:(id)a0;
+- (void)pushVC:(id)a0 commonModel:(id)a1;
+- (id)p_getTrackSourceWithCommonModel:(id)a0;
+- (void)createNormalOrderAndSendSMS:(id)a0;
+- (id)pageTypes;
+- (id)mutableControllers;
+- (BOOL)p_miroQuickBindCardCallBackForLynx:(id)a0 schema:(id)a1;
+- (void)p_bindCardWithParams:(id)a0 withDelegate:(id)a1;
+- (void)p_callBackWithBindCardResultType:(unsigned long long)a0 message:(id)a1;
+- (void)i_bindCardWithParams:(id)a0 withDelegate:(id)a1;
+- (Class)p_pageClassByType:(unsigned long long)a0;
+- (id)p_genDictionaryByKeys:(id)a0 fromCommonModel:(id)a1;
+- (BOOL)p_shouldOpenResultPageWithResultModel:(id)a0;
+- (void)p_openResultPage:(id)a0 completionBlock:(id /* block */)a1;
+- (BOOL)p_finishBindCard:(id)a0 completionBlock:(id /* block */)a1;
+- (id)p_getBindCardTrackerBaseParamWithCommonModel:(id)a0;
+- (id)p_pageTypeMaps;
+- (id)getJHConfig;
+- (id)openPage:(unsigned long long)a0 params:(id)a1 completion:(id /* block */)a2;
+- (void)modifySharedDataWithDict:(id)a0 completion:(id /* block */)a1;
+- (BOOL)cancelBindCard;
+- (id)bindCardTrackerSource;
+- (id)bindCardTeaSource;
+- (void)addPageTypeMaps:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)setEntryName:(id)a0;
+
+@end

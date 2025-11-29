@@ -1,0 +1,10 @@
+@class IESLiveChangePlayModeData;
+
+@interface HTSLiveLinkerChangePlayModeContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveChangePlayModeData *changePlayModeData;
+@property (nonatomic) BOOL hasChangePlayModeData;
+
++ (id)descriptor;
+
+@end

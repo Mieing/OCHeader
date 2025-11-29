@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.EvaluationTitleWordCountElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

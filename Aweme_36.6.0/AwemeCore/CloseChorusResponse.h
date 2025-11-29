@@ -1,0 +1,10 @@
+@class CloseChorusResponse_ResponseData;
+
+@interface CloseChorusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CloseChorusResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

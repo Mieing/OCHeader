@@ -1,0 +1,3 @@
+@interface MDLMediaDataLoaderDummy : NSObject
+
+@end

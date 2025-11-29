@@ -1,0 +1,16 @@
+@class HTSLiveImage, HTSLiveText;
+
+@interface HTSLiveLuckyBoxMessage_BottomCommentMsg : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveText *text;
+@property (nonatomic) BOOL hasText;
+@property (retain, nonatomic) HTSLiveImage *background;
+@property (nonatomic) BOOL hasBackground;
+@property (retain, nonatomic) HTSLiveImage *leftIcon;
+@property (nonatomic) BOOL hasLeftIcon;
+@property (retain, nonatomic) HTSLiveImage *rightIcon;
+@property (nonatomic) BOOL hasRightIcon;
+
++ (id)descriptor;
+
+@end

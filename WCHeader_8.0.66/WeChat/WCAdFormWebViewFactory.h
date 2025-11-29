@@ -1,0 +1,12 @@
+@class NSString, NSObject;
+@protocol FlutterBinaryMessenger;
+
+@interface WCAdFormWebViewFactory : NSObject <FlutterPlatformViewFactory>
+
+@property (retain, nonatomic) NSObject<FlutterBinaryMessenger> *messenger;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveEpisodeActors : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *userId;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *avatar;
+@property (nonatomic) BOOL hasAvatar;
+@property (nonatomic) long long verifyType;
+@property (copy, nonatomic) NSString *label;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,78 @@
+@class AWEAIGCBusinessRequestModel, NSString, NSArray, UIImage, ACCAIGCTaskRetryExtraInfoModel, NSDictionary, IESEffectModel, ACCAIGCTaskCodeInfoModel, ACCAIGCTaskRetryDetailModel;
+
+@interface AWEAIPropTaskModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *taskId;
+@property (copy, nonatomic) NSString *userId;
+@property (copy, nonatomic) NSString *aigcType;
+@property (nonatomic) double startTime;
+@property (nonatomic) unsigned long long taskStatus;
+@property (copy, nonatomic) NSString *businessHandlerClassStr;
+@property (nonatomic) long long errorCode;
+@property (copy, nonatomic) NSString *errorMessage;
+@property (nonatomic) long long queryType;
+@property (nonatomic) unsigned long long businessStatus;
+@property (nonatomic) BOOL isMultiLora;
+@property (nonatomic) long long multiLoraProfileNum;
+@property (copy, nonatomic) NSString *businessJSONStr;
+@property (nonatomic) unsigned long long resourceType;
+@property (copy, nonatomic) NSArray *imageURLs;
+@property (copy, nonatomic) NSArray *videoURLs;
+@property (copy, nonatomic) NSArray *multiImageURLs;
+@property (copy, nonatomic) NSArray *rawImageURLs;
+@property (copy, nonatomic) NSArray *liveImageURLs;
+@property (copy, nonatomic) NSArray *liveVideoURLs;
+@property (copy, nonatomic) NSString *generatedImagePath;
+@property (copy, nonatomic) NSString *generatedAIGCImagePath;
+@property (copy, nonatomic) NSString *generatedVideoPath;
+@property (copy, nonatomic) NSArray *multiImageDownloadedPath;
+@property (copy, nonatomic) NSArray *generatedRawImagePaths;
+@property (copy, nonatomic) NSString *generatedLiveImagePath;
+@property (copy, nonatomic) NSString *generatedLiveVideoPath;
+@property (copy, nonatomic) NSString *propId;
+@property (copy, nonatomic) NSString *customPropId;
+@property (copy, nonatomic) NSString *propName;
+@property (copy, nonatomic) NSString *generatingDraftId;
+@property (copy, nonatomic) NSString *generatedDraftId;
+@property (nonatomic) double serverCreateTime;
+@property (nonatomic) double estimatedDuration;
+@property (copy, nonatomic) NSString *waitTimeTip;
+@property (retain, nonatomic) ACCAIGCTaskRetryDetailModel *retryDetail;
+@property (retain, nonatomic) ACCAIGCTaskRetryExtraInfoModel *extraRetryInfo;
+@property (retain, nonatomic) ACCAIGCTaskCodeInfoModel *codeInfo;
+@property (copy, nonatomic) UIImage *pushImage;
+@property (copy, nonatomic) NSString *pushImagePath;
+@property (copy, nonatomic) NSString *placeholderTaskId;
+@property (copy, nonatomic) NSString *preloadTOSId;
+@property (retain, nonatomic) NSDictionary *requestParams;
+@property (retain, nonatomic) AWEAIGCBusinessRequestModel *requestModel;
+@property (retain, nonatomic) NSDictionary *preloadTrackParams;
+@property (copy, nonatomic) UIImage *originalImage;
+@property (copy, nonatomic) NSString *originalImagePath;
+@property (copy, nonatomic) UIImage *unifyCoverImage;
+@property (copy, nonatomic) NSString *unifyCoverPath;
+@property (copy, nonatomic) NSArray *coverURLs;
+@property (copy, nonatomic) NSString *videoType;
+@property (copy, nonatomic) NSString *gengeratedEffectCustomId;
+@property (retain, nonatomic) IESEffectModel *customEffectModel;
+@property (copy, nonatomic) NSString *afterProcessEffectExtra;
+@property (retain, nonatomic) IESEffectModel *afterProcessEffectModel;
+@property (nonatomic) BOOL aigc;
+@property (nonatomic) long long taskType;
+@property (nonatomic) long long taskTypeTrack;
+@property (nonatomic) long long queryScene;
+@property (copy, nonatomic) NSString *loraResourceType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)retryDetailJSONTransformer;
++ (id)codeInfoJSONTransformer;
++ (id)extraRetryInfoJSONTransformer;
++ (id)afterProcessEffectModelJSONTransformer;
++ (id)customEffectModelJSONTransformer;
++ (id)requestModelJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+@end

@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveLinkMicArmies_UserArmies_UserArmy : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *userId;
+@property (nonatomic) long long score;
+@property (copy, nonatomic) NSString *nickname;
+@property (retain, nonatomic) HTSLiveImage *avatarThumb;
+@property (nonatomic) BOOL hasAvatarThumb;
+
++ (id)descriptor;
+
+@end

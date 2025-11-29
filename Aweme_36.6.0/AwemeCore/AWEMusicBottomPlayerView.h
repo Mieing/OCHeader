@@ -1,0 +1,73 @@
+@class UIView, AWESelectMusicTitleControl, AWEMusicPlayerModel, CADisplayLink, NSString, UIImageView, AWEMusicModel, NSObject, DUXButton, UILabel;
+@protocol MusicService, AWEMusicBottomPlayerViewDelegate;
+
+@interface AWEMusicBottomPlayerView : UIView <AWEMusicServiceDelegate>
+
+@property (retain, nonatomic) AWEMusicModel *musicModel;
+@property (nonatomic) double viewHeight;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) BOOL needMaskCover;
+@property (retain, nonatomic) UIView *coverBgView;
+@property (retain, nonatomic) UIImageView *coverView;
+@property (retain, nonatomic) UIImageView *fakeCoverView;
+@property (retain, nonatomic) UIImageView *playIndicator;
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UILabel *durationLabel;
+@property (retain, nonatomic) UIView *infoView;
+@property (retain, nonatomic) UIView *progressView;
+@property (retain, nonatomic) UIView *progressTrackView;
+@property (retain, nonatomic) AWESelectMusicTitleControl *confirmBtn;
+@property (retain, nonatomic) DUXButton *confirmNewProfileBtn;
+@property (weak, nonatomic) UIView *parentView;
+@property (retain, nonatomic) AWEMusicPlayerModel *currentPlayerModel;
+@property (nonatomic) double currentPlaybackTime;
+@property (retain, nonatomic) id<MusicService> musicService;
+@property (nonatomic) double progress;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (readonly, nonatomic) unsigned long long style;
+@property (nonatomic) BOOL ignoreSafeArea;
+@property (nonatomic) BOOL isNewProfileMusicPlayerShootSameStyleStatus;
+@property (weak, nonatomic) NSObject<AWEMusicBottomPlayerViewDelegate> *delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)musicServiceReadyToPlay:(id)a0;
+- (void)musicServiceDidPlay:(id)a0;
+- (void)musicServiceDidPause:(id)a0 pauseType:(long long)a1;
+- (void)musicServiceDidStop:(id)a0;
+- (void)musicServiceInPlaying:(id)a0;
+- (void)musicServiceMusicChanged:(id)a0;
+- (void)hideWithAnimated:(BOOL)a0;
+- (id)initWithMusicService:(id)a0;
+- (id)initWithMusicService:(id)a0 style:(unsigned long long)a1;
+- (void)showInView:(id)a0 animated:(BOOL)a1;
+- (void)applicationBecomeActive:(id)a0;
+- (void)onDisplayRefresh;
+- (void)p_updateConstraint;
+- (id)timeString:(double)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 musicService:(id)a1 style:(unsigned long long)a2;
+- (void)installActions;
+- (double)p_coverHeight;
+- (BOOL)p_supportBig;
+- (void)didTapCoverView;
+- (void)didTapInfoView;
+- (void)didTapConfirmBtn;
+- (void)loadCoverImage:(id)a0 completion:(id /* block */)a1;
+- (void)p_updateSelfAccessibilityContent;
+- (void)clearSavedPlayingStatus;
+- (void)configWithMusic:(id)a0 progress:(double)a1;
+- (void)savePlayingStatus;
+- (void)recoverPlayingStatus;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)viewWillAppear;
+- (void)layoutSubviews;
+- (void)setupDisplayLink;
+- (void)dealloc;
+- (void)setupViews;
+- (void)viewDidDisappear;
+
+@end

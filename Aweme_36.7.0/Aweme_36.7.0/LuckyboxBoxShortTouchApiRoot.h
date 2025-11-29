@@ -1,0 +1,3 @@
+@interface LuckyboxBoxShortTouchApiRoot : GPBRootObject
+
+@end

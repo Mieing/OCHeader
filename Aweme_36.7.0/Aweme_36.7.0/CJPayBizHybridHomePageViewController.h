@@ -1,0 +1,73 @@
+@class UIImageView, UILabel, NSDictionary, CJPayBubbleInfoView, CJPayStyleButton, NSMutableArray, UIView, NSString, CJPayTwoDividedButtonView, NSArray, CJPayMarketingMsgView, CJPayDefaultChannelShowConfig, CJPayBaseLynxView;
+
+@interface CJPayBizHybridHomePageViewController : CJPayHomePageViewController <CJPayLynxViewDelegate>
+
+@property (retain, nonatomic) CJPayMarketingMsgView *marketingMsgView;
+@property (retain, nonatomic) UILabel *descLabel;
+@property (retain, nonatomic) CJPayBaseLynxView *lynxView;
+@property (retain, nonatomic) UIImageView *lynxDefaultImageView;
+@property (retain, nonatomic) CJPayStyleButton *confirmPayBtn;
+@property (retain, nonatomic) UIView *confirmButtonBgView;
+@property (retain, nonatomic) CJPayBubbleInfoView *bubbleInfo;
+@property (retain, nonatomic) CJPayTwoDividedButtonView *dividedButtonView;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *currentPayConfig;
+@property (readonly, copy, nonatomic) NSArray *payChannelConfigs;
+@property (readonly, copy, nonatomic) NSArray *cardListConfigs;
+@property (nonatomic) BOOL isLynxViewRenderSuccess;
+@property (nonatomic) BOOL isLynxViewHasDowngrade;
+@property (retain, nonatomic) NSMutableArray *combinePayNotSufficientFundIds;
+@property (retain, nonatomic) NSArray *normalNotSufficientFundIds;
+@property (copy, nonatomic) NSDictionary *lynxTrackInfoDict;
+@property (nonatomic) BOOL isImpTrackerEvented;
+@property (nonatomic) BOOL payAfterLynxViewClick;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidFinishLoadWithURL:(id)a0;
+- (void)viewDidRecieveError:(id)a0;
+- (void)viewDidLoadFailedWithUrl:(id)a0 error:(id)a1;
+- (void)lynxView:(id)a0 receiveEvent:(id)a1 withData:(id)a2;
+- (id)trackerParams;
+- (id)curSelectConfig;
+- (void)enableConfirmBtn:(BOOL)a0;
+- (void)p_onConfirmPayAction;
+- (void)p_downgradeDeskWithInfoStr:(id)a0;
+- (void)p_onPay:(id)a0;
+- (void)p_onSelectPay:(id)a0;
+- (id)p_getConfigByLynxData:(id)a0;
+- (id)p_payMethodInfoTrackList;
+- (void)p_sendLynxEvent:(id)a0 params:(id)a1;
+- (void)updateSelectConfig:(id)a0;
+- (id)payButtonTitle;
+- (void)p_updateConfirmBtnTitle:(id)a0;
+- (void)p_bindCardAndPayWithData:(id)a0;
+- (BOOL)p_isLoadingFromConfirmButton;
+- (void)p_updateAmountViewByShowConfig:(id)a0;
+- (void)p_updateConfirmButtonTitle;
+- (void)p_updateDividedViewRightButtonTitle;
+- (void)p_gotoCardList;
+- (void)p_lynxViewDidClickWithParams:(id)a0;
+- (void)p_showIncomeAlertTipsWithData:(id)a0;
+- (void)p_bindCardIndependentlyWithData:(id)a0;
+- (void)p_popLynxWnd:(id)a0;
+- (void)p_onDividedButtonRightAction;
+- (void)p_onDividedButtonLeftAction;
+- (void)updateOrderResponse:(id)a0;
+- (void)notifyNotsufficient:(id)a0;
+- (void)changePayMethodTo:(id)a0;
+- (void)creditPayFailWithTipsMsg:(id)a0 disableMsg:(id)a1;
+- (void)p_removeAllSubView;
+- (id)p_installmentWithCreditPayModelsWithIndex:(long long)a0 showConfig:(id)a1;
+- (id)p_showConfigWithChannelType:(unsigned long long)a0 methodIndex:(long long)a1 combineType:(id)a2;
+- (void)p_sendDisableEventWithIdentity:(id)a0 errorMsg:(id)a1;
+- (id)choosePayMethodVCWithshowNotSufficentFund:(BOOL)a0;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (void)startLoading;
+- (void)stopLoading;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+
+@end

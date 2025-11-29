@@ -1,0 +1,78 @@
+@class UIView, NSString, AWEQuickEditBottomView, UIImageView, UIButton, UITextField, UIViewController, UILabel;
+
+@interface AWETextEditAlertView : UIView <ACCTextInputAlertViewProtocol, UITextFieldDelegate>
+
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UITextField *textField;
+@property (copy, nonatomic) NSString *defaultValue;
+@property (copy, nonatomic) NSString *emptyToast;
+@property (nonatomic) long long textMaxLength;
+@property (copy, nonatomic) id /* block */ confirmBlock;
+@property (copy, nonatomic) id /* block */ cancelBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UIButton *clearButton;
+@property (nonatomic) BOOL isAnimating;
+@property (weak, nonatomic) UIViewController *parentVC;
+@property (retain, nonatomic) UIImageView *avatarImgView;
+@property (retain, nonatomic) UIView *baseView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *subtitleLabel;
+@property (retain, nonatomic) UIView *textBackgroundView;
+@property (retain, nonatomic) UITextField *textField;
+@property (retain, nonatomic) UILabel *tipLabel;
+@property (retain, nonatomic) AWEQuickEditBottomView *bottomView;
+@property (copy, nonatomic) NSString *oldName;
+@property (copy, nonatomic) NSString *defaultValue;
+@property (copy, nonatomic) NSString *emptyToast;
+@property (nonatomic) BOOL disableConfirmWhenEmpty;
+@property (nonatomic) BOOL disableTapMaskDismiss;
+@property (nonatomic) long long maxNumberOfWord;
+@property (copy, nonatomic) NSString *placeHolder;
+@property (nonatomic) BOOL enableWhitespace;
+@property (nonatomic) BOOL enableConfirmWhenHasPlaceHolder;
+@property (nonatomic) BOOL shouldShowAvatar;
+@property (nonatomic) long long textMaxLength;
+@property (nonatomic) BOOL showToastOverLength;
+@property (copy, nonatomic) NSString *overLengthToast;
+@property (nonatomic) double subTitleTopOffset;
+@property (nonatomic) double textFieldTopOffset;
+@property (nonatomic) BOOL shouldHiddenTitleLabel;
+@property (nonatomic) double cornerRadius;
+@property (copy, nonatomic) id /* block */ confirmBlock;
+@property (copy, nonatomic) id /* block */ cancelBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)showOnView:(id)a0;
+- (void)clickConfirmBtn;
+- (void)clickCancelBtn;
+- (void)handleKeyboardShowNoti:(id)a0;
+- (void)handleKeyboardHideNoti:(id)a0;
+- (void)updateSubviewsLayout;
+- (void)updateClearButtonImage:(id)a0;
+- (void)didUpdateKeyboardFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 willShowKeyboard:(BOOL)a1;
+- (void)handleTapViewGes:(id)a0;
+- (void)handlePanViewGes:(id)a0;
+- (void)setConfirmButtonEnabled:(BOOL)a0;
+- (void)_initProperty;
+- (void)clickClearBtn:(id)a0;
+- (void)presentOnViewController:(id)a0;
+- (void)p_setupUI;
+- (void)_addObservers;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)_removeObservers;
+- (void)_dismiss;
+- (void)textFieldDidEndEditing:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)textFieldDidBeginEditing:(id)a0;
+- (void)dealloc;
+- (void)textFieldDidChange:(id)a0;
+- (void)setConfirmButtonTitle:(id)a0;
+
+@end

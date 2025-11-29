@@ -1,0 +1,92 @@
+@class NSString, NSMutableDictionary, ACCSessionServiceContainer, AWEVideoPublishViewModel, AWEPublishStageOperationScheduler, AWEPublishTracker;
+
+@interface AWEPublishCommonTask : AWEPublishBaseTask <AWEPublishTaskMessage> {
+    BOOL _finished;
+    BOOL _republish;
+    BOOL _cancelled;
+    BOOL _useAsyncPublish;
+    long long _status;
+    double _publishStartTime;
+    AWEVideoPublishViewModel *_publishViewModel;
+    AWEPublishTracker *_tracker;
+    unsigned long long _entryType;
+    AWEPublishStageOperationScheduler *_operationScheduler;
+    unsigned long long _flowType;
+    double _progress;
+    long long _type;
+}
+
+@property (retain, nonatomic) NSMutableDictionary *timerMap;
+@property (retain, nonatomic) ACCSessionServiceContainer *sessionContainer;
+@property (copy, nonatomic) id /* block */ cancelCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)persistKey;
++ (void)removeAll;
+
+- (void)task:(id)a0 cancelWithResult:(BOOL)a1;
+- (id)createAwemeResponse;
+- (id)publishViewModel;
+- (BOOL)isPublishToNearby;
+- (BOOL)isIgnorableTask;
+- (id)coupon;
+- (void)setPublishViewModel:(id)a0;
+- (BOOL)isHotSpotTask;
+- (void)runStage:(id)a0;
+- (BOOL)isPOIRatingTask;
+- (void)terminateCancellation;
+- (BOOL)useAsyncPublish;
+- (id)operationScheduler;
+- (double)publishStartTime;
+- (BOOL)hideDraftWhenRetry;
+- (void)cancelWithCallback:(id /* block */)a0;
+- (void)cancelPrePublish;
+- (void)setPublishStartTime:(double)a0;
+- (BOOL)isPublishFailAutoRetry;
+- (id)parseProgressConfiguration;
+- (void)simulateProgress;
+- (BOOL)isStoryTask;
+- (void)setRepublish:(BOOL)a0;
+- (BOOL)isPublishFailProgressReset;
+- (BOOL)isRepublish;
+- (void)setUseAsyncPublish:(BOOL)a0;
+- (void)setOperationScheduler:(id)a0;
+- (unsigned long long)entryType;
+- (void)setTracker:(id)a0;
+- (id)initWithModel:(id)a0;
+- (id)tracker;
+- (void)setCancelled:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)remove;
+- (void)execute;
+- (BOOL)isReady;
+- (void)setFinished:(BOOL)a0;
+- (long long)type;
+- (void)setStatus:(long long)a0;
+- (void)save;
+- (id)query;
+- (double)progress;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (BOOL)isCancelled;
+- (void)setType:(long long)a0;
+- (void)fire:(id)a0;
+- (void)resume;
+- (id)taskId;
+- (BOOL)isEqual:(id)a0;
+- (void)dealloc;
+- (long long)status;
+- (void)setProgress:(double)a0;
+- (void)cancel;
+- (BOOL)isFinished;
+- (unsigned long long)flowType;
+- (void)setFlowType:(unsigned long long)a0;
+- (void)setEntryType:(unsigned long long)a0;
+- (id)addPeriodicTimeObserverForInterval:(double)a0 queue:(id)a1 usingBlock:(id /* block */)a2;
+- (void)removeTimeObserver:(id)a0;
+- (void)p_copy:(id)a0;
+
+@end

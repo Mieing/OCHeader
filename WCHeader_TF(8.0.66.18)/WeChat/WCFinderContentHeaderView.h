@@ -1,0 +1,84 @@
+@class NSMutableArray, NSString, WCFinderMaskButton, WCFinderFeedContentVM, WCFinderCommentTranslateView, WCFinderFeedContentTouchExpandTextView, WCFinderCommentHeatUpTipsView, WCFinderAuthInfoIconView, WCFinderJumpInfoPanelView, WCFinderHeadImageView, UILabel, MMUIButton;
+@protocol WCFinderContentHeaderViewDelegate;
+
+@interface WCFinderContentHeaderView : UIView <WCFinderFeedContentTextClickActionDelegate, WCFinderJumpInfoPanelViewDelegate, WCFinderPromoteOPLogExt>
+
+@property (retain, nonatomic) WCFinderFeedContentVM *contentVM;
+@property (retain, nonatomic) WCFinderHeadImageView *headerImageView;
+@property (retain, nonatomic) UILabel *nickNameLabel;
+@property (retain, nonatomic) UILabel *creatTimeAndIpRegionLabel;
+@property (retain, nonatomic) WCFinderAuthInfoIconView *authorIcon;
+@property (retain, nonatomic) UILabel *headerTagLabel;
+@property (retain, nonatomic) MMUIButton *moreActionButton;
+@property (retain, nonatomic) WCFinderFeedContentTouchExpandTextView *textView;
+@property (retain, nonatomic) WCFinderMaskButton *eventButton;
+@property (retain, nonatomic) WCFinderMaskButton *poiButton;
+@property (retain, nonatomic) WCFinderMaskButton *linkButton;
+@property (nonatomic) struct CGPoint { double x; double y; } hitPoint;
+@property (retain, nonatomic) WCFinderJumpInfoPanelView *linkJumpPanelView;
+@property (retain, nonatomic) WCFinderJumpInfoPanelView *operatingPanelView;
+@property (retain, nonatomic) WCFinderJumpInfoPanelView *rightPanelView;
+@property (retain, nonatomic) WCFinderMaskButton *collectionButton;
+@property (retain, nonatomic) MMUIButton *rightTipsBtn;
+@property (nonatomic) BOOL isExpend;
+@property (retain, nonatomic) NSMutableArray *textViewElementAccessibilityViews;
+@property (retain, nonatomic) WCFinderCommentHeatUpTipsView *heatUpTipsView;
+@property (retain, nonatomic) WCFinderJumpInfoPanelView *controversyTipsPanelView;
+@property (retain, nonatomic) WCFinderCommentTranslateView *translateView;
+@property (retain, nonatomic) WCFinderMaskButton *modFeedButton;
+@property (nonatomic) int scene;
+@property (weak, nonatomic) id<WCFinderContentHeaderViewDelegate> delegate;
+@property (nonatomic) BOOL isShow;
+@property (nonatomic) unsigned long long viewerScene;
+@property (nonatomic) unsigned long long translateType;
+@property (copy, nonatomic) NSString *translateContent;
+@property (copy, nonatomic) NSString *translateSource;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (unsigned long long)headerContentFlagByContentVM:(id)a0;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)canBecomeFirstResponder;
+- (void)setupUI;
+- (void)longPressAction:(id)a0;
+- (void)onClickRightTipsTextViewAction;
+- (void)layoutSubviews;
+- (void)layoutView;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (BOOL)hasJumpInfoViewWithBusinessType:(int)a0;
+- (void)updateWithContentVM:(id)a0;
+- (void)bindCommentJumpPanelSessionReport;
+- (BOOL)updateJumpInfoContainerWithContentVM:(id)a0;
+- (BOOL)updateControversyTips;
+- (BOOL)updatePromotion;
+- (id)createTimeAndIpRegionText;
+- (void)handleMusicFilterSwitch:(id)a0;
+- (void)resetTrucation;
+- (void)refreshAuthor;
+- (void)changeExpandStatus:(BOOL)a0;
+- (void)updateTranslateView;
+- (void)clickHeaderAvatar:(id)a0;
+- (void)clickHeaderNickname:(id)a0;
+- (void)clickPOIAction:(id)a0;
+- (void)clickModFeedButtonAction:(id)a0;
+- (void)clickEventAction:(id)a0;
+- (void)clickLinkAction;
+- (void)clickCollectionAction;
+- (void)onFinderJumpInfoViewDidClick:(id)a0;
+- (void)onFinderJumpInfoViewDidClick:(id)a0 inArea:(unsigned long long)a1;
+- (void)onFeedContentTextView:(id)a0 clickReadMore:(BOOL)a1 isTouchExpand:(BOOL)a2;
+- (void)updateTranslateType:(unsigned long long)a0;
+- (void)onFeedContentTextView:(id)a0 clickTopicText:(id)a1;
+- (void)onFeedContentTextView:(id)a0 clickMentionUsername:(id)a1 nickname:(id)a2;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (BOOL)videoPauseState;
+- (id)videoTid;
+- (void)onFeedContentTextView:(id)a0 clickContentUserName:(id)a1;
+- (void)onClickMoreAction;
+- (void)onCommentPromotePublicFlagChange:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

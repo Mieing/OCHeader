@@ -1,0 +1,3 @@
+@interface ACCSelfieEmojiViewControllerInputData : ACCRecordViewControllerInputData
+
+@end

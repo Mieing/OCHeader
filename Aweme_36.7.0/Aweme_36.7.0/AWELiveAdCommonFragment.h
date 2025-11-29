@@ -1,0 +1,74 @@
+@class NSString, HTSLiveToolbarItem, AWEAwemeModel, NSDictionary, AWELiveDouPlusDataController;
+@protocol IESLiveCompoundSubscription, IESLiveDouPlusService, IESLiveAudienceMoreToolsProvider, IESLivePerfSampler, AWEHttpTask;
+
+@interface AWELiveAdCommonFragment : IESLiveRoomComponent <HTSLiveAudienceActions, HTSLiveRoomRemoteActions, HTSLiveAudienceListActions, IESLiveAudienceListActions, HTSLiveToolbarActions, IESLiveAudienceECommerceActions, IESLiveAudienceMoreToolsAction>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModelToLiveRoom;
+@property (retain, nonatomic) AWELiveDouPlusDataController *dataController;
+@property (retain, nonatomic) id<IESLiveCompoundSubscription> disposable;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (retain, nonatomic) HTSLiveToolbarItem *douplusItem;
+@property (retain, nonatomic) NSDictionary *qcpxToastAbSettings;
+@property (retain, nonatomic) id<IESLiveDouPlusService> douPlusService;
+@property (retain, nonatomic) id<IESLiveAudienceMoreToolsProvider> moreToolsProvider;
+@property (nonatomic) BOOL didFetchEntry;
+@property (nonatomic) BOOL hasGoodsInHistory;
+@property (nonatomic) BOOL hasReportAudienceDouPlusFragment;
+@property (weak, nonatomic) id<AWEHttpTask> douPlusUniqueEntranceRequest;
+@property (nonatomic) BOOL enableShowLocalPromotion;
+@property (readonly, nonatomic) NSDictionary *itemExplicitInfoDict;
+@property (nonatomic) double lastClickTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentUnmount;
+- (void)remoteRoomDataReady:(id)a0;
+- (BOOL)shouldShowDouPlusXiaoDianEntrance;
+- (id)bizTag;
+- (void)receivingLiveAdCouponWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)fetchAdCouponForAudience;
+- (void)fetchNonAdCouponForAudience;
+- (void)fetchNonAdCouponForAudienceInnerLive;
+- (void)missionForAllEnterLiveRoomOpenLandingPage;
+- (void)autoExpandAreaPresentDetail;
+- (void)fetchLiveDouPlusEntry;
+- (void)onExpandGroupShow:(BOOL)a0;
+- (void)liveWillEndWithReason:(unsigned long long)a0;
+- (void)didEnterLiveRoom:(id)a0;
+- (void)onClickDouPlusIndicator:(id)a0;
+- (void)onShowDouPlusIndicator;
+- (void)didShowShoppingToolBarItem;
+- (void)didShowCommerceCardView;
+- (void)p_onClickDouPlusIndicator:(id)a0;
+- (void)loadDouPlusPickerItem;
+- (void)checkIfLiveRoomHasGoodsInHistory;
+- (void)updateShowLocalPromotionStatusIfNeed;
+- (id)fetchLocalPromotionTrackParams;
+- (void)checkDouPlusIndicator;
+- (void)updateGoodsStatus;
+- (void)openLiveDouPlus;
+- (id)hasAudienceDouPlusHideRedHotKey;
+- (void)showLiveDouPlus;
+- (void)updateLocalPromotionItemIfNeed;
+- (void)trackDouPlusEvent:(id)a0;
+- (id)getLiveDouPlusParams;
+- (void)trackOpenLiveDouPlus:(double)a0;
+- (id)hasEnterDouPlusKey;
+- (void)requestDouECP:(id)a0 clickTime:(id)a1;
+- (void)openDouECPWithSettingsURL;
+- (id)getCommonLiveDouPlusParams:(id)a0;
+- (void)openLiveDouPlusWithFinalURL:(id)a0 useStackBlock:(BOOL)a1;
+- (id)getXiaoDianUTMParams;
+- (void)handleECPRequestError:(id)a0;
+- (void)requestLiveAdCouponWithParam:(id)a0;
+- (id)enterLiveRoomData;
+- (void)requestLiveAdCouponWithParamNew:(id)a0;
+- (void)receivingLiveAdCouponWithParamsNew:(id)a0 completion:(id /* block */)a1;
+- (void)showToast:(id)a0;
+- (void).cxx_destruct;
+- (void)setupActions;
+
+@end

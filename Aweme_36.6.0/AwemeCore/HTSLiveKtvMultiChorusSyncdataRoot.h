@@ -1,0 +1,3 @@
+@interface HTSLiveKtvMultiChorusSyncdataRoot : GPBRootObject
+
+@end

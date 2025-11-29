@@ -1,0 +1,15 @@
+@class IESGCPPBBountyTaskDetail, IESGCPPBGroupTaskDetail, IESGCPPBSalaryTaskDetail;
+
+@interface IESGCPPBAnchorPromotionTask : GPBMessage
+
+@property (nonatomic) long long taskType;
+@property (retain, nonatomic) IESGCPPBSalaryTaskDetail *salaryTask;
+@property (nonatomic) BOOL hasSalaryTask;
+@property (retain, nonatomic) IESGCPPBGroupTaskDetail *groupTask;
+@property (nonatomic) BOOL hasGroupTask;
+@property (retain, nonatomic) IESGCPPBBountyTaskDetail *bountyTask;
+@property (nonatomic) BOOL hasBountyTask;
+
++ (id)descriptor;
+
+@end

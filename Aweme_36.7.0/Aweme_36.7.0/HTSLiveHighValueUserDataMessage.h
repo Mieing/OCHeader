@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HighValueUserData;
+
+@interface HTSLiveHighValueUserDataMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HighValueUserData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

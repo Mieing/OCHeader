@@ -1,0 +1,3 @@
+@interface AWESearchStandardVideoPlayerComponentDefines : NSObject
+
+@end

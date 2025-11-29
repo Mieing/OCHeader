@@ -1,0 +1,8 @@
+@interface KryptonVideoLifeCycleObserver : NSObject {
+    unsigned long long _observedAddress;
+}
+
+- (void)observe:(id)a0;
+- (void)dealloc;
+
+@end

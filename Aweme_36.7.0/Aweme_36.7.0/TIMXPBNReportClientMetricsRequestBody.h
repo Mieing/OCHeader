@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNReportClientMetricsRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *reportMetricsListArray;
+@property (readonly, nonatomic) unsigned long long reportMetricsListArray_Count;
+
++ (id)descriptor;
+
+@end

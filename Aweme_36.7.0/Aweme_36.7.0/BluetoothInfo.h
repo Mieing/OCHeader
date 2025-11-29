@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface BluetoothInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *macid;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *alias;
+
++ (id)descriptor;
+
+@end

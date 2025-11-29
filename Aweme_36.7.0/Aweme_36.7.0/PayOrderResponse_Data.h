@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface PayOrderResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *orderId;
+@property (nonatomic) int orderStatus;
+@property (copy, nonatomic) NSString *failureExtra;
+@property (copy, nonatomic) NSString *limitExtra;
+
++ (id)descriptor;
+
+@end

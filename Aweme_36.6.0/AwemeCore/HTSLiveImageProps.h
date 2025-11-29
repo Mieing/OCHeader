@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveImageProps : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *src;
+@property (nonatomic) BOOL hideEar;
+
++ (id)descriptor;
+
+@end

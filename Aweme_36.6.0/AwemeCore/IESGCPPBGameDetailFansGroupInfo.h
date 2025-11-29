@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESGCPPBGameDetailFansGroupInfo : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *fansGroupArray;
+@property (readonly, nonatomic) unsigned long long fansGroupArray_Count;
+
++ (id)descriptor;
+
+@end

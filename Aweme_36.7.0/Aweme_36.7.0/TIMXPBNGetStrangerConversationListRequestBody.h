@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface TIMXPBNGetStrangerConversationListRequestBody : GPBMessage
+
+@property (nonatomic) long long cursor;
+@property (nonatomic) BOOL hasCursor;
+@property (nonatomic) long long count;
+@property (nonatomic) BOOL hasCount;
+@property (nonatomic) BOOL showTotalUnread;
+@property (nonatomic) BOOL hasShowTotalUnread;
+@property (copy, nonatomic) NSString *bizInfo;
+@property (nonatomic) BOOL hasBizInfo;
+
++ (id)descriptor;
+
+@end

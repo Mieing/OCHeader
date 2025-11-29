@@ -1,0 +1,3 @@
+@interface AWEIMNativeDynamicInnerLynxCardView : IESIMBulletMessageCellContentView
+
+@end

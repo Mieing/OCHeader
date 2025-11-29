@@ -1,0 +1,3 @@
+@interface GamecpAnchorMultiStopPromotionApiRoot : GPBRootObject
+
+@end

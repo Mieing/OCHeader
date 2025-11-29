@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveCloudGameControlPanel : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *buttonsArray;
+@property (readonly, nonatomic) unsigned long long buttonsArray_Count;
+
++ (id)descriptor;
+
+@end

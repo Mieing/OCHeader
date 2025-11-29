@@ -1,0 +1,9 @@
+@interface GetSettingDetailResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL canFreeOrderSong;
+@property (nonatomic) BOOL canOrderSong;
+@property (nonatomic) long long playlistSongCount;
+
++ (id)descriptor;
+
+@end

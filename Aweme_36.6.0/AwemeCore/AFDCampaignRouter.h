@@ -1,0 +1,3 @@
+@interface AFDCampaignRouter : NSObject
+
+@end

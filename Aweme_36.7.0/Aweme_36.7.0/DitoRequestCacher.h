@@ -1,0 +1,3 @@
+@interface DitoRequestCacher : NSObject
+
+@end

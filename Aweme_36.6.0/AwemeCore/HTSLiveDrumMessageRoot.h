@@ -1,0 +1,3 @@
+@interface HTSLiveDrumMessageRoot : GPBRootObject
+
+@end

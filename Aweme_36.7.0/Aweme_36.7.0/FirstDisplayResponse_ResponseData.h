@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface FirstDisplayResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *topBannerArray;
+@property (readonly, nonatomic) unsigned long long topBannerArray_Count;
+
++ (id)descriptor;
+
+@end

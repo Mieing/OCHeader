@@ -1,0 +1,10 @@
+@class CenterEntranceResponse_Data;
+
+@interface CenterEntranceResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CenterEntranceResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

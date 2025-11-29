@@ -1,0 +1,18 @@
+@class NSString, NSMutableArray;
+
+@interface DislikeStructOptV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+@property (retain, nonatomic) NSMutableArray *entitysArray;
+@property (readonly, nonatomic) unsigned long long entitysArray_Count;
+
++ (id)descriptor;
+
+- (id)entitysArray;
+- (id)text;
+- (id)icon;
+
+@end

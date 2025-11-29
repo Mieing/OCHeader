@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface PitayaRedPacketStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (nonatomic) BOOL hasId_p;
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+
++ (id)descriptor;
+
+@end

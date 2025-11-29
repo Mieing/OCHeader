@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveToolbarItemBehaviourParam : IESLivePBBaseMessage
+
+@property (nonatomic) int behaviourType;
+@property (copy, nonatomic) NSString *values;
+
++ (id)descriptor;
+
+@end

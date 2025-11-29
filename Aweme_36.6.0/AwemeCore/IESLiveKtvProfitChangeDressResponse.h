@@ -1,0 +1,10 @@
+@class IESLiveKtvProfitChangeDressResponse_ResponseData;
+
+@interface IESLiveKtvProfitChangeDressResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveKtvProfitChangeDressResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

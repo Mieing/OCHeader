@@ -1,0 +1,72 @@
+@class WCTimeLineFooterView, MMLocationSearchBar, MMPickLocationTopView, MMUIViewController, NSString, MMPickLocationContentView;
+@protocol MMPickLocationActionDelegate;
+
+@interface MMPickLocationSearchView : MMUIView <MMLocationSearchBarDelegate, MMLocationSearchResultTableViewDelegate, POITableViewCellDelegate, POICorrectionTextViewDelegate>
+
+@property (retain, nonatomic) MMPickLocationTopView *topView;
+@property (retain, nonatomic) MMPickLocationContentView *contentView;
+@property (retain, nonatomic) MMLocationSearchBar *searchBarLogic;
+@property (weak, nonatomic) MMUIViewController *contentController;
+@property (nonatomic) double lastContentHeight;
+@property (copy, nonatomic) NSString *searchKeyword;
+@property (nonatomic) BOOL isFoldAnimating;
+@property (nonatomic) BOOL expandViewForSearchBecomeActive;
+@property (weak, nonatomic) id<MMPickLocationActionDelegate> actionDelegate;
+@property (nonatomic) BOOL isExpanded;
+@property (readonly, nonatomic) BOOL isSearching;
+@property (readonly, nonatomic) BOOL isSearchTableAutoScrolling;
+@property (readonly, nonatomic) long long currSearchState;
+@property (nonatomic) BOOL showAccuracyAuthorizationTip;
+@property (readonly, nonatomic) WCTimeLineFooterView *nearTableFooterView;
+@property (readonly, nonatomic) WCTimeLineFooterView *searchTableFooterView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithContentController:(id)a0 Manager:(id)a1;
+- (void)initSearchBarLogic;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)updateContentViewFrame;
+- (void)stopTableViewScrolling;
+- (void)setTableViewIsScrolling:(BOOL)a0;
+- (void)reloadNearbyTableView;
+- (void)finishSearch;
+- (void)scrollNearbyTableViewToVisible:(unsigned long long)a0 Animated:(BOOL)a1;
+- (void)scrollNearbyTableViewToVisibleCompletely:(unsigned long long)a0 Animated:(BOOL)a1;
+- (BOOL)isNearbyCellIndexVisible:(unsigned long long)a0;
+- (void)scrollSearchTableViewToVisibleCompletely:(unsigned long long)a0 Animated:(BOOL)a1;
+- (BOOL)isSearchCellIndexVisible:(unsigned long long)a0;
+- (void)reloadSearchResultTableView;
+- (void)updateNearbyFooterView:(long long)a0;
+- (void)updateSearchFooterView:(long long)a0;
+- (void)updateFooterView:(id)a0 WithState:(long long)a1;
+- (void)setSearchErrorTipsHidden:(BOOL)a0;
+- (void)refreshNearTableViewDataDidFinishLoading;
+- (void)refreshSearchTableViewDataDidFinishLoading;
+- (void)mmSearchBarTextDidBeginEditing:(id)a0;
+- (void)mmSearchBarTextDidChange:(id)a0;
+- (void)mmSearchBarSearchButtonClicked:(id)a0;
+- (void)mmSearchBarCancelButtonClicked:(id)a0;
+- (void)mmsearchBarBecomeActive;
+- (void)mmsearchBarWillBeginSearch;
+- (void)mmsearchBarResignActive;
+- (void)mmSearchBarSearchingStateChanged;
+- (double)heightForSearchViewTable:(id)a0;
+- (id)cellForSearchViewTable:(id)a0 AtIndexPath:(id)a1;
+- (void)searchTableViewCellWillDisplay:(id)a0 index:(id)a1;
+- (void)didSearchViewTableScroll:(id)a0;
+- (void)didSearchViewTableBeginDragging:(id)a0;
+- (void)didSearchViewTableEndScrollingAnimation:(id)a0;
+- (void)didSearchViewTableEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)didSearchViewTableEndDecelerating:(id)a0;
+- (void)tableView:(id)a0 didSelectAt:(id)a1;
+- (id)searchResultItemAt:(unsigned long long)a0;
+- (void)setSearchBar:(id)a0 CancelButtonText:(id)a1;
+- (double)expandTableViewVisbleHeight;
+- (void)updateAccuracyAuthorizationTipHidden;
+- (id)poiCorrectionKeyWord;
+- (void).cxx_destruct;
+
+@end

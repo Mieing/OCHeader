@@ -1,0 +1,3 @@
+@interface AWEECOMIMComplexMemberContainer : AWEECOMIMBaseContianerView
+
+@end

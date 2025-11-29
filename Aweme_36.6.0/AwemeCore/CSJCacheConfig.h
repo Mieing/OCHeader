@@ -1,0 +1,11 @@
+@interface CSJCacheConfig : NSObject
+
++ (id)defaultConfig;
+
+- (unsigned long long)getBUSDimageCacheMaxMemoryCount;
+- (unsigned long long)getBUSDimageCacheMaxMemoryCost;
+- (void)destroyConfig;
+- (void)setUpBUSDimageCacheMaxMemoryCount;
+- (void)setUpBUSDimageCacheMaxMemoryCost;
+
+@end

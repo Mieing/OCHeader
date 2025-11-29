@@ -1,0 +1,10 @@
+@class IESLiveLinkMicChangeMultiPKTeamResponse_ResponseData;
+
+@interface IESLiveLinkMicChangeMultiPKTeamResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicChangeMultiPKTeamResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

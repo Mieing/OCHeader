@@ -1,0 +1,12 @@
+@class HTSLiveDressPageItemCommon, IESLiveMicPosTagInfo;
+
+@interface HTSLiveTagDressPageItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveDressPageItemCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) IESLiveMicPosTagInfo *micPosTagInfo;
+@property (nonatomic) BOOL hasMicPosTagInfo;
+
++ (id)descriptor;
+
+@end

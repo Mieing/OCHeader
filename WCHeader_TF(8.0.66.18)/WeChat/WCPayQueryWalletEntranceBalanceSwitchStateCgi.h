@@ -1,0 +1,14 @@
+@protocol WCPayQueryWalletEntranceBalanceSwitchStateCgiDelegate;
+
+@interface WCPayQueryWalletEntranceBalanceSwitchStateCgi : WCPayBaseCgi
+
+@property (nonatomic) BOOL m_isServerResponse;
+@property (weak) id<WCPayQueryWalletEntranceBalanceSwitchStateCgiDelegate> m_delegate;
+
+- (void)startRequest;
+- (id)initWithDelegate:(id)a0;
+- (void)didGetResponse:(id)a0;
+- (void)didFailWithError:(id)a0;
+- (void).cxx_destruct;
+
+@end

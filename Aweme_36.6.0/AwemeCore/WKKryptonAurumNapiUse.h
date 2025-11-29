@@ -1,0 +1,3 @@
+@interface WKKryptonAurumNapiUse : NSObject
+
+@end

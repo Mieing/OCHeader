@@ -1,0 +1,64 @@
+@interface AnnieX.SLAnnieXMonitor : NSObject {
+    void /* unknown type, empty encoding */ __rts_containerBase;
+    void /* unknown type, empty encoding */ __rts_jsBase;
+    void /* unknown type, empty encoding */ __rts_containerConfig;
+    void /* unknown type, empty encoding */ __rts_engineType;
+    void /* unknown type, empty encoding */ __rts_currentPVReported;
+    void /* unknown type, empty encoding */ __rts_viewTypeCollected;
+    void /* unknown type, empty encoding */ __rts_jsbConfigReported;
+    void /* unknown type, empty encoding */ __rts_firstOnPageStart;
+    void /* unknown type, empty encoding */ __rts_endToEndData;
+    void /* unknown type, empty encoding */ __rts_performanceData;
+    void /* unknown type, empty encoding */ logService;
+}
+
+- (id)init:(id)a0 :(BOOL)a1;
+- (void)collectContainerBaseStringField:(int)a0 :(id)a1;
+- (void)doCollectContainerBaseStringField:(int)a0 :(id)a1;
+- (void)collectJSBaseField:(id)a0 :(id /* block */)a1;
+- (void)doCollectJSBaseField:(id)a0 :(id /* block */)a1;
+- (void)doReportJSBConfigPV;
+- (void)monitorJSBCall:(id)a0;
+- (void)doReportJSBPerf:(id)a0;
+- (void)doReportJSBError:(id)a0;
+- (void)reportPV:(id)a0;
+- (void)doReportPV:(id)a0;
+- (void)reportReusePV:(id)a0 :(id)a1 :(id)a2;
+- (void)doReportReusePV:(id)a0 :(id)a1 :(id)a2;
+- (void)reportWebJSException:(id)a0;
+- (void)reportLynxJSException:(id)a0 :(id /* block */)a1;
+- (void)doReportJSException:(id)a0 :(id /* block */)a1 :(id)a2;
+- (void)monitorXRequest:(id)a0;
+- (void)doReportFetchError:(id)a0;
+- (void)collectEndToEndStage:(int)a0;
+- (void)collectEndToEndStatus:(int)a0;
+- (void)collectEndToEndInfo:(int)a0 :(int)a1;
+- (void)collectEndToEndInfoWithErrorFields:(int)a0 :(int)a1 :(int)a2 :(id)a3;
+- (void)collectEndToEndInfoWithContainerError:(id)a0 :(int)a1;
+- (void)doReportEndToEndEvent;
+- (void)collectPerformanceKV:(int)a0 :(long long)a1;
+- (void)collectPerformanceTiming:(int)a0;
+- (void)doCollectPerformance:(int)a0 :(long long)a1;
+- (void)collectPerformanceFromJSSDK:(id)a0;
+- (void)collectPerformanceFromLynxSDK:(id)a0;
+- (void)doReportPerformance;
+- (void)reportForestEvent:(id)a0 :(id)a1;
+- (void)doReportForestEvent:(id)a0 :(id)a1;
+- (void)reportCustomFromJSSDK:(id)a0;
+- (void)doReportCustomFromJSSDK:(id)a0;
+- (void)reportCustomFromLynx:(id)a0 :(id /* block */)a1;
+- (void)doReportCustomFromLynx:(id)a0 :(id /* block */)a1;
+- (void)reportContainerError:(id)a0;
+- (void)doReportContainerError:(id)a0;
+- (void)reportNativeError:(id)a0;
+- (void)doReportNativeError:(id)a0;
+- (void)addContext:(id)a0 :(id)a1;
+- (void)doAddContext:(id)a0 :(id)a1;
+- (void)assembleDataPreHandler:(id)a0 :(id /* block */)a1;
+- (void)updateFields:(id)a0;
+- (void).cxx_destruct;
+- (void)debugLog:(id)a0;
+- (id)init;
+- (void)resetNavigation;
+
+@end

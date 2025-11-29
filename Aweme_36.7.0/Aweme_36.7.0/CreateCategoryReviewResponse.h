@@ -1,0 +1,10 @@
+@class CreateCategoryReviewResponse_Data;
+
+@interface CreateCategoryReviewResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CreateCategoryReviewResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

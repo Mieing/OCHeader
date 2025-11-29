@@ -1,0 +1,13 @@
+@class IESGCPPBGameDetailSimpleDownloadInfo;
+
+@interface IESGCPPBGameDetailDownloadBtnInfo : GPBMessage
+
+@property (nonatomic) double avgScore;
+@property (nonatomic) double evaluationScore;
+@property (retain, nonatomic) IESGCPPBGameDetailSimpleDownloadInfo *downloadInfo;
+@property (nonatomic) BOOL hasDownloadInfo;
+@property (nonatomic) BOOL isInPreDownloadPeriod;
+
++ (id)descriptor;
+
+@end

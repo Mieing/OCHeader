@@ -1,0 +1,12 @@
+@class CollectsInfoStructV2;
+
+@interface RelatedCollectsInfoStructV2 : GPBMessage
+
+@property (nonatomic) int relatedHighQualityCollectsType;
+@property (nonatomic) BOOL hasRelatedHighQualityCollectsType;
+@property (retain, nonatomic) CollectsInfoStructV2 *highQualityCollectsInfo;
+@property (nonatomic) BOOL hasHighQualityCollectsInfo;
+
++ (id)descriptor;
+
+@end

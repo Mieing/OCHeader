@@ -1,0 +1,74 @@
+@class FaceRecogPayHandler, NSString, MMVoidCallback, WCPayResetPwdByFaceCgi, WCPayVerifyUserRealNameInfoCgi, WCPayGenDigitalCertCgi;
+@protocol WCPayResetPayPwdLogicDelegate;
+
+@interface WCPayResetPayPwdLogic : WCPayControlLogic <WCPayFillCredInfoViewControllerDelegate, WCPayResetSelectVerifyWayViewControllerDelegate, WCPayVerifyUserRealNameInfoCgiDelegate, WCPayResetPwdByFaceCgiDelegate, WCPayGenDigitalCertCgiDelegate, FaceRecogPayHandlerDelegate, WCPayResetPwdCardInfoViewControllerDelegate, WCPayVerifyPayCardViewControllerDelegate, WCPayPayPwdViewControllerDelegate, WCPayResetPwdBindedCardListViewControllerDelegate, WCPayResetPwdBindCardViewControllerDelegate>
+
+@property (retain, nonatomic) WCPayVerifyUserRealNameInfoCgi *verifyRealnameInfoCgi;
+@property (retain, nonatomic) WCPayResetPwdByFaceCgi *resetPwdByFaceCgi;
+@property (retain, nonatomic) WCPayGenDigitalCertCgi *genDigitalCertCgi;
+@property (retain, nonatomic) FaceRecogPayHandler *faceHandler;
+@property (retain, nonatomic) NSString *faceAuthToken;
+@property (nonatomic) BOOL bIsResetingPwdByFaceRecog;
+@property (retain, nonatomic) NSString *userName;
+@property (retain, nonatomic) NSString *userIDType;
+@property (retain, nonatomic) NSString *userIDNum;
+@property (weak, nonatomic) id<WCPayResetPayPwdLogicDelegate> delegate;
+@property (retain, nonatomic) MMVoidCallback *successCallback;
+@property (retain, nonatomic) MMVoidCallback *cancelCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)startLogic;
+- (void)BackToRootView;
+- (void)onErrorAlertViewDismiss:(id)a0;
+- (void)resetPasswordSuccess;
+- (void)resetPasswordCancel;
+- (void)ResetPwdCardInfoCardInfoCancel;
+- (void)ResetPwdCardInfoNext:(id)a0;
+- (void)ResetPwdCardInfoReadAgreement;
+- (void)stopLogic;
+- (void)ResetPwdCardInfoPoped;
+- (void)VerifyPayCardBack;
+- (void)VerifyPayCardNext:(id)a0;
+- (void)VerifyPayCardAgain:(id)a0;
+- (void)OnAlertGiveUpResetPwd;
+- (void)showGiveUpResetAlert;
+- (void)VerifyPayPwdNext:(id)a0;
+- (void)SetPayPwdNext:(id)a0;
+- (void)PayPwdBack;
+- (void)PayPwdRightActionBack;
+- (void)openNewCardErrorPathWebView;
+- (BOOL)OnSelectBindCardAvailble:(id)a0;
+- (void)OnResetPwdBindedCardListNewCardClicked;
+- (void)OnResetPwdBindedCardListBack;
+- (void)OnResetPwdBindedCardListNext;
+- (void)OnWCPayResetPwdBindCardNext;
+- (void)OnWCPayResetPwdBindCardBack;
+- (void)OnResetWCPayPasswordVerifyCard:(id)a0 Error:(id)a1;
+- (void)OnResetWCPayPasswordVerifySMS:(id)a0;
+- (void)showResetPwdViewController;
+- (void)OnSetWCPayPasswordInReset:(id)a0;
+- (void)OnGetBindQueryInfo:(id)a0 Error:(id)a1;
+- (void)OnGetBindingCardBin:(id)a0 AvailableBank:(id)a1 userExInfoResponse:(id)a2 Error:(id)a3;
+- (void)OnGetBindingCardBin:(id)a0 Error:(id)a1;
+- (void)OnGetAvailableBank:(id)a0 Error:(id)a1;
+- (void)OnHandleVerifiedSMSString:(id)a0;
+- (void)onFillCredInfoViewControllerBack;
+- (void)onFillCredInfoViewControllerConfirmWithName:(id)a0 credType:(id)a1 credNum:(id)a2;
+- (void)onSelectVerifyWayViewControllerBack;
+- (void)onSelectVerifyWayViewControllerSelectVerifyCard;
+- (void)onSelectVerifyWayViewControllerSelectVerifyFace;
+- (void)onGetVerifyUserRealNameInfoCgiResp:(id)a0;
+- (void)sendGenDigitalCertRequest;
+- (void)onWCPayGenDigitalCertCgiWithResp:(id)a0;
+- (void)continueLogicAfterHandleDigitalCertSucc;
+- (void)sendResetPwdByFaceRequest:(id)a0;
+- (void)onGetResetPwdByFaceCgiResp:(id)a0;
+- (void)clickResetPwdErrorAlert;
+- (void)faceRecogPayHandlerDidCancel:(id)a0;
+- (void)faceRecogPayHandlerDidFinish:(id)a0;
+- (void).cxx_destruct;
+
+@end

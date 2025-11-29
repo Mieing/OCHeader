@@ -1,0 +1,6 @@
+@interface AWE2DStickerTextGenerator : NSObject
+
++ (struct { char *x0; int x1; int x2; int x3; })generate2DTextBitmapWithText:(id)a0 textLayout:(struct { int x0; int x1; int x2; float x3; int x4; int x5; int x6; int x7; char *x8; unsigned int x9; unsigned int x10; BOOL x11; })a1;
++ (struct { char *x0; int x1; int x2; int x3; })p_emptyBitmap;
+
+@end

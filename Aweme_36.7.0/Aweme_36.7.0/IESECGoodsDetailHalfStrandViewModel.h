@@ -1,0 +1,3 @@
+@interface IESECGoodsDetailHalfStrandViewModel : IESECGoodsDetailPageBaseViewModel
+
+@end

@@ -1,0 +1,75 @@
+@class UIView, AWEAwemeModel, AWELandscapeLongVideoNetworkErrorView, AWELandscapeLVSelectEpisodeDataController, AWELandscapeLVSelectEpisodeSegmentView, AWECollectionButton, AWEUILoadingView, NSString, UICollectionView, DUXButton, AWELandscapePageContext, AWELandscapeFeedViewModel;
+@protocol AWELandscapeSplitScreenContainerDelegate, AWELVAlbumFavoriteButtonProtocol;
+
+@interface AWELandscapeLVSelectEpisodeCoverListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AWELandscapeLVSelectEpisodeSegmentViewDelegate, AWELandscapeLVSelectEpisodeViewControllerProtocol>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) AWELandscapeLongVideoNetworkErrorView *networkErrorView;
+@property (retain, nonatomic) UIView *bottomContainerView;
+@property (retain, nonatomic) AWECollectionButton<AWELVAlbumFavoriteButtonProtocol> *favoriteButton;
+@property (retain, nonatomic) DUXButton *buyButton;
+@property (retain, nonatomic) AWELandscapePageContext *pageContext;
+@property (retain, nonatomic) AWELandscapeFeedViewModel *viewModel;
+@property (retain, nonatomic) AWEAwemeModel *currentAwemeModel;
+@property (retain, nonatomic) AWELandscapeLVSelectEpisodeDataController *splitDataController;
+@property (nonatomic) double currentOffset;
+@property (nonatomic) BOOL isRequesting;
+@property (nonatomic) BOOL isScrolling;
+@property (retain, nonatomic) Class longVideoUtil;
+@property (retain, nonatomic) AWELandscapeLVSelectEpisodeSegmentView *segmentView;
+@property (nonatomic) BOOL hasReportShowTrack;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWELandscapeSplitScreenContainerDelegate> delegate;
+@property (copy, nonatomic) id /* block */ didRefreshAwemeModel;
+
+- (void)loadMore;
+- (void)loadPrevious;
+- (void)dismissLoadingView;
+- (id)trackCommonParams;
+- (void)trackPurchaseFullEpisodeWithEvent:(id)a0;
+- (void)updateSelectedCellWithIndexPath:(id)a0;
+- (BOOL)shouldShowBMemberButton;
+- (void)addPanelBottomPaymentBtnIfNeeded;
+- (void)setupCollectionViewHeader;
+- (void)setupCollectionViewFooter;
+- (void)scrollToCurrentAwemeIfNeeded;
+- (void)setBuyButtonTitle:(id)a0;
+- (void)dismissNetworkErrorView;
+- (void)showLoadingViewUI;
+- (void)showNetworkErrorView;
+- (void)updateFooterAndHeaderState;
+- (void)trackDidSelectVideo;
+- (void)preloadDataAfterScroll:(id)a0;
+- (void)trackSegmentViewClickWithRangeString:(id)a0;
+- (id)createFlowLayout;
+- (void)didClickBuyButtonAction;
+- (void)didTapNetworkRetryButton;
+- (void)segmentView:(id)a0 didClickedIndex:(long long)a1;
+- (id)initWithPageContext:(id)a0 viewModel:(id)a1;
+- (void)updateWithAwemeModel:(id)a0 splitDataController:(id)a1;
+- (void)deselectCurrentAweme;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)resetData;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)reloadDataIfNeeded;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (struct CGSize { double x0; double x1; })cellSize;
+- (void)setupUI;
+- (void)showLoadingView;
+- (id)currentSelectedIndexPath;
+- (long long)indexOfEpisode:(long long)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface LotteryCommonRoot : GPBRootObject
+
+@end

@@ -1,0 +1,12 @@
+@class HTSLiveGiftMessage_TextEffect_Detail;
+
+@interface HTSLiveGiftMessage_TextEffect : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGiftMessage_TextEffect_Detail *portrait;
+@property (nonatomic) BOOL hasPortrait;
+@property (retain, nonatomic) HTSLiveGiftMessage_TextEffect_Detail *landscape;
+@property (nonatomic) BOOL hasLandscape;
+
++ (id)descriptor;
+
+@end

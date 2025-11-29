@@ -1,0 +1,78 @@
+@class UIImageView, IESLiveCountTimer, IESLiveVSGiftComboCircleView, UIButton, UIView, IESLiveVSGiftComboStickView, NSString, IESLiveVSGiftItem, GKRandomDistribution, NSArray, LOTAnimationView, IESLiveVSSendGiftCommandQueue, IESLiveVSGiftComboCountDownView;
+
+@interface IESLiveVSGiftComboView : UIView <UIGestureRecognizerDelegate, IESLiveVSSendGiftCommandQueueDelegate>
+
+@property (retain, nonatomic) IESLiveVSGiftComboCircleView *comboView;
+@property (retain, nonatomic) IESLiveVSGiftComboCountDownView *countView;
+@property (retain, nonatomic) IESLiveVSGiftComboStickView *stickView;
+@property (retain, nonatomic) NSArray *ripples;
+@property (retain, nonatomic) NSArray *environments;
+@property (retain, nonatomic) NSArray *spurts;
+@property (retain, nonatomic) UIImageView *hugeText;
+@property (retain, nonatomic) UIButton *actionButton;
+@property (retain, nonatomic) UIView *rippleContainer;
+@property (retain, nonatomic) UIView *environmentContainer;
+@property (retain, nonatomic) UIView *spurtContainer;
+@property (retain, nonatomic) LOTAnimationView *hugeEnvironment;
+@property (nonatomic) long long gradient;
+@property (retain, nonatomic) NSArray *giftComboInfos;
+@property (retain, nonatomic) IESLiveCountTimer *timer;
+@property (nonatomic) double buffer;
+@property (nonatomic) double currentVerlocity;
+@property (nonatomic) double verlocityLimit;
+@property (nonatomic) unsigned long long originCount;
+@property (nonatomic) BOOL pressing;
+@property (nonatomic) long long nextLargeRippleIndex;
+@property (nonatomic) long long currentSection;
+@property (nonatomic) long long currentCount;
+@property (nonatomic) unsigned long long loopTime;
+@property (nonatomic) unsigned long long giftSendingBuffer;
+@property (retain, nonatomic) GKRandomDistribution *spurtRandomDistribution;
+@property (nonatomic) long long hideCountViewTag;
+@property (nonatomic) BOOL lastShowingHugeText;
+@property (nonatomic) BOOL reachMaxSection;
+@property (nonatomic) long long lastRotateRand;
+@property (retain, nonatomic) IESLiveVSGiftItem *giftItem;
+@property (retain, nonatomic) IESLiveVSSendGiftCommandQueue *sendCommandQueue;
+@property (copy, nonatomic) id /* block */ onSend;
+@property (copy, nonatomic) id /* block */ onEnd;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)handleLongPress;
+- (void)impact;
+- (void)increaseCount;
+- (void)increaseSection;
+- (void)showHugeText;
+- (void)commandDidExecute:(id)a0 command:(id)a1 error:(id)a2;
+- (void)startPressAnimation;
+- (void)p_dismissWithInterrupt:(BOOL)a0;
+- (id)initWithGiftItem:(id)a0;
+- (void)prepareSpurt;
+- (void)stopPressAnimation;
+- (void)addSpurtAnimationIfNeeded;
+- (void)resetCountDownPosition;
+- (void)addRippleIfNeeded;
+- (void)increaseLoopTime;
+- (void)p_sendIfNeeded;
+- (void)loadNextImage;
+- (void)showLastHugeText;
+- (void)hideCountView;
+- (void)createSendCommandQueue;
+- (void)increaseEnvironmentLevel;
+- (void)rotateHugeTextUseLastRand:(BOOL)a0;
+- (id)replaceLottieIconWith:(id)a0 imageData:(id)a1;
+- (void)tap:(id)a0;
+- (void)longPress:(id)a0;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)start;
+- (void)reset;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (void)dealloc;
+- (void)loop;
+- (void)setupUI;
+
+@end

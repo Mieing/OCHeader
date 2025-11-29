@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface GiftInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long giftId;
+@property (copy, nonatomic) NSString *giftName;
+@property (copy, nonatomic) NSString *giftImgURL;
+@property (nonatomic) long long diamondCount;
+
++ (id)descriptor;
+
+@end

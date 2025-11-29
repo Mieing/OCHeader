@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceAdjustPositionResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceAdjustPositionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceAdjustPositionResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

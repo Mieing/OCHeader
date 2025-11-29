@@ -1,0 +1,3 @@
+@interface TimerIntervalFatalRoot : GPBRootObject
+
+@end

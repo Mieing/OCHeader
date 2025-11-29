@@ -1,0 +1,10 @@
+@interface PhotoSearchEntranceV2 : GPBMessage
+
+@property (nonatomic) int ecomType;
+@property (nonatomic) BOOL hasEcomType;
+
++ (id)descriptor;
+
+- (int)ecomType;
+
+@end

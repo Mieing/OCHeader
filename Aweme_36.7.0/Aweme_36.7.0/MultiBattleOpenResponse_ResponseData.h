@@ -1,0 +1,7 @@
+@interface MultiBattleOpenResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long inviteId;
+
++ (id)descriptor;
+
+@end

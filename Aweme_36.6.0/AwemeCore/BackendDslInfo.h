@@ -1,0 +1,12 @@
+@class DSLDetail, NSString;
+
+@interface BackendDslInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DSLDetail *dslInfo;
+@property (nonatomic) BOOL hasDslInfo;
+@property (copy, nonatomic) NSString *locInfo;
+@property (copy, nonatomic) NSString *viewType;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,72 @@
+@class NSString, NSArray, IESLatchAttachState, IESLatchPromiseDataHandler, IESLatchWorker, NSDictionary, NSMutableDictionary, NSMutableArray, IESLatchFullLinkMonitor;
+@protocol IESLatchProcessorDelegate, IESLatchHybridContainerProtocol;
+
+@interface IESLatchProcessor : NSObject <IESLatchWorkerDelegate, IESLatchFullLinkMonitorProtocol, IESLatchProcessorProtocol, IESLatchModuleDelegate, IESLatchLynxModuleWrapperDelegate>
+
+@property (retain, nonatomic) id<IESLatchHybridContainerProtocol> container;
+@property (retain, nonatomic) NSString *business;
+@property (weak, nonatomic) id<IESLatchProcessorDelegate> delegate;
+@property (nonatomic) BOOL attached;
+@property (copy, nonatomic) NSString *channel;
+@property (retain, nonatomic) IESLatchWorker *worker;
+@property (copy, nonatomic) NSDictionary *returnValue;
+@property (retain, nonatomic) IESLatchPromiseDataHandler *promiseHandler;
+@property (copy, nonatomic) NSArray *promiseNodes;
+@property (copy, nonatomic) NSArray *promisePaths;
+@property (retain, nonatomic) NSMutableArray *injectCallbackIDs;
+@property (copy, nonatomic) id /* block */ attachHandler;
+@property (retain, nonatomic) IESLatchAttachState *attachState;
+@property (retain, nonatomic) NSMutableDictionary *callbackHandlerMap;
+@property (retain, nonatomic) NSMutableDictionary *callbackResultMap;
+@property (nonatomic) double startProcessorTime;
+@property (nonatomic) double startAttachTime;
+@property (nonatomic) double initjsFinishTime;
+@property (retain, nonatomic) IESLatchFullLinkMonitor *fullLinkMonitor;
+@property (retain, nonatomic) NSString *transferType;
+@property (nonatomic) long long attachTimeout;
+@property (retain, nonatomic) NSDictionary *cachedPrefMetric;
+@property (retain, nonatomic) NSString *prefetchVertion;
+@property (retain, nonatomic) NSString *templateVertion;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)stopProcess;
+- (void)onWorker:(id)a0 receiveMessage:(id)a1;
+- (void)onWorker:(id)a0 receiveError:(id)a1;
+- (BOOL)checkPageVersion:(id)a0 url:(id)a1;
+- (void)onLatchMonitorFinish:(id)a0;
+- (id)initWithContainer:(id)a0 business:(id)a1 delegate:(id)a2;
+- (void)recordIODuration:(double)a0;
+- (void)reportJsbPromiseResult:(id)a0;
+- (void)attachWithCompletion:(id /* block */)a0;
+- (void)reportWithPerfMetric:(id)a0;
+- (void)reportWithResult:(id)a0;
+- (BOOL)evaluateUrlJSData:(id)a0;
+- (void)lynxModule:(id)a0 didRegisterXbridgeWithCost:(double)a1;
+- (void)lynxModule:(id)a0 startCall:(id)a1 forCallbackID:(id)a2;
+- (void)lynxModule:(id)a0 didCatchData:(id)a1 forCallbackID:(id)a2;
+- (id)getGlobalProps;
+- (void)module:(id)a0 onReturn:(id)a1;
+- (id)getInitialPropsWithKey:(id)a0;
+- (void)module:(id)a0 onErrorWithOccasion:(long long)a1 message:(id)a2 extra:(id)a3;
+- (void)module:(id)a0 onLogWithOccasion:(long long)a1 message:(id)a2;
+- (void)module:(id)a0 onInitJsFinishWithStartTime:(double)a1;
+- (void)module:(id)a0 onAttach:(id)a1;
+- (void)p_generateAttachStateIfNeededWithCode:(long long)a0;
+- (id)p_getAttachSuccessResult;
+- (void)p_monitorPrefetchCallbackIfNeeded;
+- (void)p_checkIfDone;
+- (void)p_generateAttachStateIfNeededWithCode:(long long)a0 message:(id)a1;
+- (void)p_generateAttachStateIfNeededWithCode:(long long)a0 message:(id)a1 extra:(id)a2;
+- (void)p_monitorPrefetchDuration;
+- (void)p_generatePromiseNodesAndPathsWithValue:(id)a0;
+- (BOOL)p_injectForPromiseNodesIfNeeded;
+- (id)latchContainer;
+- (BOOL)checkPageVersionInternal;
+- (void)onWorker:(id)a0 readyToEvaluateWithTimeStamp:(double)a1;
+- (void).cxx_destruct;
+- (id)containerID;
+
+@end

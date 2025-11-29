@@ -1,0 +1,3 @@
+@interface HTSLiveIntercommunicateSyncdataRoot : GPBRootObject
+
+@end

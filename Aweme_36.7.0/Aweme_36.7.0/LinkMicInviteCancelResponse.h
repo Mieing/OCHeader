@@ -1,0 +1,10 @@
+@class LinkMicInviteCancelResponse_ResponseData;
+
+@interface LinkMicInviteCancelResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LinkMicInviteCancelResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

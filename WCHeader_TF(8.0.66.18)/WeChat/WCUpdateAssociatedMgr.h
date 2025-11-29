@@ -1,0 +1,85 @@
+@class NSMutableDictionary;
+
+@interface WCUpdateAssociatedMgr : NSObject
+
+@property (retain, nonatomic) NSMutableDictionary *methodSignatureSelectorDict;
+@property (retain, nonatomic) NSMutableDictionary *selectorObjectNameDict;
+
++ (id)shareInstance;
++ (void)addMethodForClass:(Class)a0 forSel:(SEL)a1 withMethodType:(const char *)a2 withPolicty:(unsigned long long)a3;
++ (SEL)associateObjectForGetterName:(id)a0;
++ (SEL)associateObjectForSetterName:(id)a0;
+
+- (id)init;
+- (void)keepStuffFromStrip;
+- (void)centerSetLongLongAtomic:(long long)a0;
+- (void)centerSetLongLongNonAtomic:(long long)a0;
+- (long long)centerGetLongLong;
+- (void)centerSetUnsignedLongLongAtomic:(unsigned long long)a0;
+- (void)centerSetUnsignedLongLongNonAtomic:(unsigned long long)a0;
+- (unsigned long long)centerGetUnsignedLongLong;
+- (void)centerSetBOOLAtomic:(BOOL)a0;
+- (void)centerSetBOOLNonAtomic:(BOOL)a0;
+- (BOOL)centerGetBOOL;
+- (void)centerSetCharAtomic:(char)a0;
+- (void)centerSetCharNonAtomic:(char)a0;
+- (char)centerGetChar;
+- (void)centerSetUnsignedCharAtomic:(unsigned char)a0;
+- (void)centerSetUnsignedCharNonAtomic:(unsigned char)a0;
+- (unsigned char)centerGetUnsignedChar;
+- (void)centerSetIntAtomic:(int)a0;
+- (void)centerSetIntNonAtomic:(int)a0;
+- (int)centerGetInt;
+- (void)centerSetUnsignedIntAtomic:(unsigned int)a0;
+- (void)centerSetUnsignedIntNonAtomic:(unsigned int)a0;
+- (unsigned int)centerGetUnsignedInt;
+- (void)centerSetShortAtomic:(short)a0;
+- (void)centerSetShortNonAtomic:(short)a0;
+- (short)centerGetShort;
+- (void)centerSetUnsignedShortAtomic:(unsigned short)a0;
+- (void)centerSetUnsignedShortNonAtomic:(unsigned short)a0;
+- (unsigned short)centerGetUnsignedShort;
+- (void)centerSetFloatAtomic:(float)a0;
+- (void)centerSetFloatNonAtomic:(float)a0;
+- (float)centerGetFloat;
+- (void)centerSetDoubleAtomic:(double)a0;
+- (void)centerSetDoubleNonAtomic:(double)a0;
+- (double)centerGetDouble;
+- (void)centerSetIDAssign:(id)a0;
+- (void)centerSetIDRetainNonAtomic:(id)a0;
+- (void)centerSetIDCopyNonAtomic:(id)a0;
+- (void)centerSetIDRetain:(id)a0;
+- (void)centerSetIDCopy:(id)a0;
+- (id)centerGetID;
+- (void)centerSetIDWeak:(id)a0;
+- (id)centerGetWeakID;
+- (void)centerSetSELAtomic:(SEL)a0;
+- (void)centerSetSELNonatomic:(SEL)a0;
+- (SEL)centerGetSEL;
+- (void)centerSetCGSizeAtomic:(struct CGSize { double x0; double x1; })a0;
+- (void)centerSetCGSizeNonAtomic:(struct CGSize { double x0; double x1; })a0;
+- (struct CGSize { double x0; double x1; })centerGetCGSize;
+- (void)centerSetCGPointAtomic:(struct CGPoint { double x0; double x1; })a0;
+- (void)centerSetCGPointNonAtomic:(struct CGPoint { double x0; double x1; })a0;
+- (struct CGPoint { double x0; double x1; })centerGetCGPoint;
+- (void)centerSetCGVectorAtomic:(struct CGVector { double x0; double x1; })a0;
+- (void)centerSetCGVectorNonAtomic:(struct CGVector { double x0; double x1; })a0;
+- (struct CGVector { double x0; double x1; })centerGetCGVector;
+- (void)centerSetCGRectAtomic:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)centerSetCGRectNonAtomic:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })centerGetCGRect;
+- (void)centerSetCGTransformAtomic:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a0;
+- (void)centerSetCGTransformNonAtomic:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a0;
+- (struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })centerGetCGTransform;
+- (void)centerSetUIEdgeInsetsAtomic:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
+- (void)centerSetUIEdgeInsetsNonAtomic:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })centerGetUIEdgeInsets;
+- (void)centerSetUIOffsetAtomic:(struct UIOffset { double x0; double x1; })a0;
+- (void)centerSetUIOffsetNonAtomic:(struct UIOffset { double x0; double x1; })a0;
+- (struct UIOffset { double x0; double x1; })centerGetUIOffset;
+- (void)centerSetNSRangeAtomic:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a0;
+- (void)centerSetNSRangeNonAtomic:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a0;
+- (struct _NSRange { unsigned long long x0; unsigned long long x1; })centerGetNSRange;
+- (void).cxx_destruct;
+
+@end

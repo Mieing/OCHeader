@@ -1,0 +1,12 @@
+@class TIMXPBNMessageBody, TIMXPBNConversationCoreInfo;
+
+@interface TIMXPBNConversationMessageMatch : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNConversationCoreInfo *conv;
+@property (nonatomic) BOOL hasConv;
+@property (retain, nonatomic) TIMXPBNMessageBody *msg;
+@property (nonatomic) BOOL hasMsg;
+
++ (id)descriptor;
+
+@end

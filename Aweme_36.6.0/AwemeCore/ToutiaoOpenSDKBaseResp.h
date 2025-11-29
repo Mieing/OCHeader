@@ -1,0 +1,15 @@
+@class NSString, ToutiaoOpenSDKBaseReq;
+
+@interface ToutiaoOpenSDKBaseResp : NSObject
+
+@property (copy, nonatomic) NSString *responseId;
+@property (copy, nonatomic) NSString *lang;
+@property (copy, nonatomic) NSString *country;
+@property (retain, nonatomic) ToutiaoOpenSDKBaseReq *originalBaseReq;
+@property (nonatomic) long long errCode;
+@property (copy, nonatomic) NSString *errString;
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

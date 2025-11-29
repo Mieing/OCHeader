@@ -1,0 +1,7 @@
+@interface BDPMapAsset : NSObject
+
++ (id)bdp_defaultMarkerShadowImage;
++ (id)bdp_defaultUserLocationImage;
++ (id)bdp_defaultMarkerImage;
+
+@end

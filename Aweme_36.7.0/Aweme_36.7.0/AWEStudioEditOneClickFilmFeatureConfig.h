@@ -1,0 +1,3 @@
+@interface AWEStudioEditOneClickFilmFeatureConfig : AWEStudioComposerBaseFeatureConfig
+
+@end

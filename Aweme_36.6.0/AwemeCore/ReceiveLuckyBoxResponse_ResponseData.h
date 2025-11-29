@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface ReceiveLuckyBoxResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *receiveInfoArray;
+@property (readonly, nonatomic) unsigned long long receiveInfoArray_Count;
+
++ (id)descriptor;
+
+@end

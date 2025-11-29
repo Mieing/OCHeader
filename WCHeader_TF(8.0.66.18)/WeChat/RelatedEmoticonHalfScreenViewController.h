@@ -1,0 +1,76 @@
+@class CEmoticonWrap, EmoticonRecommendMessageContext, UICollectionView, EmoticonPreviewWindowViewController, FTSWebSearchMgr, NSMutableArray, NSString, UILongPressGestureRecognizer, WSSImilarPageModel, UICollectionViewFlowLayout, MMUIActivityIndicatorView, RelatedEmoticonCollectionFooterView, MMUILabel, RelatedEmoticonReportObject, CADisplayLink, NSIndexPath;
+@protocol RelatedEmoticonHalfScreenViewControllerDelegate;
+
+@interface RelatedEmoticonHalfScreenViewController : MMUIHalfScreenViewController <MMTipsViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, EmoticonPreviewWindowViewControllerDelegate, WebSearchMgrDelegate>
+
+@property (retain, nonatomic) NSString *chatId;
+@property (retain, nonatomic) CEmoticonWrap *relatedEmoticonWrap;
+@property (retain, nonatomic) WSSImilarPageModel *similarEmoticonModel;
+@property (retain, nonatomic) RelatedEmoticonReportObject *reportObject;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *collectionLayout;
+@property (retain, nonatomic) EmoticonPreviewWindowViewController *emoticonPreview;
+@property (retain, nonatomic) UILongPressGestureRecognizer *longPressGesture;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (retain, nonatomic) CEmoticonWrap *currentEmoticonWrap;
+@property (nonatomic) BOOL hasAddObserver;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (retain, nonatomic) MMUIActivityIndicatorView *loadingIndicator;
+@property (retain, nonatomic) MMUILabel *loadingTipLabel;
+@property (retain, nonatomic) RelatedEmoticonCollectionFooterView *footerView;
+@property (retain, nonatomic) FTSWebSearchMgr *webSearchMgr;
+@property (nonatomic) unsigned long long fetchStatus;
+@property (retain, nonatomic) NSString *webSearchSessionId;
+@property (retain, nonatomic) NSString *lastRequestId;
+@property (retain, nonatomic) NSString *searchId;
+@property (nonatomic) long long offset;
+@property (retain, nonatomic) NSMutableArray *similarItems;
+@property (nonatomic) double itemWidth;
+@property (nonatomic) unsigned long long itemCount;
+@property (nonatomic) double itemSpacing;
+@property (weak, nonatomic) id<RelatedEmoticonHalfScreenViewControllerDelegate> delegate;
+@property (retain, nonatomic) EmoticonRecommendMessageContext *relatedEmoticonMessageContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (id)initWithChatId:(id)a0 relatedEmoticonWrap:(id)a1;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidBePresented:(BOOL)a0;
+- (void)viewWillBeDismissed:(BOOL)a0;
+- (void)initView;
+- (void)initData;
+- (void)fetchNextSimilarPage;
+- (void)setupAnimateTransitionBlocks;
+- (void)invalidateDisplayLink;
+- (void)onContentViewTopChanged:(id)a0;
+- (double)animateContentViewTop;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)onLongPressToPreview:(id)a0;
+- (void)showEmoticonPreviewForWrap:(id)a0 description:(id)a1 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2 index:(unsigned long long)a3;
+- (void)onFinishPreviewAndChangeToPid:(id)a0;
+- (void)onShouldShowEmoticonDetailPage:(id)a0;
+- (void)reportEmoticonExposure;
+- (unsigned long long)maximumNumberOfItemsInRow;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (void)calItemWidthAndCount;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidTransitionToNewSize;
+- (void)onSearchSimilarEmoticon:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,49 @@
+@interface AWESearchVisionSettingsManager : NSObject
+
++ (BOOL)showNewLargeFontStyle;
++ (BOOL)fixWriteDynamicCardOuterIndexEnable;
++ (BOOL)visionSupportCardThemeGlobalProps;
++ (id)searchScanCachalotCacheConfig;
++ (id)searchScanCameraPopEntranceConfig;
++ (BOOL)fixSearchSampleGuideBugfix;
++ (BOOL)visionPushResultVCEnable;
++ (id)visualSearchTextStrategyConfigPool;
++ (BOOL)searchVisionCancelBoxLimitSettings;
++ (BOOL)fixSearchVisionScanModeDetectionEnable;
++ (BOOL)fixSearchVisionEnableReplaceBlurredImage;
++ (BOOL)searchVisionImageText3HideShadowView;
++ (BOOL)fixVisionTopViewBoxImageWrongEnable;
++ (BOOL)fixSearchVisionEnableUIGraphicsImageRenderer;
++ (BOOL)fixSearchVisionFixQuestionSearchBoxBothShowEnable;
++ (BOOL)fixVisionTopViewImageNilCrashEnable;
++ (BOOL)searchVisionImageGuideTrackVisualPicTimeDiffEnable;
++ (id)aiCardIdStringArray;
++ (BOOL)enableScanResultForceInvalidateLayoutChange;
++ (BOOL)searchVisionVerticalMergeAllPropertyKeysOptEnable;
++ (BOOL)fixVisionUseComponentViewModelSectionIndexEnable;
++ (BOOL)visionAIResultVCEnableAsyncProcess;
++ (BOOL)fixVisionFixRequestReturn;
++ (BOOL)fixVisionLoadMoreShowErrorEnable;
++ (BOOL)searchVisionAiLoadmoreAppendDataWithRoot;
++ (BOOL)searchVisionLoadmoreStatusOptimization;
++ (BOOL)enableScanResultTuringVerify;
++ (BOOL)visionSupportPageDurationTrack;
++ (BOOL)searchVisionForceReturnWhenPanRightSide;
++ (BOOL)searchVisionDisableSwitchQuestionWhenPanLeftSide;
++ (BOOL)fixVisionResultPageSwitchTabDoubleBoxEnable;
++ (BOOL)fixVisionPresentJudgeEnable;
++ (BOOL)visionSupportSearchPageExitTrack;
++ (BOOL)fixSearchScanPageFixExitCamera;
++ (id)searchVisualPuctureDetailSchema;
++ (BOOL)searchVisionVideoTagMonitorSettings;
++ (BOOL)searchVisionVideoTagActionSettings;
++ (BOOL)searchScanFromGeneralUseTargetChannel;
++ (BOOL)useTransitionNotUpdatePlayer;
++ (BOOL)visionSupportScreenWidthGlobalProps;
++ (BOOL)visionEnableDrawFromCacheOptimize;
++ (BOOL)visionOnlineEventMonitorEnable;
++ (BOOL)visionOnlineMethodMonitorEnable;
++ (id)separateRenderBlockListForVision;
++ (id)lynxRecycledBlacklistForVision;
+
+@end

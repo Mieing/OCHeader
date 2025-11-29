@@ -1,0 +1,10 @@
+@class DSLDetail;
+
+@interface DSLContainer : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DSLDetail *dslDetail;
+@property (nonatomic) BOOL hasDslDetail;
+
++ (id)descriptor;
+
+@end

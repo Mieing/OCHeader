@@ -1,0 +1,3 @@
+@interface AWECreateSubAccountConfig : NSObject
+
+@end

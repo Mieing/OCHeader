@@ -1,0 +1,11 @@
+@class AWEPageContext;
+@protocol AWERVDetailPageContextControlViewProtocol;
+
+@interface AWEVideoPlayControlBaseController : AWEDemaciaBaseController
+
+@property (weak, nonatomic) AWEPageContext<AWERVDetailPageContextControlViewProtocol> *context;
+
+- (id)contextShouldConformProtocolList;
+- (id)context;
+
+@end

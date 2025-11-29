@@ -1,0 +1,3 @@
+@interface _TtC13AWEStoryCacheP33_506908BA896A9E5F6911A41F9142DC1216StoryCacheDomain : _TtCs12_SwiftObject
+
+@end

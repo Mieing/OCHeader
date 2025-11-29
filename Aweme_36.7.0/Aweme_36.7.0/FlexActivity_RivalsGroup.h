@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface FlexActivity_RivalsGroup : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) NSMutableArray *rivalsArray;
+@property (readonly, nonatomic) unsigned long long rivalsArray_Count;
+
++ (id)descriptor;
+
+@end

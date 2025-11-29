@@ -1,0 +1,10 @@
+@class GPBInt32Value;
+
+@interface CGPBusinessSessionMode : GPBMessage
+
+@property (retain, nonatomic) GPBInt32Value *sessionMode;
+@property (nonatomic) BOOL hasSessionMode;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString, GPBInt64Array;
+
+@interface PopularStatusResponse_PopularStatus : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *prompt;
+@property (nonatomic) int localStatus;
+@property (retain, nonatomic) GPBInt64Array *optionsArray;
+@property (readonly, nonatomic) unsigned long long optionsArray_Count;
+@property (nonatomic) int recommendStatus;
+
++ (id)descriptor;
+
+@end

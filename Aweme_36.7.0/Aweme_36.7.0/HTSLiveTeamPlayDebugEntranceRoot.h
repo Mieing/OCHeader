@@ -1,0 +1,3 @@
+@interface HTSLiveTeamPlayDebugEntranceRoot : GPBRootObject
+
+@end

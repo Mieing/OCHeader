@@ -1,0 +1,8 @@
+@interface HTSLiveRefreshParams : IESLivePBBaseMessage
+
+@property (nonatomic) int refreshMechanism;
+@property (nonatomic) long long pollingInterval;
+
++ (id)descriptor;
+
+@end

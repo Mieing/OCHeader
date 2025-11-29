@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveUMGWCustomData : GPBMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *value;
+
++ (id)descriptor;
+
+@end

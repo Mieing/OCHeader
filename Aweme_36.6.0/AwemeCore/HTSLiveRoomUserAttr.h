@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveRoomUserAttr : IESLivePBBaseMessage
+
+@property (nonatomic) long long roomId;
+@property (copy, nonatomic) NSString *roomIdStr;
+@property (nonatomic) long long silenceFlag;
+@property (nonatomic) long long adminFlag;
+@property (nonatomic) long long rank;
+
++ (id)descriptor;
+
+@end

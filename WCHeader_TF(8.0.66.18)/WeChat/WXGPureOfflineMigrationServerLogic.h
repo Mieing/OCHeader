@@ -1,0 +1,82 @@
+@class ChatMigrationHeartBeatMonitor, NSString, WXGLocalAreaCommunicationServer, WXGBackupDataMgr, NSDictionary, WXGBackupDataInfo, WXGChatLogProtoHandler, NSObject, NSMutableArray, MMTimer;
+@protocol OS_dispatch_queue, WXGPureOfflineMigrationServerLogicDelegate;
+
+@interface WXGPureOfflineMigrationServerLogic : NSObject <LocalAreaCommunicationServerDelegate, ChatMigrationHeartBeatMonitorDelegate> {
+    NSObject<OS_dispatch_queue> *_processLogicQueue;
+    NSObject<OS_dispatch_queue> *_getDataLogicQueue;
+    BOOL _bServerStop;
+    BOOL _bStartTransfer;
+    int _chatMigrationType;
+    int _peerMigrationVersion;
+    long long _peerSupportExt;
+    ChatMigrationHeartBeatMonitor *_heartBeatMonitor;
+    MMTimer *_sendHeartBeatTimer;
+    double _heartTimerCheckInterval;
+    double _transferDataStartTime;
+    NSMutableArray *_sendingArray;
+    WXGBackupDataInfo *_backupDataInfo;
+    NSString *_lastBackupSesionName;
+    unsigned long long _currentSessionCount;
+    unsigned long long _totalSessionCount;
+    unsigned long long _transferredSize;
+    BOOL _bFirstTag;
+    WXGLocalAreaCommunicationServer *_networkHandler;
+    BOOL _sendFinish;
+}
+
+@property (retain, nonatomic) WXGChatLogProtoHandler *protoHandler;
+@property (retain, nonatomic) WXGBackupDataMgr *dataMgr;
+@property (retain, nonatomic) NSDictionary *selectedSession;
+@property (weak, nonatomic) id<WXGPureOfflineMigrationServerLogicDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)onSwitchContext;
+- (void)chooseUserResult:(int)a0;
+- (void)chooseAllOrNewResult:(BOOL)a0;
+- (void)startNetworkServer;
+- (void)startPeerServer;
+- (void)stopServerLogic;
+- (void)processData:(id)a0 withLength:(unsigned int)a1;
+- (void)processAuthenticateRequestData:(id)a0;
+- (void)processChooseUserRequestData:(id)a0;
+- (void)processStartRequestData:(id)a0;
+- (void)processSelectTypeRequestData:(id)a0;
+- (void)processRequestSessionResponseData:(id)a0;
+- (void)processDataPushResponseData:(id)a0;
+- (void)processBackupDataTagResponseData:(id)a0;
+- (void)processHeartBeatRequestData:(id)a0;
+- (void)processHeartBeatResponseData:(id)a0;
+- (void)processCancelRequestData:(id)a0;
+- (BOOL)isSupportPureOfflineMigration;
+- (BOOL)isSupportWXAM;
+- (BOOL)isSupportTimeSelect;
+- (BOOL)isSupportQuickMigration;
+- (BOOL)sendData:(id)a0;
+- (void)sendChooseUserResponse:(int)a0;
+- (void)sendRequestSession;
+- (void)sendLotOfDataPush;
+- (void)sendNextDataPushWithResponseID:(id)a0;
+- (void)sendBackupOutputToRemote:(id)a0;
+- (void)processDataInfoAndSendTag:(id)a0;
+- (void)sendFinishRequest;
+- (void)onServerConnected;
+- (void)onServerDisconnect;
+- (void)onServerReciveData:(id)a0 andLength:(unsigned int)a1;
+- (void)onServerTransferSendSpeed:(float)a0 sendLength:(unsigned long long)a1 receiveSpeed:(float)a2 receiveLength:(unsigned long long)a3;
+- (void)resetSendHeartBeatTimer;
+- (void)sendHeartBeat;
+- (void)sendHeartBeatResponseWithAck:(unsigned long long)a0;
+- (void)sendHeartBeatRequestWithAck:(unsigned long long)a0;
+- (void)onHeartBeatOK;
+- (void)onHeartBeatLate;
+- (void)onHeartBeatAckIDWrong;
+- (void)onHeartBeatPacketSendWithAckID:(unsigned long long)a0;
+- (void)notifyOnMainthread:(unsigned long long)a0;
+- (void)notifyOnMainThreadCurrentSession:(unsigned long long)a0 totalSession:(unsigned long long)a1;
+- (void).cxx_destruct;
+
+@end

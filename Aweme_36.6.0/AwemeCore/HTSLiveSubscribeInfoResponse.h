@@ -1,0 +1,10 @@
+@class HTSLiveSubscribeInfoResponse_Data;
+
+@interface HTSLiveSubscribeInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveSubscribeInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,76 @@
+@class UIView, NSString, ACCSequencePreviewViewConfig, UIButton, ACCReorderableForCollectionViewFlowLayout, CAGradientLayer, UICollectionView, NSIndexPath;
+@protocol ACCSequencePreviewViewDataSource, ACCSequencePreViewDeleteViewProtocol, ACCSequencePreviewViewDelegate;
+
+@interface ACCSequencePreviewView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, ACCReorderableForCollectionViewDataSource, ACCReorderableForCollectionViewDelegateFlowLayout>
+
+@property (retain, nonatomic) ACCSequencePreviewViewConfig *config;
+@property (retain, nonatomic) ACCReorderableForCollectionViewFlowLayout *previewLayout;
+@property (retain, nonatomic) UIView *currentView;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UIView *gradientContainerView;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (retain, nonatomic) NSIndexPath *selectedItemIndexPath;
+@property (nonatomic) BOOL isDeleteAction;
+@property (nonatomic) BOOL allowAutoScroll;
+@property (nonatomic) BOOL isAnimating;
+@property (nonatomic) struct CGPoint { double x; double y; } lastContentOffsetBeforeSmallAnimation;
+@property (nonatomic) BOOL shouldShowAddButtonCollectionViewCell;
+@property (weak, nonatomic) id<ACCSequencePreviewViewDelegate> delegate;
+@property (weak, nonatomic) id<ACCSequencePreviewViewDataSource> dataSource;
+@property (retain, nonatomic) UIView<ACCSequencePreViewDeleteViewProtocol> *deleteView;
+@property (retain, nonatomic) UIButton *addButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)cellForItemAtIndex:(unsigned long long)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 config:(id)a1;
+- (void)enableAutoScroll;
+- (void)clickOnAddButton;
+- (BOOL)accReorderableCollectionView:(id)a0 itemAtIndexPath:(id)a1 canMoveToIndexPath:(id)a2;
+- (void)accReorderableCollectionView:(id)a0 itemAtIndexPath:(id)a1 willMoveToIndexPath:(id)a2;
+- (void)accReorderableCollectionView:(id)a0 itemAtIndexPath:(id)a1 didMoveToIndexPath:(id)a2;
+- (BOOL)accReorderableCollectionView:(id)a0 canMoveItemAtIndexPath:(id)a1;
+- (void)accReorderableCollectionView:(id)a0 layout:(id)a1 willBeginDraggingItemAtIndexPath:(id)a2;
+- (void)accReorderableCollectionView:(id)a0 layout:(id)a1 didBeginDraggingItemAtIndexPath:(id)a2;
+- (void)accReorderableCollectionView:(id)a0 layout:(id)a1 willEndDraggingItemAtIndexPath:(id)a2;
+- (void)accReorderableCollectionView:(id)a0 layout:(id)a1 didEndDraggingItemAtIndexPath:(id)a2;
+- (void)accReorderableCollectionView:(id)a0 layout:(id)a1 didDragItemAtIndexPath:(id)a2 currentView:(id)a3;
+- (void)layoutCollectionView;
+- (id)buildPreviewLayoutWithConfig:(id)a0;
+- (id)buildGradientContainerView;
+- (id)buildCollectionViewWithLayout:(id)a0 cellClass:(Class)a1 identifier:(id)a2;
+- (BOOL)shouldHiddenExtraAddButton;
+- (id)buildAddButton;
+- (BOOL)shouldShowEmbededAddButton;
+- (double)previewCollectionWidth;
+- (double)allItemCollectionWidth;
+- (void)p_setGradientMaskLayer;
+- (id)addButtonImageName;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })p_gradientLayerFrame;
+- (void)unfoldGradientLayer;
+- (void)foldGradientLayer;
+- (void)updateDeleteStateWithCurrentView:(id)a0;
+- (void)collectionViewMasksToBounds:(BOOL)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })p_gradientLayerFrameWithMaxWidth;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })p_gradientLayerFrameWithWidth:(double)a0;
+- (void)reloadItemAtIndexPath:(id)a0;
+- (void)showSmallAnimation:(BOOL)a0;
+- (void)showExpansionAnimation:(BOOL)a0;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)willMoveToSuperview:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)setupUI;
+- (void)scrollToIndex:(long long)a0 animated:(BOOL)a1;
+
+@end

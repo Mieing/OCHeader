@@ -1,0 +1,11 @@
+@class NSMutableDictionary;
+
+@interface HTSLivePreviewExtendAreaSyncData_ActionConfig : IESLivePBBaseMessage
+
+@property (nonatomic) int areaAction;
+@property (retain, nonatomic) NSMutableDictionary *actionPrams;
+@property (readonly, nonatomic) unsigned long long actionPrams_Count;
+
++ (id)descriptor;
+
+@end

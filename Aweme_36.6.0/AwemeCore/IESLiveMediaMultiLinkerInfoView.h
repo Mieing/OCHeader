@@ -1,0 +1,72 @@
+@class UIView, IESLiveMediaMultiLinkerLoadingView, NSString, IESLiveAudiencePauseTipView, IESLiveMediaMultiLinkerProfileView, HTSLiveGradientBackgroundView, UIButton, IESLiveIntercomCommentMediaEntranceView, IESLiveMediaMultiLinkerFocusProfileView, HTSLiveInteractiveAPIV2;
+@protocol IESLiveInteractUserModel, IESLiveMediaMultiLinkerProvider;
+
+@interface IESLiveMediaMultiLinkerInfoView : UIView <IESLiveCommunityInteractAnchorActionPanelDelegate, IESLiveMediaMultiLinkerGridViewProtocol>
+
+@property (retain, nonatomic) id<IESLiveInteractUserModel> user;
+@property (nonatomic) BOOL didUpdateUser;
+@property (nonatomic) BOOL isAnchor;
+@property (nonatomic) BOOL isHiddenProfileView;
+@property (retain, nonatomic) IESLiveAudiencePauseTipView *tipView;
+@property (retain, nonatomic) HTSLiveGradientBackgroundView *tipBackgroundView;
+@property (retain, nonatomic) IESLiveMediaMultiLinkerProfileView *profileView;
+@property (retain, nonatomic) IESLiveIntercomCommentMediaEntranceView *intercomCommentView;
+@property (weak, nonatomic) id<IESLiveMediaMultiLinkerProvider> provider;
+@property (retain, nonatomic) UIButton *closeMicButton;
+@property (nonatomic) BOOL isMute;
+@property (retain, nonatomic) HTSLiveInteractiveAPIV2 *api;
+@property (nonatomic) unsigned long long layoutType;
+@property (retain, nonatomic) IESLiveMediaMultiLinkerFocusProfileView *focusProfileView;
+@property (nonatomic) BOOL hasRegisterFollowStatus;
+@property (nonatomic) BOOL hasBannedToast;
+@property (weak, nonatomic) UIView *tipViewSuperview;
+@property (nonatomic) BOOL didUpdate;
+@property (retain, nonatomic) IESLiveMediaMultiLinkerLoadingView *loadingView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)bindAction;
+- (void)updateLoadingStatus:(BOOL)a0;
+- (void)updateActive:(BOOL)a0;
+- (void)kickoutUser:(id)a0;
+- (void)openUserCard:(id)a0;
+- (void)muteUser:(BOOL)a0 uid:(id)a1;
+- (void)followUser:(BOOL)a0 uid:(id)a1;
+- (void)focusInAll:(BOOL)a0 uid:(id)a1;
+- (void)onCloseMicButtonClicked;
+- (void)addTapGrsture;
+- (void)onClearScreenMode:(id)a0;
+- (void)loadIntercomCommentView;
+- (double)viewPadBottomOffset;
+- (void)updateCommentViewLayout;
+- (void)updateProfileViewHidden;
+- (void)fetchFollowStatusIfNeeded;
+- (id)p_makeGradientViewFromPoint:(struct CGPoint { double x0; double x1; })a0 toPoint:(struct CGPoint { double x0; double x1; })a1 fromColor:(id)a2 toColor:(id)a3;
+- (void)updateMuteButtonHidden;
+- (void)showCloseMicPanel;
+- (BOOL)needHiddenProfileViewInFocus;
+- (double)p_getProfileViewPadBottomOffset;
+- (void)onReceivedClearNotification:(BOOL)a0;
+- (void)updateCloseMic;
+- (void)showUserProfilePanel:(id)a0;
+- (void)onFollowClicked:(id)a0;
+- (void)onUnfollowClicked;
+- (void)updateUserInfoWithUser:(id)a0;
+- (void)updateLayoutWithType:(unsigned long long)a0;
+- (void)p_showOrHideTipView:(BOOL)a0;
+- (void)doProfileViewAnimationOnScreenClear:(BOOL)a0;
+- (id)buildFollowEvent:(id)a0;
+- (void)refreshTipViewIfNeeded;
+- (id)initWithDIContext:(id)a0 isAnchor:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (BOOL)isInFocus;
+- (void)setupUI;
+- (void)updateUser:(id)a0;
+- (void)tapAction:(id)a0;
+
+@end

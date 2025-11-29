@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNSendMessageP2PResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *failedUserArray;
+@property (readonly, nonatomic) unsigned long long failedUserArray_Count;
+
++ (id)descriptor;
+
+@end

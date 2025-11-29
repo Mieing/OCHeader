@@ -1,0 +1,84 @@
+@class MMMusicMVTrackItemLocalPic, NSString, FinderMVInfo_ClientDraftInfo, WCFinderDataItem, NSMutableArray, MMMusicMVTrackItemLocalVideo;
+
+@interface MMMusicMVTrackItem : NSObject <PBCoding, NSCopying>
+
+@property (nonatomic) unsigned long long timeOffsetInMvMs;
+@property (nonatomic) unsigned int timeLengthInMvMs;
+@property (nonatomic) unsigned long long refObjectId;
+@property (retain, nonatomic) NSString *refNonceId;
+@property (nonatomic) unsigned long long timeOffsetInClipMs;
+@property (nonatomic) unsigned int isFirstUpload;
+@property (retain, nonatomic) NSString *localObjectId;
+@property (nonatomic) unsigned long long uploadState;
+@property (retain, nonatomic) MMMusicMVTrackItemLocalVideo *localVideo;
+@property (retain, nonatomic) MMMusicMVTrackItemLocalPic *localPic;
+@property (nonatomic) unsigned long long postingRefObjectId;
+@property (retain, nonatomic) NSString *postingRefNonceId;
+@property (nonatomic) unsigned long long postingClipOffsetMs;
+@property (nonatomic) unsigned long long postingVideoSource;
+@property (retain, nonatomic) WCFinderDataItem *dataItemForPreviewing;
+@property (nonatomic) unsigned long long previewingClipOffsetMs;
+@property (nonatomic) BOOL bFlexibleClipGapItem;
+@property (nonatomic) unsigned int videoDuration;
+@property (nonatomic) unsigned int imageAnimationType;
+@property (retain, nonatomic) NSMutableArray *featureList;
+@property (retain, nonatomic) NSString *transitionId;
+@property (nonatomic) unsigned long long mediaType;
+@property (retain, nonatomic) NSString *materialIdForReport;
+@property (retain, nonatomic) NSString *authorIdForReport;
+@property (nonatomic) int materialPosForReport;
+@property (nonatomic) unsigned long long materialFromForReport;
+@property (retain, nonatomic) NSString *reqIdForReport;
+@property (copy, nonatomic) NSString *uuid;
+@property (nonatomic) unsigned int materialType;
+@property (retain, nonatomic) NSString *localMaterialId;
+@property (nonatomic) unsigned long long localMaterialTimeOffsetInClipMs;
+@property (retain, nonatomic) FinderMVInfo_ClientDraftInfo *clientDraftInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_timeOffsetInMvMs;
++ (void)PBArrayAdd_timeLengthInMvMs;
++ (void)PBArrayAdd_refObjectId;
++ (void)PBArrayAdd_refNonceId;
++ (void)PBArrayAdd_timeOffsetInClipMs;
++ (void)PBArrayAdd_localObjectId;
++ (void)PBArrayAdd_localVideo;
++ (void)PBArrayAdd_postingRefObjectId;
++ (void)PBArrayAdd_postingRefNonceId;
++ (void)PBArrayAdd_postingClipOffsetMs;
++ (void)PBArrayAdd_postingVideoSource;
++ (void)PBArrayAdd_isFirstUpload;
++ (void)PBArrayAdd_featureList;
++ (void)PBArrayAdd_mediaType;
++ (void)PBArrayAdd_materialIdForReport;
++ (void)PBArrayAdd_authorIdForReport;
++ (void)PBArrayAdd_materialPosForReport;
++ (void)PBArrayAdd_materialFromForReport;
++ (void)PBArrayAdd_reqIdForReport;
++ (void)PBArrayAdd_imageAnimationType;
++ (void)PBArrayAdd_transitionId;
++ (void)PBArrayAdd_materialType;
++ (void)PBArrayAdd_localMaterialId;
++ (void)PBArrayAdd_localMaterialTimeOffsetInClipMs;
++ (void)PBArrayAdd_localPic;
++ (void)initialize;
+
+- (id)getPBPropertyTable;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (id)init;
+- (void)commonInit;
+- (id)initWithCoder:(id)a0;
+- (void)encodeWithCoder:(id)a0;
+- (BOOL)isSvrMode;
+- (unsigned long long)currentRefObjectId;
+- (id)currentRefNonceId;
+- (unsigned long long)currentClipOffsetMs;
+- (BOOL)isSlowVideo;
+- (unsigned long long)slowVideoLackTimeMs;
+- (BOOL)imageAnimationTypeIsValidValue:(int)a0;
+- (void).cxx_destruct;
+
+@end

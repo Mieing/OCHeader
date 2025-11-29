@@ -1,0 +1,10 @@
+@class IMInfoResponse_Data;
+
+@interface IMInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IMInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

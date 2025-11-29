@@ -1,0 +1,3 @@
+@interface AWELocateToCommodityTabMethodParamModel : BDXBridgeModel
+
+@end

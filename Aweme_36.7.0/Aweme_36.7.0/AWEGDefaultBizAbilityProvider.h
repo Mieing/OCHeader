@@ -1,0 +1,3 @@
+@interface AWEGDefaultBizAbilityProvider : AWEGDBizAbilityProvider
+
+@end

@@ -1,0 +1,86 @@
+@class NSString;
+
+@interface WAUpdatableMsgInfo : NSObject <WCTTableCoding>
+
+@property (retain, nonatomic) NSString *shareKey;
+@property (nonatomic) BOOL shouldUseUpdatableMsg;
+@property (nonatomic) BOOL shouldUseChattoolMsg;
+@property (retain, nonatomic) NSString *appId;
+@property (nonatomic) unsigned long long subscriptionEntryState;
+@property (nonatomic) BOOL isSystemPushFinished;
+@property (retain, nonatomic) NSString *subscriptionEntryContent;
+@property (retain, nonatomic) NSString *subscriptionEntryButtonWording;
+@property (retain, nonatomic) NSString *subscriptionConfirmedContent;
+@property (retain, nonatomic) NSString *expiredSubscribeWording;
+@property (retain, nonatomic) NSString *updatableContentText;
+@property (retain, nonatomic) NSString *updatableContentColor;
+@property (nonatomic) int updatableContentUpdateInterval;
+@property (nonatomic) unsigned int lastUpdateTime;
+@property (nonatomic) unsigned int updatableMsgType;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)shareKey;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_shareKey;
++ (const void *)shouldUseUpdatableMsg;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_shouldUseUpdatableMsg;
++ (const void *)appId;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_appId;
++ (const void *)subscriptionEntryState;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_subscriptionEntryState;
++ (const void *)isSystemPushFinished;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_isSystemPushFinished;
++ (const void *)subscriptionEntryContent;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_subscriptionEntryContent;
++ (const void *)subscriptionEntryButtonWording;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_subscriptionEntryButtonWording;
++ (const void *)subscriptionConfirmedContent;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (id)swift_subscriptionConfirmedContent;
++ (const void *)updatableContentText;
++ (const void *)__wcdb_synthesize_8:(void *)a0;
++ (id)swift_updatableContentText;
++ (const void *)updatableContentColor;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (id)swift_updatableContentColor;
++ (const void *)updatableContentUpdateInterval;
++ (const void *)__wcdb_synthesize_10:(void *)a0;
++ (id)swift_updatableContentUpdateInterval;
++ (const void *)lastUpdateTime;
++ (const void *)__wcdb_synthesize_11:(void *)a0;
++ (id)swift_lastUpdateTime;
++ (const void *)expiredSubscribeWording;
++ (const void *)__wcdb_synthesize_12:(void *)a0;
++ (id)swift_expiredSubscribeWording;
++ (const void *)updatableMsgType;
++ (const void *)__wcdb_synthesize_13:(void *)a0;
++ (id)swift_updatableMsgType;
++ (const void *)shouldUseChattoolMsg;
++ (const void *)__wcdb_synthesize_14:(void *)a0;
++ (id)swift_shouldUseChattoolMsg;
++ (void)__wcdb_column_constraint_15:(void *)a0;
++ (id)infoFromResp:(id)a0;
+
+- (BOOL)fromXML:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (id)toXML;
+- (BOOL)shouldUpdateNow;
+- (BOOL)isUpdateAllowed;
+- (unsigned int)nextTimeToUpdate;
+- (void).cxx_destruct;
+
+@end

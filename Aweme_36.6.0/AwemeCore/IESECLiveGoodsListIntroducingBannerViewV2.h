@@ -1,0 +1,77 @@
+@class UIImageView, IESECLiveGradientView, UILabel, IESECLiveContext, UIView, IESECLiveGoodsViewModel, NSString, IESECLiveListHotSaleView, IESECLiveGoodsTitleLabel, IESECLivePromotionCardBusinessParams, NSAttributedString, IESECLivePriceLabel, IESECLivePromotionCardConfigModel, IESECLiveStateBannerView;
+@protocol IESECLivePromotionCardViewActionDelegate, IESECLivePromotionCardBuyViewProtocol, IESECLivePromotionCardBusinessDelegate;
+
+@interface IESECLiveGoodsListIntroducingBannerViewV2 : UIView <IESECLiveListHotSaleViewDelegate, IESECLivePromotionCardViewProtocol>
+
+@property (retain, nonatomic) UIView *container;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) UIView *coverMaskView;
+@property (retain, nonatomic) IESECLiveGoodsTitleLabel *titleLabel;
+@property (retain, nonatomic) IESECLivePriceLabel *priceLabel;
+@property (retain, nonatomic) UIView<IESECLivePromotionCardBuyViewProtocol> *buyButton;
+@property (retain, nonatomic) IESECLiveListHotSaleView *hotsaleView;
+@property (retain, nonatomic) IESECLiveStateBannerView *introducingView;
+@property (retain, nonatomic) IESECLiveGradientView *buyButtonGradientView;
+@property (retain, nonatomic) IESECLivePromotionCardConfigModel *configModel;
+@property (retain, nonatomic) IESECLiveContext *liveContext;
+@property (retain, nonatomic) IESECLivePromotionCardBusinessParams *bizParams;
+@property (retain, nonatomic) IESECLiveGoodsViewModel *goodsViewModel;
+@property (weak, nonatomic) id<IESECLivePromotionCardBusinessDelegate> businessDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long viewStyle;
+@property (weak, nonatomic) id<IESECLivePromotionCardViewActionDelegate> delegate;
+@property (nonatomic) long long cardScene;
+@property (readonly, copy, nonatomic) NSAttributedString *priceAttributedText;
+@property (retain, nonatomic) UIView *goodsContainerView;
+@property (readonly, nonatomic) UILabel *indexLabel;
+@property (readonly, nonatomic) UIView *baseColorView;
+@property (readonly, nonatomic) UIView *coverContainer;
+
+- (void)updateParams;
+- (BOOL)buttonEnable;
+- (void)trackEvent:(id)a0 params:(id)a1 btmModel:(id)a2;
+- (void)getTagTrackModelsWithBlock:(id /* block */)a0;
+- (struct CGPoint { double x0; double x1; })addToCartButtonCenterToView:(id)a0;
+- (struct CGPoint { double x0; double x1; })addToCoverContainerCenterToView:(id)a0;
+- (void)trackIntroduceCellShowWithUniqueKey:(id)a0;
+- (void)updateCountDownModule:(id)a0;
+- (void)clickBlank;
+- (void)hotsaleView:(id)a0 changeToState:(long long)a1 hotsaleInfo:(id)a2;
+- (void)clickBuyButton;
+- (void)setupGoodsViewModel:(id)a0;
+- (void)appendGroupBuyAvatarWithURLString:(id)a0;
+- (void)setGoodsInfoSoldOutState;
+- (BOOL)isShowingReplayButton;
+- (BOOL)isShowingIntroducingView;
+- (BOOL)isShowingComboBuyView;
+- (id)getReplayButtonStatus;
+- (void)updateCloseViewType:(long long)a0;
+- (void)resizeIndexLabelInPlayback;
+- (void)setPlayBackCardStyle;
+- (void)setLiveReplayCardStyle;
+- (void)updatePlayBackRights:(BOOL)a0;
+- (void)setLiveSearchListCardStyle;
+- (id)initWithLiveContext:(id)a0 config:(id)a1 bizParams:(id)a2;
+- (void)updatePriceWithGoodsViewModelV2:(id)a0;
+- (void)updateCoverWithGoodsViewModelV2:(id)a0;
+- (void)updateTitleWithGoodsViewModelV2:(id)a0;
+- (void)updateBuyButtonWithGoodsViewModelV2:(id)a0;
+- (void)updateIntroducingViewWithGoodsViewModelV2:(id)a0;
+- (void)updateHotSaleViewWithGoodsViewModelV2:(id)a0;
+- (void)trackBSTShowEvent:(id)a0 params:(id)a1 uniqueKey:(id)a2;
+- (id)btmModelForInfo:(id)a0;
+- (id)p_goodsModelWithOrientationStatus:(id)a0;
+- (id)buyBtnUIConfig;
+- (void)trackProductClickWithParams:(id)a0 btmModel:(id)a1 extraInfo:(id)a2;
+- (BOOL)prepareClick;
+- (void)setupHotSaleAtmosphereWithModel:(id)a0 shouldShow:(BOOL)a1;
+- (id)p_updateSearchParams:(id)a0;
+- (void)p_setBuyButtonEnabeled:(BOOL)a0 vm:(id)a1;
+- (id)tracker;
+- (void).cxx_destruct;
+- (void)setupUI;
+
+@end

@@ -1,0 +1,75 @@
+@class NSArray, NSDictionary, IESLiveInteractDynamicFirstScreenService, NSString;
+@protocol IESLiveInteractDynamicContainerRoomAndFeedAbility, IESLiveInteractionModule, IESLiveInteractDynamicContainerProvider, IESLiveRoomService;
+
+@interface IESLiveInteractDynamicJSBService : NSObject <IESLiveSocialInteractPreLoadExAction, IESLiveAudioBackgroundActions, IESLiveLinkmicPreloadPushActions, IESLiveMessageInteractionModuleCommentAction, IESLiveRoomThemeActions, IESLiveAdministerPrivilegeChangedActions, IESLiveInteractionLinkerServiceAction, IESLiveInteractDynamicFirstScreenServiceDelegate>
+
+@property (weak, nonatomic) id<IESLiveInteractDynamicContainerProvider> dynamicContainerProvider;
+@property (copy, nonatomic) NSArray *lastSeatInfo;
+@property (copy, nonatomic) NSArray *lastPlayModes;
+@property (copy, nonatomic) NSArray *lastGuestInfos;
+@property (copy, nonatomic) NSDictionary *lastFanTicketInfo;
+@property (copy, nonatomic) NSArray *cacheGuestList;
+@property (nonatomic) BOOL serviceIsStart;
+@property (nonatomic) BOOL lynxSeatEnable;
+@property (weak, nonatomic) id<IESLiveInteractionModule> interactionModule;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } containerRect;
+@property (retain, nonatomic) NSArray *guestListDiffKeys;
+@property (retain, nonatomic) NSArray *seatListDiffKeys;
+@property (nonatomic) BOOL seatEventEnable;
+@property (nonatomic) BOOL enableDebug;
+@property (nonatomic) BOOL enableSmallCardOpt;
+@property (retain, nonatomic) IESLiveInteractDynamicFirstScreenService *firstScreenService;
+@property (nonatomic) BOOL isInRoom;
+@property (nonatomic) BOOL isFullScreenPreStreamView;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (weak, nonatomic) id<IESLiveInteractDynamicContainerRoomAndFeedAbility> provider;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (id)mapDictByReplaceAllNumberValueToString:(id)a0;
+- (void)currentLayoutUIDidBuild;
+- (void)currentLayoutUIFeatureDidUpdate;
+- (void)invokeEvent:(id)a0 params:(id)a1;
+- (void)updateWithTheme:(id)a0;
+- (id)allSeatProviderViews;
+- (void)didChangeLayoutFrom:(id)a0 toLayout:(id)a1;
+- (id)getLayout;
+- (void)updateAudienceRoomThemeData;
+- (void)audienceAdminChangePrivilege:(int)a0 isAdd:(BOOL)a1;
+- (id)getSettingPreloadList;
+- (void)didUpdatedGuestList:(id)a0;
+- (id)linkmicEnterInfo;
+- (void)receiveLinkmicEnterInfo:(id)a0;
+- (void)interactionLinkerServiceBeforeJoinChannel:(id)a0 success:(BOOL)a1;
+- (void)interactionLinkerServiceInteractWillStart:(id)a0;
+- (void)interactionLinkerServiceSilentInteractDidStart:(id)a0;
+- (void)interactionLinkerServiceInteractDidStart:(id)a0;
+- (void)interactionLinkerServiceInteractDidEnd:(id)a0 error:(id)a1;
+- (void)interactionLinkerService:(id)a0 interactReceiveError:(id)a1;
+- (void)joinIconDidChangeWithURLs:(id)a0;
+- (void)willChangeLayoutFrom:(id)a0 toLayout:(id)a1;
+- (BOOL)isCardFeed;
+- (id)buildFrameInfo;
+- (id)convertCGRectValueToDict:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)start:(id)a0 afterPreLoad:(BOOL)a1;
+- (void)didUpdatedFanTicket:(id)a0;
+- (void)firstScreenDataDidReady:(id)a0;
+- (id)commonLoaderParams:(BOOL)a0;
+- (id)linkmicParamsWithFrom:(id)a0 toLayout:(id)a1;
+- (void)didUpdatedGuestList:(id)a0 forceUpdate:(BOOL)a1;
+- (BOOL)compareSortedArrayEqualFrom:(id)a0 to:(id)a1 diffKeys:(id)a2;
+- (BOOL)compareDictionaries:(id)a0 withDict:(id)a1 forKeys:(id)a2;
+- (BOOL)compareSortedDictionaryEqualFrom:(id)a0 to:(id)a1;
+- (id)buildLayoutInfo;
+- (BOOL)containerRectEnable;
+- (id)linkmicLinkerDetail;
+- (void)keyboardWillHide;
+- (void)start:(id)a0;
+- (void).cxx_destruct;
+- (void)stop;
+- (void)dealloc;
+
+@end

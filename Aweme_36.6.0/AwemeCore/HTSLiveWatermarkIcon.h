@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface HTSLiveWatermarkIcon : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (nonatomic) long long iconWidth;
+@property (nonatomic) long long iconType;
+
++ (id)descriptor;
+
+@end

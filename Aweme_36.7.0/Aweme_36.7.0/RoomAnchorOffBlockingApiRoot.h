@@ -1,0 +1,3 @@
+@interface RoomAnchorOffBlockingApiRoot : GPBRootObject
+
+@end

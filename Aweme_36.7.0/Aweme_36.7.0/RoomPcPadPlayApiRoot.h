@@ -1,0 +1,3 @@
+@interface RoomPcPadPlayApiRoot : GPBRootObject
+
+@end

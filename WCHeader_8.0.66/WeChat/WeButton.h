@@ -1,0 +1,52 @@
+@interface WeButton : NSObject
+
++ (id)internalGenButtonWithColor:(id)a0 fontColor:(id)a1 fontSize:(double)a2 fixHeight:(double)a3 withBorder:(BOOL)a4 radius:(double)a5;
++ (id)genButtonWithColor:(id)a0 fontColor:(id)a1;
++ (id)genGreenButton;
++ (id)genRedButton;
++ (id)genGrayButton;
++ (id)genButtonWithColor:(id)a0 fontColor:(id)a1 fontSize:(double)a2 fixHeight:(double)a3 withBorder:(BOOL)a4 radius:(double)a5;
++ (void)groupStandardButtons:(id)a0;
++ (id)gen;
++ (id)genHalfScreenStrongButton;
++ (id)genHalfScreenRedButton;
++ (id)genHalfScreenWeakButton;
++ (id)genBigStrongButton;
++ (id)genBigStrongButtonWithMaxWidth:(double)a0;
++ (id)genBigWeakButton;
++ (id)genBigWeakButtonWithMaxWidth:(double)a0;
++ (id)genSmallStrongButton;
++ (id)genSmallWeakButton;
++ (id)genSmallWeakInverseButton;
++ (void)setNewSmallButtonStyle:(id)a0;
++ (id)genBigGreenButton;
++ (id)genBigRedButton;
++ (id)genBigGrayButton;
++ (id)genBigButtonWithColor:(id)a0 fontColor:(id)a1;
++ (void)setBigButtonStyle:(id)a0;
++ (id)bigButtonFont;
++ (id)genWideBigGreenButton;
++ (id)genWideBigRedButton;
++ (id)genWideBigGrayButton;
++ (id)genWideBigButtonWithColor:(id)a0 fontColor:(id)a1;
++ (void)setWideBigButtonStyle:(id)a0;
++ (id)genSmallGreenButton;
++ (id)genSmallGrayButton;
++ (id)genMiddleGreenButton;
++ (id)genMiddleGrayButton;
++ (id)genMiddleButtonWithColor:(id)a0 fontColor:(id)a1;
++ (void)setMiddleButtonStyle:(id)a0;
++ (id)genLineButtonWithColor:(id)a0 fontColor:(id)a1;
++ (id)genBigLineButtonWithColor:(id)a0 fontColor:(id)a1;
++ (id)genSmallLineButtonWithColor:(id)a0 fontColor:(id)a1;
++ (id)genBigGreenLineButton;
++ (id)genSmallGreenLineButton;
++ (id)genLineButtonWithColor:(id)a0 fontColor:(id)a1 fontSize:(double)a2 fixHeight:(double)a3 radius:(double)a4 fontAlphaHighLighted:(double)a5;
++ (id)genNewBigButton:(long long)a0;
++ (id)genNewBigGreenButton:(long long)a0;
++ (id)genNewBigGreyButton:(long long)a0;
++ (id)genNewBigRedButton:(long long)a0;
++ (id)getRedesignButton:(id)a0 IconName:(id)a1 Action:(SEL)a2 Target:(id)a3;
++ (id)genLinkButtonWith:(id)a0;
+
+@end

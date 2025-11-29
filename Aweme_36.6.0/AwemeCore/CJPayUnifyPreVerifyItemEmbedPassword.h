@@ -1,0 +1,70 @@
+@class CJPayUnifySetPwdController, NSString, CJPayForgetPwdOptController, CJPayOrderConfirmResponse, CJPayUnifyPreVerifyPasswordView;
+
+@interface CJPayUnifyPreVerifyItemEmbedPassword : CJPayUnifyPreVerifyItemBase <CJPaySafeInputViewDelegate, CJPayKeyboardContainerDelegate>
+
+@property (retain, nonatomic) CJPayUnifyPreVerifyPasswordView *passwordView;
+@property (retain, nonatomic) CJPayForgetPwdOptController *forgetPwdController;
+@property (retain, nonatomic) CJPayUnifySetPwdController *setPwdController;
+@property (retain, nonatomic) CJPayOrderConfirmResponse *confirmResponse;
+@property (copy, nonatomic) NSString *tipsMsg;
+@property (copy, nonatomic) NSString *lastInputPwd;
+@property (nonatomic) BOOL hasInputPwd;
+@property (nonatomic) long long passwordInputCompleteTimes;
+@property (nonatomic) double inputCompleteTimeStamp;
+@property (nonatomic) long long processType;
+@property (nonatomic) BOOL hasSetPwdSuccess;
+@property (nonatomic) BOOL canShowVerifyResultToast;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)checkType;
+- (BOOL)p_needShowBioSystemAuthority;
+- (void)inputView:(id)a0 completeInputWithCurrentInput:(id)a1;
+- (void)inputView:(id)a0 textDidChangeWithCurrentInput:(id)a1;
+- (void)p_trackEventName:(id)a0 params:(id)a1;
+- (id)checkTypeName;
+- (BOOL)shouldHandleNaviLeftBtnStyle;
+- (BOOL)isNaviLeftBtnCloseStyle;
+- (BOOL)shouldHandleNaviTitle;
+- (id)naviTitleContent;
+- (BOOL)shouldHandleNaviLeftBtnClickAction;
+- (void)handleNaviLeftBtnClickAction;
+- (BOOL)handleConfirmResponse:(id)a0;
+- (void)receiveTopRightBtnClickAction:(id)a0;
+- (id)buildPreVerifyViewWithParams:(id)a0 inputCompletionBlock:(id /* block */)a1;
+- (void)startVerifyWithParams:(id)a0;
+- (BOOL)isEmbed;
+- (BOOL)handleDefaultActionWithResponse:(id)a0;
+- (void)trackForVerifyResult:(id)a0;
+- (void)p_btmTrackEvent:(id)a0 btm:(id)a1 params:(id)a2;
+- (void)p_callBackWithResultType:(unsigned long long)a0 params:(id)a1;
+- (void)p_forgetPasswordBtnTapped;
+- (void)p_setupSetPasswordProcessWithParams:(id)a0;
+- (void)p_resetErrorInfoViewTips;
+- (void)p_setupResetPasswordProcessWithParams:(id)a0;
+- (void)p_restartSetOrResetProcessWithCompletion:(id /* block */)a0;
+- (BOOL)p_isSetOrResetPasswordProcess;
+- (BOOL)p_isBioLynxPopUpNeedDegrade;
+- (BOOL)p_lynxPopup:(id)a0;
+- (void)p_lynxPopAction:(unsigned long long)a0 popupSource:(id)a1 data:(id)a2;
+- (id)p_buildChangeModelWithVerifyType:(unsigned long long)a0 sourceStr:(id)a1;
+- (unsigned long long)p_sourceTypeWithSourceStr:(id)a0;
+- (void)p_gotoForgetPwdVCFromVC:(id)a0 completion:(id /* block */)a1;
+- (void)p_updateContentForPasswordProcess;
+- (id)p_fixedInputTips;
+- (void)p_completePasswordInputWithContent:(id)a0 extParams:(id)a1;
+- (id)p_buildPWDParamsWithInputStr:(id)a0;
+- (void)p_setPasswordWithContent:(id)a0;
+- (void)p_completePasswordInputWithContent:(id)a0;
+- (id)p_pwdTypeForProcessType;
+- (id)p_passwordTrackParams;
+- (id)p_pageTypeMap;
+- (unsigned long long)p_firstIndexForProcessType;
+- (id)p_sourceStrWithForgetPWDVCVerifySource:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (unsigned long long)verifyType;
+
+@end

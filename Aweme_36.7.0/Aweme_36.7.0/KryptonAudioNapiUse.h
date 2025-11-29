@@ -1,0 +1,3 @@
+@interface KryptonAudioNapiUse : NSObject
+
+@end

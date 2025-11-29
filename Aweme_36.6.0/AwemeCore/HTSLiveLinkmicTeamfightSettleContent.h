@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface HTSLiveLinkmicTeamfightSettleContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *disableShowToast;
+
++ (id)descriptor;
+
+@end

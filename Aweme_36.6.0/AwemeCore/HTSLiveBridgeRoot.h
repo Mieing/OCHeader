@@ -1,0 +1,3 @@
+@interface HTSLiveBridgeRoot : GPBRootObject
+
+@end

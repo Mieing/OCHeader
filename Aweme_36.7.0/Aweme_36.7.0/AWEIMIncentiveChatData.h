@@ -1,0 +1,84 @@
+@class NSObject, NSString, AWEIMIncentiveChatDataBase, AWEIMIncentiveChatInfo, YYMemoryCache, NSNumber, NSMutableArray;
+@protocol OS_dispatch_semaphore;
+
+@interface AWEIMIncentiveChatData : NSObject <IESIMUserServiceMessage, AWEIMIncentiveChatDataProtocol>
+
+@property (retain, nonatomic) NSNumber *coldUpBizErrCode;
+@property (retain, nonatomic) NSNumber *coldUpBizErrCodeForGroup;
+@property (copy, nonatomic) NSString *loginUid;
+@property (retain, nonatomic) AWEIMIncentiveChatDataBase *database;
+@property (retain, nonatomic) AWEIMIncentiveChatInfo *info;
+@property (retain, nonatomic) YYMemoryCache *inviteeNotAcceptRelationCache;
+@property (retain, nonatomic) YYMemoryCache *peerQuotaCache;
+@property (retain, nonatomic) YYMemoryCache *relationProgressCache;
+@property (retain, nonatomic) YYMemoryCache *infoOtherDataCache;
+@property (retain, nonatomic) YYMemoryCache *byteSyncDataCache;
+@property (retain, nonatomic) YYMemoryCache *commandMessageDataCache;
+@property (retain, nonatomic) NSMutableArray *delayedBlocks;
+@property (nonatomic) BOOL hasRemoteInitData;
+@property (nonatomic) BOOL hasInitData;
+@property (nonatomic) BOOL hasColdUp;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *lock;
+@property (nonatomic) BOOL enableDataBaseReleasOpt;
+@property (copy, nonatomic) NSString *privateColdUpBizErrReason;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)p_cacheKeyWithBizType:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2 conversationID:(id)a3 relationID:(id)a4;
++ (void)activityExitWithLoginUid:(id)a0;
++ (void)removeStorageCacheWithLoginUid:(id)a0;
++ (void)removeStorageCacheWithLoginUid:(id)a0 withChatType:(unsigned long long)a1;
++ (id)p_cacheKeyWithBizType:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
++ (id)p_cacheKeyWithBizType:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2 conversationID:(id)a3;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)updateWithRelation:(id)a0 loginUid:(id)a1;
+- (id)relationWithConversationID:(id)a0;
+- (id)relationWithConversationID:(id)a0 lruCache:(BOOL)a1;
+- (void)p_addObserver;
+- (void)relationProgressWithConversationID:(id)a0 completion:(id /* block */)a1;
+- (id)relationProgressWithConversationID:(id)a0;
+- (void)updateCommandMessageIncentiveChatResponseRawDataWithConversationID:(id)a0 rawData:(id)a1;
+- (void)addDelayedBlockIfNeededExecuteAfterColdUpData:(id /* block */)a0;
+- (void)updateWithRelationProgress:(id)a0 loginUid:(id)a1 cacheOptions:(unsigned long long)a2 completion:(id /* block */)a3;
+- (void)updateWithRelationActivation:(id)a0 loginUid:(id)a1 cacheOptions:(unsigned long long)a2 completion:(id /* block */)a3;
+- (id)infoOtherIncentiveChatResponseDataRawDataWithConversationID:(id)a0;
+- (id)byteSyncIncentiveChatResponseRawDataWithConversationID:(id)a0;
+- (id)commandMessageIncentiveChatResponseRawDataWithConversationID:(id)a0;
+- (id)peerQuotaWithConversationID:(id)a0;
+- (void)p_setupDataBase;
+- (void)p_setupMemoryCache;
+- (void)resetDataWithIsNeedResetColdUpErrCode:(BOOL)a0;
+- (void)p_cacheStorageWithColdUpData:(id)a0 loginUid:(id)a1;
+- (void)activityExitWithIsNeedResetColdUpErrCode:(BOOL)a0;
+- (void)p_fillDataWithStorageCacheInfo:(id)a0 loginUid:(id)a1;
+- (void)updateGroupChatDataInfo:(id)a0 completion:(id /* block */)a1;
+- (void)updateSingleChatDataInfo:(id)a0 completion:(id /* block */)a1;
+- (void)p_fillDataWithStorageCacheInfo:(id)a0 loginUid:(id)a1 chatType:(unsigned long long)a2;
+- (id)p_chatIdentityWithChatType:(unsigned long long)a0;
+- (void)p_saveIdentityQuotaToDisk:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
+- (BOOL)p_shouldUpdateWithOldRelation:(id)a0 relation:(id)a1;
+- (id)p_rawDataWithBizType:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
+- (void)p_saveCellConfToDisk:(id)a0 loginUid:(id)a1;
+- (void)p_saveUIConfToDisk:(id)a0 loginUid:(id)a1;
+- (void)saveActivityInfoToDisk:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
+- (void)p_saveHasTopWithdrawEnteryToDisk:(BOOL)a0 loginUid:(id)a1;
+- (void)p_saveMangoActivityInfoToDisk:(id)a0 loginUid:(id)a1;
+- (void)p_saveHasParticipatedGroupActivityToDisk:(BOOL)a0 loginUid:(id)a1;
+- (void)p_saveAvailableRemoteGroupChatToDisk:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
+- (void)p_asyncDiskCacheWithRawData:(id)a0 forKey:(id)a1;
+- (void)updateInfoOtherIncentiveChatResponseRawDataWithConversationID:(id)a0 rawData:(id)a1;
+- (void)updateByteSyncIncentiveChatResponseRawDataWithConversationID:(id)a0 rawData:(id)a1;
+- (void)removeMemoryCacheWithConversationID:(id)a0;
+- (void)updateWithColdUpRawData:(id)a0 error:(id)a1 requestStartTime:(double)a2 withCompletion:(id /* block */)a3;
+- (void)updateWithIdentityQuota:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
+- (void)updateWithPeerQuota:(id)a0 conversationID:(id)a1;
+- (id)rawDataFromDictWithBizType:(id)a0 chatType:(unsigned long long)a1 loginUid:(id)a2;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+
+@end

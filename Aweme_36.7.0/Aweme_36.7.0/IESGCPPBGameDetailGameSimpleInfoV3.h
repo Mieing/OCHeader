@@ -1,0 +1,16 @@
+@class IESGCPPBGameDetailOfficialAccountInfo, IESGCPPBGameDetailSimpleEvaluationInfo, NSMutableArray;
+
+@interface IESGCPPBGameDetailGameSimpleInfoV3 : GPBMessage
+
+@property (nonatomic) long long userPlayingCount;
+@property (retain, nonatomic) IESGCPPBGameDetailSimpleEvaluationInfo *evaluationInfo;
+@property (nonatomic) BOOL hasEvaluationInfo;
+@property (nonatomic) BOOL showPlayingCount;
+@property (retain, nonatomic) NSMutableArray *noticeListArray;
+@property (readonly, nonatomic) unsigned long long noticeListArray_Count;
+@property (retain, nonatomic) IESGCPPBGameDetailOfficialAccountInfo *officialAccountInfo;
+@property (nonatomic) BOOL hasOfficialAccountInfo;
+
++ (id)descriptor;
+
+@end

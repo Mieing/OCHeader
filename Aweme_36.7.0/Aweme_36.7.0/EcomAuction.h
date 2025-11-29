@@ -1,0 +1,14 @@
+@class NSString, EcomBidder;
+
+@interface EcomAuction : IESLivePBBaseMessage
+
+@property (nonatomic) long long price;
+@property (copy, nonatomic) NSString *priceLabel;
+@property (copy, nonatomic) NSString *buttonLabel;
+@property (retain, nonatomic) EcomBidder *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long status;
+
++ (id)descriptor;
+
+@end

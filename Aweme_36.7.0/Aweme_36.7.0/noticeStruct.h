@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface noticeStruct : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) NSMutableArray *valueArray;
+@property (readonly, nonatomic) unsigned long long valueArray_Count;
+
++ (id)descriptor;
+
+@end

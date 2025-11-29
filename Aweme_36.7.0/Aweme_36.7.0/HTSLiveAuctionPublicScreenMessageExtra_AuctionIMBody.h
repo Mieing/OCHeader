@@ -1,0 +1,13 @@
+@class NSString, HTSLiveMysteryUserInfo;
+
+@interface HTSLiveAuctionPublicScreenMessageExtra_AuctionIMBody : IESLivePBBaseMessage
+
+@property (nonatomic) long long roleType;
+@property (nonatomic) BOOL isBid;
+@property (copy, nonatomic) NSString *text;
+@property (retain, nonatomic) HTSLiveMysteryUserInfo *userInfo;
+@property (nonatomic) BOOL hasUserInfo;
+
++ (id)descriptor;
+
+@end

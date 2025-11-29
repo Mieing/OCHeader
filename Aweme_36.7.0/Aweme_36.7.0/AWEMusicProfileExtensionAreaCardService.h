@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface AWEMusicProfileExtensionAreaCardService : HTSService <AWEMusicProfileExtensionAreaCardService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (Class)profileExtensionAreaCardControllerClass;
+
+@end

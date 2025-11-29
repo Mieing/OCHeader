@@ -1,0 +1,3 @@
+@interface _TtCC11OpenCombine25ObservableObjectPublisherP33_6BA50B07FEF2F9225D12924A57FD96167Conduit : _TtCs12_SwiftObject
+
+@end

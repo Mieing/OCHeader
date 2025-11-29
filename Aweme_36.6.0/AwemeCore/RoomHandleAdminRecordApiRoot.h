@@ -1,0 +1,3 @@
+@interface RoomHandleAdminRecordApiRoot : GPBRootObject
+
+@end

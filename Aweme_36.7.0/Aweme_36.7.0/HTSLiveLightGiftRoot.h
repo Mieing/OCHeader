@@ -1,0 +1,3 @@
+@interface HTSLiveLightGiftRoot : GPBRootObject
+
+@end

@@ -1,0 +1,9 @@
+@interface IESLiveKtvAtmosphereVideoFrameColorData_Color : IESLivePBBaseMessage
+
+@property (nonatomic) int red;
+@property (nonatomic) int green;
+@property (nonatomic) int blue;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface LabelImageStyleV2 : GPBMessage
+
+@property (nonatomic) int shape;
+@property (nonatomic) BOOL hasShape;
+@property (nonatomic) int size;
+@property (nonatomic) BOOL hasSize;
+@property (copy, nonatomic) NSString *color;
+@property (nonatomic) BOOL hasColor;
+
++ (id)descriptor;
+
+@end

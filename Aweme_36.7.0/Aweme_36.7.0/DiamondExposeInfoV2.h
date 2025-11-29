@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface DiamondExposeInfoV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *backendTypeCodeL1;
+@property (nonatomic) BOOL hasBackendTypeCodeL1;
+@property (copy, nonatomic) NSString *sceneType;
+@property (nonatomic) BOOL hasSceneType;
+
++ (id)descriptor;
+
+@end

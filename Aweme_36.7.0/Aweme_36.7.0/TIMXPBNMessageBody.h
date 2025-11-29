@@ -1,0 +1,57 @@
+@class TIMXPBNReferenceInfo, NSString, NSMutableDictionary, NSMutableArray;
+
+@interface TIMXPBNMessageBody : GPBMessage
+
+@property (copy, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL hasConversationId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+@property (nonatomic) long long serverMessageId;
+@property (nonatomic) BOOL hasServerMessageId;
+@property (nonatomic) long long indexInConversation;
+@property (nonatomic) BOOL hasIndexInConversation;
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (nonatomic) int messageType;
+@property (nonatomic) BOOL hasMessageType;
+@property (nonatomic) long long sender;
+@property (nonatomic) BOOL hasSender;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL hasContent;
+@property (retain, nonatomic) NSMutableDictionary *ext;
+@property (readonly, nonatomic) unsigned long long ext_Count;
+@property (nonatomic) long long createTime;
+@property (nonatomic) BOOL hasCreateTime;
+@property (nonatomic) long long version;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) long long orderInConversation;
+@property (nonatomic) BOOL hasOrderInConversation;
+@property (copy, nonatomic) NSString *secSender;
+@property (nonatomic) BOOL hasSecSender;
+@property (retain, nonatomic) NSMutableDictionary *propertyList;
+@property (readonly, nonatomic) unsigned long long propertyList_Count;
+@property (retain, nonatomic) NSMutableDictionary *userProfile;
+@property (readonly, nonatomic) unsigned long long userProfile_Count;
+@property (nonatomic) long long indexInConversationV2;
+@property (nonatomic) BOOL hasIndexInConversationV2;
+@property (retain, nonatomic) TIMXPBNReferenceInfo *referenceInfo;
+@property (nonatomic) BOOL hasReferenceInfo;
+@property (nonatomic) long long indexInConversationV1;
+@property (nonatomic) BOOL hasIndexInConversationV1;
+@property (nonatomic) long long subConversationShortId;
+@property (nonatomic) BOOL hasSubConversationShortId;
+@property (nonatomic) long long cmdMessageIndex;
+@property (nonatomic) BOOL hasCmdMessageIndex;
+@property (retain, nonatomic) NSMutableArray *extDataArray;
+@property (readonly, nonatomic) unsigned long long extDataArray_Count;
+@property (nonatomic) long long cmdMessageChainV2Index;
+@property (nonatomic) BOOL hasCmdMessageChainV2Index;
+
++ (id)msgLinkTrackerDicWithWithResponse:(id)a0;
++ (id)descriptor;
+
+- (id)timx_clientMessageIdentify;
+
+@end

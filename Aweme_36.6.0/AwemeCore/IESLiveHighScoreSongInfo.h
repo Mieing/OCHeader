@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveHighScoreSongInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *songListSchema;
+@property (copy, nonatomic) NSString *countStr;
+@property (copy, nonatomic) NSString *countSubstr;
+
++ (id)descriptor;
+
+@end

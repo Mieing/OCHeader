@@ -1,0 +1,3 @@
+@interface IESLiveChatReplyRoot : GPBRootObject
+
+@end

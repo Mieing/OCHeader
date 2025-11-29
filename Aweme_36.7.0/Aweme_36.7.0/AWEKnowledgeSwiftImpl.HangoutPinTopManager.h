@@ -1,0 +1,13 @@
+@interface AWEKnowledgeSwiftImpl.HangoutPinTopManager : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ isActive;
+    void /* unknown type, empty encoding */ hasReceivedData;
+    void /* unknown type, empty encoding */ visitedItemIDSet;
+    void /* unknown type, empty encoding */ needUpdateConsumeInfoStorage;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastConsumeCount;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_needRequestPinTop;
+    void /* unknown type, empty encoding */ pinTopTask;
+    void /* unknown type, empty encoding */ xBridgeEventSubscriber;
+}
+
+@end

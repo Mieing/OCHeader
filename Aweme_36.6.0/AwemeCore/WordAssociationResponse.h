@@ -1,0 +1,10 @@
+@class WordAssociationResponse_ResponseData;
+
+@interface WordAssociationResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) WordAssociationResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

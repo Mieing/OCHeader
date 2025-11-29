@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface CGPBusinessScreenshotClient : GPBMessage
+
+@property (copy, nonatomic) NSString *sequence;
+
++ (id)descriptor;
+
+@end

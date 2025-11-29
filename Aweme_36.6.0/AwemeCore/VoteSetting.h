@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface VoteSetting : IESLivePBBaseMessage
+
+@property (nonatomic) long long voteType;
+@property (copy, nonatomic) NSString *voteDes;
+@property (nonatomic) long long durationTime;
+
++ (id)descriptor;
+
+@end

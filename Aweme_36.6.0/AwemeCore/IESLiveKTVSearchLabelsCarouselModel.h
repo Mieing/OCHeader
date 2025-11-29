@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface IESLiveKTVSearchLabelsCarouselModel : IESLiveDynamicModel
+
+@property (nonatomic) long long type;
+@property (copy, nonatomic) NSString *content;
+
+@end

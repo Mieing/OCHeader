@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface RivalsResponse_PanelBanner_Action : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *schemeURL;
+@property (retain, nonatomic) HTSLiveImage *actionImage;
+@property (nonatomic) BOOL hasActionImage;
+
++ (id)descriptor;
+
+@end

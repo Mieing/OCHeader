@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface SubscribeListResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *usersArray;
+@property (readonly, nonatomic) unsigned long long usersArray_Count;
+@property (nonatomic) long long cursor;
+@property (nonatomic) int total;
+
++ (id)descriptor;
+
+@end

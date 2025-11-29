@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CGPStateEnd : GPBMessage
+
+@property (nonatomic) long long code;
+@property (copy, nonatomic) NSString *msg;
+
++ (id)descriptor;
+
+@end

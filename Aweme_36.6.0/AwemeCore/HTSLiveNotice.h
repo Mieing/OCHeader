@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveNotice : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *rejectReason;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpAccountBindInfoApiRoot : GPBRootObject
+
+@end

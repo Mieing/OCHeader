@@ -1,0 +1,16 @@
+@class NSString, HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveInteractControlMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *roomId;
+@property (copy, nonatomic) NSString *timeStamp;
+@property (retain, nonatomic) NSMutableArray *anchorOperationArray;
+@property (readonly, nonatomic) unsigned long long anchorOperationArray_Count;
+@property (retain, nonatomic) NSMutableArray *audienceOperationArray;
+@property (readonly, nonatomic) unsigned long long audienceOperationArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@interface AWEMemoryTrack : NSObject
+
++ (void)didReceiveMemeoryDangerLevelTopNotification;
++ (void)_aweLazyRegisterStaticLoad;
++ (void)didReceiveSystemMemoryWarningNotification;
++ (id)config;
++ (BOOL)isEnabled;
++ (void)addObservers;
+
+- (void)dealloc;
+
+@end

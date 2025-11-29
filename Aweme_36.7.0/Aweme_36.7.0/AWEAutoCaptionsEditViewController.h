@@ -1,0 +1,78 @@
+@class UIView, NSString, NSArray, NSMutableDictionary, NSDictionary, UITableView, NSMutableArray, UITextField, UILabel, ACCAnimatedButton;
+@protocol ACCCaptionPreviewServiceProtocol;
+
+@interface AWEAutoCaptionsEditViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AWECaptionOptCellDelegate>
+
+@property (retain, nonatomic) NSMutableArray *captions;
+@property (copy, nonatomic) NSArray *originalCaptions;
+@property (copy, nonatomic) NSDictionary *referExtra;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) ACCAnimatedButton *backButton;
+@property (retain, nonatomic) ACCAnimatedButton *saveButton;
+@property (retain, nonatomic) UIView *separateLine;
+@property (retain, nonatomic) UITableView *captionTableView;
+@property (nonatomic) long long currentEditRow;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) BOOL isNormalPlay;
+@property (nonatomic) double audioStartTime;
+@property (nonatomic) double audioStopTime;
+@property (retain, nonatomic) NSString *captionMD5;
+@property (nonatomic) double startTime;
+@property (nonatomic) double backupStartTime;
+@property (nonatomic) long long currentIndex;
+@property (nonatomic) long long backupCurrentIndex;
+@property (nonatomic) BOOL ignoreScroll;
+@property (nonatomic) BOOL isDismissing;
+@property (retain, nonatomic) NSMutableDictionary *captionDict;
+@property (retain, nonatomic) NSMutableArray *mergedCaptions;
+@property (retain, nonatomic) UITextField *tempTextFieldForFirstResponder;
+@property (retain, nonatomic) UIView *keyboardBackgroundView;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (nonatomic) BOOL modernUI;
+@property (weak, nonatomic) id<ACCCaptionPreviewServiceProtocol> previewService;
+@property (copy, nonatomic) NSString *translationLanguage;
+@property (copy, nonatomic) NSDictionary *commonTrackInfoDic;
+@property (copy, nonatomic) id /* block */ didDismissBlock;
+@property (copy, nonatomic) id /* block */ willDismissBlock;
+@property (copy, nonatomic) id /* block */ savedBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)playerCurrentPlayTimeChanged:(double)a0;
+- (void)backButtonClicked;
+- (void)handleKeyboardWillShowNotification:(id)a0;
+- (void)saveButtonClicked;
+- (id)initWithReferExtra:(id)a0 captions:(id)a1 selectedIndex:(long long)a2;
+- (BOOL)validCurrentEditRow;
+- (void)handleKeyboardChangeFrameNotification:(id)a0;
+- (void)pausePlayServer;
+- (BOOL)captionHasChanged;
+- (double)navigationBarOffsetY;
+- (void)updateCaptionWithCaption:(id)a0 tailRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 row:(long long)a2;
+- (void)combineCaptionWhenDeleteInLineHeadWithCaption:(id)a0 row:(long long)a1;
+- (void)updateAudioPlayerStatusWithCurrentPlayerTime:(double)a0;
+- (BOOL)canCombineCaptionWhenDeleteInLineHeadWithRow:(long long)a0;
+- (void)updateCellCursorPositonWithRow:(long long)a0 positon:(long long)a1;
+- (void)updateCellHeightWithIndexPath:(id)a0;
+- (BOOL)needAdaptKeyboardHeightWithCellIndexPath:(id)a0 keyboardHeight:(double)a1;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (BOOL)prefersStatusBarHidden;
+- (long long)preferredStatusBarStyle;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)trackEvent:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)addObservers;
+
+@end

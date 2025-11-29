@@ -1,0 +1,80 @@
+@class NSString, AnimaXSurfaceDrawable;
+@protocol AnimaXPlayerProtocol;
+
+@interface AnimaXImageView : UIView <AnimaXPixelBufferUpdateListener, AnimaXLayerProtocol, AnimaXPlayerProtocol, AnimaXViewProtocol>
+
+@property (retain, nonatomic) id<AnimaXPlayerProtocol> player;
+@property (retain, nonatomic) AnimaXSurfaceDrawable *drawable;
+@property (nonatomic) BOOL enableNativeTapLayerEvent;
+@property (nonatomic) BOOL ignoreAttachStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)layerClass;
+
+- (void)onShow:(unsigned long long)a0;
+- (void)onHide:(unsigned long long)a0;
+- (void)notifyFrameChanged;
+- (void)updateVisibilityState:(BOOL)a0 forType:(unsigned long long)a1;
+- (void)adoptAnimaXSurfaceDrawable:(id)a0;
+- (void)ensureAnimaXSurface;
+- (void)handleTouch:(id)a0 withEvent:(id)a1;
+- (void)setImageFolder:(id)a0;
+- (void)setPolyfill:(id)a0;
+- (void)setAutoReverse:(BOOL)a0;
+- (void)setObjectfit:(id)a0;
+- (void)setObjectPosition:(id)a0;
+- (void)setFPSEventInterval:(long long)a0;
+- (void)setDynamicResource:(BOOL)a0;
+- (void)setSrc:(id)a0 inBundle:(id)a1;
+- (void)setJson:(id)a0 inBundle:(id)a1;
+- (void)subscribeUpdateEvent:(int)a0;
+- (void)unsubscribeUpdateEvent:(int)a0;
+- (void)subscribeUpdateEvents:(id)a0 subscribe:(BOOL)a1;
+- (void)playFrom:(double)a0 to:(double)a1;
+- (void)addAnimationEventListener:(id)a0;
+- (void)removeAnimationEventListener:(id)a0;
+- (id)getAnimaXContext;
+- (void)updateLayerProperty:(id)a0 propertyType:(unsigned long long)a1 value:(id)a2 callback:(id)a3;
+- (void)updateResourceProperty:(id)a0 propertyType:(unsigned long long)a1 value:(id)a2 callback:(id)a3;
+- (void)addLayerPropertyCallback:(unsigned long long)a0 keyPath:(id)a1 valueCallback:(id)a2 callback:(id)a3;
+- (void)getKeysForKeyPath:(id)a0 callback:(id)a1;
+- (void)onBufferUpdated:(struct __CVBuffer { } *)a0;
+- (void)handleAlphaChange:(double)a0 newAlpha:(double)a1;
+- (void)onCompositionReady;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)enterBackground;
+- (void)reload;
+- (BOOL)isAnimating;
+- (id)initWithContext:(id)a0;
+- (void)setEndFrame:(double)a0;
+- (void)setJson:(id)a0;
+- (void)stop;
+- (void)setHidden:(BOOL)a0;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setMaxFrameRate:(double)a0;
+- (void)resume;
+- (void)touchesEnded:(id)a0 withEvent:(id)a1;
+- (void)enterForeground;
+- (void)setSpeed:(double)a0;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithPlayer:(id)a0;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (void)setProgress:(double)a0;
+- (void)setSrc:(id)a0;
+- (void)setStartFrame:(double)a0;
+- (void)setComposition:(id)a0;
+- (double)currentFrame;
+- (void)seekTo:(double)a0;
+- (double)durationInMS;
+- (void)handleTapAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)setLoop:(BOOL)a0;
+- (void)setAutoplay:(BOOL)a0;
+- (void)setLoopCount:(int)a0;
+
+@end

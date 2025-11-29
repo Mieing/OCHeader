@@ -1,0 +1,3 @@
+@interface ACCImageAlbumEditorGeometry : NSObject
+
+@end

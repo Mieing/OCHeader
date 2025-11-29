@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveSetContentDescriptionParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *contentDesc;
+@property (copy, nonatomic) NSString *role;
+@property (nonatomic) BOOL isButton;
+@property (nonatomic) BOOL focusNow;
+
+@end

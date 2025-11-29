@@ -1,0 +1,10 @@
+@interface HitTaskInfoV2 : GPBMessage
+
+@property (nonatomic) int compeletedTaskCnt;
+@property (nonatomic) BOOL hasCompeletedTaskCnt;
+@property (nonatomic) int totalTaskCnt;
+@property (nonatomic) BOOL hasTotalTaskCnt;
+
++ (id)descriptor;
+
+@end

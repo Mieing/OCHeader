@@ -1,0 +1,3 @@
+@interface LVTemplateChecker : NSObject
+
+@end

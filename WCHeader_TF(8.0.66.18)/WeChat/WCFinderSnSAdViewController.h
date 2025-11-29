@@ -1,0 +1,72 @@
+@class WCFinderSnSAdListViewModel, NSString, WCFinderNearByDescriptionTableViewCell, WCFinderShareListReportModel, UIView, WCFinderFeedListView, UIButton;
+
+@interface WCFinderSnSAdViewController : MMUIViewController <WCFinderSnSAdListViewModelDelegate, WCFinderFeedListViewDataSource, WCFinderFeedListViewDelegate, WCFinderFeedDetailStatusViewDelegate, WCFinderFeedBaseViewControllerProtocol, WCFinderAdReportInfoProtocol>
+
+@property (retain, nonatomic) WCFinderFeedListView *feedListView;
+@property (retain, nonatomic) WCFinderSnSAdListViewModel *viewModel;
+@property (retain, nonatomic) UIView *moreRelatedView;
+@property (retain, nonatomic) WCFinderNearByDescriptionTableViewCell *descriptionCell;
+@property (retain, nonatomic) UIButton *rightFollowBtn;
+@property (retain, nonatomic) UIView *moreRelatedMaskView;
+@property (retain, nonatomic) NSString *adParamInofStr;
+@property (retain, nonatomic) WCFinderShareListReportModel *reportModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTid:(id)a0 nonceId:(id)a1 userName:(id)a2 reportModel:(id)a3 encryptedlastTid:(id)a4 adParamInofStr:(id)a5;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)updateRightBarItem;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (BOOL)useTransparentNavibar;
+- (void)dealloc;
+- (void)configureTableView;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)onClickCloseLeftItem;
+- (void)onClickFollowRightItem;
+- (id)finderFeedListView:(id)a0 contentVMAtSection:(long long)a1;
+- (id)finderFeedListView:(id)a0 contentVMOfTid:(id)a1;
+- (long long)numberOfContentVMsInTableView;
+- (long long)finderFeedListView:(id)a0 sectionOfTid:(id)a1;
+- (BOOL)finderFeedListView:(id)a0 customViewAtSection:(long long)a1;
+- (id)finderFeedListView:(id)a0 customCellForRowAtIndexPath:(id)a1;
+- (double)finderFeedListView:(id)a0 heightForCustomRowAtIndexPath:(id)a1;
+- (void)finderFeedListViewFetchMoreData:(id)a0;
+- (void)finderFeedListViewRetryFetch:(id)a0;
+- (unsigned long long)finderFeedListDataBeginRefreshTime:(id)a0;
+- (BOOL)finderFeedListViewCanPreFetchData:(id)a0;
+- (id)finderFeedListViewCurrentViewController:(id)a0;
+- (BOOL)finderFeedListViewIsNoMoreData:(id)a0;
+- (long long)finderFeedListView:(id)a0 rowOfCustomViewAtSection:(long long)a1;
+- (void)finderFeedListView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)finderFeedListViewDidClickScreenRotateBtn:(id)a0;
+- (id)finderFeedListViewCustomTableViewParam:(id)a0 contentVM:(id)a1;
+- (BOOL)isInSubScene;
+- (id)specialParamsForFeedId:(id)a0;
+- (void)changeMoreRelatedViewHidden:(BOOL)a0;
+- (void)finderSnSAdListFetchDataSuc;
+- (void)finderSnSAdListLoadMoreFinished:(id)a0;
+- (void)finderSnSAdListNoMoreData;
+- (void)finderSnSAdListShouldReloadMediaWithTid:(id)a0;
+- (void)finderSnSAdListDeleteDataItemVM:(id)a0;
+- (void)finderSnSAdListEmpty;
+- (void)finderSnSAdListOnStateOfNotExist:(id)a0;
+- (void)finderSnSAdListFetchFailWithErrorCode:(int)a0;
+- (void)finderSnSAdListFollowStatusChanged:(BOOL)a0 followState:(unsigned long long)a1;
+- (void)reportClickCard;
+- (void)didClickBack:(id)a0;
+- (int)feedViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (id)getCurMediaListObject;
+- (id)reportAdJSONString;
+- (id)enterSourceFeedID;
+- (void)registerYReportSdk;
+- (void).cxx_destruct;
+
+@end

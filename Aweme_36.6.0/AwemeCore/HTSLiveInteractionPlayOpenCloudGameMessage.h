@@ -1,0 +1,13 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveInteractionPlayOpenCloudGameMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) BOOL launchCloudGame;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *toast;
+
++ (id)descriptor;
+
+@end

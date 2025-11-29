@@ -1,0 +1,3 @@
+@interface AWEEcomSearchDefineInterface : NSObject
+
+@end

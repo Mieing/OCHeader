@@ -1,0 +1,76 @@
+@class NSArray, NSString, IESLiveInteractVoiceWaveManager, IESLiveInteractionLayout, IESLiveRoomThemeData;
+@protocol IESLiveInteractionAsyncResourceLoader, IESLiveInteractUserModel, IESLiveBigPartyEqualGuestListViewDataSource, IESLivePaidLinkmicRouter;
+
+@interface IESLiveBigPartyEqualGuestListViewModel : NSObject <IESLiveInteractEditSeatReaction, IESLiveAnchorPaidLinkMicAction, IESLiveAudiencePaidLinkMicAction, IESLiveBigPartyRoomThemeUpdatable>
+
+@property (copy, nonatomic) id /* block */ onUserListUpdateBlock;
+@property (copy, nonatomic) id /* block */ onPaidLinkmicEndAnimationFinishedBlock;
+@property (copy, nonatomic) NSArray *guestInfoViewModels;
+@property (copy, nonatomic) NSArray *lockedSeats;
+@property (nonatomic) BOOL isSlotIndexFixed;
+@property (retain, nonatomic) NSArray *allMembersList;
+@property (retain, nonatomic) id<IESLiveInteractUserModel> enlargeEndIncomeAnimationUser;
+@property (retain, nonatomic) IESLiveInteractionLayout *layout;
+@property (nonatomic) BOOL isPaidLinkmicSeatShowFullStageTrack;
+@property (nonatomic) BOOL needShowEmptyPaidLinkmicSeat;
+@property (weak, nonatomic) id<IESLivePaidLinkmicRouter> paidLinkMicRouter;
+@property (weak, nonatomic) id<IESLiveBigPartyEqualGuestListViewDataSource> dataSource;
+@property (readonly, nonatomic) BOOL isEqualDynamicLayout;
+@property (nonatomic) BOOL isPreview;
+@property (readonly, nonatomic) BOOL shouldProcessMediaCoverImage;
+@property (readonly, nonatomic) BOOL isEnlargeMode;
+@property (retain, nonatomic) IESLiveRoomThemeData *roomThemeData;
+@property (retain, nonatomic) IESLiveInteractVoiceWaveManager *voiceWaveManager;
+@property (copy, nonatomic) id /* block */ countDownBlock;
+@property (weak, nonatomic) id<IESLiveInteractionAsyncResourceLoader> preStreamResourceLoader;
+@property (readonly, nonatomic) BOOL shouldShowInviteViewOrApplyView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (BOOL)isSelfGuest;
+- (BOOL)isInPaidLinkmic;
+- (long long)viewIndexForUser:(id)a0;
+- (void)paidLinkmicOpenStatusChanged:(BOOL)a0;
+- (void)updateRoomThemeData:(id)a0;
+- (void)interactionDidUpdateLockedSeats:(id)a0;
+- (void)handleActiveListUpdate:(id)a0;
+- (void)updateSeatInfos:(id)a0;
+- (BOOL)isAnchorWithUser:(id)a0;
+- (void)onActiveUserListUpdated:(id /* block */)a0;
+- (void)onPaidLinkmicEndAnimationFinished:(id /* block */)a0;
+- (void)updateRoomThemeWithIconMics:(id)a0 iconMicLock:(id)a1 micBgcolorValue:(id)a2 colorMicLine:(id)a3 colorMicText:(id)a4;
+- (void)updateAnchorSeatName:(id)a0;
+- (void)updateSeatHintLabel;
+- (void)trackAudienceConnectionEmptySeatClick;
+- (void)handleGuestInviteViewClickedWithIndex:(long long)a0;
+- (void)handleGuestInviteViewClickedWithUser:(id)a0;
+- (void)handleGuestApplyViewClickedWithIndex:(long long)a0;
+- (void)trackGuestFanticketAreaClickedWithUser:(id)a0;
+- (id)guestInfoViewModelsWithLayout:(id)a0;
+- (void)p_updateWithActiveList:(id)a0;
+- (void)handleActiveListUpdate:(id)a0 needToShowAnimation:(BOOL)a1;
+- (BOOL)isEnlargeModeWithUserList:(id)a0;
+- (long long)crossRoomUserPosition:(long long)a0 isOtherRoom:(BOOL)a1;
+- (BOOL)isAnchorMainGuest;
+- (BOOL)shouldUpdateRoomTheme;
+- (void)updateWithLockedSeats:(id)a0;
+- (void)p_trackFullStagePaildLinkmicIfNeededWithActiveList:(id)a0;
+- (BOOL)isAudioCustomizeRoom;
+- (id)currentEnlargeUser;
+- (BOOL)trackPaidLinkmicIfNeeded;
+- (id)currentEnlargeUserWithUserList:(id)a0;
+- (void)updateSeatAfterPaidLinkmicStatusChange;
+- (void)p_updateEmptyPaidLinkmicSeat;
+- (void)p_setIncomePromptShowFinishedCallbackIfNeededWithViewModel:(id)a0;
+- (BOOL)isDynamicUILayout;
+- (BOOL)isAudioLinkmic;
+- (void).cxx_destruct;
+- (id)initWithLayout:(id)a0;
+- (BOOL)isAnchor;
+- (void)setup;
+- (long long)userState;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDPCDDynamicCardSupportableValueModel : NSObject
+
+@end

@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveShowWatchInfoMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *count;
+@property (copy, nonatomic) NSString *countWithBackup;
+@property (copy, nonatomic) NSString *formatCount;
+
++ (id)descriptor;
+
+@end

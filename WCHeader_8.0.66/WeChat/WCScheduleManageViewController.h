@@ -1,0 +1,43 @@
+@class NSString, NSMutableArray, MMTableView;
+
+@interface WCScheduleManageViewController : MMUIViewController <UITableViewDelegate, UITableViewDataSource, PBMessageObserverDelegate, IStrangerContactMgrExt, IFavoritesExt>
+
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) NSMutableArray *todoItemArr;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)initData;
+- (BOOL)retrieveScheduleData;
+- (void)initView;
+- (void)removeSchedule:(id)a0;
+- (void)initNavigationBar;
+- (void)updateNavigationItems;
+- (void)onReturn;
+- (void)getContactsFromServerIfNecessary;
+- (BOOL)isItem:(id)a0 EqualToItem:(id)a1;
+- (unsigned long long)getCellTypeWithIndexPath:(id)a0;
+- (void)makeCell:(id)a0 indexPath:(id)a1;
+- (void)makeNoRecentCell:(id)a0;
+- (void)makeScheduleItemCell:(id)a0 item:(id)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 willSelectRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 commitEditingStyle:(long long)a1 forRowAtIndexPath:(id)a2;
+- (void)tableView:(id)a0 didHighlightRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didUnhighlightRowAtIndexPath:(id)a1;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)onStrangerContactUpdated:(id)a0 Contact:(id)a1;
+- (void)OnUpdateItems:(id)a0;
+- (void).cxx_destruct;
+
+@end

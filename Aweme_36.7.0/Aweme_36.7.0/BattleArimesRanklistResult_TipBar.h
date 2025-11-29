@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface BattleArimesRanklistResult_TipBar : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *schemeURL;
+
++ (id)descriptor;
+
+@end

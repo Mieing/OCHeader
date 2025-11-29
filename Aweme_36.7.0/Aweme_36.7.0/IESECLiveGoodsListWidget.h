@@ -1,0 +1,70 @@
+@class NSString, CALayer, IESECLiveGoodsListModule, IESECLiveGoodsListTrackContent;
+
+@interface IESECLiveGoodsListWidget : IESECLiveBaseWidget <IESECLiveGoodsListWidgetAtomicProtocol, CAAnimationDelegate, IESECLiveGoodsListRouter, IESECLiveGoodsListModuleDelegate, IESECLiveGoodsListViewEnvironment, IESECLiveGoodsListLoadMessageProtocol, IESECLiveViewPanelDelegate>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isFromEnterRoom;
+@property (nonatomic) BOOL shopCartEverShowed;
+@property (nonatomic) BOOL widgetEverDisappeared;
+@property (copy, nonatomic) id /* block */ openGoodsListCompletion;
+@property (nonatomic) double endHandleAfterEnterRoomTime;
+@property (retain, nonatomic) IESECLiveGoodsListTrackContent *listTrackContent;
+@property (retain, nonatomic) IESECLiveGoodsListModule *listViewModule;
+@property (retain, nonatomic) CALayer *cartAddanimationLayer;
+@property (nonatomic) BOOL useNewAnimation;
+@property (copy, nonatomic) id /* block */ addCartAnimationCompletionBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)monitorParams;
+- (void)goodsListDidUpdateLynxProperty;
+- (id)initWithRoom:(id)a0 roomContext:(id)a1;
+- (void)widgetDidAppear;
+- (void)widgetUnmount;
+- (void)openGoodsListViewWithParams:(id)a0;
+- (void)openGoodsListViewWithParams:(id)a0 ignoreCartShowed:(BOOL)a1;
+- (void)openGoodsListViewWithParams:(id)a0 ignoreCartShowed:(BOOL)a1 completion:(id /* block */)a2;
+- (void)addCartAnimationWithModel:(id)a0 params:(id)a1 completion:(id /* block */)a2;
+- (void)registerAtomicBasicAbility;
+- (BOOL)isShopCartItemExist;
+- (void)widgetRefresh;
+- (void)didShowShopCart:(BOOL)a0;
+- (void)endHandleAfterEnterRoom;
+- (void)widgetDidDisappear;
+- (void)liveContext:(id)a0 jumpToGoodsDetailWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)liveContext:(id)a0 jumpToGoodsOrderWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)noticeBuyIntension;
+- (BOOL)registerSmallLiveWindowWithClassName:(Class)a0 tagName:(id)a1;
+- (id)appendRecommendParamsToMallScheme:(id)a0 prefetchKey:(id)a1 needAppendTabData:(BOOL)a2;
+- (void)didUsedECLiveParams:(id)a0;
+- (id)listViewEnvironment;
+- (BOOL)isEqualToCGZero:(struct CGPoint { double x0; double x1; })a0;
+- (void)iPadCloseTopFuncView:(BOOL *)a0;
+- (id)couponRouter;
+- (void)listModuleViewReadyToShow:(id)a0;
+- (void)listModuleDidClose:(id)a0;
+- (void)liveContext:(id)a0 openGoodsListViewWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)liveContext:(id)a0 closeGoodsListWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)liveContext:(id)a0 updateGoodsListWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)liveContext:(id)a0 showAddCartAnimWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)atomicAbilityOpenGoodsListWithParams:(id)a0;
+- (void)addCartAnimationWithURL:(id)a0 startPoint:(struct CGPoint { double x0; double x1; })a1 endPoint:(struct CGPoint { double x0; double x1; })a2;
+- (void)p_initListModuleIfNeeded;
+- (void)prefetchListViewDataIfNeeded;
+- (void)p_showCommodityViewWithParams:(id)a0 ignoreCartShowed:(BOOL)a1 completion:(id /* block */)a2;
+- (id)createListViewModule;
+- (id)p_uiConfig;
+- (void)callOpenListCompletionIfNeeded;
+- (void)addMessageSubscriber:(id)a0 forClasses:(id)a1;
+- (id)tracker;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (BOOL)isShowing;
+- (void)dealloc;
+
+@end

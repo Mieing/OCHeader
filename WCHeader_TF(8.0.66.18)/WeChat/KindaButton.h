@@ -1,0 +1,71 @@
+@class NSString, KindaUIButton, MMDynamicColor, MMKViewOnClickCallback;
+@protocol MMKImage;
+
+@interface KindaButton : KindaView <MMKButton>
+
+@property (retain, nonatomic) KindaUIButton *m_button;
+@property (retain, nonatomic) NSString *m_text;
+@property (nonatomic) float m_textSize;
+@property (retain, nonatomic) MMDynamicColor *m_normalTextColor;
+@property (retain, nonatomic) MMDynamicColor *m_normalColor;
+@property (retain, nonatomic) MMDynamicColor *m_disabledTextColor;
+@property (retain, nonatomic) MMDynamicColor *m_disabledColor;
+@property (nonatomic) long long fontStyle;
+@property (retain, nonatomic) id<MMKImage> m_normalBackgroundImage;
+@property (retain, nonatomic) id<MMKImage> m_pressBackgroundImage;
+@property (retain, nonatomic) id<MMKImage> m_disabledBackgroundImage;
+@property (retain, nonatomic) id<MMKImage> m_selectedBackgroundImage;
+@property (nonatomic) long long m_expandHitWidth;
+@property (nonatomic) long long m_expandHitHeight;
+@property (retain, nonatomic) MMKViewOnClickCallback *m_onButtonClickCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (id)getView;
+- (void)setWidth:(float)a0;
+- (void)setMinHeight:(float)a0;
+- (void)setMinWidth:(float)a0;
+- (void)setOnClickCallback:(id)a0;
+- (void)setBorderColor:(id)a0;
+- (void)setEnableHighLight:(BOOL)a0;
+- (BOOL)getEnableHighLight;
+- (void)setTextSize:(float)a0;
+- (float)getTextSize;
+- (void)setTextNormalColor:(id)a0;
+- (id)getTextNormalColor;
+- (void)setText:(id)a0;
+- (id)getText;
+- (void)setNormalImage:(id)a0;
+- (id)getNormalImage;
+- (void)setPressedImage:(id)a0;
+- (id)getPressedImage;
+- (void)setSelectedImage:(id)a0;
+- (id)getSelectedImage;
+- (void)setDisabledImage:(id)a0;
+- (id)getDisabledImage;
+- (void)setEnable:(BOOL)a0;
+- (BOOL)getEnable;
+- (void)setNormalColor:(id)a0;
+- (id)getNormalColor;
+- (id)getDisableColor;
+- (void)setDisableColor:(id)a0;
+- (id)getDisableTextColor;
+- (void)setDisableTextColor:(id)a0;
+- (void)onButtonTouchUpInside:(id)a0;
+- (void)setExpandHitWidth:(long long)a0;
+- (void)setExpandHitHeight:(long long)a0;
+- (long long)getExpandHitWidth;
+- (long long)getExpandHitHeight;
+- (long long)getFontStyle;
+- (void)setVerticalPadding:(long long)a0;
+- (long long)getVerticalPadding;
+- (void)setHorizontalPadding:(long long)a0;
+- (long long)getHorizontalPadding;
+- (void)adjustSize;
+- (void).cxx_destruct;
+
+@end

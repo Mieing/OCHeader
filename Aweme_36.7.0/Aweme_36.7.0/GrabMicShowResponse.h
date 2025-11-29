@@ -1,0 +1,10 @@
+@class GrabMicShowResponse_Data;
+
+@interface GrabMicShowResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GrabMicShowResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

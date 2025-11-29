@@ -1,0 +1,3 @@
+@interface AWESeachFullPageLoadingViewConfig : NSObject
+
+@end

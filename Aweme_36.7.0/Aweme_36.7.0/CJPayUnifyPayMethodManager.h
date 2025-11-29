@@ -1,0 +1,75 @@
+@class CJPayDefaultChannelShowConfig, CJPayUnifyPayMethodModel, NSArray, CJPayUnifyPayMethodDetailView, NSString, NSMutableDictionary, CJPayUnifyPayMethodListViewController, CJPayAssetInfoModel, CJPayUnifyPayMethodListView, CJPayAssetContextStoreManager;
+
+@interface CJPayUnifyPayMethodManager : NSObject <CJPayAssetContextStoreDelegate>
+
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *curSelectConfig;
+@property (copy, nonatomic) NSArray *allChannelConfigs;
+@property (nonatomic) BOOL hasChangeSelectConfig;
+@property (retain, nonatomic) CJPayAssetInfoModel *assetInfoModel;
+@property (retain, nonatomic) NSMutableDictionary *methodGroupModels;
+@property (copy, nonatomic) NSArray *payMethodSortList;
+@property (retain, nonatomic) NSMutableDictionary *leftToastCount;
+@property (nonatomic) long long globalMaxToastCount;
+@property (nonatomic) BOOL didInitGlobalToastCount;
+@property (retain, nonatomic) CJPayUnifyPayMethodModel *payMethodModel;
+@property (retain, nonatomic) CJPayAssetContextStoreManager *assetContextManager;
+@property (retain, nonatomic) CJPayUnifyPayMethodListView *listView;
+@property (retain, nonatomic) CJPayUnifyPayMethodDetailView *detailView;
+@property (retain, nonatomic) CJPayUnifyPayMethodListViewController *methodListVC;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *metricsDefaultConfig;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)commonTrackerParams;
+- (id)p_filterAndSortMethodList:(id)a0 subPayTypeIndexList:(id)a1;
+- (void)storeAssetContextKey:(id)a0 boolValue:(BOOL)a1 identity:(id)a2;
+- (void)clearAssetContextForKey:(id)a0;
+- (void)getMethodGroupsWithConditionParams:(id)a0 completion:(id /* block */)a1;
+- (id)assetContextValueForKey:(id)a0 identity:(id)a1;
+- (BOOL)assetContextBoolValueForKey:(id)a0 identity:(id)a1;
+- (void)clearAssetContextForKey:(id)a0 identity:(id)a1;
+- (BOOL)p_handlePayMethodListByAssetInfo:(id)a0;
+- (id)p_getAllMethodGroupListWithParams:(id)a0;
+- (BOOL)p_isEqualCurAsset:(id)a0 otherAsset:(id)a1;
+- (id)p_payMethodGroupTypeStrWithShowConfig:(id)a0;
+- (void)p_updateMethodSortOrderBySelectedConfig:(id)a0;
+- (BOOL)p_needShowGroupModelWithType:(long long)a0 isCombineMode:(BOOL)a1;
+- (BOOL)p_isAssetExpandVoucher:(id)a0;
+- (id)p_updateAssetCombineAssetInfoWithShowConfig:(id)a0;
+- (void)p_modifyMethodSortBetweenGroup:(id)a0;
+- (id)p_sortShowConfig:(id)a0 inList:(id)a1;
+- (id)p_trackCampaignInfo:(id)a0;
+- (void)updatePayMethodFromExternalSourceWithInfoModelList:(id)a0 completion:(id /* block */)a1;
+- (id)reloadPayMethodView:(id)a0 scrollType:(unsigned long long)a1;
+- (id)currentPayMethodShowConfig;
+- (id)buildPayMethodListViewWithDelegate:(id)a0;
+- (id)buildPayMethodDetailViewWithDelegate:(id)a0;
+- (id)top2BytePayTypeTrackerParams;
+- (void)gotoPayMethodListVCWithModel:(id)a0 delegate:(id)a1;
+- (id)getCombineConfigByAsset:(id)a0;
+- (void)p_initializeOrUpdateWithModel:(id)a0;
+- (void)p_initializePayMethodList;
+- (void)p_initializeDefaultConfig;
+- (void)p_getDetailGroupsWithCompletion:(id /* block */)a0;
+- (void)p_updateSelectConfig:(id)a0;
+- (id)p_getMatchingConfigForAssetMetaInfo:(id)a0;
+- (void)p_updatePayMethodFromExternalSource:(id)a0 completion:(id /* block */)a1;
+- (id)p_matchingConfigsWithAssetInfoModelList:(id)a0;
+- (id)p_getPrimaryAssetWithConfigList:(id)a0;
+- (void)configureCombineChoicePaymentWithConfig:(id)a0 detailGroupModel:(id)a1;
+- (void)configureDefaultPaymentWithConfig:(id)a0 detailGroupModel:(id)a1;
+- (void)handleUnexpectedSceneWithConfig:(id)a0 detailGroupModel:(id)a1;
+- (void)p_modifyMethodSortInsideCombineGroup:(id)a0;
+- (void)p_didSelectPayMethod:(id)a0;
+- (id)p_trackAmountInfo:(id)a0;
+- (id)p_trackMethodList;
+- (id)p_trackUnfoldMethodList;
+- (void)p_showPromptOnConfigChangeFrom:(id)a0 to:(id)a1;
+- (void)p_recordAssetAppear:(id)a0 params:(id)a1;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (void)updateWithModel:(id)a0;
+
+@end

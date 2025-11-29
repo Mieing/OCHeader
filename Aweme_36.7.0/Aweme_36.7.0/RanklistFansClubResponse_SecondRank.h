@@ -1,0 +1,12 @@
+@class HTSLiveUser;
+
+@interface RanklistFansClubResponse_SecondRank : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long score;
+@property (nonatomic) long long rank;
+
++ (id)descriptor;
+
+@end

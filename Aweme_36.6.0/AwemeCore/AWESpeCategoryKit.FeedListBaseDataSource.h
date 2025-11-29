@@ -1,0 +1,8 @@
+@interface AWESpeCategoryKit.FeedListBaseDataSource : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ context;
+    void /* unknown type, empty encoding */ dataController;
+    void /* unknown type, empty encoding */ dataProcessors;
+    void /* unknown type, empty encoding */ preloadState;
+}
+
+@end

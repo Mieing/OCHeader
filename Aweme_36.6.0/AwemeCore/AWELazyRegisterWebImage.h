@@ -1,0 +1,3 @@
+@interface AWELazyRegisterWebImage : NSObject
+
+@end

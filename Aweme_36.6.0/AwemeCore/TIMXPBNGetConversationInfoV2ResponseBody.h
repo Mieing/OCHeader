@@ -1,0 +1,10 @@
+@class TIMXPBNConversationInfoV2;
+
+@interface TIMXPBNGetConversationInfoV2ResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNConversationInfoV2 *conversationInfo;
+@property (nonatomic) BOOL hasConversationInfo;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,26 @@
+@class HTSLiveAudienceAddSongSettingChangedContent, HTSLiveAudienceMultiChorusSettingChangedContent, HTSLiveAudienceOrderSongChatContent, HTSLiveSetSettingOrderSongContent, HTSLiveSongWaitingListChangedContent, HTSLivePermitWantToListenSongContent, HTSLiveCommon, HTSLiveAudienceOrderSongContent, HTSLiveWantToListenSongListChangedContent, HTSLiveWantToListenSongRemovedContent, HTSLiveOpenKtvComponentContent, HTSLiveMultiChorusWaitingListChangedContent, HTSLivePausePlaySongContent, HTSLiveCloseKtvComponentContent, HTSLiveKTVStageHideLyricsSwitchChangedContent;
+
+@interface HTSLiveKtvMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long messageType;
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) HTSLiveSetSettingOrderSongContent *setSettingOrderSongContent;
+@property (retain, nonatomic) HTSLiveAudienceOrderSongContent *audienceOrderSongContent;
+@property (retain, nonatomic) HTSLiveAudienceOrderSongChatContent *audienceOrderSongChatContent;
+@property (retain, nonatomic) HTSLivePausePlaySongContent *pausePlaySongContent;
+@property (retain, nonatomic) HTSLiveOpenKtvComponentContent *openKtvComponentContent;
+@property (retain, nonatomic) HTSLiveCloseKtvComponentContent *closeKtvComponentContent;
+@property (retain, nonatomic) HTSLiveAudienceAddSongSettingChangedContent *audienceAddSongSettingChanged;
+@property (retain, nonatomic) HTSLiveSongWaitingListChangedContent *songWaitingListChanged;
+@property (retain, nonatomic) HTSLiveWantToListenSongListChangedContent *wantToListenSongListChanged;
+@property (retain, nonatomic) HTSLivePermitWantToListenSongContent *permitWantToListenSong;
+@property (retain, nonatomic) HTSLiveWantToListenSongRemovedContent *wantToListenSongRemoved;
+@property (retain, nonatomic) HTSLiveAudienceMultiChorusSettingChangedContent *audienceMultiChorusSettingChanged;
+@property (retain, nonatomic) HTSLiveMultiChorusWaitingListChangedContent *multiChorusWaitingListChanged;
+@property (retain, nonatomic) HTSLiveKTVStageHideLyricsSwitchChangedContent *ktvStageHideLyricsSwitchChanged;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,76 @@
+@class IESECLiveRoomContext, IESECButton, NSArray, IESECPlaybackCardListDataSource, IESECLiveReplayCardModel, NSString, NSMutableArray, IESECQualityInfoV2, UICollectionView, NSNumber;
+@protocol IESECPlaybackGoodsCardListViewDelegate;
+
+@interface IESECPlaybackGoodsCardListView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, IESECLiveReplayInteractionProtocol, IESECPlaybackGoodsCardViewDelegate>
+
+@property (retain, nonatomic) IESECButton *shrinkButton;
+@property (retain, nonatomic) IESECLiveReplayCardModel *currentCardModel;
+@property (nonatomic) long long currentCardLocalIndex;
+@property (retain, nonatomic) NSArray *goodsInVisiableCells;
+@property (retain, nonatomic) NSMutableArray *expandCardPromotionIDArray;
+@property (retain, nonatomic) NSMutableArray *smallCardPromotionIDArray;
+@property (retain, nonatomic) IESECLiveRoomContext *roomContext;
+@property (retain, nonatomic) NSNumber *replayStartTime;
+@property (nonatomic) BOOL isLiveStreaming;
+@property (nonatomic) double currentTime;
+@property (nonatomic) double totalDuration;
+@property (nonatomic) BOOL didScroll;
+@property (nonatomic) BOOL didClick;
+@property (retain, nonatomic) IESECQualityInfoV2 *qualityInfo;
+@property (nonatomic) long long mode;
+@property (nonatomic) BOOL requestOnAir;
+@property (retain, nonatomic) IESECPlaybackCardListDataSource *dataSource;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (weak, nonatomic) id<IESECPlaybackGoodsCardListViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)ecomEntranceForm;
+- (void)updateProgress:(double)a0 totalDuration:(double)a1;
+- (id)liveContext;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 context:(id)a1 params:(id)a2 mode:(long long)a3;
+- (void)onSeekUpdate:(double)a0;
+- (BOOL)isFromGoodsDetail;
+- (BOOL)currentVideoHasSubtitleInfo;
+- (void)showViewInParent:(id)a0;
+- (void)infoViewClicked;
+- (BOOL)cardUseMultiMode;
+- (long long)isFirstLocatedCardWithGoodsIndex:(long long)a0;
+- (void)reloadDataAfterFetch:(BOOL)a0;
+- (void)shrinkClick;
+- (void)updateWithPlayerTime:(double)a0;
+- (long long)getNearestIndexOfCell:(double)a0;
+- (BOOL)haveExpandCard;
+- (void)requestNextPageDataIfNeed:(double)a0;
+- (long long)getCurrentPage:(long long)a0;
+- (double)getCurrentCellOffset:(double)a0;
+- (void)updateCurrentGoods;
+- (BOOL)containValidGoods:(id)a0;
+- (BOOL)isInExplain:(id)a0;
+- (BOOL)shouldTrackShowUsingModel:(id)a0;
+- (void)trackSmallCardShowWithIndex:(long long)a0 goodsModel:(id)a1 cell:(id)a2;
+- (void)trackInfoViewCardWithGoodsModel:(id)a0 cell:(id)a1;
+- (void)cardModeChangeIfNeedReplayUsingIndex:(long long)a0;
+- (double)getCurrentVideoTimeWithCellIndex:(long long)a0;
+- (void)cardModeChangeIfNeedUsingIndex:(long long)a0;
+- (long long)getCurrentPageWithOffset:(double)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 liveContext:(id)a1 params:(id)a2 mode:(long long)a3 delegate:(id)a4;
+- (double)getCurrentCellWithScrollOffset:(double)a0;
+- (long long)getNearestLeftIndexOfCell:(double)a0;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (void)reload;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)goBack;
+- (void)scrollViewDidScroll:(id)a0;
+- (id)flowLayout;
+- (void)loadData;
+- (void)setupUI;
+
+@end

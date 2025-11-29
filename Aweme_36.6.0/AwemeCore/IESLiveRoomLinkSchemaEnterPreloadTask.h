@@ -1,0 +1,3 @@
+@interface IESLiveRoomLinkSchemaEnterPreloadTask : IESLiveLinkTask
+
+@end

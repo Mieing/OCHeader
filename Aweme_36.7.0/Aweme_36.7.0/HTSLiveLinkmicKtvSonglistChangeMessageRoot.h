@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicKtvSonglistChangeMessageRoot : GPBRootObject
+
+@end

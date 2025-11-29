@@ -1,0 +1,77 @@
+@class NSIndexPath, IESLivePKAnchorRootViewModel, IESLivePKPanelNoticeView, UIView, IESLivePKNormalPanelView, NSString, IESLivePKRecordPanel, UIScrollView;
+@protocol IESLiveScrollRefreshService, IESLivePerfSampler;
+
+@interface IESLivePKSeasonAnchorRootViewController : IESLiveRevenueInteractPopupViewController <IESLivePKCustomPanelViewDelegate, UIScrollViewDelegate>
+
+@property (nonatomic) BOOL isScrolling;
+@property (nonatomic) BOOL viewDidLoaded;
+@property (nonatomic) BOOL hasRefreshed;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } contentFrame;
+@property (nonatomic) double contentShowTimeStamp;
+@property (retain, nonatomic) UIView *expandNavBar;
+@property (retain, nonatomic) UIView *emptyView;
+@property (retain, nonatomic) IESLivePKPanelNoticeView *noticeView;
+@property (retain, nonatomic) IESLivePKNormalPanelView *seasonPKPanelView;
+@property (weak, nonatomic) IESLivePKRecordPanel *pkRecordPanel;
+@property (retain, nonatomic) UIView *redDotView;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) id<IESLiveScrollRefreshService> scrollRefresh;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (nonatomic) double appearTime;
+@property (weak, nonatomic) IESLivePKAnchorRootViewModel *viewModel;
+@property (retain, nonatomic) NSIndexPath *normalPKIndexPath;
+@property (nonatomic) BOOL needTrackContentShow;
+@property (nonatomic) double tabAppearTimestamp;
+@property (nonatomic) long long showTime;
+@property (nonatomic) BOOL hasSwitched;
+@property (nonatomic) long long refreshTimes;
+@property (nonatomic) BOOL tabSelected;
+@property (nonatomic) BOOL tabInited;
+@property (nonatomic) BOOL delayTrackContentShow;
+@property (nonatomic) BOOL isPullDown;
+@property (copy, nonatomic) id /* block */ openBookBattleAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setNavBarBackgroundColor:(BOOL)a0;
+- (void)contentViewDidSelected:(BOOL)a0 type:(long long)a1;
+- (void)setupContentViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupEmptyView;
+- (void)refreshPanel;
+- (void)onSetupNavBar:(id)a0;
+- (void)updateViewsIfNeeded;
+- (id)seasonExpandNavBar:(id)a0;
+- (BOOL)couldRefreshPanel;
+- (void)updateFeedbackTendencyWith:(id)a0 userInfo:(id)a1;
+- (void)renderPKState:(long long)a0;
+- (void)regenerateExpandNavBar;
+- (void)updateNoticeViewIfNeeded;
+- (void)trackContentShow:(BOOL)a0;
+- (void)refreshPanelThroughNetworkRequest;
+- (void)updateLayoutWithViewModel:(BOOL)a0;
+- (BOOL)needShowTopTipsView;
+- (void)cleanPanelView;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })setupNormalPanelViewFrame;
+- (void)setupLoadingProcess;
+- (void)showPKSettingVC;
+- (void)didClickHistoryEntrance;
+- (void)showPKRecordVC;
+- (void)showSelectTimeNoticePanel;
+- (BOOL)shouldShowTopTipNotice;
+- (void)showTopTipNoticePanel;
+- (void)dismissNoticePanel;
+- (void)showSeasonPKPanelView;
+- (void)handleBubbleGuideForHistoryEntrance:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithViewModel:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)clean;
+- (void)layoutUI;
+
+@end

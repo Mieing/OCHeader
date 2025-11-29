@@ -1,0 +1,12 @@
+@class NSString, NewGiftActivityRankResponse_Reward;
+
+@interface NewGiftActivityRankResponse_Rule : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (retain, nonatomic) NewGiftActivityRankResponse_Reward *reward;
+@property (nonatomic) BOOL hasReward;
+@property (copy, nonatomic) NSString *description_p;
+
++ (id)descriptor;
+
+@end

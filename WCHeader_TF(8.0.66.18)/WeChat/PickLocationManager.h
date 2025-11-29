@@ -1,0 +1,88 @@
+@class NSString, MMPOIAnnotation, QIndoorInfo, MMLocatingCoordinateLogic, NSArray, NSMutableArray, POIItem, QPoiInfo;
+@protocol MMPickLocationDataActionDelegate;
+
+@interface PickLocationManager : MMObject
+
+@property (retain, nonatomic) NSMutableArray *m_poiAnnotationList;
+@property (retain, nonatomic) NSMutableArray *m_searchAnnotationList;
+@property (retain, nonatomic) NSMutableArray *m_displayAnnotationList;
+@property (retain, nonatomic) POIItem *myPoiItem;
+@property (retain, nonatomic) MMPOIAnnotation *myPoiAnnotation;
+@property (retain, nonatomic) POIItem *userLocationItem;
+@property (retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic;
+@property (nonatomic) BOOL disablePoiDirectionDesc;
+@property (weak, nonatomic) id<MMPickLocationDataActionDelegate> actionDelegate;
+@property (nonatomic) unsigned int scene;
+@property (copy, nonatomic) NSString *roughAddress;
+@property (copy, nonatomic) NSString *address;
+@property (copy, nonatomic) NSString *province;
+@property (copy, nonatomic) NSString *city;
+@property (copy, nonatomic) NSString *district;
+@property (copy, nonatomic) NSString *subAddr;
+@property (copy, nonatomic) NSString *poiId;
+@property (nonatomic) double distanceToLandmark;
+@property (nonatomic) struct CLLocationCoordinate2D { double latitude; double longitude; } coordinate;
+@property (retain, nonatomic) QIndoorInfo *indoorInfo;
+@property (retain, nonatomic) QPoiInfo *selectPoiInfo;
+@property (retain, nonatomic) NSString *addressNameId;
+@property (nonatomic) unsigned long long selectedPoiIndex;
+@property (nonatomic) long long selectedSearchIndex;
+@property (retain, nonatomic) MMPOIAnnotation *lastSelectedSearchAnnotation;
+@property (retain, nonatomic) MMPOIAnnotation *selectedSearchAnnotation;
+@property (readonly, nonatomic) NSArray *displayAnnotationList;
+@property (readonly, nonatomic) NSArray *searchAnnotationList;
+@property (readonly, nonatomic) NSArray *searchPOIResultList;
+@property (readonly, nonatomic) NSArray *poiAnnotationList;
+
++ (id)createAnnotationForPOIItem:(id)a0;
++ (double)getDistanceBetween:(struct CLLocationCoordinate2D { double x0; double x1; })a0 AndTarget:(struct CLLocationCoordinate2D { double x0; double x1; })a1;
++ (struct CLLocationCoordinate2D { double x0; double x1; })centerForAnnotations:(id)a0;
++ (id)filterAnnotations:(id)a0 NearAnnotation:(id)a1;
++ (BOOL)isDisplayDisBetween:(id)a0 AndAnnotations:(id)a1 inMapView:(id)a2 LimitIn:(double)a3 IgnoreSamePOIDistance:(double)a4;
++ (double)getMapPointPerCGPointForAnnotation:(id)a0 AndAnnotations:(id)a1 UnderZoomLevel:(double)a2 IgnoreSamePOIDistance:(double)a3;
++ (double)maxDistanceBetweenAnnotations:(id)a0;
++ (double)getMapPointPerCGPointForAnnotationsWhenConcide:(id)a0 underZoomLevel:(double)a1 IgnoreSamePOIDistance:(double)a2;
++ (BOOL)isCoordinate1:(struct CLLocationCoordinate2D { double x0; double x1; })a0 EqualToCoordinate2:(struct CLLocationCoordinate2D { double x0; double x1; })a1;
++ (double)zoomLevelForDisplayAnnotations:(id)a0 Center:(struct CLLocationCoordinate2D { double x0; double x1; } *)a1 LimitMaxZoomLevel:(BOOL *)a2 InMapView:(id)a3;
++ (double)getMaxZoomLevelForEnlargeReclosingDisplayRect:(struct { struct { double x0; double x1; } x0; struct { double x0; double x1; } x1; })a0 RestEdgePaddingDegree:(double)a1 Center:(struct CLLocationCoordinate2D { double x0; double x1; } *)a2 InMapView:(id)a3;
++ (double)adjustDegreeForSearchAnnoations:(id)a0;
+
+- (id)init;
+- (void)addSearchAnnotations:(id)a0;
+- (void)removeSearchAnnotations;
+- (void)addDisplayAnnotations:(id)a0;
+- (void)removeDisplayAnnotations;
+- (unsigned long long)searchPOIResultCount;
+- (id)searchPOIItemAt:(unsigned long long)a0;
+- (unsigned long long)searchAnnotationCount;
+- (unsigned long long)indexOfDisplayAnnotation:(id)a0;
+- (id)searchResultSearchIDAtIndex:(unsigned long long)a0;
+- (id)poiAnnotationSearchIDAtIndex:(unsigned long long)a0;
+- (id)searchAnnotationAtIndex:(unsigned long long)a0;
+- (unsigned long long)indexForSearchAnnotation:(id)a0;
+- (id)getSelectedSearchPOIItem;
+- (id)nearbyPOIItemAt:(unsigned long long)a0;
+- (void)addNearbyPOIItem:(id)a0 searchId:(id)a1;
+- (BOOL)hasContainNearbyPOIItem:(id)a0;
+- (void)resetNearbyPOIItems;
+- (void)resetSearchResultItems;
+- (BOOL)isMyPOIItem:(id)a0;
+- (void)updateMyPOIItem;
+- (id)getMyPOIItem;
+- (id)getSelectedPOIItem;
+- (unsigned int)getMyPOIItemIndex;
+- (BOOL)isCityEqualToUserLocation:(id)a0;
+- (id)getPOIAnnotationAtIndex:(unsigned long long)a0;
+- (id)getSelectedPOIAnnotation;
+- (void)addUserPOIItemWithLatitude:(double)a0 Longitude:(double)a1;
+- (void)addNearbyPOIAnnotation:(id)a0;
+- (void)addNotCheckInPOIItemWithLatitude:(double)a0 Longitude:(double)a1;
+- (void)updateUserLocation:(id)a0 Pronvince:(id)a1 City:(id)a2;
+- (BOOL)isUserLocationComplete;
+- (BOOL)isLocationNearToUserLocationItem:(struct CLLocationCoordinate2D { double x0; double x1; })a0;
+- (id)createCurrUserLocationAnnotation;
+- (void)requestUserAddress:(struct CLLocationCoordinate2D { double x0; double x1; })a0 indoorInfo:(id)a1 lastSelectedPoiInfo:(id)a2 completion:(id /* block */)a3;
+- (BOOL)shouldUseAddressWithDirection;
+- (void).cxx_destruct;
+
+@end

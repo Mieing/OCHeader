@@ -1,0 +1,3 @@
+@interface IESLLPOIHeaderCarouselTempleteCell : UICollectionViewCell
+
+@end

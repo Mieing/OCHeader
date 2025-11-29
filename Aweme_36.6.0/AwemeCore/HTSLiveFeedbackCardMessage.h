@@ -1,0 +1,12 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveFeedbackCardMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long questionnaireId;
+@property (nonatomic) long long scatterMills;
+
++ (id)descriptor;
+
+@end

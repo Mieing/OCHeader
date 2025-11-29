@@ -1,0 +1,21 @@
+@interface FlowAudio.AVAudioEngineBasedVoiceRecorder : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ sampleInterval;
+    void /* unknown type, empty encoding */ logger;
+    void /* unknown type, empty encoding */ tracker;
+    void /* unknown type, empty encoding */ audioFileURL;
+    void /* unknown type, empty encoding */ audioFormat;
+    void /* unknown type, empty encoding */ audioEngine;
+    void /* unknown type, empty encoding */ audioDataStream;
+    void /* unknown type, empty encoding */ audioFileHandle;
+    void /* unknown type, empty encoding */ audioEngineReady;
+    void /* unknown type, empty encoding */ _averagePower;
+    void /* unknown type, empty encoding */ timer;
+    void /* unknown type, empty encoding */ timeoutWorkItem;
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ id;
+    void /* unknown type, empty encoding */ config;
+}
+
+- (void)restartAudioEngineIfNeeded;
+
+@end

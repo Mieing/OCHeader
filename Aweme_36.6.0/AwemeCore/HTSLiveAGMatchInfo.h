@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveAGMatchInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *lCountry;
+@property (copy, nonatomic) NSString *rCountry;
+@property (nonatomic) long long lScore;
+@property (nonatomic) long long rScore;
+@property (copy, nonatomic) NSString *lCountryImgURL;
+@property (copy, nonatomic) NSString *rCountryImgURL;
+
++ (id)descriptor;
+
+@end

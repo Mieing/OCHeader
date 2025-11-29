@@ -1,0 +1,3 @@
+@interface IESECWinContainerNaviVC : UINavigationController
+
+@end

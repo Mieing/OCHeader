@@ -1,0 +1,3 @@
+@interface DUXBaseCollectionViewCell : UICollectionViewCell
+
+@end

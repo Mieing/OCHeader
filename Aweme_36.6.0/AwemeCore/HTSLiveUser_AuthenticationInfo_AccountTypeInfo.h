@@ -1,0 +1,10 @@
+@class GPBInt64BoolDictionary;
+
+@interface HTSLiveUser_AuthenticationInfo_AccountTypeInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64BoolDictionary *accountTypeMap;
+@property (readonly, nonatomic) unsigned long long accountTypeMap_Count;
+
++ (id)descriptor;
+
+@end

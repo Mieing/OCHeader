@@ -1,0 +1,10 @@
+@class HTSLiveLinkerCancelContent;
+
+@interface HTSLiveLinkerSwitchChannelCancelContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkerCancelContent *content;
+@property (nonatomic) BOOL hasContent;
+
++ (id)descriptor;
+
+@end

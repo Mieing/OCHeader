@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveWalletDescriptionItem : IESLivePBBaseMessage
+
+@property (nonatomic) int descriptionType;
+@property (copy, nonatomic) NSString *value;
+
++ (id)descriptor;
+
+@end

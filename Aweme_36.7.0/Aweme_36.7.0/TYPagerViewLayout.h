@@ -1,0 +1,86 @@
+@class NSMutableDictionary, NSDictionary, NSArray, UIScrollView, NSString, NSCache;
+@protocol TYPagerViewLayoutDelegate, TYPagerViewLayoutDataSource;
+
+@interface TYPagerViewLayout : NSObject <UIScrollViewDelegate> {
+    BOOL _needLayoutContent;
+    BOOL _scrollAnimated;
+    BOOL _isTapScrollMoved;
+    double _preOffsetX;
+    long long _firstScrollToIndex;
+    BOOL _didReloadData;
+    BOOL _didLayoutSubViews;
+    struct { unsigned char addVisibleItem : 1; unsigned char removeInVisibleItem : 1; } _dataSourceFlags;
+    struct { unsigned char transitionFromIndexToIndex : 1; unsigned char transitionFromIndexToIndexProgress : 1; unsigned char pagerViewLayoutDidScroll : 1; } _delegateFlags;
+}
+
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (nonatomic) long long countOfPagerItems;
+@property (nonatomic) long long curIndex;
+@property (retain, nonatomic) NSCache *memoryCache;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } visibleRange;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } prefetchRange;
+@property (retain, nonatomic) NSDictionary *visibleIndexItems;
+@property (retain, nonatomic) NSDictionary *prefetchIndexItems;
+@property (retain, nonatomic) NSMutableDictionary *reuseIdentifyClassOrNib;
+@property (retain, nonatomic) NSMutableDictionary *reuseIdentifyItems;
+@property (weak, nonatomic) id<TYPagerViewLayoutDataSource> dataSource;
+@property (weak, nonatomic) id<TYPagerViewLayoutDelegate> delegate;
+@property (nonatomic) BOOL adjustScrollViewInset;
+@property (nonatomic) BOOL autoMemoryCache;
+@property (nonatomic) long long prefetchItemCount;
+@property (nonatomic) BOOL prefetchItemWillAddToSuperView;
+@property (readonly, nonatomic) NSArray *visibleIndexs;
+@property (readonly, nonatomic) NSArray *visibleItems;
+@property (nonatomic) BOOL progressAnimateEnabel;
+@property (nonatomic) BOOL addVisibleItemOnlyWhenScrollAnimatedEnd;
+@property (nonatomic) double changeIndexWhenScrollProgress;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)layoutIfNeed;
+- (void)scrollToItemAtIndex:(long long)a0 animate:(BOOL)a1;
+- (id)cacheItemForKey:(id)a0;
+- (void)registerClass:(Class)a0 forItemWithReuseIdentifier:(id)a1;
+- (void)registerNib:(id)a0 forItemWithReuseIdentifier:(id)a1;
+- (id)dequeueReusableItemWithReuseIdentifier:(id)a0 forIndex:(long long)a1;
+- (void)configurePropertys;
+- (void)configureScrollView;
+- (void)addScrollViewObservers;
+- (void)removeVisibleItems;
+- (void)resetPropertys;
+- (void)setNeedLayout;
+- (void)scrollViewWillScrollToView:(id)a0 animate:(BOOL)a1;
+- (void)scrollViewDidScrollToView:(id)a0 animate:(BOOL)a1;
+- (void)addPrefetchItemsOutOfVisibleRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a0;
+- (void)removeVisibleItemsOutOfVisibleRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a0;
+- (void)addVisibleItemsInVisibleRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a0;
+- (void)removeInvisibleItem:(id)a0 atIndex:(long long)a1;
+- (id)viewForItem:(id)a0 atIndex:(long long)a1;
+- (void)enqueueReusableItem:(id)a0 prefetchRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 atIndex:(long long)a2;
+- (void)cacheItem:(id)a0 forKey:(id)a1;
+- (void)addVisibleItem:(id)a0 atIndex:(long long)a1;
+- (id)viewControllerForItem:(id)a0 atIndex:(long long)a1;
+- (id)prefetchInvisibleItemAtIndex:(long long)a0;
+- (BOOL)progressCaculateEnable;
+- (void)caculateIndexByProgressWithOffsetX:(double)a0 direction:(unsigned long long)a1;
+- (void)caculateIndexWithOffsetX:(double)a0 direction:(unsigned long long)a1;
+- (void)removeScrollViewObservers;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (id)initWithScrollView:(id)a0;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (id)itemForIndex:(long long)a0;
+- (void)updateData;
+- (void)clearMemoryCache;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })frameForItemAtIndex:(long long)a0;
+
+@end

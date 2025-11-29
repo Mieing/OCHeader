@@ -1,0 +1,10 @@
+@class HTSLiveLinkmicStarWishInfo;
+
+@interface HTSLiveLinkmicStarWishOpenContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkmicStarWishInfo *starwishInfo;
+@property (nonatomic) BOOL hasStarwishInfo;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESLiveLinkMicAudienceGetPlayModeAnnounceResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *announcesArray;
+@property (readonly, nonatomic) unsigned long long announcesArray_Count;
+
++ (id)descriptor;
+
+@end

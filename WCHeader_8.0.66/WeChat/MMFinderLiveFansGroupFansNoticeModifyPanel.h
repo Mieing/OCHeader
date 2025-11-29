@@ -1,0 +1,77 @@
+@class MMWebImageView, UIImageView, MMUIButton, MMFinderLiveTaskId, UIView, UIScrollView, MMFinderLiveFansGroupNoticeVisibilitySheet, NSString, MMUILabel, NSArray, MMFinderLiveFansGroupAnchorEditFansNoticeInfo, MMTextView, UIImage;
+@protocol MMFinderLiveFansGroupFansNoticeModifyPanelDelegate, MMFinderLiveFansGroupOperationReportDelegate;
+
+@interface MMFinderLiveFansGroupFansNoticeModifyPanel : MMPageSheetBaseView <MMImagePickerManagerDelegate, WCActionSheetDelegate, UITextViewDelegate, MMFinderLiveFansGroupNoticeVisibilitySheetDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (retain, nonatomic) UIScrollView *contentView;
+@property (retain, nonatomic) UIView *visibilityContainerView;
+@property (retain, nonatomic) UIView *visibilityUpperlineView;
+@property (retain, nonatomic) UIView *visibilityLowerlineView;
+@property (retain, nonatomic) MMUILabel *visibilityTipLabel;
+@property (retain, nonatomic) MMUILabel *visibilityTitleLabel;
+@property (retain, nonatomic) UIImageView *visibilityRightChevronView;
+@property (retain, nonatomic) MMUIButton *imageSelectButton;
+@property (retain, nonatomic) MMUIButton *modifyButton;
+@property (retain, nonatomic) MMFinderLiveFansGroupAnchorEditFansNoticeInfo *editedNoticeInfo;
+@property (retain, nonatomic) MMWebImageView *noticeImageView;
+@property (retain, nonatomic) UIView *removeImageButtonView;
+@property (retain, nonatomic) MMUIButton *removeImageButton;
+@property (retain, nonatomic) MMTextView *noticeTextView;
+@property (nonatomic) BOOL isKeyBoardShow;
+@property (nonatomic) double keyBoardHeight;
+@property (retain, nonatomic) UIImage *latestNoticeImage;
+@property (retain, nonatomic) NSArray *levelTitles;
+@property (weak, nonatomic) MMFinderLiveFansGroupNoticeVisibilitySheet *visibilityPageSheet;
+@property (weak, nonatomic) id<MMFinderLiveFansGroupFansNoticeModifyPanelDelegate> panelDelegate;
+@property (weak, nonatomic) id<MMFinderLiveFansGroupOperationReportDelegate> reportDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)initNotifications;
+- (void)setupPageSheetConfig;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)createAllViews;
+- (void)layoutContentView;
+- (void)layoutVisibilityViews;
+- (void)layoutNoticeInputViews;
+- (void)updateModifyButtonStyle;
+- (double)contentWidth;
+- (double)contentHeight;
+- (double)getPanelContentHeight;
+- (double)getMaxPanelHeight;
+- (void)updateDetailViewFrameAnimated:(BOOL)a0;
+- (void)onContentSizeUpdated;
+- (id)navigationBackButton;
+- (void)onCancelButtonClicked;
+- (void)onModifyButtonClicked:(id)a0;
+- (void)onSelectImageClicked:(id)a0;
+- (void)onRemoveImageClicked;
+- (void)onChangeVisibility:(id)a0;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)MMImagePickerManager:(id)a0 didFinishPickingImageWithEditImageAttr:(id)a1;
+- (void)MMImagePickerManagerDidCancel:(id)a0;
+- (void)noticeVisibilitySheetWillDisappear:(id)a0;
+- (void)noticeVisibilitySheetDidConfirm:(id)a0 newInfo:(id)a1;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)resizeInputViewsIfNeeded;
+- (double)expectedHeightForTextView;
+- (double)maxWidthForTextView;
+- (BOOL)getModifyButtonEnable;
+- (void)updateImageSelectButtonImage;
+- (void)openImageSelect;
+- (void)syncCurrentNoticeInfoToServer:(id)a0 completion:(id /* block */)a1;
+- (void)configWithInfo:(id)a0;
+- (void)updateVisibilityTipLabel;
+- (void)makeInputBecomeFirstResponder;
+- (BOOL)superfanEnabled;
+- (void).cxx_destruct;
+
+@end

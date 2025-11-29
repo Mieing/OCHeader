@@ -1,0 +1,78 @@
+@class WAEJTexture, WAEJJavaScriptView, WAEJSharedOpenGLContext, NSMutableArray;
+
+@interface WAEJCanvasContextSkia2D : WAEJCanvasContext
+
+@property (retain, nonatomic) WAEJJavaScriptView *scriptView;
+@property (nonatomic) struct sk_sp<GrDirectContext> { struct GrDirectContext *fPtr; } skContext;
+@property (retain, nonatomic) WAEJSharedOpenGLContext *sharedGLContext;
+@property (nonatomic) unsigned int offscreenFbo;
+@property (retain, nonatomic) WAEJTexture *innerTexture;
+@property (nonatomic) struct sk_sp<SkSurface> { struct SkSurface *fPtr; } offscreenSurface;
+@property (retain, nonatomic) NSMutableArray *states;
+@property (nonatomic) struct SkPath { struct sk_sp<SkPathRef> { struct SkPathRef *fPtr; } fPathRef; int fLastMoveToIndex; struct atomic<unsigned char> { struct __cxx_atomic_impl<unsigned char, std::__cxx_atomic_base_impl<unsigned char>> { _Atomic unsigned char __a_value; } __a_; } fConvexity; struct atomic<unsigned char> { struct __cxx_atomic_impl<unsigned char, std::__cxx_atomic_base_impl<unsigned char>> { _Atomic unsigned char __a_value; } __a_; } fFirstDirection; unsigned char fFillType : 2; unsigned char fIsVolatile : 1; } path;
+
+- (id)initWithScriptView:(id)a0 width:(short)a1 height:(short)a2 screenGroup:(BOOL)a3;
+- (void)dealloc;
+- (void *)canvas;
+- (void *)currentState;
+- (void)setWidth:(short)a0;
+- (void)setHeight:(short)a0;
+- (void)markDrawCall;
+- (void)createOffScreenSurface;
+- (void)resizeToWidth:(short)a0 height:(short)a1;
+- (void)create;
+- (void)flushBuffers;
+- (void)prepare;
+- (id)getTexture;
+- (id)texture;
+- (id)capture;
+- (id)fillObject;
+- (void)setFillStyleColor:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a0;
+- (void)setFillStyleObject:(id)a0;
+- (id)strokeObject;
+- (void)setStrokeStyleColor:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a0;
+- (void)setStrokeStyleObject:(id)a0;
+- (void)save;
+- (void)restore;
+- (void)resetState;
+- (void)rotate:(float)a0;
+- (void)translateX:(float)a0 y:(float)a1;
+- (void)scaleX:(float)a0 y:(float)a1;
+- (void)resetTransform;
+- (void)transformM11:(float)a0 m12:(float)a1 m21:(float)a2 m22:(float)a3 dx:(float)a4 dy:(float)a5;
+- (void)setTransformM11:(float)a0 m12:(float)a1 m21:(float)a2 m22:(float)a3 dx:(float)a4 dy:(float)a5;
+- (struct vector<float, std::allocator<float>> { float *x0; float *x1; struct __compressed_pair<float *, std::allocator<float>> { float *x0; } x2; })getTransform;
+- (void)fillRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (void)strokeRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (void)clearRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (id)getImageDataSx:(short)a0 sy:(short)a1 sw:(short)a2 sh:(short)a3;
+- (void)putImageData:(id)a0 dx:(float)a1 dy:(float)a2;
+- (void)drawImage:(id)a0 sx:(float)a1 sy:(float)a2 sw:(float)a3 sh:(float)a4 dx:(float)a5 dy:(float)a6 dw:(float)a7 dh:(float)a8;
+- (void)beginPath;
+- (void)closePath;
+- (void)moveToX:(float)a0 y:(float)a1;
+- (void)lineToX:(float)a0 y:(float)a1;
+- (void)rectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (void)bezierCurveToCpx1:(float)a0 cpy1:(float)a1 cpx2:(float)a2 cpy2:(float)a3 x:(float)a4 y:(float)a5;
+- (void)quadraticCurveToCpx:(float)a0 cpy:(float)a1 x:(float)a2 y:(float)a3;
+- (void)arcToX1:(float)a0 y1:(float)a1 x2:(float)a2 y2:(float)a3 radius:(float)a4;
+- (void)arcX:(float)a0 y:(float)a1 radius:(float)a2 startAngle:(float)a3 endAngle:(float)a4 antiClockwise:(BOOL)a5;
+- (void)ellipse:(float)a0 y:(float)a1 radiusX:(float)a2 radiusY:(float)a3 rotation:(float)a4 startAngle:(float)a5 endAngle:(float)a6 antiClockwise:(BOOL)a7;
+- (void)fill:(int)a0;
+- (void)fill:(int)a0 withPath:(void *)a1;
+- (void)stroke;
+- (void)strokeWithPath:(void *)a0;
+- (void)clip:(int)a0;
+- (void)clip:(int)a0 withPath:(void *)a1;
+- (BOOL)isPointInPath:(float)a0 y:(float)a1 fillRule:(int)a2;
+- (BOOL)isPointInPath:(float)a0 y:(float)a1 fillRule:(int)a2 withPath:(void *)a3;
+- (BOOL)isPointInStroke:(float)a0 y:(float)a1;
+- (BOOL)isPointInStroke:(float)a0 y:(float)a1 withPath:(void *)a2;
+- (void)drawText:(void *)a0 text:(struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })a1 x:(float)a2 y:(float)a3 maxWidth:(float)a4 paint:(const void *)a5;
+- (void)fillText:(struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })a0 x:(float)a1 y:(float)a2;
+- (void)strokeText:(struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })a0 x:(float)a1 y:(float)a2;
+- (struct { float x0; float x1; float x2; })measureText:(struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })a0;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

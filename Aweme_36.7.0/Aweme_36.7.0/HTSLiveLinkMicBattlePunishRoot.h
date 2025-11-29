@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicBattlePunishRoot : GPBRootObject
+
+@end

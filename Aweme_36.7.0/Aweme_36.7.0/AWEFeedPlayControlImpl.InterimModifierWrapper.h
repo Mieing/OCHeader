@@ -1,0 +1,6 @@
+@interface AWEFeedPlayControlImpl.InterimModifierWrapper : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ _apply;
+    void /* unknown type, empty encoding */ _restore;
+}
+
+@end

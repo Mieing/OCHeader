@@ -1,0 +1,3 @@
+@interface HTSLiveTrayEffectMessageRoot : GPBRootObject
+
+@end

@@ -1,0 +1,12 @@
+@class GPBInt64Array, GPBInt64ObjectDictionary;
+
+@interface MGetCameraInfoByIDResponse_Entry : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *vsCameraInfoForEpisode;
+@property (readonly, nonatomic) unsigned long long vsCameraInfoForEpisode_Count;
+@property (retain, nonatomic) GPBInt64Array *failedEpisodeIdsArray;
+@property (readonly, nonatomic) unsigned long long failedEpisodeIdsArray_Count;
+
++ (id)descriptor;
+
+@end

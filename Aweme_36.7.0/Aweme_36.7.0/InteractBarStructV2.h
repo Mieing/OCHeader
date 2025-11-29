@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface InteractBarStructV2 : GPBMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+@property (copy, nonatomic) NSString *bizInfo;
+@property (nonatomic) BOOL hasBizInfo;
+@property (retain, nonatomic) NSMutableArray *barsArray;
+@property (readonly, nonatomic) unsigned long long barsArray_Count;
+
++ (id)descriptor;
+
+@end

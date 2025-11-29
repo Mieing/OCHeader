@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.ImagePreloadNewAdapterManager : BDMultiContentContainer.DefaultImagePreloadManager
+
+@end

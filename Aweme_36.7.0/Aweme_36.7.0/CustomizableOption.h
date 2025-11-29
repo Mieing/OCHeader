@@ -1,0 +1,13 @@
+@class GPBInt64Array;
+
+@interface CustomizableOption : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *fixedOptionArray;
+@property (readonly, nonatomic) unsigned long long fixedOptionArray_Count;
+@property (nonatomic) long long upperLimit;
+@property (nonatomic) long long lowerLimit;
+@property (nonatomic) BOOL supportCustomInput;
+
++ (id)descriptor;
+
+@end

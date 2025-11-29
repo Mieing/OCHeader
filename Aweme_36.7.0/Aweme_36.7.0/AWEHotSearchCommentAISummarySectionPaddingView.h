@@ -1,0 +1,3 @@
+@interface AWEHotSearchCommentAISummarySectionPaddingView : UICollectionReusableView
+
+@end

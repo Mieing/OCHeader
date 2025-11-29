@@ -1,0 +1,3 @@
+@interface HTSLiveDolphinSettingUpdateRoot : GPBRootObject
+
+@end

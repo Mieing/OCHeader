@@ -1,0 +1,10 @@
+@class GetFeaturedPublicScreenSettingResponse_ResponseData;
+
+@interface GetFeaturedPublicScreenSettingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetFeaturedPublicScreenSettingResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

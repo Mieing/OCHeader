@@ -1,0 +1,73 @@
+@class NSDate, NSString, UIView, UIImageView, UIButton, IESLiveOnePipPreferenceOptionsModel, UIVisualEffectView, UILabel, HTSLiveRoom;
+@protocol IESLivePlayerProtocol;
+
+@interface IESLiveSmallWindowOuterPlayerView : UIView <IESLivePlayerControllerDelegate, IESLiveSmallWindowPlayerViewProtocol>
+
+@property (retain, nonatomic) id<IESLivePlayerProtocol> playerController;
+@property (retain, nonatomic) UIView *bgContainer;
+@property (retain, nonatomic) UIView *streamContainer;
+@property (retain, nonatomic) UIView *operationContainer;
+@property (retain, nonatomic) UIView *bizDecorationView;
+@property (retain, nonatomic) UIView *shadowView;
+@property (retain, nonatomic) UIButton *enterLive;
+@property (retain, nonatomic) UIImageView *bgImageView;
+@property (retain, nonatomic) UIVisualEffectView *bgEffectview;
+@property (retain, nonatomic) UILabel *countDownLabel;
+@property (copy, nonatomic) NSDate *startDate;
+@property (copy, nonatomic) NSDate *silentDate;
+@property (nonatomic) BOOL isUserSetMuted;
+@property (nonatomic) BOOL isPreLoaded;
+@property (retain, nonatomic) UIButton *closeBtn;
+@property (retain, nonatomic) UIButton *audioBtn;
+@property (nonatomic) struct CGSize { double width; double height; } mediaSize;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isInRoom;
+@property (retain, nonatomic) HTSLiveRoom *roomModel;
+@property (copy, nonatomic) NSString *currentSmallWindowFrom;
+@property (retain, nonatomic) IESLiveOnePipPreferenceOptionsModel *preferenceOptionsModel;
+@property (copy, nonatomic) id /* block */ smallWindowTrack;
+@property (copy, nonatomic) id /* block */ muteStateDidChanged;
+@property (copy, nonatomic) id /* block */ closeWindowHandler;
+@property (copy, nonatomic) id /* block */ enterRoomHandler;
+@property (copy, nonatomic) id /* block */ preLoadFinished;
+@property (copy, nonatomic) id /* block */ loadStateChange;
+@property (copy, nonatomic) id /* block */ receiveStreamDryUp;
+@property (nonatomic) double smallWindowCornerRadius;
+@property (nonatomic) double innerPadding;
+
+- (void)setupContainer;
+- (void)player:(id)a0 loadStateDidChange:(unsigned long long)a1;
+- (void)player:(id)a0 mediaSizeDidChange:(struct CGSize { double x0; double x1; })a1;
+- (void)player:(id)a0 didReceiveError:(id)a1;
+- (void)setMute:(BOOL)a0 callTrace:(id)a1;
+- (void)trackForQuality:(id)a0 type:(long long)a1;
+- (void)didClickCloseBtn;
+- (void)switchResolution:(id)a0 complete:(id /* block */)a1;
+- (void)buildBgView;
+- (BOOL)enableAttachScreenWhenGestureCancelled;
+- (void)prePlay;
+- (void)liveDidEnded;
+- (void)countDownWithTime:(long long)a0;
+- (void)buildOperationView;
+- (void)didClickMuteBtn;
+- (void)updateAudioBtnStatus;
+- (void)buildAudioPlayer;
+- (void)buildAudioModeView;
+- (void)p_closeSmallWindowWithFinish:(BOOL)a0;
+- (void)showLiveEndView;
+- (id)initWithPreferenceModel:(id)a0 diContext:(id)a1;
+- (void)didClickEnterLiveRoom;
+- (void)buildBizDecorationView;
+- (void)layoutBizDecorationView;
+- (void)resizeWindow:(struct CGSize { double x0; double x1; })a0;
+- (void)buildPlayerView;
+- (void).cxx_destruct;
+- (void)play;
+- (void)stop;
+- (void)dealloc;
+- (void)setupLayout;
+
+@end

@@ -1,0 +1,14 @@
+@class CGPAVVideoParams;
+
+@interface CGPAVVideoFormatLevelResp : GPBMessage
+
+@property (nonatomic) BOOL ok;
+@property (nonatomic) int levelFrom;
+@property (nonatomic) int levelTo;
+@property (retain, nonatomic) CGPAVVideoParams *params;
+@property (nonatomic) BOOL hasParams;
+@property (nonatomic) int result;
+
++ (id)descriptor;
+
+@end

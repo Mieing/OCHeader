@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface AreaPattern : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *columnListArray;
+@property (readonly, nonatomic) unsigned long long columnListArray_Count;
+
++ (id)descriptor;
+
+@end

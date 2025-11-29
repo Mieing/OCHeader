@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface TextErrorCorrectionResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int statusCode;
+@property (copy, nonatomic) NSString *statusMsg;
+@property (retain, nonatomic) NSMutableArray *correctionResultsArray;
+@property (readonly, nonatomic) unsigned long long correctionResultsArray_Count;
+
++ (id)descriptor;
+
+@end

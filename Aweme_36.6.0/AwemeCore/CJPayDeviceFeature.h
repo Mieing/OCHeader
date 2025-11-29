@@ -1,0 +1,3 @@
+@interface CJPayDeviceFeature : CJPayBaseSafeFeature
+
+@end

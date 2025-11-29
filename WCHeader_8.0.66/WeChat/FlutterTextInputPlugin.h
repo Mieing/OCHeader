@@ -1,0 +1,83 @@
+@class NSTimer, NSMutableDictionary, FlutterTextInputView, FlutterTextInputViewAccessibilityHider, UIView, NSString, UIViewController;
+@protocol FlutterViewResponder, FlutterTextInputDelegate, FlutterIndirectScribbleDelegate;
+
+@interface FlutterTextInputPlugin : NSObject <FlutterKeySecondaryResponder, UIIndirectScribbleInteractionDelegate, FlutterStreamHandler> {
+    NSTimer *_enableFlutterTextInputViewAccessibilityTimer;
+}
+
+@property (readonly, nonatomic) NSMutableDictionary *autofillContext;
+@property (retain, nonatomic) FlutterTextInputView *activeView;
+@property (retain, nonatomic) FlutterTextInputViewAccessibilityHider *inputHider;
+@property (readonly, weak, nonatomic) id<FlutterViewResponder> viewResponder;
+@property (retain, nonatomic) UIView *keyboardViewContainer;
+@property (retain, nonatomic) UIView *keyboardView;
+@property (retain, nonatomic) UIView *cachedFirstResponder;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } keyboardRect;
+@property (nonatomic) double previousPointerYPosition;
+@property (nonatomic) double pointerYVelocity;
+@property (copy, nonatomic) id /* block */ eventSink;
+@property (readonly, nonatomic) UIView *hostView;
+@property (nonatomic) id<FlutterTextInputDelegate> textInputDelegate;
+@property (weak, nonatomic) UIViewController *viewController;
+@property (weak, nonatomic) id<FlutterIndirectScribbleDelegate> indirectScribbleDelegate;
+@property (retain, nonatomic) NSMutableDictionary *scribbleElements;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)onCancelWithArguments:(id)a0;
+- (id)onListenWithArguments:(id)a0 eventSink:(id /* block */)a1;
+- (id)initWithDelegate:(id)a0;
+- (void)handleKeyboardWillShow:(id)a0;
+- (void)dealloc;
+- (void)removeEnableFlutterTextInputViewAccessibilityTimer;
+- (id)textInputView;
+- (void)reset;
+- (void)handleMethodCall:(id)a0 result:(id /* block */)a1;
+- (void)handlePointerUp:(double)a0;
+- (void)dismissKeyboardScreenshot;
+- (void)showKeyboardAndRemoveScreenshot;
+- (void)handlePointerMove:(double)a0;
+- (void)setKeyboardContainerHeight:(double)a0;
+- (void)hideKeyboardWithoutAnimationAndAvoidCursorDismissUpdate;
+- (void)takeKeyboardScreenshotAndDisplay;
+- (BOOL)showEditMenu:(id)a0;
+- (void)hideEditMenu;
+- (void)setEditableSizeAndTransform:(id)a0;
+- (void)updateMarkedRect:(id)a0;
+- (void)setSelectionRects:(id)a0;
+- (void)startLiveTextInput;
+- (void)showTextInput;
+- (void)enableActiveViewAccessibility;
+- (void)hideTextInput;
+- (void)triggerAutofillSave:(BOOL)a0;
+- (void)setPlatformViewTextInputClient;
+- (void)setTextInputClient:(int)a0 withConfiguration:(id)a1;
+- (id)keyboardHeight:(double)a0;
+- (id)keyboardHeight:(double)a0 inputAccessoryHeight:(double)a1;
+- (id)createInputViewWith:(id)a0;
+- (id)updateAndShowAutofillViews:(id)a0 focusedField:(id)a1 isPasswordRelated:(BOOL)a2;
+- (id)getOrCreateAutofillableView:(id)a0 isPasswordAutofill:(BOOL)a1;
+- (id)textInputViews;
+- (void)cleanUpViewHierarchy:(BOOL)a0 clearText:(BOOL)a1 delayRemoval:(BOOL)a2;
+- (void)changeInputViewsAutofillVisibility:(BOOL)a0;
+- (void)resetAllClientIds;
+- (void)addToInputParentViewIfNeeded:(id)a0;
+- (void)setTextInputEditingState:(id)a0;
+- (void)setTextSelectionState:(id)a0;
+- (void)clearTextInputClient;
+- (void)updateConfig:(id)a0;
+- (BOOL)indirectScribbleInteraction:(id)a0 isElementFocused:(id)a1;
+- (void)indirectScribbleInteraction:(id)a0 focusElementIfNeeded:(id)a1 referencePoint:(struct CGPoint { double x0; double x1; })a2 completion:(id /* block */)a3;
+- (BOOL)indirectScribbleInteraction:(id)a0 shouldDelayFocusForElement:(id)a1;
+- (void)indirectScribbleInteraction:(id)a0 willBeginWritingInElement:(id)a1;
+- (void)indirectScribbleInteraction:(id)a0 didFinishWritingInElement:(id)a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })indirectScribbleInteraction:(id)a0 frameForElement:(id)a1;
+- (void)indirectScribbleInteraction:(id)a0 requestElementsInRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 completion:(id /* block */)a2;
+- (void)setUpIndirectScribbleInteraction:(id)a0;
+- (void)resetViewResponder;
+- (BOOL)handlePress:(id)a0;
+- (void).cxx_destruct;
+
+@end

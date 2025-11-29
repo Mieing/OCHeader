@@ -1,0 +1,71 @@
+@class AWEAwemeModel, NSString, NSArray, UIView, AWEUserModel, AWEUserProfileEventCommonParamsHandler, NSDictionary, AWEProfileTopVideoHelper, AWEProfileContext, UIViewController, AWEProfileContrailHelper;
+@protocol AWEProfileHeaderViewControllerDelegate;
+
+@interface AWEProfileHeaderContext : NSObject <NSCopying>
+
+@property (nonatomic) BOOL isCurrentUser;
+@property (retain, nonatomic) NSDictionary *customParamDict;
+@property (weak, nonatomic) AWEProfileContext *profileContext;
+@property (retain, nonatomic) AWEUserModel *userModel;
+@property (copy, nonatomic) NSArray *commonInterests;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (nonatomic) BOOL isFromHomepage;
+@property (retain, nonatomic) NSDictionary *trackerParamDict;
+@property (nonatomic) BOOL isQuickSwitchMockUser;
+@property (copy, nonatomic) id /* block */ updateHeaderHeightBlock;
+@property (copy, nonatomic) id /* block */ refreshHeaderForFoldAnimateBlock;
+@property (copy, nonatomic) id /* block */ willUpdateLayoutAnimateBlock;
+@property (copy, nonatomic) id /* block */ completeUpdateLayoutAnimateBlock;
+@property (copy, nonatomic) id /* block */ updateRemindBannerLayoutBlock;
+@property (copy, nonatomic) id /* block */ updateExtensionAreaRichContentBlock;
+@property (nonatomic) BOOL isShowingContributionGuideBanner;
+@property (nonatomic) BOOL shouldShowRecommendList;
+@property (nonatomic) BOOL shouldShowRemarkNameButton;
+@property (nonatomic) BOOL shouldShowContactRemarkNameButton;
+@property (weak, nonatomic) UIViewController *containerViewController;
+@property (nonatomic) double decorationOriginY;
+@property (nonatomic, getter=isInvalidHeaderHeightCache) BOOL invalidHeaderHeightCache;
+@property (nonatomic, getter=isInvalidAboveTopCornerSeparatorCache) BOOL invalidAboveTopCornerSeparatorCache;
+@property (copy, nonatomic) id /* block */ getBackgroundView;
+@property (nonatomic) BOOL asyncConfigCell;
+@property (copy, nonatomic) NSString *userId;
+@property (copy, nonatomic) NSString *nickname;
+@property (nonatomic) long long profileType;
+@property (weak, nonatomic) id<AWEProfileHeaderViewControllerDelegate> delegate;
+@property (retain, nonatomic) UIView *profileHeaderView;
+@property (nonatomic) BOOL isUserInfoFetched;
+@property (retain, nonatomic) NSDictionary *enterpriseTrackerParam;
+@property (retain, nonatomic) AWEUserProfileEventCommonParamsHandler *eventCommonParamsHandler;
+@property (retain, nonatomic) AWEProfileTopVideoHelper *topVideoHelper;
+@property (retain, nonatomic) AWEProfileContrailHelper *contrailHelper;
+
+- (void)dealloc;
+- (void)addKey:(id)a0 handler:(id /* block */)a1;
+- (void)postForKey:(id)a0;
+- (void)removeKey:(id)a0 handler:(id /* block */)a1;
+- (void)removeHandlersForKey:(id)a0;
+- (BOOL)isVsOfficialAccount;
+- (void)addCustomParamWithKey:(id)a0 value:(id)a1;
+- (BOOL)isOtherUserPunishBanned;
+- (BOOL)isOtherUserBanned;
+- (float)floatForKey:(id)a0;
+- (void)setDouble:(double)a0 forKey:(id)a1;
+- (void)setBool:(BOOL)a0 forKey:(id)a1;
+- (void)setString:(id)a0 forKey:(id)a1;
+- (void).cxx_destruct;
+- (void)setInteger:(long long)a0 forKey:(id)a1;
+- (void)setArray:(id)a0 forKey:(id)a1;
+- (id)dictionaryForKey:(id)a0;
+- (id)objectForKey:(id)a0;
+- (void)setFloat:(float)a0 forKey:(id)a1;
+- (BOOL)boolForKey:(id)a0;
+- (long long)integerForKey:(id)a0;
+- (id)arrayForKey:(id)a0;
+- (void)removeObjectForKey:(id)a0;
+- (double)doubleForKey:(id)a0;
+- (id)stringForKey:(id)a0;
+- (void)setDictionary:(id)a0 forKey:(id)a1;
+- (void)setObject:(id)a0 forKey:(id)a1;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface StampSaveCardApiRoot : GPBRootObject
+
+@end

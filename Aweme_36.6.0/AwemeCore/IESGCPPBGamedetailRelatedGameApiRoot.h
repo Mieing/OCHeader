@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailRelatedGameApiRoot : GPBRootObject
+
+@end

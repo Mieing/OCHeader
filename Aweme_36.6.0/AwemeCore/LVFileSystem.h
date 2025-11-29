@@ -1,0 +1,3 @@
+@interface LVFileSystem : NSObject
+
+@end

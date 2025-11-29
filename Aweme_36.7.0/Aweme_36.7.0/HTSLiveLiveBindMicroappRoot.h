@@ -1,0 +1,3 @@
+@interface HTSLiveLiveBindMicroappRoot : GPBRootObject
+
+@end

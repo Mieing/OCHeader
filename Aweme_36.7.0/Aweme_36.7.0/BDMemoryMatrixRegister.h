@@ -1,0 +1,3 @@
+@interface BDMemoryMatrixRegister : NSObject
+
+@end

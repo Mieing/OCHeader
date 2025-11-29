@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface CGPRawString : GPBMessage
+
+@property (copy, nonatomic) NSString *str;
+
++ (id)descriptor;
+
+@end

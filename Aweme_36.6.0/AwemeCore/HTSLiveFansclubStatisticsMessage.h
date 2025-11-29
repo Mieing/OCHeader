@@ -1,0 +1,12 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveFansclubStatisticsMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) long long fansCount;
+
++ (id)descriptor;
+
+@end

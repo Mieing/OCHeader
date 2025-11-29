@@ -1,0 +1,27 @@
+@class NSString, IESLiveMultiRtcInfo, IESLiveMultiChannelInfo, IESLivePreRTCInfo, IESLiveMultiLiveCoreInfo, IESLiveUserVersionInfo;
+
+@interface ApplyResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int vendor;
+@property (copy, nonatomic) NSString *signExtra;
+@property (nonatomic) BOOL rtcJoinChannel;
+@property (copy, nonatomic) NSString *linkmicIdStr;
+@property (nonatomic) BOOL rtcPushStream;
+@property (retain, nonatomic) IESLiveMultiRtcInfo *multiRtcInfo;
+@property (nonatomic) BOOL hasMultiRtcInfo;
+@property (retain, nonatomic) IESLiveMultiLiveCoreInfo *multiLiveCoreInfo;
+@property (nonatomic) BOOL hasMultiLiveCoreInfo;
+@property (retain, nonatomic) IESLiveMultiChannelInfo *multiChannelInfo;
+@property (nonatomic) BOOL hasMultiChannelInfo;
+@property (retain, nonatomic) IESLivePreRTCInfo *preRtcInfo;
+@property (nonatomic) BOOL hasPreRtcInfo;
+@property (nonatomic) long long waitSec;
+@property (retain, nonatomic) IESLiveUserVersionInfo *applyVersionInfo;
+@property (nonatomic) BOOL hasApplyVersionInfo;
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (copy, nonatomic) NSString *linkmicLynxData;
+@property (copy, nonatomic) NSString *eventTrackingInfo;
+
++ (id)descriptor;
+
+@end

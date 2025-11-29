@@ -1,0 +1,3 @@
+@interface AWEPublishBaseMergeStage : AWEPublishBaseStage
+
+@end

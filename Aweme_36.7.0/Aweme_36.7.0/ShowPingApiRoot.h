@@ -1,0 +1,3 @@
+@interface ShowPingApiRoot : GPBRootObject
+
+@end

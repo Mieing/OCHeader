@@ -1,0 +1,3 @@
+@interface RoomPaidLiveViewRightApiRoot : GPBRootObject
+
+@end

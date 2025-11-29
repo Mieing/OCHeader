@@ -1,0 +1,9 @@
+@class IESLiveAnchorRoomConfigContext;
+
+@interface IESLiveRoomExtraConfigModel : IESLiveDynamicModel
+
+@property (nonatomic) BOOL muteLive;
+@property (nonatomic) BOOL mirrored;
+@property (retain, nonatomic) IESLiveAnchorRoomConfigContext *anchorRoomContext;
+
+@end

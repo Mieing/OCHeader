@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNDeleteFriendRequestBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *userIdArray;
+@property (readonly, nonatomic) unsigned long long userIdArray_Count;
+@property (retain, nonatomic) GPBInt64Array *userIdsArray;
+@property (readonly, nonatomic) unsigned long long userIdsArray_Count;
+
++ (id)descriptor;
+
+@end

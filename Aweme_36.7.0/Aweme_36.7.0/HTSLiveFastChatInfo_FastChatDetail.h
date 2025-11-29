@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveFastChatInfo_FastChatDetail : IESLivePBBaseMessage
+
+@property (nonatomic) long long type;
+@property (copy, nonatomic) NSString *content;
+
++ (id)descriptor;
+
+@end

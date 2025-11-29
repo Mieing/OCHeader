@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveProductRichText_CountDown : IESLivePBBaseMessage
+
+@property (nonatomic) int countdown;
+@property (nonatomic) int fontSize;
+@property (copy, nonatomic) NSString *color;
+@property (copy, nonatomic) NSString *placeHolder;
+
++ (id)descriptor;
+
+@end

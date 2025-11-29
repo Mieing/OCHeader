@@ -1,0 +1,88 @@
+@class NSString;
+
+@interface AWECommentModuleService : HTSService <AWECommentModuleService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWECommentCommonAdapterClass;
+
+- (id)aAWEPadModuleAdapter;
+- (BOOL)canReplyCommentWithModel:(id)a0 failReasonCallBack:(id /* block */)a1;
+- (id)inputViewService;
+- (id)commentListViewControllerWithData:(id)a0 params:(id)a1 config:(id)a2;
+- (id)commentGeneralItem:(id)a0;
+- (Class)commentTrackManagerClass;
+- (BOOL)disableInteractionCommentElementLongPress;
+- (BOOL)isCommentVCTransition;
+- (BOOL)isCommentMediaFeedTransition;
+- (BOOL)isCommentFullScreenAtTop;
+- (BOOL)enableCommentAIClone;
+- (id)commentGlobalInstance;
+- (Class)commentManagerClass;
+- (Class)deprecatedCellHelper;
+- (id)feedFastCommentManager;
+- (void)showLocallyPrivacyToast:(id)a0 notShownBlock:(id /* block */)a1;
+- (void)matchEmoticonForAttributedString:(id)a0;
+- (id)commentReportAdaptar;
+- (id)getSmartCommentPreloadService;
+- (Class)commentMediaFeedImageCellClass:(id)a0;
+- (id)swiftAdaptor;
+- (Class)aiCloneExperimentManager;
+- (Class)sendCommentRequestModelUtil;
+- (id)lynxEggViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 lynxEggModel:(id)a1 removeContainerCompletionHandler:(id /* block */)a2;
+- (id)authorVBottomViewTipView:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 isBGWhiteColor:(BOOL)a1;
+- (Class)aweCommentOCMacrosManager;
+- (id)preloadImageTransformWithSize:(struct CGSize { double x0; double x1; })a0;
+- (id)inputViewPlaceholderWithAwemeModel:(id)a0;
+- (id)inputSelectGroupView;
+- (Class)emoticonKeyboardHelperClass;
+- (id)emoticonKeyboardHelper;
+- (id)inputFastEmojiBar;
+- (id)miniEmoticonPanelViewWithSize:(struct CGSize { double x0; double x1; })a0 inputView:(id)a1;
+- (id)inputMoreFunctionViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 models:(id)a1;
+- (id)giphySearchResultManager;
+- (Class)commentMiniEmoticonPanelManager;
+- (Class)commentGiphySearchResultCollectionViewClass;
+- (id)commentMiniEmoticonPenelView;
+- (id)userSearchHelper;
+- (id)userSearchViewController;
+- (id)mentionUserListSearchManagerWithKeyword:(id)a0;
+- (id)audioPlayerController;
+- (id)audioInputView;
+- (id)audioContentViewWithStyle:(unsigned long long)a0 isBGColorWhite:(BOOL)a1;
+- (Class)audioContentViewClass;
+- (id)audioRecorderController;
+- (id)inputAudioPlayerController;
+- (BOOL)enableCommentPublishTitleDisplayWithAwemeModel:(id)a0;
+- (BOOL)shouldShowOriginAwemeDescriptionTagWithAwemeModel:(id)a0;
+- (BOOL)shouldShowOriginAwemeButtonWithAwemeModel:(id)a0;
+- (id)anchorModelWithAweme:(id)a0 priorityKey:(id)a1 tapAnchorBlock:(id /* block */)a2;
+- (BOOL)handleAnchorClickInSchemaTypeCommonDetailPage:(id)a0;
+- (id)commentListAnchorView;
+- (id)commentInputViewContext;
+- (id)commentInputViewManagerWithParams:(id)a0 config:(id)a1;
+- (id)panelContainerService;
+- (id)panelListService;
+- (id)tabService;
+- (id)headerService;
+- (Class)commentPanelCellConfiguration;
+- (id)commentElementLongPressGuideManagerWithTargetView:(id)a0 awemeModel:(id)a1 enterFrom:(id)a2;
+- (Class)preloadImageHelper;
+- (id)imageUploadManager;
+- (id)feedInteractionService;
+- (id)mediaFeedService;
+- (id)longpressPanelService;
+- (id)mediaManagerService;
+- (id)convertTextViewToTextInput:(id)a0;
+- (id)mediaPickerService;
+- (id)aAWECommentCommonAdapter;
+- (id)commentElementLongPressGuideManagerWithTargetView:(id)a0 generalModel:(id)a1 enterFrom:(id)a2;
+- (Class)commentPanelFeedCellConfigurationClass;
+- (void)observeEvent:(id)a0;
+- (id)commentStorage;
+
+@end

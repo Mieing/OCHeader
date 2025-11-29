@@ -1,0 +1,3 @@
+@interface ShowProfilePreviewInfoApiRoot : GPBRootObject
+
+@end

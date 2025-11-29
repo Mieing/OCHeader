@@ -1,0 +1,10 @@
+@class RelatedPcDevicesResponse_Data;
+
+@interface RelatedPcDevicesResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RelatedPcDevicesResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

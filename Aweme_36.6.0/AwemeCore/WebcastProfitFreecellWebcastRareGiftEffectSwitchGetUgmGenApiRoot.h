@@ -1,0 +1,3 @@
+@interface WebcastProfitFreecellWebcastRareGiftEffectSwitchGetUgmGenApiRoot : GPBRootObject
+
+@end

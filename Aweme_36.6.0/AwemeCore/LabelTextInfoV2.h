@@ -1,0 +1,12 @@
+@class NSString, LabelTextStyleV2;
+
+@interface LabelTextInfoV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL hasContent;
+@property (retain, nonatomic) LabelTextStyleV2 *style;
+@property (nonatomic) BOOL hasStyle;
+
++ (id)descriptor;
+
+@end

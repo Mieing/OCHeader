@@ -1,0 +1,3 @@
+@interface HTSLiveContentOpenRetainPopupWindowRoot : GPBRootObject
+
+@end

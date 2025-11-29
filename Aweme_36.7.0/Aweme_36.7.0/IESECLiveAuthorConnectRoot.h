@@ -1,0 +1,3 @@
+@interface IESECLiveAuthorConnectRoot : GPBRootObject
+
+@end

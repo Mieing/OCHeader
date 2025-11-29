@@ -1,0 +1,85 @@
+@class AWEAwemeModel, NSString, AWETrendInfoModel, NSMutableDictionary, NSDictionary, AWEDetailBottomView, AWEAIThemeBottomBarView, AWEBottomShootViewBarContext, DUXPopover, NSIndexPath;
+@protocol AWEDetailInnerFlowTemplateHelperProtocol;
+
+@interface AWEBottomShootViewBarController : NSObject <AWEFollowShootChoosePopupDelegate, AWEDetailTemplateCreateVideoDelegate, AWEAwemeDetailBottomBarController>
+
+@property (retain, nonatomic) AWEBottomShootViewBarContext *context;
+@property (readonly, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) AWEDetailBottomView *bottomShootView;
+@property (retain, nonatomic) AWEAIThemeBottomBarView *AIThemeBottomShootView;
+@property (nonatomic) BOOL hasConfiged;
+@property (nonatomic) BOOL canClickActionButton;
+@property (readonly, copy, nonatomic) NSDictionary *detailBottomInfoDict;
+@property (readonly, copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) NSIndexPath *currentIndexPath;
+@property (nonatomic) BOOL showingForButtonType;
+@property (retain, nonatomic) DUXPopover *collectPopover;
+@property (readonly, nonatomic) AWEAwemeModel *outerAwemeModel;
+@property (retain, nonatomic) AWETrendInfoModel *trendModel;
+@property (retain, nonatomic) id<AWEDetailInnerFlowTemplateHelperProtocol> templateHelper;
+@property (retain, nonatomic) NSMutableDictionary *faceStickerDic;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAFDVideocutVCommonAdapterClass;
++ (void)routerCameraWithSchema:(id)a0 trendInfoModel:(id)a1;
++ (void)routerCameraWithSchema:(id)a0 trendInfoModel:(id)a1 aweme:(id)a2;
+
+- (void)updateBottomBarWithAweme:(id)a0 updateTiming:(long long)a1;
+- (void)cellDidEndDisplay:(id)a0;
+- (void)cellWillDisplay:(id)a0 forRowAtIndexPath:(id)a1 tableView:(id)a2;
+- (BOOL)canShowBottomBarForAweme:(id)a0;
+- (BOOL)useCustomRouterActionWithSchema:(id)a0;
+- (BOOL)canOpenDuetCamera;
+- (void)p_origCollectWithActionSender:(id)a0;
+- (void)handleFollowshootSchema:(id)a0;
+- (void)trackFavoriteNoticeEvent:(id)a0;
+- (void)trackTrendsCollectPerformanceWithToCollect:(BOOL)a0 extraParams:(id)a1;
+- (id)aAFDVideocutVCommonAdapter;
+- (BOOL)musicDetailRelatedEnable;
+- (void)trackCollectMusicPerformanceWithModel:(id)a0 toCollect:(unsigned long long)a1 extraParams:(id)a2;
+- (id)quickFlashStickerModel;
+- (void)trackSoloKTVEntranceShow;
+- (void)bindShootAction;
+- (void)sendDiarySamePropShowTrackLogWithAweme:(id)a0 referString:(id)a1;
+- (void)sendNewPropChallengeShowTrackLogWithAweme;
+- (void)updateBottomButton;
+- (void)trackDuetButtonAppear;
+- (void)trackMusicListBottonButtonShow;
+- (void)trackAnchorInflowGuideBtnWithEvent:(id)a0;
+- (void)handleDuetShootAction;
+- (void)configPropStyle;
+- (BOOL)musicDetailRelatedMaterialCardEnable;
+- (void)configMusicStyle;
+- (void)configMVStyle;
+- (void)configQuickFlashStyle;
+- (void)configQuickFlashDetail;
+- (void)handleTemplateShootAction;
+- (void)handleAnchorDetailGuideShootAction;
+- (void)handleBottomBarTemplateShootAction;
+- (void)handleBottomBarSoloKTVClickAction;
+- (void)configTrendDetail;
+- (void)updateBottomButtonWithCollected:(BOOL)a0;
+- (void)collectNotification:(id)a0;
+- (id)commonTrackInfoForSchemaShootSameButtonClick;
+- (void)routerFollowShootPage;
+- (void)removeCollectBubble;
+- (id)p_trendTrackParams;
+- (id)p_lastPageTrackParams;
+- (void)notificationCollect:(BOOL)a0 withID:(id)a1 forTrends:(BOOL)a2;
+- (void)showCollectBubble:(id)a0;
+- (id)p_getAIGCType:(id)a0;
+- (void)sendDiarySamePropClickTrackLog;
+- (void)sendNewPropChallengeClickTrackLog;
+- (void)gotoRecordPageWithCinemaFilterEffectID:(id)a0;
+- (id)p_musicRelatedFeedTrackParams;
+- (void)notificationCollect:(BOOL)a0 withID:(id)a1 forType:(id)a2;
+- (void)p_trackBottomBarTemplateClickAction;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (Class)contextClass;
+- (id)bottomBarView;
+
+@end

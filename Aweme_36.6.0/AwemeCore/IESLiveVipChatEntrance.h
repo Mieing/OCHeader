@@ -1,0 +1,17 @@
+@class NSString, NSDictionary;
+
+@interface IESLiveVipChatEntrance : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (nonatomic) BOOL isOpen;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *entranceText;
+@property (readonly, copy, nonatomic) NSDictionary *dictionaryValue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+
+@end

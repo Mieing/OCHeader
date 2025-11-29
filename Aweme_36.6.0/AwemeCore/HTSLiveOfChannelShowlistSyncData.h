@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface HTSLiveOfChannelShowlistSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long channelUid;
+@property (nonatomic) long long channelAnchorId;
+@property (copy, nonatomic) NSString *showlistText;
+@property (copy, nonatomic) NSString *showlistSchema;
+@property (copy, nonatomic) NSString *showlistName;
+@property (copy, nonatomic) NSString *channelName;
+@property (nonatomic) long long showlistId;
+@property (copy, nonatomic) NSString *channelOpenid;
+@property (copy, nonatomic) NSString *channelAnchorOpenId;
+
++ (id)descriptor;
+
+@end

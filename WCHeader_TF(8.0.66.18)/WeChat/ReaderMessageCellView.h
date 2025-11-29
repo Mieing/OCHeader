@@ -1,0 +1,90 @@
+@class ReaderMessageViewModel, MMWebImageView, NSString, NSArray, UIView, CALayer, BTRichTextTagView, NSMutableArray, RichTextView;
+@protocol ReaderMessageFolderCellViewDelegate;
+
+@interface ReaderMessageCellView : BaseMessageCellView <MMWebImageViewDelegate, ReaderReporterExt, ILinkEventExt> {
+    NSArray *m_arrBtnList;
+    BTRichTextTagView *m_titleView;
+    MMWebImageView *m_coverImgView;
+    UIView *m_highlightMaskView;
+    RichTextView *m_digestView;
+    CALayer *m_coverMaskLayer;
+    BOOL m_bIsAppear;
+}
+
+@property (readonly, nonatomic) ReaderMessageViewModel *viewModel;
+@property (nonatomic) BOOL isItemForFolder;
+@property (weak, nonatomic) id<ReaderMessageFolderCellViewDelegate> folderCellViewDelegate;
+@property (retain, nonatomic) NSMutableArray *cardCopyLines;
+@property (nonatomic) unsigned long long containerType;
+@property (retain, nonatomic) UIView *footerView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)itemValueLabelWithTitle:(id)a0 width:(double)a1 font:(id)a2;
+
+- (id)init;
+- (void)dealloc;
+- (void)setViewModel:(id)a0;
+- (BOOL)canBeReused;
+- (void)layoutContentView;
+- (id)generateFooterLabel:(double)a0;
+- (void)onLinkClicked:(id)a0 linkRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)initHighlightMaskView;
+- (void)addCornerToContentView;
+- (void)setHighlighted:(BOOL)a0;
+- (void)onAppear;
+- (void)onDisappear;
+- (void)rebindDrViewParamsToContentView;
+- (void)onTableViewDidScrollDown;
+- (BOOL)bShouldReportShowInfo;
+- (BOOL)isWeGameContact;
+- (BOOL)isTXNewsContact;
+- (void)onLoadImageOK:(id)a0;
+- (id)operationMenuItems;
+- (void)onForward:(id)a0;
+- (void)onFavorite:(id)a0;
+- (void)onTouchUpInside;
+- (BOOL)autoHighlight;
+- (void)clickNodeViewBtn:(id)a0;
+- (id)richTextWithFont:(id)a0 width:(double)a1;
+- (id)itemLabelWithFont:(id)a0 width:(double)a1;
+- (id)imageViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)itemLabelWithTitle:(id)a0 width:(double)a1 font:(id)a2;
+- (id)itemLabelWithText:(id)a0 width:(double)a1 font:(id)a2 numberOfLines:(unsigned long long)a3;
+- (void)onCopy:(id)a0;
+- (void)initCustomMenuButtonStyle:(id)a0 position:(int)a1;
+- (void)ShowReader:(id)a0 viewModel:(id)a1 uiReaderIndex:(unsigned int)a2;
+- (void)showWebViewController:(id)a0;
+- (id)webViewExtraInfoWithReaderWrap:(id)a0 msgWrap:(id)a1;
+- (void)reportClickReaderItem:(id)a0 clickTime:(unsigned int)a1;
+- (unsigned int)getSessionId;
+- (long long)getEnterScene;
+- (unsigned int)getSubscene;
+- (id)getWebViewController:(id)a0 url:(id)a1 forPeek:(BOOL)a2;
+- (id)getReaderUrlWithUrl:(id)a0;
+- (void)updateContentViewBgColor:(id)a0;
+- (void)onClicked;
+- (void)jumpWeappOpWrap:(id)a0;
+- (void)jumpLiteAppOpWrap:(id)a0;
+- (void)jumpWCCoinHomePage;
+- (void)jumpFinderMemberCenter:(id)a0;
+- (void)jumpWebSearch:(id)a0;
+- (void)jumpTingCategory:(id)a0;
+- (void)jumpFinderAIGCTask:(id)a0;
+- (BOOL)shouldGoToEmoticonDetail:(id)a0;
+- (void)forwardMessage;
+- (void)addFavorite;
+- (id)headImageUrlOfChatContact;
+- (BOOL)canPeek;
+- (id)viewControllerToPreviewWithFromController:(id)a0 forLocation:(struct CGPoint { double x0; double x1; })a1 inCoordinateView:(id)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })previewingSourceRectForLocation:(struct CGPoint { double x0; double x1; })a0 inCoordinateView:(id)a1;
+- (BOOL)canCellShowOperationMenu;
+- (void)report11608:(unsigned long long)a0;
+- (void)report29695:(int)a0 bizContent:(id)a1;
+- (BOOL)isAccessibilityElement;
+- (unsigned long long)accessibilityTraits;
+- (void).cxx_destruct;
+
+@end

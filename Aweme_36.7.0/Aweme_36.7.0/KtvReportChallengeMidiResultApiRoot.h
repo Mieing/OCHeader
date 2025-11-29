@@ -1,0 +1,3 @@
+@interface KtvReportChallengeMidiResultApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceCheckSilenceLinkersResponse_Data;
+
+@interface IESLiveLinkMicAudienceCheckSilenceLinkersResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceCheckSilenceLinkersResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

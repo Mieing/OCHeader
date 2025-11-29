@@ -1,0 +1,3 @@
+@interface HTSLiveSkyeyeAnchorSetRoot : GPBRootObject
+
+@end

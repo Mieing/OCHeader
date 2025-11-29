@@ -1,0 +1,12 @@
+@class NSNumber, NSDictionary, NSString;
+
+@interface IESLiveRequestResultModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *clientCode;
+@property (retain, nonatomic) NSNumber *httpCode;
+@property (copy, nonatomic) NSDictionary *header;
+@property (retain, nonatomic) id response;
+@property (copy, nonatomic) NSString *responseType;
+@property (retain, nonatomic) NSNumber *cacheCode;
+
+@end

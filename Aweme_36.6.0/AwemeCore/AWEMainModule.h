@@ -1,0 +1,84 @@
+@class NSString;
+@protocol AWEYAPModuleService;
+
+@interface AWEMainModule : NSObject <HTSAppLifeCycle, AWEAppBytedSettingMessage, AWEMainModulePrivateProtocol, AWEMessageReachAppLifeCycle>
+
+@property (nonatomic) long long badgeNumberAfterSplash;
+@property (nonatomic) BOOL settingsRequestCompleted;
+@property (nonatomic) BOOL normalAlertsAdded;
+@property (nonatomic) BOOL isVoiceOverRunning;
+@property (nonatomic) BOOL needStartDelayTask;
+@property (nonatomic) BOOL hadRegisterFireBase;
+@property (retain, nonatomic) id<AWEYAPModuleService> yapService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEMainModuleServiceDOUYINSSAdapterClass;
++ (Class)aAWEMainModuleDOUYINLiteAdapterClass;
++ (Class)aAWEMainModuleDOUYINLGAdapterClass;
++ (Class)aAWEMainModuleServiceDOUYINDSAdapterClass;
++ (BOOL)enableAlertTriggerAdaptBgfetch;
++ (Class)aAWEMainModuleCommonAdapterClass;
++ (Class)aAWEMainModuleDOUYINAdapterClass;
++ (Class)aAWEMainModuleDOUYINSSAdapterClass;
++ (Class)aAWELoginRedPacketAlertManagerClass;
++ (Class)aAWEMainModuleAlertInterceptorAdapterClass;
++ (Class)aAWESearchCollegePreferenceDOUYINSSAdapterClass;
+
+- (void)onSplashRemoved;
+- (void)onAppDidBecomeActive;
+- (BOOL)shouldNotShowNoWifiAlertUseNewStrategy;
+- (id)freeFlowCardURL;
+- (void)onAppDidFinishLaunching;
+- (void)onAppWillTerminate;
+- (void)onAppWillEnterForeground;
+- (void)onAppWillResignActive;
+- (void)onAppDidEnterBackground;
+- (void)onHandleEventsForBackgroundURLSession;
+- (void)bytedSettingDidChange;
+- (void)uploadAdressBookIfNeeded;
+- (id)aAWEMainModuleServiceDOUYINSSAdapter;
+- (void)_onAppRootViewDidAppear;
+- (void)voiceOverStatusChange;
+- (void)setupGoldenCollect;
+- (id)aAWEMainModuleDOUYINLiteAdapter;
+- (void)onSplashFakeViewRemoved;
+- (id)aAWEMainModuleDOUYINLGAdapter;
+- (id)aAWEMainModuleServiceDOUYINDSAdapter;
+- (void)updateUserAgentCache;
+- (void)voiceoverOpenStatusTrack;
+- (void)p_onAppDidFinishLaunching;
+- (void)triggerColdLaunchSplashDisappearIfNeeded;
+- (void)onSplashDisappeared;
+- (void)p_fetchPrivacySetting;
+- (BOOL)shouldCheckBDFeedBackAvailable;
+- (void)onAppRootViewDidAppear;
+- (void)_onAppDidFinishLaunching;
+- (BOOL)shouldUploadAddressBookAndLocationAccess;
+- (void)uploadAddressBookAndLocationAccessWithContext:(id)a0;
+- (id)aAWEMainModuleDOUYINAdapter;
+- (BOOL)popviewHotLaunchTriggerOpt;
+- (void)addHotLaunchAlertIfNeeded;
+- (void)triggerHotLaunchEventIfNeeded;
+- (void)p_onAppDidBecomeActive;
+- (void)_showAlertViewIfNeeded;
+- (void)triggerAlertSplashEndEventIfPossible;
+- (BOOL)shouldShowAlertViewWhenRootViewDidAppear;
+- (void)showAlertViewIfNeeded;
+- (BOOL)shouldHandlePrivaryCallback;
+- (void)voiceoverStatusChangeTrack;
+- (BOOL)voiceoverOpenStatusTrackSetting;
+- (id)aAWEMainModuleDOUYINSSAdapter;
+- (id)aAWESearchCollegePreferenceDOUYINSSAdapter;
+- (id)aAWELoginRedPacketAlertManager;
+- (id)aAWEMainModuleAlertInterceptorAdapter;
+- (id)aAWEMainModuleCommonAdapter;
+- (void)startDelayTaskWithHeaders:(id)a0;
+- (void)onAppDidFinishHotLaunch;
+- (void)luckyCatInit;
+- (void)mainModuleDOUYINSSAdapter;
+- (void).cxx_destruct;
+
+@end

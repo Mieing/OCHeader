@@ -1,0 +1,10 @@
+@class IESGCPPBAuditGameRecommendResponse_Data;
+
+@interface IESGCPPBAuditGameRecommendResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBAuditGameRecommendResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

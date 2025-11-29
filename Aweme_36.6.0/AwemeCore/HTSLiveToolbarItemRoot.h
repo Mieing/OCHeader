@@ -1,0 +1,3 @@
+@interface HTSLiveToolbarItemRoot : GPBRootObject
+
+@end

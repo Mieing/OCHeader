@@ -1,0 +1,94 @@
+@class NSString, WAEJCanvasContext, WAEJBindingTouchInput, WAEJTexture, UIView, NSMutableArray, WAEJBindingCanvasStyle;
+
+@interface WAEJBindingCanvas : WAEJBindingBase <EJDrawable> {
+    struct OpaqueJSValue { } *jsCanvasContext;
+    int contextMode;
+    short width;
+    short height;
+    WAEJBindingCanvasStyle *styleObject;
+    int imageRendering;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } style;
+    BOOL lockStyle;
+    unsigned int canvasId;
+    NSString *elementId;
+    unsigned int bindingScreenId;
+}
+
+@property (nonatomic) int imageRendering;
+@property (nonatomic) float styleLeft;
+@property (nonatomic) float styleTop;
+@property (nonatomic) float styleWidth;
+@property (nonatomic) float styleHeight;
+@property (readonly, nonatomic) BOOL isOffScreen;
+@property (readonly, nonatomic) BOOL isScreenCanvas;
+@property (readonly, nonatomic) BOOL isCustomScreen;
+@property (readonly, nonatomic) WAEJTexture *texture;
+@property (retain, nonatomic) WAEJCanvasContext *renderingContext;
+@property (weak, nonatomic) WAEJBindingTouchInput *touchInput;
+@property (weak, nonatomic) UIView *canvasView;
+@property (nonatomic) int viewId;
+@property (retain, nonatomic) NSMutableArray *touchableRects;
+
++ (void *)_ptr_to_func___uid;
++ (void *)_ptr_to_func___lockStyle;
++ (void *)_ptr_to_get_width;
++ (void *)_ptr_to_get___id;
++ (void *)_ptr_to_func___canvasId;
++ (void *)_ptr_to_get_id;
++ (void *)_ptr_to_set_id;
++ (void *)_ptr_to_set_bindingScreen;
++ (void *)_ptr_to_get_bindingScreen;
++ (void *)_ptr_to_set_width;
++ (void *)_ptr_to_get_height;
++ (void *)_ptr_to_set_height;
++ (void *)_ptr_to_get_style;
++ (void *)_ptr_to_get_offsetLeft;
++ (void *)_ptr_to_get_offsetTop;
++ (void *)_ptr_to_get_offsetWidth;
++ (void *)_ptr_to_get_offsetHeight;
++ (void *)_ptr_to_func_setTouchableRects;
++ (void *)_ptr_to_func_getContext;
++ (void *)_ptr_to_func_toDataURL;
++ (void *)_ptr_to_func_remove;
++ (id)_const_nodeName;
++ (id)_const_tagName;
+
+- (id)initWithContext:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2;
+- (void)createWithJSObject:(struct OpaqueJSValue { } *)a0 scriptView:(id)a1;
+- (void)dealloc;
+- (void)setStyle:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct OpaqueJSValue { } *)_func___uid:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (struct OpaqueJSValue { } *)_func___lockStyle:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (struct OpaqueJSValue { } *)_get_width:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_get___id:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_func___canvasId:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (struct OpaqueJSValue { } *)_get_id:(struct OpaqueJSContext { } *)a0;
+- (void)_set_id:(struct OpaqueJSContext { } *)a0 value:(struct OpaqueJSValue { } *)a1 exception:(const struct OpaqueJSValue **)a2;
+- (void)_set_bindingScreen:(struct OpaqueJSContext { } *)a0 value:(struct OpaqueJSValue { } *)a1 exception:(const struct OpaqueJSValue **)a2;
+- (struct OpaqueJSValue { } *)_get_bindingScreen:(struct OpaqueJSContext { } *)a0;
+- (void)_set_width:(struct OpaqueJSContext { } *)a0 value:(struct OpaqueJSValue { } *)a1 exception:(const struct OpaqueJSValue **)a2;
+- (struct OpaqueJSValue { } *)_get_height:(struct OpaqueJSContext { } *)a0;
+- (void)_set_height:(struct OpaqueJSContext { } *)a0 value:(struct OpaqueJSValue { } *)a1 exception:(const struct OpaqueJSValue **)a2;
+- (struct OpaqueJSValue { } *)_get_style:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_get_offsetLeft:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_get_offsetTop:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_get_offsetWidth:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_get_offsetHeight:(struct OpaqueJSContext { } *)a0;
+- (struct OpaqueJSValue { } *)_func_setTouchableRects:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (id)getWebGLContext:(struct OpaqueJSContext { } *)a0 alpha:(BOOL)a1 antialias:(BOOL)a2 preserve_drawing_buffer:(BOOL)a3 useWebGL2:(BOOL)a4;
+- (struct OpaqueJSValue { } *)_func_getContext:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (struct OpaqueJSValue { } *)getContext:(struct OpaqueJSValue { } *)a0 webgl:(BOOL)a1;
+- (struct OpaqueJSValue { } *)getGfxContext:(struct OpaqueJSValue { } *)a0;
+- (struct OpaqueJSValue { } *)toDataURLWithCtx:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2;
+- (struct OpaqueJSValue { } *)_func_toDataURL:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (struct OpaqueJSValue { } *)_func_remove:(struct OpaqueJSContext { } *)a0 argc:(unsigned long long)a1 argv:(const struct OpaqueJSValue **)a2 exception:(const struct OpaqueJSValue **)a3;
+- (BOOL)isWebGLScreen;
+- (BOOL)isCanvasScreen;
+- (id)getCanvasImage;
+- (id)getCanvasImageWithScale:(float)a0;
+- (struct OpaqueJSValue { } *)getJSObject;
+- (id)getElementId;
+- (unsigned int)getCanvasId;
+- (void).cxx_destruct;
+
+@end

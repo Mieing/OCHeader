@@ -1,0 +1,73 @@
+@class ACCCameraSubscription, NSArray, NSDictionary, NSTimer, NSString, NSNumber;
+
+@interface ACCPerfStrategyManagerImpl : NSObject <ACCPerfStrategyManagerProtocol>
+
+@property (nonatomic) BOOL mainConfigEnable;
+@property (copy, nonatomic) NSDictionary *mainConfigs;
+@property (copy, nonatomic) NSArray *blackStrategyActionKeys;
+@property (copy, nonatomic) id /* block */ monitor;
+@property (retain, nonatomic) ACCCameraSubscription *perfLifeCycleSubscription;
+@property (retain, nonatomic) NSNumber *manualExpectMemoryUsageOnceValue;
+@property (nonatomic) BOOL enableReleaseOutsideWhenPredict;
+@property (readonly, nonatomic) long long memoryDangerLevelSecondaryMB;
+@property (readonly, nonatomic) long long memoryDangerLevelSeriousMB;
+@property (readonly, nonatomic) long long memoryDangerLevelSystemWarningMB;
+@property (readonly, nonatomic) unsigned long long monitorThermalTypes;
+@property (nonatomic) unsigned long long stabeConsumptionStateOnceValue;
+@property (retain, nonatomic) NSNumber *currentScoreCache;
+@property (nonatomic) long long networkConnectionState;
+@property (retain, nonatomic) NSTimer *networkConnectionStateTimer;
+@property (nonatomic) BOOL warningLogEnable;
+@property (nonatomic) BOOL debugLogEnable;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)currentDeviceScore;
+- (BOOL)conformToStrategyWithKey:(id)a0;
+- (void)startCreativePath;
+- (void)endCreativePath;
+- (BOOL)conformToStrategyWithConfig:(id)a0;
+- (BOOL)hasStrategyWithKey:(id)a0;
+- (id)currentPerfTrackInfo;
+- (void)addStrategyStateChangedSubscriber:(id)a0;
+- (BOOL)conformToStrategyWithKey:(id)a0 scene:(id)a1;
+- (void)removeStrategyStateChangedSubscriber:(id)a0;
+- (BOOL)executeReleaseMemoryIfNeedWithWithExpectMemoryUsage:(double)a0 trackInfo:(id)a1;
+- (unsigned long long)currentConsumptionState;
+- (unsigned long long)currentMemoryDangerLevel;
+- (void)handleMemoryLevelBecomeDangerTopNotify;
+- (void)handleMemoryLevelBecomeDangerSecondNotify;
+- (void)handleMemoryDidReceiveSytemWarning;
+- (void)updateNetworkState;
+- (void)sendConsumptionChangedMessageWithType:(unsigned long long)a0;
+- (void)debug_perf_update_debug_tool;
+- (void)trackWithMatching:(BOOL)a0 matchedStrategyType:(id)a1 actionKey:(id)a2 reason:(id)a3 inputData:(id)a4 strategyConfig:(id)a5;
+- (BOOL)conformToStrategyWithConfig:(id)a0 actionKey:(id)a1 trackInfo:(id)a2;
+- (BOOL)conformToForbiddenDeviceScoreStrategyWithConfig:(id)a0;
+- (BOOL)conformToThroughDeviceScoreStrategyWithConfig:(id)a0;
+- (BOOL)conformToConsumptionStrategyWithConfig:(id)a0;
+- (BOOL)conformToMemoryStrategyWithConfig:(id)a0;
+- (BOOL)conformToNetworkConnectionStrategyWithConfig:(id)a0;
+- (unsigned long long)currentMemoryDangerLevelWithPredictIncrease:(long long)a0;
+- (BOOL)checkMemoryLevelConfigEnable;
+- (BOOL)currentMemoryDangerLevelIsEqualOrGreaterThanTaget:(unsigned long long)a0 predictIncrease:(long long)a1;
+- (BOOL)isMemoryInDangerWithPredictIncrease:(long long)a0;
+- (void)sendMemoryWarningMessageWithType:(unsigned long long)a0;
+- (void)trackDidReceiveMemoryWarningWithDangerLevel:(unsigned long long)a0;
+- (BOOL)isCurrentConsumptionStateConformTo:(unsigned long long)a0 usingStableConsumptionState:(BOOL)a1;
+- (void)trackConsumptionChangedMessageWithState:(unsigned long long)a0;
+- (long long)currentNetworkConnectionState;
+- (long long)currentMemoryUsageMB;
+- (BOOL)isMemoryInDanger;
+- (BOOL)currentMemoryDangerLevelIsEqualOrGreaterThanTaget:(unsigned long long)a0;
+- (BOOL)isCurrentConsumptionStateConformTo:(unsigned long long)a0;
+- (unsigned long long)stableConsumptionStateForCurrentCreativePath;
+- (void)debug_consumption_changed;
+- (BOOL)enable;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setup;
+
+@end

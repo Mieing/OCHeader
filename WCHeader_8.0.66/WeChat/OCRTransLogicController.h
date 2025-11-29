@@ -1,0 +1,83 @@
+@class NSString, NSArray, UIImage, EnhanceTranslatingView, OCRTransScanner, EnhanceTranslatingLogic, CameraScanOCRContentView, OCRTransReport;
+
+@interface OCRTransLogicController : BaseScanLogicController <CameraScanOCRContentViewDelegate, EnhanceTranslatingDelegate, EnhanceTranslatingViewDelegate, UIViewControllerTransitioningDelegate, EnhanceTranslatingResultViewControllerDelegate, OCRTransScannerDelegate, CameraScannerStatusExt, IOCRTransMgrExt> {
+    OCRTransScanner *_scanner;
+    int _scene;
+    NSString *_orign;
+    NSString *_translation;
+}
+
+@property (retain, nonatomic) NSString *preset;
+@property (retain, nonatomic) EnhanceTranslatingLogic *logic;
+@property (retain, nonatomic) EnhanceTranslatingView *enhanceTranslatingView;
+@property (retain, nonatomic) CameraScanOCRContentView *contentView;
+@property (retain, nonatomic) UIImage *sourceImage;
+@property (retain, nonatomic) NSArray *translations;
+@property (retain, nonatomic) OCRTransReport *report;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onCameraScannerViewDidRecover:(id)a0;
+- (void)setPreset:(id)a0;
+- (id)preset;
+- (id)init;
+- (id)initWithCameraScannerViewWrapper:(id)a0;
+- (void)dealloc;
+- (void)onCameraScannerViewDidInit:(id)a0;
+- (void)startScan;
+- (void)stopScan;
+- (void)setCloseButtonBottom:(double)a0 infoLableTop:(double)a1;
+- (void)fireWithScene:(int)a0;
+- (unsigned int)getScannerSessionId;
+- (unsigned int)sendImage:(id)a0 scene:(int)a1;
+- (void)updateSessionIDWhenSessionPicTrans;
+- (void)setCropRect;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getDrawCropRect;
+- (id)getInfoText;
+- (float)getInfoLabelTopPadding;
+- (double)getTorchBottomPadding;
+- (float)getDefaultInfoLabelBottomPadding;
+- (id)getInfoLabelFont;
+- (id)getInfoLabelColor;
+- (float)getDescriptionLabelTopPadding;
+- (id)getDescriptionText;
+- (BOOL)shouldPopFromStack;
+- (void)onRotate;
+- (void)onLeaveTab;
+- (void)onEnterTab;
+- (void)onGotOCRResultOrign:(id)a0 Translation:(id)a1;
+- (void)onGotOCRResult:(id)a0;
+- (void)onOCRTransError:(int)a0;
+- (void)onSendDataLength:(unsigned int)a0;
+- (void)onStartScanning;
+- (void)onStopScanning;
+- (void)onGotImageByScanning:(id)a0 cropRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onGotImageByCamera:(id)a0;
+- (void)setupContentView:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)contentViewNetConnect;
+- (void)contentViewNetDisconnect;
+- (void)contentViewNetShowCameraTips;
+- (void)onTakePhotoButtonClicked:(id)a0;
+- (void)onEnhanceTranslatingLogicBegin;
+- (void)onEnhanceTranslatingLogicCancel;
+- (void)onEnhanceTranslatingLogicNotStable;
+- (void)onEnhanceTranslatingLogicFail;
+- (void)onEnhanceTranslatingLogicSwitchToCamera;
+- (void)onEnhanceTranslatingLogicDisplay:(id)a0 sourceImg:(id)a1 sessionId:(unsigned long long)a2 leftTop:(struct CGPoint { double x0; double x1; })a3 rightTop:(struct CGPoint { double x0; double x1; })a4 rightBottom:(struct CGPoint { double x0; double x1; })a5 leftBottom:(struct CGPoint { double x0; double x1; })a6;
+- (void)onEnhanceTranslatingLogicTakePhoto:(id)a0;
+- (void)onEnhanceTranslatingViewCancel;
+- (void)onEnhanceTranslatingViewDiscard;
+- (void)onEnhanceTranslatingViewResultWillAppear;
+- (void)onEnhanceTranslatingViewNavToResultVc:(id)a0;
+- (unsigned long long)currentSessionId;
+- (void)onEnhanceTranslatingAnimationWorked:(BOOL)a0;
+- (id)animationControllerForPresentedController:(id)a0 presentingController:(id)a1 sourceController:(id)a2;
+- (id)presentationControllerForPresentedViewController:(id)a0 presentingViewController:(id)a1 sourceViewController:(id)a2;
+- (void)onResultPageClose;
+- (void)centerLabelShowStart;
+- (void)centerLabelShowEnd;
+- (void).cxx_destruct;
+
+@end

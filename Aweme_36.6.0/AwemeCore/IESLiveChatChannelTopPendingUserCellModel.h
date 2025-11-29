@@ -1,0 +1,3 @@
+@interface IESLiveChatChannelTopPendingUserCellModel : IESLiveChatChannelTopUserCellModel
+
+@end

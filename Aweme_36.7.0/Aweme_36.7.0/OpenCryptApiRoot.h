@@ -1,0 +1,3 @@
+@interface OpenCryptApiRoot : GPBRootObject
+
+@end

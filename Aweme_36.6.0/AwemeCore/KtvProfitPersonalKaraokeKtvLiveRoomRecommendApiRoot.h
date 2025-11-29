@@ -1,0 +1,3 @@
+@interface KtvProfitPersonalKaraokeKtvLiveRoomRecommendApiRoot : GPBRootObject
+
+@end

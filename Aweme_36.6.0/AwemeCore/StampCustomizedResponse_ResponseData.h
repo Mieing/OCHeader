@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface StampCustomizedResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL customized;
+@property (copy, nonatomic) NSString *subTitle;
+@property (retain, nonatomic) HTSLiveImage *cover;
+@property (nonatomic) BOOL hasCover;
+
++ (id)descriptor;
+
+@end

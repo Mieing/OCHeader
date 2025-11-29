@@ -1,0 +1,75 @@
+@class NSString, NSTimer, NSDate;
+@protocol XPlayItemPrivateProtocol, XPlayItemProtocol;
+
+@interface XPlayCloudBusinessHandler : NSObject <XPlayCloudBusinessHandlerProtocol>
+
+@property (weak, nonatomic) id<XPlayItemProtocol, XPlayItemPrivateProtocol> item;
+@property (copy, nonatomic) NSString *cloudDeviceId;
+@property (copy, nonatomic) NSString *token;
+@property (nonatomic) BOOL isHeartBeatStarted;
+@property (nonatomic) BOOL enableHeartBeatConsumeTime;
+@property (retain, nonatomic) NSTimer *heartbeatTimer;
+@property (nonatomic) double heartbeatInterval;
+@property (retain, nonatomic) NSDate *heartbeatSentTime;
+@property (nonatomic) unsigned long long heartbeatUnreceivedTimes;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)enableSendHeartbeatConsumeTime:(BOOL)a0;
+- (void)requestTasksInfoWithCategory:(long long)a0 callback:(id /* block */)a1;
+- (void)requestUserAuthorizedWithAuthCheck:(BOOL)a0 callback:(id /* block */)a1;
+- (void)completeUserRealNameAuthWithIdentityName:(id)a0 identityNumber:(id)a1 callback:(id /* block */)a2;
+- (void)requestAuthInfoWithCompletion:(id /* block */)a0;
+- (id)sendCustomMessage:(id)a0;
+- (void)startTaskWithType:(unsigned long long)a0 andCategory:(long long)a1;
+- (void)sendLastHeartBeat;
+- (void)requestConfig;
+- (void)completeAuthWithUserEdit:(id)a0 businessResult:(long long)a1 authCode:(id)a2 authMessage:(id)a3 needCheckAuth:(BOOL)a4 callback:(id /* block */)a5;
+- (void)completeGameOrder:(id)a0 result:(long long)a1 message:(id)a2;
+- (void)requestUserInfo:(long long)a0;
+- (void)pauseSendHeartBeat;
+- (void)startSendHeartBeatFrom:(id)a0;
+- (void)sendHeartBeatImmediately;
+- (void)didReceiveMessage:(id)a0 ackCallback:(id /* block */)a1;
+- (void)didReceiveAckMessage:(id)a0 forMessage:(id)a1;
+- (void)sendHeartBeat;
+- (id)newInst;
+- (void)updateTaskStatusWithType:(unsigned long long)a0 andCategory:(long long)a1 action:(unsigned long long)a2;
+- (void)sendAuthResultWithResult:(long long)a0 message:(id)a1 clientKey:(id)a2;
+- (void)completePostHighlight:(id)a0 result:(long long)a1;
+- (void)completeAd:(id)a0 displayResult:(id)a1;
+- (void)completeJoinGroup:(id)a0 joinResult:(id)a1;
+- (void)completeFollow:(id)a0 result:(long long)a1 message:(id)a2;
+- (void)completeGameRoomInvite:(id)a0 result:(long long)a1 message:(id)a2;
+- (void)completeGameExit:(id)a0 result:(long long)a1 message:(id)a2;
+- (void)completeGameShare:(id)a0 result:(long long)a1 message:(id)a2;
+- (void)completeCustomEvent:(id)a0 result:(long long)a1 message:(id)a2;
+- (int)getServiceID;
+- (void)dealOrderEvent:(id)a0;
+- (void)dealAuthEvent:(id)a0;
+- (void)dealHighlightEvent:(id)a0;
+- (void)dealAdEvent:(id)a0;
+- (void)dealFollowEvent:(id)a0;
+- (void)dealGameRoomInviteEvent:(id)a0;
+- (void)didReceiveCommonMessage:(id)a0;
+- (void)dealJoinGroupEvent:(id)a0;
+- (void)dealRecordResult:(id)a0;
+- (void)dealPodInfoMessage:(id)a0;
+- (void)dealCommonNotifyMessage:(id)a0;
+- (void)dealTaskFinishedWithMessage:(id)a0;
+- (void)dealPushCDNResult:(id)a0;
+- (void)dealGameExitEvent:(id)a0;
+- (void)dealGameShareEvent:(id)a0;
+- (void)dealGameCustomWithMessage:(id)a0;
+- (void)didReceiveUserInfo:(id)a0 forMessage:(id)a1;
+- (void)dealUpdateTaskStatusWithAckMessage:(id)a0 forMessage:(id)a1;
+- (void)dealHeartBeatWithAckMessage:(id)a0;
+- (void)dealRequestConfigWithAckMessage:(id)a0;
+- (void)dealCustomAckMessage:(id)a0;
+- (void)didReceiveCommonResultMessage:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithItem:(id)a0;
+
+@end

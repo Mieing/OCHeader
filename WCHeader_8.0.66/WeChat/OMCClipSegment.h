@@ -1,0 +1,71 @@
+@class OMJAspectRatio, NSString, NSDictionary, CLLocation;
+
+@interface OMCClipSegment : OMCElementSegment <OMCFilterAdjustable, OMCColorAdjustable, OMCPictureEnhancable, OMCVolumeAdjustable, OMCVocalAdjustable, OMCClipSpeedAdjustable, OMCContentSpatialAdjustable, OMCLayerVisualAdjustable, OMCDigiZoomAdjustable, OMCContentCropAdjustable>
+
+@property (readonly, nonatomic) struct SharedPtr<XMFClip> { struct XMFClip *x0; } backingClip;
+@property (readonly, nonatomic) struct SharedPtr<XMSClipSegment> { struct XMSClipSegment *x0; } backingClipSegment;
+@property (readonly, nonatomic) BOOL hasAudio;
+@property (readonly, nonatomic) BOOL hasVisual;
+@property (readonly, nonatomic) BOOL isImageType;
+@property (readonly, nonatomic) BOOL isSynthType;
+@property (readonly, nonatomic) BOOL hasAudioTrack;
+@property (readonly, nonatomic) BOOL hasAudioWaveform;
+@property (readonly, nonatomic) NSString *mediaFilePath;
+@property (readonly, nonatomic) NSString *mediaFileURL;
+@property (readonly, nonatomic) NSDictionary *mediaFileMetadata;
+@property (readonly, nonatomic) NSString *phLocalIdentifier;
+@property (readonly, nonatomic) OMJAspectRatio *aspectRatio;
+@property (readonly, nonatomic) struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; } boundingTimeRangeInMedia;
+@property (readonly, nonatomic) struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; } timeRangeInMedia;
+@property (readonly, nonatomic) struct { long long x0; int x1; unsigned int x2; long long x3; } creationTime;
+@property (readonly, nonatomic) struct { long long x0; int x1; unsigned int x2; long long x3; } modificationTime;
+@property (readonly, nonatomic) CLLocation *location;
+@property (retain, nonatomic) NSString *filterID;
+@property (nonatomic) BOOL isFilterEnabled;
+@property (retain, nonatomic) NSString *filterOptions;
+@property (nonatomic) float filterIntensity;
+@property (readonly, nonatomic) BOOL isFilterAdjusted;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) float brightness;
+@property (nonatomic) float contrast;
+@property (nonatomic) float saturation;
+@property (nonatomic) float temperature;
+@property (nonatomic) float vibrance;
+@property (nonatomic) float exposure;
+@property (nonatomic) float hue;
+@property (nonatomic) float tint;
+@property (readonly, nonatomic) BOOL isColorAdjusted;
+@property (nonatomic) float sharpness;
+@property (nonatomic) float blur;
+@property (nonatomic) float vignette;
+@property (readonly, nonatomic) BOOL isPictureParamAdjusted;
+@property (readonly, nonatomic) BOOL canAdjustVolume;
+@property (nonatomic) float volume;
+@property (nonatomic) BOOL isAudioMuted;
+@property (nonatomic) double phaseInDuration;
+@property (nonatomic) double phaseOutDuration;
+@property (nonatomic) BOOL isEnabled;
+@property (nonatomic) float gain;
+@property (readonly, nonatomic) struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; } absoluteTimeRange;
+@property (readonly, nonatomic) double speedRatio;
+@property (nonatomic) unsigned long long contentFlipMode;
+@property (nonatomic) unsigned long long contentRotationMode;
+@property (nonatomic) unsigned long long contentScaleMode;
+@property (readonly, nonatomic) BOOL isContentSpatialAdjusted;
+@property (nonatomic) float layerOpacity;
+@property (nonatomic) unsigned long long layerBlendingMode;
+@property (readonly, nonatomic) NSString *layerBlendingModeName;
+@property (nonatomic) BOOL isDigiZoomEnabled;
+@property (nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } contentCropRegion;
+
+- (void)beginSpeedAdjustmentSession;
+- (void)endSpeedAdjustmentSession;
+- (void)clearSpeedAdjustment;
+- (BOOL)updateSpeedRatio:(double)a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })mapToMediaTimeFromClipTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })mapToClipTimeFromMediaTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+
+@end

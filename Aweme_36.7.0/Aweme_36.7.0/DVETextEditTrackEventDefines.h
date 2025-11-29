@@ -1,0 +1,3 @@
+@interface DVETextEditTrackEventDefines : NSObject
+
+@end

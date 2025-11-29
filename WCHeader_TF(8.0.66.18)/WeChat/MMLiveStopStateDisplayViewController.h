@@ -1,0 +1,71 @@
+@class UIView, NSString, UIImage, MMFinderLiveHeaderView, MMLiveTask, UIImageView, MMFinderLiveTask, MMFinderLiveRouterParams, NSMutableArray, MMLiveMoreLivesIndicatorBar, WCLiveScrollActionSheet, UILabel;
+
+@interface MMLiveStopStateDisplayViewController : MMUIViewController <MMScrollActionSheetDelegate, MMFinderMenuActionDelegate, ForwardMessageLogicDelegate>
+
+@property (retain, nonatomic) MMLiveTask *liveTask;
+@property (readonly, nonatomic) MMFinderLiveTask *finderLiveTask;
+@property (retain, nonatomic) UIView *backMaskView;
+@property (retain, nonatomic) UILabel *tipLabel;
+@property (retain, nonatomic) UILabel *subTipLabel;
+@property (retain, nonatomic) UIImageView *lastFrameImageView;
+@property (retain, nonatomic) MMFinderLiveHeaderView *liveHeaderView;
+@property (retain, nonatomic) WCLiveScrollActionSheet *settingScrollActionSheet;
+@property (copy, nonatomic) NSString *subTipContent;
+@property (nonatomic) BOOL isMovingToNewScene;
+@property (retain, nonatomic) NSMutableArray *liveContentVMs;
+@property (nonatomic) long long currentIndex;
+@property (nonatomic) long long tabType;
+@property (nonatomic) int commentScene;
+@property (nonatomic) BOOL useVerticalFullscreenMinimization;
+@property (retain, nonatomic) UIImage *lastFrameImage;
+@property (retain, nonatomic) MMFinderLiveRouterParams *routeParam;
+@property (retain, nonatomic) MMLiveMoreLivesIndicatorBar *moreLivesIndicatorBar;
+@property (nonatomic) unsigned long long interruptBusinessType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithLiveTask:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (void)layoutUI;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)layoutLastFrameImageView;
+- (void)layoutBackMaskView;
+- (void)layoutTipLabel;
+- (void)layoutSubTipLabel;
+- (void)updateTipLabelOrigin;
+- (void)layoutHeaderView;
+- (void)layoutMoreLivesIndicatorBar;
+- (BOOL)isLiveCommentSceneCanShowMoreLive;
+- (void)addRestartGesture;
+- (void)onActionButtonClick;
+- (void)onCloseButtonClick;
+- (void)onHeadImageOrLabelClick:(id)a0;
+- (void)onFollowButtonClick:(id)a0;
+- (void)onFollowingButtonClick:(id)a0;
+- (void)gotoAnchorProfileView:(id)a0;
+- (void)gotoMoreLive;
+- (void)onTapGesture;
+- (void)restartLive;
+- (void)updateSubTipContent;
+- (void)scrollActionSheet:(id)a0 didSelecteItem:(id)a1;
+- (void)shareToFriend;
+- (void)shareToMoment;
+- (void)trySharingWithBlock:(id /* block */)a0;
+- (void)shareToTextState;
+- (void)trySharingToTextStateWithBlock:(id /* block */)a0;
+- (void)complaintEntry;
+- (void)gotoLotteryWinRecordViewController;
+- (void)openTrumpetSelectViewController;
+- (void)changeToOtherAppScene;
+- (void)onContactClick:(id)a0 index:(unsigned long long)a1;
+- (id)getCurrentViewController;
+- (void)OnForwardMessageSend:(id)a0;
+- (void)OnForwardMessageCancel:(id)a0;
+- (void)didMoveToNewScene:(id)a0;
+- (void).cxx_destruct;
+
+@end

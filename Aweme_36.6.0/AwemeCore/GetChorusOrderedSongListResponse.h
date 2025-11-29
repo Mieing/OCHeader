@@ -1,0 +1,10 @@
+@class GetChorusOrderedSongListResponse_ResponseData;
+
+@interface GetChorusOrderedSongListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetChorusOrderedSongListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

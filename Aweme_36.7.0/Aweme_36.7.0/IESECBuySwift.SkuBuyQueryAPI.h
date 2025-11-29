@@ -1,0 +1,8 @@
+@interface IESECBuySwift.SkuBuyQueryAPI : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ pageInfo;
+    void /* unknown type, empty encoding */ frontier;
+    void /* unknown type, empty encoding */ provider;
+    void /* unknown type, empty encoding */ metrics;
+}
+
+@end

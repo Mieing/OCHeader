@@ -1,0 +1,74 @@
+@class WCStoryCommentOthersViewModel, UILabel, UITableView, WCStoryComment, WCStoryPreviewReportObj, UIView, WCInputController, NSString, MMGrowTextView, UIButton, CAGradientLayer, EmoticonBoardView, MMUILabel, MMUIButton;
+@protocol WCStoryCommentOthersViewControllerDelegate;
+
+@interface WCStoryCommentOthersViewController : MMUIViewController <UITableViewDataSource, UITableViewDelegate, WCStoryCommentOthersViewModelDelegate, WCStoryFriendCommmentHeadCellDelegate, MMTipsViewControllerDelegate, InputControllerDelegate>
+
+@property (readonly, nonatomic) double contentViewHeight;
+@property (copy, nonatomic) NSString *tid;
+@property (retain, nonatomic) WCStoryCommentOthersViewModel *viewModel;
+@property (retain, nonatomic) WCStoryPreviewReportObj *previewReportObj;
+@property (retain, nonatomic) WCStoryComment *replyComment;
+@property (retain, nonatomic) MMUIButton *backgroundButton;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) UIView *topView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *maskView;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) MMGrowTextView *growTextView;
+@property (retain, nonatomic) WCInputController *inputController;
+@property (retain, nonatomic) UIView *inputView;
+@property (retain, nonatomic) UIButton *expressionButton;
+@property (retain, nonatomic) EmoticonBoardView *emoticonBoardView;
+@property (retain, nonatomic) UIView *bottomBackGroundView;
+@property (retain, nonatomic) MMUILabel *remainWordCountLabel;
+@property (weak, nonatomic) id<WCStoryCommentOthersViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTid:(id)a0;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidBePushOrPresent:(BOOL)a0;
+- (void)viewWillBePushOrPresent:(BOOL)a0;
+- (void)viewDidPopOrDismiss:(BOOL)a0;
+- (id)navigationBarBackgroundColor;
+- (BOOL)hidesStatusBar;
+- (void)setupData;
+- (void)scrollTableViewToBottomAnimated:(BOOL)a0;
+- (BOOL)isShowingKeyBoard;
+- (void)setupSubViews;
+- (void)setupContentView;
+- (void)setupInputViewController;
+- (void)setupGesture;
+- (void)updateUI;
+- (void)deleteComment:(id)a0;
+- (void)showContactInfoViewControllerWithStoryComment:(id)a0;
+- (void)handleTableViewPanGesture:(id)a0;
+- (void)handleTopViewPanGesture:(id)a0;
+- (void)handleScrollView:(id)a0 panGesture:(id)a1;
+- (void)onExpressionButtonClicked:(id)a0;
+- (void)onClickClose;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)keyboardWillShow;
+- (void)keyboardWillHide;
+- (void)MMGrowTextViewHeightDidChanged:(id)a0;
+- (void)textViewTextDidChange;
+- (void)didCommitText:(id)a0;
+- (void)StoryCommentOthersViewModelDataDidUpdate:(id)a0;
+- (void)StoryCommentOthersViewModelDataUpdateByAddComment;
+- (void)StoryFriendCommmentHeadCellD:(id)a0 didClickHeadViewWithComment:(id)a1;
+- (void)StoryFriendCommmentHeadCellD:(id)a0 didClickBodyViewWithComment:(id)a1;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 withText:(id)a2 withTipsVC:(id)a3;
+- (void)updateRemainWordCountLabel;
+- (double)getVisibleHeight;
+- (void).cxx_destruct;
+
+@end

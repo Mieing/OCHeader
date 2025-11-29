@@ -1,0 +1,3 @@
+@interface IESLiveLinkmicTaskRoot : GPBRootObject
+
+@end

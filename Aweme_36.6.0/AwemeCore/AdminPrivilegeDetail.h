@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface AdminPrivilegeDetail : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL disable;
+@property (copy, nonatomic) NSString *disableTip;
+@property (copy, nonatomic) NSString *disableToast;
+@property (nonatomic) long long disableType;
+
++ (id)descriptor;
+
+@end

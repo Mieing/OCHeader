@@ -1,0 +1,10 @@
+@interface IESECAtomObservation : NSObject {
+    id _observee;
+    id /* block */ _block;
+}
+
+- (void)unobserve;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface FeedCardGaiYaInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *gaiyaToken;
+@property (nonatomic) BOOL hasGaiyaToken;
+@property (nonatomic) long long gaiyaStartTime;
+@property (nonatomic) BOOL hasGaiyaStartTime;
+@property (nonatomic) long long gaiyaProjectId;
+@property (nonatomic) BOOL hasGaiyaProjectId;
+
++ (id)descriptor;
+
+@end

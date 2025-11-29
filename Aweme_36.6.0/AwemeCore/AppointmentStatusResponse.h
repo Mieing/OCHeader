@@ -1,0 +1,12 @@
+@class AppointmentStatusExtra, AppointmentStatusData;
+
+@interface AppointmentStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AppointmentStatusData *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) AppointmentStatusExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

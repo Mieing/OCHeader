@@ -1,0 +1,14 @@
+@interface YummeMixStatsV2 : GPBMessage
+
+@property (nonatomic) long long playCount;
+@property (nonatomic) BOOL hasPlayCount;
+@property (nonatomic) long long collectCount;
+@property (nonatomic) BOOL hasCollectCount;
+@property (nonatomic) long long currIndex;
+@property (nonatomic) BOOL hasCurrIndex;
+@property (nonatomic) long long total;
+@property (nonatomic) BOOL hasTotal;
+
++ (id)descriptor;
+
+@end

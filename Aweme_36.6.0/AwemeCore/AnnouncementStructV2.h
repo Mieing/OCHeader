@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface AnnouncementStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) BOOL hasTitle;
+@property (copy, nonatomic) NSString *body;
+@property (nonatomic) BOOL hasBody;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class SearchEntranceResponse_Data;
+
+@interface SearchEntranceResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SearchEntranceResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

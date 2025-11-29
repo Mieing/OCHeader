@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveHotRoomInfo;
+
+@interface HTSLiveHotRoomMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveHotRoomInfo *info;
+@property (nonatomic) BOOL hasInfo;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class IESGCPPBImpressionReportResponse_Data;
+
+@interface IESGCPPBImpressionReportResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBImpressionReportResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

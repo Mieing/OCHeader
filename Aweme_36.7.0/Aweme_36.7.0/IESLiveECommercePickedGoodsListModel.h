@@ -1,0 +1,16 @@
+@class NSArray, IESLiveECRoomCart;
+
+@interface IESLiveECommercePickedGoodsListModel : IESLiveECommerceBaseApiModel
+
+@property (copy, nonatomic) NSArray *goodsList;
+@property (nonatomic) BOOL showCart;
+@property (retain, nonatomic) IESLiveECRoomCart *roomCart;
+
++ (id)goodsListJSONTransformer;
++ (id)recommendGoodsListJSONTransformer;
++ (id)roomCartJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (BOOL)isValid;
+
+@end

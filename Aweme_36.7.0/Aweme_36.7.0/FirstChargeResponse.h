@@ -1,0 +1,10 @@
+@class FirstChargeResponse_FirstChargeData;
+
+@interface FirstChargeResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) FirstChargeResponse_FirstChargeData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

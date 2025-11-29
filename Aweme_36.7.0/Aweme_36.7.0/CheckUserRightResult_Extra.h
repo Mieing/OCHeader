@@ -1,0 +1,10 @@
+@interface CheckUserRightResult_Extra : IESLivePBBaseMessage
+
+@property (nonatomic) int lotteryVcdAuth;
+@property (nonatomic) BOOL supportGoldCoin;
+@property (nonatomic) int giftTaskStatus;
+@property (nonatomic) long long completeNextAwardCoin;
+
++ (id)descriptor;
+
+@end

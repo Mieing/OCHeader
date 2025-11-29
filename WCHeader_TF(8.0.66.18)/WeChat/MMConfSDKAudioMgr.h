@@ -1,0 +1,92 @@
+@class NSString, NSRecursiveLock;
+
+@interface MMConfSDKAudioMgr : NSObject <AUAudioDataSource, IAUAudioDeviceExt> {
+    id /* block */ currentCallback;
+    BOOL isMutePlay;
+    NSRecursiveLock *mAudioPlayLock;
+    int _voiceSampleRate;
+    int _voiceChannels;
+    int _voiceFrameDuation;
+    int recordCount;
+    int _failCount;
+    BOOL _isCallbackedStartStatus;
+    int _voicePlaySampleRate;
+    int _voicePlayChannels;
+    int _voicePlayFrameDuation;
+    BOOL _hasSetPlayAndRecord;
+    NSString *_subAppId;
+    BOOL _delayStartAudio;
+}
+
+@property (nonatomic) BOOL isClosed;
+@property (copy, nonatomic) id /* block */ recoveringBlock;
+@property (nonatomic) unsigned long long recoverTotalCount;
+@property (nonatomic) unsigned long long recoverCurrentCount;
+@property (nonatomic) unsigned long long startedSuccessCount;
+@property (nonatomic) BOOL isStarting;
+@property (nonatomic) BOOL isInInterruption;
+@property (nonatomic) BOOL isAppInInterruption;
+@property (nonatomic) BOOL isInInterruptionByBeginning;
+@property (copy, nonatomic) id /* block */ startedVoIPCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isOtherAppUsingAudioUnit;
++ (BOOL)IsConfSDKModelWithAuAudioDevice:(id)a0;
+
+- (void)beginInterruption;
+- (void)endInterruption;
+- (BOOL)isRecovering;
+- (void)cancelRecovering;
+- (void)recoverWithCompletion:(id /* block */)a0;
+- (void)recoverIfNeed;
+- (void)recoverIfNeedAfterInterruptionBeginning;
+- (id)init;
+- (void)releaseAll;
+- (void)fullyCheckIsConfSDKModelWithResultBlock:(id /* block */)a0;
+- (BOOL)resumeVoIP:(BOOL)a0 callback:(id /* block */)a1;
+- (BOOL)getIsStarting;
+- (void)startVoIP:(BOOL)a0 bluetooth:(BOOL)a1 callback:(id /* block */)a2;
+- (BOOL)setMutePlay:(BOOL)a0;
+- (BOOL)setSubAppId:(id)a0;
+- (BOOL)setMuteRecord:(BOOL)a0;
+- (BOOL)isRunning;
+- (void)setHandsFree:(BOOL)a0;
+- (int)AudioDevGetData:(char *)a0 length:(unsigned int)a1;
+- (void)callback:(int)a0;
+- (void)audioDeviceForceStop:(id)a0;
+- (void)audioDeviceStartedFail:(id)a0;
+- (void)audioDeviceDidReceiveCallbackFirstEachStartup;
+- (void)audioDeviceDidReceivePlaybackCallbackFirstEachStartup:(id)a0;
+- (void)audioDeviceDidReceiveRecordingCallbackFirstEachStartup:(id)a0;
+- (void)restartDeviceForFail;
+- (void)forceRestartDeviceForFail;
+- (void)audioDeviceStartedSuccess:(id)a0;
+- (void)audioDeviceNearEar:(id)a0;
+- (void)audioDeviceFarawayEar:(id)a0;
+- (void)setDefaultAudioParam;
+- (void)startRecord:(int)a0 channels:(int)a1 frameDuration:(int)a2;
+- (void)startPlay:(int)a0 channels:(int)a1 frameDuration:(int)a2;
+- (void)setAudioParam:(id)a0;
+- (void)__setAudioParam;
+- (int)AudioDevPutData:(char *)a0 length:(unsigned int)a1;
+- (BOOL)isConfSDKModel;
+- (int)getRecordCount;
+- (int)getPlayCount;
+- (int)getVoiceVolume;
+- (void)audioDevicePluginHeadset:(id)a0;
+- (void)audioDeviceUnPluginHeadset:(id)a0;
+- (void)HeadSetPlugin:(BOOL)a0;
+- (void)notifyAudioDeviceChange:(BOOL)a0 isWirelessDevice:(BOOL)a1 isWiredDevice:(BOOL)a2;
+- (unsigned long long)getSuccRecordTime;
+- (unsigned long long)getStartRecordTime;
+- (unsigned long long)getStartPlayTime;
+- (BOOL)isDelayStart;
+- (int)getAudioDeviceRestartStatus;
+- (void)mmConfSDKAudioMgrOnEnterForeground;
+- (void)mmConfSDKAudioMgrDidBecomeActive;
+- (void).cxx_destruct;
+
+@end

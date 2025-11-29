@@ -1,0 +1,97 @@
+@class WXVoIPAudioHardwareSystemNotificationsLifelongObserver, WXVoIPAudioHardwareSystemNotificationsObserver, WXVoIPAudioPlayPreprocessor, WXVoIPAudioUnitThreadDaemon, NSString, WXVoIPAudioHardwareCallbackAdapter, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface WXVoIPAudioDeviceAppleImpl : NSObject <WXVoIPAudioHardwareSystemNotificationsLifelongObserverDelegate, WXVoIPAudioUnitThreadDaemonDelegate, AudioPlayPreprocessedDelegate, WXVoIPAudioHardwareDelegate> {
+    struct unique_ptr<wxvoipsdk::audio::HardwareManager, std::default_delete<wxvoipsdk::audio::HardwareManager>> { struct __compressed_pair<wxvoipsdk::audio::HardwareManager *, std::default_delete<wxvoipsdk::audio::HardwareManager>> { struct HardwareManager *__value_; } __ptr_; } _hardwareManager;
+    struct weak_ptr<wxvoipsdk::audio::AudioDeviceCapCallback> { struct AudioDeviceCapCallback *__ptr_; struct __shared_weak_count *__cntrl_; } _dataCaptureCallback;
+    struct weak_ptr<wxvoipsdk::audio::AudioDevicePlayCallback> { struct AudioDevicePlayCallback *__ptr_; struct __shared_weak_count *__cntrl_; } _dataPlayCallback;
+    struct AudioFrame { void /* function */ **_vptr$AudioFrame; int sample_rate; int channels; int bits; int frame_size_ms; int frame_size_byte; BOOL frame_size_desc_byte; int samples_per_channel; BOOL has_trae_header; unsigned int timestamp_ms; unsigned int timestamp_sample; unsigned short seq_number; int packet_type; int codec_format; int frame_type; int stream_format; unsigned short energy; char *buffer; int data_size; int capacity; BOOL is_buffer_malloc_by_self; } _earMonitoringPlayProcessHelpBuffer;
+    struct TXCVolumeLevelS16 { void /* function */ **_vptr$TXCVolumeLevelS16; unsigned int sample_rate_; unsigned int channels_; unsigned int internal_abs_max_value_for_level_; unsigned short abs_max_value_for_level_; unsigned long long processed_samples_for_level; unsigned long long processed_samples_threshold_for_level_; unsigned short last_max_pcm_sample_energy_; unsigned short max_pcm_sample_energy_; unsigned long long processed_samples_for_energy_; unsigned long long processed_samples_threshold_for_energy_; } _captureEnergy;
+}
+
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *operationsQueue;
+@property BOOL isFirstDataCaptured;
+@property (nonatomic) unsigned long long startCaptureTime;
+@property BOOL isFirstDataPlayed;
+@property (nonatomic) struct AudioFrame { void /* function */ **_vptr$AudioFrame; int sample_rate; int channels; int bits; int frame_size_ms; int frame_size_byte; BOOL frame_size_desc_byte; int samples_per_channel; BOOL has_trae_header; unsigned int timestamp_ms; unsigned int timestamp_sample; unsigned short seq_number; int packet_type; int codec_format; int frame_type; int stream_format; unsigned short energy; char *buffer; int data_size; int capacity; BOOL is_buffer_malloc_by_self; } audioUnitCallbackProcessBuffer;
+@property (retain, nonatomic) WXVoIPAudioHardwareCallbackAdapter *audioHardwareCallbackAdapter;
+@property (retain, nonatomic) WXVoIPAudioPlayPreprocessor *playPreprocessor;
+@property (retain, nonatomic) WXVoIPAudioHardwareSystemNotificationsLifelongObserver *hardwareLifelongObserver;
+@property (retain, nonatomic) WXVoIPAudioHardwareSystemNotificationsObserver *hardwareObserver;
+@property (nonatomic) struct DataBasicDescription { void /* function */ **_vptr$DataBasicDescription; int sample_rate; int channels; int bits; } captureDataDescription;
+@property (nonatomic) BOOL isEarMonitoringEnabled;
+@property (retain, nonatomic) WXVoIPAudioUnitThreadDaemon *audioUnitThreadDaemon;
+@property int internalRemotePlaySoureceNumber;
+@property (nonatomic) long long captureDeviceVolume;
+@property (nonatomic) long long playoutDeviceVolume;
+@property (nonatomic, getter=isCaptureDeviceMuted) BOOL captureDeviceMuted;
+@property (nonatomic, getter=isPlayoutDeviceMuted) BOOL playoutDeviceMuted;
+@property BOOL isCaptureStarted;
+@property BOOL isPlayStarted;
+@property BOOL enableAutoRestart;
+@property unsigned int autoRestartIntervalInMS;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedInstance;
+
+- (id)init;
+- (BOOL)isInterrupted;
+- (BOOL)isInBackground;
+- (BOOL)isOtherAPPPlaying;
+- (void)startCapture:(int)a0 channels:(int)a1;
+- (void)stopCapture;
+- (void)muteCapture:(BOOL)a0;
+- (void)startPlay;
+- (void)stopPlay;
+- (void)pauseCapture;
+- (void)resumeCapture;
+- (void)setDataCaptureCallback:(struct weak_ptr<wxvoipsdk::audio::AudioDeviceCapCallback> { struct AudioDeviceCapCallback *x0; struct __shared_weak_count *x1; })a0;
+- (void)setDataPlayCallback:(struct weak_ptr<wxvoipsdk::audio::AudioDevicePlayCallback> { struct AudioDevicePlayCallback *x0; struct __shared_weak_count *x1; })a0;
+- (void)setSystemVolumeType:(int)a0;
+- (void)setPlayRoute:(int)a0;
+- (void)enableInactivateAudioSession:(int)a0;
+- (void)RestartAudioDevice;
+- (void)switchCaptureDevice:(long long)a0;
+- (struct _AudioDeviceInfo { int x0; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x1; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x2; int x3; })getActiveCaptureDevice;
+- (void)switchPlayDevice:(long long)a0;
+- (struct _AudioDeviceInfo { int x0; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x1; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x2; int x3; })getActivePlayDevice;
+- (int)getActivePlayDeviceState;
+- (struct vector<wxvoipsdk::_AudioDeviceInfo, std::allocator<wxvoipsdk::_AudioDeviceInfo>> { struct _AudioDeviceInfo *x0; struct _AudioDeviceInfo *x1; struct __compressed_pair<wxvoipsdk::_AudioDeviceInfo *, std::allocator<wxvoipsdk::_AudioDeviceInfo>> { struct _AudioDeviceInfo *x0; } x2; })getAvailableDevices:(BOOL)a0;
+- (void)setCaptureAndPlayDurationFactor:(int)a0;
+- (void)clean;
+- (void)setRemotePlaySoureceNumber:(int)a0;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })startCaptureInternal:(int)a0 channels:(int)a1;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })stopCaptureInternal;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })pauseCaptureInternal;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })resumeCaptureInternal;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })startPlayInternal;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })stopPlayInternal;
+- (void)initIfPlayOrCaptureFirstStart;
+- (void)uninitIfPlayAndCaptureBothStop;
+- (struct DeviceErrorApple { void /* function */ **x0; long long x1; int x2; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; })onInterruption:(BOOL)a0;
+- (void)onCaptureData:(struct AudioFrame { void /* function */ **x0; int x1; int x2; int x3; int x4; int x5; BOOL x6; int x7; BOOL x8; unsigned int x9; unsigned int x10; unsigned short x11; int x12; int x13; int x14; int x15; unsigned short x16; char *x17; int x18; int x19; BOOL x20; } *)a0;
+- (void)captureStartSuccessfully;
+- (void)onSendAudioData:(struct AudioFrame { void /* function */ **x0; int x1; int x2; int x3; int x4; int x5; BOOL x6; int x7; BOOL x8; unsigned int x9; unsigned int x10; unsigned short x11; int x12; int x13; int x14; int x15; unsigned short x16; char *x17; int x18; int x19; BOOL x20; } *)a0;
+- (void)onGetDatatoPlay:(struct AudioFrame { void /* function */ **x0; int x1; int x2; int x3; int x4; int x5; BOOL x6; int x7; BOOL x8; unsigned int x9; unsigned int x10; unsigned short x11; int x12; int x13; int x14; int x15; unsigned short x16; char *x17; int x18; int x19; BOOL x20; } *)a0;
+- (void)onGetDataToPlayPreprocess:(struct AudioFrame { void /* function */ **x0; int x1; int x2; int x3; int x4; int x5; BOOL x6; int x7; BOOL x8; unsigned int x9; unsigned int x10; unsigned short x11; int x12; int x13; int x14; int x15; unsigned short x16; char *x17; int x18; int x19; BOOL x20; } *)a0;
+- (BOOL)onGetVOIPModeState;
+- (void)onAudioUnitEvent:(const void *)a0;
+- (void)onAudioUnitError:(const void *)a0;
+- (void)onChangeNewCaptureHardwareSuccessfully:(const struct Hardware { int x0; } *)a0;
+- (void)onChangePlayHardwareSuccessfully:(const struct Hardware { int x0; } *)a0;
+- (void)onHardwarePluggedIn:(const struct Hardware { int x0; } *)a0;
+- (void)onHardwarePluggedOut:(const struct Hardware { int x0; } *)a0;
+- (BOOL)onGetCaptureState;
+- (BOOL)onGetPlayState;
+- (void)onNeedRestartAudioUnit;
+- (struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })getAPPStates;
+- (BOOL)isUsingHeadset;
+- (BOOL)isEarMonitoringEnabledInternal;
+- (int)getAudioQualityTypeWith:(int)a0 channels:(int)a1;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

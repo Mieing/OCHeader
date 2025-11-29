@@ -1,0 +1,78 @@
+@class NSArray, IESLivePublicScreenNodeStyleConfig, IESLivePublicScreenRefreshTimer, NSMutableArray, IESLivePublicScreenNodeFactory, IESLivePublicScreenDataFlowConfig, IESLivePEDecisionService, IESLivePublicScreenContext;
+@protocol IESLivePublicScreenMonitorProtocol, IESLivePublicScreenDataFlowDelegate;
+
+@interface IESLivePublicScreenNodeManager : NSObject
+
+@property (retain, nonatomic) IESLivePublicScreenContext *context;
+@property (retain, nonatomic) IESLivePublicScreenNodeFactory *nodeFactory;
+@property (retain, nonatomic) IESLivePublicScreenRefreshTimer *refreshTimer;
+@property (retain, nonatomic) IESLivePublicScreenDataFlowConfig *dataFlowConfig;
+@property (retain, nonatomic) IESLivePublicScreenNodeStyleConfig *nodeStyleConfig;
+@property (weak, nonatomic) id<IESLivePublicScreenDataFlowDelegate> delegate;
+@property (retain, nonatomic) NSMutableArray *messageHandlers;
+@property (retain, nonatomic) NSMutableArray *nodeHandlers;
+@property (copy, nonatomic) NSArray *nodeHandlerNoCountLimitWhiteList;
+@property (copy, nonatomic) NSArray *messageHandlerNoCountLimitWhiteList;
+@property (retain, nonatomic) NSMutableArray *waitingDeleteMessageIDs;
+@property (retain, nonatomic) NSMutableArray *duplicateMessageIDs;
+@property (nonatomic) BOOL pauseCreateNode;
+@property (retain, nonatomic) IESLivePEDecisionService *decisionService;
+@property (nonatomic) double lastShowTimeStamp;
+@property (nonatomic) double directlyShowThreshold;
+@property (nonatomic) unsigned long long applicationStateOpt;
+@property (nonatomic) unsigned long long applicationStateFromNotification;
+@property (retain, nonatomic) id<IESLivePublicScreenMonitorProtocol> monitor;
+@property (nonatomic) BOOL ignoreApplicationStateInRefresh;
+
+- (void)removeMessageHandler:(id)a0;
+- (void)p_appWillResignActive:(id)a0;
+- (id)currentRefreshConfig;
+- (id)nodeStrategyWithMessage:(id)a0;
+- (void)updateNodesSizeWithMaxLayoutWidth:(double)a0 completion:(id /* block */)a1;
+- (void)processNodeWithTask:(id)a0;
+- (void)updateRefreshConfig:(id)a0;
+- (void)addMessageToBuffer:(id)a0;
+- (id)allBufferMessages;
+- (void)addNodeToBuffer:(id)a0;
+- (id)allBufferNodes;
+- (void)addMessageHandler:(id)a0;
+- (void)addNodeHandler:(id)a0;
+- (void)removeAllBuffer;
+- (void)removeDuplicateMessageBuffer;
+- (void)removeRefreshConfigWithPriority:(unsigned long long)a0;
+- (void)processNodeWithDirectlyShowStrategy:(id)a0;
+- (void)startConsumeMessageWithCaller:(id)a0;
+- (void)immediateRefreshAndResetTimer;
+- (id)initWithPublicScreenContext:(id)a0 delegate:(id)a1 diContext:(id)a2;
+- (void)updateNodeStyleConfig:(id)a0 completion:(id /* block */)a1;
+- (void)stopNodesCommit;
+- (void)startNodesCommit;
+- (void)stopConsumeMessageWithCaller:(id)a0;
+- (void)removeNodeHandler:(id)a0;
+- (BOOL)duplicateMessage:(id)a0;
+- (void)setupRefreshTimer;
+- (void)checkAndConsumeNodes;
+- (void)refreshConfigChanged;
+- (void)updateNodeSize:(id)a0 completion:(id /* block */)a1;
+- (void)resetNode:(id)a0 completion:(id /* block */)a1;
+- (BOOL)needDirectlyShowMessage:(id)a0;
+- (id)customNodeStrategyWithMessage:(id)a0;
+- (BOOL)messageShouldBeDeleted:(id)a0;
+- (void)preprocessMessage:(id)a0;
+- (void)createNodeWith:(id)a0;
+- (void)handleNode:(id)a0;
+- (void)createNodeWithMessage:(id)a0 completion:(id /* block */)a1;
+- (void)checkAndConsumeMessages;
+- (BOOL)enableConsumeMessageAndNode;
+- (void)commitDataWithNode:(id)a0;
+- (id)processNode:(id)a0;
+- (void)handleMessage:(id)a0;
+- (id)processMessage:(id)a0;
+- (void).cxx_destruct;
+- (void)addObserver;
+- (void)dealloc;
+- (void)deleteMessages:(id)a0;
+- (BOOL)filter:(id)a0;
+- (void)p_applicationDidBecomeActive:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomSensitiveWordApiRoot : GPBRootObject
+
+@end

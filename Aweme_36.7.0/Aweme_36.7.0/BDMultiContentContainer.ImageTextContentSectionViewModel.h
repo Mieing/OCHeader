@@ -1,0 +1,22 @@
+@interface BDMultiContentContainer.ImageTextContentSectionViewModel : BDMultiContentContainer.BaseContentSectionViewModel {
+    void /* unknown type, empty encoding */ imageTextModel;
+    void /* unknown type, empty encoding */ strongBeatInterupted;
+    void /* unknown type, empty encoding */ useInternalVideoController;
+    void /* unknown type, empty encoding */ cellHasPreparedForPlaying;
+    void /* unknown type, empty encoding */ fakeCellViewModel;
+    void /* unknown type, empty encoding */ _isPinchZooming;
+    void /* unknown type, empty encoding */ _curImageZoomInfo;
+    void /* unknown type, empty encoding */ innerSlidableIndexLogToken;
+    void /* unknown type, empty encoding */ _isCurImageZoomIdentity;
+    void /* unknown type, empty encoding */ contentModeLogToken;
+    void /* unknown type, empty encoding */ _contentMode;
+    void /* unknown type, empty encoding */ _viewedImages;
+}
+
+@property (nonatomic, readonly) long long itemCount;
+
++ (BOOL)useCellViewModel;
+
+- (void).cxx_destruct;
+
+@end

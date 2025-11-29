@@ -1,0 +1,82 @@
+@class UIButton, AFDFamiliarNaviStoryPublishButton, UIImage, DUXBadge, UIView, AFDFamiliarNaviButton;
+@protocol AWENoticeFamiliarEntranceViewProtocol, AWEDiscoverFeedEntranceViewProtocol;
+
+@interface AWEFamiliarNavView : UIView
+
+@property (nonatomic) unsigned long long leftButtonType;
+@property (retain, nonatomic) DUXBadge *unreadNumberBadge;
+@property (retain, nonatomic) UIImage *leftButtonPlusDarkImage;
+@property (retain, nonatomic) UIImage *leftButtonPlusLightImage;
+@property (retain, nonatomic) UIImage *leftButtonStudioRevertImage;
+@property (retain, nonatomic) UIImage *leftButtonIMChatDarkImage;
+@property (retain, nonatomic) UIImage *leftButtonIMChatLightImage;
+@property (retain, nonatomic) UIImage *leftButtonAddFriendsDarkImage;
+@property (retain, nonatomic) UIImage *leftButtonAddFriendsLightImage;
+@property (retain, nonatomic) UIImage *leftButtonDefaultImage;
+@property (retain, nonatomic) UIImage *discoverEntranceViewImage;
+@property (retain, nonatomic) AFDFamiliarNaviButton *addFriendsButton;
+@property (retain, nonatomic) AFDFamiliarNaviButton *searchButton;
+@property (retain, nonatomic) UIView<AWENoticeFamiliarEntranceViewProtocol> *noticeEntranceView;
+@property (copy, nonatomic) id /* block */ tapPublishBtn;
+@property (copy, nonatomic) id /* block */ tapDiscoverBtn;
+@property (copy, nonatomic) id /* block */ tapStoryPublishBtn;
+@property (copy, nonatomic) id /* block */ cameraBtnDidClickedBlock;
+@property (retain, nonatomic) UIView *publishEntranceView;
+@property (retain, nonatomic) UIView *publishEntranceYellowView;
+@property (retain, nonatomic) UIButton *publishBtn;
+@property (retain, nonatomic) UIView<AWEDiscoverFeedEntranceViewProtocol> *discoverEntranceView;
+@property (retain, nonatomic) AFDFamiliarNaviStoryPublishButton *storyPublishButton;
+@property (retain, nonatomic) UIView *searchEntryView;
+@property (retain, nonatomic) UIButton *cameraBtn;
+
++ (BOOL)checkIsLite;
++ (Class)aAFDServiceDOUYINDSAdapterClass;
++ (Class)aAWEUserCenterModuleServiceCommonAdapterClass;
+
+- (void)layoutSubviews;
+- (void)onDiscoverButtonClicked:(id)a0;
+- (id)aAFDServiceDOUYINDSAdapter;
+- (void)refreshNavView;
+- (void)resetLeftAvatar;
+- (BOOL)isHitFriendRebrand;
+- (void)updateUnreadFriendsRequestBadge;
+- (void)renewSubViews;
+- (void)refreshButtonUIWithDarkTheme:(BOOL)a0;
+- (void)updateLeftButtonUIWithTintColor:(id)a0;
+- (void)updateRightButtonUIWithTintColor:(id)a0;
+- (void)updateNewRecommendCount;
+- (void)p_updateLeftButtonImage;
+- (void)p_refreshUnreadNumberBadge;
+- (void)updateStoryPublishViews;
+- (void)p_setupPublishEntryView;
+- (void)p_setupDiscoverEntranceView;
+- (void)p_setupNoticeFamiliarEntranceViewIfNeeded;
+- (void)setupStoryPublishView;
+- (id)getDiscoverEntranceView;
+- (double)p_getRightButtonRightMarginWithButton:(id)a0;
+- (struct CGSize { double x0; double x1; })getSearchButtonSizeWithButton:(id)a0;
+- (BOOL)enableShowSearchBtnForDS;
+- (unsigned long long)p_getUpdatedLeftButtonType;
+- (BOOL)noticeFamiliarEntranceEnabled;
+- (id)rightButtonDarkImage;
+- (id)rightButtonLightImage;
+- (id)leftButtonDarkImage;
+- (id)leftButtonLightImage;
+- (id)cameraImageWithDarkTheme:(BOOL)a0;
+- (void)p_updateButtonWithDarkTheme:(BOOL)a0;
+- (void)onPublishButtonClicked:(id)a0;
+- (void)didClickStorySearchButton:(id)a0;
+- (void)cameraBtnDidClicked:(id)a0;
+- (void)didClickStoryPublishButton:(id)a0;
+- (id)friendsRequestImageWithDarkTheme:(BOOL)a0;
+- (id)aAWEUserCenterModuleServiceCommonAdapter;
+- (void)updateUnreadIMChatCountBadge;
+- (void)updateAvatars:(id)a0 withSkylightState:(BOOL)a1;
+- (void)showTipsBubble;
+- (void)trackIMIconWithExtraInfo:(id)a0;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+
+@end

@@ -1,0 +1,14 @@
+@class NSNumber;
+
+@interface IESLiveGetDeviceStatsDataModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *memoryRest;
+@property (retain, nonatomic) NSNumber *cpuUsage;
+@property (retain, nonatomic) NSNumber *temperature;
+@property (retain, nonatomic) NSNumber *fps;
+@property (retain, nonatomic) NSNumber *temperatureIos;
+@property (retain, nonatomic) NSNumber *batteryLevel;
+
++ (id)modelCustomPropertyMapper;
+
+@end

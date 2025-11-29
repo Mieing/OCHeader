@@ -1,0 +1,10 @@
+@class IESGCPPBGetUserReserveStatusResponse_Data;
+
+@interface IESGCPPBGetUserReserveStatusResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBGetUserReserveStatusResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

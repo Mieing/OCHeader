@@ -1,0 +1,3 @@
+@interface IESLiveUserProfileApiRoot : GPBRootObject
+
+@end

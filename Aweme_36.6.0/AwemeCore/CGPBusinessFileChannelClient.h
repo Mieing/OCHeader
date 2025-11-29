@@ -1,0 +1,11 @@
+@class CGPBusinessFileChannelClient_Carries;
+
+@interface CGPBusinessFileChannelClient : GPBMessage
+
+@property (nonatomic) int action;
+@property (retain, nonatomic) CGPBusinessFileChannelClient_Carries *carries;
+@property (nonatomic) BOOL hasCarries;
+
++ (id)descriptor;
+
+@end

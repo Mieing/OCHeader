@@ -1,0 +1,3 @@
+@interface RoomCategoryListApiRoot : GPBRootObject
+
+@end

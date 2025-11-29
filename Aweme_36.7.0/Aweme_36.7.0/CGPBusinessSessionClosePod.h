@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CGPBusinessSessionClosePod : GPBMessage
+
+@property (nonatomic) int reason;
+@property (copy, nonatomic) NSString *packageName;
+
++ (id)descriptor;
+
+@end

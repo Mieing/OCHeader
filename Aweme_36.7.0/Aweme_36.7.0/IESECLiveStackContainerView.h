@@ -1,0 +1,26 @@
+@class NSNumber, UIStackView;
+
+@interface IESECLiveStackContainerView : UIView
+
+@property (retain, nonatomic) UIStackView *stackView;
+@property (nonatomic) double spacing;
+@property (nonatomic) long long alignment;
+@property (nonatomic) long long distribution;
+@property (retain, nonatomic) NSNumber *minShowNum;
+@property (nonatomic) BOOL shouldLayoutRight;
+@property (copy, nonatomic) id /* block */ onHideByCustomBlock;
+
+- (void)removeAllArrangedSubviews;
+- (id)initWithShouldLayoutRight;
+- (id)allArrangedSubviews;
+- (id)initWithSubViews:(id)a0;
+- (void)setupWithSubViews:(id)a0;
+- (id)subViews;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)addArrangedSubview:(id)a0;
+- (void)insertArrangedSubview:(id)a0 atIndex:(unsigned long long)a1;
+- (void)removeArrangedSubview:(id)a0;
+
+@end

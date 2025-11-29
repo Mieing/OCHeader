@@ -1,0 +1,73 @@
+@class UIView, MMTipsViewController, NSString, MMAuthorizeScopeTopView, UIButton, NSMutableArray, OauthScopeInfo, MMTableView;
+@protocol MMAuthorizeViewControllerDelegate;
+
+@interface MMAuthorizeUserInfoViewController : MMUIViewController <UITableViewDelegate, UITableViewDataSource, MMAuthorizeAddAvatarViewControllerDelegate, PBMessageObserverDelegate>
+
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) MMAuthorizeScopeTopView *tableHeaderView;
+@property (retain, nonatomic) UIView *tableFooterView;
+@property (retain, nonatomic) UIButton *comfirmBtn;
+@property (retain, nonatomic) UIButton *denyBtn;
+@property (retain, nonatomic) MMTipsViewController *tipsVC;
+@property (nonatomic) unsigned int selectedAvatarId;
+@property (nonatomic) unsigned int defaultAvatarId;
+@property (nonatomic) BOOL canAddNewAvatar;
+@property (copy, nonatomic) NSString *cloudGameScopeWording;
+@property (retain, nonatomic) OauthScopeInfo *scopeInfo;
+@property (retain, nonatomic) NSString *appName;
+@property (retain, nonatomic) NSString *iconUrl;
+@property (weak, nonatomic) id<MMAuthorizeViewControllerDelegate> delegate;
+@property (retain, nonatomic) NSString *appId;
+@property (retain, nonatomic) NSMutableArray *avatarList;
+@property (nonatomic) unsigned int avatarLimit;
+@property (nonatomic) BOOL isBanModifyAvatar;
+@property (retain, nonatomic) NSString *defaultAvatarImgUrl;
+@property (retain, nonatomic) NSString *defaultAvatarImgFileId;
+@property (retain, nonatomic) NSString *createAvatarWording;
+@property (retain, nonatomic) NSString *editAvatarWording;
+@property (retain, nonatomic) NSString *selectAvatarWording;
+@property (nonatomic) unsigned int fromScene;
+@property (nonatomic) unsigned int sessionId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithAppName:(id)a0 appId:(id)a1 iconUrl:(id)a2 scopeInfo:(id)a3 avatarList:(id)a4 avatarLimit:(unsigned int)a5 isBanModifyAvatar:(BOOL)a6 defaultAvatarId:(unsigned int)a7 cloudGameScopeWording:(id)a8;
+- (void)viewDidLoad;
+- (void)viewDidTransitionToNewSize;
+- (id)navigationBarBackgroundColor;
+- (void)initNavigationBar;
+- (void)onReturn;
+- (BOOL)shouldInteractivePop;
+- (void)initSubViews;
+- (void)initTableHeaderView;
+- (void)layoutTableHeaderView;
+- (void)initTableFooterView;
+- (void)layoutTableFooterView;
+- (double)tableViewHeight;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 commitEditingStyle:(long long)a1 forRowAtIndexPath:(id)a2;
+- (id)genAddAvatarCell;
+- (id)genNoMoreQuotaCell;
+- (unsigned int)checkDefaultAvatarId;
+- (void)editAvatar:(id)a0;
+- (void)deleteAvatar:(id)a0;
+- (void)modifyAvatar:(id)a0;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)handleDelAvatarResp:(id)a0;
+- (void)onComfirmBtnClick;
+- (void)onDenyBtnClick;
+- (void)onAddAvatarSuccess:(id)a0;
+- (void)onModAvatarSuccess:(id)a0;
+- (void)reloadTableViewAndFooterView;
+- (void).cxx_destruct;
+
+@end

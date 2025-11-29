@@ -1,0 +1,10 @@
+@class GetOrderSongListResponse_ResponseData;
+
+@interface GetOrderSongListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetOrderSongListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

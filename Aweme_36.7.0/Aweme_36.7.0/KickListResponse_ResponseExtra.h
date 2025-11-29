@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface KickListResponse_ResponseExtra : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) long long maxCount;
+@property (retain, nonatomic) NSMutableArray *listArray;
+@property (readonly, nonatomic) unsigned long long listArray_Count;
+@property (nonatomic) long long total;
+
++ (id)descriptor;
+
+@end

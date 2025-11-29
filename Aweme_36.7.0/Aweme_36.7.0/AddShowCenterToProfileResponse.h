@@ -1,0 +1,10 @@
+@class AddShowCenterToProfileResponse_ResponseData;
+
+@interface AddShowCenterToProfileResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AddShowCenterToProfileResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

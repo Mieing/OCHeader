@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveTrayPreEffect : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *preEffectImg;
+@property (nonatomic) BOOL hasPreEffectImg;
+@property (nonatomic) long long trayStartTime;
+@property (retain, nonatomic) HTSLiveImage *trayRipple;
+@property (nonatomic) BOOL hasTrayRipple;
+@property (copy, nonatomic) NSString *preSchema;
+@property (nonatomic) long long preDuration;
+@property (nonatomic) int preEffectSource;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

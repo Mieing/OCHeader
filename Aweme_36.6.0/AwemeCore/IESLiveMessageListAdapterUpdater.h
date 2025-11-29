@@ -1,0 +1,72 @@
+@class NSString, NSMutableDictionary, HTSLiveMessageListNode, CADisplayLink, IESLivePublicScreenContext, NSMutableArray, NSArray;
+@protocol IESLiveMessageListCellViewDelegate, IESLiveTableViewScrollDelegate, IESLivePublicScreenMonitorProtocol, IESLiveMessageListDataDelegate;
+
+@interface IESLiveMessageListAdapterUpdater : IESLiveTableViewAdapterUpdater <IESLivePublicScreenAdapterUpdaterProtocol>
+
+@property (nonatomic) BOOL enableFixUnexpectedReload;
+@property (nonatomic) BOOL enableHighlightOpt;
+@property (nonatomic) BOOL enableTouchOpt;
+@property (nonatomic) double autoScrollOffset;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (copy, nonatomic) id /* block */ executeCompletionBlock;
+@property (nonatomic) double lastScrollTimeS;
+@property (retain, nonatomic) NSMutableArray *commonNodeBuffer;
+@property (retain, nonatomic) NSMutableArray *foldNodeBuffer;
+@property (retain, nonatomic) NSMutableArray *needPriorityShowFoldNodeBuffer;
+@property (retain, nonatomic) HTSLiveMessageListNode *showingFoldNode;
+@property (nonatomic) BOOL shouldRemoveFoldNode;
+@property (retain, nonatomic) NSMutableArray *historyNodeBuffer;
+@property (retain, nonatomic) NSMutableArray *reloadNodeBuffer;
+@property (retain, nonatomic) NSMutableDictionary *pendingDeleteMsgIds;
+@property (nonatomic) BOOL onlyUpdateHistoryMessage;
+@property (nonatomic) double floatDuration;
+@property (retain, nonatomic) IESLivePublicScreenContext *publicScreenContext;
+@property (weak, nonatomic) id<IESLiveTableViewScrollDelegate> scrollDelegate;
+@property (weak, nonatomic) id<IESLiveMessageListCellViewDelegate> cellDelegate;
+@property (weak, nonatomic) id<IESLiveMessageListDataDelegate> dataDelegate;
+@property (retain, nonatomic) id<IESLivePublicScreenMonitorProtocol> publicScreenMonitor;
+@property (nonatomic) BOOL queuedReloadData;
+@property (retain, nonatomic) NSArray *showingRollNodes;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)visibleCellForNode:(id)a0;
+- (void)registerCellWith:(id)a0;
+- (void)addNodesToCommonBuffer:(id)a0;
+- (void)reloadMessageListOnlyWithShowingNodesWithCompletion:(id /* block */)a0;
+- (void)reloadMessageList;
+- (void)updateMessageList:(id /* block */)a0;
+- (id)showingNodes;
+- (void)reloadMessageListOnlyWithShowingNodes;
+- (void)stopAutoScroll;
+- (void)removeAllNodesAndCache;
+- (id)getRollSectionData;
+- (id)scrollDispatcher;
+- (void)addNodesToFoldBuffer:(id)a0 needPriorityShow:(BOOL)a1;
+- (void)addMessageIdsToDelete:(id)a0;
+- (void)addMessageToDelete:(id)a0;
+- (void)addNodeToShowingNodes:(id)a0 atIndex:(long long)a1;
+- (BOOL)prepareReloadMessageWithNode:(id)a0;
+- (id)allCacheNodes;
+- (void)addNodesToHistoryBuffer:(id)a0;
+- (id)getRollSectionDataOnlyWithHistory;
+- (id)getFoldSectionDataOnlyWithShowing;
+- (id)getRollSectionDataOnlyWithShowing;
+- (id)cellFromRegistrationMappingWithTableView:(id)a0 node:(id)a1;
+- (BOOL)tableView:(id)a0 shouldHighlightRowAtIndexPath:(id)a1;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)removeAllNodes;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+
+@end

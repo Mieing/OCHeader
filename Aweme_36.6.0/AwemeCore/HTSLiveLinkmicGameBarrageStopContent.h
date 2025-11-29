@@ -1,0 +1,10 @@
+@class HTSLiveLinkmicGameInfo;
+
+@interface HTSLiveLinkmicGameBarrageStopContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkmicGameInfo *gameInfo;
+@property (nonatomic) BOOL hasGameInfo;
+
++ (id)descriptor;
+
+@end

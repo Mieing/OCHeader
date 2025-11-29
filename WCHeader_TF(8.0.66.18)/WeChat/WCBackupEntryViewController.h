@@ -1,0 +1,85 @@
+@class UINavigationItem, NSString, UIView, MMUIActivityIndicatorView, UILabel, UIImageView, MMUINavigationBar, UIButton, WXGDotDotDotLabel, MMUILabel, CTRichTextView, UIScrollView;
+@protocol WCBackupEntryViewControllerDelegate;
+
+@interface WCBackupEntryViewController : MMWindowViewController <WXGChatLogSessionViewControllerDelegate, IBackupExt, IChatLogDataMgrExt, ILinkEventExt> {
+    UIScrollView *m_scrollView;
+    UIButton *m_leftTopCornerButton;
+    UIView *m_imageBackgroundView;
+    UIImageView *m_iconImageView;
+    MMUIActivityIndicatorView *m_indicatorView;
+    NSString *m_lastIconName;
+    BOOL m_lastActivity;
+    NSString *m_lastNavigationTitle;
+    MMUILabel *m_tipsLabel;
+    MMUILabel *m_smallTipsLabel;
+    CTRichTextView *m_smallTipsHelpLabel;
+    WXGDotDotDotLabel *m_dotDotDotLabel;
+    MMUILabel *m_wifiTipLabel;
+    CTRichTextView *m_helpTipsLabel;
+    UIButton *m_greenButton;
+    UIView *m_btnSeperatorView;
+    UIButton *m_greyButton;
+    UILabel *m_debugInfoLabel;
+    unsigned long long m_notifyCode;
+    unsigned long long m_childrenCode;
+    unsigned long long m_curSessionCnt;
+    unsigned long long m_totalSessionCnt;
+}
+
+@property (nonatomic) BOOL bCanShowDisconnect;
+@property (nonatomic) BOOL bSelectAllSession;
+@property (nonatomic) BOOL bGetStartConfirm;
+@property (nonatomic) unsigned long long curShowAlertTag;
+@property (retain, nonatomic) NSString *speedString;
+@property (retain, nonatomic) NSString *leftTimeString;
+@property (nonatomic) unsigned long long speedCount;
+@property (retain, nonatomic) UINavigationItem *customNavigationItem;
+@property (retain, nonatomic) UIScrollView *sheetView;
+@property (retain, nonatomic) MMUINavigationBar *customNavigationBar;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (weak, nonatomic) id<WCBackupEntryViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)addBlurEffectForView;
+- (void)setupView;
+- (void)addLeftCornerButton;
+- (void)addIconImageView;
+- (void)addGreenButton;
+- (void)addGreyButton;
+- (void)addTipsLabel;
+- (void)addSmallTipsLabel;
+- (void)onMinimizeView;
+- (void)onCloseView;
+- (void)onSendCancelAndCloseView;
+- (void)onBackupAllSession;
+- (void)onShowSelectSessionViewController;
+- (void)onConfirmAndStart;
+- (void)onStartImport;
+- (void)onStopImport;
+- (void)onCancelImport;
+- (void)onCancelBackup;
+- (void)onCancelRecoverTransfer;
+- (void)onAlertNowShouldRecoverData;
+- (void)onAlertShowNoSession;
+- (void)onAlertShowMigratedCostTime;
+- (void)onAlertShowEnergyIsNotEnough;
+- (BOOL)p_checkBatteryEnough;
+- (BOOL)p_checkSessionData;
+- (void)onChatLogSession:(id)a0 selectSession:(id)a1 selectAllTime:(BOOL)a2 selectAllSession:(BOOL)a3 selectTextOnly:(BOOL)a4 minTime:(id)a5 selectStartTime:(id)a6 selectEndTime:(id)a7;
+- (void)onCancelSelectSession;
+- (void)onBackupNotifyCode:(unsigned long long)a0;
+- (void)onProgressCurrentSession:(unsigned long long)a0 totalSession:(unsigned long long)a1;
+- (void)onBackupTransferSpeed:(float)a0 leftTime:(unsigned int)a1 sizeProgress:(float)a2;
+- (void)onBackupAlertCode:(unsigned long long)a0;
+- (void)onChatLogDataLoadFinished;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void).cxx_destruct;
+
+@end

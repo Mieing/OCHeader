@@ -1,0 +1,9 @@
+@interface TempoiOS.TempoPipeLineSizeTask : TempoiOS.TempoPipeLineBaseTask {
+    void /* unknown type, empty encoding */ template;
+    void /* unknown type, empty encoding */ uniqueID;
+    void /* unknown type, empty encoding */ data;
+}
+
+- (void).cxx_destruct;
+
+@end

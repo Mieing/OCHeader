@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveRanklistHourEntrance_Page : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *backgroundColor;
+@property (nonatomic) long long showTimes;
+@property (nonatomic) int contentType;
+
++ (id)descriptor;
+
+@end

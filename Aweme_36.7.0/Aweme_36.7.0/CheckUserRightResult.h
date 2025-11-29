@@ -1,0 +1,12 @@
+@class CheckUserRightResult_Data, CheckUserRightResult_Extra;
+
+@interface CheckUserRightResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CheckUserRightResult_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) CheckUserRightResult_Extra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

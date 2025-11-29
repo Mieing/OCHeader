@@ -1,0 +1,3 @@
+@interface AWETheaterMorePlaceHolderSectionViewModel : AWEBaseListSectionViewModel
+
+@end

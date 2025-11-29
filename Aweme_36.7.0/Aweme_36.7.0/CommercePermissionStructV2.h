@@ -1,0 +1,12 @@
+@interface CommercePermissionStructV2 : GPBMessage
+
+@property (nonatomic) int topItem;
+@property (nonatomic) BOOL hasTopItem;
+@property (nonatomic) int adLink;
+@property (nonatomic) BOOL hasAdLink;
+@property (nonatomic) int starAtlasOrder;
+@property (nonatomic) BOOL hasStarAtlasOrder;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@interface IESLivePreloadRequestGiftVoteImpl : IESLiveBackendRequestBaseImpl
+
++ (void)ieslivekit_register_preloadrequstAction;
++ (id)requstBizPath;
++ (BOOL)activeRequestImpl;
+
+- (id)bizParams;
+- (Class)modelClass;
+- (unsigned long long)responseFormat;
+
+@end

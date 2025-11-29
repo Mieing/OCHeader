@@ -1,0 +1,3 @@
+@interface RoomAudioChatSettingApiRoot : GPBRootObject
+
+@end

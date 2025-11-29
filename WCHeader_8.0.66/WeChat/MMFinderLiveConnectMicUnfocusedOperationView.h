@@ -1,0 +1,71 @@
+@class MMLiveCatalogedMerchandiseLotteryIndicatorView, MMLiveGradientLayerView, MMFinderLiveTaskId, MMLiveViewHiddenStatusContainer, MMLiveRewardGiftNotificationContainerView, MMLiveVoteFloatingView, UIView, MMFinderLiveLotteryPacketDisplayLogic, MMFinderLiveConnectMicUnfocusedUserInfoView, NSString, MMLiveVoteFloatingViewDisplayLogic, MMFinderLiveRedPacketView, MMFinderLiveConnectMicUser;
+@protocol MMFinderLiveConnectMicOperationViewDelegate;
+
+@interface MMFinderLiveConnectMicUnfocusedOperationView : UIView <MMFinderLiveConnectMicBaseUserInfoViewDelegate, WCFinderHeadImageViewDelegate, MMFinderLiveRedPacketViewModelObserver, MMLiveVoteViewModelObserver, MMFinderLiveLotteryPacketDisplayLogicExt, MMLiveVoteFloatingViewDisplayLogicDelegate, MMLiveCatalogedMerchandiseLotteryIndicatorViewDelegate, MMLiveCatalogedMerchandiseLotteryLogicExt, MMFinderLiveConnectMicOperationViewBase>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *finderLiveTaskId;
+@property (retain, nonatomic) MMFinderLiveConnectMicUser *connectMicUserInfo;
+@property (retain, nonatomic) MMLiveGradientLayerView *bottomGradientView;
+@property (retain, nonatomic) MMFinderLiveConnectMicUnfocusedUserInfoView *userInfoView;
+@property (retain, nonatomic) UIView *redPacketAnimationContainerView;
+@property (retain, nonatomic) MMFinderLiveRedPacketView *redPacketAnimationView;
+@property (retain, nonatomic) UIView *lotteryPacketAnimationContainerView;
+@property (retain, nonatomic) UIView *lotteryPacketAnimationScaleView;
+@property (retain, nonatomic) UIView *catalogedMerchandiseIndicatorContainerView;
+@property (retain, nonatomic) UIView *catalogedMerchandiseIndicatorScaleView;
+@property (retain, nonatomic) MMLiveCatalogedMerchandiseLotteryIndicatorView *catalogedMerchandiseIndicatorView;
+@property (retain, nonatomic) UIView *voteFloatingViewContainer;
+@property (retain, nonatomic) MMLiveVoteFloatingView *voteFloatingView;
+@property (retain, nonatomic) MMLiveVoteFloatingViewDisplayLogic *voteFloatingViewDisplayLogic;
+@property (retain, nonatomic) MMLiveViewHiddenStatusContainer *hiddenStatusContainer;
+@property (weak, nonatomic) id<MMFinderLiveConnectMicOperationViewDelegate> actionDelegate;
+@property (readonly, nonatomic) MMLiveRewardGiftNotificationContainerView *giftNotificationContainerView;
+@property (readonly, nonatomic) unsigned long long viewType;
+@property (retain, nonatomic) MMFinderLiveLotteryPacketDisplayLogic *lotteryPacketDisplayLogic;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } displayNormalizedFrame;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)prepareForReuse;
+- (id)refViewForDisplayPaidMicKeepAliveTips;
+- (void)showWithConnectMicUserInfo:(id)a0 isGlobalSmallMode:(BOOL)a1 isInFullScreenPKStyle:(BOOL)a2 configureLiveDirtyHandle:(BOOL)a3 hideSmallWidgets:(BOOL)a4;
+- (void)clearAndHide;
+- (void)updateOperationViewsAlpha:(double)a0;
+- (void)updateUserStatusUIWithChangeType:(unsigned long long)a0;
+- (void)updateExtraTopInset:(double)a0;
+- (void)updateExtraLeftTopInset:(double)a0;
+- (void)updateExtraBottomInset:(double)a0;
+- (void)updateUserGlobalBadgeLevel:(unsigned int)a0;
+- (void)updateLiveHeatValue;
+- (id)getUserInfoView;
+- (void)insertToPIPRenderLayerIfNeeded;
+- (id)temporarilyHideNonEssentialViews;
+- (void)restoreNonEssentialViewsWithHiddenStatusContainer:(id)a0;
+- (void)updateSmallWidgetsHidden:(BOOL)a0;
+- (void)layoutSubviews;
+- (void)onTapBackground:(id)a0;
+- (void)onMMFinderLiveConnectMicBaseUserInfoViewTapNickNameWithUserInfo:(id)a0;
+- (void)onMMFinderLiveConnectMicBaseUserInfoViewTapMicMutedButtonWithUserInfo:(id)a0;
+- (void)finderHeadImageViewDidClick:(id)a0;
+- (void)finderHeadImageViewLoadUrlImageFinished:(id)a0 image:(id)a1 urlString:(id)a2;
+- (void)redPacketViewModel:(id)a0 hiddenDidChange:(BOOL)a1;
+- (void)onFinderLiveLotteryPacketDisplayLogicDidChangeLittlePacketShow:(id)a0;
+- (void)onCatalogedMerchandiseLotteryIndicatorViewTapped:(id)a0;
+- (void)onCatalogedMerchandiseLotteryInfoUpdatedByLogic:(id)a0;
+- (void)configConnectMicOperationView:(BOOL)a0;
+- (void)setupLotteryPacketView;
+- (void)setupCatalogedMerchandiseLotteryView;
+- (void)updateCatalogedMerchandiseLotteryViewWithLotteryLogic:(id)a0;
+- (void)setupVoteFloatingView;
+- (void)setupBackgroundTapGestureRecognizer;
+- (BOOL)insertAudioMicOperationViewToPIPRenderLayer;
+- (BOOL)isFeedStreamTask;
+- (id)liveTask;
+- (void)onVotingInfoUpdate:(id)a0 fromMsg:(BOOL)a1;
+- (void)onToggleFloatingViewHidden:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

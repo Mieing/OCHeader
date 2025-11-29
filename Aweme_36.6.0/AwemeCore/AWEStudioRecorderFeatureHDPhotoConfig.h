@@ -1,0 +1,3 @@
+@interface AWEStudioRecorderFeatureHDPhotoConfig : AWEStudioComposerBaseFeatureConfig
+
+@end

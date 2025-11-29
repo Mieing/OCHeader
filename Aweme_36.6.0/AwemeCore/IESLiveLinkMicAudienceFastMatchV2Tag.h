@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveLinkMicAudienceFastMatchV2Tag : IESLivePBBaseMessage
+
+@property (nonatomic) int tagType;
+@property (copy, nonatomic) NSString *tagText;
+@property (retain, nonatomic) HTSLiveImage *tagImage;
+@property (nonatomic) BOOL hasTagImage;
+
++ (id)descriptor;
+
+@end

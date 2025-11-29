@@ -1,0 +1,3 @@
+@interface HTSLiveChannelLinkSyncdataRoot : GPBRootObject
+
+@end

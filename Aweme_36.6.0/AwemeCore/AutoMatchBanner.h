@@ -1,0 +1,14 @@
+@class HTSLiveText;
+
+@interface AutoMatchBanner : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveText *mainGuideText;
+@property (nonatomic) BOOL hasMainGuideText;
+@property (retain, nonatomic) HTSLiveText *subGuideText;
+@property (nonatomic) BOOL hasSubGuideText;
+@property (retain, nonatomic) HTSLiveText *buttonText;
+@property (nonatomic) BOOL hasButtonText;
+
++ (id)descriptor;
+
+@end

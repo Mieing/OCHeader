@@ -1,0 +1,56 @@
+@interface CMCSearchSceneController : CMCSceneController
+
+- (void)didClickAdContentDescWithContext:(id)a0;
+- (void)didClickAdComponentsViewWithContext:(id)a0;
+- (void)didClickWithEventName:(id)a0 context:(id)a1;
+- (void)trackAdPlayTimeWithContext:(id)a0;
+- (void)trackPlayerWillLoopPlayingWithContext:(id)a0;
+- (void)trackAdPlayForLoopWithContext:(id)a0;
+- (void)didClickAdHashTagWithContext:(id)a0;
+- (void)trackAdShowWithContext:(id)a0;
+- (void)trackOriginAdInfoWithContext:(id)a0;
+- (void)didClickAdUserNameWithContext:(id)a0;
+- (void)trackAdEndorseShowWithContext:(id)a0;
+- (void)trackAdSearchCardShowWithContext:(id)a0;
+- (void)openAppWithRefer:(id)a0 awemeContext:(id)a1;
+- (void)trackShowHotSpotEndorseWithContext:(id)a0;
+- (void)trackClickHotSpotEndorseTopicWithContext:(id)a0;
+- (void)trackClickHotSpotEndorseVideoWithContext:(id)a0;
+- (void)trackPlayAggregationEcommerceLiveCardWithContext:(id)a0;
+- (void)trackOverAggregationEcommerceVideoCardWithContext:(id)a0;
+- (void)trackShowAggregationEcommerceAllCardWithContext:(id)a0;
+- (void)trackBreakAggregationEcommerceAllCardWithContext:(id)a0;
+- (void)trackClickAggregationEcommerceAllCardWithContext:(id)a0;
+- (void)trackClickAggregationEcommercePictureCardWithContext:(id)a0;
+- (void)trackClickAggregationEcommerceVideoGoodsCardWithContext:(id)a0;
+- (void)trackClickAggregationEcommerceLiveGoodsCardWithContext:(id)a0;
+- (void)trackReceiveAdDataCardVideoWithContext:(id)a0;
+- (void)trackReceiveAdDataCardSearchAdWithContext:(id)a0;
+- (void)trackReceiveAdDataCardMerchandiseWithContext:(id)a0;
+- (void)trackReceiveAdDataFullEggWithContext:(id)a0;
+- (void)trackReceiveLynxCardWithContext:(id)a0;
+- (void)trackReceiveCommerceChallengeCardWithContext:(id)a0;
+- (void)trackReceiveCommerceChallengeFeedCardWithContext:(id)a0;
+- (void)trackReceiveCommerceProductEndorseWithContext:(id)a0;
+- (void)adLiveSearchCardReceiveWithContext:(id)a0;
+- (void)adLiveSearchCardDidStartShowingWithContext:(id)a0;
+- (void)adLiveSearchCardPlayerLoadStateDidChangeWithContext:(id)a0;
+- (void)adLiveSearchCardUsernameClickedWithContext:(id)a0;
+- (void)adLiveSearchCardClickedWithRefer:(id)a0 context:(id)a1;
+- (void)adLiveSearchCardLiveViewTappedWithContext:(id)a0;
+- (void)adLiveSearchCardDidEndShowingWithContext:(id)a0;
+- (void)trackProductTabShowWithContext:(id)a0;
+- (void)trackProductTabOtherClickWithContext:(id)a0;
+- (void)trackProductTabShopLabelWithContext:(id)a0;
+- (void)productTabPictureAdTappedWithContext:(id)a0;
+- (void)productTabPictureAdTappedOnlyTrackerWithContext:(id)a0;
+- (void)trackProductTabBreakWithContext:(id)a0;
+- (void)trackAdEndorseUserCardWithContext:(id)a0 label:(id)a1 refer:(id)a2;
+- (void)trackAdSearchLiveWithContext:(id)a0 label:(id)a1 refer:(id)a2;
+- (void)trackLiveLynxFailWithContext:(id)a0;
+- (void)trackTopUserViewWithContext:(id)a0 label:(id)a1;
+- (id)addSearchParamsToOpenURL:(id)a0 withAdModel:(id)a1 withRefer:(id)a2;
+- (BOOL)isEcommerceShopOrWindowAdCard:(id)a0;
+- (void)sceneDidLoad;
+
+@end

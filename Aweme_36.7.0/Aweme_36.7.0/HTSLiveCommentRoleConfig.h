@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveCommentRoleConfig : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *avatar;
+@property (nonatomic) BOOL hasAvatar;
+
++ (id)descriptor;
+
+@end

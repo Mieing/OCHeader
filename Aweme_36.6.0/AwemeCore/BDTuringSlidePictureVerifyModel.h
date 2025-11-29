@@ -1,0 +1,3 @@
+@interface BDTuringSlidePictureVerifyModel : BDTuringPictureVerifyModel
+
+@end

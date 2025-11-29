@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNMarkMsgUnreadCountReportResponseBody : GPBMessage
+
+@property (nonatomic) BOOL setTotalStatus;
+@property (nonatomic) BOOL hasSetTotalStatus;
+@property (retain, nonatomic) GPBInt64Array *failedTagListArray;
+@property (readonly, nonatomic) unsigned long long failedTagListArray_Count;
+
++ (id)descriptor;
+
+@end

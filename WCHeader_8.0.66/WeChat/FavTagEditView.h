@@ -1,0 +1,82 @@
+@class UIView, NSString, FavTagTextField, NSSet, CAShapeLayer, UIButton, NSMutableSet, NSMutableArray, UILabel, UIScrollView;
+@protocol FavTagEditViewDelegate;
+
+@interface FavTagEditView : MMUIView <MMMenuControllerExt, UITextFieldDelegate> {
+    NSMutableArray *m_arrTagButtons;
+    NSMutableSet *m_tagSet;
+    UIScrollView *m_scrollView;
+    FavTagTextField *m_textField;
+    UILabel *m_placeholderLabel;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } m_dashRect;
+    CAShapeLayer *m_dashLayer;
+    NSMutableArray *m_arrMenu;
+    NSSet *m_splitCharSet;
+    UIView *m_buttonToShow;
+    UIView *m_buttonShowing;
+    UIButton *m_highlightButton;
+    double m_buttonHeight;
+    double m_buttonCornerRadius;
+}
+
+@property (readonly, nonatomic) BOOL m_hasBeginEdit;
+@property (nonatomic) int m_maxHeight;
+@property (weak, nonatomic) id<FavTagEditViewDelegate> m_delegate;
+@property (retain, nonatomic) NSString *m_placeholderStr;
+@property (nonatomic) double customWidth;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTags:(id)a0 placeHolder:(id)a1 placeHolderEdu:(id)a2;
+- (double)caculateButtonHeight;
+- (void)layoutSubviews;
+- (void)scrollToTop;
+- (void)scrollToBottom;
+- (void)updateTagList:(id)a0;
+- (void)initMenu;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)addTagButton:(id)a0;
+- (void)deleteTagButtonWithName:(id)a0;
+- (void)deleteAllButtons;
+- (id)gatTagList;
+- (id)getCurrentTagSet;
+- (id)getTextFieldRealText;
+- (void)cleanTextField;
+- (BOOL)textFieldResignFirstResponder;
+- (BOOL)textFieldBecomeFirstResponder;
+- (void)setReturnType:(long long)a0;
+- (void)setButtonCornerRadius:(double)a0;
+- (void)updateOneButton:(id)a0 cornerRadius:(double)a1;
+- (void)setNoBeginEdit;
+- (double)getTextFieldMinWidth;
+- (id)getDefaultTitleFont;
+- (unsigned int)getMaxTagLength;
+- (void)updateTagName:(id)a0 To:(id)a1;
+- (void)deleteTagButton:(int)a0;
+- (void)updateFrameForTextFieldScroll:(BOOL)a0;
+- (void)updateFrameForTextField:(double)a0;
+- (void)updateFrameForTextField:(double)a0 scroll:(BOOL)a1;
+- (struct CGPoint { double x0; double x1; })getPositionForView:(id)a0 withWidth:(double)a1 behindButton:(id)a2;
+- (void)initView:(id)a0;
+- (void)traitCollectionDidChange:(id)a0;
+- (void)dealloc;
+- (void)ontap;
+- (void)buttonClicked:(id)a0;
+- (BOOL)textFieldShouldBeginEditing:(id)a0;
+- (BOOL)textFieldShouldReturn:(id)a0;
+- (BOOL)textFieldShouldEndEditing:(id)a0;
+- (BOOL)textField:(id)a0 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementString:(id)a2;
+- (void)textFieldDidBeginEditing:(id)a0;
+- (void)onTextFieldChanged:(id)a0;
+- (void)removeHighlighBtn;
+- (void)showMenuForButton:(id)a0;
+- (void)MenuControllerDidHide:(id)a0;
+- (void)MenuControllerWillShow:(id)a0;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (void)onMenuControllerWillShow;
+- (void)onMenuControllerDidHide;
+- (void).cxx_destruct;
+
+@end

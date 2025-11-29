@@ -1,0 +1,3 @@
+@interface HTSLiveAnswerReviewRoot : GPBRootObject
+
+@end

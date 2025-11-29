@@ -1,0 +1,3 @@
+@interface RTVNetworkDefine : NSObject
+
+@end

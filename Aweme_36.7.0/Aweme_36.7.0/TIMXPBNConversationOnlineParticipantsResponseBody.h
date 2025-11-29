@@ -1,0 +1,16 @@
+@class NSMutableArray;
+
+@interface TIMXPBNConversationOnlineParticipantsResponseBody : GPBMessage
+
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (nonatomic) long long nextCursor;
+@property (nonatomic) BOOL hasNextCursor;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (retain, nonatomic) NSMutableArray *onlineParticipantsArray;
+@property (readonly, nonatomic) unsigned long long onlineParticipantsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,73 @@
+@class NSHashTable, NSString, ACCEditBeautyEffectDataFilterConfig, ACCEditBeautyEffectDownloaderConfig, NSMutableSet, ACCEditBeautyEffectDDManager, NSMutableArray, IESEffectPlatformResponseModel;
+@protocol ACCEditBeautyEffectDownloaderProtocol;
+
+@interface ACCEditBeautyEffectDataManager : NSObject <ACCEditBeautyEffectDefaultDownloaderSubscriberProtocol, ACCEditBeautyEffectDDSubscriber>
+
+@property (retain, nonatomic) ACCEditBeautyEffectDDManager *ddManager;
+@property (retain, nonatomic) id<ACCEditBeautyEffectDownloaderProtocol> downloader;
+@property (retain, nonatomic) NSHashTable *subscribers;
+@property (retain, nonatomic) ACCEditBeautyEffectDataFilterConfig *dataFilterConfig;
+@property (retain, nonatomic) NSMutableSet *notInDefaultStateSet;
+@property (retain, nonatomic) IESEffectPlatformResponseModel *lastResponse;
+@property (retain, nonatomic) IESEffectPlatformResponseModel *preloadResponseCache;
+@property (nonatomic) BOOL didUsePreloadResponseCache;
+@property (retain, nonatomic) NSMutableArray *observers;
+@property (retain, nonatomic) ACCEditBeautyEffectDownloaderConfig *downloaderConfig;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)selectedCategory;
+- (void)reloadBeautyInCamera;
+- (void)removeBeautyFromCamera;
+- (BOOL)isUsingBeauty;
+- (void)turnOnBeauty;
+- (void)turnOffBeauty;
+- (BOOL)isBeautyOn;
+- (id)nodeWithNodeId:(id)a0;
+- (id)appliedItems;
+- (id)allItemModels;
+- (void)resetItemApplyStatusWithNodeIds:(id)a0;
+- (void)updateItemInfo:(id)a0;
+- (void)applyItemStatuaWithNodeIds:(id)a0;
+- (void)updateItem:(id)a0 value:(long long)a1;
+- (void)resetItemSelectStatusWithNodeIds:(id)a0;
+- (id)nodeWithResourceId:(id)a0;
+- (id)statusModeOfItem:(id)a0;
+- (void)p_setupDDManager;
+- (void)updateRootNodeWithResponse:(id)a0 dataFilterConfig:(id)a1 didGenerateTreeCallback:(id /* block */)a2 didFinishDownloadAllItemsCallback:(id /* block */)a3;
+- (void)downloadEffectList:(id /* block */)a0 downloadOption:(id)a1;
+- (void)updateRootNode:(id)a0;
+- (void)selectItem:(id)a0 exposeChildItemNodeIds:(id)a1;
+- (void)resetNodeIds:(id)a0;
+- (void)resetAllBeauty;
+- (void)updateBeautyAvailabilities:(id)a0;
+- (void)p_downloadAllBeautyEffects:(id /* block */)a0;
+- (void)generateTreeFromResponse:(id)a0 dataFilterConfig:(id)a1 completion:(id /* block */)a2;
+- (void)trackerBeautyFetchEffectListWithRootNode:(id)a0 isSucceededStatus:(BOOL)a1 errorMsg:(id)a2;
+- (void)p_fillIconURLsForTree:(id)a0 urlPrefixes:(id)a1;
+- (id)effectIdsWithRootNode:(id)a0;
+- (id)effectNamesWithRootNode:(id)a0;
+- (BOOL)p_isItemInDefaultState:(id)a0;
+- (BOOL)isAllInDefaultState;
+- (void)didDownloadEffects:(id)a0;
+- (void)didRecieve:(id)a0;
+- (id)initWithDownloaderConfig:(id)a0;
+- (void)downloadAndUpdateSourceDataWithConfig:(id)a0 downloadOption:(id)a1 didGenerateTreeCallback:(id /* block */)a2 didUpdateResponseCallback:(id /* block */)a3 didFinishDownloadAllItemsCallback:(id /* block */)a4;
+- (void)updateRootNodeUsingCachedResponseWithDataFilterConfig:(id)a0 didGenerateTreeCallback:(id /* block */)a1 didFinishDownloadAllItemsCallback:(id /* block */)a2;
+- (void)updateRootNodeUsingExistedResponseWithDataFilterConfig:(id)a0 didGenerateTreeCallback:(id /* block */)a1 didFinishDownloadAllItemsCallback:(id /* block */)a2;
+- (void)restoreFromCache:(id)a0;
+- (void)asyncFetchCachedResponse;
+- (id)itemStatusModesOfCategory:(id)a0;
+- (id)categories;
+- (void).cxx_destruct;
+- (id)currentState;
+- (id)rootNode;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+- (void)selectItem:(id)a0;
+- (void)selectCollection:(id)a0;
+- (void)p_addObservers;
+
+@end

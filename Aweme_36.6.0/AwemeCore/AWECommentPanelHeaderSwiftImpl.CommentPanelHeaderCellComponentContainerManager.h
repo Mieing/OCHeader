@@ -1,0 +1,3 @@
+@interface AWECommentPanelHeaderSwiftImpl.CommentPanelHeaderCellComponentContainerManager : _TtCs12_SwiftObject
+
+@end

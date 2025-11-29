@@ -1,0 +1,3 @@
+@interface AWEPOIVirgoTracker : NSObject
+
+@end

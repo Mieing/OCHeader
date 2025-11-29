@@ -1,0 +1,20 @@
+@class EcomGoodsCard, NSString, EcomPop, HTSLiveRoomCartV2, EcomLiveCard, NSMutableArray;
+
+@interface HTSLiveEcomData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) EcomLiveCard *liveCard;
+@property (nonatomic) BOOL hasLiveCard;
+@property (retain, nonatomic) EcomPop *pop;
+@property (nonatomic) BOOL hasPop;
+@property (retain, nonatomic) EcomGoodsCard *goodsCard;
+@property (nonatomic) BOOL hasGoodsCard;
+@property (retain, nonatomic) NSMutableArray *redsShowInfosArray;
+@property (readonly, nonatomic) unsigned long long redsShowInfosArray_Count;
+@property (retain, nonatomic) HTSLiveRoomCartV2 *roomCartV2;
+@property (nonatomic) BOOL hasRoomCartV2;
+@property (nonatomic) int instantType;
+@property (copy, nonatomic) NSString *routeRule;
+
++ (id)descriptor;
+
+@end

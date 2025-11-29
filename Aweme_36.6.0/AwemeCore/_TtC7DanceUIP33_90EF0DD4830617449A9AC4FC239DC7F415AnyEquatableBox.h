@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_90EF0DD4830617449A9AC4FC239DC7F415AnyEquatableBox : _TtCs12_SwiftObject
+
+@end

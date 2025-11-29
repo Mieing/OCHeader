@@ -1,0 +1,7 @@
+@interface StampCheckResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hit;
+
++ (id)descriptor;
+
+@end

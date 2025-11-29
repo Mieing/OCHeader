@@ -1,0 +1,3 @@
+@interface AWEIMTaskPlatformDetailCardDetailStyleActivityCellModel : AWEIMCellModel
+
+@end

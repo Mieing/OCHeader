@@ -1,0 +1,81 @@
+@class NSString, NSMutableArray;
+
+@interface WCMegaVideoMedia : NSObject <WCTColumnCoding, PBCoding>
+
+@property (copy, nonatomic) NSString *videoUrl;
+@property (copy, nonatomic) NSString *thumbUrl;
+@property (nonatomic) unsigned long long mediaType;
+@property (nonatomic) unsigned long long videoPlayLen;
+@property (nonatomic) double width;
+@property (nonatomic) double height;
+@property (copy, nonatomic) NSString *md5Sum;
+@property (nonatomic) unsigned long long fileSize;
+@property (nonatomic) long long bitrate;
+@property (copy, nonatomic) NSString *decodeKey;
+@property (copy, nonatomic) NSString *coverUrl;
+@property (nonatomic) unsigned long long videoPlayLenMs;
+@property (retain, nonatomic) NSMutableArray *specsArray;
+@property (retain, nonatomic) NSMutableArray *hlsSpecsArray;
+@property (retain, nonatomic) NSMutableArray *hdrSpecsArray;
+@property (copy, nonatomic) NSString *urlToken;
+@property (copy, nonatomic) NSString *thumbUrlToken;
+@property (copy, nonatomic) NSString *coverUrlToken;
+@property (readonly, nonatomic) NSString *videoUrlWithToken;
+@property (readonly, nonatomic) NSString *thumbUrlWithToken;
+@property (readonly, nonatomic) NSString *coverUrlWithToken;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_videoUrl;
++ (void)PBArrayAdd_thumbUrl;
++ (void)PBArrayAdd_mediaType;
++ (void)PBArrayAdd_videoPlayLen;
++ (void)PBArrayAdd_width;
++ (void)PBArrayAdd_height;
++ (void)PBArrayAdd_md5Sum;
++ (void)PBArrayAdd_fileSize;
++ (void)PBArrayAdd_bitrate;
++ (void)PBArrayAdd_decodeKey;
++ (void)PBArrayAdd_coverUrl;
++ (void)PBArrayAdd_videoPlayLenMs;
++ (void)PBArrayAdd_urlToken;
++ (void)PBArrayAdd_thumbUrlToken;
++ (void)PBArrayAdd_coverUrlToken;
++ (void)PBArrayAdd_specsData;
++ (void)PBArrayAdd_specsArray;
++ (void)PBArrayAdd_hlsSpecsArray;
++ (void)PBArrayAdd_hdrSpecsArray;
++ (void)initialize;
++ (id)unarchiveWithWCTValue:(id)a0;
++ (unsigned long long)columnTypeForWCDB;
++ (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })summaryClipRectForMediaSize:(struct CGSize { double x0; double x1; })a0;
++ (double)summarySizeRatioForMediaSize:(struct CGSize { double x0; double x1; })a0;
++ (double)fullMinSizeRatio;
++ (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })fullClipRectForMediaSize:(struct CGSize { double x0; double x1; })a0;
++ (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })rectInRatio_16:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+
+- (id)getPBPropertyTable;
+- (id)archivedWCTValue;
+- (void)setSpecsData:(id)a0;
+- (id)specsData;
+- (id)initWithMegaVideoMedia:(id)a0;
+- (id)genMegaVideoMedia;
+- (struct CGSize { double x0; double x1; })mediaSize;
+- (id)lengthLabel;
+- (id)mediaPath;
+- (id)getNetMediaTempCachePath;
+- (id)getLocalMediaPermanentPath;
+- (id)thumbPath;
+- (id)getNetThumbTempCachePath;
+- (id)getLocalThumbPermanentPath;
+- (id)mediaFilePath;
+- (id)convertToMediaInfoWithVideoId:(id)a0 tid:(id)a1;
+- (id)convertToPureMediaInfoWithMediaInfo:(id)a0;
+- (id)genFinderMediaWithToken;
+- (id)appendToken:(id)a0 toUrl:(id)a1;
+- (id)genFinderMedia;
+- (void).cxx_destruct;
+
+@end

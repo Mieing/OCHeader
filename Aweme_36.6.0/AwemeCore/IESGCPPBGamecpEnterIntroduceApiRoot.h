@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpEnterIntroduceApiRoot : GPBRootObject
+
+@end

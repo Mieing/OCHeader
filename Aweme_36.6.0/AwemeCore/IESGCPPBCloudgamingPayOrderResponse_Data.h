@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESGCPPBCloudgamingPayOrderResponse_Data : GPBMessage
+
+@property (copy, nonatomic) NSString *livePaymentSdkParam;
+@property (copy, nonatomic) NSString *sharkPrompts;
+@property (nonatomic) BOOL isNewPaymentLink;
+
++ (id)descriptor;
+
+@end

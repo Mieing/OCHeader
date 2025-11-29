@@ -1,0 +1,81 @@
+@class NSString, IESLiveLotteryStore, IESLiveShortTouchItem, IESLiveLotteryFloatingView;
+@protocol IESLiveURLSchemaHandler, IESLiveLotteryActions, IESLiveAuthorizationService, IESLiveSubscription, IESHYControllerProtocol, IESLiveRoomService, IESLiveInternalRouter;
+
+@interface IESLiveLotteryFragment : IESLiveRoomComponent <IESLiveLotteryReaction, IESLiveLotteryRouter>
+
+@property (retain, nonatomic) IESLiveLotteryStore *store;
+@property (retain, nonatomic) IESLiveLotteryFloatingView *lotteryFloatingView;
+@property (weak, nonatomic) id<IESLiveLotteryActions> actionCreator;
+@property (retain, nonatomic) id<IESLiveInternalRouter> internalRouter;
+@property (retain, nonatomic) id<IESLiveURLSchemaHandler> schemaURLHandler;
+@property (retain, nonatomic) id<IESLiveAuthorizationService> authService;
+@property (nonatomic) BOOL lotteryPannelViewShowing;
+@property (nonatomic) BOOL shouldForbidInteract;
+@property (nonatomic) BOOL lotteryActivityIsShowing;
+@property (retain, nonatomic) NSString *fobidInteractToast;
+@property (retain, nonatomic) IESLiveShortTouchItem *shortTouchitem;
+@property (retain, nonatomic) id<IESLiveSubscription> disposable;
+@property (weak, nonatomic) id<IESHYControllerProtocol> hybridLotteryPanel;
+@property (retain, nonatomic) id<IESLiveRoomService> roomService;
+@property (nonatomic) BOOL clickLotteryFromPreview;
+@property (nonatomic) BOOL autoShowLottery;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)componentOrientationChanged:(long long)a0;
+- (id)getCurrentLottery;
+- (BOOL)shouldShowFirstRedDot;
+- (void)prepareStartLotteryMode;
+- (void)openLotteryPage;
+- (BOOL)userHasParticipatedCurrentVote;
+- (long long)countDownDurationOfCurrentVote;
+- (void)dismissLotteryIconWithSource:(id)a0 lotteryId:(long long)a1 lotteryType:(long long)a2;
+- (id)currentLotteryType;
+- (void)p_setInteraciveDisabled:(id)a0;
+- (void)p_setInteraciveEnabled;
+- (void)p_loadLotterButtonIfNeed;
+- (BOOL)p_enableLottery;
+- (void)tr_shortTaskBannerClick;
+- (void)lotteryFloatingViewClicked:(id)a0;
+- (void)requestToShowNormalStateWithItem;
+- (void)adjustToTempStateWidth;
+- (void)tr_shortTaskBannerShowWithStatus:(BOOL)a0;
+- (void)p_handleTrackContextLotteryInfo;
+- (void)tr_showLotteryFloatEvent;
+- (void)p_realOpenLotteryPanelWithParams:(id)a0;
+- (void)triggerTempStatusWithTempNumber:(id)a0;
+- (void)lotteryItemDidClick;
+- (void)tr_clickLotteryIconEvent;
+- (void)lotteryItemClick;
+- (void)p_reallyDismissLotteryIcon;
+- (void)p_checkAuthorizationAndShowLotteryPanelWithParams:(id)a0;
+- (id)currentLotteryRange;
+- (id)currentLotteryParticipateWay;
+- (BOOL)isLinkMicGuestWithUid:(id)a0;
+- (void)p_openWebViewWithUrl:(id)a0;
+- (void)p_showLotteryResultViewWithLottery:(id)a0;
+- (void)tr_lotteryPasswordCheckFeedbackShowWithReason:(id)a0 lotteryType:(id)a1;
+- (void)p_createLotteryFloatingViewIfNeed;
+- (void)dismissPreviousPopup;
+- (void)monitorLotteryOpenEventWithResultType:(long long)a0 lotteryStatus:(long long)a1;
+- (void)p_dismissLottery;
+- (void)p_showLotteryResultView;
+- (void)receivedLotteryNotApprovedWithRule:(id)a0 failureReason:(id)a1 lotteryType:(long long)a2;
+- (void)receivedLotteryStart;
+- (void)receivedLotteryEndForResult:(long long)a0;
+- (void)showLotteryResult:(id)a0;
+- (void)updateIconWithMessage:(id)a0;
+- (void)userParticipateStateChange;
+- (void)updateTempStateLabelBySyncData;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

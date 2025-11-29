@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface GrootBottomBarInfoV2 : GPBMessage
+
+@property (nonatomic) long long speciesId;
+@property (nonatomic) BOOL hasSpeciesId;
+@property (copy, nonatomic) NSString *description_p;
+@property (nonatomic) BOOL hasDescription_p;
+@property (copy, nonatomic) NSString *schema;
+@property (nonatomic) BOOL hasSchema;
+@property (copy, nonatomic) NSString *speciesName;
+@property (nonatomic) BOOL hasSpeciesName;
+
++ (id)descriptor;
+
+@end

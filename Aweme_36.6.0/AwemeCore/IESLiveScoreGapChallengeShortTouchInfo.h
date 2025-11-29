@@ -1,0 +1,12 @@
+@interface IESLiveScoreGapChallengeShortTouchInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) long long progressRatio;
+@property (nonatomic) long long endTimeSec;
+@property (nonatomic) long long challengeThreshold;
+@property (nonatomic) long long teamfightOngoingTime;
+@property (nonatomic) long long teamfightId;
+
++ (id)descriptor;
+
+@end

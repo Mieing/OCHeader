@@ -1,0 +1,3 @@
+@interface MMFinderLiveShopShelfCellsStyle : NSObject
+
+@end

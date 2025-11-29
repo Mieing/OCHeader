@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveGiftMarketingBtn : IESLivePBBaseMessage
+
+@property (nonatomic) int buttonType;
+@property (nonatomic) int sendGiftCount;
+@property (copy, nonatomic) NSString *textBeforeMission;
+@property (copy, nonatomic) NSString *textAfterMission;
+
++ (id)descriptor;
+
+@end

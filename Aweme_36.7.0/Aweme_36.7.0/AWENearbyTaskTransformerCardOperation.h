@@ -1,0 +1,3 @@
+@interface AWENearbyTaskTransformerCardOperation : NSObject
+
+@end

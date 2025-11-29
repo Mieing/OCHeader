@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveTaskRewardToast;
+
+@interface HTSLiveTaskRewardToastMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveTaskRewardToast *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

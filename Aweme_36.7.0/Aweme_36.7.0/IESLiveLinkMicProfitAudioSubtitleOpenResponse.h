@@ -1,0 +1,10 @@
+@class IESLiveLinkMicProfitAudioSubtitleOpenResponse_ResponseData;
+
+@interface IESLiveLinkMicProfitAudioSubtitleOpenResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicProfitAudioSubtitleOpenResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

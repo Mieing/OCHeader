@@ -1,0 +1,11 @@
+@class IESGCPDetailBaseViewModel;
+
+@interface IESGCPDetailExpandBridgeViewControl : IESGCPDetailBaseViewControl {
+    IESGCPDetailBaseViewModel *_viewModel;
+}
+
+- (void).cxx_destruct;
+- (Class)contentViewClass;
+- (id)viewModel;
+
+@end

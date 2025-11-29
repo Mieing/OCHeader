@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage;
+
+@interface FirstChargeResponse_RichText : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString *text;
+@property (retain, nonatomic) HTSLiveImage *img;
+@property (nonatomic) BOOL hasImg;
+@property (nonatomic) long long fontSize;
+@property (copy, nonatomic) NSString *fontColor;
+@property (nonatomic) long long weight;
+
++ (id)descriptor;
+
+@end

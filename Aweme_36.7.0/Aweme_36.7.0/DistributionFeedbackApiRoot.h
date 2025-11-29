@@ -1,0 +1,3 @@
+@interface DistributionFeedbackApiRoot : GPBRootObject
+
+@end

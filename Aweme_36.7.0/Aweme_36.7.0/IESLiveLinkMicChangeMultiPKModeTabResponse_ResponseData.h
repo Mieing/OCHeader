@@ -1,0 +1,10 @@
+@class IESLiveMultiPKModeInfo;
+
+@interface IESLiveLinkMicChangeMultiPKModeTabResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveMultiPKModeInfo *multiPkModeInfo;
+@property (nonatomic) BOOL hasMultiPkModeInfo;
+
++ (id)descriptor;
+
+@end

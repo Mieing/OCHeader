@@ -1,0 +1,84 @@
+@class UIView, NSString, WCPlayerPlayArgs, WXFullScreenGestureRecognizer, UIImage, WCPlayerView, WCPlayerConfigControlView, NSObject, ForwardMessageLogicController, MsgRecordDataWrap;
+@protocol WCPlayerConfigViewControllerDelegate, WCPlayerMediaExt;
+
+@interface WCPlayerConfigViewController : FullScreenViewController <WCPlayerConfigDelegate, FullScreenGestureDelegate, ForwardMessageLogicDelegate, WCPlayerDownloaderExt, WCFacadeExt, IRoamBackupPackageServiceExt, SNSVideoABTestExt> {
+    BOOL m_isPresented;
+}
+
+@property (retain, nonatomic) WCPlayerView *playerView;
+@property (retain, nonatomic) WCPlayerConfigControlView *controlView;
+@property (retain, nonatomic) WXFullScreenGestureRecognizer *gestureReconizer;
+@property (retain, nonatomic) ForwardMessageLogicController *forwardMsgLogic;
+@property (retain, nonatomic) UIView *fullScreenContent;
+@property (nonatomic) BOOL bPreventRotate;
+@property (nonatomic) SEL completeSelector;
+@property (retain, nonatomic) id context;
+@property (nonatomic) BOOL bDismissSelfOnPresentOther;
+@property (nonatomic) BOOL isClosingFullScreenWindow;
+@property (nonatomic) unsigned long long playerScene;
+@property (retain, nonatomic) WCPlayerPlayArgs *playerInfo;
+@property (nonatomic) double videoStartTime;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } originRect;
+@property (retain, nonatomic) UIImage *thumbImage;
+@property (retain, nonatomic) NSString *attachTitle;
+@property (retain, nonatomic) NSObject<WCPlayerMediaExt> *mediaWrap;
+@property (retain, nonatomic) MsgRecordDataWrap *dataWrap;
+@property (weak, nonatomic) NSObject<WCPlayerConfigViewControllerDelegate> *delegate;
+@property (nonatomic) BOOL isNeedChangeContentModeAtExist;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidLoad;
+- (void)viewWillBePushOrPresent:(BOOL)a0;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)changePresentedState:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)PresentModalViewController:(id)a0 animated:(BOOL)a1;
+- (void)viewDidLayoutSubviews;
+- (id)generateConfig;
+- (void)showVCAnimation;
+- (void)stopAndCloseFullScreenWindow;
+- (void)clearSubviews;
+- (void)forwardVideoToFriend:(id)a0;
+- (void)forwardVideoOnGetAllData:(id)a0;
+- (void)favoriteVideo;
+- (void)favoriteVideoOnGetAllData;
+- (void)saveVideo;
+- (void)saveVideoOnGetAllData;
+- (void)fetchAllVideoDataWithCompleteSelector:(SEL)a0 context:(id)a1;
+- (BOOL)isChatPlayerMode;
+- (BOOL)isVideoPlaying;
+- (void)startPlay;
+- (void)pause;
+- (void)onFullScreenSingleTap;
+- (void)onFullScreenDragBegin;
+- (void)onFullScreenDragCancel;
+- (void)onFullScreenDragEnd;
+- (void)onFullScreenClose;
+- (void)resumeMusic;
+- (void)onFullScreenLongPressEnd;
+- (void)onFullScreenDragToRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)onFullScreenBackgroundColorAlphaChange:(double)a0;
+- (id)getCurrentViewController;
+- (void)OnForwardMessageSend:(id)a0;
+- (void)OnForwardMessageCancel:(id)a0;
+- (void)onSightIconProgressEnd;
+- (void)onTapSightIconView;
+- (void)onTapCloseButton:(id)a0;
+- (void)onTapAttachButton:(id)a0;
+- (void)onPlayToEnd;
+- (void)onToolViewAutoClose;
+- (void)onGetVideoSize:(struct CGSize { double x0; double x1; })a0;
+- (void)onClickShareButton:(id)a0;
+- (void)onClickDownloadButton:(id)a0;
+- (void)onClickMoreButton:(id)a0;
+- (void)OnCdnDownloadSuccess:(id)a0;
+- (void)OnPlayerDownloadProgress:(id)a0 finish:(unsigned long long)a1 total:(unsigned long long)a2;
+- (void)OnCdnDownloadError:(id)a0;
+- (void)onTimeLineVcWillPop;
+- (void)onRoamBackupPackageServiceLoadMediaResult:(id)a0 errorCode:(unsigned int)a1 dataID:(id)a2;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface PushStreamInfo_Resolution : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *key;
+
++ (id)descriptor;
+
+@end

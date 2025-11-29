@@ -1,0 +1,3 @@
+@interface HTSLiveFollowTopRoot : GPBRootObject
+
+@end

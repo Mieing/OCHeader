@@ -1,0 +1,8 @@
+@interface tdvSFHFKeychainUtils : NSObject
+
++ (id)getAllPasswordsForServiceName:(id)a0 error:(id *)a1;
++ (id)getPasswordForUsername:(id)a0 andServiceName:(id)a1 error:(id *)a2;
++ (BOOL)storeUsername:(id)a0 andPassword:(id)a1 forServiceName:(id)a2 updateExisting:(BOOL)a3 error:(id *)a4;
++ (BOOL)deleteItemForUsername:(id)a0 andServiceName:(id)a1 error:(id *)a2;
+
+@end

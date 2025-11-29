@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage, NSMutableArray;
+
+@interface ShelfMicroAppInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *schema;
+@property (retain, nonatomic) NSMutableArray *labelArray;
+@property (readonly, nonatomic) unsigned long long labelArray_Count;
+
++ (id)descriptor;
+
+@end

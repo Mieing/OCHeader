@@ -1,0 +1,3 @@
+@interface RoomPushSettingApiRoot : GPBRootObject
+
+@end

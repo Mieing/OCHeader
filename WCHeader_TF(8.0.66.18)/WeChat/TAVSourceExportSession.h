@@ -1,0 +1,78 @@
+@class AVAssetWriterInput, TAVSourceExportReader, AVAssetReaderAudioMixOutput, NSCondition, NSObject, TAVExportReportData, AVAssetWriter, AVAsset, AVAudioMix, TAVSourceExportVideoConfiguration, TAVSourceExportAudioConfiguration, AVVideoComposition, TAVSourceExportConfiguration, AVAssetWriterInputPixelBufferAdaptor, TAVImageProcessor, NSError, AVAssetReaderVideoCompositionOutput;
+@protocol OS_dispatch_queue, TAVSourceSoftEncoderFactory;
+
+@interface TAVSourceExportSession : NSObject
+
+@property (retain, nonatomic) NSError *error;
+@property (nonatomic) float progress;
+@property (retain, nonatomic) TAVSourceExportReader *reader;
+@property (retain, nonatomic) AVAssetReaderVideoCompositionOutput *videoOutput;
+@property (retain, nonatomic) AVAssetReaderAudioMixOutput *audioOutput;
+@property (retain, nonatomic) AVAssetWriter *writer;
+@property (retain, nonatomic) AVAssetWriterInput *videoInput;
+@property (retain, nonatomic) AVAssetWriterInputPixelBufferAdaptor *videoPixelBufferAdaptor;
+@property (retain, nonatomic) AVAssetWriterInput *audioInput;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *inputQueue;
+@property (nonatomic) double duration;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastVideoTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastAudioTime;
+@property BOOL suspended;
+@property BOOL isReaderReady;
+@property (nonatomic, getter=isCanceled) BOOL canceled;
+@property (nonatomic, getter=isPause) BOOL pause;
+@property (retain, nonatomic) NSCondition *pauseCondition;
+@property (nonatomic) BOOL videoCompleted;
+@property (nonatomic) BOOL audioCompleted;
+@property (retain, nonatomic) TAVImageProcessor *processor;
+@property (retain, nonatomic) TAVExportReportData *exportReportData;
+@property (nonatomic) double exportStartTime;
+@property (nonatomic) long long backgroundCount;
+@property (retain, nonatomic) AVAsset *asset;
+@property (copy, nonatomic) AVVideoComposition *videoComposition;
+@property (copy, nonatomic) AVAudioMix *audioMix;
+@property (retain, nonatomic) TAVSourceExportConfiguration *exportConfiguration;
+@property (retain, nonatomic) TAVSourceExportVideoConfiguration *videoConfiguration;
+@property (retain, nonatomic) TAVSourceExportAudioConfiguration *audioConfiguration;
+@property (retain, nonatomic) id<TAVSourceSoftEncoderFactory> encoderFactory;
+@property (copy, nonatomic) id /* block */ progressHandler;
+@property (copy, nonatomic) id /* block */ completionHandler;
+@property (nonatomic) long long status;
+@property (nonatomic) BOOL keepsProcessInBackground;
+
+- (id)init;
+- (void)dealloc;
+- (id)initWithAsset:(id)a0;
+- (id)videoSettings;
+- (id)audioSettings;
+- (void)startExport;
+- (void)pauseExporting;
+- (void)continueExporting;
+- (void)cancelExport;
+- (void)startReadingAndWriting;
+- (BOOL)processSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (BOOL)encodeReadySamplesFromOutput:(id)a0 toInput:(id)a1;
+- (void)updateProgressForFrameTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)finishWithError:(id)a0;
+- (void)finishWithCancelled;
+- (void)finishWithSuccess;
+- (void)finish;
+- (void)reset;
+- (BOOL)setupReaderWriterWithError:(id *)a0;
+- (BOOL)imageProcessorSetup;
+- (id)currentVideoComposition;
+- (id)buildDefaultVideoComposition;
+- (BOOL)setupVideoInputWithError:(id *)a0;
+- (BOOL)setupAudioInputWithError:(id *)a0;
+- (void)setupNotification;
+- (void)removeNotification;
+- (void)applicationWillResignActiveNotification;
+- (void)applicationDidBecomeActiveNotification;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getReaderRestartTime;
+- (unsigned long long)audioWriteStatusWithSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (struct opaqueCMSampleBuffer { } *)reconstructHalfWrittenAudioSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (void)handleErrorReportWithError:(id)a0;
+- (void)handleSuccessReport;
+- (id)getExportFailStatusInfo;
+- (void).cxx_destruct;
+
+@end

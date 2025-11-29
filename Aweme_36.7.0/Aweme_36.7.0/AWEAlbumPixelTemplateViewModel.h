@@ -1,0 +1,77 @@
+@class UIView, ACCImportMaterialFixedSlotInfo, NSArray, ACCGenericTemplateUnifyAlbumHandler, AWEVideoPublishViewModel, NSString, NPGenericTemplateService_OC, NSMutableArray, AWEAlbumTemplateFollowShootTipManager;
+@protocol ACCSelectedAssetsViewProtocol;
+
+@interface AWEAlbumPixelTemplateViewModel : AWEAlbumBaseViewModel <ACCExtractEventSubscriber>
+
+@property (copy, nonatomic) NPGenericTemplateService_OC *presetService;
+@property (nonatomic) long long slotCount;
+@property (nonatomic) BOOL hasCloneSlot;
+@property (nonatomic) long long minSlotCount;
+@property (nonatomic) BOOL isAIGCTemplate;
+@property (nonatomic) BOOL enableFixedSlot;
+@property (nonatomic) BOOL isPicTemplateScene;
+@property (nonatomic) BOOL isMusicBeatsTemplateScene;
+@property (retain, nonatomic) ACCGenericTemplateUnifyAlbumHandler *genericTemplateAlbumHandler;
+@property (retain, nonatomic) AWEAlbumTemplateFollowShootTipManager *templateFollowShootTipManager;
+@property (copy, nonatomic) NSArray *slotConfigs;
+@property (weak, nonatomic) UIView<ACCSelectedAssetsViewProtocol> *selectedAssetsView;
+@property (weak, nonatomic) AWEVideoPublishViewModel *gotoPublishModel;
+@property (retain, nonatomic) ACCImportMaterialFixedSlotInfo *fixedSlotInfo;
+@property (retain, nonatomic) NSMutableArray *fixedSlotInfoSortedArray;
+@property (nonatomic) BOOL isFromOCFSegementEdit;
+@property (nonatomic) double olderMaxDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)extractFeatureDidFinishedForPureModel:(id)a0;
+- (long long)minAssetsSelectionCount;
+- (void)albumViewControllerDidLoad:(id)a0;
+- (void)albumViewController:(id)a0 albumListVC:(id)a1 scrollViewDidScroll:(id)a2;
+- (void)albumViewController:(id)a0 albumListVC:(id)a1 draggingView:(id)a2 willDecelerate:(BOOL)a3;
+- (void)albumViewController:(id)a0 didSelectTabListViewController:(id)a1 index:(long long)a2;
+- (void)albumViewController:(id)a0 didClickNavigationSelectAlbumBtn:(id)a1;
+- (id)initWithInputData:(id)a0;
+- (BOOL)validAssetModelForVideo:(id)a0;
+- (BOOL)shouldSelectAlbumAsset:(id)a0;
+- (void)goToNextWithMultiSelect:(BOOL)a0;
+- (void)trackSelectAsset:(id)a0 fromPreview:(BOOL)a1;
+- (void)updateBottomNextButtonWithButton:(id)a0 fromPreview:(BOOL)a1;
+- (void)didSelectAlbumAsset:(id)a0 withViewController:(id)a1 sourceType:(long long)a2;
+- (BOOL)shouldApplyOrderWithAssets:(id)a0 originalOrder:(id)a1 updatedOrder:(id)a2 toIndex:(long long)a3;
+- (void)albumViewControllerDidSelectCustom;
+- (void)updateInputDataWithExtractResultModel:(id)a0;
+- (id)generateSlotConfigsWithTemplateModel:(id)a0;
+- (void)configAlbumInputDataForPicTemplate:(id)a0 slotConfigs:(id)a1;
+- (void)configAlbumInputDataForVideoTemplate:(id)a0 slotConfigs:(id)a1;
+- (BOOL)supportAutoFillCloneSlot;
+- (BOOL)enableTemplateAlbumMaterialEdit;
+- (BOOL)enableTemplateAlbumLivePhoto;
+- (id)searchSuggestionFeatureConfigCheckWithInputData:(id)a0 slotConfigs:(id)a1;
+- (BOOL)isEnableShowAlbumCaptureItemStatus;
+- (id)configAlbumConfigureCustomCellCreatorIfNeededWithPublishViewModel:(id)a0 inputData:(id)a1;
+- (void)startComposerActionWithInputData:(id)a0;
+- (void)handleResultWithInputData:(id)a0 context:(id)a1 creationData:(id)a2 uiControlHandler:(id)a3;
+- (void)configAssetModelWithInputData:(id)a0 result:(id)a1 uiControlHandler:(id)a2 creationData:(id)a3;
+- (id)copyCaptureResultItemToDraftFolderFromTaskId:(id)a0 isPhotoTypeStatus:(BOOL)a1;
+- (void)configPhotoAssetModelWithItemPath:(id)a0 inputData:(id)a1 uiControlHandler:(id)a2 creationData:(id)a3;
+- (void)configVideoAssetModelWithItemPath:(id)a0 inputData:(id)a1 uiControlHandler:(id)a2 creationData:(id)a3;
+- (void)photoPreviewViewControllerUseCaptureActionWithItemPath:(id)a0 inputData:(id)a1 previewViewController:(id)a2 uiControlHandler:(id)a3;
+- (void)videoPreviewViewControllerUseCaptureActionWithItemPath:(id)a0 inputData:(id)a1 previewViewController:(id)a2 uiControlHandler:(id)a3;
+- (id)footerTitleForPicTemplateScene;
+- (id)footerTitleForVideoTemplateScene;
+- (void)goToNextWithMultiSelect:(BOOL)a0 aiAvatarAssetModel:(id)a1;
+- (void)p_getAIAvatarAssertWithCompletion:(id /* block */)a0;
+- (void)convertShortVideoToImages;
+- (id)mergeFixedAssetModels:(id)a0 andSelectedAssetModels:(id)a1;
+- (id)convertToAssetModelWithImage:(id)a0;
+- (BOOL)checkValidForAssetModel:(id)a0 atIndex:(long long)a1 withToast:(BOOL)a2;
+- (BOOL)isSlotSupportVideo:(id)a0;
+- (BOOL)checkAssetForReorder:(id)a0 isLiveStatusLivePhoto:(BOOL)a1 index:(long long)a2 isToIndex:(BOOL)a3;
+- (BOOL)shouldSelectAlbumAsset:(id)a0 AtIndex:(long long)a1;
+- (BOOL)checkValidForAssetModel:(id)a0 atIndex:(long long)a1;
+- (void).cxx_destruct;
+- (id)footerTitle;
+
+@end

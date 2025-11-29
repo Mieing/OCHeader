@@ -1,0 +1,73 @@
+@class NSString, NSArray, IESLivePopupItem, IESLiveAirplayTrack, NSMutableDictionary, HTSLiveStreamUrl, NSMutableArray, HTSLiveRoomAPI;
+@protocol IESLiveRoomService;
+
+@interface IESLiveAirPlayStore : NSObject
+
+@property (retain, nonatomic) NSMutableArray *refreshUrlPriorityArr;
+@property (retain, nonatomic) NSString *currentResolutionKey;
+@property (retain, nonatomic) IESLivePopupItem *portraitPopupItem;
+@property (retain, nonatomic) NSMutableDictionary *codecToUrlMap;
+@property (retain, nonatomic) NSMutableDictionary *subCameraCodecToUrlMap;
+@property (retain, nonatomic) HTSLiveRoomAPI *roomApi;
+@property (retain, nonatomic) NSString *currentCodec;
+@property (retain, nonatomic) HTSLiveStreamUrl *streamInfoFor264;
+@property (retain, nonatomic) HTSLiveStreamUrl *streamInfoFor265;
+@property (nonatomic) BOOL isRefreshingUrl;
+@property (nonatomic) BOOL hasRequestedUrl;
+@property (nonatomic) BOOL hasSavePriorityArr;
+@property (copy, nonatomic) NSString *targetCameraTitle;
+@property (copy, nonatomic) NSString *h264StreamData;
+@property (copy, nonatomic) NSString *h265StreamData;
+@property (nonatomic) BOOL didFetchStreamData;
+@property (nonatomic) BOOL is4KRoom;
+@property (retain, nonatomic) NSArray *h264CameraInfoArray;
+@property (retain, nonatomic) NSArray *h265CameraInfoArray;
+@property (nonatomic) BOOL didFetchH264StreamData;
+@property (nonatomic) BOOL didFetchH265StreamData;
+@property (copy, nonatomic) NSString *currentCameraID;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) IESLiveAirplayTrack *tracker;
+@property (retain, nonatomic) NSString *deviceIP;
+@property (nonatomic) long long orientation;
+@property (nonatomic) BOOL needFilter1080PPlus;
+@property (nonatomic) BOOL shouldReFetchURL;
+
+- (id)initWithRoomModel:(id)a0;
+- (id)generateResolutionSDKKeys;
+- (void)mapUrlWithRoom:(id)a0;
+- (id)getPullDataWithStreamInfo:(id)a0;
+- (void)setupH264StreamInfoWithCameraInfo:(id)a0;
+- (void)setupH265StreamInfoWithCameraInfo:(id)a0;
+- (id)keyForCodec:(long long)a0;
+- (id)generateResolutionNames;
+- (id)createTopSpeedPlayURLInfo:(id)a0 token:(id)a1;
+- (id)fetchFlvURLArray;
+- (id)fetchPayLiveURLArray;
+- (void)updateCurrentResolutionWithKey:(id)a0;
+- (BOOL)subscribeBackEndDataWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)realFetchCastSettingDataWithParams:(id)a0 completion:(id /* block */)a1 immediate:(BOOL)a2;
+- (void)traceArriveTime;
+- (void)dealScreencastSettingResponse:(id)a0 requestDate:(id)a1 error:(id)a2 completion:(id /* block */)a3;
+- (id)getStreamDataFromStreamInfo:(id)a0;
+- (id)setupCodeToUrlMapFromStreamDataWithStreamInfo:(id)a0;
+- (id)setupCodeToUrlMapWithStreamInfo:(id)a0;
+- (id)setupCodeToUrlMapFromPullData:(id)a0 codec:(id)a1;
+- (id)generatePlayInfoArrayWithPullData:(id)a0 type:(id)a1;
+- (id)p_getCommonVCodecForStreamData:(id)a0;
+- (id)airPlayStreamInfo;
+- (BOOL)enableAirPlayOptimize;
+- (BOOL)refreshUrlByUser;
+- (void)showResolutionPanel;
+- (id)fetchURLArrayWithCodec:(long long)a0;
+- (void)resetCurrentResolution;
+- (void)refreshUrlPriorityIfNeedWith:(BOOL)a0;
+- (void)fetchRoomScreenCastSettingWithDanmaku:(BOOL)a0 completion:(id /* block */)a1;
+- (void)changeCameraInfo:(id)a0;
+- (void)fetchStreamData;
+- (void)updateUrlPriorityIfNeededWith:(id)a0;
+- (id)fetchH264URLArray;
+- (id)fetchAirPlayDisplayURLArray;
+- (id)getQualities;
+- (void).cxx_destruct;
+
+@end

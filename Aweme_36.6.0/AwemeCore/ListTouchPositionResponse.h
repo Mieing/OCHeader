@@ -1,0 +1,10 @@
+@class ListTouchPositionResponse_ResponseData;
+
+@interface ListTouchPositionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ListTouchPositionResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

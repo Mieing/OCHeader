@@ -1,0 +1,86 @@
+@class NSMutableDictionary, NSTimer, NSString, NSMutableArray;
+@protocol AWENearbyGeneralGiudeHandleProtocol, AWEMessageReachVideoGuideDelegate;
+
+@interface AWENearbyGuideShowManager : NSObject <AWENearbyContainerEventMessage, AWENearbyGuideBubbleProtocol, AWEMRGrouponGuideShowCheckDelegateProtocol>
+
+@property (retain, nonatomic) NSMutableDictionary *bubbleTrackModels;
+@property (retain, nonatomic) NSMutableDictionary *bubbleLastShowSecondsDic;
+@property (retain, nonatomic) NSMutableDictionary *bubbleLastShowDayDic;
+@property (retain, nonatomic) NSMutableArray<AWENearbyGeneralGiudeHandleProtocol> *guideHandlers;
+@property (nonatomic) BOOL isDoubleChecking;
+@property (weak, nonatomic) id<AWEMessageReachVideoGuideDelegate> videoBubbleDelegate;
+@property (retain, nonatomic) NSMutableDictionary *hasShowedGeneralGuide;
+@property (retain, nonatomic) NSMutableArray *notShowGeneralGuide;
+@property (retain, nonatomic) NSTimer *reqGuideTimer;
+@property (retain, nonatomic) NSTimer *repeatedGuideTimer;
+@property (retain, nonatomic) NSTimer *guideRetryTimer;
+@property (nonatomic) long long retryShowTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)allocWithZone:(struct _NSZone { } *)a0;
++ (id)sharedInstance;
+
+- (void)applicationBecomeActive;
+- (void)registNearbyGuideHandler:(id)a0;
+- (void)nearbyContainerDidAppearWithPageType:(long long)a0;
+- (BOOL)currentBubbleAwemeEqual:(id)a0;
+- (void)handleTryShowCompletionWithGuideModel:(id)a0 hasShow:(BOOL)a1 reason:(id)a2 hasHandle:(BOOL)a3;
+- (void)handleUnderTakeDotShowCompletion:(id)a0 success:(BOOL)a1;
+- (void)injectedHMDWithGuide:(id)a0 scene:(id)a1;
+- (id)guideShowEnableStatus:(id)a0;
+- (id)avoidOtherBubbleLastShowDayWithGeneralBubble:(id)a0;
+- (id)preCheckGuideValid:(id)a0;
+- (BOOL)tryCacheGuideModel:(id)a0;
+- (void)tryShowGuideWithModel:(id)a0;
+- (void)handleByteSyncGeneralBubbleData:(id)a0 noticeType:(long long)a1;
+- (BOOL)registAllGuideImp;
+- (void)hanldTimedGuideWithInitModel:(id)a0;
+- (void)startRepeatTimer;
+- (void)trackGuideShowResult:(BOOL)a0 notShowReason:(id)a1 generalGuideBubble:(id)a2;
+- (void)handleNotShowGuideArrayWithSences:(id)a0;
+- (void)didReceiveBubbleObject:(id)a0;
+- (void)reCheckGuideReqTimer;
+- (void)tryToStartPollingWithGuideModel:(id)a0;
+- (void)tryToStopPollingWithGuideModel:(id)a0;
+- (void)uploadGuideByReqWithGuideModel:(id)a0 impressionType:(unsigned long long)a1;
+- (void)tryShowGuideWithInitModel:(id)a0;
+- (void)checkGuideTimerWithTimeStmp:(long long)a0;
+- (void)p_tryShowGuideWithInitModel:(id)a0;
+- (long long)initGuideRetryMaxTimes;
+- (long long)initGuideRetryInterval;
+- (void)stopGuideReqTimer;
+- (void)reqGuideToShow;
+- (void)uploadGuideBySyncWithGuideModel:(id)a0;
+- (BOOL)onTriggerShowNearbyGuideBubble:(id)a0 sceneInfo:(id)a1 extraParam:(id)a2 videoPlaytimesNaturalDay:(long long)a3 showCompletion:(id /* block */)a4;
+- (void)onTriggerShowNearbyGuideBubble:(id)a0 sceneInfo:(id)a1 extraParam:(id)a2 showCompletion:(id /* block */)a3;
+- (void)onTriggerShowNearbyGuideBubble:(id)a0 sceneInfo:(id)a1 showCompletion:(id /* block */)a2;
+- (void)onTriggerShowNearbyGuideBubble:(id)a0 sceneInfo:(id)a1 extraParam:(id)a2 showCompletion:(id /* block */)a3 bubbleSource:(id)a4;
+- (void)handleByteSyncGeneralBubbleData:(id)a0;
+- (void)p_handleByteSyncGeneralBubbleData:(id)a0;
+- (BOOL)tabHasLoadWithPageType:(long long)a0;
+- (id)checkTabStatus:(id)a0;
+- (void)callBackGuideWithGuideModel:(id)a0;
+- (void)p_tryShowGuideWithModel:(id)a0;
+- (void)tryShowGuideWithGeneralGuideMsg:(id)a0 withCompletion:(id /* block */)a1;
+- (long long)guideArrayMaxLength;
+- (id)tabNameByPageType:(long long)a0;
+- (void)removeNotShowBubbleByScene:(unsigned long long)a0;
+- (void)handleNotShowGuideArray:(id)a0 currIndex:(long long)a1 hasShowed:(BOOL)a2 withCompletion:(id /* block */)a3;
+- (void)exposeMsgUploadWithGuideModel:(id)a0;
+- (id)guideAvoidRuleWithModel:(id)a0;
+- (void)doubleCheckGuideWithConfig:(id)a0 isUpdateDot:(BOOL)a1 sceneType:(long long)a2 withCompletion:(id /* block */)a3;
+- (void)trackBubbleOrRedDotClickTypeWithPageType:(long long)a0;
+- (void)onTriggerShowNearbyGuideBubble:(id)a0 extraParam:(id)a1 showCompletion:(id /* block */)a2;
+- (BOOL)onTriggerShowNearbyGuideBubble:(id)a0 sceneInfo:(id)a1 extraParam:(id)a2 videoPlaytimesNaturalDay:(long long)a3 showCompletion:(id /* block */)a4 videoDelegate:(id)a5;
+- (void)onTriggerShowNearbyGuideBubble:(id)a0 sceneInfo:(id)a1 extraParam:(id)a2 showCompletion:(id /* block */)a3 videoDelegate:(id)a4;
+- (void).cxx_destruct;
+- (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { } *)a0;
+- (void)applicationWillTerminate;
+- (void)addObserver;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

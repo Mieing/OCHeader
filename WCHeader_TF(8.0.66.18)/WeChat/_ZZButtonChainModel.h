@@ -1,0 +1,72 @@
+@interface _ZZButtonChainModel : _ZZControlChainModel
+
+@property (readonly, copy, nonatomic) id /* block */ pingFangRegular;
+@property (readonly, copy, nonatomic) id /* block */ pingFangMedium;
+@property (readonly, copy, nonatomic) id /* block */ title;
+@property (readonly, copy, nonatomic) id /* block */ title_O;
+@property (readonly, copy, nonatomic) id /* block */ titleHL;
+@property (readonly, copy, nonatomic) id /* block */ titleHL_O;
+@property (readonly, copy, nonatomic) id /* block */ titleSelected;
+@property (readonly, copy, nonatomic) id /* block */ titleSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ titleDisabled;
+@property (readonly, copy, nonatomic) id /* block */ titleDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ titleColor;
+@property (readonly, copy, nonatomic) id /* block */ titleColor_O;
+@property (readonly, copy, nonatomic) id /* block */ titleColorHL;
+@property (readonly, copy, nonatomic) id /* block */ titleColorHL_O;
+@property (readonly, copy, nonatomic) id /* block */ titleColorSelected;
+@property (readonly, copy, nonatomic) id /* block */ titleColorSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ titleColorDisabled;
+@property (readonly, copy, nonatomic) id /* block */ titleColorDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColor;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColor_O;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColorHL;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColorHL_O;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColorSelected;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColorSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColorDisabled;
+@property (readonly, copy, nonatomic) id /* block */ titleShadowColorDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ image;
+@property (readonly, copy, nonatomic) id /* block */ image_O;
+@property (readonly, copy, nonatomic) id /* block */ imageHL;
+@property (readonly, copy, nonatomic) id /* block */ imageHL_O;
+@property (readonly, copy, nonatomic) id /* block */ imageSelected;
+@property (readonly, copy, nonatomic) id /* block */ imageSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ imageDisabled;
+@property (readonly, copy, nonatomic) id /* block */ imageDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImage;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImage_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImageHL;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImageHL_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImageSelected;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImageSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImageDisabled;
+@property (readonly, copy, nonatomic) id /* block */ backgroundImageDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitle;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitle_O;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitleHL;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitleHL_O;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitleSelected;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitleSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitleDisabled;
+@property (readonly, copy, nonatomic) id /* block */ attributedTitleDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundColorHL;
+@property (readonly, copy, nonatomic) id /* block */ backgroundColorHL_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundColorSelected;
+@property (readonly, copy, nonatomic) id /* block */ backgroundColorSelected_O;
+@property (readonly, copy, nonatomic) id /* block */ backgroundColorDisabled;
+@property (readonly, copy, nonatomic) id /* block */ backgroundColorDisabled_O;
+@property (readonly, copy, nonatomic) id /* block */ titleFont;
+@property (readonly, copy, nonatomic) id /* block */ titleFont_O;
+@property (readonly, copy, nonatomic) id /* block */ contentEdgeInsets;
+@property (readonly, copy, nonatomic) id /* block */ contentEdgeInsets_O;
+@property (readonly, copy, nonatomic) id /* block */ titleEdgeInsets;
+@property (readonly, copy, nonatomic) id /* block */ titleEdgeInsets_O;
+@property (readonly, copy, nonatomic) id /* block */ imageEdgeInsets;
+@property (readonly, copy, nonatomic) id /* block */ imageEdgeInsets_O;
+
++ (Class)viewClass;
+
+- (void).cxx_destruct;
+
+@end

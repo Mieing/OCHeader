@@ -1,0 +1,3 @@
+@interface BUPlayableAdVideoPlayerJSBMethod : NSObject
+
+@end

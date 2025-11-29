@@ -1,0 +1,9 @@
+@interface CGPDeviceState : GPBMessage
+
+@property (nonatomic) int index;
+@property (nonatomic) int type;
+@property (nonatomic) BOOL enabled;
+
++ (id)descriptor;
+
+@end

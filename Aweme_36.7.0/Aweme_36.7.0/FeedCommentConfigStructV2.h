@@ -1,0 +1,28 @@
+@class NSString, ImageChallengeStructV2, CommentBarStructV2;
+
+@interface FeedCommentConfigStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *inputConfigText;
+@property (nonatomic) BOOL hasInputConfigText;
+@property (nonatomic) int authorAuditStatus;
+@property (nonatomic) BOOL hasAuthorAuditStatus;
+@property (retain, nonatomic) CommentBarStructV2 *commentBarConfig;
+@property (nonatomic) BOOL hasCommentBarConfig;
+@property (nonatomic) BOOL showCommentBottomInput;
+@property (nonatomic) BOOL hasShowCommentBottomInput;
+@property (retain, nonatomic) ImageChallengeStructV2 *imageChallenge;
+@property (nonatomic) BOOL hasImageChallenge;
+@property (nonatomic) long long commentScreenshotItemId;
+@property (nonatomic) BOOL hasCommentScreenshotItemId;
+@property (copy, nonatomic) NSString *commonFlags;
+@property (nonatomic) BOOL hasCommonFlags;
+@property (copy, nonatomic) NSString *commonData;
+@property (nonatomic) BOOL hasCommonData;
+
++ (id)descriptor;
+
+- (id)commonFlags;
+- (id)imageChallenge;
+- (id)inputConfigText;
+
+@end

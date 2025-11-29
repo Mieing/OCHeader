@@ -1,0 +1,3 @@
+@interface AWEIMTaskCardContentCollectionViewCellModel : AWEIMCellModel
+
+@end

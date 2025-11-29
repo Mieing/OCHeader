@@ -1,0 +1,16 @@
+@class NSString, NSMutableArray, HTSLiveUser;
+
+@interface HTSLiveBattlePowerContainerMessage_ReverseInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long reverseCount;
+@property (copy, nonatomic) NSString *des;
+@property (retain, nonatomic) NSMutableArray *usersArray;
+@property (readonly, nonatomic) unsigned long long usersArray_Count;
+@property (nonatomic) int scene;
+@property (copy, nonatomic) NSString *effectType;
+
++ (id)descriptor;
+
+@end

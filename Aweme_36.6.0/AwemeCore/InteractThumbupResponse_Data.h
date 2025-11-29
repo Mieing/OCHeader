@@ -1,0 +1,10 @@
+@class GPBInt64BoolDictionary;
+
+@interface InteractThumbupResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64BoolDictionary *thumbupList;
+@property (readonly, nonatomic) unsigned long long thumbupList_Count;
+
++ (id)descriptor;
+
+@end

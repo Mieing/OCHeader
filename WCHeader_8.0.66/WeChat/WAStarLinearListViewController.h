@@ -1,0 +1,84 @@
+@class UIView, NSString, WAStarMoveContext, WAMainListStarLogic, UIImageView, NSMutableDictionary, WAPackageSweeperLogic, WeToast, NSMutableArray, WAAppItemData, UILabel, MMTableView;
+
+@interface WAStarLinearListViewController : MMUIViewController <WCActionSheetDelegate, WAAppItemManagerExtension, WAMainListStarLogicDelegate, WAContactMgrExtension, UITableViewDelegate, UITableViewDataSource> {
+    NSString *m_showSessionId;
+    NSMutableArray *m_menuArray;
+    NSMutableDictionary *m_contactViewCache;
+    WAAppItemData *m_starItemToUnstar;
+    WAPackageSweeperLogic *m_sweepLogic;
+    BOOL hasEdited;
+    NSMutableArray *m_sessionData;
+    BOOL _isViewHasLayout;
+}
+
+@property (retain, nonatomic) WAMainListStarLogic *starLogic;
+@property (nonatomic) BOOL editMode;
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) WeToast *toastView;
+@property (retain, nonatomic) UIView *emptyView;
+@property (retain, nonatomic) UILabel *emptyLabel;
+@property (retain, nonatomic) UIImageView *emptyLogo;
+@property (retain, nonatomic) WAStarMoveContext *moveContext;
+@property (retain, nonatomic) NSMutableArray *toDeleteItemDatas;
+@property (nonatomic) unsigned long long scene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)updateSectionData;
+- (long long)indexOfSessionId:(id)a0;
+- (void)updateEmptyViewState;
+- (void)checkAndUpdateContactInList:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)reportStarListViewShowAction;
+- (void)fetchRemoteStarData;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)initCustomNavigationBar;
+- (void)updateNavigationItems;
+- (void)onReturn;
+- (void)onEdit;
+- (void)onEditCancel;
+- (void)onEditDone;
+- (void)initTableView;
+- (void)initRefreshControl;
+- (void)initEmptyView;
+- (void)updateViewStates;
+- (void)updateFooterNoMoreDataState;
+- (void)updateRefreshFooterHiddenState;
+- (void)viewDidLayoutSubviews;
+- (BOOL)tableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (unsigned int)stateFlagForAppItem:(id)a0 withIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 commitEditingStyle:(long long)a1 forRowAtIndexPath:(id)a2;
+- (long long)tableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 targetIndexPathForMoveFromRowAtIndexPath:(id)a1 toProposedIndexPath:(id)a2;
+- (void)tableView:(id)a0 moveRowAtIndexPath:(id)a1 toIndexPath:(id)a2;
+- (void)appItemDidStaredSuccess:(id)a0;
+- (void)appItemDidStaredFailedWithCountLimit:(id)a0;
+- (void)appItemDidStaredFailedWithUnknownError:(id)a0;
+- (void)appItemDidUnStaredSuccess:(id)a0;
+- (void)appItemDidUnStaredFailedWithUnknownError:(id)a0;
+- (void)starDataDidUpdated;
+- (void)onWeAppItemBatchMoved:(id)a0;
+- (void)onModifyWeAppContact:(id)a0;
+- (void)onDeleteStaredItem:(id)a0 atIndexPath:(id)a1;
+- (void)unstarAppItem:(id)a0 atIndexPath:(id)a1;
+- (void)deleteStarItem:(id)a0 atIndex:(unsigned long long)a1;
+- (void)processDeletions;
+- (void)showToast:(id)a0;
+- (void)showTipsViewController:(id)a0;
+- (void)reloadTableView;
+- (void)reloadTableViewNonAnimated;
+- (id)getContactByUserName:(id)a0;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)reportDestopOpWithAppItem:(id)a0 eventId:(unsigned long long)a1;
+- (void).cxx_destruct;
+
+@end

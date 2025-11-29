@@ -1,0 +1,3 @@
+@interface HTSLiveAssetRoot : GPBRootObject
+
+@end

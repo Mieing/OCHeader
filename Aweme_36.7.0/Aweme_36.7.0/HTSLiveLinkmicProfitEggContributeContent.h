@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveLinkmicProfitEggContributeContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long score;
+@property (copy, nonatomic) NSString *eggId;
+@property (copy, nonatomic) NSString *teamId;
+
++ (id)descriptor;
+
+@end

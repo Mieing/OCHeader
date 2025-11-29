@@ -1,0 +1,18 @@
+@class NSString, UrlStructV2;
+
+@interface RelatedMusicAnchorStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *type;
+@property (nonatomic) BOOL hasType;
+@property (copy, nonatomic) NSString *schemaURL;
+@property (nonatomic) BOOL hasSchemaURL;
+@property (retain, nonatomic) UrlStructV2 *imageURL;
+@property (nonatomic) BOOL hasImageURL;
+@property (nonatomic) long long priority;
+@property (nonatomic) BOOL hasPriority;
+@property (copy, nonatomic) NSString *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

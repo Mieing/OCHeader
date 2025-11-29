@@ -1,0 +1,70 @@
+@class UIView, NSString, AWEUserModel, AWEUILoadingView, NSDictionary, UICollectionView, AWEDPlayletUserProfileTabDataController, UILabel, NSIndexPath;
+@protocol AWEUserProfileTabVCDelegate, AWEFeedPreloadManagerProtocol;
+
+@interface AWEDiscoverDPlayletProfileTabViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, AWEPlayletPaymentMessage, AWEShowMonetizeRefreshHandler, AWEDiscoverDPlayletUserProfileTabProtocol>
+
+@property (retain, nonatomic) AWEDPlayletUserProfileTabDataController *dataController;
+@property (copy, nonatomic) NSString *userID;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) UILabel *emptyLabel;
+@property (retain, nonatomic) AWEUserModel *targetUser;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) NSIndexPath *clickedIndexPath;
+@property (retain, nonatomic) NSString *clickedPlayletID;
+@property (retain, nonatomic) UIView *topGradientView;
+@property (retain, nonatomic) id<AWEFeedPreloadManagerProtocol> preloadManager;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) BOOL fromHomePage;
+@property (weak, nonatomic) id<AWEUserProfileTabVCDelegate> userDelegate;
+@property (nonatomic) BOOL hideData;
+@property (copy, nonatomic) NSString *currentItemID;
+@property (copy, nonatomic) NSDictionary *params;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)loadMore;
+- (id)monetizeScene;
+- (void)refreshMonetizeContent:(id)a0 reason:(unsigned long long)a1;
+- (id)monetizeDataSource;
+- (id)monetizeContentReferString;
+- (double)contentOffsetY;
+- (void)adjustContentOffset:(struct CGPoint { double x0; double x1; })a0 animated:(BOOL)a1;
+- (double)contentSizeHeight;
+- (BOOL)shouldHideNoMoreText;
+- (void)p_refreshData;
+- (void)updatePlayletPaymentInfoWithModels:(id)a0;
+- (void)p_endRefreshing;
+- (id)initWithUserID:(id)a0 targetUser:(id)a1;
+- (void)p_setUpUI;
+- (void)updateWatchedUIIfNeeded:(id)a0;
+- (void)updateClickedIndexPath:(id)a0;
+- (void)p_preloadAwemeModels:(id)a0;
+- (void)pushPlayletWithSchemaWithLogExtra:(id)a0 schema:(id)a1;
+- (id)trackMoreRelatedBarWithCardModel:(id)a0 trackName:(id)a1 playletCenterParams:(id)a2;
+- (long long)p_sectionTypeForSection:(unsigned long long)a0;
+- (void)refreshWithAwemes:(id)a0;
+- (void)scrollToEnterVideoIfNeed;
+- (id)trackMoreRelatedBarLogExtraWithPlayletCenterParams:(id)a0;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (id)contentView;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)viewWillLayoutSubviews;
+- (void)refreshData;
+- (struct CGPoint { double x0; double x1; })getContentOffset;
+
+@end

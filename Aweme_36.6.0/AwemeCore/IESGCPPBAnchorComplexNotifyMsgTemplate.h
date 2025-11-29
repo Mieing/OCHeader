@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface IESGCPPBAnchorComplexNotifyMsgTemplate : GPBMessage
+
+@property (copy, nonatomic) NSString *icon;
+@property (copy, nonatomic) NSString *head;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *halfTitle;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *jumpURL;
+@property (copy, nonatomic) NSString *pcJumpURL;
+
++ (id)descriptor;
+
+@end

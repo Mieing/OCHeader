@@ -1,0 +1,73 @@
+@class HTSEventContext, NSString, NSMutableDictionary, IESLiveComponentContext, NSMutableArray;
+@protocol IESLiveSendGiftAPI, IESLiveRevenueInteractModule, IESLivePropsAPI, IESHYControllerProtocol, IESLiveInteractionModule, IESLiveRoomService, IESLiveGiftModuleRecipientRouter;
+
+@interface IESLiveGiveGiftStore : NSObject <IESLiveGiveGiftTransactionDelegate, HTSLiveGiftActions>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (retain, nonatomic) id<IESLiveInteractionModule> socialInteractionModule;
+@property (retain, nonatomic) id<IESLiveRevenueInteractModule> revenueInteractModule;
+@property (retain, nonatomic) id<IESLiveSendGiftAPI> sendGiftAPI;
+@property (retain, nonatomic) id<IESLivePropsAPI> myAssetsAPI;
+@property (retain, nonatomic) NSMutableArray *transactionArray;
+@property (copy, nonatomic) NSString *aggregatedID;
+@property (retain, nonatomic) NSMutableDictionary *aggregatedTransactionDict;
+@property (nonatomic) long long sendCount;
+@property (nonatomic) long long sendDiamond;
+@property (retain, nonatomic) id<IESLiveGiftModuleRecipientRouter> recipientRouter;
+@property (weak, nonatomic) id<IESHYControllerProtocol> hybridDSAlertView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)giftViewWillShow;
+- (void)giftViewWillDismiss;
+- (id)tagsExtra;
+- (id)giftSendExtra;
+- (id)trackScene;
+- (id)initWithRoom:(id)a0 trackContext:(id)a1 componentContext:(id)a2;
+- (BOOL)couldSendWithConfig:(id)a0;
+- (void)sendWithConfig:(id)a0 params:(id)a1 isFirstCombo:(BOOL)a2 callback:(id /* block */)a3;
+- (void)handleGiveGiftError:(id)a0 config:(id)a1;
+- (void)onTransactionBegin:(id)a0;
+- (void)onTransactionEnd:(id)a0;
+- (id)createTransactionWithConfig:(id)a0;
+- (void)sendGift:(id)a0 count:(unsigned long long)a1 toUser:(id)a2 params:(id)a3 extraTrack:(id)a4 successCallback:(id /* block */)a5 errorCallback:(id /* block */)a6;
+- (unsigned long long)sendPropSceneWithToUser:(id)a0;
+- (BOOL)p_shouldSkipDiamondCheck;
+- (unsigned long long)sendGiftScene:(id)a0;
+- (BOOL)needCertifyProcess:(id)a0;
+- (void)sendAsset:(id)a0 count:(unsigned long long)a1 toUser:(id)a2 extraTrack:(id)a3 successCallback:(id /* block */)a4 errorCallback:(id /* block */)a5;
+- (void)showChargePanelWithTargetDiamond:(long long)a0;
+- (void)showErrorMessage:(id)a0 fromSendGift:(BOOL)a1;
+- (id)unitPriceForGift:(id)a0 specialGiveGiftError:(BOOL)a1;
+- (id)unitPriceForPBGift:(id)a0 specialGiveGiftError:(BOOL)a1;
+- (id)pr_payEntranceTagsExtraWithConfig:(id)a0;
+- (void)sendGift:(id)a0 toUser:(id)a1 allMic:(BOOL)a2 count:(long long)a3 sendType:(long long)a4 sendScene:(unsigned long long)a5 sendToIndependentAnchor:(BOOL)a6 traceTool:(id)a7 interceptTracker:(id)a8 extraParams:(id)a9 callback:(id /* block */)a10;
+- (void)sendAsset:(id)a0 toUser:(id)a1 count:(unsigned long long)a2 sendType:(long long)a3 sendScene:(unsigned long long)a4 callback:(id /* block */)a5;
+- (void)trackWithTransaction:(id)a0;
+- (void)trackSendGiftEnd:(id)a0 transaction:(id)a1;
+- (void)trackFansclubGiftNotFanClicked;
+- (void)handleDSAlert:(id)a0;
+- (BOOL)p_isInteractiveGiftSentByJSBWithParams:(id)a0;
+- (void)p_startPlayingInteractiveGiftWebViewConsoleWithGiftID:(id)a0;
+- (id)createGiftFakeGiftMessagesWithToUser:(id)a0 sendGiftResponseData:(id)a1 extraData:(id)a2 giftIDForSendRequest:(id)a3 traceTool:(id)a4;
+- (id)createSpecialError:(long long)a0 toUsersCount:(long long)a1 successCount:(long long)a2;
+- (id)createAssetFakeGiftMessagePropConsumeResultData:(id)a0 extraData:(id)a1 toUser:(id)a2;
+- (id)pr_giveGiftToUserTypeString:(id)a0;
+- (id)pr_otherChannelStr;
+- (unsigned long long)pr_dimondCostWithConfig:(id)a0;
+- (BOOL)pr_isDouPlusVideo:(id)a0;
+- (void)trackGiftWithTransaction:(id)a0 gift:(id)a1;
+- (void)trackAssetWithTransaction:(id)a0;
+- (BOOL)toUserIsHost:(id)a0;
+- (void)sendGiftTransaction:(id)a0 event:(id)a1 params:(id)a2;
+- (void)advertisementTrack:(unsigned long long)a0;
+- (void)track_liveSdkSendTimeIfNeeded:(id)a0 trackParams:(id)a1;
+- (void).cxx_destruct;
+- (id)statistics;
+
+@end

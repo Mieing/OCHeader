@@ -1,0 +1,3 @@
+@interface HTSLiveResidentGuestMessageRoot : GPBRootObject
+
+@end

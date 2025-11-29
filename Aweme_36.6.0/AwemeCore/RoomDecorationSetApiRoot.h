@@ -1,0 +1,3 @@
+@interface RoomDecorationSetApiRoot : GPBRootObject
+
+@end

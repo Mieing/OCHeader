@@ -1,0 +1,10 @@
+@class PersonalKaraokeAnchorGetSongInfoResponse_ResponseData;
+
+@interface PersonalKaraokeAnchorGetSongInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PersonalKaraokeAnchorGetSongInfoResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

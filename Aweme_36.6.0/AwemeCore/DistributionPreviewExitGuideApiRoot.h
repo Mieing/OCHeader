@@ -1,0 +1,3 @@
+@interface DistributionPreviewExitGuideApiRoot : GPBRootObject
+
+@end

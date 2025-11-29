@@ -1,0 +1,3 @@
+@interface HTSLiveKtvSingingChallengeConfigRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface _TtC19AWEMultiContentImplP33_A3C33B4268370C851E7B743C9C1C85F526ImageCellViewModelProvider : AWEMultiContentImpl.BaseCellViewModelProvider
+
+@end

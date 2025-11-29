@@ -1,0 +1,71 @@
+@class UIView, AWEAwemeModel, IESLiveGradientView, UITapGestureRecognizer, IESLivePrivacyPolicyToken, NSString, NSDictionary, IESLiveButton, UIViewController, IESLiveImageView, UILabel;
+@protocol AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol, AWEAwemeBizPlayVideoProtocol;
+
+@interface AWELiveCommentVideoShareVideoPlayViewController : UIViewController <AWEPlayVideoDelegate, UIGestureRecognizerDelegate, IESLivePrivacyContextProvider, IESLiveCommentVideoShareVideoViewControllerProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEPlayVideoViewControllerProtocol, AWEAwemeBizPlayVideoProtocol> *playVideoViewController;
+@property (nonatomic) struct EngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *audioWrapper;
+@property (nonatomic) BOOL isPlayingBeforeEnterBackground;
+@property (retain, nonatomic) UITapGestureRecognizer *singleTapGesture;
+@property (nonatomic) double videoPlayTime;
+@property (nonatomic) BOOL isFirstPlayLoop;
+@property (retain, nonatomic) IESLiveGradientView *topMaskView;
+@property (retain, nonatomic) IESLiveGradientView *bottomMaskView;
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UILabel *timeLabel;
+@property (retain, nonatomic) UILabel *descLabel;
+@property (retain, nonatomic) UIView *riskNoticeView;
+@property (retain, nonatomic) IESLiveButton *backBtn;
+@property (retain, nonatomic) IESLiveButton *reportBtn;
+@property (retain, nonatomic) IESLiveImageView *pauseIcon;
+@property (nonatomic) BOOL vcWillAddToParent;
+@property (nonatomic) BOOL vcWillRemoveFromParent;
+@property (nonatomic) BOOL isAppBackground;
+@property (nonatomic) BOOL isReadyToPlayInBackground;
+@property (copy, nonatomic) NSDictionary *extraTrackParams;
+@property (retain, nonatomic) IESLivePrivacyPolicyToken *privacyToken;
+@property (copy, nonatomic) id /* block */ didClickVideoCallback;
+@property (nonatomic) long long style;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)pauseBySingleClick;
+- (void)playerWillStartNextLoop:(id)a0;
+- (void)player:(id)a0 didChangePlaybackToAction:(long long)a1;
+- (void)didSetAttachingDIContext;
+- (void)initVideoController;
+- (BOOL)needAudioWrapper;
+- (void)appDidActive;
+- (void)appEnterBack;
+- (void)trackVideoDuration;
+- (BOOL)isVideoPlayerVisble;
+- (BOOL)isSelfGuest;
+- (BOOL)isSelfAnchor;
+- (id)providePrivacyContextForKey:(id)a0;
+- (id)initWithDIContext:(id)a0 awemeModel:(id)a1 trackParams:(id)a2;
+- (void)setupVolume;
+- (unsigned long long)getReportTypeWithAweme:(id)a0;
+- (BOOL)isMyAwemeModel;
+- (BOOL)needToShowRiskNotice;
+- (void)backBtnDidClicked;
+- (void)reportBtnDidClicked;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)pause;
+- (void)willMoveToParentViewController:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)play:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)handleSingleTap;
+- (void)willDisplay;
+- (void)resetVolume;
+
+@end

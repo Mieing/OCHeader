@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNSetBlocklistResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *failedListArray;
+@property (readonly, nonatomic) unsigned long long failedListArray_Count;
+
++ (id)descriptor;
+
+@end

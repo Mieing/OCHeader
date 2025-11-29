@@ -1,0 +1,87 @@
+@class UIColor, NSDictionary, NSString;
+
+@interface AWEMultiContentImpl.AlbumPageContext : AWEPageContext <AFDAlbumPageContextProtocol> {
+    void /* unknown type, empty encoding */ _cellColor;
+    void /* unknown type, empty encoding */ _preferSinkingTransition;
+    void /* unknown type, empty encoding */ _isInFullPageTransition;
+    void /* unknown type, empty encoding */ _isPinchZoomable;
+    void /* unknown type, empty encoding */ _needMoveToCenterWhenMagnify;
+    void /* unknown type, empty encoding */ _showFullscreenBackgroundView;
+    void /* unknown type, empty encoding */ _contentMode;
+    void /* unknown type, empty encoding */ _isMuted;
+    void /* unknown type, empty encoding */ _isClipMuted;
+    void /* unknown type, empty encoding */ _useInternalVideoController;
+    void /* unknown type, empty encoding */ _playMode;
+    void /* unknown type, empty encoding */ _userScrolled;
+    void /* unknown type, empty encoding */ _hideSticker;
+    void /* unknown type, empty encoding */ _livePhotoPlayControlButtonLayoutInfo;
+    void /* unknown type, empty encoding */ _livePhotoPlayControlButtonDisplayMode;
+    void /* unknown type, empty encoding */ _livePhotoPlayControlMenuItemType;
+    void /* function */ livePhotoAutoplayChangeBlock;
+    void /* function */ livePhotoPlayControlMenuVisibilityBlock;
+    void /* function */ logExtra;
+    void /* function */ trackVideoPlayFinishBlock;
+    void /* function */ trackAlbumPlayFinishBlock;
+    void /* function */ albumContainerSlideBlock;
+    void /* function */ hasTrackedVideoPlayBlock;
+    void /* function */ fastPlayEnterMethod;
+    void /* unknown type, empty encoding */ _needFastPlay;
+    void /* unknown type, empty encoding */ originPlayMode;
+}
+
+@property (nonatomic, weak) void /* function */ pageContext;
+@property (nonatomic, weak) void /* function */ placeHolderImage;
+@property (nonatomic, weak) void /* function */ contentModeDelegate;
+@property (nonatomic) BOOL calculateColorNotShow;
+@property (nonatomic) BOOL enablePreloadOpt;
+@property (nonatomic) BOOL needFitThemeChange;
+@property (nonatomic) BOOL enablePageScrollConfig;
+@property (nonatomic, retain) UIColor *cellColor;
+@property (nonatomic) BOOL preferSinkingTransition;
+@property (nonatomic) BOOL isInFullPageTransition;
+@property (nonatomic) BOOL isPinchZoomable;
+@property (nonatomic) BOOL needMoveToCenterWhenMagnify;
+@property (nonatomic) BOOL showFullscreenBackgroundView;
+@property (nonatomic) unsigned long long contentMode;
+@property (nonatomic) BOOL needAnimateWhenUpdateContent;
+@property (nonatomic) BOOL disableEnterProfile;
+@property (nonatomic) BOOL isMuted;
+@property (nonatomic) BOOL useInternalVideoController;
+@property (nonatomic) BOOL userScrolled;
+@property (nonatomic) BOOL isUseManualScrollPause;
+@property (nonatomic) BOOL hideSticker;
+@property (nonatomic) struct { unsigned long long x0; struct CGPoint { double x0; double x1; } x1; } livePhotoPlayControlButtonLayoutInfo;
+@property (nonatomic) unsigned long long livePhotoPlayControlButtonDisplayMode;
+@property (nonatomic) unsigned long long livePhotoPlayControlMenuItemType;
+@property (nonatomic) BOOL isLivePhotoPlayControlMenuShowing;
+@property (nonatomic, weak) void /* function */ livePhotoPlayControlButtonExternalDelegate;
+@property (nonatomic, copy) id /* block */ livePhotoAutoplayChangeBlock;
+@property (nonatomic, copy) id /* block */ livePhotoPlayControlMenuVisibilityBlock;
+@property (nonatomic) BOOL isSyncingWithOtherHandler;
+@property (nonatomic) BOOL padHasRotate;
+@property (nonatomic) BOOL isScrollDisabled;
+@property (nonatomic, copy) NSDictionary *logExtra;
+@property (nonatomic, copy) id /* block */ trackVideoPlayFinishBlock;
+@property (nonatomic, copy) id /* block */ trackAlbumPlayFinishBlock;
+@property (nonatomic, copy) id /* block */ albumContainerSlideBlock;
+@property (nonatomic, copy) id /* block */ hasTrackedVideoPlayBlock;
+@property (nonatomic) BOOL hasTrackedVideoPlayFinish;
+@property (nonatomic) BOOL disableGraphicPlaytimeTrack;
+@property (nonatomic) BOOL disableGraphicPlayTimeFeedTrack;
+@property (nonatomic) BOOL disableSticker;
+@property (nonatomic, copy) NSString *fastPlayEnterMethod;
+@property (nonatomic, weak) void /* function */ delegate;
+@property (nonatomic) BOOL notFadeOut;
+@property (nonatomic) BOOL isSimpleSyncPlayState;
+@property (nonatomic) double gradientBottomOffset;
+@property (nonatomic) BOOL needFastPlay;
+
+- (unsigned long long)richContentPlayMode;
+- (void)setLivePhotoPlayMode:(unsigned long long)a0;
+- (unsigned long long)getLivePhotoPlayModeWithNeedActual:(BOOL)a0;
+- (void)subscribeNeedFastPlayWithSkip:(long long)a0 callback:(id /* block */)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setPlayMode:(unsigned long long)a0;
+
+@end

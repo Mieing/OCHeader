@@ -1,0 +1,3 @@
+@interface BDByteCastPPClearDramaListResponse : BDByteCastPPBaseCmdResponse
+
+@end

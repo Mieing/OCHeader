@@ -1,0 +1,87 @@
+@class NSTimer, NSString, UIView, BDUGLuckyCountDownTaskModel, NSMutableDictionary, NSMutableArray, BDUGLuckyCountDownPendantModel, BDUGLuckyActivityTaskModel;
+@protocol BDUGLuckyCountDownPendantViewProtocol, BDUGLuckyActivityTaskStatusDelegate, BDUGLuckyCountDownTaskDelegateProtocol;
+
+@interface BDUGLuckyCountDownNormalPackTask : NSObject <BDUGLuckyPendantProtocol, BDUGLuckyActivityTaskExecuteProtocol, BDUGLuckyCountDownTaskProtocol>
+
+@property (retain, nonatomic) BDUGLuckyCountDownTaskModel *countDownTaskModel;
+@property (retain, nonatomic) BDUGLuckyCountDownPendantModel *pendantModel;
+@property (nonatomic) unsigned long long taskStatus;
+@property (copy, nonatomic) NSString *token;
+@property (nonatomic) long long reportCount;
+@property (retain, nonatomic) NSMutableArray *failedReqPool;
+@property (nonatomic) unsigned long long retryTimes;
+@property (retain, nonatomic) NSTimer *dismissTimer;
+@property (retain, nonatomic) UIView<BDUGLuckyCountDownPendantViewProtocol> *pendantView;
+@property (nonatomic) BOOL canShowPendant;
+@property (copy, nonatomic) NSString *currentItemID;
+@property (nonatomic) double currentItemDuration;
+@property (retain, nonatomic) NSMutableDictionary *itemsDurationDict;
+@property (nonatomic) BOOL isAutoPlayVideo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<BDUGLuckyActivityTaskStatusDelegate> statusDelegate;
+@property (retain, nonatomic) BDUGLuckyActivityTaskModel *taskModel;
+@property (nonatomic) long long progress;
+@property (weak, nonatomic) id<BDUGLuckyCountDownTaskDelegateProtocol> countDownTaskDelegate;
+
++ (void)bindPhone;
++ (id)__modifyTargetPageInUrl:(id)a0 taskId:(id)a1 effectInterval:(id)a2;
++ (void)registerTaskDealer;
++ (BOOL)stopOldWhenGlobalTaskIdConflict;
++ (id)modifyTargetPageWithModel:(id)a0;
++ (void)teenModeChanged;
++ (void)accountLogIn;
++ (void)accountLogOut;
++ (void)baseModeChanged;
++ (void)rebindPhone;
++ (BOOL)isUnique;
++ (id)taskType;
+
+- (BOOL)needLocalStorage;
+- (void)updateCurrentItemID:(id)a0;
+- (void)__clearTask:(id)a0;
+- (void)videoAutoPlayNext;
+- (void)__configTask;
+- (id)__countDownTaskNotAvailableReason;
+- (long long)targetTaskTime;
+- (void)__trackerWithEvent:(id)a0 extraParams:(id)a1;
+- (void)__requestImageWithModel:(id)a0 completion:(id /* block */)a1;
+- (void)__disableDismissTimer;
+- (BOOL)shouldForbidAddTaskTokenType;
+- (void)__setupDismissTimer:(long long)a0;
+- (void)__lastReportFailedWithFailedPoolSize:(long long)a0 firstFailedReq:(long long)a1;
+- (void)__retryFailedReqs:(id /* block */)a0;
+- (unsigned long long)__convertPendantStatusFromTaskStatus:(unsigned long long)a0;
+- (void)handleVideoLimitedIfNeeded;
+- (id)getPendantPosition;
+- (void)__addPendant;
+- (void)__dismiss;
+- (id)__defaultExipreDate;
+- (id)__topView;
+- (void)removePendant;
+- (void)__updatePendantPosition;
+- (void)showPendant;
+- (id)pendantStyle;
+- (void)executeWithJumpResult:(BOOL)a0 openTaskCallback:(id /* block */)a1;
+- (void)pauseTask;
+- (void)resumeTask;
+- (id)getPendant;
+- (unsigned long long)countDownTaskType;
+- (void)didTaskProgressUpdateWithScenes:(id)a0;
+- (id)uploadToken;
+- (void)startLuckyCountDownTimer;
+- (void)stopLuckyCountDownTimer;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (id)scenes;
+- (id)init;
+- (void)stop;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (id)taskID;
+- (void)dealloc;
+- (double)expireTime;
+
+@end

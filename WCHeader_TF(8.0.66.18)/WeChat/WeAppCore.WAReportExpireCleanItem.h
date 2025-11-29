@@ -1,0 +1,80 @@
+@class NSString;
+
+@interface WeAppCore.WAReportExpireCleanItem : WAReportBaseItem {
+    void /* unknown type, empty encoding */ top1WeappAppId;
+    void /* unknown type, empty encoding */ top2WeappAppId;
+    void /* unknown type, empty encoding */ top3WeappAppId;
+    void /* unknown type, empty encoding */ top4WeappAppId;
+    void /* unknown type, empty encoding */ top5WeappAppId;
+    void /* unknown type, empty encoding */ top6WeappAppId;
+    void /* unknown type, empty encoding */ top7WeappAppId;
+    void /* unknown type, empty encoding */ top8WeappAppId;
+    void /* unknown type, empty encoding */ top9WeappAppId;
+    void /* unknown type, empty encoding */ top10WeappAppId;
+    void /* unknown type, empty encoding */ top1GameAppId;
+    void /* unknown type, empty encoding */ top2GameAppId;
+    void /* unknown type, empty encoding */ top3GameAppId;
+    void /* unknown type, empty encoding */ top4GameAppId;
+    void /* unknown type, empty encoding */ top5GameAppId;
+    void /* unknown type, empty encoding */ top6GameAppId;
+    void /* unknown type, empty encoding */ top7GameAppId;
+    void /* unknown type, empty encoding */ top8GameAppId;
+    void /* unknown type, empty encoding */ top9GameAppId;
+    void /* unknown type, empty encoding */ top10GameAppId;
+}
+
+@property (nonatomic) void /* unknown type, empty encoding */ expireDays;
+@property (nonatomic) void /* unknown type, empty encoding */ totalCleanSizeInBytes;
+@property (nonatomic) void /* unknown type, empty encoding */ totalCleanCount;
+@property (nonatomic) void /* unknown type, empty encoding */ totalCleanWeappCount;
+@property (nonatomic) void /* unknown type, empty encoding */ totalCleanWeappSizeInBytes;
+@property (nonatomic) void /* unknown type, empty encoding */ totalCleanGameCount;
+@property (nonatomic) void /* unknown type, empty encoding */ totalCleanGameSizeInBytes;
+@property (nonatomic, copy) NSString *top1WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top1WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top2WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top2WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top3WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top3WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top4WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top4WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top5WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top5WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top6WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top6WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top7WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top7WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top8WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top8WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top9WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top9WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top10WeappAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top10WeappCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top1GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top1GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top2GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top2GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top3GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top3GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top4GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top4GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top5GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top5GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top6GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top6GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top7GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top7GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top8GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top8GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top9GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top9GameCleanSizeInBytes;
+@property (nonatomic, copy) NSString *top10GameAppId;
+@property (nonatomic) void /* unknown type, empty encoding */ top10GameCleanSizeInBytes;
+@property (nonatomic) void /* unknown type, empty encoding */ opType;
+
+- (int)reportID;
+- (id)reportString;
+- (id)init;
+- (void).cxx_destruct;
+
+@end

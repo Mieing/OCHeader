@@ -1,0 +1,22 @@
+@class NSString, NSMutableArray, HTSLiveBenefitLabel;
+
+@interface HTSLiveLotteryInfoList : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *activityId;
+@property (nonatomic) long long taskType;
+@property (nonatomic) long long openTime;
+@property (nonatomic) long long userActivityStatus;
+@property (copy, nonatomic) NSString *winRecordId;
+@property (copy, nonatomic) NSString *resultLabel;
+@property (copy, nonatomic) NSString *buttonLabel;
+@property (retain, nonatomic) NSMutableArray *textArray;
+@property (readonly, nonatomic) unsigned long long textArray_Count;
+@property (copy, nonatomic) NSString *jumpURL;
+@property (nonatomic) long long lotteryType;
+@property (copy, nonatomic) NSString *elasticTitle;
+@property (retain, nonatomic) HTSLiveBenefitLabel *benefitLabel;
+@property (nonatomic) BOOL hasBenefitLabel;
+
++ (id)descriptor;
+
+@end

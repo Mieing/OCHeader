@@ -1,0 +1,88 @@
+@class NSString, NSData;
+
+@interface FinderJumpInfo_MiniAppInfo : WXPBGeneratedMessage
+
+@property (retain, nonatomic) NSString *appId;
+@property (retain, nonatomic) NSString *path;
+@property (retain, nonatomic) NSString *fetchInfoId;
+@property (retain, nonatomic) NSString *requestId;
+@property (retain, nonatomic) NSString *appUsername;
+@property (nonatomic) unsigned int versionType;
+@property (retain, nonatomic) NSData *extraData;
+@property (retain, nonatomic) NSString *productPathCookie;
+@property (nonatomic) unsigned int scene;
+@property (nonatomic) BOOL hideDefaultBar;
+@property (nonatomic) BOOL hideDragBar;
+@property (nonatomic) unsigned int launchAnimationType;
+@property (retain, nonatomic) NSString *sceneNote;
+@property (nonatomic) unsigned int type;
+@property (retain, nonatomic) NSString *openExtraData;
+@property (nonatomic) unsigned int halfPageCustomHeight;
+@property (nonatomic) unsigned long long outProductId;
+@property (retain, nonatomic) NSString *openPopupWording;
+@property (retain, nonatomic) NSString *openPopupTitle;
+@property (retain, nonatomic) NSString *tooltipWording;
+@property (retain, nonatomic) NSString *transitCommonUxInfo;
+@property (nonatomic) BOOL transparentMode;
+@property (nonatomic) BOOL useCapsuleMenuType;
+@property (nonatomic) unsigned int capsuleMenuType;
+@property (nonatomic) BOOL forbidAutoFullScreenWhenTap;
+
++ (id)unarchiveWithWCTValue:(id)a0;
++ (unsigned long long)columnTypeForWCDB;
++ (void)initialize;
+
+- (void)setForbidAutoFullScreenWhenTap:(BOOL)a0;
+- (BOOL)forbidAutoFullScreenWhenTap;
+- (void)setCapsuleMenuType:(unsigned int)a0;
+- (unsigned int)capsuleMenuType;
+- (void)setUseCapsuleMenuType:(BOOL)a0;
+- (BOOL)useCapsuleMenuType;
+- (void)setTransparentMode:(BOOL)a0;
+- (BOOL)transparentMode;
+- (void)setTransitCommonUxInfo:(id)a0;
+- (id)transitCommonUxInfo;
+- (void)setTooltipWording:(id)a0;
+- (id)tooltipWording;
+- (void)setOpenPopupTitle:(id)a0;
+- (id)openPopupTitle;
+- (void)setOpenPopupWording:(id)a0;
+- (id)openPopupWording;
+- (void)setOutProductId:(unsigned long long)a0;
+- (unsigned long long)outProductId;
+- (void)setHalfPageCustomHeight:(unsigned int)a0;
+- (unsigned int)halfPageCustomHeight;
+- (void)setOpenExtraData:(id)a0;
+- (id)openExtraData;
+- (void)setType:(unsigned int)a0;
+- (unsigned int)type;
+- (void)setSceneNote:(id)a0;
+- (id)sceneNote;
+- (void)setLaunchAnimationType:(unsigned int)a0;
+- (unsigned int)launchAnimationType;
+- (void)setHideDragBar:(BOOL)a0;
+- (BOOL)hideDragBar;
+- (void)setHideDefaultBar:(BOOL)a0;
+- (BOOL)hideDefaultBar;
+- (void)setScene:(unsigned int)a0;
+- (unsigned int)scene;
+- (void)setProductPathCookie:(id)a0;
+- (id)productPathCookie;
+- (void)setExtraData:(id)a0;
+- (id)extraData;
+- (void)setVersionType:(unsigned int)a0;
+- (unsigned int)versionType;
+- (void)setAppUsername:(id)a0;
+- (id)appUsername;
+- (void)setRequestId:(id)a0;
+- (id)requestId;
+- (void)setFetchInfoId:(id)a0;
+- (id)fetchInfoId;
+- (void)setPath:(id)a0;
+- (id)path;
+- (void)setAppId:(id)a0;
+- (id)appId;
+- (id)archivedWCTValue;
+- (BOOL)isEqual:(id)a0;
+
+@end

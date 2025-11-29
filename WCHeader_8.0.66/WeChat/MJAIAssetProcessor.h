@@ -1,0 +1,82 @@
+@class NSError, MJAIAssetGenerateResult, NSArray, NSDate, NSString, NSMutableDictionary, MJAIAssetGenerateTask, NSData, NSMutableArray, MJAITemplateAssetOptions;
+
+@interface MJAIAssetProcessor : NSObject <MJCdnUploadManagerExt, MJCdnDownloadManagerExt>
+
+@property (nonatomic) long long state;
+@property (nonatomic) long long phase;
+@property (retain, nonatomic) NSArray *assetTaskInfos;
+@property (retain, nonatomic) NSMutableArray *assetFilePaths;
+@property (retain, nonatomic) NSDate *assetPreparationStartTime;
+@property (retain, nonatomic) NSDate *assetPreparationEndTime;
+@property (retain, nonatomic) NSMutableArray *cdnUploadTaskKeys;
+@property (retain, nonatomic) NSMutableDictionary *cdnUploadRequests;
+@property (retain, nonatomic) NSMutableDictionary *cdnUploadResults;
+@property (retain, nonatomic) NSDate *cdnUploadStartTime;
+@property (retain, nonatomic) NSDate *cdnUploadEndTime;
+@property (retain, nonatomic) NSMutableArray *cdnDownloadTaskKeys;
+@property (retain, nonatomic) NSMutableDictionary *cdnDownloadRequests;
+@property (retain, nonatomic) NSMutableDictionary *cdnDownloadResults;
+@property (retain, nonatomic) NSDate *cdnDownloadStartTime;
+@property (retain, nonatomic) NSDate *cdnDownloadEndTime;
+@property (retain, nonatomic) MJAIAssetGenerateTask *aiAssetGenerateTask;
+@property (retain, nonatomic) MJAIAssetGenerateResult *aiAssetGenerateResult;
+@property (retain, nonatomic) NSDate *aiAssetGeneratingStartTime;
+@property (retain, nonatomic) NSDate *aiAssetGeneratingEndTime;
+@property (nonatomic) unsigned long long totalTaskCount;
+@property (nonatomic) unsigned long long finishedTaskCount;
+@property (copy, nonatomic) NSArray *AIAssetInfos;
+@property (retain, nonatomic) NSError *error;
+@property (readonly, copy, nonatomic) NSString *sessionKey;
+@property (nonatomic) unsigned long long reportScene;
+@property (readonly, copy, nonatomic) NSArray *originalAssetInfos;
+@property (readonly, nonatomic) MJAITemplateAssetOptions *options;
+@property (copy, nonatomic) NSData *aigcBuffer;
+@property (copy, nonatomic) id /* block */ progressHandler;
+@property (copy, nonatomic) id /* block */ completionHandler;
+@property (readonly, nonatomic) float progress;
+@property (readonly, copy, nonatomic) NSString *serverTaskID;
+@property (nonatomic) BOOL manuallyReportsWhileFinished;
+@property (nonatomic) BOOL manuallyReportsWhileFailed;
+@property (nonatomic) BOOL manuallyReportsWhileCancelled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (long long)errorTypeForError:(id)a0;
+
+- (id)initWithSessionKey:(id)a0 originalAssetInfos:(id)a1 options:(id)a2;
+- (void)dealloc;
+- (void)start;
+- (void)cancel;
+- (void)initProgressComponents;
+- (void)updateProgressWithFinishedTaskCount:(unsigned long long)a0;
+- (void)didFinish;
+- (void)didFailWithError:(id)a0;
+- (void)callCompletionHandler;
+- (void)prepareOriginalAssetFiles;
+- (void)recursivelyPrepareOriginalAssetFilesAtIndex:(unsigned long long)a0;
+- (id)resizedImageWithOriginalImage:(id)a0;
+- (id)originalAssetFilePathAtIndex:(unsigned long long)a0;
+- (id)assetFileKeyForFileAtIndex:(unsigned long long)a0;
+- (id)assetFileKeyForPHAsset:(id)a0;
+- (BOOL)saveOriginalAssetWithImage:(id)a0 atFilePath:(id)a1;
+- (void)uploadOriginalAssetFiles;
+- (void)checkUploadFinished;
+- (void)uploadOriginalAssetFileWithTaskKey:(id)a0 filePath:(id)a1;
+- (void)cancelUploadingOriginalAssetFiles;
+- (void)MJCdnUploadManager:(id)a0 uploadTaskDidComplete:(id)a1;
+- (void)generateAIAssets;
+- (void)cancelGeneratingAIAssets;
+- (void)downloadAIAssetFiles;
+- (void)cancelDownloadingAIAssetFiles;
+- (void)checkDownloadFinished;
+- (void)downloadAIAssetFileWithTaskKey:(id)a0 cdnURL:(id)a1 filePath:(id)a2;
+- (id)AIAssetFilePathAtIndex:(unsigned long long)a0;
+- (void)MJCdnDownloadManager:(id)a0 downloadTaskDidComplete:(id)a1;
+- (void)createAIAssetInfos;
+- (id)generateReporter;
+- (void)reportIfNeeded;
+- (void).cxx_destruct;
+
+@end

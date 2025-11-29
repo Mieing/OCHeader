@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface ShareRiskWarningStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) BOOL hasTitle;
+@property (copy, nonatomic) NSString *remindType;
+@property (nonatomic) BOOL hasRemindType;
+@property (retain, nonatomic) NSMutableArray *paramsArray;
+@property (readonly, nonatomic) unsigned long long paramsArray_Count;
+
++ (id)descriptor;
+
+@end

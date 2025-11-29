@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface GuideWordV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *word;
+@property (nonatomic) BOOL hasWord;
+@property (copy, nonatomic) NSString *searchWord;
+@property (nonatomic) BOOL hasSearchWord;
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) int breatheTimes;
+@property (nonatomic) BOOL hasBreatheTimes;
+
++ (id)descriptor;
+
+@end

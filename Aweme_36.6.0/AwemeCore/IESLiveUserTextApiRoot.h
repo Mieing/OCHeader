@@ -1,0 +1,3 @@
+@interface IESLiveUserTextApiRoot : GPBRootObject
+
+@end

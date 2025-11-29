@@ -1,0 +1,3 @@
+@interface TTAModifyPasswordModel : TTAUserModel
+
+@end

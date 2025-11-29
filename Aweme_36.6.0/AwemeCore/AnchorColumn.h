@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface AnchorColumn : IESLivePBBaseMessage
+
+@property (nonatomic) long long cnt;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *bgURL;
+@property (nonatomic) long long liveTimestamp;
+@property (copy, nonatomic) NSString *appointmentId;
+@property (nonatomic) BOOL alreadySubscribed;
+
++ (id)descriptor;
+
+@end

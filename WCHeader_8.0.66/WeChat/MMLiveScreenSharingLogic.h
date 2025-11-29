@@ -1,0 +1,72 @@
+@class MMLiveScreenSharingViewController, NSString, MMLiveTask, MMLiveTaskId, NSDate, MMFinderLiveTask, FinderBizUserInfo;
+@protocol MMLiveScreenSharingLogicUIDelegate, MMLiveScreenSharingLogicOperationDelegate;
+
+@interface MMLiveScreenSharingLogic : NSObject <MMLiveTaskMgrExt, WCFileBrowseDelegate, UIDocumentPickerDelegate, MMLiveScreenSharingViewControllerDelegate, MMLiveBizArticleListViewControllerDelegate>
+
+@property (retain, nonatomic) MMLiveScreenSharingViewController *presentationScreenSharingViewController;
+@property (retain, nonatomic) NSDate *currentReportedStartTime;
+@property (copy, nonatomic) NSString *currentReportedFileType;
+@property (weak, nonatomic) id<MMLiveScreenSharingLogicOperationDelegate> operationDelegate;
+@property (weak, nonatomic) id<MMLiveScreenSharingLogicUIDelegate> UIDelegate;
+@property (readonly, nonatomic) MMLiveTaskId *taskId;
+@property (readonly, nonatomic) MMLiveTask *liveTask;
+@property (readonly, nonatomic) MMFinderLiveTask *finderLiveTask;
+@property (readonly, nonatomic) BOOL isSharingFiles;
+@property (readonly, nonatomic) FinderBizUserInfo *bizUserInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)clearLive;
+- (id)operationViewModel;
+- (void)selectFiles;
+- (void)selectActionsWhileSharingFiles;
+- (void)stopSharingFiles;
+- (id)fileDetailLogicControllerWithBrowseInfo:(id)a0;
+- (id)fileDetailLogicControllerWithFileURL:(id)a0;
+- (BOOL)supportsFileTypeForLogicController:(id)a0;
+- (BOOL)supportsImageTypeForFileURL:(id)a0;
+- (BOOL)supportsPDFFileWithPath:(id)a0;
+- (void)showToastIfFileTypeNotSupported;
+- (id)createFileDetailViewControllerWithLogicController:(id)a0;
+- (id)createWebViewPresetUI;
+- (id)createWebViewControllerWithWebURL:(id)a0;
+- (id)createWebViewControllerWithBizArticle:(id)a0 visibleViewController:(id)a1;
+- (void)openFileBrowser;
+- (void)openDocumentPickerViewController;
+- (void)openBrandArticleListViewController;
+- (void)openFilePreparationFromViewController:(id)a0 withBrowseInfo:(id)a1;
+- (void)openFilePreparationFromViewController:(id)a0 withFileURL:(id)a1;
+- (void)openFilePreparationFromViewController:(id)a0 withDocumentURL:(id)a1;
+- (void)openFilePreparationFromViewController:(id)a0 withImageURL:(id)a1;
+- (void)openFilePreparationFromAssetPickerController:(id)a0 withAssetInfo:(id)a1;
+- (void)openFilePreparationFromViewController:(id)a0 withWebURL:(id)a1 title:(id)a2;
+- (void)openFilePreparationFromViewController:(id)a0 withBizArticle:(id)a1;
+- (void)showAndStartFilePresentationFromPreparationViewController:(id)a0;
+- (void)showAndStartDocumentPresentationFromPreparationViewController:(id)a0;
+- (void)showAndStartImagePresentationFromPreparationViewController:(id)a0;
+- (void)showAndStartAssetPresentationFromPreparationViewController:(id)a0;
+- (void)showAndStartWebPresentationFromPreparationViewController:(id)a0;
+- (void)showAndStartBizArticlePresentationFromPreparationViewController:(id)a0;
+- (void)hideAndStopFilePresentation;
+- (BOOL)isGivingFilePresentation;
+- (void)onFileBrowser:(id)a0 clickFile:(id)a1;
+- (void)onFileBrowser:(id)a0 assetPickerController:(id)a1 clickAssetInfo:(id)a2;
+- (void)onFileBrowseOpeniCloud;
+- (void)documentPicker:(id)a0 didPickDocumentsAtURLs:(id)a1;
+- (void)documentPickerWasCancelled:(id)a0;
+- (void)brandArticleListViewController:(id)a0 didSelectWithArticle:(id)a1;
+- (void)brandArticleListViewController:(id)a0 searchViewController:(id)a1 didSelectWithArticle:(id)a2;
+- (void)liveScreenSharingViewControllerDidClickStartButton:(id)a0;
+- (void)onLiveTask:(id)a0 isPureAudioModeChangedTo:(BOOL)a1 isPureAudioDisplayModeValueChanged:(BOOL)a2 showTip:(BOOL)a3;
+- (void)reportFilePresentationDidStartWithFileType:(id)a0;
+- (void)reportFilePresentationDidStop;
+- (id)reportedFileTypeForLogicController:(id)a0;
+- (id)reportedFileTypeForImage;
+- (id)reportedFileTypeForAssetInfo:(id)a0;
+- (id)reportedFileTypeForBiz;
+- (void).cxx_destruct;
+
+@end

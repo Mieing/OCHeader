@@ -1,0 +1,66 @@
+@interface AWENoticeSwiftImpl.InteractionNoticeDataContext : NSObject {
+    void /* unknown type, empty encoding */ entranceStyle;
+    void /* unknown type, empty encoding */ isMateStyle;
+    void /* unknown type, empty encoding */ isNoisyStyle;
+    void /* unknown type, empty encoding */ isHighFansCanReceiveRecommendNotice;
+    void /* unknown type, empty encoding */ isHighFansMoreTabsNoticePageEnable;
+    void /* unknown type, empty encoding */ showRewardTab;
+    void /* unknown type, empty encoding */ noticeListPreLoad;
+    void /* unknown type, empty encoding */ noticeListLoadMoreOptimize;
+    void /* unknown type, empty encoding */ emptyContentCutSuffixNormalEnable;
+    void /* unknown type, empty encoding */ emptyContentCutSuffixGeneralEnable;
+    void /* unknown type, empty encoding */ isSplittingBlock;
+    void /* unknown type, empty encoding */ isBackFromAwemeDetail;
+    void /* unknown type, empty encoding */ isBackFromVisitorDetail;
+    void /* unknown type, empty encoding */ isFromOuterPush;
+    void /* unknown type, empty encoding */ ruleId;
+    void /* unknown type, empty encoding */ isFromPush;
+    void /* unknown type, empty encoding */ pushNoticeID;
+    void /* unknown type, empty encoding */ aggNoticeID;
+    void /* unknown type, empty encoding */ enterFrom;
+    void /* unknown type, empty encoding */ cellEnterFrom;
+    void /* unknown type, empty encoding */ enterMethod;
+    void /* unknown type, empty encoding */ defaultType;
+    void /* unknown type, empty encoding */ routerDefaultType;
+    void /* unknown type, empty encoding */ landType;
+    void /* unknown type, empty encoding */ landSubType;
+    void /* unknown type, empty encoding */ titleText;
+    void /* unknown type, empty encoding */ navRightBtnText;
+    void /* unknown type, empty encoding */ footerText;
+    void /* unknown type, empty encoding */ hideUnreadBadge;
+    void /* unknown type, empty encoding */ _isTabSwitchEnable;
+    void /* unknown type, empty encoding */ _delNoticeToast;
+    void /* unknown type, empty encoding */ unreadCountBeforeRefresh;
+    void /* unknown type, empty encoding */ previousPageString;
+    void /* unknown type, empty encoding */ zoomIndex;
+    void /* unknown type, empty encoding */ gdLabel;
+    void /* unknown type, empty encoding */ isVCWillDisappearing;
+    void /* unknown type, empty encoding */ isVCDidDisappearing;
+    void /* unknown type, empty encoding */ _enableShowContactTipsView;
+    void /* unknown type, empty encoding */ removingNoticeID;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_shouldShowLightInteractionButtonNoticeModelIDSet;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_storyCircleShowTracker;
+    void /* unknown type, empty encoding */ _isListRequesting;
+    void /* unknown type, empty encoding */ isRefreshingList;
+    void /* unknown type, empty encoding */ isLoadingMoreList;
+    void /* unknown type, empty encoding */ _didUnfoldNoticeList;
+    void /* unknown type, empty encoding */ _hasRecommendList;
+    void /* unknown type, empty encoding */ _showRecommendList;
+    void /* unknown type, empty encoding */ needClearLocalReadedNoticeIDsSetAfterRefreshFetch;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_localReadedNoticeIDsSet;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastVisibleCacheNoticeMap;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastVisibleNoticeMap;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastVisibleNoticeMapForInteractionButtons;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastVisibleNoticeMapForLightInteractionButtons;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastVisibleNoticeMapForIMButtons;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lastVisibleNoticeMapForColorRing;
+    void /* unknown type, empty encoding */ enableMergeLowFansAndShowMultiTabs;
+    void /* unknown type, empty encoding */ enableMergeFollowNotice;
+    void /* unknown type, empty encoding */ responseSerializationOptimizeLevel;
+    void /* unknown type, empty encoding */ didSetup;
+}
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

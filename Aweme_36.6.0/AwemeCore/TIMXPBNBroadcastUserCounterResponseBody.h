@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNBroadcastUserCounterResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString, HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveGamePlayTeamStatusMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *memberListArray;
+@property (readonly, nonatomic) unsigned long long memberListArray_Count;
+@property (nonatomic) int totalNum;
+@property (nonatomic) long long playId;
+@property (copy, nonatomic) NSString *toast;
+
++ (id)descriptor;
+
+@end

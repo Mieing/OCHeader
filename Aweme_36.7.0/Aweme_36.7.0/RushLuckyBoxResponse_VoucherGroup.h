@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface RushLuckyBoxResponse_VoucherGroup : IESLivePBBaseMessage
+
+@property (nonatomic) long long validEndDatetime;
+@property (copy, nonatomic) NSString *faceValue;
+@property (copy, nonatomic) NSString *unit;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+
++ (id)descriptor;
+
+@end

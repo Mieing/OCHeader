@@ -1,0 +1,3 @@
+@interface FlowInstructionComponent.UserSendMsgCellModel : FlowInstructionComponent.SingleSelectorCellModel
+
+@end

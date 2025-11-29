@@ -1,0 +1,3 @@
+@interface AWECommentModelFunction : NSObject
+
+@end

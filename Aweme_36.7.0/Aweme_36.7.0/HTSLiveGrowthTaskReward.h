@@ -1,0 +1,13 @@
+@class NSString, HTSLiveGrowthTaskRewardDef;
+
+@interface HTSLiveGrowthTaskReward : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGrowthTaskRewardDef *def;
+@property (nonatomic) BOOL hasDef;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *extra;
+@property (nonatomic) long long remainingCount;
+
++ (id)descriptor;
+
+@end

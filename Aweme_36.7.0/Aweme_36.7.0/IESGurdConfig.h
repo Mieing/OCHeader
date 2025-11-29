@@ -1,0 +1,8 @@
+@interface IESGurdConfig : NSObject
+
++ (id)platformDomain;
++ (id)platformDomain;
++ (id)monitorAppId;
++ (id)monitorAppId;
+
+@end

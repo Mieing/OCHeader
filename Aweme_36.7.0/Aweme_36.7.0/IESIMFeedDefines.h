@@ -1,0 +1,3 @@
+@interface IESIMFeedDefines : NSObject
+
+@end

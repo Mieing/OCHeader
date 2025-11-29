@@ -1,0 +1,7 @@
+@class NSString;
+
+@interface IESLiveGetStarInfoInfoModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *orderId;
+
+@end

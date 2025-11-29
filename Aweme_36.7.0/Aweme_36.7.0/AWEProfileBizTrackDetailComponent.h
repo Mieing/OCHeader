@@ -1,0 +1,71 @@
+@class NSString, NSDictionary, AWEAwemeModel, NSNumber;
+
+@interface AWEProfileBizTrackDetailComponent : AWEUserDetailBaseComponent <AWEProfileBizTrackDetailComponentProtocol>
+
+@property (nonatomic) long long fromAwemeType;
+@property (nonatomic) BOOL didTrackEntrance;
+@property (retain, nonatomic) NSNumber *isPhoto;
+@property (retain, nonatomic) NSString *userType;
+@property (retain, nonatomic) NSNumber *followeeAwemeCount;
+@property (nonatomic) BOOL toTrackDuoshanBannerShowEvent;
+@property (nonatomic) BOOL hasTrackEnterEnterpriseHomepage;
+@property (nonatomic) BOOL hasTrackEnterMusicianHomepage;
+@property (copy, nonatomic) NSDictionary *musicTrackParams;
+@property (nonatomic) BOOL hasTrackEnterShoppingGuideHomepage;
+@property (nonatomic) BOOL hasTrackLandingHomepageFavoriteTab;
+@property (nonatomic) BOOL isFromFavoriteView;
+@property (copy, nonatomic) NSString *userExtValue;
+@property (copy, nonatomic) NSString *userStaytimeLabel;
+@property (copy, nonatomic) NSDictionary *userTrackAttributes;
+@property (copy, nonatomic) NSDictionary *searchLogPassback;
+@property (copy, nonatomic) NSDictionary *logPassback;
+@property (copy, nonatomic) NSString *enterFromItemID;
+@property (copy, nonatomic) NSString *enterFromItemAuthorID;
+@property (copy, nonatomic) NSString *nickname;
+@property (nonatomic) BOOL switchFavouriteTabFromClickToast;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)isViewDidAppear;
+- (BOOL)hasEmployeePermisson;
+- (id)tabHelper;
+- (void)startTimingForTrack;
+- (void)trackStaytime;
+- (id)commonEnterpriseTrackDict;
+- (BOOL)onConfigWithRouterParamDict:(id)a0;
+- (void)trackEnterEnterpriseHomepageIfNeeded;
+- (BOOL)isAutoLanding;
+- (BOOL)hasTrackedDefaultTabLanding;
+- (void)setHasTrackedDefaultTabLanding:(BOOL)a0;
+- (void)trackEntranceIfNeed;
+- (void)trackDuoshanBannerShowIfNeeded;
+- (void)trackEnterMusicianHomepageIfNeed;
+- (void)trackEnterShoppingGuideHomepageIfNeed;
+- (void)trackLandingHomepageFavoriteTabIfNeed;
+- (void)trackChangeProfileTab:(long long)a0 hasRedDotWhenSwitched:(BOOL)a1 actionType:(unsigned long long)a2;
+- (void)trackEnterPersonalTab:(long long)a0 hasRedDotWhenSwitched:(BOOL)a1 actionType:(unsigned long long)a2;
+- (void)configLogPassbackWithRouterParamDict:(id)a0;
+- (void)configUserTrackAttributesWithRouterParamDict:(id)a0;
+- (void)configSearchLogPassbackWithRouterParamDict:(id)a0;
+- (void)configAwemeModelWithRouterParamDict:(id)a0;
+- (void)p_trackEntranceIfNeed;
+- (void)p_trackDuoshanBannerShowIfNeeded;
+- (void)p_trackEnterEnterpriseHomepageIfNeeded;
+- (void)p_trackEnterMusicianHomepageIfNeed;
+- (void)p_trackEnterShoppingGuideHomepageIfNeed;
+- (void)p_trackLandingHomepageFavoriteTabIfNeed;
+- (BOOL)isCurrentMute;
+- (id)uiComponent;
+- (BOOL)p_isVsOfficialAccount;
+- (void)p_trackEntrance;
+- (void)p_trackVSEntranceIfNeed;
+- (id)userID;
+- (void).cxx_destruct;
+- (id)user;
+- (BOOL)isCurrentUser;
+- (void)onInit;
+
+@end

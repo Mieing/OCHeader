@@ -1,0 +1,16 @@
+@interface LiveAppointmentDetailV2 : GPBMessage
+
+@property (nonatomic) long long liveStartTime;
+@property (nonatomic) BOOL hasLiveStartTime;
+@property (nonatomic) long long appointmentId;
+@property (nonatomic) BOOL hasAppointmentId;
+@property (nonatomic) long long type;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) long long status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) long long lastStartTime;
+@property (nonatomic) BOOL hasLastStartTime;
+
++ (id)descriptor;
+
+@end

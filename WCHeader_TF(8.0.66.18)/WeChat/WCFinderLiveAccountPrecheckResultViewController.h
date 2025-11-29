@@ -1,0 +1,81 @@
+@class SecurityInfoAuthrizeLogic, NSString, MMTableViewInfo, NSMutableDictionary, UIButton, MMFinderLiveTaskId, MMAcceptAgreementCommonHeadView, SpamRisk, MMTableView;
+
+@interface WCFinderLiveAccountPrecheckResultViewController : MMAcceptAgreementBaseViewController <MMLiveNameVerifyViewControllerDelegate, MMWebViewDelegate, WCFinderLiveCompleteAgreementResultViewControllerDelegate> {
+    MMAcceptAgreementCommonHeadView *m_commonHeadView;
+    MMTableViewInfo *m_tableViewInfo;
+    MMTableView *m_tableView;
+}
+
+@property (retain, nonatomic) MMFinderLiveTaskId *liveTaskId;
+@property (retain, nonatomic) SecurityInfoAuthrizeLogic *authLogic;
+@property (nonatomic) unsigned int userFlag;
+@property (retain, nonatomic) NSString *realnameAuthUrl;
+@property (retain, nonatomic) UIButton *doneButton;
+@property (retain, nonatomic) NSMutableDictionary *m_cacheHeightDic;
+@property (nonatomic) double m_tableContentHeight;
+@property (nonatomic) BOOL shouldShowOneTimeAgreementView;
+@property (nonatomic) BOOL hasExtraVerifyItem;
+@property (nonatomic) BOOL isNameVerifiedSucceed;
+@property (nonatomic) BOOL isDoneButtonClicked;
+@property (nonatomic) BOOL isExitOnPolicyDone;
+@property (nonatomic) BOOL cancelPrecheckProcess;
+@property (retain, nonatomic) SpamRisk *spamJumpInfo;
+@property (copy, nonatomic) id /* block */ enableCreateLiveCallback;
+@property (copy, nonatomic) id /* block */ cancelledCallback;
+@property (copy, nonatomic) id /* block */ delayEnableCreateLiveCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithliveTaskId:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidTransitionToNewSize;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)layoutDoneButton;
+- (BOOL)showOneTimeAgreementView;
+- (void)showForbidLiveViewWithTitle:(id)a0 withMessage:(id)a1;
+- (id)finderLiveTask;
+- (void)onClickMakeSureActionWithViewController:(id)a0;
+- (void)reloadTableData;
+- (void)reloadFootView;
+- (void)layoutHeaderView;
+- (void)makePreCheckResultItem:(id)a0 cellInfo:(id)a1;
+- (void)onPreCheckResultItemForRealNameVerifyClicked;
+- (void)onPreCheckResultItemForFinderRealNameVerifyClicked;
+- (void)onPreCheckResultItemForFinderRealNameNewVerifyClicked;
+- (void)onPreCheckResultItemForWepayVerifyClicked;
+- (void)onPreCheckResultItemForAgeVerifyClicked;
+- (void)onPreCheckResultItemForOtherVerifyClicked;
+- (void)preCheckResultItemForFaceVerifyClicked;
+- (BOOL)isLiveNameVerifiedFail;
+- (BOOL)isLiveAgeVerifiedFail;
+- (void)startFinderRealNameVerify;
+- (void)getSecurityInfoAuthTokenWith:(id)a0;
+- (void)uploadFinderRealNameToken:(id)a0;
+- (void)startFinderRealNameNewVerify;
+- (void)uploadFinderRealNameNewCode:(id)a0;
+- (void)OnDoneButtonClicked;
+- (void)proceedCreateLivePrecess;
+- (void)showPolicyWebView;
+- (void)onBackButtonClicked:(id)a0;
+- (void)onWebViewCloseAndGoNext:(id)a0 webVC:(id)a1 customClose:(BOOL *)a2;
+- (void)onMMLiveNameVerifyViewControllerNameVerifySucceeded:(long long)a0;
+- (void)onMMLiveNameVerifyViewControllerNameVerifyFailed:(long long)a0;
+- (void)reportExpose;
+- (void)reportVerifyExpose:(unsigned long long)a0;
+- (void)updateUIOnVerfiySuccess;
+- (void)updateUserFlagOnRealnameDoneIfNeed;
+- (void)createLivePrepareWithCompleteBlock:(id /* block */)a0;
+- (void)onUpdateUserFlagFail;
+- (void)_internalCancelPrecheck;
+- (id)m_commonHeadView;
+- (void)setM_commonHeadView:(id)a0;
+- (id)m_tableViewInfo;
+- (void)setM_tableViewInfo:(id)a0;
+- (id)m_tableView;
+- (void)setM_tableView:(id)a0;
+- (void).cxx_destruct;
+
+@end

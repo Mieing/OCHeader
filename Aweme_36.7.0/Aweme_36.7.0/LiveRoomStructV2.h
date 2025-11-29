@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface LiveRoomStructV2 : GPBMessage
+
+@property (nonatomic) long long roomId;
+@property (nonatomic) BOOL hasRoomId;
+@property (nonatomic) int liveStatus;
+@property (nonatomic) BOOL hasLiveStatus;
+@property (copy, nonatomic) NSString *roomData;
+@property (nonatomic) BOOL hasRoomData;
+
++ (id)descriptor;
+
+@end

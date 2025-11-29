@@ -1,0 +1,3 @@
+@interface AWEStudioRepoIMVideoPublishModel : NSObject
+
+@end

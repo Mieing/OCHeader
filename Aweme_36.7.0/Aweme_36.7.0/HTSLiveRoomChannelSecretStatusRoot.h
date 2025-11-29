@@ -1,0 +1,3 @@
+@interface HTSLiveRoomChannelSecretStatusRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLivePreviewExtendSyncdataRoot : GPBRootObject
+
+@end

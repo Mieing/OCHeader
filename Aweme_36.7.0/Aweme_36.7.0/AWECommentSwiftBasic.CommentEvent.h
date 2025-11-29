@@ -1,0 +1,8 @@
+@interface AWECommentSwiftBasic.CommentEvent : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ observers;
+    void /* unknown type, empty encoding */ lock;
+    void /* unknown type, empty encoding */ _action;
+    void /* unknown type, empty encoding */ _actionNoReturn;
+}
+
+@end

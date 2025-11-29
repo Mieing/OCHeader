@@ -1,0 +1,80 @@
+@class AWEAwemeModel, NSString, NSError, AWEUserWorkContext, AWEProfileTabPerfMonitor, AWEUserPostsDataManager, AWEUserPostsDataResponse, AWEProfilePreloadPost;
+
+@interface AWEPostWorkDataManager : NSObject <AWEDCFeedDataControllerProtocol, AWEUserWorkCustomDataControllerProtocol>
+
+@property (retain, nonatomic) AWEProfileTabPerfMonitor *tabPerfMonitor;
+@property (retain, nonatomic) AWEUserPostsDataManager *dataManager;
+@property (retain, nonatomic) AWEProfilePreloadPost *preloadPost;
+@property (retain, nonatomic) AWEUserPostsDataResponse *response;
+@property (retain, nonatomic) AWEAwemeModel *liveModel;
+@property (retain, nonatomic) NSString *coverUrl;
+@property (retain, nonatomic) NSError *refreshError;
+@property (nonatomic) BOOL hasRefreshed;
+@property (nonatomic) BOOL waitRefresh;
+@property (weak, nonatomic) AWEUserWorkContext *userWorkContext;
+@property (nonatomic) unsigned long long sortType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadUserPageAdapterClass;
++ (Class)aAWEUserProfileModuleServiceDOUYINHTSAdaperClass;
+
+- (id)enterFrom;
+- (void)fetchDataWithRequestParams:(id)a0 args:(id)a1 completion:(id /* block */)a2;
+- (void)refreshDataWithRequestParams:(id)a0 args:(id)a1 completion:(id /* block */)a2;
+- (void)loadMoreDataWithRequestParams:(id)a0 args:(id)a1 completion:(id /* block */)a2;
+- (void)cancelRequestTask;
+- (id)aAWEPadUserPageAdapter;
+- (id)justWatched;
+- (void)tryCorrectionThreshold;
+- (id)padService;
+- (long long)computeLayoutStyle;
+- (void)checkLocateAvailable;
+- (id)horizontalSection;
+- (void)triggerLoadMoreIfNeed:(id)a0 lastContentOffset:(struct CGPoint { double x0; double x1; })a1;
+- (void)removeCacheDataIfNeed;
+- (void)refreshComponentConfigBeforeSyncAwemeModelData;
+- (void)syncAwemeModelDataSource;
+- (void)fetchOrRefreshCompletionWithList:(id)a0 error:(id)a1 completion:(id /* block */)a2;
+- (void)refreshDataWithAB:(BOOL)a0 completionBlock:(id /* block */)a1;
+- (void)completionWithList:(id)a0 error:(id)a1 completion:(id /* block */)a2;
+- (void)loadMoreData:(BOOL)a0 completion:(id /* block */)a1;
+- (void)refreshDataWithNeedUserPreloadPost:(BOOL)a0 completionBlock:(id /* block */)a1;
+- (BOOL)computeUseWaterFall;
+- (BOOL)isBlockStatus;
+- (id)loadCacheEvent;
+- (void)refreshAwemeStatisticsIfNeed;
+- (void)prepareForClearPreviousItemsIfNeed;
+- (void)preloadStoryDataIfNeeded;
+- (void)endRefreshingWithMore:(BOOL)a0 list:(id)a1 error:(id)a2 beginDate:(id)a3 preload:(BOOL)a4;
+- (id)preloadPostDataManager;
+- (void)preloadPostList:(id /* block */)a0;
+- (id)recommendSectionExtraRequestParams;
+- (id)netStageTrackComp;
+- (void)checkShowErrorToast:(id)a0;
+- (BOOL)enablePostRevisitCached;
+- (void)setupAdVideoManagerIfNeed:(id)a0;
+- (void)handleLayoutDidChangeNotification:(id)a0;
+- (void)handleWeakRefreshPostAwemeIdsNotification:(id)a0;
+- (void)correctionIfNeedWith:(unsigned long long)a0;
+- (id)weakRefreshImp;
+- (void)postPreloadLoadRequestToTraceIfNeeded:(id)a0;
+- (id)findDataManagerFromPreloadPost;
+- (id)dataManagerJustWatchedItemId;
+- (id)aAWEUserProfileModuleServiceDOUYINHTSAdaper;
+- (void)switchPostWorkSortType:(unsigned long long)a0;
+- (void)updatePostPreloader:(id)a0;
+- (BOOL)tryWeakRefreshDataWithCompletion:(id /* block */)a0;
+- (id)secUserID;
+- (id)userID;
+- (void).cxx_destruct;
+- (id)user;
+- (id)viewController;
+- (void)dealloc;
+- (id)previousPage;
+- (BOOL)isCurrentUser;
+- (id)dataController;
+
+@end

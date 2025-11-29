@@ -1,0 +1,7 @@
+@interface BDMultiContentContainer.MusicInfoModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ beginTime;
+    void /* unknown type, empty encoding */ endTime;
+    void /* unknown type, empty encoding */ volume;
+}
+
+@end

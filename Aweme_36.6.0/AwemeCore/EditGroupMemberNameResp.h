@@ -1,0 +1,10 @@
+@class EditGroupMemberNameResp_Data;
+
+@interface EditGroupMemberNameResp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) EditGroupMemberNameResp_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

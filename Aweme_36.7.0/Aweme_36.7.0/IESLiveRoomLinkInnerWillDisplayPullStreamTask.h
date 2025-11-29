@@ -1,0 +1,3 @@
+@interface IESLiveRoomLinkInnerWillDisplayPullStreamTask : IESLiveLinkTask
+
+@end

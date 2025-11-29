@@ -1,0 +1,20 @@
+@class HTSLiveRoomFeedData_DrawerConfig_ArrowView, HTSLiveRoomFeedData_DrawerConfig_EntranceTitle, HTSLiveRoomFeedData_DrawerConfig_EntranceLayout, HTSLiveRoomFeedData_DrawerConfig_SpecialConfig, HTSLiveRoomFeedData_DrawerConfig_EntranceIcon, HTSLiveRoomFeedData_DrawerConfig_AvatarArea;
+
+@interface HTSLiveRoomFeedData_DrawerConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveRoomFeedData_DrawerConfig_AvatarArea *avatarArea;
+@property (nonatomic) BOOL hasAvatarArea;
+@property (retain, nonatomic) HTSLiveRoomFeedData_DrawerConfig_EntranceIcon *entranceIcon;
+@property (nonatomic) BOOL hasEntranceIcon;
+@property (retain, nonatomic) HTSLiveRoomFeedData_DrawerConfig_EntranceTitle *entraceTitle;
+@property (nonatomic) BOOL hasEntraceTitle;
+@property (retain, nonatomic) HTSLiveRoomFeedData_DrawerConfig_ArrowView *arrowView;
+@property (nonatomic) BOOL hasArrowView;
+@property (retain, nonatomic) HTSLiveRoomFeedData_DrawerConfig_EntranceLayout *entranceLayout;
+@property (nonatomic) BOOL hasEntranceLayout;
+@property (retain, nonatomic) HTSLiveRoomFeedData_DrawerConfig_SpecialConfig *specialConfig;
+@property (nonatomic) BOOL hasSpecialConfig;
+
++ (id)descriptor;
+
+@end

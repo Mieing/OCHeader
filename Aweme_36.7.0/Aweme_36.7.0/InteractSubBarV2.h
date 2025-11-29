@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface InteractSubBarV2 : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *contentsArray;
+@property (readonly, nonatomic) unsigned long long contentsArray_Count;
+@property (retain, nonatomic) NSMutableArray *btnsArray;
+@property (readonly, nonatomic) unsigned long long btnsArray_Count;
+
++ (id)descriptor;
+
+@end

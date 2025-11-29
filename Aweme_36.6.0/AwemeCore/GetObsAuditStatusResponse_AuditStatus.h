@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface GetObsAuditStatusResponse_AuditStatus : IESLivePBBaseMessage
+
+@property (nonatomic) long long obsAuditStatus;
+@property (copy, nonatomic) NSString *obsApplyUri;
+@property (copy, nonatomic) NSString *obsHoverText;
+@property (copy, nonatomic) NSString *livePartnerDownloadUri;
+
++ (id)descriptor;
+
+@end

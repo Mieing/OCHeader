@@ -1,0 +1,3 @@
+@interface DistributionCheckUserLiveStatusApiRoot : GPBRootObject
+
+@end

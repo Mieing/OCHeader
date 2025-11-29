@@ -1,0 +1,8 @@
+@interface IESLiveMusicInterval : IESLivePBBaseMessage
+
+@property (nonatomic) long long startTimeMillisecond;
+@property (nonatomic) long long durationMillisecond;
+
++ (id)descriptor;
+
+@end

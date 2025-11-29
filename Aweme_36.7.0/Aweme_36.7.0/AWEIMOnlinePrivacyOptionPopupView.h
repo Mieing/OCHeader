@@ -1,0 +1,83 @@
+@class UIView, AWEIMHalfScreenContainerViewController, AWEIMActiveUserIndicativeView, AWESocialRelationObserver, NSArray, UIImageView, NSString, UITableView, AWEIMOnlinePrivacySelectPanelTableViewCell, AWEIMOnlinePrivacyOptionPopupViewActivityModel, UILabel;
+@protocol IESIMHttpTask;
+
+@interface AWEIMOnlinePrivacyOptionPopupView : AWEIMBasePopupView <UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource, AWEIMHalfScreenContainerVCDelegate>
+
+@property (retain, nonatomic) UIImageView *avatarImgView;
+@property (retain, nonatomic) AWEIMActiveUserIndicativeView *onlineDotView;
+@property (retain, nonatomic) UIView *hiddenDotView;
+@property (retain, nonatomic) UILabel *textLabel;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *contentLabel;
+@property (retain, nonatomic) UITableView *selectPanelTableView;
+@property (retain, nonatomic) UIView *disrecommendView;
+@property (retain, nonatomic) UIView *indicatorLineView;
+@property (retain, nonatomic) AWEIMHalfScreenContainerViewController *closeHalfContainerVC;
+@property (retain, nonatomic) AWEIMOnlinePrivacySelectPanelTableViewCell *closeFriendCell;
+@property (retain, nonatomic) AWESocialRelationObserver *closeFriendsCountObserver;
+@property (retain, nonatomic) NSArray *cellModelArray;
+@property (retain, nonatomic) NSArray *cellArray;
+@property (weak, nonatomic) AWEIMHalfScreenContainerViewController *onlinePrivacyListContainerVC;
+@property (copy, nonatomic) NSArray *partInclusiveArray;
+@property (copy, nonatomic) NSArray *partExclusiveArray;
+@property (nonatomic) long long closeFriendsCountBeforeEdit;
+@property (nonatomic) unsigned long long currentselectCellStyle;
+@property (nonatomic) long long styleOption;
+@property (retain, nonatomic) id<IESIMHttpTask> httpTask;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) AWEIMOnlinePrivacyOptionPopupViewActivityModel *activityModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAFDServiceCommonAdapterClass;
+
+- (double)externalAssignTopDragHeight;
+- (void)halfScreenContainerVCWillDismiss:(id)a0;
+- (id)aAWEPadModuleAdapter;
+- (BOOL)bringToFront;
+- (void)updateActivityModel:(id)a0;
+- (id)aAFDServiceCommonAdapter;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 title:(id)a1 subTitle:(id)a2 setting:(id)a3 style:(long long)a4;
+- (void)showOptionPopupView;
+- (void)readLastOnlinePrivacyDataFromDisk;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 title:(id)a1 subTitle:(id)a2 setting:(id)a3 useCardUIStyle:(BOOL)a4;
+- (void)fetchLastOnlinePrivacyData;
+- (void)p_setupUIWithTitle:(id)a0 subTitle:(id)a1 setting:(id)a2 style:(long long)a3;
+- (void)p_addCloseFriendsCountObserver;
+- (void)p_closeBtn;
+- (void)p_avatarImgView;
+- (void)p_onlineDotView;
+- (void)p_hiddenDotView;
+- (void)p_titleLabel;
+- (void)p_contentLabel;
+- (void)p_createSelectPanelTableView;
+- (void)p_createIndicatorLineView;
+- (void)p_createDisrecommendView;
+- (id)p_getContentLabelAttributes;
+- (void)updateOnlineDotViewScale:(BOOL)a0;
+- (void)updateOnlineDotViewHidden:(BOOL)a0;
+- (void)writeOnlinePrivacyDataToDiskFromServer;
+- (void)disrecommendViewTapped:(id)a0;
+- (id)p_getSelectArrayWithStyle:(unsigned long long)a0;
+- (void)transitionToSettingListVCWithStyle:(unsigned long long)a0 selectedUsers:(id)a1;
+- (void)showCloseFriendEditPanelViewController;
+- (void)writeLastOnlinePrivacyDataToDisk;
+- (void)switchOnlinePrivacySetWithStyle:(unsigned long long)a0;
+- (void)p_showToastForStyle:(unsigned long long)a0 isError:(BOOL)a1;
+- (void)p_updateSelectedUsers:(id)a0 withStyle:(unsigned long long)a1;
+- (void)p_refeshOnlineDotState:(BOOL)a0;
+- (void)p_trackSelectionWithStyle:(unsigned long long)a0;
+- (void)trackOnlineStatusChange:(unsigned long long)a0;
+- (void)p_constructCellArray;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 title:(id)a1 subTitle:(id)a2 setting:(id)a3;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)hide;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+
+@end

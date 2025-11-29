@@ -1,0 +1,70 @@
+@class UIView, MMLivePivotViewController, UITapGestureRecognizer, UINavigationController, LiveSdkInfo, MMFinderLiveTask, MMFinderPivotLiveViewController, WCFinderDataItem, MMFinderLiveContentVM, NSString;
+
+@interface MMLivePivotItemViewController : MMUIViewController <MMLivePivotCollectionViewExt, MMFinderPivotLiveViewControllerDelegate>
+
+@property (retain, nonatomic) MMFinderLiveContentVM *contentVM;
+@property (weak, nonatomic) UINavigationController *navControl;
+@property (retain, nonatomic) MMFinderLiveTask *liveTask;
+@property (retain, nonatomic) MMFinderPivotLiveViewController *controller;
+@property (nonatomic) BOOL isInPreview;
+@property (nonatomic) BOOL isPreviewMuted;
+@property (nonatomic) BOOL isMutedByAdVideo;
+@property (retain, nonatomic) UIView *scrollFxMaskView;
+@property (retain, nonatomic) UIView *scrollFxBlurCoverView;
+@property (retain, nonatomic) UIView *backgroundBlurView;
+@property (retain, nonatomic) LiveSdkInfo *currentLiveSdkInfo;
+@property (nonatomic) unsigned long long audienceStartLiveMs;
+@property (nonatomic) BOOL hasPlayedOpenScreenAd;
+@property (nonatomic) double scrollingFxIntensity;
+@property (retain, nonatomic) UIView *relatedLivesTapDismissView;
+@property (retain, nonatomic) UITapGestureRecognizer *relatedLivesTapDismissGestureRecognizer;
+@property (weak, nonatomic) UINavigationController *presentingNavCon;
+@property (weak, nonatomic) MMLivePivotViewController *pivotViewController;
+@property (readonly) WCFinderDataItem *dataItem;
+@property (nonatomic) BOOL isWatchHistoryLive;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) BOOL inRelatedLivesMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithContentVM:(id)a0;
+- (void)dealloc;
+- (void)registerExtension;
+- (void)unRegisterExtension;
+- (void)loadView;
+- (void)viewDidLoad;
+- (void)dismissRelatedLives;
+- (void)initControllerViewSettings;
+- (void)updateLiveSdkInfo:(id)a0 finderUserName:(id)a1;
+- (void)prepareLiveTask;
+- (void)prepareController;
+- (void)checkController;
+- (void)clearController;
+- (void)startPreview;
+- (void)startPreviewMuted:(BOOL)a0 isInScroll:(BOOL)a1;
+- (void)stopPreview;
+- (void)startLive:(unsigned long long)a0;
+- (void)startRejoinLive;
+- (BOOL)startLiveWithIsRejoin:(BOOL)a0 fromSrc:(unsigned long long)a1;
+- (void)endLive;
+- (id)liveController;
+- (void)layoutController;
+- (void)onLiveComplete;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillLayoutSubviews;
+- (void)checkAndResumeLive;
+- (void)setPivotScrollingFxWithIntensity:(double)a0;
+- (void)clearPivotScrollingFx;
+- (double)blurCoverViewAlphaForIntensity:(double)a0;
+- (BOOL)isFollowState;
+- (void)updateAudienceStartLiveTime;
+- (BOOL)tryShowOpenScreenAdvertisement;
+- (void)checkAndFinishCurrentOpenScreenAdAfterTimeout;
+- (void)preInitialTaskAndController;
+- (void)preJoinLiveWithInvokedBlock:(id /* block */)a0;
+- (void)onFinderPivotLiveViewController:(id)a0 requestReplacementWithReplayForTaskId:(id)a1;
+- (void).cxx_destruct;
+
+@end

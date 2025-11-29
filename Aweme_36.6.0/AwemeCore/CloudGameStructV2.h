@@ -1,0 +1,16 @@
+@class NSString, CloudGameEntranceStructV2;
+
+@interface CloudGameStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *cloudGameId;
+@property (nonatomic) BOOL hasCloudGameId;
+@property (retain, nonatomic) CloudGameEntranceStructV2 *entranceInfo;
+@property (nonatomic) BOOL hasEntranceInfo;
+@property (copy, nonatomic) NSString *downloadURL;
+@property (nonatomic) BOOL hasDownloadURL;
+@property (copy, nonatomic) NSString *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

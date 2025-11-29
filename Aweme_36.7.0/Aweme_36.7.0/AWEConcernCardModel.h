@@ -1,0 +1,64 @@
+@class AWEAwemeModel, NSString, AWELiveFollowFeedCellModel, NSArray, AWELiveVSEpisode, AWEConcernVSStruct, AWECodeGenFriendInteractionInfoModel, NSNumber, AWESmartFeedOutCommentModel;
+
+@interface AWEConcernCardModel : AWEBaseApiModel <AWEConcernCardTypeProtocol>
+
+@property (nonatomic) unsigned long long impressionIndex;
+@property (nonatomic) BOOL fromFamiliar;
+@property (copy, nonatomic) NSString *followRoomRawData;
+@property (retain, nonatomic) AWELiveFollowFeedCellModel *followRoom;
+@property (retain, nonatomic) AWELiveVSEpisode *liveEpisode;
+@property (retain, nonatomic) AWEConcernVSStruct *concernVSStruct;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long type;
+@property (retain, nonatomic) AWEAwemeModel *aweme;
+@property (retain, nonatomic) NSArray *users;
+@property (retain, nonatomic) NSArray *commentList;
+@property (retain, nonatomic) AWECodeGenFriendInteractionInfoModel *interactionInfo;
+@property (copy, nonatomic) NSArray *circleDiggUsers;
+@property (copy, nonatomic) NSString *lynxCardSchema;
+@property (copy, nonatomic) NSArray *lynxCardExtraModules;
+@property (retain, nonatomic) NSArray *likeUserList;
+@property (copy, nonatomic) NSString *recommendReason;
+@property (retain, nonatomic) NSNumber *recommendCount;
+@property (copy, nonatomic) NSString *challengeID;
+@property (nonatomic) double adLearnMoreViewHeight;
+@property (nonatomic) double adLabelViewHeight;
+@property (nonatomic) double adLearnMoreECommerceLynxButtonHeight;
+@property (nonatomic) double adECommerceTitleHeight;
+@property (nonatomic) double videoRecommWordHeight;
+@property (nonatomic) unsigned long long sourceType;
+@property (nonatomic) BOOL isAtlasInDynamic;
+@property (nonatomic) BOOL isRecommendInterestedItem;
+@property (nonatomic) long long fastCommentType;
+@property (nonatomic) long long userUnreadCount;
+@property (nonatomic) BOOL isFromSort;
+@property (nonatomic) long long itemType;
+@property (nonatomic) BOOL disableDeduplicate;
+@property (nonatomic) BOOL isInNewHotspot;
+@property (copy, nonatomic) NSArray *capsuleAvatarUrlList;
+@property (nonatomic) long long capsuleType;
+@property (nonatomic) BOOL liveAvoidGlobalPendant;
+@property (nonatomic) long long followFeedSceneType;
+@property (retain, nonatomic) NSNumber *feedRequestPullType;
+@property (retain, nonatomic) AWESmartFeedOutCommentModel *outCommentModel;
+@property (nonatomic) BOOL canShowSpecialFollowGuide;
+@property (nonatomic) BOOL isPlaceItem;
+
++ (id /* block */)isEqualBlock;
++ (id)awemeJSONTransformer;
++ (id)commentListJSONTransformer;
++ (id)usersJSONTransformer;
++ (id)circleDiggUsersJSONTransformer;
++ (id)likeUserListJSONTransformer;
++ (id)outCommentModelJSONTransformer;
++ (id)followRoomModel_subModelPropertyKey;
++ (id)followRoomJSONTransformer;
++ (id)concernVSStructJSONTransformer;
++ (id)liveEpisodeJSONTransformer;
++ (BOOL)useNewSearchVideoCard;
++ (id)JSONKeyPathsByPropertyKey;
+
+@end

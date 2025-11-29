@@ -1,0 +1,10 @@
+@class HTSLiveLinkmicStarWishInfo;
+
+@interface IESLiveLinkMicProfitStarWishOpenResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkmicStarWishInfo *playmodeInfo;
+@property (nonatomic) BOOL hasPlaymodeInfo;
+
++ (id)descriptor;
+
+@end

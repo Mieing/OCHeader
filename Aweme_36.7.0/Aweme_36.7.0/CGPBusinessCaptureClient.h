@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface CGPBusinessCaptureClient : GPBMessage
+
+@property (copy, nonatomic) NSString *URL;
+
++ (id)descriptor;
+
+@end

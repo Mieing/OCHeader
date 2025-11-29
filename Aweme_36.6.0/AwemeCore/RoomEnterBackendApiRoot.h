@@ -1,0 +1,3 @@
+@interface RoomEnterBackendApiRoot : GPBRootObject
+
+@end

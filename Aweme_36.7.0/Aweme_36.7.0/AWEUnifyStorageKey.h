@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface AWEUnifyStorageKey : NSObject {
+    NSString *_key;
+    NSString *_domain;
+}
+
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface IESECCategoryRefreshMessage : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *categoryInfoArray;
+@property (readonly, nonatomic) unsigned long long categoryInfoArray_Count;
+@property (nonatomic) long long updateTs;
+@property (copy, nonatomic) NSString *updateToast;
+
++ (id)descriptor;
+
+@end

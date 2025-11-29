@@ -1,0 +1,84 @@
+@class UIView, WCPayLQTSelectCardItem, NSString, WCPayLQTSelectDateItem, WCPayLQTDepositProtocolPageSheet, UIButton, UITextField, WCPayDecimalKeyboardView, WCBaseKeyboardToolBar, UILabel, WCPayRecommendItemView;
+@protocol WCPayLQTDepositFillInfoViewControllerDelegate;
+
+@interface WCPayLQTDepositFillInfoViewController : WCPayBaseViewController <WCBaseInfoItemDelegate, WCPayRecommendItemViewDelegate, WCPayDecimalKeyboardViewDelegate, ILinkEventExt, WCPayLQTSelectCardItemDelegate, UITextFieldDelegate, WCPayLQTSelectDateItemDelegate, WCPayLQTDepositProtocolPageSheetDelegate> {
+    id<WCPayLQTDepositFillInfoViewControllerDelegate> m_delegate;
+    WCBaseKeyboardToolBar *m_keyboardBar;
+    long long controllerType;
+}
+
+@property (retain, nonatomic) UIView *headerView;
+@property (retain, nonatomic) UILabel *productWordLabel;
+@property (retain, nonatomic) UILabel *marketingWordLabel;
+@property (retain, nonatomic) UILabel *depositAmountLabel;
+@property (retain, nonatomic) UILabel *currencyLabel;
+@property (retain, nonatomic) UITextField *amountTextField;
+@property (retain, nonatomic) UIView *textFieldLineView;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) UIView *headerBottomLine;
+@property (retain, nonatomic) WCPayLQTSelectCardItem *selectCardItem;
+@property (retain, nonatomic) WCPayLQTSelectDateItem *selectDateItem;
+@property (nonatomic) double m_minItemLeft;
+@property (nonatomic) BOOL isKeyboardShow;
+@property (nonatomic) BOOL isKeyboardAnimating;
+@property (retain, nonatomic) UIButton *tipsInfoBtn;
+@property (nonatomic) struct CGPoint { double x; double y; } currentOffset;
+@property (nonatomic) double currentBtnY;
+@property (nonatomic) double currentProtocolY;
+@property (retain) WCPayDecimalKeyboardView *keyboard;
+@property (retain) WCPayRecommendItemView *recommendItemView;
+@property (retain) UIButton *confirmButton;
+@property BOOL hasClickDateItem;
+@property BOOL hasClickCardItem;
+@property (retain, nonatomic) WCPayLQTDepositProtocolPageSheet *protocolPageSheet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setControllerType:(long long)a0;
+- (id)navigationBarBackgroundColor;
+- (void)setDelegate:(id)a0;
+- (void)dealloc;
+- (void)viewDidTransitionToNewSize;
+- (void)viewDidLoad;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)onBack;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)initNavigationBar;
+- (void)viewDidLayoutSubviews;
+- (void)refreshViewWithData:(id)a0;
+- (void)initView;
+- (void)updateTableView;
+- (void)updateHeaderView;
+- (void)updateTipsLabel;
+- (void)infoBtnClick:(id)a0;
+- (void)updateConfirmButtonStatus;
+- (BOOL)shouldEnableButton;
+- (void)updateRecommendItemView;
+- (void)updateKeyboard;
+- (id)getSelectCardItemBankList;
+- (void)reloadTableView;
+- (void)makeInfoCell:(id)a0 cellInfo:(id)a1;
+- (void)clickInfoCell:(id)a0 index:(id)a1;
+- (void)updateBottomView;
+- (void)WCBaseInfoItemEditChanged:(id)a0;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onAgreementClick:(id)a0;
+- (void)onConfirm:(id)a0;
+- (void)onConfirmInternal;
+- (void)textFieldDidChange;
+- (void)onWCPayLQTSelectCardItemAddNewCard;
+- (void)onWCPayLQTSelectDateItemShow;
+- (void)keyboardViewConfirmBtnClick:(id)a0;
+- (id)keyboardHostViewController;
+- (void)activeTextField;
+- (void)onWCPayRecommendItemViewSelect:(unsigned long long)a0;
+- (void)WCBaseInfoItemEndEdit:(id)a0;
+- (void)onProtocolPageSheetClickProtocolUrl:(id)a0;
+- (void)onProtocolPageSheetClickCancel;
+- (void)onProtocolPageSheetClickConfirm;
+- (void).cxx_destruct;
+
+@end

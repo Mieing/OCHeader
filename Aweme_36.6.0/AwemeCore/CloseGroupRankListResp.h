@@ -1,0 +1,10 @@
+@class CloseGroupRankListResp_Data;
+
+@interface CloseGroupRankListResp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CloseGroupRankListResp_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

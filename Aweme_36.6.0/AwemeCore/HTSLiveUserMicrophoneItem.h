@@ -1,0 +1,13 @@
+@class NSMutableArray, HTSLiveUser;
+
+@interface HTSLiveUserMicrophoneItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *orderUser;
+@property (nonatomic) BOOL hasOrderUser;
+@property (retain, nonatomic) NSMutableArray *microphoneListArray;
+@property (readonly, nonatomic) unsigned long long microphoneListArray_Count;
+@property (nonatomic) BOOL isSinging;
+
++ (id)descriptor;
+
+@end

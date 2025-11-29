@@ -1,0 +1,71 @@
+@class IESLiveBaseGiftStickerQueue, HTSEventContext, IESLiveFaceGiftExternalMgr, IESLiveGiftSticker, IESLiveFaceGiftSecondOrderEffectsExternal, NSString, NSMutableDictionary;
+@protocol IESLiveEffectProcessService, IESLiveGiftFullLinkMonitor, IESLiveInteractiveGiftScoringApi, IESLiveInteractService, IESLiveRoomService, IESLivePerfSampler;
+
+@interface IESLiveFaceGiftPlayer : NSObject <IESLiveInteractAction>
+
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) IESLiveBaseGiftStickerQueue *faceGiftQueue;
+@property (nonatomic) double currentStickerReceivedResetTime;
+@property (retain, nonatomic) IESLiveGiftSticker *lastGiftSticker;
+@property (retain, nonatomic) IESLiveFaceGiftExternalMgr *externalMgr;
+@property (nonatomic) double ntpDiffTimeMS;
+@property (retain, nonatomic) IESLiveFaceGiftSecondOrderEffectsExternal *secondOrderEffectsExternal;
+@property (nonatomic) BOOL giftDequeueRefreshAnimationNodeResourcePathEnable;
+@property (retain, nonatomic) IESLiveGiftSticker *reportGiftSticker;
+@property (nonatomic) BOOL enableAggregateClean;
+@property (copy, nonatomic) NSString *currentUserID;
+@property (nonatomic) BOOL interactiveScoreUploadEnable;
+@property (retain, nonatomic) id<IESLiveInteractiveGiftScoringApi> interactiveGiftScoringApi;
+@property (retain, nonatomic) id<IESLiveGiftFullLinkMonitor> giftFullLinkMonitor;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (retain, nonatomic) id<IESLiveEffectProcessService> effectProcessing;
+@property (retain, nonatomic) id<IESLiveInteractService> interactService;
+@property (nonatomic) BOOL enableTrackEffectInteraction;
+@property (retain, nonatomic) NSMutableDictionary *totalInteraction;
+@property (nonatomic) long long recognizeAnchor;
+@property (nonatomic) BOOL fixEffectProcessing;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)startInteractiveWithScene:(unsigned long long)a0;
+- (void)endInteractiveWithScene:(unsigned long long)a0;
+- (void)onEffectRenderCallback:(int)a0 arg1:(int)a1 arg2:(int)a2 arg3:(id)a3;
+- (id)initWithDIContext:(id)a0 room:(id)a1;
+- (id)getFaceGiftQueue;
+- (BOOL)canHandleEffectMessage:(int)a0 arg1:(int)a1 arg2:(int)a2 arg3:(id)a3;
+- (id)realEffectProcessing;
+- (BOOL)injectFaceGiftExternal:(id)a0;
+- (BOOL)cancelInjectFaceGiftExternal:(id)a0;
+- (void)loadStickerQueue;
+- (void)p_faceGiftWillPlayWithSticker:(id)a0;
+- (void)p_faceGiftPlayEndWithStricker:(id)a0;
+- (void)p_faceGiftQueueDispatchTheLastSticker:(id)a0;
+- (void)p_trackSendTogetherShow:(id)a0;
+- (void)p_faceGiftWillPlayPreConfigWithSticker:(id)a0;
+- (void)p_faceGiftWillPlayCallEffectApiWithSticker:(id)a0;
+- (void)p_faceGiftWillPlayTrackWithSticker:(id)a0;
+- (void)p_audioGraphGiftHandleWithSticker:(id)a0;
+- (void)applyStickerGoldEffectWithImage:(id)a0 withKey:(id)a1;
+- (void)trackGiftEffectShowWithSticker:(id)a0;
+- (void)p_startPerfSamplerWithStickerId:(id)a0 name:(id)a1;
+- (void)trackEffectInteractionTypeWithSticker:(id)a0;
+- (void)trackAudioGraphGiftWithSticker:(id)a0 error:(id)a1 errorDomain:(id)a2;
+- (void)addRootHandlerWithMsgModel:(id)a0;
+- (void)addExtraHandlerWithMsgModel:(id)a0;
+- (void)handleScoreAPIEffectMsg:(id)a0;
+- (void)handleTogetherEffectMsg:(id)a0;
+- (void)trackGiftEffectFirstScreenWithSticker:(id)a0;
+- (void)trackGiftEffectResourceLoadStateWithSticker:(id)a0 withLoadStateSuccess:(BOOL)a1;
+- (void)sendTogetherInitDataMessageWithScene:(unsigned long long)a0;
+- (id)uploadActivityStatisticsWithData:(id)a0;
+- (id)giftEffectBaseInfoWithSticker:(id)a0;
+- (void)enqueueWithStricker:(id)a0;
+- (void)onEffectGiftNotifyMessageReceivedWithArg1:(unsigned long long)a0 arg2:(unsigned long long)a1 data:(id)a2;
+- (void).cxx_destruct;
+- (void)p_init;
+
+@end

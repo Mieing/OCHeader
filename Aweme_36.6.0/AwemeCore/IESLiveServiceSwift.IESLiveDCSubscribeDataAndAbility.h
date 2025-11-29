@@ -1,0 +1,3 @@
+@interface IESLiveServiceSwift.IESLiveDCSubscribeDataAndAbility : IESLiveServiceSwift.IESLiveDCEventDataSubscribeBaseAndAbility
+
+@end

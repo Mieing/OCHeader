@@ -1,0 +1,10 @@
+@class IESGCPPBVisibleCheckResponse_Data;
+
+@interface IESGCPPBVisibleCheckResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBVisibleCheckResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

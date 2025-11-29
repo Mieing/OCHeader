@@ -1,0 +1,76 @@
+@class CJPayDyPayProcessConfigModel, NSString, NSDictionary, CJPayBindCardResultModel, CJPaySignAssetInfoModel, CJPayCreditSignPageQueryResponse, UIView;
+@protocol CJPayAssetDyPayCreditSignContentViewUIControlProtocol, CJPayAssetDyPayCreditSignViewProtocol, CJPayAssetDyPayCreditSignViewManagerProtocol;
+
+@interface CJPayAssetDyPayCreditSignViewManager : NSObject
+
+@property (retain, nonatomic) CJPayDyPayProcessConfigModel *configModel;
+@property (retain, nonatomic) CJPayCreditSignPageQueryResponse *response;
+@property (retain, nonatomic) NSDictionary *allParamsDict;
+@property (retain, nonatomic) NSString *merchantId;
+@property (retain, nonatomic) CJPaySignAssetInfoModel *defaultAssetInfoModel;
+@property (retain, nonatomic) CJPaySignAssetInfoModel *currentSelectedAssetInfoModel;
+@property (retain, nonatomic) CJPayBindCardResultModel *bindCardResultModel;
+@property (copy, nonatomic) NSString *setPwdToken;
+@property (nonatomic) BOOL userIsRetained;
+@property (nonatomic) BOOL retainVoucherCanUse;
+@property (nonatomic) BOOL protocolIsSelected;
+@property (nonatomic) BOOL isOpenVerifyPassword;
+@property (copy, nonatomic) id /* block */ loadingBlock;
+@property (weak, nonatomic) id<CJPayAssetDyPayCreditSignViewManagerProtocol> delegate;
+@property (weak, nonatomic) id<CJPayAssetDyPayCreditSignContentViewUIControlProtocol> uiControlDelegate;
+@property (retain, nonatomic) UIView<CJPayAssetDyPayCreditSignViewProtocol> *contentView;
+
+- (id)p_createBTMParams:(id)a0 host:(id)a1 params:(id)a2;
+- (void)trackerWithName:(id)a0 params:(id)a1;
+- (void)p_stopLoading;
+- (void)p_startLoading;
+- (void)p_clickBubble;
+- (void)registerBtmPageWithParams:(id)a0;
+- (void)openScreenPopup;
+- (void)openRecommendAccountHalfPage;
+- (BOOL)showRetain;
+- (void)actionAfterRetain;
+- (id)initWithConfigModel:(id)a0 response:(id)a1;
+- (void)p_setUpContentView;
+- (id)p_buildSignPageModelWithResponse:(id)a0;
+- (BOOL)p_buildRetainInfoV2Config:(id)a0;
+- (BOOL)p_lynxRetain:(id)a0;
+- (void)p_nativeRetain:(id)a0;
+- (void)p_trackBTMClick:(id)a0 params:(id)a1;
+- (void)p_completionWithErrorCode:(long long)a0 errorMsg:(id)a1;
+- (void)p_showBackwardDeskView:(BOOL)a0;
+- (void)p_clickConfirmSignBtn;
+- (void)p_trackBTMShow:(id)a0 params:(id)a1;
+- (void)p_showProtocolCheck;
+- (void)p_checkIsNeedOpenAuthorizationPage:(BOOL)a0;
+- (void)p_gotoLynxSetPassword;
+- (void)p_startBindCardProcess;
+- (void)p_openUnpaidOrderAlert;
+- (void)p_startVerifyProcess;
+- (void)p_openAuthorizationPageWithURL:(id)a0 completion:(id /* block */)a1;
+- (void)p_trackBTMCustom:(id)a0 params:(id)a1;
+- (void)p_openUnpaidOrderPage;
+- (void)p_requestSignInfoQueryWithCompletion:(id /* block */)a0;
+- (void)p_startLynxVerifyProcess;
+- (void)p_startNativeVerifyProcess;
+- (void)p_startSignConfirm:(id)a0 hasAddCard:(BOOL)a1;
+- (void)p_handleVerifyResult:(BOOL)a0 failReason:(id)a1;
+- (BOOL)p_checkHomePageIsHalfVC;
+- (void)p_didCompleteSetPasswordResult:(BOOL)a0 setPwdToken:(id)a1;
+- (void)p_configLynxSetPassword:(id)a0 completionBlock:(id /* block */)a1;
+- (void)p_updateDeductMethodWithAssetInfoModel:(id)a0;
+- (void)p_didCompleteBindCardSuccess:(id)a0;
+- (id)p_getTrackerParams:(id)a0;
+- (id)p_buildCommonModel;
+- (void)p_updateSignPageWithNewResponse:(id)a0;
+- (void)p_updateSourceBTMToken:(id)a0 host:(id)a1;
+- (void)p_clickDetailOpenChangeCardPage;
+- (void)p_clickChangeAccount:(id)a0;
+- (void)p_handleConfirmResultWithResponse:(id)a0;
+- (void)p_gotoResultPageWithResponse:(id)a0;
+- (void)p_openLynxSuccessResultPage:(id)a0 signSuccess:(BOOL)a1 errorMsg:(id)a2;
+- (id)p_getVoucherTitle;
+- (BOOL)enableBTM;
+- (void).cxx_destruct;
+
+@end

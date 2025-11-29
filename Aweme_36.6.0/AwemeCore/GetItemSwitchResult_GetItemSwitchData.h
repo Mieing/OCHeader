@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GetItemSwitchResult_GetItemSwitchData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *resultsArray;
+@property (readonly, nonatomic) unsigned long long resultsArray_Count;
+
++ (id)descriptor;
+
+@end

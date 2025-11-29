@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.LivePhotoPerformanceTrackerCellExtension : BDMultiContentContainer.LivePhotoCellExtension
+
+@end

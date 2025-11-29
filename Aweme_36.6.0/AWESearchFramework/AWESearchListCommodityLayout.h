@@ -1,0 +1,3 @@
+@interface AWESearchListCommodityLayout : SearchListLayout
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, IESLiveWalletUsageDescription;
+
+@interface IESLiveWalletUsageInstruction : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *cdkey;
+@property (retain, nonatomic) IESLiveWalletUsageDescription *usageDescription;
+@property (nonatomic) BOOL hasUsageDescription;
+
++ (id)descriptor;
+
+@end

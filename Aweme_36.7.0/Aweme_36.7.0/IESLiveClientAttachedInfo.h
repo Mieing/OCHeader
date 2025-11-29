@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface IESLiveClientAttachedInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *pointTag;
+@property (copy, nonatomic) NSString *imprId;
+@property (copy, nonatomic) NSString *inviteMode;
+@property (copy, nonatomic) NSString *listNum;
+@property (copy, nonatomic) NSString *inviterRoomStatus;
+@property (copy, nonatomic) NSString *inviterConnectCnt;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface GetChannelUserListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *userListArray;
+@property (readonly, nonatomic) unsigned long long userListArray_Count;
+@property (nonatomic) long long total;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL isFull;
+@property (nonatomic) long long maxMemberCount;
+
++ (id)descriptor;
+
+@end

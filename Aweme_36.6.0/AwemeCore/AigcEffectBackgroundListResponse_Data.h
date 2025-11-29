@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface AigcEffectBackgroundListResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *taskMapByEffect;
+@property (readonly, nonatomic) unsigned long long taskMapByEffect_Count;
+
++ (id)descriptor;
+
+@end

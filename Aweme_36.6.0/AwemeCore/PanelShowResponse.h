@@ -1,0 +1,10 @@
+@class PanelShowResponse_Data;
+
+@interface PanelShowResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PanelShowResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

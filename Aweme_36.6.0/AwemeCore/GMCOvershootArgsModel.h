@@ -1,0 +1,3 @@
+@interface GMCOvershootArgsModel : GMCAnticipateArgsModel
+
+@end

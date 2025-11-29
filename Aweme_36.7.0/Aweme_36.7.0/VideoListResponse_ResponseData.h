@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface VideoListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) long long minCursor;
+@property (nonatomic) long long maxCursor;
+@property (nonatomic) BOOL hasMore;
+@property (retain, nonatomic) NSMutableArray *videoListArray;
+@property (readonly, nonatomic) unsigned long long videoListArray_Count;
+
++ (id)descriptor;
+
+@end

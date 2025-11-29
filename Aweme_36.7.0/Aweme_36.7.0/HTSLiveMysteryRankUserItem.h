@@ -1,0 +1,12 @@
+@class HTSLiveMysteryUserInfo;
+
+@interface HTSLiveMysteryRankUserItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveMysteryUserInfo *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long score;
+@property (nonatomic) long long rank;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface TIMXPBNBatchGetAccountInfoByUserIdResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *accountBaseInfos;
+@property (readonly, nonatomic) unsigned long long accountBaseInfos_Count;
+
++ (id)descriptor;
+
+@end

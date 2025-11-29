@@ -1,0 +1,70 @@
+@class MMUIViewController, NSString, NSArray, UINavigationController, MMAssetPickerController, FBDocumentViewController, MMUnderlineTabsView, UIDocumentPickerViewController, WCFileBrowserToolBar, FBFilesViewController, WCFileBrowserToolBarViewModel;
+@protocol WCFileBrowseDelegate;
+
+@interface WCFileBrowser : MMUIViewController <FBFilesViewControllerDelegate, MMAssetPickerControllerDelegate, MMAssetPickerControllerExt, WCFileBrowserToolBarDelegate, UIDocumentPickerDelegate>
+
+@property (retain, nonatomic) MMUnderlineTabsView *underlineTabView;
+@property (retain, nonatomic) FBFilesViewController *chatFilesViewController;
+@property (retain, nonatomic) FBFilesViewController *favFilesViewController;
+@property (retain, nonatomic) UINavigationController *albumControlCenter;
+@property (retain, nonatomic) MMAssetPickerController *albumViewController;
+@property (retain, nonatomic) UIDocumentPickerViewController *iCloudViewController;
+@property (retain, nonatomic) FBDocumentViewController *documentViewController;
+@property (nonatomic) unsigned long long currentDataType;
+@property (retain, nonatomic) MMUIViewController *currentVC;
+@property (nonatomic) unsigned int currentIndex;
+@property (retain, nonatomic) WCFileBrowserToolBar *toolBar;
+@property (retain, nonatomic) WCFileBrowserToolBarViewModel *toolBarViewModel;
+@property (nonatomic) BOOL loadAlbumFinish;
+@property (copy, nonatomic) id /* block */ GetFileInfosFromAlbum;
+@property (nonatomic) unsigned long long type;
+@property (retain, nonatomic) NSArray *customTabItems;
+@property (nonatomic) unsigned int maxFileCount;
+@property (retain, nonatomic) NSString *confirmBtnText;
+@property (retain, nonatomic) NSArray *allowFileExtension;
+@property (nonatomic) id<WCFileBrowseDelegate> delegate;
+@property (copy, nonatomic) id /* block */ assetSelectedBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithType:(unsigned long long)a0;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })childAdditionalInset;
+- (id)albumOptions;
+- (void)initAlbumViewController;
+- (void)setTabBarItems:(id)a0;
+- (id)tabItemArrayWithType:(unsigned long long)a0;
+- (id)tabViewForTabItemWithText:(id)a0;
+- (id)tabItemWithTabView:(id)a0;
+- (id)tabItemForChatLog;
+- (id)tabItemForFav;
+- (id)tabItemForAlbum;
+- (id)tabItemFor_iCloud;
+- (void)initViews;
+- (void)displayLastVC;
+- (BOOL)shouldInteractiveDismiss;
+- (void)onInteractiveDismissComplete;
+- (id)navigationBarBackgroundColor;
+- (BOOL)showNavigationBarSepLine;
+- (void)onBack;
+- (void)onTabsViewValueChanged:(id)a0;
+- (void)replaceController:(id)a0 newController:(id)a1;
+- (void)onOpeniCloud;
+- (void)checkAlbumVCLoadingState;
+- (void)FBFilesViewController:(id)a0 DidSelectFiles:(id)a1;
+- (BOOL)onFileBrowseWillSelectFile:(id)a0 selectedFiles:(id)a1;
+- (void)onAssetPickerController:(id)a0 clickAssetInfo:(id)a1;
+- (void)onAssetPickerLoadAlbumFinish:(BOOL)a0;
+- (void)onAssetPickerControllerChangeSelectInfo:(id)a0 index:(long long)a1;
+- (void)MMImagePickerManager:(id)a0 didFinishPickingImageWithInfo:(id)a1;
+- (void)documentPicker:(id)a0 didPickDocumentsAtURLs:(id)a1;
+- (void)onToolBarRemoveFile:(id)a0 dataType:(unsigned long long)a1;
+- (void)onToolBarSendButtonClicked;
+- (void)reportFileSize;
+- (void).cxx_destruct;
+
+@end

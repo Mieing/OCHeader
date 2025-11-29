@@ -1,0 +1,3 @@
+@interface IESECLivePopRoot : GPBRootObject
+
+@end

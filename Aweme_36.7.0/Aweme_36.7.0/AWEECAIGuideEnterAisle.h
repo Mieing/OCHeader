@@ -1,0 +1,3 @@
+@interface AWEECAIGuideEnterAisle : NSObject
+
+@end

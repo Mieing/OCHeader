@@ -1,0 +1,3 @@
+@interface StampInteractEntranceApiRoot : GPBRootObject
+
+@end

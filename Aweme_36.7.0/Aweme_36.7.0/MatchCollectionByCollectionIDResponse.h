@@ -1,0 +1,10 @@
+@class MatchCollectionByCollectionIDResponse_Data;
+
+@interface MatchCollectionByCollectionIDResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) MatchCollectionByCollectionIDResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

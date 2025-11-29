@@ -1,0 +1,6 @@
+@interface Swinject.GraphStorage : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ instances;
+    void /* unknown type, empty encoding */ instance;
+}
+
+@end

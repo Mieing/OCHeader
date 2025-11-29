@@ -1,0 +1,10 @@
+@class GPBInt32Value;
+
+@interface CGPBusinessCamera : GPBMessage
+
+@property (retain, nonatomic) GPBInt32Value *renderMode;
+@property (nonatomic) BOOL hasRenderMode;
+
++ (id)descriptor;
+
+@end

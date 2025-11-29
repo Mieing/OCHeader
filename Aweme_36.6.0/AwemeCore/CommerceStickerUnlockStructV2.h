@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface CommerceStickerUnlockStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *desc;
+@property (nonatomic) BOOL hasDesc;
+@property (copy, nonatomic) NSString *webURL;
+@property (nonatomic) BOOL hasWebURL;
+@property (copy, nonatomic) NSString *openURL;
+@property (nonatomic) BOOL hasOpenURL;
+
++ (id)descriptor;
+
+@end

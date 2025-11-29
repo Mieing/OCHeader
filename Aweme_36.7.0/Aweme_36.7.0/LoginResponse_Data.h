@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface LoginResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *code;
+@property (copy, nonatomic) NSString *anonymousCode;
+@property (nonatomic) BOOL isLogin;
+
++ (id)descriptor;
+
+@end

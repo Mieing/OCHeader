@@ -1,0 +1,10 @@
+@interface PaidLivePingResponse_PingData : IESLivePBBaseMessage
+
+@property (nonatomic) long long retType;
+@property (nonatomic) long long duration;
+@property (nonatomic) int delivery;
+@property (nonatomic) BOOL needDeliveryNotice;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@interface ACCAECModelManager : NSObject
+
++ (void)downloadAECModel;
++ (void)downloadDAModel;
++ (id)AECModelPath;
++ (id)DAModelPath;
++ (BOOL)hasDownloadedAECModel;
++ (id)AudioAECModelNames;
+
+@end

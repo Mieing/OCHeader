@@ -1,0 +1,70 @@
+@class NSString, AWEFeedHomepageLongPressEditViewController;
+
+@interface AWEHPSwitchPreviewController : AWEBaseController <AWEHPHomeContainerViewControllerLifeCycle, AWEBizTabBarLightModeListenerProtocol, AWEFeedHomepageLongPressEditViewControllerDelegate, AWEFeedSwitchPreviewViewControllerDelegate, AWEBasicModeMessage>
+
+@property (nonatomic) double tabbarProgress;
+@property (nonatomic) double lastClickTime;
+@property (nonatomic) double lastEnterTime;
+@property (nonatomic) double beginTouchTime;
+@property (nonatomic) double touchHorizontalPixel;
+@property (nonatomic) double touchVerticalPixel;
+@property (nonatomic, getter=isTouchOutside) BOOL touchOutside;
+@property (weak, nonatomic) AWEFeedHomepageLongPressEditViewController *editPanelVC;
+@property (readonly, nonatomic) struct CGSize { double x0; double x1; } preferredContentSize;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)basicModeDidChange:(BOOL)a0;
+- (void)switchToLightModeWithProgress:(double)a0;
+- (BOOL)hpHandleTabBarDidSingleClick;
+- (BOOL)hpHandleTabBarDidDoubleClick;
+- (BOOL)hpHandleTabBarDidLongPress;
+- (BOOL)hpTapGestureRecognizer:(id)a0 shouldReceiveSingleClickTouch:(id)a1;
+- (void)showCustomImageOnTab;
+- (void)cancelCloseImageOnTab;
+- (void)cancelRefreshImageOnTab;
+- (id)addInterestParamsToSchema:(id)a0;
+- (void)switchPreviewHasTrans;
+- (void)showEditPanelOnVC:(id)a0 enterMethod:(id)a1;
+- (void)dismissEditPanel;
+- (void)panel:(id)a0 didCloseWithCurrentSelectedItem:(id)a1;
+- (void)panel:(id)a0 didSelectItem:(id)a1;
+- (void)panel:(id)a0 selectItem:(id)a1 didChangeSwitch:(id)a2;
+- (BOOL)isInTargetHomepageSquareChannel;
+- (void)bottomTabSpecialEntryChange;
+- (BOOL)isInTargetHomepageChannel;
+- (id)c2ChannelController;
+- (BOOL)shouldBlockSingleClickWhenNotInPreviewWithFeedVC:(id)a0;
+- (BOOL)isValidTouch;
+- (void)preloadC2Data;
+- (void)realHandleSingleClick;
+- (BOOL)shouldExitDCDirectlySwitchToHomepageHotChannel;
+- (void)switchToHomepageHotChannel;
+- (void)switchChannelDirectly;
+- (void)refreshCurrentChannelWithType:(long long)a0;
+- (void)beforeEnterPreviewVC;
+- (void)newEnterSwitchPreviewWithVC:(id)a0 isFromHomepageHot:(BOOL)a1;
+- (void)refreshAndQuitSwitchPreviewVC;
+- (BOOL)useRootVCBlockWhenSingle;
+- (BOOL)useRootVCBlockWhenDouble;
+- (BOOL)isInTargetHomepageHotChannel;
+- (id)feedChannel;
+- (struct CGPoint { double x0; double x1; })hpOffsetFromPoint:(struct CGPoint { double x0; double x1; })a0 toRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (BOOL)isInSecondPage:(id)a0;
+- (BOOL)showExitC2SnackBar:(id)a0;
+- (void)showBottomCloseImageWithProgress:(double)a0;
+- (void)showBottomRefreshImageWithProgress:(double)a0;
+- (void)showCloseBottomEntry;
+- (void)resetCurrentBottomEntry;
+- (void)resetAnotherBottomEntry;
+- (void)trackHpTouchEvent;
+- (void)cleanTouchData;
+- (BOOL)isInTouchDuration;
+- (id)closeStyleEntry;
+- (void)switchToHomepageSquareChannel:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

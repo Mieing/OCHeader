@@ -1,0 +1,81 @@
+@class NSString, NSDictionary, AWEAwemeModel, NSDate, NSObject, AWETimingCloseTimeSelectedHandler;
+@protocol OS_dispatch_source, OS_dispatch_queue;
+
+@interface AWETimingCloseManager : NSObject <AWEBasicModeMessage, AWEDigitalWellbeingMessage, AWEUserMessage, AWETimingCloseManagerProtocol>
+
+@property long long totalCountdownTime;
+@property long long remainCountdownTime;
+@property unsigned long long timingCloseType;
+@property (retain) AWEAwemeModel *fromModel;
+@property BOOL isRunning;
+@property BOOL isSuspended;
+@property (retain, nonatomic) NSObject<OS_dispatch_source> *timer;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (retain, nonatomic) NSDate *lastResignDate;
+@property BOOL pendingTimingCloseArrived;
+@property long long remainPollingTimes;
+@property BOOL shouldShowAlert;
+@property (copy, nonatomic) NSDictionary *liveEngineInfo;
+@property (retain, nonatomic) AWETimingCloseTimeSelectedHandler *timeSelectedHandler;
+@property (readonly) long long preTime;
+@property (readonly) unsigned long long timingClosePreType;
+@property (copy) NSString *prePage;
+@property (copy) id /* block */ onAlertDismissAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)timingCloseSupportPortrait;
++ (id)sharedInstance;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)teenModeDidChange:(BOOL)a0 isLogout:(BOOL)a1;
+- (void)basicModeDidChange:(BOOL)a0;
+- (BOOL)isShowingTimingCloseAlert;
+- (void)onAppDidEnterBackground;
+- (void)feedDidEndDisplayCell:(id)a0;
+- (void)timingCloseArrivePolling;
+- (BOOL)enableAntiAddictAvoid;
+- (id)dismissablePresentedScenes;
+- (void)pauseLiveEngineIfNeeded;
+- (void)setTimingCloseTotalTime:(long long)a0;
+- (void)resumeLiveEngineIfNeeded;
+- (void)setTimingCloseOptionType:(unsigned long long)a0;
+- (void)setFromModelWithModel:(id)a0;
+- (BOOL)showAlertIfNeeded;
+- (void)onAppDidBecomeActiveFromBackground;
+- (BOOL)enableScreenAutoLock;
+- (void)showTimingCloseToastIdNeeded;
+- (void)publishBDXEvent;
+- (BOOL)enableTimingClose;
+- (long long)maxPollingTimes;
+- (void)silentPauseBackgroundIfNeeded;
+- (BOOL)isHighPriorityAvoidScene;
+- (BOOL)isLowPriorityAvoidScene;
+- (void)pauseLiveEngineIfNeededWithForbid:(BOOL)a0;
+- (void)showTimeSelectedSheetWithPrePage:(id)a0;
+- (void)tryResumeTimer;
+- (BOOL)enablePauseLiveEngine;
+- (id)decideLiveEngineInfoFrom:(id)a0;
+- (BOOL)isInRecommendFeed;
+- (BOOL)isSystemAlertShowing;
+- (id)highAvoidScenes;
+- (void)userStateDidChange;
+- (long long)backgroundLimit;
+- (BOOL)canShowLongPressPanelWithModel:(id)a0;
+- (void)backgroundHasReplayed;
+- (BOOL)isTimingClosePlayCurrentEnable;
+- (void)trySuspendTimer;
+- (void).cxx_destruct;
+- (long long)pollingInterval;
+- (void)cancelTimer;
+- (id)init;
+- (void)invalidateTimer;
+- (void)reset;
+- (void)setup;
+- (void)activateTimer;
+- (void)countDown;
+
+@end

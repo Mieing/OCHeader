@@ -1,0 +1,12 @@
+@interface TIMXPBNMessagesPerUserInitRequestBody : GPBMessage
+
+@property (nonatomic) long long cursor;
+@property (nonatomic) BOOL hasCursor;
+@property (nonatomic) int newUser;
+@property (nonatomic) BOOL hasNewUser;
+@property (nonatomic) int initSubType;
+@property (nonatomic) BOOL hasInitSubType;
+
++ (id)descriptor;
+
+@end

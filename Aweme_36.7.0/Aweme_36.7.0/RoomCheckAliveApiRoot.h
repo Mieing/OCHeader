@@ -1,0 +1,3 @@
+@interface RoomCheckAliveApiRoot : GPBRootObject
+
+@end

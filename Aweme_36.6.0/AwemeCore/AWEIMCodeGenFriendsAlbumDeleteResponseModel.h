@@ -1,0 +1,3 @@
+@interface AWEIMCodeGenFriendsAlbumDeleteResponseModel : AWEBaseResponseModel
+
+@end

@@ -1,0 +1,70 @@
+@class ACCFilterTrackerSender, AWETabFilterViewController, CADisplayLink, NSMutableSet, IESEffectModel, AWEStudioRecorderFeatureFilterConfig, NSString;
+@protocol ACCFilterPrivateService, ACCRecorderViewContainer, ACCCameraService, ACCRecordSwitchModeService, ACCFilterDataService, ACCRecordPropService;
+
+@interface ACCFilterComponent : ACCFeatureComponent <UIGestureRecognizerDelegate, AWERecordFilterVCDelegate, ACCPanelViewDelegate, ACCRecordVideoEventHandler, ACCRecordSwitchModeServiceSubscriber, ACCRecordFlowServiceSubscriber, ACCCameraLifeCircleEvent>
+
+@property (retain, nonatomic) AWETabFilterViewController *filterController;
+@property (retain, nonatomic) NSMutableSet *scrollBrowsedFilters;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } gestureResponseArea;
+@property (nonatomic) long long switchFilterDirection;
+@property (retain, nonatomic) IESEffectModel *switchToFilter;
+@property (nonatomic) BOOL filterAniTiming;
+@property (nonatomic) double autoRenderProgress;
+@property (nonatomic) BOOL isCompeleteWhenFilterAniBegin;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) BOOL isSwitchFilter;
+@property (retain, nonatomic) id<ACCRecorderViewContainer> viewContainer;
+@property (retain, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) ACCFilterTrackerSender *trackSender;
+@property (retain, nonatomic) id<ACCFilterDataService> dataService;
+@property (weak, nonatomic) id<ACCRecordPropService> propService;
+@property (retain, nonatomic) id<ACCFilterPrivateService> filterService;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) AWEStudioRecorderFeatureFilterConfig *featureConfig;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentDidAppear;
+- (void)switchModeServiceDidChangeMode:(id)a0 oldMode:(id)a1;
+- (void)onCameraFirstFrameDidRender:(id)a0;
+- (void)flowServiceWillEnterNextPageWithMode:(id)a0;
+- (void)panelViewController:(id)a0 willDismissPanelView:(id)a1;
+- (void)showOnView:(id)a0;
+- (float)filterIndensity:(id)a0;
+- (id)currentFilterHelper;
+- (void)componentDidMount;
+- (void)componentDidUnmount;
+- (unsigned long long)preferredLoadPhase;
+- (void)bindViewModel;
+- (id)serviceBindingArray;
+- (void)applyFilter:(id)a0;
+- (void)bindServices:(id)a0;
+- (id)tabNameForFilter:(id)a0;
+- (void)panSwitchFilter:(id)a0;
+- (void)onSliderIndensityChangedForFilter:(id)a0 indensity:(float)a1;
+- (BOOL)enableFilterIndensity;
+- (void)startSwitchDisplayLink;
+- (void)stopSwitchDisplayLink;
+- (BOOL)enableFilterSwitch;
+- (void)changeFilterRelatedUIWithProgress:(double)a0;
+- (void)applyFilterWithBeginProgress:(double)a0 isCompelete:(BOOL)a1;
+- (void)renderOnMainLoop;
+- (BOOL)switchFilterGestureShouldBegin;
+- (id)recordVideoEvent;
+- (void)configFilterSwitchComponent;
+- (void)bindInspirationShootAutoCaptureState;
+- (void)addFilterSwitchGestureForView:(id)a0 gestureResponseArea:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)refreshSelectedFilterWithModel:(id)a0;
+- (void)applyFilter:(id)a0 withShowFilterName:(BOOL)a1;
+- (void)filterSwitchFinishWithModel:(id)a0;
+- (void)trackAutoApplyFilter:(id)a0;
+- (void)handleClickFilterAction;
+- (id)currentFilter;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)dealloc;
+
+@end

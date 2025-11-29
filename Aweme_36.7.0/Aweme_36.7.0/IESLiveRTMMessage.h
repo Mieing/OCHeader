@@ -1,0 +1,11 @@
+@class IESLiveRTMMessage_Header, NSData;
+
+@interface IESLiveRTMMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveRTMMessage_Header *header;
+@property (nonatomic) BOOL hasHeader;
+@property (copy, nonatomic) NSData *payload;
+
++ (id)descriptor;
+
+@end

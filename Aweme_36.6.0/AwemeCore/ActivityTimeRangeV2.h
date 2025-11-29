@@ -1,0 +1,12 @@
+@interface ActivityTimeRangeV2 : GPBMessage
+
+@property (nonatomic) double start;
+@property (nonatomic) BOOL hasStart;
+@property (nonatomic) double end;
+@property (nonatomic) BOOL hasEnd;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL hasDuration;
+
++ (id)descriptor;
+
+@end

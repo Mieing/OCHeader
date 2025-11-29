@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveProfileStyleTemplate : IESLivePBBaseMessage
+
+@property (nonatomic) long long templateId;
+@property (copy, nonatomic) NSString *templateName;
+@property (retain, nonatomic) HTSLiveImage *templateURL;
+@property (nonatomic) BOOL hasTemplateURL;
+@property (copy, nonatomic) NSString *templateDescription;
+
++ (id)descriptor;
+
+@end

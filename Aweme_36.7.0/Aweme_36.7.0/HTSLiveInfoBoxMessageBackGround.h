@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveInfoBoxMessageBackGround : IESLivePBBaseMessage
+
+@property (nonatomic) long long backgroundAlpha;
+@property (copy, nonatomic) NSString *backgroundColor;
+@property (retain, nonatomic) HTSLiveImage *backgroundImage;
+@property (nonatomic) BOOL hasBackgroundImage;
+
++ (id)descriptor;
+
+@end

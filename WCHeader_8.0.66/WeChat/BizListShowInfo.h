@@ -1,0 +1,70 @@
+@class NSString, NSMutableArray;
+
+@interface BizListShowInfo : WXPBGeneratedMessage
+
+@property (retain, nonatomic) NSString *bizUsername;
+@property (nonatomic) unsigned long long msgid;
+@property (nonatomic) unsigned int pos;
+@property (retain, nonatomic) NSMutableArray *idxList;
+@property (nonatomic) unsigned int exposeTimes;
+@property (nonatomic) unsigned int unfold;
+@property (nonatomic) unsigned int isClickUnfold;
+@property (nonatomic) unsigned int unfoldExpose;
+@property (nonatomic) unsigned int iconIsClick;
+@property (nonatomic) unsigned int iconLongPress;
+@property (nonatomic) unsigned int isTop;
+@property (nonatomic) unsigned int topStatus;
+@property (nonatomic) unsigned int enterProfile;
+@property (nonatomic) unsigned int cancel;
+@property (nonatomic) unsigned int exposeTimestamp;
+@property (nonatomic) unsigned int sendTimestamp;
+@property (nonatomic) unsigned int isStar;
+@property (nonatomic) unsigned int isNewmsg;
+@property (nonatomic) unsigned int msgType;
+@property (retain, nonatomic) NSString *showStrategyNum;
+@property (nonatomic) unsigned long long sendMsgid;
+@property (nonatomic) unsigned int posInCard;
+@property (nonatomic) unsigned int isUnfold;
+@property (nonatomic) unsigned int isBefore24Hour;
+@property (nonatomic) unsigned int isReadAtFirstExpose;
+@property (nonatomic) unsigned int isClick;
+@property (nonatomic) unsigned int isBigPic;
+@property (nonatomic) unsigned int isOftenReadBiz;
+@property (nonatomic) unsigned int cardType;
+@property (nonatomic) unsigned long long recId;
+@property (retain, nonatomic) NSString *recReason;
+@property (nonatomic) unsigned int ifPaidArticle;
+@property (nonatomic) unsigned int weight;
+@property (retain, nonatomic) NSString *rankSessionid;
+@property (nonatomic) unsigned int style;
+@property (retain, nonatomic) NSString *expType;
+@property (retain, nonatomic) NSString *event;
+@property (retain, nonatomic) NSString *cardId;
+@property (nonatomic) unsigned int recRk;
+@property (retain, nonatomic) NSString *recInfo;
+@property (retain, nonatomic) NSString *aid;
+@property (retain, nonatomic) NSString *traceid;
+@property (nonatomic) int isAdChecked;
+@property (retain, nonatomic) NSString *extraData;
+@property (retain, nonatomic) NSString *aggregationUrl;
+@property (retain, nonatomic) NSString *aggregationTitle;
+@property (nonatomic) unsigned int isAutoPlay;
+@property (nonatomic) unsigned int autoPlayTime;
+@property (retain, nonatomic) NSString *cardTitle;
+@property (retain, nonatomic) NSString *wordingReportInfo;
+@property (nonatomic) unsigned long long exposeTimestampMs;
+@property (nonatomic) unsigned int subPos;
+@property (nonatomic) unsigned int itemShowType;
+@property (retain, nonatomic) NSString *videoid;
+@property (retain, nonatomic) NSString *finderFeedObjectId;
+@property (nonatomic) unsigned int isValidExpose;
+@property (retain, nonatomic) NSString *itemInfo;
+@property (retain, nonatomic) NSString *contentId;
+@property (retain, nonatomic) NSString *finderId;
+@property (nonatomic) unsigned int cardSequenceIdx;
+@property (nonatomic) unsigned int styleInfo;
+@property (nonatomic) unsigned int showFinder;
+
++ (void)initialize;
+
+@end

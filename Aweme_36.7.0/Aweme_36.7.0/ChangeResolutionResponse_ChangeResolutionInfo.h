@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface ChangeResolutionResponse_ChangeResolutionInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *sdkParams;
+@property (copy, nonatomic) NSString *key;
+
++ (id)descriptor;
+
+@end

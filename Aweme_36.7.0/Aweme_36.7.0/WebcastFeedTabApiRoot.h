@@ -1,0 +1,3 @@
+@interface WebcastFeedTabApiRoot : GPBRootObject
+
+@end

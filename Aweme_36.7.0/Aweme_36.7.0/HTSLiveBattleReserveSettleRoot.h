@@ -1,0 +1,3 @@
+@interface HTSLiveBattleReserveSettleRoot : GPBRootObject
+
+@end

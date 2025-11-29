@@ -1,0 +1,77 @@
+@class NSString, WCPlayerView;
+
+@interface WCFinderMinimizePlayerContentView : WCFinderMinimizeDisplayContentBaseView <WCPlayerControlProtocol>
+
+@property (retain, nonatomic) WCPlayerView *playerView;
+@property (copy, nonatomic) id /* block */ playerGenerator;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (BOOL)needFullCover;
+- (void)updateContentVM:(id)a0;
+- (struct CGSize { double x0; double x1; })contentSize;
+- (struct CGSize { double x0; double x1; })calMediaSize;
+- (BOOL)beTakeOverAudioModel;
+- (void)didMoveToSuperview;
+- (void)onMinimizeFloatingViewDidDisplay;
+- (void)resetPlayerView;
+- (void)didExpandVC;
+- (void)cleanUp;
+- (BOOL)supportRestore;
+- (void)beforeRestore;
+- (void)updateFoldStatus:(BOOL)a0;
+- (void)hidePlayerViewIfNeeded:(BOOL)a0;
+- (void)changePlayerViewPIPOpen:(BOOL)a0;
+- (void)notifyPipAudioModuleActiveStateChanged:(BOOL)a0;
+- (void)replaceCurContentVM:(id)a0;
+- (void)configDirectlyWithPlayer:(id)a0 contentVM:(id)a1;
+- (BOOL)canGenPIP;
+- (void)pausePlay;
+- (void)resumePlay;
+- (unsigned long long)getCurAudioModuleOptions;
+- (BOOL)isCurPipSupport;
+- (BOOL)isPlaying;
+- (void)ensurePlayer;
+- (void)keepHandlePlayer;
+- (double)playPosition;
+- (void)onPlayerRestoreUserInterface;
+- (void)onPlayerView:(id)a0 pipSeekFromTime:(double)a1 toTime:(double)a2;
+- (void)onPipStatePlayWithPlayerView:(id)a0;
+- (void)onPipStateRePlayWithPlayerView:(id)a0;
+- (void)onPipStatePauseWithPlayerView:(id)a0;
+- (void)onPlayerView:(id)a0 startDisplayOnPipWindow:(long long)a1;
+- (void)onPlayerView:(id)a0 stopDisplayOnPipWindow:(long long)a1;
+- (void)onPlayerView:(id)a0 pictureInPictureStateDidChange:(long long)a1;
+- (void)onVideoFristFrameRendered;
+- (void)onVideoPrepareToPlay:(id)a0;
+- (void)onVideoPlay;
+- (void)onVideoPause;
+- (void)onVideoPlayFail:(unsigned long long)a0 errorCode:(int)a1 LocalizedErrorDes:(id)a2;
+- (void)onVideoPlayFinish;
+- (void)onVideoDidPlayToEndTime;
+- (void)_handleVideoFinishPlay;
+- (void)onCreateThumbImage:(id)a0;
+- (void)onDataSourceChangeStart:(id)a0;
+- (void)onDataSourceChangeSucc:(id)a0;
+- (void)onDataSourceChangeSuccessWithDownloadArgsWrap:(id)a0;
+- (void)onPlayerGetSeiInfo:(id)a0;
+- (void)showBufferingView;
+- (void)hiddenBufferingView;
+- (void)showPercentView;
+- (void)hiddenPercentView;
+- (void)showThumbImageView;
+- (void)hiddenThumbImageView;
+- (void)startObserveVolume;
+- (void)stopObserveVolume;
+- (void)onVideoSizeChange:(struct CGSize { double x0; double x1; })a0;
+- (void)updateVideoBufferPercent:(double)a0;
+- (void)updateVideoCurrentTime:(double)a0;
+- (void)onPlayerVideoFrameOut:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomLeaveApiRoot : GPBRootObject
+
+@end

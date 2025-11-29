@@ -1,0 +1,52 @@
+@interface GeneralSearchWaterFallConfiguration : NSObject
+
++ (BOOL)isSearchNeedWaterFallLayout;
++ (BOOL)needBackToCoverWithReferString:(id)a0;
++ (BOOL)isGeneralSearchInnerRerank;
++ (long long)generalSearchInnerRerankType;
++ (BOOL)isGeneralSearchNewLayout;
++ (BOOL)searchDualColumnPlayHighlightEnableWithReferString:(id)a0;
++ (BOOL)hitWaterFallLayoutAb;
++ (double)bannerWidth;
++ (BOOL)readDoubleSingleSWitchStateOfUser;
++ (BOOL)isMixedSingleAndDoubleColumnLayout;
++ (BOOL)isFeedDoubleColumnLayout;
++ (void)storeDoubleSingleSWitchStateOfUser:(BOOL)a0;
++ (BOOL)isWaterFallAutoPlayRule;
++ (BOOL)useGeneralSearchDualColumnActiveLinePlayRule;
++ (BOOL)useGeneralSearchDualColumnActiveLinePlayRuleWithReferString:(id)a0;
++ (BOOL)useGeneralSearchDualColumnActiveLinePlayRuleWithModel:(id)a0 referString:(id)a1;
++ (BOOL)useDualColumnActiveLinePlayRuleWithReferString:(id)a0;
++ (id)searchVideoTabConfig;
++ (id)dualColumnAutoPlayConfigWithModel:(id)a0 referString:(id)a1;
++ (id)generalSearchConfig;
++ (BOOL)isSearchShowMixedSingleAndDoubleColumnLayout;
++ (BOOL)isDoubleColumnRichCardStyle;
++ (long long)gestureGuideCardPosition;
++ (double)singleColumnHorizontalMargin;
++ (double)doubleColumnItemInsets;
++ (BOOL)isMutePlayFromWaterFallAutoPlayRule;
++ (BOOL)isGeneralSearchLayoutSwitchRerank;
++ (unsigned long long)generalSearchLayoutSwitchType;
++ (BOOL)showSingleColumnByUser;
++ (BOOL)showSingleColumnBySearchIntent;
++ (void)updateLayoutTypeBySearchIntent:(BOOL)a0;
++ (BOOL)isSearchShowFeedDoubleColumnLayout;
++ (BOOL)isWaterFallTouchAutoPlayRule;
++ (BOOL)searchDualColumnPlayHighlightEnableWithModel:(id)a0 referString:(id)a1;
++ (BOOL)useGeneralSearchDefaultPlayRuleWithReferString:(id)a0;
++ (BOOL)isDoubleColumnAutoPlayRule;
++ (void)resetLayoutType;
++ (void)switchLayoutTypeByUser;
++ (BOOL)needBackToCover;
++ (double)searchDualColumnPlayHighlightDurationWithModel:(id)a0 referString:(id)a1;
++ (BOOL)searchDualColumnIsMutePlayDurationWithModel:(id)a0 referString:(id)a1;
++ (BOOL)needBackToCoverWithModel:(id)a0 referString:(id)a1;
++ (BOOL)isDoubleColumnWeakCardStyle;
++ (double)doubleColumnHorizontalMargin;
++ (BOOL)enableSearchVideoTabAutoPlay;
++ (id)backgroundColor;
++ (BOOL)disableAutoPlay;
++ (id)layoutConfig;
+
+@end

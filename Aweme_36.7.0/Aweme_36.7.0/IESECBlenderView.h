@@ -1,0 +1,3 @@
+@interface IESECBlenderView : IESECSliceXViewElementView
+
+@end

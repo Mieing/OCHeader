@@ -1,0 +1,20 @@
+@class NSString, GPBInt64BoolDictionary, HTSLiveVIPBadge;
+
+@interface HTSLiveUserVIPInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long vipLevel;
+@property (copy, nonatomic) NSString *vipLevelName;
+@property (nonatomic) int status;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+@property (nonatomic) long long remainingDays;
+@property (nonatomic) long long totalConsume;
+@property (nonatomic) long long targetConsume;
+@property (retain, nonatomic) HTSLiveVIPBadge *badge;
+@property (nonatomic) BOOL hasBadge;
+@property (retain, nonatomic) GPBInt64BoolDictionary *privileges;
+@property (readonly, nonatomic) unsigned long long privileges_Count;
+
++ (id)descriptor;
+
+@end

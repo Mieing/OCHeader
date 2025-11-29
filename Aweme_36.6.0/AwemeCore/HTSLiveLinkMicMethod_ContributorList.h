@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkMicMethod_ContributorList : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *contributorListArray;
+@property (readonly, nonatomic) unsigned long long contributorListArray_Count;
+
++ (id)descriptor;
+
+@end

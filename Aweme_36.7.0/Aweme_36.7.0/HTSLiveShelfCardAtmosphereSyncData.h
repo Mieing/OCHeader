@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface HTSLiveShelfCardAtmosphereSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long roomId;
+@property (nonatomic) long long cardId;
+@property (retain, nonatomic) NSMutableArray *imgArray;
+@property (readonly, nonatomic) unsigned long long imgArray_Count;
+@property (nonatomic) long long saleNum;
+@property (nonatomic) int duration;
+
++ (id)descriptor;
+
+@end

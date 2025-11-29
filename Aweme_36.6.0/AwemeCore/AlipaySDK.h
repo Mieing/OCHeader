@@ -1,0 +1,83 @@
+@class APayAlertView, NSString, APayProcessor, NSDictionary, APayRoute, NSCondition, UIWindow;
+
+@interface AlipaySDK : NSObject <APayAlertViewDelegate>
+
+@property (copy, nonatomic) NSString *schemeStr;
+@property (copy, nonatomic) NSString *universalLinkStr;
+@property (copy, nonatomic) NSString *executingOrderStr;
+@property (copy, nonatomic) id /* block */ completionBlock;
+@property (readonly, nonatomic) APayRoute *route;
+@property (readonly, nonatomic) APayProcessor *processor;
+@property (retain, nonatomic) NSDictionary *alertOkAction;
+@property (retain, nonatomic) NSDictionary *alertCancelAction;
+@property (retain, nonatomic) NSCondition *tidCondition;
+@property (nonatomic) BOOL stopPayIn2S;
+@property (nonatomic) BOOL stopAuthIn2S;
+@property (nonatomic) BOOL stopFetchConfig;
+@property (nonatomic) unsigned long long areaType;
+@property (retain, nonatomic) APayAlertView *alertView;
+@property (copy, nonatomic) NSString *orderStr4Replay;
+@property (copy, nonatomic) NSString *schemeStr4Replay;
+@property (copy, nonatomic) NSString *universalLinkStr4Replay;
+@property (nonatomic) long long replayTime;
+@property (copy, nonatomic) id /* block */ completionBlock4Replay;
+@property (weak, nonatomic) UIWindow *targetWindow;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)stopLog;
++ (void)startLogWithBlock:(id /* block */)a0;
++ (id)defaultService;
+
+- (void)callbackWithResult:(id)a0;
+- (void)cleanInfoWhenGoPortal:(id)a0;
+- (void)payOrder:(id)a0 fromScheme:(id)a1 callback:(id /* block */)a2;
+- (void)payOrder:(id)a0 dynamicLaunch:(BOOL)a1 fromScheme:(id)a2 callback:(id /* block */)a3;
+- (void)payOrder:(id)a0 fromScheme:(id)a1 fromUniversalLink:(id)a2 callback:(id /* block */)a3;
+- (void)processOrderWithPaymentResult:(id)a0 standbyCallback:(id /* block */)a1;
+- (void)handleOpenUniversalLink:(id)a0 standbyCallback:(id /* block */)a1;
+- (void)payWithType:(id)a0 orderStr:(id)a1 schemeStr:(id)a2 universalLink:(id)a3 dynamicLaunch:(BOOL)a4 callback:(id /* block */)a5;
+- (void)callAlipayWithOrderStr:(id)a0 dynamicLaunch:(BOOL)a1 withBlock:(id /* block */)a2;
+- (void)callAlipayBySchemes:(id)a0 orderStr:(id)a1 withBlock:(id /* block */)a2;
+- (BOOL)callAlipayBySchemes:(id)a0 orderStr:(id)a1;
+- (void)callAlipayByUL:(id)a0 withBlock:(id /* block */)a1;
+- (void)afterCallAlipay:(id)a0 callSuccess:(BOOL)a1 withBlock:(id /* block */)a2;
+- (BOOL)checkValidityWithOrderStr:(id)a0 callback:(id /* block */)a1;
+- (unsigned long long)area4OrderStr:(id)a0;
+- (void)handleRouteConfig:(id)a0 withBlock:(id /* block */)a1;
+- (long long)routeTypeWithConfig:(id)a0;
+- (void)payUrlOrder:(id)a0 fromScheme:(id)a1 callback:(id /* block */)a2;
+- (BOOL)payInterceptorWithUrl:(id)a0 fromScheme:(id)a1 callback:(id /* block */)a2;
+- (id)fetchOrderInfoFromH5PayUrl:(id)a0;
+- (BOOL)isShouldInterceptorDomain:(id)a0;
+- (void)auth_V2WithInfo:(id)a0 fromScheme:(id)a1 callback:(id /* block */)a2;
+- (void)processAuth_V2Result:(id)a0 standbyCallback:(id /* block */)a1;
+- (void)authWithInfo:(id)a0 callback:(id /* block */)a1;
+- (void)processAuthResult:(id)a0 standbyCallback:(id /* block */)a1;
+- (void)processResultUrl:(id)a0 callback:(id /* block */)a1;
+- (id)dictionaryFromRegular:(id)a0 pattern:(id)a1;
+- (id)queryTidFactor:(int)a0;
+- (void)queryTid;
+- (void)onAdapterFinished;
+- (void)fetchSdkConfigWithBlock:(id /* block */)a0;
+- (void)callback:(id /* block */)a0 withMemo:(id)a1 andResultStatus:(id)a2;
+- (id)processTradeToken:(id)a0;
+- (BOOL)isNewModelResult:(id)a0;
+- (id)valueFromResult:(id)a0 withKey:(id)a1 isNewModel:(BOOL)a2;
+- (void)cleanDataIsPayExit:(BOOL)a0;
+- (void)removeAlipayObserver;
+- (id)fetchTradeToken;
+- (BOOL)isLogined;
+- (void)cacheInputParams:(id)a0 schemeStr:(id)a1 universalLink:(id)a2 callback:(id /* block */)a3;
+- (void)replayPayOrder;
+- (void)clearCacheInputParams;
+- (id)buildQueryStrWithOrder:(id)a0 andExtraInfo:(id)a1;
+- (id)currentVersion;
+- (void).cxx_destruct;
+- (void)setUrl:(id)a0;
+- (id)init;
+- (void)alertView:(id)a0 clickedButtonAtIndex:(long long)a1;
+
+@end

@@ -1,0 +1,14 @@
+@class UrlStructV2;
+
+@interface LiveHonorStructV2 : GPBMessage
+
+@property (nonatomic) int honorLevel;
+@property (nonatomic) BOOL hasHonorLevel;
+@property (nonatomic) long long honorScore;
+@property (nonatomic) BOOL hasHonorScore;
+@property (retain, nonatomic) UrlStructV2 *badgeThumb;
+@property (nonatomic) BOOL hasBadgeThumb;
+
++ (id)descriptor;
+
+@end

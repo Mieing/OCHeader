@@ -1,0 +1,9 @@
+@interface BDUGPushSignalListenManager : NSObject
+
++ (id)sharedInstance;
+
+- (id)signalListenModels;
+- (void)didEnterBackgroundNotification;
+- (void)startRegisterSignalListenIfNeed;
+
+@end

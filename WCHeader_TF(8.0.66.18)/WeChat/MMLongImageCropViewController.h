@@ -1,0 +1,74 @@
+@class UIView, NSString, UIImage, MMImageCropTransitionContext, UIImageView, MMLongImageCropSliderBarView, MMLongImageCropTipsView, CAGradientLayer, MMLongImageCropResult, MMUIButton, UIScrollView;
+@protocol MMLongImageCropViewControllerDelelgate;
+
+@interface MMLongImageCropViewController : MMUIViewController <UIScrollViewDelegate, MMLongImageCropSliderBarViewDelegate, MMImageCropVCAnimatedTransitionDelegate>
+
+@property (retain, nonatomic) UIImage *originImage;
+@property (retain, nonatomic) MMLongImageCropResult *originCropResult;
+@property (nonatomic) BOOL hasSetupOriginCropResult;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIImageView *previewImageView;
+@property (retain, nonatomic) UIImage *previewImage;
+@property (retain, nonatomic) MMLongImageCropSliderBarView *sliderBar;
+@property (retain, nonatomic) UIView *bottomBarView;
+@property (retain, nonatomic) MMUIButton *closeBtn;
+@property (retain, nonatomic) MMUIButton *doneBtn;
+@property (retain, nonatomic) MMUIButton *resetBtn;
+@property (retain, nonatomic) MMLongImageCropTipsView *topCropTipsView;
+@property (retain, nonatomic) MMLongImageCropTipsView *bottomCropTipsView;
+@property (retain, nonatomic) CAGradientLayer *topGradientMaskLayer;
+@property (retain, nonatomic) CAGradientLayer *bottomGradientMaskLayer;
+@property (nonatomic) double topCroppedRatio;
+@property (nonatomic) double bottomCroppedRatio;
+@property (nonatomic) BOOL isTopCropTracking;
+@property (nonatomic) BOOL isBottomCropTracking;
+@property (retain, nonatomic) MMImageCropTransitionContext *transitionContext;
+@property (weak, nonatomic) id<MMLongImageCropViewControllerDelelgate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithOriginImage:(id)a0 cropResult:(id)a1;
+- (void)viewDidLoad;
+- (BOOL)useTransparentNavibar;
+- (BOOL)useBlackStatusbar;
+- (BOOL)hidesStatusBar;
+- (BOOL)shouldInteractivePop;
+- (void)initBottomBarView;
+- (void)initContentView;
+- (void)initSliderBar;
+- (void)initPreviewScrollView;
+- (void)viewDidLayoutSubviews;
+- (void)layoutBottomBarView;
+- (void)layoutContentView;
+- (void)onCloseBtnClick;
+- (void)onDoneBtnClick;
+- (void)onResetBtnClick;
+- (void)refreshResetBtnState;
+- (BOOL)isImageCropped;
+- (void)onSliderBarMoveSliderPosWithTopOffsetRatio:(double)a0 actionType:(unsigned int)a1;
+- (void)onSliderBarBeganTrackingCropFromDirection:(unsigned int)a0;
+- (void)onSliderBarContinueTrackingCropFromDirection:(unsigned int)a0 croppedRatio:(double)a1;
+- (void)onSliderBarEndTrackingCropFromDirection:(unsigned int)a0 topCroppedRatio:(double)a1 bottomCroppedRatio:(double)a2;
+- (void)setScrollViewToTopRatio:(double)a0 animted:(BOOL)a1;
+- (void)setScrollViewToBottomRatio:(double)a0;
+- (void)updatePreviewWithCropFromDirection:(unsigned int)a0 topCroppedRatio:(double)a1 bottomCroppedRatio:(double)a2;
+- (void)updateCropTipsViewHidden:(BOOL)a0;
+- (void)cropPreviewImageWithTopCroppedRatio:(double)a0 bottomCroppedRatio:(double)a1;
+- (void)updatePreviewImage:(id)a0;
+- (void)layoutPreviewImage;
+- (id)mmNavigationController:(id)a0 animationControllerForOperation:(long long)a1 fromViewController:(id)a2 toViewController:(id)a3;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })onPushTransitionGetImageFinalFrame;
+- (void)onPushTransitionBegan:(id)a0;
+- (void)onPushTransitionInAnimateDuration:(id)a0;
+- (void)onPushTransitionEnd:(id)a0 isComplete:(BOOL)a1;
+- (void)onPushTransitionAnimateImageEnd:(id)a0 animatedImageView:(id)a1 completion:(id /* block */)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })onPopTransitionGetImageFinalFrame;
+- (void)onPopTransitionBegan:(id)a0;
+- (void)onPopTransitionInAnimateDuration:(id)a0;
+- (void)onPopTransitionEnd:(id)a0 isComplete:(BOOL)a1;
+- (void).cxx_destruct;
+
+@end

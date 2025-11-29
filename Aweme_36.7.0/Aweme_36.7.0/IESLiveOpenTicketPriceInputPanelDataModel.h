@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveOpenTicketPriceInputPanelDataModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *amount;
+@property (nonatomic) BOOL isSelection;
+
++ (id)modelCustomPropertyMapper;
+
+@end

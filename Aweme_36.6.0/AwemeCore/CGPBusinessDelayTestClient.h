@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CGPBusinessDelayTestClient : GPBMessage
+
+@property (nonatomic) int frames;
+@property (copy, nonatomic) NSString *checkId;
+
++ (id)descriptor;
+
+@end

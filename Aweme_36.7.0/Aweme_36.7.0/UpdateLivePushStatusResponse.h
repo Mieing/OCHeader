@@ -1,0 +1,12 @@
+@class LivePushStatusExtra, LivePushStatusData;
+
+@interface UpdateLivePushStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LivePushStatusData *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) LivePushStatusExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

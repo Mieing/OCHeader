@@ -1,0 +1,3 @@
+@interface BDECPigeonShopDefine : NSObject
+
+@end

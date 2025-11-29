@@ -1,0 +1,77 @@
+@class NSNumber, HTSLiveFeedDataApi, NSDictionary, NSArray, NSString, NSMutableArray, AWEFeedLiveTabDataModel;
+@protocol AWELiveTabDataControllerDelegate, HTSLiveRoomCollectionDataObserver;
+
+@interface AWELiveTabDataController : AWEListDataController <HTSLiveRoomCollectionDelegate, AWELiveVideoFeedUpdateMessage>
+
+@property (retain, nonatomic) HTSLiveFeedDataApi *feedApi;
+@property (retain, nonatomic) NSMutableArray *allFeedItems;
+@property (retain, nonatomic) NSMutableArray *currentFeedItem;
+@property (nonatomic) long long style;
+@property (nonatomic) BOOL isRequesting;
+@property (nonatomic) long long followSessionID;
+@property (retain, nonatomic) NSDictionary *landingParams;
+@property (nonatomic) BOOL similarRoomScene;
+@property (nonatomic) BOOL didSetFirstRecommendRoom;
+@property (nonatomic) BOOL singleTabRefetch;
+@property (retain, nonatomic) NSArray *unusedRestoreModels;
+@property (retain, nonatomic) AWEFeedLiveTabDataModel *dataModel;
+@property (copy, nonatomic) NSDictionary *hotRefreshParams;
+@property (copy, nonatomic) NSNumber *genTime;
+@property (nonatomic) BOOL singleTabRequestFailed;
+@property (weak, nonatomic) id<AWELiveTabDataControllerDelegate> delegate;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) NSString *enterMethod;
+@property (nonatomic) long long tabID;
+@property (copy, nonatomic) NSString *tabName;
+@property (copy, nonatomic) NSString *tabEvent;
+@property (copy, nonatomic) id /* block */ fetchReturnBlock;
+@property (copy, nonatomic) id /* block */ appearReturnBlock;
+@property (weak, nonatomic) id<HTSLiveRoomCollectionDataObserver> dataObserver;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)loadmoreHasMore;
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)loadMore;
+- (void)initFetchWithCompletion:(id /* block */)a0;
+- (void)loadMoreFeed;
+- (BOOL)isRequestOnAir;
+- (void)didSetAttachingDIContext;
+- (id)liveModuleService;
+- (BOOL)canLoadMore;
+- (void)setNeedsDeleteDuplicateLiveWithModels:(id)a0 deletedIndexPaths:(id)a1 withKey:(id)a2;
+- (BOOL)deleteModel:(id)a0;
+- (void)feedLiveTabDidEnter:(id)a0;
+- (id)awemeModelArrayFromResponse:(id)a0;
+- (void)updateSlideFeedItems:(id)a0;
+- (id)initWithEnterFrom:(id)a0 enterMethod:(id)a1 landingParams:(id)a2;
+- (void)singleTabRefetchWithCompletion:(id /* block */)a0;
+- (void)deleteRoomWithAwemeID:(id)a0;
+- (void)changeToRoom:(id)a0;
+- (void)leaveFromRoom:(id)a0;
+- (void)temporaryStorageModels:(id)a0;
+- (void)restoreModels:(id)a0 deleteLandscapeModels:(id)a1;
+- (void)p_requestWithType:(long long)a0 completion:(id /* block */)a1;
+- (void)configRefreshLiveAwemeModel:(id)a0 index:(long long)a1;
+- (void)hotRefreshWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)updateOfficeRoomWithFeedItem:(id)a0;
+- (id)slideFeedItems;
+- (BOOL)needProhibitSyncStream;
+- (id)sourceKeyForProhibitSyncStream;
+- (void)singleTabRefreshWithCompletion:(id /* block */)a0;
+- (void)syncLiveTabResponseIfNeeded;
+- (void)handleAfterRefreshDataSource;
+- (BOOL)shouldRestoreItemsInXTabLoadMore;
+- (void)restoreFeedItems:(id)a0 completion:(id /* block */)a1;
+- (id)duplicatedFilteredItemsWithDatas:(id)a0;
+- (void)dealPreStreamSimilarSceneWithModels:(id)a0 pullType:(long long)a1;
+- (void)p_updatePreStreamDataWithModel:(id)a0 completion:(id /* block */)a1;
+- (void)deleteRoomWithAwemes:(id)a0 deletedIndexPaths:(id)a1;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)refreshWithCompletion:(id /* block */)a0;
+- (void)deleteItem:(id)a0;
+
+@end

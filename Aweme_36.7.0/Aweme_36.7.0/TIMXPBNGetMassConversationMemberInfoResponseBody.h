@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface TIMXPBNGetMassConversationMemberInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *memberInfos;
+@property (readonly, nonatomic) unsigned long long memberInfos_Count;
+
++ (id)descriptor;
+
+@end

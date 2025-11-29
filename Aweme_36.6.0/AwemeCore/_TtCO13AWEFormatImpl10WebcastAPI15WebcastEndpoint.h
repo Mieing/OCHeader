@@ -1,0 +1,3 @@
+@interface _TtCO13AWEFormatImpl10WebcastAPI15WebcastEndpoint : _TtCO13AWEFormatImpl10WebcastAPI8Endpoint
+
+@end

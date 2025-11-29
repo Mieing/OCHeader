@@ -1,0 +1,76 @@
+@class UIScreenEdgePanGestureRecognizer, WCFinderLandScapeVideoViewModel, NSString, WCFinderLandScapeVCParams, MinimizeNewTransitionController, MegaVideoPageMonitorHelper, MinimizeEdgeGestureHandler, WCFinderFeedDetailStatusView, WCFinderLandScapeVideoView;
+
+@interface WCFinderLandScapeVideoViewController : MMUIViewController <WCFinderLandScapeVideoViewDataSource, WCFinderLandScapeVideoViewDelegate, WCFinderLandScapeVideoVMDelegate, WCFinderFeedDetailStatusViewDelegate, WCFinderFeedContentVMExt, WCFinderFeedBaseViewControllerProtocol>
+
+@property (retain, nonatomic) WCFinderLandScapeVideoView *landScapeVideoView;
+@property (retain, nonatomic) WCFinderLandScapeVCParams *params;
+@property (retain, nonatomic) WCFinderLandScapeVideoViewModel *viewModel;
+@property (retain, nonatomic) WCFinderFeedDetailStatusView *statusView;
+@property (nonatomic) BOOL hasReportPageAction;
+@property (retain, nonatomic) MinimizeEdgeGestureHandler *edgeGesHandler;
+@property (retain, nonatomic) MinimizeNewTransitionController *transitionController;
+@property (retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgeGesture;
+@property (retain, nonatomic) MegaVideoPageMonitorHelper *pageMonitorHelper;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTid:(id)a0 nonceId:(id)a1;
+- (id)initWithTid:(id)a0 nonceId:(id)a1 params:(id)a2;
+- (id)initWithEncryptTid:(id)a0 nonceId:(id)a1 params:(id)a2;
+- (id)initWithFinderDataItem:(id)a0 params:(id)a1;
+- (void)setupWithTid:(id)a0 encryptTid:(id)a1 nonceId:(id)a2 finderDataItem:(id)a3 params:(id)a4;
+- (id)initWithViewModel:(id)a0;
+- (void)setupViewModel:(id)a0;
+- (void)setupSubViews;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)reportPageAction;
+- (void)updateRightBarButtonItems;
+- (void)onLimitedClicked;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)viewWillBePushed:(BOOL)a0;
+- (void)viewDidPushOrPresent:(BOOL)a0;
+- (void)reportCellExpose;
+- (BOOL)useTransparentNavibar;
+- (long long)numberOfRowsInLandScapeVideoViewFeedList:(id)a0;
+- (id)finderLandScapeVideoView:(id)a0 contentVMAtFeedListRow:(long long)a1;
+- (id)finderLandScapeVideoViewGetNextContinuePlayableContentVM;
+- (long long)finderLandScapeVideoView:(id)a0 getIndexOfTid:(id)a1;
+- (long long)finderLandScapeVideoViewGetNextContinuePlayableFeedIndexOfTid:(id)a0;
+- (id)finderLandScapeVideoViewGetCurrentViewController;
+- (void)_refreshRelatedListForContentVM:(id)a0;
+- (void)finderLandScapeVideoView:(id)a0 didSelectRowAtIndex:(long long)a1;
+- (void)finderLandScapeVideoView:(id)a0 didSelectContentVM:(id)a1 refreshRelatedRecommentList:(BOOL)a2;
+- (void)finderLandScapeListFooterDidTriggerRefresh:(id)a0;
+- (BOOL)finderLandScapeListFooteIsEnableTriggerRefreshAtScroll:(id)a0;
+- (void)finderLandScapeVideoViewVideoUpdatePosition:(double)a0 videoDuration:(double)a1 maxPlayVideoTime:(double)a2;
+- (void)finderLandScapeVideoViewPlayNextListFeed:(id)a0;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (BOOL)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (BOOL)prefersHomeIndicatorAutoHidden;
+- (void)onFinderLandScapeVMFetchDataSuccessful;
+- (void)onFinderLandScapeVMFetchDatafailed;
+- (void)onFinderLandScapeVMGetFirstPlayAbleVideo:(id)a0;
+- (void)onFinderLandScapeVMNeedStopVideo;
+- (void)onFinderLandScapeVMGetNotExistDataWithMsg:(id)a0;
+- (void)onFinderLandScapeVMGetNeedOpenComplaintUrlData:(id)a0;
+- (void)onFinderLandScapeVMGetNeedOpenLiteApp:(id)a0;
+- (void)startRequestReleatedDataWithPullType:(unsigned long long)a0;
+- (void)endRequestReleatedDataWithPullType:(unsigned long long)a0 isPrefetchCache:(BOOL)a1 success:(BOOL)a2 cgiTimeCost:(unsigned long long)a3;
+- (int)feedViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (id)getCurMediaListObject;
+- (void)didClickBack:(id)a0;
+- (void)registerYReportSdk;
+- (long long)autoMinimizeCtrlFlagForFinderLandScapeVideoView:(id)a0;
+- (void).cxx_destruct;
+
+@end

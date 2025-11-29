@@ -1,0 +1,3 @@
+@interface DUXBaseStepper : UIStepper
+
+@end

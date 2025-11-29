@@ -1,0 +1,9 @@
+@interface IESLiveBidPaidLinkmicOptionalStep : IESLivePBBaseMessage
+
+@property (nonatomic) long long bidLeftClosedInterval;
+@property (nonatomic) long long bidRightClosedInterval;
+@property (nonatomic) long long bidStep;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESECProductRefreshMessage_ProductInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *cover;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@interface CGPInputMouseARM : GPBMessage
+
+@property (nonatomic) float x;
+@property (nonatomic) float y;
+@property (nonatomic) int action;
+@property (nonatomic) float axisV;
+@property (nonatomic) float axisH;
+@property (nonatomic) int key;
+
++ (id)descriptor;
+
+@end

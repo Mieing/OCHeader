@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplayGetEnjoyCardInfoApiRoot : GPBRootObject
+
+@end

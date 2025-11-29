@@ -1,0 +1,73 @@
+@class MMWebImageView, MMLiveAudioModeAnimatedBackgroundPlayerViewModel, MMFinderLiveReplayConnectMicLogic, MMFinderLiveReplayMicInfoBackgroundDisplayLogic, UILabel, MMFinderLiveReplayCompactMicUserInfoView, MMLiveResourceFetcherRootFlowAction, MMFinderLiveGestureAnimationContainerView, UIView, MMFinderLiveReplayMicInfoAnchorCoverDisplayLogic, NSString, MMLiveTaskId, LiveRoomImg, MMFinderLiveConnectMicAllUserInfoView, MMFinderLiveWcPlayerView;
+@protocol MMFinderLiveConnectMicAllUserInfoViewGiftNotificationDelegate, MMFinderLiveReplayMicInfoDisplayLogicDelegate;
+
+@interface MMFinderLiveReplayMicInfoDisplayLogic : NSObject <MMFinderLiveCDNPlayerMicLogicDelegate, MMWebImageViewDelegate, MMFinderLiveConnectMicAllUserInfoViewLayoutInfoDelegate>
+
+@property (retain, nonatomic) MMFinderLiveReplayConnectMicLogic *micLogic;
+@property (retain, nonatomic) UIView *micUserContainerViewBelow;
+@property (retain, nonatomic) UIView *micUserContainerViewAbove;
+@property (retain, nonatomic) MMFinderLiveGestureAnimationContainerView *gestureAnimationContainerView;
+@property (retain, nonatomic) UIView *audioModeCoverView;
+@property (retain, nonatomic) UIView *audioModeCoverShadingView;
+@property (retain, nonatomic) MMWebImageView *audioModeCoverImageView;
+@property (retain, nonatomic) UILabel *audioModeCoverImageSpamTextLabel;
+@property (retain, nonatomic) NSString *audioModeBackgroundVideoUri;
+@property (retain, nonatomic) MMFinderLiveWcPlayerView *audioModeBackgroundVideoView;
+@property (retain, nonatomic) MMLiveAudioModeAnimatedBackgroundPlayerViewModel *audioModeBackgroundVideoViewModel;
+@property (retain, nonatomic) UIView *micUserBackgroundViewBelow;
+@property (retain, nonatomic) UIView *micUserBackgroundViewAbove;
+@property (retain, nonatomic) UIView *micAnchorUserContainerView;
+@property (retain, nonatomic) MMFinderLiveReplayMicInfoBackgroundDisplayLogic *micUserBackgroundDisplayLogic;
+@property (retain, nonatomic) MMFinderLiveReplayMicInfoAnchorCoverDisplayLogic *micAnchorCoverDisplayLogic;
+@property (retain, nonatomic) UIView *connectMicAllUserInfoContainerView;
+@property (retain, nonatomic) MMFinderLiveConnectMicAllUserInfoView *connectMicAllUserInfoView;
+@property (retain, nonatomic) MMFinderLiveReplayCompactMicUserInfoView *compactAllUserInfoView;
+@property (nonatomic) BOOL screenSharing;
+@property (nonatomic) BOOL inAudioMode;
+@property (retain, nonatomic) MMLiveTaskId *taskId;
+@property (retain, nonatomic) MMLiveResourceFetcherRootFlowAction *downloadMgr;
+@property (retain, nonatomic) LiveRoomImg *currentAnchorLiveRoomImages;
+@property (retain, nonatomic) LiveRoomImg *opposingAnchorLiveRoomImages;
+@property (weak, nonatomic) id<MMFinderLiveReplayMicInfoDisplayLogicDelegate> delegate;
+@property (weak, nonatomic) id<MMFinderLiveConnectMicAllUserInfoViewGiftNotificationDelegate> giftNotificationDelegate;
+@property (nonatomic) BOOL isVideoLandscapeMode;
+@property (readonly, nonatomic) BOOL hasUnknownMicUser;
+@property (nonatomic) BOOL useCompactView;
+@property (readonly, nonatomic) BOOL isAudioDisplayMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 replayTask:(id)a1;
+- (id)replayTask;
+- (void)updateLiveRoomImages:(id)a0;
+- (void)updateMicInfo:(id)a0;
+- (void)updateSeiMessage:(id)a0;
+- (void)clearMicLogicState;
+- (void)notifyPIPHandleLogicConfig;
+- (void)updateConnectMicAllUserInfoViewUnableDisplay:(BOOL)a0;
+- (void)layoutComponents;
+- (BOOL)addGestureAnimationPagForUserWithId:(id)a0 withGestureId:(id)a1 instanceId:(id)a2 referenceAspectRatio:(double)a3 translationX:(double)a4 translationY:(double)a5 rotation:(double)a6 scale:(double)a7 giftSenderNickname:(id)a8;
+- (void)onFinderLiveCDNPlayerMicLogicMicUsersListUpdated;
+- (void)onLoadImageOK:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })onMMFinderLiveConnectMicAllUserInfoViewNormalizedFrameAspectRatioConversionRequested:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)updateConnectMicOtherAnchorCoverViewAppearance:(id)a0;
+- (void)updateSoloAudioModeCoverAppearance:(BOOL)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })normalizedFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 convertedToDisplayAspectRatioOfView:(id)a1;
+- (void)configureMicFocusMasksWithAllMicUsersInfo:(id)a0 anchorInAudioMode:(BOOL)a1;
+- (void)layoutMaskLayerToCoverView:(id)a0;
+- (void)reorderMicUserViewsInPipWithOrderedMicUsers:(id)a0 anchorZOrder:(unsigned long long)a1;
+- (void)bringMicUserComponentsToFrontInPipWithMicViewInfo:(id)a0;
+- (void)bringAnchorComponentsToFrontInPip;
+- (void)configureAudioModeBackgroundForCurrentAnchor;
+- (void)startAudioModeBackgroundPlayerWithPath:(id)a0;
+- (void)updateLiveRoomAudioModeBackgroundVideoUri:(id)a0;
+- (void)updateGestureAnimationContainerViewVisibility;
+- (void)configLiveBusinessIdForWidgets;
+- (BOOL)insertSoloAudioModeCoverImageViewToPIPRenderLayer;
+- (BOOL)insertCurrentAnchorAudioModeBackgroundVideoViewToPIPRenderLayer;
+- (BOOL)insertCompactAllUserInfoViewToPIPRenderLayer;
+- (void).cxx_destruct;
+
+@end

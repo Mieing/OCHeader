@@ -1,0 +1,3 @@
+@interface ShowLinkedLiveRoomsApiRoot : GPBRootObject
+
+@end

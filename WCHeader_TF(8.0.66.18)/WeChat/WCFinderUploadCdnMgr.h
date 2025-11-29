@@ -1,0 +1,83 @@
+@class NSObject, NSString, NSMutableSet, NSMutableArray, WCFinderUploadTask;
+@protocol OS_dispatch_queue, WCFinderUploadCdnMgrDelegate;
+
+@interface WCFinderUploadCdnMgr : NSObject <INetworkStatusMgrExt, ICdnComMgrExt>
+
+@property (retain, nonatomic) NSMutableArray *taskQueue;
+@property (retain, nonatomic) NSMutableArray *retryQueue;
+@property (retain, nonatomic) NSMutableArray *deleteQueue;
+@property (retain, nonatomic) NSMutableSet *willReuseTaskMap;
+@property (retain, nonatomic) NSString *taskRetryPath;
+@property (retain, nonatomic) NSString *taskUploadingPath;
+@property (retain, nonatomic) NSString *taskUploadingShouldDeletePath;
+@property (retain, nonatomic) NSString *taskWillReusePath;
+@property (retain, nonatomic) WCFinderUploadTask *currentTask;
+@property (weak, nonatomic) id<WCFinderUploadCdnMgrDelegate> delegate;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *ioQueue;
+
++ (void)updateMentionedHistoryArray:(id)a0;
+
+- (id)initWithDelegate:(id)a0;
+- (void)filterIgnoreTask;
+- (void)clearInvalidUploadTask;
+- (void)addRetryQueueWithTask:(id)a0;
+- (void)finderUploadRetryFail:(id)a0;
+- (BOOL)checkDataItem:(id)a0 inQueue:(id)a1;
+- (BOOL)checkDataItemHasUpload:(id)a0;
+- (BOOL)deleteTaskTid:(id)a0 inQueue:(id)a1;
+- (BOOL)uploadTaskNeedDeleteWithTid:(id)a0;
+- (void)deleteTaskInAllQueueWithTid:(id)a0;
+- (void)deleteUploadTaskWithTid:(id)a0;
+- (id)getUploadTaskWithTid:(id)a0;
+- (id)getUploadTaskWithTid:(id)a0 fromQueue:(id)a1;
+- (void)startWithTaskInfo:(id)a0;
+- (void)syncQueueToLocal;
+- (void)debounceSyncQueueToLocal;
+- (void)syncWillResuseTaskToLocal;
+- (void)checkQueue;
+- (void)checkRetryQueue;
+- (void)uploadMgrIdle;
+- (void)startUploadFinderDraft:(id)a0;
+- (void)preUploadFinderWithPostSession:(id)a0;
+- (id)_getShouldUploadTaskByPostSession:(id)a0;
+- (void)startUploadFinderWithPostSession:(id)a0;
+- (void)startUploadFinderLiveWithDataItem:(id)a0 successBlock:(id /* block */)a1 failBlock:(id /* block */)a2;
+- (void)startUploadFinderMemberQAWithPostSession:(id)a0;
+- (id)createPostTaskOrRaiseError:(id)a0;
+- (id)checkPostInvalidAddQueue:(id)a0;
+- (BOOL)startUploadFinderCoverWithPostSession:(id)a0 sucBlock:(id /* block */)a1 failBlock:(id /* block */)a2;
+- (void)startUploadCdnTask;
+- (void)startUploadCdnMediaTask;
+- (BOOL)checkFileExistsWithTask:(id)a0;
+- (void)markStartUploadCDNTask;
+- (void)markUploadTaskAllFinish;
+- (id)handleCDNResultCombineLogic;
+- (BOOL)hasSamePrefixWithFirstString:(id)a0 secondString:(id)a1;
+- (void)modFeedInfoPost;
+- (void)startUploadCGIPost;
+- (void)finderMemberQAPost;
+- (void)draftPost;
+- (void)afterPostTaskFinish:(id)a0;
+- (void)afterDraftPostTaskFailed:(long long)a0 tid:(id)a1;
+- (void)onDraftCDNUploadFailed;
+- (void)clearLiveUploadTask;
+- (void)finderMusicDraftPost;
+- (void)finderPost;
+- (void)bindTraceInfoToDataItem:(id)a0 traceInfo:(id)a1;
+- (void)addPostTaskToUploadQueue:(id)a0;
+- (void)finderPreuploadCDNSuccess:(id)a0;
+- (void)finderUploadCDNSuccess:(id)a0;
+- (void)moveFileToDataItemPath:(id)a0 fromDraft:(BOOL)a1;
+- (void)OnCdnInit;
+- (void)OnSetCdnDnsInfo;
+- (void)OnCdnUploadProgress:(id)a0;
+- (void)OnCdnUpload:(id)a0;
+- (void)OnCdnDownload:(id)a0;
+- (void)onNetworkStatusChange:(unsigned int)a0;
+- (void)cleanAllUploadTask;
+- (BOOL)busy;
+- (BOOL)checkDataItemInCDNUploadQueue:(id)a0;
+- (void)reportUploadResultWithMediaTaskInfo:(id)a0 taskInfo:(id)a1 retCode:(long long)a2;
+- (void).cxx_destruct;
+
+@end

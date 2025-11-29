@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureEditorVoiceChanger : MTLModel
+
+@end

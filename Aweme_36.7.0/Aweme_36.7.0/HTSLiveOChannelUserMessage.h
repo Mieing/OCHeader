@@ -1,0 +1,15 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveOChannelUserMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long startTimestamp;
+@property (nonatomic) long long endTimestamp;
+@property (nonatomic) long long maxEnterTime;
+@property (nonatomic) long long roomId;
+@property (nonatomic) long long maxNextTime;
+
++ (id)descriptor;
+
+@end

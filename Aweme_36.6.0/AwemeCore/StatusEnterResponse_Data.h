@@ -1,0 +1,11 @@
+@class NSMutableDictionary;
+
+@interface StatusEnterResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long gameId;
+@property (retain, nonatomic) NSMutableDictionary *extra;
+@property (readonly, nonatomic) unsigned long long extra_Count;
+
++ (id)descriptor;
+
+@end

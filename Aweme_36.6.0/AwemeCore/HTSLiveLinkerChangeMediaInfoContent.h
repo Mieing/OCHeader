@@ -1,0 +1,14 @@
+@class IESLiveLinkmicMediaParam, GPBEnumArray;
+
+@interface HTSLiveLinkerChangeMediaInfoContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBEnumArray *sceneListArray;
+@property (readonly, nonatomic) unsigned long long sceneListArray_Count;
+@property (retain, nonatomic) GPBEnumArray *playModeListArray;
+@property (readonly, nonatomic) unsigned long long playModeListArray_Count;
+@property (retain, nonatomic) IESLiveLinkmicMediaParam *linkmicMediaParam;
+@property (nonatomic) BOOL hasLinkmicMediaParam;
+
++ (id)descriptor;
+
+@end

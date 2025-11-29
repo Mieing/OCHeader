@@ -1,0 +1,10 @@
+@class NSNumber;
+
+@interface IESLiveCloseGiftWebViewParamModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *isGuided;
+@property (retain, nonatomic) NSNumber *comboCount;
+
++ (id)modelCustomPropertyMapper;
+
+@end

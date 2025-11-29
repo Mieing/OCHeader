@@ -1,0 +1,80 @@
+@class MMUIViewController, NSString, UIView, WXFullScreenGestureRecognizer, WCDataItem, UIImageView, SightView, WCMediaItem, ForwardMessageLogicController, MMUIButton;
+
+@interface WCSightViewController : FullScreenViewController <SightViewDelegate, IUiUtilExt, FullScreenGestureDelegate, WCPlayerDownloaderExt, ForwardMessageLogicDelegate, WCActionSheetDelegate, SNSVideoABTestExt> {
+    unsigned int _startTime;
+    MMUIViewController *_fullScreenWindow;
+    UIView *_nodeView;
+    UIView *_fullScreenContent;
+    SightView *_sightView;
+    double _videoTime;
+    BOOL _fullScreenPlaying;
+    WCMediaItem *_mediaItem;
+    UIImageView *_thumbImageView;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } _thumbRect;
+    WXFullScreenGestureRecognizer *m_gestureReconizer;
+    WCDataItem *_dataItem;
+    BOOL _bTimelineScene;
+    unsigned int m_uOperateMode;
+    BOOL m_bPreventRotate;
+    struct { long long value; int timescale; unsigned int flags; long long epoch; } m_currentPlayTime;
+    NSString *_nsFromVCName;
+    ForwardMessageLogicController *m_forwardMsgLogic;
+    MMUIButton *_gameButton;
+}
+
+@property (nonatomic) BOOL silencePlay;
+@property (nonatomic) BOOL bIgnoreLongPress;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (BOOL)shouldAutorotate;
+- (void)initGestures;
+- (void)addGameTailButton;
+- (void)onGameButtonClick:(id)a0;
+- (void)showVCAnimation;
+- (BOOL)isFullScreenPlaying;
+- (void)setThumbImage:(id)a0;
+- (void)internalStopAndCloseFullScreenWindow;
+- (void)stopAndCloseFullScreenWindow;
+- (double)calTransformFromRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)clearSubviews;
+- (void)onFullScreenSingleTap;
+- (void)onFullScreenDragBegin;
+- (void)onFullScreenDragCancel;
+- (void)onFullScreenDragEnd;
+- (void)onFullScreenClose;
+- (void)onFullScreenLongPressEnd;
+- (void)onFullScreenDragToRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)onFullScreenBackgroundColorAlphaChange:(double)a0;
+- (BOOL)sightView:(id)a0 playbackDidReadEnd:(BOOL)a1;
+- (void)onStartToPlayVideo;
+- (void)reStartStateMachine;
+- (void)onSightDurationUpdate:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)onVideoTotalTimeUpdate:(double)a0 msgClientId:(id)a1;
+- (void)onVideoStreamDownloadFail:(BOOL)a0;
+- (BOOL)checkDownloadForOperateMode:(unsigned int)a0;
+- (void)startLoadFullDownloadView;
+- (void)OnCdnDownloadSuccess:(id)a0;
+- (void)OnPlayerDownloadProgress:(id)a0 finish:(unsigned long long)a1 total:(unsigned long long)a2;
+- (void)onShowSightAction;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)tryToAddFavorite;
+- (void)OnDownloadSuccessForFavoriteAdd;
+- (void)trySendSightToFriend;
+- (void)OnDownloadSuccessForForwardVideoToFriend;
+- (void)tryToSaveVideoToAlbum;
+- (void)OnDownloadSuccessForSaveVideoToAlbum;
+- (id)getCurrentViewController;
+- (void)OnForwardMessageSend:(id)a0;
+- (void)OnForwardMessageCancel:(id)a0;
+- (void).cxx_destruct;
+
+@end

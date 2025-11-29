@@ -1,0 +1,3 @@
+@interface HTSLiveUpdateAppointmentNumberMessageRoot : GPBRootObject
+
+@end

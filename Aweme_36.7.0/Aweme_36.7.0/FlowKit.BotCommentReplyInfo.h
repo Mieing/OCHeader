@@ -1,0 +1,14 @@
+@interface FlowKit.BotCommentReplyInfo : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ commentId;
+    void /* unknown type, empty encoding */ status;
+    void /* unknown type, empty encoding */ content;
+    void /* unknown type, empty encoding */ creator;
+    void /* unknown type, empty encoding */ createTime;
+    void /* unknown type, empty encoding */ replyToId;
+    void /* unknown type, empty encoding */ parentId;
+    void /* unknown type, empty encoding */ replyToUserInfo;
+    void /* unknown type, empty encoding */ likeInfo;
+    void /* unknown type, empty encoding */ clientId;
+}
+
+@end

@@ -1,0 +1,76 @@
+@class NSString, NSArray, AWETripHeaderBgComponentView, AWEPOIHeaderContentCrushRankModel, NSDictionary, NSMutableDictionary, AWEPOIOffset, NSNumber;
+
+@interface AWETripHeaderBgComponentViewModel : DitoComponentViewModel
+
+@property (copy, nonatomic) NSString *nodeTag;
+@property (retain, nonatomic) NSDictionary *poiHeadRateFeed;
+@property (retain, nonatomic) NSDictionary *albumBottomBarParams;
+@property (retain, nonatomic) NSDictionary *bottomBarUpdateInfo;
+@property (nonatomic) long long tripHeadImageExpandOpt;
+@property (nonatomic) long long poiAggressiveStyleExp;
+@property (retain, nonatomic) NSMutableDictionary *reportedMaps;
+@property (retain, nonatomic) NSNumber *defaultOffset;
+@property (retain, nonatomic) AWEPOIOffset *headImageStartOffset;
+@property (nonatomic) BOOL showShareIcon;
+@property (nonatomic) BOOL showTagLab;
+@property (nonatomic) BOOL showMoreIconOnly;
+@property (nonatomic) BOOL showMultiPager;
+@property (retain, nonatomic) NSArray *photoPageTabList;
+@property (copy, nonatomic) NSString *anchorTabPageSymbol;
+@property (copy, nonatomic) NSDictionary *crushRankMaps;
+@property (retain, nonatomic) AWEPOIHeaderContentCrushRankModel *crushRankModel;
+@property (readonly, nonatomic) NSArray *poiHeaderPhotos;
+@property (readonly, nonatomic) NSArray *tagList;
+@property (readonly, nonatomic) NSArray *nextIndexList;
+@property (readonly, nonatomic) long long picTotalCount;
+@property (readonly, nonatomic) double originImageHeight;
+@property (readonly, nonatomic) long long showTripNativeHeadImage;
+@property (readonly, nonatomic) BOOL headImageTagOpt;
+@property (readonly, nonatomic) BOOL showAlbumText;
+@property (weak, nonatomic) AWETripHeaderBgComponentView *componentView;
+@property (nonatomic) BOOL isFullStyle;
+
+- (id)poiDetail;
+- (void)bindStateAndAction;
+- (struct CGSize { double x0; double x1; })componentSizeWithMaxWidth:(double)a0;
+- (void)didLoadPageModel:(id)a0;
+- (void)didHalfContainerOffsetChange:(id)a0 offset:(double)a1;
+- (void)fullContainerBeginPull:(double)a0;
+- (void)fullContainerUnfoldWillChange:(double)a0 isMaxUnfold:(BOOL)a1 duration:(double)a2;
+- (void)fullContainerUnfoldDidChange:(double)a0 isMaxUnfold:(BOOL)a1;
+- (void)vsdContainer:(id)a0 offsetChange:(double)a1;
+- (void)handleClickEvent:(id)a0;
+- (id)generalContext;
+- (BOOL)isReportedEvent:(id)a0;
+- (void)reportedEvent:(id)a0;
+- (void)buildBackgroundImageOffsetIfNeed;
+- (void)pageWillEndShow;
+- (void)trackBgImageSlide:(long long)a0;
+- (void)trackBgImageClick:(long long)a0;
+- (void)trackBgImageShow:(id)a0;
+- (BOOL)dataHasVideo;
+- (void)pageDidShow;
+- (void)trackCheckInVideoShow;
+- (void)trackVolumeShow;
+- (id)nextIndex:(long long)a0;
+- (void)openAlbumPageAtIndex:(long long)a0 needAnchorTab:(BOOL)a1 anchorTabPageSymbol:(id)a2 enterMethod:(id)a3;
+- (void)openHeaderPhotosAtIndex:(long long)a0;
+- (void)trackSlideVideoProcessBar;
+- (void)trackClickVolume:(BOOL)a0;
+- (BOOL)firstVideo;
+- (void)trackTagListClick:(id)a0 lastTabName:(id)a1;
+- (void)trackTagListSlide;
+- (void)trackTagListArrowClick:(id)a0 lastTabName:(id)a1;
+- (void)trackTagListShow;
+- (void)trackVideoCardClick;
+- (void)subscribeBottomBarButtonInfo;
+- (void)trackPullMax:(BOOL)a0;
+- (id)generateArrayWithIndex:(long long)a0;
+- (id)queryNextIndexWithIndex:(long long)a0 indexArray:(id)a1;
+- (BOOL)currentMediaIsVideo;
+- (void)trackPOIOperationWithIsShow:(BOOL)a0 extraParams:(id)a1;
+- (void).cxx_destruct;
+- (id)initWithNode:(id)a0;
+- (void)dealloc;
+
+@end

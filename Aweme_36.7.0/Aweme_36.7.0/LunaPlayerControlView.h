@@ -1,0 +1,73 @@
+@class LunaPlayerProgressView, _TtC21AWEMusicStreamingImpl12BNPlayButton, UIButton, UIView, _TtC21AWEMusicStreamingImpl9VideoInfo, NSString, UIStackView, _TtC21AWEMusicStreamingImpl17PlayCollectButton, LunaPlayButton, _TtC21AWEMusicStreamingImpl20BNPlayLoopModeButton, _TtC21AWEMusicStreamingImpl11BNTrackInfo, AWEMusicFeedViewModel, _TtC21AWEMusicStreamingImpl17LunaPlayTitleView;
+@protocol _TtP21AWEMusicStreamingImpl22BNPlayArtistsLabelable_, LunaPlayControllDelegate;
+
+@interface LunaPlayerControlView : UIView <LunaPlayerProgressViewDelegate, AWEMusicDispatchCollectionProtocol, AWEMusicStreamingImpl.LunaPlayTitleViewDelegate>
+
+@property (retain, nonatomic) UIView *playActionContainer;
+@property (retain, nonatomic) LunaPlayButton *playBtn;
+@property (retain, nonatomic) LunaPlayerProgressView *progressBar;
+@property (retain, nonatomic) UIStackView *userActionStackView;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl17LunaPlayTitleView *titleLabel;
+@property (retain, nonatomic) UIView *bottomContainer;
+@property (retain, nonatomic) UIView *topContainer;
+@property (retain, nonatomic) id<_TtP21AWEMusicStreamingImpl22BNPlayArtistsLabelable_> subTitleLabel;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl12BNPlayButton *commentBtn;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl12BNPlayButton *shareBtn;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl20BNPlayLoopModeButton *playModeBtn;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl17PlayCollectButton *collectBtn;
+@property (retain, nonatomic) UIButton *addPlaylistBtn;
+@property (retain, nonatomic) AWEMusicFeedViewModel *feedViewModel;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl11BNTrackInfo *trackInfo;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl9VideoInfo *videoInfo;
+@property (nonatomic) BOOL isChangingCollect;
+@property (nonatomic) BOOL isBottomBlank;
+@property (retain, nonatomic) UIView *sceneViewContainer;
+@property (weak, nonatomic) id<LunaPlayControllDelegate> delegate;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL hasSubscriberIcon;
+@property (nonatomic) unsigned long long likeType;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) unsigned long long loopMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)titleViewSubscriberIIconClicked;
+- (void)updatePlayProgressTime:(double)a0;
+- (void)playProgressGestureBeginDrag;
+- (void)playProgressGestureDidChanged:(double)a0 currentTime:(double)a1;
+- (void)modelCollectionTypeChanged:(id)a0;
+- (id)initWithIsBottomBlank:(BOOL)a0;
+- (void)updateCacheProgressTime:(double)a0;
+- (void)updateShareCountUIAfterShare;
+- (void)updatePreviewStartTime:(double)a0 previewDuration:(double)a1;
+- (void)updatecChorusTime:(double)a0;
+- (BOOL)p_canShowSubscriberIcon;
+- (void)p_updateTrackInfo:(id)a0;
+- (void)p_updateVideoInfo:(id)a0;
+- (void)p_updateCollectionUI;
+- (void)updateCommentCountUI:(long long)a0;
+- (void)updateShareCountUI:(long long)a0;
+- (void)onAddPlaylistBtnTapped;
+- (void)onPlayBtnTapped;
+- (void)onCollectBtnTapped;
+- (void)onCommentBtnTapped;
+- (void)onShareBtnTapped;
+- (void)onPlayModeBtnTapped;
+- (void)p_progressIndicatorChangedShowing:(BOOL)a0;
+- (void)playProgressGestureDidEnd:(double)a0 currentTime:(double)a1 isAttachToChorus:(BOOL)a2 completion:(id /* block */)a3;
+- (void).cxx_destruct;
+- (void)pause;
+- (void)stop;
+- (void)startLoading;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)start;
+- (void)addObserver;
+- (void)reset;
+- (void)stopLoading;
+- (void)dealloc;
+- (void)setupUI;
+- (void)updateModel:(id)a0;
+
+@end

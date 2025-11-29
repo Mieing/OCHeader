@@ -1,0 +1,70 @@
+@class RACDisposable, ACCSlidesBeatsViewModel, NSString, ACCEditMusicBeatsViewModel, ACCSlidesBeatsService;
+@protocol ACCSequencePlayControlServiceProtocol, ACCEditViewContainer, ACCSequenceEditServiceProtocol, ACCEditServiceProtocol, ACCTextStickerServiceProtocol, ACCEditPicTemplateServiceProtocol, ACCRealLivePhotoService, ACCEditMusicServiceProtocol, ACCEditPreviewProtocol, ACCEditorOneClickFilmService, ACCEditCutMusicServiceProtocol;
+
+@interface ACCSlidesBeatsComponent : ACCFeatureComponent <ACCSlidesBeatsViewModelDelegate, ACCEditMusicBeatsViewModelDataSource, ACCSequenceEditServicePlayerSubscriber, ACCSequencePlayControlServiceSubscriber, ACCRealLivePhotoServiceSubscriber, ACCFeatureComponentReloadableProtocol>
+
+@property (retain, nonatomic) ACCEditMusicBeatsViewModel *vm;
+@property (retain, nonatomic) ACCSlidesBeatsViewModel *slidesVideoModel;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCRealLivePhotoService> realLivePhotoService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCEditMusicServiceProtocol> musicService;
+@property (weak, nonatomic) id<ACCSequencePlayControlServiceProtocol> playControl;
+@property (weak, nonatomic) id<ACCEditPreviewProtocol> previewService;
+@property (weak, nonatomic) id<ACCEditCutMusicServiceProtocol> cutMusicService;
+@property (weak, nonatomic) id<ACCTextStickerServiceProtocol> textStickerService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmService> oneClickFilmService;
+@property (weak, nonatomic) id<ACCEditPicTemplateServiceProtocol> picTemplateService;
+@property (retain, nonatomic) ACCSlidesBeatsService *slidesBeatService;
+@property (nonatomic) BOOL needBeatsOn;
+@property (nonatomic, getter=isIgnoreUnbindBeats) BOOL ignoreUnbindBeats;
+@property (nonatomic) BOOL preMusicFlag;
+@property (nonatomic) BOOL preMusicBeatsOn;
+@property (nonatomic) BOOL isMultiProjects;
+@property (nonatomic) BOOL isOnWindow;
+@property (nonatomic) BOOL needPlayMusic;
+@property (retain, nonatomic) RACDisposable *panelBeatsDisposable;
+@property (nonatomic) double needVerifyTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentWillAppear;
+- (void)componentWillDisappear;
+- (void)livePhotoDidChangeMode:(unsigned long long)a0;
+- (void)sequenceEditService:(id)a0 changedWithAddedIndexSet:(id)a1 deletedIndexSet:(id)a2;
+- (void)sequenceEditService:(id)a0 willTransferToIndex:(long long)a1 editMode:(unsigned long long)a2 isAutoTransfer:(BOOL)a3;
+- (void)sequencePlayControlService:(id)a0 willFetchTimerIntervalForIndex:(unsigned long long)a1 ignoreCurrentPlayerTime:(BOOL)a2;
+- (void)sequencePlayControlService:(id)a0 playModelChange:(unsigned long long)a1;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)componentDidUnmount;
+- (unsigned long long)preferredLoadPhase;
+- (id)serviceBinding;
+- (double)_currentPlayTime;
+- (void)playMusic;
+- (void)bindServices:(id)a0;
+- (void)componentDidReload;
+- (void)componentWillReload;
+- (void)musicBeatsViewModel:(id)a0 willChangeWithBeatsOn:(BOOL)a1 beatsResult:(unsigned long long)a2 byUser:(BOOL)a3 isDefault:(BOOL)a4;
+- (void)musicBeatsViewModel:(id)a0 didChangeWithBeatsOn:(BOOL)a1 beatsResult:(unsigned long long)a2 byUser:(BOOL)a3 isDefault:(BOOL)a4;
+- (void)musicBeatsViewModel:(id)a0 didUpdateWithBeatsOn:(BOOL)a1 beatsResult:(unsigned long long)a2 barItemEnabled:(BOOL)a3;
+- (void)musicBeatsViewModel:(id)a0 didFetchBeats:(id)a1;
+- (id)beatsModeTraceValue;
+- (void)subscribeMusicSignal;
+- (void)musicBeatsViewModel:(id)a0 unbindMusicBeatsState:(BOOL)a1;
+- (void)musicBeatsViewModel:(id)a0 btnSwitchBeatOn:(BOOL)a1;
+- (BOOL)disableSlidesAIClip;
+- (void)p_updateMusicBeatStatusByDefault;
+- (void)beatsBarItemAction:(BOOL)a0 from:(id)a1;
+- (void)startAutoPlayWhenBeatsOn;
+- (void)stopAutoPlayWhenBeatsOff;
+- (void)subscribePanelBeatsStatus;
+- (void)willTransferToIndex:(long long)a0 isAutoTransfer:(BOOL)a1;
+- (BOOL)enable;
+- (void).cxx_destruct;
+- (long long)itemCount;
+
+@end

@@ -1,0 +1,71 @@
+@class _TtC6WeChat14FTSSectionData, FTSVoiceSearchBarController, FTSExternalRouter, NSString;
+@protocol FTSResultPage;
+
+@interface FTSBaseSectionController : MMTListSectionController <FTSExternalRouterEntry>
+
+@property (retain, nonatomic) FTSExternalRouter *router;
+@property (nonatomic) id<FTSResultPage> resultPage;
+@property (nonatomic) FTSVoiceSearchBarController *ftsPresenter;
+@property (nonatomic) unsigned long long mode;
+@property (readonly, nonatomic) unsigned long long sectionType;
+@property (retain, nonatomic) _TtC6WeChat14FTSSectionData *model;
+@property (nonatomic) BOOL needConvertPinyinSearch;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didUpdateToObject:(id)a0;
+- (void)didUpdateWithModel:(id)a0;
+- (id)sectionTitle;
+- (id)cellForTitleInSection:(long long)a0;
+- (id)cellForBlank;
+- (id)cellForMoreAtIndex:(long long)a0;
+- (id)cellForFoldButtonAtIndex:(long long)a0;
+- (id)cellForItemAtIndex:(long long)a0 section:(long long)a1;
+- (void)didSelectRowAtIndex:(long long)a0;
+- (id)extraReportParams;
+- (void)recordClickFlow:(long long)a0;
+- (long long)numberOfItems;
+- (BOOL)hasFoldButton;
+- (BOOL)isFoldButtonCellForIndex:(long long)a0;
+- (long long)numberOfItemsExceptTopTitile;
+- (double)heightForRowAtIndex:(long long)a0;
+- (double)heightForFooter;
+- (id)viewForFooter;
+- (id)dataCellForItemAtIndex:(long long)a0 indexPath:(id)a1;
+- (void)didSelectDataRowAtIndex:(long long)a0 indexPath:(id)a1;
+- (id)curSearchText;
+- (void)setSearchText:(id)a0 isReplace:(BOOL)a1;
+- (id)ftsTaskKey;
+- (id)countLimitConifg;
+- (long long)numberOfSearchItems;
+- (unsigned long long)maxDisplayItemsCount;
+- (id)titleForMoreCell;
+- (BOOL)isDetailSearch;
+- (BOOL)isGlobalSearch;
+- (BOOL)isMsgTalkerSearchEntry:(long long)a0;
+- (id)noResultTipSuffix;
+- (id)searchBarPlaceHolder;
+- (long long)topNotSearchItemCount;
+- (id)objectForIndexPath:(id)a0;
+- (void)onExposeItem:(id)a0 indexPath:(id)a1;
+- (void)showBubbleTips:(id)a0 view:(id)a1 confirmBlock:(id /* block */)a2;
+- (void)search:(id)a0;
+- (BOOL)isSearching;
+- (BOOL)hasMoreData;
+- (BOOL)hasSearchDone;
+- (BOOL)hasSearchResult;
+- (void)cancelSearch;
+- (void)onLoadMore;
+- (id)lastQueryText;
+- (void)fillCommonClickReportStat:(id)a0 matchTip:(id)a1;
+- (id)getViewController;
+- (id)getFTSContext;
+- (id)getHomePage;
+- (void)reportDataUpdate;
+- (unsigned long long)clickTypeForIndex:(long long)a0;
+- (unsigned int)getSubClickTypeForClickType:(unsigned int)a0 index:(unsigned int)a1;
+- (void).cxx_destruct;
+
+@end

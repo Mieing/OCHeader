@@ -1,0 +1,51 @@
+@interface AWENearbySwitchBtnUtils : NSObject
+
++ (BOOL)enableSwitchBtn;
++ (unsigned long long)nearbyFeedMode;
++ (void)dualFirstGuideAnimateDidEnd;
++ (BOOL)enableDualGuideAnimate;
++ (BOOL)enableDualFirstGuideAnimate;
++ (long long)dualSwitchBtnGuideScrollCnt;
++ (void)dualGuideAnimateDidEnd;
++ (BOOL)dualEnableGuideAction:(id /* block */)a0;
++ (id)dualSwitchBtnGuideText;
++ (id)dualConfirsText;
++ (id)dualUseFullBtnName;
++ (id)dualUseDualBtnName;
++ (void)didSwitchChannel;
++ (void)resetRequestParams;
++ (void)storageNearbyFeedMode:(unsigned long long)a0;
++ (void)updateUnderTakeModel:(id)a0;
++ (BOOL)enableFullFirstGuideAnimate;
++ (id)fullUseFullBtnName;
++ (id)fullUseDualBtnName;
++ (void)fullFirstGuideAnimateDidEnd;
++ (BOOL)enableFullGuideAnimate;
++ (BOOL)isFullDidClickSwitchBtn;
++ (BOOL)fullEnableGuideAction:(id /* block */)a0;
++ (id)fullSwitchBtnGuideText;
++ (id)fullConfirmText;
++ (BOOL)isSwitchChannel;
++ (BOOL)isFirstRequestAfterSwitch;
++ (void)didRequestEnd;
++ (void)fullGuideAnimateDidEnd;
++ (void)setFullClickSwitchBtn;
++ (void)enableFeedCardFirstOpenEnd;
++ (id)uidSwitchBtnLocalStateKey;
++ (id)uidSwitchBtnLocalTimeKey;
++ (double)nearbyFeedSwitchTimeFromStorage;
++ (BOOL)enableFeedCardFirstOpen;
++ (unsigned long long)nearbyFeedModeFromStorage;
++ (BOOL)isForceSwitchCard;
++ (id)uidDualAnimateCnt;
++ (id)uidDualSwitchBtnGuideArrayKey;
++ (id)uidEnableDualFirstGuideAnimateKey;
++ (id)uidEnableDualGuideAnimateKey;
++ (id)uidFeedCardFirstOpen;
++ (id)uidFullAnimateCnt;
++ (id)uidFullSwitchBtnGuideArrayKey;
++ (id)uidEnableFullFirstGuideAnimateKey;
++ (id)uidEnableFullGuideAnimateKey;
++ (id)uidFullDidClickSwitchBtn;
+
+@end

@@ -1,0 +1,71 @@
+@class NSIndexPath, NSString, NSArray, ACCCameraSubscription, NSMutableArray, UICollectionView, UILabel, UIColor;
+@protocol ACCWaterfallContentProviderProtocol, ACCWaterfallContentScrollDelegate;
+
+@interface ACCWaterfallViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, ACCNewCollectionDelegateWaterfallLayout, ACCWaterfallViewControllerProtocol>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (nonatomic) BOOL isFetchingData;
+@property (nonatomic) BOOL firstLoadFlag;
+@property (retain, nonatomic) NSMutableArray *displayFilterIndexPaths;
+@property (retain, nonatomic) UIColor *customBackgroundColor;
+@property (retain, nonatomic) UILabel *noMoreLabel;
+@property (retain, nonatomic) NSIndexPath *transitionIndexPath;
+@property (retain, nonatomic) ACCCameraSubscription *subscription;
+@property (nonatomic) BOOL isFromSearchPageStatus;
+@property (nonatomic) BOOL isSearchRecommendStatus;
+@property (retain, nonatomic) id<ACCWaterfallContentProviderProtocol> contentProvider;
+@property (weak, nonatomic) id<ACCWaterfallContentScrollDelegate> delegate;
+@property (copy, nonatomic) id /* block */ updateContentOffsetBlock;
+@property (retain, nonatomic) NSArray *dataSource;
+@property (nonatomic) BOOL toUsePreloadDataFlag;
+@property (nonatomic) BOOL forbidPullDropUpdate;
+@property (retain, nonatomic) UIColor *noMoreDataTextColor;
+@property (copy, nonatomic) id /* block */ didSelectItemAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)collectionView:(id)a0 layout:(id)a1 heightForHeaderInSection:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 heightForFooterInSection:(long long)a2;
+- (id)accui_emptyPageConfigForState:(unsigned long long)a0;
+- (void)accui_emptyPagePrimaryButtonTapped:(id)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })accui_emptyPageEdgeInsets;
+- (void)p_addCollectionView;
+- (BOOL)syncGetInspirationTabSupportSearchStatus;
+- (id)transitionCollectionCellForItemOffset:(long long)a0;
+- (void)p_fetchContentData:(BOOL)a0;
+- (void)p_updateEmpteStateWithError:(id)a0 andContentCount:(unsigned long long)a1;
+- (void)p_trackFilterReload:(id /* block */)a0;
+- (void)diffReloadContent;
+- (void)p_handleDidFavoriteMVTemplate:(id)a0;
+- (void)p_handleDidUnFavoriteMVTemplate:(id)a0;
+- (void)transitionUpdateIndexPathsForSelectedItems;
+- (void)p_loadMoreContent;
+- (void)p_fetchSearchNoShowLoadingStatusContentData:(BOOL)a0;
+- (id)initWithBackgroundColor:(id)a0 contentProvider:(id)a1 isFromSearchPageStatus:(BOOL)a2 isSearchRecommendStatus:(BOOL)a3;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)didReceiveMemoryWarning;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (void)viewDidLayoutSubviews;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+- (void)reloadContent;
+- (id)initWithBackgroundColor:(id)a0;
+- (void)refreshContent;
+
+@end

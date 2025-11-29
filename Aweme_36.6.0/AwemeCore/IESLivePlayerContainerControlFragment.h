@@ -1,0 +1,84 @@
+@class UIStackView, UIView, NSString, HTSEventForwardingView, UIButton, NSObject, HTSLiveAmazingBackgroundView, NSMutableArray, NSMapTable;
+@protocol OS_dispatch_group;
+
+@interface IESLivePlayerContainerControlFragment : IESLiveRoomComponent <IESLivePlayerContainerControlProvider, HTSLiveStreamPlayerAction, IESLivePipActions, IESLiveAirPlayAction, IESLivePayCardAction, IESLiveAutoRotateAction, HTSLiveHideComponentAction>
+
+@property (retain, nonatomic) HTSEventForwardingView *containerView;
+@property (retain, nonatomic) HTSEventForwardingView *topView;
+@property (retain, nonatomic) HTSEventForwardingView *bottomView;
+@property (retain, nonatomic) HTSLiveAmazingBackgroundView *topMaskView;
+@property (retain, nonatomic) HTSLiveAmazingBackgroundView *bottomMaskView;
+@property (retain, nonatomic) UIStackView *bottomStackViewForVS;
+@property (retain, nonatomic) UIView *orientationContainerViewForVS;
+@property (retain, nonatomic) NSMapTable *bottomStackArrangedSubviewsMapTable;
+@property (retain, nonatomic) NSMapTable *topArrangedSubviewsMapTable;
+@property (retain, nonatomic) NSMutableArray *itemsForDisplaySync;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *group;
+@property (nonatomic) BOOL allItemsCheckedForSync;
+@property (nonatomic) BOOL firstFrameLoaded;
+@property (nonatomic) BOOL seekAdapt;
+@property (nonatomic) long long hideStatus;
+@property (retain, nonatomic) UIButton *autohideAccessibilityBtn;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
++ (BOOL)isMixed;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentWillAppear;
+- (void)componentOrientationTransitionBegin:(long long)a0;
+- (BOOL)enableSeek;
+- (void)didAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)hideAllComponent;
+- (void)showAllComponent;
+- (void)hideComponentsForPortrait;
+- (void)showComponentsForPortrait;
+- (void)remoteRoomDataReady:(id)a0;
+- (void)startToShowPipWithShowType:(unsigned long long)a0;
+- (void)closePipWithShowType:(unsigned long long)a0;
+- (void)fromPipToRoomWithShowType:(unsigned long long)a0;
+- (void)willShowStageForPipModel:(id)a0;
+- (void)didCloseStageForPipModel:(id)a0;
+- (void)playerFrameDidChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)streamPlayerDidReadyToRender;
+- (void)playerDidEndplayInSmallWindow;
+- (void)allViewTransformPortraitForHidden:(BOOL)a0;
+- (void)addView:(id)a0 forKey:(id)a1;
+- (void)addView:(id)a0 forKey:(id)a1 position:(long long)a2;
+- (void)removeViewForKey:(id)a0;
+- (void)needCheckSubItemsForDisplaySyncWithIdentifier:(id)a0;
+- (void)checkedSubItemsForDisplaySyncWithIdentifier:(id)a0;
+- (void)relayoutForSeekPan:(BOOL)a0;
+- (void)addView:(id)a0 isResident:(BOOL)a1 forKey:(id)a2;
+- (void)checkShouldShowOnPad;
+- (BOOL)isVerticalStreaming;
+- (void)airplayStateDidChange:(BOOL)a0;
+- (void)payCardShowStatusChange:(BOOL)a0;
+- (void)accessibilityStatusDidChange;
+- (void)setupForCommon;
+- (void)setupForVS;
+- (void)setupForNormalLive;
+- (BOOL)checkNeedShowForIpad;
+- (void)checkContainerViewNeedsShow;
+- (BOOL)setContainerWithSpecifyRatioIfNeed;
+- (void)didClickAccessibilityBtn;
+- (id)gradientLayerColorsForTop;
+- (id)gradientLayerColorsForBottom;
+- (void)checkSubviewsShowState;
+- (id)bottomStackArrangedSubviewsOrder;
+- (void)removeAllBottomStackArrangedSubviews;
+- (void)renderBottomStackViewSubviews;
+- (void)p_addTopView:(id)a0 forKey:(id)a1;
+- (id)topArrangedSubviewsOrder;
+- (void)reloadContainer;
+- (void)configShowForIPad:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)enable;
+- (void).cxx_destruct;
+- (void)reloadLayout;
+- (void)dealloc;
+
+@end

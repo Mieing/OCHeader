@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface SECLynxNamespaceFixPlugin : NSObject <SECLynxPlugin>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)onPluginRegistered;
+
+- (long long)priority;
+
+@end

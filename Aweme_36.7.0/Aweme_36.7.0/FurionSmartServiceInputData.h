@@ -1,0 +1,3 @@
+@interface FurionSmartServiceInputData : FurionSmartEngineInputData
+
+@end

@@ -1,0 +1,16 @@
+@class NSString, UrlStructV2;
+
+@interface ProductLabelV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *commentPrefix;
+@property (nonatomic) BOOL hasCommentPrefix;
+@property (copy, nonatomic) NSString *productName;
+@property (nonatomic) BOOL hasProductName;
+@property (copy, nonatomic) NSString *productAttitude;
+@property (nonatomic) BOOL hasProductAttitude;
+@property (retain, nonatomic) UrlStructV2 *attitudeIcon;
+@property (nonatomic) BOOL hasAttitudeIcon;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@interface AWESECHybridSubscribers : NSObject
+
++ (void)_setupMonitorSubscriber;
++ (void)_setupParamsSubscriber;
++ (void)_setupDataMapBridgeSubscriber;
++ (void)setupSubscribers;
+
+@end

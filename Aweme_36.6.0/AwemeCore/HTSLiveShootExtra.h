@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveShootExtra : IESLivePBBaseMessage
+
+@property (nonatomic) long long shootTimes;
+@property (retain, nonatomic) NSMutableArray *textArray;
+@property (readonly, nonatomic) unsigned long long textArray_Count;
+@property (nonatomic) long long assetId;
+
++ (id)descriptor;
+
+@end

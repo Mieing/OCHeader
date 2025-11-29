@@ -1,0 +1,3 @@
+@interface MAOfflineItemNationWide : MAOfflineCity
+
+@end

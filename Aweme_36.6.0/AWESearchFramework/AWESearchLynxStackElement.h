@@ -1,0 +1,86 @@
+@class AWESearchAutoPlayHandler, NSString, NSArray, NSDictionary, UIView, AWESearchLynxBounceView;
+@protocol SearchDynamicElementStatusDelegate;
+
+@interface AWESearchLynxStackElement : LynxUI <AWESearchStackViewDelegate, AWESearchLynxBounceViewDelegate, AWESearchLynxElementViewProtocol, AWESearchAutoPlayCardProtocol, SearchDynamicElementProtocol>
+
+@property (retain, nonatomic) AWESearchLynxBounceView *bounceUI;
+@property (retain, nonatomic) UIView *bounceView;
+@property (nonatomic) double leftMargin;
+@property (nonatomic) double itemSpace;
+@property (nonatomic) double itemScale;
+@property (nonatomic) double preferItemWidth;
+@property (nonatomic) BOOL noviceAnimationGuidance;
+@property (copy, nonatomic) NSString *sessionid;
+@property (copy, nonatomic) NSArray *dataList;
+@property (copy, nonatomic) NSDictionary *commonDataDic;
+@property (copy, nonatomic) NSArray *awemeList;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (nonatomic) BOOL dataListUpdated;
+@property (nonatomic) BOOL didStartShowingTriggered;
+@property (nonatomic) BOOL hasBinded;
+@property (nonatomic) BOOL hasPlayed;
+@property (nonatomic) BOOL hasEnded;
+@property (nonatomic) double startTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<SearchDynamicElementStatusDelegate> statusDelegate;
+@property (nonatomic) long long transitionIndex;
+@property (nonatomic) BOOL isActive;
+@property (weak, nonatomic) AWESearchAutoPlayHandler *autoPlayHandler;
+
++ (id)__lynx_prop_config__901;
++ (id)__lynx_prop_config__1114;
++ (id)__lynx_prop_config__770;
++ (id)__lynx_prop_config__972;
++ (id)__lynx_prop_config__1063;
++ (id)__lynx_prop_config__1235;
++ (id)__lynx_ui_method_config__1306;
+
+- (void)layoutDidFinished;
+- (void)logExtra:(id)a0 requestReset:(BOOL)a1;
+- (void)updateAwemeList:(id)a0;
+- (BOOL)shouldNotActive;
+- (unsigned long long)suitableRuleType;
+- (void)didEndShowing;
+- (void)didStartShowing;
+- (BOOL)isMediaSourceCard;
+- (void)data:(id)a0 requestReset:(BOOL)a1;
+- (void)sessionid:(id)a0 requestReset:(BOOL)a1;
+- (void)viewWillDisAppear;
+- (void)updateStackView;
+- (void)elementDidFinishBind;
+- (void)bounce:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)scrolltoindex:(id)a0 withResult:(id /* block */)a1;
+- (void)horizontalstyle:(id)a0 requestReset:(BOOL)a1;
+- (void)noviceAnimationGuidance:(BOOL)a0 requestReset:(BOOL)a1;
+- (id)getLynxElementType;
+- (long long)currentCollectionIndexForIdIndex:(long long)a0;
+- (long long)currentTransitionIndex;
+- (void)trackBindEvent;
+- (void)trackPlayEvent;
+- (void)trackEndEvent;
+- (long long)currentAwemeIndexForCollectionIndex:(long long)a0;
+- (long long)currentCollectionIndexForFeedOffset:(long long)a0;
+- (void)bounceViewFrameDidChange;
+- (void)layoutBounceView;
+- (void)shouldUseAnniexWithModel:(id)a0;
+- (void)trackCellDidTotallyShowIfNeeded;
+- (id)stackContentViewWithModel:(id)a0;
+- (void)stackScrollWithOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)stackView:(id)a0 didShowItemAtIndex:(long long)a1;
+- (void)stackViewDidTriggerRightBounces:(id)a0;
+- (void)viewDidAppear;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (id)transitionContext;
+- (id)videoView;
+- (BOOL)hasVideo;
+- (void)didResignActive;
+- (id)activeView;
+- (void)insertChild:(id)a0 atIndex:(long long)a1;
+- (id)createView;
+- (id)transitionContextProvider;
+
+@end

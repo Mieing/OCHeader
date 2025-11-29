@@ -1,0 +1,10 @@
+@class CloseKTVComponentResponse_ResponseData;
+
+@interface CloseKTVComponentResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CloseKTVComponentResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,18 @@
+@class PoiAwemeTagRateInfoStructV2, PoiDouDiscountStructV2, NSString;
+
+@interface PoiBizStructV2 : GPBMessage
+
+@property (retain, nonatomic) PoiDouDiscountStructV2 *douDiscountInfo;
+@property (nonatomic) BOOL hasDouDiscountInfo;
+@property (nonatomic) BOOL showWantToGoButton;
+@property (nonatomic) BOOL hasShowWantToGoButton;
+@property (retain, nonatomic) PoiAwemeTagRateInfoStructV2 *tagRateInfo;
+@property (nonatomic) BOOL hasTagRateInfo;
+@property (nonatomic) BOOL showPoiCollectButton;
+@property (nonatomic) BOOL hasShowPoiCollectButton;
+@property (copy, nonatomic) NSString *showPoiCollectButtonRuleJson;
+@property (nonatomic) BOOL hasShowPoiCollectButtonRuleJson;
+
++ (id)descriptor;
+
+@end

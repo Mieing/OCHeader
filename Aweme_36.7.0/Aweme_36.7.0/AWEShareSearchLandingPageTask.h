@@ -1,0 +1,3 @@
+@interface AWEShareSearchLandingPageTask : AWEShareCommonTask
+
+@end

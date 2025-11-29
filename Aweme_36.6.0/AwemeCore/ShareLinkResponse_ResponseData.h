@@ -1,0 +1,15 @@
+@class NSString, NSMutableDictionary;
+
+@interface ShareLinkResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *shareURL;
+@property (copy, nonatomic) NSString *anchorShareText;
+@property (copy, nonatomic) NSString *userShareText;
+@property (nonatomic) BOOL isShopGuide;
+@property (copy, nonatomic) NSString *shopGuideId;
+@property (retain, nonatomic) NSMutableDictionary *commonShareParams;
+@property (readonly, nonatomic) unsigned long long commonShareParams_Count;
+
++ (id)descriptor;
+
+@end

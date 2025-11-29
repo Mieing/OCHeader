@@ -1,0 +1,71 @@
+@class UIView, ACCEditMultiSlidesPlayPauseView, NSString, NSSet, ACCEditSingleVideoPlayControlView, ACCRepositoryWorkspace, NSNumber, UIColor;
+@protocol ACCEditPlayControlWrapperViewDelegate, ACCEditPlayControlViewDelegate;
+
+@interface ACCEditPlayControlWrapperView : UIView <ACCEditPlayControlViewDelegate>
+
+@property (weak, nonatomic) UIView *containerView;
+@property (retain, nonatomic) ACCEditMultiSlidesPlayPauseView *playPauseButton;
+@property (retain, nonatomic) ACCEditSingleVideoPlayControlView *playControlView;
+@property (nonatomic) unsigned long long playControlViewType;
+@property (nonatomic) BOOL isPlayControlShowed;
+@property (nonatomic) BOOL isSliding;
+@property (nonatomic) BOOL shouldHideAfterSliding;
+@property (nonatomic) double currentTotalDuration;
+@property (retain, nonatomic) NSSet *hiddenScenes;
+@property (nonatomic) double playPauseButtonBottomOffset;
+@property (nonatomic) double originPlay;
+@property (weak, nonatomic) id<ACCEditPlayControlViewDelegate, ACCEditPlayControlWrapperViewDelegate> delegate;
+@property (weak, nonatomic) ACCRepositoryWorkspace *workspace;
+@property (copy, nonatomic) NSNumber *playControlViewOffset;
+@property (copy, nonatomic) NSNumber *progressBarUnderHeightValue;
+@property (retain, nonatomic) UIColor *progressMinimumTrackColor;
+@property (retain, nonatomic) UIColor *progressMaximumTrackColor;
+@property (nonatomic) double pauseButtonRight;
+@property (nonatomic) double pauseButtonBottom;
+@property (nonatomic) double pauseButtonWH;
+@property (copy, nonatomic) NSString *pauseButtonPauseIcon;
+@property (copy, nonatomic) NSString *pauseButtonPlayIcon;
+@property (retain, nonatomic) UIView *pauseButtonBGView;
+@property (retain, nonatomic) NSNumber *progressLabelBottomOffset;
+@property (retain, nonatomic) NSNumber *progressLabelFontSize;
+@property (retain, nonatomic) NSNumber *progressSliderHorizontalInset;
+@property (nonatomic) BOOL hiddenVideoProgressViewThumbView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)configPlayControlViewShow:(BOOL)a0;
+- (void)reloadPlayControlIfNeeded;
+- (double)totalVideoDuration;
+- (void)forcePlayControlViewHidden:(BOOL)a0 withScene:(id)a1;
+- (BOOL)isPlayControlViewHidden;
+- (id)playButtonView;
+- (void)updatePlayControlViewIfNeeded;
+- (void)setMinTime:(double)a0 maxTime:(double)a1;
+- (void)setPlayTime:(double)a0 animated:(BOOL)a1;
+- (void)dragPlayTimeBegin:(double)a0;
+- (void)dragPlayTimeChanged:(double)a0;
+- (void)dragPlayTimeEnd:(double)a0;
+- (void)playPauseButtonDidClick:(id)a0;
+- (void)switchToPlayStatus;
+- (void)switchToPauseStatus;
+- (void)resetPlayControlViewHiddenWithScene:(id)a0;
+- (void)updatePlayControlCurrentTime:(double)a0;
+- (BOOL)isNote;
+- (void)executePlayStatusChangeToPause:(id)a0;
+- (void)addPlayControlPauseView;
+- (void)addPlayPauseButton;
+- (void)updatePlayControlDurationIfNeeded;
+- (BOOL)addPlayControlViewIfNeeded;
+- (void)configPlayControlPauseViewShow:(BOOL)a0;
+- (void)configPlayPauseButtonShow:(BOOL)a0;
+- (void)updatePlayButtonBottomOffset:(double)a0;
+- (void)trackProgressBarShowEvent;
+- (void)trackPlayPauseButtonShowEvent;
+- (BOOL)progressSliderShouldRespond;
+- (void)progressSliderPanGesture:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithContainerView:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESGCPLiveAnchorContainer : IESGCPBaseContainer
+
+@end

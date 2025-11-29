@@ -1,0 +1,3 @@
+@interface ACCBeautifulEffectPanelComponentResetWorker : NSObject
+
+@end

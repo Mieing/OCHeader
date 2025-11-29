@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface WebcastTabItemConfig : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *liveEntrance;
+@property (retain, nonatomic) NSMutableArray *tabItemListArray;
+@property (readonly, nonatomic) unsigned long long tabItemListArray_Count;
+
++ (id)descriptor;
+
+- (id)liveEntrance;
+- (id)tabItemListArray;
+
+@end

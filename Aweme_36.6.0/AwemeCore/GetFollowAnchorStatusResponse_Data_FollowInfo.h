@@ -1,0 +1,7 @@
+@interface GetFollowAnchorStatusResponse_Data_FollowInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasFollowed;
+
++ (id)descriptor;
+
+@end

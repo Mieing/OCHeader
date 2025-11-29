@@ -1,0 +1,3 @@
+@interface WebcastReplayBizWebcastReplayPinHighlightReviewUgmGenApiRoot : GPBRootObject
+
+@end

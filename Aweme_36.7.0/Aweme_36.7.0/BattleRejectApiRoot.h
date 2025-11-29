@@ -1,0 +1,3 @@
+@interface BattleRejectApiRoot : GPBRootObject
+
+@end

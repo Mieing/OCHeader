@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface AWEPOIUGCRecorderTemplate : NSObject <ACCBusinessTemplate>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEVideoRecordReshootTemplateLiteAdapterClass;
+
+- (id)componentClasses;
+- (id)componentPluginClasses;
+- (id)aAWEVideoRecordReshootTemplateLiteAdapter;
+
+@end

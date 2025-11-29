@@ -1,0 +1,83 @@
+@class AWEAwemeModel, NSString, UIView, UIImageView, NSDictionary, NSMutableDictionary, UIViewController, NSNumber;
+@protocol AFDSlidesViewProtocol, AFDRichContentContainerViewControllerProtocol, AWESearchImageSetViewDelegate;
+
+@interface AWESearchImagePlayerView : UIView <AFDRichContentContainerDelegate, AFDRichContentProgressControllerDelegate, AWESearchImagePlayerViewProtocol> {
+    NSMutableDictionary *_cachedContentContainers;
+}
+
+@property (weak, nonatomic) UIViewController<AFDRichContentContainerViewControllerProtocol> *richContentContainer;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) AWEAwemeModel *currentModel;
+@property (copy, nonatomic) NSDictionary *btmInfo;
+@property (weak, nonatomic) id<AWESearchImageSetViewDelegate> delegate;
+@property (readonly, nonatomic) UIView<AFDSlidesViewProtocol> *imageSliderView;
+@property (nonatomic) BOOL shouldFixUpdateCrash;
+@property (nonatomic) BOOL slideEnable;
+@property (readonly, nonatomic) BOOL userScrolled;
+@property (nonatomic) BOOL repeat;
+@property (nonatomic) long long scaleMode;
+@property (nonatomic) long long coverContentMode;
+@property (nonatomic) BOOL mute;
+@property (nonatomic) unsigned long long playMode;
+@property (nonatomic) BOOL syncPlayStatus;
+@property (nonatomic) double volume;
+@property (nonatomic) double playbackRate;
+@property (readonly, nonatomic) double currPlaybackTime;
+@property (readonly, nonatomic) long long currentIndex;
+@property (nonatomic) long long initalIndex;
+@property (nonatomic) long long playState;
+@property (copy, nonatomic) NSString *containerID;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) NSNumber *videoDuration;
+@property (nonatomic) BOOL useGrayPlaceholderImage;
+@property (nonatomic) BOOL isPlayClipMode;
+@property (nonatomic) double startPlayTime;
+@property (nonatomic) double clipDuration;
+@property (copy, nonatomic) id /* block */ didVideoClipPlaycompletion;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL pauseBySingleClick;
+@property (readonly, nonatomic) UIImageView *currentImageView;
+
+- (void)updateCurrentAwemeModel:(id)a0;
+- (void)didUpdatePaginatedProgressWithIndex:(long long)a0 totalCount:(long long)a1;
+- (void)didUpdatePaginatedProgressWithDuration:(double)a0 totalCount:(long long)a1 currentIndex:(long long)a2 currentProcess:(double)a3 needAnimation:(BOOL)a4;
+- (void)previewInteractionDidStart;
+- (void)containerStartPlaying;
+- (void)didChangeAlbumIndex:(long long)a0 slideMethod:(unsigned long long)a1 animated:(BOOL)a2;
+- (void)containerDidPlayOrPause:(BOOL)a0;
+- (void)setUserScrolled:(BOOL)a0;
+- (void)playerPlayTime:(double)a0 canPlayTime:(double)a1 totalTime:(double)a2;
+- (id)exposedImageURISet;
+- (void)scrollToIndex:(long long)a0 method:(unsigned long long)a1 animated:(BOOL)a2;
+- (void)updateLogExtra:(id)a0;
+- (void)resetPlayerViewControllerProps;
+- (BOOL)shouldExitFullScreenWithPlayStatus;
+- (void)albumPlayTime:(double)a0 totalTime:(double)a1 index:(long long)a2;
+- (void)didAlbumEnd;
+- (void)updateBtmInfo:(id)a0;
+- (void)updateDynamicPropertiesForContainer:(id)a0;
+- (unsigned long long)AFDAlbumContentModeFromAWESearchImageSetViewScaleMode:(long long)a0;
+- (id)getTargetContainerForModel:(id)a0;
+- (void)switchToContainer:(id)a0;
+- (id)createRichContentContainerWithMultiContentMode:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (id)init;
+- (void)stop;
+- (void)didMoveToSuperview;
+- (id)transitionContext;
+- (id)playerController;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)reset;
+- (void)setupUI;
+- (void)addBoundaryTimeObserverForTimes:(id)a0 queue:(id)a1 usingBlock:(id /* block */)a2;
+- (void)updateWithModel:(id)a0;
+- (void)previewInteractionDidEnd;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

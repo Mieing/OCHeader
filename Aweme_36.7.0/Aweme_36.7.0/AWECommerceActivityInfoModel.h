@@ -1,0 +1,17 @@
+@class NSString, AWECommerceActivityInfoBottomBarModel;
+
+@interface AWECommerceActivityInfoModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *activityOpenUrl;
+@property (nonatomic) long long awemePromotionType;
+@property (retain, nonatomic) AWECommerceActivityInfoBottomBarModel *bottomBar;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)automaticallyDefaultMapping;
+
+- (void).cxx_destruct;
+
+@end

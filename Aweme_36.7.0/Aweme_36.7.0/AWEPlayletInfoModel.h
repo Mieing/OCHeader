@@ -1,0 +1,87 @@
+@class NSDictionary, AWECodeGenSeriesUIConfigModel, AWEUserModel, AWEPlayletStatusModel, AWECodeGenMarketingExposureInfoModel, AWECodeGenSeriesRightsInfoModel, AWEEntertainmentPlayletVIPModel, AWECodeGenEntPreAccessDataModel, NSString, AWECodeGenSeriesInteractiveModel, AWEVideoChargeStrategyStruct, AWEPaymentEntertainmentProductModel, NSArray, AWECodeGenDogCardInfoModel, AWEURLModel, AWEPlayletStatisticsModel, AWEPlayletSchemaModel, AWECodeGenReCreationMatchedStartPlayInfoModel, AWEShareModel, AWECodeGenReCreationMatchedWatchedInfoModel, AWECodeGenSeriesCommentTopBarModel, AWECodeGenAdSettingInfoModel, AWEPlayletChargeInfoModel, AWEDiscoverDPlayletRankCardModel, AWESeriesIcpModel, AWECodeGenSeriesBarTagInfoModel, NSNumber, AWECodeGenAdShowStrategyModel;
+
+@interface AWEPlayletInfoModel : AWEBaseApiModel
+
+@property (retain, nonatomic) NSArray *shareExtVideoCoverURLs;
+@property (retain, nonatomic) NSArray *shareExtVideoCoverItems;
+@property (copy, nonatomic) NSDictionary *videoplay_tracker;
+@property (nonatomic) long long reasonCategory;
+@property (nonatomic) long long reasonDetail;
+@property (nonatomic) BOOL hasTracked;
+@property (readonly, nonatomic) long long statusErrorCode;
+@property (retain, nonatomic) AWEPlayletSchemaModel *schemaModel;
+@property (copy, nonatomic) NSString *playletID;
+@property (copy, nonatomic) NSString *playletName;
+@property (retain, nonatomic) AWEURLModel *coverUrl;
+@property (retain, nonatomic) AWEURLModel *iconUrl;
+@property (retain, nonatomic) AWEPlayletStatisticsModel *staticsModel;
+@property (retain, nonatomic) AWEPlayletStatusModel *statusModel;
+@property (copy, nonatomic) NSString *desc;
+@property (retain, nonatomic) AWEUserModel *author;
+@property (copy, nonatomic) NSString *extra;
+@property (retain, nonatomic) AWEShareModel *shareInfo;
+@property (nonatomic) unsigned long long playletType;
+@property (nonatomic) BOOL disableDisplayBar;
+@property (nonatomic) BOOL disableDisplayBarInner;
+@property (retain, nonatomic) NSNumber *createTime;
+@property (retain, nonatomic) NSNumber *updateTime;
+@property (retain, nonatomic) NSNumber *ids;
+@property (retain, nonatomic) NSNumber *watchedEpisode;
+@property (retain, nonatomic) NSString *watchedItem;
+@property (retain, nonatomic) AWEDiscoverDPlayletRankCardModel *rankModel;
+@property (retain, nonatomic) NSArray *contentTypesArray;
+@property (retain, nonatomic) NSArray *contentTypesArrayV2;
+@property (retain, nonatomic) NSNumber *playletPrice;
+@property (nonatomic) BOOL isExclusive;
+@property (copy, nonatomic) NSArray *recommendColorArray;
+@property (retain, nonatomic) AWEVideoChargeStrategyStruct *chargeStrategyModel;
+@property (nonatomic) BOOL isIaa;
+@property (retain, nonatomic) AWESeriesIcpModel *seriesIcp;
+@property (retain, nonatomic) AWECodeGenEntPreAccessDataModel *preAccessModel;
+@property (copy, nonatomic) NSArray *seriesPaidTypeArray;
+@property (retain, nonatomic) AWECodeGenAdSettingInfoModel *adSettingInfoModel;
+@property (retain, nonatomic) AWEPlayletChargeInfoModel *paymentChargeInfoModel;
+@property (retain, nonatomic) AWEPaymentEntertainmentProductModel *paymentEntertainmentProductModel;
+@property (retain, nonatomic) AWEEntertainmentPlayletVIPModel *vipModel;
+@property (copy, nonatomic) NSString *coverTag;
+@property (retain, nonatomic) AWECodeGenSeriesUIConfigModel *paymentUIConfig;
+@property (retain, nonatomic) AWECodeGenReCreationMatchedWatchedInfoModel *reCreationMatchedWatchedInfo;
+@property (retain, nonatomic) AWECodeGenReCreationMatchedStartPlayInfoModel *reCreationMatchedStartPlayInfo;
+@property (retain, nonatomic) AWECodeGenSeriesBarTagInfoModel *seriesTagInfoModel;
+@property (retain, nonatomic) NSArray *actors;
+@property (retain, nonatomic) AWECodeGenMarketingExposureInfoModel *marketingExposureInfo;
+@property (nonatomic) int contentSubType;
+@property (retain, nonatomic) AWEURLModel *lightIconUrl;
+@property (retain, nonatomic) AWEURLModel *darkIconUrl;
+@property (retain, nonatomic) AWECodeGenSeriesInteractiveModel *seriesInteractiveModel;
+@property (retain, nonatomic) AWECodeGenSeriesCommentTopBarModel *commentTopBarInfoModel;
+@property (retain, nonatomic) AWECodeGenSeriesRightsInfoModel *rightsInfoModel;
+@property (retain, nonatomic) AWECodeGenAdShowStrategyModel *adShowStrategy;
+@property (retain, nonatomic) AWECodeGenDogCardInfoModel *dogCardInfo;
+@property (nonatomic) BOOL enableUseNewEntData;
+@property (retain, nonatomic) NSString *entertainmentSuggestInfoStr;
+
++ (id)propertyToModelClassInArrayMap;
++ (id /* block */)isEqualBlock;
++ (id)coverUrlJSONTransformer;
++ (id)paymentEntertainmentProductModelJSONTransformer;
++ (id)paymentChargeInfoModelJSONTransformer;
++ (id)authorJSONTransformer;
++ (id)iconUrlJSONTransformer;
++ (id)statusModelJSONTransformer;
++ (id)staticsModelJSONTransformer;
++ (id)shareInfoModelJSONTransformer;
++ (id)chargeStrategyModelJSONTransformer;
++ (id)seriesIcpJSONTransformer;
++ (id)rankModelJSONTransformer;
++ (id)contentTypesArrayJSONTransformer;
++ (id)vipModelJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (BOOL)isTheLastEpisode;
+- (id)getPlayletContentTypeStr;
+- (BOOL)updatedInPastDays:(long long)a0;
+- (BOOL)hasCompleteEnd;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.LynxContentCellConfig : BDMultiContentContainer.BaseDefaultContentCellConfig
+
+@end

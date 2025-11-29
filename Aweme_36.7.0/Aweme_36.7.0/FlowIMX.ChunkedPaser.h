@@ -1,0 +1,11 @@
+@interface FlowIMX.ChunkedPaser : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ eventHandler;
+    void /* unknown type, empty encoding */ receivedDataSize;
+    void /* unknown type, empty encoding */ lineParser;
+    void /* unknown type, empty encoding */ tempSSEEvent;
+    void /* unknown type, empty encoding */ lastPaserData;
+    void /* unknown type, empty encoding */ paserQueue;
+    void /* unknown type, empty encoding */ lastResId;
+}
+
+@end

@@ -1,0 +1,7 @@
+@interface CGPDeviceInfoGC : GPBMessage
+
+@property (nonatomic) int index;
+
++ (id)descriptor;
+
+@end

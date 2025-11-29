@@ -1,0 +1,3 @@
+@interface GiftGiftVotesApiRoot : GPBRootObject
+
+@end

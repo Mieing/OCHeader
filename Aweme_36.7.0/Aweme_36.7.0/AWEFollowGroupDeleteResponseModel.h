@@ -1,0 +1,3 @@
+@interface AWEFollowGroupDeleteResponseModel : AWEBaseApiModel
+
+@end

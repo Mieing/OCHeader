@@ -1,0 +1,3 @@
+@interface HTSLiveContentOpenIntentRecognitionRoot : GPBRootObject
+
+@end

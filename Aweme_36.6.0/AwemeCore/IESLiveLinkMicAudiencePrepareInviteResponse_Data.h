@@ -1,0 +1,11 @@
+@class IESLiveLinkMicAudiencePrepareInviteResponse_NoticeInfo;
+
+@interface IESLiveLinkMicAudiencePrepareInviteResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL userInRoom;
+@property (retain, nonatomic) IESLiveLinkMicAudiencePrepareInviteResponse_NoticeInfo *noticeInfo;
+@property (nonatomic) BOOL hasNoticeInfo;
+
++ (id)descriptor;
+
+@end

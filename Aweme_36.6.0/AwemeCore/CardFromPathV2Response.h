@@ -1,0 +1,10 @@
+@class CardFromPathV2Response_Data;
+
+@interface CardFromPathV2Response : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CardFromPathV2Response_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

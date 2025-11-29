@@ -1,0 +1,11 @@
+@class NSString, ShelfInfo;
+
+@interface UpdateShelfCardStatusResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ShelfInfo *shelfInfo;
+@property (nonatomic) BOOL hasShelfInfo;
+@property (copy, nonatomic) NSString *errMsg;
+
++ (id)descriptor;
+
+@end

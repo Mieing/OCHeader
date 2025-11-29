@@ -1,0 +1,73 @@
+@class BDECPigeonUserManager, BDECIMClient, BDECPigeonShopManager;
+
+@interface BDECPigeonClientPatch : NSObject
+
+@property (retain, nonatomic) BDECIMClient *imClient;
+@property (retain, nonatomic) BDECPigeonShopManager *shopManager;
+@property (retain, nonatomic) BDECPigeonUserManager *userManager;
+
+- (void)asyncSendTextMessageInConversation:(id)a0 text:(id)a1 bizRole:(id)a2 bizExt:(id)a3 completion:(id /* block */)a4;
+- (void)asyncSendEmoticonMessageInConversation:(id)a0 emoticonWidth:(id)a1 emoticonHeight:(id)a2 emoticonAnimateURL:(id)a3 emotionType:(id)a4 emotionSetId:(id)a5 emotionId:(id)a6 emotionName:(id)a7 bizRole:(id)a8 bizExt:(id)a9 completion:(id /* block */)a10;
+- (void)resendMessage:(id)a0;
+- (id)skipSendImageMessageInConversation:(id)a0 imageWidth:(id)a1 imageHeight:(id)a2 imageURI:(id)a3 bizRole:(id)a4 bizExt:(id)a5 error:(id *)a6;
+- (id)skipSendVideoMessageInConversation:(id)a0 videoWidth:(id)a1 videoHeight:(id)a2 coverURL:(id)a3 vid:(id)a4 duration:(id)a5 bizRole:(id)a6 bizExt:(id)a7 error:(id *)a8;
+- (void)recallMessageWithConversation:(id)a0 message:(id)a1 pigeonBizType:(id)a2 completion:(id /* block */)a3;
+- (void)fetchCurrentUserInfoWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)ecomAuthorFetchImageUrlWithPigeonBizType:(id)a0 uri:(id)a1 completion:(id /* block */)a2;
+- (void)fetchCurrentUserInfoFromCacheWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)batchFetchSerivceInfosWithPigeonBizType:(id)a0 pigeonShopId:(id)a1 conGroupId:(id)a2 pigeonCidList:(id)a3 completion:(id /* block */)a4;
+- (void)ecomAuthorFetchECOMImageXTokenWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)ecomFetchVideoTokenWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)ecomPublishVideoWithVid:(id)a0 receiverId:(id)a1 pigeonBizType:(id)a2 completion:(id /* block */)a3;
+- (void)ecomUploadImageToTOSWithImageData:(id)a0 imageName:(id)a1 pigeonBizType:(id)a2 completion:(id /* block */)a3;
+- (void)ecomTransCodeVideoWithVid:(id)a0 pigeonBizType:(id)a1 completion:(id /* block */)a2;
+- (id)sendMessage:(id)a0 messageType:(long long)a1 extraExt:(id)a2 error:(id *)a3;
+- (void)batchFetchShopInfosWithShopIds:(id)a0 options:(id)a1 pigeonBizType:(id)a2 completion:(id /* block */)a3;
+- (void)batchFetchServiceEntityInfosWithServiceEntityIDs:(id)a0 bizType:(id)a1 options:(id)a2 completion:(id /* block */)a3;
+- (void)asyncSendMessage:(id)a0 messageType:(long long)a1 extraExt:(id)a2 completion:(id /* block */)a3;
+- (void)canEvaluatedWithBizConversationId:(id)a0 pigeonBizType:(id)a1 dictCompletion:(id /* block */)a2;
+- (void)sendUserEnterMessageWithRequestModel:(id)a0 dictCompletion:(id /* block */)a1;
+- (id)shopInfoFromMemoryCache:(id)a0 pigeonBizType:(id)a1;
+- (void)shopInfosFromCache:(id)a0 pigeonBizType:(id)a1 completion:(id /* block */)a2;
+- (void)ecomFetchECOMImageXTokenWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)ecomAuthorFetchVideoTokenWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)ecomAuthorPublishVideoWithWithPigeonBizType:(id)a0 vid:(id)a1 receiverId:(id)a2 completion:(id /* block */)a3;
+- (void)ecomAuthorUploadImageToTOSWithPigeonBizType:(id)a0 imageData:(id)a1 imageName:(id)a2 completion:(id /* block */)a3;
+- (void)ecomAuthorTransCodeVideoWithPigeonBizType:(id)a0 vid:(id)a1 completion:(id /* block */)a2;
+- (void)ecomAuthorFetchVideoApiTokenWithPigeonBizType:(id)a0 vid:(id)a1 completion:(id /* block */)a2;
+- (void)inviteToEvaluatedBySystemWithRequestModel:(id)a0 completion:(id /* block */)a1;
+- (void)inviteToEvaluatedWithRequestModel:(id)a0 completion:(id /* block */)a1;
+- (id)sendImageMessageInConversation:(id)a0 imageWidth:(id)a1 imageHeight:(id)a2 imageURI:(id)a3 bizRole:(id)a4 bizExt:(id)a5 error:(id *)a6;
+- (id)sendTextMessageInConversation:(id)a0 text:(id)a1 bizRole:(id)a2 bizExt:(id)a3 error:(id *)a4;
+- (void)batchFetchShopInfosWithPigeonBizType:(id)a0 extendParams:(id)a1 bizExt:(id)a2 options:(id)a3 completion:(id /* block */)a4;
+- (id)sendMessage:(id)a0 extraExt:(id)a1 skipSend:(BOOL)a2 error:(id *)a3;
+- (void)sendUserEnterMessageWithPigeonShopId:(id)a0 conGroupId:(id)a1 extParams:(id)a2 pigeonBizType:(id)a3 completion:(id /* block */)a4;
+- (void)fetchImageXTokenWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)fetchImageUrlWithUri:(id)a0 pigeonBizType:(id)a1 completion:(id /* block */)a2;
+- (void)switchToHumanWithBizConversationId:(id)a0 pigeonBizType:(id)a1 extParams:(id)a2 completion:(id /* block */)a3;
+- (void)fetchCurrentUserPigeonUidWithPigeonBizType:(id)a0 completion:(id /* block */)a1;
+- (void)fetchShopIdWithPigeonBizType:(id)a0 bizShopId:(id)a1 conGroupId:(id)a2 completion:(id /* block */)a3;
+- (void)dealFetchECOMImageXTokenResultWithError:(id)a0 jsonObj:(id)a1 completion:(id /* block */)a2;
+- (id)generateImageUploadInfoWithWithJsonObj:(id)a0;
+- (void)dealFetchImageUrlResultWithError:(id)a0 jsonObj:(id)a1 completion:(id /* block */)a2;
+- (void)dealFetchVideoTokenResultWithError:(id)a0 jsonObj:(id)a1 completion:(id /* block */)a2;
+- (id)generateVideoUploadInfoWithJsonObj:(id)a0;
+- (void)dealUploadImageToTOSResultWithError:(id)a0 jsonObj:(id)a1 completion:(id /* block */)a2;
+- (void)dealPublishVideoResultWithError:(id)a0 jsonObj:(id)a1 completion:(id /* block */)a2;
+- (void)dealTransCodeVideoResultWithError:(id)a0 jsonObj:(id)a1 completion:(id /* block */)a2;
+- (BOOL)shouldMarkConversationAsReadWithConversation:(id)a0;
+- (void)ecomFetchImageUrlWithUri:(id)a0 completion:(id /* block */)a1;
+- (void)innerImplementationOfInviteToEvaluatedWithPath:(id)a0 requestModel:(id)a1 completion:(id /* block */)a2;
+- (id)getPigeonClientConfig;
+- (id)sendVideoMessageInConversation:(id)a0 videoWidth:(id)a1 videoHeight:(id)a2 coverURL:(id)a3 vid:(id)a4 duration:(id)a5 bizRole:(id)a6 bizExt:(id)a7 error:(id *)a8;
+- (id)sendMessageReceiverID:(id)a0;
+- (id)generateSendMessageWithMessage:(id)a0 conversation:(id)a1 messageType:(long long)a2 extraExt:(id)a3;
+- (void)setupPatchWithImClient:(id)a0;
+- (id)skipSendTextMessageInConversation:(id)a0 text:(id)a1 bizRole:(id)a2 bizExt:(id)a3 error:(id *)a4;
+- (void)switchToHumanWithBizConversationId:(id)a0 pigeonBizType:(id)a1 extParams:(id)a2 withCodeCompletion:(id /* block */)a3;
+- (void)canEvaluatedWithBizConversationId:(id)a0 pigeonBizType:(id)a1 completion:(id /* block */)a2;
+- (void)selectUserEntryWithParamsDict:(id)a0 pigeonBizType:(id)a1 completion:(id /* block */)a2;
+- (void).cxx_destruct;
+- (id)sendMessage:(id)a0 error:(id *)a1;
+
+@end

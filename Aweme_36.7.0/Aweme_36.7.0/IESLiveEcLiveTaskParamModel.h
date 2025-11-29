@@ -1,0 +1,12 @@
+@class NSString, NSNumber;
+
+@interface IESLiveEcLiveTaskParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *taskId;
+@property (copy, nonatomic) NSString *taskMetaId;
+@property (retain, nonatomic) NSNumber *taskStatus;
+@property (retain, nonatomic) NSNumber *taskScene;
+@property (copy, nonatomic) NSString *taskGuideMsg;
+@property (copy, nonatomic) NSString *passThroughJson;
+
+@end

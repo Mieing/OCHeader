@@ -1,0 +1,73 @@
+@class NSMutableDictionary, AWETheaterPageContext, AWETheaterEntranceGuideModel, AWETheaterVajraSectionViewModel, AWETheaterTracker, AWETheaterBannerSectionViewModel, AWECodeGenTheaterGuideBarConfigModel, AWETheaterBannerSectionController, AWETheaterDataController, AWETheaterHistorySectionViewModel, NSString, AWETheaterMoreFeedResponseModel, AWETheaterThemeConfig, AWETheaterEmptySectionViewModel, AWETheaterMoreFeedDataController, AWETheaterMoreFeedSectionViewModel;
+
+@interface AWETheaterViewModel : AWEBaseListViewModel <AWEPlayletPaymentMessage, AWEShowMonetizeRefreshHandler>
+
+@property (retain, nonatomic) AWETheaterPageContext *context;
+@property (nonatomic) long long moreFeedDataState;
+@property (nonatomic) long long historyDataState;
+@property (retain, nonatomic) AWETheaterDataController *dataController;
+@property (retain, nonatomic) AWETheaterMoreFeedDataController *moreFeedDataController;
+@property (retain, nonatomic) AWETheaterEmptySectionViewModel *emptySectionViewModel;
+@property (retain, nonatomic) AWETheaterBannerSectionViewModel *bannerSectionViewModel;
+@property (retain, nonatomic) AWETheaterVajraSectionViewModel *vajraSectionViewModel;
+@property (retain, nonatomic) AWETheaterHistorySectionViewModel *historySectionViewModel;
+@property (retain, nonatomic) AWETheaterMoreFeedSectionViewModel *moreFeedSectionViewModel;
+@property (retain, nonatomic) AWETheaterBannerSectionController *bannerSectionController;
+@property (retain, nonatomic) AWETheaterEntranceGuideModel *theaterGuideInfo;
+@property (retain, nonatomic) AWETheaterMoreFeedResponseModel *tempMoreFeedSectionResponse;
+@property (retain, nonatomic) NSMutableDictionary *cacheBannerColor;
+@property (retain, nonatomic) AWETheaterThemeConfig *themeConfig;
+@property (copy, nonatomic) NSString *theaterTitle;
+@property (copy, nonatomic) NSString *moreFeedSectionTitle;
+@property (retain, nonatomic) AWECodeGenTheaterGuideBarConfigModel *guideBarConfig;
+@property (retain, nonatomic) AWETheaterTracker *tracker;
+@property (readonly, nonatomic) AWETheaterEntranceGuideModel *guideInfo;
+@property (nonatomic) BOOL finishFirstPreload;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)fetchListData;
+- (void)loadMoreListData;
+- (id)monetizeScene;
+- (void)refreshMonetizeContent:(id)a0 reason:(unsigned long long)a1;
+- (id)monetizeDataSource;
+- (id)monetizeContentReferString;
+- (void)addNotifications;
+- (void)setupBinding;
+- (void)pauseIfNeeded:(id)a0;
+- (void)updatePlayletPaymentInfoWithModels:(id)a0;
+- (void)fetchHistoryData;
+- (void)tryPrefetchMoreFeedCover:(id)a0;
+- (id)preloadSettings;
+- (BOOL)needPlayForCell:(id)a0;
+- (void)stopLiveBannerIfNeeded:(id)a0;
+- (void)cancelPrefetchVideo;
+- (void)getHeaderColorWithItem:(id)a0 completion:(id /* block */)a1;
+- (void)didReceivePaidNotification:(id)a0;
+- (void)handleHistoryResponse:(id)a0 error:(id)a1;
+- (void)handleMoreFeedResponse:(id)a0 error:(id)a1 fetchType:(unsigned long long)a2;
+- (void)loadMoreFeedListData;
+- (void)buildSectionViewModelWithMoreFeedSectionResponse:(id)a0;
+- (void)buildSectionViewModelWithCommonSection:(id)a0;
+- (void)prefetchCoverImageForCommonSectionList:(id)a0;
+- (void)updatePayVideoInfoWithModel:(id)a0;
+- (void)tryPrefetchMoreFeedVideo:(id)a0;
+- (void)stopFeedCell;
+- (BOOL)canPlayForCell:(id)a0;
+- (void)stopBannerCell;
+- (void)prefetchMoreFeedVideo:(id)a0;
+- (id)prefetchVideoModels:(id)a0 key:(id)a1;
+- (void)startPrefetchMoreFeedVideo:(id)a0 tag:(id)a1 successBlock:(id /* block */)a2 failureBlock:(id /* block */)a3 cancelBlock:(id /* block */)a4;
+- (void)prefetchMoreFeedCover:(id)a0;
+- (void)playIfNeeded:(id)a0 scrollDirection:(long long)a1;
+- (void)donateLongVideoEntryToSystem:(id)a0;
+- (void)prefetchMoreFeedCoverImages:(id)a0;
+- (void).cxx_destruct;
+- (void)handleResponse:(id)a0 error:(id)a1;
+- (void)dealloc;
+- (void)removeNotifications;
+- (void)setupWithContext:(id)a0;
+
+@end

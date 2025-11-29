@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TIMXPBNParticipantWithProperty : GPBMessage
+
+@property (nonatomic) long long userId;
+@property (nonatomic) BOOL hasUserId;
+@property (copy, nonatomic) NSString *bizRole;
+@property (nonatomic) BOOL hasBizRole;
+@property (copy, nonatomic) NSString *groupSymbol;
+@property (nonatomic) BOOL hasGroupSymbol;
+
++ (id)descriptor;
+
+@end

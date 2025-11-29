@@ -1,0 +1,3 @@
+@interface HTSLiveMysteryAuctionRoot : GPBRootObject
+
+@end

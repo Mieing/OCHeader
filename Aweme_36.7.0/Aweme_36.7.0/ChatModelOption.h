@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface ChatModelOption : IESLivePBBaseMessage
+
+@property (nonatomic) long long option;
+@property (copy, nonatomic) NSString *buttonText;
+@property (nonatomic) BOOL enable;
+
++ (id)descriptor;
+
+@end

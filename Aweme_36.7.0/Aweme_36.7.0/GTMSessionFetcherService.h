@@ -1,0 +1,95 @@
+@class NSMutableDictionary, NSDate, NSHTTPCookieStorage, NSDictionary, NSObject, GTMSessionFetcherSessionDelegateDispatcher, NSMutableArray, NSString, NSPointerArray, NSOperationQueue, NSArray, NSURLCredential, NSURLSessionConfiguration;
+@protocol OS_dispatch_queue, GTMFetcherAuthorizationProtocol, OS_dispatch_semaphore;
+
+@interface GTMSessionFetcherService : NSObject <GTMSessionFetcherServiceProtocol> {
+    NSMutableDictionary *_delayedFetchersByHost;
+    NSMutableDictionary *_runningFetchersByHost;
+    GTMSessionFetcherSessionDelegateDispatcher *_delegateDispatcher;
+    NSObject<OS_dispatch_semaphore> *_sessionCreationSemaphore;
+    BOOL _callbackQueueIsConcurrent;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
+    NSOperationQueue *_delegateQueue;
+    double _timeout;
+    id<GTMFetcherAuthorizationProtocol> _authorizer;
+    NSMutableArray *_stoppedFetchersToWaitFor;
+    NSDate *_stoppedAllFetchersDate;
+}
+
+@property (retain) NSDictionary *delayedFetchersByHost;
+@property (retain) NSDictionary *runningFetchersByHost;
+@property (readonly) NSPointerArray *decoratorsPointerArray;
+@property unsigned long long maxRunningFetchersPerHost;
+@property (retain) NSURLSessionConfiguration *configuration;
+@property (copy) id /* block */ configurationBlock;
+@property (retain) NSHTTPCookieStorage *cookieStorage;
+@property (retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (copy) id /* block */ challengeBlock;
+@property (retain) NSURLCredential *credential;
+@property (retain) NSURLCredential *proxyCredential;
+@property (copy) NSArray *allowedInsecureSchemes;
+@property BOOL allowLocalhostRequest;
+@property BOOL allowInvalidServerCertificates;
+@property (getter=isRetryEnabled) BOOL retryEnabled;
+@property (copy) id /* block */ retryBlock;
+@property double maxRetryInterval;
+@property double minRetryInterval;
+@property (copy) NSDictionary *properties;
+@property (copy) id /* block */ metricsCollectionBlock;
+@property BOOL skipBackgroundTask;
+@property (copy) NSString *userAgent;
+@property (retain) id<GTMFetcherAuthorizationProtocol> authorizer;
+@property (retain) NSOperationQueue *sessionDelegateQueue;
+@property BOOL reuseSession;
+@property double unusedSessionTimeout;
+@property (copy) id /* block */ testBlock;
+@property (readonly) NSOperationQueue *delegateQueue;
+@property (readonly) NSArray *decorators;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (unsigned long long)numberOfNonBackgroundSessionFetchers:(id)a0;
++ (id)mockFetcherServiceWithFakedData:(id)a0 fakedResponse:(id)a1 fakedError:(id)a2;
++ (id)mockFetcherServiceWithFakedData:(id)a0 fakedError:(id)a1;
+
+- (id)fetcherWithRequest:(id)a0;
+- (id)fetcherWithURL:(id)a0;
+- (id)fetcherWithURLString:(id)a0;
+- (BOOL)fetcherShouldBeginFetching:(id)a0;
+- (void)fetcherDidCreateSession:(id)a0;
+- (void)fetcherDidBeginFetching:(id)a0;
+- (void)fetcherDidStop:(id)a0;
+- (BOOL)isDelayingFetcher:(id)a0;
+- (id)sessionForFetcherCreation;
+- (id)stoppedAllFetchersDate;
+- (void)detachAuthorizer;
+- (id)serialQueueForNewFetcher:(id)a0;
+- (id)fetcherWithRequest:(id)a0 fetcherClass:(Class)a1;
+- (void)addRunningFetcher:(id)a0 forHost:(id)a1;
+- (void)addDelayedFetcher:(id)a0 forHost:(id)a1;
+- (id)delegateDispatcherForFetcher:(id)a0;
+- (void)startFetcher:(id)a0;
+- (unsigned long long)numberOfRunningFetchers;
+- (unsigned long long)numberOfDelayedFetchers;
+- (id)issuedFetchers;
+- (void)stopFetcher:(id)a0;
+- (void)abandonDispatcher;
+- (void)resetSessionInternal;
+- (void)setCallbackQueue:(id)a0 isConcurrent:(BOOL)a1;
+- (unsigned long long)numberOfFetchers;
+- (id)issuedFetchersWithRequestURL:(id)a0;
+- (void)stopAllFetchers;
+- (void)resetSessionForDispatcherDiscardTimer:(id)a0;
+- (void)setConcurrentCallbackQueue:(id)a0;
+- (BOOL)waitForCompletionOfAllFetchersWithTimeout:(double)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)sessionDelegate;
+- (id)session;
+- (void)dealloc;
+- (void)resetSession;
+- (void)addDecorator:(id)a0;
+- (void)removeDecorator:(id)a0;
+
+@end

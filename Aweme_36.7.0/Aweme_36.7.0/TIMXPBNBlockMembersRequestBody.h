@@ -1,0 +1,24 @@
+@class NSString, GPBInt64Int64Dictionary, NSMutableDictionary;
+
+@interface TIMXPBNBlockMembersRequestBody : GPBMessage
+
+@property (nonatomic) int blockStatus;
+@property (nonatomic) BOOL hasBlockStatus;
+@property (retain, nonatomic) GPBInt64Int64Dictionary *blockTime;
+@property (readonly, nonatomic) unsigned long long blockTime_Count;
+@property (nonatomic) long long convShortId;
+@property (nonatomic) BOOL hasConvShortId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+@property (copy, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL hasConversationId;
+@property (nonatomic) int blockAction;
+@property (nonatomic) BOOL hasBlockAction;
+@property (retain, nonatomic) NSMutableDictionary *bizExt;
+@property (readonly, nonatomic) unsigned long long bizExt_Count;
+@property (retain, nonatomic) NSMutableDictionary *ext;
+@property (readonly, nonatomic) unsigned long long ext_Count;
+
++ (id)descriptor;
+
+@end

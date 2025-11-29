@@ -1,0 +1,3 @@
+@interface HTSLiveStampMessageRoot : GPBRootObject
+
+@end

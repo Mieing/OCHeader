@@ -1,0 +1,72 @@
+@class NSString, NSURL, UIImage, AWEInnerPushControlModel, NSAttributedString, NSDictionary, AWEInnerNotificationRequest, AWESBCDefaultNotificationModel, AWESBCDefaultNotificationView, AWEInnerPushCommonView, NSNumber, AWEInnerPushCommonViewModel;
+@protocol AWEInnerNotificationContentOperator;
+
+@interface AWESBCDefaultNotificationViewModel : NSObject <AWEInnerNotificationContent, AWESBCDefaultNotificationViewDelegate>
+
+@property (retain, nonatomic) NSURL *avatar;
+@property (retain, nonatomic) UIImage *defaultAvatar;
+@property (retain, nonatomic) NSURL *extImage;
+@property (copy, nonatomic) NSAttributedString *title;
+@property (copy, nonatomic) NSString *extTag;
+@property (copy, nonatomic) NSAttributedString *content;
+@property (copy, nonatomic) NSString *buttonText;
+@property (copy, nonatomic) NSString *openUrl;
+@property (copy, nonatomic) NSDictionary *extra;
+@property (copy, nonatomic) NSString *bizType;
+@property (copy, nonatomic) NSString *pushType;
+@property (copy, nonatomic) NSString *fromUid;
+@property (retain, nonatomic) NSNumber *dismissTimeInterval;
+@property (retain, nonatomic) AWEInnerPushControlModel *pushControlModel;
+@property (copy, nonatomic) NSDictionary *frontierPayLoad;
+@property (retain, nonatomic) AWEInnerNotificationRequest *request;
+@property (retain, nonatomic) AWESBCDefaultNotificationModel *dataModel;
+@property (retain, nonatomic) AWESBCDefaultNotificationView *oldView;
+@property (retain, nonatomic) AWEInnerPushCommonView *currentView;
+@property (retain, nonatomic) AWEInnerPushCommonViewModel *viewModel;
+@property (weak, nonatomic) id<AWEInnerNotificationContentOperator> notificationOperator;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)disablePullIndicatorView;
+- (void)renderModel:(id)a0 context:(id)a1;
+- (void)handleTapAction;
+- (void)viewDidDisappearWithReason:(long long)a0;
+- (double)dismissTimerInterval;
+- (BOOL)disableUseBusinessTypeDeterminDismissTimerInterval;
+- (BOOL)tapGestureIsEnable:(id)a0;
+- (id)trackingModelForScene:(unsigned long long)a0;
+- (void)updateLeftIcon;
+- (void)updateLeftExtraIcon;
+- (void)updateRightActionAreaModel;
+- (void)updateTitleAreaItems;
+- (void)updateContentAttrString;
+- (id)p_keypointFontForContent;
+- (id)p_keypointFontForTitle;
+- (id)p_keypointFontAttributesForTitle:(BOOL)a0;
+- (void)trackEventSwipeGesDirectionUp;
+- (id)p_configButtonTextWithModel:(id)a0;
+- (id)p_configTitleTextWithModel:(id)a0;
+- (id)p_configContentTextWithModel:(id)a0;
+- (double)p_calculatesMaximumLength;
+- (id)handleTitleWithTitleStr:(id)a0 extTitleStr:(id)a1 maximumWidth:(double)a2;
+- (id)handleContentWithTitleStr:(id)a0 extTitleStr:(id)a1 maximumWidth:(double)a2;
+- (id)p_regularFontAttributesForTitle;
+- (void)trackPushViewTapGesture;
+- (id)extTagTextColor;
+- (id)extTagBackgroundColor;
+- (void)trackEventShowWithTrackID:(id)a0;
+- (id)extTagTextFont;
+- (void)updateWithPushNotice:(id)a0;
+- (void)handleTapActionWithUrlString:(id)a0 shouldOpenWithDeepLink:(BOOL)a1;
+- (double)alphaValueFromString:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)businessType;
+- (id)view;
+- (id)buttonTextColor;
+- (void)updateProperties;
+- (BOOL)hasAvatar;
+
+@end

@@ -1,0 +1,12 @@
+@class CommentAttitudeV2, ProductLabelV2;
+
+@interface ProductCommentImageInfoV2 : GPBMessage
+
+@property (retain, nonatomic) CommentAttitudeV2 *commentAttitude;
+@property (nonatomic) BOOL hasCommentAttitude;
+@property (retain, nonatomic) ProductLabelV2 *productLabel;
+@property (nonatomic) BOOL hasProductLabel;
+
++ (id)descriptor;
+
+@end

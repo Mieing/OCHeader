@@ -1,0 +1,12 @@
+@class HTSLiveBizEntrance, HTSLiveBizGoods;
+
+@interface HTSLiveGoodsBizItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveBizGoods *goods;
+@property (nonatomic) BOOL hasGoods;
+@property (retain, nonatomic) HTSLiveBizEntrance *entrance;
+@property (nonatomic) BOOL hasEntrance;
+
++ (id)descriptor;
+
+@end

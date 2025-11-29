@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveToutiaoRoomCell : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+@property (retain, nonatomic) NSMutableArray *largeImageArray;
+@property (readonly, nonatomic) unsigned long long largeImageArray_Count;
+
++ (id)descriptor;
+
+@end

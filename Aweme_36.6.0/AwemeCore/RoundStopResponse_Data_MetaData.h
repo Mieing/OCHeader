@@ -1,0 +1,8 @@
+@interface RoundStopResponse_Data_MetaData : IESLivePBBaseMessage
+
+@property (nonatomic) int totalLen;
+@property (nonatomic) int rankType;
+
++ (id)descriptor;
+
+@end

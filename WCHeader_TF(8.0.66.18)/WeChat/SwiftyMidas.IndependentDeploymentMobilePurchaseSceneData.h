@@ -1,0 +1,3 @@
+@interface SwiftyMidas.IndependentDeploymentMobilePurchaseSceneData : SwiftyMidas.StandaradMobilePurchaseSceneData
+
+@end

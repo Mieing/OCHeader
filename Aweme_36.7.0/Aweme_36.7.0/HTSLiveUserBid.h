@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveUserBid : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *pic;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) long long price;
+
++ (id)descriptor;
+
+@end

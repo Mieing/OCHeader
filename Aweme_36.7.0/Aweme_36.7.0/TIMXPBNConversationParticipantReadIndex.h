@@ -1,0 +1,18 @@
+@class NSString, NSMutableArray;
+
+@interface TIMXPBNConversationParticipantReadIndex : GPBMessage
+
+@property (copy, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL hasConversationId;
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (retain, nonatomic) NSMutableArray *participantReadIndexArray;
+@property (readonly, nonatomic) unsigned long long participantReadIndexArray_Count;
+
++ (id)descriptor;
+
+- (id)participantReadIndexArray;
+- (long long)conversationShortId;
+- (id)conversationId;
+
+@end

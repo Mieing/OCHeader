@@ -1,0 +1,85 @@
+@class UIView, MMProgressViewEx, WCNetworkMediaCore, WCNetworkMediaSlider, NSString, UIImageView, UIButton, MMUILabel;
+
+@interface WCCanvasStreamVideoComponent : WCCanvasComponent <WCNetworkMediaCoreDelegate, VoiceComponentExt, WCCanvasImageLoaderObserver>
+
+@property (retain, nonatomic) MMProgressViewEx *loadingView;
+@property (retain, nonatomic) MMUILabel *durationLabel;
+@property (retain, nonatomic) UIView *bottomView;
+@property (retain, nonatomic) MMUILabel *currentLabel;
+@property (retain, nonatomic) WCNetworkMediaSlider *sliderView;
+@property (retain, nonatomic) UIButton *playButton;
+@property (retain, nonatomic) UIButton *detailButton;
+@property (retain, nonatomic) UIButton *voiceControlButton;
+@property (retain, nonatomic) UIButton *m_hideBtn;
+@property (retain, nonatomic) UIView *m_maskView;
+@property (retain, nonatomic) UIButton *m_initPlayButton;
+@property (retain, nonatomic) UIView *m_initPlayMaskView;
+@property (retain, nonatomic) UIImageView *m_previewImageView;
+@property (retain, nonatomic) WCNetworkMediaCore *mediaCore;
+@property (nonatomic) struct CGSize { double width; double height; } videoSize;
+@property (nonatomic) BOOL streamVideoThumbReady;
+@property (nonatomic) BOOL isFirstInit;
+@property (nonatomic) BOOL isLastPlaying;
+@property (nonatomic) BOOL shouldPlayAtBegin;
+@property (nonatomic) BOOL turnToPlayForVideoDisplayScaleLargeThanHalf;
+@property (retain, nonatomic) id timeObserverToken;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })calcSizeForCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)configureWithCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
+- (void)componentDidFullyAppearInMainScreen:(BOOL)a0;
+- (void)componentWillDisappearInMainScreen:(BOOL)a0;
+- (void)componentAppearFactorChagneInMainScreen;
+- (void)componentWillResumeState:(BOOL)a0;
+- (void)componentWillStopState:(BOOL)a0;
+- (void)tryToPauseStreamVideo;
+- (void)tryPlayStreamVideo;
+- (void)innerPlayStreamVideo;
+- (void)setMuted:(BOOL)a0;
+- (void)tryToSetVideoPlayingState:(BOOL)a0;
+- (BOOL)isControlViewsHidden;
+- (void)updateControlViewsVisible:(BOOL)a0;
+- (void)refreshCurrentTime;
+- (void)updateVideoFrame:(long long)a0;
+- (void)updateSubviewsFrame:(long long)a0;
+- (id)stringFromTimeInterval:(double)a0;
+- (void)retryToLoadVideo;
+- (void)componentDidEnterBackground;
+- (void)componentWillEnterForeground;
+- (BOOL)isInSafeArea;
+- (void)onSliderChange:(id)a0;
+- (void)onPlaySliderChange:(id)a0;
+- (void)onPlayClick:(id)a0;
+- (void)onShowDetail:(id)a0;
+- (void)onHideClick;
+- (void)onVoiceIconBtnClick:(id)a0;
+- (void)onInitPlayButtonClick;
+- (void)showControlViewsAnimated:(BOOL)a0;
+- (void)showControlViewsWithAutoHide;
+- (void)showControlViewsWithAutoHideAnimated:(BOOL)a0;
+- (void)hideControlViews;
+- (void)hideControlViewsAndTryShowArrowAnimate;
+- (void)tryShowDownArrowAnimate;
+- (BOOL)shouldAutoPlayStreamVideo;
+- (void)onMediaCore:(id)a0 StateChange:(int)a1;
+- (void)onMediaCore:(id)a0 CacheDarutionChange:(double)a1;
+- (void)onMediaCore:(id)a0 DarutionUpdate:(double)a1;
+- (void)onMediaCore:(id)a0 VideoSizeUpdate:(struct CGSize { double x0; double x1; })a1;
+- (void)ImageDidLoad:(id)a0 Url:(id)a1;
+- (void)ImageDidFail:(id)a0;
+- (BOOL)shouldForbidDelegateShowArrowDown;
+- (BOOL)shouldForbidDelegateShowFloatActionBtn;
+- (void)onVoiceComponentHasPlayWithSound:(id)a0;
+- (BOOL)hasFloatComponentInfo;
+- (void)notifyToShowFloatComponent;
+- (void)showFloatJumpView:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveAuthorizationNotifyRoot : GPBRootObject
+
+@end

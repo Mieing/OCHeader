@@ -1,0 +1,10 @@
+@class IESLiveLinkMicChannelGetRtcInfoResponse_Data;
+
+@interface IESLiveLinkMicChannelGetRtcInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicChannelGetRtcInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

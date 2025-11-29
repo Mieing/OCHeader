@@ -1,0 +1,3 @@
+@interface DUXBaseLabel : UILabel
+
+@end

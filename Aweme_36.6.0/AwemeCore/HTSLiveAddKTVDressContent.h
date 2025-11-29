@@ -1,0 +1,10 @@
+@class HTSLiveAddDressPrompt;
+
+@interface HTSLiveAddKTVDressContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveAddDressPrompt *addDressPrompt;
+@property (nonatomic) BOOL hasAddDressPrompt;
+
++ (id)descriptor;
+
+@end

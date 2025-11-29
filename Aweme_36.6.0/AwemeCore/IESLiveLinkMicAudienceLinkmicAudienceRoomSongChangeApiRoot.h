@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicAudienceRoomSongChangeApiRoot : GPBRootObject
+
+@end

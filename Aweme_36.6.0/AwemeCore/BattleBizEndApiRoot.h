@@ -1,0 +1,3 @@
+@interface BattleBizEndApiRoot : GPBRootObject
+
+@end

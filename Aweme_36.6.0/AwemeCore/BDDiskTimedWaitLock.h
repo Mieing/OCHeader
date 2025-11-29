@@ -1,0 +1,14 @@
+@interface BDDiskTimedWaitLock : NSObject {
+    struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } _mutex_diskAccessFlag;
+    struct _opaque_pthread_cond_t { long long __sig; char __opaque[40]; } _condition_diskAccessFlag;
+    long long _diskAccessFlag;
+}
+
+- (BOOL)testLock;
+- (BOOL)testLockWithTimeout:(double)a0;
+- (void)unlock;
+- (void)lock;
+- (id)init;
+- (void)dealloc;
+
+@end

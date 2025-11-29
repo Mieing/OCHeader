@@ -1,0 +1,74 @@
+@class UIButton, NSString, UITapGestureRecognizer, UIView, RTVFeedTracker;
+@protocol __RTVVoipAppOptionsInterface, RTVInteractionController, RTVFeedControllerInterface, RTVInteractionTipsController, RTVXRRoomSessionControllerInterface, RTVStateRecorder, RTVXRCaptureController, RTVInteractionToolBarControllerViewControllerDelegate, RTVInteractionConfigureManagerInterface, RTVInteractionContainerController, RTVVoipResourceFetcherInterface, RTVFeedContentController, RTVFeedHotReminderControllerInterface, RTVXRControllerInjector, RTVUserProfileManagerInterface, RTVFeedManagerInterface, RxInjector, RTVXRStateRecorder;
+
+@interface RTVInteractionBottomBarViewController : UIViewController <RTVInteractionToolBarViewController, RTVXRCaptureControllerObserver, RTVXRControllerInterface, RTVXRRoomSessionControllerObserver, RTVInteractionControllerObserver>
+
+@property (readonly, weak, nonatomic) id<RTVXRControllerInjector> controllerInjector;
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (readonly, weak, nonatomic) id<RTVXRRoomSessionControllerInterface> roomController;
+@property (readonly, weak, nonatomic) id<RTVXRCaptureController> captureController;
+@property (readonly, weak, nonatomic) id<RTVInteractionController> interactionController;
+@property (readonly, nonatomic) id<RTVUserProfileManagerInterface> profileManager;
+@property (readonly, nonatomic) id<RTVVoipResourceFetcherInterface> resourceFetcher;
+@property (readonly, nonatomic) RTVFeedTracker *feedTracker;
+@property (readonly, copy, nonatomic) NSString *currentProfileIMID;
+@property (readonly, nonatomic) UIView *contentView;
+@property (readonly, nonatomic) UIView *backCapsuleView;
+@property (readonly, nonatomic) UIButton *inviteFriendButton;
+@property (readonly, nonatomic) UIButton *castButton;
+@property (readonly, nonatomic) UIButton *sendButton;
+@property (readonly, nonatomic) UIButton *muteButton;
+@property (readonly, nonatomic) UIButton *emojiButton;
+@property (readonly, nonatomic) UIButton *moreButton;
+@property (readonly, nonatomic) UIView *muteButtonAccessoryView;
+@property (nonatomic) long long audioVolumeAnimatingValue;
+@property (nonatomic) long long audioVolumeAnimatingVersion;
+@property (readonly, weak, nonatomic) id<RTVFeedHotReminderControllerInterface> hotReminderController;
+@property (copy, nonatomic) NSString *tipShowingRequestIdentifier;
+@property (readonly, weak, nonatomic) id<RTVStateRecorder> stateRecorder;
+@property (readonly, weak, nonatomic) id<RTVXRStateRecorder> xrStateRecorder;
+@property (copy, nonatomic) NSString *displayReadyToken;
+@property (readonly, nonatomic) id<RTVFeedManagerInterface> feedManager;
+@property (readonly, weak, nonatomic) id<RTVFeedContentController> feedContentController;
+@property (readonly, nonatomic) id<RTVInteractionConfigureManagerInterface> interactionConfigureManager;
+@property (readonly, weak, nonatomic) id<RTVInteractionContainerController> interactionContainerController;
+@property (readonly, weak, nonatomic) id<RTVFeedControllerInterface> feedController;
+@property (readonly, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (readonly, weak, nonatomic) id<RTVInteractionTipsController> tipsController;
+@property (readonly, nonatomic) id<RTVInteractionConfigureManagerInterface> configureManager;
+@property (readonly, nonatomic) id<__RTVVoipAppOptionsInterface> appOptions;
+@property (readonly, nonatomic) BOOL supportInviteOutsideUser;
+@property (weak, nonatomic) id<RTVInteractionToolBarControllerViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)rtv_awakeFromControllerInjector;
+- (void)__addObservers;
+- (void)__createComponents;
+- (void)__layoutComponents;
+- (void)renderBusinessHandler:(id)a0 context:(id)a1;
+- (void)didChangeInteractionController:(id)a0 context:(id)a1;
+- (void)rtvSession:(id)a0 participatorsDidChange:(id)a1 oldParticipators:(id)a2;
+- (void)roomController:(id)a0 didUpdateTextChatInfo:(id)a1 withBusinessModel:(id)a2;
+- (void)__updateComponents;
+- (void)showInputViewController;
+- (id)toolBarMoreButton;
+- (id)toolBarCastButton;
+- (void)xrCaptureController:(id)a0 didChangeToMicrophoneMuted:(BOOL)a1;
+- (void)xrCaptureController:(id)a0 didReceiveSpeakerAudioVolumUpdates:(id)a1 totalVolume:(unsigned long long)a2;
+- (BOOL)__shouldShowInputViewController;
+- (void)__updateMuteButtonMuted:(BOOL)a0;
+- (void)__showFeedTips;
+- (void)__doShowHotFeedTips:(id)a0;
+- (void)__showLongVideoSupportTip;
+- (void)__dismissTipBubbleIfNeededWithAnimated:(BOOL)a0;
+- (void)__startMuteButtonAccessoryAnimationWithVolume:(unsigned long long)a0;
+- (void)__stopMuteButtonAccessoryAnimation;
+- (void).cxx_destruct;
+- (void)viewDidLoad;
+- (void)buttonTapped:(id)a0;
+- (void)dealloc;
+
+@end

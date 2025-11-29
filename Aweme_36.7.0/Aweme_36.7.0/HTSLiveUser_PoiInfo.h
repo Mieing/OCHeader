@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveUser_PoiInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isPoiEnabled;
+@property (nonatomic) long long poiId;
+@property (copy, nonatomic) NSString *poiName;
+@property (copy, nonatomic) NSString *poiIdStr;
+@property (nonatomic) long long followerCountPermission;
+@property (nonatomic) long long whiteUserPermission;
+
++ (id)descriptor;
+
+@end

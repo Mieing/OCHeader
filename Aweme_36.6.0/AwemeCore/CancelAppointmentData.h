@@ -1,0 +1,7 @@
+@interface CancelAppointmentData : IESLivePBBaseMessage
+
+@property (nonatomic) int responseStatus;
+
++ (id)descriptor;
+
+@end

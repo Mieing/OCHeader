@@ -1,0 +1,12 @@
+@class NSString, NSMutableDictionary;
+
+@interface IMInfoResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL disableEntrance;
+@property (copy, nonatomic) NSString *logExtra;
+@property (retain, nonatomic) NSMutableDictionary *startPageQuery;
+@property (readonly, nonatomic) unsigned long long startPageQuery_Count;
+
++ (id)descriptor;
+
+@end

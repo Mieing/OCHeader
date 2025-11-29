@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESLiveLinkMicChannelGetRtcInfoResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rtcInfo;
+@property (copy, nonatomic) NSString *livecoreInfo;
+@property (copy, nonatomic) NSString *rtcStrategy;
+@property (copy, nonatomic) NSString *linkmicId;
+
++ (id)descriptor;
+
+@end

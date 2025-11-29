@@ -1,0 +1,3 @@
+@interface IESOuterTestRouterRegister : NSObject
+
+@end

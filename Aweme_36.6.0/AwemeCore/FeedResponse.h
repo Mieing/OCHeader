@@ -1,0 +1,12 @@
+@class NSMutableArray, FeedExtra;
+
+@interface FeedResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+@property (retain, nonatomic) FeedExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

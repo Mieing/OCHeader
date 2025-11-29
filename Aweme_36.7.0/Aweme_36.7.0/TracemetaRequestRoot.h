@@ -1,0 +1,3 @@
+@interface TracemetaRequestRoot : GPBRootObject
+
+@end

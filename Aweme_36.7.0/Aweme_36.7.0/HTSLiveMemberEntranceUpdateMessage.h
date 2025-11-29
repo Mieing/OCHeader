@@ -1,0 +1,13 @@
+@class HTSLiveCommon, HTSLiveMemberEntranceInfo;
+
+@interface HTSLiveMemberEntranceUpdateMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long actionType;
+@property (retain, nonatomic) HTSLiveMemberEntranceInfo *memberEntranceInfo;
+@property (nonatomic) BOOL hasMemberEntranceInfo;
+
++ (id)descriptor;
+
+@end

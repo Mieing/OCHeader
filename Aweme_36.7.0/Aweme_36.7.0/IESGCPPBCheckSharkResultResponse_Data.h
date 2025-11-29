@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBCheckSharkResultResponse_Data : GPBMessage
+
+@property (copy, nonatomic) NSString *checkResult;
+@property (nonatomic) long long downloadStatus;
+
++ (id)descriptor;
+
+@end

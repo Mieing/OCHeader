@@ -1,0 +1,10 @@
+@interface VideoUnreadStructV2 : GPBMessage
+
+@property (nonatomic) int unreadCount;
+@property (nonatomic) BOOL hasUnreadCount;
+@property (nonatomic) long long latestUnreadVideoCreatedTime;
+@property (nonatomic) BOOL hasLatestUnreadVideoCreatedTime;
+
++ (id)descriptor;
+
+@end

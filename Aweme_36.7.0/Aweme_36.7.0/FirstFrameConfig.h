@@ -1,0 +1,3 @@
+@interface FirstFrameConfig : TraceMetaPluginConfig
+
+@end

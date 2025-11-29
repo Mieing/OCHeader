@@ -1,0 +1,3 @@
+@interface IESIMDataSyncDefine : NSObject
+
+@end

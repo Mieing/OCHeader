@@ -1,0 +1,52 @@
+@interface MJPublisherReporter : NSObject
+
++ (void)reportTrySkipTranscodeEventWithAVAssest:(id)a0 result:(id)a1;
++ (id)generateReportParamsFromVideoEncodeParams:(id)a0;
++ (void)reportExportEventWithExportScene:(id)a0 encodeParams:(id)a1;
++ (void)reportExportEventWithExportScene:(id)a0 encodeParams:(id)a1 otherParams:(id)a2;
++ (void)reportTimelineHasMutated:(BOOL)a0;
++ (void)reportExportTooLong:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
++ (void)reportAssetsOriginFormatWithOriginAssets:(id)a0;
++ (void)reportDraftEventWithParams:(id)a0;
++ (void)reportASREventWithParams:(id)a0;
++ (void)reportAIGCRequestStartWithVM:(id)a0;
++ (void)reportAIGCRequestFailedWithVM:(id)a0 timeCost:(unsigned long long)a1 error:(id)a2;
++ (void)reportAIGCRequestSucceedWithVM:(id)a0 timeCost:(unsigned long long)a1;
++ (void)reportPreloadCameraTemplateResourceWithTemplateInfo:(id)a0 isHighPriority:(BOOL)a1;
++ (void)reportMovieComposingLeakedWithName:(id)a0;
++ (void)reportMovieComposingShowKeyboardForMovieTitleWithVM:(id)a0;
++ (void)reportMovieComposingTouchSkipMovieTilteInputGuideButtonWithVM:(id)a0;
++ (void)reportMovieComposingTouchFeedbackButtonWithVM:(id)a0;
++ (void)reportPublisherDisableBGMWithContext:(id)a0;
++ (void)reportPublisherEnterBGMAdjustPanelWithContext:(id)a0;
++ (void)reportPublisherTouchBGMAdjustVolumeButtonWithContext:(id)a0;
++ (void)reportPublisherTouchBGMAdjustLyricButtonWithContext:(id)a0;
++ (void)reportShootComposingClickReplayWithVM:(id)a0;
++ (void)reportShootComposingEnterTemplatePanelShowingModeWithVM:(id)a0;
++ (void)reportShootComposingEnterTemplateTabPanelWithVM:(id)a0 templateTabID:(unsigned long long)a1;
++ (void)reportShootComposingEnterAlbumForMovieWithVM:(id)a0;
++ (void)reportShootComposingEnterAlbumForShootWithVM:(id)a0;
++ (void)reportTemplateCreatingStartWithMJPublisher:(id)a0 assetInfos:(id)a1;
++ (void)reportShootComposingStartPreviewWithVM:(id)a0 userSelectedTemplateItemReportModel:(id)a1 isMicrophoneOpened:(BOOL)a2 isDuetShoot:(BOOL)a3;
++ (void)reportShootComposingStartPreviewWithVM:(id)a0 templateItem:(id)a1 templateTabID:(id)a2 templateIndex:(long long)a3 isTemplateSelectDefault:(BOOL)a4 isMicrophoneOpened:(BOOL)a5 isDuetShoot:(BOOL)a6;
++ (void)reportShootComposingEndPreviewWithVM:(id)a0;
++ (void)reportShootComposingTouchFavoriteButtonWithVM:(id)a0 templateItem:(id)a1 isFavorite:(BOOL)a2;
++ (void)reportShootComposingTouchAuthorContainerButtonWithVM:(id)a0;
++ (void)reportShootComposingStartRecordWithVM:(id)a0;
++ (void)reportShootComposingCancelRecordWithVM:(id)a0 cancelReason:(id)a1 cancelMessage:(id)a2;
++ (void)reportShootComposingEndRecordWithVM:(id)a0 resultMediaFilePath:(id)a1 reachDurationLimit:(BOOL)a2;
++ (void)reportShootComposingStartAssetGenerateWithVM:(id)a0 assetCount:(long long)a1 imageCount:(long long)a2 videoCount:(long long)a3;
++ (void)reportShootComposingAssetGenerateCompleteWithVM:(id)a0 resultMediaFilePath:(id)a1;
++ (void)reportShootComposingAssetGenerateClipWithVM:(id)a0 resultMediaFilePath:(id)a1;
++ (void)reportShootComposingAssetGenerateCropWithVM:(id)a0;
++ (void)reportShootComposingAssetGenerateTouchFeedbackButtonWithVM:(id)a0;
++ (void)reportShootComposingAssetGenerateTouchBeautyMakeupButtonWithVM:(id)a0;
++ (void)reportShootComposingAssetGenerateTouchSaveVideoButtonWithVM:(id)a0;
++ (void)reportShootComposingAssetGenerateExportFailedWithVM:(id)a0 error:(id)a1;
++ (void)reportMovieComposingExportAndPublishWithVM:(id)a0;
++ (void)reportMovieComposingExportAndSaveVideoWithVM:(id)a0;
++ (void)reportMovieComposingExportFailedWithVM:(id)a0 error:(id)a1;
++ (void)reportPublisherEnterWithMetrics:(id)a0 publisherContext:(id)a1;
++ (void)reportPublisherExitWithReason:(id)a0 publisherSessionMetrics:(id)a1 publisherContext:(id)a2;
+
+@end

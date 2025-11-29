@@ -1,0 +1,33 @@
+@class HTSLiveFeedbackCard_Condition, NSString, HTSLiveImage, NSMutableArray, HTSLiveRoom;
+
+@interface HTSLiveFeedbackCard : IESLivePBBaseMessage
+
+@property (nonatomic) long long feedbackCardState;
+@property (nonatomic) BOOL fromEntrance;
+@property (nonatomic) BOOL preFeedbackCanShowInLive;
+@property (nonatomic) long long startShowIndex;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) long long feedbackId;
+@property (retain, nonatomic) NSMutableArray *questionArray;
+@property (readonly, nonatomic) unsigned long long questionArray_Count;
+@property (retain, nonatomic) HTSLiveFeedbackCard_Condition *condition;
+@property (nonatomic) BOOL hasCondition;
+@property (nonatomic) long long roomId;
+@property (retain, nonatomic) HTSLiveRoom *roomData;
+@property (nonatomic) BOOL hasRoomData;
+@property (copy, nonatomic) NSString *negativeText;
+@property (retain, nonatomic) HTSLiveImage *bgm;
+@property (nonatomic) BOOL hasBgm;
+@property (nonatomic) int feedbackType;
+@property (nonatomic) int inflowFeedbackType;
+@property (nonatomic) int anchorFeedbackType;
+@property (nonatomic) int scene;
+
++ (id)descriptor;
+
+- (BOOL)enableContinueShowScrollBackWhenOnCondition;
+- (id)questions;
+- (id)roomID;
+- (id)feedbackID;
+
+@end

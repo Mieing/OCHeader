@@ -1,0 +1,10 @@
+@class HTSLiveImage;
+
+@interface IESLiveListTagFansContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *fansTag;
+@property (nonatomic) BOOL hasFansTag;
+
++ (id)descriptor;
+
+@end

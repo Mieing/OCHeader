@@ -1,0 +1,72 @@
+@class NSString, AWEFeedPreloadManager, AWEAwemeModel, NSNumber, NSMutableArray;
+@protocol AWEFeedTrackControllerProtocol;
+
+@interface AWEFeedPlayletVideoController : AWEBaseController <AWEFeedControllerProtocol, AWEFeedTableViewCellControllerPlayerDelegate, AWEFeedTrackControllerListenerProtocol>
+
+@property (retain, nonatomic) NSNumber *currentPlaybackRate;
+@property (retain, nonatomic) AWEAwemeModel *toReplaceModel;
+@property (nonatomic) BOOL currentCellHasRecord;
+@property (retain, nonatomic) NSMutableArray *playletIDs;
+@property (copy, nonatomic) id /* block */ startPlayHandler;
+@property (weak, nonatomic) id<AWEFeedTrackControllerProtocol> feedTrackController;
+@property (retain, nonatomic) AWEFeedPreloadManager *playletPreloadManager;
+@property (nonatomic) BOOL lastPlayletIsAds;
+@property (nonatomic) double adpageShowTime;
+@property (nonatomic) long long feedWatchAdCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)cellViewControllerDidRenderFirstFrame:(id)a0;
+- (void)beginRefresh;
+- (void)tableView:(id)a0 didDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)tableView:(id)a0 didEndDisplayingCellBeforeReset:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)configureCell:(id)a0 withModel:(id)a1 atIndexPath:(id)a2;
+- (void)scrollViewDidScrollEndWithActive;
+- (void)onScrollDidEndWithIndexPath:(id)a0;
+- (void)videoPlayer:(id)a0 updatePlayTime:(double)a1 totalTime:(double)a2;
+- (void)videoControllerWillStartNextLoop:(id)a0;
+- (id)awemeModelWithIndexPath:(id)a0;
+- (id)paramsForTrackEventType:(unsigned long long)a0 initialContextParams:(id)a1;
+- (id)paramsForEnterPersonalDetail;
+- (void)onChangePlayVideoNotification:(id)a0;
+- (void)onPreloadMixVideoNotification:(id)a0;
+- (void)configurePlayletPreloadManager;
+- (void)videoPlayTrackerForSetupReusePlayer;
+- (void)preloadVideoWithIndex:(long long)a0;
+- (id)getInteractionContext;
+- (void)sendEventToInteraction:(id)a0 object:(id)a1 context:(id)a2;
+- (void)insertPlayletVideoNotification:(id)a0;
+- (void)removeVideoForPlayletInsertADNotification:(id)a0;
+- (id)currentWatermarkView;
+- (void)showPlayletWatermarkWithNeedRelayout:(BOOL)a0;
+- (void)willDisplayMonetizeTraceReportWithModel:(id)a0;
+- (id)dictionaryForADTrackerParamsWithModel:(id)a0;
+- (BOOL)canSavePlayletHistory;
+- (void)trackAdsPage:(id)a0 event:(id)a1;
+- (BOOL)playletFeedInsertADGuideEnable;
+- (void)barPlayletLoadMoreComplete:(id)a0;
+- (void)insertFeedFirstAweme:(id)a0;
+- (void)replaceVideo:(id)a0 withModel:(id)a1 reuseCell:(BOOL)a2;
+- (void)reuseCellReplaceAweme:(id)a0 withModel:(id)a1 byBiz:(long long)a2;
+- (void)savePlayletPlayDuration:(id)a0;
+- (void)saveCurrentUserWatchedPlayletIdFromHotTabIfNeeded:(id)a0;
+- (BOOL)needTrackSeriesTabShow;
+- (void)savePlayletInRecommendDistributeVideoInfo:(id)a0;
+- (BOOL)shouldPreloadAdJumpInnerModelWithModel:(id)a0;
+- (BOOL)shouldBarNextEpisodePreloadManagerFix;
+- (long long)barNextEpisodePreloadCount;
+- (void)barPreloadVideoWithAwemeList:(id)a0 preloadCount:(long long)a1 currentAweme:(id)a2;
+- (long long)barLoadMorePreloadCount;
+- (void)colorizeModelIfNeed:(id)a0;
+- (id)AWEShowPlayletBarNextEpisodePreloadManagerFixParams;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)viewWillAppear;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)orientationChanged;
+
+@end

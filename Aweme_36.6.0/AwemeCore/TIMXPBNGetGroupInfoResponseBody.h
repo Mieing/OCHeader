@@ -1,0 +1,10 @@
+@class TIMXPBNGroupInfo;
+
+@interface TIMXPBNGetGroupInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNGroupInfo *groupInfo;
+@property (nonatomic) BOOL hasGroupInfo;
+
++ (id)descriptor;
+
+@end

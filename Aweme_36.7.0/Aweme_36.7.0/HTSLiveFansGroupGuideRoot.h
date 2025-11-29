@@ -1,0 +1,3 @@
+@interface HTSLiveFansGroupGuideRoot : GPBRootObject
+
+@end

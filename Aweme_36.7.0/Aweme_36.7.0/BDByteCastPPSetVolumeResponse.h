@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetVolumeResponse : BDByteCastPPBaseCmdResponse
+
+@end

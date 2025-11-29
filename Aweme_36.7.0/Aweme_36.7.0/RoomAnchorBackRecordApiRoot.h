@@ -1,0 +1,3 @@
+@interface RoomAnchorBackRecordApiRoot : GPBRootObject
+
+@end

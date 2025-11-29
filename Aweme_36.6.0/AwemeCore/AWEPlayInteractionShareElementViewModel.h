@@ -1,0 +1,83 @@
+@class NSString, UIViewController, AWEPageContext;
+@protocol AWEPlayInteractionContextProtocol, AWESharePanel, AWEPlayInteractionShareActionLifeCycleDelegate;
+
+@interface AWEPlayInteractionShareElementViewModel : AWEPlayInteractionBaseElementViewModel <AWEPlayInteractionShareElementViewModelProtocol>
+
+@property (copy, nonatomic) NSString *shareDataChanged;
+@property (copy, nonatomic) NSString *sharePanelEnterMethod;
+@property (weak, nonatomic) UIViewController<AWESharePanel> *sharePanel;
+@property (weak, nonatomic) UIViewController *viewController;
+@property (weak, nonatomic) id<AWEPlayInteractionShareActionLifeCycleDelegate> actionDelegate;
+@property (copy, nonatomic) NSString *pageTypeString;
+@property (copy, nonatomic) NSString *cityInfoString;
+@property (nonatomic) BOOL isShowingInverseShareUserIcon;
+@property (copy, nonatomic) NSString *labelForShareWhenGuideAnimating;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) id /* block */ playShareGuideAnimationWithFinish;
+@property (copy, nonatomic) id /* block */ playIMShareGuideAnimationWithFinish;
+@property (copy, nonatomic) id /* block */ playLiteGoldShareGuideAnimationWithFinish;
+@property (copy, nonatomic) id /* block */ playFCoinShareGuideAnimationWithFinish;
+@property (copy, nonatomic) id /* block */ playIncentiveShareIconAlienationAnimationWithFinish;
+@property (nonatomic) unsigned long long shareActionStatus;
+@property (nonatomic) BOOL alertActionShare;
+@property (nonatomic) BOOL isNoTextStyle;
+@property (nonatomic) BOOL isActivityShare;
+@property (readonly, nonatomic) AWEPageContext<AWEPlayInteractionContextProtocol> *context;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWEFeedModuleServiceDOUYINHTSAdaperClass;
++ (Class)aAWEFeedModuleServiceDOUYINLiteAdaperClass;
++ (Class)aAWELiteUGSocialModuleAdapterClass;
++ (Class)aAWEFeedShareObtainGoldDOUYINLiteAdapterClass;
++ (Class)aAWEUGKitModuleDOUYINAdapterClass;
+
+- (void)dealloc;
+- (id)aAWEPadModuleAdapter;
+- (void)onShareButtonTapped:(id)a0;
+- (void)updateShareButton;
+- (void)interactor_onShareButtonTapped:(id)a0;
+- (void)checkIfShouldShowShareGuideAnimation;
+- (void)checkIfShouldShowShareGuideAnimationWithPlayTimes:(long long)a0;
+- (void)checkIfShouldShowIMShareGuideAnimation;
+- (void)checkIfShouldShowLiteGoldShareGuideAnimation;
+- (void)checkIfShouldShowFCollectShareGuideAnimation;
+- (void)playShareGuideAnimationWithFinishBlock:(id /* block */)a0;
+- (void)onShareVCDismissedNotification:(id)a0;
+- (BOOL)isCurrentUserAweme;
+- (void)p_showSharePanelWithEnterMethod:(id)a0 shareButton:(id)a1;
+- (BOOL)showShareAnimationIfNeedWithFinishBlock:(id /* block */)a0;
+- (void)dismissSharePanel;
+- (void)trackShareOtherClick;
+- (void)checkIfShouldShowShareAnimationWithPlayTimes:(long long)a0;
+- (void)didUpdateShareActionStatus:(unsigned long long)a0;
+- (id)aAWEFeedModuleServiceDOUYINHTSAdaper;
+- (id)aAWEFeedModuleServiceDOUYINLiteAdaper;
+- (id /* block */)shareConfigurationHandler;
+- (id)aAWELiteUGSocialModuleAdapter;
+- (id)aAWEFeedShareObtainGoldDOUYINLiteAdapter;
+- (id)aAWEUGKitModuleDOUYINAdapter;
+- (void)sharePanelWillShow;
+- (void)sharePanelDidDismiss;
+- (void)sharePanelWillDismiss;
+- (void)playLiteGoldShareGuideAnimationWithFinishBlock:(id /* block */)a0;
+- (void)playFCollectShareGuideAnimationWithFinishBlock:(id /* block */)a0;
+- (void)playIMShareGuideAnimationWithFinishBlock:(id /* block */)a0;
+- (void)trackShareClick;
+- (void)trackClickMoreButton:(id)a0;
+- (void)showXiguaVideoSharePanelWithShareButton:(id)a0;
+- (void)showSharePanelAndLoginPanelWithShareButton:(id)a0;
+- (void)trackShareGuideAnimationShow;
+- (id /* block */)searchXiguaShareConfigurationHandlerWithExtraLogInfo:(id)a0;
+- (void)didShowShareView:(id)a0;
+- (void)showSharePanelWithShareButton:(id)a0;
+- (id)makeExtraLogInfoForSharing;
+- (void)trackDataWithAweShareGuideType;
+- (void).cxx_destruct;
+- (id)init;
+- (id)iconString;
+
+@end

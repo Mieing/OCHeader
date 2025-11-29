@@ -1,0 +1,70 @@
+@class IESLiveGameOpenPlatformAppInstanceContext, NSString, IESLiveGameOpenPlatformAudienceEntranceMsgModel, IESLiveAnchorAudienceInteractiveGameModel;
+@protocol IESLiveGameOpenPlatformLauncher;
+
+@interface IESLiveGameOpenPlatformAudienceAppInstance : IESLiveGameOpenPlatformAppInstance <IESLiveGameOpenPlatformAudienceAppInstance>
+
+@property (retain, nonatomic) IESLiveAnchorAudienceInteractiveGameModel *aaiGameModel;
+@property (nonatomic) double startTimeInterval;
+@property (retain, nonatomic) IESLiveGameOpenPlatformAudienceEntranceMsgModel *entranceMsg;
+@property (nonatomic) BOOL certStatus;
+@property (nonatomic) BOOL startFinished;
+@property (nonatomic) BOOL loadFinished;
+@property (nonatomic) BOOL runningEnd;
+@property (retain, nonatomic) IESLiveGameOpenPlatformAppInstanceContext *context;
+@property (retain, nonatomic) id<IESLiveGameOpenPlatformLauncher> launcher;
+@property (readonly, nonatomic) unsigned long long currentState;
+@property (readonly, nonatomic) BOOL isInRunning;
+@property (readonly, nonatomic) BOOL isInActive;
+@property (readonly, nonatomic) BOOL isInShareScreen;
+@property (nonatomic) long long totalShowTime;
+@property (nonatomic) BOOL shouldPause;
+@property (nonatomic) unsigned long long appLaunchState;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)shutdownWithReason:(id)a0 completion:(id /* block */)a1;
+- (void)requestAppStartWithCallBack:(id /* block */)a0;
+- (void)continueLaunch;
+- (void)checkSupportLiveScene;
+- (void)updateCertStatus:(BOOL)a0;
+- (void)trackCertAlertWithClickType:(id)a0;
+- (void)trackAuthWithParams:(id)a0;
+- (void)requestAudienceStartWithCompletion:(id /* block */)a0;
+- (id)trackerExtraFields:(id)a0;
+- (id)initWithAppID:(id)a0 componentContext:(id)a1 eventContext:(id)a2;
+- (void)_resetContextWithSchema:(id)a0 appId:(id)a1;
+- (void)_startApp;
+- (void)launchGameNewEntrance;
+- (void)showEmulator;
+- (BOOL)checkNeedLoginStatusWhenLaunch;
+- (void)checkStartStatusWhenLaunch;
+- (void)checkLaunchAfterStartRequestFinished;
+- (void)trackStartWithInfo:(long long)a0;
+- (void)checkAppCanLaunch;
+- (void)_exitApp:(id)a0;
+- (void)_receiveIMMessage:(id)a0;
+- (void)_handleAppStopMsgWithSource:(id)a0 msgType:(unsigned long long)a1;
+- (void)_setupWithEntranceMessage:(id)a0;
+- (void)launchXplayWithGameModel:(id)a0 completed:(id /* block */)a1;
+- (void)_handleEntranceVisibleLogicWithMsgType:(unsigned long long)a0 source:(id)a1;
+- (void)launch:(id)a0 msgType:(unsigned long long)a1 source:(id)a2;
+- (void)_requestExplainCard;
+- (void)_launchAppWithEntranceMessage:(id)a0;
+- (BOOL)_enableLaunchSchema:(id)a0;
+- (void)loadWithSchema:(id)a0 appID:(id)a1;
+- (void)_trackAncientEvent:(id)a0 params:(id)a1;
+- (void)_trackStop;
+- (void)_trackStartStopDuration;
+- (void)closeXplayGame:(id)a0;
+- (void)handleEntranceMessage:(id)a0 msgType:(unsigned long long)a1 source:(id)a2;
+- (void)_startAppSuccess;
+- (void).cxx_destruct;
+- (void)shutdownWithReason:(id)a0;
+- (void)free;
+- (void)show;
+- (void)trackStart;
+- (void)receiveMessage:(id)a0;
+
+@end

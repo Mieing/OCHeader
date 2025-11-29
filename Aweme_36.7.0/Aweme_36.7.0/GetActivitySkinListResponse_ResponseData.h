@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GetActivitySkinListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *skinsArray;
+@property (readonly, nonatomic) unsigned long long skinsArray_Count;
+
++ (id)descriptor;
+
+@end

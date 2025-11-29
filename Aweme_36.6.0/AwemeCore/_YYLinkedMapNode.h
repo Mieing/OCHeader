@@ -1,0 +1,12 @@
+@interface _YYLinkedMapNode : NSObject {
+    _YYLinkedMapNode *_prev;
+    _YYLinkedMapNode *_next;
+    id _key;
+    id _value;
+    unsigned long long _cost;
+    double _time;
+}
+
+- (void).cxx_destruct;
+
+@end

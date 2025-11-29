@@ -1,0 +1,17 @@
+@class NSString, HTSLiveCommon, HTSLiveUser;
+
+@interface HTSLivePromptMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *content;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) int duration;
+
++ (id)descriptor;
+
+- (double)showTime;
+- (void)setShowTime:(double)a0;
+
+@end

@@ -1,0 +1,81 @@
+@class NSString, AWEAwemeModel, AWEFeedCellViewController, UIView, UIViewController;
+@protocol UIScrollViewDelegate, AWEFeelGoodCellViewControllerProtocol;
+
+@interface AWEFeedViewCell : UITableViewCell <AWEFeedTableViewCellProtocol, AWEFeelGoodCellProtocol>
+
+@property (retain, nonatomic) AWEFeedCellViewController *viewController;
+@property (retain, nonatomic) Class pInteractionControllerFactory;
+@property (nonatomic) struct EngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *audioWrapper;
+@property (nonatomic) struct EngineVideoWrapper { void /* function */ *x0; void /* function */ *x1; void *x2; } *videoWrapper;
+@property (nonatomic) long long indexPath;
+@property (weak, nonatomic) UIViewController *parentVC;
+@property (copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) AWEAwemeModel *registerElementModel;
+@property (nonatomic) long long cellDisplayState;
+@property (nonatomic) long long cellPageAppearState;
+@property (copy, nonatomic) id /* block */ currentCellPageAppearStateBlock;
+@property (nonatomic) BOOL didResetForReusable;
+@property (retain, nonatomic) UIView *feedTableViewCellMaskView;
+@property (readonly, weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+@property (nonatomic) BOOL hadPrepareToDisplay;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) UIViewController<AWEFeelGoodCellViewControllerProtocol> *feelGoodViewController;
+
++ (Class)aAWEPadModuleAdapterClass;
+
+- (void)layoutSubviews;
+- (void)prepareForDisplayWithoutCoverImage;
+- (void)pauseIfNotStop;
+- (BOOL)isScrolledAutomatically;
+- (void)setIsScrolledAutomatically:(BOOL)a0;
+- (BOOL)isVideoRelatedPanelShowing;
+- (void)didDisplay;
+- (BOOL)isRelatedVideoPanelShowing;
+- (BOOL)isLikeUserPanelShowing;
+- (BOOL)isAITextPanelShowing;
+- (id)aAWEPadModuleAdapter;
+- (void)updateAntiAddictedOptStrongRemindView:(BOOL)a0;
+- (BOOL)fullDetaillHalfScreenViewShowed;
+- (void)didEndDisplayingBeforeReset;
+- (void)afterDidEndDisplaying;
+- (BOOL)isViewerListShowing;
+- (void)configWithModel:(id)a0;
+- (void)resetRefreshFlag;
+- (void)seekTime:(double)a0 completion:(id /* block */)a1;
+- (void)addFeedTableViewCellMaskView:(id)a0;
+- (void)removeFeedTableViewCellMaskView;
+- (void)mutePlayerController:(BOOL)a0;
+- (void)replaceViewController:(id)a0 removeIfExisting:(BOOL)a1;
+- (BOOL)isCommonFeedCell;
+- (long long)currentVideoScaleMode;
+- (void)removeCellChildVCForMemoryOpt;
+- (void)setInteractionControllerFactory:(Class)a0;
+- (Class)interactionControllerFactory;
+- (void)_removeChildVC;
+- (void)_addChildVC;
+- (void)p_configVoiceOverElements;
+- (BOOL)isCommentPanelShowing;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)stop;
+- (void)reset;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (double)currentPlaybackTime;
+- (void)dealloc;
+- (BOOL)accessibilityScroll:(long long)a0;
+- (void)configureWithModel:(id)a0;
+- (void)didEndDisplaying;
+- (void)pauseIfPlaying;
+- (void)willDisplay;
+- (void)pageDidDisappear:(BOOL)a0;
+- (void)pageWillAppear:(BOOL)a0;
+- (void)pageDidAppear:(BOOL)a0;
+- (void)pageWillDisappear:(BOOL)a0;
+
+@end

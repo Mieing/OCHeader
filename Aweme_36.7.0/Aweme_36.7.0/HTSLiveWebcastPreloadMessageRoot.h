@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastPreloadMessageRoot : GPBRootObject
+
+@end

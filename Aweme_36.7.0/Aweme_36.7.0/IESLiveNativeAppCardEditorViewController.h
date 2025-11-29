@@ -1,0 +1,76 @@
+@class UIView, ShelfInfo, UISwitch, ShelfCardInfo, IESLiveNativeAppCoverSelectViewController, UIImageView, UIButton, IESLiveNativeAppApi, IESLiveNativeAppTitleEditViewController, NSString, IESLiveNativeAppExplainCardView, UILabel;
+@protocol IESLivePhotoLibraryService, IESLiveNativeAppCardEditorDelegate;
+
+@interface IESLiveNativeAppCardEditorViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, IESLiveNativeAppTitleEditDelegate, IESLiveNativeAppCoverSelectDelegate>
+
+@property (weak, nonatomic) id<IESLiveNativeAppCardEditorDelegate> delegate;
+@property (nonatomic) unsigned long long scene;
+@property (retain, nonatomic) UIView *edgeView;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UIButton *naviBackButton;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) IESLiveNativeAppExplainCardView *cardView;
+@property (retain, nonatomic) UIView *editContentView;
+@property (retain, nonatomic) UIView *coverEditContent;
+@property (retain, nonatomic) UILabel *coverEditLabel;
+@property (retain, nonatomic) UILabel *coverEditDescLabel;
+@property (retain, nonatomic) UIButton *coverEditButton;
+@property (retain, nonatomic) UIImageView *customizedCoverImageView;
+@property (retain, nonatomic) UILabel *reviewLabel;
+@property (retain, nonatomic) UIView *titleEditContent;
+@property (retain, nonatomic) UILabel *titleEditTitleLabel;
+@property (retain, nonatomic) UILabel *titleEditDescLabel;
+@property (retain, nonatomic) UIButton *titleEditButton;
+@property (retain, nonatomic) UIView *cardExplainStatusContent;
+@property (retain, nonatomic) UILabel *cardExplainStatusDesc;
+@property (retain, nonatomic) UISwitch *cardExplainStatusSwitch;
+@property (retain, nonatomic) UIButton *saveButton;
+@property (retain, nonatomic) ShelfInfo *shelfInfo;
+@property (retain, nonatomic) ShelfCardInfo *cardInfo;
+@property (weak, nonatomic) IESLiveNativeAppCoverSelectViewController *coverSelectVC;
+@property (weak, nonatomic) IESLiveNativeAppTitleEditViewController *titleEditVC;
+@property (retain, nonatomic) IESLiveNativeAppApi *api;
+@property (retain, nonatomic) id<IESLivePhotoLibraryService> photoService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)closeButtonDidClick:(id)a0;
+- (void)titleEditButtonDidClick;
+- (void)blankAreaDidClick;
+- (id)buildSeparateLine;
+- (void)trackCardEditorShowWithShelfInfo:(id)a0;
+- (void)updateCardEditor;
+- (id)coverEditDescText;
+- (id)titleEditDescText;
+- (void)updateCustomizedCoverContent;
+- (void)updateCardExplainStatusContent;
+- (void)trackCardEditButtonClick:(id)a0;
+- (void)trackShelfTitleChangeWithShelfInfo:(id)a0 Result:(id)a1;
+- (void)usePosterCoverTitle:(id)a0;
+- (void)trackCardCoverEditButtonClick:(id)a0;
+- (void)tryToUseCustomizedCover;
+- (void)tryToUsePosterCover;
+- (void)tryToShowImagePicker;
+- (void)showImagePickerWithPrivacyCert:(id)a0;
+- (void)didSelectCustomizedCoverImage:(id)a0;
+- (void)naviBackButtonDidClick:(id)a0;
+- (void)coverEditButtonDidClick;
+- (void)cardExplainStatusDidChange;
+- (void)saveButtonDidClick;
+- (void)editor:(id)a0 endWithText:(id)a1;
+- (void)editor:(id)a0 hitSensitiveWord:(id)a1;
+- (void)coverSelected:(int)a0;
+- (id)initWithDelegate:(id)a0 scene:(unsigned long long)a1;
+- (void)updateWithShelfInfo:(id)a0;
+- (void)close;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (id)bgColor;
+- (void)setUpUI;
+
+@end

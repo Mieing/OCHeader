@@ -1,0 +1,10 @@
+@class WantToSingSongListResponse_ResponseData;
+
+@interface WantToSingSongListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) WantToSingSongListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

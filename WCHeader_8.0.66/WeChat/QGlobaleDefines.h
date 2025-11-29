@@ -1,0 +1,80 @@
+@class NSString, QBussinessSetting;
+
+@interface QGlobaleDefines : NSObject
+
+@property (readonly, copy, nonatomic) NSString *authorizationDomain;
+@property (readonly, copy, nonatomic) NSString *indoordataDomain;
+@property (readonly, copy, nonatomic) NSString *overseadataDomain;
+@property (readonly, copy, nonatomic) NSString *mapdataDomain;
+@property (readonly, copy, nonatomic) NSString *mapstyleDomain;
+@property (readonly, copy, nonatomic) NSString *rttdataDomain;
+@property (readonly, copy, nonatomic) NSString *sketchdataDomain;
+@property (readonly, copy, nonatomic) NSString *sketchTileDomain;
+@property (readonly, copy, nonatomic) NSString *satellitedataDomain;
+@property (readonly, copy, nonatomic) NSString *statisticDomain;
+@property (readonly, copy, nonatomic) NSString *overseaTileDomain;
+@property (readonly, copy, nonatomic) NSString *visualLayerDataDomain;
+@property (readonly, copy, nonatomic) NSString *brandLogoDataDomain;
+@property (readonly, nonatomic, getter=isNoStatisticParames) BOOL noStatisticParames;
+@property (copy) NSString *suid;
+@property (copy) NSString *vendorDeviceId;
+@property (retain, nonatomic) QBussinessSetting *serverSetting;
+@property (nonatomic) BOOL worldmapPrevilege;
+@property (readonly, copy, nonatomic) NSString *documentRootPath;
+@property (readonly, copy, nonatomic) NSString *cacheRootPath;
+@property (readonly, copy, nonatomic) NSString *tileOverlayCacheRootPath;
+@property (readonly, copy, nonatomic) NSString *offlineMapCacheRootPath;
+@property (copy, nonatomic) NSString *dataEngineVersion;
+@property (copy, nonatomic) NSString *miniProgramID;
+@property (copy, nonatomic) NSString *businessKey;
+
++ (id)singleton;
++ (long long)clientType;
+
+- (void)setupNetworkStatsRules;
+- (id)mapBeaconRules;
+- (id)authorizationDomain;
+- (id)indoordataDomain;
+- (id)overseadataDomain;
+- (id)mapdataDomain;
+- (id)mapstyleDomain;
+- (id)rttdataDomain;
+- (id)sketchdataDomain;
+- (id)sketchTileDomain;
+- (id)satellitedataDomain;
+- (id)statisticDomain;
+- (id)overseaTileDomain;
+- (id)visualLayerDataDomain;
+- (void)clearServerProtocol;
+- (void)loadSeverDomain:(BOOL)a0 withJson:(id)a1;
+- (void)updateServerProtocolJsonString:(id)a0;
+- (void)updateServerProtocolDict:(id)a0;
+- (void)updateServerProtocolData:(id)a0;
+- (id)getDomainByKey:(id)a0;
+- (id)constructSensitiveCommonArguments;
+- (id)getAppVersion;
+- (id)DPI;
+- (id)getAppIdentifier;
+- (id)appName;
+- (id)getRandomDeviceID;
+- (id)getVendorId;
+- (id)deviceType;
+- (void)registerDataSafetyRuls;
+- (id)generateDataSafetyRuls;
+- (id)init;
+- (void)saveSDKVersion;
+- (BOOL)shouldClearAllLocalConfigFiles;
+- (id)sdkVersion;
+- (id)constructCommonArguments;
+- (id)netType;
+- (id)percentString:(id)a0;
+- (id)constructURLStringWithArguments:(id)a0 forUrl:(id)a1;
+- (id)appendCommonUrlStatisticParamatersFor:(id)a0;
+- (id)translateUrlParamWithString:(id)a0;
+- (id)URLEncodedString:(id)a0;
+- (id)handDrawMapVersion;
+- (void)updateHandDrawMapVersion:(id)a0;
+- (id)imageNamed:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailNavBarApiRoot : GPBRootObject
+
+@end

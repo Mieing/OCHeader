@@ -1,0 +1,5 @@
+@interface IESPlaybackPaidStreamControlConfig
+
++ (void /* unknown type, empty encoding */)initialize;
+
+@end

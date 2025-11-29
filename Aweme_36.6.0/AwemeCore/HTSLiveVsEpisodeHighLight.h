@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveVsEpisodeHighLight : IESLivePBBaseMessage
+
+@property (nonatomic) long long location;
+@property (copy, nonatomic) NSString *description_p;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (copy, nonatomic) NSString *pid;
+
++ (id)descriptor;
+
+@end

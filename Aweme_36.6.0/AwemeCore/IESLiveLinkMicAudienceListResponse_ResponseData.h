@@ -1,0 +1,24 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveLinkMicAudienceListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *userArray;
+@property (readonly, nonatomic) unsigned long long userArray_Count;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) long long totalCount;
+@property (nonatomic) BOOL ktvShowSingerIcon;
+@property (retain, nonatomic) NSMutableArray *lockedPositionsArray;
+@property (readonly, nonatomic) unsigned long long lockedPositionsArray_Count;
+@property (copy, nonatomic) NSString *nextCursor;
+@property (nonatomic) int sortStrategy;
+@property (nonatomic) long long now;
+@property (nonatomic) BOOL showPaidLinkmicGuide;
+@property (nonatomic) BOOL hasPrepareApply;
+@property (retain, nonatomic) NSMutableArray *friendsArray;
+@property (readonly, nonatomic) unsigned long long friendsArray_Count;
+@property (retain, nonatomic) NSMutableArray *aiGuestArray;
+@property (readonly, nonatomic) unsigned long long aiGuestArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class HTSLiveVSLinkInfo, GPBInt64ObjectDictionary;
+
+@interface LinkedRoomsV2Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveVSLinkInfo *linkInfo;
+@property (nonatomic) BOOL hasLinkInfo;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *roomEpisodeMap;
+@property (readonly, nonatomic) unsigned long long roomEpisodeMap_Count;
+
++ (id)descriptor;
+
+@end

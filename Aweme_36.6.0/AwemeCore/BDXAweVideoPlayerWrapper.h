@@ -1,0 +1,75 @@
+@class NSArray, TTVideoEngine, NSString, UIView;
+@protocol BDXAweVideoPlayerWrapperDelegate;
+
+@interface BDXAweVideoPlayerWrapper : NSObject <TTVideoEngineDelegate>
+
+@property (retain, nonatomic) TTVideoEngine *player;
+@property (nonatomic) long long playbackState;
+@property (nonatomic) BOOL isPaused;
+@property (nonatomic) BOOL isStalling;
+@property (nonatomic) BOOL hasPlayedOnce;
+@property (nonatomic) BOOL isURLChanged;
+@property (copy, nonatomic) NSArray *videoPlayURLs;
+@property (copy, nonatomic) NSString *currPlayURL;
+@property (copy, nonatomic) NSString *videoID;
+@property (copy, nonatomic) NSString *pToken;
+@property (copy, nonatomic) NSString *playAuth;
+@property (copy, nonatomic) NSArray *hosts;
+@property (copy, nonatomic) NSString *videoRequestUrl;
+@property (nonatomic) int playVersion;
+@property (readonly, nonatomic) UIView *view;
+@property (nonatomic) unsigned long long netWorkType;
+@property (nonatomic) BOOL enableHardDecode;
+@property (nonatomic) BOOL useCache;
+@property (nonatomic) BOOL ownPlayerPlayWithURLs;
+@property (nonatomic) BOOL repeated;
+@property (nonatomic) BOOL mute;
+@property (nonatomic) BOOL truncateTailWhenRepeated;
+@property (nonatomic) BOOL playingWithCache;
+@property (nonatomic) double volume;
+@property (nonatomic) long long cacheSize;
+@property (nonatomic) long long scalingMode;
+@property (weak, nonatomic) id<BDXAweVideoPlayerWrapperDelegate> delegate;
+@property (nonatomic) unsigned long long sessionId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)videoEngineUserStopped:(id)a0;
+- (void)videoEngine:(id)a0 playbackStateDidChanged:(long long)a1;
+- (void)videoEngine:(id)a0 loadStateDidChanged:(unsigned long long)a1;
+- (void)videoEngineDidFinish:(id)a0 error:(id)a1;
+- (void)videoEngineDidFinish:(id)a0 videoStatusException:(long long)a1;
+- (void)videoEngineCloseAysncFinish:(id)a0;
+- (void)videoEngineReadyToDisPlay:(id)a0;
+- (void)videoEngineReadyToPlay:(id)a0;
+- (void)removeTimeObserver;
+- (double)playBitrate;
+- (double)playFPS;
+- (double)currPlayableDuration;
+- (void)setTTVideoEngineRenderEngine:(unsigned long long)a0;
+- (void)resetVideoID:(id)a0 andPlayURLs:(id)a1;
+- (void)setStartPlayTime:(float)a0;
+- (double)currPlaybackTime;
+- (id)playURLs;
+- (id)apiForFetcher;
+- (id)apiForFetcher:(unsigned long long)a0;
+- (id)errorWithStatusCode:(long long)a0;
+- (void)videoEngine:(id)a0 playFailWithURL:(id)a1 error:(id)a2;
+- (void)videoEngine:(id)a0 playFailWithURL:(id)a1 statusException:(long long)a2;
+- (id)playerWithOwnPlayer:(BOOL)a0;
+- (void)resetVideoID:(id)a0 andPlayAuthToken:(id)a1 hosts:(id)a2;
+- (double)videoDuration;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (void)prepareToPlay;
+- (unsigned long long)playerType;
+- (void)addPeriodicTimeObserverForInterval:(double)a0 queue:(id)a1 usingBlock:(id /* block */)a2;
+- (long long)qualityType;
+- (struct __CVBuffer { } *)currentPixelBuffer;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

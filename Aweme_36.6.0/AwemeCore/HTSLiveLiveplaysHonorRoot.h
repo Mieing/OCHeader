@@ -1,0 +1,3 @@
+@interface HTSLiveLiveplaysHonorRoot : GPBRootObject
+
+@end

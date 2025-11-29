@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface SearchSongRecommendResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *hotsArray;
+@property (readonly, nonatomic) unsigned long long hotsArray_Count;
+
++ (id)descriptor;
+
+@end

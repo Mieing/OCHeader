@@ -1,0 +1,10 @@
+@class BattleAutoMatchResult_Extra_LogPb;
+
+@interface BattleAutoMatchResult_Extra : IESLivePBBaseMessage
+
+@property (retain, nonatomic) BattleAutoMatchResult_Extra_LogPb *logPb;
+@property (nonatomic) BOOL hasLogPb;
+
++ (id)descriptor;
+
+@end

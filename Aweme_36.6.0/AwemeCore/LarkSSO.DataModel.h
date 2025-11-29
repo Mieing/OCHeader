@@ -1,0 +1,6 @@
+@interface LarkSSO.DataModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ data;
+    void /* unknown type, empty encoding */ log_type;
+}
+
+@end

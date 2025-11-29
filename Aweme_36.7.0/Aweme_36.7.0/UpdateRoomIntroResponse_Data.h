@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface UpdateRoomIntroResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *desc;
+
++ (id)descriptor;
+
+@end

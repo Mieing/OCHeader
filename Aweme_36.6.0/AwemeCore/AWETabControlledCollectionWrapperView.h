@@ -1,0 +1,73 @@
+@class AWEColorFilterDataManager, NSString, NSArray, NSDictionary, UIButton, MASConstraint, UICollectionView, IESEffectModel, IESCategoryModel, NSIndexPath;
+@protocol ACCOldFilterUIConfigurationProtocol, AWETabControlledCollectionWrapperViewDelegate;
+
+@interface AWETabControlledCollectionWrapperView : UIView <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (retain, nonatomic) UICollectionView *tabCollectionView;
+@property (retain, nonatomic) UICollectionView *filterCollectionView;
+@property (retain, nonatomic) UIButton *clearFilterApplyButton;
+@property (copy, nonatomic) NSDictionary *filterIndexPathMap;
+@property (copy, nonatomic) NSDictionary *filterTabNameMap;
+@property (retain, nonatomic) NSDictionary *categoryMap;
+@property (retain, nonatomic) IESCategoryModel *selectedTabCategory;
+@property (nonatomic) BOOL tabIsFixed;
+@property (retain, nonatomic) id<ACCOldFilterUIConfigurationProtocol> uiConfig;
+@property (nonatomic) BOOL useSimpleStyle;
+@property (nonatomic) double tabViewLeftOffset;
+@property (retain, nonatomic) MASConstraint *tabViewRightConstraint;
+@property (retain, nonatomic) NSIndexPath *indexPathOfFilterSelected;
+@property (copy, nonatomic) NSArray *filtersArray;
+@property (weak, nonatomic) id<AWETabControlledCollectionWrapperViewDelegate> delegate;
+@property (retain, nonatomic) IESEffectModel *selectedFilter;
+@property (nonatomic) BOOL enableSliderMaskImage;
+@property (nonatomic) BOOL shouldHideIndicator;
+@property (nonatomic) unsigned long long iconStyle;
+@property (nonatomic) BOOL showFilterBoxButton;
+@property (nonatomic) BOOL shouldShowClearFilterButton;
+@property (retain, nonatomic) AWEColorFilterDataManager *filterManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)updateUIConfig:(id)a0;
+- (void)selectFilter:(id)a0;
+- (void)clearSelectedFilter;
+- (id)tabNameForFilter:(id)a0;
+- (long long)tabIdForFilter:(id)a0;
+- (void)configCell:(id)a0 withEffect:(id)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 shouldShowClearFilterButton:(BOOL)a1 useSimpleStyle:(BOOL)a2 filterManager:(id)a3;
+- (BOOL)isOneTabSimpleStyle;
+- (id)p_findIndexPathWithFilter:(id)a0;
+- (void)selectFilterByCode:(id)a0 scrolling:(BOOL)a1;
+- (void)updateTabSelection:(id)a0;
+- (void)selectTabAtIndexPath:(id)a0 animated:(BOOL)a1;
+- (void)deselectAllTabs;
+- (void)selectClearButton;
+- (void)scrollToEffect:(id)a0 animated:(BOOL)a1;
+- (void)configCell:(id)a0 withCategory:(id)a1 effects:(id)a2;
+- (void)p_onFilterBoxSettingButton:(id)a0;
+- (id)p_minimumIndexPathWithIndexPaths:(id)a0;
+- (void)p_clearButtonClicked:(id)a0;
+- (void)reloadDataAndScrollingToSelected:(BOOL)a0;
+- (void)updateTabNameCache:(id)a0;
+- (void)updateEffect:(id)a0;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (void)setupUI;
+
+@end

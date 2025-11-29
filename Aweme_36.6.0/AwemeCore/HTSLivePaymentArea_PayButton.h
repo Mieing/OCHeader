@@ -1,0 +1,16 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLivePaymentArea_PayButton : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *jumpSchema;
+@property (nonatomic) int avilable;
+@property (copy, nonatomic) NSString *copyWriting;
+@property (nonatomic) int clickType;
+@property (nonatomic) BOOL isNewEntTrade;
+
++ (id)descriptor;
+
+@end

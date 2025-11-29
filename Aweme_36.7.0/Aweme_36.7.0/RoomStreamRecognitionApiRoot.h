@@ -1,0 +1,3 @@
+@interface RoomStreamRecognitionApiRoot : GPBRootObject
+
+@end

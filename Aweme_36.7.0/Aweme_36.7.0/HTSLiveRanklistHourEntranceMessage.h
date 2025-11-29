@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveRanklistHourEntrance;
+
+@interface HTSLiveRanklistHourEntranceMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveRanklistHourEntrance *info;
+@property (nonatomic) BOOL hasInfo;
+
++ (id)descriptor;
+
+@end

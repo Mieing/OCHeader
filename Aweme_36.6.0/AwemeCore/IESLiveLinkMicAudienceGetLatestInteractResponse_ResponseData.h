@@ -1,0 +1,10 @@
+@class GPBInt64BoolDictionary;
+
+@interface IESLiveLinkMicAudienceGetLatestInteractResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64BoolDictionary *latestMap;
+@property (readonly, nonatomic) unsigned long long latestMap_Count;
+
++ (id)descriptor;
+
+@end

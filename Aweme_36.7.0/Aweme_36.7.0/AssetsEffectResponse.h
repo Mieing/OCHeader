@@ -1,0 +1,10 @@
+@class AssetsEffectResponse_Data;
+
+@interface AssetsEffectResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AssetsEffectResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

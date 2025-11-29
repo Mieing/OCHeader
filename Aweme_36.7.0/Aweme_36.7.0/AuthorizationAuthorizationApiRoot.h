@@ -1,0 +1,3 @@
+@interface AuthorizationAuthorizationApiRoot : GPBRootObject
+
+@end

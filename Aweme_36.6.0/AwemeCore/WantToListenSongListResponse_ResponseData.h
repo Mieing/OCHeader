@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface WantToListenSongListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *itemsArray;
+@property (readonly, nonatomic) unsigned long long itemsArray_Count;
+@property (copy, nonatomic) NSString *nextCursor;
+@property (nonatomic) long long totalCount;
+
++ (id)descriptor;
+
+@end

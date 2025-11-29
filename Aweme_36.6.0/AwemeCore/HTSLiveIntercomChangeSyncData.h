@@ -1,0 +1,8 @@
+@interface HTSLiveIntercomChangeSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long intercomStatus;
+@property (nonatomic) long long closeReason;
+
++ (id)descriptor;
+
+@end

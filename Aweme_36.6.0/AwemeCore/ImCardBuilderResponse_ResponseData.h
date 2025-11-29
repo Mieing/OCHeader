@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface ImCardBuilderResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *cardDataStr;
+@property (nonatomic) int cardType;
+
++ (id)descriptor;
+
+@end

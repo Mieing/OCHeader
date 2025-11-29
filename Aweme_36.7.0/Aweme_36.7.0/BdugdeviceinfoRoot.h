@@ -1,0 +1,3 @@
+@interface BdugdeviceinfoRoot : GPBRootObject
+
+@end

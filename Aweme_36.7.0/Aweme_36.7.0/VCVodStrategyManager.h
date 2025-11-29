@@ -1,0 +1,85 @@
+@class NSString;
+@protocol VCVodStrategyDataSource, VCVodStrategyEventDelegate, VCVodStrategyAppService, VCVodStrategyLogProtocol, VCVodStrategyStateSupplier;
+
+@interface VCVodStrategyManager : NSObject
+
+@property (nonatomic) void *imp;
+@property BOOL running;
+@property BOOL addKVOFlag;
+@property (copy, nonatomic) NSString *appInfo;
+@property (weak, nonatomic) id<VCVodStrategyLogProtocol> logHandle;
+@property (weak, nonatomic) id<VCVodStrategyEventDelegate> eventDelegate;
+@property (weak, nonatomic) id<VCVodStrategyStateSupplier> stateSupplier;
+@property (weak, nonatomic) id<VCVodStrategyAppService> appService;
+@property (weak, nonatomic) id<VCVodStrategyDataSource> dataSource;
+@property (weak) id userData;
+@property (nonatomic) void *ioManager;
+@property (readonly, nonatomic) BOOL enableDowngradeGearToSuperResolution;
+@property (readonly, nonatomic) BOOL enableSuperResolution;
+
++ (long long)iPlayerVersion;
+
+- (void)setIntValue:(long long)a0 forKey:(long long)a1;
+- (void)setLongValue:(long long)a0 forKey:(long long)a1;
+- (void)removeLogData:(id)a0;
+- (id)popLogData:(long long)a0 forTraceId:(id)a1;
+- (id)relatePlaySessionRef:(id)a0 oldTraceId:(id)a1 sessionRef:(id)a2;
+- (void)addMedia:(id)a0 sceneId:(id)a1 last:(BOOL)a2 interim:(BOOL)a3;
+- (void)createPlayer:(long long)a0 mediaId:(id)a1 traceId:(id)a2 tag:(id)a3;
+- (void)setPlayerOption:(long long)a0 optionKey:(long long)a1 optionValue:(long long)a2;
+- (void)setPlayConfig:(id)a0 key:(long long)a1 stringVal:(id)a2;
+- (id)getStringValue:(long long)a0 dVal:(id)a1;
+- (void)setAlgorithmJson:(long long)a0 jsonString:(id)a1;
+- (long long)getIntValue:(long long)a0 dVal:(long long)a1;
+- (void)addMedia:(id)a0 sceneId:(id)a1 last:(BOOL)a2;
+- (void)addStrategyMedia:(id)a0 sceneId:(id)a1;
+- (void)addStrategyMedias:(id)a0 sceneId:(id)a1;
+- (void)addPriorityTasks:(id)a0;
+- (void)removePriorityTaskBy:(id)a0;
+- (void)removeMedia:(id)a0 sceneId:(id)a1;
+- (void)removeAllMedias:(id)a0 stopTask:(BOOL)a1;
+- (void)focusMedia:(id)a0 type:(long long)a1;
+- (void)businessEvent:(long long)a0 intValue:(long long)a1;
+- (void)businessEvent:(long long)a0 stringValue:(id)a1;
+- (void)businessEvent:(long long)a0 custom:(long long)a1 intVal:(long long)a2;
+- (void)businessEvent:(long long)a0 custom:(long long)a1 stringVal:(id)a2;
+- (void)updateSettingsInfo:(id)a0 info:(id)a1;
+- (void)switchToScene:(id)a0;
+- (void)pausePreload;
+- (void)resumePreload;
+- (void)pausePreload:(id)a0;
+- (void)resumePreload:(id)a0;
+- (void)updateMedia:(id)a0 sceneId:(id)a1 mediaInfo:(id)a2;
+- (id)getImageStrategyResult:(id)a0 otherInfo:(id)a1;
+- (id)selectBitrate:(id)a0 type:(long long)a1 param:(id)a2 context:(id)a3;
+- (float)getFloatValue:(long long)a0 dVal:(float)a1;
+- (id)playSRStrategy:(id)a0 param:(id)a1;
+- (void)_appStateChanged:(id)a0;
+- (void)_batteryStateDidChanged:(id)a0;
+- (void)_batteryLevelDidChanged:(id)a0;
+- (void)_powerStateDidChanged:(id)a0;
+- (void)_thermalStateDidChanged:(id)a0;
+- (long long)getLongValue:(long long)a0 dVal:(long long)a1;
+- (long long)getLongValue:(long long)a0 strKey:(id)a1 dVal:(long long)a2;
+- (void)destroyScene:(id)a0;
+- (void)createPlayer:(long long)a0 mediaId:(id)a1 traceId:(id)a2;
+- (void)releasePlayer:(id)a0 traceId:(id)a1;
+- (void)makeCurrentPlayer:(id)a0;
+- (void)setPlayConfig:(id)a0 key:(long long)a1 intVal:(long long)a2;
+- (void)setPlayConfig:(id)a0 key:(long long)a1 int64Val:(long long)a2;
+- (void)setPlayConfig:(id)a0 key:(long long)a1 doubleVal:(double)a2;
+- (id)getEventLog:(id)a0;
+- (id)selectBitrateNew:(id)a0 type:(long long)a1 param:(id)a2 context:(id)a3;
+- (void)_addKVObsever;
+- (void)_removeKVObderver;
+- (void).cxx_destruct;
+- (BOOL)isRunning;
+- (id)init;
+- (void)stop;
+- (void)setStringValue:(id)a0 forKey:(long long)a1;
+- (void)start;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)dealloc;
+- (void)createScene:(id)a0;
+
+@end

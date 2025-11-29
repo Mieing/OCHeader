@@ -1,0 +1,3 @@
+@interface UserPermissionApiRoot : GPBRootObject
+
+@end

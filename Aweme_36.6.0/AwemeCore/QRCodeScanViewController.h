@@ -1,0 +1,76 @@
+@interface QRCodeScanViewController : UIViewController <AWEUserMessage, AWERouterViewControllerProtocol> {
+    void /* unknown type, empty encoding */ scanResultBlock;
+    void /* unknown type, empty encoding */ scanResultWithoutTransferBlock;
+    void /* unknown type, empty encoding */ closeOnComplete;
+    void /* unknown type, empty encoding */ isCameraOnly;
+    void /* unknown type, empty encoding */ enableAnalysisResult;
+    void /* unknown type, empty encoding */ enterFromType;
+    void /* unknown type, empty encoding */ qrCodeStyle;
+    void /* unknown type, empty encoding */ enterFrom;
+    void /* unknown type, empty encoding */ enterFromSource;
+    void /* unknown type, empty encoding */ previousPage;
+    void /* unknown type, empty encoding */ photo_search_previous_page;
+    void /* unknown type, empty encoding */ feature;
+    void /* unknown type, empty encoding */ searchScanParams;
+    void /* unknown type, empty encoding */ clientEngineExtra;
+    void /* unknown type, empty encoding */ hideScanPageWhenSearch;
+    void /* unknown type, empty encoding */ paramDict;
+    void /* unknown type, empty encoding */ ecomSceneId;
+    void /* unknown type, empty encoding */ didEnterAlbum;
+    void /* unknown type, empty encoding */ isQRCodeScanned;
+    void /* unknown type, empty encoding */ isCameraStarted;
+    void /* unknown type, empty encoding */ isCameraCapturing;
+    void /* unknown type, empty encoding */ didCameraStarted;
+    void /* unknown type, empty encoding */ scanStartTime;
+    void /* unknown type, empty encoding */ viewDidAppeared;
+    void /* unknown type, empty encoding */ isNetworkReachable;
+    void /* unknown type, empty encoding */ item;
+    void /* unknown type, empty encoding */ scanGoodsHelper;
+    void /* unknown type, empty encoding */ waitingForSplash;
+    void /* unknown type, empty encoding */ bridgeSubscriber;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_qrScanView;
+    void /* unknown type, empty encoding */ navigationRightView;
+    void /* unknown type, empty encoding */ navigationRightViews;
+    void /* unknown type, empty encoding */ camera;
+    void /* unknown type, empty encoding */ restartScanTimer;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_resultHandler;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_scanEntityHandler;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_albumScanManager;
+}
+
+@property (nonatomic, readonly) long long preferredStatusBarStyle;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didCancelLogin;
+- (void)didLoginFailed;
+- (void)restartScan;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)goodsSwitchToScanAction;
+- (void)couponVerificationListAction;
+- (void)switchCamera;
+- (void)goodsAlbumButtonAction;
+- (void)goodsShootButtonAction;
+- (void)handleAPPDidBecomeActiveNotification;
+- (void)handleAPPWillResignActiveNotification;
+- (void)handleAPPDidEnterBackgroundNotification;
+- (void)networkConnectionChangedWithNotification:(id)a0;
+- (void)handleShouldRestartRunning;
+- (void)handleEasterEggDismissNotificationWithNotification:(id)a0;
+- (void)handleOpenRecordPageResultNotificationWithNotification:(id)a0;
+- (void)cameraStatusChangedWithNotification:(id)a0;
+- (void)scanTransferWithNotification:(id)a0;
+- (void)handleEntityWithNotification:(id)a0;
+- (void)onSplashRemoved;
+- (void)backAction;
+- (void).cxx_destruct;
+- (void)cancelAction;
+- (id)init;
+- (id)initWithCoder:(id)a0;
+- (id)initWithNibName:(id)a0 bundle:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface KtvFetchAtmosphereVideoInfoApiRoot : GPBRootObject
+
+@end

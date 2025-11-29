@@ -1,0 +1,10 @@
+@class AudienceGiftAuthInfoResponse_Data;
+
+@interface AudienceGiftAuthInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AudienceGiftAuthInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

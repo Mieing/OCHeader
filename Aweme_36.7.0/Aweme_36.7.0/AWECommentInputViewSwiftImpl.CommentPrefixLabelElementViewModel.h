@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentPrefixLabelElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

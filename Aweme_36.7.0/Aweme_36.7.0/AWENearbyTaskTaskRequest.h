@@ -1,0 +1,3 @@
+@interface AWENearbyTaskTaskRequest : NSObject
+
+@end

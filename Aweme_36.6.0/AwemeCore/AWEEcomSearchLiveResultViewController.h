@@ -1,0 +1,76 @@
+@class UIView, NSString, NSArray, UICollectionViewFlowLayout, AWEUILoadingView, NSDictionary, AWEEcomSearchLiveRequestManager, UICollectionView, AWESearchBaseUtility, AWEEcomSearchViewModel;
+@protocol AWEEcomSearchResultViewControllerDelegate, IESHYContainerProtocol;
+
+@interface AWEEcomSearchLiveResultViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, AWEEcomLiveCellDelegate, AWEEcomNewSearchResultLayout, IESHYHybridViewLifecycleProtocol, CAAnimationDelegate, AWEECLiveAbilityProviderBizDelegate, AWEEcomSearchResultViewControllerProtocol>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UIView<IESHYContainerProtocol> *bottomCheckoutView;
+@property (copy, nonatomic) NSArray *searchResults;
+@property (retain, nonatomic) UICollectionViewFlowLayout *flowLayout;
+@property (retain, nonatomic) AWEEcomSearchLiveRequestManager *searchHelper;
+@property (copy, nonatomic) NSString *roomId;
+@property (copy, nonatomic) NSString *keyWord;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) AWESearchBaseUtility *searchUtility;
+@property (retain, nonatomic) Class liveCellBuilder;
+@property (copy, nonatomic) NSDictionary *bcmInfo;
+@property (copy, nonatomic) NSDictionary *bcmResultParams;
+@property (copy, nonatomic) NSString *bcmKey;
+@property (copy, nonatomic) NSDictionary *guideSearch;
+@property (weak, nonatomic) id<AWEEcomSearchResultViewControllerDelegate> delegate;
+@property (retain, nonatomic) AWEEcomSearchViewModel *searchViewModel;
+@property (copy, nonatomic) NSString *presearchID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setAweui_viewControllerState:(unsigned long long)a0;
+- (void)configUI;
+- (void)viewDidChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a0 withContainerID:(id)a1;
+- (void)refreshCollectionView;
+- (id)modelOfIndexPath:(id)a0;
+- (double)feedLynxCardWidth:(id)a0;
+- (id)getTrackerContext;
+- (void)registerReusableViews;
+- (void)p_performanceHandleScrollWillBegin;
+- (void)p_performanceHandleScrollDidEnd;
+- (id)p_searchPageScrollFpsSceneName;
+- (double)doubleColumnCardWidth;
+- (id)initWithSearchParams:(id)a0;
+- (void)searchForKey:(id)a0 force:(BOOL)a1 paramsModel:(id)a2 completion:(id /* block */)a3;
+- (void)closeSearchPage;
+- (void)getSchemaInfo:(id)a0;
+- (id)bcmParamsInfo;
+- (id)getBcmListParams;
+- (void)sentPageVisibilityChangeEvent;
+- (void)loadMoreMerchandise:(BOOL)a0;
+- (id)getImprId;
+- (void)setupCheckoutViewWithUrl:(id)a0;
+- (id)liveProductSearchId;
+- (void)configChangeChannel;
+- (id)getSearchResultIdWithModel:(id)a0;
+- (id)identifierForModelType:(id)a0;
+- (void)sentBottomViewSlideEventWithStatus:(long long)a0;
+- (unsigned long long)aweui_viewControllerState;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (double)contentWidth;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)viewDidDisappear:(BOOL)a0;
+- (double)pageHeight;
+- (id)roomID;
+- (void)getAddress;
+
+@end

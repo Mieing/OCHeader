@@ -1,0 +1,73 @@
+@class ACCSideslipPanelListDataBuilderEffectFocusAppendWorker, ACCSideslipPanelListDataBuilder, ACCSideslipPanelListDataBuilderSyncFromMainPanelWorker, ACCSideslipPanelMaterialsComprehensionRequestState, NSString, ACCSideslipPanelListDataBuilderGenericTemplateFetchWorker, ACCGenericTemplateListFetcher;
+@protocol ACCSideslipPropPanelDownloadService, ACCSideslipPropPanelService, ACCSideslipGenericTemplateService, ACCSideslipPropInternalService, ACCEditSpecialEffectServiceProtocol, ACCAIImageToLiveEditServiceProtocol, ACCEditEffectPanelServiceProtocol;
+
+@interface ACCEditorSideslipPropPanelListDataProviderV2 : ACCEditorSideslipPanelBaseListDataProvider <ACCSideslipPanelListDataBuilderDelegate>
+
+@property (weak, nonatomic) id<ACCSideslipPropPanelService> sideslipPropPanelService;
+@property (weak, nonatomic) id<ACCSideslipPropInternalService> sideslipPropInternalService;
+@property (weak, nonatomic) id<ACCSideslipPropPanelDownloadService> sideslipPropDownloadService;
+@property (weak, nonatomic) id<ACCSideslipGenericTemplateService> templateService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (weak, nonatomic) id<ACCEditEffectPanelServiceProtocol> genericPanelService;
+@property (weak, nonatomic) id<ACCAIImageToLiveEditServiceProtocol> aiImageToLiveService;
+@property (nonatomic) BOOL mvDataFiltered;
+@property (nonatomic) BOOL shouldHideMoreIcon;
+@property (nonatomic) unsigned long long firstFetchEffectShowCount;
+@property (nonatomic) long long supportSlideEffectCount;
+@property (retain, nonatomic) ACCSideslipPanelMaterialsComprehensionRequestState *materialsComprehensionRequestState;
+@property (retain, nonatomic) ACCGenericTemplateListFetcher *genericTemplateListFetcher;
+@property (retain, nonatomic) ACCSideslipPanelListDataBuilder *listDataBuilder;
+@property (retain, nonatomic) ACCSideslipPanelListDataBuilderGenericTemplateFetchWorker *genericTemplatesFetchWorker;
+@property (retain, nonatomic) ACCSideslipPanelListDataBuilderEffectFocusAppendWorker *focusAppendWorker;
+@property (retain, nonatomic) ACCSideslipPanelListDataBuilderSyncFromMainPanelWorker *syncFromMainPanelWorker;
+@property (copy, nonatomic) NSString *customRecommendPanelName;
+@property (nonatomic) BOOL defaultIsRecommend;
+@property (nonatomic) long long rightFirstIndex;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)resetInitialFocusInfo;
+- (void)bindService;
+- (BOOL)shouldHideMoreIconWhileLoading;
+- (void)resetListData;
+- (void)loadListDataWithRecommendPanelName:(id)a0 defaultIsRecommend:(BOOL)a1 completion:(id /* block */)a2;
+- (id)initWithServiceProvider:(id)a0 repository:(id)a1;
+- (void)filterTemplateForLivePhotoFromTotalList;
+- (void)initState;
+- (id)getCurrentRightDataCategory;
+- (void)syncSideslipPanelStateAfterExitMainPanel:(id)a0;
+- (void)limitDisplayTotalListIfNeededWithCellModels:(id)a0;
+- (void)fetchGenericTemplateWithCompletion:(id /* block */)a0;
+- (void)buildInitialCellModels:(id)a0;
+- (void)resetInitialFocusInfoWithShouldLimitCount:(BOOL)a0;
+- (void)predownloadGenericTemplateIfNeed:(id)a0;
+- (void)filterMVTemplateFromTotalList;
+- (void)insertAIGCPhotoTransitionEffect;
+- (void)filterImageOnlyTemplate;
+- (void)filterTemplateForAIGCUGCFromTotalList;
+- (id)appliedGenericTemplateId;
+- (void)startWaitingAIRecommendIfNeeded;
+- (void)updateGenericTemplateListFetcher;
+- (void)fetchLegacyEffectsWithCompletion:(id /* block */)a0;
+- (void)markAutoOpenIfNeeded;
+- (BOOL)needFetchForMaterials;
+- (BOOL)shouldGenericTemplateAIRecommend;
+- (id)worksForGenericTemplatePanel;
+- (id)worksForLegacyEffectPanel;
+- (id)insertsWorker;
+- (id)cancelItemWorker;
+- (id)legacyEffectsFetchWorker;
+- (id)filterWorker;
+- (id)materialComprehensionFetchWorker;
+- (id)livePhotoFilterWorker;
+- (id)AIGCPhotoTranistionWorker;
+- (id)AIGCUGCFilterTemplateWorker;
+- (id)filterImageOnlyTemplateWorker;
+- (BOOL)canUpdateDataFormAIRecommend;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

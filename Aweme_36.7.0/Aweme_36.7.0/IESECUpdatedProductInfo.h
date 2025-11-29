@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESECUpdatedProductInfo : GPBMessage
+
+@property (nonatomic) long long price;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *cover;
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *popUpicon;
+
++ (id)descriptor;
+
+@end

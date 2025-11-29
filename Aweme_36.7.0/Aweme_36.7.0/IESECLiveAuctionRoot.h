@@ -1,0 +1,3 @@
+@interface IESECLiveAuctionRoot : GPBRootObject
+
+@end

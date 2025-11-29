@@ -1,0 +1,10 @@
+@class VirtualGameUserCommandResponse_Data;
+
+@interface VirtualGameUserCommandResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) VirtualGameUserCommandResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

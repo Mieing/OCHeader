@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface InGroupDelegateResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *groupDataMap;
+@property (readonly, nonatomic) unsigned long long groupDataMap_Count;
+
++ (id)descriptor;
+
+@end

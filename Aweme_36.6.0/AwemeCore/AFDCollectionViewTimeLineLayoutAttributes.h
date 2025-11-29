@@ -1,0 +1,3 @@
+@interface AFDCollectionViewTimeLineLayoutAttributes : UICollectionViewLayoutAttributes
+
+@end

@@ -1,0 +1,11 @@
+@interface HTSLiveUser_Subscribe : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isMember;
+@property (nonatomic) long long level;
+@property (nonatomic) long long identityType;
+@property (nonatomic) long long buyType;
+@property (nonatomic) long long open;
+
++ (id)descriptor;
+
+@end

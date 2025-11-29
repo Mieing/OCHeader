@@ -1,0 +1,3 @@
+@interface _TtCO7DanceUI6UpdateP33_7AAD9C5C8658BAAACCB757F42E1ADA9E9TraceHost : _TtCs12_SwiftObject
+
+@end

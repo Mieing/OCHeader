@@ -1,0 +1,75 @@
+@class IESECGradientView, IESECMallListKitCellData, UILabel, NSDictionary, IESECMallFeedPlayStatusView, IESECLynxCardModel, UIView, UIColor, IESECMallVideoPlayer, NSString, IESECLynxCard, IESECUIImageView, UIImageView;
+@protocol IESECMallVideoCardViewDelegate, IESECMallCardAuthorInfoProtocol;
+
+@interface IESECMallVideoCardView : UIView <IESECLynxCardDelegate, IESECListCardsContextDelegate>
+
+@property (retain, nonatomic) IESECMallVideoPlayer *videoPlayer;
+@property (retain, nonatomic) UIView<IESECMallCardAuthorInfoProtocol> *authorInfoView;
+@property (retain, nonatomic) UIView *coinView;
+@property (retain, nonatomic) IESECGradientView *coinGradientView;
+@property (retain, nonatomic) UILabel *coinLabel;
+@property (retain, nonatomic) IESECUIImageView *coinIconImageView;
+@property (retain, nonatomic) UIColor *coinViewDefaultBackgroundColor;
+@property (retain, nonatomic) IESECMallListKitCellData *cellModel;
+@property (retain, nonatomic) IESECMallFeedPlayStatusView *feedPlayStatusView;
+@property (retain, nonatomic) UILabel *accessibilityLabelView;
+@property (retain, nonatomic) IESECLynxCard *windVaneView;
+@property (retain, nonatomic) IESECLynxCardModel *windVaneCardModel;
+@property (nonatomic) struct CGSize { double width; double height; } nativeViewBoundsSize;
+@property (nonatomic) long long mallDeleteLazyLoading;
+@property (nonatomic) long long borderRadius;
+@property (nonatomic) BOOL mallDeleteRemoveFromSuperview;
+@property (retain, nonatomic) UIImageView *feedbackImageView;
+@property (nonatomic) BOOL isMute;
+@property (copy, nonatomic) id /* block */ videoClick;
+@property (copy, nonatomic) id /* block */ liveHeaderClick;
+@property (copy, nonatomic) id /* block */ muteClick;
+@property (copy, nonatomic) id /* block */ feedbackButtonClick;
+@property (copy, nonatomic) NSString *currentEnvIdentifier;
+@property (copy, nonatomic) NSString *pageName;
+@property (weak, nonatomic) id<IESECMallVideoCardViewDelegate> delegate;
+@property (copy, nonatomic) NSDictionary *globalPropsExtra;
+@property (copy, nonatomic) NSDictionary *rootGlobalPropsExtra;
+@property (retain, nonatomic) UIView *nativeView;
+@property (nonatomic) double ipadSizeScale;
+@property (copy, nonatomic) NSString *itemId;
+@property (nonatomic) long long index;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)lynxCard:(id)a0 sizeDidChanged:(struct CGSize { double x0; double x1; })a1;
+- (void)lynxCard:(id)a0 didLoadFail:(id)a1;
+- (void)lynxCard:(id)a0 didFinishLoadWithURL:(id)a1;
+- (void)currentCardsWriteAlogMethodName:(id)a0 paramModel:(id)a1 result:(id)a2 context:(id)a3;
+- (id)currentListContextIdForCards;
+- (id)currentBridgeCallHanderForCards;
+- (id)currentListHomePageView;
+- (id)coverImageView;
+- (void)viewWillDisplay;
+- (id)xBridgeList;
+- (void)viewDidEndDisplay;
+- (void)updateWithBorderRadius:(double)a0;
+- (void)addLongPressGesture:(id)a0;
+- (void)updateWithBorderRadiusList:(id)a0 cellSize:(struct CGSize { double x0; double x1; })a1;
+- (void)updateWithWindVaneData:(id)a0;
+- (void)setupFeedbackView:(id)a0;
+- (void)nativeViewAddSubview:(id)a0;
+- (void)updateCoinView:(id)a0 authorInfoHeight:(double)a1;
+- (void)updateFeedbackButton:(id)a0 ipadSizeScale:(double)a1;
+- (long long)numberABCFontWeightWithFromInt:(long long)a0;
+- (void)updateWindViewHeight:(double)a0 margin:(double)a1;
+- (void)resetAccessibilityLabel;
+- (void)coinClick;
+- (void)feedbackButtonClicked;
+- (void)liveHeaderViewClicked;
+- (void)videoLinkViewClicked;
+- (void).cxx_destruct;
+- (void)prepareForReuse;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupView;
+- (void)updateWithModel:(id)a0;
+- (void)updateAccessibilityLabel;
+
+@end

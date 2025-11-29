@@ -1,0 +1,85 @@
+@class AWEAwemeModel, NSString, UITapGestureRecognizer, AWEPageContext, UIImageView, NSDictionary, YYLabel, UILabel, AWEHotSpotListModel;
+@protocol AWEPlayInteractionContextProtocol;
+
+@interface AWEFeedRelatedReadingTipView : UIView <DUXSheetDelegate, AWERelatedReadingBottomBarViewProtocol>
+
+@property (retain, nonatomic) YYLabel *hotSearchTipLabel;
+@property (retain, nonatomic) UILabel *jumpTipLabel;
+@property (retain, nonatomic) UIImageView *hotIconImageView;
+@property (retain, nonatomic) UIImageView *arrowImageView;
+@property (retain, nonatomic) UILabel *tagLabel;
+@property (retain, nonatomic) UITapGestureRecognizer *recognizer;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) AWEHotSpotListModel *hotSpotListModel;
+@property (retain, nonatomic) NSDictionary *textAttributes;
+@property (nonatomic) long long type;
+@property (nonatomic) long long currentScene;
+@property (copy, nonatomic) NSString *realDiversionType;
+@property (nonatomic) BOOL mpShowFirst;
+@property (weak, nonatomic) AWEPageContext<AWEPlayInteractionContextProtocol> *context;
+@property (copy, nonatomic) NSString *referString;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)showFeedBottomArticleBarSuperiorToHotSearch:(id)a0 otherParams:(id)a1;
++ (BOOL)showFeedBottomArticleBarInferiorToHotSearch:(id)a0 otherParams:(id)a1;
++ (void)trackReadingBarShowEvent:(id)a0 otherParams:(id)a1;
++ (id)separateGroupIDFromSchema:(id)a0;
++ (id)addParams:(id)a0 toString:(id)a1;
++ (id)schemaCanBeOpenedWithModel:(id)a0;
++ (id)relatedArticleParamsWithModel:(id)a0 enterFrom:(id)a1;
++ (void)setCheckBoxStatus:(BOOL)a0 forAction:(id)a1;
++ (id)separateParamFromBdpLog:(id)a0 param:(id)a1;
++ (id)mpGuideSwitchWithModel:(id)a0;
+
+- (void)sheetDidClickMaskArea:(id)a0;
+- (void)sheetDidClickCloseButton:(id)a0;
+- (void)handleViewDidAppear;
+- (id)commonTrackParams;
+- (void)configureUI;
+- (void)tryOpenMpWithScheme:(id)a0;
+- (void)jumpAction;
+- (void)configureWithModel:(id)a0 referString:(id)a1;
+- (id)setupArrowImageView;
+- (void)clearOpenAppDialogAction:(id)a0;
+- (BOOL)showFeedBottomArticleBarSuperiorToHotSearch;
+- (BOOL)showFeedBottomArticleBarInferiorToHotSearch;
+- (id)relatedReadingContent;
+- (long long)viewTypeForString:(id)a0 model:(id)a1;
+- (void)configureWithModel:(id)a0 type:(long long)a1;
+- (long long)sceneForType:(long long)a0;
+- (void)jumpUsingSchema;
+- (BOOL)canOpenApp;
+- (unsigned long long)openAppType;
+- (BOOL)isRelatedArticle;
+- (void)handleRelatedReadingTarget;
+- (id)relatedArticleAppendParamDict;
+- (void)tryOpenAppWithURL:(id)a0 mpSchema:(id)a1;
+- (id)mpTrackerDict;
+- (void)showOpenAppNewDialog:(id)a0 mpSchema:(id)a1;
+- (void)openApp;
+- (void)showOpenAppOldDialog:(id)a0 mpSchema:(id)a1;
+- (void)trackOpenAppDialogShow;
+- (id)openAppDialogTitle;
+- (void)trackOpenAppDialogClick:(id)a0 checked:(BOOL)a1;
+- (id)openAppConfig;
+- (void)trackIronManIfNeededWithAppear:(BOOL)a0;
+- (id)jumpTipString;
+- (void)trackRelatedReadingShowIfNeeded;
+- (void)showSheetWithViewController:(id)a0 sheetHeight:(double)a1 openAppURL:(id)a2 mpSchema:(id)a3;
+- (void)setupVideoContextForPanel;
+- (void)handleJumpTipLabelAndHotIconImageView:(id)a0;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
+- (void).cxx_destruct;
+- (unsigned long long)accessibilityTraits;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)configureWithModel:(id)a0;
+- (void)configureWithContext:(id)a0;
+- (id)bgColor;
+
+@end

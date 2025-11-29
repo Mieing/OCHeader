@@ -1,0 +1,3 @@
+@interface BattleRecommendAreaActionApiRoot : GPBRootObject
+
+@end

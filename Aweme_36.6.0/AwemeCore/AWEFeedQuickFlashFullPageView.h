@@ -1,0 +1,71 @@
+@class UIImageView, UICollectionView, UILabel, UITapGestureRecognizer, UIButton, UIView, AWEFeedQuickFlashDetailPagePlayModel, DUXPopover, NSString, AWECollectionButton, NSArray, AWEQuickFlashStickerModel, AWEFeedQuickFlashPanelStyleConfig, UIImage;
+
+@interface AWEFeedQuickFlashFullPageView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (retain, nonatomic) UIImageView *configBgImageView;
+@property (copy, nonatomic) UIImage *defaultGradientImage;
+@property (retain, nonatomic) UIImageView *flashIconView;
+@property (retain, nonatomic) UILabel *quickFlashTitleText;
+@property (retain, nonatomic) UILabel *quickFlashAuthorText;
+@property (retain, nonatomic) UICollectionView *quickFlashListCollectionView;
+@property (retain, nonatomic) UICollectionView *quickFlashRecommandCollectionView;
+@property (retain, nonatomic) UIView *bar;
+@property (retain, nonatomic) NSArray *fullPageModelList;
+@property (retain, nonatomic) NSArray *tagList;
+@property (retain, nonatomic) AWEQuickFlashStickerModel *quickFlashStickerModel;
+@property (retain, nonatomic) AWEFeedQuickFlashPanelStyleConfig *styleConfig;
+@property (retain, nonatomic) UIView *footerView;
+@property (retain, nonatomic) UIButton *joinButton;
+@property (retain, nonatomic) UIButton *createButton;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UILabel *noMoreLabel;
+@property (retain, nonatomic) UIView *whiteBottom;
+@property (retain, nonatomic) UIButton *backButton;
+@property (weak, nonatomic) DUXPopover *favoritePopover;
+@property (nonatomic) BOOL favoriteAnimating;
+@property (retain, nonatomic) UIView *redPackBannal;
+@property (retain, nonatomic) UILabel *redPackBannalText;
+@property (retain, nonatomic) UIImageView *redPackImageView;
+@property (retain, nonatomic) UIView *quickFlashPlayView;
+@property (retain, nonatomic) AWEFeedQuickFlashDetailPagePlayModel *playModel;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (retain, nonatomic) AWECollectionButton *favoriteButton;
+@property (weak, nonatomic) id delegate;
+@property (copy, nonatomic) id /* block */ didTapFavouriteHintHandler;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)removeFavoriteHint;
+- (void)closeButtonDidClicked:(id)a0;
+- (void)playViewDidClick;
+- (void)backButtonDidClicked:(id)a0;
+- (void)setupModernUI;
+- (id)generateCloseBtn;
+- (void)playButtonDidClick;
+- (void)joinButtonDidClicked:(id)a0;
+- (void)favoriteButtonDidClicked:(id)a0;
+- (void)createButtonDidClicked:(id)a0;
+- (id)generateFlashIconView;
+- (void)UIWithoutRankList;
+- (id)generateBackBtn;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 quickFlashModel:(id)a1 styleConfig:(id)a2;
+- (id)generateQuickFlashRecommandCollectionView;
+- (void)configWithModelList:(id)a0;
+- (void)configWithTagList:(id)a0;
+- (void)updateCollectionUIWithCollected:(BOOL)a0;
+- (void)configWithPlayList:(id)a0;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)setUpUI;
+- (void)setupBackgroundView;
+
+@end

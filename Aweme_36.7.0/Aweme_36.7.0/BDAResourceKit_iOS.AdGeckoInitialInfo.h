@@ -1,0 +1,9 @@
+@interface BDAResourceKit_iOS.AdGeckoInitialInfo : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ appID;
+    void /* unknown type, empty encoding */ appVersion;
+    void /* unknown type, empty encoding */ cacheRootDirectory;
+    void /* unknown type, empty encoding */ webViewConfig;
+    void /* unknown type, empty encoding */ preloadQueueMaxCount;
+}
+
+@end

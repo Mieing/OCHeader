@@ -1,0 +1,74 @@
+@class AWELeftSideBarNavigationController, AWESidebarPanGestureRecognizer, NSString, AWELeftSideBarHostParams, UIViewController;
+@protocol AWESideBarViewControllerProtocol, AWELeftSideBarTransitionObjectDelegateProtocol;
+
+@interface AWELeftSideBarPresentTransitionObject : NSObject <UIGestureRecognizerDelegate, AWELeftSideBarNavigationControllerDelegateProtocol, AWELeftSideBarTransitionObjectProtocol>
+
+@property (retain, nonatomic) AWELeftSideBarHostParams *hostParams;
+@property (weak, nonatomic) id<AWELeftSideBarTransitionObjectDelegateProtocol> delegate;
+@property (retain, nonatomic) AWESidebarPanGestureRecognizer *hidePanGesture;
+@property (retain, nonatomic) AWELeftSideBarNavigationController *sideBarNavigationController;
+@property (retain, nonatomic) UIViewController<AWESideBarViewControllerProtocol> *sideBarViewController;
+@property (nonatomic) long long sideBarStatus;
+@property (nonatomic) double dismissAnimationDuration;
+@property (nonatomic) double sidebarMoveOffsetX;
+@property (nonatomic) long long leftSideBarOpenOperateMethod;
+@property (nonatomic) BOOL isClosingSideBarInternal;
+@property (nonatomic) double openBeginTime;
+@property (nonatomic) double openEndTime;
+@property (readonly, nonatomic) long long openType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)leftSideBarWidth;
+- (void)dispatch_sideBarHostViewDidDisappear;
+- (void)closeSideBarWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)p_sideBarWillOpenPerfMonitor;
+- (void)track_leftSideBarStartIsOpen:(BOOL)a0;
+- (void)monitor_leftSideBarStartIsOpen:(BOOL)a0 success:(BOOL)a1 operateMethod:(long long)a2;
+- (unsigned long long)p_directionForPan:(id)a0;
+- (void)p_sideBarCancelOpenPerfMonitor;
+- (void)p_sideBarDidOpenPerfMonitor;
+- (id)getLeftSideBarOpenOperateMethodTrackName;
+- (void)handleHideSliderPanGesture:(id)a0;
+- (id)initWithHostParams:(id)a0 withDelegate:(id)a1;
+- (void)updateWithHostParams:(id)a0;
+- (void)openSideBarWithParams:(id)a0 completion:(id /* block */)a1;
+- (long long)leftSideBarStatus;
+- (id)getLeftSideBarViewController;
+- (void)entranceTouchesBegan;
+- (void)entranceTapFailed;
+- (double)sidebarTransition_slideArea;
+- (BOOL)sidebarTransition_canSlideOpen;
+- (unsigned long long)sidebarTransition_destinatedType;
+- (id)sidebarTransition_destinatedViewControllerForSlideDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (void)updateTabBarVCSnapshot;
+- (double)sideBarNonInteractedDismissAnimationDuration:(id)a0;
+- (void)sideBarNonInteractedDismissShowAnimation:(id)a0;
+- (void)sideBarNonInteractedDismissEndAnimation:(id)a0 result:(BOOL)a1;
+- (double)presentAnimationDuration:(id)a0;
+- (void)willStartPresentAnimation:(id)a0 isSlide:(BOOL)a1;
+- (void)startPresentAnimation:(id)a0;
+- (void)endPresentAnimationWithResult:(id)a0 result:(BOOL)a1;
+- (void)p_updateTabBarVCSnapshot;
+- (void)generateSideBarNavigationAndRootViewController;
+- (void)tryReopenPushStackWithConfig:(id)a0;
+- (void)p_presentViewControllerWithResult:(BOOL)a0;
+- (void)tryReopenPresentStackWithConfig:(id)a0 rootVC:(id)a1 completion:(id /* block */)a2;
+- (void)presentVCStack:(id)a0 byPresentingVC:(id)a1 completion:(id /* block */)a2;
+- (void)p_updateSideBarStatus:(long long)a0;
+- (void)p_dismissSideBarNavigationControllerAnimated:(BOOL)a0 completion:(id /* block */)a1;
+- (void)p_dismissViewControllerWithResult:(BOOL)a0;
+- (double)p_scrollHotArea;
+- (BOOL)p_canSlideWithDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (void)p_trackOpenErrorWithReason:(id)a0 openType:(long long)a1 hasTriggerPresentAnimation:(BOOL)a2;
+- (BOOL)p_shouldReplenishDismissSideBarCompleteEvent;
+- (long long)p_presentModalStyle;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)viewDidAppear:(id)a0;
+- (void)viewDidDisappear:(id)a0;
+
+@end

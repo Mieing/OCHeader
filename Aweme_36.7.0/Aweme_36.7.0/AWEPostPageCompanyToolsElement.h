@@ -1,0 +1,80 @@
+@class NSString, UITableViewCell, NSDictionary, AWENewPublishCompanyToolsTableViewCell;
+@protocol AWEPostPageStarAtlasService, AWEPostPageLocalLifeMatchMissionService, AWEPostPageCompanyToolsService, AWEPostPagePOIService, AWEPostPageNavigationBarService, AWEEnterpriseCompanyToolBubbleCellProtocol;
+
+@interface AWEPostPageCompanyToolsElement : AWEPostPageCellElement <AWECommerceAnchorMessageProtocol, AWEPostPageAnchorProtocol, AWECompanyToolBubbleCellDelegate>
+
+@property (retain, nonatomic) AWENewPublishCompanyToolsTableViewCell *companyToolsTableViewCell;
+@property (retain, nonatomic) UITableViewCell<AWEEnterpriseCompanyToolBubbleCellProtocol> *companyToolsBubbleContainerCell;
+@property (weak, nonatomic) id<AWEPostPageCompanyToolsService> companyTools;
+@property (weak, nonatomic) id<AWEPostPagePOIService> poi;
+@property (weak, nonatomic) id<AWEPostPageStarAtlasService> starAtlas;
+@property (weak, nonatomic) id<AWEPostPageNavigationBarService> navBarService;
+@property (weak, nonatomic) id<AWEPostPageLocalLifeMatchMissionService> localLife;
+@property (nonatomic) BOOL companyToolsTracked;
+@property (nonatomic) BOOL companyToolsBubbleTracked;
+@property (nonatomic) BOOL didViewAppear;
+@property (nonatomic) BOOL firstRenderOpt;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy, nonatomic) NSDictionary *extras;
+
++ (void)_aweLazyRegisterPostPage;
++ (id)type;
+
+- (void)bubbleGotExposedTrack:(id)a0;
+- (void)didClickShowMoreToolsBubble;
+- (void)didClickNotShowMoreToolsBubble:(id)a0;
+- (void)setupCell:(id)a0;
+- (void)saveCompanyToolInfo;
+- (void)refreshWithAnchorVM:(id)a0;
+- (BOOL)forceReceiveEvents;
+- (void)didClearPOI;
+- (BOOL)showStarAlas;
+- (void)cleanAllCompanyToolsData;
+- (void)insertBubbleCellIfNeeded;
+- (void)removeBubbleCell;
+- (void)addCompanyToolsObserver;
+- (void)setupUIForCompanyTools;
+- (void)updateCompanyToolsSubviewsForSuccess;
+- (void)updateCompanyToolsSubviewsForDefault;
+- (void)companyToolsShowTrack;
+- (void)defaultSelectBubbleIfNeeded;
+- (void)bubblePublishTrack;
+- (void)switchBubbleTimesTrack;
+- (void)p_companyToolsJSBResultNotification:(id)a0;
+- (void)p_didLoadBubbleDataFromServer;
+- (id)p_bubbleCell;
+- (void)updateCompanyToolsCellHeightWith:(BOOL)a0;
+- (void)p_setupCompanyToolsText;
+- (void)p_resetBubbleContainerDataAndUI;
+- (void)p_cleanCompanyToolsData;
+- (void)p_cleanCompanyToolsViewModelBubbleData;
+- (id)p_getBubbleArrayFromDisk;
+- (void)insertBubbleCell;
+- (void)companyToolsBubbleShowTrack;
+- (void)p_defaultSelectFirstBubble;
+- (void)p_jumpToFESelectCompanyToolsWithEntrance:(id)a0;
+- (id)p_companyToolsActionParams;
+- (void)p_matchingBubbleContainerCellToViewModel;
+- (void)p_handleFENotificationWithJsonString:(id)a0;
+- (void)p_didViewModelDeselectBubble:(id)a0;
+- (void)p_handleCompanyToolsRequestPostData;
+- (void)p_refreshCompanyToolsText;
+- (void)p_addBubbleToViewModel:(id)a0;
+- (void)p_didViewModelSelectBubble:(id)a0;
+- (void)p_removeBubbleToViewModel:(id)a0;
+- (void)p_cancleSelectedCompanyTools:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)isVisible;
+- (BOOL)isEnabled;
+- (void)cleanUp;
+- (void)_setup;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (id)cell;
+- (void)didSelect;
+
+@end

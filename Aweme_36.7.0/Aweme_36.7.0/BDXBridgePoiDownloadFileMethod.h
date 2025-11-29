@@ -1,0 +1,12 @@
+@interface BDXBridgePoiDownloadFileMethod : BDXBridgeMethod
+
++ (id)metaInfo;
+
+- (Class)paramModelClass;
+- (void)callWithParamModel:(id)a0 completionHandler:(id /* block */)a1;
+- (void)sendAlogOnStart:(id)a0;
+- (void)sendAlogOnEnd;
+- (long long)authType;
+- (id)methodName;
+
+@end

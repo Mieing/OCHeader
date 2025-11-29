@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface FeedExtra_TopButton : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *URL;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *title;
+
++ (id)descriptor;
+
+@end

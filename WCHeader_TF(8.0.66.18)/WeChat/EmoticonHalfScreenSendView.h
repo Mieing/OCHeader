@@ -1,0 +1,71 @@
+@class EmoticonStoreItem, EmojiInfoObj, ForwardMessageLogicController, NSString, UIImageView, UIButton, EmoticonCustomManageAddLogic, EmoticonHalfScreenSendViewReportInfo, RichTextView, PersonalDesigner, UILabel, MMUIActivityIndicatorView;
+@protocol EmoticonHalfScreenSendViewDelegate;
+
+@interface EmoticonHalfScreenSendView : MMPageSheetBaseView <IStoreEmotionSingleDownloadMgrExt, EmoticonCustomManageAddLogicDelegate, MMUIViewControllerDelegate, EmoticonStoreItemExt, IStoreEmotionDesignerInfoMgrExt, ILinkEventExt, ForwardMessageLogicDelegate>
+
+@property (retain, nonatomic) EmojiInfoObj *emojiInfoObj;
+@property (retain, nonatomic) UIButton *sendBtn;
+@property (retain, nonatomic) UIButton *addBtn;
+@property (nonatomic) BOOL isSendPrimary;
+@property (retain, nonatomic) UIImageView *emojiView;
+@property (retain, nonatomic) UILabel *emojiDescLabel;
+@property (retain, nonatomic) UILabel *emojiOriginalLabel;
+@property (retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic) BOOL didInitDetailView;
+@property (retain, nonatomic) RichTextView *entryView;
+@property (retain, nonatomic) EmoticonStoreItem *entryItem;
+@property (retain, nonatomic) PersonalDesigner *entryDesigner;
+@property (retain, nonatomic) EmoticonCustomManageAddLogic *emoticonAddLogic;
+@property (retain, nonatomic) ForwardMessageLogicController *forwardLogicController;
+@property (retain, nonatomic) EmoticonHalfScreenSendViewReportInfo *reportInfo;
+@property (nonatomic) BOOL needReportEntryExpose;
+@property (weak, nonatomic) id<EmoticonHalfScreenSendViewDelegate> delegate;
+@property (nonatomic) BOOL shouldShowEntry;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithEmojiInfoObj:(id)a0 reportInfo:(id)a1;
+- (void)showFromViewController:(id)a0 animated:(BOOL)a1;
+- (void)showWithAnimated:(BOOL)a0;
+- (void)showInView:(id)a0 animated:(BOOL)a1;
+- (void)pageSheetDidClose:(BOOL)a0;
+- (void)layoutSubviews;
+- (struct CGSize { double x0; double x1; })getScaledEmojiSize;
+- (void)createOrUpadreLayout;
+- (void)configPageSheet;
+- (void)tryInitDetailView;
+- (void)initDetailView;
+- (void)checkEntry;
+- (double)calDetailViewHeight;
+- (void)genButtons:(BOOL)a0;
+- (void)configIndicator;
+- (void)initCustomEntry;
+- (void)startDownloadEmoji;
+- (void)onTapSend;
+- (void)onTapAdd;
+- (void)onTapCustomEntry;
+- (void)onLongPressed:(id)a0;
+- (void)onSingleEmotionDownloadOkWithWrap:(id)a0 imageData:(id)a1;
+- (void)onSingleEmotionDownloadFailedWithMd5:(id)a0;
+- (id)oWrapFromEmojiInfo:(id)a0;
+- (id)entryContentWithName:(id)a0 imgUrl:(id)a1 isRound:(BOOL)a2;
+- (id)appendChanelIconFor:(id)a0;
+- (id)getViewController;
+- (void)onExchangeEmoticonForSendingFinishedWithWrap:(id)a0 isSuccessed:(BOOL)a1;
+- (void)AddEmoticonFinishedWithWrap:(id)a0 IsSuccessed:(BOOL)a1;
+- (id)getCurrentViewController;
+- (BOOL)shouldShowSendSuccessView:(id)a0;
+- (void)OnForwardMessageSend:(id)a0;
+- (void)OnForwardMessageCancel:(id)a0;
+- (void)OnForwardMessageException:(id)a0;
+- (void)OnEmoticonStoreItemChanged:(id)a0;
+- (void)onGetDesignerForDesignerId:(id)a0 AndDesigner:(id)a1;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onTextClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)reportAction:(unsigned long long)a0;
+- (id)sdkReportParams;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESLiveRTMMessage_Header : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *method;
+@property (nonatomic) long long msgId;
+@property (nonatomic) long long roomId;
+@property (nonatomic) long long createTime;
+
++ (id)descriptor;
+
+@end

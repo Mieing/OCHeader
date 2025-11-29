@@ -1,0 +1,3 @@
+@interface AWEStudioPublishFlowFeatureConfig : AWEStudioComposerBaseFeatureConfig
+
+@end

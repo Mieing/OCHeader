@@ -1,0 +1,12 @@
+@class NSMutableDictionary;
+
+@interface TIMXPBNBlackInfo : GPBMessage
+
+@property (nonatomic) long long userId;
+@property (nonatomic) BOOL hasUserId;
+@property (retain, nonatomic) NSMutableDictionary *ext;
+@property (readonly, nonatomic) unsigned long long ext_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveKTVStartGrabSongMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) BOOL isStart;
+
++ (id)descriptor;
+
+@end

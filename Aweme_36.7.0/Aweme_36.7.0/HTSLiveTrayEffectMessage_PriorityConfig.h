@@ -1,0 +1,10 @@
+@interface HTSLiveTrayEffectMessage_PriorityConfig : IESLivePBBaseMessage
+
+@property (nonatomic) int priority;
+@property (nonatomic) int priorityLowerStrategy;
+@property (nonatomic) int priorityEqualStrategy;
+@property (nonatomic) int priorityHigherStrategy;
+
++ (id)descriptor;
+
+@end

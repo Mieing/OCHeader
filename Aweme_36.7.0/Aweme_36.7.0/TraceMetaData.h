@@ -1,0 +1,14 @@
+@class NSData;
+
+@interface TraceMetaData : GPBMessage
+
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int dataType;
+@property (nonatomic) BOOL hasDataType;
+@property (copy, nonatomic) NSData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

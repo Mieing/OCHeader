@@ -1,0 +1,3 @@
+@interface IESGCPLivePreStreamContainer : IESGCPBaseContainer
+
+@end

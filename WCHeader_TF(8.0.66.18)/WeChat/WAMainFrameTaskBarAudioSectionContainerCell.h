@@ -1,0 +1,3 @@
+@interface WAMainFrameTaskBarAudioSectionContainerCell : UICollectionViewCell
+
+@end

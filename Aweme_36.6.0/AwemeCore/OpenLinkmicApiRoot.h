@@ -1,0 +1,3 @@
+@interface OpenLinkmicApiRoot : GPBRootObject
+
+@end

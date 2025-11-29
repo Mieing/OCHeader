@@ -1,0 +1,3 @@
+@interface IESIMIMLeadsCodeGenMobileNumberSendReponseModel : AWEBaseResponseModel
+
+@end

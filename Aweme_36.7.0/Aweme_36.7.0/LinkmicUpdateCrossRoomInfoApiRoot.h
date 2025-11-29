@@ -1,0 +1,3 @@
+@interface LinkmicUpdateCrossRoomInfoApiRoot : GPBRootObject
+
+@end

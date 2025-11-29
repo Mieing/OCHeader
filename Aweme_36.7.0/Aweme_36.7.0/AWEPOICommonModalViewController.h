@@ -1,0 +1,83 @@
+@class UIView, NSString, NSArray, AWEPOIShapeLayerView, AWEPOICommonModalHeaderView, AWEBinding, NSDictionary, UIPanGestureRecognizer, NSObject, AWEPOIModalPageModel, UIColor;
+@protocol AWEPOICommonModalFixedBottomViewProtocol, AWEPOICommonModalCustomContentProtocol, AWEPOICommonModalViewControllerDelegate;
+
+@interface AWEPOICommonModalViewController : UIViewController <UIGestureRecognizerDelegate, AWEPOIModalContentDelegate, AWERouterViewControllerProtocol>
+
+@property (nonatomic) BOOL lastVCDisableFullscreenPopTransition;
+@property (copy, nonatomic) NSArray *pageSizes;
+@property (retain, nonatomic) UIView *closeBgView;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) AWEPOIShapeLayerView *shadowView;
+@property (retain, nonatomic) UIView *topOverlapView;
+@property (retain, nonatomic) UIView *modalContentView;
+@property (retain, nonatomic) AWEPOICommonModalHeaderView *headerView;
+@property (retain, nonatomic) UIView *customContentView;
+@property (retain, nonatomic) UIView *invisiableBottomView;
+@property (retain, nonatomic) NSObject<AWEPOICommonModalCustomContentProtocol> *content;
+@property (retain, nonatomic) UIView<AWEPOICommonModalFixedBottomViewProtocol> *showFixedBottomView;
+@property (retain, nonatomic) UIView *fixedBottomView;
+@property (weak, nonatomic) AWEPOIModalPageModel *currentPage;
+@property (weak, nonatomic) AWEPOIModalPageModel *nextPage;
+@property (copy, nonatomic) NSArray *modalPagesHeight;
+@property (retain, nonatomic) UIPanGestureRecognizer *modalPan;
+@property (nonatomic) BOOL startDragModal;
+@property (nonatomic) double startContentYOffset;
+@property (nonatomic) struct CGPoint { double x; double y; } panStartPoint;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } panStartFrame;
+@property (nonatomic) BOOL isFirstAppear;
+@property (nonatomic) BOOL isFirstSetUPModal;
+@property (retain, nonatomic) AWEBinding *tabbarHiddenBinding;
+@property (nonatomic) BOOL isBackgroundViewFlex;
+@property (nonatomic) BOOL isClosing;
+@property (weak, nonatomic) id<AWEPOICommonModalViewControllerDelegate> delegate;
+@property (retain, nonatomic) UIColor *contentBackgroundColor;
+@property (nonatomic) BOOL tapBlankToClose;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (readonly, nonatomic) UIView *dragBar;
+@property (nonatomic) double shadowOpacity;
+@property (nonatomic) double topCornerRadius;
+@property (nonatomic) BOOL shouldHideTabbar;
+@property (nonatomic) BOOL breakFixedBottmView;
+@property (nonatomic) double panbottomLimit;
+@property (nonatomic) double headerViewHight;
+@property (nonatomic) double topOverlapViewHeight;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)topCornerRadius;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)sortPageSize;
+- (double)p_topOffsetWithModal:(id)a0;
+- (void)updateModalContentFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)p_willMoveToPage:(id)a0 isChangedByPull:(BOOL)a1;
+- (void)p_setupModalView;
+- (void)animateClose;
+- (void)p_drawShadowViewAndTopCornerRadius;
+- (void)tapToCloseModal:(id)a0;
+- (void)modalContentViewDidPanned:(id)a0;
+- (void)closeModalView;
+- (void)changeToPageModel:(id)a0 animated:(BOOL)a1;
+- (void)p_interruptGesture:(id)a0;
+- (void)willPresentVCWithIsModal:(BOOL)a0;
+- (void)willReloadMapContent;
+- (id)initWithPageSizes:(id)a0 content:(id)a1 fixedBottomView:(id)a2 initPageSize:(id)a3;
+- (void)showPresentAnimation;
+- (void)replacePageModel:(id)a0;
+- (void)hideOverLapView:(BOOL)a0;
+- (void)hideDragBar;
+- (void)updateModalContentY:(double)a0;
+- (void)updateBackgroundFlexibleStatus:(BOOL)a0;
+- (double)currentPageHeight;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)setPanEnabled:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)loadView;
+- (void)setupUI;
+
+@end

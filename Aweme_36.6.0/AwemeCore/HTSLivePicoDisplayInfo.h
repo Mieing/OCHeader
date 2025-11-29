@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLivePicoDisplayInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long comboSumCount;
+@property (copy, nonatomic) NSString *emoji;
+@property (retain, nonatomic) HTSLiveImage *emojiIcon;
+@property (nonatomic) BOOL hasEmojiIcon;
+@property (copy, nonatomic) NSString *emojiText;
+
++ (id)descriptor;
+
+@end

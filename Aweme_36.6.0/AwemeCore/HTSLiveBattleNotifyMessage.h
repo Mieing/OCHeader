@@ -1,0 +1,13 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveBattleNotifyMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) int notifyType;
+@property (nonatomic) long long continueSeconds;
+
++ (id)descriptor;
+
+@end

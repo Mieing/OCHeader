@@ -1,0 +1,55 @@
+@interface CJPayAPI : NSObject
+
++ (void)openDYPayDeskWithConfig:(id)a0 orderParams:(id)a1 delegate:(id)a2;
++ (void)openUniversalPayDeskWithParams:(id)a0 withDelegate:(id)a1;
++ (void)startVerifyWithParams:(id)a0 completeAlongsideDismiss:(BOOL)a1 withDelegate:(id)a2;
++ (void)startFaceRecogAndVerifyWithParams:(id)a0 fromVC:(id)a1 trackerBlock:(id /* block */)a2 pagePushBlock:(id /* block */)a3 getTicketLoadingBlock:(id /* block */)a4 completion:(id /* block */)a5;
++ (void)openBDPayDeskWithConfig:(id)a0 orderParams:(id)a1 delegate:(id)a2;
++ (void)openPayDeskWithConfig:(id)a0 orderParams:(id)a1 withDelegate:(id)a2;
++ (void)openScheme:(id)a0 callBack:(id /* block */)a1;
++ (void)configHost:(id)a0;
++ (BOOL)canProcessUserActivity:(id)a0;
++ (void)openWithdrawDeskWithConfig:(id)a0 orderURL:(id)a1 withDelegate:(id)a2;
++ (void)openScheme:(id)a0 withDelegate:(id)a1;
++ (void)openSetPasswordDeskWithParams:(id)a0 withDelegate:(id)a1;
++ (id)getAPIVersion;
++ (void)requestAuth:(id)a0 withDelegate:(id)a1;
++ (BOOL)trackPerformanceWithEventList:(id)a0;
++ (void)preLoadYueFuTemplate;
++ (id)passThroughInfo;
++ (void)syncResourcesWhenSelectHomepage;
++ (void)syncResourcesWhenSelectNotify;
++ (void)setupFontScale:(double)a0;
++ (id)i_freeLoginPaySceneEventWithParams:(id)a0 event:(id)a1;
++ (void)enableMergeGeckoRequest:(BOOL)a0;
++ (void)syncOfflineWith:(id)a0;
++ (void)enableSafeInfoCache:(BOOL)a0;
++ (void)registerAppInfo:(id)a0;
++ (void)setupLanguage:(unsigned long long)a0;
++ (void)registerMetaSecDelegate:(id)a0;
++ (BOOL)canProcessURL:(id)a0;
++ (void)bootRunEvent:(unsigned long long)a0;
++ (void)requestCreateOrderBeforeOpenBytePayDesk:(id)a0;
++ (void)openBytePayDeskWithSchemaParams:(id)a0 withDelegate:(id)a1;
++ (void)lazyInitCJPay;
++ (void)registerInitClass:(Class)a0;
++ (void)openPayscoreWithParams:(id)a0 withDelegate:(id)a1;
++ (id)getCJPayInfo:(id)a0;
++ (BOOL)preLoadChannelWithType:(unsigned long long)a0;
++ (BOOL)currentChannelIsInstalled:(unsigned long long)a0;
++ (void)lazyInitCJPay:(id)a0;
++ (void)cjPayInitExceptionDefaultRecord:(id)a0;
++ (void)openFastPayDeskWithConfig:(id)a0 orderParams:(id)a1 withDelegate:(id)a2;
++ (void)openBankCardListWithMerchantId:(id)a0 appId:(id)a1 userId:(id)a2;
++ (void)openH5PayDeskWithConfig:(id)a0 orderURL:(id)a1 withDelegate:(id)a2;
++ (void)openWithConfig:(id)a0 scheme:(id)a1 withDelegate:(id)a2;
++ (void)openBalanceWithdrawDeskWithParams:(id)a0 withDelegate:(id)a1;
++ (void)openBalanceRechargeDeskWithParams:(id)a0 withDelegate:(id)a1;
++ (void)openUniteSign:(id)a0 withDelegate:(id)a1;
++ (void)openEcommercePayDeskWithParams:(id)a0 withDelegate:(id)a1;
++ (void)openTradeRecordWithAppId:(id)a0 merchantId:(id)a1;
++ (void)openPayManagerWithAppId:(id)a0 merchantId:(id)a1;
++ (void)registerDelegate:(id)a0;
++ (void)setTheme:(id)a0;
+
+@end

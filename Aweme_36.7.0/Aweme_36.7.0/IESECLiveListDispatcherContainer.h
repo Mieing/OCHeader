@@ -1,0 +1,75 @@
+@class IESECLiveGoodsListContainer, UIView, UIScrollView, NSString, IESECEventForwardingView, NSDictionary, IESECLiveToggleTab, IESECLiveContext;
+@protocol IESECLiveGoodsListViewModelProtocol, IESECLiveListDispatcherContainerDelegate;
+
+@interface IESECLiveListDispatcherContainer : UIView <UIScrollViewDelegate, IESECLiveGoodsListStateChangeNotice, IESECLiveToggleTabDelegate>
+
+@property (retain, nonatomic) IESECLiveContext *liveContext;
+@property (nonatomic) long long mode;
+@property (retain, nonatomic) UIView *gesMaskView;
+@property (retain, nonatomic) IESECEventForwardingView *body;
+@property (retain, nonatomic) IESECLiveToggleTab *toggleTab;
+@property (retain, nonatomic) UIScrollView *switchScrollView;
+@property (retain, nonatomic) IESECLiveGoodsListContainer *secondaryContainer;
+@property (retain, nonatomic) id<IESECLiveGoodsListViewModelProtocol> primaryViewModel;
+@property (nonatomic) unsigned long long index;
+@property (readonly, nonatomic) IESECLiveGoodsListContainer *activatedContainer;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL listHidden;
+@property (nonatomic) BOOL hasTrackShowToggleTab;
+@property (nonatomic) BOOL isLinkMicDisconnectedMessage;
+@property (weak, nonatomic) id<IESECLiveListDispatcherContainerDelegate> delegate;
+@property (retain, nonatomic) IESECLiveGoodsListContainer *primaryContainer;
+@property (retain, nonatomic) NSDictionary *clickParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)clickMaskView;
+- (void)addLynxEventSubscriber;
+- (void)unmount;
+- (struct CGSize { double x0; double x1; })maskSize;
+- (struct CGSize { double x0; double x1; })panelSize;
+- (void)handleEnterDetail:(id)a0;
+- (void)handleQuitDetail:(id)a0;
+- (void)mountWithParams:(id)a0;
+- (id)p_listPanelEnvironment;
+- (void)listViewModel:(id)a0 authorConnectStateDidChange:(BOOL)a1;
+- (void)listViewModel:(id)a0 didRefreshWithState:(id)a1;
+- (id)listViewEnvironment;
+- (void)rearrangeLayout;
+- (void)preloadListView;
+- (void)iPadCloseTopFuncView:(BOOL *)a0;
+- (void)showWithParams:(id)a0 inView:(id)a1 completion:(id /* block */)a2;
+- (id)initWithLiveContext:(id)a0 primaryViewModel:(id)a1;
+- (void)addToCartAnimationDidStopWithExtraInfo:(id)a0;
+- (id)getCartAnimationPointWithParams:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })maskFrameShouldShow:(BOOL)a0;
+- (void)setListHidden:(BOOL)a0 animated:(BOOL)a1;
+- (void)doAppear:(BOOL)a0 animated:(BOOL)a1 completion:(id /* block */)a2;
+- (void)generateContainerWithPrimaryViewModel:(id)a0;
+- (void)layoutContainers;
+- (void)p_createPrimaryContainerIfNeed;
+- (void)p_createSecondaryContainerIfNeedWithPrimaryViewModel:(id)a0;
+- (void)p_createToggleTabIfNeedWithToggleModel:(id)a0;
+- (void)p_destroySecondaryContainer;
+- (void)createSwitchScrollViewIfNeeded;
+- (void)p_mountSecondaryContainerIfNeeded;
+- (void)modeDidUpdate;
+- (void)p_destroySecondaryContainerIfNeedWithPrimaryViewModel:(id)a0;
+- (BOOL)p_validSecondaryContainerWithPrimaryViewModel:(id)a0;
+- (void)toggleTab:(id)a0 didSelectedIndex:(long long)a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })panelFrameShouldShow:(BOOL)a0;
+- (void)viewDidAppear;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)viewWillAppear;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)setupUI;
+- (void)viewDidDisappear;
+- (void)addNotificationObserver;
+- (void)closeWithCompletion:(id /* block */)a0;
+- (void)viewWillDisappear;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEIncentiveBDCommonABTestRegister : NSObject
+
+@end

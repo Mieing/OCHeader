@@ -1,0 +1,12 @@
+@class HTSLiveUser;
+
+@interface IESLiveLinkMicAudienceGetKTVUserSongContributorRankResponse_ListUser : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long hot;
+@property (nonatomic) long long rank;
+
++ (id)descriptor;
+
+@end

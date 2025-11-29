@@ -1,0 +1,11 @@
+@class NSMutableSet;
+
+@interface AWEPerfVCPreloadInfo : NSObject {
+    NSMutableSet *_vcClasses;
+    double _routerBegin;
+    double _uiEventBegin;
+}
+
+- (void).cxx_destruct;
+
+@end

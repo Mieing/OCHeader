@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface HTSLiveVIPBadge : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *icons;
+@property (readonly, nonatomic) unsigned long long icons_Count;
+
++ (id)descriptor;
+
+@end

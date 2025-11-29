@@ -1,0 +1,3 @@
+@interface BDPClientAIModel : BDPBasePluginModel
+
+@end

@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_6D83EBA85527D47B88729ED1F5DE905A21DanceUITransformEvent : _TtCs12_SwiftObject
+
+@end

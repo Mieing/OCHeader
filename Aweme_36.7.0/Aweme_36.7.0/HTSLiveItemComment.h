@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface HTSLiveItemComment : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *itemCommentIconDark;
+@property (nonatomic) BOOL hasItemCommentIconDark;
+@property (retain, nonatomic) HTSLiveImage *itemCommentIconLight;
+@property (nonatomic) BOOL hasItemCommentIconLight;
+
++ (id)descriptor;
+
+@end

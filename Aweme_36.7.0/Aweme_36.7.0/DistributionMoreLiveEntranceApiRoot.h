@@ -1,0 +1,3 @@
+@interface DistributionMoreLiveEntranceApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface Theme : GPBMessage
+
+@property (copy, nonatomic) NSString *digest;
+@property (copy, nonatomic) NSString *detail;
+
++ (id)descriptor;
+
+@end

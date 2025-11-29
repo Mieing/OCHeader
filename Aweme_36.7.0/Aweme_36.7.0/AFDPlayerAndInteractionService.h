@@ -1,0 +1,85 @@
+@class NSString, NSMutableDictionary, NSMutableSet;
+
+@interface AFDPlayerAndInteractionService : HTSService <AFDPlayerAndInteractionService>
+
+@property (nonatomic) unsigned long long longPressPanelDismissTimes;
+@property (nonatomic) double longPressCurrentDSDuration;
+@property (retain, nonatomic) NSMutableDictionary *prefetchedAweme;
+@property (retain, nonatomic) NSMutableSet *prefetchingForwardAwemeUUIDSet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWEPlayInteractionAdapterClass;
++ (Class)aAFDServiceCommonAdapterClass;
+
+- (id)aAWEPadModuleAdapter;
+- (void)unfollowAlertWithTracker:(id)a0 isShowGreet:(BOOL)a1 unfollowUserBlock:(id /* block */)a2;
+- (void)unfollowAlertWithTracker:(id)a0 isShowGreet:(BOOL)a1 target:(id)a2 unfollowUserBlock:(id /* block */)a3;
+- (id)getSpeedManagerWithReferString:(id)a0 enterFrom:(id)a1;
+- (Class)speedManagerClass;
+- (id)createRemotePlayRecommendFeedDataControllerWithRoomID:(id)a0;
+- (void)enqueuePlayRemoteVideoPlayer:(id)a0;
+- (id)dequeuePlayRemoteVideoPlayerWithModel:(id)a0;
+- (void)presentCollectionTipsAlertViewWithCount:(id)a0;
+- (id)socialReverseTagsLabelTypeInScene:(id)a0;
+- (id)socialReverseTagsReverseIDInScene:(id)a0;
+- (id)socialReverseRefactorTagsInScene:(id)a0;
+- (double)feedRelationLabelHeightForModel:(id)a0 referString:(id)a1;
+- (BOOL)isFriendsWatchingAweme:(id)a0;
+- (BOOL)isHitDisableScene;
+- (unsigned long long)hitDisableScene;
+- (void)showPlayRemoteEntranceWithParam:(id)a0 awemeModel:(id)a1;
+- (void)showPlayRemoteEntranceWithSourceParam:(id)a0 eventParam:(id)a1 awemeModel:(id)a2;
+- (BOOL)showShareRoomPanelIfNeededWithParamDicNeedRetry:(id)a0;
+- (BOOL)currentUserHasCreatedPlayRemoteRoom;
+- (BOOL)currentUserHasJoinedPlayRemoteRoom;
+- (void)leaveCurrentPlayRemoteRoom;
+- (void)addPlayedItemID:(id)a0;
+- (BOOL)isPlayedItemID:(id)a0;
+- (BOOL)isBottomViewedGuideShowing;
+- (BOOL)isBusinessAccountWithCurrentUser:(id)a0;
+- (Class)videoPrivacyBottomViewBarControllerClass;
+- (id)findPreFetchedAwemeModelWithAwemeID:(id)a0;
+- (id)preFetchForwardAwemeModelWithAwemeID:(id)a0;
+- (void)cancelPrefetchingForwardAweme:(id)a0;
+- (void)deletePreFetchedForwardAwemeModelWithAwemeID:(id)a0;
+- (id)videoPrivacyButtonController;
+- (double)fastCommentAppearTime;
+- (BOOL)shouldShowTimeToLiveStoryLabel:(id)a0;
+- (BOOL)hasFeedRelationLabel:(id)a0;
+- (void)statisticsVideoViewedWithID:(id)a0 scene:(id)a1;
+- (void)statisticsVideoViewedWithID:(id)a0 authorID:(id)a1 followStatus:(long long)a2 followerStatus:(long long)a3 isStory:(BOOL)a4 isRequestDirectly:(BOOL)a5 scene:(id)a6;
+- (void)trackClickCommentButton:(id)a0 referString:(id)a1;
+- (void)trackFamiliarFeedFirstFrameWithTrackInfo:(id)a0;
+- (void)cancelTrackFamiliarFeedFirstFrame;
+- (id)copyStoryAweme:(id)a0;
+- (id)createUserWorkStoryTagView;
+- (void)trackFastShootIntroShowWithModel:(id)a0 enterFrom:(id)a1;
+- (void)trackVideoTemporaryTagShowWithModel:(id)a0 enterFrom:(id)a1;
+- (void)trackNoticeMonitorEventWithModel:(id)a0 controlsName:(id)a1;
+- (BOOL)collectExposeShowCollect;
+- (BOOL)collectExposeShowCollectCount;
+- (long long)collectExposeCollectBtnIndex;
+- (id)commentForwardShareAsStoryButtonTitle;
+- (id)beforeSystemPushPermissionRequestAlertPic;
+- (id)musicLabelStringForModel:(id)a0;
+- (BOOL)isPinchModePiPEnabled;
+- (id)createFastSpeedView;
+- (id)createSpeedManager;
+- (id)createRoundSpeedButtonWithViewWidth:(double)a0 textFont:(id)a1;
+- (id)remotePlayVCWithContext:(id)a0 audioWrapper:(struct AFDEngineAudioWrapper { } *)a1;
+- (id)createPlayRemoteAwemeContext;
+- (id)remotePlayAwemeModelProcessor;
+- (Class)remotePlayResolver;
+- (Class)playTogetherShareVideoHelper;
+- (id)aAWEPlayInteractionAdapter;
+- (id)aAFDServiceCommonAdapter;
+- (id)sharedSpeedManager;
+- (id)feedTagsManagerPageList;
+- (void)insertPreFetchedAwemeModelWithAwemeID:(id)a0 awemeModel:(id)a1;
+- (void).cxx_destruct;
+
+@end

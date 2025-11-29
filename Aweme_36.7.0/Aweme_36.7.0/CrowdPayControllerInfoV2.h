@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface CrowdPayControllerInfoV2 : GPBMessage
+
+@property (nonatomic) BOOL showDiagnoses;
+@property (nonatomic) BOOL hasShowDiagnoses;
+@property (copy, nonatomic) NSString *taskId;
+@property (nonatomic) BOOL hasTaskId;
+@property (nonatomic) int playFinishRate;
+@property (nonatomic) BOOL hasPlayFinishRate;
+
++ (id)descriptor;
+
+@end

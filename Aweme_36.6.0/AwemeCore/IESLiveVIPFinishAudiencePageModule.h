@@ -1,0 +1,72 @@
+@class UIView, NSString, IESLiveVIPProgressBarView, IESLiveIMPaaSWorker, NSArray, IESLiveGCDTimer, IESLiveVIPAfterLiveCardModel, BDXBridgeEventSubscriber;
+
+@interface IESLiveVIPFinishAudiencePageModule : NSObject <IESLiveIMMessageSubscriber, IESLiveFinishAudiencePageDynamicData>
+
+@property (retain, nonatomic) IESLiveVIPAfterLiveCardModel *model;
+@property (retain, nonatomic) IESLiveGCDTimer *timeoutTimer;
+@property (retain, nonatomic) IESLiveGCDTimer *progressBarUpdateTimer;
+@property (retain, nonatomic) IESLiveGCDTimer *progressBarTimeoutTimer;
+@property (retain, nonatomic) IESLiveIMPaaSWorker *worker;
+@property (retain, nonatomic) IESLiveVIPProgressBarView *progressBar;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *subscriber;
+@property (nonatomic) BOOL hasEnterRoom;
+@property (nonatomic) BOOL isFinishVCHide;
+@property (retain, nonatomic) UIView *contentView;
+@property (nonatomic) double width;
+@property (nonatomic) double height;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } margins;
+@property (copy, nonatomic) NSString *topViewIdentifier;
+@property (copy, nonatomic) NSArray *hideViewsIdentifier;
+@property (copy, nonatomic) id /* block */ onDestoryCallback;
+@property (copy, nonatomic) id /* block */ onHideCallback;
+@property (copy, nonatomic) id /* block */ onShowCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) BOOL ignoreBottomConstraint;
+
+- (void)enterRoom;
+- (void)setupWithContainer:(id)a0;
+- (BOOL)canEnterRoom;
+- (void)setupIMConfigCore;
+- (void)setupIMConfig;
+- (id)vipJoinSubscriber;
+- (void)stopProgressBarUpdateTimer;
+- (void)stopProgressBarTimeoutTimer;
+- (void)stopMessageReceving;
+- (void)unsubscribeVIPGoodsBuyEvent;
+- (void)setupContainerView:(id)a0;
+- (void)handleOnShowEvent;
+- (void)handleOnHideEvent;
+- (void)handleOnDestoryEvent;
+- (void)handleOnShowEventIfNewRoomReady;
+- (void)handleOnShowEventIfNewRoomNotReady;
+- (void)trackLiveVIPStreamWaitPageShow;
+- (void)updateFinishViewControllerTitle;
+- (void)subscribeVIPGoodsBuyEvent;
+- (void)startMessageReceving;
+- (void)startProgressBarUpdateTimer;
+- (void)startProgressBarTimeoutTimer;
+- (id)vipJoinScheme;
+- (void)postUpdateTitleNotificationWithTitle:(id)a0;
+- (int)imTimeOutSeconds;
+- (void)handleIMTimeout;
+- (void)updateProgressBarView;
+- (int)settingCountDownSeconds;
+- (void)clearContainerView;
+- (void)postEnterRoomNotification;
+- (void)setupVipContainerView:(id)a0;
+- (void)setupNoneVipContainerView:(id)a0;
+- (id)createProgressBarView;
+- (id)tipsLabelWithText:(id)a0;
+- (id)createJoinVIPButton;
+- (void)onClickVIPJoinButton;
+- (id)initWithModel:(id)a0 container:(id)a1;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)messageReceived:(id)a0;
+- (void)stopTimeoutTimer;
+- (void)startTimeoutTimer;
+
+@end

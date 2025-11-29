@@ -1,0 +1,83 @@
+@class NSArray, RxCollectionLayoutItemSolverState, RxCollectionLayoutItem, NSString, UITraitCollection;
+@protocol RxCollectionLayoutContainer, RxCollectionLayoutSupplementaryEnrolling, RxCollectionPreferredSizes, RxCollectionLayoutAuxillaryOffsets;
+
+@interface RxCollectionLayoutItemSolver : NSObject <NSCopying, RxCollectionLayoutAuxillaryHosting> {
+    RxCollectionLayoutItemSolverState *_state;
+}
+
+@property (retain, nonatomic) RxCollectionLayoutItemSolverState *solverResult;
+@property (readonly, nonatomic) int layoutAxis;
+@property (readonly, nonatomic) RxCollectionLayoutItem *item;
+@property (readonly, nonatomic) id<RxCollectionLayoutContainer> container;
+@property (readonly, nonatomic) UITraitCollection *traitCollection;
+@property (readonly, nonatomic) id<RxCollectionLayoutSupplementaryEnrolling> supplementaryEnroller;
+@property (readonly, nonatomic) long long maxFrameCount;
+@property (readonly, nonatomic) long long itemFrameCount;
+@property (readonly, nonatomic) id<RxCollectionPreferredSizes> preferredSizes;
+@property (readonly, nonatomic) long long solutionRecursionDepth;
+@property (readonly, nonatomic) BOOL layoutRTL;
+@property (readonly, nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } layoutFrame;
+@property (readonly, nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } contentFrame;
+@property (readonly, nonatomic) long long auxillaryFrameCount;
+@property (readonly, nonatomic) NSArray *availableLayoutSpaces;
+@property (readonly, nonatomic) NSArray *itemFrames;
+@property (readonly, nonatomic) id<RxCollectionLayoutAuxillaryOffsets> supplementaryOffsets;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithItem:(id)a0 supplementaryEnroller:(id)a1 container:(id)a2 layoutAxis:(int)a3 traitCollection:(id)a4 maxFrameCount:(long long)a5 layoutRTL:(BOOL)a6 preferredSizes:(id)a7 solverResult:(id)a8 solutionRecursiveDepth:(long long)a9;
+- (double)__additionalDimensionForEdgeSpacingAlongAxis:(int)a0 group:(id)a1 trailingEdgeOnly:(BOOL)a2;
+- (int)__layoutAxisForGroup:(id)a0;
+- (id)__queryFramesWithQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1 itemIndexOffset:(long long)a2 itemLimit:(long long)a3 supplementaryRepeatOffset:(long long)a4;
+- (id)__supplementaryFrameWithKind:(id)a0 index:(long long)a1 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a2;
+- (id)__supplementaryFrameWithKind:(id)a0 absoluteIndex:(long long)a1 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a2 interSolutionSpacing:(double)a3 repeatAxis:(int)a4;
+- (id)__queryFramesWithQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1 itemIndexOffset:(long long)a2 supplementaryOffsets:(id)a3 itemLimit:(long long)a4;
+- (id)queryFramesApplyingFrameOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)__solveForContainer:(id)a0 layoutAxis:(int)a1 traitCollection:(id)a2 maxFrameCount:(long long)a3 layoutRTL:(BOOL)a4 preferredSizes:(id)a5 solutionRecursionDepth:(long long)a6;
+- (void)__solveWithCustomGroupItemProvider;
+- (void)__solveGroup;
+- (void)__solveSingleItem;
+- (struct CGSize { double x0; double x1; })__effectiveContainerSizeForContainer:(id)a0;
+- (struct CGSize { double x0; double x1; })__effectiveGroupSizeForGroup:(id)a0 container:(id)a1;
+- (void)__warnIfClientSpecifiesFlexibleRootGroupEdgeSpacingAlongLayoutAxisAsNeededForGroup:(id)a0 layoutAxis:(int)a1;
+- (void)__updateGroupByQueryingItemsIfNeeded:(id)a0 container:(id)a1;
+- (id)initWithItem:(id)a0 supplementaryEnroller:(id)a1;
+- (struct CGPoint { double x0; double x1; })__outerContainerOffsetForGroup:(id)a0 groupComputedSize:(struct CGSize { double x0; double x1; })a1 container:(id)a2 outerLayoutAxis:(int)a3;
+- (id)__arrangeSolutionItems:(id)a0 alongLayoutAxis:(int)a1 forContainer:(id)a2 additionalLayoutOffset:(struct CGPoint { double x0; double x1; })a3 interItemSpacing:(id)a4;
+- (void)__transformGroupArrangementItemsForRTL:(id)a0;
+- (unsigned long long)__directionalEdgeForLayoutAxis:(int)a0 preEdge:(BOOL)a1;
+- (struct CGPoint { double x0; double x1; })__layoutOffsetForContainer:(id)a0;
+- (struct CGPoint { double x0; double x1; })_frameOffsetForAdditionalFrameOffset:(struct CGPoint { double x0; double x1; })a0 repeatOffset:(long long)a1 repeatAxis:(int)a2 interSolutionSpacing:(double)a3;
+- (void)__enumerateSolutionFramesForQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 itemLimit:(long long)a1 withHandler:(id /* block */)a2;
+- (id)queryFramesWithQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)queryFramesWithQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1;
+- (id)queryFramesWithItemLimit:(long long)a0;
+- (id)queryFramesWithQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1 itemIndexOffset:(long long)a2 supplementaryOffsets:(id)a3 itemLimit:(long long)a4;
+- (BOOL)canAccomodateItemWithSize:(struct CGSize { double x0; double x1; })a0;
+- (void)solveForContainer:(id)a0 layoutAxis:(int)a1 traitCollection:(id)a2 maxFrameCount:(long long)a3 layoutRTL:(BOOL)a4 preferredSizes:(id)a5;
+- (void)solveForContainer:(id)a0 layoutAxis:(int)a1 traitCollection:(id)a2 maxFrameCount:(long long)a3 layoutRTL:(BOOL)a4;
+- (id)queryFramesWithQueryRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1 itemIndexOffset:(unsigned long long)a2 itemLimit:(unsigned long long)a3 supplementaryRepeatOffset:(unsigned long long)a4;
+- (void)__solve;
+- (id)frameForAbsoluteIndex:(long long)a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1 interSolutionSpacing:(double)a2 repeatAxis:(int)a3;
+- (id)supplementaryFrameWithKind:(id)a0 absoluteIndex:(long long)a1 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a2 interSolutionSpacing:(double)a3 repeatAxis:(int)a4;
+- (struct CGSize { double x0; double x1; })auxillaryHostPinningContentSize;
+- (id)auxillaryHostContainer;
+- (id)auxillaryHostAuxillaryItems;
+- (void).cxx_destruct;
+- (id)visualDescription;
+- (id)auxillaryHostSupplementaryEnroller;
+- (int)auxillaryHostLayoutAxis;
+- (BOOL)auxillaryHostShouldLayoutRTL;
+- (struct CGPoint { double x0; double x1; })auxillaryHostAdditionalFrameOffset;
+- (id)auxillaryHostPreferredSizes;
+- (long long)auxillaryHostAuxillaryKind;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (struct CGSize { double x0; double x1; })auxillaryHostContentSize;
+- (struct CGSize { double x0; double x1; })contentSizeForFrameCount:(long long)a0 layoutAxis:(int)a1;
+- (id)_frameForAbsoluteIndex:(long long)a0 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a1 interSolutionSpacing:(double)a2 repeatAxis:(int)a3;
+- (id)supplementaryFrameWithKind:(id)a0 index:(long long)a1 additionalFrameOffset:(struct CGPoint { double x0; double x1; })a2;
+- (id)initWithItem:(id)a0;
+
+@end

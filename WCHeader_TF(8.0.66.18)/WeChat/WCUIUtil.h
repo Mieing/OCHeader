@@ -1,0 +1,56 @@
+@interface WCUIUtil : NSObject
+
++ (void)applyGradientMaskToLabel:(id)a0;
++ (BOOL)canShowLivePhotoIconOnScrollView:(id)a0 isDraggingToClose:(BOOL)a1 isAnimating:(BOOL)a2 isPlayingLivePhoto:(BOOL)a3 isEffectByScroll:(BOOL)a4;
++ (void)Deletion_startLoadingInViewController:(id)a0;
++ (void)Deletion_stopLoadingInViewController:(id)a0 withResult:(long long)a1;
++ (void)Deletion_stopLoadingInViewController:(id)a0 withResult:(long long)a1 delay:(double)a2;
++ (BOOL)isVaildLatestSettingContact:(id)a0;
++ (id)importTagFromGroupDisplayString:(id)a0;
++ (id)getLastSelectTagCellContent:(id)a0;
++ (id)getAllContactNamesIncludeChatroom:(id)a0;
++ (id)getContactsTagDisplayString:(id)a0;
++ (id)getWCGroupPrivacyContent;
++ (id)intersectArrayFrom:(id)a0 array2:(id)a1;
++ (id)getWCGroupDemoPrivacyContent:(id)a0;
++ (id)getLocalizedGroupName:(id)a0;
++ (id)getLocalizedArrayGroupName:(id)a0;
++ (id)genErrTip:(id)a0 btnUrl:(id)a1 btnTips:(id)a2;
++ (id)getErrTipForDataItem:(id)a0;
++ (id)getErrTipForCommentItem:(id)a0;
++ (id)getDefaultProductImage:(long long)a0;
++ (id)getTimelineSortLabelName;
++ (void)updateTimelineSortLabelName:(id)a0 arrSortLabelName:(id)a1;
++ (BOOL)showCellSummary;
++ (BOOL)isBrandArticleUrl:(id)a0;
++ (BOOL)shouldHideSourceWithURL:(id)a0;
++ (BOOL)showCellSource:(id)a0;
++ (double)getTimelineImageCompressRate;
++ (void)safeShowUniqueAlertWithMessage:(id)a0;
++ (id)genContactTagDisplayString:(id)a0 color:(id)a1 backupString:(id)a2 backupColor:(id)a3;
++ (id)genMemberLabelDisplayText:(id)a0 color:(id)a1 backupString:(id)a2 backupColor:(id)a3;
++ (id)genAllContactsDisplayText:(id)a0 color:(id)a1;
++ (id)genPrivacyContentDictionary:(id)a0;
++ (id)genContactsDisplayString:(id)a0;
++ (id)genContactsDisplayString:(id)a0 prefix:(id)a1;
++ (id)genContactsDisplayStringWithFriendsPrefix:(id)a0;
++ (id)genContactTagWithCountDisplayString:(id)a0;
++ (id)genContactTagWithCountDisplayString:(id)a0 prefix:(id)a1;
++ (id)genContactTagDisplayStringWithTagPrefix:(id)a0;
++ (id)genLastSelectDisplayStringWithSetting:(id)a0;
++ (id)genLastStatusSelectDisplayStringWithSetting:(id)a0;
++ (void)performLightFeedBack;
++ (void)performMediumFeedBack;
++ (void)performHeavyFeedBack;
++ (void)performFeedBackWithStyle:(long long)a0;
++ (long long)currentOrientation;
++ (unsigned long long)textLengthWithTextView:(id)a0;
++ (unsigned long long)textLengthWithText:(id)a0;
++ (id)unMarkedStringWithTextView:(id)a0;
++ (id)typeDescriptionForContentType:(int)a0;
++ (id)distanceStringWithSource:(struct CLLocationCoordinate2D { double x0; double x1; })a0 target:(struct CLLocationCoordinate2D { double x0; double x1; })a1;
++ (id)confirmTipsForDeleteDataItem:(id)a0;
++ (id)navigationBarRightTitleLabelWithTitle:(id)a0;
++ (id)generateOpenIMDescLabelWithDesc:(id)a0 maxWidth:(double)a1 remainWidth:(double)a2;
+
+@end

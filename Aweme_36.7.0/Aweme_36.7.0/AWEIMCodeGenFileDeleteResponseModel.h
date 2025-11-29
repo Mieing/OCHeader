@@ -1,0 +1,3 @@
+@interface AWEIMCodeGenFileDeleteResponseModel : AWEBaseResponseModel
+
+@end

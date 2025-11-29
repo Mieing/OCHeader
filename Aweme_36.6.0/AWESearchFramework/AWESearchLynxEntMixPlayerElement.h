@@ -1,0 +1,83 @@
+@class NSString, UIView, AWEAwemeModel;
+@protocol SearchDynamicElementStatusDelegate;
+
+@interface AWESearchLynxEntMixPlayerElement : LynxUI <AWEShowMixPlayerViewDelegate, AWEShowPlayerControllerDelegate, AWEModernFullscreenTransitionOuterContextProvider, AWESearchLynxElementViewProtocol, SearchDynamicElementProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (nonatomic) BOOL isAutoPlay;
+@property (copy, nonatomic) NSString *containerID;
+@property (retain, nonatomic) UIView *blockMaskView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<SearchDynamicElementStatusDelegate> statusDelegate;
+@property (nonatomic) long long transitionIndex;
+
++ (id)__lynx_prop_config__1305;
++ (id)__lynx_prop_config__1062;
++ (id)__lynx_prop_config__701;
++ (id)__lynx_prop_config__650;
++ (id)__lynx_prop_config__1103;
++ (id)__lynx_prop_config__1224;
++ (id)__lynx_prop_config__1386;
++ (id)__lynx_prop_config__1427;
++ (id)__lynx_prop_config__1498;
++ (id)__lynx_prop_config__1609;
++ (id)__lynx_prop_config__16410;
++ (id)__lynx_prop_config__17011;
++ (id)__lynx_ui_method_config__18012;
++ (id)__lynx_ui_method_config__18713;
++ (id)__lynx_ui_method_config__19114;
++ (id)__lynx_ui_method_config__19515;
+
+- (id)modernTransitionContext;
+- (void)play:(id)a0 withResult:(id /* block */)a1;
+- (void)pause:(id)a0 withResult:(id /* block */)a1;
+- (void)stop:(id)a0 withResult:(id /* block */)a1;
+- (void)playerPlayTime:(double)a0 canPlayTime:(double)a1 totalTime:(double)a2;
+- (void)logExtra:(id)a0 requestReset:(BOOL)a1;
+- (void)poster:(id)a0 requestReset:(BOOL)a1;
+- (void)viewStatusDidChange:(BOOL)a0;
+- (void)startposition:(id)a0 requestReset:(BOOL)a1;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (BOOL)shouldModernTransitionUpdatePlayerControllerWithFromContext:(id)a0;
+- (BOOL)shouldUpdatePlayerWhenModelDifferent:(id)a0;
+- (BOOL)shouldLayoutBeforeGenerateFeedSnapshotImageView;
+- (void)seek:(id)a0 withResult:(id /* block */)a1;
+- (BOOL)isMediaSourceCard;
+- (void)repeat:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)mute:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)objectFit:(id)a0 requestReset:(BOOL)a1;
+- (void)sessionid:(id)a0 requestReset:(BOOL)a1;
+- (void)speed:(id)a0 requestReset:(BOOL)a1;
+- (BOOL)shouldEnterFullScreenWithPlayer;
+- (void)playerDidStart;
+- (void)playerDidStop;
+- (void)sendLynxEventWithName:(id)a0;
+- (void)sendLynxEventWithName:(id)a0 extraDetail:(id)a1;
+- (void)playerDidPause;
+- (void)playerDidPlayError:(id)a0;
+- (void)paidStreamTrialRemainingTimeChangeTo:(double)a0 remainType:(long long)a1;
+- (void)paidStreamTrialDidFinish:(long long)a0;
+- (void)playerDidEnd;
+- (void)playerDidStartStall;
+- (void)awemeModel:(id)a0 requestReset:(BOOL)a1;
+- (void)hideloading:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)idSelector:(id)a0 requestReset:(BOOL)a1;
+- (id)containerAwemeList;
+- (void)willTransitionFullScreen;
+- (void)elementDidFinishBind;
+- (id)getLynxElementType;
+- (BOOL)openAutoPlayMonitor;
+- (BOOL)isIAAVideo;
+- (void)isautoplay:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (id)transitionContext;
+- (id)videoView;
+- (void)didResignActive;
+- (id)createView;
+- (void)updateWithModel:(id)a0;
+
+@end

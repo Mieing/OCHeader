@@ -1,0 +1,20 @@
+@class NSString;
+
+@interface AWELiveModule : NSObject <HTSAppLifeCycle>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)moduleTaskNameArray;
+
+- (void)onAppModuleWillBecomeActive;
+- (void)_launchLiveService;
+- (void)_launchLiveEntry;
+- (void)_syncGurdLiveResources;
+- (void)adapter_launchLiveEntryNormal;
+- (void)_launchIdleLiveTasks;
+- (void)onAppRootViewDidAppearIdle;
+
+@end

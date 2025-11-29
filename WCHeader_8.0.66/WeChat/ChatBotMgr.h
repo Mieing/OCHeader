@@ -1,0 +1,82 @@
+@class NSString, NSMutableSet, NSData, MMLocatingCoordinateLogic, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface ChatBotMgr : MMUserService <CLLocationManagerDelegate, IMinimizeTaskDelegateInterface, MMServiceProtocol, PBMessageObserverDelegate, IMsgExt>
+
+@property (retain, nonatomic) NSMutableSet *clickTaskIdSet;
+@property (retain, nonatomic) MMLocatingCoordinateLogic *locationLogic;
+@property (nonatomic) BOOL bGettingLocation;
+@property (retain, nonatomic) NSString *curLocationCallId;
+@property (retain, nonatomic) NSData *curLocationContext;
+@property (nonatomic) BOOL enableAsstChatBotVoIPCache;
+@property (nonatomic) BOOL enableNormalChatBotVoIPCache;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *selfDataUploadSerialQueue;
+@property (copy, nonatomic) id /* block */ selfDataCheckBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)setUserDataJsonString:(id)a0;
++ (id)getUserDataJsonString;
++ (void)removeUserDataJsonString;
++ (void)setSuccessAuthFor:(id)a0;
++ (BOOL)getIsAuthedFor:(id)a0;
++ (id)getMemoryKV;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)checkChatBotResUdr;
+- (BOOL)enableChatBotVoIP;
+- (BOOL)enableAsstChatBotVoIP;
+- (id)getMainFrameChatBotVoIPEntryUsername;
+- (BOOL)enableChatBotMultitalk;
+- (BOOL)enableChatBotShowOpenIMInfo:(id)a0;
+- (void)dealloc;
+- (void)applicationWillEnterForeground;
+- (BOOL)enableForUserName:(id)a0;
+- (void)dispatchCheckSelfDataTask;
+- (void)dispatchSelfDataUploadTask:(id)a0;
+- (void)updateChatBotFromServer;
+- (id)tryGetChatBotContact:(id)a0;
+- (id)tryGetChatBotContact:(id)a0 isFake:(BOOL *)a1;
+- (void)showChatBotQuickReply;
+- (void)showChatBotQuickReplyWithUserName:(id)a0;
+- (void)showChatBotQuickReplyWith:(id)a0 userName:(id)a1;
+- (void)sendChatBotCommandForCmd:(int)a0 toUserName:(id)a1;
+- (void)sendChatBotCommandForCmd:(int)a0 toUserName:(id)a1 loginInfo:(id)a2 posInfo:(id)a3;
+- (void)locationSettingLogic;
+- (void)getLocationAndAuthorizationSingle:(id)a0 retryTime:(int)a1 isFirstReq:(BOOL)a2 callId:(id)a3 context:(id)a4;
+- (void)getLocationAndAuthorization:(id)a0 posTitle:(id)a1 showSysTips:(BOOL)a2 retryTime:(int)a3;
+- (void)sendGetIlinkAuth:(id)a0 username:(id)a1 title:(id)a2 posTitle:(id)a3 needPos:(BOOL)a4 userAuthed:(BOOL)a5;
+- (void)sendGetIlinkAuth:(id)a0 username:(id)a1 title:(id)a2 userAuthed:(BOOL)a3 location:(struct CLLocationCoordinate2D { double x0; double x1; })a4;
+- (void)handleSendChatBotCommandResp:(id)a0 Event:(unsigned int)a1;
+- (id)getAgreementIdListForUserName:(id)a0;
+- (id)getSignedAgreementInfo;
+- (BOOL)hasSignedAllAgreementForUserName:(id)a0;
+- (unsigned int)getSignedServiceAgreementVersion;
+- (unsigned int)getSignedPrivacyAgreementVersion;
+- (unsigned int)getSignedAgreementVersionWithId:(unsigned int)a0;
+- (void)updateSignedAgreementInfo:(id)a0 agree:(BOOL)a1;
+- (void)handleModServiceAgreementResp:(id)a0 Event:(unsigned int)a1;
+- (void)handleGetIlinkAuthInfoForAIAgentResp:(id)a0 Event:(unsigned int)a1;
+- (id)getExternalInfoForUsername:(id)a0;
+- (id)getAgreementInfosForUsername:(id)a0;
+- (id)getServiceAgreementUrlForUsername:(id)a0;
+- (id)getPrivacyAgreementUrlForUsername:(id)a0;
+- (id)bizMenuInfoForUsername:(id)a0;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (id)changeXMLAttribute:(id)a0 tag:(id)a1 newValue:(id)a2;
+- (void)checkMyselfChatDataUpload;
+- (BOOL)isWCBusy;
+- (void)uploadSelf2SelfMsg:(id)a0;
+- (void)OnDelMsg:(id)a0 MsgWrap:(id)a1;
+- (void)OnAddMsg:(id)a0 MsgWrap:(id)a1;
+- (void)uploadFinderVideoData:(id)a0 minimizeTaskData:(id)a1 position:(double)a2;
+- (void)uploadWebPageMinimizeTaskData:(id)a0 preloadPageUrl:(id)a1;
+- (void)uploadMessageData:(id)a0 minimizeTaskData:(id)a1;
+- (void)tryAddMsgToStar:(id)a0 nickName:(id)a1 userName:(id)a2;
+- (id)filterMsgTaskDataInSwitchClose:(id)a0;
+- (void).cxx_destruct;
+
+@end

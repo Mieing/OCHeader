@@ -1,0 +1,49 @@
+@interface AFDRichContentProgressController : NSObject <AFDVideoProgressInteractionManagerDelegate, AFDAlbumPreviewInteractionManagerDelegate, AFDProgressInteractionHotZoneManagerDelegate, AWEStoryProgressContainerViewDelegate, AFDRichContainerProgressControllerProtocol> {
+    void /* unknown type, empty encoding */ isAppear;
+    void /* unknown type, empty encoding */ isDisplaying;
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ viewModel;
+    void /* unknown type, empty encoding */ paginatedProgressView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_hotZoneManager;
+    void /* unknown type, empty encoding */ albumPreviewInteractionManager;
+    void /* unknown type, empty encoding */ draggableType;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_videoProgressInteractionManager;
+}
+
+- (BOOL)canPlayerPlayAfterTouch;
+- (void)playStoryAlbumWithProgressPercentage:(double)a0;
+- (void)playAlbumWithProgressPercentage:(double)a0;
+- (void)pauseAlbumTimer:(BOOL)a0;
+- (void)touchActionCancelled;
+- (BOOL)isInPinchView;
+- (void)didSelectAlbumPreviewItemAtIndex:(long long)a0 playerAdapter:(id)a1 livePhotoPlayerAdapter:(id)a2;
+- (void)didScrollToAlbumPreviewItemFromIndex:(long long)a0 toIndex:(long long)a1 imageModel:(id)a2;
+- (id)placeholderImageForAlbumAtIndex:(long long)a0;
+- (void)setUpVideoController:(id)a0 model:(id)a1;
+- (id)previewBackgroundColor:(id)a0;
+- (BOOL)shouldRecognizeWindowGesture;
+- (BOOL)shouldExpandPinchProgressHotZone;
+- (BOOL)shouldAlignFeedProgressHotZone;
+- (BOOL)shouldResponseLongPressProgress;
+- (BOOL)isHitFriendsProgressBarHotZoneOptimization;
+- (BOOL)viewIsAppear;
+- (BOOL)shouldAssignMaskWindowDelegate;
+- (BOOL)isSingleImage;
+- (BOOL)shouldReduceHotZoneForWindowGestureWith:(double)a0;
+- (id)progressView;
+- (id)window;
+- (void)scrollToIndex:(long long)a0;
+- (void)swipeToLastStory;
+- (void)swipeToNextStory;
+- (void)progressContainerViewTouchBegan;
+- (void)progressContainerViewValueChangedWithOffsetX:(double)a0;
+- (void)progressContainerViewTouchEnded;
+- (id)accessibilityLabels;
+- (BOOL)progressContainerShouldBeginGestureRecognizer:(id)a0;
+- (BOOL)shouldShowProgress;
+- (void)selectedDownloadImageIndexWithNotification:(id)a0;
+- (void)onFeedLongPressNotificationWithNotification:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

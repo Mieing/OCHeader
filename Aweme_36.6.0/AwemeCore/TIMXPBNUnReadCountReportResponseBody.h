@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNUnReadCountReportResponseBody : GPBMessage
+
+@property (nonatomic) BOOL setTotalStatus;
+@property (nonatomic) BOOL hasSetTotalStatus;
+@property (retain, nonatomic) GPBInt64Array *failedConvListArray;
+@property (readonly, nonatomic) unsigned long long failedConvListArray_Count;
+
++ (id)descriptor;
+
+@end

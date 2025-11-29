@@ -1,0 +1,3 @@
+@interface BDPMKMapView : MKMapView
+
+@end

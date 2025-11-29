@@ -1,0 +1,3 @@
+@interface WalletCommonRoot : GPBRootObject
+
+@end

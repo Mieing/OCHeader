@@ -1,0 +1,81 @@
+@class UIView, NSString, NSArray, UITapGestureRecognizer, UIImage, UITextView, UIImageView, UIWindow, NSAttributedString, UILabel;
+
+@interface AWEBatManUIAlertView : UIView <UIGestureRecognizerDelegate>
+
+@property (nonatomic) long long style;
+@property (nonatomic) double containerWidth;
+@property (nonatomic) double containerMaxHeight;
+@property (nonatomic) double textViewHorizatalInset;
+@property (copy, nonatomic) NSArray *actions;
+@property (retain, nonatomic) UIView *animationView;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIImageView *iconImageView;
+@property (retain, nonatomic) UITextView *descriptionTextView;
+@property (retain, nonatomic) UILabel *attributedLabel;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGes;
+@property (retain, nonatomic) UITapGestureRecognizer *tapToDismissGes;
+@property (copy, nonatomic) NSArray *buttons;
+@property (copy, nonatomic) NSArray *buttonTitles;
+@property (weak, nonatomic) UIWindow *windowToShowAlert;
+@property (weak, nonatomic) UIView *viewToShowAlert;
+@property (nonatomic) BOOL dismissWhenTappedInBlankArea;
+@property (nonatomic) BOOL bringAlertViewFromLoadingToBatMan;
+@property (nonatomic) BOOL isCheckedAgreement1;
+@property (nonatomic) BOOL isCheckedAgreement2;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (copy, nonatomic) id /* block */ dismissBlockWithoutCallCancelAction;
+@property (copy, nonatomic) id /* block */ configUIBlock;
+@property (nonatomic) BOOL useHtmlRender;
+@property (nonatomic) double maxContentHeight;
+@property (nonatomic) double customCornerRadius;
+@property (retain, nonatomic) UIImage *headerImage;
+@property (retain, nonatomic) UIImageView *headerImageView;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } headerImageEdgeInsets;
+@property (nonatomic) struct CGSize { double width; double height; } headerImageSize;
+@property (nonatomic) long long closeButtonStyle;
+@property (copy, nonatomic) id /* block */ closeButtonClickedBlock;
+@property (nonatomic) BOOL shouldShowIconImage;
+@property (retain, nonatomic) UIImage *iconImage;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } iconImageEdgeInsets;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSAttributedString *attributedTitle;
+@property (copy, nonatomic) NSString *message;
+@property (copy, nonatomic) NSAttributedString *attributedMessage;
+@property (nonatomic) BOOL messageShouldAlignLeft;
+@property (retain, nonatomic) UIView *bodyView;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSAttributedString *attributedText;
+@property (copy, nonatomic) id /* block */ handleBlock;
+@property (nonatomic) BOOL isButtonAlignedVertically;
+@property (nonatomic) BOOL disableLocalizations;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)showAlertWithTitle:(id)a0 description:(id)a1 image:(id)a2 actionButtonTitle:(id)a3 cancelButtonTitle:(id)a4 actionBlock:(id /* block */)a5 cancelBlock:(id /* block */)a6 UIConfigBlock:(id /* block */)a7;
++ (void)showAlertWithTitle:(id)a0 description:(id)a1 image:(id)a2 actionButtonTitle:(id)a3 cancelButtonTitle:(id)a4 actionBlock:(id /* block */)a5 cancelBlock:(id /* block */)a6;
++ (BOOL)isSomeAlertShowing;
++ (id)alertViewWithStyle:(long long)a0;
+
+- (void)loadSubviews;
+- (void)dismissSelfDefineAlert;
+- (void)didTapAlertView:(id)a0;
+- (void)p__showSelfDefineAlertWithAnimation;
+- (void)loadSubviewsForClassicStyle;
+- (void)onAttributedLabelClicked:(id)a0;
+- (void)onCloseButtonClicked:(id)a0;
+- (void)findCancelActionAndExecute;
+- (void)p__dismissSelfDefineAlertWithAnimation;
+- (void)resetUIBeforeShowingForClassicStyle;
+- (id)initForShareTrendingHeaderImage:(id)a0;
+- (void)enableActionWithIndex:(unsigned long long)a0 isEnable:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)addAction:(id)a0;
+- (id)init;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)show;
+- (void)dismiss:(BOOL)a0;
+
+@end

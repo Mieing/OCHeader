@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESGCPPBGameDetailMiniGameMeta : GPBMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *version;
+
++ (id)descriptor;
+
+@end

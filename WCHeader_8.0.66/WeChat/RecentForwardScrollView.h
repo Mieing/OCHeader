@@ -1,0 +1,90 @@
+@class UIView, NSString, MMActionSheetScrollView, UIColor, UIFont, MMUIView, NSMutableArray, CContact, MMUIButton, UILabel;
+@protocol RecentForwardScrollViewDelegate;
+
+@interface RecentForwardScrollView : UIView <RecentForwardSheetItemViewDelegate> {
+    NSString *m_title;
+    UIColor *m_backgroundColor;
+    double m_headImgWidth;
+    UIFont *m_titleFont;
+    double m_titleMarginLeft;
+    double m_titleMarginTop;
+    double m_titleLineHeight;
+    double m_scrollViewMarginLeft;
+    double m_scrollItemMarginLeft;
+    BOOL m_showSeperator;
+    double m_bottomPadding;
+    UIFont *m_nameLabelFont;
+    BOOL m_bIgnoreChatRoom;
+    BOOL m_onlyChatRoom;
+    BOOL m_bNewEditModel;
+    BOOL m_bStartNewEditModelIng;
+    BOOL m_isHalfScreen;
+    BOOL m_hasDeleteItem;
+    NSMutableArray *m_deleteList;
+    long long m_toUserIndex;
+    NSString *m_toUserName;
+    unsigned long long m_startTime;
+}
+
+@property (retain, nonatomic) UILabel *tipLabel;
+@property (retain, nonatomic) MMActionSheetScrollView *aScrollView;
+@property (retain, nonatomic) NSMutableArray *iconViews;
+@property (retain, nonatomic) UIView *seperator;
+@property (retain, nonatomic) MMUIButton *deleteForwardChatBtnInNewEditModel;
+@property (retain, nonatomic) MMUIButton *finishForwardChatBtnInNewEditModel;
+@property (retain, nonatomic) MMUIView *finishForwardChatBtnInNewEditModelView;
+@property (retain, nonatomic) NSString *forwardSessionId;
+@property (retain, nonatomic) NSString *forwardFinishDeletSessionId;
+@property (weak, nonatomic) id<RecentForwardScrollViewDelegate> delegate;
+@property (retain, nonatomic) CContact *longpressContact;
+@property (nonatomic) long long maxNumberOfForwardItem;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) id userInfo;
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) unsigned int msgType;
+@property (nonatomic) unsigned int innerAppMsgType;
+@property (retain, nonatomic) NSString *reportUserInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)hasRecentForward;
+
+- (id)init;
+- (id)initWithCount:(long long)a0 title:(id)a1 backgroundColor:(id)a2 headImgWidth:(double)a3 titleFont:(id)a4 titleMarginLeft:(double)a5 titleMarginTop:(double)a6 titleLineHeight:(double)a7 scrollViewMarginLeft:(double)a8 scrollItemMarginLeft:(double)a9 showSeperator:(BOOL)a10 bottomPadding:(double)a11 nameLabelFont:(id)a12 ignoreChatRoom:(BOOL)a13 bNewEditModel:(BOOL)a14 onlyChatRoom:(BOOL)a15;
+- (void)initView;
+- (void)initDeleteForwardChatBtnInNewEditModel;
+- (void)initFinishForwardChatBtnInNewEditModel;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (id)contactsForRecentForwardMenu;
+- (void)layoutSubviews;
+- (void)onClickDeleteForwardChatBtnInNewEditModel;
+- (void)deleteForwardChatNewEditModelAnimation;
+- (void)onClickFinishForwardChatBtnInNewEditModel;
+- (void)finishDelectChatNewEditModel;
+- (void)finishDelectChatNewEditModelAnimation;
+- (void)onItemClick:(id)a0;
+- (void)onItemLongPress:(id)a0;
+- (void)onDeleteItem;
+- (void)deleteContact:(id)a0;
+- (void)deleteContactAnimation;
+- (id)iconViewForContact:(id)a0;
+- (id)getAllIconView;
+- (void)setForceDarkMode:(BOOL)a0;
+- (void)didMoveToWindow;
+- (void)reportRecentForwardHalfPanelUsage;
+- (long long)indexForContact:(id)a0;
+- (unsigned long long)getOneLineCount;
+- (id)getDeleteList;
+- (void)changeEditingStatus:(BOOL)a0;
+- (BOOL)OnGetStartNewEditModelIngValue;
+- (void)OnDidClickSmallDeleteButton:(id)a0;
+- (void)reportLongPressRemoveRecentFrowradChats:(id)a0;
+- (void)reportRemoveRecentFrowradChats:(id)a0;
+- (void)reportClickDeleteForwardChatNewEditModel;
+- (void)reportRemoveRecentFrowradChatsInNewEditModel:(id)a0;
+- (void).cxx_destruct;
+
+@end

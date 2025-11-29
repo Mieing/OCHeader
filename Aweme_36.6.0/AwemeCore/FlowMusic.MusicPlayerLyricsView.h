@@ -1,0 +1,17 @@
+@interface FlowMusic.MusicPlayerLyricsView : UIView <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
+    void /* unknown type, empty encoding */ model;
+    void /* unknown type, empty encoding */ lyricsSyncer;
+    void /* unknown type, empty encoding */ logger;
+    void /* unknown type, empty encoding */ freeze;
+    void /* unknown type, empty encoding */ freezeTime;
+    void /* unknown type, empty encoding */ collectionView;
+}
+
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+
+@end

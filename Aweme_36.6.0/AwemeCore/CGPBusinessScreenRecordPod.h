@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CGPBusinessScreenRecordPod : GPBMessage
+
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *savePath;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,75 @@
+@class NSDate, NSString, NSArray, IESECMallLynxRenderMonitor, AWEECMallSubListModel, NSDictionary, IESECLynxCardModel, UIViewController, AWEECMallSubDataManager;
+@protocol AWEECMultiMallContainerConfigProtocol;
+
+@interface AWEECMallSubLiveModel : NSObject <IESECListCardsContextDelegate, IESECMallLynxRenderMonitorDelegate>
+
+@property (nonatomic) long long straightOutFirstScreenStatus;
+@property (nonatomic) long long realFirstScreenStatus;
+@property (nonatomic) long long loadMoreStatus;
+@property (nonatomic) long long refreshStatus;
+@property (retain, nonatomic) AWEECMallSubListModel *mainListModel;
+@property (retain, nonatomic) IESECLynxCardModel *skyLightModel;
+@property (retain, nonatomic) AWEECMallSubListModel *subListModel;
+@property (nonatomic) long long pageNum;
+@property (nonatomic) long long cursor;
+@property (copy, nonatomic) NSString *postBack;
+@property (copy, nonatomic) NSDictionary *loadModule;
+@property (copy, nonatomic) NSArray *filters;
+@property (copy, nonatomic) NSArray *followTabShopFilters;
+@property (copy, nonatomic) NSArray *feedImpression;
+@property (copy, nonatomic) NSArray *BFFFilters;
+@property (copy, nonatomic) NSArray *BFFFollowTabShopFilters;
+@property (nonatomic) long long requestPageCount;
+@property (retain, nonatomic) AWEECMallSubDataManager *dataManager;
+@property (retain, nonatomic) id<AWEECMultiMallContainerConfigProtocol> config;
+@property (copy, nonatomic) NSArray *xBridgeList;
+@property (weak, nonatomic) UIViewController *hostVC;
+@property (nonatomic) BOOL hasFinishRealRender;
+@property (nonatomic) double listOffsetY;
+@property (nonatomic) double skyCardH;
+@property (copy, nonatomic) NSDate *channelLeaveDate;
+@property (nonatomic) BOOL isInnerChannel;
+@property (copy, nonatomic) NSDate *pageLeaveDate;
+@property (nonatomic) BOOL isPageVisible;
+@property (copy, nonatomic) NSDate *appLeaveDate;
+@property (nonatomic) BOOL isAppActive;
+@property (nonatomic) double initTime;
+@property (nonatomic) double openTime;
+@property (retain, nonatomic) IESECMallLynxRenderMonitor *lynxRenderMonitor;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)trackEvent:(id)a0 params:(id)a1;
+- (void)currentCardsWriteAlogMethodName:(id)a0 paramModel:(id)a1 result:(id)a2 context:(id)a3;
+- (id)currentListContextIdForCards;
+- (id)commonTrackParams;
+- (BOOL)canLoadMore;
+- (void)mallLynxRenderReport:(id)a0;
+- (id)getFiltersStringValue;
+- (id)getShopFiltersStringValue;
+- (void)handleResponse:(id)a0 request:(id)a1 completed:(id /* block */)a2;
+- (id)straightOutCacheKey;
+- (id)hybridMonitorBid;
+- (id)rootProps;
+- (id)globalExtraProps;
+- (BOOL)hasLaunched;
+- (void)handleCommonImpressionFromFilters:(id)a0;
+- (void)prepareFirstScreenDataCompleted:(id /* block */)a0;
+- (void)loadMoreDataCompleted:(id /* block */)a0;
+- (void)refreshWithSectionList:(id)a0 module:(long long)a1 completed:(id /* block */)a2;
+- (void)refreshSkyWithCardModel:(id)a0;
+- (void)reportCommonImpression;
+- (void)trackFirstScreen:(BOOL)a0;
+- (void)trackPageException:(unsigned long long)a0;
+- (void)trackAutoNextRequest:(BOOL)a0;
+- (void)trackScrollToTop;
+- (void)trackGoToTopStatus:(BOOL)a0;
+- (BOOL)canRefresh;
+- (void).cxx_destruct;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+- (BOOL)isDarkMode;
+
+@end

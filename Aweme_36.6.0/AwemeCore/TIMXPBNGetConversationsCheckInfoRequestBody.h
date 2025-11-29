@@ -1,0 +1,8 @@
+@interface TIMXPBNGetConversationsCheckInfoRequestBody : GPBMessage
+
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+
++ (id)descriptor;
+
+@end

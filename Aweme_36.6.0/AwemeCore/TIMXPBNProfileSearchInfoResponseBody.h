@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNProfileSearchInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *profileArray;
+@property (readonly, nonatomic) unsigned long long profileArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetSubtitleResponse : BDByteCastPPBaseCmdResponse
+
+@end

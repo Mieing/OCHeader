@@ -1,0 +1,8 @@
+@interface AWEMusicStreamingImpl.CellHeightCalculator : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ tableView;
+    void /* unknown type, empty encoding */ prototypes;
+    void /* unknown type, empty encoding */ cachedHeights;
+    void /* unknown type, empty encoding */ separatorHeight;
+}
+
+@end

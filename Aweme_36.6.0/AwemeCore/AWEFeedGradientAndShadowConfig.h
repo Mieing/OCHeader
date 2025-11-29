@@ -1,0 +1,57 @@
+@interface AWEFeedGradientAndShadowConfig : NSObject
+
++ (BOOL)isTitleBarShadow;
++ (id)topMaskColors;
++ (BOOL)isConciseMode;
++ (double)adMoreBorderShadowAlpha;
++ (double)adMoreBorderShadowOffset;
++ (double)adMoreTagTextAlpha;
++ (double)adMoreTagWholeAlpha;
++ (double)adMoreTagOpacity;
++ (double)adMoreTagShadowOffsetX;
++ (double)adMoreTagShadowOffsetY;
++ (double)adMoreTagRadius;
++ (double)adMoreTagBackgroundRadius;
++ (double)adMoreTagBackgroundOpacity;
++ (double)adMoreTagBackgroundShadowOffsetX;
++ (double)adMoreTagBackgroundShadowOffsetY;
++ (BOOL)referStringCheck:(id)a0;
++ (id)bottomMaskColors;
++ (double)bottomMaskWholeAlpha;
++ (double)bottomMaskBottomMaskHeight;
++ (double)topMaskWholeAlpha;
++ (double)topMaskBottomMaskHeight;
++ (double)adDescriptionRadius;
++ (double)adDescriptionOpacity;
++ (double)adDescriptionShadowOffsetX;
++ (double)adDescriptionShadowOffsetY;
++ (double)descriptionRadius;
++ (double)descriptionOpacity;
++ (double)descriptionShadowOffsetX;
++ (double)descriptionShadowOffsetY;
++ (double)musicLabelRadius;
++ (double)musicLabelOpacity;
++ (double)musicLabelShadowOffsetX;
++ (double)musicLabelShadowOffsetY;
++ (double)authorLabelRadius;
++ (double)authorLabelOpacity;
++ (double)authorLabelShadowOffsetX;
++ (double)authorLabelShadowOffsetY;
++ (double)videoButtonRadius;
++ (double)videoButtonOpacity;
++ (double)videoButtonShadowOffsetX;
++ (double)videoButtonShadowOffsetY;
++ (double)titleBarRadius;
++ (double)titleBarOpacity;
++ (double)titleBarColorAlpha;
++ (double)titleBarShadowOffsetX;
++ (double)titleBarShadowOffsetY;
++ (double)titleBarRadiusInConciseMode;
++ (double)titleBarColorAlphaInConciseMode;
++ (double)titleBarOpacityInConciseMode;
++ (double)titleBarShadowOffsetXInConciseMode;
++ (double)titleBarShadowOffsetYInConciseMode;
++ (double)conciseModeAlpha;
++ (BOOL)isDarkMode;
+
+@end

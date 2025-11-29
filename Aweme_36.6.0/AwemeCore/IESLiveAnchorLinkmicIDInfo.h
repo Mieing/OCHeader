@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface IESLiveAnchorLinkmicIDInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *mainLinkmicIdStr;
+@property (copy, nonatomic) NSString *backupLinkmicIdStr;
+@property (nonatomic) BOOL useBackupStream;
+
++ (id)descriptor;
+
+- (id)iesLiveMultiLinker_currentUsingLinkmicID;
+- (id)iesLiveMultiLinker_currentBackupLinkmicID;
+
+@end

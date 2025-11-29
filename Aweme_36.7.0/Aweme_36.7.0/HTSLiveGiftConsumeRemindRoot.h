@@ -1,0 +1,3 @@
+@interface HTSLiveGiftConsumeRemindRoot : GPBRootObject
+
+@end

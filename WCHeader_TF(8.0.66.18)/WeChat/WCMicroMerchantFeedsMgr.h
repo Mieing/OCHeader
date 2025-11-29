@@ -1,0 +1,71 @@
+@class WCTimelineBatchGetFeedsCGI, NSMutableDictionary, MyWCDB, NSMutableArray;
+@protocol WCMicroMerchantFeedsMgrDelegate;
+
+@interface WCMicroMerchantFeedsMgr : NSObject
+
+@property (retain, nonatomic) NSMutableDictionary *microMerchantFeedGroups;
+@property (retain, nonatomic) NSMutableDictionary *reverseFeedID2GroupID;
+@property (retain, nonatomic) NSMutableArray *segments;
+@property (retain, nonatomic) NSMutableDictionary *microMerchantFeedsDataItemDict;
+@property (nonatomic) unsigned int foldSectionSize;
+@property (retain, nonatomic) WCTimelineBatchGetFeedsCGI *batchGetFeedsCGI;
+@property (retain, nonatomic) MyWCDB *database;
+@property (copy, nonatomic) id /* block */ groupItemUpdatedBlock;
+@property (weak, nonatomic) id<WCMicroMerchantFeedsMgrDelegate> delegate;
+
+- (id)initWithDatabase:(id)a0;
+- (void)dealloc;
+- (void)reloadCacheDatas;
+- (void)checkFoldSizeChange;
+- (void)dropAllMicroMerchantTableData;
+- (void)cleanUpTables;
+- (void)clearSoftDeletedMircoMechantFeeds;
+- (void)clearNoUseSegments:(id)a0 checkCnt:(unsigned int)a1;
+- (void)preloadMicroMerchantFeedsGroupOnBeigin;
+- (void)preloadMicroMerchantFeedsGroupFromBottom:(id)a0 toTop:(id)a1;
+- (id)foldSyncContext;
+- (id)getCachedMicroMerchantFeedGroups;
+- (id)getCachedMicroMerchantFeedGroup:(id)a0;
+- (id)filterIDList:(id)a0 withMaxID:(id)a1;
+- (void)mergeTimelineIdx:(id)a0;
+- (id)splitArray:(id)a0 pageSize:(unsigned int)a1;
+- (id)convertFeedIdArrayToDBSegments:(id)a0;
+- (void)saveUpdateSegment:(id)a0 InsertSegments:(id)a1;
+- (void)updateMicroMerchantGroupCache:(id)a0;
+- (void)updateMicroMerchantGroupDatabase:(id)a0 dataList:(id)a1;
+- (void)deleteAllCacheForGroupId:(id)a0;
+- (id)mergeMicroMerchantFeeds:(id)a0 feedList:(id)a1;
+- (void)updateMicroMerchantGroupsCache:(id)a0 dataList:(id)a1;
+- (id)getDataItemInDatabase:(id)a0;
+- (BOOL)deleteDataItemInDatabase:(id)a0;
+- (BOOL)deleteRelationInDatabase:(id)a0;
+- (BOOL)reloadDataItemFromDatabaseToCache:(id)a0;
+- (id)getMicroMerchantDataItemsByIds:(id)a0;
+- (void)deleteAllDatabaseObjectForGroupId:(id)a0;
+- (id)getDataItemInCache:(id)a0;
+- (BOOL)modifyCache:(id)a0;
+- (BOOL)deleteDataItemInCache:(id)a0;
+- (id)getDataItemsFromCache:(id)a0;
+- (BOOL)modifyDataItemInCache:(id)a0 groupId:(id)a1;
+- (BOOL)replaceDataItemCache:(id)a0 forGroupId:(id)a1;
+- (BOOL)removeAllDataItemsInCache:(id)a0;
+- (BOOL)deleteDataItemInCache:(id)a0 groupId:(id)a1;
+- (id)getDataItemInCache:(id)a0 groupId:(id)a1;
+- (unsigned long long)findDataIndexInCache:(id)a0 itemID:(id)a1;
+- (id)findGroupIdWithFeedId:(id)a0;
+- (BOOL)isFeedIDFoldInGroup:(id)a0;
+- (long long)microMerchantFeedStatusForFeedID:(id)a0;
+- (void)fetchGroupItemsFromSvr:(id)a0 originalDataList:(id)a1 completion:(id /* block */)a2;
+- (void)fetchGroupItemsFromSvr:(id)a0 originalDataList:(id)a1 fetchFeedIds:(id)a2 completion:(id /* block */)a3;
+- (void)tryMergeSvrDataListDataItem:(id)a0 withLocal:(id)a1;
+- (id)dataItemListToDataDict:(id)a0;
+- (void)tryMergeSvrDataListComment:(id)a0 withLocal:(id)a1;
+- (BOOL)isTimelineUnfoldedFromUsername:(id)a0;
+- (BOOL)unfoldTimelineFromUsername:(id)a0;
+- (void)dumpAllCaches;
+- (void)dumpReverseIDMap:(id)a0;
+- (void)dumpMicroMerchantFeedsGroup:(id)a0;
+- (void)dumpSegments:(id)a0;
+- (void).cxx_destruct;
+
+@end

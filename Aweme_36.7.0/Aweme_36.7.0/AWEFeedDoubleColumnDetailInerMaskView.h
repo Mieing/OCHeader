@@ -1,0 +1,3 @@
+@interface AWEFeedDoubleColumnDetailInerMaskView : UIView
+
+@end

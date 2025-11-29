@@ -1,0 +1,10 @@
+@class GetMineInfoResponse_Data;
+
+@interface GetMineInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetMineInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

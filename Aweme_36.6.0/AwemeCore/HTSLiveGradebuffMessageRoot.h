@@ -1,0 +1,3 @@
+@interface HTSLiveGradebuffMessageRoot : GPBRootObject
+
+@end

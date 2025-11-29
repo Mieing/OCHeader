@@ -1,0 +1,3 @@
+@interface AWENearbyTaskMultiTabRefresh : NSObject
+
+@end

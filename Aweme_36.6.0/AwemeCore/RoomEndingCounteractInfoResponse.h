@@ -1,0 +1,10 @@
+@class RoomEndingCounteractInfoResponse_CounteractInfo;
+
+@interface RoomEndingCounteractInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RoomEndingCounteractInfoResponse_CounteractInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

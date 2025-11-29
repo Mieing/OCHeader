@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveHeartbeatPacket_WrdsKeyVersion : GPBMessage
+
+@property (copy, nonatomic) NSString *syncKey;
+@property (nonatomic) long long version;
+
++ (id)descriptor;
+
+@end

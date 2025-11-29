@@ -1,0 +1,72 @@
+@class NSArray, WCAdRandomPickCardItemsInfo, NSString, NSMutableArray, WCAdRandomPickCardItemInfo;
+@protocol WCAdRandomPickCardItemsViewDelegate;
+
+@interface WCAdRandomPickCardItemsView : MMUIView <WCAdRandomPickCardItemViewDelegate>
+
+@property (weak, nonatomic) id<WCAdRandomPickCardItemsViewDelegate> delegate;
+@property (nonatomic) long long viewStatus;
+@property (retain, nonatomic) WCAdRandomPickCardItemsInfo *itemsInfo;
+@property (nonatomic) long long viewType;
+@property (retain, nonatomic) NSMutableArray *itemViews;
+@property (retain, nonatomic) NSArray *sortedCardItems;
+@property (retain, nonatomic) WCAdRandomPickCardItemInfo *stayPutViewItemInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 itemsInfo:(id)a1 viewType:(long long)a2 delegate:(id)a3;
+- (void)dealloc;
+- (void)generateSubviews;
+- (void)layoutSubviews;
+- (BOOL)needToLayoutSubviews;
+- (id)fetchCanvasPageId;
+- (id)pickCardLogic;
+- (unsigned long long)fetchPickedTimestampForCardId:(id)a0 inCardsInfo:(id)a1;
+- (unsigned long long)fetchCardIndexForCardId:(id)a0;
+- (double)fetchContentMaxWidth;
+- (struct CGSize { double x0; double x1; })calcCardItemSize;
+- (void)sortRandomCardItemsWithPickedCards;
+- (void)sortItemViewsWithSortedCardItems;
+- (BOOL)isCardPickedWithCardId:(id)a0 inPickedCards:(id)a1;
+- (void)resumeFromVanishingState;
+- (void)onRandomPickCardItemViewDidClick:(id)a0;
+- (void)onRandomPickCardItemViewQuickSwitchAnimationDone;
+- (void)onRandomPickCardVanishingItemViewReadyToFillUp;
+- (void)onRandomPickCardVanishingItemViewFillUpDone;
+- (void)resetCardItemsView;
+- (void)setCardItemsViewForTransitionBeginning:(BOOL)a0 isToVC:(BOOL)a1;
+- (void)prepareCardItemsViewForAnimation;
+- (void)updateViewStateForAnimation;
+- (void)showIntroduceAnimation;
+- (void)scheduleIntroduceOneAnimation;
+- (void)scheduleIntroduceTwoAnimation;
+- (void)makePreparedForIntroduceOneWithView:(id)a0;
+- (void)playIntroduceOneAnimationForView:(id)a0;
+- (void)playIntroduceTwoAnimationForView:(id)a0;
+- (void)showRandomAnimation;
+- (void)scheduleRandomAnimation;
+- (void)showAllPickedAnimation;
+- (void)scheduleAllPickedAnimation;
+- (void)makePreparedForSimpleWaveWithView:(id)a0;
+- (void)playSimpleWaveAnimationForView:(id)a0;
+- (void)makePreparedForSimpleFlipWithView:(id)a0;
+- (void)playSimpleFlipAnimationForView:(id)a0;
+- (void)playExtAnimationForView:(id)a0;
+- (void)noticeCardViewToUpdateStatus:(id)a0;
+- (void)noticeCardViewToPlayBackgroundAnimationWithStatus:(id)a0;
+- (void)setCardItemsViewActive:(BOOL)a0;
+- (void)setCardItemHidden:(BOOL)a0 atIndex:(unsigned long long)a1;
+- (void)pauseCardItemsViewAnimationsWithStatus:(long long)a0;
+- (void)resumeCardItemsViewAnimationsWithStatus:(long long)a0;
+- (BOOL)isCardSelectedWithCardId:(id)a0;
+- (BOOL)isCardSelectedPreviouslyWithCardId:(id)a0;
+- (BOOL)isReadyToPlayQuickSwitchAnimation;
+- (void)updateVanishingItemInfoWith:(id)a0;
+- (BOOL)isVanishingItemForCardId:(id)a0;
+- (void)updateStayPutItemWithInfo:(id)a0;
+- (BOOL)isLastStayPutItemForCardId:(id)a0;
+- (long long)fetchPreviousClickedIndex;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,87 @@
+@class NSString, EnterpriseRoomData;
+
+@interface CEnterpriseContact : CBaseContact <WCTTableCoding>
+
+@property (retain, nonatomic) NSString *m_nsUsrName;
+@property (retain) NSString *m_nsBrandUserName;
+@property (nonatomic) unsigned long long m_uiContactVer;
+@property (retain, nonatomic) NSString *m_nsContactDisplayName;
+@property (retain, nonatomic) NSString *m_nsProfileJumpUrl;
+@property (retain, nonatomic) NSString *m_nsHeadHDImgUrl;
+@property (nonatomic) BOOL m_bHeadImageUpdateFlag;
+@property (retain, nonatomic) NSString *m_nsAddMemberUrl;
+@property (nonatomic) unsigned int m_uiUserFlag;
+@property (nonatomic) unsigned int m_uiContactType;
+@property (retain, nonatomic) EnterpriseRoomData *m_oRoomData;
+@property (retain, nonatomic) NSString *m_nsAtUserList;
+@property (retain, nonatomic) NSString *m_nsDraft;
+@property (nonatomic) unsigned int m_uiDraftTime;
+@property (nonatomic) BOOL m_bUpdateFlag;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)m_nsUsrName;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_m_nsUsrName;
++ (const void *)m_nsContactDisplayName;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_m_nsContactDisplayName;
++ (const void *)m_uiContactVer;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_m_uiContactVer;
++ (const void *)m_nsProfileJumpUrl;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_m_nsProfileJumpUrl;
++ (const void *)m_nsHeadHDImgUrl;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_m_nsHeadHDImgUrl;
++ (const void *)m_nsAddMemberUrl;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_m_nsAddMemberUrl;
++ (const void *)m_uiUserFlag;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_m_uiUserFlag;
++ (const void *)m_uiContactType;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (id)swift_m_uiContactType;
++ (const void *)m_oRoomData;
++ (const void *)__wcdb_synthesize_8:(void *)a0;
++ (id)swift_m_oRoomData;
++ (const void *)m_bHeadImageUpdateFlag;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (id)swift_m_bHeadImageUpdateFlag;
++ (const void *)m_nsBrandUserName;
++ (const void *)__wcdb_synthesize_10:(void *)a0;
++ (id)swift_m_nsBrandUserName;
++ (const void *)m_nsAtUserList;
++ (const void *)__wcdb_synthesize_11:(void *)a0;
++ (id)swift_m_nsAtUserList;
++ (const void *)m_nsDraft;
++ (const void *)__wcdb_synthesize_12:(void *)a0;
++ (id)swift_m_nsDraft;
++ (const void *)m_uiDraftTime;
++ (const void *)__wcdb_synthesize_13:(void *)a0;
++ (id)swift_m_uiDraftTime;
++ (const void *)m_bUpdateFlag;
++ (const void *)__wcdb_synthesize_14:(void *)a0;
++ (id)swift_m_bUpdateFlag;
++ (void)__wcdb_column_constraint_15:(void *)a0;
++ (id)contactFromBizChatUser:(id)a0 brandUserName:(id)a1;
+
+- (BOOL)isChatroom;
+- (BOOL)isChatStatusNotifyOpen;
+- (BOOL)isSelf;
+- (BOOL)isWeixinSingleConatct;
+- (BOOL)isFavorite;
+- (BOOL)isContactTop;
+- (void).cxx_destruct;
+
+@end

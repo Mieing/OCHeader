@@ -1,0 +1,49 @@
+@class NSString, HTSLiveImage, HTSLivePublicAreaCommon, NSMutableDictionary, HTSLiveCommon, GPBEnumArray, HTSLiveUser, HTSLiveLandscapeAreaCommon, HTSLiveText;
+
+@interface HTSLiveChatMessage : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *replyAndPinMessageId;
+@property (nonatomic) BOOL focusPublicScreen;
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL visibleToSender;
+@property (retain, nonatomic) HTSLiveImage *backgroundImage;
+@property (nonatomic) BOOL hasBackgroundImage;
+@property (copy, nonatomic) NSString *fullScreenTextColor;
+@property (retain, nonatomic) HTSLiveImage *backgroundImageV2;
+@property (nonatomic) BOOL hasBackgroundImageV2;
+@property (retain, nonatomic) HTSLivePublicAreaCommon *publicAreaCommon;
+@property (nonatomic) BOOL hasPublicAreaCommon;
+@property (retain, nonatomic) HTSLiveImage *giftImage;
+@property (nonatomic) BOOL hasGiftImage;
+@property (nonatomic) long long agreeMsgId;
+@property (nonatomic) int priorityLevel;
+@property (retain, nonatomic) HTSLiveLandscapeAreaCommon *landscapeAreaCommon;
+@property (nonatomic) BOOL hasLandscapeAreaCommon;
+@property (nonatomic) long long eventTime;
+@property (nonatomic) BOOL sendReview;
+@property (nonatomic) BOOL fromIntercom;
+@property (nonatomic) BOOL intercomHideUserCard;
+@property (retain, nonatomic) GPBEnumArray *chatTagsArray;
+@property (readonly, nonatomic) unsigned long long chatTagsArray_Count;
+@property (nonatomic) long long chatBy;
+@property (nonatomic) int individualChatPriority;
+@property (retain, nonatomic) HTSLiveText *rtfContent;
+@property (nonatomic) BOOL hasRtfContent;
+@property (retain, nonatomic) HTSLiveText *rtfContentV2;
+@property (nonatomic) BOOL hasRtfContentV2;
+@property (retain, nonatomic) NSMutableDictionary *modelInfo;
+@property (readonly, nonatomic) unsigned long long modelInfo_Count;
+
++ (id)descriptor;
+
+- (long long)eventTime;
+- (id)publicAreaCommon;
+- (id)content;
+- (id)user;
+- (id)common;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESECGetCjInfoParamModel : IESLiveBridgeModel
+
+@end

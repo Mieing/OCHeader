@@ -1,0 +1,3 @@
+@interface AnchorToolRedDotApiRoot : GPBRootObject
+
+@end

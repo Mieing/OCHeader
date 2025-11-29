@@ -1,0 +1,84 @@
+@class NSData, FinderSyncClientInfo, NSString, FinderBaseRequest, BaseRequest, SKBuiltinBuffer_t, FinderSyncRequest_Coordinate, NSMutableArray, FinderSyncClientStatus, EntranceExposeContent;
+
+@interface FinderSyncRequest : WXPBGeneratedMessage
+
+@property (retain, nonatomic) BaseRequest *baseRequest;
+@property (nonatomic) unsigned int selector;
+@property (retain, nonatomic) SKBuiltinBuffer_t *keyBuf;
+@property (retain, nonatomic) NSMutableArray *contacts;
+@property (retain, nonatomic) NSMutableArray *self_;
+@property (retain, nonatomic) NSString *finderUsername;
+@property (retain, nonatomic) FinderBaseRequest *finderBasereq;
+@property (nonatomic) unsigned int scene;
+@property (retain, nonatomic) NSMutableArray *ctrlInfoList;
+@property (retain, nonatomic) NSString *entranceTipsId;
+@property (retain, nonatomic) NSMutableArray *nearbyCtrlInfoList;
+@property (retain, nonatomic) NSString *nearbyEntranceTipsId;
+@property (nonatomic) unsigned int stayDisplayTabType;
+@property (retain, nonatomic) NSData *clientAiInfo;
+@property (nonatomic) unsigned int fredDeleted;
+@property (nonatomic) unsigned long long freqctrlSet;
+@property (retain, nonatomic) FinderSyncClientInfo *clientInfo;
+@property (retain, nonatomic) FinderSyncClientStatus *clientStatus;
+@property (retain, nonatomic) NSMutableArray *multiFinderUsername;
+@property (retain, nonatomic) FinderSyncRequest_Coordinate *coordinate;
+@property (retain, nonatomic) EntranceExposeContent *entranceExposeContent;
+@property (retain, nonatomic) NSData *lastBuffer;
+@property (retain, nonatomic) NSMutableArray *syncClubInfoList;
+@property (retain, nonatomic) NSMutableArray *snsCtrlInfoList;
+@property (retain, nonatomic) NSMutableArray *reddotExposeInfos;
+
++ (void)initialize;
+
+- (void)setReddotExposeInfos:(id)a0;
+- (id)reddotExposeInfos;
+- (void)setSnsCtrlInfoList:(id)a0;
+- (id)snsCtrlInfoList;
+- (void)setSyncClubInfoList:(id)a0;
+- (id)syncClubInfoList;
+- (void)setLastBuffer:(id)a0;
+- (id)lastBuffer;
+- (void)setEntranceExposeContent:(id)a0;
+- (id)entranceExposeContent;
+- (void)setCoordinate:(id)a0;
+- (id)coordinate;
+- (void)setMultiFinderUsername:(id)a0;
+- (id)multiFinderUsername;
+- (void)setClientStatus:(id)a0;
+- (id)clientStatus;
+- (void)setClientInfo:(id)a0;
+- (id)clientInfo;
+- (void)setFreqctrlSet:(unsigned long long)a0;
+- (unsigned long long)freqctrlSet;
+- (void)setFredDeleted:(unsigned int)a0;
+- (unsigned int)fredDeleted;
+- (void)setClientAiInfo:(id)a0;
+- (id)clientAiInfo;
+- (void)setStayDisplayTabType:(unsigned int)a0;
+- (unsigned int)stayDisplayTabType;
+- (void)setNearbyEntranceTipsId:(id)a0;
+- (id)nearbyEntranceTipsId;
+- (void)setNearbyCtrlInfoList:(id)a0;
+- (id)nearbyCtrlInfoList;
+- (void)setEntranceTipsId:(id)a0;
+- (id)entranceTipsId;
+- (void)setCtrlInfoList:(id)a0;
+- (id)ctrlInfoList;
+- (void)setScene:(unsigned int)a0;
+- (unsigned int)scene;
+- (void)setFinderBasereq:(id)a0;
+- (id)finderBasereq;
+- (void)setFinderUsername:(id)a0;
+- (id)finderUsername;
+- (void)setSelf_:(id)a0;
+- (id)self_;
+- (void)setContacts:(id)a0;
+- (id)contacts;
+- (void)setKeyBuf:(id)a0;
+- (id)keyBuf;
+- (void)setSelector:(unsigned int)a0;
+- (unsigned int)selector;
+- (void)setBaseRequest:(id)a0;
+- (id)baseRequest;
+
+@end

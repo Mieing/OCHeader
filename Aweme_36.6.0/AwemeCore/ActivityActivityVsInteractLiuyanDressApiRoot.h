@@ -1,0 +1,3 @@
+@interface ActivityActivityVsInteractLiuyanDressApiRoot : GPBRootObject
+
+@end

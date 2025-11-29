@@ -1,0 +1,87 @@
+@class FinderClientPerformance, NSString, FinderClientBrightness, FinderClientAudio, NSMutableArray;
+
+@interface FinderClientStatus : WXPBGeneratedMessage
+
+@property (nonatomic) int netType;
+@property (retain, nonatomic) NSString *netName;
+@property (nonatomic) unsigned int bandwidthKbps;
+@property (retain, nonatomic) NSMutableArray *lastVideosDownloadInfo;
+@property (retain, nonatomic) NSString *deviceModel;
+@property (retain, nonatomic) NSString *deviceBrand;
+@property (retain, nonatomic) NSString *osName;
+@property (retain, nonatomic) NSString *osVersion;
+@property (retain, nonatomic) NSMutableArray *supportedCodingFormat;
+@property (retain, nonatomic) NSMutableArray *finderFluencyInfo;
+@property (nonatomic) unsigned int deviceTypeId;
+@property (nonatomic) unsigned int clientVersion;
+@property (retain, nonatomic) NSString *clientIp;
+@property (retain, nonatomic) NSMutableArray *recentFinderDownloadSpeed;
+@property (retain, nonatomic) NSMutableArray *recentWechatDownloadSpeed;
+@property (retain, nonatomic) NSMutableArray *lastPreloadDownloadInfo;
+@property (retain, nonatomic) NSMutableArray *recentNonfinderQuicDownloadSpeed;
+@property (retain, nonatomic) NSMutableArray *recentNonfinderNonquicDownloadSpeed;
+@property (retain, nonatomic) NSMutableArray *nextVideosDownloadInfo;
+@property (retain, nonatomic) FinderClientPerformance *clientPerformance;
+@property (nonatomic) unsigned int isDawangNettype;
+@property (retain, nonatomic) FinderClientBrightness *brightness;
+@property (retain, nonatomic) NSMutableArray *supportedHdrType;
+@property (retain, nonatomic) NSMutableArray *recentCdnConnRecord;
+@property (retain, nonatomic) NSMutableArray *recentCgiConnRecord;
+@property (retain, nonatomic) FinderClientAudio *clientAudio;
+
++ (void)initialize;
+
+- (void)setClientAudio:(id)a0;
+- (id)clientAudio;
+- (void)setRecentCgiConnRecord:(id)a0;
+- (id)recentCgiConnRecord;
+- (void)setRecentCdnConnRecord:(id)a0;
+- (id)recentCdnConnRecord;
+- (void)setSupportedHdrType:(id)a0;
+- (id)supportedHdrType;
+- (void)setBrightness:(id)a0;
+- (id)brightness;
+- (void)setIsDawangNettype:(unsigned int)a0;
+- (unsigned int)isDawangNettype;
+- (void)setClientPerformance:(id)a0;
+- (id)clientPerformance;
+- (void)setNextVideosDownloadInfo:(id)a0;
+- (id)nextVideosDownloadInfo;
+- (void)setRecentNonfinderNonquicDownloadSpeed:(id)a0;
+- (id)recentNonfinderNonquicDownloadSpeed;
+- (void)setRecentNonfinderQuicDownloadSpeed:(id)a0;
+- (id)recentNonfinderQuicDownloadSpeed;
+- (void)setLastPreloadDownloadInfo:(id)a0;
+- (id)lastPreloadDownloadInfo;
+- (void)setRecentWechatDownloadSpeed:(id)a0;
+- (id)recentWechatDownloadSpeed;
+- (void)setRecentFinderDownloadSpeed:(id)a0;
+- (id)recentFinderDownloadSpeed;
+- (void)setClientIp:(id)a0;
+- (id)clientIp;
+- (void)setClientVersion:(unsigned int)a0;
+- (unsigned int)clientVersion;
+- (void)setDeviceTypeId:(unsigned int)a0;
+- (unsigned int)deviceTypeId;
+- (void)setFinderFluencyInfo:(id)a0;
+- (id)finderFluencyInfo;
+- (void)setSupportedCodingFormat:(id)a0;
+- (id)supportedCodingFormat;
+- (void)setOsVersion:(id)a0;
+- (id)osVersion;
+- (void)setOsName:(id)a0;
+- (id)osName;
+- (void)setDeviceBrand:(id)a0;
+- (id)deviceBrand;
+- (void)setDeviceModel:(id)a0;
+- (id)deviceModel;
+- (void)setLastVideosDownloadInfo:(id)a0;
+- (id)lastVideosDownloadInfo;
+- (void)setBandwidthKbps:(unsigned int)a0;
+- (unsigned int)bandwidthKbps;
+- (void)setNetName:(id)a0;
+- (id)netName;
+- (void)setNetType:(int)a0;
+- (int)netType;
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESLiveShortTouchResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *shortTouchAreaArray;
+@property (readonly, nonatomic) unsigned long long shortTouchAreaArray_Count;
+
++ (id)descriptor;
+
+@end

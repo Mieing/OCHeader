@@ -1,0 +1,3 @@
+@interface HTSLiveActivityPrizeRoot : GPBRootObject
+
+@end

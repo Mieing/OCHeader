@@ -1,0 +1,13 @@
+@class AWESearchPlayerInteractorBottomContainerComponentModel, AWESearchImageProgressComponentModel, AWESearchRightTopContainerComponentModel, AWESearchPlayerInteractorLeftBottomContainerComponentModel, AWESearchPlayerInteractorLeftTopContainerComponentModel;
+
+@interface AWESearchImagePlayerInteractorComponentModel : NSObject
+
+@property (retain, nonatomic) AWESearchPlayerInteractorLeftTopContainerComponentModel *leftTopContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorLeftBottomContainerComponentModel *leftBottomContainerModel;
+@property (retain, nonatomic) AWESearchRightTopContainerComponentModel *rightTopContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorBottomContainerComponentModel *bottomContainerModel;
+@property (retain, nonatomic) AWESearchImageProgressComponentModel *progressModel;
+
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveGiftSortStrategyRoot : GPBRootObject
+
+@end

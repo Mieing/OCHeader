@@ -1,0 +1,3 @@
+@interface OfficialChannelGrabMicShowApiRoot : GPBRootObject
+
+@end

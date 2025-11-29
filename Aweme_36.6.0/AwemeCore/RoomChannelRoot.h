@@ -1,0 +1,3 @@
+@interface RoomChannelRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBTeamPlayConfig_ApplyListSortStrategy : GPBMessage
+
+@property (nonatomic) long long sortStrategy;
+@property (copy, nonatomic) NSString *desc;
+
++ (id)descriptor;
+
+@end

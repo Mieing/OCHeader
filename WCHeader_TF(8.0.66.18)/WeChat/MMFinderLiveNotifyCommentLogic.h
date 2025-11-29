@@ -1,0 +1,78 @@
+@class MMFinderLiveTaskId, UITableView, MMFinderLiveLikeNotifyDataItem, MMFinderLiveLikeNotifyCommentLogic, NSMutableArray, MMFinderLiveInteractionNotifyCommentLogic, UIView, MMFinderLiveRealNameFriendLikeCommentDataItem, NSString, MMFinderLiveFollowNotifyCommentLogic, MMLiveCommentPubbleCell, MMLiveCommentDataItem, NSMutableSet, MMFinderLiveLikeV2NotifyCommentLogic, NSMutableOrderedSet, PAGView, PAGFile;
+@protocol MMFinderLiveNotifyCommentLogicDelegate;
+
+@interface MMFinderLiveNotifyCommentLogic : NSObject <MMFinderLiveCommentNotifyExt, MMFinderLiveLikeNotifyCommentDelegate, MMFinderLiveLikeV2NotifyCommentDelegate, MMFinderLiveFollowNotifyCommentDelegate, MMFinderLiveRealNameFriendLikeExt, MMFinderLiveInteractionNotifyCommentDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (retain, nonatomic) MMFinderLiveLikeNotifyCommentLogic *likeNotifyCommentLogic;
+@property (retain, nonatomic) MMFinderLiveLikeV2NotifyCommentLogic *likeV2NotifyCommentLogic;
+@property (retain, nonatomic) MMFinderLiveFollowNotifyCommentLogic *followNotifyCommentLogic;
+@property (retain, nonatomic) MMFinderLiveInteractionNotifyCommentLogic *interactionNotifyCommentLogic;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UITableView *bottomTableView;
+@property (retain, nonatomic) NSMutableArray *notifyCommentItemArr;
+@property (retain, nonatomic) NSMutableArray *pendingNotifyCommentItemArr;
+@property (retain, nonatomic) NSMutableArray *removedNotifyCommentItemArr;
+@property (retain, nonatomic) NSMutableOrderedSet *commentMsgIdSet;
+@property (retain, nonatomic) NSMutableSet *notifyProductIdSet;
+@property (nonatomic) BOOL isNotifyCommentItemArrAsyncOrderring;
+@property (nonatomic) BOOL isDisplaying;
+@property (retain, nonatomic) MMLiveCommentPubbleCell *currentDisplayPubbleCell;
+@property (retain, nonatomic) MMLiveCommentDataItem *currentDisplayCommentItem;
+@property (weak, nonatomic) MMFinderLiveLikeNotifyDataItem *currentPreparingLikeNotifyDataItem;
+@property (weak, nonatomic) MMFinderLiveRealNameFriendLikeCommentDataItem *currentPreparingFriendLikeNotifyDataItem;
+@property (retain, nonatomic) PAGView *audienceJoinPAGAnimationView;
+@property (retain, nonatomic) PAGFile *audienceJoinPAGFile;
+@property (retain, nonatomic) NSString *lastAudienceJoinRankImageName;
+@property (nonatomic) BOOL allow30FpsAnimation;
+@property (nonatomic) unsigned long long forbidRecOptions;
+@property (copy, nonatomic) id /* block */ notifyCommentViewWillShownBlock;
+@property (nonatomic) BOOL notifyCommentViewIsShown;
+@property (weak, nonatomic) id<MMFinderLiveNotifyCommentLogicDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithContainerView:(id)a0 bottomTableView:(id)a1 taskId:(id)a2;
+- (void)onEnterLive;
+- (void)onExitLive;
+- (void)registerExtension;
+- (void)unRegisterExtension;
+- (void)rejectHotSalesForCurrentPromotingProduct;
+- (BOOL)startDisplayWithLast:(id)a0;
+- (void)startAudienceJoinAnimationForComment:(id)a0;
+- (void)stopAudienceJoinAnimation;
+- (void)updateDisplayNextNotifyItemWithCurrentPubbleCell:(id)a0 duration:(double)a1;
+- (double)displayDurationForCommentItem:(id)a0;
+- (long long)animationTypeForNextCommentItem:(id)a0 last:(id)a1;
+- (unsigned int)getNextNotifyCommentType;
+- (BOOL)appendNotifyComment:(id)a0;
+- (BOOL)checkIsShoppingHasNotify:(id)a0;
+- (void)tagHasNotifyShopping:(id)a0;
+- (void)onNewNotifyCommentUpdate:(id)a0;
+- (BOOL)innerAppendNewNotifyComments:(id)a0;
+- (void)innerAppendFilterNotifyCommentsWithSyncSort:(id)a0;
+- (void)innerAppendFilterNotifyCommentsWithAsyncSort:(id)a0;
+- (void)removeUnusedCommentItem;
+- (void)removeUnusedCommentMsgId;
+- (void)removeNotifyCommentItem:(id)a0;
+- (id)getFinderLiveTask;
+- (id)getFilterNotifyCommentArr:(id)a0;
+- (id)getCommentArrayFilterRepeatCommit:(id)a0;
+- (id)getCommentArrayFilterType:(id)a0 validType:(id)a1;
+- (id)getCommentArrayFilterUnNeedCommit:(id)a0;
+- (void)onPreparingDisplayLikeMsgInfoUpdate:(id)a0;
+- (void)onPreparingDisplayLikeV2MsgInfoUpdate:(id)a0;
+- (void)onPreparingDisplayLikeInteraction:(id)a0 fromContact:(id)a1;
+- (void)onPreparingDisplayFollowNotifyUpdate:(id)a0;
+- (void)onPreparingDisplayFollowInteraction:(id)a0 fromContact:(id)a1;
+- (void)onFinderLiveRealNameFriendLikeNotificationShow;
+- (void)onFinderLiveRealNameFriendLikeNotificationHalfWillShow;
+- (void)onFinderLiveRealNameFriendLikeNotificationHalfClose;
+- (void)cleanPendingMsg;
+- (BOOL)forbidReceiveMsg;
+- (void)onPreparingDisplayInteractionNotifyUpdate:(id)a0;
+- (void).cxx_destruct;
+
+@end

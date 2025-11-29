@@ -1,0 +1,3 @@
+@interface TaskCenterGoldRewardApiRoot : GPBRootObject
+
+@end

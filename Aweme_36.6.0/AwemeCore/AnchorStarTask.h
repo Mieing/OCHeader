@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AnchorStarTask : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *taskId;
+@property (copy, nonatomic) NSString *taskURL;
+@property (nonatomic) long long taskStatus;
+
++ (id)descriptor;
+
+@end

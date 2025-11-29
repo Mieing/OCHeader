@@ -1,0 +1,83 @@
+@class NSString, BDECIMWebSocketBridge, BDECIMConversationManager, BDECIMClientConfig, NSArray;
+@protocol BDECIMCloudIMMessageReadManagerInterface, BDECIMCloudIMClientInterface, BDECIMCloudClientInterface, BDECIMCloudCoreBridgeManagerInterface, BDECIMCloudConversationsDataSourceInterface;
+
+@interface BDECIMClient : NSObject <BDECIMCloudIMMessageReadManagerDelegate, BDECIMCloudConversationsDataSourceDelegate, BDECIMCloudChangeObserverDelegate, BDECIMCloudClientDelegate, BDECIMCloudPullerStatusChangeObserverDelegate, BDECIMCloudIMStatisticDelegate, BDECIMCloudAppMessageInsertPluginDelegate, BDECIMCloudMessageSenderDelegate>
+
+@property long long staticTimestampDeltaCount;
+@property double avgTimeDelta;
+@property (retain, nonatomic) id<BDECIMCloudClientInterface> IMClient;
+@property (retain, nonatomic) id<BDECIMCloudIMClientInterface> IMCloudClient;
+@property (retain, nonatomic) id<BDECIMCloudIMMessageReadManagerInterface> IMMessageReadManager;
+@property (retain, nonatomic) id<BDECIMCloudCoreBridgeManagerInterface> IMBridgeManager;
+@property (retain, nonatomic) BDECIMWebSocketBridge *imWebSocket;
+@property (retain, nonatomic) id<BDECIMCloudConversationsDataSourceInterface> dataSource;
+@property (nonatomic) unsigned long long totalUnreadNumberForUnmutedConversations;
+@property (nonatomic) unsigned long long totalUnreadNumberForMutedConversations;
+@property (copy, nonatomic) NSString *messageSenderObserverIdentifier;
+@property (copy, nonatomic) NSString *convListPullObserverIdentifier;
+@property (copy, nonatomic) NSString *imOChangeObserverIdentifier;
+@property double pullStartTime;
+@property (retain, nonatomic) BDECIMConversationManager *conversationManager;
+@property (retain, nonatomic) BDECIMClientConfig *clientConfig;
+@property (copy, nonatomic) id /* block */ conversationListUpdateCallback;
+@property (nonatomic) double imServerTimestamp;
+@property (readonly, nonatomic) BOOL isIMLogin;
+@property (readonly, nonatomic) long long currentUserID;
+@property (readonly, copy, nonatomic) NSArray *currentConversationIDs;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)removeAllNewUnreadModelWithCustomBizID:(id)a0;
++ (void)removeAllTIMXFileWithAppID:(id)a0 userID:(long long)a1 businessID:(id)a2;
++ (id)shared;
+
+- (void)newP2PMessageNotifyConversation:(id)a0 message:(id)a1;
+- (void)fetchMessageReadsWithArrConversationID:(id)a0 arrConversationShortID:(id)a1 arrWhichUserID:(id)a2 inbox:(int)a3 completion:(id /* block */)a4;
+- (void)IMLoginWithUserID:(id)a0 token:(id)a1 completion:(id /* block */)a2;
+- (void)IMLogoutWithCompletion:(id /* block */)a0;
+- (BOOL)isFilterTypeWithMesage:(id)a0;
+- (void)addIMObserver;
+- (void)removeIMObserver;
+- (void)removeSyncConversationsObserver;
+- (void)addMessageSendObserverIfNeeded;
+- (void)prepareForIMDidLogin;
+- (void)prepareForIMDidLogout;
+- (void)messageReadDidUpdateWithArrConversationID:(id)a0;
+- (void)conversationDataSource:(id)a0 didUpdateWithUpdate:(id)a1 updateReason:(long long)a2;
+- (void)didInsertNewMessagesWithMessageIdentifiers:(id)a0 belongingConversationMap:(id)a1 reason:(long long)a2;
+- (void)messageUpdated:(id)a0 inConversation:(id)a1;
+- (void)conversationUpdated:(id)a0;
+- (void)conversationDidDissolved:(id)a0;
+- (void)imClientIdentityTokenDidBecomeInvalid;
+- (void)imClientOnAuthError:(long long)a0;
+- (void)processMessages:(id)a0;
+- (BOOL)filterMessage:(id)a0 reason:(id)a1;
+- (BOOL)filterMessage:(id)a0;
+- (void)pullerInsertNewMessages:(id)a0 reason:(id)a1 context:(id)a2;
+- (void)dealMessageWhenWebsocketArrive:(id)a0;
+- (void)message:(id)a0 inConversation:(id)a1 didReceiveResponse:(id)a2 error:(id)a3;
+- (void)didStartInstallInitForUser:(long long)a0 inbox:(int)a1 pullerType:(long long)a2;
+- (void)didEndInstallInitForUser:(long long)a0 inbox:(int)a1 pullerType:(long long)a2;
+- (void)didStartPullForUser:(long long)a0 inbox:(int)a1 pullerType:(long long)a2;
+- (void)didReceiveTimestamp:(id)a0;
+- (BOOL)messageReadParticipantsWithConversationID:(id)a0 messageIndex:(long long)a1 byUserID:(long long)a2;
+- (void)deleteConversationsBeforeTime:(id)a0 minRemain:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)didEndPullForUser:(long long)a0 inbox:(int)a1 pullerType:(long long)a2 error:(id)a3 hasMore:(BOOL)a4 userInfo:(id)a5;
+- (id)messageReadParticipantsWithConversationID:(id)a0 messageIndex:(long long)a1;
+- (void)registerListeningForSyncConversationsStatus;
+- (void)renewIMToken:(id)a0 completion:(id /* block */)a1;
+- (BOOL)isVisibilityTypeTrueWithVisibilityType:(id)a0;
+- (BOOL)isfrontendNeedHiddenTrueWithMessage:(id)a0;
+- (void)setupClientWithConfig:(id)a0;
+- (void)postNotificationForStatusChanged:(long long)a0;
+- (void)trackMessageArriveWithEventName:(id)a0 conversationID:(id)a1 messageID:(id)a2 messageSource:(id)a3;
+- (id)messageArriveEventParamWithConversationID:(id)a0 messageID:(id)a1 messageSource:(id)a2;
+- (void)removeChangeObserverWithConversationID:(id)a0;
+- (void)fetchMessageReadsWithConversationID:(id)a0 conversationShortID:(id)a1 completion:(id /* block */)a2;
+- (void)fetchMessageReadsWithArrConversationID:(id)a0 arrConversationShortID:(id)a1 completion:(id /* block */)a2;
+- (void).cxx_destruct;
+- (id)initWithConfig:(id)a0;
+
+@end

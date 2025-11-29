@@ -1,0 +1,13 @@
+@class HTSLiveText, HTSLiveUser;
+
+@interface HTSLiveAudienceOrderSongChatContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (retain, nonatomic) HTSLiveText *displayText;
+@property (nonatomic) BOOL hasDisplayText;
+@property (nonatomic) BOOL displayUserRole;
+
++ (id)descriptor;
+
+@end

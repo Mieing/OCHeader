@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface GiftDetail : IESLivePBBaseMessage
+
+@property (nonatomic) long long giftId;
+@property (copy, nonatomic) NSString *giftName;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (copy, nonatomic) NSString *giftDes;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@interface RoomCreateCircleInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL lastRelatedCircleLegal;
+@property (nonatomic) BOOL alreadyJoinedCircle;
+
++ (id)descriptor;
+
+@end

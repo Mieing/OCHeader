@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface SmartPhoneSettingsStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *phoneNumber;
+@property (nonatomic) BOOL hasPhoneNumber;
+@property (copy, nonatomic) NSString *phoneId;
+@property (nonatomic) BOOL hasPhoneId;
+@property (copy, nonatomic) NSString *encryptKey;
+@property (nonatomic) BOOL hasEncryptKey;
+
++ (id)descriptor;
+
+@end

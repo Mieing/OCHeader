@@ -1,0 +1,3 @@
+@interface RoomDslPreviewApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,75 @@
+@class ACCTagsPOIPickerViewController, ACCEditTagsNewCustomizeViewController, UIImage, NSDictionary, ACCTagsCustomizeViewController, AWEInteractionEditTagStickerModel, ACCEditTagsUserPickerViewController, ACCEditTagsCameraPositionPickerViewController, UIView, ACCSlidingViewController, ACCTagsCommodityPickerViewController, ACCEditTagsFakeTagsStickerView, NSString, NSArray, ACCTagsSlidingTabBarView;
+@protocol ACCEditTagsPickerViewControllerDelegate;
+
+@interface ACCEditTagsPickerViewController : UIViewController <ACCSlidingViewControllerDelegate, ACCTagsItemPickerViewControllerDelegate, ACCEditTagsNewCustomizeViewControllerDelegate, ACCPanelViewProtocol>
+
+@property (retain, nonatomic) UIView *topIndicator;
+@property (retain, nonatomic) UIView *panelView;
+@property (nonatomic) BOOL currentItemHasChanged;
+@property (retain, nonatomic) ACCSlidingViewController *slidingViewController;
+@property (retain, nonatomic) ACCTagsSlidingTabBarView *slidingTabbarView;
+@property (retain, nonatomic) ACCEditTagsUserPickerViewController *userPickerViewController;
+@property (retain, nonatomic) ACCTagsPOIPickerViewController *poiPickerViewController;
+@property (retain, nonatomic) ACCTagsCommodityPickerViewController *commodityPickerViewController;
+@property (retain, nonatomic) ACCTagsCustomizeViewController *customTagsViewController;
+@property (retain, nonatomic) ACCEditTagsNewCustomizeViewController *nCustomTagsViewController;
+@property (retain, nonatomic) ACCEditTagsCameraPositionPickerViewController *cameraPositionPickerViewController;
+@property (copy, nonatomic) NSArray *tabIndecies;
+@property (copy, nonatomic) NSArray *titles;
+@property (copy, nonatomic) NSArray *viewControllers;
+@property (nonatomic) BOOL locationAlertDisplayed;
+@property (nonatomic) BOOL startTakingTabActions;
+@property (retain, nonatomic) ACCEditTagsFakeTagsStickerView *currentTagView;
+@property (retain, nonatomic) UIView *accessoryView;
+@property (weak, nonatomic) id<ACCEditTagsPickerViewControllerDelegate> delegate;
+@property (retain, nonatomic) AWEInteractionEditTagStickerModel *originalTag;
+@property (nonatomic) struct CGPoint { double x; double y; } originalCenter;
+@property (copy, nonatomic) NSDictionary *baseTrackerParams;
+@property (copy, nonatomic) NSString *currentFrameUri;
+@property (copy, nonatomic) NSString *currentItemIdentifier;
+@property (retain, nonatomic) UIImage *currentItemCover;
+@property (copy, nonatomic) NSString *currentItemCoverPath;
+@property (nonatomic) BOOL isUserEnablePreupload;
+@property (nonatomic) long long loadStatus;
+@property (weak, nonatomic) UIView *topMaskView;
+@property (weak, nonatomic) UIView *mediaContainerView;
+@property (nonatomic) double keyBoardHeight;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)numberOfControllers:(id)a0;
+- (id)slidingViewController:(id)a0 viewControllerAtIndex:(long long)a1;
+- (void)slidingViewController:(id)a0 didSelectIndex:(long long)a1 transitionType:(long long)a2;
+- (void)slidingViewController:(id)a0 didFinishTransitionToIndex:(unsigned long long)a1;
+- (double)panelViewHeight;
+- (void)resetPanel;
+- (void)tagsItemPicker:(id)a0 didSelectItem:(id)a1 referExtra:(id)a2;
+- (void)preFetchRecommendData;
+- (void)customInputBarTextDidChange:(id)a0;
+- (void)customInputBarConfirmClick;
+- (void)handleTapOnTopView;
+- (void)handlePanOnTopView:(id)a0;
+- (void)showCameraPositionWarning;
+- (void)exitFinishTags;
+- (void)setupDataSourceWithIndices:(id)a0;
+- (void)updateCurrentTagViewWithModel:(id)a0;
+- (BOOL)revertCurrentTagViewWithOriginalModelIfNeeded;
+- (id)defaultTagModel;
+- (void)tagsItemPickerDidTapCreateCustomTagButton:(id)a0 keyword:(id)a1;
+- (BOOL)isCurrentTagPicker:(id)a0;
+- (void)refreshRecommendedDataIfNeeded;
+- (void)editingTagShouldShow:(BOOL)a0 hideCompletion:(id /* block */)a1;
+- (long long)countOfRecommendCommodities;
+- (void)resetCurrentTagView;
+- (void).cxx_destruct;
+- (double)topInset;
+- (id)init;
+- (double)animationDuration;
+- (void)viewDidLoad;
+- (void *)identifier;
+- (void)setupDataSource;
+- (id)panelName;
+
+@end

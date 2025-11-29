@@ -1,0 +1,3 @@
+@interface HTSLiveHamletMessageRoot : GPBRootObject
+
+@end

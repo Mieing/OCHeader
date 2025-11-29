@@ -1,0 +1,3 @@
+@interface HTSLiveInRoomBannerRefreshRoot : GPBRootObject
+
+@end

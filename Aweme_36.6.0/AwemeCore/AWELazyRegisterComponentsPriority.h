@@ -1,0 +1,3 @@
+@interface AWELazyRegisterComponentsPriority : NSObject
+
+@end

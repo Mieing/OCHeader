@@ -1,0 +1,10 @@
+@class UnsubscribeFollowResponse_Data;
+
+@interface UnsubscribeFollowResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UnsubscribeFollowResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

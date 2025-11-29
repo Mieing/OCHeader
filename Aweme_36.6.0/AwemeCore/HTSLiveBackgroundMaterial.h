@@ -1,0 +1,16 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveBackgroundMaterial : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *buoyAreaBg;
+@property (nonatomic) BOOL hasBuoyAreaBg;
+@property (retain, nonatomic) HTSLiveImage *globalBg;
+@property (nonatomic) BOOL hasGlobalBg;
+@property (retain, nonatomic) HTSLiveImage *scoreboardBg;
+@property (nonatomic) BOOL hasScoreboardBg;
+@property (copy, nonatomic) NSString *toneLineStart;
+@property (copy, nonatomic) NSString *toneLineEnd;
+
++ (id)descriptor;
+
+@end

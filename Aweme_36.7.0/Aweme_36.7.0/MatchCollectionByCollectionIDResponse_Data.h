@@ -1,0 +1,10 @@
+@class HTSLiveCollectionItem;
+
+@interface MatchCollectionByCollectionIDResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCollectionItem *collectionItem;
+@property (nonatomic) BOOL hasCollectionItem;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicAudienceCancelInviteCrossRoomLinkApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,84 @@
+@class BDPModel, NSString, BDPPromise, UIView, BDPDynamicPluginLoadInstance;
+@protocol BDPPageProtocol;
+
+@interface BDPNativeAppLoadInstance : BDPBaseLoadInstance <BDPDynamicPluginLoadMessage>
+
+@property (retain, nonatomic) BDPDynamicPluginLoadInstance *dynamicPlugin;
+@property (retain, nonatomic) BDPPromise *appConfigLoadPromise;
+@property (retain, nonatomic) BDPPromise *pageReadyPromise;
+@property (retain, nonatomic) BDPPromise *jscReadyPromise;
+@property (retain, nonatomic) BDPModel *coldBootModel;
+@property (retain, nonatomic) UIView<BDPPageProtocol> *firstPage;
+@property (copy, nonatomic) NSString *pathChangeReason;
+@property (nonatomic) BOOL needLoadPluginConfigAndServiceJS;
+@property (nonatomic) BOOL isReportJSCReady;
+@property (copy, nonatomic) NSString *preRouteID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)bootstrapLaunch;
++ (id)validateMeta:(id)a0;
++ (id)appRenderType;
++ (BOOL)shouldDownloadPkg:(id)a0;
++ (BOOL)isLocalIPAddress:(id)a0;
++ (long long)type;
+
+- (void)updateSchema:(id)a0;
+- (id)businessParamForEvent:(id)a0;
+- (BOOL)canShowLoading:(id)a0;
+- (BOOL)canFastBootWithLoadCache:(id)a0;
+- (unsigned long long)checkModelStatus:(id)a0 reader:(id)a1;
+- (void)metaInfoModelCompletion:(id)a0 model:(id)a1 reader:(id)a2;
+- (void)commonAndTaskSetupDone:(BOOL)a0;
+- (void)doubleReadyCheck;
+- (void)onAppLaunch:(BOOL)a0;
+- (void)setUpFirstAppPage:(BOOL)a0;
+- (void)prepareForStartPage:(BOOL)a0 completion:(id /* block */)a1;
+- (id)findRedirectPagePath:(id)a0;
+- (id)setUpAppPage:(id)a0 isColdFP:(BOOL)a1;
+- (void)becomeReadyStatus;
+- (void)firstFrameDidShow;
+- (void)updateInnerTrustConfig:(id)a0;
+- (BOOL)canApplyUpdate;
+- (Class)customTaskClass;
+- (void)loadInstanceDidCreated:(BOOL)a0;
+- (void)readyToLoadAppWithModel:(id)a0;
+- (void)launchEndWithNoRoute;
+- (void)workBeforeClose:(id)a0;
+- (void)updateHomeButtonShowState;
+- (id)getReaderWithPath:(id)a0;
+- (id)gainDynamicPlugin;
+- (id)secondDynamicPluginTrackerParamsForPluginId:(id)a0;
+- (void)loadServiceWithPath:(id)a0 completionBlk:(id /* block */)a1 needTrack:(BOOL)a2;
+- (void)startLoadWithCacheMeta:(id)a0 schema:(id)a1;
+- (void)pageLCPArriveWithParam:(id)a0;
+- (void)pkgDownloadCompletion:(id)a0 model:(id)a1;
+- (void)getUpdatedPkgCompletion:(id)a0 model:(id)a1;
+- (void)md5Invalid;
+- (id)setupCommonAndTaskWithModel:(id)a0 appConfigData:(id)a1;
+- (void)prepareDynamicPlugin;
+- (void)eventCpJsLoadStart;
+- (void)eventCpJsLoadResult:(id)a0;
+- (void)configData:(id)a0 readyWithModel:(id)a1;
+- (void)loadServiceFile:(long long)a0;
+- (BOOL)pr_isCanShowLoadingWithLoadCache:(id)a0;
+- (void)readAppConfigWithModel:(id)a0;
+- (id)performanceLevelString;
+- (void)reportJSCReadyPoint;
+- (id)setUpAppPage:(id)a0 isColdFP:(BOOL)a1 hasLynxSchema:(BOOL)a2;
+- (BOOL)needServiceJsFailShowErrorPage;
+- (void)delayPreloadAppPage;
+- (void)updateSubscribeTemplate:(id)a0;
+- (BOOL)delayPreloadRuntimeByPerformance;
+- (void)preloadAppPage;
+- (BOOL)isPath:(id)a0 inAppConfig:(id)a1;
+- (long long)pr_skeletonStateOfCurrentPage;
+- (id)startPageTrackerRenderType;
+- (id)annieFastBootList;
+- (BOOL)skipLoadingWhenPreloadComplete;
+- (void).cxx_destruct;
+- (id)currentPage;
+
+@end

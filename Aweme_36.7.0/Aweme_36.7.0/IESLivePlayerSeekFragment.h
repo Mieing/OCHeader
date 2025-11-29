@@ -1,0 +1,86 @@
+@class IESLivePlayerSimpleProgressView, NSString, IESLivePlayerSeekContainerView, IESLivePlayerSeekViewModel, UIView, IESLiveSeekPortraitPreview, IESLiveSeekLandscapePreview;
+@protocol IESLiveSeekPreviewProtocol, IESLiveSeekRouter;
+
+@interface IESLivePlayerSeekFragment : IESLiveRoomComponent <HTSLiveCleanScreenActions, IESLiveSeekContainerRouter, IESLiveAutoRotateAction, IESLiveTrackerDelegate, HTSLiveMessageSubscriber, IESLiveCustomAutoHideAnimAction, IESLiveMessageInteractionModuleCommentAction, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) IESLivePlayerSeekViewModel<IESLiveSeekRouter> *viewModel;
+@property (retain, nonatomic) IESLivePlayerSeekContainerView *seekContainer;
+@property (retain, nonatomic) IESLivePlayerSimpleProgressView *simpleProgressView;
+@property (retain, nonatomic) UIView<IESLiveSeekPreviewProtocol> *currentPreview;
+@property (retain, nonatomic) IESLiveSeekPortraitPreview *portraitPreview;
+@property (retain, nonatomic) IESLiveSeekLandscapePreview *landscapePreview;
+@property (nonatomic) long long orientation;
+@property (nonatomic) BOOL AirPlayShowed;
+@property (nonatomic) BOOL watchNewNeedHidden;
+@property (nonatomic) BOOL useNewSeekContainerStyle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) BOOL enableSeek;
+
++ (BOOL)componentShouldActive:(id)a0;
++ (BOOL)isMixed;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentWillAppear;
+- (void)componentOrientationTransitionBegin:(long long)a0;
+- (void)componentOrientationTransitioning:(long long)a0;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)hideComponent;
+- (void)showComponent;
+- (void)willAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)didAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)handleOrientationChanged:(long long)a0;
+- (void)remoteRoomDataReady:(id)a0;
+- (BOOL)isVerticalStream;
+- (void)onCleanScreenContainerShow;
+- (void)onCleanScreenContainerHide;
+- (void)playerMediaSizeDidChange:(struct CGSize { double x0; double x1; })a0;
+- (void)streamPlayerDidReadyToRender;
+- (void)onStreamProgressUpdate:(double)a0 start:(double)a1 latest:(double)a2 trackCurrentSEIts:(id)a3 callTrace:(id)a4;
+- (void)onCameraDidChangeTo:(id)a0 source:(long long)a1;
+- (void)onRoomStyleDidChange:(BOOL)a0 callTrace:(id)a1;
+- (void)hideWatchNewBtn;
+- (BOOL)enableSeekForRoom:(id)a0;
+- (void)handlePauseBtn:(id)a0 hidden:(BOOL)a1;
+- (void)handleNextBtn:(id)a0 hidden:(BOOL)a1;
+- (void)handleCommentBtn:(id)a0 hidden:(BOOL)a1;
+- (id)seekContainerView;
+- (id)seekContentView;
+- (id)matchPauseContainer;
+- (BOOL)isSupportedSeek;
+- (void)watchNewNeedHidden:(BOOL)a0;
+- (void)portraitViewsTransformToHidden:(BOOL)a0;
+- (double)transSeekBarProgressToRealProgress:(double)a0;
+- (double)transRealProgressToSeekBarProgress:(double)a0;
+- (void)onSeekStart;
+- (void)onSeekEnd;
+- (void)remakeConstraintsWithOrientation:(BOOL)a0;
+- (void)sendSeekContainerShowEvent:(BOOL)a0;
+- (void)showPreView:(BOOL)a0;
+- (void)onAppDidEnterForeground;
+- (void)p_hideSeekView;
+- (void)updatePreViewForStreamIfNeed:(double)a0;
+- (BOOL)useContainerNormalLive;
+- (void)p_showSeekUseContainerIfNeeded;
+- (void)usePlayerControl;
+- (void)seekForContextSeekTime;
+- (void)changeCameraResetSeekBar;
+- (void)handleSimpleProgress:(long long)a0;
+- (void)showSeekContainerForLandScape;
+- (BOOL)shouldShowAirplay;
+- (void)keyboardWillHide;
+- (void)keyboardWillShow;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)addObserver;
+- (void)dealloc;
+- (void)setup;
+- (void)messageReceived:(id)a0;
+- (void)handleMessages:(id)a0;
+
+@end

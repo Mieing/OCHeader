@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESLiveOpenFansGroupSettingDirectParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *backUrl;
+@property (copy, nonatomic) NSString *conversationId;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *scene;
+
++ (id)modelCustomPropertyMapper;
+
+@end

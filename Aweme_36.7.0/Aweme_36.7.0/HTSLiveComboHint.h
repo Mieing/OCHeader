@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface HTSLiveComboHint : IESLivePBBaseMessage
+
+@property (nonatomic) int comboHintScene;
+@property (retain, nonatomic) NSMutableArray *comboHintDataArray;
+@property (readonly, nonatomic) unsigned long long comboHintDataArray_Count;
+
++ (id)descriptor;
+
+@end

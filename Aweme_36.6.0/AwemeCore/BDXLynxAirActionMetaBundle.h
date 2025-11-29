@@ -1,0 +1,3 @@
+@interface BDXLynxAirActionMetaBundle : BDXLynxAirActionBaseBundle
+
+@end

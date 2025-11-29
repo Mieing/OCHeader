@@ -1,0 +1,12 @@
+@class UILabel, UICollectionView;
+
+@interface GCInputAtView : UIView
+
+@property (retain, nonatomic) UICollectionView *atCollectionView;
+@property (retain, nonatomic) UILabel *noResultView;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setIsEmpty:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

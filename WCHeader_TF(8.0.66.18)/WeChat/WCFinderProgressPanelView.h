@@ -1,0 +1,70 @@
+@class MMUIButton, WCFinderTimeLabel, WCFinderProgressSpritesView, NSString, WCFinderProgressBar, UIButton, NSMutableArray, WCFinderJumpInfoPanelView, WCFinderProgressControlPanelConfigParamsModel, WCFinderFeedHighlightStyle, UILabel;
+@protocol WCFinderProgressPanelViewDelegate;
+
+@interface WCFinderProgressPanelView : UIView <WCFinderJumpInfoPanelViewDelegate>
+
+@property (retain, nonatomic) WCFinderTimeLabel *timeLabel;
+@property (retain, nonatomic) WCFinderProgressBar *progressBar;
+@property (retain, nonatomic) MMUIButton *pauseButton;
+@property (retain, nonatomic) MMUIButton *subtitleButton;
+@property (retain, nonatomic) NSMutableArray *leftJumpInfoArray;
+@property (retain, nonatomic) WCFinderFeedHighlightStyle *highlightStyleInfo;
+@property (retain, nonatomic) WCFinderJumpInfoPanelView *leftJumpInfoPanelView;
+@property (retain, nonatomic) UILabel *currentHighlightTitleLabel;
+@property (retain, nonatomic) UIButton *playRateButton;
+@property (retain, nonatomic) UIButton *bulletButton;
+@property (retain, nonatomic) MMUIButton *backButton;
+@property (retain, nonatomic) WCFinderProgressControlPanelConfigParamsModel *paramsModel;
+@property (retain, nonatomic) WCFinderProgressSpritesView *progressPreviewView;
+@property (weak, nonatomic) id<WCFinderProgressPanelViewDelegate> delegate;
+@property (readonly, nonatomic) BOOL canShowLeftJumpInfoPanelView;
+@property (readonly, nonatomic) BOOL shouldIgnoreLeftJumpInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (BOOL)responseToHitGes:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)globalUpdatePanelWithParams:(id)a0;
+- (void)checkAndUpdateHighlightStyleInfo;
+- (void)configLeftJumpInfoPanelView;
+- (void)updateUIStateWithPaused:(BOOL)a0;
+- (void)updateSubviewsStyle;
+- (void)updateTimeLabelWithCurrentPlayPos:(double)a0 videoTotalTime:(double)a1 layoutBlock:(id /* block */)a2;
+- (void)updateHighlightTitleLabelWithCurrentPlayPos:(double)a0;
+- (void)updateConfig;
+- (void)updateProgressElementsWithCurrentPlayPosition:(double)a0 videoDuration:(double)a1 forbidProgressBarMovAnim:(BOOL)a2 contentVM:(id)a3 manual:(BOOL)a4;
+- (void)_udpateProgressSubViewHiddenState;
+- (void)checkProgressBarStatus;
+- (void)layoutProgressBar;
+- (void)updateProgressBarValueWithCurrentPlayProgress:(double)a0;
+- (void)resetUIViewState;
+- (BOOL)isShowing;
+- (void)debugSetProgressPreviewWithPrecent:(double)a0;
+- (void)onPlayerProgressBarCurPlayPrecent:(double)a0 dragState:(unsigned long long)a1;
+- (void)updateProgressPreviewHiddenStateIfNeeded:(BOOL)a0;
+- (void)updateProgressPreviewPercent:(double)a0;
+- (id)lightWhiteColor;
+- (id)dynamicFontOfSize:(double)a0;
+- (id)fontOfSize:(double)a0;
+- (id)dynamicWhiteColor;
+- (void)onClickPauseButton:(id)a0;
+- (void)onChangePlayRate:(id)a0;
+- (void)onClickBulletButton:(id)a0;
+- (void)onClickSubtitleButton:(id)a0;
+- (void)onClickBackButton:(id)a0;
+- (void)setupNotification;
+- (void)removeNotification;
+- (void)onVoiceOverStatusChanged;
+- (void)startLoading;
+- (void)stopLoading;
+- (BOOL)isAnimating;
+- (BOOL)isNewLoading;
+- (void)onFinderJumpInfoViewDidClick:(id)a0;
+- (id)finderJumpInfoPanelViewGetContentVM;
+- (void).cxx_destruct;
+
+@end

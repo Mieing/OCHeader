@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface LVideoEntranceDataV2 : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *metaArray;
+@property (readonly, nonatomic) unsigned long long metaArray_Count;
+@property (retain, nonatomic) NSMutableArray *playArray;
+@property (readonly, nonatomic) unsigned long long playArray_Count;
+
++ (id)descriptor;
+
+@end

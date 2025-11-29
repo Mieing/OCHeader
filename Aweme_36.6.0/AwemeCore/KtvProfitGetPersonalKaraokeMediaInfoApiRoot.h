@@ -1,0 +1,3 @@
+@interface KtvProfitGetPersonalKaraokeMediaInfoApiRoot : GPBRootObject
+
+@end

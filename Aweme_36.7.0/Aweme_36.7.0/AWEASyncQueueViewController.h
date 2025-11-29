@@ -1,0 +1,72 @@
+@class UIView, NSString, UIImageView, DUXLoadingCircleView, NSDictionary, YYLabel, AWERepoAIGCSyncModel, UILabel, ACCAnimatedButton;
+@protocol _TtP9AWELottie13AWELottieView_;
+
+@interface AWEASyncQueueViewController : UIViewController <AWEASyncQueueViewControllerProtocol>
+
+@property (retain, nonatomic) UIImageView *bgView;
+@property (retain, nonatomic) UIImageView *orignImageView;
+@property (retain, nonatomic) ACCAnimatedButton *backButton;
+@property (retain, nonatomic) ACCAnimatedButton *bottomButton;
+@property (retain, nonatomic) UILabel *queueStatusLable;
+@property (retain, nonatomic) UILabel *queueContentLable;
+@property (nonatomic) long long viewType;
+@property (nonatomic) long long currentvViewType;
+@property (copy, nonatomic) NSString *shootWay;
+@property (copy, nonatomic) AWERepoAIGCSyncModel *aigcModel;
+@property (retain, nonatomic) UIView<_TtP9AWELottie13AWELottieView_> *guideAnimationView;
+@property (nonatomic) long long loadingType;
+@property (retain, nonatomic) UILabel *headLineLabel;
+@property (retain, nonatomic) DUXLoadingCircleView *loadingView;
+@property (retain, nonatomic) UILabel *bottomLabel;
+@property (retain, nonatomic) UIView *guidBackGroupUIView;
+@property (retain, nonatomic) YYLabel *keywordsLabel;
+@property (copy, nonatomic) NSString *shootEnterFrom;
+@property (copy, nonatomic) NSString *currentTaskId;
+@property (nonatomic) long long currentTaskType;
+@property (nonatomic) double lessResidueTimeNeedToQuery;
+@property (nonatomic) double queryInterval;
+@property (nonatomic) double currentWaitTime;
+@property (nonatomic) BOOL appDidBecomeBackGround;
+@property (nonatomic) BOOL vcWillDismiss;
+@property (nonatomic) BOOL updateFromLoopRequest;
+@property (nonatomic) double enterPageStartTime;
+@property (nonatomic) BOOL enterFromDraftBox;
+@property (retain, nonatomic) NSDictionary *commonDictionary;
+@property (copy, nonatomic) NSString *headLineTitle;
+@property (nonatomic) long long generateAIType;
+@property (copy, nonatomic) id /* block */ finishBlock;
+@property (copy, nonatomic) id /* block */ backBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)handleApplicationDidBecomeActive;
+- (void)updateCurrentPageTaskId:(id)a0 taskType:(long long)a1;
+- (void)updateOrignImageViewWithImage:(id)a0;
+- (void)startDelayQueryTask;
+- (double)calculateLabelHeightWithLabel:(id)a0;
+- (void)p_backClicked:(id)a0;
+- (void)updateKeywordsLabelWithText:(id)a0;
+- (void)updateSyncQueueType:(long long)a0 withStatusLabel:(id)a1 subTitleText:(id)a2 withBottomText:(id)a3 withWaitTime:(double)a4 repoAIGCSyncModel:(id)a5 shootWay:(id)a6 enterFrom:(id)a7 withfailText:(id)a8;
+- (id)initWithLoadingType:(long long)a0;
+- (void)layoutCustomSubview;
+- (void)handleReceiveUpdateDraftDownWith:(id)a0;
+- (void)addCustomSubView;
+- (void)queryCurrentTask;
+- (void)trackerAsyncQueuePage:(long long)a0 clickType:(long long)a1 repoAIGCSyncModel:(id)a2;
+- (double)calculateLabelWithWithLabel:(id)a0;
+- (void)updateKeyWordsListShowStatus:(BOOL)a0;
+- (void)trackerAsyncQueuePage:(long long)a0 repoAIGCSyncModel:(id)a1;
+- (void)monitorAIGCQueryTaskListWithStatus:(long long)a0 errorCode:(long long)a1 errorMessage:(id)a2;
+- (void)monitorAIGCQueryTaskResultWithStatus:(long long)a0 errorCode:(long long)a1 errorMessage:(id)a2 taskID:(id)a3 serverTaskID:(id)a4 scene:(id)a5 isMultiLora:(BOOL)a6 multiLoraProfileNum:(long long)a7;
+- (void)closeSelfWithCompletion:(id /* block */)a0;
+- (void)p_bottomClicked:(id)a0;
+- (id)getTrackPage:(long long)a0;
+- (id)getCountDownShowTimeTextWithoutHours:(double)a0 showDraftTipsMsg:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)handleApplicationDidEnterBackground;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

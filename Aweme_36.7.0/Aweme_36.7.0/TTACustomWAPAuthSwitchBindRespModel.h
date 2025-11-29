@@ -1,0 +1,3 @@
+@interface TTACustomWAPAuthSwitchBindRespModel : TTASNSSDKAuthCallbackRespModel
+
+@end

@@ -1,0 +1,47 @@
+@interface AWESECHybridSettings : NSObject
+
++ (BOOL)enableRuleEngine;
++ (id)focusLynxModule;
++ (id)focusMsg;
++ (BOOL)extractLynxPiperInSync;
++ (void)setupSettings;
++ (BOOL)enableRouteSafety;
++ (id)bdomains;
++ (long long)bdomainVersion;
++ (BOOL)enableLynxDataMap;
++ (id)bridgeSampleRateDict;
++ (BOOL)enableLynxPluginEntry;
++ (BOOL)enableWebPluginEntry;
++ (BOOL)enableXBridgePluginEntry;
++ (BOOL)enableBulletPluginEntry;
++ (BOOL)enableSECHybridBPEAPlugin;
++ (id)webViewPluginList;
++ (BOOL)enableWebRouteSafety;
++ (BOOL)enableWebRouteSecLink;
++ (id)lynxPluginList;
++ (id)secHybridPluginConfig;
++ (id)jsbRegistryDivisionSkipViews;
++ (int)jsbRegistryDivisionSkipCount;
++ (id)urlMonitorSkipUrls;
++ (double)urlMonitorDelay;
++ (id)exemptMsg;
++ (id)exemptLynxModule;
++ (id)piperMonitorUnwantedSchemes;
++ (id)piperMonitorUnwantedScriptMessage;
++ (BOOL)piperMonitorOnlyStringScriptMessage;
++ (id)piperMonitorFuncKeys;
++ (id)bridgeValidateDic;
++ (BOOL)disableCollectingBPEAContext;
++ (void)setupLegacyPluginConfig;
++ (id)exemptionPiper;
++ (id)focusPiper;
++ (BOOL)enableSECHybridPluginFramework;
++ (BOOL)enableSECHybridPageMonitor;
++ (BOOL)enableSECHybridPiperMonitor;
++ (BOOL)enableSECDataMapMonitor;
++ (BOOL)enablePrivacyContextPlugins;
++ (BOOL)enableLynxBridgeInterceptor;
++ (BOOL)enableSceneStack;
++ (BOOL)enableWebcastRouteSafety;
+
+@end

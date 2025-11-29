@@ -1,0 +1,10 @@
+@class IESGCPPBCancelReserveGameResponse_Data;
+
+@interface IESGCPPBCancelReserveGameResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBCancelReserveGameResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveDataLifeLiveProtoRoot : GPBRootObject
+
+@end

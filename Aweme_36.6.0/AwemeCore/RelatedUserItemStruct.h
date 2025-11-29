@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface RelatedUserItemStruct : GPBMessage
+
+@property (nonatomic) int awemeType;
+@property (nonatomic) BOOL hasAwemeType;
+@property (copy, nonatomic) NSString *awemeId;
+@property (nonatomic) BOOL hasAwemeId;
+@property (copy, nonatomic) NSString *postCoverURL;
+@property (nonatomic) BOOL hasPostCoverURL;
+@property (copy, nonatomic) NSString *likeCount;
+@property (nonatomic) BOOL hasLikeCount;
+
++ (id)descriptor;
+
+@end

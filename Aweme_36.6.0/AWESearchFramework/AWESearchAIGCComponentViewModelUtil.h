@@ -1,0 +1,86 @@
+@class NSString;
+
+@interface AWESearchAIGCComponentViewModelUtil : NSObject <AWESearchAIGCComponentViewModelUtilProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)nodeTypeName:(id)a0;
++ (id)createNativeNodeWithContext:(id)a0 aigcServiceContext:(id)a1 dataType:(unsigned long long)a2 viewType:(unsigned long long)a3 dataModel:(id)a4;
++ (BOOL)isAIBusinessCard:(id)a0;
++ (BOOL)isDoubleVideoSkeletonNodeVM:(id)a0;
++ (BOOL)isMixCardNodeVM:(id)a0;
++ (BOOL)isBubbleNodeVM:(id)a0;
++ (BOOL)isAIChatFollowUpQuestionVM:(id)a0;
++ (BOOL)isHealthyVM:(id)a0;
++ (BOOL)isStreamCard:(id)a0;
++ (BOOL)isCustomerReviewsNodeVM:(id)a0;
++ (BOOL)isDoubleVideoLoadMoreNodeVM:(id)a0;
++ (BOOL)isAISSEAnswerNodeVM:(id)a0;
++ (BOOL)isTimestampNodeVM:(id)a0;
++ (BOOL)isShareNotEnableVM:(id)a0;
++ (id)createDynamicNodeWithContext:(id)a0 renderModel:(id)a1 dataModel:(id)a2;
++ (BOOL)isSecuritySplitNodeVM:(id)a0;
++ (BOOL)isMultiAwemeVideoNodeVM:(id)a0;
++ (BOOL)isDoubleColumnImageNodeVM:(id)a0;
++ (BOOL)isDoubleColumnVideoNodeVM:(id)a0;
++ (id)createDoubleColumnLayerNodeWithContext:(id)a0 dataModel:(id)a1;
++ (BOOL)isTopOneLoadingNodeVM:(id)a0;
++ (BOOL)isSkeletonNodeVM:(id)a0;
++ (BOOL)enableReplaceStreamCardLogic;
++ (id)extraSupportStreamCardArray;
++ (BOOL)isAIChatNodeVM:(id)a0;
++ (BOOL)isAIQuestionNodeVM:(id)a0;
++ (BOOL)isAICanvasNodeVM:(id)a0;
++ (id)createNativeNodeWithContext:(id)a0 dataType:(unsigned long long)a1 viewType:(unsigned long long)a2 dataModel:(id)a3;
++ (BOOL)enableSearchAIGCDisableAIEntrance;
++ (id)createDynamicNodeWithContext:(id)a0 renderModel:(id)a1 dataModel:(id)a2 logData:(id)a3;
++ (id)createDynamicNodeWithContext:(id)a0 aigcServiceContext:(id)a1 renderModel:(id)a2 dataModel:(id)a3 logData:(id)a4;
++ (id)aiBusinessVirtualCard:(id)a0;
++ (id)aiBusinessVirtualCardForNewFramework:(id)a0;
++ (BOOL)isAIDouYin995VirtualCard:(id)a0;
++ (id)findAIDouYin995VirtualCardForLeaf:(id)a0;
++ (id)resultMarkModelWithVM:(id)a0;
++ (BOOL)isAIPlaceholderVM:(id)a0;
++ (BOOL)isAIChatWebNodeVM:(id)a0;
++ (BOOL)isAISmartCanvasOperationAreaNodeVM:(id)a0;
++ (BOOL)isAIChatHeadCopilotNodeVM:(id)a0;
++ (BOOL)isSuperAgentNodeVM:(id)a0;
++ (BOOL)checkCardNameWithName:(id)a0 NodeVM:(id)a1;
++ (BOOL)isAIEntranceNodeVM:(id)a0;
++ (BOOL)isAIErrorReanswerNodeVM:(id)a0;
++ (BOOL)isDoubleColumnBottomSpacingVM:(id)a0;
++ (BOOL)isAIFixedHeightCard:(id)a0;
++ (BOOL)isFormatAINodeVM:(id)a0;
++ (BOOL)isTopOneCopilotNodeVM:(id)a0;
++ (BOOL)isAIDouyinTitleNodeVM:(id)a0;
++ (BOOL)isAIChatOperationNodeVM:(id)a0;
++ (BOOL)isAIChatMessageLynxVM:(id)a0;
++ (BOOL)isVoiceLoadingNodeVM:(id)a0;
++ (BOOL)isHistoryTipsNodeVM:(id)a0;
++ (BOOL)isFeedSummaryVideoCoverVM:(id)a0;
++ (BOOL)isFeedSummaryVM:(id)a0;
++ (BOOL)isFeedRSVM:(id)a0;
++ (BOOL)isAIVideoAbstractFeedRSVM:(id)a0;
++ (BOOL)isQuerySeparationLineVM:(id)a0;
++ (BOOL)isAIChatTop1AdNodeVM:(id)a0;
++ (id)createTimestampNodeWithContext:(id)a0 timestamp:(double)a1;
++ (id)createSkeletonNodeWithContext:(id)a0;
++ (id)createHistoryTipsNodeWithContext:(id)a0;
++ (id)createQuerySeparationLineNodeWithContext:(id)a0;
++ (id)createInputLoadingNodeWithContext:(id)a0;
++ (id)createRightSidebarWithContext:(id)a0;
++ (id)createChainOfThoughtInnerPageWithContext:(id)a0;
++ (id)createEntranceNodeWithContext:(id)a0 isAIGCHomePageOnboarding:(BOOL)a1 isHasLocalHistoryStorage:(BOOL)a2;
++ (id)createFeedSummaryVMsNodeWithContext:(id)a0 rowDataDict:(id)a1 logData:(id)a2;
++ (id)createFeedRSVMsNodeWithContext:(id)a0 rowDataDict:(id)a1 logData:(id)a2;
++ (id)createBubbleNodeWithContext:(id)a0 dataModel:(id)a1;
++ (id)createDoubleColumnSpacingNodeWithContext:(id)a0 dataModel:(id)a1;
++ (id)createFeedSummaryVideoCoverNodeWithContext:(id)a0 dataModel:(id)a1;
++ (id)createVirtualNodeWithContext:(id)a0 nodeLayout:(id)a1 aigcServiceContext:(id)a2;
++ (id)findAIDouyinChildQueryCardFor995Card:(id)a0;
+
+
+@end

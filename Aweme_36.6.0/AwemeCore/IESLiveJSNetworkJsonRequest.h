@@ -1,0 +1,23 @@
+@class NSString, NSDictionary;
+
+@interface IESLiveJSNetworkJsonRequest : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *method;
+@property (copy, nonatomic) NSDictionary *headers;
+@property (copy, nonatomic) NSDictionary *params;
+@property (copy, nonatomic) NSDictionary *data;
+@property (copy, nonatomic) NSString *version;
+@property (readonly, nonatomic) BOOL postMethodUseData;
+@property (copy, nonatomic) NSDictionary *pbExtras;
+@property (nonatomic) BOOL enableTiming;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,83 @@
+@class ACCEditAdjustServiceImpl, NSDictionary, ACCEditAdjustItemModel, NSString, NSObject, UIViewController;
+@protocol ACCEditSpecialEffectServiceProtocol, ACCEditPicTemplateServiceProtocol, AWETabFilterViewControllerProtocol, ACCAdvanceEditorRouterServiceProtocol, ACCPanelViewProtocol, ACCAdvanceEditServiceProtocol, ACCEditOneClickFilmApplyServiceProtocol, ACCEditMusicServiceProtocol, ACCDraftAutoSaveProtocol, ACCEditVideoFilterServiceProtocol, ACCEditViewContainer, ACCSequenceEditServiceProtocol, ACCEditServiceProtocol, ACCMultiStyleAlertProtocol;
+
+@interface ACCEditAdjustComponent : ACCFeatureComponent <ACCEditAdjustPanelDelegate, ACCEditAdjustPanelDataSource, AWESliderDelegate, ACCEditPreviewMessageProtocol, ACCPanelViewDelegate, ACCSequencePlayControlServiceSubscriber, ACCSequenceEditServicePlayerSubscriber, ACCEditOneClickFilmApplySubscriberProtocol, ACCEditSpecialEffectServiceSubscriber, ACCEditPicTemplateServiceSubscriber, ACCEditMusicServiceSubscriberProtocol, ACCDraftResourceRecoverProtocol>
+
+@property (weak, nonatomic) id<ACCEditVideoFilterServiceProtocol> filterService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCAdvanceEditServiceProtocol> advanceEditService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (retain, nonatomic) ACCEditAdjustServiceImpl *service;
+@property (weak, nonatomic) UIViewController<AWETabFilterViewControllerProtocol, ACCPanelViewProtocol> *tabFilterViewController;
+@property (retain, nonatomic) ACCEditAdjustItemModel *curAdjustItem;
+@property (retain, nonatomic) ACCEditAdjustItemModel *downloadingAdjust;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCEditOneClickFilmApplyServiceProtocol> oneClickFilmApplyService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (weak, nonatomic) id<ACCEditPicTemplateServiceProtocol> picTemplateService;
+@property (weak, nonatomic) id<ACCEditMusicServiceProtocol> musicService;
+@property (weak, nonatomic) id<ACCDraftAutoSaveProtocol> autoSaveService;
+@property (weak, nonatomic) id<ACCAdvanceEditorRouterServiceProtocol> advanceEditorRouterService;
+@property (copy, nonatomic) NSDictionary *clipsTimeRangeCache;
+@property (copy, nonatomic) NSString *curClipId;
+@property (nonatomic) long long currentSliderValue;
+@property (nonatomic) BOOL isAlertShowing;
+@property (nonatomic) BOOL isPanelShowing;
+@property (retain, nonatomic) NSObject<ACCMultiStyleAlertProtocol> *alert;
+@property (nonatomic) BOOL hasBeenSegmentedBeforeApplyAll;
+@property (nonatomic) BOOL hasConfirmedApplyAllAlert;
+@property (nonatomic) long long sliderStartValue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)draftResourceIDsToDownloadForPublishViewModel:(id)a0;
+
+- (void)trackEvent:(id)a0 params:(id)a1;
+- (void)sequenceEditService:(id)a0 didTransferToIndex:(long long)a1 editMode:(unsigned long long)a2 isAutoTransfer:(BOOL)a3;
+- (BOOL)sequencePlayControlService:(id)a0 shouldForbidPauseWhenDisappear:(id)a1;
+- (BOOL)musicService:(id)a0 shouldForbidPauseWhenDisappear:(id)a1;
+- (BOOL)sequencePlayControlService:(id)a0 shouldForbidPlayWhenAppear:(id)a1;
+- (void)playerCurrentPlayTimeChanged:(double)a0;
+- (void)slider:(id)a0 valueDidChanged:(float)a1;
+- (void)sliderWillStartSliding:(id)a0;
+- (void)slider:(id)a0 didFinishSlidingWithValue:(float)a1;
+- (void)panelViewController:(id)a0 willShowPanelView:(id)a1;
+- (void)panelViewController:(id)a0 didDismissPanelView:(id)a1;
+- (void)beforeEnterDidApplyTemplateModel:(id)a0;
+- (void)didRemoveTemplate;
+- (BOOL)hasAppliedTemplate;
+- (void)componentDidMount;
+- (id)serviceBinding;
+- (void)playStatusChanged:(long long)a0;
+- (BOOL)previewService:(id)a0 shouldForbidPauseWhenDisappear:(id)a1;
+- (void)bindServices:(id)a0;
+- (void)updateSliderWithAdjustItem:(id)a0;
+- (void)applyAdjust:(id)a0 intensity:(double)a1;
+- (void)applyDefaultIntensityIfNeededWithAdjustItem:(id)a0;
+- (void)fetchItemsWithCompletion:(id /* block */)a0;
+- (void)willShowAdjustPanel;
+- (void)didClickAdjustItem:(id)a0;
+- (void)compareBtnTouchDown;
+- (void)compareBtnTouchUp;
+- (void)bottomActionClick;
+- (void)selectTabDidChange;
+- (void)willApplyTemplate:(id)a0 projectUUID:(id)a1 willCreateNewProject:(BOOL)a2;
+- (void)applySuccessWithTemplate:(id)a0 projectUUID:(id)a1;
+- (void)didRemoveTemplateWith:(id)a0 projectUUID:(id)a1;
+- (BOOL)shouldShowBottomActionView;
+- (void)showAlertBubbleIfNeeded;
+- (void)clipDidChanged:(id)a0;
+- (void)transformSlotAdjustToGlobalWithProject:(id)a0;
+- (void)transformGlobalAdjustToSlotWithProject:(id)a0;
+- (void)transformTrackAdjustToGlobalWithProject:(id)a0;
+- (void)transformGlobalAdjustToTrackWithProject:(id)a0;
+- (void)didClickClearAdjustItem:(id)a0;
+- (void)reloadAdjustBottomActionView;
+- (void)showApplyAlertIfNeeded;
+- (void)didUpdateProgressForLatestTemplate:(unsigned long long)a0 templateModel:(id)a1;
+- (void)didRemoveTemplateId:(id)a0;
+- (void).cxx_destruct;
+
+@end

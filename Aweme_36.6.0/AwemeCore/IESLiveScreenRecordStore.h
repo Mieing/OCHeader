@@ -1,0 +1,77 @@
+@class HTSEventContext, NSString, NSArray, UIImage, NSTimer, NSOperationQueue, NSDictionary, NSMutableArray, IESLiveScreenRecordApi, NSNumber;
+@protocol IESLiveRoomService;
+
+@interface IESLiveScreenRecordStore : NSObject <HTSLiveMessageSubscriber, IESLiveAnchorScreenRecordService>
+
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) IESLiveScreenRecordApi *api;
+@property (nonatomic) unsigned long long backRecordStatus;
+@property (retain, nonatomic) NSString *playUrl;
+@property (nonatomic) double curProgress;
+@property (retain, nonatomic) NSArray *tsUrls;
+@property (retain, nonatomic) NSMutableArray *localTsUrls;
+@property (retain, nonatomic) UIImage *coverImage;
+@property (retain, nonatomic) NSNumber *roomID;
+@property (retain, nonatomic) NSString *executionID;
+@property (retain, nonatomic) NSNumber *endTime;
+@property (retain, nonatomic) NSNumber *waitSeconds;
+@property (retain, nonatomic) NSNumber *timeOutSeconds;
+@property (nonatomic) double fakeProgress;
+@property (retain, nonatomic) NSString *downloadDirectories;
+@property (retain, nonatomic) NSOperationQueue *downloadQueue;
+@property (retain, nonatomic) NSTimer *timer;
+@property (retain, nonatomic) NSTimer *downloadTimer;
+@property (nonatomic) double startDownloadTime;
+@property (nonatomic) BOOL receiveFromApi;
+@property (nonatomic) BOOL isDownloading;
+@property (retain, nonatomic) NSDictionary *errorDictionary;
+@property (retain, nonatomic) NSDictionary *errorDictionaryForDA;
+@property (nonatomic) BOOL hadStartRecord;
+@property (nonatomic) BOOL hasPrepareTSUrl;
+@property (retain, nonatomic) NSString *backTrackFileName;
+@property (readonly, nonatomic) NSString *localVideoPath;
+@property (retain, nonatomic) id<IESLiveRoomService> roomModel;
+@property (nonatomic) BOOL enableShareFansGroup;
+@property (nonatomic) BOOL enableAutoRecordShareFansGroup;
+@property (retain, nonatomic) NSString *backRecordRequestPage;
+@property (nonatomic) BOOL isBackFromPublishPage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL hadShowPublicPanel;
+@property (readonly, nonatomic) BOOL isRecording;
+
+- (void)removeTimer;
+- (void)taskDone;
+- (void)resetAllParams;
+- (void)dispatchFakeMessage:(id)a0;
+- (BOOL)fansGroupGuideDisabled;
+- (void)fetchAllSortedFansGroup:(id)a0 roomId:(id)a1 complection:(id /* block */)a2;
+- (id)initWithContext:(id)a0 componetContext:(id)a1;
+- (void)cancelTaskByReason:(unsigned long long)a0;
+- (void)retryBackRecord:(id)a0;
+- (void)requestForStartRecord:(id)a0 isRetry:(BOOL)a1;
+- (void)trackBackRecordCancel:(BOOL)a0;
+- (void)setupSignal;
+- (void)resetPartParams;
+- (void)clearFile:(BOOL)a0;
+- (void)waitForRequest;
+- (void)requestForDelay;
+- (void)taskTimeOut:(unsigned long long)a0;
+- (void)startTimerForMsg;
+- (void)downloadVieoWithList:(id)a0 fromExtra:(BOOL)a1;
+- (void)waitForMsg;
+- (void)trackBackRecordFail:(unsigned long long)a0;
+- (BOOL)enableOptForBackRecord;
+- (void)addDownloadM3U8Task;
+- (void)addConverVideoTask:(id)a0;
+- (void)trackBackRecordSuccess;
+- (void)trackBackRecordCancel;
+- (void).cxx_destruct;
+- (BOOL)isAnchor;
+- (id)videoPath;
+- (void)messageReceived:(id)a0;
+- (id)captureImage;
+
+@end

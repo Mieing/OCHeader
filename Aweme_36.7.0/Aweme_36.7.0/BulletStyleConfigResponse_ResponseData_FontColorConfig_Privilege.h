@@ -1,0 +1,8 @@
+@interface BulletStyleConfigResponse_ResponseData_FontColorConfig_Privilege : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL canUse;
+@property (nonatomic) int needFansclubLevel;
+
++ (id)descriptor;
+
+@end

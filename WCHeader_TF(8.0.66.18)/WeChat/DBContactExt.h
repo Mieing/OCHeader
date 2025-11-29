@@ -1,0 +1,81 @@
+@class NSString;
+
+@interface DBContactExt : NSObject <WCTTableCoding>
+
+@property (nonatomic) unsigned int ConIntRes2;
+@property (nonatomic) unsigned int ConIntRes3;
+@property (retain, nonatomic) NSString *ConStrRes3;
+@property (retain, nonatomic) NSString *userName;
+@property (nonatomic) unsigned int type;
+@property (retain, nonatomic) NSString *remark;
+@property (retain, nonatomic) NSString *remarkShortPinYin;
+@property (retain, nonatomic) NSString *remarkFullPinYin;
+@property (retain, nonatomic) NSString *QQMBlog;
+@property (retain, nonatomic) NSString *SMBlog;
+@property (retain, nonatomic) NSString *chatRoomMember;
+@property (nonatomic) unsigned int chatStatus;
+@property (retain, nonatomic) NSString *domainList;
+@property (retain, nonatomic) NSString *extent;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)userName;
++ (const void *)__wcdb_synthesize_20:(void *)a0;
++ (id)swift_userName;
++ (const void *)type;
++ (const void *)__wcdb_synthesize_21:(void *)a0;
++ (id)swift_type;
++ (const void *)remark;
++ (const void *)__wcdb_synthesize_22:(void *)a0;
++ (id)swift_remark;
++ (const void *)remarkShortPinYin;
++ (const void *)__wcdb_synthesize_23:(void *)a0;
++ (id)swift_remarkShortPinYin;
++ (const void *)remarkFullPinYin;
++ (const void *)__wcdb_synthesize_24:(void *)a0;
++ (id)swift_remarkFullPinYin;
++ (const void *)QQMBlog;
++ (const void *)__wcdb_synthesize_25:(void *)a0;
++ (id)swift_QQMBlog;
++ (const void *)SMBlog;
++ (const void *)__wcdb_synthesize_26:(void *)a0;
++ (id)swift_SMBlog;
++ (const void *)chatRoomMember;
++ (const void *)__wcdb_synthesize_27:(void *)a0;
++ (id)swift_chatRoomMember;
++ (const void *)chatStatus;
++ (const void *)__wcdb_synthesize_28:(void *)a0;
++ (id)swift_chatStatus;
++ (const void *)ConIntRes2;
++ (const void *)__wcdb_synthesize_29:(void *)a0;
++ (id)swift_ConIntRes2;
++ (const void *)ConIntRes3;
++ (const void *)__wcdb_synthesize_30:(void *)a0;
++ (id)swift_ConIntRes3;
++ (const void *)domainList;
++ (const void *)__wcdb_synthesize_31:(void *)a0;
++ (id)swift_domainList;
++ (const void *)extent;
++ (const void *)__wcdb_synthesize_32:(void *)a0;
++ (id)swift_extent;
++ (const void *)ConStrRes3;
++ (const void *)__wcdb_synthesize_33:(void *)a0;
++ (id)swift_ConStrRes3;
++ (void)__wcdb_column_constraint_34:(void *)a0;
++ (void)__wcdb_column_constraint_35:(void *)a0;
++ (void)__wcdb_column_constraint_36:(void *)a0;
++ (void)__wcdb_column_constraint_37:(void *)a0;
++ (void)__wcdb_column_constraint_38:(void *)a0;
++ (void)__wcdb_column_constraint_39:(void *)a0;
+
+- (void).cxx_destruct;
+
+@end

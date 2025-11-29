@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESLiveWalletInviteFriendInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *coverImg;
+@property (copy, nonatomic) NSString *itemId;
+@property (copy, nonatomic) NSString *secBuyerUserId;
+@property (copy, nonatomic) NSString *buyerNickName;
+@property (copy, nonatomic) NSString *title;
+
++ (id)descriptor;
+
+@end

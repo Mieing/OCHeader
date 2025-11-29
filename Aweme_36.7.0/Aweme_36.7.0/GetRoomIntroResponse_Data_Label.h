@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface GetRoomIntroResponse_Data_Label : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *value;
+
++ (id)descriptor;
+
+@end

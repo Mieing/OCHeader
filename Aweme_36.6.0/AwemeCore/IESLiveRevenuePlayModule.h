@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESLiveRevenuePlayModule : IESLiveModule <IESLiveRevenuePlayModule>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)taskPanelManagerInterface;
+- (id)taskCenterInterface;
+
+@end

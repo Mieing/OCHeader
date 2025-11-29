@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface SearchBar : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *bgImage;
+@property (nonatomic) BOOL hasBgImage;
+@property (copy, nonatomic) NSString *content;
+
++ (id)descriptor;
+
+@end

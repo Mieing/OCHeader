@@ -1,0 +1,81 @@
+@class NSString;
+
+@interface WAAppItemData : MMObject <WCTTableCoding, NSCopying>
+
+@property (retain, nonatomic) NSString *appid;
+@property (retain, nonatomic) NSString *userName;
+@property (nonatomic) unsigned int appType;
+@property (nonatomic) unsigned int updateTime;
+@property (nonatomic) BOOL beStared;
+@property (nonatomic) double sortFactor;
+@property (nonatomic) BOOL isFromOuter;
+@property (retain, nonatomic) NSString *appDesc;
+@property (nonatomic) unsigned int commuseInfoReferId;
+@property (nonatomic) unsigned int commuseRecallQueueType;
+@property (retain, nonatomic) NSString *commuseExtraData;
+@property (retain, nonatomic) NSString *pagePath;
+@property (retain, nonatomic) NSString *iconUrl;
+@property (retain, nonatomic) NSString *appNickName;
+@property (nonatomic) BOOL isCommonUseItem;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)userName;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_userName;
++ (const void *)appType;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_appType;
++ (const void *)updateTime;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_updateTime;
++ (const void *)beStared;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_beStared;
++ (const void *)sortFactor;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_sortFactor;
++ (const void *)isFromOuter;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_isFromOuter;
++ (const void *)appDesc;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_appDesc;
++ (const void *)commuseInfoReferId;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (id)swift_commuseInfoReferId;
++ (const void *)commuseRecallQueueType;
++ (const void *)__wcdb_synthesize_8:(void *)a0;
++ (id)swift_commuseRecallQueueType;
++ (const void *)commuseExtraData;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (id)swift_commuseExtraData;
++ (const void *)pagePath;
++ (const void *)__wcdb_synthesize_10:(void *)a0;
++ (id)swift_pagePath;
++ (const void *)appid;
++ (const void *)__wcdb_synthesize_11:(void *)a0;
++ (id)swift_appid;
++ (const void *)iconUrl;
++ (const void *)__wcdb_synthesize_12:(void *)a0;
++ (id)swift_iconUrl;
++ (const void *)appNickName;
++ (const void *)__wcdb_synthesize_13:(void *)a0;
++ (id)swift_appNickName;
++ (void)__wcdb_table_constraint_14:(void *)a0;
++ (void)__wcdb_table_constraint_15:(void *)a0;
+
+- (id)appItemKey;
+- (id)uniqueKey;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void).cxx_destruct;
+
+@end

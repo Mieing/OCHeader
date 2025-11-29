@@ -1,0 +1,3 @@
+@interface AWEEntertainmentPlayletVIPVideoTrialPresenter : AWEEntertainmentBaseVideoTrialPresenter
+
+@end

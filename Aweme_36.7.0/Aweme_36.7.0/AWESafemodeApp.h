@@ -1,0 +1,10 @@
+@interface AWESafemodeApp : NSObject
+
++ (id)shared;
+
+- (void)safemodeDidFinishLaunching;
+- (void)fixingAssert;
+- (void)startTTNet;
+- (void)startHeimdallr;
+
+@end

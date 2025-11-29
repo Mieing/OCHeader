@@ -1,0 +1,3 @@
+@interface AWEMVIndentBannerView : DUXIndentBanner
+
+@end

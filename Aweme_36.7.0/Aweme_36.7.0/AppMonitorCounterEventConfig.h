@@ -1,0 +1,7 @@
+@interface AppMonitorCounterEventConfig : AppMonitorEventConfig
+
++ (id)sharedInstance;
+
+- (id)init;
+
+@end

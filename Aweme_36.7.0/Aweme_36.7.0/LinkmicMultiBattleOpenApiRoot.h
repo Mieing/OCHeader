@@ -1,0 +1,3 @@
+@interface LinkmicMultiBattleOpenApiRoot : GPBRootObject
+
+@end

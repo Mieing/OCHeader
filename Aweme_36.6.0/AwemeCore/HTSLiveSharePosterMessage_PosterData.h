@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveSharePosterMessage_PosterData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *posterArray;
+@property (readonly, nonatomic) unsigned long long posterArray_Count;
+@property (retain, nonatomic) NSMutableArray *decoratorArray;
+@property (readonly, nonatomic) unsigned long long decoratorArray_Count;
+
++ (id)descriptor;
+
+@end

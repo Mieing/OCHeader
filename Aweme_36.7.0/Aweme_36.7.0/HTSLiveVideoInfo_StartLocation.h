@@ -1,0 +1,8 @@
+@interface HTSLiveVideoInfo_StartLocation : IESLivePBBaseMessage
+
+@property (nonatomic) long long loc;
+@property (nonatomic) long long time;
+
++ (id)descriptor;
+
+@end

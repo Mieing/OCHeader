@@ -1,0 +1,3 @@
+@interface RoomFinishAbnormalApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface BattleRival_InviteButton : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *description_p;
+@property (nonatomic) BOOL forbidden;
+@property (nonatomic) long long type;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class AddSongCancelPrepareApplyResponse_ResponseData;
+
+@interface AddSongCancelPrepareApplyResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AddSongCancelPrepareApplyResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

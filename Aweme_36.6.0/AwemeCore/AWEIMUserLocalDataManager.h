@@ -1,0 +1,82 @@
+@class NSString, AWESocialRelationObserver, YYMemoryCache;
+
+@interface AWEIMUserLocalDataManager : NSObject <AWEUserMessage, IESIMUserLocalDataManagerProtocol>
+
+@property (readonly, nonatomic) YYMemoryCache *memoryCache;
+@property (nonatomic) BOOL enableAddMemoryCache;
+@property (retain, nonatomic) AWESocialRelationObserver *observer;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)updateIMUser:(id)a0 withMemoryData:(id)a1;
++ (id)sharedInstance;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)didFinishUpdateCurrentFullUserForReason:(unsigned long long)a0;
+- (void)didFinishFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)didFinishBlockUser:(id)a0 status:(long long)a1;
+- (void)didFinishUnBlockUser:(id)a0 status:(long long)a1;
+- (void)didFinishHideMyPostFromUser:(id)a0 status:(long long)a1;
+- (void)didFinishShowMyPostToUser:(id)a0 status:(long long)a1;
+- (void)didFinishSetRemarkWithUser:(id)a0;
+- (void)didReceiveMemoryWarningNotification;
+- (id)userWithSecUid:(id)a0;
+- (id)usersWithSecUids:(id)a0;
+- (void)usersWithSecUids:(id)a0 completion:(id /* block */)a1;
+- (id)userWithId:(id)a0 readScene:(long long)a1;
+- (void)didReceiveMemoryDangerLevelTopNotification;
+- (BOOL)enableMemoryOptimizeWithNunki;
+- (void)localDataCenterDidUpdate:(id)a0;
+- (void)removeMemoryCacheUserWithUid:(id)a0;
+- (id)findIMUserFromMemory:(id)a0;
+- (id)usersWithUserIDs:(id)a0 readScene:(long long)a1;
+- (void)recordInMemoryWithUid:(id)a0 user:(id)a1;
+- (id)usersWithUserIDs:(id)a0 trackContext:(id)a1 option:(id)a2;
+- (void)usersWithUserIDs:(id)a0 readScene:(long long)a1 completion:(id /* block */)a2;
+- (void)usersWithUserIDs:(id)a0 trackContext:(id)a1 completion:(id /* block */)a2;
+- (void)usersWithUserIDs:(id)a0 trackContext:(id)a1 canUseMemoryCacheAndSwitchThread:(BOOL)a2 completion:(id /* block */)a3;
+- (id)userIdWithSecUserId:(id)a0;
+- (id)secUserIdWithUserId:(id)a0;
+- (id)multiTableNames;
+- (void)fetchIMUserWithRequestModel:(id)a0 startTime:(double)a1 isChat:(BOOL)a2 completion:(id /* block */)a3;
+- (void)trackFetchEmptyUID:(id)a0;
+- (id)localUsersWithOption:(id)a0 readScene:(long long)a1;
+- (id)followListIDWithFollowType:(unsigned long long)a0 option:(id)a1;
+- (unsigned long long)readTypeFromFollowStatus:(long long)a0;
+- (id)packRequestWithUserIDs:(id)a0 option:(id)a1 readScene:(long long)a2;
+- (void)readIMUserConditionTrackWithContext:(id)a0;
+- (void)readIMUserTrackWithContext:(id)a0;
+- (void)packIMUserWithUserIDs:(id)a0 trackContext:(id)a1 completion:(id /* block */)a2;
+- (void)usersWithSecUids:(id)a0 needTracker:(BOOL)a1 completion:(id /* block */)a2;
+- (BOOL)isNetworkGetNeedCheck;
+- (BOOL)enableContactReport:(BOOL)a0 isUC:(BOOL)a1;
+- (void)fetchIMUserWithRequestModel:(id)a0 startTime:(double)a1 completion:(id /* block */)a2;
+- (long long)maxGetReportCount;
+- (void)usersWithUserIDs:(id)a0 completion:(id /* block */)a1;
+- (long long)maxGetRequestCount;
+- (void)usersWithUserIDs:(id)a0 secUids:(id)a1 startTime:(double)a2 completion:(id /* block */)a3;
+- (void)hitMemoryCacheWithIsHit:(BOOL)a0;
+- (void)p_checkMemoryDataIsEqualToDbDataIfNeedWith:(id)a0;
+- (void)removeAllMemoryObject;
+- (void)checkAndCompensateUser:(id)a0 action:(id)a1;
+- (BOOL)enableCompensateWithoutUser:(id)a0;
+- (BOOL)enableTrackIMUser;
+- (BOOL)checkActionIsEnable:(double)a0;
+- (id)usersWithUserIDs:(id)a0;
+- (void)usersWithUserIDs:(id)a0 readScene:(long long)a1 canUseMemoryCacheAndSwitchThread:(BOOL)a2 completion:(id /* block */)a3;
+- (void)fetchIMUserWithSecUIDs:(id)a0 needLabel:(BOOL)a1 completion:(id /* block */)a2;
+- (void)fetchIMUserWithUserID:(id)a0 secUid:(id)a1 needLabel:(BOOL)a2 extraParams:(id)a3 completion:(id /* block */)a4;
+- (id)localUsersWithOption:(id)a0;
+- (id)localUsersWithFollowStatus:(long long)a0 option:(id)a1;
+- (long long)localUsersCountWithOption:(id)a0;
+- (long long)localUsersCountWithFollowStatus:(long long)a0 option:(id)a1;
+- (BOOL)enableIMUserMigrateTables;
+- (void).cxx_destruct;
+- (id)init;
+- (void)addObserver;
+- (void)dealloc;
+
+@end

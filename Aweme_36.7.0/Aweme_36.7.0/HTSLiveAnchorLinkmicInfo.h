@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveAnchorLinkmicInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (copy, nonatomic) NSString *linkmicIdStr;
+@property (nonatomic) BOOL useBackupStream;
+
++ (id)descriptor;
+
+@end

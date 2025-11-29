@@ -1,0 +1,14 @@
+@class NSString, HTSLiveImage;
+
+@interface GetGroupInfoResponse_GroupInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *avatar;
+@property (nonatomic) BOOL hasAvatar;
+@property (nonatomic) long long population;
+@property (nonatomic) int userInGroupStatus;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,80 @@
+@class NSString, NSDictionary, AWEGrouponLynxContainerView, AWEAwemeModel, AWEGrouponPageContext, AWEGrouponLynxConfig;
+@protocol AWEGrouponC2FeedCellDelegate;
+
+@interface AWEGrouponDynamicFeedLynxContainer : UIView <AWEGrouponLynxContainerViewDelegate, AWEImageMonitorDelegate, AWEGrouponC2ContainerFeedCellControllerProtocol, AWEGrouponC2ChildTrackerProtocol>
+
+@property (retain, nonatomic) AWEGrouponLynxContainerView *lynxContainer;
+@property (retain, nonatomic) AWEGrouponLynxConfig *lynxConfig;
+@property (weak, nonatomic) AWEAwemeModel *aweme;
+@property (copy, nonatomic) NSString *cardID;
+@property (nonatomic) BOOL needSendShowFirstScreen;
+@property (nonatomic) BOOL didFirstScreen;
+@property (nonatomic) BOOL didSendPartialShowEvent;
+@property (copy, nonatomic) NSDictionary *partialShowEventParams;
+@property (nonatomic) BOOL needSendPartialShowEvent;
+@property (nonatomic) BOOL didSendPartialShowtimeEvent;
+@property (copy, nonatomic) NSDictionary *partialShowtimeEventParams;
+@property (nonatomic) BOOL needSendPartialShowtimeEvent;
+@property (nonatomic) BOOL needSendOnCardShowOnceEvent;
+@property (nonatomic) BOOL didContainerFinishLoad;
+@property (nonatomic) BOOL needWaitSendPlayEvent;
+@property (nonatomic) double displayTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isPlaying;
+@property (weak, nonatomic) id<AWEGrouponC2FeedCellDelegate> delegate;
+@property (retain, nonatomic) AWEGrouponPageContext *pageContext;
+
++ (double)cellHeightWithWidth:(double)a0 model:(id)a1;
++ (id)commonParamsWithAweme:(id)a0 pageType:(long long)a1;
+
+- (id)extraParams;
+- (void)didDisplay;
+- (void)sendEvent:(id)a0 params:(id)a1;
+- (id)findViewWithName:(id)a0;
+- (void)updateLynxData:(id)a0;
+- (id)initWithPageContext:(id)a0;
+- (id)commonParamsWithAweme:(id)a0;
+- (void)playWithMute:(BOOL)a0;
+- (void)endDisplay;
+- (void)onClickWithModel:(id)a0;
+- (void)updateContentWithAweme:(id)a0 cellWidth:(double)a1;
+- (id)setUpVCWithModel:(id)a0 cellWidth:(double)a1;
+- (void)resetVC;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })coverFrame;
+- (void)trackCoverDidShow:(id)a0;
+- (void)trackFreshImageShowtime:(id)a0;
+- (void)resetVideoPlayerVC;
+- (void)resetPlay;
+- (void)sendOnCardShowEvent;
+- (void)sendOnCardHideEvent;
+- (void)setHiddenContainerView:(BOOL)a0;
+- (void)trackInnerDidShow:(id)a0;
+- (void)trackPartialShowWithParams:(id)a0;
+- (void)trackPartialShowtimeWithParams:(id)a0;
+- (id)initWithModel:(id)a0 pageContext:(id)a1;
+- (id)lynxModelFromAweme:(id)a0;
+- (id)getReuseLynxContainerWithLynxModel:(id)a0;
+- (void)sendOnCardShowOnceEvent;
+- (BOOL)useGrouponLynxCachePool;
+- (void)addLynxViewAndRemoveFromCachePoolIfNeeded:(id)a0;
+- (void)stopPlayer;
+- (void)trackCellAdShow;
+- (void)removeLynxViewAndEnterToCachePoolIfNeeded:(id)a0;
+- (id)cellCommonParamsWithAweme:(id)a0;
+- (void)lynxContainer:(id)a0 viewDidChangeContentSize:(struct CGSize { double x0; double x1; })a1;
+- (void)lynxContainerDidFirstScreen:(id)a0;
+- (void)lynxContainer:(id)a0 didFinishLoadWithURL:(id)a1;
+- (void)lynxContainer:(id)a0 didLoadFailedWithUrl:(id)a1 error:(id)a2;
+- (void)lynxContainerDidUpdate:(id)a0;
+- (void)didReceiveMonitor:(id)a0 attributes:(id)a1 extra0:(id)a2 extra1:(id)a3;
+- (void).cxx_destruct;
+- (void)pause;
+- (void)stop;
+- (BOOL)canPlay;
+- (void)dealloc;
+- (void)willDisplay;
+
+@end

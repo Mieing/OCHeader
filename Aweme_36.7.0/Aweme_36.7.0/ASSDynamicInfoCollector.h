@@ -1,0 +1,3 @@
+@interface ASSDynamicInfoCollector : NSObject
+
+@end

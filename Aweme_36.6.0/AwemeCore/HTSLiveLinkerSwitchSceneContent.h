@@ -1,0 +1,10 @@
+@class IESLiveSwitchSceneData;
+
+@interface HTSLiveLinkerSwitchSceneContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveSwitchSceneData *switchSceneData;
+@property (nonatomic) BOOL hasSwitchSceneData;
+
++ (id)descriptor;
+
+@end

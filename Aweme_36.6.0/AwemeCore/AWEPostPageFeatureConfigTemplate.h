@@ -1,0 +1,3 @@
+@interface AWEPostPageFeatureConfigTemplate : NSObject
+
+@end

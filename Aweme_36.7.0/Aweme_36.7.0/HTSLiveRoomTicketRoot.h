@@ -1,0 +1,3 @@
+@interface HTSLiveRoomTicketRoot : GPBRootObject
+
+@end

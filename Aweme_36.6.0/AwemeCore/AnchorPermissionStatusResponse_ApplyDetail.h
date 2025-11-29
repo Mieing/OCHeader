@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface AnchorPermissionStatusResponse_ApplyDetail : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *rulesArray;
+@property (readonly, nonatomic) unsigned long long rulesArray_Count;
+
++ (id)descriptor;
+
+@end

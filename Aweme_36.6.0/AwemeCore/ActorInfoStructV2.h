@@ -1,0 +1,16 @@
+@class NSString, UrlStructV2;
+
+@interface ActorInfoStructV2 : GPBMessage
+
+@property (retain, nonatomic) UrlStructV2 *avatar;
+@property (nonatomic) BOOL hasAvatar;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *role;
+@property (nonatomic) BOOL hasRole;
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+
++ (id)descriptor;
+
+@end

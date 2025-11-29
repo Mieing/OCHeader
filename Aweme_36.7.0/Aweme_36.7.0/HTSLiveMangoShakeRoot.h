@@ -1,0 +1,3 @@
+@interface HTSLiveMangoShakeRoot : GPBRootObject
+
+@end

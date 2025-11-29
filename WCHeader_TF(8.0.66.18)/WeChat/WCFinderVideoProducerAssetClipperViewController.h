@@ -1,0 +1,73 @@
+@class NSString, WCFinderVideoProducerBaseSheetView, UICollectionView, SightLocalVideoImageSlider, WCFinderVideoProducerDataSource, NSIndexPath;
+@protocol WCFinderVideoProducerAssetClipperDelegate;
+
+@interface WCFinderVideoProducerAssetClipperViewController : WCFinderVideoProducerBaseViewControllerFragment <WCFinderVideoProducerBaseSheetViewDelegate, SightLocalVideoImageSliderDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (retain, nonatomic) WCFinderVideoProducerBaseSheetView *sheetView;
+@property (retain, nonatomic) UICollectionView *cvAssetBarView;
+@property (retain, nonatomic) SightLocalVideoImageSlider *sliderView;
+@property (retain, nonatomic) WCFinderVideoProducerDataSource *cellVMData;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (weak, nonatomic) id<WCFinderVideoProducerAssetClipperDelegate> delegate;
+@property (nonatomic) BOOL isMJAppLauncherEnabled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (void)onRelayoutViews;
+- (double)getContentHeightWhenShowing;
+- (void)setViewTop:(double)a0 animated:(BOOL)a1 withCompletion:(id /* block */)a2;
+- (void)viewDidLoad;
+- (void)viewDidTransitionToNewSize;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)resetDataWithClipSegmentListList:(id)a0;
+- (id)getAllCellVMList;
+- (double)getAssetClipperShowingHeight;
+- (void)selectFirstAssetClip;
+- (void)onClickTopActionBarLeftButton:(id)a0;
+- (void)onClickTopActionBarRightButton:(id)a0;
+- (void)imageSlider:(id)a0 startFlagDidMoveToTime:(float)a1;
+- (void)imageSlider:(id)a0 playFlagDidMoveToTime:(float)a1;
+- (void)imageSlider:(id)a0 endFlagDidMoveToTime:(float)a1;
+- (void)imageSlider:(id)a0 didStopSlidingAtTime:(float)a1 isStartFlag:(BOOL)a2;
+- (BOOL)imageSliderCanMoveStartAndEndFlag:(id)a0;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (BOOL)collectionView:(id)a0 shouldSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didDeselectItemAtIndexPath:(id)a1;
+- (void)_onShowMJAppLauncherButton;
+- (void)_onClickMJAppLauncherButton:(id)a0;
+- (void)_safeScrollToItemAtIndex:(id)a0;
+- (BOOL)_isIndexPathValid:(id)a0;
+- (void)_seekSegmentForCellVM:(id)a0 toTimeSec:(double)a1;
+- (void)_playSegmentForCellVM:(id)a0 startAtTimeSec:(double)a1;
+- (void)_showSliderViewForCellVM:(id)a0;
+- (void)_prepareSliderViewForAsset:(id)a0 withPictureDetection:(id /* block */)a1 videoDetection:(id /* block */)a2 errorHandler:(id /* block */)a3;
+- (void)_updateSliderViewWithPictureImage:(id)a0 assetId:(id)a1 sliderTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a2 completion:(id /* block */)a3;
+- (void)_updateSliderViewWithVideoAVAsset:(id)a0 assetId:(id)a1 sliderTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a2 completion:(id /* block */)a3;
+- (void)_hideSliderView;
+- (BOOL)_isSelectedCellVMContainsAssetId:(id)a0;
+- (void)_onCellAtIndex:(id)a0 changedSelectTo:(BOOL)a1 manually:(BOOL)a2;
+- (void)_appendClipSgementList:(id)a0;
+- (void)_onDataChanged;
+- (id)_errorWithCode:(long long)a0;
+- (void)_relayoutView;
+- (void)_initView;
+- (void)_initSheetView;
+- (void)_initAssetBarView;
+- (void)_initClipperView;
+- (void)_initMJAppLauncherButton;
+- (double)_getSheetViewHeight;
+- (double)_getSheetViewContentheight;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,72 @@
+@class ACCMusicPickerCreationBiz, ACCVideoEditMusicViewModel, NSString, AWEVideoPublishViewModel, ACCMusicPickerViewController, ACCMusicVolumeViewModel;
+@protocol IESServiceProvider, ACCStickerServiceProtocol, ACCEditVoiceChangerServiceProtocol, ACCSelectTemplateServiceProtocol, ACCEditCutMusicServiceProtocol, ACCAdvanceEditorRouterServiceProtocol, AEKEditAutoCaptionPublicAPI, ACCAutoCaptionServiceProtocol, ACCSequencePlayControlServiceProtocol, ACCAdvanceEditServiceProtocol, ACCLivePhotoEditServiceProtocol, ACCMusicPickerBizComponentDelegate, ACCMusicModelProtocol, ACCLyricsStickerServiceProtocol, ACCEditClipV1ServiceProtocol, ACCSequenceEditServiceProtocol, ACCEditServiceProtocol;
+
+@interface ACCMusicPickerBizComponent : NSObject <ACCPanelViewDelegate, ACCMusicPickerViewControllerPresenter, ACCMusicListBizHandler, ACCMusicPickerViewControllerDelegate, ACCMusicPickerBizComponentProtocol>
+
+@property (readonly, weak, nonatomic) AWEVideoPublishViewModel *publishModel;
+@property (weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (weak, nonatomic) ACCVideoEditMusicViewModel *viewModel;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCEditCutMusicServiceProtocol> cutMusicService;
+@property (weak, nonatomic) id<ACCStickerServiceProtocol> stickerService;
+@property (weak, nonatomic) id<ACCAutoCaptionServiceProtocol> autoCaptionService;
+@property (weak, nonatomic) id<AEKEditAutoCaptionPublicAPI> autoCaptionPublicAPI;
+@property (weak, nonatomic) id<ACCEditVoiceChangerServiceProtocol> voiceChangerService;
+@property (weak, nonatomic) id<ACCSequencePlayControlServiceProtocol> sequencePlayControl;
+@property (weak, nonatomic) id<ACCLyricsStickerServiceProtocol> lyricsStickerService;
+@property (weak, nonatomic) id<ACCEditClipV1ServiceProtocol> clipV1Service;
+@property (weak, nonatomic) id<ACCSelectTemplateServiceProtocol> selectTemplateService;
+@property (weak, nonatomic) id<ACCAdvanceEditServiceProtocol> advanceEditService;
+@property (weak, nonatomic) id<ACCLivePhotoEditServiceProtocol> livePhotoEditService;
+@property (weak, nonatomic) id<ACCAdvanceEditorRouterServiceProtocol> advanceEditorRouterService;
+@property (nonatomic) double showMusicPanelTime;
+@property (retain, nonatomic) ACCMusicPickerViewController *musicPickerController;
+@property (retain, nonatomic) ACCMusicPickerCreationBiz *musicPickerCreationBiz;
+@property (retain, nonatomic) ACCMusicVolumeViewModel *volumeViewModel;
+@property (weak, nonatomic) id<ACCMusicPickerBizComponentDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) id<ACCMusicModelProtocol> selectedMusic;
+@property (retain, nonatomic) id<ACCMusicModelProtocol> deletedMusic;
+
+- (void)panelViewController:(id)a0 willShowPanelView:(id)a1;
+- (void)panelViewController:(id)a0 willDismissPanelView:(id)a1;
+- (void)panelViewController:(id)a0 didDismissPanelView:(id)a1;
+- (void)musicListSelectMusicPlayable:(id)a0 withUrl:(id)a1;
+- (void)musicListSelectMusicDownloaded:(id)a0 withUrl:(id)a1;
+- (void)setupBinding;
+- (BOOL)musicListShouldEnableClipForMusic:(id)a0;
+- (void)musicListDeselectMusic:(id)a0;
+- (BOOL)playerTypeIsAudioPlayer;
+- (void)musicListClipMusic:(id)a0;
+- (void)dismissMusicPicker;
+- (void)showMusicSearch;
+- (id)viewControllerPresentMusicPicker:(id)a0;
+- (id)panelViewControllerPresentMusicPicker:(id)a0;
+- (void)picker:(id)a0 didFinishPickingMusic:(id)a1;
+- (void)pickerShowMusicSearch:(id)a0;
+- (void)p_initialForLVAudioFrame;
+- (void)updateChallenge;
+- (id)initWithService:(id)a0 serviceProvider:(id)a1;
+- (void)didSelectToolBarModel:(id)a0;
+- (void)didToggleMusicCollectStateWithMusicId:(id)a0 collect:(BOOL)a1 sender:(id)a2;
+- (void)setupSelectedMusicBinding;
+- (BOOL)preconditionDisablePlayMusic;
+- (id)p_reactedBGMAsset;
+- (void)showMusicPickerViewController;
+- (void)dismissMusicPanelWithClip:(BOOL)a0;
+- (void)setupMusicPickerCreationBiz;
+- (void)doSelectMusic:(id)a0 error:(id)a1;
+- (void)doDeselectMusic:(id)a0 autoPlay:(BOOL)a1;
+- (void)repoMusicDidChange;
+- (void)p_deselectMusic;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setup;
+- (id)volumeView;
+- (void)showMusicPicker;
+
+@end

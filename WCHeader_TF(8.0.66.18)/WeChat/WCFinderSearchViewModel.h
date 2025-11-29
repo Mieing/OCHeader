@@ -1,0 +1,70 @@
+@class WCFinderBaseCgi, NSString, NSArray, WCFinderSearchItemReportQueue, FinderSearchSecurityTips;
+@protocol WCFinderSearchViewModelDelegate;
+
+@interface WCFinderSearchViewModel : NSObject <WCFinderContactExt, WCFinderFeedPickerPreviewListViewModelProtocol>
+
+@property (retain, nonatomic) WCFinderBaseCgi *searchCGI;
+@property (retain, nonatomic) NSString *latestQueryText;
+@property (nonatomic) unsigned long long refreshTime;
+@property (nonatomic) unsigned long long searchSourceType;
+@property (retain, nonatomic) NSArray *displaySections;
+@property (retain, nonatomic) WCFinderSearchItemReportQueue *itemReportQueue;
+@property (nonatomic) BOOL alreadyInputInputText;
+@property (weak, nonatomic) id<WCFinderSearchViewModelDelegate> delegate;
+@property (copy, nonatomic) NSString *searchSessionid;
+@property (nonatomic) BOOL notShowSectionHeader;
+@property (readonly, nonatomic) FinderSearchSecurityTips *securityTips;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)resetDatas;
+- (BOOL)isRepetSearch:(id)a0;
+- (void)updateSearchSourceType:(unsigned long long)a0;
+- (void)queryContactWith:(id)a0;
+- (void)queryContactWith:(id)a0 sessionBuf:(id)a1 scene:(unsigned long long)a2;
+- (void)onQueryNextPageDataItem;
+- (void)onQueryNextPageDataItem:(int)a0;
+- (void)_queryNextPageContact:(int)a0;
+- (void)_queryNextPageFeed:(int)a0;
+- (void)_afterQueryNextPageFeedAppendDatas:(id)a0 toTab:(id)a1;
+- (void)changeSelctedFeedTab:(id)a0;
+- (id)selectedTab;
+- (id)latestQueryString;
+- (BOOL)isNoMoreData;
+- (id)generateSearchContactViewModel;
+- (id)generateSearchlistViewModel;
+- (id)generateSearchListViewModelWithHotWord:(id)a0 hotWordList:(id)a1 lastBuffer:(id)a2;
+- (void)resetSearchStatus;
+- (long long)dataItemSection;
+- (BOOL)hasSearchContent;
+- (unsigned long long)searchNumsOfSection;
+- (unsigned long long)searchRowNumsWithSection:(unsigned long long)a0;
+- (BOOL)isSearchInfoCountGreaterThanMax;
+- (BOOL)isSearchInfoSection:(unsigned long long)a0;
+- (BOOL)isSearchDataItemSection:(unsigned long long)a0;
+- (BOOL)isSearchFeedItemEmpty;
+- (id)searchInfoAtIndexPath:(id)a0;
+- (id)sectionForType:(long long)a0;
+- (id)searchDataItemAtIndexPath:(id)a0;
+- (id)getCustomUdfKvJsonStr;
+- (void)reportSearchActionInfo:(id)a0 isClickActionType:(BOOL)a1;
+- (void)recordResultDisplay:(id)a0;
+- (void)reportItemExposeInfo;
+- (BOOL)deleteAllSearchRecord;
+- (BOOL)deleteSearchRecord:(id)a0;
+- (void)onFinderContactFollowStatusUpdate:(id)a0;
+- (id)contentVMOfSearchItem:(id)a0;
+- (id)contentVMAtIndex:(unsigned long long)a0;
+- (id)contentVMOfTid:(id)a0;
+- (unsigned long long)dataCount;
+- (long long)indexOfTid:(id)a0;
+- (BOOL)hasMoreData;
+- (void)loadNextPageData;
+- (void)report22878DataWithFeedID:(id)a0 feedPos:(long long)a1 isClickAction:(BOOL)a2 isVideoFeed:(BOOL)a3;
+- (void)reportHasInputSearchText;
+- (void).cxx_destruct;
+
+@end

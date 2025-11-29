@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicAdventureRoot : GPBRootObject
+
+@end

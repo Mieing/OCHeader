@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicEcologyMessageRoot : GPBRootObject
+
+@end

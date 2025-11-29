@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveVsSwitchControlMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int switch_p;
+@property (nonatomic) BOOL on;
+@property (copy, nonatomic) NSString *displayText;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

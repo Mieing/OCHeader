@@ -1,0 +1,77 @@
+@class NSNumber, AWECollectDiversionModel, AWEMusicDSPEventModel, AWEMusicCollectionActivitySectionModel, AWEMusicStreamingQueueHandler, NSMutableArray, NSString, AWEMusicCollectionSongSectionViewModel, AWEMusicPlayerQueue, NSMutableSet, AWEMiniLunaPlaylistPagingFetcher, NSArray, AWEUserModel, AWEMusicCollectionPlaylistSectionViewModel, AWEMusicCollectionLunaBannerSectionViewModel;
+@protocol AWEMusicCollectionVCViewModelDelegate;
+
+@interface AWEMusicCollectionVCViewModel : NSObject <AWEMusicStreamingQueueDelegate, AWEMusicStreamingQueueHandlerDelegate, AWEMusicDispatchCollectionProtocol, AWEMusicDispatchPlaylistProtocol, AWEMusicCollectionSongCellModelDelegate>
+
+@property (retain, nonatomic) NSArray *sectionViewModelArray;
+@property (retain, nonatomic) AWEMusicCollectionSongSectionViewModel *songSectionModel;
+@property (retain, nonatomic) AWEMusicCollectionSongSectionViewModel *recommendSectionModel;
+@property (retain, nonatomic) AWEMusicCollectionSongSectionViewModel *emptySectionModel;
+@property (retain, nonatomic) AWEMusicCollectionPlaylistSectionViewModel *playlistSectionModel;
+@property (retain, nonatomic) AWEMusicCollectionActivitySectionModel *activitySectionModel;
+@property (retain, nonatomic) AWEMusicCollectionLunaBannerSectionViewModel *lunaBannerSectionModel;
+@property (nonatomic) BOOL isCurrentUser;
+@property (retain, nonatomic) AWEMusicPlayerQueue *queue;
+@property (retain, nonatomic) NSNumber *cursor;
+@property (nonatomic) BOOL hasMoreSong;
+@property (nonatomic) long long totalCount;
+@property (nonatomic) long long requestCount;
+@property (readonly, nonatomic) AWEMusicStreamingQueueHandler *queueHandler;
+@property (copy, nonatomic) NSString *currentPlayMusicUniqueID;
+@property (nonatomic) long long currentPlayStatus;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) NSMutableSet *reportRecommendSongEventRecordSet;
+@property (retain, nonatomic) AWEUserModel *userModel;
+@property (retain, nonatomic) NSMutableArray *recommendBackupPool;
+@property (nonatomic) long long recommendRetryCount;
+@property (nonatomic) BOOL hasShownLunaBanner;
+@property (retain, nonatomic) AWEMiniLunaPlaylistPagingFetcher *fetcher;
+@property (weak, nonatomic) id<AWEMusicCollectionVCViewModelDelegate> delegate;
+@property (nonatomic) BOOL refreshFooterHidden;
+@property (copy, nonatomic) NSString *secUserID;
+@property (copy, nonatomic) NSString *userName;
+@property (retain, nonatomic) AWECollectDiversionModel *collectDiversionInfo;
+@property (retain, nonatomic) AWEMusicDSPEventModel *eventModel;
+@property (nonatomic) BOOL isMiniLuna;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)p_refreshData;
+- (BOOL)hasMoreOfScene:(id)a0;
+- (void)loadMoreScene:(id)a0 responseBlock:(id /* block */)a1 completion:(id /* block */)a2;
+- (BOOL)needRecordLoopMode:(id)a0;
+- (id)titleForPlayerOfQueueId:(id)a0;
+- (id)subTitleForPlayerOfQueueId:(id)a0;
+- (void)playlistModelChangedWithType:(unsigned long long)a0 changeModels:(id)a1 from:(id)a2;
+- (void)deletePlaylist:(id)a0 completion:(id /* block */)a1;
+- (void)p_trackLunaBannerDidClicked;
+- (void)p_trackLunaBannerShown;
+- (void)modelCollectionTypeChanged:(id)a0;
+- (void)songDidShow:(id)a0;
+- (BOOL)changeCollectTypeEvent:(id)a0 completion:(id /* block */)a1;
+- (id)p_makePlaylistSectionViewModel;
+- (void)firstLoadFinish:(id)a0 completion:(id /* block */)a1;
+- (void)p_requestPlaylist:(id /* block */)a0;
+- (id)p_makeSongSectionViewModelWithTitle:(id)a0;
+- (void)loadMoreSong:(id /* block */)a0;
+- (id)recommendQueueName;
+- (void)checkNeedAppendRecommendMusic;
+- (void)p_refreshCellPlayStatus:(id)a0;
+- (id)p_collectTipWithType:(unsigned long long)a0 error:(id)a1;
+- (void)p_updateLunaBannerTrackParams;
+- (BOOL)p_canShowLunaBanner;
+- (id)p_makeLunaBannerSectionViewModel;
+- (id)p_makeActivitySectionViewModel;
+- (void)loadMoreRecommendMusic;
+- (void)requestPlaylistAndSong:(id /* block */)a0;
+- (long long)indexOfPlaylist:(id)a0;
+- (void)tableViewDidSelectCellModel:(id)a0 atIndexPath:(id)a1;
+- (void)updateCurrentPlayMusicModelUniqueID:(id)a0 playStatus:(long long)a1;
+- (id)filterPlayFeedViewModels:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithUserModel:(id)a0;
+- (long long)loadCount;
+
+@end

@@ -1,0 +1,18 @@
+@class NSString, AWESearchMusicRecommendedVideosModel;
+@protocol ACCSearchMusicRecommendedVideosModelProtocol;
+
+@interface AWESearchMusicFinalModel : AWESearchMusicModel <AWEStudioSearchMusicFinalModelProtocol>
+
+@property (retain, nonatomic) id<ACCSearchMusicRecommendedVideosModelProtocol> recommedVideos;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWESearchMusicRecommendedVideosModel *recommedVideos;
+
++ (id)recommedVideosJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

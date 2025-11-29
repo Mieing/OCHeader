@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicInteractActingRoot : GPBRootObject
+
+@end

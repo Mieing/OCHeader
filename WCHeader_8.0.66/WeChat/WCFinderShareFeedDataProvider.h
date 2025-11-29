@@ -1,0 +1,73 @@
+@class WCFinderShareSpanState, JsApiSourceInfo, FinderRelatedRecommendTips, NSMutableArray, FinderObjectThankInfo, NSString, WCFinderPushFeedViewProductParams, WCFinderShareEntranceMessageInfo, WCFinderTaskQueue, NSArray, NSData, WCFinderFeedArray, WCFinderGetRelatedListParams;
+@protocol WCFinderShareFeedDataProviderDelegate;
+
+@interface WCFinderShareFeedDataProvider : NSObject <WCFinderFeedArrayDelegate>
+
+@property (retain, nonatomic) WCFinderTaskQueue *taskQueue;
+@property (retain, nonatomic) WCFinderFeedArray *feedArray;
+@property (retain, nonatomic) WCFinderGetRelatedListParams *params;
+@property (retain, nonatomic) WCFinderPushFeedViewProductParams *productInfo;
+@property (retain, nonatomic) WCFinderShareEntranceMessageInfo *entranceMessageInfo;
+@property (retain, nonatomic) JsApiSourceInfo *jsApiSourceInfo;
+@property (retain, nonatomic) NSData *lastBuff;
+@property (retain, nonatomic) NSString *enterTid;
+@property (nonatomic) struct WCFinderShareDataState { long long flag; WCFinderShareSpanState *span; } flag;
+@property (retain, nonatomic) NSMutableArray *topBackupFeedArray;
+@property (retain, nonatomic) NSMutableArray *bottomBackupFeedArray;
+@property (nonatomic) long long topBackupFeedInsertCount;
+@property (nonatomic) long long bottomBackupFeedAppendCount;
+@property (retain, nonatomic) NSMutableArray *jumpFeedArray;
+@property (copy, nonatomic) NSArray *needCollectionDataItemList;
+@property (nonatomic) BOOL hasRequestPlaceholderDataItems;
+@property (nonatomic) BOOL appendingPlaceholderDataItems;
+@property (copy, nonatomic) NSData *debugMessage;
+@property (retain, nonatomic) NSMutableArray *waitFirstPageBlocks;
+@property (weak, nonatomic) id<WCFinderShareFeedDataProviderDelegate> delegate;
+@property (nonatomic) BOOL onlyOneFeed;
+@property (nonatomic) BOOL allowTopPull;
+@property (retain, nonatomic) FinderRelatedRecommendTips *relatedRecommendTips;
+@property (nonatomic) BOOL finderEntryCardStyleSwitch;
+@property (retain, nonatomic) FinderObjectThankInfo *thankInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithParams:(id)a0;
+- (void)ensureFirstPageLoaded:(id /* block */)a0;
+- (void)_onFirstPageLoadFinish:(BOOL)a0;
+- (void)requestCacheData;
+- (void)requestFirstPage:(id /* block */)a0;
+- (BOOL)ignoreRequestGetRelative;
+- (struct WCFinderShareDataState { long long x0; id x1; })state;
+- (struct WCFinderShareDataState { long long x0; id x1; } *)stateRef;
+- (void)requestNextPage:(id /* block */)a0;
+- (void)requestPrePage:(id /* block */)a0;
+- (void)requestPlaceholderData;
+- (void)splitBackupFeedArray:(id)a0;
+- (id)sliceDataArray:(id)a0 mergeType:(int)a1;
+- (void)insertTopBackupFeed;
+- (void)appendBottomBackupFeed;
+- (void)collectionUnUsedPlaceholderObjects;
+- (id)firstDataItem;
+- (id)createDetailTask:(BOOL)a0 complete:(id /* block */)a1;
+- (id)createCommentDetailTask:(BOOL)a0 complete:(id /* block */)a1;
+- (id)createEncryptCommentDetailTask:(BOOL)a0 complete:(id /* block */)a1;
+- (void)_onDetailCGIBack:(id)a0 isFirstDataItemLoading:(BOOL)a1;
+- (id)createNextRelativeTask:(id /* block */)a0;
+- (id)createPreRelativeTask:(id /* block */)a0;
+- (void)appendDataItem:(id)a0 isFirstPage:(BOOL)a1 isBottom:(BOOL)a2 resp:(id)a3;
+- (BOOL)feedArray:(id)a0 ignoreFinderStreamCard:(id)a1;
+- (void)onFeedArray:(id)a0 insertContentVMS:(id)a1 removeContentVMS:(id)a2;
+- (BOOL)recommendTipsIsValid;
+- (void)deleteFeedWithIds:(id)a0;
+- (void)insertFeeds:(id)a0 before:(id)a1 cleanBottom:(BOOL)a2;
+- (void)_onCGIBackError:(int)a0 msg:(id)a1;
+- (id)parseError:(int)a0 msg:(id)a1;
+- (void)deadlyErrorCleanDatas:(BOOL)a0;
+- (void)updateLocalDataItem:(id /* block */)a0;
+- (id)forkProviderWithFeed:(id)a0 byPassInfo:(id)a1 commentScene:(int)a2;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

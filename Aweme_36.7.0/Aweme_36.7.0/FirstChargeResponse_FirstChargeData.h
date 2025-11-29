@@ -1,0 +1,15 @@
+@class FirstChargeResponse_FirstChargeExtra, NSMutableArray;
+
+@interface FirstChargeResponse_FirstChargeData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isFirstCharge;
+@property (retain, nonatomic) NSMutableArray *diamondArray;
+@property (readonly, nonatomic) unsigned long long diamondArray_Count;
+@property (retain, nonatomic) FirstChargeResponse_FirstChargeExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+@property (retain, nonatomic) NSMutableArray *firstChargePackageArray;
+@property (readonly, nonatomic) unsigned long long firstChargePackageArray_Count;
+
++ (id)descriptor;
+
+@end

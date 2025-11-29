@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface IESECUpdatedGroupInfo : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *avatarListArray;
+@property (readonly, nonatomic) unsigned long long avatarListArray_Count;
+@property (nonatomic) long long joined;
+@property (nonatomic) long long groupSize;
+@property (nonatomic) long long persent;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class GroupInviteResponse_ResponseData;
+
+@interface GroupInviteResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GroupInviteResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

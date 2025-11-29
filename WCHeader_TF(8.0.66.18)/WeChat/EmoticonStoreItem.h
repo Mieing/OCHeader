@@ -1,0 +1,87 @@
+@class EmotionStatisticsInfo, NSString, NSArray, PackActivityInfo, PersonalDesigner, EmotionLinkInfo, NSMutableArray;
+
+@interface EmoticonStoreItem : WXPBGeneratedMessage
+
+@property (retain, nonatomic) NSString *productID;
+@property (readonly, nonatomic) NSArray *previewEmojiInfos;
+@property (retain, nonatomic) NSString *productId;
+@property (retain, nonatomic) NSString *iconUrl;
+@property (retain, nonatomic) NSString *packName;
+@property (retain, nonatomic) NSString *packDesc;
+@property (nonatomic) unsigned int packType;
+@property (nonatomic) unsigned int packFlag;
+@property (retain, nonatomic) NSString *coverUrl;
+@property (nonatomic) unsigned int packExpire;
+@property (retain, nonatomic) NSString *packCopyright;
+@property (nonatomic) unsigned int boughtTime;
+@property (retain, nonatomic) NSString *panelUrl;
+@property (retain, nonatomic) NSString *introduce;
+@property (retain, nonatomic) NSString *tagUri;
+@property (retain, nonatomic) NSString *exptDesc;
+@property (nonatomic) unsigned int packWeCoinNum;
+@property (retain, nonatomic) NSString *designerIpsetKey;
+@property (nonatomic) int version;
+@property (retain, nonatomic) NSString *shareDesc;
+@property (retain, nonatomic) NSString *oldRedirectUrl;
+@property (retain, nonatomic) NSString *packActivity;
+@property (retain, nonatomic) PackActivityInfo *packActivityInfo;
+@property (retain, nonatomic) PersonalDesigner *personalDesigner;
+@property (retain, nonatomic) EmotionLinkInfo *summaryLinkInfo;
+@property (retain, nonatomic) EmotionLinkInfo *detailLinkInfo;
+@property (nonatomic) unsigned int thumbExtCount;
+@property (retain, nonatomic) NSMutableArray *detailPackEmojiList;
+@property (retain, nonatomic) NSMutableArray *summaryPackEmojiList;
+@property (retain, nonatomic) NSString *packPrice;
+@property (retain, nonatomic) NSString *priceNum;
+@property (retain, nonatomic) NSString *packFileId;
+@property (retain, nonatomic) NSString *cdnDownloadClientId;
+@property (retain, nonatomic) NSString *cdnDownloadPath;
+@property (retain, nonatomic) NSString *packFileKey;
+@property (nonatomic) unsigned long long packFileSize;
+@property (nonatomic) BOOL isAutomaticDownload;
+@property (nonatomic) BOOL hasReddot;
+@property (retain, nonatomic) NSString *reqId;
+@property (retain, nonatomic) EmotionStatisticsInfo *staticsInfo;
+
++ (void)megerStoreItem:(id)a0 FromEmotionSummary:(id)a1;
++ (id)StoreItemFromEmotionSummary:(id)a0;
++ (id)StoreItemFromEmotionDetail:(id)a0;
++ (id)StoreItemFromLegacyItem:(id)a0;
++ (void)megerWithOutProductForceUpdateTagAndIntroduce:(id)a0 item:(id)a1;
++ (void)megerWithOutProduct:(id)a0 item:(id)a1 isFromDetail:(BOOL)a2;
++ (void)megerWithOutProduct:(id)a0 item:(id)a1;
++ (BOOL)IsPrivilegeEmoticonByPid:(id)a0;
++ (id)loadItemFromCache:(id)a0;
++ (void)initialize;
+
+- (id)detailFromItem;
+- (BOOL)isValid;
+- (BOOL)canBuy;
+- (BOOL)isWeCoinProduct;
+- (BOOL)canDownload;
+- (BOOL)isSameAs:(id)a0;
+- (id)GetIconUrl;
+- (id)GetName;
+- (id)priceStringForProduct:(id)a0;
+- (id)GetPrice;
+- (id)GetCoverUrl;
+- (id)GetDesc;
+- (id)description;
+- (BOOL)IsFree;
+- (BOOL)IsFreeLimited;
+- (id)GetBoughtTimeString;
+- (BOOL)hasDetail;
+- (BOOL)isExpired;
+- (BOOL)hasPaid;
+- (BOOL)isCanShare;
+- (BOOL)isCanReport;
+- (BOOL)isCanReward;
+- (BOOL)isEmptyItem;
+- (unsigned long long)linkStatusForReport:(id)a0;
+- (BOOL)needCheckUpdateAfterInteractionFor:(id)a0;
+- (id)GetServerPrice;
+- (BOOL)IsStaticPicture;
+- (void)saveItemToCache;
+- (void)removeMemoryVariables;
+
+@end

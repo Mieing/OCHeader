@@ -1,0 +1,13 @@
+@class NSString, HTSLiveUser;
+
+@interface NewGiftActivityRankResponse_RankItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long score;
+@property (nonatomic) long long rank;
+@property (copy, nonatomic) NSString *gapDescription;
+
++ (id)descriptor;
+
+@end

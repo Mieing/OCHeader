@@ -1,0 +1,3 @@
+@interface IESLivePaidUtilities : NSObject
+
+@end

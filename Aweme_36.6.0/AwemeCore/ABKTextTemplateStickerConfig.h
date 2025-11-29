@@ -1,0 +1,3 @@
+@interface ABKTextTemplateStickerConfig : ABKTextStickerConfig
+
+@end

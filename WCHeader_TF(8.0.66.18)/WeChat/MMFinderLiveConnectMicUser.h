@@ -1,0 +1,84 @@
+@class FinderLiveContact, NSString, MMFinderLiveAudioModeBackgroundConfiguration, NSData, NSArray, MMFinderLiveFreeMicLocalInfo, WCFinderContact;
+
+@interface MMFinderLiveConnectMicUser : MMFinderLiveConnectMicSeatBaseInfo <NSCopying>
+
+@property (retain, nonatomic) WCFinderContact *connectMicFinderContact;
+@property (nonatomic) BOOL useVideo;
+@property (nonatomic) BOOL initialUseVideo;
+@property (nonatomic) unsigned long long userState;
+@property (nonatomic) BOOL isConnecting;
+@property (nonatomic) BOOL isConnectWaiting;
+@property (nonatomic) unsigned long long localCloseState;
+@property (nonatomic) unsigned long long tryCloseCount;
+@property (copy, nonatomic) NSString *sdkUserId;
+@property (copy, nonatomic) NSString *sessionId;
+@property (nonatomic) unsigned long long sequence;
+@property (nonatomic) BOOL isSelf;
+@property (nonatomic) unsigned long long expiredTime;
+@property (nonatomic) unsigned int micUserAttrFlag;
+@property (nonatomic) BOOL isAnchor;
+@property (nonatomic) BOOL isCurrentAnchor;
+@property (nonatomic) unsigned int sdkRoomId;
+@property (copy, nonatomic) NSString *sdkPkSign;
+@property (copy, nonatomic) NSString *sdkNewPkSign;
+@property (nonatomic) BOOL hasConnectedOtherRoom;
+@property (copy, nonatomic) NSString *coverImageUrlString;
+@property (nonatomic) BOOL isAudioMode;
+@property (retain, nonatomic) MMFinderLiveAudioModeBackgroundConfiguration *audioModeBackgroundConfiguration;
+@property (nonatomic) BOOL isAppliedBySelf;
+@property (copy, nonatomic) NSString *anchorApplyId;
+@property (nonatomic) BOOL isTalking;
+@property (nonatomic) int talkingCount;
+@property (nonatomic) BOOL isRemoteClosed;
+@property (nonatomic) unsigned long long randomMicState;
+@property (retain, nonatomic) NSData *randomMicBuffer;
+@property (nonatomic) unsigned long long randomMicApplyPos;
+@property (retain, nonatomic) NSArray *badgeInfos;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } normalizedUserFrame;
+@property (nonatomic) unsigned long long zOrder;
+@property (nonatomic) unsigned long long focusState;
+@property (nonatomic) unsigned long long uiType;
+@property (copy, nonatomic) NSString *anchorSdkUserId;
+@property (retain, nonatomic) FinderLiveContact *finderLiveContact;
+@property (nonatomic) BOOL isMicTalking;
+@property (retain, nonatomic) MMFinderLiveFreeMicLocalInfo *freeMicLocalInfo;
+@property (copy, nonatomic) NSString *selfDisplayName;
+@property (nonatomic) BOOL isMicMutedByAnchor;
+@property (nonatomic) BOOL isMicMutedBySelf;
+@property (nonatomic) BOOL isLiveRoomAnchorMicMutedByAnchor;
+@property (nonatomic) BOOL isCurrentKtvSinger;
+@property (nonatomic) unsigned long long sourceType;
+@property (nonatomic) unsigned long long liveHeatValue;
+@property (nonatomic) unsigned long long audienceApplySearId;
+@property (nonatomic) BOOL isAnchorPkChangeLayoutEnabled;
+@property (nonatomic) unsigned long long paidMicLastDurationInSeconds;
+@property (nonatomic) unsigned long long estimatedMicEndTimeOnAnchorSideInSeconds;
+@property (retain, nonatomic) NSData *sceneBuffer;
+@property (nonatomic) unsigned long long recommendType;
+@property (copy, nonatomic) NSString *boardKey;
+@property (nonatomic) unsigned int boardType;
+@property (readonly, nonatomic) BOOL needInvite;
+@property (readonly, nonatomic) BOOL isNeedInviteAudience;
+@property (readonly, nonatomic) BOOL isFinderAuthor;
+@property (readonly, nonatomic) BOOL hasAnchorAudioModeBackground;
+@property (nonatomic) unsigned int applyScene;
+@property (retain, nonatomic) NSString *candidateRequestId;
+
++ (id)connectMicUserFromAnchorContact:(id)a0;
++ (id)connectMicUserFromContact:(id)a0;
++ (id)connectMicUserFromContact:(id)a0 finderLiveContact:(id)a1;
++ (id)currentAnchorUserFromContact:(id)a0;
++ (id)connectMicUserFromFinderObject:(id)a0;
++ (id)genMicUserWithSdkUserId:(id)a0 andContact:(id)a1;
+
+- (BOOL)isMicAnonymousUser;
+- (id)getLocationName;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (BOOL)isSelfUser;
+- (void)updateBadgeInfo:(id)a0;
+- (void)resetStatus;
+- (void)resetAllStatusValue:(BOOL)a0;
+- (void)updateInfoFromServerWithOtherUserInfo:(id)a0;
+- (void).cxx_destruct;
+
+@end

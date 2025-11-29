@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface ToolBarPermissionResponse_ToolBarComponentPermissionData : IESLivePBBaseMessage
+
+@property (nonatomic) int groupId;
+@property (nonatomic) int componentType;
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDLynxContextManager : NSObject
+
+@end

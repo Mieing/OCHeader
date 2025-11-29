@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface PublicPaidLiveTicketResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *mySellingTicketsArray;
+@property (readonly, nonatomic) unsigned long long mySellingTicketsArray_Count;
+@property (retain, nonatomic) NSMutableArray *moreSellingTicketsArray;
+@property (readonly, nonatomic) unsigned long long moreSellingTicketsArray_Count;
+@property (retain, nonatomic) NSMutableArray *searchedSellingTicketsArray;
+@property (readonly, nonatomic) unsigned long long searchedSellingTicketsArray_Count;
+
++ (id)descriptor;
+
+@end

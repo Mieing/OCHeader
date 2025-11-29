@@ -1,0 +1,83 @@
+@class NSString, NSArray, AWEIMImageLivePhotoModel, AWEIMImageIronManAnchorModel, AWEIMShareGroupChatScreenShootModel, AWEURLModel;
+
+@interface AWEIMEncryptedImageContent : AWEIMMessageContent <NSCopying> {
+    double _latitude;
+    double _longitude;
+    NSString *_poiAddress;
+    NSString *_poiName;
+    NSString *_poiID;
+    NSString *_awemePoiID;
+}
+
+@property (copy, nonatomic) NSString *resObjectID;
+@property (copy, nonatomic) NSString *resSecretKey;
+@property (copy, nonatomic) NSString *resMd5;
+@property (retain, nonatomic) AWEIMImageLivePhotoModel *livePhotoVideoModel;
+@property (nonatomic) BOOL isLongOrWidePic;
+@property (copy, nonatomic) NSArray *resOriginUrlList;
+@property (copy, nonatomic) NSArray *resThumbUrlList;
+@property (copy, nonatomic) NSArray *resMediumUrlList;
+@property (copy, nonatomic) NSArray *resLargeUrlList;
+@property (copy, nonatomic) NSArray *resLongUrlList;
+@property (copy, nonatomic) NSArray *resStillUrlList;
+@property (nonatomic) long long resFileSize;
+@property (nonatomic) long long coverWidth;
+@property (nonatomic) long long coverHeight;
+@property (nonatomic) struct CGSize { double width; double height; } originCoverSize;
+@property (nonatomic) double compressDuration;
+@property (readonly, nonatomic) BOOL isLivePhoto;
+@property (copy, nonatomic) NSString *checkPic;
+@property (copy, nonatomic) NSString *inlinePic;
+@property (copy, nonatomic) NSString *inlineSign;
+@property (nonatomic) long long duetType;
+@property (nonatomic) long long duetLayout;
+@property (nonatomic) long long duetRole;
+@property (nonatomic) long long effectType;
+@property (nonatomic) long long validRange;
+@property (copy, nonatomic) NSString *md5;
+@property (nonatomic) BOOL fromGallery;
+@property (nonatomic) BOOL useOriginImage;
+@property (nonatomic) long long postType;
+@property (copy, nonatomic) NSArray *checkTexts;
+@property (nonatomic) BOOL massMsg;
+@property (nonatomic) long long aweType;
+@property (readonly, nonatomic) AWEURLModel *resourceUrl;
+@property (readonly, nonatomic) AWEURLModel *mediumResourceUrl;
+@property (readonly, nonatomic) AWEURLModel *largeResourceUrl;
+@property (readonly, nonatomic) AWEURLModel *posterResourceUrl;
+@property (readonly, nonatomic) AWEURLModel *longResourceUrl;
+@property (copy, nonatomic) NSString *sourceTitle;
+@property (retain, nonatomic) AWEURLModel *sourceIcon;
+@property (copy, nonatomic) NSString *packageName;
+@property (copy, nonatomic) NSString *clientKey;
+@property (copy, nonatomic) NSString *itemId;
+@property (nonatomic) long long exchangeRequestSeverMessageId;
+@property (nonatomic) long long followBatchID;
+@property (readonly, nonatomic) BOOL isLongPicture;
+@property (nonatomic) long long creatType;
+@property (nonatomic) double createTimestamp;
+@property (nonatomic) BOOL isAIGC;
+@property (retain, nonatomic) AWEIMImageIronManAnchorModel *ironManAnchor;
+@property (retain, nonatomic) AWEIMShareGroupChatScreenShootModel *groupChatScreenModel;
+
+- (id)poiID;
+- (id)poiName;
+- (id)poiAddress;
+- (void)setPoiAddress:(id)a0;
+- (void)setPoiName:(id)a0;
+- (void)setPoiID:(id)a0;
+- (void)setAwemePoiID:(id)a0;
+- (id)awemePoiID;
+- (void)updateMessageContentWithAttachmentMD5:(id)a0 fileType:(int)a1;
+- (void)updateMessageContentWithUploadedFileResponse:(id)a0 fileType:(int)a1;
+- (void)updateMessageContentWithUploadedFileSize:(long long)a0 fileType:(int)a1;
+- (void).cxx_destruct;
+- (void)setLongitude:(double)a0;
+- (void)setLatitude:(double)a0;
+- (id)initWithDictionary:(id)a0;
+- (double)latitude;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (double)longitude;
+- (id)contentDictionary;
+
+@end

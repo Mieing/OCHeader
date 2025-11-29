@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLotteryUnusualInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *productName;
+@property (nonatomic) long long openTime;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface ProfitCheckRoot : GPBRootObject
+
+@end

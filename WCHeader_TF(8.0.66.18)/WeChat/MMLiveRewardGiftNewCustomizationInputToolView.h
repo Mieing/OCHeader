@@ -1,0 +1,82 @@
+@class UIView, NSString, NSRegularExpression, UIImageView, UITextField, NSMutableArray, MMUILabel, MMUIButton, MMFinderLiveNewCustomGiftText;
+
+@interface MMLiveRewardGiftNewCustomizationInputToolView : UIView <UITextFieldDelegate>
+
+@property (retain, nonatomic) MMFinderLiveNewCustomGiftText *giftCustomText;
+@property (retain, nonatomic) UIView *pubbleInputView;
+@property (retain, nonatomic) UITextField *textField;
+@property (retain, nonatomic) MMUIButton *clearBtn;
+@property (retain, nonatomic) MMUIButton *doneBtn;
+@property (retain, nonatomic) UIImageView *beanIconView;
+@property (retain, nonatomic) MMUILabel *beanCntLabel;
+@property (retain, nonatomic) MMUILabel *tipLabel;
+@property (retain, nonatomic) NSString *initialText;
+@property (nonatomic) BOOL isInputInValid;
+@property (retain, nonatomic) NSString *currentValidText;
+@property (readonly, nonatomic) BOOL hasInputText;
+@property (nonatomic) long long currentState;
+@property (retain, nonatomic) NSRegularExpression *nonAlphanumericRegex;
+@property (retain, nonatomic) NSMutableArray *inputToolStateListenerList;
+@property (retain, nonatomic) MMUILabel *beanIncreaseLabel;
+@property (copy, nonatomic) id /* block */ shouldBeginEditingCallback;
+@property (copy, nonatomic) id /* block */ inputTextChangedCallback;
+@property (readonly, nonatomic) BOOL isEditing;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)preferHeight;
+
+- (id)initWithGiftCustomText:(id)a0;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)layoutDoneBtn;
+- (void)updateDoneButtonHidden;
+- (void)updateDoneButtonEnable;
+- (BOOL)isDoneButtonEnable;
+- (void)layoutPubbleInputView;
+- (void)updatePubbleInputViewFrame;
+- (void)layoutTextField;
+- (void)updateTextFieldFrame;
+- (void)layoutClearBtn;
+- (void)updateClearBtnOrigin;
+- (void)updateClearBtnHidden;
+- (void)layoutBeanWidgets;
+- (void)layoutBeanIncreaseLabel;
+- (void)layoutBeanIconView;
+- (void)layoutBeanCntLabel;
+- (void)updateBeanWidgetsOrigin;
+- (void)updateBeanWidgetsHidden;
+- (void)layoutTipLabel;
+- (void)updateTipLabelHidden;
+- (void)updateTipLableTextColor;
+- (BOOL)textFieldShouldReturn:(id)a0;
+- (BOOL)textFieldShouldBeginEditing:(id)a0;
+- (BOOL)textFieldShouldEndEditing:(id)a0;
+- (void)textFieldDidEndEditing:(id)a0;
+- (BOOL)textField:(id)a0 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementString:(id)a2;
+- (void)textFieldDidChangeContent:(id)a0;
+- (BOOL)checkHasMarkedTextRange:(id)a0;
+- (void)onTextFieldTextChanged;
+- (void)clearText;
+- (void)onDoneButtonClick;
+- (void)endEditing;
+- (void)beginEditing;
+- (void)setInputText:(id)a0;
+- (void)addInputToolStateListener:(id /* block */)a0;
+- (void)removeInputToolStateListener:(id /* block */)a0;
+- (void)updateTextFieldText:(id)a0;
+- (void)updateCurrentState:(long long)a0;
+- (void)synchronizeAllListenersWithPreState:(long long)a0 currState:(long long)a1;
+- (void)checkTextFieldTextOverLengthLimit;
+- (unsigned int)textFieldWordLimit;
+- (void)checkTextFieldTextValid;
+- (BOOL)isTextValid:(id)a0;
+- (void)updateValidText;
+- (id)getValidTextFromInitText:(id)a0;
+- (BOOL)isCharacterValid:(id)a0;
+- (id)currentText;
+- (void).cxx_destruct;
+
+@end

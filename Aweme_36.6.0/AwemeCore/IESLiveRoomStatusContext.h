@@ -1,0 +1,3 @@
+@interface IESLiveRoomStatusContext : IESLivePrivacyContext
+
+@end

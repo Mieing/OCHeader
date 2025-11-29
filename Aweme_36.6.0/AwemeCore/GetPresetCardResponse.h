@@ -1,0 +1,10 @@
+@class GetPresetCardResponse_Data;
+
+@interface GetPresetCardResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetPresetCardResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

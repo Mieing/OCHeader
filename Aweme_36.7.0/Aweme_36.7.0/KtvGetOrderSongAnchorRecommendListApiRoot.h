@@ -1,0 +1,3 @@
+@interface KtvGetOrderSongAnchorRecommendListApiRoot : GPBRootObject
+
+@end

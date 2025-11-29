@@ -1,0 +1,78 @@
+@class UIView, AFDMomentCameraContext, NSString, NSArray, ACCServiceAssembler, CECMomentCameraSwitchTabConfig, NSMutableArray, AFDMomentCameraViewModelFactory;
+@protocol ACCServiceProvideRecipe, AFDMomentCameraFlowService, VERecorderPublicProtocol, AFDCameraViewLayoutProtocol, AFDMomentCameraViewControllerDelegate, AFDMomentCameraPerformanceTrackService, ACCCreationBusinessConfiguration, AFDMomentCameraService, AFDMCEditService, IESServiceProvider;
+
+@interface AFDMomentCameraViewController : UIViewController <AFDMomentCameraFlowServiceSubscriber, AFDMomentCameraLifeCircleEvent, AFDMomentCameraBaseComponentDelegate, AFDMomentCameraBaseViewModelDelegate, AFDMomentCameraViewControllerProtocol>
+
+@property (retain, nonatomic) id<ACCCreationBusinessConfiguration> bussinessConfiguration;
+@property (retain, nonatomic) ACCServiceAssembler *serviceAssembler;
+@property (nonatomic) BOOL viewReady;
+@property (nonatomic) long long currentState;
+@property (retain, nonatomic) id<VERecorderPublicProtocol> camera;
+@property (retain, nonatomic) id<AFDCameraViewLayoutProtocol> layoutManager;
+@property (retain, nonatomic) AFDMomentCameraViewModelFactory *viewModelFactory;
+@property (retain, nonatomic) NSMutableArray *componentArray;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *preview;
+@property (nonatomic) BOOL shouldStartRecord;
+@property (retain, nonatomic) id<AFDMomentCameraService> cameraService;
+@property (retain, nonatomic) id<AFDMomentCameraFlowService> flowService;
+@property (retain, nonatomic) id<AFDMomentCameraPerformanceTrackService> trackService;
+@property (weak, nonatomic) id<AFDMCEditService> editService;
+@property (weak, nonatomic) id<AFDMomentCameraViewControllerDelegate> delegate;
+@property (retain, nonatomic) AFDMomentCameraContext *cameraContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isLandingToPublisher;
+@property (readonly, nonatomic) BOOL navigateUserInteractionEnabled;
+@property (copy, nonatomic) id /* block */ closeRecordBlock;
+@property (weak, nonatomic) id<IESServiceProvider> shootServiceProvider;
+@property (retain, nonatomic) id<ACCServiceProvideRecipe> serviceProvider;
+@property (retain, nonatomic) CECMomentCameraSwitchTabConfig *config;
+@property (retain, nonatomic) NSArray *externalComponent;
+@property (nonatomic) BOOL shouldDelayLoad;
+
+- (void)showPopover;
+- (void)onCameraDidStartRender:(id)a0;
+- (void)switchMomentCameraSetCamera:(id)a0;
+- (void)removeCamera;
+- (void)flowServiceDidChangeToState:(long long)a0 fromState:(long long)a1;
+- (void)dismissContainer;
+- (void)viewAppearInContainer;
+- (id)initWithBusinessConfiguration:(id)a0;
+- (void)removeBeautyEffect;
+- (id)getSecondPreview;
+- (id)getPreview;
+- (void)loadComponents;
+- (void)setMomentTrackParameters;
+- (void)p_setViewReady;
+- (void)showCloseFriendGuideOnTopWithDissmissBlock:(id /* block */)a0;
+- (void)viewDisappearInContainer;
+- (void)closeRecord;
+- (void)showCloseFriendGuide;
+- (void)showCloseFriendGuideOnTop;
+- (void)shootToMomentCamera;
+- (void)willTransitionToTraitCollection:(id)a0 withTransitionCoordinator:(id)a1;
+- (void)setupConstraints;
+- (void).cxx_destruct;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (void)encodeWithCoder:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)didUpdateFocusInContext:(id)a0 withAnimationCoordinator:(id)a1;
+- (BOOL)shouldUpdateFocusInContext:(id)a0;
+- (void)updateFocusIfNeeded;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)setNeedsFocusUpdate;
+- (void)dealloc;
+- (struct CGSize { double x0; double x1; })sizeForChildContentContainer:(id)a0 withParentContainerSize:(struct CGSize { double x0; double x1; })a1;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)traitCollectionDidChange:(id)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)a0;
+- (id)currentCamera;
+
+@end

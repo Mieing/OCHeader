@@ -1,0 +1,13 @@
+@class AWEPadPolymericChannelSlidableInnerSectionViewModel;
+
+@interface AWEPadPolymericChannelSlidableInnerSectionController : AWEPadHorizontalSectionInnerController
+
+@property (weak, nonatomic) AWEPadPolymericChannelSlidableInnerSectionViewModel *viewModel;
+
++ (Class)sectionViewModelClass;
+
+- (long long)numberOfItemsInOnLineWithCollectionViewSize:(struct CGSize { double x0; double x1; })a0;
+- (double)dynamicSpacing;
+- (double)minimumLineSpacing;
+
+@end

@@ -1,0 +1,71 @@
+@class AWEMusicCardDailyPlaylistDialogViewModel, AWEUILoadingView, AWEMusicExceptionalView, AWEMusicCardDailyPlaylistBackgroundView, UITableView, UILabel, NSDictionary, CALayer, UIView, UIButton, NSString, AWEMusicPlayEventService, AWEPlaylistInfoModel, AWEMusicCardDailyPlaylistHeaderView, AWEMusicService, LunaMainDiversionButton, YYLabel;
+@protocol AWEMiniLunaDailyPlaylistDetailViewControllerDelegate, MusicService;
+
+@interface AWEMiniLunaDailyPlaylistDetailViewController : AWEMiniLunaBaseViewController <UITableViewDelegate, UITableViewDataSource, AWEMusicExceptionalViewDelegate, AWEMusicServiceDelegate, AWEMusicLunaSKOverlayServiceTargetSceneDelegate>
+
+@property (retain, nonatomic) UIButton *lightBackBtn;
+@property (retain, nonatomic) AWEMusicCardDailyPlaylistBackgroundView *backgroundHeaderView;
+@property (retain, nonatomic) AWEMusicExceptionalView *exceptionView;
+@property (retain, nonatomic) CALayer *commentContentGradientLayer;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) AWEMusicCardDailyPlaylistHeaderView *headerView;
+@property (retain, nonatomic) UIView *bottomMaskView;
+@property (retain, nonatomic) UILabel *blockerLabel;
+@property (retain, nonatomic) UIView *bottomContainerView;
+@property (retain, nonatomic) LunaMainDiversionButton *mainBottomButton;
+@property (retain, nonatomic) UILabel *miniTitleLabel;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) AWEMusicPlayEventService *musicEventService;
+@property (retain, nonatomic) AWEMusicCardDailyPlaylistDialogViewModel *viewModel;
+@property (copy, nonatomic) NSString *currentPlayingUniqueId;
+@property (retain) YYLabel *sixEssentinalLabel;
+@property (retain, nonatomic) AWEMusicService *musicService;
+@property (retain, nonatomic) AWEPlaylistInfoModel *playlistInfo;
+@property (copy, nonatomic) NSString *playlistID;
+@property (copy, nonatomic) NSDictionary *dialogInfo;
+@property (nonatomic) BOOL isNeedResumeContextPlayer;
+@property (weak, nonatomic) id<MusicService> contextMusicService;
+@property (weak, nonatomic) id<AWEMiniLunaDailyPlaylistDetailViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)musicService:(id)a0 playStatusChanged:(long long)a1;
+- (void)musicService:(id)a0 didFinishedWithError:(id)a1;
+- (void)p_didClickMainButton;
+- (void)noNetViewDidTapTryAgain:(id)a0;
+- (void)onBackButtonClicked;
+- (void)SKOverlayWillShow;
+- (void)SKOverlayWillDismiss;
+- (id)currentSKOverlaySceneDiversionInfo;
+- (void)startLoadingData;
+- (void)p_dismissSKOverlayWithReason:(unsigned long long)a0;
+- (void)p_showSKOverlay;
+- (double)p_miniTitleMaxWidth;
+- (id)p_diversionBtnTitle;
+- (void)trackDiversionMainButtonShow;
+- (void)trackDirectToLunaClickWithClickArea:(id)a0;
+- (BOOL)p_canShowSKOverlay;
+- (void)p_prepareSixEssentialLabel;
+- (id)trackPublicParams;
+- (long long)p_availableSongAmount;
+- (id)p_makeBackButtonWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 imageName:(id)a1;
+- (id)p_makeMaskLayer;
+- (void)setUp;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupUI;
+
+@end

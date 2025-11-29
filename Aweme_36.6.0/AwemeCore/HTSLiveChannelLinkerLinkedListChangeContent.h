@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveChannelLinkerLinkedListChangeContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *channelLinkmicUsersArray;
+@property (readonly, nonatomic) unsigned long long channelLinkmicUsersArray_Count;
+@property (nonatomic) unsigned long long version;
+@property (copy, nonatomic) NSString *rtcRoomIdStr;
+
++ (id)descriptor;
+
+@end

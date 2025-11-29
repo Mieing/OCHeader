@@ -1,0 +1,87 @@
+@class UIView, NSString, AWEAwemeModel, AWEButton, UIImageView, NSDictionary, AWEDiscoverDPlayletDetailListView, AWEPlayletInfoModel;
+@protocol AWEFeedPreloadManagerProtocol;
+
+@interface AWEDiscoverDPlayletDetailViewController : UIViewController <AWERouterViewControllerProtocol, AWEPlayletDetailListViewDelegate, AWEShowMonetizeRefreshHandler, AWEModernFullscreenTransitionOuterContextProvider, AWEModernFullscreenTransitionInnerContextProvider>
+
+@property (copy, nonatomic) NSString *playletID;
+@property (retain, nonatomic) AWEPlayletInfoModel *playletModel;
+@property (retain, nonatomic) AWEDiscoverDPlayletDetailListView *detailView;
+@property (retain, nonatomic) UIView *navBackView;
+@property (retain, nonatomic) AWEButton *shareBtn;
+@property (retain, nonatomic) UIImageView *loadingImageView;
+@property (copy, nonatomic) NSString *previousPage;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) NSString *enterSource;
+@property (copy, nonatomic) NSString *fromGroupID;
+@property (copy, nonatomic) NSDictionary *logParams;
+@property (nonatomic) long long isAd;
+@property (nonatomic) long long adId;
+@property (retain, nonatomic) AWEAwemeModel *lastPlayedModel;
+@property (nonatomic) long long itemOffset;
+@property (nonatomic) BOOL itemHasScrolled;
+@property (nonatomic) BOOL enterFromSearchHElementSchema;
+@property (nonatomic) BOOL blockInnerDataCallback;
+@property (nonatomic) BOOL returnFirstBatchResponsePreload;
+@property (nonatomic) BOOL enterMixManagerView;
+@property (nonatomic) BOOL isFirstEnter;
+@property (retain, nonatomic) id<AWEFeedPreloadManagerProtocol> preloadManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPlayletDetailCommonAdapterClass;
+
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (void)aweui_emptyPagePrimaryButtonTapped:(id)a0;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (long long)modernTransitionItemOffset;
+- (BOOL)modernTransitionItemHasScrolled;
+- (id)modernTransitionContext;
+- (BOOL)disableSyncModelIndex;
+- (long long)modernInitialIndex;
+- (id)modernCurrentDisplayingItem;
+- (long long)modernUseOrigin;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (long long)modernUpdateOffsetDiffWithItem:(id)a0 initialIndex:(long long)a1 originOffset:(long long)a2;
+- (id)monetizeScene;
+- (id)monetizeDataSource;
+- (id)monetizeContentReferString;
+- (void)refresh:(id)a0 willRefreshMonetizeContentForContext:(id)a1;
+- (BOOL)needReceiveRefreshMonetizeContent;
+- (id)monetizeSceneContainer;
+- (void)configureUI;
+- (void)onShareBtnClicked:(id)a0;
+- (void)refreshDataWithCompletion:(id /* block */)a0;
+- (void)scrollViewDidShowNav:(BOOL)a0;
+- (void)handleRefreshDataNotification:(id)a0;
+- (void)configPreloadManager;
+- (void)dismissHintBubble;
+- (void)requestPlayletVideoListWithNoData:(BOOL)a0;
+- (void)scrollDetailViewToTop;
+- (id)addTapGestureForView:(id)a0 selector:(SEL)a1;
+- (id)aAWEPlayletDetailCommonAdapter;
+- (void)refreshDataWithShouldUpdateList:(BOOL)a0 completion:(id /* block */)a1;
+- (void)refreshMixAndShareButton;
+- (void)handlePaymentRefreshResultWithPlayletInfo:(id)a0 error:(id)a1;
+- (BOOL)seriesNewMixVideoEditable:(id)a0;
+- (BOOL)isShowEditButton;
+- (BOOL)isCurrentLoginUser;
+- (void)onMixMangeClicked:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (id)init;
+- (void)addObserver;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)appWillResignActive:(id)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)appDidBecomeActive:(id)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)themeDidChange;
+- (void)refreshData;
+
+@end

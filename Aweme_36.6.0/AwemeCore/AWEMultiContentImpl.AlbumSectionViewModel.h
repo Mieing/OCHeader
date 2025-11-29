@@ -1,0 +1,86 @@
+@class AWEAwemeModel, NSArray, AWEPageContext;
+@protocol AFDAlbumPlayFinishTrackTriggerProtocol, AFDRichContentPageContextProtocol;
+
+@interface AWEMultiContentImpl.AlbumSectionViewModel : AWEMultiContentImpl.RichContentBaseSectionViewModel <AFDAlbumSectionViewModelProtocol, AFDAlbumPlayFinishTrackTriggerOwner, AWEImageTextSectionViewModelProtocol> {
+    void /* unknown type, empty encoding */ firstCellBackgroundColor;
+    void /* unknown type, empty encoding */ cellHasPreparedForPlaying;
+    void /* unknown type, empty encoding */ _isPinchZoomable;
+    void /* unknown type, empty encoding */ _isPinchZooming;
+    void /* unknown type, empty encoding */ _curImageZoomInfo;
+    void /* unknown type, empty encoding */ _isCurImageZoomIdentity;
+    void /* unknown type, empty encoding */ _needMoveToCenterWhenMagnify;
+    void /* unknown type, empty encoding */ _showFullscreenBackgroundView;
+    void /* unknown type, empty encoding */ _contentMode;
+    void /* unknown type, empty encoding */ albumContentShrink;
+    void /* unknown type, empty encoding */ strongBeatInterupted;
+    void /* unknown type, empty encoding */ isWaiting;
+    void /* unknown type, empty encoding */ beginInternetSpeed;
+    void /* unknown type, empty encoding */ firstFrameDuration;
+    void /* unknown type, empty encoding */ firstFrameIndex;
+    void /* unknown type, empty encoding */ firstImageOrigin;
+    void /* unknown type, empty encoding */ hasLoadImageUris;
+    void /* unknown type, empty encoding */ isRealyDisplayed;
+    void /* unknown type, empty encoding */ musicPlay;
+    void /* unknown type, empty encoding */ imageLoadTotalDuration;
+    void /* unknown type, empty encoding */ imageLoadTotalDurationFeed;
+    void /* unknown type, empty encoding */ graphicTotalPlaytime;
+    void /* unknown type, empty encoding */ graphicImageLoadTotalPlaytime;
+    void /* unknown type, empty encoding */ longLoadImageIndexs;
+    void /* unknown type, empty encoding */ _hideSticker;
+    void /* unknown type, empty encoding */ needUpdateImageContentViewLayoutWithAnthorPostion;
+    void /* unknown type, empty encoding */ leftInteractionMinY;
+    void /* unknown type, empty encoding */ authorElementMinY;
+    void /* unknown type, empty encoding */ isPanning;
+    void /* unknown type, empty encoding */ useInternalVideoController;
+    void /* unknown type, empty encoding */ _viewedImages;
+    void /* unknown type, empty encoding */ awemeModel;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_spriteManager;
+    void /* unknown type, empty encoding */ exposedImageURI;
+    void /* unknown type, empty encoding */ graphicPlayState;
+    void /* unknown type, empty encoding */ imageContentInsets;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_imageLayoutConfigCacheDict;
+    void /* unknown type, empty encoding */ isProgressBarPressed;
+    void /* unknown type, empty encoding */ hasTrackedFirstVisibleImageLoad;
+    void /* unknown type, empty encoding */ firstVisibleImageShow;
+    void /* unknown type, empty encoding */ hasTrackedFirstImageLoad;
+    void /* unknown type, empty encoding */ playStartTimestamp;
+    void /* unknown type, empty encoding */ graphicPlayTimeFeed;
+    void /* unknown type, empty encoding */ trackGraphicPlayTimeBlock;
+    void /* unknown type, empty encoding */ trackGraphicPlayTimeFeedBlock;
+    void /* unknown type, empty encoding */ fakeImageModel;
+    void /* function */ trackNewAlbumPlayFinish;
+    void /* function */ trackPlayFinishBlock;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_pinchZoomTracker;
+}
+
+@property (nonatomic, readonly) BOOL isPaused;
+@property (nonatomic, readonly) AWEPageContext<AFDRichContentPageContextProtocol> *containerPageContext;
+@property (nonatomic) BOOL hasTrackedAlbumPlayFinish;
+@property (nonatomic) BOOL hasTrackedCaptionPicShow;
+@property (nonatomic, readonly) long long itemCount;
+@property (nonatomic, readonly) AWEAwemeModel *aweme;
+@property (nonatomic, readonly) NSArray *albumImages;
+@property (nonatomic, copy) id /* block */ trackNewAlbumPlayFinish;
+@property (nonatomic, copy) id /* block */ trackPlayFinishBlock;
+@property (nonatomic, retain) id<AFDAlbumPlayFinishTrackTriggerProtocol> finishTrackTrigger;
+
+- (void)trackPinchZoomWithZoomType:(long long)a0;
+- (void)createFinishTrackTriggerIfNeeded;
+- (void)resetFinishTrackTrigger;
+- (unsigned long long)getRefinedImageContentMode:(id)a0;
+- (id)currentImageModel;
+- (void)trackGraphicPlayTimeFeedIfNeeded;
+- (void)initializeGraphicPlayTimeFeed;
+- (id)awemeModelForFinishTrackTrigger;
+- (void)initializePlayStartTimestamp;
+- (void)trackGraphicPlayTimeIfNeeded;
+- (double)totalPlayDuration:(BOOL)a0;
+- (id)viewedImagesURI;
+- (void)playOrPauseTimer:(BOOL)a0;
+- (BOOL)getEnableRefinedImageLayout;
+- (double)getCurrentLoadDurationAndClear;
+- (void)setAlbumPlayStatePlay;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

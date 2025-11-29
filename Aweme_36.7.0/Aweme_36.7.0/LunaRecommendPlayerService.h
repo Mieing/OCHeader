@@ -1,0 +1,70 @@
+@class NSObject, LunaPlayEventService, NSString, NSDictionary, UIView, AWEMusicPlayerQueue, LunaPlayerViewController;
+@protocol BDUGLuckyCountDownPendantViewProtocol, BDUGLuckyCrossoverProtocol, MusicService;
+
+@interface LunaRecommendPlayerService : NSObject <AWEMusicServiceDelegate, BDUGLuckyCountDownTaskPendantDelegateProtocol, AWEMusicFeedPlayerDelegate, AWEMusicStreamingQueueDelegate>
+
+@property (weak, nonatomic) LunaPlayEventService *eventService;
+@property (nonatomic) BOOL isRequesting;
+@property (retain, nonatomic) NSString *cursor;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) unsigned long long feedRequestCount;
+@property (copy, nonatomic) NSDictionary *extraParams;
+@property (copy, nonatomic) NSString *crossTaskId;
+@property (copy, nonatomic) NSString *taskSceneId;
+@property (retain, nonatomic) UIView<BDUGLuckyCountDownPendantViewProtocol> *pendant;
+@property (nonatomic) BOOL isTimerRunning;
+@property (nonatomic) BOOL isPendantShowing;
+@property (weak, nonatomic) id<BDUGLuckyCrossoverProtocol> luckyCrossover;
+@property (nonatomic) unsigned long long crossoverStatus;
+@property (nonatomic) BOOL bottomBtnGoldShowed;
+@property (nonatomic) BOOL isPlayerShowing;
+@property (retain, nonatomic) AWEMusicPlayerQueue *queue;
+@property (weak, nonatomic) LunaPlayerViewController *playerVC;
+@property (weak, nonatomic) NSObject<MusicService> *musicService;
+@property (copy, nonatomic) NSString *sceneName;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)musicService:(id)a0 playStatusChanged:(long long)a1;
+- (void)feedViewDidLoad:(id)a0;
+- (void)pendantIsReady;
+- (void)pendantWillDestroy;
+- (BOOL)enableCycleToFirst;
+- (void)p_addNotification;
+- (BOOL)hasMoreOfScene:(id)a0;
+- (void)loadMoreScene:(id)a0 responseBlock:(id /* block */)a1 completion:(id /* block */)a2;
+- (BOOL)needRecordLoopMode:(id)a0;
+- (void)reactLoadMoreFeedWithResponseCount:(long long)a0 responseFilteredCount:(long long)a1 queueName:(id)a2;
+- (id)titleForPlayerOfQueueId:(id)a0;
+- (id)subTitleForPlayerOfQueueId:(id)a0;
+- (void)feedDidRetry:(id)a0;
+- (void)feed:(id)a0 viewWillAppear:(BOOL)a1;
+- (void)feed:(id)a0 viewDidAppear:(BOOL)a1;
+- (void)feed:(id)a0 viewWillDisappear:(BOOL)a1;
+- (void)feed:(id)a0 viewDidDisappear:(BOOL)a1;
+- (BOOL)feed:(id)a0 onClickBottomBtn:(id)a1;
+- (void)feed:(id)a0 didDismissAnimation:(BOOL)a1;
+- (id)p_request;
+- (id)queueHandler;
+- (id)viewModelsFromResponse:(id)a0 forPlay:(BOOL)a1;
+- (id)initWithMusicService:(id)a0 extraParams:(id)a1;
+- (id)p_currentDay;
+- (void)queryRecommendResponseBlock:(id /* block */)a0 completion:(id /* block */)a1;
+- (id)p_queueParams;
+- (void)setupCrossover;
+- (void)updateBottomBtnIfNeeded:(id)a0;
+- (id)activityAttributeString:(id)a0 title:(id)a1;
+- (id)countDownManager;
+- (void)p_handleNotification:(id)a0;
+- (void)startIncentivePendantTimer;
+- (void)stopIncentivePendantTimer;
+- (void)hideIncentivePendant;
+- (void)showIncentivePendant;
+- (id)timer;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setup;
+
+@end

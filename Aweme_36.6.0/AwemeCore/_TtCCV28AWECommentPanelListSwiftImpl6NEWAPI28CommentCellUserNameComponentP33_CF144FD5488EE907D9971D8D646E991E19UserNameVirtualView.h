@@ -1,0 +1,3 @@
+@interface _TtCCV28AWECommentPanelListSwiftImpl6NEWAPI28CommentCellUserNameComponentP33_CF144FD5488EE907D9971D8D646E991E19UserNameVirtualView : _TtCV28AWECommentPanelListSwiftImpl6NEWAPI19CommentVirtualLabel
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveShowStatusLabel : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *showStatusLabelText;
+@property (nonatomic) float showStatusLabelTextTransparency;
+@property (copy, nonatomic) NSString *showStatusLabelBgColor;
+
++ (id)descriptor;
+
+@end

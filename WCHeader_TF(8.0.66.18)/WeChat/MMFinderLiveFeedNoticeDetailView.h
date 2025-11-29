@@ -1,0 +1,76 @@
+@class FinderLiveNoticeInfo, MMUIButton, UILabel, MMFinderLiveMultiCouponForNoticeView, MMFinderLiveFeedNoticeColumnView, MMLiveShopShelfDragBar, UIView, MMUIImageView, MMUILabel, UIScrollView, CAGradientLayer, WCFinderHeadImageView, MMFinderLiveNoticeDetailPayView, MMPaddingView, NSString, WCFinderAuthInfoIconView, WCFinderContact;
+
+@interface MMFinderLiveFeedNoticeDetailView : MMPageSheetBaseView <MMWebViewDelegate, MMFinderLiveCouponViewDelegate, WCFinderLiveExt>
+
+@property (retain, nonatomic) WCFinderContact *anchorContact;
+@property (retain, nonatomic) FinderLiveNoticeInfo *noticeInfo;
+@property (nonatomic) BOOL showHideButton;
+@property (nonatomic) BOOL shouldShowColumnView;
+@property (retain, nonatomic) UIView *cardView;
+@property (retain, nonatomic) MMUIImageView *cardImageView;
+@property (retain, nonatomic) UIView *cardContentView;
+@property (retain, nonatomic) UIScrollView *contentScrollView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) MMLiveShopShelfDragBar *dragBar;
+@property (retain, nonatomic) WCFinderHeadImageView *anchorAvatarView;
+@property (retain, nonatomic) MMUIButton *anchorDisplayNameButton;
+@property (retain, nonatomic) WCFinderAuthInfoIconView *anchorVerificationStatusView;
+@property (retain, nonatomic) UILabel *noticeRecommendationLabel;
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) MMUILabel *subtitleLabel;
+@property (retain, nonatomic) MMUIButton *actionButton;
+@property (retain, nonatomic) MMUIButton *unLikeButton;
+@property (retain, nonatomic) MMUILabel *couponStateLabel;
+@property (retain, nonatomic) MMPaddingView *couponLabel;
+@property (retain, nonatomic) MMFinderLiveMultiCouponForNoticeView *multiCouponView;
+@property (retain, nonatomic) MMFinderLiveNoticeDetailPayView *noticeDetailPayVIew;
+@property (nonatomic) BOOL isLandscape;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (nonatomic) BOOL folding;
+@property (nonatomic) int reportScene;
+@property (retain, nonatomic) MMFinderLiveFeedNoticeColumnView *columnView;
+@property (copy, nonatomic) id /* block */ actionButtonBlock;
+@property (copy, nonatomic) id /* block */ unLikeButtonBlock;
+@property (copy, nonatomic) id /* block */ onReceiveCouponButtonBlock;
+@property (retain, nonatomic) NSString *customActionTitleForUnreservedFreeNotice;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)updateWithAnchorFinderContact:(id)a0 noticeInfo:(id)a1 showHideButton:(BOOL)a2 shouldShowColumnView:(BOOL)a3 reportScene:(int)a4 completionBlock:(id /* block */)a5;
+- (void)updateActionButton:(id)a0;
+- (void)updateUnLikeButton:(BOOL)a0;
+- (void)updateActionButtonWhenNeedPay:(id)a0;
+- (void)updateActionButtonWhenFree:(id)a0;
+- (void)updateWithNoticeInfo:(id)a0;
+- (void)updateCouponViews:(id)a0;
+- (BOOL)showColumnView:(id)a0;
+- (double)getFootContentHeight:(id)a0;
+- (void)updateWithAnchorFinderContact:(id)a0;
+- (void)updateNoticeView:(id)a0;
+- (void)layoutUI;
+- (double)getTitleLabelTop;
+- (void)createUI;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)setupPageSheetConfig;
+- (void)pageSheetDidChangeVisibleHeight:(double)a0;
+- (double)contentViewHeight;
+- (double)getCurrentTotalHeight;
+- (void)onColumnButtonClick:(id)a0;
+- (void)onColumnButtonReport:(BOOL)a0;
+- (void)onHideButtonReport:(BOOL)a0;
+- (void)openWebViewController:(id)a0 fromNav:(id)a1 closeCompletion:(id /* block */)a2;
+- (void)unLikeButtonClick;
+- (void)actionButtonClick;
+- (void)executeActionBlock:(BOOL)a0;
+- (void)anchorAvatarViewClick;
+- (void)updateGradientLayer:(BOOL)a0;
+- (id)getGradientLayer:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 radio1:(double)a1 radio2:(double)a2;
+- (void)onActionButtonClicked:(id)a0 view:(id)a1;
+- (void)onFinderLiveNoticeWithNoticeId:(id)a0 reserveStateChanged:(unsigned long long)a1;
+- (void).cxx_destruct;
+
+@end

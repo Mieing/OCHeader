@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveTreasureDetail : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) long long countDown;
+@property (nonatomic) int triggerTiming;
+@property (copy, nonatomic) NSString *countDownKey;
+@property (nonatomic) int contentType;
+
++ (id)descriptor;
+
+@end

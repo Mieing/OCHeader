@@ -1,0 +1,10 @@
+@class IESLiveBattleUserSettingsList;
+
+@interface BattleGetSettingsListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveBattleUserSettingsList *list;
+@property (nonatomic) BOOL hasList;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@interface CreateInfoResponse_LinkmicSetting : IESLivePBBaseMessage
+
+@property (nonatomic) int key;
+@property (nonatomic) int value;
+
++ (id)descriptor;
+
+@end

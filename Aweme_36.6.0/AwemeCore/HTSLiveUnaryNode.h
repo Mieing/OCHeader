@@ -1,0 +1,11 @@
+@class NSString, HTSLiveASTNode;
+
+@interface HTSLiveUnaryNode : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *operator_p;
+@property (retain, nonatomic) HTSLiveASTNode *node;
+@property (nonatomic) BOOL hasNode;
+
++ (id)descriptor;
+
+@end

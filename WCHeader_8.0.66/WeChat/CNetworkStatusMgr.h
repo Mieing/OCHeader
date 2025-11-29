@@ -1,0 +1,82 @@
+@class NSString, MMTimer, ReportInfo, NSDate, NSMutableArray;
+
+@interface CNetworkStatusMgr : MMUserService <INewSyncExt, MMServiceProtocol, MessageObserverDelegate, CNetworkStatusExt, IEmoticonDownloadExt, MMKernelExt, PBMessageObserverDelegate, INetworkStatusReportWithGPSExt> {
+    BOOL m_bConnecting;
+    BOOL m_bConnected;
+    BOOL m_bAllStatusServerFailed;
+    BOOL m_bLongLinkStatusServerFailed;
+    BOOL m_bAllStatusServerConnected;
+    BOOL m_bGettingData;
+    BOOL m_bReadOnceAgain;
+    NSMutableArray *m_messsageIdToListen;
+    BOOL m_bIsNetworkReachable;
+    BOOL m_bIsServerReachable;
+    unsigned int m_eNetworkStatusType;
+    BOOL m_bIsNetworkWeak;
+    NSDate *m_dtLastReport;
+    ReportInfo *m_oReportInfo;
+    MMTimer *m_oReportTimer;
+    NSString *m_nsLastWifiBssid;
+    NSString *m_nsCacheWifiBssid;
+    NSString *m_nsCacheWifiSsid;
+    BOOL m_isCheckingNetwork;
+    BOOL m_isBaseNetworkOK;
+    BOOL m_isWechatNetworkOK;
+    BOOL m_isWechatLongLinkOK;
+    unsigned long long m_beginGettingDataTime;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)isDuringSync;
+- (void)translateStatus;
+- (BOOL)isServerReachable;
+- (BOOL)isGettingData;
+- (void)checkCallStatusChangedExt;
+- (void)handleNetworkStatusChange:(id)a0;
+- (void)handleSyncBegin;
+- (void)handleSyncEnd;
+- (void)initMessageIdToListen;
+- (void)unListenMessageId;
+- (void)regExt;
+- (void)unregExt;
+- (id)init;
+- (void)dealloc;
+- (void)onServiceInit;
+- (void)MessageReturn:(unsigned int)a0 MessageInfo:(id)a1 Event:(unsigned int)a2;
+- (void)onNewSyncBegin;
+- (void)onNewSyncOplogFail;
+- (void)onNewSyncOplogConnectFail;
+- (void)onNewSyncEnd;
+- (void)onServiceEnterBackground;
+- (void)onServiceTerminate;
+- (id)getReportStringWithScene:(unsigned int)a0;
+- (id)getGpsReportString:(id)a0;
+- (unsigned int)getNetworkStatusType;
+- (void)setReadToGettingData;
+- (void)ClearIDCache;
+- (void)UpdateWifiInfo:(unsigned int)a0;
+- (void)OnUpdateWifiInfo:(BOOL)a0 Scene:(unsigned int)a1;
+- (BOOL)isConnectedTestingEnv;
+- (void)ReachabilityChange:(unsigned int)a0;
+- (void)LoadReportInfo;
+- (void)SaveReportInfo;
+- (void)OnNetworkStatusReportWithGPS:(id)a0 inScene:(unsigned int)a1;
+- (void)onAuthOK;
+- (void)CheckBG2FG;
+- (void)CheckReportNetworkInfo:(unsigned int)a0;
+- (id)MakeSafeReportString:(id)a0;
+- (void)InternalReportNetworkInfo:(id)a0;
+- (void)InternalReportWithGPS:(id)a0 inScene:(unsigned int)a1;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (BOOL)isNetworkChecking;
+- (void)startNetworkChecking;
+- (void)onNetworkCheckResult:(BOOL)a0 stage:(unsigned int)a1 allEnds:(BOOL)a2 kvString:(id)a3;
+- (BOOL)isNetworkWeak;
+- (void)onNetworkWeakChanged:(BOOL)a0 currentRTT:(unsigned int)a1;
+- (void).cxx_destruct;
+
+@end

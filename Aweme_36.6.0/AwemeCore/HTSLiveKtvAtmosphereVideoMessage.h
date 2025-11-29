@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveKtvAtmosphereVideoContent;
+
+@interface HTSLiveKtvAtmosphereVideoMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveKtvAtmosphereVideoContent *ktvAtmosphereVideoContent;
+@property (nonatomic) BOOL hasKtvAtmosphereVideoContent;
+
++ (id)descriptor;
+
+@end

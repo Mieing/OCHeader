@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface ChanFeedExtraStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *sort;
+@property (nonatomic) BOOL hasSort;
+
++ (id)descriptor;
+
+@end

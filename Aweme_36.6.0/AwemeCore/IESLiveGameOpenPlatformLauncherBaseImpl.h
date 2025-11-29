@@ -1,0 +1,70 @@
+@class IESLiveGameOpenPlatformBootConfigCache, NSString, NSArray, IESLiveGameOpenPlatformCryptor, IESLiveAnchorAudienceInteractiveGameModel, NSOperationQueue, NSDictionary, NSObject, IESLiveComponentContext;
+@protocol OS_dispatch_group, IESLiveGameOpenPlatformResourceLoader, IESLiveGameOpenPlatformEmulator, OS_dispatch_semaphore, BDLiveOpenContainerInstance;
+
+@interface IESLiveGameOpenPlatformLauncherBaseImpl : NSObject <IESLiveGameOpenPlatformLauncher, IESLiveGameOpenPlatformResourceLoaderDelegate>
+
+@property (retain, nonatomic) IESLiveGameOpenPlatformCryptor *cryptor;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *launchTaskGroup;
+@property (retain, nonatomic) NSOperationQueue *launchTaskQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *loadResourceSemaphore;
+@property (nonatomic) BOOL preloadFlag;
+@property (nonatomic) unsigned long long resourceDownloadState;
+@property (nonatomic) unsigned long long bootConfigRequestState;
+@property (copy, nonatomic) id /* block */ launchCallback;
+@property (copy, nonatomic) NSArray *openCapabilityList;
+@property (copy, nonatomic) NSDictionary *resourceLoaderInitializationParams;
+@property (readonly, nonatomic) id<IESLiveGameOpenPlatformResourceLoader> resourceLoader;
+@property (readonly, nonatomic) IESLiveGameOpenPlatformBootConfigCache *bootConfigCache;
+@property (retain, nonatomic) id<BDLiveOpenContainerInstance> containerInstance;
+@property (copy, nonatomic) NSString *resourceIndexPath;
+@property (nonatomic) BOOL isResourceReady;
+@property (nonatomic) BOOL enableConnectIMChannel;
+@property (readonly, copy, nonatomic) NSString *appID;
+@property (readonly, copy, nonatomic) NSString *appName;
+@property (readonly, copy, nonatomic) NSString *iconUrl;
+@property (readonly, copy, nonatomic) NSString *schema;
+@property (readonly, nonatomic) IESLiveComponentContext *componentContext;
+@property (readonly, nonatomic) IESLiveAnchorAudienceInteractiveGameModel *gameModel;
+@property (readonly, nonatomic) id<IESLiveGameOpenPlatformEmulator> currentEmulator;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)launchWithCallback:(id /* block */)a0 reuse:(BOOL)a1;
+- (void)loadPanelContainer;
+- (void)loadPanelContainerWithCompletion:(id /* block */)a0;
+- (unsigned long long)resourceLoaderType;
+- (void)preloadGame;
+- (void)realRequestBootConfigWithCompletion:(id /* block */)a0;
+- (BOOL)bootConfigIsReady;
+- (id)initWithAppID:(id)a0 appName:(id)a1 iconUrl:(id)a2 schema:(id)a3 componentContext:(id)a4 gameModel:(id)a5 DIContext:(id)a6;
+- (void)formatLogIWithEvent:(id)a0 extraInfo:(id)a1;
+- (void)formatLogEWithEvent:(id)a0 extraInfo:(id)a1;
+- (void)finishLaunchTask:(id)a0 withSemaphore:(id)a1;
+- (BOOL)checkLaunchTaskIsExist;
+- (void)setupLaunchTaskQueue;
+- (void)startLaunchTask:(id /* block */)a0 withTaskDescription:(id)a1;
+- (void)startLaunchBarrierTask:(id /* block */)a0;
+- (void)realRequestBootConfigWithSemaphore:(id)a0 completion:(id /* block */)a1;
+- (void)didFinishRequestingBootConfigWithResponse:(id)a0 error:(id)a1 semaphore:(id)a2 completion:(id /* block */)a3;
+- (void)containerInstance:(id)a0 didGetOpenCapabilityList:(id)a1;
+- (void)handleBootConfigResponse:(id)a0;
+- (void)requestSecretKey;
+- (void)_startLaunchTaskByOperationQueue:(id /* block */)a0 withTaskDescription:(id)a1;
+- (void)_startLaunchTaskByGroup:(id /* block */)a0 withTaskDescription:(id)a1;
+- (void)_finishLaunchTaskByOperationQueue:(id)a0 withSemaphore:(id)a1;
+- (void)_finishLaunchTaskByGroup:(id)a0;
+- (void)_startLaunchBarrierTaskByOperationQueue:(id /* block */)a0;
+- (void)_startLaunchBarrierTaskByGroup:(id /* block */)a0;
+- (void)willBeginLaunchingWithResult:(BOOL)a0;
+- (void)didFinishLaunchingWithResult:(BOOL)a0 error:(id)a1;
+- (void)didLoadResourceInProgress:(unsigned long long)a0 total:(unsigned long long)a1;
+- (void)didFinishLoadingResource:(id)a0 error:(id)a1;
+- (void).cxx_destruct;
+- (id)initWithConfiguration:(id)a0;
+- (void)dealloc;
+- (void)retry;
+- (id)loadResources;
+
+@end

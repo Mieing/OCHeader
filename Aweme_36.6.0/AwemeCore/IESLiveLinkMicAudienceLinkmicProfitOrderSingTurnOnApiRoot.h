@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicProfitOrderSingTurnOnApiRoot : GPBRootObject
+
+@end

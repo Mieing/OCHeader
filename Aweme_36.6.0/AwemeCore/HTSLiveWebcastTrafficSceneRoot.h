@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastTrafficSceneRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveRoomUserSeqRoot : GPBRootObject
+
+@end

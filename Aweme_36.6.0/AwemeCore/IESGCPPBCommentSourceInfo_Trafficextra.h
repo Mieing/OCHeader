@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBCommentSourceInfo_Trafficextra : GPBMessage
+
+@property (copy, nonatomic) NSString *isOtherChannel;
+@property (copy, nonatomic) NSString *trafficType;
+
++ (id)descriptor;
+
+@end

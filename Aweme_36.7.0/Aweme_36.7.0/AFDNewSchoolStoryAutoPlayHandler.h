@@ -1,0 +1,86 @@
+@class NSArray, NSMutableDictionary, NSString, NSHashTable, UIView, CachalotMainLoopIdleTaskManager;
+@protocol AFDNewSchoolStoryAutoPlayContainerProtocol, AFDNewSchoolStoryAutoPlayCellProtocol;
+
+@interface AFDNewSchoolStoryAutoPlayHandler : NSObject <UIScrollViewDelegate>
+
+@property (weak, nonatomic) id<AFDNewSchoolStoryAutoPlayContainerProtocol> container;
+@property (weak, nonatomic) UIView<AFDNewSchoolStoryAutoPlayCellProtocol> *currentActiveView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } activeRect;
+@property (nonatomic) double shouldNotActiveHeight;
+@property (nonatomic) BOOL shouldFilterStaticCard;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) double activeRectTop;
+@property (nonatomic) double activeRectBottom;
+@property (retain, nonatomic) NSMutableDictionary *rulePlugins;
+@property (weak, nonatomic) UIView<AFDNewSchoolStoryAutoPlayCellProtocol> *currentTransitionActiveView;
+@property (retain, nonatomic) NSHashTable *distributes;
+@property (nonatomic) long long scrollTriggerCount;
+@property (nonatomic) double lastDidScrollTime;
+@property (nonatomic) double scrollingSpeedX;
+@property (nonatomic) double scrollingSpeedY;
+@property (nonatomic) double lastContentOffsetX;
+@property (nonatomic) double lastContentOffsetY;
+@property (copy, nonatomic) NSString *autoPlayTaskKey;
+@property (weak, nonatomic) AFDNewSchoolStoryAutoPlayHandler *superHandler;
+@property (nonatomic) BOOL calculateWhenEndDecelerating;
+@property (retain, nonatomic) CachalotMainLoopIdleTaskManager *taskManager;
+@property (retain, nonatomic) NSArray *sortedRules;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)fetchActiveRectTop;
++ (double)fetchActiveRectBottom;
++ (double)fetchShouldNotActiveHeight;
++ (BOOL)fetchShouldFilterStaticCard;
+
+- (long long)currentPlayingIndex;
+- (void)windowDidResignKeyNotification:(id)a0;
+- (void)windowDidBecomeKeyNotification:(id)a0;
+- (void)forceBecomeActive:(id)a0;
+- (void)endForceBecomeActive:(id)a0;
+- (void)enterFullScreen:(id)a0 withForceActive:(BOOL)a1;
+- (void)changeActiveCardIfNeeded:(id)a0;
+- (void)p_updateScrollSpeedInfo;
+- (void)p_clearScrollSpeedInfo;
+- (void)addDistribute:(id)a0;
+- (void)recalculateToActiveNeedReset:(BOOL)a0;
+- (void)didResignCard:(id)a0;
+- (void)didActiveCardIfNeeded:(id)a0;
+- (void)didActiveCard:(id)a0;
+- (void)didCalculateToActiveCell;
+- (void)didResignWithEnteringFullScreen;
+- (void)p_calculateToActiveCell;
+- (void)didUpdateHandlerToCard;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })didCalculateActiveRect;
+- (double)didCalculateRelativeCenterY:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)becomeActive;
+- (void)scrollViewWillBeginZooming:(id)a0 withView:(id)a1;
+- (id)viewForZoomingInScrollView:(id)a0;
+- (void)scrollViewDidZoom:(id)a0;
+- (void)scrollViewDidScrollToTop:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (BOOL)scrollViewShouldScrollToTop:(id)a0;
+- (void)scrollViewDidChangeAdjustedContentInset:(id)a0;
+- (void)scrollViewDidEndZooming:(id)a0 withView:(id)a1 atScale:(double)a2;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (void)applicationDidBecomeActive;
+- (void)resignActive;
+- (void)addRule:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)applicationWillResignActive;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (id)methodSignatureForSelector:(SEL)a0;
+- (id)initWithContainer:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (BOOL)respondsToSelector:(SEL)a0;
+- (id)forwardingTargetForSelector:(SEL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (BOOL)conformsToProtocol:(id)a0;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)forwardInvocation:(id)a0;
+- (void)addObservers;
+
+@end

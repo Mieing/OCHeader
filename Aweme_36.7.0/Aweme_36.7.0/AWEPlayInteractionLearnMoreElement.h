@@ -1,0 +1,83 @@
+@class AWEAdFeedTagListView, NSString, NSTimer, UIStackView, UIView;
+@protocol AWEAdFeedLearnMoreView;
+
+@interface AWEPlayInteractionLearnMoreElement : AWEPlayInteractionLeftElement <AWEUserMessage, AWEInsAnimationDelegate, CMCLiveTopviewMessage, AWEElementSelfFilterProtocol, AWEPlayInteractionLearnMoreElementProtocol>
+
+@property (retain, nonatomic) UIView<AWEAdFeedLearnMoreView> *learnMoreView;
+@property (weak, nonatomic) UIView *mannorLearnMoreView;
+@property (retain, nonatomic) UIView<AWEAdFeedLearnMoreView> *leftLearnMoreView;
+@property (retain, nonatomic) UIView *interactionExpandingView;
+@property (copy, nonatomic) NSString *shouldShowItemID;
+@property (nonatomic) BOOL obscured;
+@property (retain, nonatomic) UIView *buttonAnimationView;
+@property (retain, nonatomic) NSTimer *animationTimer;
+@property (nonatomic) double animationTimeInterval;
+@property (retain, nonatomic) AWEAdFeedTagListView *tagListView;
+@property (nonatomic) BOOL isCellAppeared;
+@property (nonatomic) BOOL isDelayLoad;
+@property (retain, nonatomic) UIView *extraClickArea;
+@property (retain, nonatomic) UIStackView *learnMoreContainerStackView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (id)activateInfoWithContext:(id)a0;
+
+- (void)didFinishFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)setHide:(BOOL)a0;
+- (void)initializeElement;
+- (void)viewController_willDisplay;
+- (void)viewController_viewWillAppear;
+- (void)detectAbnormalDisplay;
+- (id)aAWEPadModuleAdapter;
+- (void)flashLearnMoreViewWithAnimation:(BOOL)a0;
+- (void)liveDidEnd:(id)a0;
+- (void)updateLearnMoreView;
+- (void)playAnimationForFollowAd;
+- (void)reShowBtnWhenAdUnfollow;
+- (id)activateInfoWithData:(id)a0;
+- (void)layoutElementView;
+- (void)viewDidDisposed;
+- (id)currentInfoForSubUnits;
+- (id)adMannorCardManager;
+- (void)playAdLearnMoreViewAnimation;
+- (id)learnMoreViewBackgroundColorWhenShow;
+- (id)learnMoreViewTipsLabelTextColorWhenShow;
+- (id)learnMoreViewTipsLabelTextColorWhenDismiss;
+- (void)promptViewDisappearingDebugHandler;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getLearnMoreViewFrameInView:(id)a0;
+- (void)runAIModelTask;
+- (void)showLearnMoreNormalView:(BOOL)a0;
+- (void)flashLearnMoreNormalViewWithAnimation:(BOOL)a0;
+- (void)onLearnMoreViewClicked:(id)a0;
+- (double)elementContainerWidth;
+- (void)runDolphinAIModelTask:(id)a0 model:(id)a1 dict:(id)a2;
+- (void)setupExtraClickArea:(id)a0;
+- (double)calculateTouchAreaOverlapPercentage;
+- (void)processOthershowFinish;
+- (void)onLearnMoreViewClicked:(id)a0 extParam:(id)a1;
+- (id)currentLearnMoreView;
+- (double)learnMoreViewFitHeight;
+- (BOOL)runCtrModelTaskIfNeeded;
+- (void)updateLearnMoreView_real:(BOOL)a0;
+- (void)trackAdButtonShow;
+- (void)resetAdMannorCardManager;
+- (id)getAdMannorCardManagerFromContext;
+- (BOOL)showLoadView;
+- (void)onTagsViewClicked:(id)a0;
+- (BOOL)shouldShowAdMannorNativeLearnMoreView;
+- (void)playFollowAnimation;
+- (void)hideLearnMoreNormalView;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })realFrame;
+- (void)ins_animationDidStop:(id)a0 finished:(BOOL)a1 isReusableSafe:(BOOL)a2;
+- (void).cxx_destruct;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)context;
+- (BOOL)appear;
+- (id)currentInfo;
+
+@end

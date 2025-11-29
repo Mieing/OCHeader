@@ -1,0 +1,85 @@
+@class AWEAwemeModel, AWEImagePreviewView, UIView, NSString, AWEBinding, NSDictionary, UIImageView, NSMutableArray, AWEPadSplitPageContext;
+@protocol AWEPadSplitViewBizAdapter, AWEDouyinSelectAINoteContainerDelegate, AWEPadSplitViewService;
+
+@interface AWEDouyinSelectAINoteViewController : UIViewController <AWEDouyinSelectAINoteContainerProtocol, BDXContainerLifecycleProtocol, AWEPadSplitViewSecondaryController>
+
+@property (weak, nonatomic) id<AWEDouyinSelectAINoteContainerDelegate> delegate;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) NSDictionary *logExtraDict;
+@property (retain, nonatomic) NSMutableArray *anniexEventSubscriberList;
+@property (retain, nonatomic) UIView *videoControlView;
+@property (retain, nonatomic) UIImageView *pauseIcon;
+@property (retain, nonatomic) UIView *contentView;
+@property (nonatomic) BOOL wasPlayingBeforeFullscreen;
+@property (nonatomic) BOOL wasPlayingBeforeSpeechRecognition;
+@property (nonatomic) struct CGSize { double width; double height; } lastShrinkSize;
+@property (nonatomic) double keyboardHeight;
+@property (nonatomic) BOOL isKeyBoardShowing;
+@property (nonatomic) unsigned long long screenStatus;
+@property (nonatomic) BOOL isViewAppear;
+@property (weak, nonatomic) AWEImagePreviewView *preView;
+@property (nonatomic) double updateContentAnimationDuration;
+@property (nonatomic) BOOL hideTabBarByAINoteVC;
+@property (retain, nonatomic) AWEBinding *tabBarBinding;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (nonatomic) BOOL hasFinishLoaded;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isPadSplitting;
+@property (readonly, copy, nonatomic) NSString *splitViewScene;
+@property (weak, nonatomic) AWEPadSplitPageContext *splitViewContext;
+@property (weak, nonatomic) id<AWEPadSplitViewService> splitService;
+@property (retain, nonatomic) id<AWEPadSplitViewBizAdapter> splitViewAdapter;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWEPadBizUIAdapterClass;
++ (Class)aAWEPadSplitScreenAdapterClass;
+
+- (void)containerDidCreated:(id)a0 view:(id)a1;
+- (id)getVideoScreenShot;
+- (id)aAWEPadModuleAdapter;
+- (void)duxGrid_viewSizeDidChangeToBreakPoint:(struct { long long x0; long long x1; })a0;
+- (void)setupNotification;
+- (id)aAWEPadBizUIAdapter;
+- (void)unbindEvent;
+- (void)bindEvent;
+- (id)aAWEPadSplitScreenAdapter;
+- (void)changePlayerState:(long long)a0;
+- (void)setupKeyBoardFilter;
+- (double)currentHeightPercent;
+- (void)shrinkVideoPlayToTargetHeight:(double)a0 animated:(BOOL)a1;
+- (void)hideTabBarIfNeeded;
+- (void)showVideoPauseIcon;
+- (void)hideVideoPauseIcon;
+- (double)getStatusBarHeight;
+- (void)p_updateContentHeightWithAnimated:(BOOL)a0;
+- (void)restoreTab;
+- (void)refreshShrinkIfNeeded;
+- (void)dismissOnSizeChangeIfNeed;
+- (id)getAINotePanelParams;
+- (id)bdxControllerWithURL:(id)a0;
+- (void)changeVideoPlayState:(id)a0;
+- (void)closeAINotePanelWithAnimated:(BOOL)a0;
+- (void)changeContentHeightWithAction:(id)a0;
+- (void)closePanel:(id)a0;
+- (void)previewImage:(id)a0 data:(id)a1;
+- (id)initWithDelegate:(id)a0 model:(id)a1 logExtraDict:(id)a2;
+- (void)dismissPreViewIfNeeded;
+- (void)dismissSelfIfNeed;
+- (void)keyboardDidHide:(id)a0;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)keyboardDidShow:(id)a0;
+- (void)setupUI;
+
+@end

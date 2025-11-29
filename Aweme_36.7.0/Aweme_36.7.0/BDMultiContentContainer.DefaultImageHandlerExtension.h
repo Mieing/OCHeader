@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.DefaultImageHandlerExtension : BDMultiContentContainer.HandlerExtension
+
+@end

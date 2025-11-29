@@ -1,0 +1,3 @@
+@interface AWELiveABTestRegister : NSObject
+
+@end

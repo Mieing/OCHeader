@@ -1,0 +1,3 @@
+@interface AWEMusicRouterManager : NSObject
+
+@end

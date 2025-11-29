@@ -1,0 +1,3 @@
+@interface AWEIMSearchHistoryCellModel : AWEIMCellModel
+
+@end

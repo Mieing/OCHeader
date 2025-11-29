@@ -1,0 +1,3 @@
+@interface QuizGameRoomApiRoot : GPBRootObject
+
+@end

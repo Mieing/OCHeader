@@ -1,0 +1,10 @@
+@class SwitchChannelInviteResponse_ResponseData;
+
+@interface SwitchChannelInviteResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SwitchChannelInviteResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

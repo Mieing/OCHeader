@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpUserReserveStatusApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEPOIAlbumPageModel : NSObject
+
+@end

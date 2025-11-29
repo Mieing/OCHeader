@@ -1,0 +1,13 @@
+@class NSMutableArray, AreaPattern;
+
+@interface PanelArea : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *widgetListArray;
+@property (readonly, nonatomic) unsigned long long widgetListArray_Count;
+@property (nonatomic) int areaType;
+@property (retain, nonatomic) AreaPattern *areaPattern;
+@property (nonatomic) BOOL hasAreaPattern;
+
++ (id)descriptor;
+
+@end

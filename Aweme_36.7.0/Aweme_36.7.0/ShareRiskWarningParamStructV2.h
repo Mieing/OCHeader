@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface ShareRiskWarningParamStructV2 : GPBMessage
+
+@property (nonatomic) int paramType;
+@property (nonatomic) BOOL hasParamType;
+@property (copy, nonatomic) NSString *key;
+@property (nonatomic) BOOL hasKey;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+@property (copy, nonatomic) NSString *target;
+@property (nonatomic) BOOL hasTarget;
+
++ (id)descriptor;
+
+@end

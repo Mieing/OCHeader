@@ -1,0 +1,10 @@
+@class PaidLiveTicketRecommendResponse_Data;
+
+@interface PaidLiveTicketRecommendResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PaidLiveTicketRecommendResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

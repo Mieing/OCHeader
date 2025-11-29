@@ -1,0 +1,11 @@
+@class GPBInt64Array;
+
+@interface HTSLiveSKU_EntityIDsMap : IESLivePBBaseMessage
+
+@property (nonatomic) int entityType;
+@property (retain, nonatomic) GPBInt64Array *releatedEntityIdsArray;
+@property (readonly, nonatomic) unsigned long long releatedEntityIdsArray_Count;
+
++ (id)descriptor;
+
+@end

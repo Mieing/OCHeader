@@ -1,0 +1,85 @@
+@class AWESearchLoadMoreFooter, AWESearchEasterEggView, NSDictionary, AWESearchCachalotDataController, UITapGestureRecognizer, AWESearchCachalotWebPipeline, NSObject, UIView, AWESearchResultRefreshHeader, AWESearchAIGCLynxPipeline, NSString, AWESearchCachalotResultContext, AWESearchResultViewController, AWESearchAIGCService, AWETrackerContext, AWESearchSchemaModel, AWESearchTabConfig, AWESearchFloatingBackgroundView, UIPanGestureRecognizer;
+@protocol AWESearchActionListenerProtocol, AWESearchFeelGoodManagerProtocol, AWESearchChildViewControllerResultFilterProtocol, SearchCachalotViewInterface, AWESearchAIGCRightSidebarActionDelegate;
+
+@interface AWESearchAIGCRightSidebarViewController : AWESearchResultVerticalBaseViewController <AWESearchAIGCServiceDelegate>
+
+@property (retain, nonatomic) UITapGestureRecognizer *singleTapGesture;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (retain, nonatomic) UIView *placeholderView;
+@property (retain, nonatomic) NSDictionary *searchAIGCEmptyTemplateConfig;
+@property (retain, nonatomic) AWESearchAIGCLynxPipeline *lynxPipeline;
+@property (retain, nonatomic) AWESearchAIGCService *aigcService;
+@property (retain, nonatomic) AWESearchCachalotWebPipeline *webPipeline;
+@property (weak, nonatomic) id<AWESearchAIGCRightSidebarActionDelegate> rightSidebarDelegate;
+@property (retain, nonatomic) AWESearchSchemaModel *routerModel;
+@property (retain, nonatomic) UIView *view;
+@property (readonly, nonatomic) UIView<SearchCachalotViewInterface> *cachalotView;
+@property (readonly, nonatomic) AWESearchCachalotDataController *dataController;
+@property (weak, nonatomic) AWESearchResultViewController *searchResultViewController;
+@property (readonly, nonatomic) AWESearchResultRefreshHeader *refreshHeaderView;
+@property (readonly, nonatomic) AWESearchLoadMoreFooter *footerView;
+@property (readonly, nonatomic) AWESearchCachalotResultContext *cachalotContext;
+@property (nonatomic) BOOL isSearchLoading;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWESearchTabConfig *tabConfig;
+@property (weak, nonatomic) id<AWESearchChildViewControllerResultFilterProtocol> delegate;
+@property (weak, nonatomic) id<AWESearchActionListenerProtocol> listener;
+@property (retain, nonatomic) AWETrackerContext *trackerContext;
+@property (copy, nonatomic) id /* block */ searchTabsUpdateBlock;
+@property (nonatomic) BOOL isFilterSearch;
+@property (nonatomic) unsigned long long publishTime;
+@property (nonatomic) unsigned long long sortType;
+@property (nonatomic) unsigned long long refreshType;
+@property (retain, nonatomic) NSString *refer;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (nonatomic) BOOL dismissTabBottomLine;
+@property (retain, nonatomic) AWESearchFloatingBackgroundView *floatingBackgroundView;
+@property (retain, nonatomic) AWESearchEasterEggView *easterEggView;
+@property (nonatomic) long long searchTabFeedType;
+@property (copy, nonatomic) NSString *personalSearchChannel;
+@property (copy, nonatomic) NSString *personalTrackTabType;
+@property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *tokenType;
+@property (copy, nonatomic) NSString *clickMoreMethod;
+@property (nonatomic) long long searchQueryInputTime;
+@property (nonatomic) long long searchButtonPressDuration;
+@property (nonatomic) long long searchButtonClickPositionX;
+@property (nonatomic) long long searchButtonClickPositionY;
+@property (copy, nonatomic) id /* block */ isShowingMiddlePageBlock;
+@property (copy, nonatomic) id /* block */ sugSessionIDBlock;
+@property (retain, nonatomic) NSObject<AWESearchFeelGoodManagerProtocol> *surveyManager;
+
++ (void)preprocessModel:(id)a0;
+
+- (id)enterFrom;
+- (BOOL)sendEvent:(id)a0 params:(id)a1;
+- (void)updateData:(id)a0 processorName:(id)a1;
+- (id)searchKeyword;
+- (id)lynxRawDataParams;
+- (id)customContainerConfig;
+- (BOOL)customUseSerialOperationMode;
+- (BOOL)enableMutipleColumnStyle;
+- (BOOL)customDisablePadSideView;
+- (BOOL)customDisablePadSideBorder;
+- (double)getContainerWidthWithViewModel:(id)a0;
+- (void)globalVoiceBroadcastChangeStatusWithParams:(id)a0;
+- (void)sidebarDeleteSingleHistoryWithParams:(id)a0;
+- (void)sidebarSelectHistoryWithParams:(id)a0;
+- (void)insertResultWithViewModels:(id)a0 targetVM:(id)a1 completionBlock:(id /* block */)a2;
+- (BOOL)enableSearchAIPadStyle;
+- (double)containerWidthForPad;
+- (BOOL)enableHandleSizeChange;
+- (void)reloadData;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)show;
+- (void)handlePanGesture:(id)a0;
+- (void)createUI;
+
+@end

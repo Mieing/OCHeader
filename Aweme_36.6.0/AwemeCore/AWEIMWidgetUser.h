@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface AWEIMWidgetUser : INObject
+
+@property (copy, nonatomic) NSString *uid;
+@property (copy, nonatomic) NSString *secUid;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *bindingUid;
+
+@end

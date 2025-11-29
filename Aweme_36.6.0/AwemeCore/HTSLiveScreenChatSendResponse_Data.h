@@ -1,0 +1,18 @@
+@class NSString, HTSLiveImage, HTSLiveUser;
+
+@interface HTSLiveScreenChatSendResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *orderId;
+@property (nonatomic) long long leftDiamond;
+@property (nonatomic) long long msgId;
+@property (copy, nonatomic) NSString *toast;
+@property (nonatomic) long long activityDanmuBackground;
+@property (nonatomic) int showIdentity;
+@property (retain, nonatomic) HTSLiveImage *identityLabel;
+@property (nonatomic) BOOL hasIdentityLabel;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+
++ (id)descriptor;
+
+@end

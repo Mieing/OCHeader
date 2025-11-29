@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBIntroduceCardTag : GPBMessage
+
+@property (copy, nonatomic) NSString *iconURL;
+@property (copy, nonatomic) NSString *subText;
+
++ (id)descriptor;
+
+@end

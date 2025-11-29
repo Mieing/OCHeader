@@ -1,0 +1,72 @@
+@class IESLivePlaybackCommentPanelViewModel, IESLivePlaybackCommentButton, UIButton, NSString, IESLivePlaybackCommentStore, UIView, IESLivePlaybackCommentPanelView;
+@protocol IESLiveEmoticonResource;
+
+@interface IESLivePlaybackCommentFragment : IESLivePlaybackComponent <IESLivePlaybackCommentPanelViewDelegate, IESLivePlaybackChangeStreamAction, IESLivePlaybackCommentReactions, IESLivePlaybackComponentLifeCycle>
+
+@property (retain, nonatomic) IESLivePlaybackCommentStore *store;
+@property (retain, nonatomic) IESLivePlaybackCommentPanelView *commentPanelView;
+@property (weak, nonatomic) UIView *panelContainerView;
+@property (retain, nonatomic) IESLivePlaybackCommentPanelViewModel *commentPanelViewModel;
+@property (retain, nonatomic) IESLivePlaybackCommentButton *commentButton;
+@property (retain, nonatomic) UIButton *commentInPlayerButton;
+@property (copy, nonatomic) NSString *commentDraft;
+@property (retain, nonatomic) id<IESLiveEmoticonResource> emoticonResource;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)componentDidMount;
+- (void)componentWillUnmount;
+- (void)componentDidUnmount;
+- (void)hideCommentView;
+- (void)dismissPanel;
+- (void)addCommentView;
+- (void)roomThemeNeedRefresh;
+- (void)removeCommentView;
+- (double)commentViewBottomOffsetWithContainer;
+- (BOOL)enableCommentWithRoomAuth;
+- (double)commentViewBottomOffsetWithScreen;
+- (void)componentWillMount;
+- (void)didUpdatePlaybackEpisode:(id)a0;
+- (void)streamChangedWithEpisode:(id)a0;
+- (void)setupCommentButton;
+- (void)showCommentWithContent:(id)a0;
+- (void)showCustomPreviewWithImageData:(id)a0;
+- (id)commentTypeWithMsg:(id)a0;
+- (void)collectLivePlaybackCommentSelectedImage:(id)a0;
+- (void)reportLivePlaybackCommentWithCommentInfo:(id)a0;
+- (void)showCommentView:(id)a0 referredUser:(id)a1 requestPage:(id)a2 extraTrackParams:(id)a3;
+- (void)commentBeganWithContent:(id)a0;
+- (void)clearCommentDraft;
+- (void)commentSucceedWithFakeMessage:(id)a0 messageID:(unsigned long long)a1;
+- (void)commentSendToWebContent:(id)a0;
+- (void)updateCommentBtn;
+- (void)addRACBind;
+- (void)handleCommentBtnInSeek:(BOOL)a0;
+- (void)refreshCommentButtonStyle;
+- (BOOL)isShowLandscapeStyle;
+- (void)p_showCommenBtnForScreenState:(BOOL)a0;
+- (id)p_getCommentBgImage:(BOOL)a0;
+- (id)creatCommentPanelViewModel;
+- (void)exitKeyboardSence:(id)a0;
+- (void)startCommentPanelShowAnimWithDuration:(double)a0 curve:(long long)a1 animation:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)setupCommentInPlayerButtonIfNeeded;
+- (void)danmakuComment;
+- (void)animationForKeyboardShow:(id)a0;
+- (void)enterKeyboardSence;
+- (void)changeCommentButtonAlphaWithoutAnimation:(double)a0;
+- (void)p_updateCommentBtnImage;
+- (void)commentPanelView:(id)a0 didClickSendWithComment:(id)a1;
+- (id)getCommentTopicListWithEpisodeID:(id)a0;
+- (void).cxx_destruct;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)addObserver;
+- (void)comment;
+- (void)dealloc;
+- (void)keyboardFrameDidChange:(id)a0;
+
+@end

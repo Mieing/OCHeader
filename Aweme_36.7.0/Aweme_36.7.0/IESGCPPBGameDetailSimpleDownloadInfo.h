@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESGCPPBGameDetailSimpleDownloadInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *unsupportedDownloadBtnText;
+@property (nonatomic) BOOL packageSizeSwitch;
+@property (nonatomic) long long supportPlatforms;
+@property (copy, nonatomic) NSString *mapId;
+@property (copy, nonatomic) NSString *mapName;
+
++ (id)descriptor;
+
+@end

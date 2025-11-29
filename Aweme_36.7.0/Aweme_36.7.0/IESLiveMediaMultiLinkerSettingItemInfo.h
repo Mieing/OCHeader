@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESLiveMediaMultiLinkerSettingItemInfo : IESLiveDynamicModel
+
+@property (retain, nonatomic) NSString *settingKey;
+@property (retain, nonatomic) NSString *paramsKey;
+@property (retain, nonatomic) NSString *title;
+@property (nonatomic) long long index;
+@property (nonatomic) long long offset;
+@property (copy, nonatomic) NSString *backgroundColor;
+@property (nonatomic) long long style;
+
+@end

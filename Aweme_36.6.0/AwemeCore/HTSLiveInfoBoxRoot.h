@@ -1,0 +1,3 @@
+@interface HTSLiveInfoBoxRoot : GPBRootObject
+
+@end

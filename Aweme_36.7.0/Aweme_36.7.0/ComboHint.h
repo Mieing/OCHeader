@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface ComboHint : IESLivePBBaseMessage
+
+@property (nonatomic) long long bizType;
+@property (retain, nonatomic) NSMutableArray *dataListArray;
+@property (readonly, nonatomic) unsigned long long dataListArray_Count;
+@property (nonatomic) long long curLeftGiftCount;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveAtmosphereContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long showDuration;
+@property (copy, nonatomic) NSString *count;
+
++ (id)descriptor;
+
+@end

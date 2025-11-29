@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLinkmicProfitNormalPaidLinkmicCloseContent : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL waitingUserNeedLeave;
+@property (copy, nonatomic) NSString *waitingUserToast;
+
++ (id)descriptor;
+
+@end

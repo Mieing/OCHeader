@@ -1,0 +1,7 @@
+@interface IESGCPPBMapPlayConfig : GPBMessage
+
+@property (nonatomic) BOOL hasChallengeAgain;
+
++ (id)descriptor;
+
+@end

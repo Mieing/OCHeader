@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNBatchMarkConversationReadRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *markReadRequestsArray;
+@property (readonly, nonatomic) unsigned long long markReadRequestsArray_Count;
+
++ (id)descriptor;
+
+@end

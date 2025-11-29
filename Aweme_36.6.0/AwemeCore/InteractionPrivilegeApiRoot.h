@@ -1,0 +1,3 @@
+@interface InteractionPrivilegeApiRoot : GPBRootObject
+
+@end

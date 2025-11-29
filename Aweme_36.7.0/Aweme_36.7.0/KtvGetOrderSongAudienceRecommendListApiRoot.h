@@ -1,0 +1,3 @@
+@interface KtvGetOrderSongAudienceRecommendListApiRoot : GPBRootObject
+
+@end

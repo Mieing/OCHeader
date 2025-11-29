@@ -1,0 +1,71 @@
+@class UIView, WCFinderCreateLiveViewModel, FinderNewUserPrepareResponse, NSString, MMFinderLiveTask, MMGrowTextView, UIButton, MMUILabel, MMUIButton, UILabel;
+@protocol MMFinderLiveBulletinViewControllerDelegate;
+
+@interface MMFinderLiveBulletinViewController : MMCPUIViewController <MMGrowTextViewDelegate, WCActionSheetDelegate, MMFinderLiveCreateNoticeViewControllerDelegate, WCFinderUserPrepareCgiDelegate, UITextViewDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTask *liveTask;
+@property (retain, nonatomic) MMUIButton *singleCloseButton;
+@property (nonatomic) BOOL isBeingLayouted;
+@property (nonatomic) double keyboardHeight;
+@property (retain, nonatomic) UIView *noticeContainer;
+@property (retain, nonatomic) WCFinderCreateLiveViewModel *createLiveVM;
+@property (retain, nonatomic) FinderNewUserPrepareResponse *prepareResponse;
+@property (nonatomic) BOOL enableDescExtend;
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) UIButton *leftButton;
+@property (retain, nonatomic) UIButton *rightButton;
+@property (retain, nonatomic) MMGrowTextView *growTextView;
+@property (retain, nonatomic) UILabel *titleCountTips;
+@property (retain, nonatomic) UIView *separateLineUnderDesc;
+@property (retain, nonatomic) MMGrowTextView *descriptionTextView;
+@property (retain, nonatomic) UILabel *descCountTips;
+@property (retain, nonatomic) UILabel *wordCountTips;
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) BOOL isFromThemeGuide;
+@property (nonatomic) BOOL isEdit;
+@property (retain, nonatomic) NSString *descriptionExtend;
+@property (retain, nonatomic) NSString *descriptionStr;
+@property (retain, nonatomic) NSString *placeHolderStr;
+@property (retain, nonatomic) NSString *aiAssistantInfoId;
+@property (weak, nonatomic) id<MMFinderLiveBulletinViewControllerDelegate> actionDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)navigationBarBackgroundColor;
+- (BOOL)navigationBarBlurEffect;
+- (long long)preferredStatusBarStyle;
+- (long long)overrideUserInterfaceStyle;
+- (id)initWithTask:(id)a0 enableDescExtend:(BOOL)a1 descriptionStr:(id)a2 descriptionExtend:(id)a3 aiAssistantInfoId:(id)a4;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)createUI;
+- (void)layoutUI;
+- (void)dealloc;
+- (void)updateRightDoneButton;
+- (id)stringByRemovingOverflowedLinesInString:(id)a0 limitedLineCount:(unsigned long long)a1;
+- (void)fixTopicText:(BOOL)a0 openMaxLines:(BOOL)a1;
+- (void)fixTitleText:(BOOL)a0;
+- (id)stringByRemovingLastEmptyLineInString:(id)a0;
+- (double)getTopButtonsTop;
+- (double)getTextViewTop;
+- (BOOL)isPortrait;
+- (void)layoutSubviewsAnimated:(BOOL)a0;
+- (void)onKeyboardWillChangeFrame:(id)a0;
+- (void)onKeyboardWillHide:(id)a0;
+- (void)TextViewHeightDidChanged:(id)a0;
+- (void)TextDidChanged:(id)a0 selectedRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)TextViewDidEnter:(id)a0;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)onTapDone;
+- (void)processBulletinData;
+- (void)finishWithInfo:(id)a0;
+- (void)onTapCancel;
+- (void)viewController:(id)a0 didFinishCreateLiveNoticeWithInfo:(id)a1;
+- (void)userPrepareCgi:(id)a0 didGetResponse:(id)a1;
+- (void)userPrepareCgi:(id)a0 didFailWithError:(id)a1;
+- (void)viewControllerDidCancelCreateLiveNotice:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,8 @@
+@interface LotteryRegularlyConfig : IESLivePBBaseMessage
+
+@property (nonatomic) int times;
+@property (nonatomic) int interval;
+
++ (id)descriptor;
+
+@end

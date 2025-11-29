@@ -1,0 +1,3 @@
+@interface HTSLiveDsLimitRoot : GPBRootObject
+
+@end

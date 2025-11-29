@@ -1,0 +1,9 @@
+@interface HTSLiveMyLiveTab_Extra : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) long long nextQueryIndex;
+@property (nonatomic) long long cost;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWELazyRegisterCarrierService : NSObject
+
+@end

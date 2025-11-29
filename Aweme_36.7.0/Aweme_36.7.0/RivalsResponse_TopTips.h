@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface RivalsResponse_TopTips : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (retain, nonatomic) HTSLiveImage *img;
+@property (nonatomic) BOOL hasImg;
+@property (nonatomic) int topTipsType;
+@property (copy, nonatomic) NSString *schemeURL;
+
++ (id)descriptor;
+
+@end

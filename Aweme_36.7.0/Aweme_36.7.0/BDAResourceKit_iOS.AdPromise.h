@@ -1,0 +1,10 @@
+@interface BDAResourceKit_iOS.AdPromise : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ deferred;
+    void /* unknown type, empty encoding */ task;
+    void /* unknown type, empty encoding */ errorTask;
+    void /* unknown type, empty encoding */ runningScheduler;
+    void /* unknown type, empty encoding */ context;
+    void /* unknown type, empty encoding */ cancelled;
+}
+
+@end

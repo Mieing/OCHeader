@@ -1,0 +1,74 @@
+@class IESLiveWebpLoadingView, IESLiveRevenueInteractAddCustomBattleCell, UIImageView, NSString, UILabel, UIView, UITableView;
+@protocol IESLiveCompoundSubscription, IESLiveRevenueInteractConnectingViewModel;
+
+@interface IESLiveRevenueInteractConnectingViewController : IESLiveRevenueInteractPopupViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (retain, nonatomic) id<IESLiveRevenueInteractConnectingViewModel> viewModel;
+@property (retain, nonatomic) id<IESLiveCompoundSubscription> disposable;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIImageView *quitButton;
+@property (retain, nonatomic) UIView *inviteBtnContainer;
+@property (retain, nonatomic) UIImageView *inviteBtnIcon;
+@property (retain, nonatomic) UILabel *inviteBtnLabel;
+@property (retain, nonatomic) UIView *separateLine;
+@property (retain, nonatomic) UITableView *battleChooseTableView;
+@property (retain, nonatomic) IESLiveWebpLoadingView *loadingView;
+@property (retain, nonatomic) UIView *bottomGradientView;
+@property (retain, nonatomic) UIView *pkFeedBackFooterView;
+@property (retain, nonatomic) UILabel *pkFeedBackLabel;
+@property (retain, nonatomic) UIImageView *pkFeedBackIcon;
+@property (retain, nonatomic) UIImageView *interactSettingIcon;
+@property (retain, nonatomic) UIView *chorusContainerView;
+@property (retain, nonatomic) UIView *headerContainerView;
+@property (nonatomic) double viewAppearTime;
+@property (nonatomic) long long showTime;
+@property (nonatomic) BOOL hasEnteredNextPage;
+@property (nonatomic) BOOL hasSlideTracked;
+@property (retain, nonatomic) IESLiveRevenueInteractAddCustomBattleCell *addCustomBattleCell;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setupBottomGradientView;
+- (id)initWithViewModel:(id)a0 diContext:(id)a1;
+- (void)onSetupNavBar:(id)a0;
+- (void)updateInviteButton;
+- (void)onQuitButtonClicked;
+- (void)onInviteButtonClicked;
+- (void)hideRevenueInteractTitleIconView;
+- (void)onClickRevenueInteractBattleItem;
+- (void)notifyRevenueInteractBattleDesignatedGiftView:(unsigned long long)a0;
+- (void)notifyRevenueInteractNewCustomPKEvent:(unsigned long long)a0;
+- (void)trackPlayModePanelClose;
+- (void)fetchBattleChooseList;
+- (void)trackChorusButtonShow;
+- (void)refreshBattleChooseList;
+- (id)setupChorusView;
+- (id)setupHeaderContainerView;
+- (double)battleChooseTableViewHeight;
+- (void)onClickedChorusView;
+- (void)chorusStatusChanged;
+- (void)trackPlayModeShow:(id)a0;
+- (BOOL)shouldShowFeedBackEntrance;
+- (void)onBattleCustomClicked;
+- (void)onPKFeedbackEntranceClicked;
+- (void)onInteractSettingClicked;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupSubviews;
+- (void)setupData;
+
+@end

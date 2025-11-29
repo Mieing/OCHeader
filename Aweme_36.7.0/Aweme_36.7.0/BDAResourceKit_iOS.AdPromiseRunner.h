@@ -1,0 +1,14 @@
+@interface BDAResourceKit_iOS.AdPromiseRunner : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ runningTasks;
+    void /* unknown type, empty encoding */ delayAssignRunningTask;
+    void /* unknown type, empty encoding */ errorTask;
+    void /* unknown type, empty encoding */ context;
+    void /* unknown type, empty encoding */ runnerResult;
+    void /* unknown type, empty encoding */ cancelled;
+    void /* unknown type, empty encoding */ isAsyncTaskGroups;
+    void /* unknown type, empty encoding */ asyncTaskGroupResult;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_cancelledCallBack;
+    void /* unknown type, empty encoding */ rootPromise;
+}
+
+@end

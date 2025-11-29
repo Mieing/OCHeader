@@ -1,0 +1,14 @@
+@class FallStaticReason;
+
+@interface FallReasonCandidate : GPBMessage
+
+@property (nonatomic) long long businessId;
+@property (nonatomic) BOOL hasBusinessId;
+@property (nonatomic) long long priority;
+@property (nonatomic) BOOL hasPriority;
+@property (retain, nonatomic) FallStaticReason *staticLabel;
+@property (nonatomic) BOOL hasStaticLabel;
+
++ (id)descriptor;
+
+@end

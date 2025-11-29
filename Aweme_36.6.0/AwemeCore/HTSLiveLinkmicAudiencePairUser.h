@@ -1,0 +1,12 @@
+@class HTSLiveLinkmicAudiencePairUserInfo;
+
+@interface HTSLiveLinkmicAudiencePairUser : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkmicAudiencePairUserInfo *guest;
+@property (nonatomic) BOOL hasGuest;
+@property (retain, nonatomic) HTSLiveLinkmicAudiencePairUserInfo *investor;
+@property (nonatomic) BOOL hasInvestor;
+
++ (id)descriptor;
+
+@end

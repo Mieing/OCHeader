@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNConversationMessagePreViewResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *messageResultArray;
+@property (readonly, nonatomic) unsigned long long messageResultArray_Count;
+
++ (id)descriptor;
+
+@end

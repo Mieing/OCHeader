@@ -1,0 +1,3 @@
+@interface AFDFriendRecommendTagDefaultStrategy : AFDFriendRecommendTagBaseStrategy
+
+@end

@@ -1,0 +1,56 @@
+@interface WeiboSDK : NSObject
+
++ (id)wbsdk_platform;
++ (BOOL)registerApp:(id)a0 universalLink:(id)a1;
++ (BOOL)handleOpenURL:(id)a0 delegate:(id)a1;
++ (BOOL)handleOpenUniversalLink:(id)a0 delegate:(id)a1;
++ (id)serializeURLString:(id)a0 withParams:(id)a1;
++ (id)queryValueWithName:(id)a0 urlString:(id)a1;
++ (void)directlySendResponseToCurrentApp:(id)a0;
++ (id)requestUserInfoCache;
++ (id)queryDictionaryOfURLQuery:(id)a0;
++ (id)callbackSchemePrefix;
++ (BOOL)isCanSSOAndShareInWeiboApp;
++ (BOOL)registerAppWithAppKey:(id)a0 universalLink:(id)a1;
++ (void)openAppWithTransferObject:(id)a0 completion:(id /* block */)a1;
++ (id)callbackUniversalLinekPrefix;
++ (BOOL)handleOpenUrl:(id)a0 delegate:(id)a1 callBackUrlPrefix:(id)a2;
++ (void)didReceiveUnSupportedRequest:(id)a0;
++ (void)didReceiveUnSupportedResponse:(id)a0;
++ (void)callBackSendSuccess:(BOOL)a0 Completion:(id /* block */)a1;
++ (void)openURLObject:(id)a0 completion:(id /* block */)a1;
++ (long long)attatchContextBegin;
++ (id)formIOS16AttachmentJsonByTransferObj:(id)a0 level:(long long)a1;
++ (id)formIOS16Scheme:(id)a0 attachmentJson:(id)a1;
++ (void)attatchContextEnd;
++ (BOOL)needAttachmentAlgorithmByLevel:(long long)a0 attachment:(id)a1;
++ (void)attachContextNeed:(BOOL)a0;
++ (BOOL)hasDataInObj:(id)a0;
++ (long long)sizeForObj:(id)a0;
++ (BOOL)isEmptyOrWhitespace:(id)a0;
++ (BOOL)isWeiboAppInstalled;
++ (BOOL)isCanSSOInWeiboApp;
++ (BOOL)isCanShareInWeiboAPP;
++ (void)openWeiboApp:(id /* block */)a0;
++ (id)getWeiboAppInstallUrl;
++ (void)sendResponse:(id)a0 completion:(id /* block */)a1;
++ (id)getWeiboSDKUA;
++ (id)registedAppsPasteboardName;
++ (void)banGetIdfa:(BOOL)a0;
++ (void)logOutWithToken:(id)a0 delegate:(id)a1 withTag:(id)a2;
++ (BOOL)unregisterApp;
++ (void)linkToUser:(id)a0;
++ (void)linkToSingleBlog:(id)a0 blogID:(id)a1;
++ (void)linkToArticle:(id)a0;
++ (void)shareToWeibo:(id)a0;
++ (void)commentToWeibo:(id)a0;
++ (void)linkToSearch:(id)a0;
++ (void)linkToTimeLine;
++ (void)linkToProfile;
++ (BOOL)awe_handleOpenURL:(id)a0 delegate:(id)a1;
++ (id)getSDKVersion;
++ (void)sendRequest:(id)a0 completion:(id /* block */)a1;
++ (id)hashKey;
++ (void)enableDebugMode:(BOOL)a0;
+
+@end

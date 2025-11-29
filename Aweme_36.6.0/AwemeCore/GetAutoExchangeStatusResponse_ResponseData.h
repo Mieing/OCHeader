@@ -1,0 +1,7 @@
+@interface GetAutoExchangeStatusResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+
++ (id)descriptor;
+
+@end

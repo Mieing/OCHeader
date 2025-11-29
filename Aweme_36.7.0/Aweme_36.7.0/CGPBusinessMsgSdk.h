@@ -1,0 +1,13 @@
+@class CGPBusinessMsgSdk_MsgSdkMsg, NSString;
+
+@interface CGPBusinessMsgSdk : GPBMessage
+
+@property (retain, nonatomic) CGPBusinessMsgSdk_MsgSdkMsg *payload;
+@property (nonatomic) BOOL hasPayload;
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *ackId;
+@property (copy, nonatomic) NSString *userId;
+
++ (id)descriptor;
+
+@end

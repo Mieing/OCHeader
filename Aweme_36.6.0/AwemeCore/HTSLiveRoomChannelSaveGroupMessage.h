@@ -1,0 +1,11 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveRoomChannelSaveGroupMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *conId;
+
++ (id)descriptor;
+
+@end

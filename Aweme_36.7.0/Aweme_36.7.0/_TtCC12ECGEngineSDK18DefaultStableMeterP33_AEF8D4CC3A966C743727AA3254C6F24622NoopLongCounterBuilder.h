@@ -1,0 +1,3 @@
+@interface _TtCC12ECGEngineSDK18DefaultStableMeterP33_AEF8D4CC3A966C743727AA3254C6F24622NoopLongCounterBuilder : _TtCs12_SwiftObject
+
+@end

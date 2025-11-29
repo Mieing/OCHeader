@@ -1,0 +1,13 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveQuickComment : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *wordsArray;
+@property (readonly, nonatomic) unsigned long long wordsArray_Count;
+@property (nonatomic) int duration;
+
++ (id)descriptor;
+
+@end

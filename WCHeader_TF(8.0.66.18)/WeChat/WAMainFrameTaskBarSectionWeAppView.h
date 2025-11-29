@@ -1,0 +1,97 @@
+@class UIView, WAMainFrameTaskBarSectionWeAppViewModel, NSString, WAMainFrameTaskBarDeleteActionWindow, UIImageView, WAStarCollectionViewLayout, UIButton, UICollectionView, UILabel, NSIndexPath;
+@protocol WAMainFrameTaskBarSectionWeAppViewDelegate;
+
+@interface WAMainFrameTaskBarSectionWeAppView : WAMainFrameTaskBarSectionBaseView <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, WAStarCollectionViewLayoutDataSource, WAMainFrameTaskbarOperationViewControllerDelegate, WAStarCollectinViewViewLayoutDelegate> {
+    WAStarCollectionViewLayout *_layout;
+    UIView *_line;
+    UIView *_bottomArea;
+    UIButton *_bottomClickArea;
+    UIView *_emptyContainer;
+    UILabel *_emptyLabel;
+    UIView *_emptySearchContainer;
+    UIImageView *_emptySearchIcon;
+    UILabel *_emptySearchLabel;
+    BOOL _inAddStarArea;
+    BOOL _isDraging;
+}
+
+@property (retain, nonatomic) WAMainFrameTaskBarDeleteActionWindow *operationWindow;
+@property (retain, nonatomic) WAMainFrameTaskBarSectionWeAppViewModel *viewModel;
+@property (weak, nonatomic) id<WAMainFrameTaskBarSectionWeAppViewDelegate> delegate;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (retain, nonatomic) UIView *searchArea;
+@property (retain, nonatomic) UIView *topRightArea;
+@property (nonatomic) BOOL isInEditMode;
+@property (retain, nonatomic) UILabel *moreLabel;
+@property (retain, nonatomic) UIView *moreContainer;
+@property (retain, nonatomic) UIImageView *moreIcon;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)titleFont;
++ (int)contentHeight:(id)a0 maxShowCount:(long long)a1;
++ (BOOL)isIpadNotSplit;
++ (double)totalCellHeight:(id)a0 maxShowCount:(long long)a1;
+
+- (id)title;
+- (void)initView;
+- (void)initEmptyView;
+- (void)initOperationWindow;
+- (void)initCollectionView;
+- (void)layoutSubviews;
+- (void)showOperationWindow;
+- (void)hideOperationWindow;
+- (void)prepareForReuse;
+- (float)gapSize;
+- (void)reload;
+- (void)reloadCommonUsedItemIfNeeded;
+- (void)updateTitle;
+- (void)updateMoreView;
+- (void)handleEmptyState:(BOOL)a0;
+- (void)onItemTapd:(id)a0;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (void)onClickMore;
+- (void)onItemClick:(id)a0 position:(long long)a1;
+- (BOOL)isMyWeApp;
+- (BOOL)isCommonUseWeApp;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (BOOL)isLimitMode;
+- (BOOL)collectionView:(id)a0 shouldDoCustomDeleteAnimation:(id)a1;
+- (id)collectionView:(id)a0 dragViewForItemAtIndexPath:(id)a1;
+- (struct CGPoint { double x0; double x1; })collectionView:(id)a0 dragViewFromPointForItemAtIndexPath:(id)a1;
+- (struct CGPoint { double x0; double x1; })collectionView:(id)a0 dragViewToPointForItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 dragingView:(id)a1 didDragToPosition:(struct CGPoint { double x0; double x1; })a2;
+- (id)collectionView:(id)a0 itemAnimateBackToPostion:(id)a1;
+- (void)collectionView:(id)a0 layout:(id)a1 didEndAnimateToPos:(id)a2;
+- (void)collectionView:(id)a0 layout:(id)a1 willEndDraggingItemAtIndexPath:(id)a2;
+- (BOOL)collectionView:(id)a0 canMoveItemAtIndexPath:(id)a1;
+- (BOOL)collectionView:(id)a0 itemAtIndexPath:(id)a1 canMoveToIndexPath:(id)a2;
+- (void)collectionView:(id)a0 itemAtIndexPath:(id)a1 willMoveToIndexPath:(id)a2;
+- (void)collectionView:(id)a0 itemAtIndexPath:(id)a1 didMoveToIndexPath:(id)a2;
+- (void)collectionView:(id)a0 layout:(id)a1 didEndDraggingItemAtIndexPath:(id)a2;
+- (void)collectionView:(id)a0 layout:(id)a1 onLongPress:(id)a2 indexPath:(id)a3;
+- (BOOL)collectionView:(id)a0 itemCenterIsInDeleteArea:(struct CGPoint { double x0; double x1; })a1;
+- (long long)collectionView:(id)a0 itemDidMoveInDeleteAreaAtIndexPath:(id)a1 viewCenter:(struct CGPoint { double x0; double x1; })a2;
+- (void)collectionView:(id)a0 itemDidMoveOutDeleteAreaAtIndexPath:(id)a1;
+- (BOOL)collectionView:(id)a0 itemDidCommitToDeleteAtIdexPath:(id)a1;
+- (BOOL)collectionView:(id)a0 itemDidCommitToStarAtIdexPath:(id)a1;
+- (BOOL)commonStarItem:(id)a0 position:(int)a1;
+- (void)onLongPress:(id)a0;
+- (void)handleLongPress:(id)a0;
+- (BOOL)isInStarList:(id)a0;
+- (void)animateRemoveItem:(long long)a0;
+- (void)deleteToSection;
+- (void)showTipsViewController:(id)a0;
+- (void)handleClickStar;
+- (void)handleClickSearch;
+- (void).cxx_destruct;
+
+@end

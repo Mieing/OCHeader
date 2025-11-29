@@ -1,0 +1,21 @@
+@interface AWESpeCategoryKit.FeedListContainerViewModel : AWEBaseListViewModel <AWESpeCategoryKit.FeedListContainerViewModelApdapterProtocol> {
+    void /* unknown type, empty encoding */ containerConfig;
+    void /* unknown type, empty encoding */ dataSource;
+    void /* unknown type, empty encoding */ tabModel;
+    void /* unknown type, empty encoding */ footerShowDuringLoadMore;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_launchMonitor;
+    void /* unknown type, empty encoding */ enterTimes;
+    void /* unknown type, empty encoding */ enterDate;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_trackerConfig;
+}
+
+- (void)dislikeNotificationHandlerWithNotice:(id)a0;
+- (void)fetchListData;
+- (void)loadMoreListData;
+- (void)setupViewModel;
+- (id)deleteNotificationKey;
+- (id)deleteNotificationItemIDKey;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

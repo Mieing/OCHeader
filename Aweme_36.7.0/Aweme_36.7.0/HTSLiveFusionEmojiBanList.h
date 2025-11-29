@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface HTSLiveFusionEmojiBanList : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *banListArray;
+@property (readonly, nonatomic) unsigned long long banListArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,81 @@
+@class UIView, AWEProfileHeaderContext, NSString, AWEProfileMultiAccountUnreadDotView, UIImageView, UIButton, AWEProfileBillboardAccessView, NSMutableDictionary, AWEProfileBillboardLabel, DUXBadge;
+@protocol AWEProfileHeaderNameLabelContainerViewDelegate;
+
+@interface AWEProfileHeaderNameLabelContainerView : UIView <AWEProfileBillboardAccessView, DUXGridBreakPointResponder>
+
+@property (retain, nonatomic) AWEProfileBillboardLabel *nameLabel;
+@property (retain, nonatomic) UIButton *remarkNameEditBtn;
+@property (retain, nonatomic) UIImageView *birthdayView;
+@property (retain, nonatomic) UIButton *switchAccountButton;
+@property (retain, nonatomic) DUXBadge *noticeUnreadDotView;
+@property (retain, nonatomic) AWEProfileMultiAccountUnreadDotView *multiAccountNoticeUnreadDotView;
+@property (retain, nonatomic) AWEProfileHeaderContext *context;
+@property (copy, nonatomic) NSString *oldUserID;
+@property (nonatomic) BOOL hasTrackedShowCraftsmanBillboard;
+@property (nonatomic) BOOL hasTrackedMultiAccountUnreadDotShow;
+@property (retain, nonatomic) UIView *multiAccountUnreadDotAccessView;
+@property (retain, nonatomic) AWEProfileBillboardAccessView *nameLabelAccessView;
+@property (nonatomic) BOOL isShowingEditBtn;
+@property (nonatomic) BOOL isShowingRemarkNameEditBtn;
+@property (retain, nonatomic) NSMutableDictionary *nameHeightCache;
+@property (weak, nonatomic) id<AWEProfileHeaderNameLabelContainerViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)nameLabelFont;
++ (Class)aAWEDYProfileHeaderActionControllerDOUYINLiteAdapterClass;
+
+- (void)duxGrid_viewDidChangeBreakPointFrom:(struct { long long x0; long long x1; })a0 toBreakPoint:(struct { long long x0; long long x1; })a1;
+- (void)updateWidth:(double)a0;
+- (void)textLabelAttachmentAction;
+- (id)nameLabelColor;
+- (void)configWithContext:(id)a0;
+- (void)p_updateLayout;
+- (void)p_didThemeChanged;
+- (void)showQuickSwitchAccountPanel;
+- (BOOL)isExistInCacheName:(id)a0 imageUrlArray:(id)a1;
+- (id)aAWEDYProfileHeaderActionControllerDOUYINLiteAdapter;
+- (void)updateMultiAccountNoticeUnreadDot;
+- (void)p_addSwitchAccountBtn;
+- (void)p_addMultiAccountNoticeUnreadDotView;
+- (void)updateMultiAccountNoticeUnreadDotViewHidden:(unsigned long long)a0 affectedByBirthdayView:(BOOL)a1;
+- (void)p_trackMultiAccountsUnreadDot;
+- (void)p_addNoticeUnreadDotView;
+- (double)nameLabelLineHeight;
+- (void)updateNameLabelTitle:(id)a0;
+- (void)p_addNameEditIfNeeded;
+- (void)nameEditButtonTapped;
+- (void)nameEditButtonTappedWith:(BOOL)a0;
+- (void)nicknameDidTapAction;
+- (void)aliasDidTapAction;
+- (void)p_layoutWhenBirthdayViewShowWithTitleRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)p_layoutWhenBirthdayViewHideWithTitleRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)p_configFrameWorkStateWithContext:(id)a0;
+- (void)p_replaceUI;
+- (void)p_updateUIContent;
+- (void)showRemarkEntranceIfNeed:(id)a0;
+- (void)showRemarkNameEntranceWithAnimated:(BOOL)a0;
+- (void)remarkNameEditBtnClicked;
+- (void)birthdayViewTapped;
+- (void)switchAccountButtonTapped:(BOOL)a0;
+- (void)multiAccountNoticeUnreadDotViewTapped:(BOOL)a0;
+- (void)p_showCopyNameAndRemarkPopup;
+- (void)p_copyNameToPaste:(id)a0;
+- (void)updateSwitchButtonHidden:(BOOL)a0;
+- (id)p_clipCircleImageWithImage:(id)a0;
+- (void)p_copyNameToPasteInAlert;
+- (void)p_showNameAndAvatarAlert;
+- (void)p_trackCraftsmanBillboardShow;
+- (struct CGSize { double x0; double x1; })computedSizeWithWidth:(double)a0 context:(id)a1 isFollowFromProfile:(BOOL)a2;
+- (void)dismissRemarkNameEntrance;
+- (void)qrcodeIconTapped;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)updateNameLabel;
+
+@end

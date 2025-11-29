@@ -1,0 +1,3 @@
+@interface IESIMIMLeadsCodeGenCommonResponseModel : AWEBaseResponseModel
+
+@end

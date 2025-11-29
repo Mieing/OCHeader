@@ -1,0 +1,10 @@
+@class GetContentOrderPayResultResult_ResultData;
+
+@interface GetContentOrderPayResultResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetContentOrderPayResultResult_ResultData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

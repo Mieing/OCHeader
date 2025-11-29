@@ -1,0 +1,84 @@
+@class WCFinderFeedContentTextView, MMUIButton, UILabel, WCFinderFullScreenHorPanGesture, WCFinderAnimationLoadingView, NSMutableArray, UIView, WCFinderComment, WCFinderCommentLikeView, UIScrollView, UIAccessibilityElement, WCFinderHeadImageView, NSString, WCFinderGradientView, UIImageView;
+@protocol WCFinderCommentImageBrowseCellDelegate;
+
+@interface WCFinderCommentImageBrowseCell : UICollectionViewCell <UIScrollViewDelegate, WCFinderContactExt, WCFinderHeadImageViewDelegate, WCFinderFeedContentTextClickActionDelegate, WCFinderFullScreenHorPanGestureDelegate>
+
+@property (weak, nonatomic) id<WCFinderCommentImageBrowseCellDelegate> delegate;
+@property (retain, nonatomic) WCFinderComment *comment;
+@property (nonatomic) int viewScene;
+@property (nonatomic) double layoutWidth;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIImageView *bigImageView;
+@property (retain, nonatomic) WCFinderFullScreenHorPanGesture *horPanGesture;
+@property (retain, nonatomic) WCFinderAnimationLoadingView *loadingView;
+@property (retain, nonatomic) MMUIButton *retryButton;
+@property (retain, nonatomic) UIView *bottomContainerView;
+@property (retain, nonatomic) WCFinderHeadImageView *avatarImageView;
+@property (retain, nonatomic) UILabel *nickNameLabel;
+@property (retain, nonatomic) UIImageView *finderIconImageView;
+@property (retain, nonatomic) UILabel *timeAndIpRegionLabel;
+@property (nonatomic) double timeLabelMinWidth;
+@property (retain, nonatomic) WCFinderFeedContentTextView *contentTextView;
+@property (retain, nonatomic) MMUIButton *replyButton;
+@property (retain, nonatomic) WCFinderCommentLikeView *commentLikeView;
+@property (retain, nonatomic) WCFinderGradientView *gradientView;
+@property (retain, nonatomic) UIView *userGuideView;
+@property (retain, nonatomic) UIImageView *arrowViewForUserGuide;
+@property (retain, nonatomic) UILabel *titleLabelForUserGuide;
+@property (retain, nonatomic) NSMutableArray *accessibilityElements;
+@property (retain, nonatomic) UIAccessibilityElement *likeAccessibility;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)cellID;
++ (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })fittingFrameForImageSize:(struct CGSize { double x0; double x1; })a0 containerWidth:(double)a1 containerHeight:(double)a2;
++ (double)bottomOffsetForContent;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupUI;
+- (void)prepareForReuse;
+- (void)layoutSubviews;
+- (void)adjustUILayout;
+- (void)adjustNickNameLabelWidth;
+- (void)_setImageViewImage:(id)a0;
+- (void)updateAvatarCornerWithAuthorFlag:(BOOL)a0;
+- (void)reportShrinkButtonExpose;
+- (void)reportExpandButtonExpose;
+- (void)loadImageForComment;
+- (void)doLoadBigImageFromCacheOrNext;
+- (void)doLoadThumbImageFromCacheOrNext;
+- (void)doLoadBigImageFromNetworkIfNeed;
+- (void)updateVoiceOver;
+- (id)_totalAccessibilityLabel;
+- (void)setupUserGuideView;
+- (void)showUserGuide;
+- (void)dismissUserGuide;
+- (void)handleDoubleTapBigImage:(id)a0;
+- (void)handleLongPressBigImage:(id)a0;
+- (void)handleClickAvatar:(id)a0;
+- (void)replyAction:(id)a0;
+- (void)clickLikeCommentAction:(id)a0;
+- (void)onClickRetryButton;
+- (void)configWithComment:(id)a0 isCommentClose:(BOOL)a1 viewScene:(int)a2 delegate:(id)a3;
+- (void)updateWithVisiblePercent:(double)a0;
+- (void)reportCellExpose;
+- (void)didEndDisplaying;
+- (id)viewForZoomingInScrollView:(id)a0;
+- (void)scrollViewDidZoom:(id)a0;
+- (void)onFinderContactUpdate:(id)a0;
+- (void)onFeedContentTextView:(id)a0 clickReadMore:(BOOL)a1;
+- (void)onFeedContentTextView:(id)a0 clickText:(id)a1 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)onFeedContentTextView:(id)a0 clickKeywordUrl:(id)a1;
+- (BOOL)finderHorPanGestureEnableDragDownToClose;
+- (void)finderHorPanGestureOnSingleTap;
+- (void)finderHorPanGestureDragBegin;
+- (void)finderHorPanGestureBackgroundAlphaChanged:(double)a0;
+- (void)finderHorPanGestureDragToRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)finderHorPanGestureDragEnd;
+- (void)finderHorPanGestureShouldCloseByDrag;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface BattleSeasonPanelApiRoot : GPBRootObject
+
+@end

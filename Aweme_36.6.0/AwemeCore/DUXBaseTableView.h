@@ -1,0 +1,3 @@
+@interface DUXBaseTableView : UITableView
+
+@end

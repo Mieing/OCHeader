@@ -1,0 +1,19 @@
+@interface AWECommentMediaFeedSwfitImpl.CommentMediaFeedPlayInteractionAuthorNameElement : AWECommentMediaFeedSwfitImpl.CommentMediaFeedPlayInteractionBaseElement {
+    void /* unknown type, empty encoding */ tagViewModel;
+    void /* unknown type, empty encoding */ livePhotoPlayWayChangeBlock;
+    void /* unknown type, empty encoding */ optionOncePlay;
+    void /* unknown type, empty encoding */ optionAlwaysPlay;
+    void /* unknown type, empty encoding */ currentPlayState;
+    void /* unknown type, empty encoding */ mediaTagViewMaxWidth;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_mediaTypeTagView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_tagImageArrowView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_tagBackgroundView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_authorNameLabel;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_contentBackgroundView;
+}
+
+- (void)handleAuthorViewTap;
+- (void)livePhotoPlayWayTapped;
+- (void).cxx_destruct;
+
+@end

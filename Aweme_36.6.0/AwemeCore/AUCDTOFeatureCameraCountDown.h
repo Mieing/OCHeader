@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureCameraCountDown : MTLModel
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HotspotInfoStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *hotspotId;
+@property (nonatomic) BOOL hasHotspotId;
+@property (copy, nonatomic) NSString *hotspotText;
+@property (nonatomic) BOOL hasHotspotText;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLivePkActivePushRoot : GPBRootObject
+
+@end

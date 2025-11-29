@@ -1,0 +1,3 @@
+@interface AWEIMPetELFPanelContext : NSObject
+
+@end

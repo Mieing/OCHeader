@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveMoreEntrance : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) long long type;
+
++ (id)descriptor;
+
+@end

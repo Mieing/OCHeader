@@ -1,0 +1,3 @@
+@interface BDPCustomLoadingIconStyle : BDPCustomLoadingBaseStyle
+
+@end

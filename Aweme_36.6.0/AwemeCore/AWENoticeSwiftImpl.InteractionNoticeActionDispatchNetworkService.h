@@ -1,0 +1,3 @@
+@interface AWENoticeSwiftImpl.InteractionNoticeActionDispatchNetworkService : _TtCs12_SwiftObject
+
+@end

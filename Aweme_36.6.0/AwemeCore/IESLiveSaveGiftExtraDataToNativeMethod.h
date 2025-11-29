@@ -1,0 +1,7 @@
+@interface IESLiveSaveGiftExtraDataToNativeMethod : AnnieBridgeMethod
+
+- (Class)paramModelClass;
+- (unsigned long long)authType;
+- (id)methodName;
+
+@end

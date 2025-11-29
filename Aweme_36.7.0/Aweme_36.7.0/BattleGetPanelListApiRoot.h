@@ -1,0 +1,3 @@
+@interface BattleGetPanelListApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,80 @@
+@class NSTimer, NSString, NSArray, AWEAwemeModel, NSMutableDictionary, UIImageView, NSMutableArray, NSObject, NSNumber;
+@protocol OS_dispatch_queue;
+
+@interface AWEAwemeFeedPreCacheV3Manager : NSObject <AWEUserMessage, AWEFeedCacheTracker, AWEPrecacheProtocol>
+
+@property (nonatomic) BOOL hasCacheSuccess;
+@property (nonatomic) BOOL retryReadCache;
+@property (nonatomic) BOOL hasUploadInfo;
+@property (nonatomic) BOOL appIsActive;
+@property (nonatomic) double lastEnterBackgroundTime;
+@property (nonatomic) double cacheSuccessTimestamp;
+@property (nonatomic) double launchTimestamp;
+@property (retain, nonatomic) NSNumber *readCacheListTime;
+@property (retain, nonatomic) NSArray *cacheList;
+@property (retain, nonatomic) NSArray *providers;
+@property (copy, nonatomic) NSString *feedCacheSource;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *storageQueue;
+@property (retain, nonatomic) NSMutableArray *readLocalCacheCompletions;
+@property (retain, nonatomic) NSMutableDictionary *consumedAwemeIds;
+@property (retain, nonatomic) UIImageView *tempImageView;
+@property (retain, nonatomic) NSTimer *feedCachePrefetchTimer;
+@property (retain, nonatomic) AWEAwemeModel *currentSessionUsedModel;
+@property (nonatomic) BOOL hasReadLocalCache;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (id)sharedInstance;
+
+- (void)clearAllCache;
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)clearDuplicatedFeedPreCacheModels:(id)a0;
+- (BOOL)isPrecacheUndownloadedAwemeModel:(id)a0;
+- (void)saveFeedRequestModels:(id)a0;
+- (id)getCloudContentEvalParams;
+- (id)feedCacheFromDepName;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (void)onAppFeedReady;
+- (void)videoDownloadFinished:(id)a0;
+- (void)timerRepeatFetchFeedCache;
+- (void)readLocalCompletionBlock:(id /* block */)a0;
+- (void)fetchCacheIfNeeded;
+- (BOOL)hasPreCache;
+- (void)initAllDataSource;
+- (void)applicationDidDidBecomeActive;
+- (void)p_createTimerIfNeeded;
+- (void)postReadCacheFinishedSignal;
+- (void)p_trackPullOutCacheVideo:(BOOL)a0 respFrom:(id)a1;
+- (void)p_loadImageCoverForModelIfNeeded:(id)a0;
+- (void)p_loadImageCoverForModel:(id)a0;
+- (void)p_saveData;
+- (BOOL)p_forceFetchCacheEnable;
+- (BOOL)p_isForceFetchCache;
+- (void)p_saveUnconsumedVideo;
+- (BOOL)p_hasEnoughCachedModelForNextLaunch;
+- (id)getCurrentSessionUsedModel;
+- (void)p_saveFeedRequestModels:(id)a0;
+- (BOOL)p_canSaveAwemeModel:(id)a0;
+- (void)p_saveUnconsumedVideoAfterAssessment;
+- (void)asyncGetFeedCache;
+- (void)updateConsumedVideoWithModel:(id)a0;
+- (void)clearCacheWithArray:(id)a0;
+- (void)getFeedCacheWithCount:(long long)a0 completion:(id /* block */)a1;
+- (id)getItemIDsWithAvailableCache;
+- (void)getFeedCacheWithItemIDs:(id)a0 completion:(id /* block */)a1;
+- (id)getCacheIndexModels;
+- (id)nonRepeatWithArray:(id)a0;
+- (id)p_expireTimeConfig;
+- (id)clearRedundantWithNewModels:(id)a0 provider:(id)a1;
+- (id)onEvent:(id)a0 tag:(id)a1 params:(id)a2;
+- (void)videoStartPlay:(id)a0;
+- (void).cxx_destruct;
+- (void)applicationDidEnterBackground;
+- (id)init;
+- (void)applicationWillResignActive;
+
+@end

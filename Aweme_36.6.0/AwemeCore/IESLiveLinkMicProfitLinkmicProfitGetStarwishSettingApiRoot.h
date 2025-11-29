@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitGetStarwishSettingApiRoot : GPBRootObject
+
+@end

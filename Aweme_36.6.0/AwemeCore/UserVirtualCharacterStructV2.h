@@ -1,0 +1,16 @@
+@class UrlStructV2, UserVirtualAnimAvatarStructV2;
+
+@interface UserVirtualCharacterStructV2 : GPBMessage
+
+@property (retain, nonatomic) UserVirtualAnimAvatarStructV2 *virtualAnimAvatar;
+@property (nonatomic) BOOL hasVirtualAnimAvatar;
+@property (retain, nonatomic) UrlStructV2 *virtualAvatar;
+@property (nonatomic) BOOL hasVirtualAvatar;
+@property (nonatomic) long long version;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) BOOL useVirtualAvatar;
+@property (nonatomic) BOOL hasUseVirtualAvatar;
+
++ (id)descriptor;
+
+@end

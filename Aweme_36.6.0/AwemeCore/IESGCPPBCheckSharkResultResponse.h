@@ -1,0 +1,10 @@
+@class IESGCPPBCheckSharkResultResponse_Data;
+
+@interface IESGCPPBCheckSharkResultResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBCheckSharkResultResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

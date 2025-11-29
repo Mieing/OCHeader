@@ -1,0 +1,13 @@
+@class NSMutableArray, HTSLiveImage;
+
+@interface BreakthroughConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *stagesArray;
+@property (readonly, nonatomic) unsigned long long stagesArray_Count;
+@property (retain, nonatomic) HTSLiveImage *mvpImage;
+@property (nonatomic) BOOL hasMvpImage;
+@property (nonatomic) long long highScoreThreshold;
+
++ (id)descriptor;
+
+@end

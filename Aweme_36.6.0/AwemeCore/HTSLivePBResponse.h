@@ -1,0 +1,14 @@
+@class NSData, HTSLivePBResponse_Header;
+
+@interface HTSLivePBResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLivePBResponse_Header *header;
+@property (nonatomic) BOOL hasHeader;
+@property (copy, nonatomic) NSData *body;
+
++ (id)descriptor;
+
+- (id)header;
+- (id)body;
+
+@end

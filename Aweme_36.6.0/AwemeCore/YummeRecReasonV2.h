@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface YummeRecReasonV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *reasonType;
+@property (nonatomic) BOOL hasReasonType;
+@property (copy, nonatomic) NSString *showType;
+@property (nonatomic) BOOL hasShowType;
+@property (copy, nonatomic) NSString *reasonVal;
+@property (nonatomic) BOOL hasReasonVal;
+
++ (id)descriptor;
+
+@end

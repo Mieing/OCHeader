@@ -1,0 +1,7 @@
+@interface TempoiOS.TempoPipeLineOpenTask : TempoiOS.TempoPipeLineBaseTask {
+    void /* unknown type, empty encoding */ context;
+}
+
+- (void).cxx_destruct;
+
+@end

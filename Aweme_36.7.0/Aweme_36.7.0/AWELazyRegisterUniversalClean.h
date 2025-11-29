@@ -1,0 +1,3 @@
+@interface AWELazyRegisterUniversalClean : NSObject
+
+@end

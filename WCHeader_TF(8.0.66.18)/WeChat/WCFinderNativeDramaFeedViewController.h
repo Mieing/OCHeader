@@ -1,0 +1,75 @@
+@class NSString, WCFinderNativeDramaHalfScreenViewModel, WCFinderNativeDramaFeedViewModel, FinderNativeDramaInfo, WCFinderFeedListView, UIPanGestureRecognizer, NSMutableSet, MMTimer;
+
+@interface WCFinderNativeDramaFeedViewController : MMUIViewController <WCFinderNativeDramaFeedViewModelDelegate, WCFinderFeedListViewDelegate, WCFinderNativeDramaEpisodeListProtocol, WCFinderNativeDramaHalfScreenDataCacheable, WCFinderFeedListViewMinimizeDelegate, WCFinderFeedListTransitionHelperDelegate, UIGestureRecognizerDelegate, WCFinderNativeDramaFeedUnlockViewDelegate, WCFinderNativeDramaIAAFeedViewControllerDelegate, WCFinderFeedBaseViewControllerProtocol>
+
+@property (retain, nonatomic) FinderNativeDramaInfo *info;
+@property (nonatomic) BOOL popDetailOnce;
+@property (retain, nonatomic) WCFinderNativeDramaFeedViewModel *viewModel;
+@property (retain, nonatomic) WCFinderNativeDramaHalfScreenViewModel *nativeDramaDetailHalfScreenViewModel;
+@property (retain, nonatomic) MMTimer *promotionTimer;
+@property (nonatomic) long long countDown;
+@property (retain, nonatomic) NSMutableSet *viewedPromotions;
+@property (retain, nonatomic) WCFinderFeedListView *feedListView;
+@property (retain, nonatomic) UIPanGestureRecognizer *tipsPanGesture;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithParams:(id)a0;
+- (BOOL)shouldHideNavigationBar;
+- (BOOL)useTransparentNavibar;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)_appWillEnterForeground;
+- (void)_appDidEnterBackground;
+- (void)_setupUI;
+- (void)_setupFeedListView;
+- (void)_setupNavigationTitle;
+- (void)_disabledFeedInteractiveIfNeed;
+- (void)_enabledFeedInteractive;
+- (void)_onPanGestureChanged:(id)a0;
+- (void)_updatePromotionTipsIfNeedWithCell:(id)a0 forRowAtIndex:(long long)a1 contentVM:(id)a2;
+- (void)_promotionCountDownTimerTrigger;
+- (void)viewModel:(id)a0 feedItemDidChangeWithDiff:(id)a1;
+- (void)_updateFooterView;
+- (void)_fetchPromotionWithContentVM:(id)a0;
+- (void)_fetchIndependentFeedPromotionWithContentVM:(id)a0;
+- (void)_fetchInternalFeedPromotionWithContentVM:(id)a0;
+- (unsigned long long)_currentEpisodeID;
+- (void)_startCountDownIfNeed;
+- (BOOL)_reloadItemIfNeed:(unsigned long long)a0;
+- (void)_updateContentVMWithEpisodeID:(unsigned long long)a0;
+- (BOOL)finderFeedListViewCanPreFetchData:(id)a0;
+- (BOOL)finderFeedListViewIsNoMoreData:(id)a0;
+- (void)finderFeedListViewFetchMoreData:(id)a0;
+- (void)finderFeedListViewRetryFetch:(id)a0;
+- (BOOL)finderFeedListViewHeaderCanFetchData:(id)a0;
+- (void)finderFeedListViewHeaderFetchMoreData:(id)a0;
+- (void)finderFeedListStartMediaPlay;
+- (void)finderFeedListVideoMediaIsPause:(BOOL)a0;
+- (void)finderFeedListViewDidEndScrollingAnimation:(id)a0;
+- (void)finderFeedListViewDidEndDecelerating:(id)a0;
+- (void)finderFeedListView:(id)a0 playRateDidChanged:(double)a1;
+- (id)finderFeedListViewCurrentViewController:(id)a0;
+- (void)finderFeedListMediaDidEndPlay:(unsigned long long)a0 contentVM:(id)a1 finderPlayerReport:(id)a2;
+- (void)finderFeedListView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)finderFeedListView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)view:(id)a0 didTriggerUnlockActionWithModel:(id)a1;
+- (void)nativeDramaIAAFeedController:(id)a0 didUnlockEpisode:(unsigned long long)a1;
+- (int)feedViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (id)getCurMediaListObject;
+- (BOOL)halfScreen:(id)a0 jumpToEpisode:(unsigned long long)a1;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (id)minimizePageBizKey;
+- (BOOL)finderFeedListViewControllerSupportMinimize:(id)a0;
+- (void)_reportPromotionDisplay;
+- (void).cxx_destruct;
+
+@end

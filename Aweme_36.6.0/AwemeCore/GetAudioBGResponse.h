@@ -1,0 +1,10 @@
+@class GetAudioBGResponse_ResponseData;
+
+@interface GetAudioBGResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetAudioBGResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

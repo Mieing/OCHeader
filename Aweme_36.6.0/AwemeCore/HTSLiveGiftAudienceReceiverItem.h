@@ -1,0 +1,13 @@
+@class NSString, HTSLiveUser;
+
+@interface HTSLiveGiftAudienceReceiverItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long score;
+@property (nonatomic) BOOL giftAuth;
+@property (copy, nonatomic) NSString *offReasonToast;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class RanklistFansClubResponse_ResponseData;
+
+@interface RanklistFansClubResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RanklistFansClubResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

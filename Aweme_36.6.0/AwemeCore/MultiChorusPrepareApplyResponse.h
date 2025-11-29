@@ -1,0 +1,10 @@
+@class MultiChorusPrepareApplyResponse_ResponseData;
+
+@interface MultiChorusPrepareApplyResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) MultiChorusPrepareApplyResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

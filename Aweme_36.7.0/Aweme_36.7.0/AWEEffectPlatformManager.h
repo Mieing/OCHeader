@@ -1,0 +1,81 @@
+@class NSString, NSMutableDictionary, NSArray, NSObject;
+@protocol ACCModuleConfigProtocol, OS_dispatch_semaphore;
+
+@interface AWEEffectPlatformManager : NSObject <AWEEffectPlatformManageable, ACCUserServiceMessage, ACCModuleConfigMessage, ACCCreativePathMessage, IESEffectLoggerProtocol>
+
+@property (readonly, nonatomic) NSObject<OS_dispatch_semaphore> *simpleDownloadingEffectsDictLock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) id<ACCModuleConfigProtocol> moduleConfig;
+@property (retain, nonatomic) NSMutableDictionary *downloadingEffectMap;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *simpleDownloadingEffectsDictLock;
+@property (nonatomic) BOOL enableEffectTrackAddSceneInfo;
+@property (retain, nonatomic) NSArray *localVoiceEffectList;
+@property (retain, nonatomic) NSString *localVoiceEffectName_chipmunk;
+@property (retain, nonatomic) NSString *localVoiceEffectName_baritone;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)configEffectPlatform;
++ (void)downloadStickerWithStickerID:(id)a0 progress:(id /* block */)a1 completion:(id /* block */)a2;
++ (void)downloadStickerWithStickerID:(id)a0 gradeKey:(id)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
++ (void)fetchStickerListWithStickerIDS:(id)a0 shouldApplySticker:(BOOL)a1 gradeKey:(id)a2 toDownloadParentSticker:(id)a3 completion:(id /* block */)a4;
++ (void)fetchStickerListWithStickerIDS:(id)a0 shouldApplySticker:(BOOL)a1 priority:(long long)a2 completion:(id /* block */)a3;
++ (void)fetchAndFilterStickerListWithStickerIDS:(id)a0 shouldApplySticker:(BOOL)a1 toDownloadParentSticker:(id)a2 stickerFilterBlock:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)sharedManager;
+
+- (void)trackService:(id)a0 status:(long long)a1 extra:(id)a2;
+- (void)downloadEffect:(id)a0 progress:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)didFinishLogout;
+- (void)log:(id)a0 type:(long long)a1;
+- (void)logEvent:(id)a0 params:(id)a1;
+- (id)p_makeZipFileIfNeedWithPath:(id)a0;
+- (void)creativePathPageDidLoad:(unsigned long long)a0 controller:(id)a1;
+- (id)cachedVoiceEffectWithID:(id)a0;
+- (id)localVoiceEffectWithID:(id)a0;
+- (void)loadEffectWithID:(id)a0 completion:(id /* block */)a1;
+- (long long)downloadStatusForEffect:(id)a0;
+- (void)uploadCustomizedEffectWithFilePath:(id)a0 iconPath:(id)a1 coverPath:(id)a2 extraParameters:(id)a3 uploadConfig:(id)a4 completion:(id /* block */)a5;
+- (void)downloadStickerWithStickerID:(id)a0 gradeKey:(id)a1 trackModel:(id)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)downloadStickerWithStickerID:(id)a0 trackModel:(id)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)downloadParentEffectWithParentEffectID:(id)a0 childEffect:(id)a1 trackModel:(id)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)downloadEffect:(id)a0 trackModel:(id)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)trackerEffectPlatformDownloadResultInfo:(id)a0 parallelDownload:(BOOL)a1;
+- (void)downloadEffect:(id)a0 parallelDownload:(BOOL)a1 trackModel:(id)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)fetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 extraInfoDict:(id)a3 toDownloadParentSticker:(id)a4 priority:(long long)a5 trackModel:(id)a6 progress:(id /* block */)a7 completion:(id /* block */)a8;
+- (void)fetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 extraInfoDict:(id)a3 toDownloadParentSticker:(id)a4 priority:(long long)a5 trackModel:(id)a6 effects:(id)a7 bindEffects:(id)a8 progress:(id /* block */)a9 completion:(id /* block */)a10;
+- (void)handleFetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 extraInfoDict:(id)a3 toDownloadParentSticker:(id)a4 priority:(long long)a5 trackModel:(id)a6 effects:(id)a7 bindEffects:(id)a8 error:(id)a9 progress:(id /* block */)a10 completion:(id /* block */)a11;
+- (void)fetchAndFilterStickerListWithStickerIDS:(id)a0 shouldApplySticker:(BOOL)a1 toDownloadParentSticker:(id)a2 trackModel:(id)a3 progress:(id /* block */)a4 stickerFilterBlock:(id /* block */)a5 completion:(id /* block */)a6;
+- (void)downloadEffect:(id)a0 parallelDownload:(BOOL)a1 trackModel:(id)a2 downloadQueuePriority:(long long)a3 downloadQualityOfService:(long long)a4 progress:(id /* block */)a5 completion:(id /* block */)a6;
+- (id)simpleDownloadingEffectsDict;
+- (void)p_trackStickerDownloadErrorWithEffect:(id)a0 error:(id)a1 filePath:(id)a2 trackModel:(id)a3;
+- (void)downloadEffect:(id)a0 trackModel:(id)a1 downloadQueuePriority:(long long)a2 downloadQualityOfService:(long long)a3 progress:(id /* block */)a4 completion:(id /* block */)a5;
+- (void)fetchEffectWith:(id)a0 gradeKey:(id)a1 completion:(id /* block */)a2;
+- (void)fetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 extraInfoDict:(id)a3 toDownloadParentSticker:(id)a4 trackModel:(id)a5 progress:(id /* block */)a6 completion:(id /* block */)a7;
+- (void)fetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 toDownloadParentSticker:(id)a3 trackModel:(id)a4 progress:(id /* block */)a5 completion:(id /* block */)a6;
+- (id)excludeTrackingKeys;
+- (void)setSimpleDownloadingEffectsDict:(id)a0;
+- (void)fetchStickerListAndDownloadStickerWithStickerID:(id)a0 gradeKey:(id)a1 parallelDownload:(BOOL)a2 trackModel:(id)a3 progress:(id /* block */)a4 completion:(id /* block */)a5;
+- (void)fetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 extraInfoDict:(id)a3 toDownloadParentSticker:(id)a4 trackModel:(id)a5 effects:(id)a6 bindEffects:(id)a7 progress:(id /* block */)a8 completion:(id /* block */)a9;
+- (void)fetchStickerListWithStickerIDS:(id)a0 gradeKey:(id)a1 shouldApplySticker:(BOOL)a2 toDownloadParentSticker:(id)a3 priority:(long long)a4 trackModel:(id)a5 progress:(id /* block */)a6 completion:(id /* block */)a7;
+- (id)downloadingEffectsDict;
+- (void)predownloadedEffect;
+- (void)p_configEffectPlatformInner;
+- (void)effectPlatformAccessKeyDidChanged:(id)a0;
+- (void)configEffectPlatform:(id)a0 region:(id)a1;
+- (void)setUpEffectManagerOnce;
+- (void)setUpEffectManager;
+- (void)triggerEffectPlatformTrackWithParameters:(id)a0;
+- (BOOL)equalWithCachedEffect:(id)a0 localEffect:(id)a1;
+- (void)downloadEffectModelWithID:(id)a0 completion:(id /* block */)a1;
+- (BOOL)isAppStoreChannel;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (id)extracted;
+
+@end

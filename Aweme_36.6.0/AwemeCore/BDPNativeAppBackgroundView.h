@@ -1,0 +1,3 @@
+@interface BDPNativeAppBackgroundView : UIView
+
+@end

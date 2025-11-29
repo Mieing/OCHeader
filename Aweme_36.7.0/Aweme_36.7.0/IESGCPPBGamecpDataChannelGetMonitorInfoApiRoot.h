@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpDataChannelGetMonitorInfoApiRoot : GPBRootObject
+
+@end

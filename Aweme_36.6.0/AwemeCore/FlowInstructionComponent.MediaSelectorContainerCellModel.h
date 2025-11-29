@@ -1,0 +1,3 @@
+@interface FlowInstructionComponent.MediaSelectorContainerCellModel : FlowInstructionComponent.FlowInstructionBaseCellModel
+
+@end

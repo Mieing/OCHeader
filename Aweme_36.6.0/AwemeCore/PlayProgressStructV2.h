@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface PlayProgressStructV2 : GPBMessage
+
+@property (nonatomic) long long playProgress;
+@property (nonatomic) BOOL hasPlayProgress;
+@property (nonatomic) long long lastModifiedTime;
+@property (nonatomic) BOOL hasLastModifiedTime;
+@property (copy, nonatomic) NSString *progressGuildBar;
+@property (nonatomic) BOOL hasProgressGuildBar;
+@property (nonatomic) int watchTimes;
+@property (nonatomic) BOOL hasWatchTimes;
+
++ (id)descriptor;
+
+@end

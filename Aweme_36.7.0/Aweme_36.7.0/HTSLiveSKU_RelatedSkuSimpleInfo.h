@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveSKU_RelatedSkuSimpleInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *skuId;
+@property (copy, nonatomic) NSString *productId;
+
++ (id)descriptor;
+
+@end

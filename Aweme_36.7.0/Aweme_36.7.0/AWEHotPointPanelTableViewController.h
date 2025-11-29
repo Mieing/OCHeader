@@ -1,0 +1,70 @@
+@class AWEHotSpotInnerContext, NSArray, NSString, NSIndexPath, UIView, UILabel, UITableView;
+
+@interface AWEHotPointPanelTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AWEHotPointPanelControllerProtocol>
+
+@property (retain, nonatomic) UITableView *tableView;
+@property (copy, nonatomic) NSArray *hotPointModels;
+@property (copy, nonatomic) NSString *currentWord;
+@property (retain, nonatomic) UIView *lineView;
+@property (retain, nonatomic) UIView *headerView;
+@property (retain, nonatomic) UILabel *risingHotSpotLabel;
+@property (copy, nonatomic) NSArray *risingHotSpotList;
+@property (nonatomic) BOOL disablePanelAnchor;
+@property (retain, nonatomic) AWEHotSpotInnerContext *context;
+@property (nonatomic) BOOL shouldShowHotWordsRecommend;
+@property (retain, nonatomic) NSIndexPath *currentIndexPath;
+@property (copy, nonatomic) id /* block */ updateRecommendViewBlock;
+@property (copy, nonatomic) id /* block */ disableSelectionBlock;
+@property (copy, nonatomic) NSArray *allHotSpots;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long index;
+
+- (id)tabManager;
+- (void)configureUI;
+- (id)recommendManager;
+- (id)risingHotSpotTitle;
+- (void)resetTrackedState;
+- (void)refreshWithData:(id)a0 risingHotSpotList:(id)a1 paramsModel:(id)a2 otherParams:(id)a3;
+- (void)scrollToNewHotSpotModel:(id)a0 isScrolled:(BOOL)a1;
+- (void)showRecommendView;
+- (void)hideRecommendView;
+- (void)selectSameHotSpotModel:(id)a0;
+- (id)currSelectHotSearchModel;
+- (id)hotSearchModelAtIndexPath:(id)a0;
+- (long long)getParentIndex;
+- (void)configCell:(id)a0 model:(id)a1 indexPath:(id)a2;
+- (void)expandRelateSpotAtSection:(long long)a0;
+- (void)trackTrendingTopicForEvent:(id)a0 searchModel:(id)a1 indexPath:(id)a2 withOtherParams:(id)a3;
+- (BOOL)shouldCurrentPanelStyleShowRecommendHotWords;
+- (id)indexPathForHotWord:(id)a0 expandSpotModel:(id)a1;
+- (id)indexPathForHotWord:(id)a0;
+- (double)constHeaderHeight;
+- (id)hotSpotModelsAtSection:(long long)a0;
+- (BOOL)shouldShowHeaderAtSection:(long long)a0;
+- (BOOL)shouldShowFooterAtSection:(long long)a0;
+- (void)trackClickEventResultAdWithModel:(id)a0 indexPath:(id)a1 withOtherParams:(id)a2;
+- (void)trackTrendingWordsForEvent:(id)a0 searchModel:(id)a1 indexPath:(id)a2;
+- (void)trackShowEventResultAdWithModel:(id)a0 indexPath:(id)a1;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (id)footerView;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (id)scrollView;
+- (void)scrollViewDidScroll:(id)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (Class)tableViewCellClass;
+
+@end

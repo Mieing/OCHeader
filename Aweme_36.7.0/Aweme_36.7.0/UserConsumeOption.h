@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface UserConsumeOption : IESLivePBBaseMessage
+
+@property (nonatomic) long long userConsumeCount;
+@property (copy, nonatomic) NSString *userConsumeDescribe;
+@property (copy, nonatomic) NSString *userConsumePlaceholder;
+@property (nonatomic) long long maxCountCanSet;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface HTSLiveDiggIcon : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (retain, nonatomic) HTSLiveImage *normalIconURL;
+@property (nonatomic) BOOL hasNormalIconURL;
+
++ (id)descriptor;
+
+@end

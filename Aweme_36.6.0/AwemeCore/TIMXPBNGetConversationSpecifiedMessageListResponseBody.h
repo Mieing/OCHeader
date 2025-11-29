@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetConversationSpecifiedMessageListResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *messageListArray;
+@property (readonly, nonatomic) unsigned long long messageListArray_Count;
+@property (nonatomic) long long nextOffset;
+@property (nonatomic) BOOL hasNextOffset;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+
++ (id)descriptor;
+
+@end

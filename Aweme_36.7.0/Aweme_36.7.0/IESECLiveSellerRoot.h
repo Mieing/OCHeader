@@ -1,0 +1,3 @@
+@interface IESECLiveSellerRoot : GPBRootObject
+
+@end

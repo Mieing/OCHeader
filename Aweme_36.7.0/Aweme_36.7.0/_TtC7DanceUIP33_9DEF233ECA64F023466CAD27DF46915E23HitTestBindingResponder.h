@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_9DEF233ECA64F023466CAD27DF46915E23HitTestBindingResponder : DanceUI.DefaultLayoutViewResponder
+
+@end

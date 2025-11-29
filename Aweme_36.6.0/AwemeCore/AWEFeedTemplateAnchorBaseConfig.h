@@ -1,0 +1,82 @@
+@class BDUGFlowAuthToken, NSString, NSTimer, AWEAwemeModel, UIView, AWECodeGenCommonAnchorBasicInfoModel, AWEPageContext;
+@protocol AWEAwemePlayInteractionUIDisplayDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEAwemePlayInteractionPanelDelegate, AWEPlayInteractionViewControllerProtocol, AWEAwemePlayInteractionCommerceDelegate, AWEFeedTemplateAnchorViewProtocol, AWEFeedAnchorBaseConfigProtocol, AWEAwemePlayInteractionPresenterMethodDelegate, AWEFeedTemplateAnchorViewPrivateProtocol;
+
+@interface AWEFeedTemplateAnchorBaseConfig : NSObject <AWEFeedTemplateAnchorViewDelegate, AWEMicroAppLifeCycleDelegate, AWEPlayInteractionComponentTrackPluginProtocol, AWEFeedTemplateAnchorBaseConfigProtocol, BDXContainerLifecycleProtocol, HunterContainerLifeCycleProtocol>
+
+@property (retain, nonatomic) UIView<AWEFeedTemplateAnchorViewProtocol, AWEFeedTemplateAnchorViewPrivateProtocol> *anchorView;
+@property (nonatomic) BOOL hasAnchorViewClick;
+@property (nonatomic) double detailPageEnterTimeStamp;
+@property (retain, nonatomic) BDUGFlowAuthToken *token;
+@property (copy, nonatomic) id /* block */ suffixDelayedShowVideoHandler;
+@property (copy, nonatomic) id /* block */ suffixDelayedShowAlbumHandler;
+@property (copy, nonatomic) id /* block */ subDescDelayedShowVideoHandler;
+@property (copy, nonatomic) id /* block */ subDescDelayedShowAlbumHandler;
+@property (copy, nonatomic) id /* block */ anchorDelayedShowAlbumHandler;
+@property (copy, nonatomic) id /* block */ anchorDelayedShowVideoHandler;
+@property (retain, nonatomic) NSTimer *suffixDelayedShowTimer;
+@property (retain, nonatomic) NSTimer *subDescDelayedShowTimer;
+@property (retain, nonatomic) NSTimer *anchorDelayedShowTimer;
+@property (nonatomic) BOOL shouldResetIdForHunter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) AWECodeGenCommonAnchorBasicInfoModel *templateAnchorInfo;
+@property (weak, nonatomic) id<AWEFeedAnchorBaseConfigProtocol> wrapperConfig;
+@property (weak, nonatomic) AWEPageContext *interactionContext;
+@property (weak, nonatomic) id<AWEAwemePlayInteractionPresenterMethodDelegate, AWEAwemePlayInteractionPanelDelegate, AWEAwemePlayInteractionCommerceDelegate, AWEAwemePlayInteractionUIDisplayDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEPlayInteractionViewControllerProtocol> interactionViewController;
+@property (copy, nonatomic) NSString *referString;
+
++ (BOOL)shouldShowAnchor:(id)a0;
++ (unsigned long long)templateAnchorType;
+
+- (void)containerViewControllerViewDidLoad:(id)a0;
+- (void)containerDidClose:(id)a0;
+- (void)anchorViewWillShowOnSuperview;
+- (void)handlerTemplateAnchorViewClicked;
+- (id)trackerParamsForTemplateAnchorShow;
+- (id)trackerParamsForTemplateAnchorClick;
+- (BOOL)shouldBusinessInvoke;
+- (void)trackerForTemplateAnchorShow;
+- (void)willShowDoubleLineStyleWithType:(unsigned long long)a0;
+- (void)trackerForTemplateAnchorClick;
+- (void)anchorConfigReset;
+- (id)trackerCommonParamsForTemplateAnchor;
+- (void)updateWithAwemeModel:(id)a0 needPerformOnDisplay:(BOOL)a1;
+- (void)parentViewForAnchorContainerWillShowOnScreen;
+- (id)getAwemeModelForTrackComponent;
+- (id)getBizParamsForTrackComponentWithStayDuration;
+- (void)stayDurationDidTrack:(double)a0;
+- (id)getAnchorViewWithModel:(id)a0;
+- (void)anchorViewReset;
+- (void)didShowDoubleLineStyleAnchor;
+- (id)paramsForTemplateAnchorViewTransfer;
+- (void)trackerForDetailPageStay;
+- (void)handleAnchorDetailPageEnterEventWithIdentifier:(id)a0 trackMethodType:(long long)a1;
+- (void)handleAnchorDetailPageDismissEventWithIdentifier:(id)a0 trackMethodType:(long long)a1;
+- (void)microAppViewDidLoadWithAppID:(id)a0 containerViewController:(id)a1;
+- (void)microAppWorkBeforeCloseWithAppID:(id)a0 containerViewController:(id)a1;
+- (void)setupAnimationHandlerBinding;
+- (void)anchorViewDidEndDisplay;
+- (BOOL)enableFixLineBreakV2;
+- (void)performSuffixDelayedAnimation;
+- (void)performAnchorDelayedAnimation;
+- (void)setupSuffixDelayedShowHandlerBinding;
+- (void)setupSubDescDelayedShowHandlerBinding;
+- (void)setupAnchorDelayedShowHandlerBinding;
+- (void)performSubDescDelayedAnimation;
+- (void)removeAnimationHandler;
+- (BOOL)enableStayTimeTrackOpt;
+- (void)onTemplateAnchorViewClicked;
+- (void)commitAnchorStatsParams;
+- (id)trackerParamsForTemplateAnchorInfo;
+- (id)trackerFrameWorkParamsForTemplateAnchor;
+- (id)trackerParamsForTemplateAnchorDetailPageStay;
+- (void)updateElementViewLayout;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)addObservers;
+
+@end

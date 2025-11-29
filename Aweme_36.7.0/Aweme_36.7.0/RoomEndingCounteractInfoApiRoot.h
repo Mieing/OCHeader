@@ -1,0 +1,3 @@
+@interface RoomEndingCounteractInfoApiRoot : GPBRootObject
+
+@end

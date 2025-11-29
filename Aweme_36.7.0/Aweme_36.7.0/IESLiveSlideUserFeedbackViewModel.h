@@ -1,0 +1,71 @@
+@class FeedItem, NSArray, HTSLiveFeedbackCard_RoomCardStruct, IESLiveSlideUserFeedbackApi, NSString, IESLiveInnerFeedUserFeedbackItemModel, HTSLiveFeedbackCard_Question;
+
+@interface IESLiveSlideUserFeedbackViewModel : NSObject <IESLiveOuterFeedbackAction>
+
+@property (retain, nonatomic) IESLiveSlideUserFeedbackApi *userFeedbackApi;
+@property (retain, nonatomic) NSArray *cardRoomList;
+@property (nonatomic) long long showIndex;
+@property (retain, nonatomic) HTSLiveFeedbackCard_RoomCardStruct *nextRoom;
+@property (nonatomic) long long showPage;
+@property (nonatomic) long long likeCount;
+@property (nonatomic) BOOL hasMoreRooms;
+@property (retain, nonatomic) IESLiveInnerFeedUserFeedbackItemModel *itemModel;
+@property (copy, nonatomic) NSString *actionType;
+@property (retain, nonatomic) FeedItem *model;
+@property (retain, nonatomic) HTSLiveFeedbackCard_Question *currentQuestion;
+@property (retain, nonatomic) HTSLiveFeedbackCard_Question *subQuestion;
+@property (nonatomic) BOOL isNegativeAnswer;
+@property (nonatomic) long long index;
+@property (nonatomic) BOOL isShowingCard;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)enterFrom;
+- (id)enterMethod;
+- (id)toastText;
+- (void)didSetAttachingDIContext;
+- (id)lynxUrl;
+- (void)onFeedbackStateChange:(long long)a0 toastInfo:(id)a1;
+- (id)lynxInitialData;
+- (void)postUserFeedbackCardIShow;
+- (id)feedbackCardEventData;
+- (void)saveDateWhenUserFeedbackCardShow;
+- (void)removeCurrentUserFeedbackCard;
+- (void)trackUserFeedbackCardDurationWithTime:(id)a0;
+- (void)notifyFeedbackShowIfNeed;
+- (BOOL)isBigCardType;
+- (long long)currentLikeCount;
+- (BOOL)canEnterNextMultiCard;
+- (void)trackUserFeedSubmitClick:(id)a0;
+- (void)trackUserFeedbackCardShowError:(id)a0;
+- (BOOL)canEnterNextBigCard;
+- (id)getRoomByIndex:(long long)a0;
+- (void)requestForBigCardLikeOrDislike:(BOOL)a0 withRoom:(id)a1;
+- (void)tryToEnterNextbigCard:(BOOL)a0;
+- (id)firstOptionToast;
+- (id)getRoomsWithStart:(long long)a0 andLen:(long long)a1;
+- (void)trackUserFeedbackCardLiveRoomShow:(id)a0;
+- (void)multiCardEnterNext;
+- (void)requestForSmallCardLikeOrDislike;
+- (id)getLikeRoomIDs;
+- (void)bigcardSubmit:(BOOL)a0;
+- (void)multiCardSubmit:(BOOL)a0;
+- (void)clearBeforeSelectedWithQuestion:(id)a0;
+- (void)clearAllOptions;
+- (id)findQuestionWithID:(id)a0;
+- (BOOL)shouldEnableSubmit;
+- (void)trackUserFeedbackCardShow;
+- (void)checkIfFollowedTheBoundRoom;
+- (void)updateLikeCount:(BOOL)a0 withRoom:(id)a1;
+- (void)multiLiveSubmit:(BOOL)a0;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (id)result;
+- (void)submit;
+- (id)questionType;
+- (id)cardType;
+- (id)fallbackUrl;
+
+@end

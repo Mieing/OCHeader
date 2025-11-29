@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicBattleRoot : GPBRootObject
+
+@end

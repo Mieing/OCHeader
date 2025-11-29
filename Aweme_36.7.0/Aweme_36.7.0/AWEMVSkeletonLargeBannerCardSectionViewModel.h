@@ -1,0 +1,3 @@
+@interface AWEMVSkeletonLargeBannerCardSectionViewModel : AWEBaseListSectionViewModel
+
+@end

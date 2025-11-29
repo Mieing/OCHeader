@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface BrandTagInteractionStickerStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *brandId;
+@property (nonatomic) BOOL hasBrandId;
+@property (copy, nonatomic) NSString *schema;
+@property (nonatomic) BOOL hasSchema;
+
++ (id)descriptor;
+
+@end

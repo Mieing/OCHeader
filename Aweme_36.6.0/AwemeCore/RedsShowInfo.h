@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface RedsShowInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int dataType;
+@property (copy, nonatomic) NSString *fullText;
+
++ (id)descriptor;
+
+@end

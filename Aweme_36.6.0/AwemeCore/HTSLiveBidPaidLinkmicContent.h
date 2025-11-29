@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface HTSLiveBidPaidLinkmicContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long startPrice;
+@property (nonatomic) long long linkDuration;
+@property (nonatomic) long long maxBidPrice;
+@property (nonatomic) long long bidDuration;
+@property (retain, nonatomic) NSMutableArray *bidStepsArray;
+@property (readonly, nonatomic) unsigned long long bidStepsArray_Count;
+
++ (id)descriptor;
+
+@end

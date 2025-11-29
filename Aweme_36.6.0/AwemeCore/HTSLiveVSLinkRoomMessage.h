@@ -1,0 +1,14 @@
+@class HTSLiveVSLinkInfo, HTSLiveCommon;
+
+@interface HTSLiveVSLinkRoomMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveVSLinkInfo *linkInfo;
+@property (nonatomic) BOOL hasLinkInfo;
+@property (nonatomic) BOOL allInfo;
+@property (nonatomic) long long scatterTime;
+
++ (id)descriptor;
+
+@end

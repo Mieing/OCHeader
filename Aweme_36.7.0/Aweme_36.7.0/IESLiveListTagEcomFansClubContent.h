@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveListTagEcomFansClubContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *ecomFansClubTag;
+@property (nonatomic) BOOL hasEcomFansClubTag;
+@property (copy, nonatomic) NSString *clubName;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class RushedListResponse_ResponseData;
+
+@interface RushedListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RushedListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

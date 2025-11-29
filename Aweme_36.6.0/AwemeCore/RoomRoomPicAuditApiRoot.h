@@ -1,0 +1,3 @@
+@interface RoomRoomPicAuditApiRoot : GPBRootObject
+
+@end

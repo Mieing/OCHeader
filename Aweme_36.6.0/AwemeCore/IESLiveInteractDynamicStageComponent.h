@@ -1,0 +1,3 @@
+@interface IESLiveInteractDynamicStageComponent : IESLiveInteractComponentBase
+
+@end

@@ -1,0 +1,3 @@
+@interface IESLiveOpenPlatformSonicView : UIView
+
+@end

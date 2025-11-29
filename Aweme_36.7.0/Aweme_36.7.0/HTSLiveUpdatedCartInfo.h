@@ -1,0 +1,14 @@
+@class HTSLiveGlobalCustomIcons, HTSLiveCartVertical, HTSLiveCartHorizontal;
+
+@interface HTSLiveUpdatedCartInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCartVertical *vertical;
+@property (nonatomic) BOOL hasVertical;
+@property (retain, nonatomic) HTSLiveCartHorizontal *horizontal;
+@property (nonatomic) BOOL hasHorizontal;
+@property (retain, nonatomic) HTSLiveGlobalCustomIcons *globalCustomIcons;
+@property (nonatomic) BOOL hasGlobalCustomIcons;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString, NSMutableDictionary, HTSLiveText;
+
+@interface AssociationResult : IESLivePBBaseMessage
+
+@property (nonatomic) int actionType;
+@property (retain, nonatomic) HTSLiveText *associationDisplayText;
+@property (nonatomic) BOOL hasAssociationDisplayText;
+@property (copy, nonatomic) NSString *schemaURL;
+@property (retain, nonatomic) NSMutableDictionary *extraMap;
+@property (readonly, nonatomic) unsigned long long extraMap_Count;
+
++ (id)descriptor;
+
+@end

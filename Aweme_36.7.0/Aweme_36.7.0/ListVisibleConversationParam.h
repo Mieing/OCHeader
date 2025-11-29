@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface ListVisibleConversationParam : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *secAnchorId;
+@property (nonatomic) int conversationType;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,82 @@
+@class NSString, AWEPlayInteractionCommentLynxMediaControlManager, AWEPlayInteractionPreloadManager, NSMutableArray, UIViewController;
+@protocol AWECommentListViewControllerProtocol, AWEPadSplitViewSecondaryContentProtocol;
+
+@interface AWEPlayInteractionCommentPanelController : AWEPlayInteractionNewBaseController <AWEPlayInteractionCommentPanelControllerProtocol, AWECommentPreloadManagerProtocol>
+
+@property (copy, nonatomic) NSString *commentCloseMethod;
+@property (nonatomic) BOOL isShowedCommentPanel;
+@property (retain, nonatomic) NSMutableArray *commentModelListToInsert;
+@property (retain, nonatomic) AWEPlayInteractionPreloadManager *preloadManager;
+@property (retain, nonatomic) AWEPlayInteractionCommentLynxMediaControlManager *lynxMediaControl;
+@property (nonatomic) BOOL isShowingFastCommentKeyboard;
+@property (retain, nonatomic) UIViewController<AWECommentListViewControllerProtocol> *padSplitCommentVC;
+@property (nonatomic) double padPanelRemainStartTimeInterval;
+@property (retain, nonatomic) UIViewController<AWEPadSplitViewSecondaryContentProtocol> *padSplitContainer;
+@property (retain, nonatomic) UIViewController<AWECommentListViewControllerProtocol> *commentVC;
+@property (nonatomic) long long commentPanelType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWEPadBizUIAdapterClass;
++ (Class)aAFDServiceDOUYINDSAdapterClass;
++ (Class)aAWEPlayInteractionCommentElementDOUYINLiteAdapterClass;
++ (Class)aAWEPadSplitScreenAdapterClass;
+
+- (void)onThemeChanged;
+- (id)aAWEPadModuleAdapter;
+- (void)userDidTakeScreenshot;
+- (BOOL)isNotInteractiveCommentPanelShowing;
+- (void)addModelToCommentInsertList:(id)a0;
+- (BOOL)isCommentListShowing;
+- (void)showShareHintWithPlayTimes:(long long)a0;
+- (void)openCommentPanelWithEnterSource:(unsigned long long)a0;
+- (void)showCommentPanelWithParams:(id)a0;
+- (void)commentVCDidDismiss;
+- (id)shrinkVideoExtraParams;
+- (void)magnifyVideoWhenCloseCommentPanelIfNeeded:(BOOL)a0;
+- (void)resizeVideoWhenDragCommentPanel:(double)a0;
+- (BOOL)shouldShowCommentShrinkVideo;
+- (void)shouldCancelShowCommentPanel;
+- (BOOL)isPadSplitOpening;
+- (void)p_prepareForDisplay;
+- (BOOL)isPanelShowed;
+- (BOOL)enableMemoryOptimizeWithNunki;
+- (void)didReceiveMemeoryDangerLevelTopNotification;
+- (id)aAWEPadBizUIAdapter;
+- (void)resetComment;
+- (void)appBecomeActiveShrinkVideoNotification;
+- (void)resetCommentVC;
+- (void)shrinkVideoWhenShowCommentPanel:(BOOL)a0;
+- (void)updateCommentPanelType:(id)a0;
+- (BOOL)swipeRightCommentPanelToCloseInFlowVC;
+- (void)magnifyVideoWhenCloseCommentPanelIfNeeded:(BOOL)a0 panelType:(unsigned long long)a1;
+- (void)shrinkVideoWhenEnterPartialFullCommentPanel:(BOOL)a0;
+- (void)updateLynxMediaControlParams;
+- (void)updateCommentPanelParam:(id)a0;
+- (id)aAWEPlayInteractionCommentElementDOUYINLiteAdapter;
+- (id)aAWEPadSplitScreenAdapter;
+- (void)shrinkVideoWhenCommentRotateIfNeeded;
+- (void)insertCommentFromPlayView;
+- (void)setCommentVCBlock;
+- (void)showDouPlusGuideInInteractionScene;
+- (void)addSearchParamsWithParams:(id)a0 trackerContext:(id)a1;
+- (BOOL)isCommentVCEmpty;
+- (id)nonAutoInitCommentVC;
+- (id)aAFDServiceDOUYINDSAdapter;
+- (BOOL)isCommentVCShowing;
+- (void)performCommentAction;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning;
+- (void)viewWillAppear;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)didEndDisplaying;
+- (void)viewDidDisappear;
+- (void)willDisplay;
+- (void)viewWillDisappear;
+
+@end

@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveScreenBarConfigure : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (nonatomic) int isDynamicImg;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *jumpPrompt;
+
++ (id)descriptor;
+
+@end

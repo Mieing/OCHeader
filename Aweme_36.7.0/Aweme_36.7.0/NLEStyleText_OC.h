@@ -1,0 +1,84 @@
+@class NSArray, NSString, NLEResourceNode_OC;
+
+@interface NLEStyleText_OC : NLENode_OC
+
+@property (nonatomic) struct shared_ptr<cut::model::NLEStyText> { struct NLEStyText *x0; struct __shared_weak_count *x1; } cppValue;
+@property (nonatomic) unsigned int fontSize;
+@property (nonatomic) unsigned int backgroundColor;
+@property (nonatomic) BOOL backgroundRoundCorner;
+@property (nonatomic) float backgroundRoundRadius;
+@property (nonatomic) float backgroundRoundScale;
+@property (nonatomic) BOOL backgroundCustomized;
+@property (nonatomic) struct CGSize { double x0; double x1; } backgroundWHCustomized;
+@property (nonatomic) struct CGSize { double x0; double x1; } backgroundOffsetCustomized;
+@property (retain, nonatomic) NSArray *animations;
+@property (nonatomic) unsigned int outlineColor;
+@property (nonatomic) unsigned int textColor;
+@property (nonatomic) int alignType;
+@property (nonatomic) int typeSettingKind;
+@property (nonatomic) unsigned int shadowColor;
+@property (nonatomic) float shadowSmoothing;
+@property (nonatomic) float shadowOffsetX;
+@property (nonatomic) float shadowOffsetY;
+@property (nonatomic) BOOL bold;
+@property (nonatomic) float boldWidth;
+@property (nonatomic) unsigned int italicDegree;
+@property (nonatomic) BOOL underline;
+@property (nonatomic) float underlineWidth;
+@property (nonatomic) float underlineOffset;
+@property (nonatomic) float lineGap;
+@property (nonatomic) float charSpacing;
+@property (nonatomic) float innerPadding;
+@property (nonatomic) BOOL outline;
+@property (nonatomic) float outlineWidth;
+@property (nonatomic) BOOL shapeFlipX;
+@property (nonatomic) BOOL shapeFlipY;
+@property (nonatomic) unsigned int KTVColor;
+@property (nonatomic) unsigned int KTVOutlineColor;
+@property (nonatomic) unsigned int KTVShadowColor;
+@property (nonatomic) BOOL oneLineTruncated;
+@property (nonatomic) BOOL background;
+@property (nonatomic) BOOL shadow;
+@property (nonatomic) float lineMaxWidth;
+@property (copy, nonatomic) NSString *truncatedPostfix;
+@property (retain, nonatomic) NLEResourceNode_OC *font;
+@property (retain, nonatomic) NLEResourceNode_OC *fallbackFont;
+@property (retain, nonatomic) NLEResourceNode_OC *shape;
+@property (retain, nonatomic) NLEResourceNode_OC *flower;
+@property (nonatomic) BOOL useFlowerDefaultColor;
+@property (nonatomic) float backgroundWidth;
+@property (nonatomic) float backgroundHeight;
+@property (nonatomic) float segmentShadowDistance;
+@property (nonatomic) float segmentShadowAngle;
+
++ (id)textStyleWithJSONString:(id)a0;
++ (id)textStyleWithJSONString:(id)a0 isNewEffectProtocol:(BOOL)a1;
+
+- (id)initWithCPPNode:(struct shared_ptr<cut::model::NLEStyText> { struct NLEStyText *x0; struct __shared_weak_count *x1; })a0;
+- (id)getFallbackFontList;
+- (void)clearFallbackFontList;
+- (void)removeFallbackFontList:(id)a0;
+- (void)addFallbackFontList:(id)a0;
+- (id)getOutlineColors;
+- (void)setOutlineColors:(id)a0;
+- (id)getBackgourndColors;
+- (id)getTextColors;
+- (id)getShadowColors;
+- (id)getKTVColors;
+- (void)setKTVColors:(id)a0;
+- (id)getKTVOutlineColors;
+- (void)setKTVOutlineColors:(id)a0;
+- (id)getKTVShadowColors;
+- (void)setKTVShadowColors:(id)a0;
+- (void)clearAnimation;
+- (float)backgroundHeighth;
+- (void).cxx_destruct;
+- (id)init;
+- (BOOL)hasTextColor;
+- (void)addAnimation:(id)a0;
+- (void)removeAnimation:(id)a0;
+- (void)setBackgroundColors:(id)a0;
+- (void)setTextColors:(id)a0;
+- (void)setShadowColors:(id)a0;
+
+@end

@@ -1,0 +1,26 @@
+@class HTSLiveText, NSString, IESLiveMicPosTagInfo, IESLiveEarlyInitRtcEnginelData;
+
+@interface IESLiveLinkMicAudienceApplyResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long linkmicId;
+@property (nonatomic) int vendor;
+@property (copy, nonatomic) NSString *prompts;
+@property (copy, nonatomic) NSString *linkmicIdStr;
+@property (nonatomic) BOOL autoJoin;
+@property (nonatomic) long long weightDecayType;
+@property (nonatomic) BOOL autoJoinFull;
+@property (nonatomic) long long waitingListOffset;
+@property (nonatomic) int silenceStatus;
+@property (retain, nonatomic) HTSLiveText *fastMatchDisplayText;
+@property (nonatomic) BOOL hasFastMatchDisplayText;
+@property (nonatomic) int linkType;
+@property (retain, nonatomic) IESLiveMicPosTagInfo *micPosTagInfo;
+@property (nonatomic) BOOL hasMicPosTagInfo;
+@property (retain, nonatomic) IESLiveEarlyInitRtcEnginelData *earlyInitRtcEngineData;
+@property (nonatomic) BOOL hasEarlyInitRtcEngineData;
+@property (copy, nonatomic) NSString *linkerSessionId;
+@property (copy, nonatomic) NSString *subRtcExtInfo;
+
++ (id)descriptor;
+
+@end

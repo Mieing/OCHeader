@@ -1,0 +1,10 @@
+@class PortalPingResponse_Data;
+
+@interface PortalPingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PortalPingResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

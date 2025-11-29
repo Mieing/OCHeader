@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastOpenRewardRoot : GPBRootObject
+
+@end

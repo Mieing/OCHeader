@@ -1,0 +1,76 @@
+@class MMMetricsInfo, MMLiveTask, NSString, MMPowerABTest;
+
+@interface MMBatteryPowerMonitor : MMRootService <MMLiveTaskMgrExt, IExptServiceExt, MMServiceProtocol>
+
+@property (nonatomic) BOOL callerMonitoring;
+@property (nonatomic) BOOL isMonitoring;
+@property (nonatomic) unsigned long long type;
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) float currentBatteryLevel;
+@property (nonatomic) BOOL batteryIsCharging;
+@property (nonatomic) float lastBatteryLevel;
+@property (nonatomic) double lastBatteryChangeTime;
+@property (nonatomic) long long lastThermalState;
+@property (nonatomic) double lastThermalStateChangedTime;
+@property (nonatomic) BOOL isLive;
+@property (nonatomic) BOOL isFinder;
+@property (nonatomic) BOOL enable;
+@property (nonatomic) unsigned long long liveRenderViewType;
+@property (nonatomic) unsigned long long liveRenderViewFrameCnt;
+@property (nonatomic) double liveRenderViewTotalFrameTime;
+@property (retain, nonatomic) MMPowerABTest *abTest;
+@property (readonly, nonatomic) double reportTimeInterval;
+@property (retain, nonatomic) MMMetricsInfo *lastReportedMetricsInfo;
+@property (nonatomic) BOOL injected;
+@property (weak, nonatomic) MMLiveTask *liveTask;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)setup;
+- (void)onServiceClearData;
+- (void)onExptItemListChange;
+- (void)metricsMonitor:(id)a0 didCollectMetricsInfo:(id)a1;
+- (void)reportMetricsInfo:(id)a0;
+- (void)startMonitorType:(unsigned long long)a0 scene:(unsigned long long)a1;
+- (void)stopAllMonitorScene:(unsigned long long)a0;
+- (void)stopALLMonitor;
+- (void)startPowerReport;
+- (void)batteryLevelDidChange;
+- (void)attachSceneInfo:(id)a0;
+- (void)onLiveTask:(id)a0 statistics:(id)a1;
+- (unsigned int)extraSceneInfo;
+- (BOOL)isRecentUseFaceDetect;
+- (BOOL)isRecentUseFaceDecode;
+- (BOOL)isKTVSinger;
+- (BOOL)isKTVListener;
+- (BOOL)isCaptureRes2560x1440;
+- (id)logWithReport:(id)a0;
+- (void)batteryStateDidChange;
+- (void)stopPowerReport;
+- (void)startMonitoring;
+- (void)stopMonitoring;
+- (float)devicemAh;
+- (float)estimateVoltage;
+- (void)startThermalStateDurationReport;
+- (void)stopReportThermalStateDuration;
+- (void)thermalStateDidChange;
+- (void)startReportForThermalStateChanged:(unsigned long long)a0;
+- (void)reportMetricsDataForThermalStateChangedIfNeed:(unsigned long long)a0 lastDuration:(double)a1;
+- (void)startReportWithMetricsInfo:(id)a0;
+- (unsigned long long)typeWithLastThermalState:(long long)a0 currentThermalState:(long long)a1;
+- (void)finderTypeChanged:(id)a0;
+- (void)liveTypeChanged:(id)a0;
+- (BOOL)rejectHighCPUTaskScene:(unsigned long long)a0;
+- (void)statisticsRenderView;
+- (BOOL)isNewDevice;
+- (void)reportFinder:(id)a0;
+- (void)liveDataItemUpdated:(id)a0;
+- (void)onEnterFinder;
+- (void)hook4Player;
+- (void)startSwizzlePlayer;
+- (void).cxx_destruct;
+
+@end

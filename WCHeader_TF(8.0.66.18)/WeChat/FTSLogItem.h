@@ -1,0 +1,74 @@
+@class NSString, NSDictionary, NSMutableSet;
+
+@interface FTSLogItem : NSObject
+
+@property (nonatomic) unsigned long long searchScene;
+@property (nonatomic) unsigned long long clickType;
+@property (nonatomic) unsigned long long row;
+@property (nonatomic) unsigned long long clickSubType;
+@property (nonatomic) unsigned long long bussinessRow;
+@property (retain, nonatomic) NSString *searchId;
+@property (nonatomic) unsigned long long docId;
+@property (nonatomic) unsigned long long matchType;
+@property (nonatomic) unsigned int guideStyle;
+@property (nonatomic) unsigned int queryMatchType;
+@property (nonatomic) unsigned int groupMemberMatchLogType;
+@property (retain, nonatomic) NSString *itemName;
+@property (nonatomic) unsigned int browseTime;
+@property (nonatomic) unsigned int normalContactCount;
+@property (nonatomic) unsigned int groupContactCount;
+@property (nonatomic) unsigned int brandContactCount;
+@property (nonatomic) unsigned int messageCount;
+@property (nonatomic) unsigned int featureCount;
+@property (nonatomic) unsigned int favCount;
+@property (nonatomic) unsigned int gameCount;
+@property (nonatomic) unsigned int addressBookCount;
+@property (nonatomic) unsigned int weAppCount;
+@property (nonatomic) unsigned int miniGameCount;
+@property (nonatomic) unsigned int sectionPos;
+@property (nonatomic) unsigned int resultCount;
+@property (retain, nonatomic) NSString *query;
+@property (retain, nonatomic) NSDictionary *voiceInfo;
+@property (retain, nonatomic) NSMutableSet *exposeSet;
+@property (nonatomic) unsigned int lastActiveTime;
+@property (nonatomic) unsigned int myLastActiveTime;
+@property (nonatomic) unsigned int memCount;
+@property (nonatomic) unsigned int memFanCount;
+@property (nonatomic) BOOL isSilentGroup;
+@property (nonatomic) unsigned int unReadCount;
+@property (retain, nonatomic) NSString *groupId;
+@property (retain, nonatomic) NSString *matchStr;
+@property (nonatomic) unsigned int myRecentMsgCount;
+@property (retain, nonatomic) NSString *myRecentSearchCount;
+@property (retain, nonatomic) NSString *myRecentSearchDays;
+@property (nonatomic) unsigned int myLastSearchTime;
+@property (retain, nonatomic) NSString *topHitInfo;
+@property (nonatomic) double trainScore;
+@property (retain, nonatomic) NSString *nsDocId;
+@property (retain, nonatomic) NSString *nsWeAppId;
+@property (retain, nonatomic) NSString *nsFinderUserName;
+@property (nonatomic) unsigned int uiFinderSearchCount;
+@property (retain, nonatomic) NSString *nsItemUserName;
+@property (nonatomic) unsigned int customerServiceCount;
+@property (nonatomic) unsigned int customerServiceType;
+@property (nonatomic) unsigned int customerServiceMatchType;
+@property (retain, nonatomic) NSString *weshopBuffer;
+@property (nonatomic) unsigned int pageType;
+@property (retain, nonatomic) NSString *extInfo;
+
+- (id)init;
+- (id)initWithParams:(id)a0;
+- (void)parse:(id)a0;
+- (id)formatLogString:(id)a0;
+- (BOOL)hasVoiceInput;
+- (id)genVoiceInfo;
+- (BOOL)isVoiceResultMod;
+- (id)getExposeInfo;
+- (BOOL)shouldDiscardByOverseaUser;
+- (id)genStatString;
+- (id)genStatStringForSubSearch;
+- (id)filteredSearchId;
+- (unsigned long long)filteredDocId;
+- (void).cxx_destruct;
+
+@end

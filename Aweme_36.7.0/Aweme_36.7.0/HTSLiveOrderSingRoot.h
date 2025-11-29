@@ -1,0 +1,3 @@
+@interface HTSLiveOrderSingRoot : GPBRootObject
+
+@end

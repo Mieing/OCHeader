@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveOpenExplainCardSettingDialogIconModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *uri;
+
++ (id)modelCustomPropertyMapper;
+
+@end

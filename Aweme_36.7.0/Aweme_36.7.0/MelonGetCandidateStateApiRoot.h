@@ -1,0 +1,3 @@
+@interface MelonGetCandidateStateApiRoot : GPBRootObject
+
+@end

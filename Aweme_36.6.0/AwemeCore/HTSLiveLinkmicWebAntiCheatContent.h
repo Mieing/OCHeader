@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface HTSLiveLinkmicWebAntiCheatContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *authTicket;
+@property (copy, nonatomic) NSString *entryWebPageAddress;
+@property (copy, nonatomic) NSString *popupText;
+@property (nonatomic) long long webPageDisplayDuration;
+@property (nonatomic) int faceVerifyType;
+@property (nonatomic) BOOL authorization;
+@property (copy, nonatomic) NSString *requestSource;
+@property (copy, nonatomic) NSString *did;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage, HTSLiveFlexImageStruct;
+
+@interface HTSLiveScreenChatMessage_Effect : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveFlexImageStruct *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (retain, nonatomic) HTSLiveImage *avatarIcon;
+@property (nonatomic) BOOL hasAvatarIcon;
+@property (copy, nonatomic) NSString *backgroundColor;
+
++ (id)descriptor;
+
+@end

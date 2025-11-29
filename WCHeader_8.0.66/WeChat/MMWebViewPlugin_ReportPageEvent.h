@@ -1,0 +1,92 @@
+@class NSString, BrandActionReportLogicController, WCStatTimerHelper, NSMutableArray;
+
+@interface MMWebViewPlugin_ReportPageEvent : MMWebViewPluginBase <IMMWebViewReportStatMgrExt> {
+    NSString *_nsSessionID;
+    NSString *_referLoadUrl;
+    NSString *_currentLoadUrl;
+    unsigned long long _enterPageTime;
+    unsigned long long _didStartLoadTime;
+    unsigned long long _costLoadTime;
+    long long _scene;
+    unsigned long long _recentMenuType;
+    WCStatTimerHelper *m_oStatTimerHelper;
+    unsigned int m_stat_enterTime;
+    double m_beginOffset;
+    double m_endOffset;
+    double m_maxOffset;
+    double m_screenHeight;
+    unsigned long long m_startInitTime;
+    unsigned long long m_loadTime;
+    unsigned long long m_startDisappearTime;
+    unsigned long long m_disappearTime;
+    BOOL m_beginDragging;
+    BOOL m_hasAppear;
+    BOOL m_hasEnter;
+    BOOL m_hasMinimize;
+}
+
+@property (retain, nonatomic) NSString *m_lastCheckCpKey;
+@property (nonatomic) BOOL m_isFinishLoaded;
+@property (nonatomic) BOOL m_isPageLoadFail;
+@property (nonatomic) BOOL hasCreateBrandActionReport;
+@property (retain, nonatomic) BrandActionReportLogicController *m_brandActionReport;
+@property (copy, nonatomic) NSString *navigateActionSourceUrl;
+@property (copy, nonatomic) NSString *navigateActionTargetUrl;
+@property (nonatomic) unsigned long long navigateActionTimeStampInMs;
+@property (nonatomic) unsigned int navigateActionMatchControlAction;
+@property (nonatomic) BOOL navigateActionMatchUniversalLinkAndConfirmed;
+@property (retain, nonatomic) NSMutableArray *arrWebviewJumpInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getUserAgent;
++ (unsigned long long)getNetType;
++ (unsigned int)getCurrentTimeStamp;
++ (unsigned long long)getCurrentTimeInMs;
++ (void)reportPageInfoWhenForwardMsgOrFav:(id)a0 actionType:(unsigned long long)a1 fromScene:(unsigned long long)a2 ret:(unsigned long long)a3;
++ (void)reportCityServiceInjectAction:(id)a0 extString:(id)a1 success:(BOOL)a2 reason:(unsigned long long)a3;
++ (void)reportCityServiceIdKeyAction:(unsigned long long)a0;
+
+- (id)init;
+- (void)dealloc;
+- (BOOL)reportPageEventFrom3rdProvideInfoWithKey:(id)a0 andValue:(id)a1;
+- (void)reportPageEventWhenClickMenuAction:(unsigned long long)a0;
+- (id)getSessionID;
+- (void)genSessionID;
+- (id)getAppID;
+- (id)getCurrentUrl;
+- (id)getPublisherName;
+- (BOOL)isShareWithUpdatePluginInfo:(unsigned long long)a0;
+- (void)reportPageEventWhenPageLeft:(BOOL)a0;
+- (void)realReportMenuActionWithType:(unsigned long long)a0 result:(unsigned long long)a1;
+- (void)onEnterForeground;
+- (void)onEnterBackground;
+- (void)updateMaxScroll;
+- (BOOL)handleEvent:(unsigned long long)a0 userInfo:(id)a1;
+- (void)onMenuActionRet:(unsigned long long)a0;
+- (void)reportKeyShouldStartLoadEventWithSourceUrl:(id)a0 targetUrl:(id)a1 matchAction:(unsigned int)a2;
+- (void)reportUniversalLinkAlertUserAction:(BOOL)a0 sourceUrl:(id)a1 targetUrl:(id)a2;
+- (void)onCheckUniversalLinkActionWhenNavigationDidStart:(id)a0;
+- (void)onCheckUniversalLinkActionWhenEnterBackground;
+- (void)__reportUniversalLinkNavigationKVStatWithPerfomUniversalLinkNavigationResult:(BOOL)a0;
+- (void)__clearNavigateActionReportData;
+- (void)markNeedCheckUrlAndRemoveLastCheckedUrl:(id)a0;
+- (void)reportH5PageWrapWhenShouldStartLoad:(id)a0;
+- (void)reportH5PageWrapWhenDidFinishLoad:(id)a0;
+- (void)reportH5PageWrapWhenDidFailLoad:(id)a0;
+- (void)reportH5PageWrapWhenDealloc:(id)a0;
+- (void)reportTopStory:(id)a0;
+- (void)reportCloseWebView;
+- (void)createBrandActionReport;
+- (unsigned long long)reportFromScene;
+- (void)reportAdPageTakeScreenshot;
+- (void)savePageInfoForKv10643Report;
+- (void)saveCurrentPageTiteInfoForKv10643Report;
+- (id)genUrlListForKv10643Report;
+- (void)extractAndreportPageFeatureWithInitUrl:(id)a0 a8keyUrl:(id)a1 currentUrl:(id)a2 andRequstID:(unsigned int)a3;
+- (id)genReportStringWithFeatureVectorArray:(id)a0 startIndex:(unsigned long long)a1;
+- (void).cxx_destruct;
+
+@end

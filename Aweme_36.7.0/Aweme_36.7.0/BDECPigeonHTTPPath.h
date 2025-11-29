@@ -1,0 +1,77 @@
+@class NSString;
+
+@interface BDECPigeonHTTPPath : NSObject
+
+@property (readonly, copy, nonatomic) NSString *rawPrefix;
+@property (readonly, copy, nonatomic) NSString *conversationPrefix;
+@property (readonly, copy, nonatomic) NSString *groupChatConversationPrefix;
+@property (readonly, copy, nonatomic) NSString *userPrefix;
+@property (readonly, copy, nonatomic) NSString *groupChatUserPrefix;
+@property (copy) NSString *pathPrefix;
+@property (readonly, copy, nonatomic) NSString *get_link_info;
+@property (readonly, copy, nonatomic) NSString *get_link_info_list;
+@property (readonly, copy, nonatomic) NSString *post_pre_check_comment;
+@property (readonly, copy, nonatomic) NSString *post_add_comment;
+@property (readonly, copy, nonatomic) NSString *post_comment_invite_comment;
+@property (readonly, copy, nonatomic) NSString *post_withdraw_message;
+@property (readonly, copy, nonatomic) NSString *post_set_user_setting;
+@property (readonly, copy, nonatomic) NSString *get_user_setting;
+@property (readonly, copy, nonatomic) NSString *post_user_enter_chat;
+@property (readonly, copy, nonatomic) NSString *post_switch_human;
+@property (readonly, copy, nonatomic) NSString *post_select_user_entry;
+@property (readonly, copy, nonatomic) NSString *get_history_msg;
+@property (readonly, copy, nonatomic) NSString *get_can_start_conversation;
+@property (readonly, copy, nonatomic) NSString *post_cs_transfer_conversation;
+@property (readonly, copy, nonatomic) NSString *post_cs_close_conversation;
+@property (readonly, copy, nonatomic) NSString *get_leave_msg_list;
+@property (readonly, copy, nonatomic) NSString *post_resolve_leave_msg;
+@property (readonly, copy, nonatomic) NSString *get_icons;
+@property (readonly, copy, nonatomic) NSString *can_send_msg_to_group_chat;
+@property (readonly, copy, nonatomic) NSString *get_conversation_param;
+@property (readonly, copy, nonatomic) NSString *get_pigeon_uid;
+@property (readonly, copy, nonatomic) NSString *get_user_info;
+@property (readonly, copy, nonatomic) NSString *get_pigeon_id_by_cs;
+@property (readonly, copy, nonatomic) NSString *batch_get_user_info;
+@property (readonly, copy, nonatomic) NSString *set_cs_info;
+@property (readonly, copy, nonatomic) NSString *post_batch_get_shop_info;
+@property (readonly, copy, nonatomic) NSString *get_conversation_params;
+@property (readonly, copy, nonatomic) NSString *post_batch_get_cs_info;
+@property (readonly, copy, nonatomic) NSString *post_get_biz_role_info;
+@property (readonly, copy, nonatomic) NSString *get_sts2_auth;
+@property (readonly, copy, nonatomic) NSString *get_url_for_uri;
+@property (readonly, copy, nonatomic) NSString *batch_get_platform_cs_profile;
+@property (readonly, copy, nonatomic) NSString *get_has_permission_type_list;
+@property (readonly, copy, nonatomic) NSString *get_is_conversationed_new;
+@property (readonly, copy, nonatomic) NSString *get_customer_list_by_biz;
+@property (readonly, copy, nonatomic) NSString *set_chat_permission;
+@property (readonly, copy, nonatomic) NSString *get_current_participator;
+@property (readonly, copy, nonatomic) NSString *batch_get_participators;
+@property (readonly, copy, nonatomic) NSString *post_get_cs_info;
+@property (readonly, copy, nonatomic) NSString *set_cs_max_service_num;
+@property (readonly, copy, nonatomic) NSString *post_get_cs_list;
+@property (readonly, copy, nonatomic) NSString *update_biz_online_status;
+@property (readonly, copy, nonatomic) NSString *get_cs_list_for_transfer;
+@property (readonly, copy, nonatomic) NSString *post_cs_auth;
+@property (readonly, copy, nonatomic) NSString *GET_STS2_AUTH;
+@property (readonly, copy, nonatomic) NSString *GET_URL_FOR_URI;
+@property (readonly, copy, nonatomic) NSString *upload_img;
+@property (readonly, copy, nonatomic) NSString *get_upload_token;
+@property (readonly, copy, nonatomic) NSString *get_k3s_url_for_uri;
+@property (readonly, copy, nonatomic) NSString *get_sts2_token;
+@property (readonly, copy, nonatomic) NSString *get_play_token;
+@property (readonly, copy, nonatomic) NSString *put_video;
+@property (readonly, copy, nonatomic) NSString *video_trans_code;
+@property (readonly, copy, nonatomic) NSString *get_sts_to_upload_token;
+@property (readonly, copy, nonatomic) NSString *post_batch_get_service_entity_info;
+@property (readonly, copy, nonatomic) NSString *get_service_entity_info;
+@property (readonly, copy, nonatomic) NSString *listShopInfo;
+@property (readonly, copy, nonatomic) NSString *getSTS2Token;
+@property (readonly, copy, nonatomic) NSString *getURLForURI;
+@property (readonly, copy, nonatomic) NSString *getSTS2UploadToken;
+@property (readonly, copy, nonatomic) NSString *uploadimg;
+@property (readonly, copy, nonatomic) NSString *putVideo;
+@property (readonly, copy, nonatomic) NSString *transCode;
+
+- (void).cxx_destruct;
+
+@end

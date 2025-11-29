@@ -1,0 +1,87 @@
+@class UIImageView, AWEGeneralWaterfallVideoTag, UILabel, AWEGeneralWaterfallLikeButton, UIView, BDImageView, NSString, AWESearchCachalotResultContext, AWEAwemeModel, AWEGradientView, YYLabel, AWEGeneralWaterfallAnchor, UIImage;
+@protocol AWEAwemePlayInteractionInteractorProtocol, AWEModernFeedCellContext, AWEModernFeedCellFrameProtocol, AWEAwemePlayInteractionRouterProtocol;
+
+@interface AWESearchScanWaterfallBaseCellController : UIViewController <AWEModernFeedCellControllerProtocol, AWESearchCachalotCardViewProtocol>
+
+@property (retain, nonatomic) id<AWEModernFeedCellContext> context;
+@property (retain, nonatomic) AWESearchCachalotResultContext *cachalotContext;
+@property (retain, nonatomic) id<AWEModernFeedCellFrameProtocol> cellFrameModel;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (readonly, nonatomic) AWEAwemeModel *realAweme;
+@property (retain, nonatomic) BDImageView *playerView;
+@property (retain, nonatomic) AWEGeneralWaterfallVideoTag *videoTagView;
+@property (retain, nonatomic) YYLabel *descLabel;
+@property (retain, nonatomic) UIView *userInfoView;
+@property (retain, nonatomic) UIImageView *avatarView;
+@property (retain, nonatomic) UILabel *userNameLabel;
+@property (retain, nonatomic) AWEGeneralWaterfallLikeButton *likeButton;
+@property (retain, nonatomic) AWEGeneralWaterfallAnchor *nativeAnchorView;
+@property (retain, nonatomic) AWEGradientView *bottomGradientView;
+@property (retain, nonatomic) UIImage *defaultCoverImage;
+@property (retain, nonatomic) id<AWEAwemePlayInteractionRouterProtocol> router;
+@property (retain, nonatomic) id<AWEAwemePlayInteractionInteractorProtocol> interactor;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) BOOL isFullScreen;
+@property (nonatomic) BOOL isViewAppearing;
+@property (nonatomic) double videoHeightWidthRatio;
+@property (nonatomic) BOOL shouldHideAnchorView;
+@property (retain, nonatomic) Class cardClass;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)handleDescriptionEmptyLine:(id)a0;
++ (double)modernFeedCellPreferedHeightForModel:(id)a0 width:(double)a1;
++ (struct CGSize { double x0; double x1; })sizeWithViewModel:(id)a0 width:(double)a1;
++ (id)attributedContentWithString:(id)a0;
++ (id)descriptionString:(id)a0;
++ (double)adjustedPreferredMaxWidthWithWidth:(double)a0;
++ (Class)nativeAnchorClassForModel:(id)a0;
++ (id)tmpLabel;
++ (double)getVideoHeightWidthRatioForAweme:(id)a0 isWaterfallLayout:(BOOL)a1;
++ (id)contentAttributes;
+
+- (id)logExtraDict;
+- (id)adEventName;
+- (BOOL)alertIfNotValid;
+- (void)trackShow;
+- (void)onAwemeDiggNotification:(id)a0;
+- (void)trackClick;
+- (void)trackAdShow;
+- (void)doActionIfNotValid;
+- (void)doActionIfNotValidWithText:(id)a0;
+- (void)addLongPressGesture;
+- (id /* block */)shareConfigurationHandler;
+- (void)didEndShowing;
+- (void)updateWithReferString:(id)a0;
+- (void)didStartShowing;
+- (id)logExtraDictWithDict:(id)a0;
+- (id)getInflowExtra;
+- (BOOL)shouldShowUserGuideViewInFlow;
+- (void)showSharePanel;
+- (void)cardSingleTapped:(id)a0;
+- (id)getTrackBaseParams;
+- (void)userInfoTapped:(id)a0;
+- (id)adSearchMonitorData;
+- (void)diggTapped;
+- (double)getIconSize:(double)a0;
+- (void)addNativeAnchorView;
+- (void)trackAdVideoTagShow;
+- (id)getSearchID;
+- (void)showLongPressPanelForScene:(id)a0 model:(id)a1 coverImage:(id)a2 referString:(id)a3 logExtra:(id)a4;
+- (id)getMyViewController;
+- (id)customComponentDataModelWithViewModel:(id)a0;
+- (void)_addObservers;
+- (void).cxx_destruct;
+- (void)updateViewConstraints;
+- (id)initWithContext:(id)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillLayoutSubviews;
+- (id)componentView;
+- (void)handleLongPressGesture:(id)a0;
+- (void)setupUI;
+- (void)updateWithModel:(id)a0;
+
+@end

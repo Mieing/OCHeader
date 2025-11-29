@@ -1,0 +1,3 @@
+@interface AWEECMallConstant : NSObject
+
+@end

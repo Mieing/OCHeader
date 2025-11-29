@@ -1,0 +1,10 @@
+@interface CGPInputTouchARM : GPBMessage
+
+@property (nonatomic) float x;
+@property (nonatomic) float y;
+@property (nonatomic) int action;
+@property (nonatomic) int pointerId;
+
++ (id)descriptor;
+
+@end

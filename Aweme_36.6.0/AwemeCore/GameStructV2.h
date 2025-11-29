@@ -1,0 +1,10 @@
+@interface GameStructV2 : GPBMessage
+
+@property (nonatomic) int gameType;
+@property (nonatomic) BOOL hasGameType;
+@property (nonatomic) int gameScore;
+@property (nonatomic) BOOL hasGameScore;
+
++ (id)descriptor;
+
+@end

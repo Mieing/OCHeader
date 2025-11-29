@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveLinkMicPositionVerifyItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long position;
+@property (copy, nonatomic) NSString *positionName;
+@property (nonatomic) int verifyStatus;
+@property (nonatomic) int positionType;
+
++ (id)descriptor;
+
+@end

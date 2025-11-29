@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage, UIView;
+
+@interface BattleRivalTag : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UIView *customView;
+@property (retain, nonatomic) HTSLiveImage *bgImage;
+@property (nonatomic) BOOL hasBgImage;
+@property (retain, nonatomic) HTSLiveImage *iconImage;
+@property (nonatomic) BOOL hasIconImage;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *fontColor;
+@property (nonatomic) int tagType;
+@property (copy, nonatomic) NSString *tagDesc;
+
++ (id)descriptor;
+
+@end

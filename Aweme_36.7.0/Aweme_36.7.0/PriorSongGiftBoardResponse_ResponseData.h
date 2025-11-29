@@ -1,0 +1,8 @@
+@interface PriorSongGiftBoardResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long predictPosition;
+@property (nonatomic) long long giftId;
+
++ (id)descriptor;
+
+@end

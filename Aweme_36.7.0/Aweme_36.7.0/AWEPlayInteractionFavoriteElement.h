@@ -1,0 +1,81 @@
+@class AWEPlayInteractionFavoriteElementViewModel, DUXPopover, LOTAnimationView, UIButton, NSString, UIView, AWEPlayInteractionFavoriteResourceConfig;
+@protocol AWEFeedVideoButtonProtocol, AWEInteractionElementLongPressProtocol;
+
+@interface AWEPlayInteractionFavoriteElement : AWEPlayInteractionRightElement <AWEUserMessage, AWERightElementButtonLayout, AWEElementSelfFilterProtocol, AWEPlayInteractionElementLightAdaptProtocol, AWEPlayInteractionFavoriteElementProtocol>
+
+@property (retain, nonatomic) LOTAnimationView *favoriteAnimationView;
+@property (retain, nonatomic) AWEPlayInteractionFavoriteElementViewModel *viewModel;
+@property (retain, nonatomic) AWEPlayInteractionFavoriteResourceConfig *resourceConfig;
+@property (retain, nonatomic) id<AWEInteractionElementLongPressProtocol> longPressGestureManager;
+@property (retain, nonatomic) DUXPopover *favoritedNotWatchedPopover;
+@property (retain, nonatomic) DUXPopover *longPressPopover;
+@property (nonatomic) BOOL enableShowFavoriteGuideCache;
+@property (nonatomic) BOOL shouldShowFavoriteGuideInRecommend;
+@property (nonatomic) BOOL shouldShowFavoriteGuideBaseOnModel;
+@property (nonatomic) BOOL isLightVideo;
+@property (retain, nonatomic) UIButton<AWEFeedVideoButtonProtocol> *favoriteButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) UIView *view;
+@property (readonly, nonatomic) UIButton<AWEFeedVideoButtonProtocol> *button;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (id)activateInfoWithContext:(id)a0;
++ (Class)aAWEPlayInteractionAdapterClass;
++ (Class)aAWELiteUGSocialModuleAdapterClass;
++ (Class)aAWELiteUGMainModuleAdapterClass;
++ (BOOL)shouldActiveWithData:(id)a0 context:(id)a1;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)initializeElement;
+- (void)viewController_willDisplay;
+- (void)viewController_didEndDisplaying;
+- (void)viewController_viewWillAppear;
+- (void)viewController_viewWillDisappear;
+- (void)viewController_viewDidDisappear;
+- (id)aAWEPadModuleAdapter;
+- (void)videoPlayerWillTrackPlayTime;
+- (void)viewDidChangeBreakPoint;
+- (id)activateInfoWithData:(id)a0;
+- (void)layoutElementView;
+- (id)showStringFromNumber:(id)a0;
+- (void)bindEvent;
+- (void)cleanViewModel;
+- (id)aAWEPlayInteractionAdapter;
+- (void)announceAccessibility:(id)a0;
+- (id)aAWELiteUGSocialModuleAdapter;
+- (void)playFavoriteAnimation;
+- (id)aAWELiteUGMainModuleAdapter;
+- (void)setupFavoriteStatus;
+- (void)setupPadKeybindings;
+- (void)setupPadElementSizeWithConfig:(struct { double x0; double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; })a0;
+- (void)adaptJingXuanElementSizeWithConfig:(struct { double x0; double x1; double x2; double x3; double x4; })a0 type:(long long)a1;
+- (void)updateAccesibilityLabel;
+- (void)updateElementForLightVideo:(BOOL)a0 shadowController:(id)a1;
+- (BOOL)shouldShieldLongPress;
+- (void)updateFavoriteCount;
+- (void)playUnfavoriteAnimation;
+- (void)addLongPressGestureIfNeeded;
+- (void)_stopFavoriteAnimation;
+- (void)_playFavoriteAnimation;
+- (void)updateIconImageIfNeed;
+- (BOOL)shouldShowFavoriteGuidebubbleOnVideoWithPlayBackTime:(float)a0 videoDuration:(float)a1;
+- (void)showFavoriteGuideBubble;
+- (BOOL)shouldShowFavoriteGuidebubbleOnAlbumWithAlbumVideoPlayIndex:(long long)a0;
+- (void)adaptJingXuanElementSize;
+- (BOOL)shouldShowFavoriteGuideBubbleBasedOnModel;
+- (void)trackWhenFavoriteGuideShow;
+- (void)_playUnfavoriteAnimation;
+- (void)p_presentFavoriteFolderHint;
+- (void)buttonClicked:(BOOL)a0;
+- (void)updateLayout;
+- (void).cxx_destruct;
+- (void)play;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)context;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESGCPPBPromotedPropDataItem : GPBMessage
+
+@property (copy, nonatomic) NSString *totalVolume;
+@property (copy, nonatomic) NSString *todayVolume;
+@property (copy, nonatomic) NSString *todayQuantity;
+
++ (id)descriptor;
+
+@end

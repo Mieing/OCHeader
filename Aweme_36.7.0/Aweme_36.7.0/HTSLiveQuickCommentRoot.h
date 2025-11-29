@@ -1,0 +1,3 @@
+@interface HTSLiveQuickCommentRoot : GPBRootObject
+
+@end

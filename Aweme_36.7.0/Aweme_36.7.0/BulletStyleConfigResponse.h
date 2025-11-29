@@ -1,0 +1,10 @@
+@class BulletStyleConfigResponse_ResponseData;
+
+@interface BulletStyleConfigResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) BulletStyleConfigResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

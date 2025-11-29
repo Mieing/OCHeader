@@ -1,0 +1,3 @@
+@interface GMCDecelerateArgsModel : GMCStandardArgsModel
+
+@end

@@ -1,0 +1,95 @@
+@class NSMutableDictionary, NSString, NSArray, WeChatTabRedDotStruct, NSSet, NSMutableArray, WCFinderTrigger;
+
+@interface WCSessionDataReporter : MMUserService <SessionSwitchExt, MMServiceProtocol> {
+    NSMutableArray *queue;
+    BOOL *entryRedDotInfo;
+    BOOL *entryRedDotInfoCopy;
+    WCFinderTrigger *m_finderTrigger;
+    NSArray *weChatTabRedDotArray;
+    WeChatTabRedDotStruct *copyFindFriendsTabStruct;
+    NSString *currSessionId;
+    NSString *lastTwoSessionId;
+    unsigned long long lastTwoSessionStayTimeMs;
+    NSSet *needReportReddotUnExpPaths;
+    NSMutableDictionary *needReportReddotUnExpStructs;
+    unsigned long long entrySwitch;
+    unsigned long long lastGetNetTypeTimeMs;
+    unsigned int lastNetType;
+    unsigned long long lastGetBatteryTimeMs;
+    unsigned int lastBatteryLevel;
+}
+
+@property (copy) NSString *k1kRedDotReportJson;
+@property (copy) NSString *finderRedDotReportJson;
+@property (copy) NSString *finderLiveRedDotReportJson;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (int)formatStringToNumber:(id)a0;
+
+- (id)init;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (unsigned long long)getDsEnterToFrontFirstTimeMs;
+- (void)setDsEnterToFrontFirstTimeMs;
+- (void)onServiceEnterForeground;
+- (void)checkToReqGetLiveTipsConfig;
+- (void)onServiceEnterBackground;
+- (void)resetInfo;
+- (id)checkToReturnAiFinderInfo;
+- (int)getCurrSessionId;
+- (int)getLastTwoSessionId;
+- (unsigned long long)getLastTwoSessionStayTimeMs;
+- (void)onSessionEnter:(id)a0 withTime:(unsigned long long)a1;
+- (void)noteFindFriendEntryRedDot:(long long)a0 andHadRedDot:(BOOL)a1;
+- (void)noteTabBarBadge:(BOOL)a0 andTotalCount:(long long)a1 andTabIndex:(unsigned int)a2;
+- (BOOL)isFindFriendsTabHadRedDot;
+- (void)handleSessionEvent:(id)a0 withEnterTime:(unsigned long long)a1;
+- (void)copyEntryRedDotInfo;
+- (id)getCopyEntryRedDotInfo;
+- (void)copyFindFriendTabStruct;
+- (void)checkSessionData;
+- (void)reportFindFrindEntry:(id)a0 andNext:(id)a1 andLast:(id)a2;
+- (void)handleNewMainFrameViewController:(id)a0 andCurr:(id)a1 andNext:(id)a2;
+- (void)handleFindFriendEntryController:(id)a0 andCurr:(id)a1 andNext:(id)a2;
+- (void)enterNewMainFrameViewController:(id)a0 andCurr:(id)a1 andNext:(id)a2;
+- (void)quitNewMainFrameViewController:(id)a0 andCurr:(id)a1 andNext:(id)a2;
+- (void)enterFindFriendEntryController:(id)a0 andCurr:(id)a1 andNext:(id)a2;
+- (void)quitFindFriendEntryController:(id)a0 andCurr:(id)a1 andNext:(id)a2;
+- (void)noteFinderRedDotReportJson;
+- (id)getFinderRedDotJson:(id)a0;
+- (void)finderRedDotLogic;
+- (void)triggerSyncAction;
+- (BOOL)noteFinderRedDotExpose;
+- (BOOL)checkRedDotIfInColdTimeWhenEnter;
+- (BOOL)checkRedDotExposeLimitWhenEnter;
+- (BOOL)checkRedDotExposeLimitWhenEnterForNewLifeSync;
+- (BOOL)checkRedDotExposeLimitWhenEnterForSearchSync;
+- (BOOL)checkRedDotExposeLimitWhenEnterForPath:(id)a0;
+- (BOOL)checkRedDotExposeLimitWhenEnterForTing;
+- (void)checkRedDotExposeLimitWhenQuit:(id)a0;
+- (void)finderSync;
+- (void)disposeRedDotAtPath:(id)a0;
+- (BOOL)checkRedDotColdTimeWhenEnter:(id)a0;
+- (BOOL)checkRedDotExposeLimitWhenEnter:(id)a0;
+- (void)checkRedDotExposeLimitWhenQuit:(id)a0 andToSid:(id)a1 andIgnoreSid:(unsigned int)a2;
+- (void)checkRedDotExposeLimitWithPath:(id)a0;
+- (unsigned int)checkFinderTipsShowInfo:(id)a0;
+- (void)reportExposeLimitStrategy:(id)a0 andAction:(unsigned int)a1;
+- (unsigned int)genDayStr:(unsigned long long)a0;
+- (void)reportReddotExpTimeOnExposurePath:(id)a0 andShowInfo:(id)a1 andCtrlInfo:(id)a2;
+- (void)reportReddotExpTimeOnUnExposePath:(id)a0 andTipsUuid:(id)a1;
+- (void)onFindFriendRedDotEvent:(id)a0;
+- (unsigned int)getCacheNetType;
+- (unsigned int)getCacheBatteryLevel;
+- (unsigned long long)getFindFriendEntrySwitch;
+- (void)resetFindFriendEntrySwitch;
+- (void)noteFindFriendEntry:(long long)a0 andSwitch:(BOOL)a1;
+- (unsigned long long)getFindFriendEntryReddotEnabledInfo;
+- (unsigned int)getWeSportHKStepCount;
+- (unsigned int)getWeSportM7StepCount;
+- (void).cxx_destruct;
+
+@end

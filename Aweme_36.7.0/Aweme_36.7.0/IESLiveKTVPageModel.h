@@ -1,0 +1,12 @@
+@class PlaylistTab;
+@protocol IESLiveKTVRecommendListProtocol;
+
+@interface IESLiveKTVPageModel : IESLiveDynamicModel
+
+@property (retain, nonatomic) PlaylistTab *category;
+@property (retain, nonatomic) id<IESLiveKTVRecommendListProtocol> musicListModel;
+@property (nonatomic) int firstLevelTab;
+
+- (void)clean;
+
+@end

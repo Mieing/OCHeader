@@ -1,0 +1,3 @@
+@interface AWESearchLiveCachalotDataResponse : AWESearchResultVerticalBaseDataResponse
+
+@end

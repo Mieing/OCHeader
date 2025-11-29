@@ -1,0 +1,10 @@
+@class GetPlayerPropInfoResponse_Data;
+
+@interface GetPlayerPropInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetPlayerPropInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

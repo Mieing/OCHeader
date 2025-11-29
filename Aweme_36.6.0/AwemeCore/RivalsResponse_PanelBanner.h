@@ -1,0 +1,12 @@
+@class HTSLiveImage, RivalsResponse_PanelBanner_Action;
+
+@interface RivalsResponse_PanelBanner : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RivalsResponse_PanelBanner_Action *action;
+@property (nonatomic) BOOL hasAction;
+@property (retain, nonatomic) HTSLiveImage *bgImage;
+@property (nonatomic) BOOL hasBgImage;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveAdvancedPrivilege_PrivilegeOption : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (copy, nonatomic) NSString *script;
+
++ (id)descriptor;
+
+@end

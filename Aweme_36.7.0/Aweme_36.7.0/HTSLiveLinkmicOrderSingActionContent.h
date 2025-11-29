@@ -1,0 +1,19 @@
+@class HTSLiveUser, NSString, HTSLiveCurrentOrderSingItemV2, HTSLiveImage;
+
+@interface HTSLiveLinkmicOrderSingActionContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *orderSingItemId;
+@property (nonatomic) int orderSingItemAction;
+@property (retain, nonatomic) HTSLiveUser *orderUser;
+@property (nonatomic) BOOL hasOrderUser;
+@property (nonatomic) long long timestamp;
+@property (retain, nonatomic) HTSLiveCurrentOrderSingItemV2 *currentOrderSingItem;
+@property (nonatomic) BOOL hasCurrentOrderSingItem;
+@property (retain, nonatomic) HTSLiveImage *orderSingGiftIcon;
+@property (nonatomic) BOOL hasOrderSingGiftIcon;
+@property (retain, nonatomic) HTSLiveImage *auditionGiftIcon;
+@property (nonatomic) BOOL hasAuditionGiftIcon;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface RanklistRanklistApiRoot : GPBRootObject
+
+@end

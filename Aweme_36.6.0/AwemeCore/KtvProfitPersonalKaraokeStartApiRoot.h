@@ -1,0 +1,3 @@
+@interface KtvProfitPersonalKaraokeStartApiRoot : GPBRootObject
+
+@end

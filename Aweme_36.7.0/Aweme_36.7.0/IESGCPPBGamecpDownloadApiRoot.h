@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpDownloadApiRoot : GPBRootObject
+
+@end

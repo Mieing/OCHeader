@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveLinkmicPositionItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long position;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *activeName;
+@property (nonatomic) int verifyStatus;
+@property (nonatomic) int positionType;
+@property (nonatomic) long long clientUiPosition;
+
++ (id)descriptor;
+
+@end

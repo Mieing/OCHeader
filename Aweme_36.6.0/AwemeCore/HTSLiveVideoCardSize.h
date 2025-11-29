@@ -1,0 +1,8 @@
+@interface HTSLiveVideoCardSize : IESLivePBBaseMessage
+
+@property (nonatomic) long long height;
+@property (nonatomic) long long width;
+
++ (id)descriptor;
+
+@end

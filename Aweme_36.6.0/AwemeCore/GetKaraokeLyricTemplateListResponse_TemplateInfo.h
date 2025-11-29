@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface GetKaraokeLyricTemplateListResponse_TemplateInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *templateStr;
+@property (nonatomic) long long id_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomEnterPreloadApiRoot : GPBRootObject
+
+@end

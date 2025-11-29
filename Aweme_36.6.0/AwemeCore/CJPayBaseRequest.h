@@ -1,0 +1,55 @@
+@interface CJPayBaseRequest : NSObject
+
++ (id)createHTTPTaskRequestWithUrl:(id)a0 requestParams:(id)a1 serializeType:(unsigned long long)a2 highPriority:(BOOL)a3 callback:(id /* block */)a4;
++ (void)startRequestWithUrl:(id)a0 method:(id)a1 requestParams:(id)a2 headerFields:(id)a3 serializeType:(unsigned long long)a4 callback:(id /* block */)a5;
++ (void)syncTimestampWithURL:(id)a0 header:(id)a1 requestTime:(double)a2;
++ (void)exampleMonitor:(id)a0 errorCode:(long long)a1 errorDesc:(id)a2 statusCode:(long long)a3 header:(id)a4;
++ (id)apiPath;
++ (void)startRequestWithUrl:(id)a0 serializeType:(unsigned long long)a1 requestParams:(id)a2 callback:(id /* block */)a3;
++ (id)getGBDPayConfigHost;
++ (id)bdpayDeskServerUrlString;
++ (id)apiMethod;
++ (id)bdpayH5DeskServerHostString;
++ (id)deskServerHostString;
++ (id)buildBaseParams;
++ (id)buildServerUrl;
++ (void)startRequestWithUrl:(id)a0 requestParams:(id)a1 callback:(id /* block */)a2;
++ (id)gConfigHost;
++ (id)deskServerUrlString;
++ (void)setGBDPayConfigHost:(id)a0;
++ (id)intergratedConfigHost;
++ (id)cashierServerUrlString;
++ (id)customDeskServerUrlString;
++ (id)jhHostString;
++ (id)superPayServerUrlString;
++ (id)getDyPayConfigHost;
++ (id)buildDyPayServerUrl:(BOOL)a0;
++ (id)dypayDeskServerUrlString;
++ (id)dypayH5DeskServerHostString;
++ (id)buildDyPayServerUrl;
++ (void)setDyPayConfigHost:(id)a0;
++ (id)getOuterConfigHost;
++ (id)outerDeskServerUrlString;
++ (id)outerH5DeskServerHostString;
++ (id)buildOuterServerUrl;
++ (void)setOuterConfigHost:(id)a0;
++ (id)buildBaseParamsWithVersion:(id)a0 needTimestamp:(BOOL)a1;
++ (void)startRequestWithUrl:(id)a0 method:(id)a1 requestParams:(id)a2 headerFields:(id)a3 serializeType:(unsigned long long)a4 callback:(id /* block */)a5 needCommonParams:(BOOL)a6;
++ (void)startRequestWithUrl:(id)a0 method:(id)a1 requestParams:(id)a2 headerFields:(id)a3 serializeType:(unsigned long long)a4 callback:(id /* block */)a5 needCommonParams:(BOOL)a6 highPriority:(BOOL)a7 enableHttpCache:(BOOL)a8;
++ (id)apiPath:(id)a0;
++ (void)syncTimestampIfNeedWithResponse:(id)a0 error:(id)a1 requestTime:(double)a2;
++ (void)monitor:(id)a0 error:(id)a1 response:(id)a2;
++ (void)eventTrack:(id)a0 costTime:(double)a1 error:(id)a2 response:(id)a3;
++ (void)monitorRequestBizResult:(id)a0 costTime:(double)a1 error:(id)a2 response:(id)a3 responseJsonDic:(id)a4;
++ (BOOL)isHitUnifyCashierOpt2;
++ (void)serverApiCallbackLogWithError:(id)a0 path:(id)a1 response:(id)a2 logId:(id)a3 traceId:(id)a4;
++ (id)createHTTPTaskRequestWithUrl:(id)a0 method:(id)a1 requestParams:(id)a2 headerFields:(id)a3 serializeType:(unsigned long long)a4 autoResume:(BOOL)a5 callback:(id /* block */)a6 needCommonParams:(BOOL)a7 highPriority:(BOOL)a8 enableHttpCache:(BOOL)a9;
++ (void)startRequestWithUrl:(id)a0 type:(id)a1 requestParams:(id)a2 header:(id)a3 callback:(id /* block */)a4;
++ (id)p_buildMonitorDataWith:(id)a0 error:(id)a1 response:(id)a2;
++ (id)p_buildMonitorDataWith:(id)a0 errorCode:(long long)a1 errorDesc:(id)a2 statusCode:(long long)a3 header:(id)a4;
++ (id)p_analyseBizResult:(id)a0;
++ (void)monitorBizServerApi:(id)a0 error:(id)a1 response:(id)a2 responseJsonDic:(id)a3;
++ (void)exampleMonitor:(id)a0 error:(id)a1 response:(id)a2;
++ (void)setGConfigHost:(id)a0;
+
+@end

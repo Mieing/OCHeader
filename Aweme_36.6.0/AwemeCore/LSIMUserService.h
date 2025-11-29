@@ -1,0 +1,3 @@
+@interface LSIMUserService : NSObject
+
+@end

@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface GetOrderSongAnchorRecommendListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *anchorSungSongsArray;
+@property (readonly, nonatomic) unsigned long long anchorSungSongsArray_Count;
+@property (retain, nonatomic) NSMutableArray *hotRecommendSongsArray;
+@property (readonly, nonatomic) unsigned long long hotRecommendSongsArray_Count;
+@property (nonatomic) BOOL hasMore;
+
++ (id)descriptor;
+
+@end

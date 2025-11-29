@@ -1,0 +1,3 @@
+@interface HTSLiveBattleModeRoot : GPBRootObject
+
+@end

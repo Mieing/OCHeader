@@ -1,0 +1,11 @@
+@class HTSLiveUser;
+
+@interface HTSLiveLinkerApplyStrongReminderContent : IESLivePBBaseMessage
+
+@property (nonatomic) int source;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+
++ (id)descriptor;
+
+@end

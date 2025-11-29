@@ -1,0 +1,3 @@
+@interface RoomAigcEffectBackgroundApiRoot : GPBRootObject
+
+@end

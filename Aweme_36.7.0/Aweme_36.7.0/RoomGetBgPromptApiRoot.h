@@ -1,0 +1,3 @@
+@interface RoomGetBgPromptApiRoot : GPBRootObject
+
+@end

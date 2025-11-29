@@ -1,0 +1,14 @@
+@class NSString, NSMutableDictionary;
+
+@interface HTSLiveSubscribeGiftInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL useAdvancedEffect;
+@property (nonatomic) long long giftId;
+@property (copy, nonatomic) NSString *effectConfig;
+@property (copy, nonatomic) NSString *effectSchema;
+@property (retain, nonatomic) NSMutableDictionary *effectResource;
+@property (readonly, nonatomic) unsigned long long effectResource_Count;
+
++ (id)descriptor;
+
+@end

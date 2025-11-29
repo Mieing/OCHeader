@@ -1,0 +1,84 @@
+@class AWEIMBulletContainerUIInfo, NSString, AWEIMBulletMessageVideoContent, AWEIMCombineShareMessage, NSDictionary, AWEURLModel, IESIMDynamicPatchModel;
+
+@interface AWEIMBulletMessage : AWEIMMessage <AWEIMMessageConfigProtocol, AWEIMHistoryMediaMessageCoverProtocol, IESIMBulletMessageProtocol, AWEIMFeedMediaDisplayable>
+
+@property (nonatomic) BOOL isSystemType;
+@property (copy, nonatomic) NSString *bulletDescription;
+@property (copy, nonatomic) NSString *bulletPushDetail;
+@property (copy, nonatomic) NSString *bulletReceiverDescription;
+@property (copy, nonatomic) NSString *bulletReceiverPushDetail;
+@property (copy, nonatomic) NSString *jumpSchemaAfterClickMessage;
+@property (retain, nonatomic) IESIMDynamicPatchModel *dynamicPatch;
+@property (retain, nonatomic) AWEIMBulletContainerUIInfo *uiInfo;
+@property (retain, nonatomic) NSDictionary *logParams;
+@property (retain, nonatomic) AWEURLModel *coverURL;
+@property (copy, nonatomic) NSString *itemId;
+@property (retain, nonatomic) AWEIMBulletMessageVideoContent *awemeInfo;
+@property (copy, nonatomic) NSDictionary *liveInfo;
+@property (retain, nonatomic) NSDictionary *abParamsMap;
+@property (retain, nonatomic) AWEIMBulletMessage *abHitMessage;
+@property (copy, nonatomic) NSString *shareId;
+@property (weak, nonatomic) AWEIMCombineShareMessage *parentCombineMsg;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)viewModelClass;
++ (id)chatCellHintForAweType:(long long)a0 needReplacePrefix:(BOOL)a1 originDescription:(id)a2;
+
+- (id)bulletCardLogParams;
+- (id)initWithContentDict:(id)a0;
+- (BOOL)isAllowedCellEdit;
+- (id)livePreviewExtraParams;
+- (BOOL)isUserCellType;
+- (id)showItemId;
+- (id)getContentDict;
+- (id)contentComponentName;
+- (BOOL)supportRefactorCell;
+- (id)quoteContentComponentName;
+- (double)bubbleMaxWidth;
+- (BOOL)isAllowedEmojiReply;
+- (id)showLogParams;
+- (id)makeFeedMediaDisplayModel;
+- (BOOL)supportFeedCardQutoReply;
+- (BOOL)shouldShowNicknameWithMessageType;
+- (id)hintOnInputVCWhenQuoted;
+- (BOOL)shouldChangeVisibleStatus;
+- (id)showCoverURL;
+- (BOOL)awemeAvailable;
+- (void)addBusinessInfo:(id)a0 withKey:(id)a1;
+- (struct CGSize { double x0; double x1; })messageCellSize;
+- (long long)showAweType;
+- (id)sendMessageAndResponseTrackerParams:(id)a0;
+- (id)itemIDUsedForContentAvailableRefresh;
+- (BOOL)shouldShowMessageState;
+- (id)p_formatTimeStamp:(id)a0;
+- (id)showUIInfo;
+- (id)showDynamicPatch;
+- (id)showBulletDescription;
+- (id)showBulletPushDetail;
+- (id)showAuthorNickname;
+- (id)showAuthorUID;
+- (long long)shareWithTimestamp;
+- (id)businessInfoForKey:(id)a0;
+- (void)configABHitMessage;
+- (BOOL)enableCrashProtect;
+- (id)stringValueFromABSDKOrABTest:(id)a0;
+- (id)p_defaultMenuItems;
+- (id)mediaCoverUrlList;
+- (id)mediaCoverURI;
+- (id)showJumpSchemaAfterClickMessage;
+- (id)showBulletReceiverDescription;
+- (id)groupLiveVisibleIDs;
+- (id)showLiveNextTimeMessage;
+- (id)itemIDWhenQuotedIfHave;
+- (BOOL)isSupportForward;
+- (id)supportMessageMenuTypeList;
+- (long long)messageType;
+- (void).cxx_destruct;
+- (long long)templateType;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (id)cellIdentifier;
+
+@end

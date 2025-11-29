@@ -1,0 +1,13 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveGameAncAudDataFromAudMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long gameId;
+@property (copy, nonatomic) NSString *data_p;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

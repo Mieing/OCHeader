@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HotCommentStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *cid;
+@property (nonatomic) BOOL hasCid;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+@property (nonatomic) int diggCount;
+@property (nonatomic) BOOL hasDiggCount;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@interface TIMXPBNConvUnread : GPBMessage
+
+@property (nonatomic) int badgeCount;
+@property (nonatomic) BOOL hasBadgeCount;
+@property (nonatomic) int readBadgeCount;
+@property (nonatomic) BOOL hasReadBadgeCount;
+
++ (id)descriptor;
+
+@end

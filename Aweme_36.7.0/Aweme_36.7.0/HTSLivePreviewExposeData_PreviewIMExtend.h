@@ -1,0 +1,14 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLivePreviewExposeData_PreviewIMExtend : IESLivePBBaseMessage
+
+@property (nonatomic) long long imExtendType;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *mainTitle;
+@property (copy, nonatomic) NSString *subTitle;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

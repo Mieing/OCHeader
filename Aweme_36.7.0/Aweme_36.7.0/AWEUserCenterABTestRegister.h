@@ -1,0 +1,3 @@
+@interface AWEUserCenterABTestRegister : NSObject
+
+@end

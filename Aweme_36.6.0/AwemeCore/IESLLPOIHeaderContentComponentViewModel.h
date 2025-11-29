@@ -1,0 +1,74 @@
+@class NSTimer, NSString, NSArray, IESLLPOIOffset, NSMutableDictionary, IESLLPOIHeaderContentComponentView, IESLLPOIHeaderContentCrushRankModel, NSNumber;
+
+@interface IESLLPOIHeaderContentComponentViewModel : LLDitoComponentViewModel <LLCubeViewDelegate>
+
+@property (copy, nonatomic) NSString *nodeTag;
+@property (retain, nonatomic) NSArray *photoPageTabList;
+@property (retain, nonatomic) NSNumber *defaultOffset;
+@property (retain, nonatomic) NSNumber *defaultUnfoldOffset;
+@property (retain, nonatomic) IESLLPOIOffset *headImageStartOffset;
+@property (nonatomic) BOOL isMaxUnfold;
+@property (nonatomic) BOOL isInUnfoldCollapse;
+@property (nonatomic) double containerHeight;
+@property (nonatomic) BOOL firstScreenDidLoad;
+@property (retain, nonatomic) NSMutableDictionary *lynxPreloadMap;
+@property (retain, nonatomic) NSMutableDictionary *reportedMaps;
+@property (retain, nonatomic) NSTimer *unfoldNotifyTimer;
+@property (readonly, copy, nonatomic) NSArray *tabList;
+@property (readonly, nonatomic) IESLLPOIHeaderContentCrushRankModel *crushRankModel;
+@property (readonly, nonatomic) double originImageHeight;
+@property (weak, nonatomic) IESLLPOIHeaderContentComponentView *componentView;
+@property (nonatomic) BOOL isFullStyle;
+@property (readonly, nonatomic) double tabListMarginRight;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)bindStateAndAction;
+- (struct CGSize { double x0; double x1; })componentSizeWithMaxWidth:(double)a0;
+- (void)didLoadPageModel:(id)a0;
+- (void)didHalfContainerOffsetChange:(id)a0 offset:(double)a1;
+- (void)halfContainerMaxUnfoldState:(BOOL)a0 isInUnfoldCollapse:(BOOL)a1;
+- (void)fullContainerBeginPull:(double)a0;
+- (void)fullContainerUnfoldWillChange:(double)a0 isMaxUnfold:(BOOL)a1 duration:(double)a2;
+- (void)fullContainerUnfoldDidChange:(double)a0 isMaxUnfold:(BOOL)a1;
+- (void)halfContainerBeginPullCollapse:(double)a0 duration:(double)a1;
+- (void)halfContainerDuringPullCollapse:(double)a0;
+- (void)halfContainerEndPullCollapse:(double)a0 isCollapsed:(BOOL)a1 duration:(double)a2;
+- (void)handleClickEvent:(id)a0;
+- (id)constData;
+- (id)generalContext;
+- (BOOL)isReportedEvent:(id)a0;
+- (void)reportedEvent:(id)a0;
+- (id)extraParamsForLynx:(id)a0;
+- (void)buildBackgroundImageOffsetIfNeed;
+- (void)pageWillEndShow;
+- (void)trackBgImageSlide:(long long)a0;
+- (void)notifyHalfContainerToExpand:(id)a0;
+- (void)trackVolumeShow:(long long)a0;
+- (id)getLynxViewForTab:(id)a0;
+- (void)trackBgImageClick:(long long)a0;
+- (void)trackBgImageShow:(long long)a0;
+- (void)handleTabDidChange;
+- (void)openContentPageWithAnchorSymbol:(id)a0 anchorTabID:(id)a1 enterMethod:(id)a2;
+- (void)trackTabListClick:(id)a0;
+- (void)trackTabListSlide;
+- (void)trackTabListShow;
+- (void)videoMuteStatusChange:(BOOL)a0;
+- (void)trackVolumeClick:(BOOL)a0;
+- (void)subscribeLynxContentChange;
+- (void)handlePOIFmpDidLoad;
+- (void)handleHalfContainerUnfoldOffsetChange:(double)a0;
+- (void)sendHeightChangeNotification:(long long)a0 shouldReset:(BOOL)a1;
+- (void)unfoldPullHeightChange;
+- (void)sendHeightChangeNotification:(long long)a0;
+- (void)trackExpandMaxUnfold:(id)a0 pullDown:(BOOL)a1;
+- (BOOL)dataHasVideo;
+- (void)trackPOIHeaderEvent:(id)a0 extraParams:(id)a1;
+- (void)trackPOIHeaderEventWithIsShow:(BOOL)a0 extraParams:(id)a1;
+- (void)pageDidShow;
+- (void).cxx_destruct;
+- (id)initWithNode:(id)a0;
+
+@end

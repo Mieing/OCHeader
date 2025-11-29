@@ -1,0 +1,9 @@
+@interface HTSLiveEnterGiftAnimation : IESLivePBBaseMessage
+
+@property (nonatomic) int giftEffectId;
+@property (nonatomic) int displayGap;
+@property (nonatomic) int displayFreq;
+
++ (id)descriptor;
+
+@end

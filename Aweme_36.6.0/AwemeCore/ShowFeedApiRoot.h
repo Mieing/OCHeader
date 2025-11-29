@@ -1,0 +1,3 @@
+@interface ShowFeedApiRoot : GPBRootObject
+
+@end

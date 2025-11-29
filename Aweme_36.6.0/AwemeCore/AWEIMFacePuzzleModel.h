@@ -1,0 +1,3 @@
+@interface AWEIMFacePuzzleModel : NSObject
+
+@end

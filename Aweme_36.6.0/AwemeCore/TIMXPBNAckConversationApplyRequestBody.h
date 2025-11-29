@@ -1,0 +1,14 @@
+@class NSMutableDictionary;
+
+@interface TIMXPBNAckConversationApplyRequestBody : GPBMessage
+
+@property (nonatomic) long long applyId;
+@property (nonatomic) BOOL hasApplyId;
+@property (nonatomic) int applyStatus;
+@property (nonatomic) BOOL hasApplyStatus;
+@property (retain, nonatomic) NSMutableDictionary *bizExt;
+@property (readonly, nonatomic) unsigned long long bizExt_Count;
+
++ (id)descriptor;
+
+@end

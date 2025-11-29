@@ -1,0 +1,3 @@
+@interface IESIMInviteAICloneRouterRegister : NSObject
+
+@end

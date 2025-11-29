@@ -1,0 +1,12 @@
+@class GPBInt64Array, NSMutableArray;
+
+@interface TIMXPBNSetConversationTagResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *failedConvShortIdsArray;
+@property (readonly, nonatomic) unsigned long long failedConvShortIdsArray_Count;
+@property (retain, nonatomic) NSMutableArray *settingsArray;
+@property (readonly, nonatomic) unsigned long long settingsArray_Count;
+
++ (id)descriptor;
+
+@end

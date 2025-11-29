@@ -1,0 +1,83 @@
+@class NSString;
+
+@interface MMAsset : MMObject <NSCopying, NSCoding>
+
+@property (nonatomic) BOOL m_isNeedOriginImage;
+@property (nonatomic) BOOL m_isSupportHeif;
+@property (nonatomic) BOOL m_isFailedFromIcloud;
+@property (nonatomic) BOOL m_isLoadingFromIcloud;
+@property (nonatomic) double m_progressFromIcloud;
+@property (nonatomic) unsigned long long m_indexInAlbum;
+@property (nonatomic) unsigned long long originVideoSize;
+@property (retain, nonatomic) NSString *m_livePhotoVideoPath;
+@property (nonatomic) BOOL m_isUseLivePhoto;
+@property (nonatomic) double livePhotoDuration;
+@property (nonatomic) long long livePhotoVideoSize;
+@property (retain, nonatomic) NSString *revokeBatchId;
+
++ (id)decodeXmlString:(id)a0;
++ (struct CGSize { double x0; double x1; })LongImageSizeWithOriginSize:(struct CGSize { double x0; double x1; })a0;
++ (BOOL)isAsset:(id)a0 CreateWithInSecond:(double)a1;
+
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (id)initWithUrl:(id)a0 IsNeedOrigin:(BOOL)a1;
+- (void)getBigImageWithCompressConfig:(id)a0 ProcessBlock:(id /* block */)a1 ResultBlock:(id /* block */)a2 ErrorBlock:(id /* block */)a3;
+- (void)getDisplayImageWithCompressConfig:(id)a0 ResultBlock:(id /* block */)a1 ErrorBlock:(id /* block */)a2;
+- (void)getDisplayLivePhotoWithResultBlock:(id /* block */)a0 errorBlock:(id /* block */)a1;
+- (BOOL)canUseLivePhoto;
+- (void)getHighResolutionImageWithCompressConfig:(id)a0 ProcessBlock:(id /* block */)a1 ResultBlock:(id /* block */)a2 ErrorBlock:(id /* block */)a3 FaceCountBlock:(id /* block */)a4;
+- (id)getThumbImage;
+- (id)getThumbnail;
+- (id)getThumbImageWithSize:(struct CGSize { double x0; double x1; })a0;
+- (void)asyncGetThumbnail:(id /* block */)a0;
+- (void)asyncGetThumbnail:(id /* block */)a0 progress:(id /* block */)a1;
+- (void)asyncGetAspectRatioThumbnailWithTargetSize:(struct CGSize { double x0; double x1; })a0 andResult:(id /* block */)a1;
+- (id)tipForLoadingUncomplete;
+- (id)assetUrl;
+- (id)assetId;
+- (id)assetFileName;
+- (id)alAssetReferenceUrl;
+- (BOOL)hasLocation;
+- (double)latitude;
+- (double)longitude;
+- (id)encodeXmlString;
+- (id)uniformTypeIdentifier;
+- (BOOL)isPicture;
+- (BOOL)isGif;
+- (BOOL)isLivePhoto;
+- (BOOL)isPictureForIncludeGif:(BOOL)a0;
+- (id)getOriginImageDataSize;
+- (void)asyncGetOriginImageDataSizeWithBlock:(id /* block */)a0;
+- (BOOL)isVideo;
+- (BOOL)isSlowMotionVideo;
+- (BOOL)isTimeLapseVideo;
+- (id)videoDuration;
+- (void)getVideoDurationForDisplayWithCompletion:(id /* block */)a0;
+- (id)getVideoUrl;
+- (void)asyncGetVideoAssetWithBlock:(id /* block */)a0;
+- (void)asyncGetVideoAsset:(BOOL)a0 withBlock:(id /* block */)a1;
+- (void)asyncGetVideoAsset:(BOOL)a0 successBlock:(id /* block */)a1 errorBlock:(id /* block */)a2;
+- (void)asyncGetLivePhotoVideoWithSuccess:(id /* block */)a0 errorBlock:(id /* block */)a1;
+- (void)asyncImageOriginSourceData:(id /* block */)a0 errorBlock:(id /* block */)a1;
+- (void)asyncGetVideoFileSizeWithBlock:(id /* block */)a0;
+- (void)asyncGetIsSpatial:(id /* block */)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (id)getCreatedDate;
+- (struct CGSize { double x0; double x1; })getImageRatioSize;
+- (void)stopICloudActivity;
+- (void)stopGetBigImageICloudActivity;
+- (void)asyncGetMetadata:(id /* block */)a0;
+- (void)setEditedImage:(id)a0 withDrawLayer:(id)a1 withEdited:(BOOL)a2;
+- (id)getDrawLayerArray;
+- (BOOL)getIsEdited;
+- (id)getEditImageAttr;
+- (BOOL)getIsEditedVideo;
+- (id)getEditVideoAttr;
+- (id)getOriginalAssetLocalIdentifier;
+- (void)asyncGetImageExifLogInfo:(id /* block */)a0;
+- (void)fetchLivePhotoInfoWithResultBlock:(id /* block */)a0 errorBlock:(id /* block */)a1;
+- (BOOL)tryUpdateAsset;
+- (void).cxx_destruct;
+
+@end

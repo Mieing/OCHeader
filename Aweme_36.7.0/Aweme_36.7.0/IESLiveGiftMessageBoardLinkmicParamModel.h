@@ -1,0 +1,15 @@
+@class NSString, NSNumber;
+
+@interface IESLiveGiftMessageBoardLinkmicParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *userId;
+@property (copy, nonatomic) NSString *secUserId;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isSubscriber;
+@property (nonatomic) BOOL inRoom;
+@property (copy, nonatomic) NSString *messageBoardId;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *giftId;
+@property (retain, nonatomic) NSNumber *giftMoney;
+
+@end

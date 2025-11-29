@@ -1,0 +1,8 @@
+@interface HTSLiveNormalPaidLinkmicSettingContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long paidCount;
+@property (nonatomic) long long limitedTime;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,6 @@
+@interface AWEClassroomImpl.ClassroomMakeNotesViewModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ videoGroupId;
+    void /* unknown type, empty encoding */ noteProvider;
+}
+
+@end

@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitCreateTeamfightApiRoot : GPBRootObject
+
+@end

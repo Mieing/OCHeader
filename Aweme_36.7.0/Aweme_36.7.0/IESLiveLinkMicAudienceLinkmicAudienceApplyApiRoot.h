@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicAudienceApplyApiRoot : GPBRootObject
+
+@end

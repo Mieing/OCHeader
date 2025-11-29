@@ -1,0 +1,87 @@
+@class NSString, WCAccountBindPhoneForRegCGI, WCAccountGatewayMobileHandler, WCAccountManualAuthControlLogic, WCAccountRegisterControlLogic, WCPrivacyPolicyControlLogic;
+
+@interface WCAccountPhoneRegLoginControlLogic : WCAccountBaseControlLogic <WCBaseControlMgrExt, WCAccountGatewayMaskedMobileViewControllerDelegate, WCAccountRegisterViewControllerDelegate, WCAccountVoiceVerifyViewControllerDelegate, WCAccountPhoneVerifyViewControllerDelegate, WCAccountSetPasswordViewControllerDelegate, WCAccountRegByOldPhoneViewControllerDelegate, WCAccountManualAuthControlLogicDelegate, WCAccountBindPhoneForRegCGIDelegate, WCAccountPhoneVerifyUpViewControllerDelegate, WCPrivacyPolicyControlLogicDelegate> {
+    unsigned int m_uiABtest;
+    unsigned long long m_eRegStyleStatus;
+    unsigned int m_uiTryCount;
+    BOOL m_bNeedSetPwd;
+    unsigned int m_uiCheckVerifyUpCount;
+    NSString *m_nsDefaultISO;
+    BOOL m_isDefaultEU;
+    WCAccountBindPhoneForRegCGI *m_modelLogic;
+    WCAccountManualAuthControlLogic *m_manualAuthLogic;
+    WCAccountRegisterControlLogic *m_registerLogic;
+    WCPrivacyPolicyControlLogic *_privacyPolicyLogic;
+    id /* block */ privacyPolicyDoneBlock;
+}
+
+@property (retain, nonatomic) WCAccountGatewayMobileHandler *gatewayMobileHandler;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithData:(id)a0;
+- (unsigned int)getCCType;
+- (void)reportABTestStatus:(unsigned int)a0;
+- (void)startLogic;
+- (void)cancelAllEvent;
+- (id)getRegPhoneNumber;
+- (BOOL)getVerifyCodeReady;
+- (BOOL)getVoideVerifyCodeReady:(id)a0;
+- (BOOL)checkVerifyCode:(id)a0;
+- (BOOL)checkPhoneNumberStatus:(unsigned int)a0;
+- (void)getVerifyCodeByCheckType;
+- (void)getVerifyCode;
+- (void)doPostCheck;
+- (void)loginAccount;
+- (void)preCheckReg;
+- (void)doRegAccount;
+- (void)onGatewayViewControllerQuit:(id)a0;
+- (void)onGatewayViewControllerGoNext;
+- (void)onGatewayViewControllerUseOtherPhone;
+- (unsigned long long)onRegStatus;
+- (BOOL)isEURegion;
+- (void)onRegNickNameBack;
+- (void)onRegBack;
+- (void)onRegNextWith:(id)a0 headImage:(id)a1;
+- (BOOL)onRegNextWithISO:(id)a0 isDefault:(BOOL)a1;
+- (void)onRegNextWith:(id)a0 countryIsoCode:(id)a1 phoneNum:(id)a2 pwd:(id)a3;
+- (void)showPrivacyPolicyWithCC:(id)a0 countryIsoCode:(id)a1 phoneNum:(id)a2 isAge:(BOOL)a3 doneBlock:(id /* block */)a4;
+- (void)onWCPrivacyPolicyControlLogicClickAgree;
+- (void)onWCPrivacyPolicyControlLogicClickDiagree;
+- (void)delaySetPrivacyPolicyLogicNil;
+- (void)onPhoneVerifyBack:(id)a0;
+- (void)onPhoneVerifyVoice;
+- (void)onPhoneVerifyAgain;
+- (void)onPhoneVerifyNext:(id)a0;
+- (void)onVoiceVerifyBack:(id)a0;
+- (void)onVoiceVerifyGetVerifyCode:(id)a0;
+- (void)onSetPasswordBack;
+- (void)onSetPasswordOK;
+- (void)checkHavePwd;
+- (void)onRegByOldPhoneBack;
+- (void)onRegByOldPhoneContinueReg;
+- (void)onRegByOldPhoneLogin;
+- (void)onPhoneVerifyUpBack;
+- (void)onPhoneVerifyUpNext;
+- (void)onManualAuthControlLogicStop:(unsigned long long)a0 response:(id)a1;
+- (BOOL)onManualAuthControlLogicError:(id)a0;
+- (id)getRegSessionID;
+- (void)onCheckRegPhoneNumberStatus:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)onGetVerifyCode:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)onGetVoiceVerifyCode:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)jumpToManulLoginControlMgrToRegister;
+- (void)loginForPhone;
+- (void)onGetRegVerifyCode:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)onGetRegVoiceVerifyCode:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)onCheckRegVerifyCode:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)onPostCheckRegState:(id)a0 StyleKeyValue:(id)a1 Response:(id)a2;
+- (void)onErrorHandleLogicDone;
+- (void)onErrorHandleLogicDoneAndNeedGoNextWithParams:(id)a0;
+- (void)pause;
+- (void)resume;
+- (void).cxx_destruct;
+
+@end

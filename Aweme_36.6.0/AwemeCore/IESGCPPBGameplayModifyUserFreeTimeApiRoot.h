@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplayModifyUserFreeTimeApiRoot : GPBRootObject
+
+@end

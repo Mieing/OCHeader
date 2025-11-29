@@ -1,0 +1,13 @@
+@class NSString, AnchorPermissionStatusResponse_ApplyDetail;
+
+@interface AnchorPermissionStatusResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int applyStatus;
+@property (copy, nonatomic) NSString *desc;
+@property (retain, nonatomic) AnchorPermissionStatusResponse_ApplyDetail *applyDetail;
+@property (nonatomic) BOOL hasApplyDetail;
+@property (nonatomic) long long isGovernment;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLinkmicAudienceSettingValue : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

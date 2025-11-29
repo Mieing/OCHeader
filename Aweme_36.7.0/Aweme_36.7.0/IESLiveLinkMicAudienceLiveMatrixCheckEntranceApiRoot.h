@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLiveMatrixCheckEntranceApiRoot : GPBRootObject
+
+@end

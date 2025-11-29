@@ -1,0 +1,3 @@
+@interface IESLiveUpdateLinkmicSettingsSucceedParamModel : IESLiveBridgeModel
+
+@end

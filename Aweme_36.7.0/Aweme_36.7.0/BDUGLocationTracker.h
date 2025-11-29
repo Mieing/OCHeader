@@ -1,0 +1,8 @@
+@interface BDUGLocationTracker : NSObject
+
++ (id)_getCommonParams;
++ (void)trackRequestWhenInUse;
++ (void)trackRequestTemporaryFullAccuracyAuthorization;
++ (void)trackSessionLaunch;
+
+@end

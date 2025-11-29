@@ -1,0 +1,5 @@
+@interface AWENearbyExportNSClassFactory : NSObject
+
++ (Class)getCls:(long long)a0;
+
+@end

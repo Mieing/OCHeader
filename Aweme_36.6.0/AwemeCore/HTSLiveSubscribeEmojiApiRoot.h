@@ -1,0 +1,3 @@
+@interface HTSLiveSubscribeEmojiApiRoot : GPBRootObject
+
+@end

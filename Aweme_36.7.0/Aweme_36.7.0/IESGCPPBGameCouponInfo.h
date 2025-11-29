@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface IESGCPPBGameCouponInfo : GPBMessage
+
+@property (nonatomic) long long couponDiscountLimit;
+@property (nonatomic) long long couponDiscountAmount;
+@property (copy, nonatomic) NSString *templateId;
+@property (copy, nonatomic) NSString *templateName;
+@property (nonatomic) long long couponExpireLeftTime;
+@property (copy, nonatomic) NSString *couponType;
+@property (copy, nonatomic) NSString *couponStatus;
+
++ (id)descriptor;
+
+@end

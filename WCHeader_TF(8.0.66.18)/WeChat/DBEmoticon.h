@@ -1,0 +1,88 @@
+@class NSString;
+
+@interface DBEmoticon : NSObject <WCTTableCoding>
+
+@property (retain, nonatomic) NSString *ConStrRes3;
+@property (retain, nonatomic) NSString *md5;
+@property (retain, nonatomic) NSString *message;
+@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned int createTime;
+@property (nonatomic) unsigned int length;
+@property (nonatomic) unsigned int status;
+@property (retain, nonatomic) NSString *catalog;
+@property (nonatomic) unsigned int catalogId;
+@property (retain, nonatomic) NSString *draft;
+@property (nonatomic) unsigned int lastUsedTime;
+@property (nonatomic) unsigned int extFlag;
+@property (nonatomic) unsigned int indexInPack;
+@property (retain, nonatomic) NSString *extInfo;
+@property (retain, nonatomic) NSString *packageId;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)md5;
++ (const void *)__wcdb_synthesize_146:(void *)a0;
++ (id)swift_md5;
++ (const void *)message;
++ (const void *)__wcdb_synthesize_147:(void *)a0;
++ (id)swift_message;
++ (const void *)type;
++ (const void *)__wcdb_synthesize_148:(void *)a0;
++ (id)swift_type;
++ (const void *)createTime;
++ (const void *)__wcdb_synthesize_149:(void *)a0;
++ (id)swift_createTime;
++ (const void *)length;
++ (const void *)__wcdb_synthesize_150:(void *)a0;
++ (id)swift_length;
++ (const void *)status;
++ (const void *)__wcdb_synthesize_151:(void *)a0;
++ (id)swift_status;
++ (const void *)catalog;
++ (const void *)__wcdb_synthesize_152:(void *)a0;
++ (id)swift_catalog;
++ (const void *)catalogId;
++ (const void *)__wcdb_synthesize_153:(void *)a0;
++ (id)swift_catalogId;
++ (const void *)draft;
++ (const void *)__wcdb_synthesize_154:(void *)a0;
++ (id)swift_draft;
++ (const void *)lastUsedTime;
++ (const void *)__wcdb_synthesize_155:(void *)a0;
++ (id)swift_lastUsedTime;
++ (const void *)extFlag;
++ (const void *)__wcdb_synthesize_156:(void *)a0;
++ (id)swift_extFlag;
++ (const void *)indexInPack;
++ (const void *)__wcdb_synthesize_157:(void *)a0;
++ (id)swift_indexInPack;
++ (const void *)extInfo;
++ (const void *)__wcdb_synthesize_158:(void *)a0;
++ (id)swift_extInfo;
++ (const void *)packageId;
++ (const void *)__wcdb_synthesize_159:(void *)a0;
++ (id)swift_packageId;
++ (const void *)ConStrRes3;
++ (const void *)__wcdb_synthesize_160:(void *)a0;
++ (id)swift_ConStrRes3;
++ (void)__wcdb_column_constraint_161:(void *)a0;
++ (void)__wcdb_column_constraint_162:(void *)a0;
++ (void)__wcdb_column_constraint_163:(void *)a0;
++ (void)__wcdb_column_constraint_164:(void *)a0;
++ (void)__wcdb_column_constraint_165:(void *)a0;
++ (void)__wcdb_column_constraint_166:(void *)a0;
++ (void)__wcdb_column_constraint_167:(void *)a0;
++ (void)__wcdb_column_constraint_168:(void *)a0;
++ (void)__wcdb_index_169:(void *)a0;
+
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface UpdateCiInfoResponse : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *data_p;
+
++ (id)descriptor;
+
+@end

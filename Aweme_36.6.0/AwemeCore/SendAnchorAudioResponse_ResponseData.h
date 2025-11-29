@@ -1,0 +1,16 @@
+@class HTSLiveUser, HTSLiveImage, HTSLiveText;
+
+@interface SendAnchorAudioResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long msgId;
+@property (retain, nonatomic) HTSLiveText *rtfContent;
+@property (nonatomic) BOOL hasRtfContent;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) int showIdentity;
+@property (retain, nonatomic) HTSLiveImage *identityLabel;
+@property (nonatomic) BOOL hasIdentityLabel;
+
++ (id)descriptor;
+
+@end

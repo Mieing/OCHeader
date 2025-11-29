@@ -1,0 +1,10 @@
+@class ReplaySetting;
+
+@interface ReplaySettingUpdateResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ReplaySetting *replaySetting;
+@property (nonatomic) BOOL hasReplaySetting;
+
++ (id)descriptor;
+
+@end

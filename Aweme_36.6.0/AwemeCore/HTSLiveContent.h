@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveContent : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *content;
+@property (retain, nonatomic) NSMutableArray *avatarArray;
+@property (readonly, nonatomic) unsigned long long avatarArray_Count;
+
++ (id)descriptor;
+
+@end

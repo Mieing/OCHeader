@@ -1,0 +1,3 @@
+@interface AnchorScheduledTimeApiRoot : GPBRootObject
+
+@end

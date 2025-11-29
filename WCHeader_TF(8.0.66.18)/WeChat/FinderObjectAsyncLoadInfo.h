@@ -1,0 +1,87 @@
+@class FinderAdPreMovieAdInfo, FinderLiveCardProductShowcase, LiveStreamLiveRoomInfo, FinderAdLivingProductInfo, DescCarouselInfo, FinderLivePreJoinLiveInfo, NSMutableArray, FinderNpsSurveyTaskConf, FinderObjectWordingInfo, FinderPurchaseLivePreviewInfo, FinderLiveInfo, FinderLiveStreamPlayTogetherInfo, FinderObjectHelpPromotionInfo, FinderObjectControversialAlertInfo, AsyncLoadAccountUpdateInfo, FinderObjectListenInfo, FinderObjectDigest, FinderLiveCardHighlightTag, FinderLiveAutoSwipeInfo, FinderLiveStreamRelatedListBackupFeedInfo;
+
+@interface FinderObjectAsyncLoadInfo : WXPBGeneratedMessage
+
+@property (nonatomic) unsigned long long objectId;
+@property (retain, nonatomic) FinderLiveInfo *liveInfo;
+@property (retain, nonatomic) NSMutableArray *adItemInfo;
+@property (retain, nonatomic) NSMutableArray *adLeadInfo;
+@property (retain, nonatomic) NSMutableArray *jumpInfo;
+@property (retain, nonatomic) NSMutableArray *hotspotJumpinfo;
+@property (retain, nonatomic) FinderLivePreJoinLiveInfo *preJoinliveInfo;
+@property (retain, nonatomic) FinderObjectDigest *objectDigest;
+@property (retain, nonatomic) FinderPurchaseLivePreviewInfo *purchaseLivePreviewInfo;
+@property (retain, nonatomic) NSMutableArray *commJumpinfo;
+@property (retain, nonatomic) DescCarouselInfo *descCarouselInfo;
+@property (retain, nonatomic) NSMutableArray *feedJumpInfo;
+@property (retain, nonatomic) FinderNpsSurveyTaskConf *npsSurveyConf;
+@property (retain, nonatomic) FinderLiveCardHighlightTag *liveCardHighlightTag;
+@property (retain, nonatomic) FinderLiveCardProductShowcase *liveCardProductShowcase;
+@property (retain, nonatomic) FinderLiveAutoSwipeInfo *liveAutoSwipeInfo;
+@property (retain, nonatomic) FinderObjectWordingInfo *wordingInfo;
+@property (retain, nonatomic) FinderAdPreMovieAdInfo *preMovieAdInfo;
+@property (retain, nonatomic) FinderAdLivingProductInfo *adLivingProductInfo;
+@property (retain, nonatomic) FinderLiveStreamPlayTogetherInfo *livePlaytogetherInfo;
+@property (retain, nonatomic) FinderObjectHelpPromotionInfo *helpPromotionInfo;
+@property (retain, nonatomic) FinderObjectControversialAlertInfo *alertInfo;
+@property (retain, nonatomic) FinderLiveStreamRelatedListBackupFeedInfo *backupFeedsOnImpression;
+@property (retain, nonatomic) AsyncLoadAccountUpdateInfo *acctUpdateInfo;
+@property (retain, nonatomic) FinderObjectListenInfo *listenInfo;
+@property (retain, nonatomic) LiveStreamLiveRoomInfo *liveRoomInfo;
+
++ (void)initialize;
+
+- (void)setLiveRoomInfo:(id)a0;
+- (id)liveRoomInfo;
+- (void)setListenInfo:(id)a0;
+- (id)listenInfo;
+- (void)setAcctUpdateInfo:(id)a0;
+- (id)acctUpdateInfo;
+- (void)setBackupFeedsOnImpression:(id)a0;
+- (id)backupFeedsOnImpression;
+- (void)setAlertInfo:(id)a0;
+- (id)alertInfo;
+- (void)setHelpPromotionInfo:(id)a0;
+- (id)helpPromotionInfo;
+- (void)setLivePlaytogetherInfo:(id)a0;
+- (id)livePlaytogetherInfo;
+- (void)setAdLivingProductInfo:(id)a0;
+- (id)adLivingProductInfo;
+- (void)setPreMovieAdInfo:(id)a0;
+- (id)preMovieAdInfo;
+- (void)setWordingInfo:(id)a0;
+- (id)wordingInfo;
+- (void)setLiveAutoSwipeInfo:(id)a0;
+- (id)liveAutoSwipeInfo;
+- (void)setLiveCardProductShowcase:(id)a0;
+- (id)liveCardProductShowcase;
+- (void)setLiveCardHighlightTag:(id)a0;
+- (id)liveCardHighlightTag;
+- (void)setNpsSurveyConf:(id)a0;
+- (id)npsSurveyConf;
+- (void)setFeedJumpInfo:(id)a0;
+- (id)feedJumpInfo;
+- (void)setDescCarouselInfo:(id)a0;
+- (id)descCarouselInfo;
+- (void)setCommJumpinfo:(id)a0;
+- (id)commJumpinfo;
+- (void)setPurchaseLivePreviewInfo:(id)a0;
+- (id)purchaseLivePreviewInfo;
+- (void)setObjectDigest:(id)a0;
+- (id)objectDigest;
+- (void)setPreJoinliveInfo:(id)a0;
+- (id)preJoinliveInfo;
+- (void)setHotspotJumpinfo:(id)a0;
+- (id)hotspotJumpinfo;
+- (void)setJumpInfo:(id)a0;
+- (id)jumpInfo;
+- (void)setAdLeadInfo:(id)a0;
+- (id)adLeadInfo;
+- (void)setAdItemInfo:(id)a0;
+- (id)adItemInfo;
+- (void)setLiveInfo:(id)a0;
+- (id)liveInfo;
+- (void)setObjectId:(unsigned long long)a0;
+- (unsigned long long)objectId;
+
+@end

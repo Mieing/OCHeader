@@ -1,0 +1,80 @@
+@class BUPlayer, CSJLiveStreamInfo, UIImageView, NSString, BUTimer;
+@protocol CSJLivePlayer, CSJPlayerDelegate;
+
+@interface CSJPlayer : NSObject <CSJLivePlayerDelegate>
+
+@property (retain) BUPlayer *videoPlayer;
+@property (retain) id<CSJLivePlayer> livePlayer;
+@property (retain, nonatomic) CSJLiveStreamInfo *liveStreamInfo;
+@property (retain, nonatomic) UIImageView *liveCoverImage;
+@property (nonatomic) long long liveState;
+@property (nonatomic) BOOL isLiveAutoPause;
+@property (nonatomic) long long liveBoundaryTime;
+@property (nonatomic) long long playingTime;
+@property (retain) BUTimer *playingTimer;
+@property (nonatomic) BOOL background;
+@property (readonly, nonatomic) BOOL isLiveStream;
+@property (nonatomic) BOOL isJSBPauseVideo;
+@property (weak, nonatomic) id<CSJPlayerDelegate> delegate;
+@property (readonly, nonatomic) BOOL isFullScreen;
+@property (nonatomic) BOOL shouldAutoRotate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)playerWithLiveStream:(id)a0;
++ (id)playerWithVideoItem:(id)a0;
++ (id)liveSDKConfig;
++ (void)registerLiveClass:(Class)a0;
++ (BOOL)supportLivePlayer;
++ (void)setupSDK;
+
+- (BOOL)isEnterBackground;
+- (double)currentPlayTime;
+- (void)recieveError:(id)a0;
+- (void)stallStart;
+- (void)stallEnd;
+- (void)onStreamDryup:(id)a0;
+- (void)onMonitorLog:(id)a0;
+- (void)loadStateChanged:(id)a0;
+- (void)removePlayerBoundaryTime;
+- (void)changeOrientationScreen;
+- (void)setPlayerBoundaryTime:(long long)a0;
+- (void)showCoverImage:(BOOL)a0 completion:(id /* block */)a1;
+- (id)controlContainer;
+- (void)showCoverImage:(BOOL)a0;
+- (void)replaceCurrentItemWithVideoItem:(id)a0;
+- (double)watchedDuration;
+- (BOOL)canPlaying;
+- (void)applicationDidEnterForeground:(id)a0;
+- (void)stopPlayingTimer;
+- (void)startPlayingTimer;
+- (void)updateLiveStreamState:(long long)a0;
+- (void)replaceCurrentItemWithLiveItem:(id)a0;
+- (void)seekToTime:(double)a0 autoPlay:(BOOL)a1 completion:(id /* block */)a2;
+- (void)onPlayingTimerUpdate;
+- (void)startRender;
+- (void)playbackStatusChanged:(long long)a0;
+- (void)setPlayerLayerGravity:(long long)a0;
+- (void)insertGaosiMohuWithView:(id)a0;
+- (void)applicationWillResignActive:(id)a0;
+- (BOOL)mute;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)setOption:(long long)a0;
+- (id)initWithType:(BOOL)a0;
+- (void)stop;
+- (long long)state;
+- (double)duration;
+- (void)replay;
+- (id)view;
+- (id)forwardingTargetForSelector:(SEL)a0;
+- (void)dealloc;
+- (void)setMute:(BOOL)a0;
+- (id)currentPlayerItem;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+- (unsigned long long)decodeMode;
+
+@end

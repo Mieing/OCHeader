@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface HTSLiveStreamUrl_StreamUrlExtra_AnchorClientInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *customInfo;
+
++ (id)descriptor;
+
+@end

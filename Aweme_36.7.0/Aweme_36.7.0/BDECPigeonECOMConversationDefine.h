@@ -1,0 +1,3 @@
+@interface BDECPigeonECOMConversationDefine : NSObject
+
+@end

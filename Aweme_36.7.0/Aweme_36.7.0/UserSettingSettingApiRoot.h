@@ -1,0 +1,3 @@
+@interface UserSettingSettingApiRoot : GPBRootObject
+
+@end

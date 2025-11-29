@@ -1,0 +1,71 @@
+@class UIView, NSString, UICollectionViewFlowLayout, MJCollectionView, OMCBatchThumbnailProvider, MMUIView, MJSegmentCellBorderView, UIPanGestureRecognizer, UICollectionView, MJTimelineViewModel, MJPlaybackViewModel;
+@protocol MJTimelineContentRangeEditViewDelegate, OMCThumbnailProvider;
+
+@interface MJTimelineContentRangeEditView : MMUIView <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, MJSegmentReusableViewDelegate>
+
+@property (retain, nonatomic) MJSegmentCellBorderView *contentRangeBorderView;
+@property (retain, nonatomic) UIView *leftMaskView;
+@property (retain, nonatomic) UIView *rightMaskView;
+@property (retain, nonatomic) MJCollectionView *thumbnailCollectionView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *thumbnailCollectionViewLayout;
+@property (retain, nonatomic) UICollectionView *segmentCollectionView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *segmentCollectionViewLayout;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } currentBounds;
+@property (retain, nonatomic) id<OMCThumbnailProvider> thumbnailProvider;
+@property (retain, nonatomic) MMUIView *playheadView;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } playheadTouchInsets;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (retain, nonatomic) OMCBatchThumbnailProvider *batchThumbnailProvider;
+@property (readonly, nonatomic) MJTimelineViewModel *timelineVM;
+@property (readonly, nonatomic) MJPlaybackViewModel *playbackVM;
+@property (weak, nonatomic) id<MJTimelineContentRangeEditViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTimelineViewModel:(id)a0 playbackViewModel:(id)a1;
+- (void)dealloc;
+- (void)setupThumbnailProvider;
+- (void)setupViews;
+- (void)layoutViews;
+- (void)layoutPlayheadView;
+- (void)layoutSubviews;
+- (void)bindViews;
+- (void)reloadData;
+- (void)setupGestureRecognizers;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (BOOL)collectionView:(id)a0 shouldSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (long long)numberOfThumbnailTiles;
+- (void)setupThumbnailCell:(id)a0 atIndexPath:(id)a1;
+- (void)setupSegmentCell:(id)a0 atIndexPath:(id)a1;
+- (void)reloadOnFocusSegmentDidChange;
+- (void)requestThumbnailImageForCell:(id)a0 atIndexPath:(id)a1;
+- (void)cancelThumbnailImageRequestForCell:(id)a0 atIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)didEndScrubbingTimelineView;
+- (void)updateSegmentContentRange;
+- (void)scrollToContentRange;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })playbackTimeFromPlayheadOffset;
+- (void)skimAndNotify;
+- (void)layoutMaskView;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)handlePanGesture:(id)a0;
+- (void)updatePlayheadWithGesture:(id)a0;
+- (void)stopPlayingAndBeginClipSkimming;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })timeForOffset:(double)a0 shouldClamp:(BOOL)a1 contentRangeClamp:(BOOL)a2;
+- (double)offsetForTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })timeRangeForOffsetRange:(struct MCOffsetRange { double x0; double x1; })a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,80 @@
+@class NSString, NSObject;
+@protocol OS_dispatch_queue, MTLCommandQueue, MTLDevice;
+
+@interface BmfSuperResolution : NSObject <IBmfSuperResolution> {
+    float scaleRatio;
+    unsigned long long buffer_size;
+    BOOL only_texture;
+}
+
+@property (nonatomic) struct shared_ptr<BmfImageDataPool<BmfTextureData>> { void *__ptr_; struct __shared_weak_count *__cntrl_; } texDataPool;
+@property (nonatomic) struct shared_ptr<std::mutex> { struct mutex *__ptr_; struct __shared_weak_count *__cntrl_; } mtx;
+@property BOOL sr_impl_init_finish_;
+@property (retain) NSObject<OS_dispatch_queue> *sr_impl_init_queue_;
+@property struct shared_ptr<SR_IMPL_BASE> { struct SR_IMPL_BASE *__ptr_; struct __shared_weak_count *__cntrl_; } sr_impl_;
+@property (nonatomic) int algo_type_;
+@property (nonatomic) int scale_mode_;
+@property (nonatomic) int process_mode_;
+@property (copy, nonatomic) NSString *lib_path_;
+@property (nonatomic) int max_width_;
+@property (nonatomic) int max_height_;
+@property (copy, nonatomic) NSString *license_module_name_;
+@property (nonatomic) BOOL sync_;
+@property int *level_;
+@property int level_count_;
+@property (nonatomic) int sharp_level_;
+@property (copy, nonatomic) NSString *weight_path_;
+@property (nonatomic) BOOL use_individual_cmd_buf_;
+@property (nonatomic) BOOL use_multi_sharp_;
+@property (nonatomic) BOOL use_nn_;
+@property (nonatomic) BOOL memcpy_optimize_;
+@property (weak, nonatomic) id<MTLCommandQueue> cmd_queue_;
+@property (weak, nonatomic) id<MTLDevice> device_;
+@property (copy, nonatomic) NSString *nn_module_path_;
+@property (copy, nonatomic) NSString *host_;
+@property (copy, nonatomic) NSString *app_id_;
+@property (copy, nonatomic) NSString *weight_save_dir_;
+@property (nonatomic) int backup_algo_type_;
+@property (nonatomic) void *first_hold_instance_;
+@property (nonatomic) void *second_hold_instance_;
+@property (nonatomic) BOOL want_hold_;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init:(int)a0 :(int)a1 :(int)a2 :(id)a3 :(int)a4 :(int)a5 :(id)a6 :(BOOL)a7;
+- (id)processImageWithScaleRatioAndError:(id)a0 :(float)a1 :(id *)a2;
+- (id)processImageWithError:(id)a0 :(id *)a1;
+- (id)initWithErrInfo:(int)a0 :(int)a1 :(int)a2 :(id)a3 :(int)a4 :(int)a5 :(id)a6 :(BOOL)a7 :(id *)a8;
+- (struct BmfData { struct shared_ptr<BmfTextureData> { struct BmfTextureData *x0; struct __shared_weak_count *x1; } x0; })createBmfDataWithStride:(unsigned int *)a0 PlaneNum:(unsigned int)a1 Width:(unsigned int)a2 Height:(unsigned int)a3 Fmt:(int)a4;
+- (id)processImageOptimizeInput:(struct BmfData { struct shared_ptr<BmfTextureData> { struct BmfTextureData *x0; struct __shared_weak_count *x1; } x0; })a0 Output:(struct BmfData { struct shared_ptr<BmfTextureData> { struct BmfTextureData *x0; struct __shared_weak_count *x1; } x0; })a1 ScaleRatio:(float)a2 Matrix:(float *)a3 Offset:(float *)a4 Error:(id *)a5;
+- (void *)processVideo:(struct __CVBuffer { } *)a0;
+- (int)retainBmfSrData:(void *)a0;
+- (void *)processVideoAndOuputOnlyTexture:(struct __CVBuffer { } *)a0;
+- (int)initSrImpl;
+- (int)getReplaceType:(int)a0;
+- (void)holdOldInstance;
+- (void *)haveAlreadyInitAlgoType:(int)a0 AndScaleMode:(int)a1;
+- (int)getSharpValueByLevel:(int)a0;
+- (void *)processVideoRoi:(struct __CVBuffer { } *)a0 :(int)a1 :(int)a2 :(int)a3 :(int)a4 :(int)a5 :(int)a6 :(int)a7;
+- (void)changeImplWithAlgoType:(int)a0 AndScaleMode:(int)a1;
+- (void *)processMtlTexture:(id)a0 SecondTex:(id)a1 ThirdTex:(id)a2;
+- (int)copyToMetalTextureOptimizer:(void **)a0 :(int *)a1 :(int *)a2 :(int)a3 :(int)a4 :(id)a5 :(id)a6 :(id)a7;
+- (int)copyToMetalTexture:(void **)a0 :(int *)a1 :(int *)a2 :(int)a3 :(int)a4 :(id)a5 :(id)a6 :(id)a7;
+- (void *)process:(void **)a0 :(int *)a1 :(int)a2 :(int)a3 :(int)a4 :(int)a5;
+- (id)initWithExtraInfo:(int)a0 :(int)a1 :(int)a2 :(id)a3 :(int)a4 :(int)a5 :(id)a6 :(BOOL)a7 :(struct BmfSrInitExtraInfo { id x0; id x1; id x2; int x3; } *)a8;
+- (id)initWithMtlDeviceAndQueue:(int)a0 :(int)a1 :(int)a2 :(id)a3 :(int)a4 :(int)a5 :(id)a6 :(BOOL)a7 :(struct BmfSrInitExtraInfo { id x0; id x1; id x2; int x3; } *)a8 :(id)a9 :(id)a10;
+- (void *)processVideo:(struct __CVBuffer { } *)a0 WithExtraInfo:(struct BmfSrExtraInfo { struct BmfRect { int x0; int x1; int x2; int x3; } x0; struct BmfSrColor { int x0; int x1; int x2; } x1; int x2; int x3; int x4; BOOL x5; id x6; id x7; int x8; id x9[3]; } *)a1 AndExtraMode:(int)a2;
+- (void *)processWithExtraInfo:(void **)a0 :(int *)a1 :(int)a2 :(int)a3 :(int)a4 :(int)a5 :(struct BmfSrExtraInfo { struct BmfRect { int x0; int x1; int x2; int x3; } x0; struct BmfSrColor { int x0; int x1; int x2; } x1; int x2; int x3; int x4; BOOL x5; id x6; id x7; int x8; id x9[3]; } *)a6 :(int)a7;
+- (id)processImage:(id)a0;
+- (id)processImageWithScaleRatio:(id)a0 :(float)a1;
+- (void *)processVideoWithScaleRatio:(struct __CVBuffer { } *)a0 :(int)a1;
+- (void)setMemcpyOptimize:(BOOL)a0;
+- (void)setModelInfo:(id)a0 Host:(id)a1 SaveDir:(id)a2 BackupAlgorithmMode:(int)a3;
+- (int)setOverShootThreshold:(float)a0 AndWeight:(float)a1;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+- (void)dealloc;
+
+@end

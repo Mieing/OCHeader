@@ -1,0 +1,3 @@
+@interface TTALogoutModel : TTADataRespModel
+
+@end

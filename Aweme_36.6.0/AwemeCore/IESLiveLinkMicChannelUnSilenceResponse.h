@@ -1,0 +1,10 @@
+@class IESLiveLinkMicChannelUnSilenceResponse_ResponseData;
+
+@interface IESLiveLinkMicChannelUnSilenceResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicChannelUnSilenceResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

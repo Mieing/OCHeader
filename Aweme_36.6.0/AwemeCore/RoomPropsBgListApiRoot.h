@@ -1,0 +1,3 @@
+@interface RoomPropsBgListApiRoot : GPBRootObject
+
+@end

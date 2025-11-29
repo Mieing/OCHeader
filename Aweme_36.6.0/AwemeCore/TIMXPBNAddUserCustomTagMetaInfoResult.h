@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNAddUserCustomTagMetaInfoResult : GPBMessage
+
+@property (nonatomic) long long tagId;
+@property (nonatomic) BOOL hasTagId;
+@property (retain, nonatomic) GPBInt64Array *failedConversationIdsArray;
+@property (readonly, nonatomic) unsigned long long failedConversationIdsArray_Count;
+
++ (id)descriptor;
+
+@end

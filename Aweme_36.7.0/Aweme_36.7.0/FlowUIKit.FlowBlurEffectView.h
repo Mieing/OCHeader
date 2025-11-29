@@ -1,0 +1,6 @@
+@interface FlowUIKit.FlowBlurEffectView : UIVisualEffectView
+
+- (id)initWithCoder:(id)a0;
+- (id)initWithEffect:(id)a0;
+
+@end

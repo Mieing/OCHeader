@@ -1,0 +1,3 @@
+@interface BattleRoot : GPBRootObject
+
+@end

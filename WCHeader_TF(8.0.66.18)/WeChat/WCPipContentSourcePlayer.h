@@ -1,0 +1,76 @@
+@class WCPlayerPlayArgs, WCPlayerPlaybackInfo, NSString, UIView, AVPictureInPictureControllerContentSource, WCPlayerView;
+@protocol WCPipContentSourcePlayerDelegate;
+
+@interface WCPipContentSourcePlayer : NSObject <WCPlayerPipMgrExt, WCPlayerPipControllerProtocol>
+
+@property (nonatomic) struct CGSize { double width; double height; } size;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL isDisplayedInPipSucc;
+@property (nonatomic) BOOL isExpectStartPipWhenResignActive;
+@property (nonatomic) BOOL isPauseMainPlayerWhenNotStartPip;
+@property (nonatomic) long long displayStopReason;
+@property (nonatomic) BOOL bNeedRegisterPipControllerResource;
+@property (copy, nonatomic) id /* block */ initCompletionHandler;
+@property (nonatomic) unsigned int taskId;
+@property (nonatomic) BOOL isPipPlaying;
+@property (nonatomic) BOOL isErrorState;
+@property (nonatomic) BOOL isDisplayingOnPipWindow;
+@property (nonatomic) BOOL isOccupyAudioModuleSucc;
+@property (nonatomic) BOOL isNeedDestoryWhenPipStop;
+@property (readonly, nonatomic) BOOL isRegisteredPipResource;
+@property (nonatomic) BOOL bResourceIsCreating;
+@property (retain, nonatomic) WCPlayerPlayArgs *playerArgs;
+@property (retain, nonatomic) WCPlayerPlaybackInfo *playbackInfo;
+@property (retain, nonatomic) AVPictureInPictureControllerContentSource *pipContentSource;
+@property (weak, nonatomic) UIView *playerSuperView;
+@property (weak, nonatomic) WCPlayerView<WCPipContentSourcePlayerDelegate> *playerView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithDelegate:(id)a0 playArgs:(id)a1 playbackInfo:(id)a2 completionHandler:(id /* block */)a3;
+- (void)dealloc;
+- (void)addNotification;
+- (void)tryClosePipWhenAppActive;
+- (void)onApplicationBecomeActive;
+- (void)cleanResourceWhenPipNotSuccStart;
+- (id)displayLayerView;
+- (BOOL)isEnqueueSampleBufferType;
+- (void)setPlayerVideoGravityWithPlayerContentMode:(long long)a0;
+- (void)createPipResouce;
+- (void)createPipResouceCompleted;
+- (void)unregisterPipResourcre;
+- (void)tryRegisterPipControllerResource;
+- (void)stopPipAndCleanResource;
+- (void)onActiveAudioModuleFail;
+- (id)getPipActiveAudioModule;
+- (void)occupyAudioModuleSucc:(BOOL)a0;
+- (BOOL)isForbidStartPlay;
+- (void)play;
+- (void)pause:(BOOL)a0;
+- (void)stop;
+- (void)seekTo:(double)a0;
+- (void)onStartBuffering;
+- (void)onBufferingComplete;
+- (void)setRate:(double)a0;
+- (void)setLoopBack:(BOOL)a0;
+- (void)onPlayerEnterErrorState;
+- (void)onPlayerDidPlayToEnd;
+- (void)onPlayerSeekComplete:(double)a0;
+- (void)onPlayCallback:(double)a0;
+- (void)onRenderedOneFrame:(id)a0;
+- (void)updateDisplayLayerViewFrame;
+- (id)getDisplayView;
+- (void)onStartDisplayOnPipWindow:(long long)a0;
+- (void)onStopDisplayOnPipWindow:(long long)a0;
+- (BOOL)isWillGeneratePipWindow;
+- (void)onApplicationWillResignActive;
+- (void)onWillGeneratePipWindowWhenResignActive;
+- (void)pictureInPictureStateDidChange:(long long)a0;
+- (void)restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(id /* block */)a0;
+- (void)failToStartPictureInPictureWithError:(id)a0;
+- (void)onPipSourcePlayerUnRegisterPipResource:(id)a0;
+- (void).cxx_destruct;
+
+@end

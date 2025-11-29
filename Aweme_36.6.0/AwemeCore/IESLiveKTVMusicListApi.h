@@ -1,0 +1,3 @@
+@interface IESLiveKTVMusicListApi : NSObject
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveDslTemplate : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *template_p;
+@property (copy, nonatomic) NSString *data_p;
+@property (copy, nonatomic) NSString *templateHash;
+
++ (id)descriptor;
+
+@end

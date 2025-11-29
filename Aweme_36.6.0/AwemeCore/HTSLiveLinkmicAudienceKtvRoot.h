@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicAudienceKtvRoot : GPBRootObject
+
+@end

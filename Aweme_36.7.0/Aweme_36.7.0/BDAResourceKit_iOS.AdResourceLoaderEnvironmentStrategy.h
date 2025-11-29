@@ -1,0 +1,3 @@
+@interface BDAResourceKit_iOS.AdResourceLoaderEnvironmentStrategy : _TtCs12_SwiftObject
+
+@end

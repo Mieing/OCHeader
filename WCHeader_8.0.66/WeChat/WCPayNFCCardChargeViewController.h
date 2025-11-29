@@ -1,0 +1,78 @@
+@class UIView, NSString, UIImageView, UIButton, WCPayCss, RichTextView, EXTPKG_mmpayapplynfccardbo_CardTypeInfo, WCPayWebImageView, UILabel;
+@protocol WCPayNFCCardChargeViewControllerDelegate;
+
+@interface WCPayNFCCardChargeViewController : WCPayBaseViewController <ILinkEventExt, WCPayNFCCardDepositViewDelegate>
+
+@property (weak, nonatomic) id<WCPayNFCCardChargeViewControllerDelegate> m_delegate;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) WCPayWebImageView *nfcCardImageView;
+@property (retain, nonatomic) WCPayCss *css;
+@property (retain, nonatomic) UIView *cardInfoView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *balanceView;
+@property (retain, nonatomic) UILabel *balancePrefixLabel;
+@property (retain, nonatomic) UILabel *balanceLabel;
+@property (retain, nonatomic) UIView *tagsView;
+@property (retain, nonatomic) UIView *seperatorView;
+@property (retain, nonatomic) EXTPKG_mmpayapplynfccardbo_CardTypeInfo *m_viewData;
+@property (retain, nonatomic) UILabel *preChargeLabel;
+@property (retain, nonatomic) UIView *preChargeAmountContentView;
+@property (retain, nonatomic) UILabel *depositTitleView;
+@property (retain, nonatomic) UIView *depositContentView;
+@property (retain, nonatomic) UIView *cardAboutContentView;
+@property (retain, nonatomic) UIView *bottomContentView;
+@property (retain, nonatomic) UIView *bottomViewUpperLine;
+@property (retain, nonatomic) UIView *bottomViewLowerLine;
+@property (retain, nonatomic) UIView *protocolView;
+@property (retain, nonatomic) UIView *chargeConfirmView;
+@property (retain, nonatomic) UIImageView *checkBoxImageView;
+@property (nonatomic) BOOL isChecked;
+@property (retain, nonatomic) RichTextView *protocolTextView;
+@property (retain, nonatomic) UILabel *cardAboutTitleView;
+@property (retain, nonatomic) UIView *cardAboutInfoContentView;
+@property (retain, nonatomic) UILabel *amountLabelPrefix;
+@property (retain, nonatomic) UILabel *amountLabel;
+@property (retain, nonatomic) UILabel *cardApplyAmountNameLabel;
+@property (retain, nonatomic) UIView *amountContentView;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (nonatomic) long long selectedDepositAmount;
+@property (retain, nonatomic) UIButton *abontCardButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidLoad;
+- (void)setDelegate:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)onBack;
+- (id)navigationBarBackgroundColor;
+- (void)initNavigationBar;
+- (void)onClickChargeRecord:(id)a0;
+- (void)refreshViewWithData:(id)a0;
+- (void)updateView;
+- (void)updateTailView;
+- (void)updateNFCCardImageView;
+- (void)updateCardInfoView;
+- (void)updateTitleLabel;
+- (void)updateBalanceView;
+- (void)updateTags;
+- (void)updateSeperator;
+- (void)updateDepositView;
+- (void)updateDepositContentView;
+- (double)balanceAmount;
+- (void)updateAboutCardButton;
+- (void)onClickAboutCardButton:(id)a0;
+- (void)updateBottomContent;
+- (double)totalAmount;
+- (void)updateChargeConfirmView;
+- (void)onClickConfirmButton:(id)a0;
+- (void)onWCPayNFCCardDepositViewTap:(long long)a0;
+- (void)onConfirmChage:(id)a0;
+- (void)updateDepositContentViewState;
+- (void)updateCardAboutInfoView;
+- (double)maxTitleLength;
+- (void).cxx_destruct;
+
+@end

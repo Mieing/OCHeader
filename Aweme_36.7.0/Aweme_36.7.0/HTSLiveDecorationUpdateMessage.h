@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveDecotationDetail;
+
+@interface HTSLiveDecorationUpdateMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveDecotationDetail *detai;
+@property (nonatomic) BOOL hasDetai;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEIMTaskConversationDetailCellModel : AWEIMCellModel
+
+@end

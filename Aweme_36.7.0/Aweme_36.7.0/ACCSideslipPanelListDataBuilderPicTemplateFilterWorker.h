@@ -1,0 +1,10 @@
+@interface ACCSideslipPanelListDataBuilderPicTemplateFilterWorker : ACCSideslipPanelListDataBuilderBaseWorker
+
+@property (copy, nonatomic) id /* block */ getTotalListBlk;
+
+- (unsigned long long)workerScene;
+- (void)composeListDataWithPropPickDic:(id)a0 completion:(id /* block */)a1;
+- (void).cxx_destruct;
+- (unsigned long long)workerType;
+
+@end

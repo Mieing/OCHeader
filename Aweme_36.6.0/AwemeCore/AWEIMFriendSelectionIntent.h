@@ -1,0 +1,13 @@
+@class NSString, NSArray;
+
+@interface AWEIMFriendSelectionIntent : INIntent <AWEIMIntentModelToDictionaryProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) NSArray *users;
+
+- (id)toDictionary;
+
+@end

@@ -1,0 +1,3 @@
+@interface LinkmicFinishApiRoot : GPBRootObject
+
+@end

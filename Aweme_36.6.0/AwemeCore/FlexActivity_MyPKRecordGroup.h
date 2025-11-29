@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface FlexActivity_MyPKRecordGroup : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) NSMutableArray *recordsArray;
+@property (readonly, nonatomic) unsigned long long recordsArray_Count;
+
++ (id)descriptor;
+
+@end

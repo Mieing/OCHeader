@@ -1,0 +1,3 @@
+@interface DUXBaseActivityIndicatorView : UIActivityIndicatorView
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEDynamicTheaterViewHolder : AWEBaseListViewHolder
+
+@end

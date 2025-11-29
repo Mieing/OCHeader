@@ -1,0 +1,3 @@
+@interface AWECodeGenJanusListenUserLunaDiversionBtnReqModel : AWEBaseDataModel
+
+@end

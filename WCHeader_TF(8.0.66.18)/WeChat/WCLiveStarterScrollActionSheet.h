@@ -1,0 +1,70 @@
+@class MMLiveActionSheetFlowLayoutView, WCLiveStarterScrollActionSheetViewModel, NSArray, NSString, WCFinderLiveAnchorLogReporter, MMFinderLiveTask, WCFinderLiveStarterReporter, MMFinderLiveTaskId, UIPanGestureRecognizer, MMLiveShopShelfDragBar, MMScrollActionSheetItemView;
+
+@interface WCLiveStarterScrollActionSheet : MMScrollActionSheet <MMLiveActionSheetFlowLayoutViewDelegate, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *liveTaskId;
+@property (readonly, nonatomic) MMFinderLiveTask *finderLiveTask;
+@property (nonatomic) BOOL isCommentEnable;
+@property (nonatomic) BOOL isMicEnable;
+@property (nonatomic) BOOL isRewardEnable;
+@property (nonatomic) long long currVisibilityMode;
+@property (retain, nonatomic) MMLiveActionSheetFlowLayoutView *anchorFlowLayoutView;
+@property (retain, nonatomic) WCFinderLiveAnchorLogReporter *reporter;
+@property (retain, nonatomic) WCFinderLiveStarterReporter *starterReporter;
+@property (weak, nonatomic) MMScrollActionSheetItemView *firstItemViewWithRedDot;
+@property (retain, nonatomic) NSArray *sctionTitleArray;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (retain, nonatomic) MMLiveShopShelfDragBar *dragBar;
+@property (readonly, nonatomic) BOOL shouldHideRedPacketItem;
+@property (readonly, nonatomic) BOOL shouldHideLinkItem;
+@property (readonly, nonatomic) BOOL shouldHideFansGroupItem;
+@property (readonly, nonatomic) BOOL shouldHideRewardWishItem;
+@property (copy, nonatomic) id /* block */ redDotQueryBlock;
+@property (copy, nonatomic) id /* block */ redDotCtrlInfoQueryBlock;
+@property (nonatomic) unsigned long long hiddenItemsFlag;
+@property (retain, nonatomic) WCLiveStarterScrollActionSheetViewModel *sheetVM;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithLiveTaskId:(id)a0;
+- (void)loadData;
+- (BOOL)isGameLiveMode;
+- (id)loadItemArray;
+- (void)creatorCenterEntryTo:(id)a0;
+- (void)anchorOpPromotionCardItem:(id)a0;
+- (BOOL)shouldShowMoreRedDotForPath:(id)a0 type:(unsigned long long)a1;
+- (void)addReplaySettingItemIntoRow:(id)a0;
+- (void)anchorCommentManageItem:(id)a0;
+- (void)anchorMoreFunctionItem:(id)a0;
+- (void)anchorLiveNoticeItem:(id)a0;
+- (void)musicToRow:(id)a0;
+- (void)linkToRow:(id)a0;
+- (void)redPacketToRow:(id)a0;
+- (void)fansGroupItemToRow:(id)a0;
+- (void)customizeRewardItemToRow:(id)a0;
+- (void)trafficItemToRow:(id)a0;
+- (void)rewardWishItemToRow:(id)a0;
+- (void)connectMicItemToRow:(id)a0;
+- (void)anchorFeedbackEntrance:(id)a0;
+- (void)setSubPath:(id)a0;
+- (BOOL)shouldShowAnchorTaskGuide:(id)a0;
+- (void)onActionSheetItemClicked:(id)a0 senderView:(id)a1;
+- (id)mmLiveActionSheetFlowLayoutView:(id)a0 getRedDotShowInfoAtPath:(id)a1;
+- (void)reportNewAnchorTaskSubPathWithType:(unsigned int)a0;
+- (id)itemArray;
+- (void)showInView:(id)a0;
+- (void)configItemView:(id)a0 withItem:(id)a1;
+- (void)reportQuickReplyExpose;
+- (void)reportForSensitiveItemExpose;
+- (void)reportForSensitiveItemSelect;
+- (void)setUpEdgePanGesture;
+- (void)handlePopPanGesture:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (id)getHeaderView;
+- (void)handleContentGestureChangeTo:(double)a0;
+- (void)handleContentGestureEnd;
+- (void).cxx_destruct;
+
+@end

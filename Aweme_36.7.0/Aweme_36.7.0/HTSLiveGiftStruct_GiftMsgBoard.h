@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveGiftStruct_GiftMsgBoard : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL forMsgBoard;
+@property (copy, nonatomic) NSString *promptText;
+
++ (id)descriptor;
+
+@end

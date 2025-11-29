@@ -1,0 +1,3 @@
+@interface BattleStatsApiRoot : GPBRootObject
+
+@end

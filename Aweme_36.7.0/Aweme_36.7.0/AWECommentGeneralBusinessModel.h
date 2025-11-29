@@ -1,0 +1,17 @@
+@class NSString, NSDictionary, AWEAwemeModel, NSNumber, AWEUserModel;
+
+@interface AWECommentGeneralBusinessModel : NSObject
+
+@property (copy, nonatomic) NSString *itemID;
+@property (copy, nonatomic) NSString *serviceID;
+@property (retain, nonatomic) NSNumber *commentCountTotal;
+@property (retain, nonatomic) AWEUserModel *author;
+@property (retain, nonatomic) AWEAwemeModel *awemeInfo;
+@property (copy, nonatomic) NSString *channelID;
+@property (copy, nonatomic) NSString *channelObjID;
+@property (copy, nonatomic) NSDictionary *businessParams;
+
+- (id)initWithItemID:(id)a0 serviceID:(id)a1;
+- (void).cxx_destruct;
+
+@end

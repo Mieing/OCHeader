@@ -1,0 +1,15 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveFastChatSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) int chatSupportType;
+@property (copy, nonatomic) NSString *toast;
+@property (copy, nonatomic) NSString *hint;
+@property (copy, nonatomic) NSString *color;
+@property (retain, nonatomic) NSMutableArray *fastChatArray;
+@property (readonly, nonatomic) unsigned long long fastChatArray_Count;
+@property (nonatomic) BOOL fastChatSwitch;
+
++ (id)descriptor;
+
+@end

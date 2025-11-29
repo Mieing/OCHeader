@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNDeleteFriendResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *failedInfosArray;
+@property (readonly, nonatomic) unsigned long long failedInfosArray_Count;
+
++ (id)descriptor;
+
+@end

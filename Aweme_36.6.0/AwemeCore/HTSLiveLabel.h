@@ -1,0 +1,10 @@
+@class HTSLiveImage;
+
+@interface HTSLiveLabel : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *img;
+@property (nonatomic) BOOL hasImg;
+
++ (id)descriptor;
+
+@end

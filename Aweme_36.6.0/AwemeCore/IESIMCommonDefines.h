@@ -1,0 +1,3 @@
+@interface IESIMCommonDefines : NSObject
+
+@end

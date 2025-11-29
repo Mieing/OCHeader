@@ -1,0 +1,77 @@
+@class NSString;
+
+@interface WCCanvasDownloadMgr : MMUserService <WCCanvasImageLoaderObserver, IMsgExt, MMServiceProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)tryToDownloadCanvasAdResourceWithBeginPage:(unsigned long long)a0 EndPage:(unsigned long long)a1 CanvasInfo:(id)a2 atScene:(unsigned int)a3;
+- (void)tryToPredownloadResourceWhenRecieveCanvasShareFeed:(id)a0 atScene:(unsigned int)a1;
+- (void)tryToPredownloadResourceWhenRecieveAdShareXml:(id)a0 atScene:(unsigned int)a1;
+- (void)tryToPredownloadResourceWhenRecieveAdDynamicXml:(id)a0 atScene:(unsigned int)a1;
+- (unsigned long long)getResourceCountOfTopPageCount:(unsigned long long)a0 canvasInfo:(id)a1;
+- (void)tryToDownloadCanvasAdOutSideIcon:(id)a0;
+- (id)imageForURL:(id)a0 LoadOnMainThread:(BOOL)a1;
+- (unsigned long long)getResourceCountOfCanvasPage:(id)a0;
+- (void)tryToDownloadTopNumComponetResrc:(id)a0 topNum:(unsigned long long)a1 atScene:(unsigned int)a2 withDownloadOutSide:(BOOL)a3 preloadConfigInfo:(id)a4;
+- (void)tryToPreloadCanvasResourceOnAdExposure:(id)a0;
+- (void)tryToPreloadCanvasResourceForCanvasInfo:(id)a0 preloadConfigInfo:(id)a1;
+- (void)preDownloadCanvasAdResource:(id)a0 preloadConfigInfo:(id)a1;
+- (void)preDownloadCanvasExtraResource:(id)a0 preloadConfigInfo:(id)a1;
+- (void)tryToDownloadComponetList:(id)a0 atScene:(unsigned int)a1 withDownloadOutSide:(BOOL)a2 preloadConfigInfo:(id)a3;
+- (void)tryToDownloadFloatComponentList:(id)a0 atScene:(unsigned int)a1 withDownloadOutSide:(BOOL)a2 preloadConfigInfo:(id)a3;
+- (void)preDownloadSnsAdResource:(id)a0 preloadConfigInfo:(id)a1;
+- (void)preDownloadAdBannerResourceWithDataItem:(id)a0;
+- (void)preDownloadAdResource:(id)a0 withoutCanvas:(BOOL)a1;
+- (void)preDownloadImagesWithUrlArray:(id)a0;
+- (void)downloadImageInternal:(id)a0;
+- (void)preDownloadSphereCardResource:(id)a0;
+- (void)preloadCoverRes:(id)a0;
+- (void)preDownloadScanGoodRes:(id)a0;
+- (void)preDownloadFinderTopicRes:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)preDownloadSliderCardMedia:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)preDownloadSliderCardList:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)preDownloadLookbookCardInfo:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)preDownloadFlipCardInfo:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)preDownloadMediaWith:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)stopPreDownloadVideoForFlipCardInfo:(id)a0;
+- (BOOL)tryToDownloadComponetResrc:(id)a0 atScene:(unsigned int)a1 withDownloadOutSide:(BOOL)a2 preloadConfigInfo:(id)a3;
+- (void)preDownloadImage:(id)a0 atScene:(unsigned int)a1 withDownloadOutside:(BOOL)a2;
+- (void)preDownloadTimelineSightWithMediaItem:(id)a0 preloadConfigInfo:(id)a1 isStreamMode:(BOOL)a2;
+- (void)preDownloadCanvasSightWithUrl:(id)a0 md5:(id)a1 tid:(id)a2 preloadConfigInfo:(id)a3 isStreamMode:(BOOL)a4 shouldCheckDownloadQueue:(BOOL)a5;
+- (void)preDownloadSight:(id)a0 atScene:(unsigned int)a1 withDownloadOutside:(BOOL)a2;
+- (void)preDownloadCommonFileWithUrl:(id)a0 fileMD5:(id)a1;
+- (void)preDownloadCanvasEggAnimationResourceWithInfo:(id)a0;
+- (void)preDownloadDynamicFeedResourceWithInfo:(id)a0;
+- (void)preDownloadDynamicFeedElementResourceWithInfo:(id)a0;
+- (id)getFirstImageUrl:(id)a0;
+- (BOOL)isImageHasDownloaded:(id)a0;
+- (BOOL)isFirstImageHasDownloaded:(id)a0;
+- (void)tryToDownloadFirstImage:(id)a0;
+- (id)md5ForURL:(id)a0;
+- (void)ImageDidLoad:(id)a0 Url:(id)a1;
+- (void)ImageDidFail:(id)a0;
+- (void)reportImageDownloadReportWithUr:(id)a0 andResult:(BOOL)a1;
+- (void)OnAddMsg:(id)a0 MsgWrap:(id)a1;
+- (void)preloadH5ForSnsAdResource:(id)a0;
+- (void)preloadH5ForCanvasAdResource:(id)a0 advertiseInfo:(id)a1 inCanvas:(BOOL)a2;
+- (void)tryPreloadH5ForComponentList:(id)a0 advertiseInfo:(id)a1 inCanvas:(BOOL)a2;
+- (void)tryPreloadH5ForComponentItem:(id)a0 advertiseInfo:(id)a1 inCanvas:(BOOL)a2;
+- (void)preloadH5ForSnsAdUrl:(id)a0 advertiseInfo:(id)a1;
+- (void)preloadH5ForCanvasUrl:(id)a0 componentItem:(id)a1 advertiseInfo:(id)a2;
+- (void)preloadH5WithUrl:(id)a0;
+- (void)stopPreDownloadVideo:(id)a0;
+- (void)stopPreDownloadVideoForCanvas:(id)a0;
+- (void)stopPreDownloadVideoForComponentList:(id)a0;
+- (void)stopPreDownloadVideoForComponent:(id)a0;
+- (void)stopPreDownloadVideoForMedia:(id)a0;
+- (void)tryToPreloadResourceForCanvasDSLJson:(id)a0;
+- (void)preDownloadStatePublish:(id)a0;
+- (void)tryToPreloadStatePublishForAdCanvas:(id)a0;
+
+@end

@@ -1,0 +1,11 @@
+@class GPBInt64Array;
+
+@interface GetPriorSongGiftConfigResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *giftPoolArray;
+@property (readonly, nonatomic) unsigned long long giftPoolArray_Count;
+@property (nonatomic) long long selectedGift;
+
++ (id)descriptor;
+
+@end

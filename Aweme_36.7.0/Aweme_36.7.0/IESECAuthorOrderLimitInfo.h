@@ -1,0 +1,13 @@
+@class NSString, IESECICON;
+
+@interface IESECAuthorOrderLimitInfo : GPBMessage
+
+@property (retain, nonatomic) IESECICON *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *button;
+
++ (id)descriptor;
+
+@end

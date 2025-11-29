@@ -1,0 +1,10 @@
+@class IESGCPPBCloudgamingGetUnifiedGameIdResponse_Data;
+
+@interface IESGCPPBCloudgamingGetUnifiedGameIdResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBCloudgamingGetUnifiedGameIdResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

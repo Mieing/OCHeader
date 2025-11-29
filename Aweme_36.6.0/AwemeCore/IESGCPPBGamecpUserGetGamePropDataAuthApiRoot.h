@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpUserGetGamePropDataAuthApiRoot : GPBRootObject
+
+@end

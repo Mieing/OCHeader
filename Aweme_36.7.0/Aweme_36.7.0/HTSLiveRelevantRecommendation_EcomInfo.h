@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveRelevantRecommendation_EcomInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long productId;
+@property (copy, nonatomic) NSString *productName;
+
++ (id)descriptor;
+
+@end

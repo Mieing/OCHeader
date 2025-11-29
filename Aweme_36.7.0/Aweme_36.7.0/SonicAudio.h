@@ -1,0 +1,3 @@
+@interface SonicAudio : NSObject
+
+@end

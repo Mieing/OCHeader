@@ -1,0 +1,78 @@
+@class UIView, NSData, NSString, WCAgreementCheckBox, MMLimitedModeConfigListView, UIImageView, UIButton, MMLimitedModeMaskViewView, MMLimitedModeGuardianEntryView, MMUILabel, UILabel, UIScrollView;
+
+@interface MMLimitedModeEntryViewController : MMUIViewController <MMLimitedModeConfigListViewDelegate, MMUseCaseCallback, MMLimitedModeBizCellDelegate, MMLimitedModeExt, ILinkEventExt, MMLimitedModeIndependentVerifyViewControllerDelegate, UIScrollViewDelegate, MMLimitedModeEntryProtocolViewControllerDelegate, MMLimitedModeGuardianEntryViewDelegate>
+
+@property (retain, nonatomic) UIScrollView *contentScrollView;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) UIImageView *iconImageView;
+@property (retain, nonatomic) MMUILabel *descLabel;
+@property (retain, nonatomic) MMUILabel *openTipLabel;
+@property (retain, nonatomic) UIButton *openButton;
+@property (retain, nonatomic) UIButton *openButtonNotYet;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) MMLimitedModeConfigListView *listView;
+@property (retain, nonatomic) MMLimitedModeGuardianEntryView *guardianEntryView;
+@property (nonatomic) BOOL isSelected;
+@property (retain, nonatomic) WCAgreementCheckBox *agreementCheckBox;
+@property (retain, nonatomic) NSData *pay_respData;
+@property (retain, nonatomic) NSString *pay_status;
+@property (retain, nonatomic) MMLimitedModeMaskViewView *maskView;
+@property (retain, nonatomic) UIView *deadlineTipsView;
+@property (retain, nonatomic) UILabel *deadlineTipsLabel;
+@property (nonatomic) long long scene;
+@property (retain, nonatomic) NSString *ticket;
+@property (nonatomic) BOOL isIndependentVerifyFlag;
+@property (nonatomic) BOOL isNeverUse;
+@property (retain, nonatomic) NSString *deadlineWording;
+@property (copy, nonatomic) id /* block */ completionBlock;
+@property (nonatomic) BOOL forceDisplay;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithScene:(long long)a0;
+- (void)viewDidLoad;
+- (void)viewDidTransitionToNewSize;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)tryPopPreviousEntryViewControllerInNavBar;
+- (void)handleLimitedModeEntryScenePreEnterDidQuitBlock;
+- (void)initUI;
+- (void)initBavigationBar;
+- (void)updateListViewGradientLayer;
+- (void)reloadContent;
+- (void)updateUI;
+- (id)navigationBarBackgroundColor;
+- (id)getTitleLabelText;
+- (BOOL)checkLimitedModeEntryScenePreEnter;
+- (void)onSelectedAtBizCell:(long long)a0;
+- (void)call:(id)a0;
+- (void)onIndependentPasswordClearSuccessTicket:(id)a0;
+- (BOOL)onMMLimitedModeBizCellDynamicDescFor:(long long)a0;
+- (id)onMMLimitedModeBizCellDescFor:(long long)a0;
+- (BOOL)onMMLimitedModeBizCellLoadingFor:(long long)a0;
+- (void)onOpenButtonClick;
+- (void)onCloseButtonClick;
+- (void)onBack;
+- (void)onMoreAction;
+- (void)doModifyIndependentPwdVerify;
+- (void)doClearIndependentPwdVerify;
+- (void)doSetIndependent;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onLimitedModeChanged;
+- (void)deleteAllAndReloadContent;
+- (void)onLimitedModeBizLevelChange:(long long)a0 bizType:(long long)a1;
+- (void)onChangeLimitedModeFail;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)onClickLimitedModeEntryProtocolAgreeButton;
+- (long long)preferredStatusBarStyle;
+- (id)getViewController;
+- (void)onClickSetLimitedModeGuardian;
+- (id)dotWithMultilineIntros:(id)a0 font:(id)a1 textColor:(id)a2;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWENetwrokBusinessABTestManager : NSObject
+
+@end

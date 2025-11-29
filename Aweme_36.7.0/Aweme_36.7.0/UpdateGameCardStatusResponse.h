@@ -1,0 +1,10 @@
+@class UpdateGameCardStatusResponse_Data;
+
+@interface UpdateGameCardStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateGameCardStatusResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

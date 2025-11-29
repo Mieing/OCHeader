@@ -1,0 +1,9 @@
+@interface HTSLiveAnchorFaceConfig : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL contourEnable;
+@property (nonatomic) long long frequency;
+@property (nonatomic) long long userCount;
+
++ (id)descriptor;
+
+@end

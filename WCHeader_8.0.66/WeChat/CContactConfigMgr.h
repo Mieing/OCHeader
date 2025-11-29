@@ -1,0 +1,3 @@
+@interface CContactConfigMgr : NSObject
+
+@end

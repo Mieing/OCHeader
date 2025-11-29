@@ -1,0 +1,3 @@
+@interface ShowEnterApiRoot : GPBRootObject
+
+@end

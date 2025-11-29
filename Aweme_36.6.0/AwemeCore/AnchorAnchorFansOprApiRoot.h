@@ -1,0 +1,3 @@
+@interface AnchorAnchorFansOprApiRoot : GPBRootObject
+
+@end

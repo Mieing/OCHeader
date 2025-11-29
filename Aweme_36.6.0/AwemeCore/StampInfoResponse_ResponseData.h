@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface StampInfoResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *stampsArray;
+@property (readonly, nonatomic) unsigned long long stampsArray_Count;
+
++ (id)descriptor;
+
+@end

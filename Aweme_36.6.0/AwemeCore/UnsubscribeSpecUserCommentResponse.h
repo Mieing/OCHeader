@@ -1,0 +1,10 @@
+@class UnsubscribeSpecUserCommentResponse_Data;
+
+@interface UnsubscribeSpecUserCommentResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UnsubscribeSpecUserCommentResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

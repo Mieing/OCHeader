@@ -1,0 +1,3 @@
+@interface IESLiveLinkContextParam : NSObject
+
+@end

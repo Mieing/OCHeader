@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface FeedFlowControllerInfoV2 : GPBMessage
+
+@property (nonatomic) BOOL showFlow;
+@property (nonatomic) BOOL hasShowFlow;
+@property (copy, nonatomic) NSString *flowButtonIconURL;
+@property (nonatomic) BOOL hasFlowButtonIconURL;
+@property (copy, nonatomic) NSString *flowButtonExtra;
+@property (nonatomic) BOOL hasFlowButtonExtra;
+
++ (id)descriptor;
+
+- (id)flowButtonIconURL;
+- (BOOL)showFlow;
+
+@end

@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface HTSLiveGrowthTaskRewardDef : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (nonatomic) int rewardType;
+@property (nonatomic) int settleType;
+@property (copy, nonatomic) NSString *target;
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *operator_p;
+@property (copy, nonatomic) NSString *sendParamStr;
+@property (copy, nonatomic) NSString *extra;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

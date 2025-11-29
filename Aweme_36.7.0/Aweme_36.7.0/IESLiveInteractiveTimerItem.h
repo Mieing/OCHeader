@@ -1,0 +1,6 @@
+@interface IESLiveInteractiveTimerItem : IESLiveDynamicModel
+
+@property (nonatomic) long long countDown;
+@property (nonatomic) BOOL isInvite;
+
+@end

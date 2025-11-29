@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface CameraInfosResponse_Entry : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *vsCameraInfosArray;
+@property (readonly, nonatomic) unsigned long long vsCameraInfosArray_Count;
+@property (copy, nonatomic) NSString *entryLinkedRoomTitleText;
+@property (copy, nonatomic) NSString *entryMultiCameraTitleText;
+@property (copy, nonatomic) NSString *entryLinkedRoomSubTitleText;
+@property (copy, nonatomic) NSString *entryMultiCameraSubTitleText;
+
++ (id)descriptor;
+
+@end

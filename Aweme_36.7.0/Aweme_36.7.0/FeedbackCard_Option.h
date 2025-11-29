@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface FeedbackCard_Option : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) long long subQuestionId;
+@property (nonatomic) BOOL negative;
+@property (copy, nonatomic) NSString *toastText;
+@property (nonatomic) int tendency;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,95 @@
+@class BDTGPrivateKeyManager, NSString;
+@protocol BDTGConfigProtocol;
+
+@interface BDTicketGuard : NSObject
+
+@property (class, readonly, nonatomic) BDTGPrivateKeyManager *teeKeyManager;
+@property (class, readonly, nonatomic) BDTGPrivateKeyManager *reeKeyManager;
+@property (class, readonly, copy, nonatomic) NSString *sdkVersion;
+@property (class, readonly, copy, nonatomic) NSString *clientCert;
+@property (class, readonly, copy, nonatomic) NSString *serverCertSN;
+@property (class, copy, nonatomic) id /* block */ eventTrackControllBlock;
+@property (class, readonly, nonatomic) id<BDTGConfigProtocol> config;
+@property (class, readonly, nonatomic) BOOL isReePrivateKeyReady;
+@property (class, readonly, nonatomic) BOOL isTeePrivateKeyReady;
+
+@property (retain, nonatomic) id<BDTGConfigProtocol> config;
+@property (copy) id /* block */ eventTrackControllBlock;
+
++ (void)eventV3:(id)a0 params:(id)a1;
++ (void)preloadCert;
++ (void)loadCertWithCompletion:(id /* block */)a0;
++ (void)p_preloadCert;
++ (void)p_loadCertWithCompletion:(id /* block */)a0;
++ (void)trackFullPathWithTicketName:(id)a0 eventType:(id)a1 error:(id)a2 extraInfo:(id)a3;
++ (void)trackGetCertWithParams:(id)a0 error:(id)a1 startTimestamp:(double)a2;
++ (void)requestForJSONWithURL:(id)a0 params:(id)a1 headerField:(id)a2 callback:(id /* block */)a3;
++ (void)requestForJSONWithURL:(id)a0 params:(id)a1 callback:(id /* block */)a2;
++ (void)loginSuccessAttest;
++ (void)addHeadersToUseAttestRequest:(id)a0 attestKey:(id)a1 attestKeyTsSign:(id)a2;
++ (void)attestSignRefresh:(id)a0 path:(id)a1 logID:(id)a2 serverTime:(long long)a3 interval:(long long)a4;
++ (id)localAttestResult;
++ (BOOL)attestResultSuccess;
++ (void)compensationAttestationResultPubKeyIfNeeded:(id)a0;
++ (void)trackGetPrivateKeyWithError:(id)a0 startTimestamp:(double)a1 keyType:(id)a2 isFromCache:(BOOL)a3 attemptCount:(int)a4;
++ (BOOL)hasGeneratedForKeyType:(id)a0;
++ (void)trackGetClientCSRWithResult:(id)a0;
++ (void)trackCreateSignatureResult:(id)a0 startTimestamp:(double)a1;
++ (void)setHasGeneratedForKeyType:(id)a0;
++ (void)trackGetPrivateKeySuccessWithTimes:(long long)a0 isFromCache:(int)a1;
++ (void)trackGenerateEcdhKeyFail:(id)a0;
++ (void)trackPrivateKeyDidChange:(id)a0 pubKey:(id)a1 cachedPubKey:(id)a2;
++ (void)trackKeyCertNotMatch:(BOOL)a0 pubKey:(id)a1 preCertKey:(id)a2 preCert:(id)a3;
++ (id)tsSignItemsInResponse:(id)a0;
++ (id)snapshotForRequest:(id)a0 response:(id)a1;
++ (void)ticketDidUpdateWithRequset:(id)a0 response:(id)a1 ticketName:(id)a2 ticket:(id)a3 tsSign:(id)a4;
++ (id)addHeadersToGetTicketRequest:(id)a0 ticketName:(id)a1;
++ (id)splashPath:(id)a0;
++ (BOOL)enableRee;
++ (id)ticketGuardVersion;
++ (id)ticketGuardIterationVersion;
++ (id)ticketGuardECDHIterationVersion;
++ (void)trackGetTicketWithRequest:(id)a0 response:(id)a1 startTimestamp:(double)a2 hasLocalClientCert:(int)a3 hasRemoteClientCert:(int)a4 hasServerData:(int)a5;
++ (void)trackSignClientDataForRequestPath:(id)a0 error:(id)a1 startTimestamp:(double)a2 attemptCount:(int)a3;
++ (void)trackUseTicketIfFail:(id)a0 response:(id)a1;
++ (id)addHeadersToGetTicketRequest:(id)a0;
++ (id)handleGetTicketRequest:(id)a0;
++ (void)handleGetTicketResponse:(id)a0 request:(id)a1;
++ (id)handleUseTicketRequest:(id)a0;
++ (id)ticketForRequestPath:(id)a0 tag:(id)a1;
++ (id)addHeadersToUseTicketRequest:(id)a0 ticket:(id)a1 tsSign:(id)a2 ticketName:(id)a3;
++ (id)addHeadersToUseTicketRequest:(id)a0 ticket:(id)a1 tsSign:(id)a2 ticketName:(id)a3 needRee:(BOOL)a4 needTee:(BOOL)a5;
++ (id)addHeadersToUseTicketRequest:(id)a0 ticket:(id)a1 tsSign:(id)a2;
++ (id)addHeadersToGetTicketRequestReeOnly:(id)a0 timeout:(double)a1;
++ (id)addHeadersToUseTicketRequestReeOnly:(id)a0 ticket:(id)a1 tsSign:(id)a2 timeout:(double)a3;
++ (void)requestForJSONWithURL:(id)a0 method:(id)a1 params:(id)a2 extraGetParams:(id)a3 needCommonParams:(BOOL)a4 follow302Redirect:(BOOL)a5 headerField:(id)a6 callback:(id /* block */)a7;
++ (void)requestForJSONWithURL:(id)a0 method:(id)a1 params:(id)a2 headerField:(id)a3 callback:(id /* block */)a4;
++ (BOOL)trackPassportUseTicketFail:(id)a0 response:(id)a1 localError:(id)a2 remoteError:(id)a3;
++ (void)trackGetPublicKeyWithError:(id)a0 startTimestamp:(double)a1;
++ (void)trackDecryptWithError:(id)a0 startTimestamp:(double)a1 keyType:(id)a2;
++ (void)trackSDKLaunch;
++ (void)trackDecryptTimeout:(double)a0 keyType:(id)a1;
++ (id)decryptData:(id)a0 timeout:(double)a1 error:(id *)a2;
++ (id)decryptDataForString:(id)a0 error:(id *)a1;
++ (id)decryptDataForString:(id)a0 timeout:(double)a1 error:(id *)a2;
++ (id)reeDecryptData:(id)a0 error:(id *)a1;
++ (id)decryptHexString:(id)a0 error:(id *)a1;
++ (id)decryptHexString:(id)a0 timeout:(double)a1 error:(id *)a2;
++ (id)decryptBase64String:(id)a0 error:(id *)a1;
++ (id)decryptBase64String:(id)a0 timeout:(double)a1 error:(id *)a2;
++ (id)reeDecryptBase64StringForString:(id)a0 timeout:(double)a1 error:(id *)a2;
++ (void)refreshSettings;
++ (void)attestRetryByResponseInvalidate;
++ (void)addTTNetRequestForPassportAccessTokenFilterBlock;
++ (id)reeGetTicketRequestHeadersWithUrl:(id)a0 needTicketEncrypted:(BOOL)a1 timeout:(double)a2 error:(id *)a3;
++ (id)reeUseTicketRequestHeadersWithUrl:(id)a0 tsSignItem:(id)a1 timeout:(double)a2 error:(id *)a3;
++ (id)decryptData:(id)a0 keyType:(id)a1 error:(id *)a2;
++ (void)configure:(id)a0;
++ (void)start;
++ (id)sharedInstance;
++ (id)decryptData:(id)a0 error:(id *)a1;
+
+- (BOOL)enbaleTeeKeyAttest;
+- (void).cxx_destruct;
+
+@end

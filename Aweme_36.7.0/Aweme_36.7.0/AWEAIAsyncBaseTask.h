@@ -1,0 +1,84 @@
+@class NSString, AWEAIPropTaskModel, NSDictionary, AWEAIPropTaskMessenger;
+
+@interface AWEAIAsyncBaseTask : NSObject <AWEStudioAIGCAsyncTaskTemporaryHandlerProtocol, AWEAIAsyncBaseTaskProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } rwLock;
+@property (retain, nonatomic) AWEAIPropTaskModel *taskModel;
+@property (weak, nonatomic) AWEAIPropTaskMessenger *messenger;
+@property (retain, nonatomic) Class businessHandler;
+@property (readonly, nonatomic) long long taskType;
+@property (nonatomic) BOOL createRuning;
+@property (nonatomic) BOOL hadDownloadedAssets;
+@property (nonatomic) BOOL willBeginDownloadAssets;
+@property (nonatomic) double asyncPostTaskStartTime;
+@property (copy, nonatomic) NSDictionary *trackParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)downloadAssetWithURLs:(id)a0 atIndex:(long long)a1 identifier:(id)a2 fileNameSuffix:(id)a3 fileExtension:(id)a4 completion:(id /* block */)a5;
++ (void)downloadAssetWithURLs:(id)a0 atIndex:(long long)a1 identifier:(id)a2 fileNameSuffix:(id)a3 fileExtension:(id)a4 queuePriority:(long long)a5 insertRequestType:(long long)a6 completion:(id /* block */)a7;
++ (id)taskModelFromJsonString:(id)a0;
+
+- (id)convertToJsonString;
+- (void)startDownloading;
+- (void)saveGeneratingDraftWithPublishModel:(id)a0 msgToEffectStartStamp:(double)a1 completion:(id /* block */)a2;
+- (void)revertTargetTaskStatus:(unsigned long long)a0;
+- (void)cleanFailedInfo;
+- (id)fetchOriginalCoverImage;
+- (void)appendBusinessStatus:(unsigned long long)a0;
+- (BOOL)checkHasTaskStatus:(unsigned long long)a0;
+- (void)transferOriginalCoverImageToDraft:(id)a0;
+- (id)retrievePropId;
+- (long long)retrieveDuration;
+- (void)saveGeneratingDraftWithPublishModel:(id)a0 completion:(id /* block */)a1;
+- (BOOL)checkHasBusinessStatus:(unsigned long long)a0;
+- (BOOL)isDraftExistedWithDraftId:(id)a0;
+- (BOOL)showAIGCGeneratingNotificationIfNeeded;
+- (void)handleAIGCGeneratedResultNotificationWithScene:(unsigned long long)a0;
+- (void)handleGeneratedNoticeClickBeforeTaskBatchProcessFinish:(id)a0 completion:(id /* block */)a1;
+- (id)fetchOriginalCoverImageFullPath;
+- (id)taskModelWithParams:(id)a0 userID:(id)a1;
+- (id)initWithTaskModel:(id)a0 messenger:(id)a1;
+- (id)storeImageToDisk:(id)a0 taskId:(id)a1;
+- (id)generatePathWithFileName:(id)a0 taskId:(id)a1;
+- (void)downloadAssetWithURLs:(id)a0 atIndex:(long long)a1 fileNameSuffix:(id)a2 fileExtension:(id)a3 completion:(id /* block */)a4;
+- (unsigned long long)readTaskStatus;
+- (BOOL)isTaskFailed;
+- (BOOL)isAssetDownloaded;
+- (BOOL)isTaskUnderValidFailedPeriod;
+- (BOOL)isTaskFinished;
+- (void)writeTaskStatus:(unsigned long long)a0;
+- (void)trackAIGCCameraCompositeResponseWithDuration:(double)a0 errorCode:(long long)a1 errorMessage:(id)a2;
+- (id)getNotificationDefaultContent:(BOOL)a0;
+- (void)failWithErrorCode:(long long)a0 errorMessage:(id)a1 completion:(id /* block */)a2;
+- (void)toggleTaskStatus:(unsigned long long)a0;
+- (BOOL)shouldCheckRetryEnableFailedTask;
+- (BOOL)retryEnableTaskExpire;
+- (BOOL)isFailedTaskExpire;
+- (void)cancelTaskWithReason:(id)a0;
+- (id)initWithParams:(id)a0 userID:(id)a1 messenger:(id)a2;
+- (BOOL)hasMatchedDraftWithDraftId:(id)a0;
+- (void)downloadCoverWithCompletion:(id /* block */)a0;
+- (void)getLocalTaskProcess:(id /* block */)a0;
+- (unsigned long long)retrieveCurrentTaskStatus;
+- (BOOL)couldRemoveTask;
+- (BOOL)isValidUser;
+- (id)retrieveCoverWithDraftId:(id)a0;
+- (id)generateNotificationContentWithPropName:(id)a0 isTemplate:(BOOL)a1;
+- (id)generateFailNotificationContentWithPropName:(id)a0;
+- (void)updateTaskWithGenerationInfo:(id)a0 scene:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)updateTaskWithTaskInfo:(id)a0 scene:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)updateFailedInfoWithTaskGenerationInfo:(id)a0;
+- (void)updateFailedInfoWithQueryTaskInfo:(id)a0;
+- (void).cxx_destruct;
+- (id)logLabel;
+- (id)rootFolder;
+- (void)dealloc;
+
+@end

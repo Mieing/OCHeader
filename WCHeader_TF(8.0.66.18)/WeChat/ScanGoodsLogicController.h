@@ -1,0 +1,80 @@
+@class NSString, CameraScanGoodsContentView, GoodsScanner;
+
+@interface ScanGoodsLogicController : BaseScanLogicController <CameraScannerStatusExt, GoodsScannerDelegate, MMUIHalfScreenViewControllerDelegate, CameraScanGoodsContentViewDelegate> {
+    GoodsScanner *_scanner;
+    BOOL _isSearching;
+    NSString *_alertText;
+}
+
+@property (nonatomic) struct CGPoint { double x; double y; } markdotCenter;
+@property (retain, nonatomic) CameraScanGoodsContentView *contentView;
+@property (nonatomic) BOOL hasDidShakingAnimationOnce;
+@property (retain, nonatomic) NSString *svrRespInfoText;
+@property (nonatomic) BOOL isHandlingResult;
+@property (nonatomic) unsigned long long lastBeginHandleResultTimeStamp;
+@property (nonatomic) unsigned long long openHalfResultPageTimeStampInMs;
+@property (retain, nonatomic) NSString *desc;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithCameraScannerViewWrapper:(id)a0 businessType:(long long)a1 businessSubType:(long long)a2 adInfo:(id)a3 jsapiInfo:(id)a4;
+- (void)dealloc;
+- (void)onCameraScannerViewDidInit:(id)a0;
+- (void)startScan;
+- (void)stopScan;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getDrawCropRect;
+- (id)getInfoText;
+- (id)getAlertText;
+- (void)onScanTimeout;
+- (void)onCaptureNewBuffer;
+- (void)onGetGoodsScanDotInfoList:(id)a0;
+- (void)onSendImageDataLength:(unsigned long long)a0;
+- (void)onSendImageDataFail:(id)a0 errorCode:(long long)a1 errorMsg:(id)a2 isNetworkError:(BOOL)a3;
+- (void)onSendImageDataSuccess:(id)a0 sendoutImage:(id)a1 normalizedCenter:(struct CGPoint { double x0; double x1; })a2 normalizedSize:(struct CGSize { double x0; double x1; })a3;
+- (void)prepareForHandlingResult;
+- (void)handleCameraSendImageDataSuccess:(id)a0 sendoutImage:(id)a1 normalizedCenter:(struct CGPoint { double x0; double x1; })a2 normalizedSize:(struct CGSize { double x0; double x1; })a3;
+- (void)handleAlbumSendImageDataSuccess:(id)a0 sendoutImage:(id)a1 normalizedCenter:(struct CGPoint { double x0; double x1; })a2 normalizedSize:(struct CGSize { double x0; double x1; })a3;
+- (void)detectSuccessBeforeMarkDotAnimation:(id)a0;
+- (void)detectSuccessAfterMarkDotAnimation:(id)a0;
+- (void)openHalfScreenViewCtrl:(id)a0;
+- (void)onRotate;
+- (BOOL)shouldDoAnimationWhenDismiss;
+- (void)scanOnePicture:(id)a0;
+- (void)startScanOnePictureLoadingBlock;
+- (void)stopScanOnePictureLoadingBlock;
+- (void)generateCombineImageAndBlurImage:(id)a0;
+- (void)onEnterTab;
+- (void)onLeaveTab;
+- (void)scannerStartCapture;
+- (void)scannerStopCapture;
+- (void)imagePickerOpen;
+- (void)imagePickerCancel;
+- (void)cancelAllCallback;
+- (void)setupContentView:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)contentViewAppearFromSwitchTab:(BOOL)a0;
+- (void)contentViewDisappear;
+- (void)contentViewNetConnect;
+- (void)contentViewNetDisconnect;
+- (void)startShakingAnimation;
+- (void)stopShakingAnimation;
+- (void)onHalfScreenPage:(id)a0 contentTopChanged:(double)a1;
+- (void)onHalfScreenPageWillClose:(id)a0 action:(long long)a1;
+- (void)onHalfScreenPageDidClose:(id)a0 action:(long long)a1;
+- (void)reportCloseHalfScreenPage:(long long)a0;
+- (void)onBeginHandleResult;
+- (void)onEndHandleResult;
+- (void)updateGoodsContentWithHalfScreenTop:(double)a0 animateDuration:(double)a1;
+- (struct CGPoint { double x0; double x1; })calcuateCustomViewPointWithHalfScreenTop:(double)a0;
+- (BOOL)isAlbumImageHorizontalFilled:(id)a0;
+- (struct CGSize { double x0; double x1; })calcuateAlbumImageDisplaySize:(id)a0 isHorizontalFilled:(BOOL)a1;
+- (float)getDefaultInfoLabelBottomPadding;
+- (id)getMarkDotCustomImage;
+- (BOOL)shouldShowFullScreenBgView;
+- (id)getFullScreenBgImage;
+- (BOOL)shouldShowPinView;
+- (id)getPinFgImage;
+- (void).cxx_destruct;
+
+@end

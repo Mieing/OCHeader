@@ -1,0 +1,78 @@
+@class NSString, NSHashTable, AWEBaseListSectionController;
+@protocol AWECommonFeedAutoPlaySectionProtocol, AWECommonFeedAutoPlayContainerProtocol;
+
+@interface AWECommonFeedAutoPlayHandler : NSObject <UIScrollViewDelegate>
+
+@property (weak, nonatomic) id<AWECommonFeedAutoPlayContainerProtocol> container;
+@property (weak, nonatomic) AWEBaseListSectionController<AWECommonFeedAutoPlaySectionProtocol> *currentActiveSection;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } activeRect;
+@property (nonatomic) BOOL isActive;
+@property (weak, nonatomic) AWEBaseListSectionController<AWECommonFeedAutoPlaySectionProtocol> *currentTransitionActiveSection;
+@property (retain, nonatomic) NSHashTable *distributes;
+@property (nonatomic) long long scrollTriggerCount;
+@property (nonatomic) double lastDidScrollTime;
+@property (nonatomic) double scrollingSpeedX;
+@property (nonatomic) double scrollingSpeedY;
+@property (nonatomic) double lastContentOffsetX;
+@property (nonatomic) double lastContentOffsetY;
+@property (weak, nonatomic) AWECommonFeedAutoPlayHandler *superHandler;
+@property (nonatomic) BOOL calculateWhenEndDecelerating;
+@property (nonatomic) double maxAutoplaySpeedY;
+@property (nonatomic) double activeRectTop;
+@property (nonatomic) double activeRectBottom;
+@property (nonatomic) double shouldNotActiveHeight;
+@property (nonatomic) BOOL shouldFilterStaticCard;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)currentPlayingIndex;
+- (BOOL)p_floatEqualZero:(double)a0;
+- (void)windowDidResignKeyNotification:(id)a0;
+- (void)windowDidBecomeKeyNotification:(id)a0;
+- (void)forceBecomeActive:(id)a0;
+- (void)endForceBecomeActive:(id)a0;
+- (void)enterFullScreen:(id)a0 withForceActive:(BOOL)a1;
+- (void)_resignCard:(id)a0;
+- (void)_activeCardIfNeeded:(id)a0;
+- (void)_activeCard:(id)a0;
+- (void)_calculateToActiveCell;
+- (void)_resignWithEnteringFullScreen;
+- (void)_updateHandlerToCard;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })_calculateActiveRect;
+- (double)_calculateRelativeCenterY:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)p_updateScrollSpeedInfo;
+- (void)p_clearScrollSpeedInfo;
+- (void)addDistribute:(id)a0;
+- (void)recalculateToActiveNeedReset:(BOOL)a0;
+- (void)changeActiveSectionIfNeeded:(id)a0;
+- (struct CGPoint { double x0; double x1; })getScrollingSpeed;
+- (void)becomeActive;
+- (void)scrollViewWillBeginZooming:(id)a0 withView:(id)a1;
+- (id)viewForZoomingInScrollView:(id)a0;
+- (void)scrollViewDidZoom:(id)a0;
+- (void)scrollViewDidScrollToTop:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (BOOL)scrollViewShouldScrollToTop:(id)a0;
+- (void)scrollViewDidChangeAdjustedContentInset:(id)a0;
+- (void)scrollViewDidEndZooming:(id)a0 withView:(id)a1 atScale:(double)a2;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (void)applicationDidBecomeActive;
+- (void)resignActive;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)applicationWillResignActive;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (id)methodSignatureForSelector:(SEL)a0;
+- (id)initWithContainer:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (BOOL)respondsToSelector:(SEL)a0;
+- (id)forwardingTargetForSelector:(SEL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (BOOL)conformsToProtocol:(id)a0;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)forwardInvocation:(id)a0;
+- (void)addObservers;
+
+@end

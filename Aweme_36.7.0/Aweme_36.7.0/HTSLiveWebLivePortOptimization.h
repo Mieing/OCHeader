@@ -1,0 +1,11 @@
+@class NSString, NSMutableDictionary;
+
+@interface HTSLiveWebLivePortOptimization : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableDictionary *strategyConfig;
+@property (readonly, nonatomic) unsigned long long strategyConfig_Count;
+@property (copy, nonatomic) NSString *strategyExtra;
+
++ (id)descriptor;
+
+@end

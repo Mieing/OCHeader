@@ -1,0 +1,10 @@
+@class AdvanceAwardPrizeResult_ResponseData;
+
+@interface AdvanceAwardPrizeResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AdvanceAwardPrizeResult_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

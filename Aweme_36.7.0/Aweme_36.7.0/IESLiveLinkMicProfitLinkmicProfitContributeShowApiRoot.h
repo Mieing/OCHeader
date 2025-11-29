@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitContributeShowApiRoot : GPBRootObject
+
+@end

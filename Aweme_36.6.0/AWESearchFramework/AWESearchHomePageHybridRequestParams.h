@@ -1,0 +1,3 @@
+@interface AWESearchHomePageHybridRequestParams : AWESearchVerticalRequestParams
+
+@end

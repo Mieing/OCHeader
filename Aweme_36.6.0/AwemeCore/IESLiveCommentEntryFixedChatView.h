@@ -1,0 +1,8 @@
+@interface IESLiveCommentEntryFixedChatView : IESLiveCommentEntryBaseView
+
+- (void)setupInnerButton;
+- (void)setupExpandButton;
+- (id)fetchEntryTitle;
+- (id)entryViewType;
+
+@end

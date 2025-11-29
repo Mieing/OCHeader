@@ -1,0 +1,3 @@
+@interface _TtC13DanceUILottieP33_A80114CAACA48541096E6BEF4C5F18D118BlankImageProvider : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,7 @@
+@interface HTSLiveAudienceOrderSongContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long orderSongCount;
+
++ (id)descriptor;
+
+@end

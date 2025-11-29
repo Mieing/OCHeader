@@ -1,0 +1,87 @@
+@class AWELiveStreamingTagView, NSString, UIView, AWELiveUserProfileVSTabStreamingFreeTrialView, UIImageView, IESLiveImageView, UILabel, AWEVSFormatTabStreamingModel;
+@protocol AWELivingTag, AWELiveCommonMessageProtocol, IESLivePlayerProtocol, AWELivePaidStreamControlProvider;
+
+@interface AWEVSFormatLiveStreamingView : UIView <IESLivePlayerControllerDelegate, HTSLiveAudienceActions, AWELiveCommonMessageSubscriber, IESLivePaidStreamAction, AWEVSFormatStreamingLive>
+
+@property (nonatomic) unsigned long long vsFormatStreamingType;
+@property (copy, nonatomic) NSString *playerUrl;
+@property (copy, nonatomic) NSString *liveStreamData;
+@property (copy, nonatomic) NSString *liveSDKKey;
+@property (copy, nonatomic) NSString *roomID;
+@property (copy, nonatomic) NSString *authorID;
+@property (copy, nonatomic) id /* block */ tapBlock;
+@property (retain, nonatomic) UIView *blurView;
+@property (retain, nonatomic) UIView *playerContainer;
+@property (retain, nonatomic) UIImageView *blurBgView;
+@property (retain, nonatomic) id<IESLivePlayerProtocol> playerController;
+@property (retain, nonatomic) UIView<AWELivingTag> *liveTagGradientView;
+@property (retain, nonatomic) AWELiveStreamingTagView *tagView;
+@property (retain, nonatomic) IESLiveImageView *muteIcon;
+@property (retain, nonatomic) UIView *liveEndContainer;
+@property (retain, nonatomic) UIImageView *liveEndHolderImgView;
+@property (retain, nonatomic) UIView *liveEndBlurView;
+@property (retain, nonatomic) UILabel *liveEndTitle;
+@property (retain, nonatomic) UILabel *liveEndSubtitle;
+@property (nonatomic) double startPlayTime;
+@property (nonatomic) double startPlayV2Time;
+@property (copy, nonatomic) id /* block */ finishBlock;
+@property (copy, nonatomic) id /* block */ firstFrameBlock;
+@property (retain, nonatomic) AWEVSFormatTabStreamingModel *tabStreamingModel;
+@property (copy, nonatomic) id /* block */ addWatermarkBlock;
+@property (retain, nonatomic) id<AWELivePaidStreamControlProvider> paidStreamControl;
+@property (retain, nonatomic) AWELiveUserProfileVSTabStreamingFreeTrialView *freeTrialView;
+@property (retain, nonatomic) id<AWELiveCommonMessageProtocol> messageManager;
+@property (copy, nonatomic) id /* block */ changePurchaseButtonStateBlock;
+@property (copy, nonatomic) id /* block */ paidPanelParamHandler;
+@property (copy, nonatomic) id /* block */ trackParamHandler;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)endedRoomIDs;
+
+- (void)configWithModel:(id)a0;
+- (void)player:(id)a0 loadStateDidChange:(unsigned long long)a1;
+- (void)player:(id)a0 playbackStateDidChange:(unsigned long long)a1;
+- (double)playedDuration;
+- (void)player:(id)a0 mediaSizeDidChange:(struct CGSize { double x0; double x1; })a1;
+- (void)player:(id)a0 didReceiveError:(id)a1;
+- (void)installMessageChannel;
+- (void)uninstallMessageChannel;
+- (void)openPaidPanel;
+- (void)onCommonMessageReceive:(id)a0 messageStr:(id)a1;
+- (void)paidStreamTrialDidStart:(long long)a0;
+- (void)paidStreamTrialDidStop:(long long)a0;
+- (void)paidStreamTrialDidFinish:(long long)a0 reason:(unsigned long long)a1;
+- (void)paidStreamTrialDidPaid:(long long)a0;
+- (void)liveDidFinished:(id)a0;
+- (void)paidStreamTrialRemainingTimeChangeTo:(double)a0 scene:(long long)a1;
+- (void)paidStreamTrialDidPromised:(long long)a0;
+- (void)showLiveEndViewIfNeeded;
+- (void)disposeSubviews;
+- (void)setupLiveFinishView;
+- (void)setPlayerSecureContent;
+- (BOOL)checkRoomIdEnded:(id)a0;
+- (void)addVSWatermarkView:(id)a0;
+- (void)singleTapped;
+- (void)requestLiveEndStatus;
+- (void)markRoomIdAsEnded:(id)a0;
+- (void)streamingTapped:(id /* block */)a0;
+- (BOOL)liveEnded;
+- (void)streamingFinishBlock:(id /* block */)a0;
+- (void)streamingFirstFrameBlock:(id /* block */)a0;
+- (double)playedV2Duration;
+- (void)addWatermarkBlock:(id /* block */)a0;
+- (void)close;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)setup;
+- (void)setMute:(BOOL)a0;
+- (void)setupUI;
+
+@end

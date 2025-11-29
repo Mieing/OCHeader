@@ -1,0 +1,14 @@
+@class NSString, IESGCPPBGameDetailAuthorBriefInfo;
+
+@interface IESGCPPBGameDetailEvaluationVideo : GPBMessage
+
+@property (copy, nonatomic) NSString *itemId;
+@property (retain, nonatomic) IESGCPPBGameDetailAuthorBriefInfo *author;
+@property (nonatomic) BOOL hasAuthor;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *coverURL;
+@property (nonatomic) int diggCount;
+
++ (id)descriptor;
+
+@end

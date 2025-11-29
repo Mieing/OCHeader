@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface ScheduledLive : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *listArray;
+@property (readonly, nonatomic) unsigned long long listArray_Count;
+
++ (id)descriptor;
+
+@end

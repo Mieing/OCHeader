@@ -1,0 +1,73 @@
+@class NSMapTable, NSString, NSOperationQueue, NSObject;
+@protocol OS_dispatch_queue, IESIMFTSStoreServiceProtocol;
+
+@interface IESIMFTSDataModuleService : NSObject <IESIMFTSDataServiceProtocol>
+
+@property (retain, nonatomic) id<IESIMFTSStoreServiceProtocol> store;
+@property (retain, nonatomic) NSMapTable *taskMap;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *writeUserQueue;
+@property (retain) NSOperationQueue *searchUserQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *writeMessageQueue;
+@property (retain) NSOperationQueue *searchMessageQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *writeParticipantQueue;
+@property (retain) NSOperationQueue *searchParticipantQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *writeConversationQueue;
+@property (retain) NSOperationQueue *searchConversationQueue;
+@property (nonatomic) BOOL enableWCDBTwoCrashOpt;
+@property (copy, nonatomic) id /* block */ userSortOrderBlock;
+@property (copy, nonatomic) id /* block */ conversationSortOrderBlock;
+@property (copy, nonatomic) id /* block */ messageSortOrderBlock;
+@property (copy, nonatomic) id /* block */ participantSortOrderBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)queryConversationsWithKeywords:(id)a0 contentTypes:(id)a1 beforeSortOrder:(long long)a2 limit:(unsigned long long)a3 completion:(id /* block */)a4;
+- (id)pathOfCurrentUser:(id)a0;
+- (id)movePathIfNeeded:(id)a0;
+- (id)initWithSetUpConfig:(id)a0;
+- (id)ftsPathOfCurrentUser:(id)a0;
+- (id)newDocumentFTSPathOfCurrentUser:(id)a0;
+- (id)oldDirectoryPath;
+- (id)newDirectoryPath;
+- (id)generateTaskId;
+- (void)setOperation:(id)a0 forTaskId:(id)a1;
+- (long long)getTotalMessageCount;
+- (long long)getTotalDeletedMessageCount;
+- (long long)getTotalUserCount;
+- (long long)getTotalDeletedUserCount;
+- (long long)getTotalConversationCount;
+- (long long)getTotalDeletedConversationCount;
+- (long long)getTotalParticipantCount;
+- (long long)getTotalDeletedParticipantCount;
+- (void)handleParticipantChangeWithConversationID:(id)a0 updates:(id)a1 deletes:(id)a2 version:(long long)a3;
+- (long long)ftsParticipantVersionWithConversationID:(id)a0;
+- (void)executeCheckpointWithCompletion:(id /* block */)a0;
+- (void)insertOrUpdateUserDatas:(id)a0 completion:(id /* block */)a1;
+- (void)deleteUserDatasWithUid:(id)a0 completion:(id /* block */)a1;
+- (void)deleteAllUserDatasWithCompletion:(id /* block */)a0;
+- (void)recalculateAllUserDatasSortOrderWithCompletion:(id /* block */)a0;
+- (id)queryUsersWithKeywords:(id)a0 contentTypes:(id)a1 beforeSortOrder:(long long)a2 limit:(unsigned long long)a3 completion:(id /* block */)a4;
+- (id)queryUsersWithConfig:(id)a0 completion:(id /* block */)a1;
+- (void)insertOrUpdateConversationDatas:(id)a0 completion:(id /* block */)a1;
+- (void)deleteConversationDatasWithConvIds:(id)a0 completion:(id /* block */)a1;
+- (void)insertOrUpdateMessageDatas:(id)a0 completion:(id /* block */)a1;
+- (void)deleteMessageDatasWithMsgIds:(id)a0 completion:(id /* block */)a1;
+- (void)deleteMessageDatasWithConvIds:(id)a0 completion:(id /* block */)a1;
+- (void)deleteMessageDatasWithMessageTypes:(id)a0 completion:(id /* block */)a1;
+- (id)queryMessagesWithKeywords:(id)a0 contentTypes:(id)a1 inConversation:(id)a2 beforeSortOrder:(long long)a3 limit:(unsigned long long)a4 completion:(id /* block */)a5;
+- (id)queryMessagesWithConfig:(id)a0 completion:(id /* block */)a1;
+- (void)insertOrUpdateParticipantDatas:(id)a0 withConversationId:(id)a1 completion:(id /* block */)a2;
+- (void)updateParticipantDatasWithUid:(id)a0 newContentDict:(id)a1 completion:(id /* block */)a2;
+- (void)deleteParticipantDatasWithUids:(id)a0 completion:(id /* block */)a1;
+- (void)deleteParticipantDatasWithConvIds:(id)a0 completion:(id /* block */)a1;
+- (void)deleteAllParticipantDatasWithCompletion:(id /* block */)a0;
+- (id)queryParticipantsWithKeywords:(id)a0 contentTypes:(id)a1 beforeSortOrder:(long long)a2 limit:(unsigned long long)a3 completion:(id /* block */)a4;
+- (id)p_getDBTableNames;
+- (id)p_getWriteQueueWithTableName:(id)a0;
+- (BOOL)cancelTask:(id)a0;
+- (void).cxx_destruct;
+- (void)clearWithCompletion:(id /* block */)a0;
+
+@end

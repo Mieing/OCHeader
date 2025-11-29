@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface PosterActivityData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *previewImage;
+@property (nonatomic) BOOL hasPreviewImage;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+
++ (id)descriptor;
+
+@end

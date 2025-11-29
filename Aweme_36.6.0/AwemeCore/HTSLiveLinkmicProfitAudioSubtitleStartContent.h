@@ -1,0 +1,11 @@
+@class HTSLiveLinkmicSubtitleStatus;
+
+@interface HTSLiveLinkmicProfitAudioSubtitleStartContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long versionId;
+@property (retain, nonatomic) HTSLiveLinkmicSubtitleStatus *linkmicSubtitleStatus;
+@property (nonatomic) BOOL hasLinkmicSubtitleStatus;
+
++ (id)descriptor;
+
+@end

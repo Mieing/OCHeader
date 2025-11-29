@@ -1,0 +1,10 @@
+@class HTSLiveMoreLiveEntrance;
+
+@interface HTSLiveMoreLiveSyncData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveMoreLiveEntrance *info;
+@property (nonatomic) BOOL hasInfo;
+
++ (id)descriptor;
+
+@end

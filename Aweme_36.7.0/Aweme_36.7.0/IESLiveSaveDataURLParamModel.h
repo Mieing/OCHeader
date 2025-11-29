@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveSaveDataURLParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *dataURL;
+@property (copy, nonatomic) NSString *filename;
+@property (copy, nonatomic) NSString *extension;
+@property (copy, nonatomic) NSString *saveToAlbum;
+
+@end

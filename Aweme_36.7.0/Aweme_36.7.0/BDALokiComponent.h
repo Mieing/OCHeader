@@ -1,0 +1,87 @@
+@class UIView, NSString, NSArray, BDALokiProfile, NSMutableDictionary, BDARifleView, BDARifleViewConfiguration, NSMutableArray, BDALokiModel, BDALokiBaseItem, BDALokiConfiguration;
+@protocol BDALokiComponentDelegate;
+
+@interface BDALokiComponent : NSObject <BDARifleViewDelegate, BDALokiBaseItemDelegate> {
+    NSMutableDictionary *_anchorObserverIdentifiers;
+}
+
+@property (retain, nonatomic) BDALokiModel *lokiModel;
+@property (nonatomic) BOOL hasShowOnce;
+@property (retain, nonatomic) NSString *failReason;
+@property (retain, nonatomic) BDALokiProfile *lokiProfile;
+@property (retain, nonatomic) NSMutableDictionary *anchorFrames;
+@property (retain, nonatomic) BDALokiBaseItem *lokiItem;
+@property (weak, nonatomic) UIView *container;
+@property (nonatomic) BOOL hasReceivePerformanceDics;
+@property (nonatomic) double openTime;
+@property (nonatomic) double loadStartTime;
+@property (nonatomic) double loadEndTime;
+@property (nonatomic) double templateStartTime;
+@property (nonatomic) double templateEndTime;
+@property (nonatomic) BOOL jsRuntimeIsReady;
+@property (retain, nonatomic) NSMutableArray *jsEventList;
+@property (retain, nonatomic) BDARifleView *lokiRifleView;
+@property (retain, nonatomic) BDARifleViewConfiguration *lokiRifleViewConfiguration;
+@property (nonatomic) BOOL hasDowngraded;
+@property (weak, nonatomic) id<BDALokiComponentDelegate> delegate;
+@property (retain, nonatomic) BDALokiConfiguration *lokiConfiguration;
+@property (copy, nonatomic) NSArray *customLynxBridges;
+@property (copy, nonatomic) NSArray *customJsBridges;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)sendEvent:(id)a0 params:(id)a1 callback:(id /* block */)a2;
+- (id)getBDXLynxView;
+- (id)lynxView;
+- (id)createLynxKitParamsWithContext:(id)a0;
+- (void)checkHasShowOnce:(id /* block */)a0;
+- (void)rifleView:(id)a0 didChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a1;
+- (void)rifleViewDidStartLoading:(id)a0;
+- (void)rifleView:(id)a0 didStartFetchResourceWithURL:(id)a1;
+- (void)rifleView:(id)a0 didFetchedResource:(id)a1 error:(id)a2;
+- (void)rifleViewvDidFirstScreen:(id)a0;
+- (void)rifleView:(id)a0 didFinishLoadWithURL:(id)a1;
+- (void)rifleView:(id)a0 didLoadFailedWithURL:(id)a1 error:(id)a2;
+- (void)rifleView:(id)a0 didRecieveError:(id)a1;
+- (void)rifleView:(id)a0 didReceivePerformance:(id)a1;
+- (void)rifleViewDidConstructJSRuntime:(id)a0;
+- (id)getComponentView;
+- (id)initWithContainer:(id)a0 lokiModel:(id)a1;
+- (void)createLokiRifleViewAndConfig;
+- (void)sendJSEventList;
+- (void)updateGlobalProps;
+- (void)createViewOnly;
+- (id)lokiComponentJsBridges;
+- (void)createLokiItemOnly;
+- (void)setupLokiItem;
+- (void)updateWith;
+- (void)sendLynxTiming;
+- (id)resourceSourceWithResource:(id)a0;
+- (void)downgrade:(id)a0 url:(id)a1 type:(long long)a2;
+- (id)lokiRemakeConstraint:(id)a0;
+- (BOOL)shouldAdjustWidth;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })convertRectFromView:(id)a0;
+- (void)unregistAnchorsChange:(id)a0;
+- (void)registAnchorsChange:(id)a0;
+- (void)rifleView:(id)a0 onSetUp:(id)a1;
+- (void)lokiItemDidStartLoading;
+- (void)lokiItemDidStartFetchResourceWithURL:(id)a0;
+- (void)lokiItemDidFetchedResource:(id)a0 url:(id)a1 error:(id)a2;
+- (void)lokiItemDidFinishLoadWithURL:(id)a0;
+- (void)lokiItemDidLoadFailedWithURL:(id)a0 error:(id)a1;
+- (void)lokiItemDidConstructJSRuntime;
+- (void)lokiItemDidRecieveError:(id)a0;
+- (void)lokiItemDidFirstScreen;
+- (void)lokiItemDidChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a0;
+- (void)fetchTemplateDataWithUrl:(id)a0 completion:(id /* block */)a1;
+- (id)sendMethodWithName:(id)a0 params:(id)a1;
+- (void)close;
+- (void).cxx_destruct;
+- (void)reset;
+- (void)render;
+- (void)removeObservers;
+- (BOOL)updateLayout:(id)a0;
+
+@end

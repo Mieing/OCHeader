@@ -1,0 +1,84 @@
+@class NSTimer, NSString, AWEPublishBaseStage, AWEVideoPublishViewModel, NSError, AWEPublishWaterMarkStage, AWEPublishFlowModel, AWEUserModel, AWEVideoDraftTracer, AWEPublishTimeTracker, NSNumber;
+@protocol ACCSequenceEditServiceProtocol, ACCPublishServiceSaveAlbumDelegate, ACCEditServiceProtocol;
+
+@interface AWEPublishSaveToAlbumTask : AWEPublishCommonTask <AWEPublishStageDelegate, AWEPublishRunnableStageObserver> {
+    id<ACCEditServiceProtocol> _editService;
+    id<ACCSequenceEditServiceProtocol> _sequenceEditService;
+    AWEPublishTimeTracker *_timeTracker;
+}
+
+@property (retain, nonatomic) AWEPublishBaseStage *mergeStage;
+@property (retain, nonatomic) AWEPublishWaterMarkStage *waterMarkStage;
+@property (retain, nonatomic) NSTimer *timer;
+@property (nonatomic) unsigned long long savePathStyle;
+@property (retain, nonatomic) NSNumber *saveAlbumFinished;
+@property (retain, nonatomic) NSNumber *saveCloudAlbumFinished;
+@property (retain, nonatomic) NSNumber *saveDraftFinished;
+@property (copy, nonatomic) NSString *saveCloudAlbumFailedText;
+@property (retain, nonatomic) AWEVideoPublishViewModel *inputModel;
+@property (retain, nonatomic) NSError *saveError;
+@property (nonatomic) BOOL taskFailed;
+@property (nonatomic) BOOL didMergeFinish;
+@property (nonatomic) double startTime;
+@property (nonatomic) double expectedSaveDuration;
+@property (retain, nonatomic) AWEPublishFlowModel *flowModel;
+@property (retain, nonatomic) AWEUserModel *customerWatermarkAuthorInfo;
+@property (nonatomic) BOOL isFeedVideoMergeTask;
+@property (nonatomic) BOOL forceIgnoreWatermark;
+@property (nonatomic) BOOL isFromSaveAsVideoManager;
+@property (retain, nonatomic) AWEVideoDraftTracer *tracer;
+@property (nonatomic) BOOL silent;
+@property (nonatomic) BOOL hasBroken;
+@property (nonatomic) BOOL parallelEdit;
+@property (copy, nonatomic) id /* block */ updateSourceModel;
+@property (retain, nonatomic) AWEVideoPublishViewModel *sourcePublishModel;
+@property (weak, nonatomic) id<ACCPublishServiceSaveAlbumDelegate> saveAlbumDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)p_updateProgress:(double)a0;
+- (void)setCurrentStage:(long long)a0;
+- (id)editService;
+- (void)setEditService:(id)a0;
+- (void)p_showSuccessToast;
+- (id)sequenceEditService;
+- (void)setSequenceEditService:(id)a0;
+- (void)willResignActiveNotification:(id)a0;
+- (void)publishStage:(id)a0 didChangeStatus:(long long)a1 userInfo:(id)a2;
+- (void)stage:(id)a0 didChangeStatus:(long long)a1;
+- (void)notifyWillAppend;
+- (void)publishStage:(id)a0 updateProgress:(double)a1;
+- (void)saveDraft:(id /* block */)a0;
+- (void)trackDownloadEventIfNeed;
+- (void)p_trackImageAlbumDownloadStatusIfNeedWithIsStart:(BOOL)a0;
+- (void)p_startTimerToUpdateProgress;
+- (BOOL)p_shouldSaveAlbumWithWatermarkStage;
+- (long long)p_getCurrentSaveStyle;
+- (void)p_didFinishWithUserInfo:(id)a0;
+- (void)p_handleProcessImageStageDoneWithUserInfo:(id)a0;
+- (void)syncImageQualityTrackWithURL:(id)a0;
+- (BOOL)p_shouldSaveAlbumWithWatermarkForSourceClip;
+- (void)p_trackDownload;
+- (void)feedbackForSaveAlbumIfNeeded;
+- (void)p_errorAction:(id)a0;
+- (void)p_checkAllSaveTaskDidFinish;
+- (void)p_saveToAlbum:(id /* block */)a0;
+- (void)p_saveToCloudAlbumWithInfo:(id)a0 completion:(id /* block */)a1;
+- (void)p_clearQuickSaveAlbumInfo;
+- (void)p_deleteDraftIfNeeded;
+- (id)p_trackExtra;
+- (id)p_handleCloudAlbumReourceWithInfo:(id)a0;
+- (void)p_trackDownloadStatusWithFailedPathInfo:(id)a0;
+- (void)_syncImageQualityTrackWithURL:(id)a0;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (void)execute;
+- (void)resume;
+- (void)failWithError:(id)a0;
+- (void)dealloc;
+- (id)timeTracker;
+- (void)setTimeTracker:(id)a0;
+
+@end

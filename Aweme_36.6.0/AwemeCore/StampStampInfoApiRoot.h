@@ -1,0 +1,3 @@
+@interface StampStampInfoApiRoot : GPBRootObject
+
+@end

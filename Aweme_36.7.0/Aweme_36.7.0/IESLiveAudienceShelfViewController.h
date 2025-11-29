@@ -1,0 +1,77 @@
+@class NSMutableDictionary, ShelfInfo, UILabel, UITableView, NSDictionary, NSMutableArray, ShowPrivateMsgEntranceResponse_Data, UIView, IESLiveNativeAppAudienceShelfIMChatView, NSString, HTSEventContext, IESLivePopupItem, IESLiveNativeAppApi, UIImageView;
+@protocol IESLiveTimorService, IESLiveRoomService;
+
+@interface IESLiveAudienceShelfViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (retain, nonatomic) ShowPrivateMsgEntranceResponse_Data *privateMsgData;
+@property (retain, nonatomic) IESLiveNativeAppAudienceShelfIMChatView *imChatView;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) ShelfInfo *shelfInfo;
+@property (retain, nonatomic) UIView *topView;
+@property (retain, nonatomic) UIImageView *iconImage;
+@property (retain, nonatomic) UILabel *timorTitleLabel;
+@property (retain, nonatomic) UIImageView *timorTitleBottomImage;
+@property (nonatomic) unsigned long long explaningCardIndex;
+@property (nonatomic) BOOL isTimorScreenRecording;
+@property (retain, nonatomic) id<IESLiveTimorService> timorService;
+@property (retain, nonatomic) UIImageView *timorEnterIcon;
+@property (retain, nonatomic) UIImageView *screenPageEnterIcon;
+@property (retain, nonatomic) UIView *screenCastView;
+@property (retain, nonatomic) UILabel *timorScreenTitleLabel;
+@property (retain, nonatomic) UILabel *timorScreenContentLabel;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) id<IESLiveRoomService> roomService;
+@property (retain, nonatomic) NSMutableArray *cardExtraInfoList;
+@property (retain, nonatomic) NSMutableArray *cardIdList;
+@property (nonatomic) BOOL isFromReLoadData;
+@property (retain, nonatomic) NSDictionary *shelfClientExtra;
+@property (retain, nonatomic) IESLiveNativeAppApi *api;
+@property (retain, nonatomic) NSMutableDictionary *supplementCardInfoMap;
+@property (retain, nonatomic) IESLivePopupItem *popupItem;
+@property (nonatomic) long long basePicShelfCardNum;
+@property (nonatomic) long long baseTitleShelfCardNum;
+@property (nonatomic) long long bufferPicShelfCardNum;
+@property (nonatomic) long long bufferTitleShelfCardNum;
+@property (nonatomic) unsigned long long cellCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)trackPageShow;
+- (id)trackCommonParams;
+- (id)getIsADChannel;
+- (void)applicationWillEnterFreground;
+- (id)startPageInSchema:(id)a0;
+- (void)updateSupplementCardInfo:(id)a0;
+- (void)updateShelfInfo:(id)a0 isTimorScreenRecording:(BOOL)a1;
+- (void)recordNativeAppVisit:(unsigned long long)a0 cardID:(unsigned long long)a1;
+- (void)fetchIMChatInfo;
+- (id)initWithShelfInfo:(id)a0 isTimorScreenRecording:(BOOL)a1 trackContext:(id)a2 DIContext:(id)a3;
+- (void)p_updateViewHeight;
+- (void)hideIMChat;
+- (void)trackCardWithEvent:(id)a0 cardExtraInfo:(id)a1 cardInfo:(id)a2;
+- (id)IMChatTrackParams:(id)a0;
+- (void)openScreenPageAction;
+- (void)openDefualtTimorAction;
+- (void)trackShelfWithEvent:(id)a0 extraParams:(id)a1;
+- (void)trackIMChatClick:(id)a0;
+- (void)trackIMChatShow:(id)a0;
+- (long long)getRealIndexAtRow:(long long)a0;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)tableView:(id)a0 willDisplayHeaderView:(id)a1 forSection:(long long)a2;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)refreshUI;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (id)tapGesture;
+- (void)setUpUI;
+
+@end

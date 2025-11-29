@@ -1,0 +1,20 @@
+@class LabelMultiTextsInfoV2, NSString, LabelTextInfoV2, LabelMultiImagesInfoV2;
+
+@interface LabelElementV2 : GPBMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+@property (retain, nonatomic) LabelTextInfoV2 *text;
+@property (nonatomic) BOOL hasText;
+@property (retain, nonatomic) LabelMultiTextsInfoV2 *multiTexts;
+@property (nonatomic) BOOL hasMultiTexts;
+@property (retain, nonatomic) LabelMultiImagesInfoV2 *multiImages;
+@property (nonatomic) BOOL hasMultiImages;
+@property (copy, nonatomic) NSString *eventId;
+@property (nonatomic) BOOL hasEventId;
+@property (copy, nonatomic) NSString *dataRef;
+@property (nonatomic) BOOL hasDataRef;
+
++ (id)descriptor;
+
+@end

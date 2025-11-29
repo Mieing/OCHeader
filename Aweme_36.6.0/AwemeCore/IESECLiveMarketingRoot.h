@@ -1,0 +1,3 @@
+@interface IESECLiveMarketingRoot : GPBRootObject
+
+@end

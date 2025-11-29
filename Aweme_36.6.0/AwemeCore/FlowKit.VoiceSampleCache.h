@@ -1,0 +1,8 @@
+@interface FlowKit.VoiceSampleCache : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ logger;
+    void /* unknown type, empty encoding */ urlSession;
+    void /* unknown type, empty encoding */ downloadTaskLock;
+    void /* unknown type, empty encoding */ downloadTasks;
+}
+
+@end

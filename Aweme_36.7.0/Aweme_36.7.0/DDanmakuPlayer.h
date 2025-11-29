@@ -1,0 +1,82 @@
+@class DDanmakuRenderEngine, DDanmakuDispatcher, DDanmakuPlayerView, NSString, NSMutableArray, DDanmakuDataPool, DDanmakuRenderManager, DDanmakuClock;
+@protocol DDanmakuPlayerDelegate, DDanmakuPlayerTimeSynchronizer;
+
+@interface DDanmakuPlayer : NSObject <DDanmakuDispatcherDelegate, DDanmakuDispatcherDataSource, DDanmakuPlayerViewDelegate, DDanmakuRenderEngineDelegate, DDanmakuRenderDelegate>
+
+@property (class, nonatomic) BOOL shouldBlockDanmakuDispatch;
+@property (class, nonatomic) long long danmakuClockInterval;
+@property (class, nonatomic) BOOL enableDisplayingOpt;
+@property (class, nonatomic) BOOL enableLayOutChangeOpt;
+@property (class, nonatomic) BOOL enableEmptyScreenCallBack;
+
+@property (retain, nonatomic) DDanmakuDispatcher *dispatcher;
+@property (retain, nonatomic) DDanmakuDataPool *dataPool;
+@property (retain, nonatomic) DDanmakuRenderEngine *renderEngine;
+@property (retain, nonatomic) DDanmakuClock *clock;
+@property (nonatomic) double playbackTime;
+@property (nonatomic) unsigned long long status;
+@property (nonatomic) unsigned long long clockStepCount;
+@property (retain, nonatomic) DDanmakuPlayerView *rootView;
+@property (nonatomic) BOOL needsLayout;
+@property (nonatomic) BOOL needsDisplay;
+@property (retain, nonatomic) NSMutableArray *resultArray;
+@property (retain, nonatomic) DDanmakuRenderManager *renderManager;
+@property (weak, nonatomic) id<DDanmakuPlayerTimeSynchronizer> timeSynchronizer;
+@property (weak, nonatomic) id<DDanmakuPlayerDelegate> delegate;
+@property (copy, nonatomic) id /* block */ filterBlock;
+@property (nonatomic) long long currentRenderType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)addDisplayingDanmaku:(id)a0;
+- (id)allDisplayingDanmakusArray;
+- (id)allBookDanmakusArray;
+- (void)appendDanmakusToDataPool:(id)a0;
+- (void)didDroppedDanmakus:(id)a0;
+- (void)didDisplayDanmaku:(id)a0 inContainerView:(id)a1;
+- (id)danmakuContainerView;
+- (void)setPlaySpeedFactor:(double)a0;
+- (void)prepareRePlayForLoop;
+- (void)clearDanmakusInDataPool;
+- (void)clearAllDisplayingDanmakus;
+- (void)addTrackLayer:(id)a0;
+- (void)didEndDisplayDanmaku:(id)a0 inContainerView:(id)a1;
+- (void)didTappedDanmaku:(id)a0 inContainerView:(id)a1;
+- (void)updateFilterBlock:(id /* block */)a0 needEffectForDanmakuDisplaying:(BOOL)a1;
+- (void)refreshRenderDisplayedDanmakusWithForce:(BOOL)a0;
+- (void)removeDisplayingDanmaku:(id)a0;
+- (void)pauseDisplayingDanmakuByID:(id)a0;
+- (void)removeDisplayingDanmakuByID:(id)a0;
+- (void)resumeDisplayingDanmakuByID:(id)a0;
+- (BOOL)danmakuDisplayingOnView;
+- (void)registerClass:(Class)a0 forItemViewType:(id)a1;
+- (void)registerClass:(Class)a0 forItemNodeType:(id)a1;
+- (void)changeRenderTo:(long long)a0;
+- (void)handleGestureRecognizer:(id)a0 targetDanmaku:(id)a1;
+- (id)danmakusBeforeTime:(double)a0;
+- (BOOL)dispatchDanamku:(id)a0;
+- (void)setupClock;
+- (void)setAnimationRender;
+- (void)optimizedTimeUpdated:(double)a0;
+- (double)queryCurrentTime;
+- (id)currentRender;
+- (BOOL)shouldFilterDanmaku:(id)a0;
+- (void)layoutDidChanged:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)allDanmakusInDataPool;
+- (void)updateMaxBufferLength:(long long)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)layoutIfNeeded;
+- (void)setNeedsLayout;
+- (void)setNeedsDisplay;
+- (id)init;
+- (void)stop;
+- (void)reset;
+- (void)seekToTime:(double)a0;
+- (void)dealloc;
+- (void)displayIfNeeded;
+
+@end

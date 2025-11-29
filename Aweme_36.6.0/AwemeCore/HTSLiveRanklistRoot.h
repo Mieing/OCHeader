@@ -1,0 +1,3 @@
+@interface HTSLiveRanklistRoot : GPBRootObject
+
+@end

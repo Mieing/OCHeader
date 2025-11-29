@@ -1,0 +1,70 @@
+@class NSString;
+
+@interface AWESearchServiceInterface : HTSService <AWESearchServiceInterface>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)searchBarTrackWithEnterFrom:(id)a0 awemeID:(id)a1;
+- (void)searchEntranceClickTrackWithEnterFrom:(id)a0;
+- (void)searchEntranceClickTrackWithEnterFrom:(id)a0 enterFromSecond:(id)a1;
+- (void)searchEntranceClickTrackWithEnterFrom:(id)a0 enterFromSecond:(id)a1 isHalfScreen:(BOOL)a2;
+- (void)searchEntranceClickTrackWithEnterFrom:(id)a0 enterFromSecond:(id)a1 isHalfScreen:(BOOL)a2 extraParams:(id)a3;
+- (id)searchEntranceRecommendManager;
+- (BOOL)isLifeSearchInnerSceneWithEnterFrom:(id)a0;
+- (BOOL)isSearchFeedWithEnterFrom:(id)a0;
+- (id)getSearchParamsWithLogExtra:(id)a0 enterFrom:(id)a1 appendSearchParams:(id)a2;
+- (void)modifyMutableLogExtra:(id)a0 logExtra:(id)a1 aweme:(id)a2;
+- (id)getSilentParamWithLogExtra:(id)a0;
+- (void)updateFeedBottomFakeAnchorForModel:(id)a0 gid:(id)a1;
+- (void)updateCommentTopFakeAnchorForModel:(id)a0 gid:(id)a1;
+- (void)updateFakeGuessWordsForWords:(id)a0 gid:(id)a1;
+- (void)updateSearchBarOuterWordForWord:(id)a0 gid:(id)a1;
+- (void)updateClickRecomWordsForWords:(id)a0 gid:(id)a1;
+- (void)updateGuideSearchWordsForWords:(id)a0 gid:(id)a1;
+- (void)updateRelatedSearchWordsForWords:(id)a0 uploadToken:(id)a1 gid:(id)a2;
+- (void)addCommentEntityWord:(id)a0 gid:(id)a1;
+- (void)addDescriptionEntityWord:(id)a0 gid:(id)a1;
+- (void)addLiveFeedBarKeyword:(id)a0 gid:(id)a1;
+- (void)addHotspotFeedBarKeyword:(id)a0 gid:(id)a1;
+- (void)addCommentEntityOuter:(id)a0 gid:(id)a1;
+- (void)addImpressionExtraInfo:(id)a0 gid:(id)a1;
+- (id)maskedSearchParamsForGid:(id)a0;
+- (id)maskedSearchParamsForGid:(id)a0 relatedSearchWordsUploadToken:(id)a1;
+- (void)removeAllFakeWords;
+- (void)updateClickRecomWordsForGeneralMask:(id)a0 searchId:(id)a1;
+- (void)updateGSWordsForGeneralMask:(id)a0 searchId:(id)a1;
+- (void)updateRSWordsForGeneralMask:(id)a0 searchId:(id)a1;
+- (void)updateCommentEntityOuterForGeneralMask:(id)a0 searchId:(id)a1;
+- (id)generalMaskedSearchParamsForSearchIDs:(id)a0;
+- (id)generalMaskedSearchParamsForSearchId:(id)a0;
+- (BOOL)hitOldMaskTypeForGid:(id)a0;
+- (void)setFromGroupId:(id)a0;
+- (id)fetchNextTimeRelatedSearchWordsUploadTokenWhenMaskedSearchFinished;
+- (BOOL)enableMaskTrackOpt;
+- (BOOL)enableMaskTrackAdd;
+- (BOOL)enableMaskTrackFix;
+- (id)needMaskTrackScenes;
+- (id)userDetailEventList;
+- (id)userDetailEventListString;
+- (id)userDetailEventMapStringWithEventParams:(id)a0 searchParams:(id)a1;
+- (id)videoSearchCardNameForModel:(id)a0;
+- (id)teensAlbumCardName;
+- (id)gameWeakVideoCardName;
+- (id)searchCardNameForLynxCardName:(id)a0;
+- (id)searchCardNameForECommerce:(BOOL)a0;
+- (BOOL)shouldShowVideoNoteTagWithModel:(id)a0;
+- (id)searchLongPressExtraWithReferString:(id)a0 isInner:(BOOL)a1 params:(id)a2;
+- (BOOL)enableSearchDoubleColumnSar;
+- (long long)searchDoubleColumnSarShowMaxCnt;
+- (long long)searchDoubleColumnSarClickMaxCnt;
+- (double)searchDoubleColumnShowPercentThreshold;
+- (id)getLogExtra:(id)a0 enterFrom:(id)a1 appendSearchParams:(id)a2;
+- (void)p_modifyLogExtra:(id)a0 aweme:(id)a1 searchMap:(id)a2;
+- (BOOL)fixSearchTrackMap;
+- (id)searchDoubleColumnSarConfig;
+- (id)getFromGroupId;
+
+@end

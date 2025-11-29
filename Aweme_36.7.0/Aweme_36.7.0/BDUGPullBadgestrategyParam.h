@@ -1,0 +1,3 @@
+@interface BDUGPullBadgestrategyParam : BDUGBaseRequestParam
+
+@end

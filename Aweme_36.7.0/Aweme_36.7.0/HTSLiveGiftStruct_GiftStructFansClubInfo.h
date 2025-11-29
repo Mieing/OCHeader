@@ -1,0 +1,8 @@
+@interface HTSLiveGiftStruct_GiftStructFansClubInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int minLevel;
+@property (nonatomic) int insertPos;
+
++ (id)descriptor;
+
+@end

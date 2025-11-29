@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface VarietyStruct : GPBMessage
+
+@property (copy, nonatomic) NSString *rawData;
+@property (nonatomic) BOOL hasRawData;
+
++ (id)descriptor;
+
+@end

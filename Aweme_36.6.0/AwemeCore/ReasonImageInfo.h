@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface ReasonImageInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *uri;
+@property (nonatomic) BOOL hasUri;
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+
++ (id)descriptor;
+
+@end

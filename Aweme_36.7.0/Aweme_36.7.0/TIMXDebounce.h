@@ -1,0 +1,3 @@
+@interface TIMXDebounce : TIMXThrottleDebounce
+
+@end

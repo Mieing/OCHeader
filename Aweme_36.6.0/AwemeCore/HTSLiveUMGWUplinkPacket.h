@@ -1,0 +1,12 @@
+@class HTSLiveUMGWEventData;
+
+@interface HTSLiveUMGWUplinkPacket : GPBMessage
+
+@property (nonatomic) long long uniqueId;
+@property (nonatomic) int eventType;
+@property (retain, nonatomic) HTSLiveUMGWEventData *eventData;
+@property (nonatomic) BOOL hasEventData;
+
++ (id)descriptor;
+
+@end

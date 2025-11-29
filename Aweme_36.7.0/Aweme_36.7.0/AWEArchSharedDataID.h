@@ -1,0 +1,3 @@
+@interface AWEArchSharedDataID : AWEArchUniqueID
+
+@end

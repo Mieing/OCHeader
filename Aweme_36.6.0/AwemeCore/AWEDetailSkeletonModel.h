@@ -1,0 +1,3 @@
+@interface AWEDetailSkeletonModel : NSObject
+
+@end

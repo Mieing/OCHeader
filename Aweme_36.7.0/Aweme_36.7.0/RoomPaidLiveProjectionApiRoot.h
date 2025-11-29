@@ -1,0 +1,3 @@
+@interface RoomPaidLiveProjectionApiRoot : GPBRootObject
+
+@end

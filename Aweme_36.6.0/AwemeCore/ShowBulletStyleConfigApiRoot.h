@@ -1,0 +1,3 @@
+@interface ShowBulletStyleConfigApiRoot : GPBRootObject
+
+@end

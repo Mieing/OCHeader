@@ -1,0 +1,12 @@
+@class GPBInt32Array;
+
+@interface ToolbarPermutation_Rule : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt32Array *groupPriorityArray;
+@property (readonly, nonatomic) unsigned long long groupPriorityArray_Count;
+@property (retain, nonatomic) GPBInt32Array *componentSequenceArray;
+@property (readonly, nonatomic) unsigned long long componentSequenceArray_Count;
+
++ (id)descriptor;
+
+@end

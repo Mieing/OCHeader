@@ -1,0 +1,10 @@
+@class FinishResponse_ResponseData;
+
+@interface FinishResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) FinishResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

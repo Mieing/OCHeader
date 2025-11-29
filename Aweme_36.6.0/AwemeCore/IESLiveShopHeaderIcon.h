@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface IESLiveShopHeaderIcon : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (retain, nonatomic) HTSLiveImage *URL;
+@property (nonatomic) BOOL hasURL;
+
++ (id)descriptor;
+
+@end

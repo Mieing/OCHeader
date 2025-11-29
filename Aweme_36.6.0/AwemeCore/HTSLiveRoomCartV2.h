@@ -1,0 +1,7 @@
+@interface HTSLiveRoomCartV2 : IESLivePBBaseMessage
+
+@property (nonatomic) int showCart;
+
++ (id)descriptor;
+
+@end

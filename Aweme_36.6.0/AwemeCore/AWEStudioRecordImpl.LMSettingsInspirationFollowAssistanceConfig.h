@@ -1,0 +1,3 @@
+@interface AWEStudioRecordImpl.LMSettingsInspirationFollowAssistanceConfig : _TtCs12_SwiftObject
+
+@end

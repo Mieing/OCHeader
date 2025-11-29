@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface IESECICON : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+@property (nonatomic) int width;
+@property (nonatomic) int height;
+
++ (id)descriptor;
+
+@end

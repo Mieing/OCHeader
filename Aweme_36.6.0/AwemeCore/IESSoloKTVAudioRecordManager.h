@@ -1,0 +1,85 @@
+@class IESSoloKTVDraftSongModel, NSString, IESLiveGCDTimer, NSObject;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore, IESSoloKTVAudioRecordProtocol;
+
+@interface IESSoloKTVAudioRecordManager : NSObject {
+    struct IESSoloKTVAudioRecordFilterPipeline { struct vector<IESSoloKTVAudioRecordFilterProtocol *, std::allocator<IESSoloKTVAudioRecordFilterProtocol *>> { struct IESSoloKTVAudioRecordFilterProtocol **__begin_; struct IESSoloKTVAudioRecordFilterProtocol **__end_; struct IESSoloKTVAudioRecordFilterProtocol **__cap_; } filters; } pipeline;
+    struct IESSoloKTVAudioRecordFilterPipeline { struct vector<IESSoloKTVAudioRecordFilterProtocol *, std::allocator<IESSoloKTVAudioRecordFilterProtocol *>> { struct IESSoloKTVAudioRecordFilterProtocol **__begin_; struct IESSoloKTVAudioRecordFilterProtocol **__end_; struct IESSoloKTVAudioRecordFilterProtocol **__cap_; } filters; } earPipeline;
+    struct IESSoloKTVAudioRecordFilterPipeline { struct vector<IESSoloKTVAudioRecordFilterProtocol *, std::allocator<IESSoloKTVAudioRecordFilterProtocol *>> { struct IESSoloKTVAudioRecordFilterProtocol **__begin_; struct IESSoloKTVAudioRecordFilterProtocol **__end_; struct IESSoloKTVAudioRecordFilterProtocol **__cap_; } filters; } encodePipeline;
+    void *midiFilter;
+    void *earEffectFilter;
+    void *fileFilter;
+    void *effectFilter;
+}
+
+@property (retain, nonatomic) id<IESSoloKTVAudioRecordProtocol> byteAudio;
+@property (copy, nonatomic) id /* block */ midiCallback;
+@property (retain, nonatomic) NSString *filePath;
+@property (retain, nonatomic) NSString *midiPath;
+@property (retain, nonatomic) NSString *lyricPath;
+@property (retain, nonatomic) NSString *effectPath;
+@property (retain, nonatomic) IESLiveGCDTimer *midiTimer;
+@property (retain, nonatomic) IESSoloKTVDraftSongModel *songModel;
+@property (nonatomic) BOOL isUseOrigin;
+@property (nonatomic) int playAudioVolume;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *executeQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *fileQueue;
+@property (nonatomic) double midiFps;
+@property (copy, nonatomic) id /* block */ playAudioEndingBlock;
+@property (copy, nonatomic) id /* block */ playAudioPositionBlock;
+@property (nonatomic) double writeFileTime;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *sem;
+
+- (void)updateAudioConfig:(id)a0;
+- (void)pausePlayAudio;
+- (void)updateCurrentScene:(id)a0;
+- (void)releaseByteAudio;
+- (double)getRecordDelayTime;
+- (void)updateMidiTimerFps:(double)a0;
+- (void)setMidiPath:(id)a0 lyricPath:(id)a1;
+- (void)setMidiScoreCallback:(id /* block */)a0;
+- (void)configDefaultFilters;
+- (void)updateAudioEffectPath:(id)a0;
+- (void)updateHeadsetVolume:(int)a0;
+- (void)updatePlayAudioVolume:(int)a0;
+- (void)updateRecordVolume:(int)a0;
+- (void)updatePlayAudioEndingBlock:(id /* block */)a0;
+- (void)updatePlayAudioPositionBlock:(id /* block */)a0;
+- (void)addPlayAudioWithModel:(id)a0 original:(BOOL)a1 accompany:(BOOL)a2;
+- (void)useOriginal:(BOOL)a0;
+- (void)seekPlayAudioToAutoPlay:(double)a0 original:(BOOL)a1 accompany:(BOOL)a2;
+- (void)updateKaraokeId:(long long)a0;
+- (id)getAudioFileType;
+- (void)setSaveFilePath:(id)a0;
+- (BOOL)isPlayAudioStop;
+- (void)startRecordAndPlayAudioAtTime:(double)a0 writeFileTime:(double)a1 completion:(id /* block */)a2;
+- (void)resumeRecordAndPlayAudioAtTime:(double)a0 writeFileTime:(double)a1 completion:(id /* block */)a2;
+- (void)stopRecordAndPlayAudio:(id /* block */)a0;
+- (void)pauseRecordAndPlayAudio:(id /* block */)a0;
+- (void)setEarMonitor:(BOOL)a0;
+- (void)startByteAudioReportTimer;
+- (void)cancelByteAudioReportTimer;
+- (void)startPlayAudioAtTime:(double)a0 completion:(id /* block */)a1;
+- (void)stopPlayAudio:(id /* block */)a0;
+- (void)resumePlayAudio:(id /* block */)a0;
+- (void)updateTone:(int)a0;
+- (void)playAudioEndingAction;
+- (void)playAudioPositionAction:(double)a0 duration:(double)a1;
+- (void)resetEffectStatus;
+- (void)seekMidiToTime:(double)a0;
+- (void)startMidiScoreTimerIfNeed;
+- (void)stopMidiScoreTimer;
+- (void)stopRecordAndGetFilePath:(id /* block */)a0;
+- (void)seekPlayAudioToTime:(double)a0;
+- (void)innerSetSaveFilePath:(id)a0;
+- (id)stopRecordAndGetFilePathInternal;
+- (void)addPlayAudioWithModel:(id)a0;
+- (void)seekPlayAudioTo:(double)a0 original:(BOOL)a1 accompany:(BOOL)a2 autoPlay:(BOOL)a3;
+- (void).cxx_destruct;
+- (BOOL)isRecording;
+- (BOOL)isPlaying;
+- (id)init;
+- (id).cxx_construct;
+- (void)dealloc;
+- (void)timerAction;
+
+@end

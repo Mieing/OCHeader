@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLivePaidLinkmicTag : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *pic;
+@property (nonatomic) BOOL hasPic;
+
++ (id)descriptor;
+
+@end

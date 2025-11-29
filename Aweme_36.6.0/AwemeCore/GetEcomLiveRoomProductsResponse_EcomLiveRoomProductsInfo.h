@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface GetEcomLiveRoomProductsResponse_EcomLiveRoomProductsInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+@property (copy, nonatomic) NSString *currentPromotionId;
+
++ (id)descriptor;
+
+@end

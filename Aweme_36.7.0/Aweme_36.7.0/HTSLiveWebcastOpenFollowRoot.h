@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastOpenFollowRoot : GPBRootObject
+
+@end

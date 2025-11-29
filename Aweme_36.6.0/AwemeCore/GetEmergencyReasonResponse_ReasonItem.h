@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface GetEmergencyReasonResponse_ReasonItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long serialId;
+@property (copy, nonatomic) NSString *reason;
+@property (copy, nonatomic) NSString *description_p;
+
++ (id)descriptor;
+
+@end

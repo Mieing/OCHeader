@@ -1,0 +1,3 @@
+@interface IESLiveAVResourceContext : IESLivePrivacyContext
+
+@end

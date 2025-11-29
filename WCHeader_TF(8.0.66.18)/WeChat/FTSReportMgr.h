@@ -1,0 +1,73 @@
+@class WCSearchCTRInfo, NSMutableSet, FTSBrowseReportHelper;
+
+@interface FTSReportMgr : NSObject
+
+@property (retain, nonatomic) NSMutableSet *resultHittedKeywordSet;
+@property (retain, nonatomic) FTSBrowseReportHelper *mainBrowseHelper;
+@property (retain, nonatomic) FTSBrowseReportHelper *subBrowseHelper;
+@property (retain, nonatomic) WCSearchCTRInfo *ctrInfo;
+@property (retain, nonatomic) WCSearchCTRInfo *detailCtrInfo;
+
+- (id)init;
+- (id)safeKVString:(id)a0;
+- (void)addMainSearchFTSLog:(id)a0;
+- (void)logBeginSearch:(unsigned long long)a0;
+- (void)logAddAddressFriend:(unsigned long long)a0;
+- (void)addSubSearchFTSLog:(id)a0;
+- (void)clearCacheHitKeyword;
+- (void)logNewHitResult:(id)a0 hasWebSearchCellShow:(BOOL)a1 clickType:(unsigned int)a2 cellStyle:(unsigned int)a3;
+- (void)logGuidePageClick:(unsigned long long)a0 sessionId:(id)a1;
+- (void)logGroupHitPos:(unsigned int)a0 totalCount:(unsigned int)a1;
+- (void)logGroupHitPos:(unsigned int)a0 totalCount:(unsigned int)a1 isInMainPage:(BOOL)a2 isClickMore:(BOOL)a3;
+- (void)reportGlobalSearchResult:(id)a0;
+- (BOOL)searchFavDone:(id)a0;
+- (BOOL)searchMemoryDone:(id)a0;
+- (BOOL)searchMatchTopHit:(id)a0;
+- (unsigned int)searchTopHitCount:(id)a0;
+- (BOOL)searchMatchNormalContact:(id)a0;
+- (unsigned int)searchNormalContactCount:(id)a0;
+- (BOOL)searchMatchGroupContact:(id)a0;
+- (unsigned int)searchGroupCount:(id)a0;
+- (BOOL)searchMatchBrandContact:(id)a0;
+- (unsigned int)searchBrandContactCount:(id)a0;
+- (BOOL)searchMatchFeature:(id)a0;
+- (unsigned int)searchFeatureCount:(id)a0;
+- (BOOL)searchMatchMsg:(id)a0;
+- (unsigned int)searchMsgCount:(id)a0;
+- (BOOL)searchMatchIndexMsg:(id)a0;
+- (BOOL)searchMatchMemoryMsg:(id)a0;
+- (BOOL)searchMatchFavItems:(id)a0;
+- (unsigned int)searchFavCount:(id)a0;
+- (void)startBrowseMainSearchResult;
+- (void)startBrowseSubSearchResult;
+- (void)reportIDKeyContactSearchTime:(unsigned int)a0;
+- (void)reportKVContactSearchInfo:(id)a0;
+- (unsigned int)getReportDeviceCode;
+- (void)cancelSearch;
+- (void)createChatRoomOperationKVReport:(BOOL)a0;
+- (void)reportKVMsgResultClickType:(unsigned long long)a0 pageType:(unsigned long long)a1 showTalkerEntry:(BOOL)a2;
+- (void)reportKVMsgResultClickType:(unsigned long long)a0 pageType:(unsigned long long)a1 showTalkerEntry:(BOOL)a2 userName:(id)a3;
+- (void)reportDBFileSize:(long long)a0 pageCount:(unsigned int)a1 freeListCount:(unsigned int)a2 unbatchGetFavItemCount:(unsigned int)a3;
+- (void)reportFavSearchTime:(unsigned long long)a0 QueryTime:(unsigned long long)a1 CheckDBTime:(unsigned long long)a2 ResultCount:(unsigned int)a3 isFromFav:(BOOL)a4 byType:(long long)a5 tagsCount:(int)a6 isFTS5:(BOOL)a7;
+- (void)reportFavIndexOperationType:(unsigned int)a0 OperationTime:(unsigned long long)a1 OperationCount:(unsigned int)a2 updateCount:(unsigned int)a3 isFTS5:(BOOL)a4;
+- (void)reportContactIndexOperationType:(unsigned int)a0 OperationTime:(unsigned long long)a1 OperationCount:(unsigned int)a2 updateCount:(unsigned int)a3 singleContactCount:(unsigned int)a4 groupContactCount:(unsigned int)a5 isBuildingIndex:(BOOL)a6;
+- (void)reportMessageFTSResultCnt:(unsigned long long)a0 FTSQueryTime:(unsigned long long)a1 MainDBTime:(unsigned long long)a2 GroupTime:(unsigned long long)a3 limitSessionCount:(unsigned long long)a4 targetSessionCount:(unsigned long long)a5 itemLimit:(unsigned long long)a6 maxCreateTime:(unsigned long long)a7 totalTime:(unsigned long long)a8;
+- (void)reportMessageFTSModify:(int)a0 MessageCount:(unsigned long long)a1 CostTime:(unsigned long long)a2;
+- (void)reportContactSearchMonitor:(id)a0;
+- (void)reportKVMsgSearchInfo:(unsigned long long)a0 pageType:(unsigned long long)a1 searchAgain:(BOOL)a2 appendMode:(BOOL)a3;
+- (void)reportSelectedGroupTrains:(id)a0;
+- (void)batchReportUnSelectedGroupTrains:(id)a0 exclude:(id)a1 dicMatchTips:(id)a2 query:(id)a3 topHits:(id)a4;
+- (void)initCrtInfo;
+- (void)newCTRBeginSearch:(id)a0 isVoiceInput:(BOOL)a1;
+- (void)newCTREndSearch:(id)a0 force:(BOOL)a1;
+- (void)weshopCTRBeginSearch:(id)a0;
+- (void)weshopCTREndSearch;
+- (unsigned int)getFTSCustomerServiceTypeWithUserName:(id)a0;
+- (unsigned int)getFTSCustomerServiceMatchTypeWithMatchTip:(id)a0;
+- (unsigned int)getFTSMsgResultChatType:(id)a0;
+- (void)reportClickSearchForPhoneAndQQ;
+- (void)reportExposureSearchForPhoneAndQQ;
+- (void)reportExposureSearchForPhoneAndQQCore;
+- (void).cxx_destruct;
+
+@end

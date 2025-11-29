@@ -1,0 +1,3 @@
+@interface TVLPlayerItemAccessLogLLASHPullStreamEvent : TVLPlayerItemAccessLogHTTPPullStreamEvent
+
+@end

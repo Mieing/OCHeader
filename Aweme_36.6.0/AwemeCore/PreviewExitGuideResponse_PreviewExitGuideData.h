@@ -1,0 +1,7 @@
+@interface PreviewExitGuideResponse_PreviewExitGuideData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL previewExitGuideFlag;
+
++ (id)descriptor;
+
+@end

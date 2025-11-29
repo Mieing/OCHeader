@@ -1,0 +1,74 @@
+@class NSMutableDictionary, ForwardMessageLogicController, NSString, NSObject, NSMutableArray;
+@protocol OS_dispatch_queue;
+
+@interface EcsGiftMessageMgr : MMUserService <ForwardMessageLogicDelegate, IMsgExt, PBMessageObserverDelegate, MMImageLoaderObserver, MMServiceProtocol>
+
+@property (retain, nonatomic) ForwardMessageLogicController *forwardLogicController;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *handleMsgQueue;
+@property (retain, nonatomic) NSMutableDictionary *giftTicket2ticketItem;
+@property (retain, nonatomic) NSMutableArray *giftMsgIdList;
+@property (nonatomic) BOOL canSwipeDismiss;
+@property (retain, nonatomic) NSMutableArray *giftStatusCgiLimitList;
+@property (retain, nonatomic) NSMutableArray *preloadImgLimitList;
+@property (nonatomic) BOOL enableShowRedDigest;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)dealloc;
+- (id)createFlutterInstance:(id)a0 arguments:(id)a1;
+- (void)startEcsGiftLogic:(id)a0 messageWrap:(id)a1;
+- (void)openEcsGift:(id)a0 messageWrap:(id)a1;
+- (void)enableGiftPageSwipeDismiss;
+- (BOOL)canGiftPageSwipeDismiss;
+- (void)preloadGiftImage:(id)a0;
+- (void)downloadEcsGiftImage:(id)a0;
+- (void)sendEcsLocalGiftMsg:(id)a0 toUserName:(id)a1;
+- (void)sendEcsLocalGiftMsg:(id)a0 toUserName:(id)a1 withSvrId:(long long)a2;
+- (BOOL)isEcsGiftMsgExist:(id)a0;
+- (id)getCurrentViewController;
+- (void)OnForwardMessageSend:(id)a0;
+- (void)OnForwardMessageConfirmCanceled:(id)a0;
+- (void)openEcsGiftWithSystemMsg:(id)a0 linkUrl:(id)a1 fromVC:(id)a2;
+- (void)handleCgiRespWhenOpenEcsGiftWithSystemMsg:(id)a0 resp:(id)a1 orderId:(id)a2 fromVC:(id)a3;
+- (void)openEcsGiftWithParams:(id)a0 params:(id)a1 isChatroom:(BOOL)a2;
+- (BOOL)shouldShowGiftCover:(BOOL)a0;
+- (void)openEcsGiftReceivePageWithParams:(id)a0 params:(id)a1 isGroupChatroom:(BOOL)a2 isSender:(BOOL)a3 giftStatus:(long long)a4;
+- (void)openEcsGiftFloatPageWithParams:(id)a0 params:(id)a1;
+- (void)openEcsGiftReceivePageWithLoading:(id)a0 params:(id)a1;
+- (void)handleCgiRespAndOpenEcsGiftReceivePage:(id)a0 orderId:(id)a1 extraParams:(id)a2 fromVC:(id)a3;
+- (void)triggerOpenEcsGiftReceivePageRequestCgiFailedEvent:(id)a0;
+- (BOOL)isGiftMsgIdHandled:(id)a0;
+- (void)updateGiftMsgByCgiIfNeeded:(id)a0;
+- (void)updateEcsGiftMsgStatus:(id)a0 statusInfo:(id)a1;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)handleGetOrderCgiResp:(id)a0;
+- (void)handleGetPresentOrderResponse:(id)a0 respGiftItem:(id)a1;
+- (void)openEcsGiftFromMsg:(id)a0 messageWrap:(id)a1 extraParam:(id)a2;
+- (void)OnGetNewXmlMsg:(id)a0 Type:(id)a1 MsgWrap:(id)a2;
+- (void)OnAddMsg:(id)a0 MsgWrap:(id)a1;
+- (void)OnDelMsg:(id)a0 MsgWrap:(id)a1;
+- (id)genSendGiftTicket;
+- (void)endSendGiftSessionWithTicket:(id)a0;
+- (void)updateSendGiftSessionRecipientUsername:(id)a0 ticket:(id)a1;
+- (id)getSendGiftSessionRecipientUsernameByTicket:(id)a0;
+- (void)updateSendGiftSessionRecipientMsgXml:(id)a0 ticket:(id)a1;
+- (id)getSendGiftSessionRecipientMsgXmlByTicket:(id)a0;
+- (void)updateSendGiftSessionChatroomUsername:(id)a0 ticket:(id)a1;
+- (id)getSendGiftSessionChatroomUsernameByTicket:(id)a0;
+- (BOOL)checkValidWithSendGiftTicket:(id)a0;
+- (BOOL)canEcsGiftMsgUpdate:(id)a0 newMsgWrap:(id)a1;
+- (void)openEcsGiftLotteryWithParams:(id)a0 params:(id)a1;
+- (void)openEcsGiftGivePreviewCoverPageWithParams:(id)a0 params:(id)a1;
+- (void)openEcsGiftGivePreviewCoverPageV2:(id)a0 params:(id)a1;
+- (void)ImageDidLoadWithData:(id)a0 Url:(id)a1;
+- (void)ImageDidFail:(id)a0;
+- (BOOL)enableShowGiftRedDigest;
+- (unsigned int)getEcsGiftRedLabelType:(id)a0;
+- (BOOL)isExclusiveReceiver:(id)a0;
+- (void).cxx_destruct;
+
+@end

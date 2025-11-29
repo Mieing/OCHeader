@@ -1,0 +1,3 @@
+@interface LinkmicCheckAnchorLinkersApiRoot : GPBRootObject
+
+@end

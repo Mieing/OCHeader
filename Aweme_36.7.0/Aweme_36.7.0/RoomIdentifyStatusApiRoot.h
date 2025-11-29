@@ -1,0 +1,3 @@
+@interface RoomIdentifyStatusApiRoot : GPBRootObject
+
+@end

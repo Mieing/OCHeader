@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CGPBusinessStreamControlClient : GPBMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *uid;
+
++ (id)descriptor;
+
+@end

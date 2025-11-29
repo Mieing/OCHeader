@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveMicroAppStartSyncData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *audienceStartMsg;
+@property (copy, nonatomic) NSString *anchorStartMsg;
+
++ (id)descriptor;
+
+@end

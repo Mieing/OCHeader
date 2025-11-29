@@ -1,0 +1,76 @@
+@class NSString, NSArray, CSJAdSlot, BUTimer, CSJNativeExpressAdView, CSJNativeExpressAdManager, NSDictionary, UIViewController, CSJAdClientBiddingHandle;
+@protocol CSJNativeExpressBannerViewDelegate;
+
+@interface CSJNativeExpressBannerView : CSJAdBaseView <CSJNativeExpressAdViewDelegate, CSJNativeExpressBannerOverseaDislikeViewDelegate, CSJMopubAdMarkUpDelegate, CSJAdClientBiddingProtocol>
+
+@property (retain, nonatomic) CSJAdSlot *slot;
+@property (copy, nonatomic) NSString *currentAdCreativeToken;
+@property (copy, nonatomic) NSArray *superScrollViewArray;
+@property (nonatomic) long long viewInScreenType;
+@property (nonatomic) long long currentCount;
+@property (weak, nonatomic) CSJNativeExpressAdView *currentBanner;
+@property (retain, nonatomic) CSJAdClientBiddingHandle *clientBiddingHandle;
+@property (nonatomic) BOOL didSetADM;
+@property (weak, nonatomic) UIViewController *rootViewController;
+@property (retain, nonatomic) CSJNativeExpressAdView *expressAdView;
+@property (retain, nonatomic) CSJNativeExpressAdView *anotherExpressAdView;
+@property (nonatomic) struct CGSize { double width; double height; } adSize;
+@property (nonatomic) long long interval;
+@property (retain, nonatomic) CSJNativeExpressAdManager *nativeExpressAdManager;
+@property (retain, nonatomic) CSJNativeExpressAdManager *anotherAdManager;
+@property (retain, nonatomic) BUTimer *timer;
+@property (nonatomic) long long playItems;
+@property (nonatomic) BOOL isCarousel;
+@property (copy, nonatomic) NSString *lastAdm;
+@property (nonatomic) long long realSlotRenderType;
+@property (weak, nonatomic) id<CSJNativeExpressBannerViewDelegate> delegate;
+@property (readonly, copy, nonatomic) NSDictionary *mediaExt;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)addNotifications;
+- (void)win:(id)a0;
+- (void)loss:(id)a0 lossReason:(id)a1 winBidder:(id)a2;
+- (void)nativeExpressAdSuccessToLoad:(id)a0 views:(id)a1;
+- (void)nativeExpressAdFailToLoad:(id)a0 error:(id)a1;
+- (void)nativeExpressAdViewRenderSuccess:(id)a0;
+- (void)nativeExpressAdViewRenderFail:(id)a0 error:(id)a1;
+- (void)nativeExpressAdViewWillShow:(id)a0;
+- (void)nativeExpressAdViewDidClick:(id)a0;
+- (void)nativeExpressAdView:(id)a0 dislikeWithReason:(id)a1;
+- (void)nativeExpressAdViewDidCloseOtherController:(id)a0 interactionType:(long long)a1;
+- (void)nativeExpressAdViewDidRemoved:(id)a0;
+- (void)setAdMarkup:(id)a0;
+- (id)biddingToken;
+- (void)loadAdData;
+- (id)getAdCreativeToken;
+- (id)initWithSlot:(id)a0 rootViewController:(id)a1 adSize:(struct CGSize { double x0; double x1; })a2;
+- (id)initWithSlotID:(id)a0 rootViewController:(id)a1 adSize:(struct CGSize { double x0; double x1; })a2;
+- (double)visibleAreaWithView;
+- (void)appWillBecomeActive;
+- (void)_loadAdDataByPublisher:(BOOL)a0;
+- (id)_currentMaterialMeta;
+- (void)replaceExpressAdView:(id)a0 isAnother:(BOOL)a1;
+- (void)clickAdLogoOnTheBannerofOverseaDislikeView:(id)a0;
+- (id)initWithSlotID:(id)a0 rootViewController:(id)a1 adSize:(struct CGSize { double x0; double x1; })a2 interval:(long long)a3;
+- (id)initWithSlot:(id)a0 rootViewController:(id)a1 adSize:(struct CGSize { double x0; double x1; })a2 interval:(long long)a3;
+- (void)addDislikeBannerView;
+- (void)addOverSeaDislikeViewOnSuperView:(id)a0;
+- (id)findSupperScrollViews:(id)a0;
+- (void)appStoreControllerDidAppear:(id)a0;
+- (void)appStoreControllerDidDisappear:(id)a0;
+- (void)tapAdLogo;
+- (void)stopTimer;
+- (void).cxx_destruct;
+- (BOOL)isMemberOfClass:(Class)a0;
+- (BOOL)isKindOfClass:(Class)a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (void)setPrice:(id)a0;
+- (void)tick:(id)a0;
+- (void)appWillResignActive;
+
+@end

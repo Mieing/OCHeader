@@ -1,0 +1,12 @@
+@class NSString, HTSLiveRoom;
+
+@interface FeedbackCard_RoomCardStruct : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveRoom *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+
++ (id)descriptor;
+
+@end

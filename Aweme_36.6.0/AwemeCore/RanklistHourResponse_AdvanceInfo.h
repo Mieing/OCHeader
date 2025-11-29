@@ -1,0 +1,11 @@
+@class RanklistHourResponse_AdvanceInfo_Detail;
+
+@interface RanklistHourResponse_AdvanceInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int mode;
+@property (retain, nonatomic) RanklistHourResponse_AdvanceInfo_Detail *detail;
+@property (nonatomic) BOOL hasDetail;
+
++ (id)descriptor;
+
+@end

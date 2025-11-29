@@ -1,0 +1,74 @@
+@class UIView, NSString, MMTimer, MMHeadImageView, UIImageView, UIButton, WCPayF2FDynamicCodeCgi, NSMutableArray, CgiF2FDynamicCodeResp, WCPayWebImageView, UILabel;
+@protocol WCPayF2FMiddleViewControllerDelegate;
+
+@interface WCPayF2FMiddleViewController : WCPayBaseViewController <WCActionSheetDelegate, WCPayF2FDynamicCodeCgiDelegate>
+
+@property (weak, nonatomic) id<WCPayF2FMiddleViewControllerDelegate> m_delegate;
+@property (retain, nonatomic) UIView *m_headerView;
+@property (retain, nonatomic) UIView *m_panelView;
+@property (retain, nonatomic) UIView *m_headWordingBackView;
+@property (retain, nonatomic) UILabel *m_headWordingView;
+@property (retain, nonatomic) UILabel *m_moneyTitleView;
+@property (retain, nonatomic) UILabel *m_moneyView;
+@property (retain, nonatomic) UIImageView *m_qrcodeView;
+@property (retain, nonatomic) MMHeadImageView *m_headImageView;
+@property (retain, nonatomic) WCPayWebImageView *m_webImageView;
+@property (retain, nonatomic) UIImageView *m_iconView;
+@property (retain, nonatomic) UIView *m_lineView;
+@property (retain, nonatomic) UIView *m_keyValueView;
+@property (retain, nonatomic) UIButton *m_buttonView;
+@property (retain, nonatomic) UIImageView *m_footerIconView;
+@property (retain, nonatomic) UILabel *m_footerWordingView;
+@property (retain, nonatomic) NSMutableArray *m_keyListView;
+@property (retain, nonatomic) NSMutableArray *m_valueListView;
+@property (retain, nonatomic) WCPayF2FDynamicCodeCgi *m_f2fDynamicCodeCgi;
+@property (retain, nonatomic) CgiF2FDynamicCodeResp *m_f2fDynamicCodeResp;
+@property (nonatomic) unsigned int m_amount;
+@property (retain, nonatomic) NSString *m_getDynamicCodeSign;
+@property (retain, nonatomic) NSString *m_getDynamicCodeExtend;
+@property (retain, nonatomic) NSString *m_dynamicCodeSpamWording;
+@property (retain, nonatomic) MMTimer *m_refreshTimer;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)updateData;
+- (void)viewDidLayoutSubviews;
+- (void)didReceiveMemoryWarning;
+- (void)updateNavigation;
+- (void)refreshDynamicData;
+- (void)setDelegate:(id)a0;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)updateView;
+- (void)updatePanelView;
+- (void)updateHeadWordingBackView;
+- (void)updateHeadWordingView;
+- (void)updateMoneyTitleView;
+- (void)updateMoneyView;
+- (void)adjustMoney;
+- (void)updateQrcodeView;
+- (void)updateHeadImageView;
+- (void)updateWebImageView;
+- (void)updateIconView;
+- (void)updateLineView;
+- (void)updateKeyValueView;
+- (void)updateButtonView;
+- (void)updateFooterIconView;
+- (void)updateFooterWordingView;
+- (void)adjustFooter;
+- (void)onWCPayF2FDynamicCodeCgi:(id)a0 resp:(id)a1;
+- (void)onWCPayF2FDynamicCodeCgi:(id)a0 netWorkError:(id)a1;
+- (void)reportWithAction:(unsigned long long)a0;
+- (void)timeToRefreshCode;
+- (void)onLongPress:(id)a0;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)leftBarButtonItemClick;
+- (void)closeView;
+- (void)onClickTransfer;
+- (void)callBackDelegate;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,15 @@
+@interface FlowKit.AppSettingViewModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ iconImageName;
+    void /* unknown type, empty encoding */ nameText;
+    void /* unknown type, empty encoding */ nameTextColor;
+    void /* unknown type, empty encoding */ detailText;
+    void /* unknown type, empty encoding */ rightText;
+    void /* unknown type, empty encoding */ switchState;
+    void /* unknown type, empty encoding */ webViewUrl;
+    void /* unknown type, empty encoding */ layoutMode;
+    void /* unknown type, empty encoding */ actionMode;
+    void /* unknown type, empty encoding */ selected;
+    void /* unknown type, empty encoding */ showUpgradeRedDot;
+}
+
+@end

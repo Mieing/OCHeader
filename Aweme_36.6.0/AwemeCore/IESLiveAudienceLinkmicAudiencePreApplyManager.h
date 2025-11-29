@@ -1,0 +1,77 @@
+@class HTSEventContext, NSString, IESLiveAudienceInteractPermissionChecker, NSArray, IESLiveAudienceInteractFastMatchPopUpView, HTSLiveInteractiveAPI, NSHashTable, UIView, NSMutableArray, NSNumber, IESLiveWaitingListUser, HTSLiveText;
+@protocol IESLiveRoomService, IESHYContainerProtocol, IESLiveDynamicActivityProvider;
+
+@interface IESLiveAudienceLinkmicAudiencePreApplyManager : NSObject <IESLiveAudienceInteractFastMatchPopUpViewDataSource, IESLiveAudienceInteractFastMatchPopUpViewDelegate, IESHYHybridViewLifecycleProtocol, IESLiveAudienceLinkMicAudiencePreApplyRouter>
+
+@property (nonatomic) long long currentStatus;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) HTSLiveInteractiveAPI *API;
+@property (retain, nonatomic) IESLiveAudienceInteractPermissionChecker *permissionChecker;
+@property (nonatomic) BOOL handlingPreapply;
+@property (nonatomic) BOOL loadingPreapplyList;
+@property (copy, nonatomic) NSString *preapplyListCursor;
+@property (readonly, nonatomic) long long preapplyListPageSize;
+@property (copy, nonatomic) NSArray *preapplyList;
+@property (nonatomic) BOOL isPreapplyListComplete;
+@property (nonatomic) long long preapplyingUserTotalCount;
+@property (retain, nonatomic) NSHashTable *delegates;
+@property (weak, nonatomic) IESLiveAudienceInteractFastMatchPopUpView *operationPanel;
+@property (retain, nonatomic) HTSLiveText *displayText;
+@property (copy, nonatomic) NSString *preApplyConnectSuccessRequestPage;
+@property (copy, nonatomic) NSString *preApplyConnectOverRequestPage;
+@property (retain, nonatomic) UIView<IESHYContainerProtocol> *lynxView;
+@property (retain, nonatomic) NSMutableArray *waitingList;
+@property (retain, nonatomic) NSMutableArray *paidWaitingList;
+@property (nonatomic) long long totalCount;
+@property (nonatomic) long long waitingListTotalCount;
+@property (nonatomic) long long paidWaitingListTotalCount;
+@property (nonatomic) int waitingListSortStrategy;
+@property (retain, nonatomic) IESLiveWaitingListUser *waitingUser;
+@property (retain, nonatomic) NSNumber *serverTime;
+@property (nonatomic) BOOL hasFetchWaitingList;
+@property (nonatomic) BOOL showPaidListTab;
+@property (nonatomic) BOOL selectedPaidListTab;
+@property (retain, nonatomic) id<IESLiveDynamicActivityProvider> activityProvider;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)switchPreapplyStatusWithDisplayText:(id)a0;
+- (void)checkApplyPermissionError:(id)a0 completion:(id /* block */)a1;
+- (void)hidePreapplyOperationPanel;
+- (void)popUpPreapplyOperationPanel;
+- (void)reloadPreapplyList;
+- (void)reloadPreapplyOperationPanel;
+- (void)cancelPreapplyWithRefreshPanelAfterCompletion:(BOOL)a0;
+- (void)incrementallyLoadPreapplyList;
+- (void)refreshWaitingListWithType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)fastMatchPopUpViewDidClickTopRightBtn:(id)a0;
+- (void)fastMatchPopUpViewDidClickMatchBtn:(id)a0;
+- (void)fastMatchPopUpViewClosePopupView:(id)a0;
+- (void)fastMatchPopUpViewNeedToJump:(id)a0;
+- (void)fastMatchPopUpViewSuccessPanelDidShow:(id)a0;
+- (void)fastMatchPopUpViewDidClickRematchBtn:(id)a0 type:(unsigned long long)a1;
+- (void)loadMoreWaitingListWithType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)preapplyWithRefreshPanelAfterCompletion:(BOOL)a0 requestPage:(id)a1;
+- (void)replyAnchorPreInvite:(BOOL)a0 requestPage:(id)a1;
+- (void)realPreapplyAfterCheckWithRefreshPanelAfterCompletion:(BOOL)a0 requestPage:(id)a1;
+- (void)checkAudioPermissionWithCompletion:(id /* block */)a0;
+- (void)sendPreApplyChangeEvent;
+- (void)popUpPreapplyLynxView;
+- (void)realreplyAnchorPreInvite:(BOOL)a0 requestPage:(id)a1;
+- (id)getAndRemovePreApplyConnectSuccessRequestPage;
+- (id)getAndRemovePreApplyConnectOverRequestPage;
+- (id)initWithRoom:(id)a0 DIContext:(id)a1 trackContext:(id)a2;
+- (void)handlePreInviteMessage:(id)a0;
+- (void)handleRemoveWaitingUser:(id)a0;
+- (id)getAndRemovePreApplyConnectSuccessParams;
+- (id)getAndRemovePreApplyConnectOverParams;
+- (void)addDelegate:(id)a0;
+- (void)removeDelegate:(id)a0;
+- (void).cxx_destruct;
+- (void)clean;
+
+@end

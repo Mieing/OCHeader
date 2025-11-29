@@ -1,0 +1,12 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveTeamPlayDebugEntranceMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *gamesArray;
+@property (readonly, nonatomic) unsigned long long gamesArray_Count;
+
++ (id)descriptor;
+
+@end

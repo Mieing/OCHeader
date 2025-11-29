@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicLinkmicChangeMultiPkTeamApiRoot : GPBRootObject
+
+@end

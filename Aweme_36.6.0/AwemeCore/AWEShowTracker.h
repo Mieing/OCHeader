@@ -1,0 +1,56 @@
+@interface AWEShowTracker : NSObject
+
++ (void)showTrackerWithEvent:(id)a0 model:(id)a1 withObject:(id)a2 customParams:(id)a3;
++ (id)showTrackerGetCommonParams:(id)a0 model:(id)a1 withObject:(id)a2 customParams:(id)a3;
++ (id)showTrackerGetCommonParamsForBillPageWithModel:(id)a0 withObject:(id)a1;
++ (id)showTrackerGetCommonParamsForBillPageWithModel:(id)a0 withObject:(id)a1 customParams:(id)a2;
++ (id)showTrackerGetMixCommonParams:(id)a0 mixInfo:(id)a1 withObject:(id)a2 customParams:(id)a3;
++ (id)showTrackerGetLongVideoCommonParams:(id)a0 longVideoInfo:(id)a1 withObject:(id)a2 customParams:(id)a3;
++ (id)showTrackerGetPlayletCommonParams:(id)a0 playletInfo:(id)a1 withObject:(id)a2 customParams:(id)a3;
++ (id)itemSuccessType:(id)a0;
++ (id)itemPanyType:(id)a0;
++ (id)contentPanyType:(id)a0;
++ (id)contentPanyTypeWithPlayletInfo:(id)a0;
++ (id)showTrackerServerLogExtraParams:(id)a0;
++ (id)recommendDistributeVideoInfoInFeed:(id)a0;
++ (id)playletAdParamsForSchema:(id)a0;
++ (id)showTrackerApplyTransmissionForEvent:(id)a0 Object:(id)a1;
++ (BOOL)isRoi3AdToM2:(id)a0;
++ (id)showTrackerPublicBaseCommonParamsWithEvent:(id)a0 withObject:(id)a1 customParams:(id)a2;
++ (id)showTrackerPublicModelCommonParamsWithModel:(id)a0;
++ (id)paramsForBeforeParamsWithModel:(id)a0 andBeforeParams:(id)a1;
++ (id)showTrackerPagePublicParams:(id)a0 event:(id)a1;
++ (id)showTrackerOnlyPageCommonParams:(id)a0;
++ (id)commonParamsForMix:(id)a0;
++ (id)showTrackerStackGeneralParams:(id)a0;
++ (id)commonParamsForLongVideo:(id)a0;
++ (id)commonParamsForPlaylet:(id)a0;
++ (id)showTrackerModelCommonParams:(id)a0;
++ (id)showTrackerModelPaidCommonParams:(id)a0;
++ (id)showTrackerPaidStreamCommonParams:(id)a0;
++ (id)showTrackerShowCommonParams:(id)a0;
++ (id)showTrackerRootListForGroupId;
++ (long long)paidStreamTypeForModel:(id)a0;
++ (id)showTrackerIAPPaidCommonParams:(id)a0;
++ (id)showTrackerIAAPaidCommonParams:(id)a0;
++ (id)showTrackerVIPPaidCommonParams:(id)a0;
++ (id)itemPanyStatus:(id)a0;
++ (unsigned long long)videoTypeForModel:(id)a0;
++ (id)commonParamsForVideo:(id)a0;
++ (id)paramsForApeParamsWithModel:(id)a0;
++ (id)paramsForFreeWatchWithModel:(id)a0;
++ (id)getAdUniversalParametersFromModel:(id)a0;
++ (id)paramsForBringGoodsWithModel:(id)a0 andCurrentParams:(id)a1 enterFrom:(id)a2;
++ (id)paramsForADWithLogExtraDic:(id)a0;
++ (id)paramsForUGWithLogExtraDic:(id)a0;
++ (id)paramsForRelatedPanelWithLogExtraDic:(id)a0;
++ (id)paramsForLongVideoRelatedPanelWithLogExtraDic:(id)a0;
++ (id)generalParamsForLongVideo:(id)a0;
++ (id)playletIaaFreeFeedParams:(id)a0;
++ (BOOL)hasIAAUnlockAbility:(id)a0;
++ (id)getPlayletSaleTypeCombinationWithIsIaa:(BOOL)a0 isIap:(BOOL)a1 isVip:(BOOL)a2 isAhead:(BOOL)a3;
++ (id)showTrackerCheckAlarmWithEnterFrom;
++ (void)showTrackerAllParamsCheckAlarm:(id)a0 event:(id)a1;
++ (id)showTrackerCheckAlarmWithEvent;
+
+@end

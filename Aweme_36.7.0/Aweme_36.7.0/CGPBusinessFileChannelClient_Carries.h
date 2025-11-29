@@ -1,0 +1,13 @@
+@class NSString, GPBInt64Value;
+
+@interface CGPBusinessFileChannelClient_Carries : GPBMessage
+
+@property (copy, nonatomic) NSString *folder;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *md5;
+@property (retain, nonatomic) GPBInt64Value *expires;
+@property (nonatomic) BOOL hasExpires;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,76 @@
+@class EmoticonRecommendBoardCgi, NSString, CADisplayLink, NSArray, UICollectionViewFlowLayout, EmoticonSearchInMessagePanelReporter, EmoticonSearchBoardView, UITableView, EmoticonPreviewWindowViewController;
+@protocol EmoticonSearchHalfScreenViewControllerDelegate;
+
+@interface EmoticonSearchHalfScreenViewController : MMUIHalfScreenViewController <EmoticonSearchBoardViewDelegate, EmoticonPreviewWindowViewControllerDelegate, EmoticonRecommendBoardCgiDelegate, WSSimilarEmoticonListViewControllerDelegate>
+
+@property (retain, nonatomic) NSString *currentText;
+@property (retain, nonatomic) NSString *chatId;
+@property (retain, nonatomic) UICollectionViewFlowLayout *collectionLayout;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (retain, nonatomic) NSArray *localSearchWraps;
+@property (retain, nonatomic) NSArray *svrSearchWraps;
+@property (retain, nonatomic) EmoticonRecommendBoardCgi *recommendBoardCgi;
+@property (retain, nonatomic) NSString *currentRequestText;
+@property (retain, nonatomic) EmoticonSearchBoardView *boardView;
+@property (retain, nonatomic) EmoticonPreviewWindowViewController *emoticonPreview;
+@property (nonatomic) BOOL hasAddObserver;
+@property (nonatomic) BOOL hasAddMsgTableViewObserver;
+@property (nonatomic) BOOL isSearchWithRecentQuery;
+@property (retain, nonatomic) UITableView *observedMsgTableView;
+@property (copy, nonatomic) id /* block */ presentAnimateBlock;
+@property (copy, nonatomic) id /* block */ dismissAnimateBlock;
+@property (nonatomic) int animationMode;
+@property (retain, nonatomic) EmoticonSearchInMessagePanelReporter *reporter;
+@property (weak, nonatomic) id<EmoticonSearchHalfScreenViewControllerDelegate> delegate;
+@property (nonatomic) double standardHeight;
+@property (nonatomic) unsigned int sourceScene;
+@property (readonly, nonatomic) BOOL needResetPresentedViewFrame;
+@property (nonatomic) BOOL disableWebSearch;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (id)initWithCurrentTextAndCid:(id)a0 chatId:(id)a1;
+- (void)initNotificationObservers;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewDidBePresented:(BOOL)a0;
+- (void)viewWillBeDismissed:(BOOL)a0;
+- (void)touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)configData;
+- (void)configSvrData;
+- (void)configBoardView;
+- (void)hideKeyboardOnSearchWithRecentQuery;
+- (void)makeSearchBarBecomeFirstResponder;
+- (BOOL)isAnimationFollowKeyboard;
+- (void)setupAnimateTransitionBlocks;
+- (void)invalidateDisplayLink;
+- (void)onContentViewTopChanged:(id)a0;
+- (double)animateContentViewTop;
+- (void)onFinishPreviewAndChangeToPid:(id)a0;
+- (void)onShouldShowEmoticonDetailPage:(id)a0;
+- (void)onEmoticonRecommendBoardCgiOk:(id)a0 recommendWraps:(id)a1;
+- (void)onEmoticonRecommendBoardCgiFailed:(id)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)onSelectEmoticon:(id)a0;
+- (void)onSendEmoticonWithEmoticonWrap:(id)a0;
+- (void)dismissAfterSend;
+- (void)removeMsgTableViewObserver;
+- (BOOL)isMsgTableScrollToBottom;
+- (void)onSearchBarSearchEmoticonWithText:(id)a0;
+- (void)resetRecommendBoardRequest;
+- (void)onSearchBarCancelButtonClicked;
+- (void)onSearchEmoticonLongPressToPreview:(id)a0 description:(id)a1 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2 index:(unsigned long long)a3;
+- (void)onClickPurchaseTipButton:(long long)a0 chooseEmoticonWrap:(id)a1;
+- (void)onClickWSSButtton:(id)a0;
+- (void)onClickEmotionStore;
+- (void)onExposure:(id)a0 bottomIndex:(unsigned long long)a1;
+- (void)keyboardWillShow:(id)a0;
+- (void)setuphalfScreenViewAnimationForPresentedBlockDefault;
+- (void)setuphalfScreenViewAnimationForPresentedBlockFollowKeyboard;
+- (void).cxx_destruct;
+
+@end

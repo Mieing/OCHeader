@@ -1,0 +1,84 @@
+@class NSString, NSMutableDictionary, NSDictionary, IESLivePaidStreamParameterCreator, IESLivePaidStreamInteractionAuther, IESLivePaidStreamPaidPanelManager, IESLivePaidStreamTrack, IESLiveGCDTimer;
+
+@interface IESLivePaidStreamControlFragment : IESLiveRoomComponent <IESLivePaidStreamControlProvider, IESLivePaidStreamPlugin, IESLivePaidStreamSecurityDelegate, HTSLiveStreamPlayerAction, HTSLiveMessageSubscriber, HTSLiveAudienceActions>
+
+@property (nonatomic, getter=isStreamDidStall) BOOL streamDidStall;
+@property (retain, nonatomic) NSMutableDictionary *paidStreamCreators;
+@property (retain, nonatomic) NSDictionary *paidStreams;
+@property (retain, nonatomic) IESLivePaidStreamInteractionAuther *interactionAuther;
+@property (retain, nonatomic) IESLivePaidStreamParameterCreator *parameterCreator;
+@property (retain, nonatomic) IESLivePaidStreamPaidPanelManager *paidPanelManager;
+@property (retain, nonatomic) IESLiveGCDTimer *backgroundTimer;
+@property (nonatomic) unsigned long long backgroundTimeIntervalAfterFreeTrialFinished;
+@property (nonatomic) BOOL isBackground;
+@property (retain, nonatomic) IESLivePaidStreamTrack *paidStreamTrack;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentUnmount;
+- (BOOL)inTrial;
+- (BOOL)inTrialFinish;
+- (id)verifyInteractionAuthDisabled:(unsigned long long)a0;
+- (void)openPaidPanel:(unsigned long long)a0 source:(unsigned long long)a1 extraURLParams:(id)a2 paidObject:(id)a3;
+- (void)paidStreamDidStop:(id)a0;
+- (void)paidStreamDidClose:(id)a0;
+- (void)paidStreamTrialDidStart:(id)a0;
+- (void)paidStream:(id)a0 trialRemainingTimeDidChange:(double)a1;
+- (void)paidStream:(id)a0 didFinishTrialWithReason:(unsigned long long)a1;
+- (void)paidStream:(id)a0 willDisplayForBlockType:(unsigned long long)a1;
+- (void)paidStream:(id)a0 didEndDisplayForBlockType:(unsigned long long)a1;
+- (void)paidStream:(id)a0 actionForBlockType:(unsigned long long)a1 completionHandler:(id /* block */)a2;
+- (void)paidStreamDidEndDisplayGrabFreeView:(id)a0;
+- (void)paidStream:(id)a0 grabFreeSucceed:(BOOL)a1;
+- (void)liveWillEndWithReason:(unsigned long long)a0;
+- (void)liveDidEnterBackground;
+- (void)liveWillEnterForground;
+- (void)paidStream:(id)a0 didChangeAuthRetType:(unsigned long long)a1 reason:(unsigned long long)a2;
+- (void)paidStream:(id)a0 didChangeAuthPromiseType:(unsigned long long)a1 reason:(unsigned long long)a2;
+- (void)handlePaidLiveTypeModifyMessage:(id)a0;
+- (BOOL)hasRet;
+- (BOOL)hasPromised;
+- (BOOL)inScreenCaptured;
+- (void)onStreamPause;
+- (BOOL)paidStreamShouldActiveScreenCaptured:(id)a0;
+- (BOOL)paidStreamShouldActiveTakeScreenshot:(id)a0;
+- (void)streamPlayerDidReadyToRender;
+- (void)onStreamStop;
+- (void)playerDidStall;
+- (void)playerDidResume;
+- (void)onCameraWillChangeTo:(id)a0 source:(long long)a1;
+- (void)onCameraDidChangeTo:(id)a0 source:(long long)a1;
+- (void)installPaidBlockView:(unsigned long long)a0;
+- (double)trialFinishStayDuration;
+- (double)promiseStayDuration;
+- (id)findHighPriorityPaidStream;
+- (BOOL)hasPaidStream;
+- (BOOL)hasPaidStreamForPaidScene:(long long)a0;
+- (BOOL)inTrialForPaidScene:(long long)a0;
+- (double)trialedTime;
+- (double)trialedTimeForPaidScene:(long long)a0;
+- (BOOL)inTrialFinishForPaidScene:(long long)a0;
+- (BOOL)hasRetForPaidScene:(long long)a0;
+- (BOOL)hasPromisedForPaidScene:(long long)a0;
+- (double)trialFinishStayDurationWithoutBackground;
+- (double)promiseStayDurationWithoutBackground;
+- (id)verifyInteractionAuthDisabled:(unsigned long long)a0 openPaidPanelWhenDisabled:(BOOL)a1;
+- (void)openPaidPanelWithSchema:(id)a0 source:(unsigned long long)a1 extraURLParams:(id)a2;
+- (void)openPaidPanel:(unsigned long long)a0 extraURLParams:(id)a1;
+- (void)configPaidStreamCreators:(id)a0;
+- (id)createPaidStreamForCreator:(id)a0 launchSource:(unsigned long long)a1 paidObject:(id)a2 reason:(unsigned long long)a3;
+- (void)openPaidPanel:(unsigned long long)a0 extraURLParams:(id)a1 paidStream:(id)a2;
+- (unsigned long long)getEntranceTypeWithSource:(unsigned long long)a0;
+- (void)trackBuyTicketModuleClick:(unsigned long long)a0 extraParams:(id)a1;
+- (void)verifyInteractionRoomStatusBeforeOpenPaidPanel:(id /* block */)a0;
+- (void).cxx_destruct;
+- (void)messageReceived:(id)a0;
+
+@end

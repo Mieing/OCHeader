@@ -1,0 +1,10 @@
+@class GetEcomLiveRoomProductsResponse_EcomLiveRoomProductsInfo;
+
+@interface GetEcomLiveRoomProductsResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetEcomLiveRoomProductsResponse_EcomLiveRoomProductsInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

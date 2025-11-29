@@ -1,0 +1,3 @@
+@interface LVVELocalVideoEffectDiffer : LVVEAdjustDiffer
+
+@end

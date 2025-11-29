@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentHashtagElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

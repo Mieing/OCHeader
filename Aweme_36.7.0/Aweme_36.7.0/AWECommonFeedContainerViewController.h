@@ -1,0 +1,72 @@
+@class AWECommonFeedAutoPlayHandler, NSDictionary, NSString, NSObject, UIViewController;
+@protocol AWECommonFeedConfigProtocol, AWEAwemeDetailTableViewControllerProtocol;
+
+@interface AWECommonFeedContainerViewController : AWEBaseListViewController <AWEModernFullscreenTransitionOuterContextProvider, AWEZoomTransitionOuterContextProvider, UIScrollViewDelegate, AWECommonFeedContainerProtocol, AWECommonFeedAutoPlayContainerProtocol>
+
+@property (readonly, nonatomic) NSDictionary *zoomTransitionContext;
+@property (retain, nonatomic) AWECommonFeedAutoPlayHandler *autoPlayHandler;
+@property (retain, nonatomic) NSObject<AWECommonFeedConfigProtocol> *configManager;
+@property (nonatomic) BOOL isAppearing;
+@property (nonatomic) struct CGPoint { double x; double y; } savedFeedContentOffset;
+@property (nonatomic) double lastContentOffset;
+@property (nonatomic) BOOL invalidatePageAutoPlayControl;
+@property (retain, nonatomic) UIViewController<AWEAwemeDetailTableViewControllerProtocol> *detailVC;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)referString;
+- (id)zoomTransitionStartViewForOffset:(long long)a0;
+- (id)liveTransitionContext;
+- (void)listWillPerformBatchUpdatesWithCollectionView:(id)a0;
+- (void)listDidPerformBatchUpdatesWithCollectionView:(id)a0;
+- (id)modernTransitionContext;
+- (BOOL)disableSyncReferString;
+- (void)customLayoutCollectionView:(id)a0;
+- (id)layoutForCollectionView;
+- (id)sectionControllerClassArray;
+- (void)dataSourceDidCreateSectionController:(id)a0 forSectionViewModel:(id)a1;
+- (BOOL)disableContentOffsetRestorationAnchor;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (BOOL)shouldModernTransitionUpdatePlayerControllerWithFromContext:(id)a0;
+- (long long)preferScaleMode;
+- (void)windowDidResignKeyNotification:(id)a0;
+- (void)windowDidBecomeKeyNotification:(id)a0;
+- (id)feedScrollView;
+- (id)scrollProxy;
+- (id)initWithConfigManager:(id)a0;
+- (BOOL)enableCommonFeedNewCollectionLayout;
+- (void)playVideoIfActive;
+- (id)sectionBindedData;
+- (void)setScrollViewContentOffset:(struct CGPoint { double x0; double x1; })a0 animated:(BOOL)a1;
+- (void)reloadSectionController:(id)a0 supplementaryViewNeedReload:(BOOL)a1 animated:(BOOL)a2 needReloadAutoPlay:(BOOL)a3;
+- (void)videoPlayerStartPlay;
+- (void)scrollToDisplayItemAtIndex:(long long)a0 offset:(double)a1 animated:(BOOL)a2;
+- (void)videoSinglePlayed:(long long)a0 withCardModel:(id)a1 awemeModel:(id)a2 isFromDetail:(BOOL)a3;
+- (BOOL)enableFixCommonFeedContentOffsetRestorationAnchor;
+- (void)autoPlayHandlerNeedRecalculateToActiveNeedReset:(BOOL)a0;
+- (void)scrollToDisplayItemAtIndex:(long long)a0 animated:(BOOL)a1;
+- (void)insertCardModels:(id)a0 atIndexes:(id)a1 animated:(BOOL)a2;
+- (void)replaceCardModels:(id)a0;
+- (void)updateByCardModels:(id)a0;
+- (void)appendCardModels:(id)a0;
+- (void)removeCardModels:(id)a0;
+- (void)removeCardModels:(id)a0 animation:(BOOL)a1;
+- (void)insertCardModel:(id)a0 atIndex:(long long)a1;
+- (void)insertCardModels:(id)a0 atIndexes:(id)a1;
+- (void).cxx_destruct;
+- (void)applicationDidBecomeActive;
+- (id)init;
+- (void)applicationWillResignActive;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (BOOL)isActive;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupCollectionView:(id)a0;
+- (void)addObservers;
+- (void)pauseVideo;
+- (id)visibleSections;
+
+@end

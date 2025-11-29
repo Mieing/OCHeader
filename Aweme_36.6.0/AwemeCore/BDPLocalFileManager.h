@@ -1,0 +1,96 @@
+@class NSString, NSLock;
+
+@interface BDPLocalFileManager : NSObject <BDPBusinessUpdateHandlerProtocol>
+
+@property (class, readonly, nonatomic) NSString *appFileUserPrefix;
+
+@property (copy) NSString *bdpFolerPath;
+@property (copy) NSString *bdpAppFolderPath;
+@property (copy) NSString *tempFolderPath;
+@property (copy) NSString *offlineFolderPath;
+@property (copy) NSString *resourceFolderPath;
+@property (copy) NSString *cacheFolderPath;
+@property (copy) NSString *appsFolderPath;
+@property (copy) NSString *spAppsFolderPath;
+@property (copy) NSString *odrsFolderPath;
+@property (copy) NSString *appsSandboxPath;
+@property (copy) NSString *templateFolderPath;
+@property (copy) NSString *unisusFolderPath;
+@property (copy) NSString *tmaClientAIPath;
+@property (copy) NSString *tmaClientAIRegulusCommonPath;
+@property (copy) NSString *userStoragePath;
+@property (copy) NSString *logFolderPath;
+@property (copy) NSString *feForeverStorageFolderPath;
+@property (copy) NSString *feUserStorageFolderPath;
+@property (copy) NSString *pluginsFolderPath;
+@property (copy, nonatomic) NSString *oldTmgFolerPath;
+@property (copy, nonatomic) NSString *internalBundleFolderPath;
+@property (copy) NSString *remoteDebugDownloadDir;
+@property (nonatomic) BOOL enableUserStorageMoved;
+@property (nonatomic) BOOL hasUserStorageMoved;
+@property (retain, nonatomic) NSLock *userStorageMovedLock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (long long)sizeWithPath:(id)a0;
++ (id)readDataFromFilePath:(id)a0 withRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
++ (void)updateRelativeDataIfNeed;
++ (void)bootstrapLaunch;
++ (BOOL)createFolderIfNeed:(id)a0;
++ (BOOL)removeFolderIfNeed:(id)a0;
++ (void)clearSharedInstance;
++ (void)removeUnUsedSPFiles;
++ (id)getAllAppSymbolicLinkLOriginFileList;
++ (id)offlineFolderName;
++ (BOOL)createFileWithCheckFolder:(id)a0 fileName:(id)a1;
++ (id)getExistPkgPathWithName:(id)a0 appID:(id)a1;
++ (long long)folderSizeAtPath:(id)a0;
++ (id)sharedInstance;
++ (BOOL)moveItemAtPath:(id)a0 toPath:(id)a1 error:(id *)a2;
++ (BOOL)createSymbolicLinkAtPath:(id)a0 withDestinationPath:(id)a1;
+
+- (id)oldAppBasicPathWithId:(id)a0;
+- (void)cleanLogCacheWithAppID:(id)a0;
+- (void)cleanAllAppCacheExceptAppIds:(id)a0;
+- (id)appBasicPathWithID:(id)a0;
+- (id)appStorageFilePathWithID:(id)a0;
+- (id)appStorageMMKVPathWithID:(id)a0;
+- (id)appSandboxPathWithID:(id)a0;
+- (id)templatePluginPkgPathWithPluginID:(id)a0 version:(id)a1;
+- (id)templatePluginPkgPathWithPluginID:(id)a0 version:(id)a1 name:(id)a2;
+- (id)JSLibPath;
+- (void)cleanAllUserTempExceptAppIds:(id)a0;
+- (void)cleanAllUserCacheExceptAppIds:(id)a0;
+- (void)cleanAppsSandboxExceptAppIds:(id)a0;
+- (void)moveUserStorageIfNeedWithCompletion:(id /* block */)a0;
+- (long long)calculateAllAppCacheSizeExceptAppIds:(id)a0;
+- (long long)calculateAllAppSandboxSizeExceptAppIds:(id)a0;
+- (id)logFolderPathWithAppID:(id)a0;
+- (id)appPkgPathWithID:(id)a0 versionMark:(id)a1 name:(id)a2;
+- (id)userStorageParentPath;
+- (void)moveUserStorageIfNeed;
+- (BOOL)moveOldUserStorage:(id)a0 isMmkvPath:(BOOL)a1 appID:(id)a2;
+- (id)appPkgDirPathWithID:(id)a0 versionMark:(id)a1;
+- (id)appFilePathWithPrefix:(id)a0 name:(id)a1;
+- (id)appPkgRoomWithAppId:(id)a0 versionMark:(id)a1 suffix:(id)a2;
+- (id)templatePluginPkgPathWithPluginID:(id)a0;
+- (id)newUserStoragePathWithID:(id)a0;
+- (void)cleanLogCache;
+- (id)appTempPathWithID:(id)a0;
+- (id)appListCachePathWithUserID:(id)a0;
+- (id)appFileInPkgRoomWithAppId:(id)a0 versionMark:(id)a1 suffix:(id)a2 filename:(id)a3;
+- (id)pluginPkgPathWithPluginID:(id)a0;
+- (id)oldAppSandboxPathWithID:(id)a0;
+- (id)oldAppStorageFilePathWithID:(id)a0;
+- (id)cookieFilePathWithID:(id)a0;
+- (id)cookieMMKVPathWithID:(id)a0;
+- (void)cleanPluginsWithSizeLimit:(unsigned long long)a0;
+- (BOOL)cleanAllUserCacheWithAppId:(id)a0;
+- (void)restoreToOriginalState;
+- (void)restoreToOriginalStateExceptAppFolder;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

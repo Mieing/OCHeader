@@ -1,0 +1,39 @@
+@class NSString, HMDCrashLoadModel, NSURL, HMDCrashLoadMeta_new, HMDCrashLoadBackgroundSession, HMDCrashLoadReport, NSURLComponents, NSMutableArray, NSFileManager, HMDCrashLoadProfile;
+
+@interface HMDCLoadContext_new : NSObject {
+    struct HMDCLoadOption { struct { unsigned long long mask; } optionStatus; struct { BOOL enable; char *host; char *appID; BOOL keepLoadCrash; unsigned int keepLoadCrashIncludePreviousCrashCount; BOOL crashTrackerProcessFailed; } uploadOption; struct { BOOL dropCrashIfProcessFailed; } directoryOption; struct { BOOL lastTimeCrash; BOOL lastTimeLoadCrash; BOOL pendingCrashExist; BOOL trackerProcessFailedExist; BOOL loadProcessFailedExist; } urgentStatus; struct { unsigned int moveTrackerProcessFailedCount; unsigned int dropCrashIfProcessFailedCount; unsigned int processCrashFailedCount; } failureStatus; struct { struct { double beginTime; double endTime; } launch; struct { double beginTime; double endTime; } prepare; struct { double beginTime; double endTime; } directory; struct { double beginTime; double endTime; } environment; struct { double beginTime; double endTime; } detection; struct { double beginTime; double endTime; } process; struct { double beginTime; double endTime; } upload; struct { double beginTime; double endTime; } sync; struct { double beginTime; double endTime; } finish; struct { double beginTime; double endTime; } report; } timeProfile; struct { BOOL enableMirror; char *channel; unsigned int channelPriority; char *appName; unsigned int appNamePriority; char *installID; unsigned int installIDPriority; char *deviceID; unsigned int deviceIDPriority; char *userID; unsigned int userIDPriority; char *scopedDeviceID; unsigned int scopedDeviceIDPriority; char *scopedUserID; unsigned int scopedUserIDPriority; } userProfile; struct { struct __CFDictionary *headerField; struct __CFDictionary *queryItems; } URLComponent; struct { BOOL accurateAppInfo; } ABSwitch; } _option;
+    NSFileManager *_manager;
+    NSString *_trackerLastTime;
+    NSString *_trackerActive;
+    NSString *_trackerProcessing;
+    NSString *_loadSafeGuard;
+    NSString *_loadPending;
+    NSString *_loadProcessing;
+    NSString *_loadPrepared;
+    NSString *_loadMirror;
+    NSString *_UUID;
+    NSString *_currentDirectory;
+    HMDCrashLoadMeta_new *_currentMeta;
+    HMDCrashLoadMeta_new *_crashMeta;
+    HMDCrashLoadModel *_model;
+    NSString *_processPath;
+    NSString *_processUUID;
+    NSURLComponents *_URLComponents;
+    NSMutableArray *_queryItems;
+    HMDCrashLoadBackgroundSession *_session;
+    NSURL *_uploadingURL;
+    NSString *_uploadingPath;
+    NSString *_uploadingName;
+    HMDCrashLoadProfile *_profile;
+    HMDCrashLoadProfile *_mirrorProfile;
+    HMDCrashLoadProfile *_userProfile;
+    HMDCrashLoadReport *_report;
+}
+
++ (id)contextWithOption:(struct HMDCLoadOption { struct { unsigned long long x0; } x0; struct { BOOL x0; char *x1; char *x2; BOOL x3; unsigned int x4; BOOL x5; } x1; struct { BOOL x0; } x2; struct { BOOL x0; BOOL x1; BOOL x2; BOOL x3; BOOL x4; } x3; struct { unsigned int x0; unsigned int x1; unsigned int x2; } x4; struct { struct { double x0; double x1; } x0; struct { double x0; double x1; } x1; struct { double x0; double x1; } x2; struct { double x0; double x1; } x3; struct { double x0; double x1; } x4; struct { double x0; double x1; } x5; struct { double x0; double x1; } x6; struct { double x0; double x1; } x7; struct { double x0; double x1; } x8; struct { double x0; double x1; } x9; } x5; struct { BOOL x0; char *x1; unsigned int x2; char *x3; unsigned int x4; char *x5; unsigned int x6; char *x7; unsigned int x8; char *x9; unsigned int x10; char *x11; unsigned int x12; char *x13; unsigned int x14; } x6; struct { struct __CFDictionary *x0; struct __CFDictionary *x1; } x7; struct { BOOL x0; } x8; } *)a0;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)initWithOption:(struct HMDCLoadOption { struct { unsigned long long x0; } x0; struct { BOOL x0; char *x1; char *x2; BOOL x3; unsigned int x4; BOOL x5; } x1; struct { BOOL x0; } x2; struct { BOOL x0; BOOL x1; BOOL x2; BOOL x3; BOOL x4; } x3; struct { unsigned int x0; unsigned int x1; unsigned int x2; } x4; struct { struct { double x0; double x1; } x0; struct { double x0; double x1; } x1; struct { double x0; double x1; } x2; struct { double x0; double x1; } x3; struct { double x0; double x1; } x4; struct { double x0; double x1; } x5; struct { double x0; double x1; } x6; struct { double x0; double x1; } x7; struct { double x0; double x1; } x8; struct { double x0; double x1; } x9; } x5; struct { BOOL x0; char *x1; unsigned int x2; char *x3; unsigned int x4; char *x5; unsigned int x6; char *x7; unsigned int x8; char *x9; unsigned int x10; char *x11; unsigned int x12; char *x13; unsigned int x14; } x6; struct { struct __CFDictionary *x0; struct __CFDictionary *x1; } x7; struct { BOOL x0; } x8; } *)a0;
+
+@end

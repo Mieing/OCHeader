@@ -1,0 +1,3 @@
+@interface LinkmicPermitApiRoot : GPBRootObject
+
+@end

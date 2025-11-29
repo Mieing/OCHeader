@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveLinkMicProfitGetTeamfightConfResponse_ScoreType : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *intro;
+
++ (id)descriptor;
+
+@end

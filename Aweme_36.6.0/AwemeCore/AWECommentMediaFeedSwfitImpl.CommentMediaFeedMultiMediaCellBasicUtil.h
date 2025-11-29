@@ -1,0 +1,3 @@
+@interface AWECommentMediaFeedSwfitImpl.CommentMediaFeedMultiMediaCellBasicUtil : _TtCs12_SwiftObject
+
+@end

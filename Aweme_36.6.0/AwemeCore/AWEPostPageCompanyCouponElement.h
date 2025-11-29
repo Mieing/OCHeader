@@ -1,0 +1,80 @@
+@class NSArray, NSDictionary, NSString, AWENewPublishCompanyCouponTableCell;
+
+@interface AWEPostPageCompanyCouponElement : AWEPostPageAnchorCheckCellElement <AWECommerceAnchorMessageProtocol, AWEPostPageAnchorProtocol>
+
+@property (retain, nonatomic) AWENewPublishCompanyCouponTableCell *companyCouponTableViewCell;
+@property (nonatomic) BOOL isFromLocalLifeMissionInfo;
+@property (nonatomic) BOOL isRepeatShowVisible;
+@property (copy, nonatomic) NSArray *originalAnchorIconList;
+@property (copy, nonatomic) NSDictionary *reeditContentInfo;
+@property (nonatomic) BOOL isAlreadyPublishTradeAnchor;
+@property (nonatomic) long long reeditSourceType;
+@property (nonatomic) BOOL isSetupCell;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy, nonatomic) NSDictionary *extras;
+
++ (void)_aweLazyRegisterPostPage;
++ (id)type;
+
+- (id)poiService;
+- (void)elementAppear;
+- (id)anchorService;
+- (void)setLocalLifeAnchorPublishPunishCanShow:(BOOL)a0;
+- (void)didSelectAnchorWithType:(long long)a0 anchorDismissBlock:(id /* block */)a1 enterFromType:(long long)a2;
+- (id)aggregateService;
+- (BOOL)enableGameAndCompanyCouponLogicOp;
+- (id)companyCouponService;
+- (id)localLife;
+- (id)companyToolService;
+- (BOOL)enableAnchorsCheckLogicOp;
+- (void)p_addBindSignObserver;
+- (void)p_addCompanyCouponObserver;
+- (void)setupUIForAnchor;
+- (void)p_trackUIShowForCompanyCoupon;
+- (BOOL)reEditDisenableSelectNewCompanyCoupon;
+- (void)setupCell:(id)a0;
+- (void)trackCompanyCouponRemindViewEvent;
+- (void)clickCompanyToolsEvent;
+- (id)p_currentLocalLifeAnchorInfoModel;
+- (id)reeditRouterURLWithSchema:(id)a0;
+- (id)p_jumpToDetailPageWithSchema:(id)a0 isAutoJump:(BOOL)a1;
+- (BOOL)anchor:(id)a0 shouldSelectAnchorWithType:(long long)a1;
+- (void)updateCompanyCouponWithJSON:(id)a0;
+- (BOOL)hasLocalLifeAnchor;
+- (void)companyCouponJSBResultNotification:(id)a0;
+- (void)companyCouponAddAnchorJSBNotification:(id)a0;
+- (id)p_getTopSpuIdParamsDict;
+- (void)p_jumpToTitleEditPageFromLifeTask;
+- (id)adaptJsonFromMicroApp:(id)a0;
+- (void)p_reeditContent;
+- (id)repoTrackInfo;
+- (id)poiTradeAnchorIcon;
+- (long long)p_currentLocalLifeAnchorType;
+- (void)p_checkoutIsLocalLifeMissionWithDict:(id)a0;
+- (void)p_trackCompanyCouponAnchorChosenWithParams:(id)a0;
+- (id)reeditAnchorContentHandleWithOriginContent:(id)a0;
+- (void)p_assemblePublishParamsWithDict:(id)a0;
+- (void)configPlaceholderUI;
+- (void)clearCompanyCouponData;
+- (void)addReminViewWithModel:(id)a0 cell:(id)a1;
+- (void)refreshWithAnchorVM:(id)a0;
+- (BOOL)canHandleAnchorType:(long long)a0;
+- (BOOL)forceReceiveEvents;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning;
+- (void)viewDidLayoutSubviews;
+- (BOOL)isVisible;
+- (BOOL)isEnabled;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)cleanUp;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (id)cell;
+- (void)didSelect;
+
+@end

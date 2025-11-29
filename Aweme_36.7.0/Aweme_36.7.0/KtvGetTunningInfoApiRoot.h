@@ -1,0 +1,3 @@
+@interface KtvGetTunningInfoApiRoot : GPBRootObject
+
+@end

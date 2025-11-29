@@ -1,0 +1,14 @@
+@class HTSLiveImage;
+
+@interface HTSLiveAnchorGuide : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *text;
+@property (nonatomic) BOOL hasText;
+@property (retain, nonatomic) HTSLiveImage *picture;
+@property (nonatomic) BOOL hasPicture;
+@property (nonatomic) int maxTextDisplayNum;
+@property (nonatomic) int maxPictureDisplayNum;
+
++ (id)descriptor;
+
+@end

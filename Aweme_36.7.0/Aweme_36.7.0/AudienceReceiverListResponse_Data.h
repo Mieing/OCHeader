@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface AudienceReceiverListResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *audienceReceiverListArray;
+@property (readonly, nonatomic) unsigned long long audienceReceiverListArray_Count;
+
++ (id)descriptor;
+
+@end

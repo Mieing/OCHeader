@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESLiveGameCooperationPartnerGlobalModule : IESLiveModule <IESLiveGameCooperationPartnerGlobalModule>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)executeLaunchTask;
+- (id)schemaParserInterface;
+
+@end

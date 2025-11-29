@@ -1,0 +1,13 @@
+@class NSString, HTSLiveLinkInfo;
+
+@interface HTSLiveNews : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) long long updateTimeMs;
+@property (retain, nonatomic) HTSLiveLinkInfo *linkInfo;
+@property (nonatomic) BOOL hasLinkInfo;
+@property (copy, nonatomic) NSString *uniqueId;
+
++ (id)descriptor;
+
+@end

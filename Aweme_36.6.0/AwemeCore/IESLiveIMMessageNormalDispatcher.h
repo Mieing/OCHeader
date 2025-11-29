@@ -1,0 +1,74 @@
+@class NSTimer, NSString, IESLiveIMRoomMessageCache, NSHashTable, IESLiveMessageProcesser, NSMutableDictionary, IESLiveIMReplayManager, NSSet, NSObject, IESLiveIMBizDispatchConfig;
+@protocol IESLiveIMMessageReciever, IESLiveDataSyncService, IESLiveIMMessageFilter, OS_dispatch_queue;
+
+@interface IESLiveIMMessageNormalDispatcher : NSObject <IESLiveMessageProcessOutput, IESLiveIMMessageReciever, IESLiveIMMessageDispatchProvider, IESLiveIMPreprocesserProvider>
+
+@property (retain, nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL messageDispatchStarted;
+@property (retain, nonatomic) IESLiveMessageProcesser *preprocessor;
+@property (nonatomic) BOOL needCache;
+@property (nonatomic) double dispatchInterval;
+@property (nonatomic) long long dispatchCount;
+@property (copy, nonatomic) NSString *processQueueLabel;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *messageProcessQueue;
+@property (retain, nonatomic) IESLiveIMRoomMessageCache *messageCache;
+@property (retain, nonatomic) NSHashTable *subscribersForAll;
+@property (retain, nonatomic) NSMutableDictionary *subscriberDic;
+@property (nonatomic) double seiTime;
+@property (nonatomic) double seiReceiveTime;
+@property (retain, nonatomic) IESLiveIMReplayManager *replayManager;
+@property (retain, nonatomic) NSSet *needReplaySubscribersSet;
+@property (retain, nonatomic) NSSet *needReplayMessagesSet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) id<IESLiveIMMessageReciever> nextReceiver;
+@property (retain, nonatomic) IESLiveIMBizDispatchConfig *dispatchConfig;
+@property (weak, nonatomic) id<IESLiveDataSyncService> wrdsManager;
+@property (nonatomic) BOOL enableMessageReplay;
+@property (retain, nonatomic) id<IESLiveIMMessageFilter> nextFilter;
+@property (nonatomic) long long ntpDiffTime;
+@property (nonatomic) BOOL useHeartBeatSEI;
+
+- (void)addSubscriber:(id)a0 forMessages:(id)a1;
+- (void)addSubscriber:(id)a0 forWRDSMessage:(Class)a1 firstCallbackWithSubkey:(id)a2;
+- (void)addSubscriber:(id)a0 forWRDSMessages:(id)a1;
+- (void)asyncQueryWRDSMessage:(Class)a0 withSubkey:(id)a1 completion:(id /* block */)a2;
+- (long long)decideMessageCacheType:(id)a0;
+- (void)runOnMessageProcessSerialQueue:(id /* block */)a0;
+- (void)dispatchMessage:(id)a0 needFilter:(BOOL)a1;
+- (double)decideDelayMessageDispatchTime:(id)a0;
+- (BOOL)doFilter:(id)a0;
+- (void)didRecieveMessages:(id)a0;
+- (void)didRecievePacket:(id)a0;
+- (void)seiPlayerTS:(id)a0;
+- (void)seiHeartBeatTS:(id)a0;
+- (void)startDispatch;
+- (void)stopDispatch;
+- (void)startReplay;
+- (void)stopReplay;
+- (void)addSubscriber:(id)a0 forMessages:(id)a1 needReplay:(BOOL)a2;
+- (id)getMessages:(long long)a0 withCount:(long long)a1;
+- (void)addMessageProcesser:(id)a0;
+- (void)logWith:(id)a0 params:(id)a1;
+- (void)doTimerLoopAction;
+- (void)messagesReplay;
+- (void)realDispatchMessage:(id)a0;
+- (void)putMessagesToReplayBuffer:(id)a0;
+- (void)realDispatchReplayMessage:(id)a0;
+- (BOOL)messageNeedReplay:(id)a0;
+- (BOOL)filterBeforeDispatchMessage:(id)a0;
+- (void)enumerate:(id)a0 sendMessage:(id)a1;
+- (void)messageDidDispatch:(id)a0;
+- (void)processer:(id)a0 message:(id)a1;
+- (void)stopTimer;
+- (void)processMessage:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setup;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+- (void)startTimerWithInterval:(double)a0;
+
+@end

@@ -1,0 +1,88 @@
+@class NSLock, NSString, NSData, IESLiveLinkLiveRtcHost, NSMutableDictionary, ByteRTCEngineEx, IESLiveLinkLiveVideoParam, IESLiveLinkLiveDualStreamParam;
+@protocol ByteRTCEngineDelegate;
+
+@interface IESLiveLinkLiveRtc : NSObject
+
+@property (copy, nonatomic) NSString *liveRtcLastAppId;
+@property (copy, nonatomic) NSString *liveRtcCurrentAppId;
+@property (weak, nonatomic) id<ByteRTCEngineDelegate> LiveRtcDelegate;
+@property (copy, nonatomic) NSString *liveRtcAccountID;
+@property (copy, nonatomic) NSString *liveRtcToken;
+@property (copy, nonatomic) NSData *liveRtcTokenData;
+@property (copy, nonatomic) NSString *liveRtcSignKey;
+@property (copy, nonatomic) NSString *liveRtcRoomId;
+@property (copy, nonatomic) NSString *liveRtcUserId;
+@property (copy, nonatomic) NSString *liveRtcbusinessID;
+@property (copy, nonatomic) NSString *liveRtcSceneTag;
+@property (copy, nonatomic) NSString *liveRtcConfig;
+@property (copy, nonatomic) NSString *forceGlobalApiServer;
+@property (retain, nonatomic) IESLiveLinkLiveRtcHost *liveRtcHost;
+@property (nonatomic) long long liveRtcParamMode;
+@property (nonatomic) long long liveRtcMixType;
+@property (retain, nonatomic) IESLiveLinkLiveVideoParam *liveVideoParamServerDefine;
+@property (retain, nonatomic) IESLiveLinkLiveDualStreamParam *liveDualStreamParam;
+@property (retain, nonatomic) IESLiveLinkLiveVideoParam *liveVideoParam1V1Client;
+@property (retain, nonatomic) IESLiveLinkLiveVideoParam *liveVideoParam1V1Server;
+@property (nonatomic) long long liveRtcMixVideoBitRateKbps;
+@property (nonatomic) long long liveRtcMixServerVideoWidth;
+@property (nonatomic) long long liveRtcMixServerVideoHeight;
+@property (nonatomic) long long liveRtcMixServerVideoFps;
+@property (nonatomic) long long liveRtcMixServerVideoBitRateKbps;
+@property (copy, nonatomic) NSString *liveRtcMaxTranscodingCbInterval;
+@property (retain, nonatomic) IESLiveLinkLiveVideoParam *liveVideoParamPerformanceProfileLow;
+@property (retain, nonatomic) IESLiveLinkLiveVideoParam *liveRtcVideoInputParam;
+@property (retain, nonatomic) NSLock *apiLock;
+@property long long currentState;
+@property (retain, nonatomic) NSMutableDictionary *liveRtcVideoSinks;
+@property (retain, nonatomic) NSMutableDictionary *liveRtcAudioSinks;
+@property (retain, nonatomic) NSMutableDictionary *streamSubsMap;
+@property (retain, nonatomic) ByteRTCEngineEx *rtcVideoEngine;
+@property long long liveRtcExpectedMixType;
+@property BOOL isVideoExtSource;
+@property BOOL isVideoExtRender;
+@property BOOL isAudioExtSource;
+@property BOOL isAudioExtRender;
+@property (nonatomic) unsigned long long audioInputSampleRate;
+@property (nonatomic) unsigned long long audioInputChannelNum;
+@property (nonatomic) unsigned long long audioOutputSampleRate;
+@property (nonatomic) unsigned long long audioOutputChannelNum;
+@property (nonatomic) long long videoInputWidthFromCustomer;
+@property (nonatomic) long long videoInputHeightFromCustomer;
+@property (nonatomic) long long videoInputFpsFromCustomer;
+@property (nonatomic) long long videoInputBitRateKbpsFromCustomer;
+@property (nonatomic) long long videoInputGopFromCustomer;
+@property (copy, nonatomic) NSString *liveRtcLinkerSessionId;
+@property (nonatomic) BOOL isStartInteractUnpublish;
+@property (nonatomic) BOOL isStartInteractAudioUnpublish;
+@property (nonatomic) BOOL enableVideoFrameCallbackOptimize;
+
++ (BOOL)isVaildRtcExtInfoJson:(id)a0;
+
+- (BOOL)configEngine;
+- (id)rtcEngine;
+- (BOOL)pushExternalVideoFrame:(struct __CVBuffer { } *)a0 time:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1 rotation:(long long)a2 extendedData:(id)a3 supplementaryInfo:(id)a4;
+- (int)sendUserMessageOutsideRoom:(id)a0 message:(id)a1;
+- (int)pushExternalAudioFrame:(void *)a0 size:(int)a1 timestamp:(double)a2;
+- (int)pullExternalAudioFrame:(void *)a0 size:(int)a1;
+- (id)initLiveRtcWithAppId:(id)a0 delegate:(id)a1 parameters:(id)a2 delegateEx:(id)a3;
+- (BOOL)parseRtcExtInfoInternal:(id)a0;
+- (BOOL)parseRtcVideoParams:(id)a0;
+- (void)configVideoParams;
+- (void)rtcExtInfoParse:(id)a0;
+- (id)rtcExtInfoObtain;
+- (void)rtcExtInfoRefresh:(id)a0;
+- (int)joinChannel:(id)a0 userVisibility:(BOOL)a1;
+- (int)leaveChannel:(id)a0 leaveRoomBlock:(id /* block */)a1;
+- (void)setVideoFrameCallBack:(id /* block */)a0 userId:(id)a1;
+- (BOOL)pushExternalEncodedVideoFrame:(long long)a0 pictureType:(long long)a1 timestampUs:(long long)a2 timestampDtsUs:(long long)a3 rotation:(long long)a4 data:(id)a5 width:(double)a6 height:(double)a7;
+- (void)setAudioFrameCallBack:(id /* block */)a0 anchorMixBlock:(id /* block */)a1 userId:(id)a2;
+- (void)didUpdateLocalAudioRecordParams;
+- (int)setVideoCaptureConfig:(id)a0;
+- (BOOL)pushScreenAudioFrame:(id)a0;
+- (void)setScreenAudioSourceType:(long long)a0;
+- (void)setScreenAudioStreamIndex:(long long)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (int)login;
+
+@end

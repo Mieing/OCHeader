@@ -1,0 +1,73 @@
+@class NSString, UIImageView, AWEScrollStringLabel, UIView, UIButton;
+
+@interface AWEScrollStringButton : UIView <UIGestureRecognizerDelegate, ACCScrollStringButtonProtocol>
+
+@property (retain, nonatomic) NSString *title;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) AWEScrollStringLabel *label;
+@property (retain, nonatomic) UIView *blurView;
+@property (retain, nonatomic) UIView *bgMaskView;
+@property (retain, nonatomic) UIView *closeBackgroundView;
+@property (retain, nonatomic) UIView *separatorView;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (nonatomic) double maxButtonWidth;
+@property (nonatomic) BOOL useColorStyle;
+@property (nonatomic) BOOL isBlackStyle;
+@property (nonatomic) long long type;
+@property (nonatomic) double blurCornerRadius;
+@property (nonatomic) double blurHeight;
+@property (nonatomic) double loopLabelHeight;
+@property (nonatomic) double behindContentLabelSpacing;
+@property (nonatomic) double alongsideCloseButtonSpacing;
+@property (nonatomic) BOOL hdrEnabled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL shouldAnimate;
+@property (nonatomic) BOOL enableConstantSpeed;
+@property (nonatomic) double buttonWidth;
+@property (nonatomic) BOOL acc_enabled;
+@property (nonatomic) BOOL hasMusic;
+@property (nonatomic) BOOL isDisableStyle;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } acc_hitTestEdgeInsets;
+@property (nonatomic) unsigned long long scrollStringAnimationType;
+@property (nonatomic) BOOL enableTitleAlignmentCenter;
+@property (nonatomic) BOOL enableImageRotation;
+
+- (void)hideCloseButton;
+- (void)updateColorStyle:(BOOL)a0;
+- (id)initWithType:(long long)a0 hdrEnabled:(BOOL)a1;
+- (void)showLabelShadow;
+- (void)configWithImage:(id)a0 title:(id)a1 hasMusic:(BOOL)a2 maxButtonWidth:(double)a3;
+- (id)getBackgroundColor;
+- (BOOL)shouldScroll;
+- (void)configWithImage:(id)a0 title:(id)a1 hasMusic:(BOOL)a2;
+- (void)updateBackgroundColorWith:(id)a0;
+- (void)calcContentLabelWithImageWidth:(double)a0 returnMinContentLabelWidth:(double *)a1 returnMaxContentLabelWidth:(double *)a2 returnWidthWithoutContentLabel:(double *)a3;
+- (void)addGradientMaskForView:(id)a0 maskWidth:(double)a1;
+- (void)removeGradientMaskForView:(id)a0;
+- (double)getTitleWidth;
+- (void)closeButtonDidTouchDown:(id)a0;
+- (void)closeButtonDidTouchUp:(id)a0;
+- (void)p_updateImageViewRoateAnim;
+- (BOOL)isAccessibilityElement;
+- (void)startAnimation;
+- (void).cxx_destruct;
+- (id)titleFont;
+- (id)initWithType:(long long)a0;
+- (void)stopAnimation;
+- (void)setUserInteractionEnabled:(BOOL)a0;
+- (id)init;
+- (id)accessibilityElements;
+- (void)addTarget:(id)a0 action:(SEL)a1;
+- (double)buttonHeight;
+- (void)touchesCancelled:(id)a0 withEvent:(id)a1;
+- (void)touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)touchesEnded:(id)a0 withEvent:(id)a1;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)layoutSubviews;
+- (void)setupUI;
+- (void)showCloseButton;
+
+@end

@@ -1,0 +1,9 @@
+@interface HTSLiveLinkPhase : IESLivePBBaseMessage
+
+@property (nonatomic) int phaseId;
+@property (nonatomic) int phaseSecondsBegin;
+@property (nonatomic) int phaseSecondsEnd;
+
++ (id)descriptor;
+
+@end

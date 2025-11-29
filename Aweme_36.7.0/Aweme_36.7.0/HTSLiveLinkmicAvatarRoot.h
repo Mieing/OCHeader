@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicAvatarRoot : GPBRootObject
+
+@end

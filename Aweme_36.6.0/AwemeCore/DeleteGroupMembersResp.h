@@ -1,0 +1,10 @@
+@class DeleteGroupMembersResp_Data;
+
+@interface DeleteGroupMembersResp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DeleteGroupMembersResp_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

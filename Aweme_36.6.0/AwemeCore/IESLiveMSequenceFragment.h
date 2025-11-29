@@ -1,0 +1,84 @@
+@class NSTimer, NSString, IESLiveMSequenceRoomView, HTSLiveMSequenceStore, IESLiveCountTimer, IESLiveMSequenceDefaultCover, NSMutableDictionary, NSNumber, HTSLiveRoom;
+@protocol IESLiveCloseAction, IESLiveContainerRouter, IESLiveTimeService;
+
+@interface IESLiveMSequenceFragment : IESLiveRoomComponent <IESLiveMSequenceReaction, HTSLiveStreamPlayerAction, HTSLiveMSequenceRouter>
+
+@property (retain, nonatomic) IESLiveMSequenceRoomView *detailView;
+@property (retain, nonatomic) IESLiveMSequenceDefaultCover *defaultCover;
+@property (retain, nonatomic) HTSLiveMSequenceStore *store;
+@property (retain, nonatomic) IESLiveCountTimer *timer;
+@property (nonatomic) unsigned long long remainCount;
+@property (nonatomic) BOOL roomChangeTracked;
+@property (nonatomic) BOOL liveShowTracked;
+@property (nonatomic) BOOL enterMseqlogged;
+@property (nonatomic) BOOL enterOfficalShuffleOpt;
+@property (retain, nonatomic) id<IESLiveContainerRouter> containerRouter;
+@property (retain, nonatomic) id<IESLiveCloseAction> closeActionDispatcher;
+@property (retain, nonatomic) id<IESLiveTimeService> timeService;
+@property (retain, nonatomic) NSTimer *showProgrammeTimer;
+@property (retain, nonatomic) HTSLiveRoom *nextMseqRoom;
+@property (retain, nonatomic) NSNumber *nextMseqRoomID;
+@property (retain, nonatomic) NSMutableDictionary *originalStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentDidAppear;
+- (void)componentUnmount;
+- (void)hideComponent;
+- (void)showComponent;
+- (void)playerFrameDidChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (long long)shuffleTime:(long long)a0 upper:(long long)a1;
+- (id)realRoomOwner;
+- (BOOL)isMSeqBackupRoom;
+- (void)enterMseqAnchorRoomLayout:(long long)a0 shuffleNext:(long long)a1;
+- (void)updateEnterMseqRoom:(long long)a0 shuffleNext:(long long)a1;
+- (void)dismissMSeqProgrammeView;
+- (void)showMSeqProgrammeView:(long long)a0;
+- (void)showMSeqProgrammeView;
+- (BOOL)getCurrentRoomIsInOfficialChannel;
+- (BOOL)isMSeqRoomWillEnd;
+- (BOOL)isAnchorMSeqRoomWillStart;
+- (id)toastStringBeforeEnd;
+- (unsigned long long)currentMseqLayout;
+- (void)enterMSeqBackupRoom;
+- (void)showProgrammeView:(long long)a0;
+- (void)stopShowProgrammeTimer;
+- (void)startShowProgrammeTimer:(long long)a0 startTime:(long long)a1;
+- (BOOL)shouldRenderMSeqView;
+- (void)updateComponentStatus;
+- (void)showDefaultCover;
+- (void)showProgrammePageView;
+- (void)removeDetailViewToLayout;
+- (void)addDetailViewToLayout;
+- (void)startNextRoomCountDown:(double)a0 shuffleLower:(long long)a1 shuffleUpper:(long long)a2;
+- (void)trackLiveShowIfNeed;
+- (void)addMseqTracker;
+- (void)trackMSeqRoomChange;
+- (void)entranceLeftContainerViewStatusToIsHide:(BOOL)a0;
+- (void)RenderDetailView;
+- (BOOL)disableReEnterRoom;
+- (void)pr_goNextMseqRoom:(id)a0 nextRoom:(id)a1 shuffleNext:(long long)a2;
+- (void)pr_goNextMseqRoom:(id)a0 shuffleNext:(long long)a1;
+- (void)pr_goFinishVC;
+- (long long)upperTimeForEnter:(id)a0;
+- (void)guaranteePortrait;
+- (void)showCountdownTipsView:(unsigned long long)a0;
+- (void)showNormalProgrammeView;
+- (void)fetchNextMseqRoomInfo;
+- (void)showWillEndNotifyMessage;
+- (void)showNextAnchorAnimation:(BOOL)a0;
+- (void)gotoNextMseqRoom:(long long)a0;
+- (void)enterNormalRoom;
+- (void)stopTimer;
+- (void).cxx_destruct;
+- (void)startTimer;
+- (void)dealloc;
+
+@end

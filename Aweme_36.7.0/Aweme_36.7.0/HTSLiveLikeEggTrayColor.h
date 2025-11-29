@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLikeEggTrayColor : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *backgroundColor;
+@property (copy, nonatomic) NSString *barColor;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface AWELiveInstallIDServiceImplDOUYINAdapter : NSObject <AWELiveInstallIDServiceImplDOUYINAdapter>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)weakTargetClass;
+
+- (BOOL)isDouyinTarget;
+- (BOOL)isDouyinHTSTarget;
+- (id)weakTarget;
+
+@end

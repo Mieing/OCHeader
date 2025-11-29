@@ -1,0 +1,12 @@
+@class HTSLiveUser;
+
+@interface IESLiveLinkMicAudienceLastLinkUserResponse_LastLinkUserHisory : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) int online;
+@property (nonatomic) int linkDays;
+
++ (id)descriptor;
+
+@end

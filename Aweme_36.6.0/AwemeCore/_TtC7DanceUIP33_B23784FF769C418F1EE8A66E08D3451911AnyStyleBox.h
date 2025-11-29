@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_B23784FF769C418F1EE8A66E08D3451911AnyStyleBox : _TtCs12_SwiftObject
+
+@end

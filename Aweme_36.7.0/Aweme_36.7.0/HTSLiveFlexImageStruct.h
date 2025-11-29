@@ -1,0 +1,25 @@
+@class NSArray, NSString, UIImage, GPBInt64Array, NSMutableArray;
+
+@interface HTSLiveFlexImageStruct : IESLivePBBaseMessage <IESLiveFlexImage>
+
+@property (retain, nonatomic) UIImage *localImage;
+@property (readonly, nonatomic) NSArray *urlList;
+@property (readonly, nonatomic) NSArray *flexSetting;
+@property (readonly, nonatomic) NSArray *textSetting;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+@property (copy, nonatomic) NSString *uri;
+@property (retain, nonatomic) GPBInt64Array *flexSettingArray;
+@property (readonly, nonatomic) unsigned long long flexSettingArray_Count;
+@property (retain, nonatomic) GPBInt64Array *textSettingArray;
+@property (readonly, nonatomic) unsigned long long textSettingArray_Count;
+@property (nonatomic) long long topBorderHeight;
+
++ (id)descriptor;
+
+
+@end

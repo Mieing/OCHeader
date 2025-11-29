@@ -1,0 +1,3 @@
+@interface AWEECOMIMComplexThemeContainer : AWEECOMIMBaseContianerView
+
+@end

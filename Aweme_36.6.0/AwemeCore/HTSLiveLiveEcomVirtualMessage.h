@@ -1,0 +1,3 @@
+@interface HTSLiveLiveEcomVirtualMessage : HTSLiveLiveEcomGeneralMessage
+
+@end

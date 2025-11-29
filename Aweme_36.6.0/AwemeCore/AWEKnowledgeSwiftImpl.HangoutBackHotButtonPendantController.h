@@ -1,0 +1,9 @@
+@interface AWEKnowledgeSwiftImpl.HangoutBackHotButtonPendantController : AWEKnowledgeSwiftImpl.HangoutBasePendantController {
+    void /* unknown type, empty encoding */ $__lazy_storage_$_backHotButton;
+    void /* unknown type, empty encoding */ scheduleType;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_frequencyChecker;
+    void /* unknown type, empty encoding */ backHotButtonShowDate;
+    void /* unknown type, empty encoding */ deferVanishWork;
+}
+
+@end

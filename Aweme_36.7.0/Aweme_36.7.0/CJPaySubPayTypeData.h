@@ -1,0 +1,85 @@
+@class CJPayCombinePayInfoModel, CJPayVoucherInfoModel, NSDictionary, CJPayBytePayCreditPayMethodModel, CJPaySubPayTypeIconTipModel, CJPayOutDisplayInfoModel, NSString, CJPayVoucherRetainInfoModel, CJPayHomePagePromotionShowPriorityModel, CJPayHomePageFoldVoucherInfoModel, NSArray, CJPayBubbleInfo, CJPayTypeVoucherMsgV2Model;
+@protocol CJPayAmountAreaModel, BDPayCombinePayShowInfo, CJPayDyPayPlusXModel, CJPayBytePayCreditPayMethodModel;
+
+@interface CJPaySubPayTypeData : JSONModel
+
+@property (retain, nonatomic) CJPayBytePayCreditPayMethodModel *creditModel;
+@property (nonatomic) BOOL showCombinePay;
+@property (copy, nonatomic) NSString *mobileMask;
+@property (nonatomic) long long balanceAmount;
+@property (nonatomic) long long incomeAmount;
+@property (nonatomic) long long freezedAmount;
+@property (copy, nonatomic) NSArray *voucherMsgList;
+@property (copy, nonatomic) NSArray *bytepayVoucherMsgList;
+@property (copy, nonatomic) NSArray *subPayVoucherMsgList;
+@property (copy, nonatomic) CJPayVoucherInfoModel *voucherInfo;
+@property (retain, nonatomic) CJPayTypeVoucherMsgV2Model *voucherMsgV2Model;
+@property (copy, nonatomic) NSString *bankCardId;
+@property (copy, nonatomic) NSString *cardNo;
+@property (copy, nonatomic) NSString *cardNoMask;
+@property (copy, nonatomic) NSString *cardType;
+@property (copy, nonatomic) NSString *cardTypeName;
+@property (copy, nonatomic) NSString *cardStyleShortName;
+@property (copy, nonatomic) NSString *supportOneKeySign;
+@property (copy, nonatomic) NSString *frontBankCode;
+@property (copy, nonatomic) NSString *frontBankCodeName;
+@property (copy, nonatomic) NSString *bankName;
+@property (copy, nonatomic) NSString *cardShowName;
+@property (copy, nonatomic) NSString *cardLevel;
+@property (copy, nonatomic) NSString *perdayLimit;
+@property (copy, nonatomic) NSString *perpayLimit;
+@property (copy, nonatomic) NSString *bankCode;
+@property (copy, nonatomic) NSString *signNo;
+@property (copy, nonatomic) NSString *creditPayInstallment;
+@property (copy, nonatomic) NSArray<CJPayBytePayCreditPayMethodModel> *creditPayMethods;
+@property (copy, nonatomic) NSString *cardAddExt;
+@property (retain, nonatomic) CJPaySubPayTypeIconTipModel *iconTips;
+@property (nonatomic) long long recommendType;
+@property (copy, nonatomic) NSString *subExt;
+@property (copy, nonatomic) NSString *crossedPrice;
+@property (copy, nonatomic) NSString *standardVoucherLabel;
+@property (retain, nonatomic) CJPayOutDisplayInfoModel *outDisplayInfo;
+@property (copy, nonatomic) NSArray<CJPayDyPayPlusXModel> *payAddiItemList;
+@property (retain, nonatomic) CJPayBubbleInfo *bubbleInfoMap;
+@property (copy, nonatomic) NSArray<CJPayAmountAreaModel> *amountAreaList;
+@property (retain, nonatomic) CJPayVoucherRetainInfoModel *voucherRetainInfoModel;
+@property (retain, nonatomic) CJPayVoucherRetainInfoModel *superImposedRetainInfo;
+@property (copy, nonatomic) NSString *standardRetainVoucherLabel;
+@property (retain, nonatomic) CJPayHomePageFoldVoucherInfoModel *homePageFoldVoucherInfoModel;
+@property (copy, nonatomic) NSDictionary *voucherShowInfoDic;
+@property (retain, nonatomic) CJPayHomePagePromotionShowPriorityModel *homePageShowPriorityModel;
+@property (nonatomic) BOOL isCreditActivate;
+@property (copy, nonatomic) NSString *decisionId;
+@property (copy, nonatomic) NSString *creditActivateUrl;
+@property (copy, nonatomic) NSString *creditSignUrl;
+@property (copy, nonatomic) NSString *standardRecDesc;
+@property (copy, nonatomic) NSString *standardShowAmount;
+@property (copy, nonatomic) NSArray<BDPayCombinePayShowInfo> *combineShowInfo;
+@property (retain, nonatomic) CJPayCombinePayInfoModel *combinePayInfo;
+@property (copy, nonatomic) NSString *selectPageGuideText;
+@property (nonatomic) BOOL isForeignCard;
+@property (copy, nonatomic) NSString *passwordPageDesc;
+@property (copy, nonatomic) NSString *passwordPageDescTitle;
+@property (copy, nonatomic) NSString *voucherDescText;
+@property (copy, nonatomic) NSDictionary *tradeAreaVoucher;
+@property (copy, nonatomic) NSString *shareAssetCode;
+@property (copy, nonatomic) NSString *shareAssetID;
+@property (copy, nonatomic) NSDictionary *lynxRetainParams;
+@property (copy, nonatomic) NSDictionary *payTypeDataDic;
+
++ (id)keyMapper;
++ (BOOL)propertyIsOptional:(id)a0;
++ (id)modelContainerPropertyGenericClass;
++ (id)modelCustomPropertyMapper;
++ (id)keyMapperDict;
+
+- (id)getPlusXData;
+- (id)curSelectCredit;
+- (void)updateDefaultCreditModel:(id)a0;
+- (id)lynxRetainServerParams;
+- (BOOL)lynxRetainUIHasChoiceChanged;
+- (id)lynxRetainUIParams;
+- (id)obtainOutDisplayMsg:(long long)a0;
+- (void).cxx_destruct;
+
+@end

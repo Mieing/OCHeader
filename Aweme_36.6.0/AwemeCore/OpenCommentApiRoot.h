@@ -1,0 +1,3 @@
+@interface OpenCommentApiRoot : GPBRootObject
+
+@end

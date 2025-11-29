@@ -1,0 +1,58 @@
+@interface WCCanvasCommonUtil : NSObject
+
++ (id)duplicate2:(id)a0;
++ (id)getImage:(id)a0;
++ (unsigned int)getComponentCountInCanvasInfo:(id)a0;
++ (id)getChsWordingFor:(id)a0;
++ (id)genFowardAdXMLByDataItem:(id)a0 adXML:(id)a1 adInfo:(id)a2;
++ (id)genForwardCanvasExtFromAdInfo:(id)a0;
++ (id)genForwardSKAdItemsFromAdInfo:(id)a0;
++ (id)processFowardAdXML:(id)a0 withRedEnvelopInfo:(id)a1;
++ (id)filterXMLNode:(id)a0 fromString:(id)a1;
++ (id)replaceXmlNode:(id)a0 originXml:(id)a1 targetXml:(id)a2;
++ (struct _NSRange { unsigned long long x0; unsigned long long x1; })fetchXmlNodeRange:(id)a0 fromXml:(id)a1;
++ (struct _NSRange { unsigned long long x0; unsigned long long x1; })fetchXmlNodeRange:(id)a0 fromXml:(id)a1 onlyContent:(BOOL)a2;
++ (id)fetchXmlNode:(id)a0 fromXml:(id)a1;
++ (id)fetchXmlNode:(id)a0 fromXml:(id)a1 onlyContent:(BOOL)a2;
++ (id)genCanvasShareInfoXml:(id)a0 adInfo:(id)a1;
++ (id)mergeCanvasShareWithStaticXml:(id)a0 andDynamicXml:(id)a1;
++ (BOOL)isSameIndexPathBetween:(id)a0 WithIndexPath:(id)a1;
++ (BOOL)isUrlNeedAddSessionData:(id)a0 adInfo:(id)a1;
++ (BOOL)isBtnUrlNeedJumpAppstore:(id)a0;
++ (BOOL)isBtnSchemaJumpDoubleLink:(id)a0;
++ (BOOL)isBtnUrlNeedJumpCard:(id)a0;
++ (BOOL)isUrlNeedAddUxInfo:(id)a0 adInfo:(id)a1;
++ (id)getBackGroundColorWhenLoading:(long long)a0 canvasInfo:(id)a1;
++ (id)getBackGroundColorAtSection:(long long)a0 canvasInfo:(id)a1;
++ (BOOL)isLastCellInSection:(id)a0 canvasInfo:(id)a1;
++ (BOOL)isFirstCellInSection:(id)a0 canvasInfo:(id)a1;
++ (double)heightForFirstPageWith:(id)a0 orientation:(long long)a1;
++ (id)getCellIdentifierAtIndexPath:(id)a0 canvasInfo:(id)a1;
++ (id)getCanvasComponentItemAtIndexPath:(id)a0 canvasInfo:(id)a1;
++ (BOOL)isCurSectionBlackMoreThanWhite:(long long)a0 canvasInfo:(id)a1;
++ (id)getTitleFontForComponentItem:(id)a0;
++ (id)getCanvasBackGroundWithCanvasInfo:(id)a0;
++ (BOOL)shouldNotifyAppearFactor:(double)a0 lastFactorNum:(id)a1;
++ (BOOL)setItem:(id)a0 value:(id)a1 forDynamic:(id)a2;
++ (id)resizeImage:(id)a0 toMinSideLen:(long long)a1;
++ (BOOL)isInGameShareJumpWayExp;
++ (BOOL)shouldGameShareCanvasJumpToCanvasView;
++ (unsigned int)fetchSpecialTransitioningTypeForAdInfo:(id)a0 fromScene:(int)a1;
++ (id)getPreloadH5Urls:(id)a0 withUxInfo:(id)a1 adInfo:(id)a2;
++ (id)getReqWebviewUrl:(id)a0 withUxInfo:(id)a1 adInfo:(id)a2;
++ (id)appendParams:(id)a0 toWebViewUrl:(id)a1;
++ (id)getTempSessionExtInfoWithUxInfo:(id)a0;
++ (double)realSafeAreaInsetsTop;
++ (double)realSafeAreaInsetsBottom;
++ (double)realCanvasInsetsTop:(BOOL)a0;
++ (id)appendParamsToUrl:(id)a0 componentItem:(id)a1 advertiseInfo:(id)a2 sharedUxinfo:(id)a3;
++ (id)fetchMusicId:(id)a0;
++ (id)fetchShareWebUrl:(id)a0;
++ (id)convertCanvasXmlToCanvasCombineShareExtraParams:(id)a0;
++ (id)convertCanvasCombineShareExtraParamsToCanvasXml:(id)a0;
++ (BOOL)tryToOpenAdCanvasFromCombineShareExtraParams:(id)a0;
++ (BOOL)tryToOpenAdCanvasFromCombineFavExtraParams:(id)a0;
++ (BOOL)tryToOpenAdCanvasFromFavWithShareInfoInAdInfo:(id)a0 showNavigationBar:(BOOL)a1 originView:(id)a2 originCanvasPageXml:(id)a3 originThumbUrl:(id)a4;
++ (void)loadCanvasFromFavWithCanvasId:(id)a0 uxInfo:(id)a1 canvasDynamicInfo:(id)a2 originAdInfo:(id)a3 showNavigationBar:(BOOL)a4 originView:(id)a5 originCanvasPageXml:(id)a6 originThumbUrl:(id)a7;
+
+@end

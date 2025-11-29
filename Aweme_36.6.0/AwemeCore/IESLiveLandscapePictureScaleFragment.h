@@ -1,0 +1,81 @@
+@class IESLivePictureScaleGuideView, HTSLiveSandwichBorderInfo, NSString, UIPinchGestureRecognizer, IESLandscapePictureScaleStore, UIPanGestureRecognizer, UIButton;
+@protocol IESLiveLandscapePictureScaleAction;
+
+@interface IESLiveLandscapePictureScaleFragment : IESLiveRoomComponent <UIGestureRecognizerDelegate, IESLiveLandscapePictureSettingActions, HTSLiveHideComponentAction, IESLiveLandscapePictureScaleRouter, IESLiveCustomAutoHideAnimAction, HTSLiveMessageSubscriber, IESLiveGameInteractStickerActions, IESLiveAirPlayAction>
+
+@property (retain, nonatomic) IESLandscapePictureScaleStore *store;
+@property (retain, nonatomic) UIPinchGestureRecognizer *pinchGesture;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (retain, nonatomic) UIButton *resetButton;
+@property (retain, nonatomic) id<IESLiveLandscapePictureScaleAction> notifier;
+@property (nonatomic) BOOL isComponentsHide;
+@property (retain, nonatomic) IESLivePictureScaleGuideView *guideView;
+@property (nonatomic) double enlargeStart;
+@property (nonatomic) float enlargeRatio;
+@property (nonatomic) float previousEnlargeRatio;
+@property (nonatomic) float movex;
+@property (nonatomic) float movey;
+@property (nonatomic) BOOL hasEnlarge;
+@property (nonatomic) BOOL userCancelSandwichScale;
+@property (nonatomic) BOOL shouldUseSandwichScaleLayout;
+@property (retain, nonatomic) HTSLiveSandwichBorderInfo *sandwichInfo;
+@property (nonatomic) BOOL needUpdateSandwichInfo;
+@property (nonatomic) BOOL isLandScrollEnter;
+@property (nonatomic) BOOL hasTransitionToPortrait;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
++ (BOOL)isMixed;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)componentOrientationTransitionBegin:(long long)a0;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)hideAllComponent;
+- (void)showAllComponent;
+- (void)willHideAllComponent;
+- (void)bindActions;
+- (void)landscapeViewsTransformToHidden:(BOOL)a0;
+- (void)portraitViewsTransformToHidden:(BOOL)a0;
+- (void)didChangePictureSetting;
+- (BOOL)landscapeShouldUseSandwichLayout;
+- (void)updateCallbackCurrentScreenCastStatus:(BOOL)a0;
+- (id)getPullDataWithRoom:(id)a0;
+- (void)resetRecordedIfNeed:(BOOL)a0;
+- (double)currentPictureScale;
+- (void)updatePictureScale:(double)a0;
+- (void)stickerViewDidShow:(BOOL)a0;
+- (void)bindStore;
+- (BOOL)updateShouldUseSandwichScaleLayout;
+- (id)previousEnlargeRatioNum;
+- (id)moveXDistance;
+- (id)moveYDistance;
+- (void)vsTrackEvent:(id)a0 extraParams:(id)a1;
+- (void)scaleStatusChange;
+- (void)updateRoomModelSandwichInfo;
+- (BOOL)shouldShowResetButton;
+- (BOOL)isScreenHeightLessThan812;
+- (void)onPan:(id)a0;
+- (BOOL)shouldShowViceViewInLandscapeGameRoom;
+- (void)updateUserCancelSandwichScale:(BOOL)a0 needLayoutPlayer:(BOOL)a1;
+- (void)showScaleGesGuide;
+- (id)curEnlargeRatioNum;
+- (void)gameTrackEvent:(id)a0 extraParams:(id)a1;
+- (BOOL)shouldActivatePinchGesture;
+- (BOOL)shouldActivatePanGesture;
+- (BOOL)screenDidLock;
+- (void)resetButtonClick:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)setupUI;
+- (void)messageReceived:(id)a0;
+- (void)setupGestures;
+- (void)onPinch:(id)a0;
+
+@end

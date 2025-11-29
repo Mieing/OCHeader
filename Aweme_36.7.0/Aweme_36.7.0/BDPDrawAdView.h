@@ -1,0 +1,75 @@
+@class UIView, NSString, BDPVideoContainer, TVLManager, BDPUniqueID, BDMannorManager, BDPDrawAdModel, BDPDrawAdDataManger, WKWebView;
+
+@interface BDPDrawAdView : UIView <BDPVideoContainerProtocol, TVLDelegate, BDPAppRouteChangeMessage>
+
+@property (nonatomic) double livePlayStartTime;
+@property (nonatomic) double livePlayDuration;
+@property (nonatomic) BOOL hasTrackerError;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) BOOL isAutoPlay;
+@property (weak, nonatomic) UIView *bgView;
+@property (weak, nonatomic) UIView *cardView;
+@property (weak, nonatomic) BDPVideoContainer *videoContainer;
+@property (retain, nonatomic) BDPDrawAdModel *drawAdModel;
+@property (retain, nonatomic) BDPUniqueID *uniqueId;
+@property (retain, nonatomic) BDMannorManager *mannorManager;
+@property (retain, nonatomic) TVLManager *tvlManager;
+@property (retain, nonatomic) BDPDrawAdDataManger *adDataManager;
+@property (copy, nonatomic) NSString *adUnitId;
+@property (nonatomic) BOOL hasFullScreenAdCard;
+@property (nonatomic) BOOL adDowngrade;
+@property (nonatomic) double playStartTime;
+@property (copy, nonatomic) NSString *componentId;
+@property (nonatomic) long long pageId;
+@property (weak, nonatomic) WKWebView *webviewPage;
+@property (nonatomic) BOOL isFullScreenHeight;
+@property (nonatomic) double scale;
+@property (weak, nonatomic) BDPUniqueID *uniqueID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)recieveError:(id)a0;
+- (void)startRender;
+- (void)mannorComponentDidStartLoad:(id)a0 componentType:(id)a1;
+- (void)mannorComponentDidLoadFailed:(id)a0 error:(id)a1 componentType:(id)a2;
+- (void)mannorComponentDowngrade:(id)a0 errorMessage:(id)a1 componentType:(id)a2;
+- (void)mannorComponentShow:(id)a0 componentType:(id)a1;
+- (void)mannorComponent:(id)a0 didChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a1;
+- (id)p_mannorJSBInjectHandlerMethodMap;
+- (id)p_mannorComponentElement;
+- (void)p_enterBackground:(id)a0;
+- (void)p_enterForeground:(id)a0;
+- (void)onAppRouteChangePageDidEnterWithPageID:(long long)a0 pageURL:(id)a1 uniqueID:(id)a2;
+- (void)onAppRouteChangePageWillLeaveWithPageID:(long long)a0 pageURL:(id)a1 uniqueID:(id)a2;
+- (void)p_buttonClick;
+- (void)removePlaybackStateObserver;
+- (void)videoPlayerStateChange:(long long)a0 videoPlayer:(id)a1 extra:(id)a2;
+- (void)trackVideoEventWithState:(long long)a0 videoPlayer:(id)a1 extra:(id)a2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 adUnitId:(id)a1 uniqueId:(id)a2 adModel:(id)a3;
+- (long long)getOnScreenStatus;
+- (void)p_setupContentViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 uniqueId:(id)a1 adModel:(id)a2;
+- (void)p_appWillEnterForeground:(id)a0;
+- (void)p_appDidEnterBackground:(id)a0;
+- (void)p_handleAudioInterruption:(id)a0;
+- (id)p_getAdExtraWithParams:(id)a0;
+- (struct CGSize { double x0; double x1; })getVideoViewSize;
+- (void)p_liveRoomButtonClick;
+- (void)p_checkFullScreenAdCardWithData:(id)a0;
+- (void)p_setupMannorCardWithAdModel:(id)a0 cardView:(id)a1;
+- (void)p_showButtonCard;
+- (void)p_showLiveInformationCard;
+- (void)p_cardClickWithParams:(id)a0 componentType:(id)a1;
+- (void)p_trackAdWithEventName:(id)a0 adData:(id)a1 logExtra:(id)a2 extra:(id)a3 adExtraData:(id)a4 tag:(id)a5 refer:(id)a6;
+- (void)p_drawAdStateChangeWithState:(id)a0 errorCode:(long long)a1 errMsg:(id)a2 errorType:(id)a3;
+- (void)p_trackVideoEventWithEventName:(id)a0 params:(id)a1;
+- (BOOL)p_needTransformPreRenderEvent:(id)a0;
+- (void)updateLayoutIfNeeded;
+- (void).cxx_destruct;
+- (void)play;
+- (void)stop;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEHotSpotAwemeModelFunctions : NSObject
+
+@end

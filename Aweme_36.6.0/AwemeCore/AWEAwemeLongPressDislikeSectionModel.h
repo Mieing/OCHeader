@@ -1,0 +1,3 @@
+@interface AWEAwemeLongPressDislikeSectionModel : AFDLongPressBaseSectionViewModel
+
+@end

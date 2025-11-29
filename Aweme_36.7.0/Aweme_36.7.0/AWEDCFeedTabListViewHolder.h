@@ -1,0 +1,3 @@
+@interface AWEDCFeedTabListViewHolder : AWEBaseTabListViewHolder
+
+@end

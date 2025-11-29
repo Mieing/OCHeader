@@ -1,0 +1,3 @@
+@interface RoomPaidLivePingApiRoot : GPBRootObject
+
+@end

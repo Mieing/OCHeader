@@ -1,0 +1,18 @@
+@class NSString, LotteryConfig, NSMutableArray;
+
+@interface GetLotteryConfigResult_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LotteryConfig *lotteryConfig;
+@property (nonatomic) BOOL hasLotteryConfig;
+@property (retain, nonatomic) NSMutableArray *lotteryConfigListArray;
+@property (readonly, nonatomic) unsigned long long lotteryConfigListArray_Count;
+@property (retain, nonatomic) NSMutableArray *customizedLotteryConfigListArray;
+@property (readonly, nonatomic) unsigned long long customizedLotteryConfigListArray_Count;
+@property (nonatomic) long long hintStatus;
+@property (copy, nonatomic) NSString *updateExtraKey;
+@property (retain, nonatomic) NSMutableArray *expandLotteryConfigListArray;
+@property (readonly, nonatomic) unsigned long long expandLotteryConfigListArray_Count;
+
++ (id)descriptor;
+
+@end

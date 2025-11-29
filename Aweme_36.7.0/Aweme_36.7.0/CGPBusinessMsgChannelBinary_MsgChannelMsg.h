@@ -1,0 +1,11 @@
+@class NSString, NSData;
+
+@interface CGPBusinessMsgChannelBinary_MsgChannelMsg : GPBMessage
+
+@property (copy, nonatomic) NSString *mid;
+@property (copy, nonatomic) NSData *data_p;
+@property (nonatomic) long long timeMs;
+
++ (id)descriptor;
+
+@end

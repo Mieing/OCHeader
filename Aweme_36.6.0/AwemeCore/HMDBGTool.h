@@ -1,0 +1,50 @@
+@interface HMDBGTool : NSObject
+
++ (id)where:(id)a0;
++ (id)getSqlValue:(id)a0 type:(id)a1 encode:(BOOL)a2;
++ (id)getLikeWithKeyPathAndValues:(id)a0 where:(BOOL)a1;
++ (BOOL)isClassFromFoundation:(Class)a0;
++ (id)foundationClasses;
++ (void)bg_enumerateClasses:(Class)a0 complete:(id /* block */)a1;
++ (id)getSqlType:(id)a0;
++ (id)getClassIvarList:(Class)a0 onlyKey:(BOOL)a1;
++ (id)executeSelector:(SEL)a0 forClass:(Class)a1;
++ (id)dataToJson:(id)a0;
++ (id)jsonStringWithArray:(id)a0;
++ (id)jsonStringWithDictionary:(id)a0;
++ (id)jsonStringWithMapTable:(id)a0;
++ (id)jsonStringWithNSHashTable:(id)a0;
++ (id)dictionaryForArrayInsert:(id)a0;
++ (id)dictionaryForDictionaryInsert:(id)a0;
++ (id)arrayFromJsonString:(id)a0;
++ (id)dictionaryFromJsonString:(id)a0;
++ (id)mapTableFromJsonString:(id)a0;
++ (id)hashTableFromJsonString:(id)a0;
++ (id)stringWithDate:(id)a0;
++ (id)jsonWithString:(id)a0;
++ (id)bg_objectWithClass:(Class)a0 value:(id)a1;
++ (id)bg_keyValuesWithObject:(id)a0 ignoredKeys:(id)a1;
++ (id)objectFromJsonStringWithTableName:(id)a0 class:(Class)a1 valueDict:(id)a2;
++ (id)valueForArrayRead:(id)a0;
++ (id)valueForDictionaryRead:(id)a0;
++ (id)getDictWithObject:(id)a0 ignoredKeys:(id)a1;
++ (id)getIvarEncoding:(id)a0 class:(Class)a1;
++ (BOOL)isUniqueKey:(id)a0 with:(id)a1;
++ (id)keyAndType:(id)a0;
++ (id)getTableNameWithObject:(id)a0;
++ (id)tansformDataFromSqlDataWithTableName:(id)a0 class:(Class)a1 array:(id)a2;
++ (id)executeSelector:(SEL)a0 forObject:(id)a1;
++ (id)getDictWithObject:(id)a0 ignoredKeys:(id)a1 filtModelInfoType:(long long)a2;
++ (id)bg_filtCreateKeys:(id)a0 ignoredkeys:(id)a1;
++ (BOOL)isPureInt:(id)a0;
++ (BOOL)isPureFloat:(id)a0;
++ (BOOL)getBoolWithKey:(id)a0;
++ (void)setBoolWithKey:(id)a0 value:(BOOL)a1;
++ (id)getStringWithKey:(id)a0;
++ (void)setStringWithKey:(id)a0 value:(id)a1;
++ (long long)getIntegerWithKey:(id)a0;
++ (void)setIntegerWithKey:(id)a0 value:(long long)a1;
++ (id)dateFromString:(id)a0;
++ (id)jsonStringWithObject:(id)a0;
+
+@end

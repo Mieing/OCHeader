@@ -1,0 +1,3 @@
+@interface DUXBaseTextView : UITextView
+
+@end

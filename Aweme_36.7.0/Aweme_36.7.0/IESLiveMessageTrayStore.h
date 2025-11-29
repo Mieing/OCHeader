@@ -1,0 +1,76 @@
+@class HTSEventContext, NSString, NSMutableDictionary, IESLiveMessageTrayAggregationModel, IESLiveMessageTrayConfrontModel, IESLiveStableModeStrategy, NSMutableArray, NSNumber;
+@protocol IESLiveRoomService, IESLivePerfSampler;
+
+@interface IESLiveMessageTrayStore : NSObject <HTSLiveMessageSubscriber, IESVSMessageSubscriber, IESLiveDataSyncDelegate, IESLiveMessageInteractionAssetUpdateAction, HTSLiveStreamPlayerAction, IESLiveEffectTrayComboDelegate>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) IESLiveMessageTrayConfrontModel *confrontModel;
+@property (retain, nonatomic) IESLiveMessageTrayAggregationModel *aggregationModel;
+@property (nonatomic) double confrontDisappearTime;
+@property (retain, nonatomic) NSMutableArray *aggregationIcons;
+@property (retain, nonatomic) NSMutableArray *confrontIcons;
+@property (nonatomic) BOOL disableMatchHotMsg;
+@property (retain, nonatomic) NSNumber *confrontRetryDownloadTimes;
+@property (nonatomic) BOOL enableCommonTray;
+@property (retain, nonatomic) NSMutableDictionary *lastDisplayComboModels;
+@property (nonatomic) BOOL useNewHotMsg;
+@property (nonatomic) BOOL disableAnimation;
+@property (weak, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (retain, nonatomic) NSMutableArray *subscriberList;
+@property (nonatomic) BOOL subscribeEmojiHotChatMessageEnable;
+@property (nonatomic) BOOL degradeForHotChat;
+@property (retain, nonatomic) IESLiveStableModeStrategy *stableModelStrategy;
+@property (nonatomic) BOOL isStableModeEnable;
+@property (nonatomic) BOOL enableEmphasisArea;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentUnmount;
+- (void)subscribedSyncDataWithValue:(id)a0 version:(long long)a1;
+- (void)subscribedSyncDataUpdatedWithValue:(id)a0 oldVersion:(long long)a1 newVersion:(long long)a2;
+- (void)didSetAttachingDIContext;
+- (void)addTrayWithBusinessConfigure:(id)a0;
+- (id)initWithRoom:(id)a0 trackContext:(id)a1;
+- (void)onCameraWillChangeTo:(id)a0 source:(long long)a1;
+- (BOOL)precheck;
+- (void)matchHotUpdate:(id)a0;
+- (void)startAnchorStableModeStrategy;
+- (void)stopAnchorStableModeStrategy;
+- (void)configStableModeStrategy;
+- (void)disappearMatchHotTray:(id)a0;
+- (void)handleSyncData:(id)a0;
+- (void)p_loadImageForText:(id)a0 completion:(id /* block */)a1;
+- (void)p_loadImageForCombineText:(id)a0 completion:(id /* block */)a1;
+- (void)p_loadImageForURLListArray:(id)a0 completion:(id /* block */)a1;
+- (void)comboModelUpdate:(id)a0 scene:(id)a1;
+- (void)p_setupObservers;
+- (void)p_subscribeJSBEvent;
+- (void)perfDegradeStopAnimation:(unsigned long long)a0;
+- (void)addComponentConfigModel:(id)a0;
+- (void)p_handleHotWordArray:(id)a0 atIndex:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)checkMatchHotChatMessageResource:(id)a0 completion:(id /* block */)a1;
+- (long long)transformPriorityStrategyFromServerToLocalWithStrategy:(int)a0;
+- (id)getAttributedStringWithCombinedText:(id)a0 withConfig:(id)a1 overlapSpace:(double)a2 attrFontSize:(double)a3;
+- (void)handleHotChatMesssageWithConfig:(id)a0;
+- (void)handleNewHotGatherMessageWithConfig:(id)a0;
+- (BOOL)checkVSRoomCanShowHotMessage;
+- (void)handleAggregateMessageWithConfig:(id)a0;
+- (void)handleConfrontMessage:(id)a0;
+- (void)handleCommonTrayMessageWithConfig:(id)a0;
+- (void)clearConfrontModel;
+- (void)loadImageURLs:(id)a0 withTimes:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)loadImageURLs:(id)a0 completion:(id /* block */)a1;
+- (void)removeMatchHotTrays;
+- (void)handleLikeEggMessageWithConfig:(id)a0;
+- (void)handleFastChatData:(id)a0;
+- (void)handleConfrontMessageWithConfig:(id)a0;
+- (id)stackImageItem:(id)a0 overlapSpace:(double)a1;
+- (void)messageReceived:(id)a0 source:(id)a1;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)messageReceived:(id)a0;
+
+@end

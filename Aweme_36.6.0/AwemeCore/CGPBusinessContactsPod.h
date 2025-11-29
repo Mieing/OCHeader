@@ -1,0 +1,11 @@
+@class CGPBusinessContactsPod_ContactsArgs;
+
+@interface CGPBusinessContactsPod : GPBMessage
+
+@property (nonatomic) int subCmd;
+@property (retain, nonatomic) CGPBusinessContactsPod_ContactsArgs *args;
+@property (nonatomic) BOOL hasArgs;
+
++ (id)descriptor;
+
+@end

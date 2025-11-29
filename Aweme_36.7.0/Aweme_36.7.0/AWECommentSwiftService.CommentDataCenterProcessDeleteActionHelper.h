@@ -1,0 +1,3 @@
+@interface AWECommentSwiftService.CommentDataCenterProcessDeleteActionHelper : _TtCs12_SwiftObject
+
+@end

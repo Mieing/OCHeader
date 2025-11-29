@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface HTSLiveMatchShareBackground : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *verticalImg;
+@property (nonatomic) BOOL hasVerticalImg;
+@property (retain, nonatomic) HTSLiveImage *horizontalImg;
+@property (nonatomic) BOOL hasHorizontalImg;
+
++ (id)descriptor;
+
+@end

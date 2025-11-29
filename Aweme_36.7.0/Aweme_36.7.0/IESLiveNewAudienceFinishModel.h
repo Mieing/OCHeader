@@ -1,0 +1,77 @@
+@class IESLiveNewAudienceRelaxPerformanceLogger, NSDictionary, CommonLiveTabGuideData, IESLiveSitckerReservation, HTSLiveUser, IESLiveRoomFinishApi, UIView, EndingPageResponseData, NSString, IESLiveNewAudienceFinishAnchorModel, IESLiveNewAudienceEndingReplayInfoModel, HTSEventContext, NSArray, NSNumber, IESLiveWindowEntranceModel;
+@protocol IESLiveRoomService;
+
+@interface IESLiveNewAudienceFinishModel : IESLiveDynamicModel <IESLiveUserActions>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSLiveUser *channelUser;
+@property (retain, nonatomic) IESLiveRoomFinishApi *api;
+@property (nonatomic) BOOL exitReport;
+@property (nonatomic) double startTime;
+@property (retain, nonatomic) NSArray *roomList;
+@property (retain, nonatomic) NSArray *appointmentArray;
+@property (retain, nonatomic) IESLiveNewAudienceFinishAnchorModel *anchorModel;
+@property (retain, nonatomic) NSDictionary *sources;
+@property (retain, nonatomic) IESLiveSitckerReservation *reservModel;
+@property (retain, nonatomic) NSNumber *nextWaitSeconds;
+@property (retain, nonatomic) IESLiveWindowEntranceModel *windowEntranceInfo;
+@property (weak, nonatomic) UIView *finishView;
+@property (weak, nonatomic) IESLiveNewAudienceRelaxPerformanceLogger *performanceLogger;
+@property (retain, nonatomic) CommonLiveTabGuideData *guideData;
+@property (readonly, nonatomic) HTSLiveUser *actualOwner;
+@property (nonatomic) long long followStatus;
+@property (copy, nonatomic) id /* block */ closeVCBlock;
+@property (nonatomic) long long recommendLiveCount;
+@property (nonatomic) BOOL isFromMSeqRoomClose;
+@property (nonatomic) BOOL isXTabGuideShow;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (copy, nonatomic) NSString *requestId;
+@property (retain, nonatomic) IESLiveNewAudienceEndingReplayInfoModel *endingReplayInfo;
+@property (copy, nonatomic) id /* block */ closeInterceptBlock;
+@property (nonatomic) BOOL disablePopout;
+@property (nonatomic) BOOL isDataFromEndingRequest;
+@property (nonatomic) BOOL isRedisplay;
+@property (retain, nonatomic) EndingPageResponseData *responseData;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)btmTrackParamsWithIndex:(unsigned long long)a0;
+- (void)trackEnterUserProfile;
+- (void)followAnchor;
+- (void)trackOpenPushStatusShow;
+- (void)trackOpenPushStatusClick;
+- (void)trackTabLiveGuideViewClickButton;
+- (void)trackTabLiveGuideViewClickCard;
+- (void)trackTabLiveGuideViewClickWithArea:(id)a0;
+- (id)firstRequestPage;
+- (void)registerUserService;
+- (void)fetchFinishInfoWithCompletion:(id /* block */)a0;
+- (void)fetchGuideInfoWithCompletion:(id /* block */)a0;
+- (void)trackFinishShow;
+- (void)trackfinishLiveShow;
+- (id)buildFollowAnchorEvent;
+- (void)changeSubscribeState:(BOOL)a0 secAnchorId:(id)a1 completion:(id /* block */)a2;
+- (void)trackSubscribevEvent:(id)a0;
+- (void)fetchCombineFinishInfoWithCompletion:(id /* block */)a0;
+- (void)trackExitFinish:(BOOL)a0;
+- (void)trackReservEvent:(id)a0;
+- (void)trackSubscribeButtonShown;
+- (void)trackSubscribeClicked:(BOOL)a0;
+- (void)trackSubscribeClickedSuccess;
+- (void)trackReplayButtonShow;
+- (void)trackReplayButtonClick;
+- (void)trackWindowEntranceShow;
+- (void)trackWindowEntranceClick;
+- (void)trackXTabGuideButtonClick;
+- (void)trackTabLiveGuideButtonClick;
+- (void)trackTabLiveGuideButtonShow;
+- (void)trackTabLiveGuideViewShow;
+- (void)trackAnnouncementWithEvent:(id)a0;
+- (void)trackFinishDuration;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)initWithRoom:(id)a0;
+
+@end

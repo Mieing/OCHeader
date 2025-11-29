@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface HTSLiveScreenChatTabResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *itemArray;
+@property (readonly, nonatomic) unsigned long long itemArray_Count;
+@property (nonatomic) long long shadowType;
+
++ (id)descriptor;
+
+@end

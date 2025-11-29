@@ -1,0 +1,70 @@
+@class AWESearchSingleTapEnterDetailHandler, NSString, NSDictionary, AWESearchCachalotGeneralCardPipeline, AWEAwemeModel, AWESearchCachalotCardInjectManager;
+
+@interface AWESearchLifeServiceVideoViewController : AWESearchLifeServiceBaseViewController <AWESearchGeneralPipelinePreRenderProvider, AWESearchSingleTapEnterDetailProtocol, AWESearchLifeServiceVideoViewControllerProtocol>
+
+@property (retain, nonatomic) AWESearchCachalotGeneralCardPipeline *nativeCardPipeline;
+@property (retain, nonatomic) AWESearchCachalotCardInjectManager *injectManager;
+@property (retain, nonatomic) NSDictionary *cachalotRegisterCardDict;
+@property (copy, nonatomic) NSDictionary *logExtraDict;
+@property (retain, nonatomic) AWESearchSingleTapEnterDetailHandler *tapEnterDetailHandler;
+@property (copy, nonatomic) NSDictionary *commonOnceParams;
+@property (copy, nonatomic) NSDictionary *commonAllTimeParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWEAwemeModel *originModel;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (nonatomic) BOOL isInSearchAdEndorseVideo;
+@property (nonatomic) long long transitionIndex;
+@property (nonatomic) long long transitionToIndex;
+@property (nonatomic) long long transitionRealIndex;
+@property (readonly, nonatomic) BOOL useCollectionView;
+@property (nonatomic) BOOL clickAvatarNotScroll;
+
+- (id)referString;
+- (BOOL)isDoubleColumn;
+- (id)searchDataController;
+- (id)sectionBindedData;
+- (void)fetchDataWithKeyWord:(id)a0 enterFrom:(id)a1 extraLogParams:(id)a2 isSearchByUserClick:(BOOL)a3 isFilterSearch:(BOOL)a4 animated:(BOOL)a5 completion:(id /* block */)a6;
+- (void)customHandleNodeViewModelsReady:(id)a0 withResponseParams:(id)a1 isLoadmore:(BOOL)a2;
+- (void)customComponentWillDisplay:(id)a0 withViewModel:(id)a1;
+- (id)customContainerConfig;
+- (Class)customDataControllerClass;
+- (BOOL)customInnerFlowShouldShowDataModel:(id)a0;
+- (id)customOuterDataModels;
+- (void)customComponentDidEndDisplay:(id)a0;
+- (void)singleTapEnterDetail:(long long)a0 withExtra:(id)a1 withPlayer:(id)a2;
+- (long long)awemeIndexInDisplayItems:(long long)a0;
+- (id)fetchDataControllerLogPassback;
+- (id)registerCardDict;
+- (id)fetchAllLeafArrayWithModernFeedType;
+- (void)customAddExtraParamsToTrackSearchEventWithBuilder:(id)a0;
+- (id)fetchPreRenderComponentWithViewModel:(id)a0;
+- (void)configAutoPlayHandler;
+- (id)fetchSearchModelWithIndex:(long long)a0;
+- (void)singleLayoutViewInjectConfig;
+- (void)handleAttachmentCellControllerWillDisplaywithViewModel:(id)a0;
+- (id)cellBackgroundModelForQualityWithCellModeModel:(id)a0;
+- (id)sectionSearchType;
+- (void)handleAttachmentCellControllerEndDisplaywithViewModel:(id)a0;
+- (BOOL)p_isUsingFlowData;
+- (id)fetchDataController;
+- (id)sectionSearchLogPassback;
+- (void)handleEnterDetailPerfWeaken;
+- (void)handleWillShowFullScreenVideoFeed;
+- (BOOL)syncOutsideFeedStreamReRankWithRemoveModelIndexSet:(id)a0 rankedModelIndexArr:(id)a1 insertCacheAwemeArr:(id)a2 insertCacheAwemeIndexArr:(id)a3 operateType:(long long)a4;
+- (void)syncFeedData:(id)a0 feedIndex:(long long)a1;
+- (id)fetchOutsideVCData;
+- (id)fetchNavigationController;
+- (void)innerDataControllerLoadmoreCallBackWithList:(id)a0;
+- (void)didDeleteAwemeWithSyncData:(BOOL)a0 awemeID:(id)a1;
+- (id)fetchAwemeModelWithIndex:(long long)a0;
+- (id)p_getTabConfig;
+- (id)visibleCells;
+- (void).cxx_destruct;
+- (id)displayItems;
+- (id)initWithConfig:(id)a0;
+- (void)viewDidLoad;
+
+@end

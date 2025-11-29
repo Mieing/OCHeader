@@ -1,0 +1,14 @@
+@interface TIMXPBNConversationMessagePreViewRequestBody : GPBMessage
+
+@property (nonatomic) long long convShortId;
+@property (nonatomic) BOOL hasConvShortId;
+@property (nonatomic) long long messageId;
+@property (nonatomic) BOOL hasMessageId;
+@property (nonatomic) long long conversationIndex;
+@property (nonatomic) BOOL hasConversationIndex;
+@property (nonatomic) int inboxType;
+@property (nonatomic) BOOL hasInboxType;
+
++ (id)descriptor;
+
+@end

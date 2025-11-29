@@ -1,0 +1,3 @@
+@interface StampIntroPanelFinishedApiRoot : GPBRootObject
+
+@end

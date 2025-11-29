@@ -1,0 +1,76 @@
+@class MJMovieTextSuggestionView, MJPublisherInspectorContainerView, UIView, MMTextView, MJPageView, MMGrowTextView, NSString, MMUIButton, MJMovieTextEditViewModel;
+@protocol MJMovieTextEditInspectorDelegate;
+
+@interface MJMovieTextEditInspector : UIViewController <MJPageViewDelegate, MJPageViewDataSource, MMGrowTextViewDelegate, IMMGrowTextViewExt, MJMovieTextSuggestionViewDelegate, MJStyleEditViewControllerDelegate, MJStickerPickerViewControllerDelegate>
+
+@property (retain, nonatomic) MJPublisherInspectorContainerView *containerView;
+@property (retain, nonatomic) UIView *inputContainerView;
+@property (retain, nonatomic) MMGrowTextView *growTextView;
+@property (retain, nonatomic) MMGrowTextView *growSubTextView;
+@property (retain, nonatomic) MMTextView *showingTextView;
+@property (retain, nonatomic) MMTextView *showingSubTextView;
+@property (retain, nonatomic) MMUIButton *doneBtn;
+@property (retain, nonatomic) MMUIButton *deleteBtn;
+@property (retain, nonatomic) MJPageView *pageView;
+@property (retain, nonatomic) MJMovieTextSuggestionView *suggestionCollectionView;
+@property (retain, nonatomic) NSString *prevTextUnmarked;
+@property (nonatomic) BOOL bFirstAppeared;
+@property (nonatomic) BOOL shouldShowSubTextViews;
+@property (nonatomic) BOOL shouldShowMovieTitleSuggestions;
+@property (nonatomic) BOOL isEditingSubText;
+@property (nonatomic) BOOL isUsingSuggestion;
+@property (nonatomic) BOOL isShowingKeyboard;
+@property (weak, nonatomic) id<MJMovieTextEditInspectorDelegate> delegate;
+@property (retain, nonatomic) MJMovieTextEditViewModel *viewModel;
+@property (readonly, nonatomic) NSString *textUnmarked;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithViewModel:(id)a0;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)clearText;
+- (void)reloadText;
+- (void)reloadPlaceholder;
+- (void)reloadSuggestions:(id)a0;
+- (void)setupViews;
+- (void)setupInputContainer;
+- (void)containerDidChangeHeight;
+- (void)textViewBecomeFirstResponder:(id)a0;
+- (void)textViewsResignFirstResponderIfNeeded;
+- (void)clickedDoneBtn:(id)a0;
+- (void)clickedDeleteBtn:(id)a0;
+- (BOOL)disMissSelf;
+- (void)movieTextSuggestionCollectionView:(id)a0 didSelectSuggestionWithTitle:(id)a1;
+- (void)onTextViewDidChange:(id)a0;
+- (void)TextViewExceedMaxLength:(id)a0;
+- (void)TextViewHeightDidChanged:(id)a0;
+- (void)TextDidChanged:(id)a0 selectedRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)MMGrowTextViewBeginEditing:(id)a0;
+- (void)MMGrowTextViewEndEditing:(id)a0;
+- (void)keyboardWillShow:(double)a0;
+- (void)keyboardWillHide:(BOOL)a0;
+- (void)onClickTextViewSendText:(id)a0;
+- (long long)numberOfPagesInPageView:(id)a0;
+- (id)pageView:(id)a0 titleItemAtIndex:(long long)a1;
+- (id)pageView:(id)a0 contentItemAtIndex:(long long)a1;
+- (void)pageView:(id)a0 didAppearPageAtIndex:(long long)a1;
+- (void)styleEditVC:(id)a0 didSelectedMaterial:(id)a1;
+- (void)styleEditVC:(id)a0 didSelectedFont:(id)a1;
+- (void)styleEditVC:(id)a0 didSelectedColor:(id)a1;
+- (void)styleEditVC:(id)a0 didSelectAnimPreset:(id)a1;
+- (void)styleEditVC:(id)a0 didEndChangeMaterialWitDataType:(unsigned long long)a1;
+- (void)stickerPicker:(id)a0 didChangeSelection:(id)a1 atIndex:(long long)a2;
+- (void)updateInputContainerViewHeight;
+- (void)didTappedShowingTextView;
+- (void)didTappedShowingSubTextView;
+- (void)updateDoneBtn;
+- (void)updateDeleteBtn;
+- (void).cxx_destruct;
+
+@end

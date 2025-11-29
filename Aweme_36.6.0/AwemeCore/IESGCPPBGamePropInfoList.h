@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface IESGCPPBGamePropInfoList : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+@property (nonatomic) long long totalCount;
+
++ (id)descriptor;
+
+@end

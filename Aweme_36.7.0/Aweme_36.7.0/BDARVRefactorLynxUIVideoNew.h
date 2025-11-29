@@ -1,0 +1,81 @@
+@class BDARRefactorLynxVideoWrappView, NSString, BDARVVideoModel, BDARVSDKVideoService, BDARVPayloadData;
+
+@interface BDARVRefactorLynxUIVideoNew : LynxUI <BDARVVideoEventEmiter, BDARVIndicatorViewDelegate, BDARLynxContext, BDASDKVideoPlayerDelegate>
+
+@property (retain, nonatomic) BDARVVideoModel *videoModel;
+@property (retain, nonatomic) BDARVPayloadData *payloadData;
+@property (retain, nonatomic) BDARRefactorLynxVideoWrappView *wrappView;
+@property (nonatomic) BOOL didMoveToWindow;
+@property (retain, nonatomic) BDARVSDKVideoService *videoService;
+@property (copy, nonatomic) NSString *src;
+@property (nonatomic) BOOL muted;
+@property (nonatomic) BOOL autoplay;
+@property (nonatomic) long long position;
+@property (copy, nonatomic) NSString *preload;
+@property (copy, nonatomic) NSString *objectfit;
+@property (copy, nonatomic) NSString *playstatus;
+@property (nonatomic) long long volume;
+@property (nonatomic) double speed;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)__lynx_prop_config__1081;
++ (id)__lynx_prop_config__870;
++ (id)__lynx_prop_config__1192;
++ (id)__lynx_prop_config__1543;
++ (id)__lynx_prop_config__1604;
++ (id)__lynx_prop_config__1665;
++ (id)__lynx_prop_config__1886;
++ (id)__lynx_prop_config__1957;
+
+- (void)setMuted:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)videoPlayerDidFinished:(id)a0 error:(id)a1;
+- (void)videoPlayer:(id)a0 playbackTime:(double)a1;
+- (void)videoPlayer:(id)a0 playTimingChange:(unsigned long long)a1;
+- (void)videoPlayer:(id)a0 playbackStateDidChanged:(long long)a1;
+- (void)videoPlayer:(id)a0 loadStateDidChanged:(unsigned long long)a1;
+- (void)videoPlayerReadyToDisPlay:(id)a0 params:(id)a1;
+- (void)videoPlayerReadyToPlay:(id)a0;
+- (void)videoPlayer:(id)a0 hitCacheSize:(long long)a1;
+- (void)videoPlayer:(id)a0 mdlKey:(id)a1 hitCacheSize:(long long)a2;
+- (void)videoPlayError:(id)a0;
+- (void)videoFirstFrame;
+- (void)playOver;
+- (void)setSrc:(id)a0 requestReset:(BOOL)a1;
+- (id)playerStatusInfo;
+- (void)indicatorViewRetry:(id)a0;
+- (void)videoPlayHitCache;
+- (void)videoFirstFrameSDK;
+- (BOOL)configPlayerWithVideoInfo:(id)a0;
+- (void)_startIndicatorWithType:(unsigned long long)a0 withText:(id)a1;
+- (void)autoPlayByLynx;
+- (long long)convertVideoScalingMode:(long long)a0;
+- (void)addKVOForContext;
+- (void)bdarPlay;
+- (void)bdarPause;
+- (double)bdarDuration;
+- (double)bdarTotalWatchTime;
+- (unsigned long long)playDurationStatus;
+- (id)supportNAEvents;
+- (BOOL)supportEvent:(id)a0;
+- (void)emitNAEvnet:(id)a0 payload:(id)a1;
+- (void)timeupdate:(id)a0;
+- (void)videoPlayStateChange:(unsigned long long)a0;
+- (void)videoPlayHitMDLCache:(id)a0;
+- (void)emitEvnet:(id)a0 payload:(id)a1;
+- (id)supportEvents;
+- (void)setPreload:(id)a0 requestReset:(BOOL)a1;
+- (void)setAutoplay:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)setPosition:(long long)a0 requestReset:(BOOL)a1;
+- (void)setPlaystatus:(id)a0 requestReset:(BOOL)a1;
+- (void)setObjectfit:(id)a0 requestReset:(BOOL)a1;
+- (void)setSpeed:(double)a0 requestReset:(BOOL)a1;
+- (void)videoStartPlay:(id)a0;
+- (void).cxx_destruct;
+- (void)willMoveToWindow:(id)a0;
+- (void)dealloc;
+- (id)createView;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetLoopModeResponse : BDByteCastPPBaseCmdResponse
+
+@end

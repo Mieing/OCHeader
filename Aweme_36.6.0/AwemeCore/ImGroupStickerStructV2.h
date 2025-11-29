@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface ImGroupStickerStructV2 : GPBMessage
+
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *groupCreateType;
+@property (nonatomic) BOOL hasGroupCreateType;
+
++ (id)descriptor;
+
+@end

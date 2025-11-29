@@ -1,0 +1,40 @@
+@class NSString, HTSLiveImage, HTSLiveScreenChatMessage_Effect, HTSLivePublicAreaCommon, HTSLiveChatIdentity, HTSLiveScreenChatMessageContentExt, HTSLiveCommon, HTSLiveUser, HTSLiveScreenChatMessage_OfficialCommentConfig, HTSLiveText;
+
+@interface HTSLiveScreenChatMessage : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isFakeMessage;
+@property (nonatomic) BOOL isSendTcs;
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long screenChatType;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) long long priority;
+@property (retain, nonatomic) HTSLiveScreenChatMessage_Effect *effect;
+@property (nonatomic) BOOL hasEffect;
+@property (retain, nonatomic) HTSLiveImage *backgroundImage;
+@property (nonatomic) BOOL hasBackgroundImage;
+@property (retain, nonatomic) HTSLiveScreenChatMessage_Effect *effectV2;
+@property (nonatomic) BOOL hasEffectV2;
+@property (retain, nonatomic) HTSLiveImage *backgroundImageV2;
+@property (nonatomic) BOOL hasBackgroundImageV2;
+@property (retain, nonatomic) HTSLivePublicAreaCommon *publicAreaCommon;
+@property (nonatomic) BOOL hasPublicAreaCommon;
+@property (retain, nonatomic) HTSLiveScreenChatMessage_OfficialCommentConfig *officialCommentConfig;
+@property (nonatomic) BOOL hasOfficialCommentConfig;
+@property (nonatomic) long long eventTime;
+@property (nonatomic) BOOL sendReview;
+@property (retain, nonatomic) HTSLiveChatIdentity *chatIdentityInfo;
+@property (nonatomic) BOOL hasChatIdentityInfo;
+@property (retain, nonatomic) HTSLiveText *rtfContent;
+@property (nonatomic) BOOL hasRtfContent;
+@property (nonatomic) BOOL publicAreaDoesNotDisplay;
+@property (retain, nonatomic) HTSLiveText *rtfContentV2;
+@property (nonatomic) BOOL hasRtfContentV2;
+@property (retain, nonatomic) HTSLiveScreenChatMessageContentExt *contentExt;
+@property (nonatomic) BOOL hasContentExt;
+
++ (id)descriptor;
+
+@end

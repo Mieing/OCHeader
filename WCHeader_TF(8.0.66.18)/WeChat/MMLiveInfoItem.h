@@ -1,0 +1,81 @@
+@class NSString, NSData, MMGroupLiveInfoItem, WCFinderLiveShareItem;
+
+@interface MMLiveInfoItem : MMObject <WCTTableCoding, NSCopying>
+
+@property (nonatomic) long long liveId;
+@property (retain, nonatomic) NSString *liveName;
+@property (retain, nonatomic) NSString *roomId;
+@property (nonatomic) unsigned int createTime;
+@property (nonatomic) unsigned int endTime;
+@property (nonatomic) unsigned int status;
+@property (retain, nonatomic) NSString *anchor;
+@property (nonatomic) long long timeId;
+@property (nonatomic) unsigned int barStatus;
+@property (nonatomic) BOOL useDefaultLiveName;
+@property (nonatomic) unsigned int liveType;
+@property (retain, nonatomic) NSData *liveExtraData;
+@property (readonly, nonatomic) BOOL isFinderLive;
+@property (readonly, nonatomic) BOOL isGroupLive;
+@property (readonly, nonatomic) WCFinderLiveShareItem *finderLiveShareItem;
+@property (readonly, nonatomic) MMGroupLiveInfoItem *groupLiveInfoItem;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)liveId;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_liveId;
++ (const void *)liveName;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_liveName;
++ (const void *)roomId;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_roomId;
++ (const void *)createTime;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_createTime;
++ (const void *)endTime;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_endTime;
++ (const void *)status;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_status;
++ (const void *)anchor;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_anchor;
++ (const void *)timeId;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (id)swift_timeId;
++ (const void *)barStatus;
++ (const void *)__wcdb_synthesize_8:(void *)a0;
++ (id)swift_barStatus;
++ (const void *)useDefaultLiveName;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (id)swift_useDefaultLiveName;
++ (const void *)liveType;
++ (const void *)__wcdb_synthesize_10:(void *)a0;
++ (id)swift_liveType;
++ (const void *)liveExtraData;
++ (const void *)__wcdb_synthesize_11:(void *)a0;
++ (id)swift_liveExtraData;
++ (void)__wcdb_column_constraint_12:(void *)a0;
++ (void)__wcdb_index_13:(void *)a0;
++ (void)__wcdb_index_14:(void *)a0;
++ (void)__wcdb_index_15:(void *)a0;
++ (void)__wcdb_index_16:(void *)a0;
++ (void)__wcdb_index_17:(void *)a0;
++ (id)createItemWithLiveInfo:(id)a0 roomId:(id)a1;
++ (id)createItemWithShareLiveMsg:(id)a0;
+
+- (BOOL)isEqual:(id)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void).cxx_destruct;
+
+@end

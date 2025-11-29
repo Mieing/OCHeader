@@ -1,0 +1,8 @@
+@interface HTSLiveUser_ProfileStyleParams : IESLivePBBaseMessage
+
+@property (nonatomic) long long profileStyle;
+@property (nonatomic) long long smartSwitch;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface BattleReplyApiRoot : GPBRootObject
+
+@end

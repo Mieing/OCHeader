@@ -1,0 +1,70 @@
+@class AWEFeedLiveStreamTableLastCellMaskView, NSMutableDictionary, NSString, AWEAwemeModel, UIView, UIViewController;
+@protocol AWEFeedTableViewCellViewControllerProtocol, AWEAwemePlayInteractionInteractorProtocol, UIScrollViewDelegate, AWEAwemePlayInteractionRouterProtocol;
+
+@interface AWEFeedLiveStreamTableViewCell : UITableViewCell <AWEFeedTableViewCellProtocol, AWEAwemeDetailCellMaskProtocol>
+
+@property (retain, nonatomic) id<AWEAwemePlayInteractionRouterProtocol> router;
+@property (retain, nonatomic) id<AWEAwemePlayInteractionInteractorProtocol> interactor;
+@property (weak, nonatomic) UIViewController<AWEFeedTableViewCellViewControllerProtocol> *currentController;
+@property (nonatomic) long long controllerType;
+@property (nonatomic) BOOL controllerTypeChanged;
+@property (retain, nonatomic) NSMutableDictionary *controllerFactory;
+@property (retain, nonatomic) AWEFeedLiveStreamTableLastCellMaskView *lastCellMaskView;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) long long indexPath;
+@property (readonly, nonatomic) UIViewController<AWEFeedTableViewCellViewControllerProtocol> *viewController;
+@property (weak, nonatomic) UIViewController *parentVC;
+@property (copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) AWEAwemeModel *registerElementModel;
+@property (nonatomic) long long cellDisplayState;
+@property (nonatomic) long long cellPageAppearState;
+@property (copy, nonatomic) id /* block */ currentCellPageAppearStateBlock;
+@property (nonatomic) struct EngineAudioWrapper { } *audioWrapper;
+@property (nonatomic) struct EngineVideoWrapper { } *videoWrapper;
+@property (nonatomic) BOOL didResetForReusable;
+@property (retain, nonatomic) UIView *feedTableViewCellMaskView;
+@property (readonly, weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+@property (nonatomic) BOOL hadPrepareToDisplay;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)isVideoRelatedPanelShowing;
+- (void)didDisplay;
+- (void)preloadWithModel:(id)a0;
+- (void)configWithModel:(id)a0;
+- (void)willConfigWithModel:(id)a0;
+- (void)deceleratingEndToDisplay;
+- (void)replaceViewController:(id)a0 removeIfExisting:(BOOL)a1;
+- (void)resetPreload;
+- (void)enterLiveRoom:(id)a0;
+- (void)removeCellChildVCForMemoryOpt;
+- (void)showLastCellMaskView:(BOOL)a0;
+- (void)configLastCellMaskViewWithTitle:(id)a0 backHintText:(id)a1 backAction:(id /* block */)a2;
+- (id)liveModuleService;
+- (void)trackLogWithEvent:(id)a0;
+- (void)removeChildViewController;
+- (long long)controllerTypeWithAweModel:(id)a0;
+- (BOOL)isPreStreamVCReuse;
+- (id)controllerWithType:(long long)a0;
+- (void)_addChildVC:(id)a0 parentController:(id)a1;
+- (BOOL)isMannorCardShown:(id)a0;
+- (id)liveStreamViewControllerWithAvatarClick:(id /* block */)a0;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (void)reset;
+- (void)dealloc;
+- (void)configureWithModel:(id)a0;
+- (void)didEndDisplaying;
+- (void)removeViewController:(id)a0;
+- (void)willDisplay;
+- (void)pageDidDisappear:(BOOL)a0;
+- (void)pageWillAppear:(BOOL)a0;
+- (void)pageDidAppear:(BOOL)a0;
+- (void)pageWillDisappear:(BOOL)a0;
+
+@end

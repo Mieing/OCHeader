@@ -1,0 +1,12 @@
+@class HTSLiveCommon, ProfitCheckConfig;
+
+@interface HTSLiveProfitReportMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) ProfitCheckConfig *profitCheckConfig;
+@property (nonatomic) BOOL hasProfitCheckConfig;
+
++ (id)descriptor;
+
+@end

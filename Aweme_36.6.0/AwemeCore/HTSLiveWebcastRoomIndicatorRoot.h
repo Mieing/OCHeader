@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastRoomIndicatorRoot : GPBRootObject
+
+@end

@@ -1,0 +1,9 @@
+@interface AWEMusicStreamingImpl.PlaylistInfoEditModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ playlistId;
+    void /* unknown type, empty encoding */ title;
+    void /* unknown type, empty encoding */ desc;
+    void /* unknown type, empty encoding */ cover;
+    void /* unknown type, empty encoding */ coverUrl;
+}
+
+@end

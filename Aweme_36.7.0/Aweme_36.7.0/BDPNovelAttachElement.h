@@ -1,0 +1,3 @@
+@interface BDPNovelAttachElement : NSObject
+
+@end

@@ -1,0 +1,10 @@
+@class NotifyFansGroupGuideResponse_ResponseData;
+
+@interface NotifyFansGroupGuideResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NotifyFansGroupGuideResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

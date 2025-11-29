@@ -1,0 +1,3 @@
+@interface OpenAppStatusApiRoot : GPBRootObject
+
+@end

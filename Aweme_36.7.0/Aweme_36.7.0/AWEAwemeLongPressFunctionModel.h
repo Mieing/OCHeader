@@ -1,0 +1,70 @@
+@class UIFont, NSString, UIColor, UIImage, NSURL, NSAttributedString, NSDictionary;
+@protocol AWEIMShareModelProtocol, AWEIMStreakDisplayManagerProtocol;
+
+@interface AWEAwemeLongPressFunctionModel : NSObject <AWEListDiffable>
+
+@property (copy, nonatomic) id /* block */ willAppearBlock;
+@property (copy, nonatomic) id /* block */ disappearedBlock;
+@property (copy, nonatomic) id /* block */ highlightedBlock;
+@property (copy, nonatomic) id /* block */ unhighlightedBlock;
+@property (copy, nonatomic) NSString *offsiteSharePlatform;
+@property (copy, nonatomic) NSString *typeIdentifierString;
+@property (nonatomic) long long type;
+@property (retain, nonatomic) UIImage *icon;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) id /* block */ actionBlock;
+@property (copy, nonatomic) NSAttributedString *attributeTitle;
+@property (copy, nonatomic) id /* block */ trackSendClickedBlock;
+@property (retain, nonatomic) NSURL *avatartURL;
+@property (nonatomic) BOOL needClipIcon;
+@property (copy, nonatomic) NSString *guideTitle;
+@property (retain, nonatomic) NSURL *videoCover;
+@property (copy, nonatomic) NSString *userName;
+@property (copy, nonatomic) NSString *userDescription;
+@property (nonatomic) BOOL isIMUser;
+@property (nonatomic) long long shareState;
+@property (nonatomic) BOOL isMoreFriend;
+@property (nonatomic) BOOL isShareAsStory;
+@property (nonatomic) BOOL isCreateAndShare;
+@property (readonly, nonatomic) BOOL isFakeIMUser;
+@property (nonatomic) BOOL isInsertedAuthorModel;
+@property (nonatomic) BOOL isTip;
+@property (nonatomic) BOOL isProgress;
+@property (nonatomic) BOOL isDisabled;
+@property (nonatomic) BOOL isRecommend;
+@property (nonatomic) BOOL hasRecommend;
+@property (nonatomic) BOOL isLongPressSelect;
+@property (nonatomic) BOOL needShowArrow;
+@property (copy, nonatomic) NSString *disabledInfo;
+@property (nonatomic) BOOL isOffsiteShare;
+@property (nonatomic) double progress;
+@property (nonatomic) BOOL autoDismiss;
+@property (nonatomic) BOOL isFromSharePanel;
+@property (nonatomic) double tipTextHeight;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } tipInsets;
+@property (retain, nonatomic) UIFont *tipFont;
+@property (retain, nonatomic) UIColor *titleColor;
+@property (retain, nonatomic) NSDictionary *infoDict;
+@property (nonatomic) BOOL isDislikeReason;
+@property (nonatomic) BOOL isSpeed;
+@property (retain, nonatomic) UIColor *backgroudColor;
+@property (retain, nonatomic) id<AWEIMShareModelProtocol> shareModel;
+@property (retain, nonatomic) id<AWEIMStreakDisplayManagerProtocol> imStreakDisplayManager;
+@property (copy, nonatomic) NSString *pageIdentifier;
+@property (copy, nonatomic) id /* block */ configCellActionBlock;
+@property (nonatomic) long long sectionType;
+@property (nonatomic) long long priority;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)diffIdentifierKey;
+- (BOOL)isEqualToDiffableObject:(id)a0;
+- (void)updateWithTitle:(id)a0 icon:(id)a1 actionBlock:(id /* block */)a2 willAppearBlock:(id /* block */)a3;
+- (void)updateWithIcon:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithType:(long long)a0;
+- (void)updateWithType:(long long)a0;
+
+@end

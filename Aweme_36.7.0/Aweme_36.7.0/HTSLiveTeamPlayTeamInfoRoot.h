@@ -1,0 +1,3 @@
+@interface HTSLiveTeamPlayTeamInfoRoot : GPBRootObject
+
+@end

@@ -1,0 +1,74 @@
+@class GCDAsyncUdpSocket, NSMutableDictionary, NSURLSession, NSOperationQueue, NSTimer, NSObject, NSString;
+@protocol OS_dispatch_queue, BDCLUPnPServerDelegate;
+
+@interface BDCLUPnPServer : NSObject <GCDAsyncUdpSocketDelegate>
+
+@property (retain, nonatomic) GCDAsyncUdpSocket *unicastUdpSocket;
+@property (retain, nonatomic) GCDAsyncUdpSocket *multicastUdpSocket;
+@property (retain, nonatomic) NSOperationQueue *operationQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *checkQueue;
+@property (retain, nonatomic) NSMutableDictionary *deviceDictionary;
+@property (nonatomic) BOOL unicastUdpSocketInited;
+@property (nonatomic) BOOL udpSocketInited;
+@property (retain, nonatomic) NSURLSession *urlSession;
+@property (weak, nonatomic) NSTimer *timer;
+@property (nonatomic) unsigned long long cycleIndex;
+@property (nonatomic) long long cacheDeviceCount;
+@property (nonatomic) BOOL supportDLNA;
+@property (nonatomic) BOOL supportDIAL;
+@property (nonatomic) BOOL supportBDLE;
+@property (nonatomic) BOOL enableDLNALoadAvtScpd;
+@property (weak, nonatomic) id<BDCLUPnPServerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)closeConnection:(int)a0;
+- (id)initWithContextId:(id)a0;
+- (id)headerValueForKey:(id)a0 inData:(id)a1;
+- (void)udpSocket:(id)a0 didSendDataWithTag:(long long)a1;
+- (void)udpSocket:(id)a0 didNotSendDataWithTag:(long long)a1 dueToError:(id)a2;
+- (void)udpSocket:(id)a0 didReceiveData:(id)a1 fromAddress:(id)a2 withFilterContext:(id)a3;
+- (void)udpSocketDidClose:(id)a0 withError:(id)a1;
+- (id)getUPnPURLWithUrlModel:(id)a0 urlHeader:(id)a1;
+- (void)httpServerRestart:(id)a0;
+- (void)startWithOptimizeEnabled;
+- (void)traceStartBrowseError:(id)a0;
+- (void)unsubscribeForDevice:(id)a0;
+- (void)sendUdpSearchPacket;
+- (void)checkCacheDeviceAvailable;
+- (void)getDeviceInfoAndAddDevice:(id)a0;
+- (void)getDeviceWithLocation:(id)a0 withUSN:(id)a1 privateServiceVersion:(int)a2 andIsCached:(BOOL)a3 completion:(id /* block */)a4;
+- (id)getSearchStringWithSTString:(id)a0;
+- (void)checkWithDevice:(id)a0 count:(long long)a1 maxCount:(long long)a2 timeout:(double)a3 retryInterval:(double)a4 offlineDevice:(BOOL)a5 urlSession:(id)a6 checkCompletion:(id /* block */)a7;
+- (void)handleDeviceOffline:(id)a0;
+- (void)checkDeviceWithDevice:(id)a0 timeout:(double)a1 urlSession:(id)a2 completion:(id /* block */)a3;
+- (void)removeDeviceWithKey:(id)a0;
+- (id)cacheArray:(id)a0 findDeviceWithLocation:(id)a1 usn:(id)a2;
+- (void)traceBDDLNABrowseError:(id)a0 message:(id)a1 extra:(id)a2;
+- (void)JudgeDeviceWithData:(id)a0;
+- (BOOL)isNilString:(id)a0;
+- (void)getDeviceWithLocation:(id)a0 withUSN:(id)a1 privateServiceVersion:(int)a2 completion:(id /* block */)a3;
+- (void)updateCachedCustomServiceVersionWithDevice:(id)a0;
+- (BOOL)useDLNACustomizedService:(int)a0;
+- (void)subscribeForDevice:(id)a0;
+- (id)convertAvtScpdMetadata:(id)a0;
+- (void)getAvtScpdInfoWithLocation:(id)a0 completion:(id /* block */)a1;
+- (void)subscribeWithDevice:(id)a0 callback:(id /* block */)a1;
+- (void)unsubscribeWithDevice:(id)a0 callback:(id /* block */)a1;
+- (void)subscribe:(BOOL)a0 device:(id)a1 callback:(id /* block */)a2;
+- (void)checkServiceAlive:(id)a0;
+- (void)checkServiceAlive:(id)a0 maxCount:(long long)a1 timeout:(double)a2 retryInterval:(double)a3 urlSession:(id)a4 completion:(id /* block */)a5;
+- (void)traceBrowseError:(long long)a0 message:(id)a1 extra:(id)a2 sdkType:(unsigned long long)a3;
+- (void)startWithError:(id)a0;
+- (void)addDevice:(id)a0;
+- (void)start:(unsigned long long)a0;
+- (void).cxx_destruct;
+- (void)search;
+- (void)stop;
+- (void)dealloc;
+- (void)onError;
+- (void)onChange;
+
+@end

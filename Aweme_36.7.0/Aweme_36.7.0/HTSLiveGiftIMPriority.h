@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface HTSLiveGiftIMPriority : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *queueSizesArray;
+@property (readonly, nonatomic) unsigned long long queueSizesArray_Count;
+@property (nonatomic) long long selfQueuePriority;
+@property (nonatomic) long long priority;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveInviteListUserInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *last7DaysGiftCountText;
+@property (copy, nonatomic) NSString *fuzzyFanTicket;
+@property (nonatomic) BOOL isActive;
+
++ (id)descriptor;
+
+@end

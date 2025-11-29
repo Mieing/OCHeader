@@ -1,0 +1,80 @@
+@class UILabel, NSString, UIView, AWEUILoadingView, UIButton;
+@protocol AWEUITextLoadingViewDelegate;
+
+@interface AWEUITextLoadingView : UIView <IESECUILoadingViewProtocol, IESIMTextLoadingViewProtocol, ACCTextLoadingViewProtcol>
+
+@property (nonatomic) double progress;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UIButton *im_closeBtn;
+@property (copy, nonatomic) id /* block */ im_closeBlock;
+@property (readonly, copy, nonatomic) NSString *title;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL acclt_cancellable;
+@property (nonatomic) double acclt_dalay;
+@property (retain, nonatomic) UIButton *closeBtn;
+@property (copy, nonatomic) id /* block */ closeBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UIView *hudView;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *containerView;
+@property (weak, nonatomic) id<AWEUITextLoadingViewDelegate> delegate;
+@property (readonly, copy, nonatomic) NSString *title;
+
++ (void)dismissWindowLoadingWithAnimated:(BOOL)a0;
++ (id)showWindowLoadingWithTitle:(id)a0 animated:(BOOL)a1;
++ (void)dismissWindowLoading;
++ (id)showLoadingOnView:(id)a0 withTitle:(id)a1;
++ (id)showWindowLoadingWithTitle:(id)a0;
++ (id)showWindowLoadingWithTitle:(id)a0 animated:(BOOL)a1 afterDelay:(double)a2;
++ (id)showLoadingOnView:(id)a0 title:(id)a1 animated:(BOOL)a2;
++ (id)p_imageWithColor:(id)a0;
++ (id)sharedView;
++ (id)showWindowLoadingWithTitle:(id)a0 animated:(BOOL)a1 afterDelay:(double)a2 delegate:(id)a3;
++ (id)showLoadingOnView:(id)a0 title:(id)a1 animated:(BOOL)a2 afterDelay:(double)a3 delegate:(id)a4;
++ (id)showLoadingOnView:(id)a0 title:(id)a1 animated:(BOOL)a2 afterDelay:(double)a3;
++ (void)_aweLazyRegisterLoad_ACCLoading;
+
+- (void)dismissWithAnimated:(BOOL)a0;
+- (void)allowUserInteraction:(BOOL)a0;
+- (void)p_showLoadingOnView:(id)a0 title:(id)a1 animated:(BOOL)a2;
+- (void)p_showLoadingOnView:(id)a0;
+- (void)showCloseBtn:(BOOL)a0 closeBlock:(id /* block */)a1;
+- (id)im_closeBtn;
+- (id /* block */)im_closeBlock;
+- (void)im_didClickCloseBtn:(id)a0;
+- (void)setIm_closeBtn:(id)a0;
+- (void)setIm_closeBlock:(id /* block */)a0;
+- (void)im_showCloseBtn:(BOOL)a0 closeBlock:(id /* block */)a1;
+- (void)iesim_showCloseBtn:(BOOL)a0 closeBlock:(id /* block */)a1;
+- (void)setAcclt_loadingStartTime:(double)a0;
+- (double)acclt_loadingStartTime;
+- (long long)acclt_scene;
+- (void)setAcclt_scene:(long long)a0;
+- (double)acclt_delay;
+- (void)setAcclt_delay:(double)a0;
+- (void)acc_dismissWithAnimated:(BOOL)a0;
+- (void)didClickCloseBtn:(id)a0;
+- (void)acc_updateTitle:(id)a0;
+- (void)stopAnimating;
+- (void)startAnimating;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setTitle:(id)a0;
+- (void)setHidden:(BOOL)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)willMoveToWindow:(id)a0;
+- (void)setupUI;
+- (void)updateTitle:(id)a0;
+
+@end

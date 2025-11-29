@@ -1,0 +1,61 @@
+@interface DYAUserService : NSObject
+
++ (void)switchToUser:(id)a0 completion:(id /* block */)a1;
++ (void)fetchConnectUserProfileWithAids:(id)a0 completion:(id /* block */)a1;
++ (Class)aAWEVCDAuthorizeDOUYINHTSAdapterClass;
++ (id)currentPassportUser;
++ (void)updateCurrentUserWithPassportUser:(id)a0 completion:(id /* block */)a1;
++ (void)finishLoginWithPassportUser:(id)a0 completion:(id /* block */)a1;
++ (void)updateCurrentUser:(BOOL)a0 afterLogin:(BOOL)a1 isTeenMode:(BOOL)a2 headers:(id)a3 completion:(id /* block */)a4;
++ (void)clearAllUsers:(id /* block */)a0;
++ (void)clearUser:(id)a0 backgroundUser:(BOOL)a1 completion:(id /* block */)a2;
++ (id)userForUID:(id)a0;
++ (Class)aAWEPassportServiceHTSAdapterClass;
++ (void)finishLoginWithPassportUser:(id)a0 context:(id)a1 completion:(id /* block */)a2;
++ (void)finishLoginWithPassportUser:(id)a0 context:(id)a1 extraParams:(id)a2 completion:(id /* block */)a3;
++ (void)updateCurrentUserWhenMixed:(BOOL)a0 completion:(id /* block */)a1;
++ (void)updateCurrentUser:(BOOL)a0 afterLogin:(BOOL)a1 scene:(long long)a2 isTeenMode:(BOOL)a3 headers:(id)a4 completion:(id /* block */)a5;
++ (id)currentUserBusinessModel;
++ (BOOL)isSafePhoneOrPhoneBinded;
++ (void)fetchAwemeUser:(id)a0 extraParams:(id)a1 headers:(id)a2 isColdLaunch:(BOOL)a3 isTeenMode:(BOOL)a4 completion:(id /* block */)a5;
++ (BOOL)isSimpleUserRequestIsColdLaunch:(BOOL)a0 isTeenMode:(BOOL)a1;
++ (void)enrichSimpleAwemeAccountUser:(id)a0;
++ (void)getPassportAccountInfoWithHeaders:(id)a0 completedBlock:(id /* block */)a1;
++ (void)monitorAccountData:(id)a0 localUid:(id)a1 originUid:(id)a2 error:(id)a3;
++ (void)updateCurrentUserWithPassportUser:(id)a0 context:(id)a1 coldLaunch:(BOOL)a2 afterLogin:(BOOL)a3 scene:(long long)a4 headers:(id)a5 extraParams:(id)a6 completion:(id /* block */)a7;
++ (void)updateCurrentUserWithPassportUser:(id)a0 context:(id)a1 coldLaunch:(BOOL)a2 afterLogin:(BOOL)a3 headers:(id)a4 completion:(id /* block */)a5;
++ (void)updateCurrentUserWithPassportUser:(id)a0 context:(id)a1 completion:(id /* block */)a2;
++ (void)updateCurrentUserWithPassportUser:(id)a0 context:(id)a1 coldLaunch:(BOOL)a2 afterLogin:(BOOL)a3 completion:(id /* block */)a4;
++ (void)updateCurrentUserWithPassportUser:(id)a0 context:(id)a1 coldLaunch:(BOOL)a2 afterLogin:(BOOL)a3 headers:(id)a4 extraParams:(id)a5 completion:(id /* block */)a6;
++ (void)fetchCurrentUser:(id)a0 context:(id)a1 coldLaunch:(BOOL)a2 afterLogin:(BOOL)a3 headers:(id)a4 scene:(long long)a5 extraParams:(id)a6 completion:(id /* block */)a7;
++ (void)fetchFinishedWithAccount:(id)a0 passportUser:(id)a1 scene:(long long)a2 error:(id)a3 source:(id)a4 completion:(id /* block */)a5;
++ (id)createVCDEmptyUserModelWithPassportUser:(id)a0;
++ (id)createUserModelWithPassportUser:(id)a0;
++ (BOOL)shouldShowVCDAccountAuthAlertWithPassport:(id)a0;
++ (void)switchToUserWithID:(id)a0 secUserID:(id)a1 completion:(id /* block */)a2;
++ (void)handleSwitchUser:(id)a0 model:(id)a1 userID:(id)a2 completion:(id /* block */)a3;
++ (void)removeUserIfNeeded:(id)a0 userID:(id)a1;
++ (void)handleSwitchRelationUser:(id)a0 model:(id)a1 userID:(id)a2 completion:(id /* block */)a3;
++ (void)switchToUser:(id)a0 optimizeRequest:(BOOL)a1 completion:(id /* block */)a2;
++ (void)switchToUserWithID:(id)a0 completion:(id /* block */)a1;
++ (void)multipleUnbind:(id)a0 completion:(id /* block */)a1;
++ (void)tryFetchCurrentUserAfterLogin:(id)a0 context:(id)a1 extraParams:(id)a2 retryCount:(long long)a3 completion:(id /* block */)a4;
++ (void)persistUserWithPassportUser:(id)a0 source:(id)a1 completion:(id /* block */)a2;
++ (id)cacheUserModelWithPassportUser:(id)a0;
++ (id)createAccountModelWithPassportUser:(id)a0 awemeUserModel:(id)a1;
++ (void)fetchAwemeUser:(id)a0 extraParams:(id)a1 headers:(id)a2 completion:(id /* block */)a3;
++ (void)switchToUserWithSecUserID:(id)a0 completion:(id /* block */)a1;
++ (void)switchToRelationUserWithSecUserID:(id)a0 userID:(id)a1 relationUserToken:(id)a2 completion:(id /* block */)a3;
++ (void)logoutOthers:(id /* block */)a0;
++ (BOOL)updateWithUser:(id)a0 source:(id)a1;
++ (void)updateCurrentUserWithAwemeJSON:(id)a0 passportJSON:(id)a1;
++ (void)syncPassportUserWhenQuerySuccess:(id)a0;
++ (id)userID;
++ (id)allAccounts;
++ (id)currentUser;
++ (BOOL)isLogin;
+
+- (id)aAWEVCDAuthorizeDOUYINHTSAdapter;
+- (id)aAWEPassportServiceHTSAdapter;
+
+@end

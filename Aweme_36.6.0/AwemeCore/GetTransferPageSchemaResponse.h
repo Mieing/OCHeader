@@ -1,0 +1,10 @@
+@class GetTransferPageSchemaResponse_Data;
+
+@interface GetTransferPageSchemaResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetTransferPageSchemaResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

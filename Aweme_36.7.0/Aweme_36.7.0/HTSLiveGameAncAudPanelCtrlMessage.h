@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveGameAncAudPanelCtrlMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long gameId;
+@property (nonatomic) long long sendType;
+@property (nonatomic) long long panelType;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

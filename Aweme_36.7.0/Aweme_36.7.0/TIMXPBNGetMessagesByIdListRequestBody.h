@@ -1,0 +1,16 @@
+@class NSString, GPBInt64Array;
+
+@interface TIMXPBNGetMessagesByIdListRequestBody : GPBMessage
+
+@property (copy, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL hasConversationId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (retain, nonatomic) GPBInt64Array *serverMessageIdListArray;
+@property (readonly, nonatomic) unsigned long long serverMessageIdListArray_Count;
+
++ (id)descriptor;
+
+@end

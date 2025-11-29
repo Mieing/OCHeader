@@ -1,0 +1,3 @@
+@interface HTSLiveMysteryShopRoot : GPBRootObject
+
+@end

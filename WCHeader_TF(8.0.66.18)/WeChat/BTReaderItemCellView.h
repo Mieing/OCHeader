@@ -1,0 +1,80 @@
+@class UIView, MMWebImageView, NSString, BTReaderMsgSectionData, BTReaderItemCellViewModel, BTRichTextTagView, RichTextView, MMUILabel, BTFinderRecommendRedPacketView, CAGradientLayer;
+
+@interface BTReaderItemCellView : BTBaseItemCellView <WCActionSheetDelegate> {
+    BTRichTextTagView *m_titleView;
+    RichTextView *m_digestLabel;
+    MMWebImageView *m_coverImageView;
+    UIView *m_highlightMaskView;
+    UIView *m_separateLine;
+    MMUILabel *m_friendRelatedInfoLabel;
+    BOOL m_bIsForceHighlight;
+    CAGradientLayer *m_maskLayer;
+}
+
+@property (nonatomic) unsigned int itemIndex;
+@property (readonly, nonatomic) MMWebImageView *coverImageView;
+@property (readonly, nonatomic) BTRichTextTagView *titleView;
+@property (readonly, nonatomic) RichTextView *digestLabel;
+@property (readonly, nonatomic) MMUILabel *friendRelatedInfoLabel;
+@property (readonly, nonatomic) BTReaderItemCellViewModel *viewModel;
+@property (readonly, nonatomic) BTReaderMsgSectionData *sectionData;
+@property (readonly, nonatomic) BTFinderRecommendRedPacketView *redPacketView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithViewModel:(id)a0;
+- (id)accessibilityLabel;
+- (void)setViewModel:(id)a0;
+- (BOOL)isTopItem;
+- (void)initHighlightMaskView;
+- (void)setHighlighted:(BOOL)a0 animated:(BOOL)a1;
+- (void)forceSetHighlighted:(BOOL)a0;
+- (void)initLongPressGesture;
+- (void)initTopReaderItem;
+- (void)initNormalReaderItem;
+- (void)initSeparateLayer;
+- (void)initCoverView;
+- (id)getCoverImageView;
+- (void)initTitleView;
+- (void)initDigestLabel;
+- (void)initFriendsReadLabel;
+- (void)initRedPacketView;
+- (void)initCoverMask;
+- (void)onUpdateViewModel;
+- (void)updateImage:(id)a0 widthUrl:(id)a1;
+- (void)updateTitleView:(BOOL)a0;
+- (id)getTitleViewColor:(BOOL)a0;
+- (void)updatePaySubcribeTag;
+- (void)updateCover:(BOOL)a0;
+- (void)updateDigestLabel;
+- (void)updateFriendRelatedInfo;
+- (void)resetRedPacketViewHidden;
+- (id)getFriendRelatedInfoTextColor;
+- (id)titleLabel;
+- (void)layoutSubviews;
+- (void)layoutContentView;
+- (void)addCornerToContentView:(unsigned long long)a0;
+- (void)layoutSubviewsTopItem;
+- (void)layoutSubviewsNormalItem;
+- (void)handleLongPressEx:(id)a0;
+- (void)onBrandItemLongPress;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (void)handleMenuControllerWillHideMenuNotification:(id)a0;
+- (void)handleMenuControllerWillShowNotification:(id)a0;
+- (void)onForward:(id)a0;
+- (void)onFavorite:(id)a0;
+- (void)onDelete:(id)a0;
+- (void)onDebug:(id)a0;
+- (void)showComfirmDeleteActionSheet;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (id)forwardMenuItem;
+- (id)favoriteMenuItem;
+- (id)deleteMenuItem;
+- (id)debugMenuItem;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceAddSongResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceAddSongResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceAddSongResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

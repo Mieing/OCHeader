@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface BattleShellConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long shellType;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

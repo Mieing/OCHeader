@@ -1,0 +1,13 @@
+@class IESLiveLinkMicAudienceListResponse_ListUser, IESLiveWaitingListUser;
+
+@interface IESLiveLinkMicAudienceUserSearchResponse_ListUser : IESLivePBBaseMessage
+
+@property (nonatomic) int searchType;
+@property (retain, nonatomic) IESLiveWaitingListUser *waitingUser;
+@property (nonatomic) BOOL hasWaitingUser;
+@property (retain, nonatomic) IESLiveLinkMicAudienceListResponse_ListUser *inviteUser;
+@property (nonatomic) BOOL hasInviteUser;
+
++ (id)descriptor;
+
+@end

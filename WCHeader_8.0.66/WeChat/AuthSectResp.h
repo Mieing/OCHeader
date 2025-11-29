@@ -1,0 +1,84 @@
+@class ECDHKey, WTLoginImgRespInfo, WxVerifyCodeRespInfo, NSString, ShowStyleKey, SKBuiltinBuffer_t;
+
+@interface AuthSectResp : WXPBGeneratedMessage
+
+@property (nonatomic) unsigned int uin;
+@property (retain, nonatomic) ECDHKey *svrPubEcdhkey;
+@property (retain, nonatomic) SKBuiltinBuffer_t *sessionKey;
+@property (retain, nonatomic) SKBuiltinBuffer_t *autoAuthKey;
+@property (nonatomic) unsigned int wtloginRspBuffFlag;
+@property (retain, nonatomic) SKBuiltinBuffer_t *wtloginRspBuff;
+@property (retain, nonatomic) WTLoginImgRespInfo *wtloginImgRespInfo;
+@property (retain, nonatomic) WxVerifyCodeRespInfo *wxVerifyCodeRespInfo;
+@property (retain, nonatomic) SKBuiltinBuffer_t *cliDbencryptKey;
+@property (retain, nonatomic) SKBuiltinBuffer_t *cliDbencryptInfo;
+@property (retain, nonatomic) NSString *authKey;
+@property (retain, nonatomic) SKBuiltinBuffer_t *a2Key;
+@property (retain, nonatomic) NSString *applyBetaUrl;
+@property (retain, nonatomic) ShowStyleKey *showStyle;
+@property (retain, nonatomic) NSString *authTicket;
+@property (nonatomic) unsigned int newVersion;
+@property (nonatomic) unsigned int updateFlag;
+@property (nonatomic) unsigned int authResultFlag;
+@property (retain, nonatomic) NSString *fsurl;
+@property (nonatomic) unsigned int mmtlsControlBitFlag;
+@property (nonatomic) unsigned int serverTime;
+@property (retain, nonatomic) SKBuiltinBuffer_t *clientSessionKey;
+@property (retain, nonatomic) SKBuiltinBuffer_t *serverSessionKey;
+@property (nonatomic) unsigned int ecdhControlFlag;
+@property (retain, nonatomic) SKBuiltinBuffer_t *extEncryptKeySeries;
+
++ (void)initialize;
+
+- (void)setExtEncryptKeySeries:(id)a0;
+- (id)extEncryptKeySeries;
+- (void)setEcdhControlFlag:(unsigned int)a0;
+- (unsigned int)ecdhControlFlag;
+- (void)setServerSessionKey:(id)a0;
+- (id)serverSessionKey;
+- (void)setClientSessionKey:(id)a0;
+- (id)clientSessionKey;
+- (void)setServerTime:(unsigned int)a0;
+- (unsigned int)serverTime;
+- (void)setMmtlsControlBitFlag:(unsigned int)a0;
+- (unsigned int)mmtlsControlBitFlag;
+- (void)setFsurl:(id)a0;
+- (id)fsurl;
+- (void)setAuthResultFlag:(unsigned int)a0;
+- (unsigned int)authResultFlag;
+- (void)setUpdateFlag:(unsigned int)a0;
+- (unsigned int)updateFlag;
+- (void)setNewVersion:(unsigned int)a0;
+- (unsigned int)newVersion;
+- (void)setAuthTicket:(id)a0;
+- (id)authTicket;
+- (void)setShowStyle:(id)a0;
+- (id)showStyle;
+- (void)setApplyBetaUrl:(id)a0;
+- (id)applyBetaUrl;
+- (void)setA2Key:(id)a0;
+- (id)a2Key;
+- (void)setAuthKey:(id)a0;
+- (id)authKey;
+- (void)setCliDbencryptInfo:(id)a0;
+- (id)cliDbencryptInfo;
+- (void)setCliDbencryptKey:(id)a0;
+- (id)cliDbencryptKey;
+- (void)setWxVerifyCodeRespInfo:(id)a0;
+- (id)wxVerifyCodeRespInfo;
+- (void)setWtloginImgRespInfo:(id)a0;
+- (id)wtloginImgRespInfo;
+- (void)setWtloginRspBuff:(id)a0;
+- (id)wtloginRspBuff;
+- (void)setWtloginRspBuffFlag:(unsigned int)a0;
+- (unsigned int)wtloginRspBuffFlag;
+- (void)setAutoAuthKey:(id)a0;
+- (id)autoAuthKey;
+- (void)setSessionKey:(id)a0;
+- (id)sessionKey;
+- (void)setSvrPubEcdhkey:(id)a0;
+- (id)svrPubEcdhkey;
+- (void)setUin:(unsigned int)a0;
+- (unsigned int)uin;
+
+@end

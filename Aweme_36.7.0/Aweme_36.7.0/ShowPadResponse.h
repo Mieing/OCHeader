@@ -1,0 +1,10 @@
+@class ShowPadResponse_Data;
+
+@interface ShowPadResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ShowPadResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

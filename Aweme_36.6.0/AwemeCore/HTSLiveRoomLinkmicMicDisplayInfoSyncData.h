@@ -1,0 +1,11 @@
+@class GPBInt64ObjectDictionary;
+
+@interface HTSLiveRoomLinkmicMicDisplayInfoSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long roomId;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *roomDisplayInfo;
+@property (readonly, nonatomic) unsigned long long roomDisplayInfo_Count;
+
++ (id)descriptor;
+
+@end

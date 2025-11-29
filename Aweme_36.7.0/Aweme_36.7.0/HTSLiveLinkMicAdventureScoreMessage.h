@@ -1,0 +1,12 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveLinkMicAdventureScoreMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *pairListArray;
+@property (readonly, nonatomic) unsigned long long pairListArray_Count;
+
++ (id)descriptor;
+
+@end

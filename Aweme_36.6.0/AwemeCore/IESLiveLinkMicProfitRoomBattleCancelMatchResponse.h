@@ -1,0 +1,10 @@
+@class IESLiveLinkMicProfitRoomBattleCancelMatchResponse_ResponseData;
+
+@interface IESLiveLinkMicProfitRoomBattleCancelMatchResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicProfitRoomBattleCancelMatchResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

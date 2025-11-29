@@ -1,0 +1,10 @@
+@class UploadPerformanceDataResponse_Data;
+
+@interface UploadPerformanceDataResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UploadPerformanceDataResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

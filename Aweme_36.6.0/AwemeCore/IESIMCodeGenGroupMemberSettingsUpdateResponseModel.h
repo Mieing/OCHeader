@@ -1,0 +1,3 @@
+@interface IESIMCodeGenGroupMemberSettingsUpdateResponseModel : AWEBaseResponseModel
+
+@end

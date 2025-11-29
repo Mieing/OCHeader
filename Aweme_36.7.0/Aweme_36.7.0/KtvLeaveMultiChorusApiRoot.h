@@ -1,0 +1,3 @@
+@interface KtvLeaveMultiChorusApiRoot : GPBRootObject
+
+@end

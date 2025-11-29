@@ -1,0 +1,10 @@
+@class OpenFormatResponse_Data;
+
+@interface OpenFormatResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) OpenFormatResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

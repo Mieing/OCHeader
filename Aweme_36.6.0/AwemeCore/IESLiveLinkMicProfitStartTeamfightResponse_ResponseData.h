@@ -1,0 +1,10 @@
+@class HTSLiveLinkmicTeamfightInfo;
+
+@interface IESLiveLinkMicProfitStartTeamfightResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkmicTeamfightInfo *teamfightInfo;
+@property (nonatomic) BOOL hasTeamfightInfo;
+
++ (id)descriptor;
+
+@end

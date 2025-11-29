@@ -1,0 +1,72 @@
+@class UIView, NSString, AWEAwemeModel, UITapGestureRecognizer, IESLiveBackgroundView, NSMutableDictionary, UIImageView, UIViewController, AWELivePreStreamContext, HTSLiveRoom;
+@protocol IESLiveHierarchyContainerView, IESLivePlayerProtocol;
+
+@interface AWELivePreStream4LayerContainerView : HTSLive4LayerContainerView <UIGestureRecognizerDelegate, AWELivePreStreamViewProtocol>
+
+@property (retain, nonatomic) NSMutableDictionary *centerContainerBottomLayoutDic;
+@property (retain, nonatomic) UIView *accessibilityView;
+@property (retain, nonatomic) UITapGestureRecognizer *tapRecognizer;
+@property (retain, nonatomic) UIImageView *topDarkWatermark;
+@property (retain, nonatomic) UIImageView *bottomDarkWatermark;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) HTSLiveRoom *room;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) BOOL didEndedLive;
+@property (retain, nonatomic) id<IESLivePlayerProtocol> fakePlayer;
+@property (retain, nonatomic) UIView *fakeBizView;
+@property (copy, nonatomic) id /* block */ enterRoomAction;
+@property (readonly, nonatomic) UIView *controlContainer;
+@property (readonly, nonatomic) UIView *danmakuContainer;
+@property (retain, nonatomic) UIView *topDesView;
+@property (readonly, nonatomic) UIImageView *liveCoverImageView;
+@property (readonly, nonatomic) UIView *liveCoverBlurView;
+@property (readonly, nonatomic) UIView *playerContainerView;
+@property (readonly, nonatomic) UIView *abovePlayerContainerView;
+@property (readonly, nonatomic) UIView *belowPlayerContainerView;
+@property (readonly, nonatomic) UIView *gradientContainerView;
+@property (readonly, nonatomic) IESLiveBackgroundView *liveBackgroundView;
+@property (retain, nonatomic) UIView *leftContainer;
+@property (retain, nonatomic) UIView *centerContainer;
+@property (retain, nonatomic) UIView *bottomGradientView;
+@property (weak, nonatomic) UIView *streamPlayerView;
+@property (copy, nonatomic) id /* block */ addWatermarkBlock;
+@property (nonatomic) BOOL needSecureContent;
+@property (weak, nonatomic) UIViewController *rootViewController;
+@property (weak, nonatomic) AWELivePreStreamContext *preStreamContext;
+@property (weak, nonatomic) UIView<IESLiveHierarchyContainerView> *contentContainer;
+
+- (void)configWithModel:(id)a0;
+- (BOOL)touchAtEmptyPlace:(id)a0;
+- (void)unregisterCenterContainerLayoutWithType:(unsigned long long)a0;
+- (void)registerCenterContainerLayoutWithModel:(id)a0;
+- (void)streamPlayerPlay:(id)a0;
+- (void)smoothBackWithFakeBizView:(id)a0;
+- (void)normalCenterContainerLayout;
+- (void)reusePlayerFromLiveRoom;
+- (void)updateUIWithRoomStatus:(BOOL)a0;
+- (void)prepareForPreReuse;
+- (void)enterLiveEnd;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 DIContext:(id)a1 pageContext:(id)a2;
+- (void)awe_nunkiForbidLiveCoverView;
+- (void)setupAccessibilityView;
+- (void)onVoiceOverChanged:(id)a0;
+- (void)changePayCardShowStatus:(BOOL)a0;
+- (void)removeFakeStreamPlayer;
+- (void)removeFakeBizViewSmoothBack;
+- (void)watchTapped:(id)a0;
+- (void)addWatermark;
+- (void)layoutCenterContainer;
+- (void)showEnterOtherRoomDialog:(id)a0 actionBlock:(id /* block */)a1 cancelBlock:(id /* block */)a2;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)reset;
+- (void)layoutSubviews;
+- (void)setupUI;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0;
+
+@end

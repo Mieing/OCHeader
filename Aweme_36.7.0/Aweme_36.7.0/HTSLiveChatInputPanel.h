@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveChatInputPanel : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *carrierListArray;
+@property (readonly, nonatomic) unsigned long long carrierListArray_Count;
+
++ (id)descriptor;
+
+@end

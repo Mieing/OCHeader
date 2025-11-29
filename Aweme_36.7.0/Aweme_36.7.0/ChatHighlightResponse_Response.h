@@ -1,0 +1,13 @@
+@class HTSLiveNewHighlightItem;
+
+@interface ChatHighlightResponse_Response : IESLivePBBaseMessage
+
+@property (nonatomic) long long eventTime;
+@property (nonatomic) long long newId;
+@property (retain, nonatomic) HTSLiveNewHighlightItem *item;
+@property (nonatomic) BOOL hasItem;
+@property (nonatomic) long long skipReview;
+
++ (id)descriptor;
+
+@end

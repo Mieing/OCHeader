@@ -1,0 +1,6 @@
+@interface AWEMusicStreamingImpl.CellRegisterer : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ registeredIds;
+    void /* unknown type, empty encoding */ tableView;
+}
+
+@end

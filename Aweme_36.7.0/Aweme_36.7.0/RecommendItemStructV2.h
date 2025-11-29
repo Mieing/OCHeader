@@ -1,0 +1,16 @@
+@class NSString, UrlStructV2;
+
+@interface RecommendItemStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *awemeId;
+@property (nonatomic) BOOL hasAwemeId;
+@property (retain, nonatomic) UrlStructV2 *cover;
+@property (nonatomic) BOOL hasCover;
+@property (retain, nonatomic) UrlStructV2 *dynamicCover;
+@property (nonatomic) BOOL hasDynamicCover;
+@property (nonatomic) long long mediaType;
+@property (nonatomic) BOOL hasMediaType;
+
++ (id)descriptor;
+
+@end

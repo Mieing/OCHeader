@@ -1,0 +1,83 @@
+@class NSMutableArray, NSArray, NSString, UIFocusEffect, UIView, SemanticsObjectContainer;
+@protocol UIFocusEnvironment, UIFocusItemContainer, UICoordinateSpace;
+
+@interface SemanticsObject : UIAccessibilityElement <UIFocusItem, UIFocusItemContainer> {
+    BOOL _inDealloc;
+}
+
+@property (readonly, nonatomic) BOOL canBecomeFocused;
+@property (readonly, nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } frame;
+@property (readonly, copy, nonatomic) UIFocusEffect *focusEffect;
+@property (readonly, nonatomic) long long focusGroupPriority;
+@property (readonly, nonatomic) long long focusItemDeferralMode;
+@property (readonly, nonatomic) BOOL isTransparentFocusItem;
+@property (readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
+@property (readonly, weak, nonatomic) id<UIFocusEnvironment> parentFocusEnvironment;
+@property (readonly, nonatomic) id<UIFocusItemContainer> focusItemContainer;
+@property (readonly, weak, nonatomic) UIView *preferredFocusedView;
+@property (readonly, copy, nonatomic) NSString *focusGroupIdentifier;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) id<UICoordinateSpace> coordinateSpace;
+@property (retain, nonatomic) SemanticsObjectContainer *container;
+@property (weak, nonatomic) SemanticsObject *parent;
+@property (readonly, nonatomic) int uid;
+@property (readonly, nonatomic) struct WeakPtr<flutter::AccessibilityBridgeIos> { struct AccessibilityBridgeIos *ptr_; struct RefPtr<fml::internal::WeakPtrFlag> { struct WeakPtrFlag *ptr_; } flag_; struct DebugThreadChecker { } checker_; } bridge;
+@property (readonly, nonatomic) struct SemanticsNode { int id; struct SemanticsFlags { BOOL hasCheckedState; BOOL isChecked; BOOL isSelected; BOOL isButton; BOOL isTextField; BOOL isFocused; BOOL hasEnabledState; BOOL isEnabled; BOOL isInMutuallyExclusiveGroup; BOOL isHeader; BOOL isObscured; BOOL scopesRoute; BOOL namesRoute; BOOL isHidden; BOOL isImage; BOOL isLiveRegion; BOOL hasToggledState; BOOL isToggled; BOOL hasImplicitScrolling; BOOL isMultiline; BOOL isReadOnly; BOOL isFocusable; BOOL isLink; BOOL isSlider; BOOL isKeyboardKey; BOOL isCheckStateMixed; BOOL hasExpandedState; BOOL isExpanded; BOOL hasSelectedState; BOOL hasRequiredState; BOOL isRequired; } flags; int actions; int maxValueLength; int currentValueLength; int textSelectionBase; int textSelectionExtent; int platformViewId; int scrollChildren; int scrollIndex; double scrollPosition; double scrollExtentMax; double scrollExtentMin; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } identifier; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } label; struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<flutter::StringAttribute> *, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__value_; } __end_cap_; } labelAttributes; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } hint; struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<flutter::StringAttribute> *, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__value_; } __end_cap_; } hintAttributes; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } value; struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<flutter::StringAttribute> *, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__value_; } __end_cap_; } valueAttributes; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } increasedValue; struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<flutter::StringAttribute> *, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__value_; } __end_cap_; } increasedValueAttributes; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } decreasedValue; struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<flutter::StringAttribute> *, std::allocator<std::shared_ptr<flutter::StringAttribute>>> { void *__value_; } __end_cap_; } decreasedValueAttributes; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } tooltip; int textDirection; struct SkRect { float fLeft; float fTop; float fRight; float fBottom; } rect; struct SkM44 { float fMat[16]; } transform; struct vector<int, std::allocator<int>> { int *__begin_; int *__end_; struct __compressed_pair<int *, std::allocator<int>> { int *__value_; } __end_cap_; } childrenInTraversalOrder; struct vector<int, std::allocator<int>> { int *__begin_; int *__end_; struct __compressed_pair<int *, std::allocator<int>> { int *__value_; } __end_cap_; } childrenInHitTestOrder; struct vector<int, std::allocator<int>> { int *__begin_; int *__end_; struct __compressed_pair<int *, std::allocator<int>> { int *__value_; } __end_cap_; } customAccessibilityActions; int headingLevel; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char __data_[23]; unsigned char __padding_[0]; unsigned char __size_ : 7; unsigned char __is_long_ : 1; } __s; struct __long { char *__data_; unsigned long long __size_; unsigned long __cap_ : 63; unsigned char __is_long_ : 1; } __l; struct __raw { unsigned long long __words[3]; } __r; } ; } __value_; } __r_; } linkUrl; int role; int validationResult; } node;
+@property (readonly, nonatomic) BOOL hasChildren;
+@property (copy, nonatomic) NSMutableArray *children;
+@property (copy, nonatomic) NSArray *childrenInHitTestOrder;
+@property (readonly, nonatomic) id nativeAccessibility;
+
+- (id)focusItem;
+- (void)setNeedsFocusUpdate;
+- (void)updateFocusIfNeeded;
+- (BOOL)shouldUpdateFocusInContext:(id)a0;
+- (void)didUpdateFocusInContext:(id)a0 withAnimationCoordinator:(id)a1;
+- (id)focusItemsInRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithBridge:(struct WeakPtr<flutter::AccessibilityBridgeIos> { struct AccessibilityBridgeIos *x0; struct RefPtr<fml::internal::WeakPtrFlag> { struct WeakPtrFlag *x0; } x1; struct DebugThreadChecker { } x2; })a0 uid:(int)a1;
+- (void)dealloc;
+- (BOOL)isAccessibilityBridgeAlive;
+- (void)setSemanticsNode:(const void *)a0;
+- (void)accessibilityBridgeDidFinishUpdate;
+- (BOOL)nodeWillCauseLayoutChange:(const void *)a0;
+- (BOOL)nodeWillCauseScroll:(const void *)a0;
+- (BOOL)nodeShouldTriggerAnnouncement:(const void *)a0;
+- (void)replaceChildAtIndex:(long long)a0 withChild:(id)a1;
+- (id)routeName;
+- (id)createAttributedStringFromString:(id)a0 withAttributes:(const void *)a1;
+- (void)showOnScreen;
+- (BOOL)isAccessibilityElement;
+- (BOOL)isFocusable;
+- (void)collectRoutes:(id)a0;
+- (BOOL)onCustomAccessibilityAction:(id)a0;
+- (id)accessibilityIdentifier;
+- (id)accessibilityLabel;
+- (BOOL)containsPoint:(struct CGPoint { double x0; double x1; })a0;
+- (id)search:(struct CGPoint { double x0; double x1; })a0;
+- (id)_accessibilityHitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (BOOL)accessibilityScrollToVisible;
+- (BOOL)accessibilityScrollToVisibleWithChild:(id)a0;
+- (id)accessibilityAttributedLabel;
+- (id)accessibilityHint;
+- (id)accessibilityAttributedHint;
+- (id)accessibilityValue;
+- (id)accessibilityAttributedValue;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })accessibilityFrame;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })globalRect;
+- (void)setAccessibilityContainer:(id)a0;
+- (id)accessibilityContainer;
+- (BOOL)accessibilityActivate;
+- (void)accessibilityIncrement;
+- (void)accessibilityDecrement;
+- (BOOL)accessibilityScroll:(long long)a0;
+- (BOOL)accessibilityPerformEscape;
+- (void)accessibilityElementDidBecomeFocused;
+- (void)accessibilityElementDidLoseFocus;
+- (BOOL)accessibilityRespondsToUserInteraction;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

@@ -1,0 +1,7 @@
+@class NSString;
+
+@interface IESLiveSaveDataURLResultModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *filePath;
+
+@end

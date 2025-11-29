@@ -1,0 +1,7 @@
+@interface RTVXRInterruptViewController : UIViewController
+
+- (BOOL)awe_shouldAutorotate;
+- (unsigned long long)awe_supportedInterfaceOrientations;
+- (void)viewDidLoad;
+
+@end

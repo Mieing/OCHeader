@@ -1,0 +1,86 @@
+@class UIView, NSString, IESECShopShareBubbleView, UIImageView, IESECShopToolsModel, CAGradientLayer, IESECShopToolsPanelViewController, IESECStoreNavbarViewModel, IESECServiceProxy, IESECShopRecommendTitleView;
+@protocol IESECRelationNavbarViewProtocol, IESECShopLiveTabService, IESECShopHeaderViewProtocol, IESECShopLayoutService, IESECShopFrameworkService, IESECShopThemeService, IESECShopStateService, IESECShopDataService, IESECShopTopTabService;
+
+@interface IESECStoreNavbarController : IESECRelationController <IESECRelationNavbarViewDelegate, IESECShopEventSubscriber, IESECShopPopupProtocol, IESECShopToolsPanelDelegate, IESECShopHeaderViewDelegate, IESECStoreNavbarControllerProtocol> {
+    BOOL _hasNavBarBeenExpanded;
+    BOOL _qrCodeDataReady;
+    BOOL _needShowSharePanel;
+    IESECShopToolsModel *_toolsModel;
+    BOOL _needShowToolsPanel;
+}
+
+@property (retain, nonatomic) IESECStoreNavbarViewModel *viewModel;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopThemeService> *themeService;
+@property (retain, nonatomic) UIView<IESECRelationNavbarViewProtocol> *navbarView;
+@property (retain, nonatomic) CAGradientLayer *headerGradientLayer;
+@property (retain, nonatomic) UIImageView *navbarPromotionView;
+@property (retain, nonatomic) CAGradientLayer *promotionMaskLayer;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopTopTabService> *topTabService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopLiveTabService> *liveTabService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopFrameworkService> *frameworkService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopDataService> *dataService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopStateService> *stateService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopLayoutService> *layoutService;
+@property (retain, nonatomic) UIView<IESECShopHeaderViewProtocol> *headerView;
+@property (retain, nonatomic) IESECShopRecommendTitleView *recommendTitleView;
+@property (retain, nonatomic) IESECShopShareBubbleView *bubbleView;
+@property (weak, nonatomic) IESECShopToolsPanelViewController *toolsPanelView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) UIView<IESECRelationNavbarViewProtocol> *navigationBar;
+
+- (void)didTapMoreButton;
+- (void)didTapBackButton;
+- (void)setupBinding;
+- (void)setupBindingV2;
+- (void)didTapSearchButton;
+- (void)pagerView:(id)a0 mainScrollViewDidScroll:(id)a1;
+- (void)headerTypeDidChange:(unsigned long long)a0;
+- (void)switchTheme:(unsigned long long)a0;
+- (void)controllerDidLoad;
+- (void)controllerWillAppear:(BOOL)a0;
+- (void)controllerWillDisappear:(BOOL)a0;
+- (void)iesecshop_screenStateDidChange:(unsigned long long)a0;
+- (void)iesecshop_splitSlideDidScroll:(double)a0;
+- (void)updateWithInfoResponse:(id)a0;
+- (void)dismissToolsPanel;
+- (void)closeShop;
+- (void)openSearch;
+- (void)openShareOrToolsPanel;
+- (void)updateWithActivityResponse:(id)a0;
+- (void)p_promotionViewsSwitchTheme:(unsigned long long)a0;
+- (void)showWithTask:(id)a0 closeCallback:(id /* block */)a1;
+- (void)animatorDidRefresh;
+- (void)didTapSearchBar;
+- (void)didTapPhotoSearch;
+- (void)headerView:(id)a0 didUpdateViewSize:(struct CGSize { double x0; double x1; })a1;
+- (void)configJSB;
+- (void)preloadSearchResultResource;
+- (void)setupViewsV2;
+- (void)addHeaderView;
+- (void)p_showNewSharePanelIfNeeded:(id)a0;
+- (void)p_handleScrollForSimpleHeaderView;
+- (void)p_headerViewSwitchTheme:(unsigned long long)a0;
+- (void)p_promotionViewsScrollToPercent:(double)a0;
+- (void)didTapShareItem;
+- (void)requestSwsBlock;
+- (id)createShopMoreOptionItems;
+- (void)didTapShoppingCartItem;
+- (void)didShowShoppingCartItem;
+- (void)didTapMyOrdersItem;
+- (void)handleSearchPageRedirectWithSearchButton:(BOOL)a0;
+- (BOOL)canShowShareBubble;
+- (void)addShareBubblePopupTask;
+- (void)openToolsPanel;
+- (void)didTapServiceButton;
+- (void)didTapCartButton;
+- (void)onNavBarScrollComplete;
+- (void)didTapServiceItem;
+- (void)didTapRedpacketItem;
+- (void)showSharePanel;
+- (void).cxx_destruct;
+- (void)viewDidLoad;
+
+@end

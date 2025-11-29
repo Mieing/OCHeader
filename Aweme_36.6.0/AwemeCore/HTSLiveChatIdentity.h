@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface HTSLiveChatIdentity : IESLivePBBaseMessage
+
+@property (nonatomic) int showIdentity;
+@property (retain, nonatomic) HTSLiveImage *identityLabel;
+@property (nonatomic) BOOL hasIdentityLabel;
+
++ (id)descriptor;
+
+@end

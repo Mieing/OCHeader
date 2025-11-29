@@ -1,0 +1,3 @@
+@interface AWELiveSwiftImpl.AWELivePreStreamQuitRoomRecommendGuidePage : AWELiveSwiftImpl.AWELivePreStreamQuitRoomCommonAlertBasePage
+
+@end

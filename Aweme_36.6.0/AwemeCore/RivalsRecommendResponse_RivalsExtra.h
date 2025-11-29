@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface RivalsRecommendResponse_RivalsExtra : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isHitAnchorPunish;
+@property (copy, nonatomic) NSString *hitPunishContent;
+
++ (id)descriptor;
+
+@end

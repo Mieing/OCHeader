@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface GetLiveDebugPermissionResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *tipMsg;
+
++ (id)descriptor;
+
+@end

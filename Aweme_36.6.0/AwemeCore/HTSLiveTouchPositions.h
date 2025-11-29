@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveTouchPositions : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+
++ (id)descriptor;
+
+@end

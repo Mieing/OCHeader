@@ -1,0 +1,71 @@
+@class UIStackView, UIView, UITapGestureRecognizer, NSString, UIImageView, UIButton, AWEIMSchoolGroupManager, UITextField, AWEIMSchoolGroupVerifyViewModel, IESIMButton, UILabel, AWEIMSchoolGroupTracker;
+@protocol IESIMCustomModalTransitionContext;
+
+@interface AWEIMSchoolGroupVerifyViewController : UIViewController <UITextFieldDelegate, YYTextKeyboardObserver, UIGestureRecognizerDelegate, IESIMCustomModalTransitionVCProtocol>
+
+@property (readonly, nonatomic) AWEIMSchoolGroupManager *manager;
+@property (readonly, nonatomic) AWEIMSchoolGroupTracker *tracker;
+@property (readonly, nonatomic) UIStackView *titleRegion;
+@property (readonly, nonatomic) UILabel *titleLabel;
+@property (readonly, nonatomic) UIButton *closeButton;
+@property (readonly, nonatomic) UIStackView *collegeRegion;
+@property (readonly, nonatomic) UILabel *collegeTitle;
+@property (readonly, nonatomic) UITextField *collegeTextField;
+@property (readonly, nonatomic) UIView *collegeBottomline;
+@property (readonly, nonatomic) UIStackView *yearRegion;
+@property (readonly, nonatomic) UILabel *yearTitle;
+@property (readonly, nonatomic) UILabel *yearLabel;
+@property (readonly, nonatomic) UILabel *yearConfirmLabel;
+@property (readonly, nonatomic) UIImageView *yearArrowImageView;
+@property (readonly, nonatomic) UITapGestureRecognizer *yearRegionTapGesture;
+@property (readonly, nonatomic) UIView *yearBottomline;
+@property (readonly, nonatomic) UIStackView *autoSendIntroduceRegion;
+@property (readonly, nonatomic) UIImageView *autoSendIntroduceCheckImageView;
+@property (readonly, nonatomic) UILabel *autoSendIntroduceLabel;
+@property (readonly, nonatomic) UITapGestureRecognizer *autoSendIntroduceTapGesture;
+@property (readonly, nonatomic) AWEIMSchoolGroupVerifyViewModel *viewModel;
+@property (readonly, nonatomic) IESIMButton *completeButton;
+@property (nonatomic) double viewHeight;
+@property (nonatomic) double additionViewHeight;
+@property (weak, nonatomic) id<IESIMCustomModalTransitionContext> transitionContext;
+@property (copy, nonatomic) id /* block */ onClose;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)keyboardChangedWithTransition:(struct { BOOL x0; BOOL x1; struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } x2; struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } x3; double x4; long long x5; unsigned long long x6; })a0;
+- (void)__createComponents;
+- (void)__layoutComponents;
+- (void)__configComponents;
+- (void)__createDependency;
+- (void)__setupBinder;
+- (void)handleCloseButtonClicked:(id)a0;
+- (void)__createTitleRegion;
+- (void)__createCollegeRegion;
+- (void)__createYearRegion;
+- (void)__createAutoSendIntroduceRegion;
+- (void)__createCompleteButton;
+- (void)collegeTextFieldDidChange:(id)a0;
+- (void)handleYearTapGesture:(id)a0;
+- (void)handleAutoSendIntroduceTapGesture:(id)a0;
+- (void)handleCompleteButtonClicked:(id)a0;
+- (void)__collegeBinder;
+- (void)__yearBinder;
+- (void)__autoSendIntroduceBind;
+- (void)__completeBinder;
+- (long long)__maxCollegeLength;
+- (void)__showDatePickerViewController;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })preferredContentSize;
+- (BOOL)textFieldShouldReturn:(id)a0;
+- (id)init;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (id)initWithConversationID:(id)a0;
+- (double)customCornerRadius;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveBattleNotifyPointRoot : GPBRootObject
+
+@end

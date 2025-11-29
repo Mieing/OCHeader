@@ -1,0 +1,3 @@
+@interface StampShelfRemoveApiRoot : GPBRootObject
+
+@end

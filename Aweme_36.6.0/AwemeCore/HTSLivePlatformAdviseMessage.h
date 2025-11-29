@@ -1,0 +1,16 @@
+@class NSMutableDictionary, HTSLiveCommon, HTSLiveText;
+
+@interface HTSLivePlatformAdviseMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveText *adviseText;
+@property (nonatomic) BOOL hasAdviseText;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long priority;
+@property (retain, nonatomic) NSMutableDictionary *eventTracking;
+@property (readonly, nonatomic) unsigned long long eventTracking_Count;
+
++ (id)descriptor;
+
+@end

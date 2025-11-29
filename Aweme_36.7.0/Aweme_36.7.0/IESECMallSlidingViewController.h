@@ -1,0 +1,73 @@
+@class IESECMallSlidingScrollView, NSMutableArray, NSString;
+@protocol IESECMallSlidingViewControllerDelegate;
+
+@interface IESECMallSlidingViewController : UIViewController <UIScrollViewDelegate, IESECMallSlidingScrollViewDelegate>
+
+@property (retain, nonatomic) NSMutableArray *viewControllers;
+@property (nonatomic) long long animatingDestinationIndex;
+@property (nonatomic) BOOL isViewAppearing;
+@property (nonatomic) BOOL isViewAppeared;
+@property (nonatomic) long long scrollPreIndex;
+@property (nonatomic) BOOL isScrolling;
+@property (retain, nonatomic) NSMutableArray *transitionAppearArray;
+@property (retain, nonatomic) NSMutableArray *transitionDisappearArray;
+@property (retain, nonatomic) NSMutableArray *appearCompleteArray;
+@property (retain, nonatomic) NSMutableArray *appearNeedDisappearArray;
+@property (nonatomic) BOOL isScrollingWhileDisappear;
+@property (nonatomic) long long selectedIndex;
+@property (retain, nonatomic) NSMutableArray *recordReleasedVCArray;
+@property (weak, nonatomic) id<IESECMallSlidingViewControllerDelegate> delegate;
+@property (retain, nonatomic) IESECMallSlidingScrollView *contentScrollView;
+@property (readonly, nonatomic) BOOL isFingerDragging;
+@property (nonatomic) BOOL slideEnabled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)scrollViewDidEndScroll:(id)a0;
+- (id)initWithSelectedIndex:(long long)a0;
+- (long long)numberOfControllers;
+- (id)controllerAtIndex:(long long)a0;
+- (id)currentVCAtIndex:(long long)a0;
+- (void)reloadVCsWithSelectedIndex:(long long)a0;
+- (void)vcHasCompleteAppear:(id)a0;
+- (void)vcHasCompleteDisappear:(id)a0;
+- (void)_makeControllersDidAppear;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })viewFrameAtIndex:(long long)a0;
+- (void)addViewController:(id)a0 atIndex:(long long)a1;
+- (long long)nextIndexForScrollView:(id)a0;
+- (long long)currentIndexForScrollView:(id)a0;
+- (void)handleTransitionAppearArray:(long long)a0;
+- (void)traverseAppearNeedDisappearArraySendDisAppear;
+- (void)updateScrollIndexControllerWithTransitionType:(long long)a0 index:(long long)a1;
+- (void)updateScrollIndexControllerWithTransitionType:(long long)a0 index:(long long)a1 animationCompletion:(id /* block */)a2;
+- (void)_makeViewControllerVisibleAtIndex:(long long)a0 transitionType:(long long)a1;
+- (BOOL)childViewControllerNeedSendWillAppear:(long long)a0;
+- (void)_makeControllersWillAppearAtCurrentIndex:(long long)a0;
+- (void)_makeControllersWillAppearAtPreIndex:(long long)a0 currentIndex:(long long)a1;
+- (void)updateSelectedIndexWithScrollView:(id)a0;
+- (id)currentViewControllers;
+- (long long)currentScrollPage;
+- (BOOL)slidingScrollView:(id)a0 gestureRecognizerShouldBegin:(id)a1;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (id)init;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)addObserver;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)setup;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)scrollToIndex:(long long)a0 animated:(BOOL)a1;
+- (id)visibleViewControllers;
+- (void)reloadViewControllers;
+
+@end

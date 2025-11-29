@@ -1,0 +1,3 @@
+@interface SecurityTextCorrectionApiRoot : GPBRootObject
+
+@end

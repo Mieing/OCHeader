@@ -1,0 +1,82 @@
+@class NSString, UIViewController, RTVInteractionTracker;
+@protocol RxInjector, RTVInteractionSessionInterface, RTVXRRoomSessionControllerInterface, RTVInteractionCastServiceContentDelegate, RTVXRControllerInjector, RTVReachabilityManagerInterface, RTVXRInteractionController, RTVInteractionConfigureManagerInterface, RTVInteractionCastServiceContainerDelegate, RTVUserProfileManagerInterface, RTVFeedMonitorInterface, RTVInteractionController;
+
+@interface AWERTVFeedCastVideoPanelController : NSObject <__AWERTVFeedAcqCastVideoViewModelDelegate, AFDPlayRemotePlayerInteractionMessage, AWERTVInteractionFunctionViewControllerDelegate, AWERTVFeedCastVideoService>
+
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (readonly, weak, nonatomic) id<RTVXRControllerInjector> controllerInjector;
+@property (readonly, weak, nonatomic) id<RTVInteractionController> interactionController;
+@property (readonly, weak, nonatomic) id<RTVXRInteractionController> xrInteractionController;
+@property (nonatomic) long long feedType;
+@property (readonly, nonatomic) id<RTVReachabilityManagerInterface> reachabilityManager;
+@property (readonly, nonatomic) id<RTVUserProfileManagerInterface> profileManager;
+@property (readonly, weak, nonatomic) id<RTVInteractionSessionInterface> session;
+@property (readonly, nonatomic) RTVInteractionTracker *tracker;
+@property (readonly, weak, nonatomic) id<RTVFeedMonitorInterface> monitor;
+@property (readonly, nonatomic) id<RTVInteractionConfigureManagerInterface> interactionConfigMananger;
+@property (readonly, weak, nonatomic) id<RTVXRRoomSessionControllerInterface> roomController;
+@property (weak, nonatomic) UIViewController *currentPanelViewController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<RTVInteractionCastServiceContentDelegate> contentDelegate;
+@property (weak, nonatomic) id<RTVInteractionCastServiceContainerDelegate> containerDelegate;
+
++ (Class)aAWETheaterViewControllerCommonAdapterClass;
+
+- (void)rtv_awakeFromControllerInjector;
+- (void)didOccurredInteractionCommentUserTappedMessageWithCommentModel:(id)a0 awemeModel:(id)a1;
+- (void)didOccurredInteractionCommentMentionUserTappedMessageWithUserID:(id)a0 commentModel:(id)a1 awemeModel:(id)a2;
+- (void)didOccurredInteractionMixTappedMessageWithAwemeModel:(id)a0;
+- (void)didOccurredInteractionChallengeTappedMessageWithTitle:(id)a0 challengeId:(id)a1 awemeModel:(id)a2;
+- (void)didOccurredInteractionUserMessageWithType:(long long)a0 user:(id)a1 awemeModel:(id)a2;
+- (void)didOccurredInteractionUserNameInDescritionTappedMessageWithUserID:(id)a0 awemeModel:(id)a1;
+- (id)commonTrackParams;
+- (void)didClickClose;
+- (void)renderBusinessHandler:(id)a0 context:(id)a1;
+- (void)showUserPannel:(id)a0;
+- (void)showOtherUserPannel:(id)a0;
+- (void)showCurrentUserPanel:(id)a0;
+- (void)showChallengePannelWithTitle:(id)a0 challengeId:(id)a1 authorId:(id)a2 groupId:(id)a3;
+- (void)showMixPannelWithTitle:(id)a0 mixId:(id)a1 authorId:(id)a2 groupId:(id)a3;
+- (void)requestCastVideoWithDataController:(id)a0 currentID:(id)a1 targetFeedID:(id)a2 feedType:(long long)a3 infoDict:(id)a4;
+- (long long)feedShareRoomFeatureType;
+- (void)trackGuestClickCommentIconWithExtraInfo:(id)a0;
+- (void)trackGuestCommentPageShowWithExtraInfo:(id)a0;
+- (void)didChangeInteractionController:(id)a0 context:(id)a1;
+- (BOOL)isSupportRichAweme;
+- (void)didSelectVideo:(long long)a0 dataController:(id)a1 currentID:(id)a2 targetFeedID:(id)a3 infoDict:(id)a4;
+- (void)didClickAvatar:(id)a0;
+- (void)didClickRecommendBtn;
+- (void)didClickQuit;
+- (void)didSelectTab:(long long)a0 byUser:(id)a1;
+- (void)didSelectMix:(id)a0;
+- (void)__showCurrentUserPanel:(id)a0;
+- (void)__showOtherUserPanel:(id)a0;
+- (id)__createCastVideoViewModel;
+- (long long)__defaultTabType:(id)a0;
+- (BOOL)__isCasting;
+- (id)aAWETheaterViewControllerCommonAdapter;
+- (void)__showPanel:(id)a0;
+- (long long)__tabTypeFromFeed:(long long)a0;
+- (void)__showPanelWithViewModel:(id)a0;
+- (id)__commonTrackParams;
+- (id)__feedContentDelegate;
+- (id)__feedSession;
+- (BOOL)__isBelongFriendsFeedWithTargetFeedID:(id)a0;
+- (void)__didCastVideoPanelSelectedWithDataController:(id)a0 currentID:(id)a1 targetFeedID:(id)a2 feedType:(long long)a3 infoDict:(id)a4;
+- (void)updateFeedType:(long long)a0;
+- (void)__invokeFeedWithDataController:(id)a0 currentID:(id)a1 feedType:(long long)a2 infoDict:(id)a3;
+- (id)__belongUserTypeWithTargetFeedID:(id)a0;
+- (void)__showUserCardWithUserID:(id)a0;
+- (id)__panelBelongUserType:(id)a0;
+- (BOOL)__isRTVRoomProviderWithAwemeModel:(id)a0;
+- (id)__numberFromString:(id)a0;
+- (void)interactionFunctionViewControlelr:(id)a0 didSelectedTab:(long long)a1;
+- (void)dismissPanelWithInteractionFunctionViewControlelr:(id)a0;
+- (void)__showCannotPrensetPanelTip;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

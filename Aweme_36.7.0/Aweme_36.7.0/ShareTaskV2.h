@@ -1,0 +1,10 @@
+@interface ShareTaskV2 : GPBMessage
+
+@property (nonatomic) int showTimestamp;
+@property (nonatomic) BOOL hasShowTimestamp;
+@property (nonatomic) int coinCount;
+@property (nonatomic) BOOL hasCoinCount;
+
++ (id)descriptor;
+
+@end

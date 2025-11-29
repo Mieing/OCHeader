@@ -1,0 +1,71 @@
+@class MMLiveGradientView, NSString, MMLiveConnectedMicAudienceView, MMLiveCommentView, MMLiveOnlineStateView;
+@protocol MMLiveOperationViewUIDelegate, MMUIViewControllerDelegate, MMLiveOperationViewDelegate;
+
+@interface MMLiveOperationView : MMLiveBaseComponentView <IMMFontMgrExt, MMLiveOnlineStateViewDelegate, MMLiveCommentViewDelegate>
+
+@property (nonatomic) long long roleType;
+@property (retain, nonatomic) MMLiveGradientView *topShadowView;
+@property (retain, nonatomic) MMLiveGradientView *bottomShadowView;
+@property (nonatomic) unsigned long long topShadowForbidOptionFlag;
+@property (nonatomic) unsigned long long bottomShadowForbidOptionFlag;
+@property (retain, nonatomic) MMLiveCommentView *commentView;
+@property (retain, nonatomic) MMLiveOnlineStateView *onlineStateView;
+@property (retain, nonatomic) NSString *liveTitle;
+@property (nonatomic) BOOL isLiveNameEdited;
+@property (readonly, nonatomic) BOOL isAnchor;
+@property (weak, nonatomic) id<MMLiveOperationViewUIDelegate> uiDelegate;
+@property (weak, nonatomic) id<MMLiveOperationViewDelegate> operationDelegate;
+@property (weak, nonatomic) id<MMUIViewControllerDelegate> vcDelegate;
+@property (nonatomic) unsigned long long connectMicButtonState;
+@property (nonatomic) BOOL connectMicButtonShowRedDot;
+@property (retain, nonatomic) MMLiveConnectedMicAudienceView *connectedMicAudienceView;
+@property (nonatomic) BOOL shouldShowHeatValue;
+@property (nonatomic) BOOL liveRewardEnabled;
+@property (nonatomic) BOOL shouldIgnoreBackViewTapped;
+@property (nonatomic) BOOL isShouldShowNewHeatValueStyle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)dealloc;
+- (void)registerExtension;
+- (void)unRegisterExtension;
+- (void)layoutUI;
+- (void)layoutShadowView;
+- (void)forceLayoutForOrientationChanged;
+- (void)hideAllContents;
+- (void)showAllContentsForAudience;
+- (void)showAllContentsForAnchor;
+- (void)checkAndShowAllContents;
+- (void)checkAndHideAllContents;
+- (void)updateOnlineUserCnt:(unsigned long long)a0;
+- (void)updateOnlineUserCnt:(unsigned long long)a0 withOnlineViewCnt:(unsigned long long)a1;
+- (void)updateRewardWecoinCnt:(unsigned long long)a0;
+- (void)updateRewardTotalAmountInHeat:(unsigned long long)a0;
+- (void)updateHeatValue:(unsigned long long)a0;
+- (id)getConnectMicOperationPanel;
+- (id)getConnectMicVideoPreviewPanel;
+- (void)showShadowView;
+- (void)hideShadowView;
+- (void)setTopShadowShowForbidOption:(long long)a0;
+- (void)clearTopShadowShowForbidOption:(long long)a0;
+- (void)onTopShadowForbidOptionFlagChanged;
+- (void)setBottomShadowShowForbidOption:(long long)a0;
+- (void)clearBottomShadowShowForbidOption:(long long)a0;
+- (void)onBottomShadowForbidOptionFlagChanged;
+- (void)showTopShadowView;
+- (id)minimizeSrcView;
+- (void)clearOrRecoverScreen;
+- (void)operationPermissionChanged;
+- (void)onAnchorStartLiveFinished;
+- (void)onAnchorPayGameSettedValueChanged;
+- (void)extraOperationInfoUpdated;
+- (void)refreshWidgetsForFontSizeChange;
+- (id)extractBottomShadowView;
+- (void)reLoadBottomShadowView;
+- (void)onFontSizeChange;
+- (void).cxx_destruct;
+
+@end

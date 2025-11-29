@@ -1,0 +1,80 @@
+@class NSString, FinderNextObjectInfo, NSData, FinderCollectioPlayHistory;
+
+@interface FinderCollectionInfo : WXPBGeneratedMessage <YYModel>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long long collectionTopicId;
+@property (retain, nonatomic) NSString *collectionName;
+@property (retain, nonatomic) NSString *collectionDesc;
+@property (retain, nonatomic) NSString *coverImgUrl;
+@property (nonatomic) unsigned int feedCount;
+@property (nonatomic) unsigned int readCount;
+@property (nonatomic) unsigned int feedSortId;
+@property (nonatomic) unsigned int lastUpdateTime;
+@property (nonatomic) unsigned long long nextObjectId;
+@property (nonatomic) int collectionType;
+@property (nonatomic) int collectionEnterType;
+@property (nonatomic) unsigned int feedPosId;
+@property (retain, nonatomic) NSData *collectionBuffer;
+@property (nonatomic) BOOL highPriorityThanJumpInfo;
+@property (retain, nonatomic) NSString *categoryId;
+@property (retain, nonatomic) NSString *collectionTypeWording;
+@property (nonatomic) unsigned int isLandscape;
+@property (nonatomic) unsigned int businessType;
+@property (retain, nonatomic) FinderNextObjectInfo *nextObjectInfo;
+@property (nonatomic) unsigned int collectionTopicType;
+@property (retain, nonatomic) NSData *collectionTopicBuffer;
+@property (retain, nonatomic) FinderCollectioPlayHistory *playHistory;
+
++ (id)modelCustomPropertyMapperForConfigTag:(id)a0;
++ (void)initialize;
+
+- (void)setPlayHistory:(id)a0;
+- (id)playHistory;
+- (void)setCollectionTopicBuffer:(id)a0;
+- (id)collectionTopicBuffer;
+- (void)setCollectionTopicType:(unsigned int)a0;
+- (unsigned int)collectionTopicType;
+- (void)setNextObjectInfo:(id)a0;
+- (id)nextObjectInfo;
+- (void)setBusinessType:(unsigned int)a0;
+- (unsigned int)businessType;
+- (void)setIsLandscape:(unsigned int)a0;
+- (unsigned int)isLandscape;
+- (void)setCollectionTypeWording:(id)a0;
+- (id)collectionTypeWording;
+- (void)setCategoryId:(id)a0;
+- (id)categoryId;
+- (void)setHighPriorityThanJumpInfo:(BOOL)a0;
+- (BOOL)highPriorityThanJumpInfo;
+- (void)setCollectionBuffer:(id)a0;
+- (id)collectionBuffer;
+- (void)setFeedPosId:(unsigned int)a0;
+- (unsigned int)feedPosId;
+- (void)setCollectionEnterType:(int)a0;
+- (int)collectionEnterType;
+- (void)setCollectionType:(int)a0;
+- (int)collectionType;
+- (void)setNextObjectId:(unsigned long long)a0;
+- (unsigned long long)nextObjectId;
+- (void)setLastUpdateTime:(unsigned int)a0;
+- (unsigned int)lastUpdateTime;
+- (void)setFeedSortId:(unsigned int)a0;
+- (unsigned int)feedSortId;
+- (void)setReadCount:(unsigned int)a0;
+- (unsigned int)readCount;
+- (void)setFeedCount:(unsigned int)a0;
+- (unsigned int)feedCount;
+- (void)setCoverImgUrl:(id)a0;
+- (id)coverImgUrl;
+- (void)setCollectionDesc:(id)a0;
+- (id)collectionDesc;
+- (void)setCollectionName:(id)a0;
+- (id)collectionName;
+- (void)setCollectionTopicId:(unsigned long long)a0;
+- (unsigned long long)collectionTopicId;
+
+@end

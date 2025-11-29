@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface CGPBusinessUserProfileClient : GPBMessage
+
+@property (nonatomic) int action;
+@property (retain, nonatomic) NSMutableArray *pathArray;
+@property (readonly, nonatomic) unsigned long long pathArray_Count;
+@property (nonatomic) int reason;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,86 @@
+@class AWEPostPageAnchorViewModel, NSArray, NSString, AWEPostPageElementCenter, NSMutableDictionary, AWEStudioVideoAnchorModel, AWEFourTuple, AWEStudioComposerPublishBasicFeature, NSMutableArray, AWETwoTuple;
+@protocol AWEAnchorListFilterProtocol, AWEPostPageListService, AWEPostPageContext, AWEPostPageFeatureConfigService, AWEPostPageFooterService;
+
+@interface AWEPostPageAnchorHandler : NSObject <AWEAnchorListFilterProtocol, AWEPostPageAnchorService>
+
+@property (retain, nonatomic) NSMutableArray *subscribers;
+@property (retain, nonatomic) AWETwoTuple *revertAnchorInformationSignal;
+@property (weak, nonatomic) id<AWEPostPageListService> list;
+@property (weak, nonatomic) id<AWEPostPageFooterService> footer;
+@property (retain, nonatomic) NSMutableDictionary *externalAnchorInfoDict;
+@property (retain, nonatomic) NSArray *externalAnchorTypeWhiteList;
+@property (nonatomic) BOOL isChecking;
+@property (retain, nonatomic) AWEPostPageAnchorViewModel *checkingAnchorVM;
+@property (retain, nonatomic) NSString *checkingElementType;
+@property (retain, nonatomic) id<AWEAnchorListFilterProtocol> externalFilter;
+@property (weak, nonatomic) id<AWEPostPageFeatureConfigService> featureConfigService;
+@property (weak, nonatomic) AWEStudioComposerPublishBasicFeature *basicFeature;
+@property (weak, nonatomic) AWEPostPageElementCenter *elementCenter;
+@property (nonatomic) BOOL isCancelChecking;
+@property (nonatomic) BOOL originShouldShowAggregateAnchor;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) AWEStudioVideoAnchorModel *currentAnchor;
+@property (readonly, nonatomic) NSArray *subscribersCopy;
+@property (readonly, nonatomic) AWETwoTuple *normalAnchorVM;
+@property (readonly, nonatomic) AWETwoTuple *abNormalAnchorVM;
+@property (readonly, nonatomic) AWEFourTuple *anchorCheck;
+@property (readonly, nonatomic) id<AWEPostPageContext> context;
+
++ (Class)aAWEStudioPostPageAnchorAdapterClass;
+
+- (id)anchorWithType:(long long)a0;
+- (id)publishAnchorArray;
+- (id)anchorContext;
+- (void)bindServices:(id)a0;
+- (id)anchorParamsFromPublishModel:(id)a0;
+- (BOOL)shouldBanAnchor:(id)a0;
+- (BOOL)hasCommonAnchorEntranceWithType:(long long)a0;
+- (BOOL)anchor:(id)a0 shouldSelectAnchorWithType:(long long)a1;
+- (void)setCurrentAnchorTitle:(id)a0;
+- (BOOL)shouldShowAggregateAnchor;
+- (BOOL)shouldShowAggregateAnchorInImageAlbum;
+- (id)externalAnchorInfoWithType:(long long)a0;
+- (void)cleanExternalAnchorInfoWithType:(long long)a0;
+- (void)cleanAllExternalAnchorInfos;
+- (void)addExternalAnchorIfNeeded:(id)a0;
+- (void)anchor:(id)a0 setViewModel:(id)a1;
+- (void)cancelCurrentAnchorCheckIfNeeded;
+- (id)exclusiveToastWithAnchorA:(id)a0 andAnchorB:(id)a1;
+- (BOOL)showShareOrder;
+- (BOOL)isSelectedPOITradeAnchor;
+- (id)trackParamsWithExtra:(id)a0;
+- (void)trackSingleAnchorEntranceShowWithType:(long long)a0 extra:(id)a1;
+- (void)trackSingleAnchorEntranceClickWithType:(long long)a0 extra:(id)a1;
+- (id)placeholderNameWithAnchorType:(long long)a0 anchorModel:(id)a1;
+- (BOOL)openPlatformAggregateAnchorEnabled:(id)a0;
+- (void)recoverCommercialAnchorWithExternalAnchorType:(long long)a0;
+- (BOOL)shouldElementAppearWhenReload:(id)a0;
+- (id)iconURLListWithAnchorVM:(id)a0 anchor:(id)a1 placeholder:(id *)a2;
+- (id)elementLoadPassiveAnchorWithType:(long long)a0;
+- (void)anchor:(id)a0 didSelectExternalAnchorWithType:(long long)a1 anchorDismissBlock:(id /* block */)a2 enterFromType:(long long)a3;
+- (void)anchor:(id)a0 didSelectAnchorWithType:(long long)a1 anchorDismissBlock:(id /* block */)a2 enterFromType:(long long)a3;
+- (long long)checkRequestItemType;
+- (id)aAWEStudioPostPageAnchorAdapter;
+- (id)safeGetAnchorExtra:(id)a0;
+- (BOOL)shouldAddExternalAnchor:(id)a0;
+- (BOOL)shouldCheckAbnormalAnchor:(id)a0 anchorVM:(id)a1 reason:(id *)a2;
+- (void)checkWithAnchor:(id)a0 viewModel:(id)a1;
+- (void)checkedAbnormalAnchor:(id)a0 setViewModel:(id)a1;
+- (void)checkNormalAnchor:(id)a0 setViewModel:(id)a1;
+- (void)checkedNormalAnchor:(id)a0 revertAnchorVM:(id)a1;
+- (void)checkedNormalAnchor:(id)a0 setViewModel:(id)a1;
+- (void)trackAnchorAdd;
+- (void)trackAnchorRemove;
+- (void)revertAnchorInformation;
+- (void)sendCheckSignalWithType:(id)a0 setViewModel:(id)a1 state:(id)a2 result:(id)a3;
+- (id)checkRequestParamsWithAnchorVM:(id)a0;
+- (void)preHandleAnchorCheck:(id)a0;
+- (void)trackAnchorCheck:(id)a0;
+- (void).cxx_destruct;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+
+@end

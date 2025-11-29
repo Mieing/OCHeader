@@ -1,0 +1,80 @@
+@class NSData, NSString, NSArray, UIView, NormalContactVerifyLogic, OpenIMContactVerifyLogic, WCUIAlertView, MMLoadingView;
+@protocol contactVerifyLogicDelegate, ContactVerifyPreCheckLogicDelegate;
+
+@interface CContactVerifyLogic : MMObject <OpenIMContactVerifyLogicDelegate, NormalContactVerifyLogicDelegate, UITextFieldDelegate, VerifyUserSpamTipViewControllerDelegate> {
+    NSArray *m_arrVerifyContactWrap;
+    UIView *m_parentView;
+    NSString *m_nsVerifyValue;
+    MMLoadingView *m_loadingView;
+    unsigned int m_uiOpCode;
+    BOOL m_bFromChatRoom;
+    BOOL m_bNeedSaveToLocalDB;
+    unsigned int m_uiFriendScene;
+    NormalContactVerifyLogic *m_normalVerifyLogic;
+    OpenIMContactVerifyLogic *m_openIMVerifyLogic;
+    unsigned int m_contactVerifyUserSpamFailNumber;
+}
+
+@property (retain, nonatomic) WCUIAlertView *alertView;
+@property (weak, nonatomic) id<contactVerifyLogicDelegate> m_delegate;
+@property (weak, nonatomic) id<contactVerifyLogicDelegate> m_sendRequestDelegate;
+@property (weak, nonatomic) id<ContactVerifyPreCheckLogicDelegate> m_preCheckDelegate;
+@property (nonatomic) BOOL m_bNotShowAlert;
+@property (nonatomic) unsigned long long m_qrAddScene;
+@property (retain, nonatomic) NSString *m_reportInfo;
+@property (copy, nonatomic) NSString *m_nsStartLoadingText;
+@property (copy, nonatomic) NSString *m_nsStartLoadingOKText;
+@property (readonly, nonatomic) NSString *verifyValue;
+@property (retain, nonatomic) NSData *m_spamContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)reset;
+- (id)getLoadingText;
+- (id)getLoadingOkText;
+- (void)startLoading;
+- (void)stopLoading;
+- (void)stopLoadingAndShowOK;
+- (id)filterString:(id)a0;
+- (BOOL)needSaveToLocalDB;
+- (BOOL)needSetSayHelloStatus;
+- (void)SaveToLocalDB;
+- (BOOL)doVerify:(id)a0;
+- (void)dealloc;
+- (unsigned int)getContactVerifyUserSpamFailNumber;
+- (void)doVerifyByAlertView;
+- (id)getAlertTitle;
+- (id)getAlertMessage;
+- (void)showVerifyAlert;
+- (void)onUserNotVerifyUseDoVerify:(BOOL)a0 antispamTicket:(id)a1;
+- (void)onUserVerifyUseDoVerifyNeedConfirm:(BOOL)a0;
+- (void)startForSendVerifyRequest:(id)a0 opCode:(unsigned int)a1 parentView:(id)a2 fromChatRoom:(BOOL)a3;
+- (void)startForAddVerifyMsg:(id)a0 parentView:(id)a1;
+- (void)startForAddVerifyMsg:(id)a0 parentView:(id)a1 verifyMsg:(id)a2;
+- (void)startForVerifyOK:(id)a0 parentView:(id)a1;
+- (void)startForSendVerifyMsg:(id)a0 parentView:(id)a1 verifyMsg:(id)a2;
+- (BOOL)sendVerifyUserPreCheck:(id)a0 opcode:(unsigned int)a1;
+- (void)OnContinueSendRequest;
+- (void)handleVerifyOk:(id)a0;
+- (void)clearClearStrangerPermission:(id)a0;
+- (void)ProcessStrangerContactTag:(id)a0;
+- (BOOL)isEnterpriseBrand;
+- (BOOL)isBrandAccount;
+- (BOOL)isNormalSayHelloContact;
+- (void)onContactVerifyFail:(id)a0 isOpenIM:(BOOL)a1 antispamTicket:(id)a2;
+- (void)handleVerifyErrorNeedVerifyUser;
+- (void)doVerifyFillVerifyValue;
+- (void)doSendRequestContactVerifyFillVerifyMsg;
+- (void)onNormalContactVerifyDone:(id)a0 encodeUserName:(id)a1;
+- (void)onNormalContactVerifyFail:(id)a0 andVerifyUserResponse:(id)a1;
+- (void)showVerifyUserSpamTipViewController:(id)a0;
+- (void)onNormalContactVerifyPreCheckDone:(id)a0 opcode:(unsigned int)a1;
+- (void)onNormalContactVerifyPreChecFail:(id)a0 opcode:(unsigned int)a1 baseResponse:(id)a2 andVerifyUserResponse:(id)a3;
+- (void)onOpenIMContactVerifyDone:(id)a0;
+- (void)onOpenIMContactVerifyFail:(id)a0;
+- (void).cxx_destruct;
+
+@end

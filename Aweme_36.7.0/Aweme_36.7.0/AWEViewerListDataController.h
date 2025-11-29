@@ -1,0 +1,70 @@
+@class NSString, NSArray, AWEAwemeModel, NSDictionary, NSNumber, NSObject;
+@protocol OS_dispatch_semaphore;
+
+@interface AWEViewerListDataController : AWEListDataController <AWEViewerListDataControllerProtocol>
+
+@property (copy, nonatomic) NSString *awemeID;
+@property (nonatomic) long long count;
+@property (retain, nonatomic) NSNumber *maxCursor;
+@property (retain, nonatomic) NSNumber *minCursor;
+@property (retain, nonatomic) NSNumber *expireTime;
+@property (retain, nonatomic) NSArray *likeList;
+@property (retain, nonatomic) NSArray *viewerList;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (nonatomic) long long viewerListCount;
+@property (nonatomic) long long viewerUserCount;
+@property (nonatomic) long long ttlDays;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *lock;
+@property (readonly, nonatomic) BOOL hasExpiredOver7Days;
+@property (nonatomic) long long lastFavouriteTime;
+@property (nonatomic) BOOL isPanelFirstRequest;
+@property (copy, nonatomic) NSArray *insertViewerIDs;
+@property (copy, nonatomic) NSArray *hightLightViewerIDs;
+@property (nonatomic) BOOL enableCacheOptimization;
+@property (nonatomic) unsigned long long coldStartPlayCount;
+@property (copy, nonatomic) NSDictionary *extraRequestParams;
+@property (nonatomic) BOOL isAuthor;
+@property (nonatomic) BOOL isStory;
+@property (nonatomic) BOOL isFromCloseFriends;
+@property (retain, nonatomic) NSNumber *playCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (id)initWithAwemeModel:(id)a0;
+- (BOOL)needColdStartCount;
+- (BOOL)isCacheExpired;
+- (void)updateAwemeModel:(id)a0;
+- (BOOL)isEmptyData;
+- (void)updateDataSourceWithResponseModel:(id)a0 cacheModel:(id)a1;
+- (void)refreshSuccess:(id)a0;
+- (void)refreshError:(id)a0;
+- (id)videoVisitorListNetworkProvider:(BOOL)a0;
+- (id)filterUserFromModel:(id)a0;
+- (void)updateCacheModelWithResponseObject:(id)a0;
+- (id)viewerCacheModel;
+- (BOOL)enableUseCacheListWithCachedModel:(id)a0;
+- (BOOL)enableUseCacheList;
+- (void)loadMoreSuccess:(id)a0;
+- (void)loadMoreError:(id)a0;
+- (void)addUsersToViewerList:(id)a0;
+- (id)getUsersFromVisitors:(id)a0;
+- (BOOL)hasCacheList;
+- (id)getViewerCacheListWithCachedModel:(id)a0;
+- (id)viewerCacheList;
+- (long long)awemePublishDays;
+- (id)assembleInsertIDs;
+- (id)cacheListRequestParamWithCachedModel:(id)a0;
+- (id)cacheListRequestParam;
+- (void)updateVideoVisitorListNetworkProviderExtraParam:(id)a0 isLoadMore:(BOOL)a1;
+- (id)filterUserFromResponseModel:(id)a0 cacheModel:(id)a1;
+- (void)trackEventForUseViewerListDiskCacheWithHitType:(long long)a0;
+- (BOOL)shouldUpdateViewerCacheList;
+- (void).cxx_destruct;
+- (id)dataSource;
+- (id)requestUrl;
+- (void)refreshWithCompletion:(id /* block */)a0;
+
+@end

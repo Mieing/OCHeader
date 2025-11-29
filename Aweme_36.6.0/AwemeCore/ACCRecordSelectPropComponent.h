@@ -1,0 +1,71 @@
+@class NSNumber, ACCRecordSelectPropViewModel, NSString, AWEStickerSwitchImageView, UILabel, AWEStudioRecorderFeaturePropConfig, UIButton;
+@protocol ACCLandscapeRecordService, ACCRecorderViewContainer, ACCRecordUIHiddenStrategyService, ACCCameraService, ACCRecorderStickerServiceProtocol, ACCRecordAuthService, ACCRecordFlowService, AWERedPackThemeService, ACCRecordPropService, ACCSideslipPropService, ACCRecordSwitchModeService, ACCRecordScanModelFlowService, ACCRecordGestureService;
+
+@interface ACCRecordSelectPropComponent : ACCFeatureComponent <ACCRecordScanModelFlowSubscriber, ACCRecorderViewContainerItemsHideShowObserver, ACCRecordSwitchModeServiceSubscriber, ACCRecordGestureServiceSubscriber, ACCLandscapeRecordServiceSubscriber>
+
+@property (nonatomic) BOOL hasCameraAndMicAuthorized;
+@property (nonatomic) BOOL hasContainerVCAppeared;
+@property (retain, nonatomic) UIButton *stickerSwitchButton;
+@property (retain, nonatomic) AWEStickerSwitchImageView *stickerSwitchImageView;
+@property (retain, nonatomic) UILabel *stickerSwitchLabel;
+@property (retain, nonatomic) AWEStudioRecorderFeaturePropConfig *featureConfig;
+@property (nonatomic) BOOL hasShownStickerPanelAtLaunch;
+@property (retain, nonatomic) NSNumber *visibleItemAlphaInCurrentMode;
+@property (retain, nonatomic) ACCRecordSelectPropViewModel *viewModel;
+@property (retain, nonatomic) id<ACCRecorderViewContainer> viewContainer;
+@property (retain, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) id<ACCRecordPropService> propService;
+@property (retain, nonatomic) id<ACCRecordAuthService> authService;
+@property (retain, nonatomic) id<AWERedPackThemeService> themeService;
+@property (retain, nonatomic) id<ACCRecordScanModelFlowService> scanService;
+@property (retain, nonatomic) id<ACCRecordUIHiddenStrategyService> hiddenStrategyService;
+@property (retain, nonatomic) id<ACCSideslipPropService> sideslipPropService;
+@property (retain, nonatomic) id<ACCRecordFlowService> flowService;
+@property (weak, nonatomic) id<ACCRecorderStickerServiceProtocol> stickerService;
+@property (retain, nonatomic) id<ACCRecordGestureService> gestureService;
+@property (retain, nonatomic) id<ACCLandscapeRecordService> landscapeRecordService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentWillAppear;
+- (void)componentDidAppear;
+- (void)switchModeServiceWillChangeToMode:(id)a0 oldMode:(id)a1;
+- (void)recorderDeviceOrientationChanged:(long long)a0;
+- (void)onCameraDidStartRender:(id)a0;
+- (void)shouldItemsShow:(BOOL)a0 animated:(BOOL)a1;
+- (void)updateItemsHiddenWithAnimation:(BOOL)a0;
+- (void)viewContainerDidLayout;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (unsigned long long)preferredLoadPhase;
+- (id)serviceBinding;
+- (void)p_bindViewModel;
+- (void)bindServices:(id)a0;
+- (void)longPressGestureDidRecognized:(id)a0;
+- (void)flowServiceWillEnterScanMode;
+- (void)flowServiceWillExitScanMode;
+- (void)p_readExistData;
+- (void)clickStickersBtn;
+- (void)preloadFirstHotSticker;
+- (void)showSuperEntranceBubbleIfNeeded;
+- (void)p_updatePropInfo:(id)a0;
+- (void)p_applyEffectWithPack:(id)a0;
+- (void)p_updatePropIconShowState;
+- (void)p_updateIcon:(id)a0;
+- (id)stickerSwitchLabelText;
+- (void)p_uploadByteBenchFeature:(id)a0;
+- (void)p_updateIconForProp:(id)a0;
+- (void)p_updateDyanmicIconStatus:(id)a0;
+- (id)getServerEffectLabels:(id)a0;
+- (void)p_precheckThenFadeShow:(id)a0;
+- (void)startPropSlidePanelConsumeTrack;
+- (void)trackSendGiftClickStickerBtns;
+- (void)setLongPressOpenSticker;
+- (void)p_setLabelTextWithPropName:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

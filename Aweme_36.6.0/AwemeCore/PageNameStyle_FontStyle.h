@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface PageNameStyle_FontStyle : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *color;
+@property (nonatomic) double transparency;
+
++ (id)descriptor;
+
+@end

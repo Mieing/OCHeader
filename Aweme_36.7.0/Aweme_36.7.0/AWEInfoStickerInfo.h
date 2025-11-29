@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface AWEInfoStickerInfo : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *stickerID;
+@property (copy, nonatomic) NSString *challengeID;
+@property (copy, nonatomic) NSString *challengeName;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

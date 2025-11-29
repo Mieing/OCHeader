@@ -1,0 +1,10 @@
+@class AnnouncementVideoListResponse_Data;
+
+@interface AnnouncementVideoListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AnnouncementVideoListResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

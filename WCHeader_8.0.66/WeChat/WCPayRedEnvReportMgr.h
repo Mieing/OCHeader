@@ -1,0 +1,70 @@
+@class NSString, NSMutableSet, NSMutableDictionary;
+
+@interface WCPayRedEnvReportMgr : MMUserService <MMServiceProtocol>
+
+@property (retain, nonatomic) NSString *previewSessionId;
+@property (nonatomic) unsigned int previewStartTime;
+@property (retain, nonatomic) NSString *redSkinEntrySessionId;
+@property (retain, nonatomic) NSMutableSet *redSkinReportOnceOnlyKeySet;
+@property (retain, nonatomic) NSMutableDictionary *redEnvBubbleSessionKeyDict;
+@property (retain, nonatomic) NSMutableSet *redEnvBubbleReportOnceOnlyKeySet;
+@property (retain, nonatomic) NSString *redEnvStorySessionId;
+@property (nonatomic) unsigned int redEnvStoryStartTime;
+@property (nonatomic) unsigned int redEnvStoryEnterType;
+@property (nonatomic) unsigned int redEnvStoryExitType;
+@property (nonatomic) unsigned int redEnvStoryScrollCount;
+@property (nonatomic) unsigned int redEnvStoryImageScrollCount;
+@property (nonatomic) unsigned int redEnvStoryVideoPlayTotalCount;
+@property (nonatomic) unsigned int redEnvStoryMPBtnClickCount;
+@property (retain, nonatomic) NSString *redEnvelopesClickReportSessionId;
+@property (nonatomic) unsigned int redEnvelopesClickReportSourceWay;
+@property (nonatomic) unsigned int redEnvelopesClickReportTargetType;
+@property (nonatomic) unsigned int redEnvelopesClickReportHbMode;
+@property (nonatomic) double autoCarouselStartTimestamp;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)genRedEnvEntrySessionId;
+- (void)redEnvelopesEntryClickReport:(unsigned int)a0 sourceWay:(unsigned int)a1;
+- (void)redEnvelopesMakeRedEnvPageReport:(unsigned int)a0 targetType:(unsigned int)a1 hbMode:(unsigned int)a2;
+- (void)redEnvelopesGroupHBModeReport:(unsigned int)a0 targetType:(unsigned int)a1 hbMode:(unsigned int)a2;
+- (void)redEnvelopesDetailPageReport:(unsigned int)a0 targetType:(unsigned int)a1 hbMode:(unsigned int)a2;
+- (void)reportRedEnvelopesMessageReport:(id)a0 action:(unsigned int)a1;
+- (void)redEnvelopesMessageReport:(id)a0 isSender:(BOOL)a1 userName:(id)a2 coverId:(id)a3 isOpen:(BOOL)a4 isValid:(BOOL)a5 action:(unsigned int)a6;
+- (void)clearRedEnvelopesClickReportSessionId;
+- (id)init;
+- (id)genReportSessionIdWithPreFixString:(id)a0;
+- (void)genPreViewSessionIdAndStartTime;
+- (void)reportRedEnvPreViewWithActionType:(unsigned int)a0 authorID:(id)a1;
+- (void)genRedSkinEntrySessionId;
+- (id)getRedSkinEntrySessinoId;
+- (void)reportRedSkinWishingRecommendedWithActionType:(unsigned int)a0 wishingText:(id)a1 skinCount:(unsigned int)a2 prevSkinId:(id)a3 recommendSkinIds:(id)a4 requestId:(unsigned long long)a5;
+- (void)reportRedSkinEntryWithActionType:(unsigned int)a0 hasRedDot:(unsigned int)a1 skinId:(id)a2 redDotText:(id)a3 redDotVersion:(id)a4 reportOnce:(BOOL)a5;
+- (void)reportRedSkinEntryWithActionType:(unsigned int)a0 hasRedDot:(unsigned int)a1 reportOnce:(BOOL)a2;
+- (id)genRedEnvBubbleExposeSessionIdWithC2CUrl:(id)a0;
+- (id)getRedEnvBubbleExposeSessionIdWithC2CUrl:(id)a0;
+- (void)clearRedEnvBubbleReportOnceOnlyKeySet;
+- (BOOL)isRedEnvBubbleExposeKeyhadReport:(unsigned int)a0 c2cUrl:(id)a1;
+- (void)addRedEnvBubbleExposeKeyHasReport:(unsigned int)a0 c2cUrl:(id)a1;
+- (void)reportRedEnvExposeSeriesWithControlData:(id)a0 exposeType:(unsigned int)a1 hasLogo:(unsigned int)a2 reportOnce:(BOOL)a3;
+- (void)reportRedEnvExposeSeriesWithControlData:(id)a0 exposeType:(unsigned int)a1 hasLogo:(unsigned int)a2 reportOnce:(BOOL)a3 jumpLink:(id)a4;
+- (void)genRedEnvStorySessionIdAndStartTime;
+- (unsigned int)getRedEnvStoryExitType;
+- (void)addRedEnvStoryScrollCount;
+- (void)addRedEnvStoryScrollImageCount;
+- (void)addRedEnvStoryViewVideoTotalCount;
+- (void)addRedEnvStoryMPBtnClickCount;
+- (void)reportRedEnvStoryExitWithControlData:(id)a0;
+- (void)genRedEnvStoryViewPic:(id)a0 picUrl:(id)a1 sessionId:(id)a2 c2cOpenID:(id)a3;
+- (void)genRedEnvStoryViewVideo:(id)a0 videoUrl:(id)a1 replayCount:(unsigned int)a2 playTime:(unsigned int)a3 sessionId:(id)a4 autoPlayFlag:(unsigned int)a5 c2cOpenID:(id)a6;
+- (void)genRedEnvSelectRedSkinDidScroll;
+- (void)genRedEnvSelectRedSkinDidConfirm:(id)a0 afterId:(id)a1;
+- (void)genRedEnvSelectRedSkinDidCancel:(id)a0 afterId:(id)a1;
+- (void)genRedEnvStoryAutoCarouselStartTime;
+- (void)reportRedEnvStoryAutoCarouselStaytime:(id)a0;
+- (void)reportRedEnvStoryMakeSameCover:(id)a0 actionType:(unsigned int)a1 coverPath:(id)a2;
+- (void).cxx_destruct;
+
+@end

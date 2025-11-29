@@ -1,0 +1,70 @@
+@class UIView, OMJCamSink;
+@protocol OMJCamSessionDelegate;
+
+@interface OMJCamSession : NSObject
+
+@property (nonatomic) struct SharedPtr<XMJCamSession> { struct XMJCamSession *_ptr; } backingSession;
+@property (nonatomic) struct shared_ptr<XMJRenderView> { struct XMJRenderView *__ptr_; struct __shared_weak_count *__cntrl_; } backingRenderView;
+@property (readonly, nonatomic) OMJCamSink *camSink;
+@property (readonly, nonatomic) UIView *renderView;
+@property (readonly, nonatomic) long long state;
+@property (weak, nonatomic) id<OMJCamSessionDelegate> delegate;
+
+- (id)initWithBackingSession:(const void *)a0;
+- (void)dealloc;
+- (void)setupRecordingDidFailCallback;
+- (void)setupRecordingTimeDidChangeCallback;
+- (void)setupFirstFrameDidPresentCallback;
+- (void)setupBeginRequestAIGCCallback;
+- (void)startPreviewingWithSettings:(id)a0 completionHandler:(id /* block */)a1;
+- (void)startPreviewingWithTemplateID:(id)a0 overridingParams:(id)a1 settings:(id)a2 completionHandler:(id /* block */)a3;
+- (void)startPreviewingWithVideoRemixTemplateID:(id)a0 videoRemixParams:(id)a1 settings:(id)a2 completionHandler:(id /* block */)a3;
+- (void)updateRenderAspectRatioWithWidth:(int)a0 height:(int)a1 completionHandler:(id /* block */)a2;
+- (void)teardownWithCompletionHandler:(id /* block */)a0;
+- (void)beginUseTemplateWithID:(id)a0 overridingParams:(id)a1 completionHandler:(id /* block */)a2;
+- (void)beginUseTemplateWithID:(id)a0 overridingParams:(id)a1 useTemplateCompletionHandler:(id /* block */)a2;
+- (void)clearTemplateWithCompletionHandler:(id /* block */)a0;
+- (void)clearTemplateWithOverridingParams:(id)a0 completionHandler:(id /* block */)a1;
+- (void)beginUseTemplateAndVideoRemixTemplateWithID:(id)a0 videoRemixTemplateID:(id)a1 overridingParams:(id)a2 completionHandler:(id /* block */)a3;
+- (void)beginUseVideoRemixTemplateWithID:(id)a0 overridingParams:(id)a1 completionHandler:(id /* block */)a2;
+- (void)clearVideoRemixTemplateWithCompletionHandler:(id /* block */)a0;
+- (void)startRecordingWithOutputFilePath:(id)a0 recordingSettings:(id)a1 completionHandler:(id /* block */)a2;
+- (void)startRecordingWithOutputFilePath:(id)a0 recordingSettings:(id)a1 auditCaptureSettings:(id)a2 completionHandler:(id /* block */)a3;
+- (void)stopRecordingWithShouldTeardownSession:(BOOL)a0 completionHandler:(id /* block */)a1;
+- (void)exportPhotoWithVideoSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0 clockwiseRotation:(int)a1 isMirrored:(BOOL)a2 outputFilePath:(id)a3 shouldTeardownSession:(BOOL)a4 useRenderAspectRatio:(BOOL)a5 photoSettings:(id)a6 completionHandler:(id /* block */)a7;
+- (void)exportPhotoWithVideoSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0 clockwiseRotation:(int)a1 isMirrored:(BOOL)a2 shouldTeardownSession:(BOOL)a3 completionHandler:(id /* block */)a4;
+- (void)exportPhotoWithVideoSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0 clockwiseRotation:(int)a1 isMirrored:(BOOL)a2 shouldTeardownSession:(BOOL)a3 useRenderAspectRatio:(BOOL)a4 completionHandler:(id /* block */)a5;
+- (void)pausePreviewingWithCompletionHandler:(id /* block */)a0;
+- (void)resumePreviewingWithCompletionHandler:(id /* block */)a0;
+- (BOOL)connectToRenderView:(const void *)a0 error:(id *)a1;
+- (void)setBeautyAdjustmentWithDesc:(id)a0 completionHandler:(id /* block */)a1;
+- (void)clearBeautyAdjustmentDescWithCompletionHandler:(id /* block */)a0;
+- (id)getBeautyAdjustmentDesc;
+- (void)setFilterDesc:(id)a0 completionHandler:(id /* block */)a1;
+- (void)clearFilterDescWithCompletionHandler:(id /* block */)a0;
+- (id)getFilterDesc;
+- (void)beginPlayBackgroundMusicWithDesc:(id)a0 completionHandler:(id /* block */)a1;
+- (void)beginPlayBackgroundMusicWithDesc:(id)a0 shouldRestartPreview:(BOOL)a1 completionHandler:(id /* block */)a2;
+- (void)clearBackgroundMusicWithCompletionHandler:(id /* block */)a0;
+- (id)getCurrentBackgroundMusicDesc;
+- (void)pauseBackgroundMusicWithCompletionHandler:(id /* block */)a0;
+- (void)resumeBackgroundMusicWithCompletionHandler:(id /* block */)a0;
+- (unsigned long long)getPreferredCameraDimensionLevel;
+- (void)setAudioDeviceType:(long long)a0;
+- (void)toggleFaceGenderWithCompletionHandler:(id /* block */)a0;
+- (void)setLocationInfo:(id)a0 completionHandler:(id /* block */)a1;
+- (void)beginUseAssetInputWithAssetInfo:(id)a0 assetInputSettings:(id)a1 completionHandler:(id /* block */)a2;
+- (void)beginUseCameraInputWithCompletionHandler:(id /* block */)a0;
+- (void)startExportingVideoWithOutputFilePath:(id)a0 recordingSettings:(id)a1 auditCaptureSettings:(id)a2 completionHandler:(id /* block */)a3;
+- (void)cancelExportingVideoWithCompletionHandler:(id /* block */)a0;
+- (void)updateAIGCResultWithParams:(id)a0 completionHandler:(id /* block */)a1;
+- (id)backingRenderViewCon;
+- (id)getCamGestureRecognizerSettings;
+- (void)touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)touchesMoved:(id)a0 withEvent:(id)a1;
+- (void)touchesEnded:(id)a0 withEvent:(id)a1;
+- (void)touchesCancelled:(id)a0 withEvent:(id)a1;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

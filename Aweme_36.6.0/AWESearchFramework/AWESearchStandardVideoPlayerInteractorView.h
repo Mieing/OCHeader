@@ -1,0 +1,3 @@
+@interface AWESearchStandardVideoPlayerInteractorView : UIView
+
+@end

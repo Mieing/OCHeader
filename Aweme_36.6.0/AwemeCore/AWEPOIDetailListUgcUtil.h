@@ -1,0 +1,78 @@
+@class NSString, DitoGeneralContainerPageContext, DitoPageModel, AWEPOIDetailNGUGCComponentViewModel, AWEPOIDetailListCommonUtil, UIViewController;
+@protocol AWEPOIUGCRateContextProtocol;
+
+@interface AWEPOIDetailListUgcUtil : NSObject <AWEPOIDetailListUgcUtilProtocol>
+
+@property (weak, nonatomic) DitoPageModel *pageModel;
+@property (retain, nonatomic) AWEPOIDetailListCommonUtil *commonHelper;
+@property (nonatomic) BOOL rateDeleted;
+@property (copy, nonatomic) NSString *ugcTagName;
+@property (copy, nonatomic) NSString *ugcGroupTagName;
+@property (retain, nonatomic) AWEPOIDetailNGUGCComponentViewModel *diggHintTargetUgcVM;
+@property (weak, nonatomic) UIViewController *detailViewController;
+@property (weak, nonatomic) DitoGeneralContainerPageContext<AWEPOIUGCRateContextProtocol> *context;
+@property (nonatomic) BOOL isFromIsolated;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)bindStateAndAction;
+- (id)nodeByTag:(id)a0;
+- (void)recordCellTagWithVM:(id)a0;
+- (BOOL)hasDoRateDiggAction;
+- (BOOL)canShowRateDiggHint;
+- (id)rateDiggHintText;
+- (BOOL)canShowRateDiggHintInLocalAndUpdate;
+- (long long)UGCListCount;
+- (id)findUgcGroupName;
+- (void)forEachWithGroupTagName:(id)a0 block:(id /* block */)a1;
+- (void)rateDeleteSuccessNotification:(id)a0;
+- (void)handleDiggUpdateNotification:(id)a0;
+- (void)sortIndexesForUgcGroup;
+- (void)locateToUGCIfNeed;
+- (void)hideUGCLineAboveNPSCardIfNeed;
+- (void)resetUGCLineStatusWhichAboveNPSCardIfNeed:(id)a0;
+- (void)recordLocatedUGCWithVM:(id)a0;
+- (void)sortUGCGoupOrderIndexes;
+- (void)handleAfterSortIndexes;
+- (void)hideUGCDeleteEmptyView;
+- (id)currentUgcTag;
+- (void)updateCurrentUgcTag:(id)a0;
+- (void)deleteRateWithId:(id)a0 groupTagName:(id)a1;
+- (void)clearOtherTagCacheIfHasRemovedWithRateId:(id)a0;
+- (void)showUGCDeleteEmptyViewIfNeed;
+- (id)refreshNodeTag:(id)a0;
+- (void)requestTagData:(id)a0 viewModel:(id)a1;
+- (void)showStatusViewEvent:(id)a0 appendingParams:(id)a1;
+- (id)clearFeedsGroup:(id)a0;
+- (id)replacedNodeTag:(id)a0;
+- (void)enterUGCIsolatedControllerWithTag:(id)a0 ugcItemModel:(id)a1 viewModel:(id)a2;
+- (id)rateDiggHint;
+- (BOOL)hasDoRateDiggActionFromServer;
+- (id)diggHintStorageKey;
+- (BOOL)canShowRateDiggHintInLocal;
+- (void)updateRateDiggHintStorageWithType:(long long)a0;
+- (id)completeVisibleUgcViewModelList;
+- (void)showRateDiggHintInUgcCell;
+- (void)updateUgcInteractiveMaskViewStatus:(BOOL)a0;
+- (id)findUgcItemModelByItemId:(id)a0;
+- (id)ugcFeedsGroupNodeTagList;
+- (void)recordUGCLineStatusWhichAboveNPSCardIfNeed:(id)a0;
+- (id)superTag:(id)a0;
+- (void)configUGCABParamsWithViewModel:(id)a0;
+- (id)ugcRateNodeTagList;
+- (BOOL)hasUGCList;
+- (BOOL)didSelectUgcTagWithModel:(id)a0 viewModel:(id)a1;
+- (void)clickUgcListModuleEntranceWithMethod:(id)a0 viewModel:(id)a1;
+- (void)didClickTagExpandButton;
+- (void)showRateDiggHintIfNeeded;
+- (void)interruptRateDiggHintTiming;
+- (id)lastUGCItem;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)setHeaderModel:(id)a0;
+- (id)headerModel;
+
+@end

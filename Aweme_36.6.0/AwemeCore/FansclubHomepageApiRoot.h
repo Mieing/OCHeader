@@ -1,0 +1,3 @@
+@interface FansclubHomepageApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,76 @@
+@class NSString, IESLiveGuideCoverSettingViewController, IESLiveCreateCoverEditViewController, IESLiveGuideContentPanelModel, HTSLiveCoverImageApi, NSMutableArray, HTSLiveAddCoverImageView, HTSLiveCoverImageModel;
+@protocol IESLiveMonitor, IESLivePhotoLibraryService, IESLiveGuideCoverImageHandlerDelegate, IESLivePerfSampler, IESLiveInternalRouter;
+
+@interface IESLiveGuideCoverImageHandler : NSObject <UINavigationControllerDelegate, UIImagePickerControllerDelegate, IESLiveGuideCoverSettingViewControllerDelegate, IESLiveAnchorCameraPermissionHandler, IESLiveGuidePrivacyPermissionProtocol, IESLiveGuideCoverSelectPanelDataSource>
+
+@property (retain, nonatomic) HTSLiveCoverImageModel *coverImageModel;
+@property (copy, nonatomic) id /* block */ coverImageCompletion;
+@property (retain, nonatomic) HTSLiveCoverImageApi *coverImageApi;
+@property (retain, nonatomic) id<IESLiveMonitor> monitor;
+@property (weak, nonatomic) id<IESLiveInternalRouter> router;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (retain, nonatomic) id<IESLivePhotoLibraryService> photoService;
+@property (nonatomic) BOOL tapOnVerticalCover;
+@property (nonatomic) BOOL firstOpenLive;
+@property (nonatomic) BOOL isPickerShowing;
+@property (weak, nonatomic) IESLiveGuideCoverSettingViewController *coverSettingViewController;
+@property (retain, nonatomic) IESLiveCreateCoverEditViewController *createCoverEditController;
+@property (retain, nonatomic) NSString *disableUploadCoverToast;
+@property (retain, nonatomic) NSMutableArray *aiCovers;
+@property (retain, nonatomic) NSMutableArray *latestCoverUrlArray;
+@property (nonatomic) BOOL lastCoverIsAi;
+@property (weak, nonatomic) id<IESLiveGuideCoverImageHandlerDelegate> delegate;
+@property (retain, nonatomic) HTSLiveAddCoverImageView *addCoverImageView;
+@property (retain, nonatomic) HTSLiveAddCoverImageView *verticalCoverImageView;
+@property (retain, nonatomic) NSString *coverURI;
+@property (retain, nonatomic) NSString *verticalCoverURI;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) IESLiveGuideContentPanelModel *panelModel;
+@property (nonatomic) BOOL didFetchHorizontalURI;
+@property (nonatomic) BOOL didFetchVerticalURI;
+@property (nonatomic) BOOL hasCoverImage;
+@property (nonatomic) BOOL useNewStyle;
+@property (nonatomic) BOOL isMediaLive;
+@property (nonatomic) BOOL isUploadedCover;
+@property (nonatomic) BOOL isAutoCover;
+@property (nonatomic) BOOL isInToolBar;
+@property (readonly, nonatomic) BOOL supportedAutoCover;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)updateCoverImageStatus;
+- (id)liveType;
+- (void)bindAction;
+- (BOOL)canHandleVideoCapture;
+- (void)routeToCoverSettingPage;
+- (void)showBaseAddCoverImageViewWithPrivacyCert:(id)a0;
+- (void)updateWithOpenLiveModel:(id)a0;
+- (BOOL)supportedAutoCoverTarget;
+- (void)handleCoverClicked;
+- (void)trackEventForUploadingCoverAction:(id)a0;
+- (void)uploadCoverImage:(id)a0 vertical:(BOOL)a1 isLocal:(BOOL)a2;
+- (void)createCoverImageWithPrivacyCert:(id)a0 withCompetion:(id /* block */)a1;
+- (id)coverRootViewController;
+- (id)convertedImageModel:(id)a0;
+- (BOOL)aiCoverEnable;
+- (void)removeIndicatorIfNeededVertical:(BOOL)a0;
+- (BOOL)isInLiveType:(unsigned long long)a0;
+- (BOOL)isImageValid:(id)a0;
+- (void)guideCoverSettingViewControllerDidClickResetCoverButton:(id)a0;
+- (void)guideCoverSettingViewController:(id)a0 didChangeAutoCoverStatus:(BOOL)a1;
+- (id)needIgnoreProcessGeneralVideoCaptureByResumeScene:(unsigned long long)a0;
+- (id)aiCoversData;
+- (id)latestUsedCoverUrlArray;
+- (void)fetchCoverImages;
+- (void)editImage:(id)a0 fromController:(id)a1;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)imagePickerControllerDidCancel:(id)a0;
+- (void)imagePickerController:(id)a0 didFinishPickingMediaWithInfo:(id)a1;
+
+@end

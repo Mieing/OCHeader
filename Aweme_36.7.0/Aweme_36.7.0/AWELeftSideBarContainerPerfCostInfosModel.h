@@ -1,0 +1,3 @@
+@interface AWELeftSideBarContainerPerfCostInfosModel : AWELeftSideBarBasePerfCostInfosModel
+
+@end

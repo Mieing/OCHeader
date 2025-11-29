@@ -1,0 +1,12 @@
+@class RivalsResponse_ResponseData, RivalsResponse_RivalsExtra;
+
+@interface RivalsResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RivalsResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) RivalsResponse_RivalsExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

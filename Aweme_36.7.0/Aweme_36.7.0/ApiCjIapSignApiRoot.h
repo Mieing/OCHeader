@@ -1,0 +1,3 @@
+@interface ApiCjIapSignApiRoot : GPBRootObject
+
+@end

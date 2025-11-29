@@ -1,0 +1,84 @@
+@class PTYMemoryCache, NSMapTable, NSMutableDictionary, NSString, NSLock, NSObject;
+@protocol OS_dispatch_semaphore;
+
+@interface AWENearbyClientAIManager : NSObject <AWENearbyClientAIManagerProtocol>
+
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *syncLock;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *fbSyncLock;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *feedCardSyncLock;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *pinTopSyncLock;
+@property (retain, nonatomic) NSLock *grouponFeedRefreshLock;
+@property (retain, nonatomic) NSLock *grouponPassiveRefreshLock;
+@property (nonatomic) struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } packageStatusLock;
+@property (nonatomic) struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } packageDownloadStatusLock;
+@property (retain, nonatomic) NSMapTable *locationReqCallBacks;
+@property (retain, nonatomic) NSMapTable *feedButtonCallBacks;
+@property (retain, nonatomic) NSMapTable *grouponFeedRefreshCallbacks;
+@property (retain, nonatomic) NSMapTable *grouponPassiveRefreshCallbacks;
+@property (retain, nonatomic) NSMapTable *feedCardDetailPreloadCallbacks;
+@property (retain, nonatomic) NSMapTable *pinTopEnhanceCallbacks;
+@property (retain, nonatomic) NSMutableDictionary *packageStatus;
+@property (retain, nonatomic) NSMutableDictionary *packageDownloadStatus;
+@property (retain, nonatomic) NSMutableDictionary *latestTriggerMessages;
+@property (retain, nonatomic) PTYMemoryCache *realtimeDataMemoryCache;
+@property (retain, nonatomic) PTYMemoryCache *realtimeDataMetaMemoryCache;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)allocWithZone:(struct _NSZone { } *)a0;
++ (id)sharedInstance;
+
+- (void)downloadPackage:(id)a0 callback:(id /* block */)a1;
+- (void)queryPackage:(id)a0 callback:(id /* block */)a1;
+- (void)removeMessageHandler:(id)a0;
+- (void)registerFeedButtonMessageWithListener:(id)a0 handler:(id /* block */)a1;
+- (id)getLatestTriggerMessageOfPackage:(id)a0;
+- (void)triggerPackage:(id)a0 event:(id)a1 params:(id)a2 callback:(id /* block */)a3;
+- (void)registerGrouponFeedRefreshMessageWithListener:(id)a0 handler:(id /* block */)a1;
+- (void)registerGrouponPassiveRefreshMessageWithListener:(id)a0 handler:(id /* block */)a1;
+- (void)registerLocationMessageWithListener:(id)a0 handler:(id /* block */)a1;
+- (void)getLifeMallBusinessInfoWithFeatureCollection:(id)a0 completion:(id /* block */)a1;
+- (void)getLifeMallRealTimeDataWithFeatureCollection:(id)a0 strategy:(long long)a1 completion:(id /* block */)a2;
+- (void)getLifeMallRealTimeDataWithScene:(id)a0 strategy:(long long)a1 callback:(id /* block */)a2;
+- (void)getLifeMallRealTimeDataWithScene:(id)a0 featureCollection:(id)a1 strategy:(long long)a2 callback:(id /* block */)a3;
+- (void)runTaskWithBusinessName:(id)a0 params:(id)a1 callback:(id /* block */)a2;
+- (void)registerPinTopMessageWithListener:(id)a0 handler:(id /* block */)a1;
+- (void)registerFeedCardDetailPreloadMessageWithListener:(id)a0 handler:(id /* block */)a1;
+- (void)registerBusinessMessage;
+- (id)handleLocationTriggerMessage:(id)a0;
+- (id)handleFeedButtonTriggerMessage:(id)a0;
+- (id)handleGrouponFeedRefreshTriggerMessage:(id)a0;
+- (id)handleGrouponPassiveRefreshTriggerMessage:(id)a0;
+- (id)handleGrouponPinTopEnhanceTriggerMessage:(id)a0;
+- (void)handleFeedCardDetailPreloadWithMessage:(id)a0;
+- (BOOL)checkPackageReadyForBusiness:(id)a0;
+- (id)getPackageVersionForBusiness:(id)a0;
+- (void)didSuccessTriggerPackage:(id)a0 event:(id)a1 params:(id)a2 version:(id)a3 callback:(id /* block */)a4;
+- (void)updatePackageStatusForBusiness:(id)a0 version:(id)a1;
+- (void)updatePackageDownloadStatusForBusiness:(id)a0 downloadSuccess:(BOOL)a1;
+- (void)didFailTriggerPackage:(id)a0 error:(id)a1 callback:(id /* block */)a2;
+- (BOOL)p_checkPackageReadyForBusiness:(id)a0;
+- (void)updatePackageStatusForBusiness:(id)a0 callback:(id /* block */)a1;
+- (BOOL)p_checkPackageDownloadStatusForBusiness:(id)a0;
+- (id)defaultTaskConfig;
+- (id)getLifeMallRealTimeFeatureCollectionWithScene:(id)a0 featureCollection:(id)a1;
+- (id)getLifeMallRealTimeDataCacheWithFeatureCollection:(id)a0 isSuccess:(BOOL *)a1;
+- (id)getMemoryCache:(id)a0 valueForKeys:(id)a1 isSuccess:(BOOL *)a2;
+- (id)getLifeMallRealTimeDataCacheWithMemoryCache:(id)a0 featureCollection:(id)a1 isSuccess:(BOOL *)a2;
+- (id)getAllBusinessReadyStatus;
+- (id)getAllBusinessDownloadStatus;
+- (void)updateAllPackageStatus:(id /* block */)a0;
+- (id)getLifeMallRealTimeFeatureCollectionWithScene:(id)a0;
+- (id)getMemoryCache:(id)a0 valueForKeys:(id)a1 isSuccess:(BOOL *)a2 retryCount:(long long)a3;
+- (id)getLifeMallRealTimeDataCacheWithScene:(id)a0 featureCollection:(id)a1 isSuccess:(BOOL *)a2;
+- (BOOL)checkPackageDownloadStatusForBusiness:(id)a0;
+- (id)getLifeMallRealTimeDataCacheWithScene:(id)a0 isSuccess:(BOOL *)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { } *)a0;
+- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

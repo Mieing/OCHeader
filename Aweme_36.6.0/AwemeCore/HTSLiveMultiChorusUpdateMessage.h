@@ -1,0 +1,14 @@
+@class HTSLiveLeaveMultiChorusContent, HTSLiveFinishMultiChorusContent, HTSLiveJoinMultiChorusContent, HTSLiveStartSingMultiChorusContent;
+
+@interface HTSLiveMultiChorusUpdateMessage : IESLivePBBaseMessage
+
+@property (nonatomic) int msgType;
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) HTSLiveStartSingMultiChorusContent *startSingMultiChorusContent;
+@property (retain, nonatomic) HTSLiveJoinMultiChorusContent *joinMultiChorusContent;
+@property (retain, nonatomic) HTSLiveLeaveMultiChorusContent *leaveMultiChorusContent;
+@property (retain, nonatomic) HTSLiveFinishMultiChorusContent *finishMultiChorusContent;
+
++ (id)descriptor;
+
+@end

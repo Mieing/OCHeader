@@ -1,0 +1,10 @@
+@interface IESLiveAccountStats : IESLivePBBaseMessage
+
+@property (nonatomic) long long videosCount;
+@property (nonatomic) BOOL videosCountEnable;
+@property (nonatomic) long long totalIncome;
+@property (nonatomic) long long totalConsumeToTarget;
+
++ (id)descriptor;
+
+@end

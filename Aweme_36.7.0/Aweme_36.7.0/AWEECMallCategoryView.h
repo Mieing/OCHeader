@@ -1,0 +1,86 @@
+@class UIView, NSString, NSArray, AWEECMallCategoryViewConfig, AWEECMallCategoryMaskView, UIButton, AWEECMallSegmentedItem, AWEECMallSegmentedControl, AWEECMallSegmentedCell, AWEECMallSegmentedIndicator;
+@protocol AWEECMallCategoryViewDelegate;
+
+@interface AWEECMallCategoryView : UIView <AWEECMallSegmentedControlDelegate>
+
+@property (copy, nonatomic) NSString *currentPageTheme;
+@property (retain, nonatomic) NSArray *items;
+@property (retain, nonatomic) AWEECMallCategoryViewConfig *uiConfig;
+@property (nonatomic) BOOL firstReload;
+@property (retain, nonatomic) AWEECMallCategoryMaskView *maskContainerView;
+@property (retain, nonatomic) AWEECMallSegmentedControl *segmentedControl;
+@property (retain, nonatomic) UIButton *rightArrowView;
+@property (retain, nonatomic) UIView *leftStickView;
+@property (retain, nonatomic) AWEECMallSegmentedIndicator *leftStickIndicator;
+@property (weak, nonatomic) AWEECMallSegmentedItem *stickItem;
+@property (retain, nonatomic) AWEECMallSegmentedCell *stickCell;
+@property (nonatomic) double leftInsert;
+@property (nonatomic) double defaultImageItemHeight;
+@property (nonatomic) double selectedImageItemHeight;
+@property (nonatomic) double defaultAnchorItemEdgeLength;
+@property (nonatomic) long long willSelectedIndex;
+@property (readonly, nonatomic) long long selectedIndex;
+@property (weak, nonatomic) id<AWEECMallCategoryViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEECMultiMallDOUYINLGAdapterClass;
+
+- (void)updateConfig:(id)a0;
+- (BOOL)segmentedControl:(id)a0 shouldSelectIndex:(long long)a1 fromIndex:(long long)a2;
+- (void)mallChannelInnerTheme:(id)a0;
+- (long long)multiMallCategoryIndicatorStyle;
+- (double)multiMallCategoryIndicatorHeight;
+- (double)multiMallCategoryIndicatorWidth;
+- (double)multiMallCategoryItemSpace;
+- (double)multiMallCategoryIndicatorHeightVerticalMargin;
+- (id)multiMallCategoryIndicatorDefaultColor;
+- (id)multiMallCategoryIndicatorDefaultDarkColor;
+- (id)multiMallCategoryItemTextDefaultColor;
+- (id)multiMallCategoryItemTextDefaultDarkColor;
+- (id)multiMallCategoryItemTextDefaultSelectedDarkColor;
+- (id)multiMallCategoryItemTextDefaultSelectedColor;
+- (id)multiMallCategoryItemTextDefaultFont;
+- (id)multiMallCategoryItemTextDefaultSelectedFont;
+- (double)multiMallCategoryLeftInsert;
+- (double)multiMallCategoryDefaultImageItemHeight;
+- (double)multiMallCategorySelectedImageItemHeight;
+- (id)multiMallCategoryRightArrowImageName;
+- (id)multiMallCategoryRightArrowLightTintColor;
+- (id)multiMallCategoryRightArrowDarkTintColor;
+- (id)aAWEECMultiMallDOUYINLGAdapter;
+- (void)reloadSubItem:(id)a0;
+- (id)initWithTheme:(id)a0 delegate:(id)a1;
+- (void)initializeData;
+- (double)getRightMaskWidth;
+- (id)getRightArrowViewTintColor;
+- (void)setSelectedIndex:(long long)a0 animated:(BOOL)a1 selectType:(unsigned long long)a2;
+- (void)reloadItems:(id)a0 selectedIndex:(long long)a1;
+- (id)getSegmentItems;
+- (BOOL)enableLeftStick;
+- (id)getSegmentedItemByTabInfo:(id)a0;
+- (void)updateLeftStickView:(long long)a0;
+- (BOOL)isWillSelectedTab:(id)a0;
+- (BOOL)isSelectedTab:(id)a0;
+- (BOOL)enableRightArrow;
+- (void)didLeftStickViewClicked;
+- (void)rightArrowClick:(id)a0;
+- (void)segmentedControl:(id)a0 didChangeSelectedIndex:(long long)a1 previousIndex:(long long)a2 selectType:(unsigned long long)a3;
+- (void)segmentedControl:(id)a0 didScroll:(id)a1;
+- (void)segmentedControl:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)segmentedControl:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)segmentedControl:(id)a0 didEndDragging:(id)a1 willDecelerate:(BOOL)a2;
+- (void)containerContentOffsetDidChanged:(id)a0;
+- (id)getTabViewByIndex:(long long)a0;
+- (BOOL)showRightArrow;
+- (void).cxx_destruct;
+- (void)reloadItems:(id)a0;
+- (void)layoutSubviews;
+- (id)initWithTheme:(id)a0;
+- (void)initializeViews;
+- (void)setSelectedIndex:(long long)a0 animated:(BOOL)a1;
+- (BOOL)isLightTheme;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEECommerceSwiftImpl.AWEECMarkAnchorCommentEmptyGuideViewModel : _TtCs12_SwiftObject
+
+@end

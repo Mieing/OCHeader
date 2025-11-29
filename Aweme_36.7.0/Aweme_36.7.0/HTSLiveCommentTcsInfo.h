@@ -1,0 +1,14 @@
+@class GPBInt64Array;
+
+@interface HTSLiveCommentTcsInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long commentTcsType;
+@property (nonatomic) long long commentTcsProject;
+@property (retain, nonatomic) GPBInt64Array *banAntidirtTablesArray;
+@property (readonly, nonatomic) unsigned long long banAntidirtTablesArray_Count;
+@property (retain, nonatomic) GPBInt64Array *selfVisibleAntidirtTablesArray;
+@property (readonly, nonatomic) unsigned long long selfVisibleAntidirtTablesArray_Count;
+
++ (id)descriptor;
+
+@end

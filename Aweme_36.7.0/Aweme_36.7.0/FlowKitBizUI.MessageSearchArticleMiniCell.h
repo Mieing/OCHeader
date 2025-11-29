@@ -1,0 +1,13 @@
+@interface FlowKitBizUI.MessageSearchArticleMiniCell : FlowKitBizUI.SearchCardsBaseItemCell {
+    void /* unknown type, empty encoding */ onTapBlock;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_articleCover;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_articleTitle;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_maskCoverView;
+}
+
+- (void).cxx_destruct;
+- (void)prepareForReuse;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)handleTap;
+
+@end

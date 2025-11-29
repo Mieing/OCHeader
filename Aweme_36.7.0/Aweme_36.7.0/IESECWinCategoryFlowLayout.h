@@ -1,0 +1,3 @@
+@interface IESECWinCategoryFlowLayout : UICollectionViewFlowLayout
+
+@end

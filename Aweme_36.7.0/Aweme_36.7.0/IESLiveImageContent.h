@@ -1,0 +1,16 @@
+@class NSString, NSNumber;
+
+@interface IESLiveImageContent : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (retain, nonatomic) NSString *name;
+@property (retain, nonatomic) NSString *fontColor;
+@property (retain, nonatomic) NSNumber *level;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+
+@end

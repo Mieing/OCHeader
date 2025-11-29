@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface GetTuningInfoResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *effectListArray;
+@property (readonly, nonatomic) unsigned long long effectListArray_Count;
+@property (copy, nonatomic) NSString *defaultItemName;
+
++ (id)descriptor;
+
+@end

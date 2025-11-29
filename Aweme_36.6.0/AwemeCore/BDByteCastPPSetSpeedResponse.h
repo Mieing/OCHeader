@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetSpeedResponse : BDByteCastPPBaseCmdResponse
+
+@end

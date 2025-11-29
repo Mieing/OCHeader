@@ -1,0 +1,12 @@
+@class HTSLiveMultiSeasonInfo;
+
+@interface AwemeItemListV3Extra : IESLivePBBaseMessage
+
+@property (nonatomic) long long total;
+@property (retain, nonatomic) HTSLiveMultiSeasonInfo *multiSeasonInfo;
+@property (nonatomic) BOOL hasMultiSeasonInfo;
+@property (nonatomic) BOOL hasMore;
+
++ (id)descriptor;
+
+@end

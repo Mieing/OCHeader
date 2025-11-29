@@ -1,0 +1,12 @@
+@class NSString, HTSLiveInteractiveScreenCastInfo;
+
+@interface HTSLiveLinkmicProfitInteractiveScreenCastCloseContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveInteractiveScreenCastInfo *screenCastInfo;
+@property (nonatomic) BOOL hasScreenCastInfo;
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (copy, nonatomic) NSString *liveCoreExtInfo;
+
++ (id)descriptor;
+
+@end

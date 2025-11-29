@@ -1,0 +1,70 @@
+@class RxDeferred, UILabel, UITapGestureRecognizer, RTVVoipMissCallViewModel, UIButton, AWEIMActiveUserIndicativeView, RTVVoipModel, NSString, BDImageView, RTVVoipTracker, AWEInnerNotificationRequest, UIStackView, RTVVoipMonitor;
+@protocol RxInjector, RTVVoipMissCallDependencyHelper, RTVVoipService, RTVCoordinator, AWEInnerNotificationCenter, RTVVoipModelStoreInterface, RTVVoipManagerInterface, RTVSettingsManager, AWEInnerNotificationContentOperator, RTVUserProfileManagerInterface, __RTVVoipContextManagerPrivateInterface;
+
+@interface RTVVoipMissCallNotificationView : UIView <RTVVoipObserver, AWEInnerNotificationContent>
+
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (readonly, nonatomic) id<RTVUserProfileManagerInterface> profileManager;
+@property (readonly, nonatomic) id<RTVVoipService> voipService;
+@property (readonly, nonatomic) id<RTVSettingsManager> settingsManager;
+@property (readonly, nonatomic) id<AWEInnerNotificationCenter> notificationCenter;
+@property (readonly, nonatomic) id<RTVVoipMissCallDependencyHelper> helper;
+@property (readonly, nonatomic) RTVVoipTracker *voipTracker;
+@property (readonly, nonatomic) id<RTVCoordinator> rtvCoordinator;
+@property (readonly, nonatomic) id<__RTVVoipContextManagerPrivateInterface> voipContextCenter;
+@property (readonly, nonatomic) id<RTVVoipModelStoreInterface> voipStore;
+@property (readonly, nonatomic) RTVVoipMonitor *voipMonitor;
+@property (readonly, nonatomic) id<RTVVoipManagerInterface> voipManager;
+@property (readonly, nonatomic) AWEInnerNotificationRequest *request;
+@property (readonly, nonatomic) RTVVoipMissCallViewModel *viewModel;
+@property (readonly, nonatomic) BDImageView *avatarView;
+@property (readonly, nonatomic) AWEIMActiveUserIndicativeView *onlineDotView;
+@property (readonly, nonatomic) UIStackView *labelStackView;
+@property (readonly, nonatomic) UILabel *userNameLabel;
+@property (readonly, nonatomic) UILabel *descLabel;
+@property (readonly, nonatomic) UIButton *recallButton;
+@property (readonly, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (retain, nonatomic) RxDeferred *hangUpLastActiveVoipPromise;
+@property (retain, nonatomic) RTVVoipModel *prepareModel;
+@property (weak, nonatomic) id<AWEInnerNotificationContentOperator> notificationOperator;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)rxAwakeFromPropertyInjection;
+- (void)renderModel:(id)a0 context:(id)a1;
+- (void)__createComponents;
+- (void)__layoutComponents;
+- (id)trackingModelForScene:(unsigned long long)a0;
+- (void)__handleTapGesture:(id)a0;
+- (void)voipDidFinish:(id)a0;
+- (BOOL)__closeLiveRoomWithScene:(id)a0;
+- (BOOL)__closeFormatLiveWithScene:(id)a0;
+- (BOOL)__closeFormatVoiceChatWithScene:(id)a0;
+- (void)__createDependency;
+- (void)__configureComponents;
+- (void)__updateReplyButton;
+- (void)__createAvatarRegion;
+- (void)__createLabelRegion;
+- (void)__createReplyButton;
+- (void)__createTapGesture;
+- (void)__handleRecallButtonClicked:(id)a0;
+- (BOOL)__enableImageRecallButton;
+- (void)__handleRecall;
+- (BOOL)__enableVoipPushInWatchInLiveSettings;
+- (id)__dismissSelf;
+- (void)__transferToChatAndJoinOrInvokeWithType:(unsigned long long)a0;
+- (void)__invokeVoip;
+- (void)__invokInteractionOperationWithType:(unsigned long long)a0;
+- (void)__handleTapWhenInAudienceLiveRoom;
+- (void)__handleTap;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (id)init;
+- (id)view;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (struct CGSize { double x0; double x1; })intrinsicContentSize;
+
+@end

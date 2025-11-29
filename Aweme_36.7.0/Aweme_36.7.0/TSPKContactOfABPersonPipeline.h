@@ -1,0 +1,13 @@
+@interface TSPKContactOfABPersonPipeline : TSPKDetectPipeline
+
++ (id)stubbedClass;
++ (BOOL)entryEnable;
++ (BOOL)isEntryDefaultEnable;
++ (id)stubbedCAPIs;
++ (void)preload;
++ (id)dataType;
++ (id)pipelineType;
+
+- (BOOL)deferPreload;
+
+@end

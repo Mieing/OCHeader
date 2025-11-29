@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveBgColor : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *from;
+@property (copy, nonatomic) NSString *to;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWESceneViewProvider : NSObject
+
+@end

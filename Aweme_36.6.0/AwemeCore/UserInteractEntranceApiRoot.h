@@ -1,0 +1,3 @@
+@interface UserInteractEntranceApiRoot : GPBRootObject
+
+@end

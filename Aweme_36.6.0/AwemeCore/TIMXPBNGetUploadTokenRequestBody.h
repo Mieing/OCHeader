@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface TIMXPBNGetUploadTokenRequestBody : GPBMessage
+
+@property (copy, nonatomic) NSString *vsdkVersion;
+@property (nonatomic) BOOL hasVsdkVersion;
+@property (nonatomic) int tokenType;
+@property (nonatomic) BOOL hasTokenType;
+
++ (id)descriptor;
+
+@end

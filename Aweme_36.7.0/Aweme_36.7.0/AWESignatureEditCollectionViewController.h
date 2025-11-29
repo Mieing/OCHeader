@@ -1,0 +1,70 @@
+@class NSTimer, UIView, NSString, DUXBasicSheet, AWESignatureEditCollectionDataController, AWESpecialPersonSheetViewController, DUXCheckBox, UICollectionView, UIImageView, UILabel;
+@protocol AWESignatureEditCollectionDelegate;
+
+@interface AWESignatureEditCollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWESpecialPersonSearchViewDelegate, DUXSheetDelegate, AWESignatureEditManagerDelegate>
+
+@property (retain, nonatomic) UICollectionView *specialPersonCollectionView;
+@property (nonatomic) unsigned long long style;
+@property (retain, nonatomic) AWESignatureEditCollectionDataController *dataController;
+@property (nonatomic) BOOL isRequestMoreMentionList;
+@property (retain, nonatomic) UILabel *numberTextLabel;
+@property (retain, nonatomic) DUXBasicSheet *sheet;
+@property (retain, nonatomic) AWESpecialPersonSheetViewController *specialPersonSheetVC;
+@property (retain, nonatomic) NSTimer *searchTimer;
+@property (copy, nonatomic) id /* block */ searchBlock;
+@property (nonatomic) float contentOffsetY;
+@property (retain, nonatomic) DUXCheckBox *checkBoxButton;
+@property (retain, nonatomic) UIView *leftContainer;
+@property (retain, nonatomic) UIView *rightContainer;
+@property (retain, nonatomic) UILabel *goRecordLabel;
+@property (retain, nonatomic) UIImageView *arrow;
+@property (nonatomic) BOOL isSelected;
+@property (weak, nonatomic) id<AWESignatureEditCollectionDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)sheetDidDismiss:(id)a0;
+- (void)checkBoxTapped;
+- (BOOL)p_networkAvailable;
+- (void)p_stopTimer;
+- (void)p_startTimer;
+- (void)finishSearch;
+- (void)requestMentionListWithKeyword:(id)a0;
+- (void)switchCollectionViewControllerToMentionStyle;
+- (void)p_onSearchTimer;
+- (void)showSignatureDailyEntrance;
+- (BOOL)checkBoxButtonIsOn;
+- (void)setCheckBoxEnable:(BOOL)a0;
+- (void)showSpecialPersonSheetWithString:(id)a0 keyword:(id)a1;
+- (void)presentNumberTextLabelWithString:(id)a0 textColor:(id)a1;
+- (void)resetDefaultStyle;
+- (void)configABTest;
+- (void)p_collectionviewReloadData;
+- (void)p_collectionviewReloadDataWithUserInteractionEnabled:(BOOL)a0;
+- (void)configSelfViewFrame;
+- (void)configCollectionViewFrame;
+- (void)configSignatureDailyEntrance;
+- (void)p_addMentionLoadMorePlaceholderModels;
+- (void)p_removeMentionLoadMorePlaceholderModels;
+- (void)p_loadMoreMentionList;
+- (void)pushToRecordEditing;
+- (void)configLeftContainer;
+- (void)configRightContainer;
+- (void)searchUser:(id)a0;
+- (BOOL)isInDefaultStyle;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (void)keyboardWillShow:(id)a0;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)keyboardWillHide:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+
+@end

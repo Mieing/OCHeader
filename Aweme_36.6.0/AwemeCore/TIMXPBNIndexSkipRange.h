@@ -1,0 +1,10 @@
+@interface TIMXPBNIndexSkipRange : GPBMessage
+
+@property (nonatomic) long long startIndex;
+@property (nonatomic) BOOL hasStartIndex;
+@property (nonatomic) long long endIndex;
+@property (nonatomic) BOOL hasEndIndex;
+
++ (id)descriptor;
+
+@end

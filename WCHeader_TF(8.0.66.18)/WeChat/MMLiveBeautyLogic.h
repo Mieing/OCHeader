@@ -1,0 +1,85 @@
+@class WCFinderLiveAnchorLogReporter, NSMutableDictionary, MMFinderLiveTask, MMLiveEffectsUsingContext, NSDictionary, MMLiveEnergyController, MMLiveBeautyPackage, MMLiveTask, MMLiveMakeupPackage, MMWeEffectManager, MMLiveFilterPackage, NSString, MemoryMappedKV, MMLiveMakeupDataItem, WCFinderLiveStarterReporter, MMLiveFilterDataItem, MMLiveBeautyResourcesDescriptor;
+
+@interface MMLiveBeautyLogic : NSObject <MMLiveBeautyLogicProvider, MMLiveTaskMgrExt, MMLiveStorageCleanupExt>
+
+@property (class, readonly, nonatomic) BOOL isDeviceLowSpec;
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) MMWeEffectManager *effectManager;
+@property (retain, nonatomic) MemoryMappedKV *mappedKV;
+@property (nonatomic) BOOL usingDefaultNoopBeautyPackage;
+@property (retain, nonatomic) MMLiveBeautyPackage *beautyPackage;
+@property (retain, nonatomic) NSMutableDictionary *beautyDrivers;
+@property (retain, nonatomic) MMLiveFilterPackage *filterPackage;
+@property (retain, nonatomic) MMLiveMakeupPackage *makeupPackage;
+@property (retain, nonatomic) WCFinderLiveAnchorLogReporter *anchorReporter;
+@property (retain, nonatomic) WCFinderLiveStarterReporter *starterReporter;
+@property (nonatomic) BOOL isAudience;
+@property (weak, nonatomic) MMLiveTask *task;
+@property (retain, nonatomic) MMLiveFilterDataItem *noopFilter;
+@property (retain, nonatomic) MMLiveMakeupDataItem *noopMakeup;
+@property (retain, nonatomic) MMLiveFilterDataItem *currentUsedFilter;
+@property (retain, nonatomic) MMLiveMakeupDataItem *currentUsedMakeup;
+@property (nonatomic) BOOL skinSegEnable;
+@property (retain, nonatomic) MMLiveBeautyResourcesDescriptor *resourcesDescriptor;
+@property (retain, nonatomic) NSDictionary *makeupDetailIdDic;
+@property (retain, nonatomic) NSString *makeupResourcesInstancePath;
+@property (retain, nonatomic) NSString *filterResourcesInstancePath;
+@property (readonly, weak, nonatomic) MMFinderLiveTask *finderLiveTask;
+@property (retain, nonatomic) MMLiveEffectsUsingContext *effectUsingCtx;
+@property (retain, nonatomic) MMLiveEnergyController *energyController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)beautyLogic;
+- (id)getDecorDataItemList;
+- (void)setLiveDecorEffect:(id)a0;
+- (id)getVisionEffectDataItemList;
+- (void)setLiveVisionEffect:(id)a0;
+- (BOOL)isMaterialResourcePrepared:(id)a0;
+- (BOOL)isMaterialResourceDownloading:(id)a0;
+- (BOOL)loadMaterialResource:(id)a0;
+- (void)reportDecorAction:(unsigned long long)a0 item:(id)a1;
+- (void)reportVisionEffectAction:(unsigned long long)a0 item:(id)a1;
+- (id)initWithWeEffectManager:(id)a0 beautyPackage:(id)a1 isAudience:(BOOL)a2 task:(id)a3;
+- (void)initSkinSeg;
+- (void)updateSkinSegStatus:(BOOL)a0 success:(id /* block */)a1 fail:(id /* block */)a2;
+- (void)_internalUpdateSkinSegStatus:(BOOL)a0 success:(id /* block */)a1 saveCurStatus:(BOOL)a2;
+- (void)saveCurrentFilterStatusOnSkinSegOpen;
+- (void)resetFilterStatusToSkinSegOpen;
+- (void)initMakeup;
+- (void)updateMakeup:(id)a0;
+- (void)updateMakupDetail:(id)a0;
+- (void)updateMakupDetail:(id)a0 resetFilterIfNeeded:(BOOL)a1;
+- (void)initFilter;
+- (void)setFilter:(id)a0;
+- (void)setFilter:(id)a0 showToast:(BOOL)a1;
+- (void)setLiveFilterValue:(float)a0;
+- (void)initBeauty;
+- (void)activateBeautySuite:(id)a0;
+- (BOOL)isCurrentBeautySuitDefaultValue;
+- (BOOL)isCurrentMakeupDetailDefaultValue;
+- (void)reloadDataItemsValue;
+- (void)resetDataItemsValueToDefault;
+- (void)resetMakeupDetailValueToDefault;
+- (void)saveAllEffectBeautyValues;
+- (void)applyBeautyItem:(id)a0;
+- (id)getMeizhuangResultString;
+- (void)reportMakeupActionOnStarter;
+- (void)reportMakeupAction;
+- (void)saveAllMakeupDataItemValues;
+- (void)saveAllMakeupDataDetailItemValues;
+- (void)saveAllEffectFilterValues;
+- (id)getMakeupDataItemList;
+- (id)getFilterDataItemsList;
+- (float)getValidParamValue:(float)a0;
+- (void)onLiveTask:(id)a0 liveClosed:(BOOL)a1;
+- (void)willBeginStorageCleanupInScenario:(unsigned long long)a0 withContext:(id)a1;
+- (void).cxx_destruct;
+
+@end

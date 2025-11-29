@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CustomConfig_ScoreElement : IESLivePBBaseMessage
+
+@property (nonatomic) long long valueKind;
+@property (copy, nonatomic) NSString *valueName;
+
++ (id)descriptor;
+
+@end

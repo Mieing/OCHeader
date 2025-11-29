@@ -1,0 +1,3 @@
+@interface RoomBubbleDotApiRoot : GPBRootObject
+
+@end

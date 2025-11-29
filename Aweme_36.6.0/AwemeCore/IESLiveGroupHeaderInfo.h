@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveGroupHeaderInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *goods;
+@property (copy, nonatomic) NSString *sale;
+@property (copy, nonatomic) NSString *URL;
+@property (retain, nonatomic) NSMutableArray *iconsArray;
+@property (readonly, nonatomic) unsigned long long iconsArray_Count;
+
++ (id)descriptor;
+
+@end

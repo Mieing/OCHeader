@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESECGoodsFeedPitayaService : NSObject <IESECGoodsFeedPitayaServiceInterface>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)registerMessageHandler:(id)a0 callback:(id /* block */)a1;
+
+
+@end

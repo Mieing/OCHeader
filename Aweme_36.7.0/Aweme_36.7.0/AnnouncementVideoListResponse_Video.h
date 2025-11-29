@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface AnnouncementVideoListResponse_Video : IESLivePBBaseMessage
+
+@property (nonatomic) long long itemId;
+@property (retain, nonatomic) NSMutableArray *coverUrlsArray;
+@property (readonly, nonatomic) unsigned long long coverUrlsArray_Count;
+@property (copy, nonatomic) NSString *itemIdStr;
+
++ (id)descriptor;
+
+@end

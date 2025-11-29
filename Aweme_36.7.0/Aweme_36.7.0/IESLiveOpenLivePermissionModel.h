@@ -1,0 +1,38 @@
+@class NSString, NSArray, NSDictionary, IESLiveOpenLiveBroadcastConfig, IESLiveAnnouncementData, NSNumber, IESLiveWelfarePermissionInfoModel;
+
+@interface IESLiveOpenLivePermissionModel : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (readonly, nonatomic) NSNumber *playbackAuthOption;
+@property (readonly, nonatomic) NSNumber *onlyPlaybackAuthOption;
+@property (retain, nonatomic) NSNumber *playback;
+@property (retain, nonatomic) NSNumber *highlight;
+@property (retain, nonatomic) NSNumber *hasShopAndPlayBackAuth;
+@property (retain, nonatomic) NSNumber *showLiveLifeEntry;
+@property (nonatomic) BOOL hasAskExplainAuth;
+@property (nonatomic) BOOL hasRealTimePlayBackAuth;
+@property (retain, nonatomic) NSNumber *audienceRecordAuthOption;
+@property (retain, nonatomic) NSArray *stamps;
+@property (nonatomic) BOOL liveCommercial;
+@property (retain, nonatomic) NSNumber *lastRoomID;
+@property (retain, nonatomic) IESLiveOpenLiveBroadcastConfig *broadcastConfig;
+@property (retain, nonatomic) NSNumber *fansGroupChatAuth;
+@property (readonly, nonatomic) BOOL showGiftSwitchSetting;
+@property (readonly, nonatomic) BOOL defaultWhenGiftSettingNotShow;
+@property (readonly, nonatomic) long long notAllowGiftReason;
+@property (retain, nonatomic) NSNumber *p_showGiftSwitchSetting;
+@property (retain, nonatomic) NSNumber *authenticationType;
+@property (retain, nonatomic) IESLiveAnnouncementData *announcement;
+@property (retain, nonatomic) IESLiveWelfarePermissionInfoModel *welfarePermissionInfo;
+@property (nonatomic) BOOL buySubscribeSwitch;
+@property (readonly, copy, nonatomic) NSDictionary *dictionaryValue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)validate:(id)a0;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

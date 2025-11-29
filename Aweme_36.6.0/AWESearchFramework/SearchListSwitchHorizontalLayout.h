@@ -1,0 +1,25 @@
+@class NSMutableDictionary;
+
+@interface SearchListSwitchHorizontalLayout : SearchListLayout
+
+@property (retain, nonatomic) NSMutableDictionary *attributesCacheMap;
+@property (nonatomic) BOOL scalesInBothDirections;
+@property (nonatomic) double maxScalingDistance;
+@property (nonatomic) BOOL enableCenterSnapping;
+@property (nonatomic) BOOL enableLayoutFix;
+@property (nonatomic) double leftMargin;
+@property (nonatomic) double itemSpace;
+@property (nonatomic) double preferItemWidth;
+@property (nonatomic) double scaleValue;
+
+- (void)applyScalingTransformToLayoutAttributes:(id)a0;
+- (void).cxx_destruct;
+- (id)layoutAttributesForItemAtIndexPath:(id)a0;
+- (void)prepareLayout;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)init;
+- (void)invalidateLayout;
+- (struct CGPoint { double x0; double x1; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x0; double x1; })a0 withScrollingVelocity:(struct CGPoint { double x0; double x1; })a1;
+
+@end

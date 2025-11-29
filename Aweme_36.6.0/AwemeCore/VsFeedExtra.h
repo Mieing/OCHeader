@@ -1,0 +1,16 @@
+@class NSString, VsFeedExtra_LogPb;
+
+@interface VsFeedExtra : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) long long style;
+@property (nonatomic) long long offset;
+@property (nonatomic) int offsetType;
+@property (retain, nonatomic) VsFeedExtra_LogPb *logPb;
+@property (nonatomic) BOOL hasLogPb;
+@property (nonatomic) long long maxTime;
+@property (copy, nonatomic) NSString *offsetStr;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,84 @@
+@class UIView, RxScheduler, AWERTVInviteFriendsSegmentController, RTVListViewController, RTVVoipParticipatorInviteContext, RxPromise, UIButton, NSString, UIScrollView, RTVInteractionTracker, RTVInviteListSearchPlugin, RxDeferred;
+@protocol RTVInviteParticipantDataFetcher, RTVIMConversationServiceInterface, RxInjector, RTVXRStateRecorder, RTVSettingsManager;
+
+@interface RTVInviteParticipantViewController : UIViewController <RTVPageSheetViewControllerProtocol, RTVListViewControllerDelegate, AWERTVInviteFriendsSegmentControllerDelegate, AWERTVInviteViewController>
+
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (readonly, nonatomic) RTVListViewController *listVC;
+@property (readonly, nonatomic) RTVVoipParticipatorInviteContext *context;
+@property (readonly, nonatomic) AWERTVInviteFriendsSegmentController *inviteFriendProvider;
+@property (readonly, nonatomic) id<RTVXRStateRecorder> xrStateRecorder;
+@property (readonly, nonatomic) id<RTVSettingsManager> settingsManager;
+@property (readonly, weak, nonatomic) id<RTVIMConversationServiceInterface> imManager;
+@property (readonly, nonatomic) RTVInteractionTracker *tracker;
+@property (readonly, nonatomic) UIButton *createGroupButton;
+@property (readonly, nonatomic) UIView *inviteButtonContainer;
+@property (readonly, nonatomic) UIButton *inviteButton;
+@property (readonly, nonatomic) id<RTVInviteParticipantDataFetcher> dataFetcher;
+@property (retain, nonatomic) RxDeferred *inviteCompleteDeferred;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } contentInset;
+@property (readonly, nonatomic) long long uiStyle;
+@property (readonly, weak, nonatomic) RTVInviteListSearchPlugin *searchPlugin;
+@property (readonly, nonatomic) RxScheduler *scheduler;
+@property (readonly, nonatomic) RxPromise *inviteCompletePromise;
+@property (copy, nonatomic) id /* block */ completion;
+@property (copy, nonatomic) id /* block */ scrollViewDidScroll;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) UIScrollView *scrollView;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWEPadRTVAdapterClass;
+
+- (BOOL)awe_shouldAutorotate;
+- (unsigned long long)awe_supportedInterfaceOrientations;
+- (BOOL)disablePullIndicatorView;
+- (id)pullIndicatorViewBackgroundColor;
+- (void)rxAwakeFromPropertyInjection;
+- (BOOL)awe_shouldBypassPresentationHook;
+- (id)aAWEPadModuleAdapter;
+- (void)renderModel:(id)a0 context:(id)a1;
+- (void)__createComponents;
+- (void)__layoutComponents;
+- (void)__configComponents;
+- (BOOL)__interfaceOrientationLayoutIsPortrait;
+- (id)aAWEPadRTVAdapter;
+- (BOOL)enableCloseButtonForPageSheetPresentation;
+- (BOOL)enablePullDismissGestureForPageSheetPresentation;
+- (id)customTitleForPageSheetPresentation;
+- (void)segmentController:(id)a0 didSelectCellModel:(id)a1;
+- (BOOL)segmentControllerIsSearching:(id)a0;
+- (void)__layoutUIComponents;
+- (id)__segmentControllers;
+- (void)__handleInviteAction:(id)a0;
+- (void)__createCreateGroupButton;
+- (void)__handleCreateGroupAndInviteAction:(id)a0;
+- (unsigned long long)__maxSelectCount;
+- (void)__refreshInviteButton;
+- (void)__refreshCreateGroupButton;
+- (id)__currentSelectedUserIMIDs;
+- (long long)__createGroupMinSelectCount;
+- (void)__showCreateGroupButton:(BOOL)a0;
+- (void)__dismissSelf:(id /* block */)a0;
+- (void)listViewControllerFinishInitialLoad:(id)a0 isEmpty:(BOOL)a1;
+- (void)listViewScrollViewDidScroll:(id)a0 scrollViewOffset:(struct CGPoint { double x0; double x1; })a1;
+- (id)listViewControllerLoadingView:(id)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })listViewController:(id)a0 loadingViewInsetForPluginRegionHeight:(double)a1;
+- (id)listViewController:(id)a0 emptyViewForSearch:(BOOL)a1;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })listViewController:(id)a0 emptyViewInsetForPluginRegionHeight:(double)a1 forSearch:(BOOL)a2;
+- (struct CGPoint { double x0; double x1; })scrollViewOffset;
+- (id)__isCurrentUserAParticipantWithAllConversationIDs:(id)a0;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (long long)preferredStatusBarStyle;
+- (struct CGSize { double x0; double x1; })preferredContentSize;
+- (void)resetSelection;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)loadView;
+
+@end

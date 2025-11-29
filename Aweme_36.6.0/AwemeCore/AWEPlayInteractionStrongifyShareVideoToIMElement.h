@@ -1,0 +1,83 @@
+@class AWEPlayInteractionStrongifyShareContentView, NSArray, NSTimer, NSString;
+
+@interface AWEPlayInteractionStrongifyShareVideoToIMElement : AWEPlayInteractionBaseActionButtonElement <AWEPlayInteractionBottomButtonPriorityProtocol, AWEElementSelfFilterProtocol, AWEPlayInteractionStrongifyShareVideoToIMElementProtocol>
+
+@property (retain, nonatomic) AWEPlayInteractionStrongifyShareContentView *shareView;
+@property (copy, nonatomic) NSArray *shareModels;
+@property (copy, nonatomic) id /* block */ showGuideHandler;
+@property (nonatomic) long long avoidPriority;
+@property (nonatomic) unsigned long long displayType;
+@property (nonatomic) BOOL hasClickedShare;
+@property (nonatomic) BOOL hasDisplay;
+@property (nonatomic) BOOL shouldShowControlledByOuterShare;
+@property (retain, nonatomic) NSTimer *autoHideTimer;
+@property (copy, nonatomic) NSString *triggerMode;
+@property (nonatomic) BOOL needReverse;
+@property (nonatomic) BOOL enableShareToIMEntrancePrfOpt;
+@property (nonatomic) BOOL shouldShowShareToIMEntrance;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)activateInfoWithContext:(id)a0;
++ (Class)aAWELiteUGSocialModuleAdapterClass;
+
+- (void)initializeElement;
+- (void)videoPlayerWillTrackPlayTime;
+- (id)activateInfoWithData:(id)a0;
+- (void)layoutElementView;
+- (void)prepareForActivate;
+- (void)initializeConfig;
+- (id /* block */)shareConfigurationHandler;
+- (id)aAWELiteUGSocialModuleAdapter;
+- (void)onLongPressShowNotification:(id)a0;
+- (void)handleIMSendShareMessageNoti:(id)a0;
+- (void)handleIMTranspondListVCDidAppearNoti:(id)a0;
+- (void)shareToUser:(id)a0 customSnackBarTips:(id)a1 tagText:(id)a2;
+- (id)p_trackShowType;
+- (void)p_showQuickShareButton:(id)a0;
+- (void)onDigoAddNotification:(id)a0;
+- (void)onSharePanelDidDismiss:(id)a0;
+- (void)removeOlderFollowGuideHandler;
+- (BOOL)opt_shouldShowUnifyGuideBtnForPermanent;
+- (void)showShareButtonWithAnimationIfNeedWithTriggerMode:(id)a0 isDelayShow:(BOOL)a1;
+- (BOOL)p_imFeedShareFromUserRecEnable;
+- (BOOL)opt_shouldShowStrongifyShareToIMEntranceUnify;
+- (BOOL)opt_shouldShowUnifyGuideBtnForPlayXTime;
+- (BOOL)opt_shouldShowUnifyGuideBtnForPlayOver;
+- (BOOL)p_shouldShowUnifyGuideBtnForPermanent;
+- (BOOL)p_shouldShowUnifyGuideBtnForPlayXTime;
+- (BOOL)p_shouldShowUnifyGuideBtnForPlayOver;
+- (BOOL)opt_shouldShowStrongifyShareToIMEntranceBaseOnInvariant;
+- (BOOL)p_shouldShowUnifyGuideBtnForDigo;
+- (void)hideShareButtonWithAnimation;
+- (BOOL)p_shouldShowButtonByPriorty;
+- (BOOL)isRecommendToFriendsEntranceShowOptEnabledWithTrigger:(id)a0;
+- (BOOL)isCurrentRecommendToFriendsEntranceCanShowWithTrigger:(id)a0;
+- (void)trackShareShowFailWithReasonType:(id)a0 reasonDetail:(id)a1 extDict:(id)a2;
+- (BOOL)shouldShowByfrenquencyControl;
+- (void)trackDisplayEvent;
+- (void)p_fetchShareModelWithAnimationBlock:(id /* block */)a0;
+- (id)filterSharemModels:(id)a0;
+- (BOOL)p_imFeedShareFromGroupRecUnfiyEnable;
+- (void)p_handleFeedShareFromGroupRecWithAnimationBlock:(id /* block */)a0;
+- (BOOL)p_imFeedShareFromUserRecUnfiyEnable;
+- (id)mergeAndFilterShareModels:(id)a0 withShareModels:(id)a1;
+- (BOOL)p_filterGroupShareModel:(id)a0;
+- (id)p_filterGroups:(id)a0;
+- (id)p_findFirstGroupInShareModels:(id)a0;
+- (void)trackShareEventWithUser:(id)a0;
+- (void)trackClickMoreButtonWithSharePanel;
+- (void)trackShareEventWithSharePanel;
+- (void)clickQuickShareShowSharePanelWithUser:(id)a0;
+- (BOOL)p_isCurrentTypeinConfigWithKey:(id)a0;
+- (BOOL)shouldActivateButtonWithData:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)context;
+
+@end

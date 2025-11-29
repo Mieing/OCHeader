@@ -1,0 +1,10 @@
+@class CreateOrderIDResponse_Data;
+
+@interface CreateOrderIDResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CreateOrderIDResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

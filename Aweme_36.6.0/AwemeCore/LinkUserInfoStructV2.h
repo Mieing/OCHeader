@@ -1,0 +1,10 @@
+@interface LinkUserInfoStructV2 : GPBMessage
+
+@property (nonatomic) int authStatus;
+@property (nonatomic) BOOL hasAuthStatus;
+@property (nonatomic) int authType;
+@property (nonatomic) BOOL hasAuthType;
+
++ (id)descriptor;
+
+@end

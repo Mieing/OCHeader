@@ -1,0 +1,3 @@
+@interface CGPCgProtocolMsgAvRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureCameraBeauty : MTLModel
+
+@end

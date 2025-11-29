@@ -1,0 +1,62 @@
+@interface AWELeftSideBarTrackManager : NSObject
+
++ (Class)aAWEPadLeftSideBarAdapterClass;
++ (Class)aAWEMainModuleServiceDOUYINHTSAdaperClass;
++ (id)getIronManModuleService;
++ (void)track_leftSideBarShowWithStatus:(long long)a0 showPage:(id)a1 errorType:(id)a2 isLogin:(BOOL)a3 isPad:(BOOL)a4;
++ (void)moniter_leftSideBarOpenWithEvent:(id)a0 status:(long long)a1 identification:(id)a2;
++ (void)moniter_leftSideBarCloseWithEvent:(id)a0 status:(long long)a1 identification:(id)a2;
++ (void)track_leftSideBarOpenWithModel:(id)a0;
++ (void)track_leftSlideBarExitWithModel:(id)a0;
++ (void)track_leftSideBarDistinguishEntranceViewShowBadgeWithTrackModel:(id)a0;
++ (void)track_leftSideBarEntranceViewShowBadge:(id)a0 badgeCallContext:(id)a1 withDotType:(unsigned long long)a2 componentID:(id)a3;
++ (void)track_leftSideBarEntranceViewHideBadge:(id)a0 withDotType:(unsigned long long)a1 hideType:(long long)a2 lastShowTime:(double)a3 componentID:(id)a4;
++ (void)track_sideBarPresentOpenErrorWithReason:(id)a0;
++ (void)moniter_leftSideBarSchemaRouter:(long long)a0 type:(id)a1 schema:(id)a2 businessId:(id)a3;
++ (void)track_leftSideBarCellClickWithPresenter:(id)a0 model:(id)a1;
++ (void)track_leftSideBarLynxCardDidClickCloseButtonWithPresenter:(id)a0 context:(id)a1;
++ (void)track_leftSideBarLynxCardClickWithPresenter:(id)a0 context:(id)a1 withPosition:(long long)a2;
++ (void)moniter_leftSideBarLoadLynx:(long long)a0 schema:(id)a1 error:(id)a2 presenter:(id)a3;
++ (void)track_leftSideBarLynxCardShowWithPresenter:(id)a0 context:(id)a1 withPosition:(long long)a2;
++ (void)track_leftSideBarLynxCardCloseButtonShowWithPresenter:(id)a0 context:(id)a1;
++ (void)process_timorContext:(id)a0 type:(long long)a1 withLeftSideBarTimorTrackParams:(id)a2 identification:(id)a3;
++ (id)process_timorSchema:(id)a0 type:(long long)a1 withLeftSideBarTimorTrackParams:(id)a2 identification:(id)a3;
++ (id)tryToProcess_timorLandingPageSchema:(id)a0 withLeftSideBarTimorTrackParams:(id)a1 identification:(id)a2;
++ (void)moniter_leftSideBarEntranceViewShowBadge:(long long)a0 status:(long long)a1 fromBiz:(id)a2 cause:(id)a3 causeBiz:(id)a4;
++ (void)track_leftSideBarEntranceViewDowngradeHideBadge:(id)a0 withDotType:(unsigned long long)a1 lastShowTime:(double)a2 componentID:(id)a3;
++ (void)track_leftSideBarEntranceViewShowInteractiveAnimation:(id)a0 withModel:(id)a1;
++ (void)track_leftSideBarEntranceShowLottie:(id)a0 isBusiness:(BOOL)a1 status:(BOOL)a2 errorCode:(long long)a3;
++ (void)track_leftSideBarEntranceBussinessViewShow:(id)a0 isBusiness:(BOOL)a1;
++ (void)moniter_leftSideBarEntranceViewShowPopView:(long long)a0 errorType:(long long)a1;
++ (void)track_leftSideBarEntranceViewShowPopView:(id)a0 text:(id)a1;
++ (void)track_leftSideBarEntranceViewShowCaptionBubble:(long long)a0 businessId:(id)a1 businessSubId:(id)a2 componentId:(id)a3 result:(long long)a4;
++ (void)track_leftSideBarEntranceViewShowCaptionBubble:(id)a0 withComponentId:(id)a1 withBusinessSubId:(id)a2;
++ (void)track_leftSideBarEntranceViewClickCaptionBubble:(id)a0 withComponentId:(id)a1 withBusinessSubId:(id)a2 withClickType:(id)a3 withLastShowDuration:(double)a4;
++ (void)track_leftSideBarVCBubbleShow:(BOOL)a0 businessId:(id)a1 itemId:(id)a2 errorCode:(long long)a3;
++ (void)track_leftSideBarViewShowPopView:(id)a0 text:(id)a1;
++ (void)moniter_leftSideBarCellSchemaRouter:(long long)a0 presenter:(id)a1;
++ (void)moniter_leftSideBarOpenWithEvent:(id)a0 status:(long long)a1 identification:(id)a2 presenter:(id)a3;
++ (void)track_leftUGSideBarEntranceBussinessViewForShow:(BOOL)a0 withModel:(id)a1;
++ (void)moniter_leftSideBarEntryAnimateShowWithCode:(long long)a0 presenter:(id)a1 itemId:(id)a2;
++ (void)track_leftSideBarDataHotSwitchWithHash:(id)a0 result:(long long)a1 cause:(long long)a2;
++ (void)track_leftSideBarCellViewShow:(id)a0 model:(id)a1;
++ (void)track_leftSideBarModuleShowWithModel:(id)a0;
++ (void)track_leftSideBarRedDotShowWithModel:(id)a0;
++ (void)track_leftSideBarSubtitleShowWithModel:(id)a0;
++ (void)track_leftSideBarLoadBusinessesDataWithHash:(id)a0 withBusinessIds:(id)a1 withUnloadBusinessIds:(id)a2 dataSource:(long long)a3;
++ (void)track_sideBarPrefContainerMonitor:(id)a0;
++ (void)track_sideBarPrefBizComponentMonitor:(id)a0;
++ (void)track_sideBarPrefOpenBizPageMonitor:(id)a0;
++ (void)track_hamletEvent:(id)a0 worldID:(id)a1 worldName:(id)a2;
++ (void)track_timorEvent:(id)a0 schema:(id)a1 name:(id)a2 type:(long long)a3 withLeftSideBarTimorTrackParams:(id)a4 identification:(id)a5;
++ (void)track_timorEvent:(id)a0 schema:(id)a1 type:(long long)a2 withLeftSideBarTimorTrackParams:(id)a3 identification:(id)a4;
++ (void)p_track_lynxCardCloseButtonWithEvent:(id)a0 presenter:(id)a1 context:(id)a2;
++ (id)p_getTraceTimorGeneralParamsWithExtraParam:(id)a0 type:(long long)a1 withLeftSideBarTimorTrackParams:(id)a2 identification:(id)a3;
++ (id)p_getTraceTimorScene;
++ (id)timorLaunchFromWithIdentification:(id)a0;
++ (void)track_sideBarHostVCSnapshotErrorWithReason:(id)a0 isInit:(BOOL)a1;
+
+- (id)aAWEPadLeftSideBarAdapter;
+- (id)aAWEMainModuleServiceDOUYINHTSAdaper;
+
+@end

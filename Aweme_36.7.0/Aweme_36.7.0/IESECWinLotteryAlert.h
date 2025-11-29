@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESECWinLotteryAlert : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *buttonLabel;
+
++ (id)descriptor;
+
+@end

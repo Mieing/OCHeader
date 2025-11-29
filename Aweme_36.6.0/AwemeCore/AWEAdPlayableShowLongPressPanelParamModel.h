@@ -1,0 +1,3 @@
+@interface AWEAdPlayableShowLongPressPanelParamModel : BDXBridgeModel
+
+@end

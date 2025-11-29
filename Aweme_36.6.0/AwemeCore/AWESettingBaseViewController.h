@@ -1,0 +1,72 @@
+@class AWESettingBaseViewModel, NSMutableDictionary, NSString, AWEUILoadingView, UITableView;
+@protocol AWESettingBaseViewControllerBizAbilityProtocol, AWEUserSettingBigFontAdapterProtocol;
+
+@interface AWESettingBaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (nonatomic) BOOL isRequesting;
+@property (retain, nonatomic) id<AWEUserSettingBigFontAdapterProtocol> fontAdapter;
+@property (retain, nonatomic) NSMutableDictionary *itemModelToControllerMap;
+@property (readonly, nonatomic) AWESettingBaseViewModel *viewModel;
+@property (nonatomic) long long colorStyle;
+@property (nonatomic) BOOL hideSepLine;
+@property (nonatomic) BOOL useCardUIStyle;
+@property (nonatomic) long long highlightType;
+@property (nonatomic) BOOL needInvisibleToast;
+@property (nonatomic) BOOL disableDefaultHighlightCell;
+@property (retain, nonatomic) id<AWESettingBaseViewControllerBizAbilityProtocol> bizAbilityImpl;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)trackUserPrivacySettingOptWithEnterFrom:(id)a0 itemID:(id)a1 eventType:(id)a2;
+- (void)backBtnClick:(id)a0;
+- (void)refreshView;
+- (void)willDisplayItemModel:(id)a0;
+- (void)didSelectItemModel:(id)a0;
+- (void)highlightCellIfNeeded;
+- (void)addLoadingViewToVC;
+- (void)removeLoadingViewFromVC;
+- (void)p_setViewBackGroundColor;
+- (void)addThemeChangeObserver;
+- (void)p_didThemeChanged;
+- (void)p_highlightCellIfNeeded;
+- (void)highlightCellWithIndex:(id)a0;
+- (void)awe_setLoadingView:(id)a0;
+- (id)awe_loadingView;
+- (void)showLoadingViewWithTitle:(id)a0;
+- (void)p_configCardUIStyle;
+- (id)tableViewCellIdentifier;
+- (id)unexpectedTableViewCellIdentifier;
+- (id)headerViewIdentifier;
+- (id)p_highlightIndexPathWithType:(long long)a0;
+- (id)getCellControllerWithItemModel:(id)a0;
+- (void)awe_setDuxLoadingView:(id)a0;
+- (id)awe_duxLoadingView;
+- (BOOL)isHitAccountManageWithGroup;
+- (void)showDUXLoadingViewWithTitle:(id)a0;
+- (void)hideDUXLoadingView;
+- (BOOL)isBasicViewController;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)viewWillAppear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (id)viewModel;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)hideLoadingView;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEBindSetupImpl : NSObject
+
+@end

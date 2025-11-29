@@ -1,0 +1,3 @@
+@interface AWERecordBeautyBasicCollectionViewCell : NSObject
+
+@end

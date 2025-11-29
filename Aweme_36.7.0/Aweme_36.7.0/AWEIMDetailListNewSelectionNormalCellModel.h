@@ -1,0 +1,3 @@
+@interface AWEIMDetailListNewSelectionNormalCellModel : AWEIMCellModel
+
+@end

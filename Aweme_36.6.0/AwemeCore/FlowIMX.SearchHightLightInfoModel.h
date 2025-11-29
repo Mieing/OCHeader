@@ -1,0 +1,7 @@
+@interface FlowIMX.SearchHightLightInfoModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ botId;
+    void /* unknown type, empty encoding */ fieldName;
+    void /* unknown type, empty encoding */ keywordPositions;
+}
+
+@end

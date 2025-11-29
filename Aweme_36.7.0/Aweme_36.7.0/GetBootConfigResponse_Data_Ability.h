@@ -1,0 +1,13 @@
+@class NSString, GPBStringInt64Dictionary;
+
+@interface GetBootConfigResponse_Data_Ability : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) long long maxTimes;
+@property (nonatomic) long long unitTime;
+@property (retain, nonatomic) GPBStringInt64Dictionary *authInfo;
+@property (readonly, nonatomic) unsigned long long authInfo_Count;
+
++ (id)descriptor;
+
+@end

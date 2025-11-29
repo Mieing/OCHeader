@@ -1,0 +1,7 @@
+@interface CreationKitAlbum.Change : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ oldValue;
+    void /* unknown type, empty encoding */ newValue;
+    void /* unknown type, empty encoding */ diff;
+}
+
+@end

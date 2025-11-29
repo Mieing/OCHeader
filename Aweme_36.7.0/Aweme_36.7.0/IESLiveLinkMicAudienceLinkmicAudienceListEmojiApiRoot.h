@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicAudienceListEmojiApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class VsInteractiveLoadResponse_Data;
+
+@interface VsInteractiveLoadResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) VsInteractiveLoadResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

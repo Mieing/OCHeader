@@ -1,0 +1,10 @@
+@interface PushSettingGetResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long reviewPushOnOff;
+@property (nonatomic) long long giftPushOnOff;
+@property (nonatomic) long long systemPushOnOff;
+@property (nonatomic) long long enterRoomPushOnOff;
+
++ (id)descriptor;
+
+@end

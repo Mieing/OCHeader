@@ -1,0 +1,12 @@
+@class NSMutableArray, AnimationConfigV2;
+
+@interface DynamicLabelsInfoV2 : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *labelsArray;
+@property (readonly, nonatomic) unsigned long long labelsArray_Count;
+@property (retain, nonatomic) AnimationConfigV2 *config;
+@property (nonatomic) BOOL hasConfig;
+
++ (id)descriptor;
+
+@end

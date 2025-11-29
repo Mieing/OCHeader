@@ -1,0 +1,26 @@
+@interface SECNetMetrics : NSObject {
+    unsigned long long _requestStartTime;
+    unsigned long long _requestEndTime;
+    unsigned long long _responseStartTime;
+    unsigned long long _responseEndTime;
+    unsigned long long _decisionStartTime;
+    unsigned long long _decisionEndTime;
+    unsigned long long _actionStartTime;
+    unsigned long long _actionEndTime;
+}
+
+- (void)startResponse;
+- (void)endResponse;
+- (void)startDecision;
+- (void)endDecision;
+- (void)startAction;
+- (double)decisionDuration;
+- (double)actionDuration;
+- (double)responseDuration;
+- (id)init;
+- (double)requestDuration;
+- (void)startRequest;
+- (void)endRequest;
+- (void)endAction;
+
+@end

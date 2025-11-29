@@ -1,0 +1,3 @@
+@interface KryptonVECameraNapiUse : NSObject
+
+@end

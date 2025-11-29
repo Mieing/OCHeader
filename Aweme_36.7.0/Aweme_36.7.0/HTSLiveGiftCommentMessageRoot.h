@@ -1,0 +1,3 @@
+@interface HTSLiveGiftCommentMessageRoot : GPBRootObject
+
+@end

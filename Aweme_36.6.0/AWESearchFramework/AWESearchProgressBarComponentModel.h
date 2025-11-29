@@ -1,0 +1,3 @@
+@interface AWESearchProgressBarComponentModel : NSObject
+
+@end

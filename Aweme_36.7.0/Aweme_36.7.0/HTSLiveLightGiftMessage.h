@@ -1,0 +1,26 @@
+@class NSString, HTSLiveCommon, HTSLiveGiftIMPriority, HTSLiveGiftInfo, HTSLiveGiftLiteTrayInfo, HTSLiveGiftStruct;
+
+@interface HTSLiveLightGiftMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long groupCount;
+@property (nonatomic) long long repeatCount;
+@property (nonatomic) long long comboCount;
+@property (copy, nonatomic) NSString *toUserId;
+@property (retain, nonatomic) HTSLiveGiftIMPriority *priority;
+@property (nonatomic) BOOL hasPriority;
+@property (retain, nonatomic) HTSLiveGiftInfo *giftInfo;
+@property (nonatomic) BOOL hasGiftInfo;
+@property (retain, nonatomic) HTSLiveGiftLiteTrayInfo *trayInfo;
+@property (nonatomic) BOOL hasTrayInfo;
+@property (nonatomic) long long sendType;
+@property (nonatomic) long long count;
+@property (copy, nonatomic) NSString *diyItemInfo;
+@property (nonatomic) long long bannedDisplayEffects;
+@property (retain, nonatomic) HTSLiveGiftStruct *giftStruct;
+@property (nonatomic) BOOL hasGiftStruct;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,72 @@
+@class ACCTemplateSegmentSelectView, NSArray, ACCGenericTemplatePreprocessTaskManager, AWEAssetsCropAndClipManager, AWEModalTransitionDelegate, ACCGenericTemplateTTSTaskManager, AWEGenericTemplateAIGCTaskManager, ACCGenericTemplateTextParamManager, NSString;
+@protocol ACCEditOneClickFilmApplyServiceProtocol, ACCBusinessInputData, ACCSequenceEditServiceProtocol, ACCEditViewContainer, ACCGenericTemplateApplierService, ACCOneClickFilmPlayerService, ACCOCFViewContainerProtocol, ACCEditorOneClickFilmService, ACCEditorOneClickFilmingExitServiceProtocol, ACCEditorOneClickFilmingViewModelProtocol;
+
+@interface ACCOCFSegmentEditComponent : ACCFeatureComponent <ACCEditPreviewMessageProtocol>
+
+@property (weak, nonatomic) id<ACCBusinessInputData> inputData;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmService> oneClickFilmService;
+@property (weak, nonatomic) id<ACCOCFViewContainerProtocol> viewContainer;
+@property (weak, nonatomic) id<ACCEditViewContainer> editViewContainer;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCOneClickFilmPlayerService> previewPlayerService;
+@property (weak, nonatomic) id<ACCEditOneClickFilmApplyServiceProtocol> applyService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmingExitServiceProtocol> exitService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmingViewModelProtocol> oneClickViewModel;
+@property (weak, nonatomic) id<ACCGenericTemplateApplierService> applierService;
+@property (retain, nonatomic) ACCTemplateSegmentSelectView *segmentSelectView;
+@property (copy, nonatomic) NSArray *currentTemplateDynamicSlot;
+@property (retain, nonatomic) AWEModalTransitionDelegate *modalTransDelegate;
+@property (retain, nonatomic) AWEAssetsCropAndClipManager *cropAndClipManager;
+@property (nonatomic) BOOL hasAfterEdit;
+@property (nonatomic) BOOL shouldShowPlayerCursor;
+@property (nonatomic) long long selectedSegmentIndex;
+@property (nonatomic) unsigned long long scene;
+@property (retain, nonatomic) AWEGenericTemplateAIGCTaskManager *templateAIGCTaskManager;
+@property (nonatomic) long long currentEditStatus;
+@property (nonatomic) long long updateTemplateTaskID;
+@property (nonatomic) BOOL isCanceledByUser;
+@property (retain, nonatomic) ACCGenericTemplatePreprocessTaskManager *preprocessTaskManager;
+@property (retain, nonatomic) ACCGenericTemplateTTSTaskManager *ttsTaskManager;
+@property (retain, nonatomic) ACCGenericTemplateTextParamManager *textParamTaskManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentDidAppear;
+- (void)componentWillDisappear;
+- (void)playerCurrentPlayTimeChanged:(double)a0;
+- (id)nle;
+- (void)componentDidMount;
+- (unsigned long long)preferredLoadPhase;
+- (void)playStatusChanged:(long long)a0;
+- (void)bindServices:(id)a0;
+- (void)trackMoveMaterial:(BOOL)a0;
+- (void)trackForEnterCropAndClipPage:(id)a0;
+- (void)trackForSaveCropAndClipEvent:(id)a0 hasEdit:(BOOL)a1;
+- (void)trackForCancelCropAndClipEvent:(id)a0 hasEdit:(BOOL)a1;
+- (id)commonParamsForCropAndClipEvent:(id)a0;
+- (void)fetchReplaceAssetFragments;
+- (void)changeCurrentEditStatus:(long long)a0;
+- (void)showSegmentEditPage;
+- (void)trackForExitSegmentEditWithEvent:(id)a0;
+- (void)loadSegmentViewIfNeeded;
+- (void)showSegmentEditPageWithChangeFrame:(BOOL)a0;
+- (BOOL)shouldAddPlayerCursor;
+- (void)reloadSegmentDisplay;
+- (void)enterAlbumForReplaceSegment:(long long)a0;
+- (void)enterCropAndClipPageForSegmentIndex:(long long)a0;
+- (void)removeSegmentView;
+- (void)exitOneClickFilmPageIfNeeded;
+- (void)showCancelAlertDialog;
+- (void)reorderMaterial:(id)a0;
+- (BOOL)canApplyReorder:(id)a0 toIndex:(long long)a1;
+- (BOOL)checkAssetForReorder:(long long)a0 originIndex:(long long)a1 isToIndex:(BOOL)a2;
+- (id)coverOfVideoSlot:(id)a0 draftPath:(id)a1 preferSize:(struct CGSize { double x0; double x1; })a2;
+- (void)updateAppliedTemplateWithReplaceSlots:(id)a0 isReplaceMaterial:(BOOL)a1;
+- (void)writeAssetToLocalPath:(id)a0 completion:(id /* block */)a1;
+- (id)cropImage:(id)a0 slotInfo:(id)a1;
+- (long long)caculatCurrentPlayIndex:(double)a0;
+- (void).cxx_destruct;
+
+@end

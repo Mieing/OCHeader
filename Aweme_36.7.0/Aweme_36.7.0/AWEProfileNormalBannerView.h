@@ -1,0 +1,81 @@
+@class UIView, AWEProfileHeaderContext, AWEProfileBannerBGCoverMaskView, UITapGestureRecognizer, AWETopVideoEntranceView, AWEProfileNormalBannerViewModel, AWEProfileBannerBGCoverView, NSString, AWEProfileVideoPreviewViewController, UILabel, AWEProfileCoverPreviewActionSheetManager;
+@protocol AWEProfileBannerContext, AWEProfileBannerDelegate;
+
+@interface AWEProfileNormalBannerView : UIView <AWEProfileBannerBGCoverViewDelegate, AWEPhotosPreviewViewControllerDelegate, UIGestureRecognizerDelegate, AWEProfileBannerBGCoverMaskViewDelegate, AWEProfileBannerService, AWEProfileBannerProtocol>
+
+@property (retain, nonatomic) AWEProfileBannerBGCoverView *bannerBGCoverView;
+@property (retain, nonatomic) UIView *videoContainerView;
+@property (retain, nonatomic) AWEProfileVideoPreviewViewController *videoPreviewVC;
+@property (retain, nonatomic) AWEProfileBannerBGCoverMaskView *videoMaskView;
+@property (retain, nonatomic) AWETopVideoEntranceView *videoEntranceView;
+@property (retain, nonatomic) UILabel *indexLabel;
+@property (retain, nonatomic) AWEProfileCoverPreviewActionSheetManager *actionSheetManager;
+@property (retain, nonatomic) AWEProfileNormalBannerViewModel *viewModel;
+@property (nonatomic) long long bannerImageCount;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (nonatomic) BOOL hasTrackedEntranceShow;
+@property (retain, nonatomic) AWEProfileHeaderContext *headerContext;
+@property (nonatomic) unsigned long long bannerStyle;
+@property (copy, nonatomic) id /* block */ padStyleHandler;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWEProfileBannerDelegate> delegate;
+@property (readonly, nonatomic) double normalHeight;
+@property (readonly, nonatomic) double maxHeight;
+@property (weak, nonatomic) id<AWEProfileBannerContext> context;
+
++ (Class)aAWEPadUserPageAdapterClass;
++ (BOOL)canHandleData:(id)a0;
+
+- (void)userDidPerformOperationOnPhotosPreviewViewController:(id)a0;
+- (void)didScrollFromIndex:(unsigned long long)a0 toIndex:(unsigned long long)a1;
+- (BOOL)isThemeStyleLight;
+- (void)configWithData:(id)a0;
+- (id)aAWEPadUserPageAdapter;
+- (BOOL)autoAdjustHeight;
+- (void)showImagePreviewView:(id)a0 type:(long long)a1;
+- (void)scrollViewDidScrollWithOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)scrollViewDidEndDragingWithOffset:(struct CGPoint { double x0; double x1; })a0;
+- (id)padService;
+- (BOOL)canUpdateData:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 data:(id)a1 context:(id)a2 delegate:(id)a3;
+- (void)refreshBannerViewIfNeededWithSize:(struct CGSize { double x0; double x1; })a0;
+- (void)scrollViewBeginDraging;
+- (BOOL)canBecomeFullScreen;
+- (void)handleMaskViewColorChange:(id)a0;
+- (void)didSetHeaderViewBGImageFailed:(id)a0;
+- (void)updateComputedLightColor:(id)a0 darkColor:(id)a1 index:(long long)a2;
+- (void)didSetBannerImage:(id)a0 url:(id)a1 error:(id)a2 bannerList:(id)a3 index:(long long)a4;
+- (void)updateHeaderViewBGColor:(id)a0;
+- (void)trackBannerImageLoadState:(long long)a0;
+- (void)updateIndexLabelWithIndex:(unsigned long long)a0 count:(unsigned long long)a1;
+- (double)bottomContentOverlapHeight;
+- (id)eCommerceEntranceLocation;
+- (void)updateBannerStyle;
+- (void)selectCoverFromAlbum;
+- (void)onTapGestureAction:(id)a0;
+- (void)onTapGestureWithLocation:(struct CGPoint { double x0; double x1; })a0;
+- (double)_bannerHeight:(BOOL)a0;
+- (double)_bannerNormalHeight:(BOOL)a0;
+- (void)dynamicCoverLeaveFullScreen;
+- (void)dynamicCoverEnterFullScreen;
+- (void)_updateCoverView;
+- (void)clearVideoPreviewVC;
+- (void)refreshVideoMaskColor;
+- (void)bannerEnterFullScreenWithAnimation:(id /* block */)a0 completion:(id /* block */)a1;
+- (void)bannerLeaveFullScreenWithShowTabBar:(BOOL)a0 beforeAnimationBlock:(id /* block */)a1;
+- (double)_bannerNormalHeight;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (void)viewWillAppear;
+- (void)layoutSubviews;
+- (void)setupUI;
+- (double)_screenHeight;
+- (double)_screenWidth;
+- (void)viewDidDisappear;
+- (void)_refreshUI;
+- (void)viewWillDisappear;
+
+@end

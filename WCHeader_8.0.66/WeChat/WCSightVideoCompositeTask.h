@@ -1,0 +1,74 @@
+@class EditVideoAttr, NSString, NSURL, NSError, VideoEncodeTask, SightDraft, VideoCompositionAttr, WCMomentsPostReportSession, MMAssetForPHAssetFramework;
+@protocol WCSightVideoCompositeTaskDelegate;
+
+@interface WCSightVideoCompositeTask : NSObject <MMAssetCompositeTaskProtocol>
+
+@property (retain, nonatomic) MMAssetForPHAssetFramework *srcPHAsset;
+@property (retain, nonatomic) MMAssetForPHAssetFramework *exportedPHAsset;
+@property (retain, nonatomic) EditVideoAttr *editVideoAttr;
+@property (retain, nonatomic) VideoCompositionAttr *compositionAttr;
+@property (nonatomic) BOOL isTaskCompleted;
+@property (retain, nonatomic) SightDraft *completedSightDraft;
+@property (retain, nonatomic) NSError *error;
+@property (retain, nonatomic) NSString *taskId;
+@property (nonatomic) long long taskFailedCount;
+@property (retain, nonatomic) NSString *savedAssetFileShortName;
+@property (retain, nonatomic) NSURL *cachedEditedAssetFileURL;
+@property (nonatomic) double taskPendingTime;
+@property (nonatomic) double taskStartTime;
+@property (nonatomic) double taskFinishTime;
+@property (nonatomic) double taskStopTime;
+@property (nonatomic) double taskInterruptTime;
+@property (nonatomic) double taskDetachTime;
+@property (readonly, nonatomic) BOOL isTaskRunning;
+@property (weak, nonatomic) id<WCSightVideoCompositeTaskDelegate> delegate;
+@property (nonatomic) long long assetCompositionSource;
+@property (retain, nonatomic) WCMomentsPostReportSession *postReportSession;
+@property (retain, nonatomic) NSString *mjMetaInfoStr;
+@property (retain, nonatomic) VideoEncodeTask *videoEncodeTask;
+@property (nonatomic) BOOL enablesCrashProtect;
+@property (copy, nonatomic) NSString *sightDraftVideoPath;
+@property (copy, nonatomic) id /* block */ compositeProgressCb;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)getThumbImageForEditVideoFromPath:(id)a0;
+- (void)reportCompositionFailed;
+- (void)setupSightDraft:(id)a0;
+- (id)initWithTaskId:(id)a0 srcPHAsset:(id)a1 editVideoAttr:(id)a2 compositionAttr:(id)a3;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (void)clearTaskData;
+- (void)willAddIntoTrash;
+- (id)getPreparedAssetFileURL;
+- (void)prepareTaskWithBlock:(id /* block */)a0;
+- (BOOL)removeLocalCache;
+- (double)videoCompressDuration;
+- (double)videoDuration;
+- (id)generatePreviewImage;
+- (id)generateWidgetCanvasView;
+- (void)_saveBackupAssetToDiskIfNeeded:(id /* block */)a0;
+- (void)_prepareEditAttrWithResultBlock:(id /* block */)a0;
+- (struct CGSize { double x0; double x1; })_getEditedAssetSize;
+- (id)_getEditedAssetCacheFileURL;
+- (long long)taskType;
+- (BOOL)isValid;
+- (BOOL)isSafe;
+- (BOOL)shouldSaveExportVideoToLibrary;
+- (void)onTaskPending;
+- (void)onTaskReady;
+- (void)onTaskStarted;
+- (void)onTaskStoppedWithResult:(id)a0 session:(id)a1;
+- (void)onTaskInterrupted;
+- (void)onTaskDetached;
+- (void)_onTaskFinished;
+- (void)_handleCompositionTaskCompletedWithSession:(id)a0;
+- (void)_handleCompositionTaskFailedWithSession:(id)a0;
+- (double)currentCompositeProgress;
+- (void)_retainSelfForBlock;
+- (void).cxx_destruct;
+
+@end

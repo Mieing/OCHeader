@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface TIMXPBNModifyPropertyContent : GPBMessage
+
+@property (nonatomic) int operation;
+@property (nonatomic) BOOL hasOperation;
+@property (copy, nonatomic) NSString *key;
+@property (nonatomic) BOOL hasKey;
+@property (copy, nonatomic) NSString *value;
+@property (nonatomic) BOOL hasValue;
+@property (copy, nonatomic) NSString *idempotentId;
+@property (nonatomic) BOOL hasIdempotentId;
+
++ (id)descriptor;
+
+@end

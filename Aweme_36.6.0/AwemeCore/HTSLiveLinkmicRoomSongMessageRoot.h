@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicRoomSongMessageRoot : GPBRootObject
+
+@end

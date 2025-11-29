@@ -1,0 +1,19 @@
+@class NSString, AWEUGDesktopChannelGuideInstallConfigModel, AWEUGDesktopChannelGuideTrackerInfoModel;
+
+@interface AWEUGDesktopLynxGuideConfigModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *lynxSchema;
+@property (nonatomic) BOOL needErrorToast;
+@property (retain, nonatomic) AWEUGDesktopChannelGuideInstallConfigModel *installConfig;
+@property (retain, nonatomic) AWEUGDesktopChannelGuideTrackerInfoModel *trackerInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
++ (id)JSONTransformerForKey:(id)a0;
+
+- (void).cxx_destruct;
+
+@end

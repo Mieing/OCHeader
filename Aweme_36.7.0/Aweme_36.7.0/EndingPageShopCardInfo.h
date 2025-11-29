@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface EndingPageShopCardInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *shopSchema;
+@property (retain, nonatomic) NSMutableArray *productListArray;
+@property (readonly, nonatomic) unsigned long long productListArray_Count;
+@property (copy, nonatomic) NSString *shopId;
+
++ (id)descriptor;
+
+@end

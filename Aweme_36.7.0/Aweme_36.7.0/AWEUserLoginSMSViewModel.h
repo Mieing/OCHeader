@@ -1,0 +1,81 @@
+@class NSError, AWEUserLoginSMSDataController, NSString, NSArray, DYPhoneNumberModel, AWECarrierLoginPhoneModel, AWEUserComponentSubtitleModel, AWEUserSendCodeModel, DYASendCodeModel, AWEUserLoginSMSVerificationContext;
+
+@interface AWEUserLoginSMSViewModel : AWEUserLoginBaseViewModel <AWEUserLoginViewModelSecondaryProtocol>
+
+@property (retain, nonatomic) DYPhoneNumberModel *inputPhoneModel;
+@property (nonatomic) double inputPhoneCountryCodeWidth;
+@property (nonatomic) long long smsScene;
+@property (retain, nonatomic) DYASendCodeModel *sendCodeModel;
+@property (copy, nonatomic) NSString *inputVerification;
+@property (retain, nonatomic) AWEUserLoginSMSDataController *dataController;
+@property (retain, nonatomic) NSError *loginError;
+@property (nonatomic) BOOL hasAutoRequest;
+@property (nonatomic) long long verificationStatus;
+@property (retain, nonatomic) AWEUserLoginSMSVerificationContext *verificationContext;
+@property (nonatomic) double sendCodeAllStartTimeInterval;
+@property (nonatomic) double sendCodeTimeInterval;
+@property (nonatomic) BOOL isOverseaLayout;
+@property (readonly, nonatomic) NSArray *avatarURLArray;
+@property (readonly, copy, nonatomic) NSString *displayNickName;
+@property (readonly, copy, nonatomic) NSString *loginSubTitle;
+@property (readonly, copy, nonatomic) NSArray *combineLoginUsers;
+@property (readonly, nonatomic) AWECarrierLoginPhoneModel *carrierPhoneModel;
+@property (readonly, copy, nonatomic) NSString *inputEmailAccount;
+@property (readonly, nonatomic) long long emailScene;
+@property (readonly, nonatomic) AWEUserComponentSubtitleModel *subtitleModel;
+@property (readonly, nonatomic) AWEUserSendCodeModel *codeModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEUserLoginThemeAdapterClass;
+
+- (id)aAWEUserLoginThemeAdapter;
+- (void)checkConfirmedProtocolWithCompletion:(id /* block */)a0;
+- (id)additionalTrackParamsForSendCode;
+- (void)dataControllerUpdateLoginError:(id)a0;
+- (id)monitorPageName;
+- (void)trackLoginEvent:(long long)a0;
+- (id)notifyTrackLoginSuggestMethod;
+- (void)updateLoginButtonEnableStatus;
+- (void)trackPageShowPerfEvent;
+- (id)loginComponentTypeList;
+- (id)showLoginPlatformList;
+- (void)requestLogin;
+- (id)loginNotAvailableToastText;
+- (void)updateSendCodeModel:(id)a0;
+- (id)additionalTrackInfo:(long long)a0;
+- (id)fillVerificationScene;
+- (id)fillPhoneNumberScene;
+- (void)updateInputPhoneModel:(id)a0;
+- (void)updateInputVerification:(id)a0;
+- (void)updateVerificationStatus:(long long)a0;
+- (void)updateInputPhoneCountryCodeWidth:(double)a0;
+- (void)requestSendVerificationIsResend:(BOOL)a0 block:(id /* block */)a1;
+- (void)requestSendVoiceVerificationBlock:(id /* block */)a0;
+- (void)startBind;
+- (void)switchToPasswordLogin;
+- (id)initWithLoginPanelStyle:(unsigned long long)a0 scene:(long long)a1;
+- (id)initWithLoginPanelStyle:(unsigned long long)a0 verificationContext:(id)a1 phoneModel:(id)a2;
+- (void)notReceiveVerificationBtnClicked;
+- (void)updateIsOverseaLayout:(BOOL)a0;
+- (id)fillPhoneModelIfNeed;
+- (id)initWithLoginPanelStyle:(unsigned long long)a0 scene:(long long)a1 phoneModel:(id)a2 verificationContext:(id)a3;
+- (id)componentTypeListForMobilePhoneNumber;
+- (id)componentTypeListForMobileVerification;
+- (void)switchToSMSStep2Page;
+- (BOOL)isInputPhoneValid;
+- (BOOL)isLoginButtonValid;
+- (id)sendCodeAdditionalParams;
+- (id)smsLoginAdditionalEvent:(long long)a0;
+- (void)requestSendVerificationFirstTryValidateLogin;
+- (void)_requestSMSLoginBlock:(id /* block */)a0;
+- (BOOL)needTryValidateSMSLogin;
+- (void)trackLoginSendCodeDuration:(BOOL)a0 isResend:(BOOL)a1;
+- (void)_requestSendVerificationIsResend:(BOOL)a0 block:(id /* block */)a1;
+- (void)_requestSendVoiceVerificationBlock:(id /* block */)a0;
+- (void)handleVoiceCodeVerificationError;
+- (void).cxx_destruct;
+
+@end

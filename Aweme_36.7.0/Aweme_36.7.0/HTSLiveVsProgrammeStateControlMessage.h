@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveVsProgrammeStateControlMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *pId;
+@property (nonatomic) int state;
+@property (retain, nonatomic) NSMutableArray *playBackInfoListArray;
+@property (readonly, nonatomic) unsigned long long playBackInfoListArray_Count;
+
++ (id)descriptor;
+
+@end

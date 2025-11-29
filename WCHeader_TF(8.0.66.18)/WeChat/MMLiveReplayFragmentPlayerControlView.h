@@ -1,0 +1,78 @@
+@class UIView, SightIconView, UITapGestureRecognizer, WCC2CPlayerProgressBar, UILabel, NSString, UIButton, CAGradientLayer, NSObject, MMUILabel, MMLiveReplayFragmentPlayerConfig, MMUIButton;
+@protocol MMLiveReplayFragmentPlayerControlDelegate;
+
+@interface MMLiveReplayFragmentPlayerControlView : WCPlayerControlView <SightIconViewDelegate, WCC2CPlayerProgressBarDelegate, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+@property (retain, nonatomic) UIView *topBkgView;
+@property (retain, nonatomic) CAGradientLayer *topGradientLayer;
+@property (retain, nonatomic) CAGradientLayer *bottomGradientLayer;
+@property (retain, nonatomic) MMUIButton *publishFinderFeedButton;
+@property (nonatomic) BOOL temporaryHideBottomToolView;
+@property (retain, nonatomic) MMLiveReplayFragmentPlayerConfig *playerConfig;
+@property (weak, nonatomic) NSObject<MMLiveReplayFragmentPlayerControlDelegate> *delegate;
+@property (retain, nonatomic) UIView *toolPanView;
+@property (retain, nonatomic) UIView *bottomToolView;
+@property (retain, nonatomic) MMUIButton *shareBtn;
+@property (retain, nonatomic) MMUIButton *downloadBtn;
+@property (retain, nonatomic) MMUIButton *moreBtn;
+@property (retain, nonatomic) WCC2CPlayerProgressBar *progressBar;
+@property (retain, nonatomic) SightIconView *iconView;
+@property (retain, nonatomic) UILabel *hintLabel;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) MMUILabel *errorLabel;
+@property (retain, nonatomic) UIButton *attachButton;
+@property (nonatomic) BOOL fullScreen;
+@property (nonatomic) BOOL shrink;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 Delegate:(id)a1 Config:(id)a2;
+- (void)addSubviews;
+- (void)layoutSubviews;
+- (void)updateBottomToolViewWithEdgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
+- (void)onCloseButtonTap:(id)a0;
+- (void)showErrorTipsWithText:(id)a0;
+- (void)setAttachButtonTitle:(id)a0;
+- (BOOL)isVideoPlaying;
+- (void)showToolView;
+- (void)hideToolView;
+- (void)onProgressEnd;
+- (void)onPlayerCreated;
+- (void)setProgress:(double)a0;
+- (void)onVideoPlay;
+- (void)onVideoPause;
+- (void)onVideoPlayFinish;
+- (void)onVideoDidPlayToEndTime;
+- (void)onPlayerSeekCompelete:(double)a0;
+- (void)onDataSourceChangeSuccessWithDownloadArgsWrap:(id)a0;
+- (void)updateVideoSize:(struct CGSize { double x0; double x1; })a0;
+- (void)setToolViewHidden:(BOOL)a0;
+- (void)updateBottomToolViewHidden:(BOOL)a0;
+- (void)handleTapGesture:(id)a0;
+- (void)onShareBtnClick:(id)a0;
+- (void)onDownloadBtnClick:(id)a0;
+- (void)onMoreBtnClick:(id)a0;
+- (void)onPublishFinderFeedButtonClick:(id)a0;
+- (void)onTapSightIconView;
+- (void)showDownloadPercentView;
+- (void)showBufferingView;
+- (void)hiddenBufferingView;
+- (void)hiddenDownloadPercentView;
+- (void)onVideoPrepareToPlay:(id)a0;
+- (void)updateProgressDuration:(float)a0;
+- (void)onPlayButtonClicked;
+- (void)onProgressBarHidden;
+- (void)onProgressBarChangePlayRate:(float)a0 currentPlayRate:(float)a1;
+- (void)onSliderChangeTo:(float)a0;
+- (void)onSliderScrubbBegin;
+- (void)onSliderSeekToTime:(float)a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getCurrentPlaybackTime;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void).cxx_destruct;
+
+@end

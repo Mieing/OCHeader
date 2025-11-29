@@ -1,0 +1,10 @@
+@class AnchorPermissionStatusResponse_Data;
+
+@interface AnchorPermissionStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AnchorPermissionStatusResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceInviteCrossRoomLinkResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceInviteCrossRoomLinkResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceInviteCrossRoomLinkResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,78 @@
+@class UINavigationController, NSString, NSDictionary, AWECommonSearchBar, UIView, AWEIMSearchResultClickHandler, UIButton;
+
+@interface AWEIMSearchHomeViewController : UIViewController <AWEIMSearchResultProtocol, AWECommonSearchBarDelegate, AWEIMSearchResultCollectionViewCellDelegate, AWEIMMessageTabSearchTransitionInnerContextProvider>
+
+@property (nonatomic) BOOL isFirstAppear;
+@property (nonatomic) BOOL keyboardShowing;
+@property (retain, nonatomic) UINavigationController *subNav;
+@property (retain, nonatomic) UIView *titleView;
+@property (retain, nonatomic) AWECommonSearchBar *searchBar;
+@property (retain, nonatomic) UIButton *backButton;
+@property (retain, nonatomic) UIButton *cancelButton;
+@property (retain, nonatomic) AWEIMSearchResultClickHandler *clickHandler;
+@property (nonatomic) long long searchPageMode;
+@property (copy, nonatomic) NSDictionary *contextParamDict;
+@property (retain, nonatomic) UIView *categorizeMenuView;
+@property (nonatomic) long long searchRank;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setupObserver;
+- (id)searchTransitionEndView;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })searchTransitionEndViewFrame;
+- (void)p_back;
+- (void)onSearchUserSearchResultClick:(id)a0 withContext:(id)a1;
+- (void)onSearchGroupResultConversationClick:(id)a0 withContext:(id)a1;
+- (void)onSearchUserSearchResultClickChat:(id)a0 withContext:(id)a1;
+- (id)initWithMode:(long long)a0 params:(id)a1;
+- (void)enterUserProfile:(id)a0 withContext:(id)a1;
+- (void)enterSingleConversationWithUser:(id)a0 withContext:(id)a1;
+- (void)enterGroupConversation:(id)a0 withContext:(id)a1;
+- (void)enterOfficialChat:(id)a0 withContext:(id)a1;
+- (void)startVideoVoipWithUser:(id)a0 withContext:(id)a1;
+- (void)startAudioVoipWithUser:(id)a0 withContext:(id)a1;
+- (BOOL)p_newGroupUIEnable;
+- (void)_installTitleView;
+- (void)__updateSearchBarIconByType:(long long)a0;
+- (void)p_dismiss:(BOOL)a0;
+- (void)p_addFooterToDetailVC:(id)a0;
+- (void)onExitGroup;
+- (void)p_setupCategorizeMenuView;
+- (void)p_saveSearchHistoryWithUid:(id)a0;
+- (void)p_trackEnterPersonalDetailWithContext:(id)a0 toUser:(id)a1;
+- (void)p_enterFormatChat:(id)a0 extar:(id)a1;
+- (void)p_trackEnterChatEventWithContext:(id)a0 toUser:(id)a1;
+- (void)setSearchParamsForConversation:(id)a0 withContext:(id)a1;
+- (void)onSearchDetailType:(long long)a0 currentResult:(id)a1 msgCountList:(id)a2;
+- (void)p_panBackFrom:(id)a0 to:(id)a1 WithProgress:(float)a2 complete:(BOOL)a3 poped:(BOOL)a4;
+- (id)p_typeStringForClickContextEnterMethod:(unsigned long long)a0;
+- (void)p_saveForceInsertSearchHistoryWithSessionID:(id)a0;
+- (void)p_saveSearchHistoryWithSessionID:(id)a0;
+- (void)p_saveSearchHistoryWithConversationID:(id)a0;
+- (void)p_cleanSearchText;
+- (BOOL)p_shouldShowGroupOwnerMsgEntry;
+- (void)p_groupOwnerMessageViewClicked:(id)a0;
+- (BOOL)p_shouldShowHistoryMediaEntry;
+- (void)p_sharedWorkViewClicked:(id)a0;
+- (void)p_videoAndPhotoViewClicked:(id)a0;
+- (void)p_trackSelectChatHistoryCategory:(id)a0;
+- (void)onClickBack;
+- (void)cancelDidClick;
+- (void)onSearchDetailType:(long long)a0 currentResult:(id)a1;
+- (void)onSearchMessageResultConversationClick:(id)a0 message:(id)a1 withContext:(id)a2;
+- (void)onSearchMessageDetailClickInConversation:(id)a0 currentResult:(id)a1 withContext:(id)a2;
+- (void)onSearchAllGotoHomeSearchClickWithKeywords:(id)a0;
+- (void)__updateBackButtonPosition;
+- (void).cxx_destruct;
+- (void)searchBar:(id)a0 textDidChange:(id)a1;
+- (BOOL)textFieldShouldReturn:(id)a0;
+- (id)init;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)loadView;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

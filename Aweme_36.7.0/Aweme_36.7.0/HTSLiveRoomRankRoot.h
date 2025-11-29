@@ -1,0 +1,3 @@
+@interface HTSLiveRoomRankRoot : GPBRootObject
+
+@end

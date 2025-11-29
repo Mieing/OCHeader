@@ -1,0 +1,10 @@
+@class FlexActivity;
+
+@interface FlexActivityRegisterResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) FlexActivity *flexActivity;
+@property (nonatomic) BOOL hasFlexActivity;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,18 @@
+@class NSString, NSArray, IESLiveSearchWordRecordModel;
+
+@interface IESLiveSearchSugModel : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSArray *hightlightPositions;
+@property (retain, nonatomic) IESLiveSearchWordRecordModel *wordRecord;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)hightlightPositionsJSONTransformer;
++ (id)wordRecordJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+
+@end

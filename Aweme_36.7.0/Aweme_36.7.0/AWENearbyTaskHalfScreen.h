@@ -1,0 +1,3 @@
+@interface AWENearbyTaskHalfScreen : NSObject
+
+@end

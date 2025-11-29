@@ -1,0 +1,15 @@
+@class HTSLiveStrategyRespExtra, HTSLiveStrategyFeatureInfo;
+
+@interface GetFeaturesResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveStrategyFeatureInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) HTSLiveStrategyRespExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+- (id)data_p;
+- (id)extra;
+
+@end

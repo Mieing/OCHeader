@@ -1,0 +1,12 @@
+@class NSString, IESLiveShowShortTouchBubbleUiModelModel, NSNumber;
+
+@interface IESLiveShowShortTouchBubbleBubbleParamsModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *bubbleId;
+@property (retain, nonatomic) IESLiveShowShortTouchBubbleUiModelModel *uiModel;
+@property (retain, nonatomic) NSNumber *strategy;
+@property (retain, nonatomic) NSNumber *duration;
+
++ (id)modelCustomPropertyMapper;
+
+@end

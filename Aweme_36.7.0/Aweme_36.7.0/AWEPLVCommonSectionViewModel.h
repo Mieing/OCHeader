@@ -1,0 +1,3 @@
+@interface AWEPLVCommonSectionViewModel : AWEPLVConstantSectionViewModel
+
+@end

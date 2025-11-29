@@ -1,0 +1,3 @@
+@interface AWEMusicPerformanceListFeedViewHolder : AWEBaseListViewHolder
+
+@end

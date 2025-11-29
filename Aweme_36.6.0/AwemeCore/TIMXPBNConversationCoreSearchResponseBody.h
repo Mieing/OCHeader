@@ -1,0 +1,16 @@
+@class NSString, NSMutableArray;
+
+@interface TIMXPBNConversationCoreSearchResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *conversationsArray;
+@property (readonly, nonatomic) unsigned long long conversationsArray_Count;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (copy, nonatomic) NSString *scrollId;
+@property (nonatomic) BOOL hasScrollId;
+@property (nonatomic) long long totalCount;
+@property (nonatomic) BOOL hasTotalCount;
+
++ (id)descriptor;
+
+@end

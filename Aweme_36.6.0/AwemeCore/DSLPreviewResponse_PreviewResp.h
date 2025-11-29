@@ -1,0 +1,12 @@
+@class DSLDetail, NSString;
+
+@interface DSLPreviewResponse_PreviewResp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DSLDetail *dslDetail;
+@property (nonatomic) BOOL hasDslDetail;
+@property (copy, nonatomic) NSString *sliceInfo;
+@property (copy, nonatomic) NSString *lynxAirTosURL;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,71 @@
+@class QualityTagInfo, NSString, NewCfgMeta, NSMutableArray, ChorusBgmUsrInfo;
+
+@interface LiveSdkChannelParams : WXPBGeneratedMessage
+
+@property (retain, nonatomic) NSString *userDefineRecordId;
+@property (retain, nonatomic) NSString *streamId;
+@property (nonatomic) unsigned int audienceMode;
+@property (nonatomic) int micAbility;
+@property (nonatomic) unsigned long long qcAppid;
+@property (nonatomic) unsigned long long qcBizid;
+@property (retain, nonatomic) NSMutableArray *cdnTransInfo;
+@property (nonatomic) int cdnQualityTag;
+@property (retain, nonatomic) NSMutableArray *cdnIps;
+@property (retain, nonatomic) NSString *rtmpPushUrl;
+@property (nonatomic) unsigned int cdnQualitySvrcfg;
+@property (nonatomic) unsigned int cdnQualityH265Backcfg;
+@property (nonatomic) unsigned int supportScreenRotate;
+@property (nonatomic) unsigned int qosReportSwitch;
+@property (nonatomic) unsigned int qosControlSwitch;
+@property (nonatomic) unsigned int seiMode;
+@property (nonatomic) unsigned int playerMinCacheMs;
+@property (nonatomic) unsigned int playerMaxCacheMs;
+@property (retain, nonatomic) NSString *gameAppid;
+@property (retain, nonatomic) NSString *hlsUrl;
+@property (nonatomic) unsigned int cdnQualitySmallSvrcfg;
+@property (nonatomic) unsigned int cdnQualitySmallH265Backcfg;
+@property (nonatomic) unsigned int p2PSwitch;
+@property (nonatomic) unsigned int p2PUploadSwitch;
+@property (nonatomic) unsigned int p2PDownloadMnSwitch;
+@property (nonatomic) unsigned int p2PStatSwitch;
+@property (nonatomic) unsigned int p2PDebugLogSwitch;
+@property (nonatomic) unsigned int p2PMaxLoad;
+@property (nonatomic) unsigned int p2PMaxBufferSize;
+@property (nonatomic) unsigned int p2PUploadDawangkaSwitch;
+@property (retain, nonatomic) NSString *p2PAppid;
+@property (retain, nonatomic) NSString *p2PKey;
+@property (retain, nonatomic) NSString *p2PSecret;
+@property (nonatomic) unsigned int anchorPushMode;
+@property (nonatomic) unsigned int p2PVerifyStream;
+@property (retain, nonatomic) NSString *userDefinePushArgs;
+@property (nonatomic) unsigned int qosReportIntervalSeconds;
+@property (nonatomic) unsigned int flvEncryptionMode;
+@property (retain, nonatomic) NSString *flvEncryptionKey;
+@property (retain, nonatomic) NSString *flvEncryptionIv;
+@property (nonatomic) unsigned int videoWidth;
+@property (nonatomic) unsigned int videoHeight;
+@property (retain, nonatomic) NSMutableArray *bakDomain;
+@property (nonatomic) unsigned int customRenderParam;
+@property (nonatomic) unsigned int wavejbmFlag;
+@property (nonatomic) unsigned int wavejbmMode;
+@property (nonatomic) unsigned int wavejbmMinSpeedRate;
+@property (nonatomic) unsigned int wavejbmMaxSpeedRate;
+@property (nonatomic) unsigned int uploadMediaType;
+@property (retain, nonatomic) QualityTagInfo *qualityTagInfo;
+@property (nonatomic) unsigned int lebMinCacheMs;
+@property (nonatomic) unsigned int lebMaxCacheMs;
+@property (retain, nonatomic) NSMutableArray *svrSwitchList;
+@property (nonatomic) unsigned int deviceLevel;
+@property (nonatomic) unsigned int cpuScore;
+@property (nonatomic) unsigned int gpuScore;
+@property (nonatomic) unsigned int flvGopCache;
+@property (nonatomic) unsigned int keepmix;
+@property (nonatomic) unsigned int keepmixIdleTime;
+@property (retain, nonatomic) ChorusBgmUsrInfo *chorusBgmUsrInfo;
+@property (retain, nonatomic) NewCfgMeta *newCfgMeta;
+@property (nonatomic) unsigned int flvIpv6First;
+@property (retain, nonatomic) NSString *p2PDomain;
+
++ (void)initialize;
+
+@end

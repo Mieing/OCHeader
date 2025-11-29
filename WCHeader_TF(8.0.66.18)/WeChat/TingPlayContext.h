@@ -1,0 +1,84 @@
+@class TingDownloadInfo, NSString, NSData;
+
+@interface TingPlayContext : WXPBGeneratedMessage
+
+@property (nonatomic) float playRate;
+@property (nonatomic) int startTime;
+@property (nonatomic) int endTime;
+@property (retain, nonatomic) TingDownloadInfo *downloadInfo;
+@property (nonatomic) BOOL holdLastPlayerCore;
+@property (nonatomic) BOOL isPreload;
+@property (nonatomic) unsigned int sourceType;
+@property (retain, nonatomic) NSString *localVoicePath;
+@property (nonatomic) int localVoiceEndTime;
+@property (nonatomic) int localVoiceDefaultVolume;
+@property (nonatomic) long long playStartTimeTs;
+@property (nonatomic) unsigned long long utcStartTimeMs;
+@property (nonatomic) unsigned long long utcTolerantTimeMs;
+@property (nonatomic) BOOL auditoryEnhEnable;
+@property (nonatomic) unsigned int auditoryEnhMode;
+@property (retain, nonatomic) NSData *pendingBypassPlayInfo;
+@property (retain, nonatomic) NSString *requestId;
+@property (nonatomic) BOOL tpAudioMixTtsEnable;
+@property (nonatomic) BOOL isChatroomHistory;
+@property (nonatomic) BOOL isDataPreload;
+@property (nonatomic) int dataFileSize;
+@property (nonatomic) int preloadDataSize;
+@property (nonatomic) BOOL isPreparedPreloadPlayer;
+@property (nonatomic) BOOL disableSq;
+@property (nonatomic) unsigned int bizType;
+
++ (void)initialize;
+
+- (void)setBizType:(unsigned int)a0;
+- (unsigned int)bizType;
+- (void)setDisableSq:(BOOL)a0;
+- (BOOL)disableSq;
+- (void)setIsPreparedPreloadPlayer:(BOOL)a0;
+- (BOOL)isPreparedPreloadPlayer;
+- (void)setPreloadDataSize:(int)a0;
+- (int)preloadDataSize;
+- (void)setDataFileSize:(int)a0;
+- (int)dataFileSize;
+- (void)setIsDataPreload:(BOOL)a0;
+- (BOOL)isDataPreload;
+- (void)setIsChatroomHistory:(BOOL)a0;
+- (BOOL)isChatroomHistory;
+- (void)setTpAudioMixTtsEnable:(BOOL)a0;
+- (BOOL)tpAudioMixTtsEnable;
+- (void)setRequestId:(id)a0;
+- (id)requestId;
+- (void)setPendingBypassPlayInfo:(id)a0;
+- (id)pendingBypassPlayInfo;
+- (void)setAuditoryEnhMode:(unsigned int)a0;
+- (unsigned int)auditoryEnhMode;
+- (void)setAuditoryEnhEnable:(BOOL)a0;
+- (BOOL)auditoryEnhEnable;
+- (void)setUtcTolerantTimeMs:(unsigned long long)a0;
+- (unsigned long long)utcTolerantTimeMs;
+- (void)setUtcStartTimeMs:(unsigned long long)a0;
+- (unsigned long long)utcStartTimeMs;
+- (void)setPlayStartTimeTs:(long long)a0;
+- (long long)playStartTimeTs;
+- (void)setLocalVoiceDefaultVolume:(int)a0;
+- (int)localVoiceDefaultVolume;
+- (void)setLocalVoiceEndTime:(int)a0;
+- (int)localVoiceEndTime;
+- (void)setLocalVoicePath:(id)a0;
+- (id)localVoicePath;
+- (void)setSourceType:(unsigned int)a0;
+- (unsigned int)sourceType;
+- (void)setIsPreload:(BOOL)a0;
+- (BOOL)isPreload;
+- (void)setHoldLastPlayerCore:(BOOL)a0;
+- (BOOL)holdLastPlayerCore;
+- (void)setDownloadInfo:(id)a0;
+- (id)downloadInfo;
+- (void)setEndTime:(int)a0;
+- (int)endTime;
+- (void)setStartTime:(int)a0;
+- (int)startTime;
+- (void)setPlayRate:(float)a0;
+- (float)playRate;
+
+@end

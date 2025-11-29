@@ -1,0 +1,88 @@
+@class AVPlayerLayerView, NSString, AVPlayerItem, MVideoPlayerView, SightRecoder, NSObject, AVPlayer;
+@protocol SightPlayerViewDelegate;
+
+@interface SightPlayerView : UIView <MMAVPlayerItem, MVideoPlayerViewDelegate> {
+    long long m_previewContentMode;
+    long long m_avplayerContentMode;
+    BOOL m_disableContentModeAnimation;
+    NSString *m_cpKey;
+    BOOL m_isPlayerPause;
+    BOOL m_isTryingProtect;
+    struct timeval { long long tv_sec; int tv_usec; } m_startProtectingTime;
+    SightRecoder *m_sightRecoder;
+    NSObject *m_oPlaybackTimeObserver;
+}
+
+@property (retain, nonatomic) NSString *recodedPath;
+@property (retain, nonatomic) NSString *playerPath;
+@property (nonatomic) unsigned long long scene;
+@property (retain, nonatomic) NSString *path;
+@property (readonly, nonatomic) BOOL isMute;
+@property (weak, nonatomic) id<SightPlayerViewDelegate> delegate;
+@property (readonly, nonatomic) int status;
+@property (nonatomic) long long contentMode;
+@property (nonatomic) BOOL disableResumeMusicPlayAfterPause;
+@property (nonatomic) BOOL isAnimating;
+@property (nonatomic) BOOL disablePlayerStatusTimerCheck;
+@property (nonatomic) BOOL neverHidePreview;
+@property (nonatomic) BOOL removeCrossFadeTransition;
+@property (retain, nonatomic) NSString *cpKey;
+@property (retain, nonatomic) AVPlayer *player;
+@property (retain, nonatomic) AVPlayerItem *playItem;
+@property (retain, nonatomic) AVPlayerLayerView *playerLayerView;
+@property (retain, nonatomic) MVideoPlayerView *m_preview;
+@property (nonatomic) double playRate;
+@property (nonatomic) float m_uiMaxLimitDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)itemPlayEnded:(id)a0;
+- (void)startTransitionAnim;
+- (void)onPlayEnd;
+- (void)setPlayerLayerContentMode:(long long)a0 disableAnimation:(BOOL)a1;
+- (long long)getSilentPlayContentMode;
+- (long long)getFullPlayContentMode;
+- (void)initPreview;
+- (void)startPreview;
+- (void)pausePreview;
+- (void)setMute;
+- (void)setUnMute;
+- (void)initPlayer;
+- (void)startPlayer;
+- (void)pausePlayer;
+- (void)clearPlayer;
+- (void)silentPlay;
+- (BOOL)fullPlayWithMute:(BOOL)a0;
+- (BOOL)clear;
+- (void)savePlayedTimeToMemory;
+- (void)clearBufferCountAndPlayedTime;
+- (void)reportKVArgs:(id)a0;
+- (unsigned long long)startDownloadVideo;
+- (void)stopDownloadVideo;
+- (void)seekToStartFrame;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getCurrentPlaybackTime;
+- (void)seekTo:(float)a0;
+- (void)performLoadItem:(id)a0;
+- (void)performPauseForce:(BOOL)a0;
+- (void)performSilentPlay;
+- (void)silentPlayImmediately;
+- (BOOL)performFullLoad;
+- (BOOL)performFullPlay;
+- (BOOL)performFullPlayWithMute:(BOOL)a0;
+- (BOOL)performClear;
+- (void)willStack;
+- (void)onResume;
+- (BOOL)isPlayProtect;
+- (BOOL)isReEncode;
+- (int)getProtectType;
+- (void)monitoringPlayback:(id)a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)recodeSightWithCompletion:(id /* block */)a0;
+- (id)makeNewTmpPath:(id)a0 withSubfix:(id)a1;
+- (void).cxx_destruct;
+
+@end

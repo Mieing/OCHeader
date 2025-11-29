@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface SafeCardInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *template_p;
+@property (copy, nonatomic) NSString *data_p;
+
++ (id)descriptor;
+
+@end

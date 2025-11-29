@@ -1,0 +1,3 @@
+@interface IESIMABTestManager : NSObject
+
+@end

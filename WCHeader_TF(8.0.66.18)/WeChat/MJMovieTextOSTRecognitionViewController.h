@@ -1,0 +1,88 @@
+@class WCProgressCircleView, MJPlaybackViewModel, MJAudioExtractor, MMUIImageView, MMUILabel, NSString, MMTimer, MMUIView, MJSpeechCgiHelper, MJTimelineViewController, MJActionPanelMainMenuView, MJTimelineViewModel, MMUIButton;
+@protocol MJMovieTextOSTRecognitionViewControllerDelegate;
+
+@interface MJMovieTextOSTRecognitionViewController : UIViewController <MJTimelineViewControllerDelegate, MJActionPanelMainMenuViewDelegate, MJMovieTextActionProtocol>
+
+@property (retain, nonatomic) MJTimelineViewModel *timelineVM;
+@property (retain, nonatomic) MJPlaybackViewModel *playbackVM;
+@property (readonly, nonatomic) NSString *currentSessionID;
+@property (retain, nonatomic) MMUIView *backgroundViewInitial;
+@property (retain, nonatomic) MMUIImageView *startRecognitionTipImageView;
+@property (retain, nonatomic) MMUILabel *startRecognitionTipLabel;
+@property (retain, nonatomic) MMUIButton *startRecognitionButton;
+@property (retain, nonatomic) MMUIView *backgroundViewRunning;
+@property (retain, nonatomic) WCProgressCircleView *recognitionProgressView;
+@property (retain, nonatomic) MMUILabel *recognitionProgressLabel;
+@property (retain, nonatomic) MMUIButton *cancelRecognitionButton;
+@property (nonatomic) float recognitionFakeProgress;
+@property (retain, nonatomic) MMTimer *recognitionFakeProgressTimer;
+@property (retain, nonatomic) MMUIView *backgroundViewSucceed;
+@property (retain, nonatomic) MJTimelineViewController *timelineVC;
+@property (retain, nonatomic) MJActionPanelMainMenuView *menuView;
+@property (retain, nonatomic) MJAudioExtractor *audioExtractor;
+@property (retain, nonatomic) MJSpeechCgiHelper *cgiHelper;
+@property (weak, nonatomic) id<MJMovieTextOSTRecognitionViewControllerDelegate> delegate;
+@property (readonly, nonatomic) unsigned long long status;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isAppearing;
+
++ (id)genSessionID;
++ (BOOL)isSegmentCaptionExtractable:(id)a0;
++ (void)extractCaptionItemsFromAudioData:(id)a0 audioID:(id)a1 completionHandler:(id /* block */)a2;
++ (id)cachedCaptionsWithMediaFileURL:(id)a0 timeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a1;
+
+- (id)initWithTimelineViewModel:(id)a0 playbackViewModel:(id)a1;
+- (void)dealloc;
+- (void)commonInit;
+- (void)setupForWillAppear;
+- (void)setupForWillDisappear;
+- (void)setupStatus;
+- (void)setupViews;
+- (void)setupViewsForInitialStatus;
+- (void)setupViewsForRunningStatus;
+- (void)setupViewsForSucceedStatus;
+- (void)removeViewsIfNeeded;
+- (void)bindViews;
+- (void)unbindViews;
+- (BOOL)enterStatus:(unsigned long long)a0;
+- (BOOL)canEnterStatus:(unsigned long long)a0;
+- (void)setStatus:(unsigned long long)a0;
+- (void)syncStatusToTimelineVM;
+- (void)setCurrentSessionID:(id)a0;
+- (BOOL)checkIfSessionExpired:(id)a0;
+- (id)menuItemsEnabled;
+- (id)menuItemsDisabled;
+- (id)menuItemsWithSegmentVM:(id)a0 time:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1;
+- (void)updateMenuWithSegmentVM:(id)a0;
+- (void)mainMenuView:(id)a0 didSelectItem:(id)a1;
+- (void)updateOnSkimTimeDidChange:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)updateOnPlaybackTimeDidChange:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)updateOnIsPlayingDidChange:(BOOL)a0;
+- (void)showHandleboxForCurrentCaptionSegment;
+- (void)reloadData:(id)a0;
+- (void)resetPreview;
+- (BOOL)tryFocusOnAndHighlightCurrentCaptionSegment;
+- (void)timelineViewControllerDidDoubleTap:(id)a0;
+- (void)timelineViewControllerDidSelectRetryOSTRecognition:(id)a0;
+- (void)startRecognitionButtonDidTouchUpInside:(id)a0;
+- (void)tapOnStartRecognitionButton;
+- (void)updateRecognitionFakeProgressByOnePercent;
+- (void)startFakeProgressTimer;
+- (void)stopFakeProgressTimer;
+- (void)startRecognition;
+- (void)startRecognitionImpl;
+- (void)cancelRecognitionButtonDidTouchUpInside:(id)a0;
+- (void)cancelRecognition;
+- (void)menuViewDidSelectRemove;
+- (void)menuViewDidSelectEditCaptionText;
+- (void)menuViewDidSelectEditCaptionStyle;
+- (unsigned long long)numberOfCaptionExtractableSegments;
+- (void)extractCaptionsWithProgressHandler:(id /* block */)a0 completionHandler:(id /* block */)a1;
+- (void)postProcessCaptionsWithClipSegment:(id)a0 captionGroups:(id)a1;
+- (void)leaveEditingStateIfNeeded;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,84 @@
+@class IESLiveNetworkSampling, NSString, IESLiveMemoryReplacement, NSDictionary, IESLivePowerDissipation;
+@protocol IESLiveStabilityThrashing;
+
+@interface IESLiveThrashingWatchDog : NSObject <IESLiveMetricsService, IESLiveDispatchService>
+
+@property (retain, nonatomic) IESLiveMemoryReplacement *replacement;
+@property (retain, nonatomic) IESLiveNetworkSampling *netThrashing;
+@property (retain, nonatomic) id<IESLiveStabilityThrashing> liveMemoryThrashing;
+@property (retain, nonatomic) id<IESLiveStabilityThrashing> liveThreadThrashing;
+@property (retain, nonatomic) id<IESLiveStabilityThrashing> liveMemoryIncrease;
+@property (retain, nonatomic) IESLivePowerDissipation *powerDissipation;
+@property (retain, nonatomic) NSDictionary *liveMetrics;
+@property (retain) NSDictionary *liveHotTag;
+@property (nonatomic) BOOL isInjected;
+@property (nonatomic) BOOL isMonitoring;
+@property (nonatomic) double startTimeInterval;
+@property (nonatomic) double startNSTimeInterval;
+@property (nonatomic) long long restartMemory;
+@property (nonatomic) long long firstStartMemory;
+@property long long audience;
+@property long long maxaudience;
+@property long long enterRoom;
+@property BOOL isAnchor;
+@property (copy) NSString *roomid;
+@property (copy) NSString *roomtype;
+@property (copy) NSString *roomscence;
+@property (copy) NSString *ownerUserID;
+@property (copy) id /* block */ contentType;
+@property (copy) id /* block */ willSendData;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedInstance;
+
+- (void)trackResourceService:(id)a0 extra:(id)a1;
+- (void)startLive;
+- (void)stopNetworkMonitoring;
+- (void)refreshRoomAudienceCount:(long long)a0;
+- (long long)roomAudienceCount;
+- (id)stabilityBaseMetrics;
+- (void)refreshRoomInfoWithTag:(id)a0;
+- (long long)threadMetricsStrategy;
+- (long long)memoryMetricsStrategy;
+- (void)liveSceneExit;
+- (void)slideOutRoom;
+- (void)triggerMemoryWarning;
+- (void)turnon;
+- (void)turnoff;
+- (void)networkMonitoring;
+- (id)roomBaseMetrics;
+- (void)memoryMonitoring;
+- (void)threadMonitoring;
+- (void)startPowerDissipation;
+- (void)slideInRoom;
+- (void)audienceMetrics;
+- (void)stopPowerDissipation;
+- (void)stopMemoryMonitoring;
+- (void)stopThreadMonitoring;
+- (void)unBindAnalyserForRoom;
+- (BOOL)samplable;
+- (void)enterRoomFirstTime;
+- (void)storeRoomInformation;
+- (long long)enablePerMonitoring:(long long)a0;
+- (void)resetBaseMetrics;
+- (id)mapMemoryStrategy;
+- (id)constructAnchorMetrics;
+- (unsigned long long)memorylevel;
+- (void)recordLiveMetrics;
+- (void)cleanLocalInformation;
+- (void)memoryMonitorIMP;
+- (void)beginTracking;
+- (void)closeLive;
+- (void)threadMonitorIMP;
+- (void)networkMonitorIMP;
+- (void)injectReplacement;
+- (void)removeiInjectReplacement;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (int)delaySeconds;
+- (void)endTracking;
+
+@end

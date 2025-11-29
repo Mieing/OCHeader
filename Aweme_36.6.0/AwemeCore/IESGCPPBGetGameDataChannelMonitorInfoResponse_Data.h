@@ -1,0 +1,10 @@
+@class NSMutableDictionary;
+
+@interface IESGCPPBGetGameDataChannelMonitorInfoResponse_Data : GPBMessage
+
+@property (retain, nonatomic) NSMutableDictionary *games;
+@property (readonly, nonatomic) unsigned long long games_Count;
+
++ (id)descriptor;
+
+@end

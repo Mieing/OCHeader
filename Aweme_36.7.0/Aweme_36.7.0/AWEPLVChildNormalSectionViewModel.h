@@ -1,0 +1,3 @@
+@interface AWEPLVChildNormalSectionViewModel : AWEPLVConstantSectionViewModel
+
+@end

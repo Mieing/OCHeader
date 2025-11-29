@@ -1,0 +1,3 @@
+@interface IESLiveMultiRoomPreloadDefine : NSObject
+
+@end

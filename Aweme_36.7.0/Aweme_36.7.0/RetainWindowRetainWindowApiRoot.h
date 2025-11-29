@@ -1,0 +1,3 @@
+@interface RetainWindowRetainWindowApiRoot : GPBRootObject
+
+@end

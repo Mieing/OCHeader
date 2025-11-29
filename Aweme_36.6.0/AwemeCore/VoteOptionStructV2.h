@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface VoteOptionStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *optionText;
+@property (nonatomic) BOOL hasOptionText;
+@property (nonatomic) long long optionId;
+@property (nonatomic) BOOL hasOptionId;
+@property (nonatomic) long long voteCount;
+@property (nonatomic) BOOL hasVoteCount;
+@property (copy, nonatomic) NSString *option;
+@property (nonatomic) BOOL hasOption;
+
++ (id)descriptor;
+
+@end

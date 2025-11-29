@@ -1,0 +1,13 @@
+@protocol AWECommentEvaluationInputViewRatingElementConfigurationProtocol, AWECommentEvaluationInputViewTitleElementConfigurationProtocol, AWECommentEvaluationInputViewExpandElementConfigurationProtocol, AWECommentEvaluationInputViewImagePreviewElementConfigurationProtocol;
+
+@interface AWECommentInputViewSwiftImpl.CustomInputViewDefaultSubConfig : AWECommentInputViewConfigModel <AWECommentInputViewEvaluationConfigurationProtocol>
+
+@property (nonatomic, retain) id<AWECommentEvaluationInputViewTitleElementConfigurationProtocol> evaluationTitleConfig;
+@property (nonatomic, retain) id<AWECommentEvaluationInputViewRatingElementConfigurationProtocol> evaluationRatingConfig;
+@property (nonatomic, retain) id<AWECommentEvaluationInputViewExpandElementConfigurationProtocol> evaluationExpandConfig;
+@property (nonatomic, retain) id<AWECommentEvaluationInputViewImagePreviewElementConfigurationProtocol> imagePreviewConfig;
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

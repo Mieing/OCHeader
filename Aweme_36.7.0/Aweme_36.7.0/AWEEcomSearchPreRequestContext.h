@@ -1,0 +1,3 @@
+@interface AWEEcomSearchPreRequestContext : AWESearchPreRequestContext
+
+@end

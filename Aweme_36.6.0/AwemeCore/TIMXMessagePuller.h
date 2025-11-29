@@ -1,0 +1,95 @@
+@class NSString, TIMXPBResponseLongConnectionCallback, TIMXSimplePullerStatusObserver, TIMXMulticastDelegate, NSDictionary, TIMXOfflineConversationPollingPullerManager, TIMXGCDTimer, TIMXSDKInstance;
+
+@interface TIMXMessagePuller : NSObject <IESIMDBRebuildPuller, TIMXStartUpTaskProtocol, TIMXHistoryMessagePullerProtocol, TIMXPullerStatusObserver, TIMXMessagePullerProtocol, TIMXNewMessageNotifyProtocol, TIMXAckMessagesProtocol, TIMXInstanceScopeSingleton> {
+    TIMXSDKInstance *_r;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) TIMXPBResponseLongConnectionCallback *longConnectCallback;
+@property (retain) NSDictionary *inboxPullerGroups;
+@property (retain, nonatomic) TIMXMulticastDelegate *observerMulticast;
+@property (retain, nonatomic) TIMXSimplePullerStatusObserver *statusObserver;
+@property (retain, nonatomic) TIMXGCDTimer *pullTimer;
+@property BOOL checkingInbox;
+@property long long lastPullReason;
+@property BOOL needResetInitPullerBeforeKickoff;
+@property (retain, nonatomic) TIMXOfflineConversationPollingPullerManager *offlineConvPollingPullerManager;
+@property (retain) TIMXGCDTimer *wsStatusTimer;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (long long)startUpOrder;
++ (void)startUpWithRootObject:(id)a0;
+
+- (void)fetchMarkMessagesWithConversationID:(id)a0 offset:(long long)a1 limit:(unsigned long long)a2 ascending:(BOOL)a3 actionType:(unsigned long long)a4 completion:(id /* block */)a5;
+- (void)removeObserverWithIdentifier:(id)a0;
+- (void)userDidLogin:(id)a0;
+- (void)setNeedPullMessageInInboxType:(int)a0;
+- (unsigned long long)initStatusWithInboxType:(int)a0;
+- (void)appEnterForeground:(id)a0;
+- (id)addWeakChangesObserver:(id)a0 onQueue:(id)a1;
+- (long long)currentStatusForInbox:(int)a0;
+- (void)kickoffPullerInInboxType:(int)a0 needResetInitPuller:(BOOL)a1;
+- (BOOL)couldUseNewPullerRefactor:(id)a0;
+- (void)checkDatabaseValidWithLastConversationCountAtLogout:(long long)a0 currentConversationCount:(long long)a1;
+- (void)continueFetchPullInInboxType:(int)a0 completion:(id /* block */)a1;
+- (BOOL)hasFinishInitAllConversations:(int)a0;
+- (void)resetForRecoverMessageDB;
+- (BOOL)hasInitSucessWithInbox:(int)a0;
+- (BOOL)hasInitOverWithInbox:(int)a0;
+- (void)fetchAllRebuildedMessagesWithInbox:(int)a0 completion:(id /* block */)a1;
+- (BOOL)shouldFetchForDBCorruptAutoInbox:(int)a0;
+- (void)setFlagForDBCorruptAuto;
+- (void)resetFlagForDBCorruptAuto;
+- (void)cancelPullingAllMessagesWithInbox:(int)a0;
+- (void)clearAllfailedRebuildConvs;
+- (void)clearAllLiveConsultFailedRebuildConvs;
+- (void)fetchSpecifiedMessageWithConversationID:(id)a0 ConversationShortID:(long long)a1 specifiedMessageListType:(unsigned long long)a2 offset:(long long)a3 pageLimit:(unsigned long long)a4 completionBlock:(id /* block */)a5;
+- (void)userDidLogout:(id)a0;
+- (void)loadHistoryForConversationId:(id)a0 beforeMessage:(id)a1 visibleLimit:(unsigned long long)a2 inRange:(id)a3 skipRanges:(id)a4 completionBlock:(id /* block */)a5;
+- (void)loadHistoryForConversationId:(id)a0 beforeMessage:(id)a1 limit:(unsigned long long)a2 includeInvisable:(BOOL)a3 completionBlock:(id /* block */)a4;
+- (void)loadMessagesForConversationId:(id)a0 anchorMessage:(id)a1 visibleLimit:(unsigned long long)a2 direction:(unsigned long long)a3 shouldContainBoundaryMessage:(BOOL)a4 completionBlock:(id /* block */)a5;
+- (void)loadHistoryMessagesFromConversation:(id)a0 anchorMsgId:(id)a1 direction:(unsigned long long)a2 limit:(long long)a3 completionBlock:(id /* block */)a4;
+- (void)loadHistoryMessagesFromConversationV2:(id)a0 inbox:(long long)a1 anchorMsgId:(id)a2 direction:(unsigned long long)a3 limit:(long long)a4 completionBlock:(id /* block */)a5;
+- (BOOL)checkContinousInRangeWithMinIndexV2:(long long)a0 maxIndexV2:(long long)a1 inConversation:(id)a2 emptyRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; } *)a3 includeRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; } *)a4;
+- (BOOL)checkContinousInRangeWithMinIndexV1:(long long)a0 maxIndexV1:(long long)a1 inConversation:(id)a2;
+- (void)getMessagesCheckInfoInInbox:(int)a0 conversationShortId:(long long)a1 conversationId:(id)a2 conversationType:(int)a3 cursorReverseBegin:(long long)a4 cursorReverseEnd:(long long)a5 expectMsgTotalCount:(int)a6 completionBlock:(id /* block */)a7;
+- (void)getMessageByServerMessageID:(long long)a0 conversationShortId:(long long)a1 conversationId:(id)a2 conversationType:(id)a3 completionBlock:(id /* block */)a4;
+- (void)getMessagesCheckInfoInInbox:(int)a0 conversationShortId:(long long)a1 conversationId:(id)a2 conversationType:(int)a3 minIndexV2:(long long)a4 maxIndexV2:(long long)a5 completionBlock:(id /* block */)a6;
+- (void)fetchMessagesForConversation:(id)a0 completionBlock:(id /* block */)a1;
+- (void)fetchAllMessagesFromConversationIdentifier:(id)a0 minIndexV2:(long long)a1 maxIndexV2:(long long)a2 shouldCancelBlock:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)remoteLoadMessagesBetweenMinIndexV2:(long long)a0 maxIndexV2:(long long)a1 direction:(unsigned long long)a2 inConversation:(id)a3 completionBlock:(id /* block */)a4;
+- (void)loadHistoryForConversationId:(id)a0 beforeIndex:(long long)a1 totalCount:(unsigned long long)a2 completionBlock:(id /* block */)a3;
+- (void)loadNewerRemoteMessageForConversation:(id)a0 afterIndex:(long long)a1 inRange:(id)a2 completionBlock:(id /* block */)a3;
+- (void)forceLoadNewerRemoteMessageForConversation:(id)a0 conversationShortID:(long long)a1 conversationType:(int)a2 inbox:(int)a3 afterIndex:(long long)a4 completionBlock:(id /* block */)a5;
+- (void)loadHistoryRemedialyForConversationId:(id)a0 beforeMessage:(id)a1 visibleLimit:(unsigned long long)a2 priorityUseDB:(BOOL)a3 completionBlock:(id /* block */)a4;
+- (void)loadHistoryRemedialyForConversationId:(id)a0 beforeMessage:(id)a1 visibleLimit:(unsigned long long)a2 priorityUseDB:(BOOL)a3 forcePullRemote:(BOOL)a4 completionBlock:(id /* block */)a5;
+- (void)loadOlderMsgesRemedialyFromConversationId:(id)a0 anchorMsgId:(id)a1 msgesCount:(long long)a2 priorityUseDB:(BOOL)a3 forcePullRemote:(BOOL)a4 currentMinIndexV2:(long long)a5 currentMaxIndexV2:(long long)a6 completionBlock:(id /* block */)a7;
+- (void)loadNewerMsgesRemedialyFromConversationId:(id)a0 anchorMsgId:(id)a1 msgesCount:(long long)a2 currentMinIndexV2:(long long)a3 currentMaxIndexV2:(long long)a4 shouldContainBoundaryMessage:(BOOL)a5 completionBlock:(id /* block */)a6;
+- (void)loadNewerRemedialyForConversation:(id)a0 afterMessage:(id)a1 visibleLimit:(unsigned long long)a2 shouldContainBoundaryMessage:(BOOL)a3 completionBlock:(id /* block */)a4;
+- (void)loadMsgesRemedialyFromConversationId:(id)a0 indexV2:(long long)a1 direction:(unsigned long long)a2 msgesCount:(long long)a3 completionBlock:(id /* block */)a4;
+- (void)tokenChanged:(id)a0;
+- (void)wsStateChangedToConnected:(id)a0;
+- (void)responseServerLongConnectACK:(id)a0;
+- (void)checkInboxStatusWithReason:(long long)a0;
+- (void)wsStatusTimerFired:(id)a0;
+- (id)_conversationFromDBWithID:(id)a0;
+- (id)_pullerWithConversation:(id)a0;
+- (void)pullFired:(id)a0;
+- (void)retryCheckInbox;
+- (void)notifyNewMessage:(id)a0 inInboxType:(int)a1;
+- (void)batchAckMessagesLongConnectionWithArrPbMessage:(id)a0 response:(id)a1;
+- (void)batchAckMessagesRequestWithReportType:(int)a0 arrPbMessage:(id)a1 response:(id)a2;
+- (void)batchAckMessagesShowWithArrDbMessage:(id)a0;
+- (int)enableUserChainBoxType;
+- (id)_pullerWithConversationID:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)initWithRootObject:(id)a0;
+
+@end

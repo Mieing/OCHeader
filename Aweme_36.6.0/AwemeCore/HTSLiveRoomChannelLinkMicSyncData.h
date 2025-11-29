@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveRoomChannelLinkMicSyncData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *channelLinkUsersArray;
+@property (readonly, nonatomic) unsigned long long channelLinkUsersArray_Count;
+@property (nonatomic) long long placeholder;
+@property (copy, nonatomic) NSString *rtcRoomIdStr;
+
++ (id)descriptor;
+
+@end

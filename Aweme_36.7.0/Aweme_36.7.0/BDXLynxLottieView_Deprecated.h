@@ -1,0 +1,83 @@
+@class NSString, NSNumber, LOTCompositionContainer;
+
+@interface BDXLynxLottieView_Deprecated : LynxUI <LOTAnimationDelegate>
+
+@property (nonatomic) BOOL autoPlay;
+@property (nonatomic) BOOL layoutFinished;
+@property (nonatomic) BOOL playWhenFinishingLayout;
+@property (copy, nonatomic) NSString *srcFormat;
+@property (copy, nonatomic) NSString *srcPolyfill;
+@property (retain, nonatomic) NSNumber *startFrame;
+@property (retain, nonatomic) NSNumber *endFrame;
+@property (retain, nonatomic) NSNumber *repeatCount;
+@property (nonatomic) unsigned long long loopCount;
+@property (nonatomic) unsigned long long lastFrame;
+@property (copy, nonatomic) NSString *animationID;
+@property (retain, nonatomic) LOTCompositionContainer *compContainer;
+@property (nonatomic) BOOL listenAnimationUpdate;
+@property (nonatomic) BOOL hasReportMotionEvent;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)lynxLazyLoad;
++ (id)__lynx_prop_config__1373;
++ (id)__lynx_prop_config__1161;
++ (id)__lynx_prop_config__1262;
++ (id)__lynx_prop_config__1474;
++ (id)__lynx_prop_config__1735;
++ (id)__lynx_prop_config__1826;
++ (id)__lynx_prop_config__1917;
++ (id)__lynx_prop_config__2008;
++ (id)__lynx_prop_config__2059;
++ (id)__lynx_prop_config__21410;
++ (id)__lynx_prop_config__22511;
++ (id)__lynx_prop_config__24012;
++ (id)__lynx_prop_config__24813;
++ (id)__lynx_ui_method_config__25714;
++ (id)__lynx_ui_method_config__26215;
++ (id)__lynx_ui_method_config__26816;
++ (id)__lynx_ui_method_config__27317;
++ (id)__lynx_ui_method_config__27718;
++ (id)__lynx_ui_method_config__28119;
++ (id)__lynx_ui_method_config__28820;
+
+- (void)layoutDidFinished;
+- (void)play:(id)a0 withResult:(id /* block */)a1;
+- (void)pause:(id)a0 withResult:(id /* block */)a1;
+- (void)stop:(id)a0 withResult:(id /* block */)a1;
+- (void)autoplay:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)animationView:(id)a0 isDisplayingFrame:(float)a1;
+- (void)animationView:(id)a0 fetchResourceWithURL:(id)a1 completionHandler:(id /* block */)a2;
+- (void)animationView:(id)a0 didLoadResourcesWithError:(id)a1;
+- (void)animationViewDidStart:(id)a0;
+- (void)seek:(id)a0 withResult:(id /* block */)a1;
+- (void)src:(id)a0 requestReset:(BOOL)a1;
+- (void)objectfit:(id)a0 requestReset:(BOOL)a1;
+- (void)loop:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)speed:(id)a0 requestReset:(BOOL)a1;
+- (void)reportMotionEvent:(id)a0;
+- (void)srcFormat:(id)a0 requestReset:(BOOL)a1;
+- (void)srcPolyfill:(id)a0 requestReset:(BOOL)a1;
+- (void)json:(id)a0 requestReset:(BOOL)a1;
+- (void)startFrame:(id)a0 requestReset:(BOOL)a1;
+- (void)endFrame:(id)a0 requestReset:(BOOL)a1;
+- (void)autoReverse:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)progress:(id)a0 requestReset:(BOOL)a1;
+- (void)repeatCount:(id)a0 requestReset:(BOOL)a1;
+- (void)getDuration:(id)a0 withResult:(id /* block */)a1;
+- (void)isAnimating:(id)a0 withResult:(id /* block */)a1;
+- (void)refreshAnimationID;
+- (void)sendEventNamed:(id)a0 extraDetail:(id)a1;
+- (void)updateSource:(id)a0 withPolyfill:(id)a1 hasPlaceholder:(BOOL)a2;
+- (void)updateSourceWithPolyfillIfNeeded;
+- (id)updateURLQuery:(id)a0 resolvingAgainstBaseURL:(BOOL)a1;
+- (void)sendErrorEventWithCode:(long long)a0 message:(id)a1;
+- (void)listenAnimationUpdate:(id)a0 withResult:(id /* block */)a1;
+- (void).cxx_destruct;
+- (void)play;
+- (id)init;
+- (id)createView;
+
+@end

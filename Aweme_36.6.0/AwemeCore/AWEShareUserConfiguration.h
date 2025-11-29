@@ -1,0 +1,3 @@
+@interface AWEShareUserConfiguration : AWEShareCommonConfiguration
+
+@end

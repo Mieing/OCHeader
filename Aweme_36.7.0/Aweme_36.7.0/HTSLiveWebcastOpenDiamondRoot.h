@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastOpenDiamondRoot : GPBRootObject
+
+@end

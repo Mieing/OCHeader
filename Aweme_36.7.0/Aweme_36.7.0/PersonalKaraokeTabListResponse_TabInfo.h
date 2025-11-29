@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface PersonalKaraokeTabListResponse_TabInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long tabId;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *iconURL;
+@property (copy, nonatomic) NSString *URL;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,84 @@
+@class NSString, NSMutableSet, AWEListDataController;
+@protocol AWELongVideoPlusDataControllerProtocol;
+
+@interface AWELandscapeLongVideoViewController : AWELandscapeBaseVideoViewController <AWEAdLongVideoPlayerControllDelegate, DUXAlertDialogDelegate, AWELandscapeVideoVCFeedShareProtocol>
+
+@property (nonatomic) BOOL isAdContainerExist;
+@property (retain, nonatomic) NSString *failedEpisodeID;
+@property (nonatomic) double skipEndingTime;
+@property (retain, nonatomic) NSMutableSet *longVideoUploadedSet;
+@property (retain, nonatomic) AWEListDataController<AWELongVideoPlusDataControllerProtocol> *longVideoPlusDataController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWETheaterViewControllerCommonAdapterClass;
+
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (void)updateDefaultSeekToTime:(id)a0;
+- (id)aAWEPadModuleAdapter;
+- (void)setupObserver;
+- (void)adContainerViewShowCompleted;
+- (void)resumeBackgroundPlayer;
+- (void)pauseBackgroundPlayer;
+- (void)onChangePlayVideoNotification:(id)a0;
+- (void)playNextVideo;
+- (id)aAWETheaterViewControllerCommonAdapter;
+- (void)configUIForFeedShare:(id)a0 allowSelectEpisode:(BOOL)a1;
+- (void)configMicroButtonForFeedShare:(id)a0;
+- (void)updateWithModel:(id)a0 playerViewController:(id)a1 forceUpdatePlayer:(BOOL)a2;
+- (void)refreshWithEpisodeInfo:(id)a0 playMode:(id)a1;
+- (void)handleExitLandscape:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)refreshLongVideoEpisode:(id)a0 playMode:(id)a1;
+- (void)updateScreenCastPlayStatus;
+- (void)updatePlayerFrame:(BOOL)a0;
+- (void)__handleHolderTransitioningNotification:(id)a0;
+- (void)refreshPlayTime:(double)a0 canPlayTime:(double)a1 totalTime:(double)a2 forceUpdate:(BOOL)a3;
+- (BOOL)enableAutoPlayNext;
+- (void)__updateUserPauseStatus:(BOOL)a0;
+- (void)__seekVideoStartToHistory;
+- (void)updatePlayerSettingWithUpdatePlaybackRate:(BOOL)a0;
+- (BOOL)canAutoPlayNext;
+- (void)tracePauseButtonClickedMethod:(unsigned long long)a0;
+- (void)traceResumeButtonClickedMethod:(unsigned long long)a0;
+- (void)hideLongVideoAlbumViewWithCompletion:(id /* block */)a0;
+- (void)paymentVideoLoopPlay;
+- (void)traceChangingEpisodeWithChangingModel:(id)a0 isAutoPlay:(BOOL)a1;
+- (void)refreshWithEpisodeModel:(id)a0 playMode:(id)a1;
+- (void)skipVideoHead;
+- (void)updateSkipEndingTime;
+- (void)cleanSkipEndingTime;
+- (void)trackLongVideoShow:(id)a0;
+- (void)didTapAppointment;
+- (void)trackAppointmentClick;
+- (void)requestLVWidgetInfo;
+- (id)getNextEpisodeModel;
+- (void)preloadNextEpisodeModelIfNeeded;
+- (void)showSkipVideoTailReminder;
+- (void)skipVideoTailWithTotalTime:(double)a0;
+- (BOOL)canAutoPlayToNextEpisode:(id)a0;
+- (id)p_canAutoPlayToNextEpisodeForFailReason;
+- (unsigned long long)currentResolutionType:(id)a0;
+- (void)actualRefreshWithEpisodeInfo:(id)a0 playMode:(id)a1;
+- (void)showXiguaGuideWhenChangeEpisodeWith:(id)a0 playMode:(id)a1;
+- (BOOL)canShowAdVideoContainerWithModel:(id)a0;
+- (void)trackAppointmentClickResult:(long long)a0 formerAppointmentStatus:(BOOL)a1;
+- (void)reportAppointment:(BOOL)a0;
+- (void)showPushAlertIfNeed;
+- (void)showUserNotificationAlert;
+- (void)guideOpenSkipVideoHeadTail;
+- (id)paramsForTrackLongVideo;
+- (void)updatePlayerResolutionBeforeStartPlay;
+- (void)autoSkipVideoHead;
+- (void)playerWillLoopPlaying:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)play;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)setupContext;
+- (id)nextEpisode;
+
+@end

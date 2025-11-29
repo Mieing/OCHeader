@@ -1,0 +1,3 @@
+@interface AppointmentAppointmentApiRoot : GPBRootObject
+
+@end

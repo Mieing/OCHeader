@@ -1,0 +1,85 @@
+@class NSDictionary, NSString, WASessionContentLogicHandler;
+
+@interface WASessionContentLogicController : WeixinContentLogicController <WAContactMgrExtension, WASessionContentLogicHandlerDelegate, WASessionContentDelegate> {
+    WASessionContentLogicHandler *_sessionLogichandler;
+    BOOL _isQuickSendSessionMsgViewHide;
+    BOOL _hasCheckUpdateContact;
+}
+
+@property (nonatomic) unsigned long long enterScene;
+@property (nonatomic) unsigned long long fromScene;
+@property (retain, nonatomic) NSDictionary *dicSessionContentContext;
+@property (copy, nonatomic) NSString *sceneID;
+@property (nonatomic) unsigned long long debugMode;
+@property (nonatomic) unsigned int appVersion;
+@property (copy, nonatomic) NSString *fatherAppid;
+@property (copy, nonatomic) NSString *fromPagePath;
+@property (copy, nonatomic) NSString *sessionTitle;
+@property (copy, nonatomic) NSString *sessionSubTitle;
+@property (retain, nonatomic) NSString *customHeadImageUrl;
+@property (nonatomic) BOOL isInWeAppSheetMode;
+@property (copy, nonatomic) id /* block */ backFromContactCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithSceneID:(id)a0;
+- (id)getMsgSendOpEntry;
+- (BOOL)CanSendVoiceMsg;
+- (BOOL)CanSendImageMsg:(id)a0;
+- (BOOL)CanSendVideoMsg;
+- (BOOL)CanSendVoipMsg;
+- (BOOL)CanLongPressHeadImage;
+- (BOOL)CanSendEmoticonMessage;
+- (BOOL)CanShowBanner;
+- (id)getLeftBarButton;
+- (id)GetRightBarBtn;
+- (id)GetHeadImageUrl:(id)a0;
+- (id)GetUsrTitle;
+- (id)getSubTitle;
+- (BOOL)isFromBusiness;
+- (BOOL)isWeAppSheetMode;
+- (void)onClickWeAppReceiveSessionMsg;
+- (void)CustomToolViewEX:(id)a0 inputPresenter:(id)a1;
+- (id)getOpenWeAppMenuButton;
+- (void)onClickOpenWeAppButton;
+- (void)onOpenWeAppWithJSONString:(id)a0 fromScene:(unsigned long long)a1 sceneNote:(id)a2;
+- (void)ViewWillInit;
+- (void)ViewDidAppear;
+- (void)setNeedUpdateTitle:(BOOL *)a0;
+- (void)AddMsg:(id)a0 MsgWrap:(id)a1;
+- (void)onModifyWeAppContact:(id)a0;
+- (void)Register;
+- (void)UnRegister;
+- (void)initViewController;
+- (BOOL)CanRemoteRecord;
+- (id)GetTitleTailImageView;
+- (id)getSessionContentContact;
+- (id)getSessionContentNavigationController;
+- (id)getSessionContentViewController;
+- (unsigned long long)getSessionContentEnterScene;
+- (id)getSessionContentPageID;
+- (id)getSessionSceneID;
+- (unsigned long long)getDebugMode;
+- (unsigned int)getAppVersion;
+- (id)getQuickSendSessionMsgInfo;
+- (id)getFatherAppid;
+- (id)getFromPagePath;
+- (void)onClickRightBarButton:(id)a0;
+- (void)callbackBackFromContact:(id)a0 query:(id)a1;
+- (void)checkUpdateWeAppContact;
+- (BOOL)isNeedShowQuickSendMsgView;
+- (BOOL)isBackToWeApp:(id)a0;
+- (void)backToWeApp:(id)a0 pagePath:(id)a1;
+- (void)onHideQuickSendSessionMsgBtn;
+- (void)onClickQuickSendSessionMsgBtn:(id)a0;
+- (void)onSessionContentViewDidBePoped;
+- (double)getCustomizedAreaWidth;
+- (id)getScanQrCodeBlackList;
+- (void)onClickTitle;
+- (void)fetchKFSessionInfo;
+- (BOOL)mainSwitch_shouldHandleAppmsg;
+- (void).cxx_destruct;
+
+@end

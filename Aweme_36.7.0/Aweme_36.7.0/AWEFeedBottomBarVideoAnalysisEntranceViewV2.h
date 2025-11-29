@@ -1,0 +1,72 @@
+@class AWEMultiAvatarView, NSString, AWEAwemeModel, UIView, NSArray, AWEBinding, UIImageView, UILabel;
+
+@interface AWEFeedBottomBarVideoAnalysisEntranceViewV2 : UIView <AWEFeedBottomBarVideoAnalysisEntranceViewV2Protocol>
+
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) UIView *backgroundView1;
+@property (retain, nonatomic) UIView *backgroundView2;
+@property (retain, nonatomic) AWEMultiAvatarView *avatarView;
+@property (retain, nonatomic) UILabel *playCountLabel;
+@property (retain, nonatomic) NSString *playCount;
+@property (retain, nonatomic) UIImageView *analysisIcon;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIImageView *playIcon;
+@property (nonatomic) double lastWidth;
+@property (retain, nonatomic) AWEBinding *bottomToolBarModelBinding;
+@property (retain, nonatomic) NSArray *avatars;
+@property (retain, nonatomic) NSArray *originAvatars;
+@property (retain, nonatomic) UIImageView *viewerArrowUpImageView;
+@property (retain, nonatomic) UIImageView *diagnoseArrowUpImageView;
+@property (copy, nonatomic) NSString *awemeIDTrackedLastTime;
+@property (copy, nonatomic) id /* block */ entranceBlock;
+@property (copy, nonatomic) id /* block */ commentPanelBlock;
+@property (copy, nonatomic) id /* block */ viewerListDataControllerBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)commonTrackParams;
+- (id)toolBarModel;
+- (long long)daysToExpire;
+- (void)videoAnalysisEntrance;
+- (void)updateVideoAnalysisEntranceViewForModel:(id)a0 referString:(id)a1 enterFrom:(id)a2 avatars:(id)a3 playCount:(id)a4;
+- (void)updateEntranceViewLayout:(id)a0 avatars:(id)a1 playCount:(id)a2;
+- (void)trackShownEvent:(id)a0;
+- (BOOL)shouldShowDiagnoseContainer:(id)a0;
+- (id)viewerListDataController;
+- (BOOL)needForceShowDiagnoseEntrance;
+- (void)commentPanelAction;
+- (void)trackClickedEvent:(id)a0;
+- (double)duxFontScale;
+- (id)playCountDescWithPlayCount:(id)a0 forModel:(id)a1;
+- (BOOL)shouldShowViewerContainer:(id)a0 playCount:(id)a1;
+- (unsigned long long)containerLayoutStyle:(id)a0 avatars:(id)a1 playCount:(id)a2;
+- (void)setupEntranceViewerView;
+- (void)updatePlayStyle:(id)a0 avatars:(id)a1 playCount:(id)a2 isDoubleContainer:(BOOL)a3 layoutStyle:(unsigned long long)a4;
+- (void)setupEntranceDiagnoseView;
+- (void)updateDiagnoseStyle:(id)a0 isDoubleContainer:(BOOL)a1 layoutStyle:(unsigned long long)a2;
+- (void)setupStory25EntranceViewerView;
+- (id)arrowUpImage;
+- (struct CGSize { double x0; double x1; })arrowUpSize;
+- (BOOL)isNewStory:(id)a0;
+- (double)iconRightPadding:(unsigned long long)a0;
+- (BOOL)canShowArrowUpIcon:(unsigned long long)a0 isSingleContainer:(BOOL)a1 model:(id)a2;
+- (double)arrowUpIconLeftPadding;
+- (double)avatarWidth:(id)a0;
+- (id)avatarOption;
+- (BOOL)shouldShowDiagnoseWithModel:(id)a0;
+- (id)toolBarExtraModel;
+- (struct CGSize { double x0; double x1; })analysisIconSize;
+- (double)avatarRightPadding:(id)a0;
+- (struct CGSize { double x0; double x1; })iconSize;
+- (void)updateLayout;
+- (void).cxx_destruct;
+- (id)titleFont;
+- (id)init;
+- (BOOL)hasExpired;
+- (void)layoutSubviews;
+- (void)setupUI;
+- (struct CGSize { double x0; double x1; })avatarSize;
+
+@end

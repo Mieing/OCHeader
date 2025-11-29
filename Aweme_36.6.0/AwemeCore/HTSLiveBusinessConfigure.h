@@ -1,0 +1,16 @@
+@class HTSLiveResourceConfigure;
+
+@interface HTSLiveBusinessConfigure : IESLivePBBaseMessage
+
+@property (nonatomic) long long businessId;
+@property (nonatomic) long long busType;
+@property (nonatomic) int delaySecond;
+@property (nonatomic) long long preciseTime;
+@property (nonatomic) int displaySecond;
+@property (retain, nonatomic) HTSLiveResourceConfigure *resConfig;
+@property (nonatomic) BOOL hasResConfig;
+@property (nonatomic) long long delType;
+
++ (id)descriptor;
+
+@end

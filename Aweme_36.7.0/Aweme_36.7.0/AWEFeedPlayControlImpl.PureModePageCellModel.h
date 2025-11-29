@@ -1,0 +1,9 @@
+@interface AWEFeedPlayControlImpl.PureModePageCellModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ initialAweme;
+    void /* unknown type, empty encoding */ isFromOuter;
+    void /* unknown type, empty encoding */ isActive;
+    void /* unknown type, empty encoding */ isFakeCell;
+    void /* unknown type, empty encoding */ _event;
+}
+
+@end

@@ -1,0 +1,3 @@
+@interface AWECommentPanelListSwiftImpl.CommentLoadMoreFooterComponent : _TtCs12_SwiftObject
+
+@end

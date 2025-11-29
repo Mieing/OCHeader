@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage, GPBInt64ObjectDictionary;
+
+@interface HTSLiveBadge : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *icons;
+@property (readonly, nonatomic) unsigned long long icons_Count;
+
++ (id)descriptor;
+
+@end

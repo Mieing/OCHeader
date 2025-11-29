@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBGameAwemeStruct : GPBMessage
+
+@property (copy, nonatomic) NSString *video;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class TrialExchangeIncomeResult_ResultData;
+
+@interface TrialExchangeIncomeResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) TrialExchangeIncomeResult_ResultData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

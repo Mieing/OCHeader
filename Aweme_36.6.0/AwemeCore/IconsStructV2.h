@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IconsStructV2 : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *iconsArray;
+@property (readonly, nonatomic) unsigned long long iconsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface LaunchConfig : TraceMetaPluginConfig
+
+@end

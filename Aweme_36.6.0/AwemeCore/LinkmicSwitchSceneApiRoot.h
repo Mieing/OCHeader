@@ -1,0 +1,3 @@
+@interface LinkmicSwitchSceneApiRoot : GPBRootObject
+
+@end

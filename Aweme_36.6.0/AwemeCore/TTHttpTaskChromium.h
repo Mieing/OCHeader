@@ -1,0 +1,82 @@
+@class TTHttpRequestChromium, NSURL, NSString, NSObject, NSProgress, NSMutableData, TTRedirectTask, NSMutableIndexSet;
+@protocol OS_dispatch_queue;
+
+@interface TTHttpTaskChromium : TTHttpTask <TTFetcherProtocol> {
+    struct scoped_refptr<TTFetcherDelegate> { struct TTFetcherDelegate *ptr_; } fetcher_delegate;
+    struct atomic<bool> { struct __cxx_atomic_impl<bool, std::__cxx_atomic_base_impl<bool>> { _Atomic BOOL __a_value; } __a_; } is_task_resumed;
+}
+
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *downloadProgressCallbackQueue;
+@property (nonatomic) BOOL isNon2xxResponseCode;
+@property (retain, nonatomic) NSMutableData *non2xxDataBuffer;
+@property (nonatomic) BOOL isDispatchQueueSelected;
+@property BOOL canDirectlyDispatchFromIOThread;
+@property (retain) NSObject<OS_dispatch_queue> *upperLayerCallbackQueue;
+@property (retain, nonatomic) TTRedirectTask *redirectTask;
+@property (retain, nonatomic) NSURL *fileDestinationURL;
+@property (nonatomic) BOOL isFileAppend;
+@property (nonatomic) unsigned long long uploadFileOffset;
+@property (nonatomic) unsigned long long uploadFileLength;
+@property (nonatomic) void *engine;
+@property (retain, nonatomic) TTHttpRequestChromium *request;
+@property (nonatomic) unsigned long long taskId;
+@property (copy, nonatomic) id /* block */ callbackBlock;
+@property (copy, nonatomic) id /* block */ uploadProgressBlock;
+@property (copy, nonatomic) id /* block */ downloadProgressBlock;
+@property (nonatomic) float taskPriority;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic) BOOL isCompleted;
+@property long long throttleNetBytesPerSecond;
+@property (nonatomic) int taskType;
+@property (nonatomic) BOOL forceRun;
+@property (nonatomic) int level;
+@property (retain, nonatomic) NSMutableIndexSet *acceptableStatusCodes;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *dispatch_queue;
+@property (copy, nonatomic) id /* block */ streamReadCompleteBlock;
+@property (retain, nonatomic) NSProgress *uploadProgress;
+@property (retain, nonatomic) NSProgress *downloadProgress;
+@property (copy, nonatomic) id /* block */ headerBlock;
+@property (copy, nonatomic) id /* block */ dataBlock;
+@property (copy, nonatomic) id /* block */ redirectedBlock;
+@property (nonatomic) BOOL isWebviewRequest;
+@property (nonatomic) int delayTimeMills;
+@property (copy, nonatomic) NSString *compressLog;
+@property (nonatomic) BOOL isUserSpecifiedHeaderCallbackExist;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setThrottleNetSpeed:(long long)a0;
+- (void)setDownloadProgressCallback:(id /* block */)a0;
+- (void)setHeaderCallback:(id /* block */)a0;
+- (void)onTimeout:(int)a0 error:(int)a1 details:(id)a2 requestLog:(id)a3;
+- (void)setFetcherPriority_:(struct URLFetcher { void /* function */ **x0; } *)a0;
+- (id)initWithRequest:(id)a0 engine:(void *)a1 dispatchQueue:(id)a2 taskId:(unsigned long long)a3 enableHttpCache:(BOOL)a4 completedCallback:(id /* block */)a5 uploadProgressCallback:(id /* block */)a6 downloadProgressCallback:(id /* block */)a7;
+- (void)runRequestFiltersAndStart;
+- (id)getSerialDispatchQueue;
+- (void)startRedirect;
+- (void)onURLFetchComplete:(const struct URLFetcher { void /* function */ **x0; } *)a0;
+- (void)onURLFetchDownloadProgress:(const struct URLFetcher { void /* function */ **x0; } *)a0 current:(long long)a1 total:(long long)a2 current_network_bytes:(long long)a3;
+- (void)onURLFetchUploadProgress:(const struct URLFetcher { void /* function */ **x0; } *)a0 current:(long long)a1 total:(long long)a2;
+- (void)onResponseStarted:(const struct URLFetcher { void /* function */ **x0; } *)a0;
+- (void)onURLRedirectReceived:(const struct URLFetcher { void /* function */ **x0; } *)a0 redirect_info:(const void *)a1 response_info:(const void *)a2;
+- (void)onReadResponseData:(id)a0;
+- (void)onCancel:(id)a0 subErrorCode:(int)a1;
+- (id)initWithRequest:(id)a0 engine:(void *)a1 dispatchQueue:(id)a2 taskId:(unsigned long long)a3 completedCallback:(id /* block */)a4;
+- (id)initWithRequest:(id)a0 engine:(void *)a1 dispatchQueue:(id)a2 taskId:(unsigned long long)a3 completedCallback:(id /* block */)a4 uploadProgressCallback:(id /* block */)a5 downloadProgressCallback:(id /* block */)a6;
+- (void)setDirectlyDispatchFromIOThread:(BOOL)a0 withUpperLayerCallbackQueue:(id)a1;
+- (int)getDelayTimeWithUrl:(id)a0 requestTag:(id)a1;
+- (void)setUploadProgressCallback:(id /* block */)a0;
+- (BOOL)getIsDirectlyDispatchedFromIOThread;
+- (void)readDataOfMinLength:(unsigned long long)a0 maxLength:(unsigned long long)a1 timeout:(double)a2 completionHandler:(id /* block */)a3;
+- (void).cxx_destruct;
+- (void)suspend;
+- (long long)state;
+- (id).cxx_construct;
+- (void)setPriority:(float)a0;
+- (void)resume;
+- (void)dealloc;
+- (void)cancel;
+
+@end

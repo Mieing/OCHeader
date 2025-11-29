@@ -1,0 +1,3 @@
+@interface ScreenshotScreenshotApiRoot : GPBRootObject
+
+@end

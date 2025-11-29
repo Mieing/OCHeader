@@ -1,0 +1,3 @@
+@interface AWECodeGenInterestActivityAlbumDeleteInnerVideoResponse : AWEBaseResponseModel
+
+@end

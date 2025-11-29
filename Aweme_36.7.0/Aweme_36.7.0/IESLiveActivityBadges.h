@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveActivityBadges : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *badgesArray;
+@property (readonly, nonatomic) unsigned long long badgesArray_Count;
+@property (copy, nonatomic) NSString *openURL;
+
++ (id)descriptor;
+
+@end

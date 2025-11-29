@@ -1,0 +1,8 @@
+@interface CGPBusinessScreenRecordClient : GPBMessage
+
+@property (nonatomic) int action;
+@property (nonatomic) long long duration;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWELazyRegisterPremainEmpty : NSObject
+
+@end

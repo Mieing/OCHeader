@@ -1,0 +1,74 @@
+@class AWEStudioEditLivePhotoFeatureConfig, ACCRealLivePhotoServiceImpl, NSString, ACCTextStickerHandler, NSMutableArray;
+@protocol ACCEditSpecialEffectServiceProtocol, ACCStickerServiceProtocol, AWEPublishTrackerProtocol, ACCCTRServiceProtocol, ACCAIImageToLiveEditServiceProtocol, AEKEditMediaGenrePublicAPI, ACCAIGCEffectServiceProtocol, ACCTopToolBarServiceProtocol, AWEStudioEditMusicFeaturePublicAPI, ACCEditViewContainer, ACCSequenceEditServiceProtocol, ACCMusicVolumeServiceProtocol, ACCEditServiceProtocol;
+
+@interface ACCRealLivePhotoEditComponent : ACCFeatureComponent <ACCEditPreviewMessageProtocol, ACCRealLivePhotoServiceDelegate, ACCSequenceEditServicePlayerSubscriber, ACCBarItemContainerViewSubscriber, AEKEditMediaGenreTransferSubscriber>
+
+@property (retain, nonatomic) AWEStudioEditLivePhotoFeatureConfig *featureConfig;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (retain, nonatomic) ACCRealLivePhotoServiceImpl *realLivePhotoService;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCCTRServiceProtocol> ctrService;
+@property (weak, nonatomic) id<ACCStickerServiceProtocol> stickerService;
+@property (weak, nonatomic) id<ACCAIGCEffectServiceProtocol> aigcService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (weak, nonatomic) id<ACCAIImageToLiveEditServiceProtocol> aiImageToLiveService;
+@property (weak, nonatomic) id<AEKEditMediaGenrePublicAPI> mediaGenreTransferService;
+@property (weak, nonatomic) id<ACCTopToolBarServiceProtocol> topToolBarService;
+@property (weak, nonatomic) id<AWEStudioEditMusicFeaturePublicAPI> musicFeatureAPI;
+@property (weak, nonatomic) id<ACCMusicVolumeServiceProtocol> volumeService;
+@property (weak, nonatomic) ACCTextStickerHandler *textStickerHandler;
+@property (nonatomic) BOOL isMultiProject;
+@property (nonatomic) BOOL didShowTipsAtFirstTime;
+@property (nonatomic) BOOL hasAppliedTemplateBeforeChangeMode;
+@property (nonatomic) BOOL shouldSkipChangeMode;
+@property (retain, nonatomic) id<AWEPublishTrackerProtocol> publishTracker;
+@property (retain, nonatomic) NSMutableArray *dataErrorReportUUIDCache;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentWillAppear;
+- (void)componentDidAppear;
+- (void)sequenceEditService:(id)a0 changedWithAddedIndexSet:(id)a1 deletedIndexSet:(id)a2;
+- (void)sequenceEditService:(id)a0 didTransferToIndexAndNotDragScrolling:(long long)a1 editMode:(unsigned long long)a2 isAutoTransfer:(BOOL)a3;
+- (void)playerCurrentPlayTimeChanged:(double)a0;
+- (void)barItemContainerDidLoad;
+- (void)editMediaGenreDidTransferFromSourceType:(unsigned long long)a0 toTargetType:(unsigned long long)a1 success:(BOOL)a2 scene:(id)a3;
+- (BOOL)hasAppliedTemplate;
+- (void)changeLivePhotoToMode:(unsigned long long)a0;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (unsigned long long)preferredLoadPhase;
+- (id)serviceBinding;
+- (void)playStatusChanged:(long long)a0;
+- (void)bindServices:(id)a0;
+- (BOOL)enableTextRefactor;
+- (void)bindLoraUpdateTrackSignal;
+- (void)bindImageToLiveUpdateTrackSignal;
+- (id)livePhotoBarItem;
+- (id)barItemImageName;
+- (id)barItemTitle;
+- (void)updateTopToolBarItemIfNeededWithEnableStatus:(BOOL)a0;
+- (id)topToolBarItemImageName;
+- (void)findTextStickerHandler;
+- (void)showVideoPlayerAnimation:(BOOL)a0;
+- (void)updatePreviewPlayersStateWithAnimation:(BOOL)a0;
+- (void)bindDidChangedUinTemplateSignal;
+- (void)showLivePhotoModeTips;
+- (void)updateBarItem;
+- (id)livephotoModeStringWithMode:(unsigned long long)a0;
+- (void)cleanAIIfNeeded;
+- (void)ttsChangeWithLivePhotoMode:(unsigned long long)a0;
+- (void)playFromTheBeginning;
+- (void)disableLivePhotoBarItem;
+- (void)enableLivePhotoBarItem;
+- (BOOL)shouldShowStaticLivePhotoItemBar;
+- (void)dismissVideoPlayerAnimation:(BOOL)a0;
+- (void)clickChangeLivePhotoMode;
+- (void)updateAllLivePhotoData;
+- (void)updatePlayControlView;
+- (void).cxx_destruct;
+
+@end

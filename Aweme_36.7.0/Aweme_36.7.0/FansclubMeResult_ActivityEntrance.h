@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface FansclubMeResult_ActivityEntrance : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *verticalScheme;
+@property (copy, nonatomic) NSString *horizontalScheme;
+
++ (id)descriptor;
+
+@end

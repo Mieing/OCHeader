@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastOpenPerformanceRoot : GPBRootObject
+
+@end

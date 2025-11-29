@@ -1,0 +1,12 @@
+@class GPBInt64Array, NSString;
+
+@interface HTSLivePermitWantToListenSongContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *songIdArray;
+@property (readonly, nonatomic) unsigned long long songIdArray_Count;
+@property (nonatomic) BOOL isMultiAddSong;
+@property (copy, nonatomic) NSString *songName;
+
++ (id)descriptor;
+
+@end

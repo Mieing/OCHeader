@@ -1,0 +1,3 @@
+@interface RoomUpdateCiInfoApiRoot : GPBRootObject
+
+@end

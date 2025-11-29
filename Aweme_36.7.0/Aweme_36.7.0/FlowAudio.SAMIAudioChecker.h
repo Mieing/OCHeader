@@ -1,0 +1,6 @@
+@interface FlowAudio.SAMIAudioChecker : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ audioCheckerConfig;
+    void /* unknown type, empty encoding */ audioChecker;
+}
+
+@end

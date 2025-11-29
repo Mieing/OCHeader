@@ -1,0 +1,3 @@
+@interface GXRichText : YYLabel
+
+@end

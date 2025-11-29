@@ -1,0 +1,78 @@
+@class UIView, NSString, HTSLiveScorllLabelView, HTSEventContext, IESLiveAnchorStatusCenterConfiguration, IESLiveCountTimer, NSDictionary, RealtimeSuggest, CAGradientLayer, IESLiveImageView, UILabel;
+@protocol IESLiveRoomService;
+
+@interface IESLiveAnchorStatusRemindView : UIView <HTSLivePluginLayoutView>
+
+@property (nonatomic) double maxExpendWidth;
+@property (retain, nonatomic) NSDictionary *NetWorkIconMap;
+@property (retain, nonatomic) NSDictionary *MicrophoneIconMap;
+@property (retain, nonatomic) NSDictionary *TemperatureIconMap;
+@property (retain, nonatomic) IESLiveImageView *microphoneImgView;
+@property (retain, nonatomic) IESLiveImageView *temperatureImgView;
+@property (retain, nonatomic) IESLiveImageView *networkImgView;
+@property (nonatomic) BOOL microphoneAbnormal;
+@property (nonatomic) BOOL NetWorkAbnormal;
+@property (nonatomic) BOOL temperatureAbnormal;
+@property (retain, nonatomic) UIView *statusIconView;
+@property (retain, nonatomic) IESLiveImageView *statusImgView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UILabel *normalContentView;
+@property (retain, nonatomic) HTSLiveScorllLabelView *scrollContentView;
+@property (retain, nonatomic) IESLiveImageView *expandIcon;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (nonatomic) BOOL hasShowNetWorkRemindSlow;
+@property (nonatomic) BOOL hasShowNetWorkRemindNonet;
+@property (nonatomic) BOOL hasShowTempRemindCritical;
+@property (nonatomic) BOOL hasShowTempRemindSerious;
+@property (nonatomic) BOOL hasShowMicrophoneRemindMute;
+@property (nonatomic) BOOL hasShowMicrophoneRemindError;
+@property (retain, nonatomic) NSString *currentSuggestKey;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) IESLiveCountTimer *prefSuggestCountTimer;
+@property (nonatomic) long long currentDisplayMode;
+@property (retain, nonatomic) IESLiveAnchorStatusCenterConfiguration *configuration;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (nonatomic) long long currentNetworkStatus;
+@property (nonatomic) long long currentTempLevel;
+@property (nonatomic) long long currentMicorphoneState;
+@property (retain, nonatomic) RealtimeSuggest *currentManageSuggest;
+@property (copy, nonatomic) id /* block */ configurationUpdateHandler;
+
+- (void)onClick;
+- (struct CGSize { double x0; double x1; })pluginLayoutContentSize;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })pluginLayoutContentInsets;
+- (id)initWithRoom:(id)a0 trackContext:(id)a1;
+- (double)getContentViewWidth:(id)a0;
+- (void)updateNetworkStatus:(long long)a0;
+- (void)updateTemperatureLevel:(long long)a0;
+- (void)updateMicrophoneState:(long long)a0;
+- (BOOL)isInAudioPunish;
+- (void)trackBarShowWithExtraParams:(id)a0;
+- (void)trackBarClickWithExtraParams:(id)a0;
+- (id)getNormalConfiguration;
+- (void)handleRealtimeSuggest:(id)a0 barStyle:(id)a1;
+- (void)handleRealtimeSuggestExpire:(id)a0;
+- (void)transitionToNormal;
+- (void)updateContentViewWithContent:(id)a0 shouldScroll:(BOOL)a1;
+- (void)applyBarStyleWithConfiguration:(id)a0;
+- (void)updateStatusIconView;
+- (void)removeGradientLayerIfNeeded;
+- (void)updateGradientBorderWithConfigurationIfNeeded:(id)a0;
+- (void)getTotalExpendWidthWithContent:(id)a0 completion:(id /* block */)a1;
+- (void)transitionToPrefSuggestWithContent:(id)a0;
+- (void)trackPerfSuggestShowWithSuggestKey:(id)a0;
+- (void)transitionToIconOnly;
+- (void)updateMicrophoneIconMap;
+- (void)transitionToManageSuggestWithSuggest:(id)a0 barStyle:(id)a1;
+- (void)resizeViewWithConfiguration:(id)a0;
+- (void)updateGradientBorderWithConfiguration:(id)a0;
+- (void)iconViewWithImage:(id)a0;
+- (id)attributedContent:(id)a0 barStyle:(id)a1;
+- (double)getStatusIconViewWidth;
+- (void)updateConfiguration:(id)a0;
+- (void).cxx_destruct;
+- (id)viewType;
+- (void)dealloc;
+- (void)setupUI;
+
+@end

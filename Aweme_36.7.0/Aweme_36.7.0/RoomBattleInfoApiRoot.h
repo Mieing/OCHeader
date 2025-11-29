@@ -1,0 +1,3 @@
+@interface RoomBattleInfoApiRoot : GPBRootObject
+
+@end

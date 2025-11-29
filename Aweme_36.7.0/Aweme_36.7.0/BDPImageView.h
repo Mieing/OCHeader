@@ -1,0 +1,19 @@
+@class NSArray, NSString;
+
+@interface BDPImageView : UIImageView <BDPAppearance, BDPAppearanceStyleMessage>
+
+@property (copy, nonatomic) NSArray *bdp_styleCategories;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)bootstrapLoad;
++ (id)bdp_styleForCategory:(id)a0;
++ (void)applyAppearanceStyle;
+
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (void)didMoveToWindow;
+
+@end

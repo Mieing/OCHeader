@@ -1,0 +1,3 @@
+@interface KtvGetRealTimeChorusInfoApiRoot : GPBRootObject
+
+@end

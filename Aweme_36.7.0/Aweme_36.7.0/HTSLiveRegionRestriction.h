@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface HTSLiveRegionRestriction : IESLivePBBaseMessage
+
+@property (nonatomic) long long type;
+@property (retain, nonatomic) NSMutableArray *whiteListArray;
+@property (readonly, nonatomic) unsigned long long whiteListArray_Count;
+@property (retain, nonatomic) NSMutableArray *blackListArray;
+@property (readonly, nonatomic) unsigned long long blackListArray_Count;
+
++ (id)descriptor;
+
+@end

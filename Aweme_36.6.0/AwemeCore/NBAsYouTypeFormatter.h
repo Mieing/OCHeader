@@ -1,0 +1,74 @@
+@class NSString, NSMutableString, NSRegularExpression, NBPhoneNumberUtil, NSMutableArray, NBPhoneMetaData;
+
+@interface NBAsYouTypeFormatter : NSObject
+
+@property (retain, nonatomic) NSString *DIGIT_PLACEHOLDER_;
+@property (nonatomic) NSString *SEPARATOR_BEFORE_NATIONAL_NUMBER_;
+@property (retain, nonatomic) NSString *currentOutput_;
+@property (retain, nonatomic) NSString *currentFormattingPattern_;
+@property (retain, nonatomic) NSString *defaultCountry_;
+@property (retain, nonatomic) NSString *nationalPrefixExtracted_;
+@property (retain, nonatomic) NSMutableString *formattingTemplate_;
+@property (retain, nonatomic) NSMutableString *accruedInput_;
+@property (retain, nonatomic) NSMutableString *prefixBeforeNationalNumber_;
+@property (retain, nonatomic) NSMutableString *accruedInputWithoutFormatting_;
+@property (retain, nonatomic) NSMutableString *nationalNumber_;
+@property (retain, nonatomic) NSRegularExpression *DIGIT_PATTERN_;
+@property (retain, nonatomic) NSRegularExpression *NATIONAL_PREFIX_SEPARATORS_PATTERN_;
+@property (retain, nonatomic) NSRegularExpression *CHARACTER_CLASS_PATTERN_;
+@property (retain, nonatomic) NSRegularExpression *STANDALONE_DIGIT_PATTERN_;
+@property (retain, nonatomic) NSRegularExpression *ELIGIBLE_FORMAT_PATTERN_;
+@property (nonatomic) BOOL ableToFormat_;
+@property (nonatomic) BOOL inputHasFormatting_;
+@property (nonatomic) BOOL isCompleteNumber_;
+@property (nonatomic) BOOL isExpectingCountryCallingCode_;
+@property (nonatomic) BOOL shouldAddSpaceAfterNationalPrefix_;
+@property (retain, nonatomic) NBPhoneNumberUtil *phoneUtil_;
+@property (nonatomic) unsigned long long lastMatchPosition_;
+@property (nonatomic) unsigned long long originalPosition_;
+@property (nonatomic) unsigned long long positionToRemember_;
+@property (nonatomic) unsigned long long MIN_LEADING_DIGITS_LENGTH_;
+@property (retain, nonatomic) NSMutableArray *possibleFormats_;
+@property (retain, nonatomic) NBPhoneMetaData *currentMetaData_;
+@property (retain, nonatomic) NBPhoneMetaData *defaultMetaData_;
+@property (retain, nonatomic) NBPhoneMetaData *EMPTY_METADATA_;
+@property (readonly, nonatomic) BOOL isSuccessfulFormatting;
+
+- (id)initWithRegionCodeForTest:(id)a0 bundle:(id)a1;
+- (id)initWithRegionCodeForTest:(id)a0;
+- (void).cxx_destruct;
+- (void)clear;
+- (id)description;
+- (id)init;
+- (id)initWithRegionCode:(id)a0;
+- (id)initWithRegionCode:(id)a0 bundle:(id)a1;
+- (id)getMetadataForRegion_:(id)a0;
+- (BOOL)maybeCreateNewTemplate_;
+- (void)getAvailableFormats_:(id)a0;
+- (BOOL)isFormatEligible_:(id)a0;
+- (void)narrowDownPossibleFormats_:(id)a0;
+- (BOOL)createFormattingTemplate_:(id)a0;
+- (id)getFormattingTemplate_:(id)a0 numberFormat:(id)a1;
+- (id)removeLastDigitAndRememberPosition;
+- (id)removeLastDigit;
+- (id)inputStringAndRememberPosition:(id)a0;
+- (id)inputString:(id)a0;
+- (id)inputDigit:(id)a0;
+- (id)inputDigitAndRememberPosition:(id)a0;
+- (id)inputDigitWithOptionToRememberPosition_:(id)a0 rememberPosition:(BOOL)a1;
+- (id)attemptToChoosePatternWithPrefixExtracted_;
+- (BOOL)ableToExtractLongerNdd_;
+- (BOOL)isDigitOrLeadingPlusSign_:(id)a0;
+- (id)attemptToFormatAccruedDigits_;
+- (id)appendNationalNumber_:(id)a0;
+- (long long)getRememberedPosition;
+- (id)attemptToChooseFormattingPattern_;
+- (id)inputAccruedNationalNumber_;
+- (BOOL)isNanpaNumberWithNationalPrefix_;
+- (id)removeNationalPrefixFromNationalNumber_;
+- (BOOL)attemptToExtractIdd_;
+- (BOOL)attemptToExtractCountryCallingCode_;
+- (id)normalizeAndAccrueDigitsAndPlusSign_:(id)a0 rememberPosition:(BOOL)a1;
+- (id)inputDigitHelper_:(id)a0;
+
+@end

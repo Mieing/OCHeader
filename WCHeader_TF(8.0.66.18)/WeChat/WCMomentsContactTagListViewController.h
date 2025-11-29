@@ -1,0 +1,88 @@
+@class NSMutableDictionary, UILabel, MMPageSheetAdapter, NSMutableArray, ContactTagSearchFromContactLogic, NSString, NSMutableOrderedSet, MMTableView, NSMutableSet, NSArray, WCSearchBar, WCMomentsContactTagSearchViewController, WCMomentsContactTagEditView;
+@protocol WCMomentsContactTagListViewControllerDelegate;
+
+@interface WCMomentsContactTagListViewController : MMUIViewController <UITableViewDelegate, UITableViewDataSource, ContactTagNewDetailViewControllerDelegate, WCMomentsContactTagEditViewDelegate, WCMomentsContactTagSearchViewControllerDelegate, ContactTagSearchFromContactLogicDelegate> {
+    ContactTagSearchFromContactLogic *m_contactTagSearchLogic;
+    WCMomentsContactTagSearchViewController *m_searchVC;
+}
+
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) NSMutableDictionary *tagDataCache;
+@property (retain, nonatomic) NSMutableArray *arrAllTagID;
+@property (retain, nonatomic) UILabel *noTagTips;
+@property (retain, nonatomic) WCSearchBar *searchBar;
+@property (retain, nonatomic) WCMomentsContactTagEditView *tagEditView;
+@property (retain, nonatomic) NSMutableDictionary *searchResultsDataCache;
+@property (retain, nonatomic) NSMutableSet *searchSelectedTagIDSet;
+@property (nonatomic) BOOL hasModifiedSelectedContacts;
+@property (weak, nonatomic) id<WCMomentsContactTagListViewControllerDelegate> delegate;
+@property (retain, nonatomic) NSString *viewControllerTitle;
+@property (retain, nonatomic) NSString *rightBarTitle;
+@property (nonatomic) BOOL canEditTagLabel;
+@property (nonatomic) BOOL hideSearchBar;
+@property (nonatomic) BOOL enableConfirmAfterModify;
+@property (nonatomic) long long privacy;
+@property (nonatomic) long long enterScene;
+@property (nonatomic) unsigned long long sourceScene;
+@property (retain, nonatomic) NSMutableOrderedSet *selectedTagIdSet;
+@property (retain, nonatomic) NSArray *requiredTags;
+@property (retain, nonatomic) NSArray *disabledTags;
+@property (weak, nonatomic) MMPageSheetAdapter *pageSheetAdapter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)initData;
+- (void)initTableView;
+- (void)updateTopBar;
+- (void)switchTopBarIfNeeded;
+- (void)initNoTagTips;
+- (void)updateViewDisplayStateWithTagData:(id)a0;
+- (void)updateNoTagTipsFrame;
+- (double)getContentViewY;
+- (id)createSearchVC;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidBePushOrPresent:(BOOL)a0;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)getLeftBarButtonItem;
+- (id)getRightBarButtonItem;
+- (id)rightBarButtonItemWithSelectTagCount:(unsigned long long)a0 prefix:(id)a1;
+- (id)rightBarButtonItemWithTitle:(id)a0;
+- (void)updateRightBarButtonItemIfNeeded;
+- (void)showSearchVC;
+- (void)showContactTagDetailViewWithContactTagData:(id)a0;
+- (BOOL)filterTag:(id)a0;
+- (BOOL)isTagSelectEnabled:(id)a0;
+- (BOOL)isTagSelected:(id)a0;
+- (id)tagDataAtIndexPath:(id)a0;
+- (id)tagDataWithTagID:(id)a0;
+- (id)tagDatasWithTagIDs:(id)a0;
+- (void)addSelectedTagDatas:(id)a0;
+- (void)addSelectedTagData:(id)a0;
+- (void)deleteSelectedTagData:(id)a0;
+- (BOOL)canShowTopBar;
+- (void)reloadData;
+- (void)reloadTableView;
+- (void)clearCache;
+- (void)onDismissBarButtonPress:(id)a0;
+- (void)onSaveBarButtonPress:(id)a0;
+- (void)reloadContactTagListView;
+- (void)onTagDetailDismissedWithAddContactLabel;
+- (void)searchViewController:(id)a0 didSelectTagDataSet:(id)a1 multiSelectedFlag:(BOOL)a2;
+- (id)searchViewController:(id)a0 searchWithQuery:(id)a1;
+- (BOOL)isTagName:(id)a0 containsQuery:(id)a1;
+- (void)onSearchViewControllerDidCancelItemClick;
+- (void)contactTagEditView:(id)a0 deleteTagData:(id)a1;
+- (void)contactTagEditViewDidClickSearch:(id)a0;
+- (void)onContactAsynContactTagResultChanged;
+- (id)getAllContactUserNameMatchTip;
+- (void).cxx_destruct;
+
+@end

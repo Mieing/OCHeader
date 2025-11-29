@@ -1,0 +1,10 @@
+@interface HTSLiveAnchorAudioConf : IESLivePBBaseMessage
+
+@property (nonatomic) long long status;
+@property (nonatomic) long long switcherWelcome;
+@property (nonatomic) long long switcherThanks;
+@property (nonatomic) long long switcherCongrats;
+
++ (id)descriptor;
+
+@end

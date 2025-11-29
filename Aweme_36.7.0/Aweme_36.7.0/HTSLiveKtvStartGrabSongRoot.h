@@ -1,0 +1,3 @@
+@interface HTSLiveKtvStartGrabSongRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface LiveKtvKtvGetHighScoreSungSongsApiRoot : GPBRootObject
+
+@end

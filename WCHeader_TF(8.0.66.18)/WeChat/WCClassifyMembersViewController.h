@@ -1,0 +1,84 @@
+@class WCSnsPrivacyReporter, NSString, NSMutableDictionary, WCGroup, WCOpLog, NSMutableArray, MMTableView;
+
+@interface WCClassifyMembersViewController : MMUIViewController <WCActionSheetDelegate, MMTableViewDelegate, NewChatRoomMemberItemViewDelegate, MultiSelectContactsViewControllerDelegate, IContactMgrExt, WCFacadeExt, WCCreateNewGroupViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+    BOOL _deleteStatus;
+    WCOpLog *_wcOpLog;
+    BOOL m_hasAddMemberWhenOnDone;
+    BOOL m_hasDelMemberWhenOnDone;
+    BOOL m_hasReturnAddMemberResponse;
+    BOOL m_hasReturnDelMemberResponse;
+    double m_defaultGroupCellHeight;
+    WCSnsPrivacyReporter *m_snsReporter;
+}
+
+@property (retain, nonatomic) NSMutableDictionary *dicGroupMemberView;
+@property (retain, nonatomic) NSMutableArray *arrGroupMember;
+@property (retain, nonatomic) NSMutableArray *arrGroupTempMember;
+@property (retain, nonatomic) NSString *tempGroupName;
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) WCGroup *group;
+@property (retain, nonatomic) NSMutableDictionary *dicGroupOutsiderMember;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)getDefaultGroupName;
+- (id)getGroupName;
+- (void)updateTitle;
+- (void)updateNavigation;
+- (long long)getColCount;
+- (void)makeGroupNameCell:(id)a0;
+- (void)loadMemberList;
+- (void)loadOutsiderMembers;
+- (void)initData;
+- (void)initBlacklistFooterView;
+- (void)initOutsiderFooterView;
+- (void)initFooterView;
+- (void)initView;
+- (void)startLoadingWithTitle:(id)a0;
+- (void)stopLoading;
+- (void)reloadMemberListAndView;
+- (void)reloadMember:(id)a0;
+- (void)initGroupTempMember;
+- (id)initWithWCGroup:(id)a0;
+- (void)onDismiss;
+- (BOOL)shouldModGroup;
+- (void)onCancel;
+- (void)modOutsiderGroup;
+- (void)resetBlackListControlStatus;
+- (void)onDone;
+- (void)onSelectRoundCell;
+- (void)showAlert:(id)a0;
+- (void)tryDeleteGroup;
+- (void)onDeleteGroup;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)OnWCCreatNewGroupName:(id)a0;
+- (void)onMultiSelectContactReturn:(id)a0;
+- (void)openContactInfo:(id)a0;
+- (void)onAddMember:(id)a0;
+- (void)onDeleteMember:(id)a0;
+- (void)onLongPressEx:(id)a0;
+- (void)setShowRemoveMember;
+- (void)onWCGroupAddMemberReturn:(BOOL)a0 group:(id)a1;
+- (void)onWCGroupRemoveMemberReturn:(BOOL)a0 group:(id)a1;
+- (void)onWCDeleteGroupReturn:(BOOL)a0 groupID:(id)a1;
+- (void)processModContact:(id)a0;
+- (void)onModifyContact:(id)a0;
+- (void)onDeleteContact:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)makeCell:(id)a0 tableCell:(id)a1 indexPath:(id)a2;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (double)getDefaultGroupCellHeight;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)mmTableView:(id)a0 touchesBegan:(id)a1 withEvent:(id)a2;
+- (void)initSnsReporter;
+- (void)doSnsReportAfterCgiSuccess;
+- (void).cxx_destruct;
+
+@end

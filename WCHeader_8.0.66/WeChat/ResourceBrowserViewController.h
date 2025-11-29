@@ -1,0 +1,90 @@
+@class NSDate, NSString, UIView, MMTableView, MMUIActivityIndicatorView, UIButton, NSMutableArray, WCFilterView, UILabel;
+
+@interface ResourceBrowserViewController : MMUIViewController <UITableViewDelegate, UITableViewDataSource, WCFilterViewDelegate, IChatLogDataMgrExt> {
+    UIView *_footerView;
+    UIButton *_selectAllButton;
+    UIButton *_deleteButton;
+    UILabel *_sizeLabel;
+    MMUIActivityIndicatorView *_loadingIndicatorView;
+    BOOL _hasLookDetailed;
+    NSMutableArray *m_arrSectionTitle;
+    struct map<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>, CompareNSString, std::allocator<std::pair<NSString *const, std::vector<std::shared_ptr<ChatLogSessionItem>>>>> { struct __tree<std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, std::__map_value_compare<NSString *, std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, CompareNSString>, std::allocator<std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<NSString *, std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, CompareNSString>> { unsigned long long __value_; } __pair3_; } __tree_; } m_dicMsgsByTitle;
+    struct map<std::shared_ptr<ChatLogSessionItem>, long, std::less<std::shared_ptr<ChatLogSessionItem>>, std::allocator<std::pair<const std::shared_ptr<ChatLogSessionItem>, long>>> { struct __tree<std::__value_type<std::shared_ptr<ChatLogSessionItem>, long>, std::__map_value_compare<std::shared_ptr<ChatLogSessionItem>, std::__value_type<std::shared_ptr<ChatLogSessionItem>, long>, std::less<std::shared_ptr<ChatLogSessionItem>>>, std::allocator<std::__value_type<std::shared_ptr<ChatLogSessionItem>, long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<std::shared_ptr<ChatLogSessionItem>, long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<std::shared_ptr<ChatLogSessionItem>, std::__value_type<std::shared_ptr<ChatLogSessionItem>, long>, std::less<std::shared_ptr<ChatLogSessionItem>>>> { unsigned long long __value_; } __pair3_; } __tree_; } m_dicFindItem;
+    unsigned int _curMaxDataCount;
+    struct vector<std::shared_ptr<ChatLogSessionItem>, std::allocator<std::shared_ptr<ChatLogSessionItem>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<ChatLogSessionItem> *, std::allocator<std::shared_ptr<ChatLogSessionItem>>> { void *__value_; } __end_cap_; } _arrSelectedData;
+    struct vector<std::shared_ptr<ChatLogSessionItem>, std::allocator<std::shared_ptr<ChatLogSessionItem>>> { void *__begin_; void *__end_; struct __compressed_pair<std::shared_ptr<ChatLogSessionItem> *, std::allocator<std::shared_ptr<ChatLogSessionItem>>> { void *__value_; } __end_cap_; } _arrSessionTypeItem;
+    struct map<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>, std::less<NSString *>, std::allocator<std::pair<NSString *const, std::vector<std::shared_ptr<ChatLogSessionItem>>>>> { struct __tree<std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, std::__map_value_compare<NSString *, std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, std::less<NSString *>>, std::allocator<std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<NSString *, std::__value_type<NSString *, std::vector<std::shared_ptr<ChatLogSessionItem>>>, std::less<NSString *>>> { unsigned long long __value_; } __pair3_; } __tree_; } m_dicSessionByTitle;
+}
+
+@property (nonatomic) long long baseNowTime;
+@property (nonatomic) unsigned long long eFilterType;
+@property (nonatomic) unsigned long long eOrderType;
+@property (nonatomic) unsigned int eFilterTime;
+@property (retain, nonatomic) MMTableView *mainTableView;
+@property (retain, nonatomic) UILabel *emptyTipLabel;
+@property (retain, nonatomic) WCFilterView *filterView;
+@property (retain, nonatomic) UIView *seperateLine;
+@property (nonatomic) double startLoadCleanData;
+@property (retain, nonatomic) NSDate *minDate;
+@property (retain, nonatomic) NSDate *maxDate;
+@property (retain, nonatomic) NSDate *selectBeginDate;
+@property (retain, nonatomic) NSDate *selectEndDate;
+@property (nonatomic) unsigned long long lastSelectTimeIndex;
+@property (nonatomic) unsigned long long lastHeaderIndex;
+@property (nonatomic) unsigned long long maxChatLogSize;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getDateWithoutHMS:(id)a0;
+
+- (BOOL)isForbidPageSheet;
+- (void)onReturn;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)didAppear;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getTableViewFrame;
+- (void)initView;
+- (void)makeFilterView;
+- (void)makeTableView;
+- (void)makeEmptyTipLabel;
+- (void)makeFooterPanelView;
+- (void)updateMainView;
+- (void)updateFooterPannelView;
+- (BOOL)isDataEmpty;
+- (void)initData;
+- (void)reInitData;
+- (void)p_filterSessionItem;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 titleForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (void)onSelecteAll;
+- (void)onDeleteSelectedData:(id)a0;
+- (void)deleteSelectedSessionKeepMsg;
+- (void)deleteSelectedSessionAllData;
+- (void)onAlertNothingDetail:(id)a0;
+- (void)onLookDetail:(id)a0;
+- (id)getSelectButtonTitle;
+- (id)userNameDescriptionFor:(const void *)a0;
+- (unsigned long long)getSessionsItemDataSize:(const void *)a0;
+- (unsigned long long)getSessionsItemAllDataSize:(const void *)a0;
+- (unsigned long long)getDataItemsDataSize:(const void *)a0;
+- (void)onSelectedDataChange;
+- (id)genTimeStringForSectionHeader:(unsigned int)a0;
+- (void)onChatLogDataLoadFinished;
+- (void)onChatLogDataReloadItem;
+- (id)p_getTimeSection;
+- (id)p_getFilterSection;
+- (void)onItemClick:(unsigned int)a0 atSection:(unsigned int)a1;
+- (void)onSelectionPanelDismissed:(id)a0;
+- (id)getCurrentViewController;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

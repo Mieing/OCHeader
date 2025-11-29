@@ -1,0 +1,9 @@
+@interface ShotSpot : IESLivePBBaseMessage
+
+@property (nonatomic) double xAxis;
+@property (nonatomic) double yAxis;
+@property (nonatomic) int shotType;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class ChangeResolutionResponse_ChangeResolutionInfo;
+
+@interface ChangeResolutionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ChangeResolutionResponse_ChangeResolutionInfo *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

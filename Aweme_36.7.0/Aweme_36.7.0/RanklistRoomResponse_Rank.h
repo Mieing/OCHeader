@@ -1,0 +1,25 @@
+@class HTSLiveUser, NSString, RanklistRoomResponse_InvisibleInfo, HTSLiveImage, SimpleUser;
+
+@interface RanklistRoomResponse_Rank : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long score;
+@property (nonatomic) long long rank;
+@property (copy, nonatomic) NSString *gapDescription;
+@property (nonatomic) long long delta;
+@property (nonatomic) BOOL firstGift;
+@property (nonatomic) BOOL isHidden;
+@property (copy, nonatomic) NSString *scoreDescription;
+@property (copy, nonatomic) NSString *exactlyScore;
+@property (retain, nonatomic) RanklistRoomResponse_InvisibleInfo *invisibleInfo;
+@property (nonatomic) BOOL hasInvisibleInfo;
+@property (copy, nonatomic) NSString *appName;
+@property (retain, nonatomic) HTSLiveImage *bgImage;
+@property (nonatomic) BOOL hasBgImage;
+@property (retain, nonatomic) SimpleUser *simpleUser;
+@property (nonatomic) BOOL hasSimpleUser;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface AWEStickerApplyEditPageButtonStyleHandler : AWEStickerApplyBaseHandler <ACCRecordFlowServiceSubscriber>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)flowServiceDidAddPictureToVideo:(id)a0;
+- (void)flowServiceDidAddFragment:(id)a0;
+- (void)handlerDidBecomeActive;
+
+@end

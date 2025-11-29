@@ -1,0 +1,3 @@
+@interface IESLiveFeedbackCardRoot : GPBRootObject
+
+@end

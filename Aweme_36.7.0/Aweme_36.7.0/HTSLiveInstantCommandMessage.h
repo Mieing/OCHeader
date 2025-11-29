@@ -1,0 +1,13 @@
+@class HTSLiveOpenSchemaCommand, HTSLiveCommon;
+
+@interface HTSLiveInstantCommandMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int commandType;
+@property (retain, nonatomic) HTSLiveOpenSchemaCommand *openSchemaCommand;
+@property (nonatomic) BOOL hasOpenSchemaCommand;
+
++ (id)descriptor;
+
+@end

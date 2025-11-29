@@ -1,0 +1,70 @@
+@class VERenderer, NSString, NSMutableDictionary, HTSGLContext, HTSGLFramebuffer, NSObject;
+@protocol OS_dispatch_semaphore;
+
+@interface HTSGLFilter : HTSFilterInterface <HTSGLInput> {
+    HTSGLFramebuffer *_firstInputFramebuffer;
+    float _backgroundColorRed;
+    float _backgroundColorGreen;
+    float _backgroundColorBlue;
+    float _backgroundColorAlpha;
+    BOOL _isEndProcessing;
+    struct CGSize { double width; double height; } _currentFilterSize;
+    unsigned long long _inputRotation;
+    NSMutableDictionary *_uniformStateRestorationBlocks;
+    NSObject<OS_dispatch_semaphore> *_imageCaptureSemaphore;
+    VERenderer *_glRenderer;
+}
+
+@property struct __CVBuffer { } *renderTarget;
+@property (nonatomic) BOOL preventRendering;
+@property (nonatomic) BOOL breakNextRendering;
+@property (nonatomic) struct CGSize { double width; double height; } outputFrameSize;
+@property (copy, nonatomic) id /* block */ exceptionBlock;
+@property (readonly) HTSGLContext *context;
+@property (readonly) NSString *route;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const float *)textureCoordinatesForRotation:(unsigned long long)a0;
+
+- (void)informTargetsAboutNewFrameAtTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (long long)nextAvailableTextureIndex;
+- (struct CGSize { double x0; double x1; })maximumOutputSize;
+- (void)endProcessing;
+- (void)renderToTextureWithVertices:(const float *)a0 textureCoordinates:(const float *)a1;
+- (struct CGSize { double x0; double x1; })rotatedSize:(struct CGSize { double x0; double x1; })a0 forIndex:(long long)a1;
+- (void)setupFilterForSize:(struct CGSize { double x0; double x1; })a0;
+- (void)setBackgroundColorRed:(float)a0 green:(float)a1 blue:(float)a2 alpha:(float)a3;
+- (void)setInteger:(int)a0 forUniformName:(id)a1;
+- (void)setFloat:(float)a0 forUniformName:(id)a1;
+- (void)setSize:(struct CGSize { double x0; double x1; })a0 forUniformName:(id)a1;
+- (void)setPoint:(struct CGPoint { double x0; double x1; })a0 forUniformName:(id)a1;
+- (void)setFloatVec3:(struct HTSGPUVector3 { float x0; float x1; float x2; })a0 forUniformName:(id)a1;
+- (void)setFloatVec4:(struct HTSGPUVector4 { float x0; float x1; float x2; float x3; })a0 forUniform:(id)a1;
+- (void)setFloatArray:(float *)a0 length:(int)a1 forUniform:(id)a2;
+- (struct CGImage { } *)newCGImageFromCurrentlyProcessedOutput;
+- (void)forceProcessingAtSize:(struct CGSize { double x0; double x1; })a0;
+- (void)forceProcessingAtSizeRespectingAspectRatio:(struct CGSize { double x0; double x1; })a0;
+- (void)useNextFrameForImageCapture;
+- (void)setInputRotation:(unsigned long long)a0 atIndex:(long long)a1;
+- (void)setInputFramebuffer:(id)a0 atIndex:(long long)a1;
+- (void)newFrameReadyAtTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0 atIndex:(long long)a1;
+- (void)setInputSize:(struct CGSize { double x0; double x1; })a0 atIndex:(long long)a1;
+- (struct CGSize { double x0; double x1; })sizeOfFBO;
+- (struct CGImage { } *)newCGImageFromCurrentlyProcessedOutput:(struct __CFString { } *)a0;
+- (void)initializeRenderer:(id)a0;
+- (void)setMatrix3f:(struct HTSGPUMatrix3x3 { struct HTSGPUVector3 { float x0; float x1; float x2; } x0; struct HTSGPUVector3 { float x0; float x1; float x2; } x1; struct HTSGPUVector3 { float x0; float x1; float x2; } x2; })a0 uniformName:(id)a1;
+- (void)setMatrix4f:(struct HTSGPUMatrix4x4 { struct HTSGPUVector4 { float x0; float x1; float x2; float x3; } x0; struct HTSGPUVector4 { float x0; float x1; float x2; float x3; } x1; struct HTSGPUVector4 { float x0; float x1; float x2; float x3; } x2; struct HTSGPUVector4 { float x0; float x1; float x2; float x3; } x3; })a0 uniformName:(id)a1;
+- (void)setPointArray:(struct CGPoint { double x0; double x1; } *)a0 length:(int)a1 uniformName:(id)a2;
+- (void)setIntegerArray:(int *)a0 length:(int)a1 uniformName:(id)a2;
+- (void)newFrameReadyAtTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0 atIndex:(long long)a1 exceptionBlock:(id /* block */)a2;
+- (void)resetRenderEnv;
+- (BOOL)wantsMonochromeInput;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+- (void)dealloc;
+- (void)initializeAttributes;
+
+@end

@@ -1,0 +1,29 @@
+@class PanelTitle, NSString, HTSLiveCommon, BattleConfigSetting;
+
+@interface HTSLiveBattleInviteMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int inviteType;
+@property (nonatomic) long long channelId;
+@property (copy, nonatomic) NSString *signExtra;
+@property (copy, nonatomic) NSString *inviteUid;
+@property (nonatomic) long long battleId;
+@property (copy, nonatomic) NSString *multipleAgainPrompts;
+@property (retain, nonatomic) PanelTitle *panelTitle;
+@property (nonatomic) BOOL hasPanelTitle;
+@property (nonatomic) int scene;
+@property (copy, nonatomic) NSString *inviteTitle;
+@property (copy, nonatomic) NSString *inviteSubTitle;
+@property (nonatomic) long long waitSec;
+@property (retain, nonatomic) BattleConfigSetting *battleConfigSetting;
+@property (nonatomic) BOOL hasBattleConfigSetting;
+@property (nonatomic) long long durationTime;
+@property (nonatomic) int multiPkMode;
+@property (copy, nonatomic) NSString *clientAttachedInfo;
+@property (copy, nonatomic) NSString *lynxData;
+@property (copy, nonatomic) NSString *eventTrackingInfo;
+
++ (id)descriptor;
+
+@end

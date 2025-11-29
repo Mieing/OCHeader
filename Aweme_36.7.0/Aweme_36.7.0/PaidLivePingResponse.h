@@ -1,0 +1,10 @@
+@class PaidLivePingResponse_PingData;
+
+@interface PaidLivePingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PaidLivePingResponse_PingData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

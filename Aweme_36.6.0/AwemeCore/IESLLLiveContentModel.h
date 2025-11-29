@@ -1,0 +1,39 @@
+@class IESLLLiveLevelConfig, NSString, NSArray, IESLLLivePackConfig, NSDictionary, IESLLLiveAggPreloadConfig, IESLLLiveLynxModel, IESLLLiveURLModel, NSNumber;
+
+@interface IESLLLiveContentModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *roomId;
+@property (copy, nonatomic) NSString *anchorId;
+@property (copy, nonatomic) NSString *webTitle;
+@property (copy, nonatomic) NSString *webUrl;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (retain, nonatomic) IESLLLiveAggPreloadConfig *aggPreloadConfig;
+@property (copy, nonatomic) NSArray *cardInfos;
+@property (retain, nonatomic) IESLLLiveURLModel *iconUrl;
+@property (retain, nonatomic) IESLLLiveURLModel *dynamicIconUrl;
+@property (copy, nonatomic) NSDictionary *extra;
+@property (copy, nonatomic) NSString *preloadWeb;
+@property (retain, nonatomic) IESLLLiveLynxModel *nativeSiteConfig;
+@property (retain, nonatomic) NSNumber *serverTime;
+@property (copy, nonatomic) NSDictionary *perfLog;
+@property (retain, nonatomic) IESLLLiveLevelConfig *levelConfig;
+@property (nonatomic) BOOL isFromBackend;
+@property (copy, nonatomic) NSArray *iconAlienationAnimationInfos;
+@property (retain, nonatomic) IESLLLivePackConfig *packConfig;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)iconUrlJSONTransformer;
++ (id)cardInfosJSONTransformer;
++ (id)dynamicIconUrlJSONTransformer;
++ (id)aggPreloadConfigJSONTransformer;
++ (id)nativeSiteConfigJSONTransformer;
++ (id)iconAlienationAnimationInfosJSONTransformer;
++ (id)levelConfigJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

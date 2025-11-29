@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface CardPropertyTag : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *storeLogo;
+@property (nonatomic) BOOL hasStoreLogo;
+@property (copy, nonatomic) NSString *storeName;
+
++ (id)descriptor;
+
+@end

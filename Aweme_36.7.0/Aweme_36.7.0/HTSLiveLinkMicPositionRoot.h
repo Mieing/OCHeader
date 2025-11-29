@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicPositionRoot : GPBRootObject
+
+@end

@@ -1,0 +1,74 @@
+@class AWEFeedChannelTopBarBadgeModel, NSMutableDictionary, AWEHPCommonActivityTabResourceManager, NSString, AWEHPHambListener, UIViewController;
+@protocol AWEHPChannelControllerConfigProtocol, AWEFeedTabItemViewControllerProtocol, AWEHPCommonActivityAdapter;
+
+@interface AWEHPCommonActivityChannelController : NSObject <AWEHPMessageObserverProtocol, AWEHPCommonActivityContainer, AWEHPCommonActivityTabResourceManagerDelegate, AWEHPChannelControllerProtocol>
+
+@property (nonatomic) BOOL isChannelLoaded;
+@property (nonatomic) BOOL isTopTabContainerAppear;
+@property (nonatomic) BOOL inPageShow;
+@property (retain, nonatomic) UIViewController<AWEFeedTabItemViewControllerProtocol> *contentVC;
+@property (retain, nonatomic) id<AWEHPCommonActivityAdapter> activityAdapter;
+@property (retain, nonatomic) AWEHPCommonActivityTabResourceManager *tabManager;
+@property (retain, nonatomic) NSMutableDictionary *trackerInfo;
+@property (retain, nonatomic) AWEHPHambListener *tabOfflineListener;
+@property (retain, nonatomic) AWEFeedChannelTopBarBadgeModel *badge;
+@property (nonatomic) double lastBubbleShowTime;
+@property (nonatomic) long long bubbleStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWEHPChannelControllerConfigProtocol> config;
+
+- (void)setupWithConfig:(id)a0;
+- (void)channelEnterWithModel:(id)a0;
+- (void)channelLeaveWithModel:(id)a0;
+- (void)channelTrackEntranceShowWithModel:(id)a0;
+- (void)channelTrackContentVCStayTimeWithModel:(id)a0;
+- (void)channelTopTabContainerDidAppear;
+- (void)channelTopTabContainerDidDisappear;
+- (void)showBubbleWithModel:(id)a0 completion:(id /* block */)a1;
+- (id)getCustomTrackParamsWithTrackInfo:(id)a0;
+- (void)channelDidLoadWithType:(unsigned long long)a0;
+- (BOOL)channelAllowReloadWithConfig:(id)a0;
+- (void)channelWillReloadWithConfig:(id)a0;
+- (void)channelDidReload;
+- (BOOL)channelIsAvailableWithError:(id *)a0;
+- (void)channelDidUnloadWithType:(unsigned long long)a0;
+- (void)channelViewDidAppear;
+- (void)channelViewDidDisappear;
+- (void)channelLandingTabWithModel:(id)a0;
+- (BOOL)slidingScrollViewShouldScrollWithPanGestureRecognizer:(id)a0;
+- (void)scrollViewDidScrollToIndex:(long long)a0;
+- (void)channelWillEnterForeground;
+- (BOOL)channelReleaseContentViewController:(id)a0;
+- (id)getContentViewController;
+- (void)generateContentVCIfNeed;
+- (id)p_getBadgeWithData:(id)a0;
+- (void)hideBadgeIfNeeded;
+- (void)p_tryShowBadgeWithModel:(id)a0 completion:(id /* block */)a1;
+- (void)p_hideBadge;
+- (void)showBadgeWithModel:(id)a0 completion:(id /* block */)a1;
+- (id)getBadgeContentWithModel:(id)a0;
+- (void)p_showBubbleWithModel:(id)a0 completion:(id /* block */)a1;
+- (void)hideBubbleIfNeeded;
+- (void)updateTopBarItemWithImageModel:(id)a0 defaultTitle:(id)a1 lottieCallback:(id /* block */)a2;
+- (void)removeActivityChannelIfNeeded;
+- (BOOL)activityNeedOffline;
+- (void)channelSendTrackerEvent:(id)a0 params:(id)a1;
+- (void)p_tryShowCurrentBubble;
+- (id)currentActivityTitle;
+- (void)p_updateTopBarItem;
+- (void)p_tryShowCurrentBadge;
+- (void)handleHPMessage:(id)a0;
+- (void)reloadActivityTab;
+- (void)didUpdateTopBarItemWithManager:(id)a0;
+- (void)didUpdateBadgeWithManager:(id)a0;
+- (void)didUpdateBubbleWithManager:(id)a0;
+- (void).cxx_destruct;
+- (void)reload;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+- (id)currentActivityID;
+
+@end

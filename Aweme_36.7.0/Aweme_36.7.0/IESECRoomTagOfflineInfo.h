@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESECRoomTagOfflineInfo : GPBMessage
+
+@property (nonatomic) long long tagType;
+@property (copy, nonatomic) NSString *userToast;
+
++ (id)descriptor;
+
+@end

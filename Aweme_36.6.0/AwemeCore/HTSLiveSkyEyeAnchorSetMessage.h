@@ -1,0 +1,15 @@
+@class NSString, HTSLiveCommon, HTSLiveImage;
+
+@interface HTSLiveSkyEyeAnchorSetMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveImage *titleImage;
+@property (nonatomic) BOOL hasTitleImage;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *topTip;
+@property (copy, nonatomic) NSString *bottomTip;
+
++ (id)descriptor;
+
+@end

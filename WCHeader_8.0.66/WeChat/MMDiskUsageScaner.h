@@ -1,0 +1,85 @@
+@class NSString, NSRecursiveLock, MMDiskExptConfig, MMDiskUsageScanStat, NSMutableDictionary, NSArray, MMFolderWrapCacheData, NSObject, MMLRUCache;
+@protocol OS_dispatch_queue, MMDiskUsageScannerDelegate, OS_dispatch_semaphore;
+
+@interface MMDiskUsageScaner : NSObject
+
+@property int scannerStatus;
+@property (nonatomic) unsigned int slowDownCheckSubFileNum;
+@property (nonatomic) unsigned int slowDownSleepMillisecond;
+@property (copy, nonatomic) NSString *currentAppRootPath;
+@property (retain, nonatomic) MMDiskUsageScanStat *scanStat;
+@property (retain, nonatomic) MMDiskExptConfig *exptConfig;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *concurrentSemaphore;
+@property (retain, nonatomic) NSRecursiveLock *lock;
+@property (retain, nonatomic) NSMutableDictionary *hardlinkInodeDict;
+@property (retain, nonatomic) NSMutableDictionary *cowFileDict;
+@property (retain, nonatomic) MMFolderWrapCacheData *wrapCacheData;
+@property (nonatomic) unsigned long long midImgWxamCount;
+@property (nonatomic) unsigned long long midImgWxamSize;
+@property (nonatomic) unsigned long long midImgTotalCount;
+@property (nonatomic) unsigned long long midImgTotalSize;
+@property (nonatomic) unsigned long long rawImgSize;
+@property (nonatomic) unsigned long long rawVideoSize;
+@property (nonatomic) unsigned long long compressedWxamCount;
+@property (nonatomic) unsigned long long compressedWxamSize;
+@property (nonatomic) unsigned long long wildFileCount;
+@property (nonatomic) unsigned long long wildFileSize;
+@property (nonatomic) unsigned long long cleanedRawImgSize;
+@property (nonatomic) unsigned long long cleanedRawVideoSize;
+@property (retain, nonatomic) NSArray *sessionArray;
+@property (retain, nonatomic) NSMutableDictionary *userNameDirHashDict;
+@property (retain, nonatomic) NSMutableDictionary *c2CFileItemDict;
+@property (retain, nonatomic) MMLRUCache *msgLruCache;
+@property (nonatomic) unsigned long long startScanTime;
+@property (weak, nonatomic) id<MMDiskUsageScannerDelegate> delegate;
+
++ (long long)latestTimeWithCurTime:(long long)a0 accessTime:(long long)a1 modifyTime:(long long)a2 changeTime:(long long)a3 birthTime:(long long)a4;
++ (void)markCleanCache;
++ (void)markCleanChatLog;
+
+- (id)jsonDictFromString:(id)a0;
+- (void)scanExistC2CFile;
+- (void)reportLastWholeWechatDataAsync;
+- (id)init;
+- (void)startWithScanConfig:(id)a0;
+- (void)stop;
+- (BOOL)isRunning;
+- (BOOL)scanBeginWithRootFolderWithScanConfig:(id)a0 withScanData:(id)a1;
+- (BOOL)waitingForScanFinish:(id)a0 withScanConfig:(id)a1;
+- (void)handleDeleteFolder:(id)a0 withFolderPath:(id)a1 withScanStat:(id)a2;
+- (void)scanFolderBegin:(id)a0 withParentPath:(id)a1 withScanConfig:(id)a2 withScanStat:(id)a3 depth:(int)a4;
+- (void)onScanFileInFolderFinish:(id)a0 withScanStat:(id)a1;
+- (BOOL)scanFileInFolder:(id)a0 withFolderPath:(id)a1 withScanConfig:(id)a2;
+- (void)mergeFolderStat:(id)a0 intoScanStat:(id)a1;
+- (BOOL)isFileCanNotChangeSize:(id)a0;
+- (void)scanSubFolder:(id)a0 withFolderPath:(id)a1 withScanConfig:(id)a2 withScanStat:(id)a3 depth:(int)a4;
+- (BOOL)deleteFile:(id)a0 matchInfo:(struct MMBizMatchInfo { long long x0; long long x1; int x2; int x3; })a1 inFolder:(id)a2 withScanConfig:(id)a3 fileSize:(unsigned long long *)a4 logicFileSize:(unsigned long long *)a5 latestTimeInterval:(long long *)a6;
+- (void)addBizFileStat:(id)a0 bizType:(long long)a1 fileSize:(unsigned long long)a2 fileInterval:(long long)a3;
+- (void)addBizDelFileStat:(id)a0 bizType:(long long)a1 delFileSize:(unsigned long long)a2;
+- (void)addFileTypeInUseStat:(id)a0 fileTypeInUse:(int)a1 fileSize:(unsigned long long)a2;
+- (void)addFileClassStat:(id)a0 fileClassType:(int)a1 fileSize:(unsigned long long)a2;
+- (void)registerBackgroundNotification;
+- (void)onWillSuspend:(id)a0;
+- (void)appDidBecomeActive:(id)a0;
+- (unsigned long long)getLastWholeWechatScanTime;
+- (unsigned long long)getLastWholeWechatReportTime;
+- (void)saveLastWholeWechatReportTime;
+- (void)markEnterNewStorageUsageView;
+- (void)reportLastWholeWechatData;
+- (void)reportWildFile:(BOOL)a0;
+- (void)reportWxamConvertResult;
+- (void)reportAutoCleanRawMedia;
+- (id)getMessageWithLruCache:(id)a0 MsgLocalId:(id)a1;
+- (void)reportExistC2CFile;
+- (long long)getReportValueFromMMKV:(id)a0;
+- (void)analyseC2CFile:(id)a0 FileName:(id)a1 BizType:(long long)a2;
+- (id)getFileItemKey:(id)a0;
+- (long long)getKeyFileSize:(unsigned long long)a0;
+- (id)jsonStringFromDict:(id)a0;
+- (BOOL)isTop50FileExt:(id)a0;
+- (int)getSendFileScene:(unsigned int)a0 ForwardType:(unsigned int)a1;
+- (void)saveConvertWxamResult:(unsigned long long)a0 CompressedSize:(unsigned long long)a1;
+- (void).cxx_destruct;
+
+@end

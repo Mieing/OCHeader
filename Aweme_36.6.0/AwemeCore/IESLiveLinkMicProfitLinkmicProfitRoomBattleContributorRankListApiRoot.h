@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitRoomBattleContributorRankListApiRoot : GPBRootObject
+
+@end

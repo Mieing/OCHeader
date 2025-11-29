@@ -1,0 +1,16 @@
+@class UrlStructV2;
+
+@interface ImageInfoStructV2 : GPBMessage
+
+@property (nonatomic) int height;
+@property (nonatomic) BOOL hasHeight;
+@property (nonatomic) int width;
+@property (nonatomic) BOOL hasWidth;
+@property (retain, nonatomic) UrlStructV2 *labelLarge;
+@property (nonatomic) BOOL hasLabelLarge;
+@property (retain, nonatomic) UrlStructV2 *labelThumb;
+@property (nonatomic) BOOL hasLabelThumb;
+
++ (id)descriptor;
+
+@end

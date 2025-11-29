@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpGameDoulinkApiRoot : GPBRootObject
+
+@end

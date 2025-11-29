@@ -1,0 +1,88 @@
+@class BDARVFeedADModel, NSString, NSArray, NSDictionary, BDARVSourceModel, BDARVPatchADModel, BDARVCardView, UIColor;
+@protocol BDARVCardViewContainerDelegate;
+
+@interface BDARVCardViewContainer : UIView <BDARVCardViewProtocol, BDARVCardViewContainerTypeProtocol, BDARVCardViewContainerProtocol>
+
+@property (nonatomic) BOOL bdpAppAdOnScreen;
+@property (copy, nonatomic) NSArray *feedAdModels;
+@property (retain, nonatomic) BDARVSourceModel *sourceModel;
+@property (retain, nonatomic) BDARVFeedADModel *feedAdModel;
+@property (nonatomic) long long adType;
+@property (nonatomic) unsigned long long loadState;
+@property (nonatomic) unsigned long long cardViewAdType;
+@property (retain, nonatomic) BDARVPatchADModel *patchAdModel;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } layoutFrame;
+@property (nonatomic) BOOL isVideoMute;
+@property (copy, nonatomic) UIColor *btnHighlightColor;
+@property (copy, nonatomic) UIColor *btnNormalColor;
+@property (retain, nonatomic) BDARVCardView *innerCardView;
+@property (copy, nonatomic) NSDictionary *playerConfig;
+@property (weak, nonatomic) id<BDARVCardViewContainerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)bootstrapLoad;
++ (void)startPreload:(id)a0;
++ (void)bannerPreloadSuccessWithSource:(id)a0 adType:(id)a1 duration:(id)a2;
++ (id)getBDARVCardViewContainer:(id)a0 feedAdModels:(id)a1 delegate:(id)a2;
++ (id)getBDARVNovelCardViewContainer:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 source:(id)a1 delegate:(id)a2;
++ (id)getBDARVPatchCardViewContainer:(id)a0 source:(id)a1 delegate:(id)a2;
++ (void)loadAds:(long long)a0 source:(id)a1 completed:(id /* block */)a2;
++ (void)loadPatchAds:(long long)a0 source:(id)a1 completed:(id /* block */)a2;
++ (long long)cacheAdCount:(id)a0;
++ (long long)patchCacheAdCountCreatorID:(id)a0;
++ (long long)cacheAdCountAdFrom:(id)a0;
++ (void)clearCacheAdFrom:(id)a0;
+
+- (void)hideCloseBtn;
+- (BOOL)isVerticalVideo;
+- (void)sendShowEvent;
+- (void)layoutWithOrigin:(struct CGPoint { double x0; double x1; })a0;
+- (void)layoutWithWidth:(double)a0;
+- (void)layoutWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)cardViewDidLoadFailWithError:(id)a0;
+- (void)cardViewDidLoadSuccess;
+- (void)cardViewDidClickCardViewWithInfo:(id)a0;
+- (void)sendCardViewEventWithLabel:(id)a0;
+- (void)cardViewDidClickCloseWithInfo:(id)a0;
+- (void)cardViewReportAction:(id)a0 adModel:(id)a1;
+- (void)cardViewDidClickCardViewButtonWithInfo:(id)a0;
+- (void)sendCardViewEventWithTag:(id)a0 label:(id)a1 refer:(id)a2;
+- (void)sendShowOverEvent:(id)a0;
+- (void)innerLoadContent;
+- (id)loadNovelAdModuleFromLocal:(id)a0;
+- (id)loadAdModuleFromLocal;
+- (void)cardViewPreloadMPWithInfo:(id)a0;
+- (id)loadModuleWithAdType:(long long)a0;
+- (BOOL)handleAppstoreClosedLoopWith:(id)a0;
+- (void)cardViewWillStartLoad;
+- (void)cardViewDidContentResize:(struct CGSize { double x0; double x1; })a0 info:(id)a1;
+- (void)cardViewPreloadFormWithInfo:(id)a0;
+- (void)cardViewDidClickBannerWithInfo:(id)a0;
+- (void)cardViewDidClickVideoWithInfo:(id)a0;
+- (void)cardViewDidClickFullScreen:(BOOL)a0 completed:(id /* block */)a1;
+- (void)cardViewRenderVideoStart;
+- (void)cardViewCloseAd;
+- (void)cardViewLoadVideoError;
+- (void)cardViewVideoAdDidFinish;
+- (void)cardViewMuteBtnClick:(BOOL)a0;
+- (void)sendCardViewEventWithTag:(id)a0 label:(id)a1 refer:(id)a2 extra:(id)a3;
+- (void)bdpPluginDealloc;
+- (void)close;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (BOOL)hasType:(long long)a0;
+- (void)stop;
+- (void)hide;
+- (BOOL)hasVideo;
+- (void)resume;
+- (void)dealloc;
+- (void)show;
+- (void)enterFullScreen;
+- (void)exitFullScreen;
+- (void)loadContent;
+
+@end

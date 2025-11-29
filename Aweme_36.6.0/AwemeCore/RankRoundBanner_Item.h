@@ -1,0 +1,16 @@
+@class NSString, NSMutableArray, HTSLiveImage;
+
+@interface RankRoundBanner_Item : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *URL;
+@property (retain, nonatomic) NSMutableArray *listArray;
+@property (readonly, nonatomic) unsigned long long listArray_Count;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (retain, nonatomic) HTSLiveImage *background;
+@property (nonatomic) BOOL hasBackground;
+
++ (id)descriptor;
+
+@end

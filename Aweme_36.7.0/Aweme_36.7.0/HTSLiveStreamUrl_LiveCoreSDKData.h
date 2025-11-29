@@ -1,0 +1,17 @@
+@class HTSLiveStreamUrl_LiveCoreSDKData_PullData, HTSLiveStreamUrl_LiveCoreSDKData_PushData, NSString;
+
+@interface HTSLiveStreamUrl_LiveCoreSDKData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveStreamUrl_LiveCoreSDKData_PullData *pullData;
+@property (nonatomic) BOOL hasPullData;
+@property (retain, nonatomic) HTSLiveStreamUrl_LiveCoreSDKData_PushData *pushData;
+@property (nonatomic) BOOL hasPushData;
+@property (copy, nonatomic) NSString *size;
+
++ (id)descriptor;
+
+- (id)size;
+- (id)pullData;
+- (id)aweLiveCoreSDKData;
+
+@end

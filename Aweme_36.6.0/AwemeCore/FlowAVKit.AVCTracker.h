@@ -1,0 +1,49 @@
+@interface FlowAVKit.AVCTracker : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ _voiceCallProvider;
+    void /* unknown type, empty encoding */ _trackerProvider;
+    void /* unknown type, empty encoding */ agentIntentionParams;
+    void /* unknown type, empty encoding */ enableVoiceCallTrackerOpt;
+    void /* unknown type, empty encoding */ safeContext;
+    void /* unknown type, empty encoding */ _context;
+    void /* unknown type, empty encoding */ currentProactiveSummaryId;
+    void /* unknown type, empty encoding */ proactiveResponseIndexDict;
+    void /* unknown type, empty encoding */ currentStatus;
+    void /* unknown type, empty encoding */ currentStatusString;
+    void /* unknown type, empty encoding */ startVoiceCallTimeStamp;
+    void /* unknown type, empty encoding */ userSpeakDuration;
+    void /* unknown type, empty encoding */ botSpeakDuration;
+    void /* unknown type, empty encoding */ isInterrupt;
+    void /* unknown type, empty encoding */ ttsContent;
+    void /* unknown type, empty encoding */ asrContent;
+    void /* unknown type, empty encoding */ sessionStartedTimestamp;
+    void /* unknown type, empty encoding */ isAIInMotion;
+    void /* unknown type, empty encoding */ scene;
+    void /* unknown type, empty encoding */ secScene;
+    void /* unknown type, empty encoding */ botName;
+    void /* unknown type, empty encoding */ lastASRTaskId;
+    void /* unknown type, empty encoding */ lastTTSTaskId;
+    void /* unknown type, empty encoding */ isCaptionMode;
+    void /* unknown type, empty encoding */ callID;
+    void /* unknown type, empty encoding */ vuiASRSet;
+    void /* unknown type, empty encoding */ vuiChatSet;
+    void /* unknown type, empty encoding */ vuiTTSFirstPackageCnt;
+    void /* unknown type, empty encoding */ imMessageTimestamps;
+    void /* unknown type, empty encoding */ vuiMessageTimestamps;
+    void /* unknown type, empty encoding */ _ttsPlaySpan;
+    void /* unknown type, empty encoding */ _messageForFeelSpan;
+    void /* unknown type, empty encoding */ _asrEndToFirstTxtPkgSpan;
+    void /* unknown type, empty encoding */ _asrEndToFirstTTSDataPkgSpan;
+    void /* unknown type, empty encoding */ _ttsFirstDataPkgToPlayStartSpan;
+    void /* unknown type, empty encoding */ isTTSEnd;
+    void /* unknown type, empty encoding */ _isTTSBreak;
+    void /* unknown type, empty encoding */ _settingsProvider;
+    void /* unknown type, empty encoding */ sessionStatus;
+    void /* unknown type, empty encoding */ _currentError;
+    void /* unknown type, empty encoding */ _pvTracker;
+    void /* unknown type, empty encoding */ vuiStartTime;
+    void /* unknown type, empty encoding */ disconnectTimes;
+    void /* unknown type, empty encoding */ connectTime;
+    void /* unknown type, empty encoding */ connectedDuration;
+}
+
+@end

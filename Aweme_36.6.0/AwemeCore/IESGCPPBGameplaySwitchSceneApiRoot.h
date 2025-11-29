@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplaySwitchSceneApiRoot : GPBRootObject
+
+@end

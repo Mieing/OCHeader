@@ -1,0 +1,10 @@
+@interface MemoryAbilityGetStatusResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long rememberStatus;
+@property (nonatomic) long long rememberCardStatus;
+@property (nonatomic) long long showLiveData;
+@property (nonatomic) long long showImportantCard;
+
++ (id)descriptor;
+
+@end

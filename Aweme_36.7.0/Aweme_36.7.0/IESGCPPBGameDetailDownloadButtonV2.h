@@ -1,0 +1,14 @@
+@class NSString, IESGCPPBGameDownloadInfoV2;
+
+@interface IESGCPPBGameDetailDownloadButtonV2 : GPBMessage
+
+@property (nonatomic) double avgScore;
+@property (nonatomic) double evaluationScore;
+@property (retain, nonatomic) IESGCPPBGameDownloadInfoV2 *downloadInfo;
+@property (nonatomic) BOOL hasDownloadInfo;
+@property (copy, nonatomic) NSString *subTitle;
+@property (nonatomic) BOOL isInPreDownloadPeriod;
+
++ (id)descriptor;
+
+@end

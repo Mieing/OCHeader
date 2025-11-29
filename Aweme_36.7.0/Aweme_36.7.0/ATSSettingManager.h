@@ -1,0 +1,15 @@
+@interface ATSSettingManager : NSObject
+
++ (id)corelocationMonitorParams;
++ (id)downgradeLocationRequestCountryList;
++ (id)requestLocationRestrictedCountryList;
++ (id)disableLocationRequestCountryList;
++ (BOOL)shouldDowngradeLocationRequest;
++ (BOOL)enableCoreLocationMonitor;
++ (BOOL)downgradeWebviewRequest;
++ (BOOL)downgradeAdWebviewRequest;
++ (BOOL)downgradeServiceEnable;
++ (long long)downgradeAuthorizationStatus;
++ (BOOL)downgradeAuthorize;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomMultiAnchorEffectApiRoot : GPBRootObject
+
+@end

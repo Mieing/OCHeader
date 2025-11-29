@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface QueryPopularCardResponse_CardInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *cardsArray;
+@property (readonly, nonatomic) unsigned long long cardsArray_Count;
+@property (nonatomic) long long total;
+@property (nonatomic) long long totalEnterNumber;
+
++ (id)descriptor;
+
+@end

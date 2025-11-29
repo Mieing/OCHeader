@@ -1,0 +1,73 @@
+@class UIView, NSTimer, UIImageView, AWEStoryToolBar, UIButton, CAShapeLayer, UICollectionView, AWECaptionScrollFlowLayout, UILabel, ACCAnimatedButton;
+@protocol ACCLoadingViewProtocol, AWECaptionScrollFlowLayoutDelegate;
+
+@interface AWECaptionBottomView : UIView
+
+@property (retain, nonatomic) UIView *loadingBgView;
+@property (retain, nonatomic) UIView *retryBgView;
+@property (retain, nonatomic) UIView *emptyBgView;
+@property (retain, nonatomic) UIView *captionBgView;
+@property (retain, nonatomic) UIView *styleBgView;
+@property (retain, nonatomic) UIView<ACCLoadingViewProtocol> *loadingView;
+@property (retain, nonatomic) UIView *loadingViewBgView;
+@property (retain, nonatomic) UILabel *loadingTitle;
+@property (retain, nonatomic) UILabel *loadingSubtitle1;
+@property (retain, nonatomic) UILabel *loadingSubtitle2;
+@property (retain, nonatomic) UIButton *cancelButton;
+@property (retain, nonatomic) UILabel *retryTitle;
+@property (retain, nonatomic) UIButton *retryButton;
+@property (retain, nonatomic) UIButton *quitButton;
+@property (retain, nonatomic) UILabel *newRetryTitle;
+@property (retain, nonatomic) UILabel *newRetrySubtitle;
+@property (retain, nonatomic) UIButton *newRetryButton;
+@property (retain, nonatomic) UILabel *emptyTitle;
+@property (retain, nonatomic) UIButton *emptyCancelButton;
+@property (retain, nonatomic) UILabel *captionTitle;
+@property (retain, nonatomic) ACCAnimatedButton *styleButton;
+@property (retain, nonatomic) ACCAnimatedButton *deleteButton;
+@property (retain, nonatomic) ACCAnimatedButton *editButton;
+@property (retain, nonatomic) UIView *separateLine;
+@property (retain, nonatomic) UICollectionView *captionCollectionView;
+@property (retain, nonatomic) UILabel *transitionTitleLabel;
+@property (retain, nonatomic) UIImageView *transitionImageView;
+@property (retain, nonatomic) ACCAnimatedButton *transitionButton;
+@property (retain, nonatomic) AWEStoryToolBar *styleToolBar;
+@property (retain, nonatomic) UIView *styleSeparateLine;
+@property (retain, nonatomic) ACCAnimatedButton *styleCancelButton;
+@property (retain, nonatomic) ACCAnimatedButton *styleSaveButton;
+@property (retain, nonatomic) NSTimer *progressTimer;
+@property (retain, nonatomic) NSTimer *hintTimer;
+@property (retain, nonatomic) CAShapeLayer *maskLayer;
+@property (nonatomic) long long currentType;
+@property (nonatomic) double realProgress;
+@property (nonatomic) long long currentStage;
+@property (copy, nonatomic) id /* block */ refreshUICompletion;
+@property (retain, nonatomic) AWECaptionScrollFlowLayout *layout;
+@property (weak, nonatomic) id<AWECaptionScrollFlowLayoutDelegate> layoutDelegate;
+@property (nonatomic) long long currentRow;
+
+- (void)startLoadingAnim;
+- (void)stopLoadingAnim;
+- (void)refreshUIWithType:(long long)a0;
+- (void)updateRealLoadingProgress:(double)a0 stage:(long long)a1;
+- (void)layoutLoadingBgView;
+- (void)layoutEmptyBgView;
+- (void)layoutRetryBgView;
+- (void)layoutCaptionBgView;
+- (void)layoutStyleBgView;
+- (void)startRealLoadingAnim;
+- (void)loadingSubTitleAnimationWithText:(id)a0 flag:(int)a1;
+- (void)startProgressAnimationWithProgress:(long long)a0 interval:(double)a1;
+- (void)startLoadingSubtitleAnimation;
+- (void)startProgressAnimation;
+- (id)createCaptionCollectionView;
+- (void)updateCaptionBottomVieMandarinTranslationEnable:(BOOL)a0;
+- (void)updateCaptionBottomVieMandarinTranslationSelected:(BOOL)a0;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)setupUI;
+
+@end

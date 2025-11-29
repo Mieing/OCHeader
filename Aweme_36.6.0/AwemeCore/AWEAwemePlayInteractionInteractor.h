@@ -1,0 +1,74 @@
+@class AWEPlayInteractionPersonElementViewModel, AWEPlayInteractionMusicFavoriteViewModel, AWEPlayInteractionPanelViewModel, AWEPlayInteractionLikeElementViewModel, AWEPlayInteractionUserAvatarElementViewModel, NSDictionary, NSObject, AWEPlayInteractionDescriptionElementViewModel, AWEPlayInteractionCommentElementViewModel, AWEPlayInteractionContext, NSString, AWEPlayInteractionShareElementViewModel, AWEPlayInteractionMusicInfoElementViewModel, AWEAwemeModel, NSNumber, AWEPlayInteractionAnchorViewModel;
+@protocol AWEPlayInteractionFavoriteElementViewModelProtocol;
+
+@interface AWEAwemePlayInteractionInteractor : NSObject <AWEAwemePlayInteractionInteractorProtocol>
+
+@property (retain, nonatomic) AWEPlayInteractionContext *context;
+@property (retain, nonatomic) AWEPlayInteractionPersonElementViewModel *personViewModel;
+@property (retain, nonatomic) AWEPlayInteractionUserAvatarElementViewModel *userAvatarViewModel;
+@property (retain, nonatomic) AWEPlayInteractionCommentElementViewModel *commentViewModel;
+@property (retain, nonatomic) AWEPlayInteractionMusicFavoriteViewModel *musicCollectViewModel;
+@property (retain, nonatomic) AWEPlayInteractionMusicInfoElementViewModel *musicInfoViewModel;
+@property (retain, nonatomic) AWEPlayInteractionAnchorViewModel *anchorViewModel;
+@property (retain, nonatomic) AWEPlayInteractionDescriptionElementViewModel *descriptionViewModel;
+@property (retain, nonatomic) AWEPlayInteractionPanelViewModel *panelViewModel;
+@property (retain, nonatomic) NSString *referString;
+@property (retain, nonatomic) NSString *pageTypeString;
+@property (retain, nonatomic) NSString *fromPage;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (nonatomic) unsigned long long feedType;
+@property (nonatomic) BOOL hasEnterFullScreen;
+@property (copy, nonatomic) NSString *adEventName;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) AWEAwemeModel *fromModel;
+@property (nonatomic) unsigned long long eventSource;
+@property (retain, nonatomic) NSDictionary *logExtraDict;
+@property (nonatomic) long long shareSceneType;
+@property (retain, nonatomic) NSString *interestGroupID;
+@property (nonatomic) BOOL mustShowFavoriteToast;
+@property (retain, nonatomic) NSNumber *favoriteToastBottomPadding;
+@property (copy, nonatomic) id /* block */ shareActionStatusBlock;
+@property (retain, nonatomic) AWEPlayInteractionShareElementViewModel *shareViewModel;
+@property (retain, nonatomic) AWEPlayInteractionLikeElementViewModel *likeViewModel;
+@property (retain, nonatomic) NSObject<AWEPlayInteractionFavoriteElementViewModelProtocol> *favoriteViewModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onMvLabelClicked:(id)a0;
+- (void)onOneKeyLabelClicked:(id)a0;
+- (void)onMusicBeatTemplateLabelClicked:(id)a0;
+- (void)onPoiLabelClicked:(id)a0;
+- (void)onStickerLabelClicked:(id)a0;
+- (void)onCommentButtonClicked:(id)a0;
+- (void)onShareButtonTapped:(id)a0;
+- (void)onAuthorLabelClicked:(id)a0;
+- (void)onDescriptionLabelClicked:(id)a0 url:(id)a1;
+- (void)favoriteWithFavoriteBlock:(id /* block */)a0 unfavoriteBlock:(id /* block */)a1 otherActionBlock:(id /* block */)a2 actionFailedBlock:(id /* block */)a3 enterMethod:(id)a4 enterFrom:(id)a5 snackBarBottomPadding:(double)a6 forceAFDSnackBar:(BOOL)a7 a11yDismissView:(id)a8;
+- (void)favoriteWithFavoriteBlock:(id /* block */)a0 unfavoriteBlock:(id /* block */)a1 otherActionBlock:(id /* block */)a2 actionFailedBlock:(id /* block */)a3 actionSuccessBlock:(id /* block */)a4 enterMethod:(id)a5 enterFrom:(id)a6 snackBarBottomPadding:(double)a7 forceAFDSnackBar:(BOOL)a8 a11yDismissView:(id)a9 shouldBlockSnackBar:(BOOL)a10;
+- (void)onLongPressShareWithSender:(id)a0;
+- (void)longPressDislikeVideo;
+- (void)longPressDislikeVideoWithButtonType:(unsigned long long)a0;
+- (void)longPressFriendsAction;
+- (id)dislikeButtonText;
+- (void)onFollowViewClicked:(id)a0 comletion:(id /* block */)a1;
+- (void)onUserAvatarViewClicked:(id)a0 contentSource:(id)a1 enterLiveRoomBlock:(id /* block */)a2;
+- (void)onCommentAddNotification:(id)a0 completion:(id /* block */)a1;
+- (void)onCommentDeleteNotification:(id)a0 completion:(id /* block */)a1;
+- (void)onCommentTotalCountNotification:(id)a0 completion:(id /* block */)a1;
+- (void)onAuthorLabelClicked:(id)a0 contentSource:(id)a1;
+- (void)musicFavoriteWithFavoriteBlock:(id /* block */)a0 unfavoriteBlock:(id /* block */)a1 otherActionBlock:(id /* block */)a2 actionFailedBlock:(id /* block */)a3 actionSuccessBlock:(id /* block */)a4 enterMethod:(id)a5 enterFrom:(id)a6;
+- (void)onPoiLabelClicked:(id)a0 enterMethod:(id)a1;
+- (void)onMusicInfoLabelClicked:(id)a0 trackerDict:(id)a1;
+- (id)realShowAuthor;
+- (void)triggerSyncStatus;
+- (void)doSafeDiggWithConfig:(id)a0;
+- (void)favoriteWithFavoriteBlock:(id /* block */)a0 unfavoriteBlock:(id /* block */)a1 otherActionBlock:(id /* block */)a2 actionFailedBlock:(id /* block */)a3 enterMethod:(id)a4 enterFrom:(id)a5 snackBarBottomPadding:(double)a6;
+- (void)setupObserver;
+- (void)onVideoPlayerViewDoubleClicked:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setupContext;
+
+@end

@@ -1,0 +1,10 @@
+@interface IESLivePreloadRequestDressImpl : IESLiveBackendRequestBaseImpl
+
++ (void)ieslivekit_register_preloadrequstAction;
++ (id)requstBizPath;
++ (BOOL)activeRequestImpl;
+
+- (id)bizParams;
+- (unsigned long long)responseFormat;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEIMStreakPetElfUserPrefetchManagerWakeUp : NSObject
+
+@end

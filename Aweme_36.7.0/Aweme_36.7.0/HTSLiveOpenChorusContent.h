@@ -1,0 +1,11 @@
+@class NSString, IESLiveChorusInfo;
+
+@interface HTSLiveOpenChorusContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveChorusInfo *chorusInfo;
+@property (nonatomic) BOOL hasChorusInfo;
+@property (copy, nonatomic) NSString *subSingerToast;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESLiveKtvProfitKtvGetRealTimeChorusGiftConfigApiRoot : GPBRootObject
+
+@end

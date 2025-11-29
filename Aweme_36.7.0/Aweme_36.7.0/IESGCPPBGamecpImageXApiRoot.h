@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpImageXApiRoot : GPBRootObject
+
+@end

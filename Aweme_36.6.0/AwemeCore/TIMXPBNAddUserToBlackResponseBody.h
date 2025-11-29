@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNAddUserToBlackResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *failedInfoArray;
+@property (readonly, nonatomic) unsigned long long failedInfoArray_Count;
+
++ (id)descriptor;
+
+@end

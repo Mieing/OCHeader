@@ -1,0 +1,81 @@
+@class AWEStudioCaptionInfoModel, NSString, NSMutableDictionary, NSURL, NSMutableArray;
+@protocol ACCPublishRepository, ACCFileUploadServiceProtocol;
+
+@interface AWERepoCaptionModel : NSObject <AWERepositoryDraftProtocol, ACCRepositoryDraftContextDeprecated, ACCRepositoryRequestParamsDeprecated, NSCopying, ACCRepositoryContextDeprecated, ACCRepositoryTrackContextDeprecated>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) id<ACCFileUploadServiceProtocol> videoUploadService;
+@property (copy, nonatomic) NSURL *mixAudioUrl;
+@property (copy, nonatomic) NSString *mixAudioInfoMd5;
+@property (copy, nonatomic) AWEStudioCaptionInfoModel *captionInfo;
+@property (nonatomic) BOOL fromAdvancedEditCaptionData;
+@property (copy, nonatomic) NSString *fromAdvancedEditMusicId;
+@property (retain, nonatomic) NSString *captionPath;
+@property (nonatomic) long long currentAudioSourceType;
+@property (nonatomic) long long audioState;
+@property (retain, nonatomic) NSMutableDictionary *audioSourceContexts;
+@property (retain, nonatomic) NSMutableDictionary *mandarinStatusByAudioSource;
+@property (copy, nonatomic) NSString *taskId;
+@property (copy, nonatomic) NSString *vid;
+@property (retain, nonatomic) NSMutableArray *captions;
+@property (nonatomic) unsigned long long mandarinStatus;
+@property (nonatomic) long long currentStatus;
+@property (nonatomic) BOOL deleted;
+@property (copy, nonatomic) NSString *tosKey;
+@property (nonatomic) BOOL enableMandarinTranslation;
+@property (nonatomic) BOOL isMandarinTranslation;
+@property (retain, nonatomic) NSString *translationLanguage;
+@property (nonatomic) BOOL translationToMandarin;
+@property (nonatomic) BOOL blockTransition;
+@property (copy, nonatomic) NSString *autoCaptionTemplateId;
+@property (copy, nonatomic) NSString *autoCaptionTemplateName;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<ACCPublishRepository> repoDeprecated;
+
++ (id)captionsTextCountWithCaptions:(id)a0;
+
+- (id)acc_publishRequestParams:(id)a0;
+- (id)initWithDraft:(id)a0;
+- (void)saveWithDraft:(id)a0;
+- (id)acc_referExtraParams;
+- (id)acc_publishTrackEventParams:(id)a0;
+- (id)captionsTextCount;
+- (id)captionWordsForCheck;
+- (id)extraWordsForCheck;
+- (void)draftWillBeSavedWithID:(id)a0;
+- (void)modelDidRetrievedFromDraftWithID:(id)a0;
+- (BOOL)isMultiAudioSourceEnabled;
+- (id)contextForAudioSourceType:(long long)a0;
+- (BOOL)shouldUseDirectProperties;
+- (id)currentMixAudioInfoMd5;
+- (void)uploadAudioWithUrl:(id)a0 status:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)commitAudioWithMaterialId:(id)a0 status:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)queryCaptionWithTaskId:(id)a0 status:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)resetQueryStatusWithErrorCode:(long long)a0;
+- (BOOL)audioDidChanged;
+- (void)resetAudioChangeFlag;
+- (void)syncAutoCaptionTemplateInfo;
+- (void)feedbackCaptionWithAwemeId:(id)a0;
+- (void)queryCaptionsWithUrl:(id)a0 audioSourceType:(long long)a1 status:(unsigned long long)a2 completion:(id /* block */)a3;
+- (void)updateWithUploadInfo:(id)a0;
+- (id)generateUploadInfo;
+- (void)clearMultiAudioSourceContext;
+- (id)nameForAudioSourceType:(long long)a0;
+- (id)nameForMandarinStatus:(unsigned long long)a0;
+- (void)loadAllContextsFromDraft:(id)a0;
+- (void)saveAllContextsToDraft:(id)a0;
+- (void)loadContextFromDraft:(id)a0 audioSourceType:(long long)a1 mandarinStatus:(unsigned long long)a2 dtoContext:(id)a3;
+- (void)saveSpecificContextToDraft:(id)a0 audioSourceType:(long long)a1 mandarinStatus:(unsigned long long)a2 contextSetter:(id /* block */)a3;
+- (void).cxx_destruct;
+- (id)init;
+- (id)currentContext;
+- (void)finishWithError:(id)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

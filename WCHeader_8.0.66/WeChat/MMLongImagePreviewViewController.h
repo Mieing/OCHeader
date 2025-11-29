@@ -1,0 +1,76 @@
+@class ImageBrowseButton, FavoritesItem, UIImage, MMLongImageCropResult, NSString, UIImageView, MMLongImagePreviewBottomView, MMLongImagePreviewContext, CAGradientLayer, ForwardMessageLogicController, MMUIButton, UIScrollView;
+@protocol MMLongImagePreviewViewControllerDelegate;
+
+@interface MMLongImagePreviewViewController : MMUIViewController <UIScrollViewDelegate, ForwardMessageLogicDelegate, IFavoritesExt, MMLongImageCropViewControllerDelelgate>
+
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIImage *originImage;
+@property (retain, nonatomic) UIImage *previewImage;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) CAGradientLayer *topGradientLayer;
+@property (retain, nonatomic) MMUIButton *closeBtn;
+@property (retain, nonatomic) MMLongImagePreviewBottomView *bottomBarView;
+@property (retain, nonatomic) CAGradientLayer *bottomGradientLayer;
+@property (retain, nonatomic) MMUIButton *cropBtn;
+@property (retain, nonatomic) ImageBrowseButton *forwardBtn;
+@property (retain, nonatomic) ImageBrowseButton *favoriteBtn;
+@property (retain, nonatomic) ImageBrowseButton *saveBtn;
+@property (nonatomic) BOOL disableForward;
+@property (nonatomic) BOOL disableFavorite;
+@property (nonatomic) BOOL inEditingMode;
+@property (retain, nonatomic) ForwardMessageLogicController *forwardLogicController;
+@property (retain, nonatomic) FavoritesItem *addingFavItem;
+@property (retain, nonatomic) MMLongImageCropResult *croppedResult;
+@property (nonatomic) BOOL hasEdit;
+@property (retain, nonatomic) MMLongImagePreviewContext *context;
+@property (weak, nonatomic) id<MMLongImagePreviewViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithImage:(id)a0;
+- (id)initWithImage:(id)a0 disableForward:(BOOL)a1 disableFavorite:(BOOL)a2;
+- (void)viewWillBePoped:(BOOL)a0;
+- (BOOL)useTransparentNavibar;
+- (BOOL)useBlackStatusbar;
+- (BOOL)hidesStatusBar;
+- (BOOL)shouldInteractivePop;
+- (void)viewDidLoad;
+- (void)initTopBar;
+- (void)layoutTopBar;
+- (void)onReturn;
+- (void)delayDimissMySelf:(double)a0;
+- (void)initScrollView;
+- (void)layoutPreviewImage;
+- (void)initBottomBar;
+- (void)layoutBottomBar;
+- (void)viewDidLayoutSubviews;
+- (id)viewForZoomingInScrollView:(id)a0;
+- (void)scrollViewDidZoom:(id)a0;
+- (struct CGPoint { double x0; double x1; })scrollViewCenter;
+- (struct CGSize { double x0; double x1; })scrollViewVisibleSize;
+- (void)updateZoomScaleWithTouchPoint:(struct CGPoint { double x0; double x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })zoomRectForScale:(float)a0 withCenter:(struct CGPoint { double x0; double x1; })a1;
+- (void)handleDoubleTap:(id)a0;
+- (void)onClickCropBtn;
+- (void)onFinishCropImage:(id)a0;
+- (id)onGetImageViewForTransition;
+- (void)onCropViewControllerPushTransitionInAnimateDuration;
+- (void)onCropViewControllerPushTransitionEnd;
+- (void)onCropViewControllerPopTransitionBegan;
+- (void)onCropViewControllerPopTransitionInAnimateDuration;
+- (void)onCropViewControllerPopTransitionEnd;
+- (void)onClickFowardBtn;
+- (id)genMsgWrapWithImage:(id)a0;
+- (void)forwardPreviewImageInFragment;
+- (void)__forwardMsgWithArrImage:(id)a0;
+- (id)getCurrentViewController;
+- (void)OnForwardMessageSend:(id)a0;
+- (void)onClickFavoriteBtn;
+- (void)addFavImageInFragment;
+- (void)__addFavItemWithArrImage:(id)a0;
+- (void)onClickSaveBtn;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface AWELiveViewZoomServiceImpl : NSObject <IESLiveViewZoomService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)viewZoomModeOn;
+- (unsigned long long)currentViewZoomMode;
+- (double)currentViewZoomScale;
+
+@end

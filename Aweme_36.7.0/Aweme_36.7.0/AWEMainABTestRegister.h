@@ -1,0 +1,8 @@
+@interface AWEMainABTestRegister : NSObject
+
++ (void)_aweLazyRegisterLoad;
++ (Class)aAWEMainABTestCommonAdapterClass;
+
+- (id)aAWEMainABTestCommonAdapter;
+
+@end

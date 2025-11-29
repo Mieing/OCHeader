@@ -1,0 +1,15 @@
+@class NSString, NSMutableArray;
+
+@interface IESGCPPBGameDetailStrategy : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *feedItemsArray;
+@property (readonly, nonatomic) unsigned long long feedItemsArray_Count;
+@property (retain, nonatomic) NSMutableArray *tabsArray;
+@property (readonly, nonatomic) unsigned long long tabsArray_Count;
+@property (nonatomic) BOOL hideTab;
+@property (copy, nonatomic) NSString *titleName;
+@property (nonatomic) BOOL jumpAllEnable;
+
++ (id)descriptor;
+
+@end

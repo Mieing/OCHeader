@@ -1,0 +1,73 @@
+@class NSString, NSArray, IESLivePlaybackComponentContext, HTSLiveEpisode, HTSEventContext, NSDate;
+@protocol IESLivePlaybackSeekViewModelReaction;
+
+@interface IESLivePlaybackSeekViewModel : NSObject <IESVSVideoPlayAction, IESLiveAirPlayAction, IESLivePlaybackRoomAction, IESLivePlaybackPaywallFreeTrialAction, IESLivePaidStreamActionAdapter, IESLivePlaybackSeekRouter>
+
+@property (nonatomic) unsigned long long currentSeekAction;
+@property (nonatomic) BOOL enableSeek;
+@property (nonatomic) double progress;
+@property (nonatomic) double watchDuration;
+@property (retain, nonatomic) NSString *watchDurationStr;
+@property (retain, nonatomic) NSString *totalDurationStr;
+@property (retain, nonatomic) NSArray *signModels;
+@property (nonatomic) BOOL hiddenWatchNew;
+@property (nonatomic) BOOL isSeekingProgress;
+@property (nonatomic) BOOL needHideProgressIndicator;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } playerFrame;
+@property (retain, nonatomic) IESLivePlaybackComponentContext *context;
+@property (nonatomic) double duration;
+@property (nonatomic) double liveStartTime;
+@property (retain, nonatomic) HTSLiveEpisode *episode;
+@property (retain, nonatomic) HTSEventContext *eventContext;
+@property (nonatomic) BOOL receiveRemoteData;
+@property (nonatomic) BOOL hadReportProgressShowInPortrait;
+@property (nonatomic) BOOL hadReportProgressShowInLandscape;
+@property (nonatomic) BOOL hadReportWatchNewShowInPortrait;
+@property (nonatomic) BOOL hadReportWatchNewShowInLandscape;
+@property (nonatomic) long long startWatchRecord;
+@property (retain, nonatomic) NSDate *startSeekTime;
+@property (weak, nonatomic) id<IESLivePlaybackSeekViewModelReaction> seekVMReaction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)startConnectToDevice;
+- (void)paidStreamTrialDidStart:(long long)a0;
+- (void)paidStreamTrialDidFinish:(long long)a0 reason:(unsigned long long)a1;
+- (void)paidStreamTrialDidPromised:(long long)a0;
+- (void)onOrientationTransitionEnd;
+- (BOOL)isHiddenWatchNewBtn;
+- (void)updateUIProgress:(double)a0 withAction:(unsigned long long)a1 isEndSeek:(BOOL)a2;
+- (unsigned long long)nextSignModelIndex;
+- (void)coloringProgressWithModels:(id)a0;
+- (void)onAirplayStart;
+- (void)onAirplayProgressUpdate:(double)a0 duration:(double)a1;
+- (void)startCastWhenComponentDidMount;
+- (void)didUpdatePlaybackEpisode:(id)a0;
+- (void)onVideoRenderStart;
+- (void)onVideoProgressUpdate:(double)a0 duration:(double)a1;
+- (void)onVideoFrameChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)freeTrialDidStart;
+- (void)freeTrialDidFinish;
+- (void)promiseDidSuccess;
+- (void)onReceiveRmoteRoomData:(id)a0;
+- (id)initWithContext:(id)a0 eventContext:(id)a1;
+- (BOOL)isStreamVideo;
+- (id)watchDurationAccessibilityValue;
+- (id)formatDurationWithPortrait:(double)a0;
+- (void)manualUpdateCurrentSeekProgressUI;
+- (void)trackProgressShowEvent;
+- (void)trackWatchNewShowEvent;
+- (void)_formatDurationWatch:(double)a0 total:(double)a1;
+- (void)trackSlideEvent;
+- (void)seekVideoWithProgress:(double)a0;
+- (unsigned long long)seekbarType;
+- (void)onPlayerProgressAutoUpdate:(double)a0 duration:(double)a1;
+- (void)trackWatchNewClick;
+- (void)watchNewLive;
+- (void).cxx_destruct;
+- (id)formatDuration:(double)a0;
+
+@end

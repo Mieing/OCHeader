@@ -1,0 +1,73 @@
+@class UIImageView, UILabel, AVCaptureVideoPreviewLayer, AVCaptureStillImageOutput, NSObject, AVCaptureDevice, AWEInsightsShopPhotoUploadViewController, UIButton, UIView, AVCaptureDeviceInput, NSString, AWEInsightsShopCameraCornerView, AVCaptureSession, YYLabel, UIImage;
+@protocol OS_dispatch_queue;
+
+@interface AWEInsightsShopCameraViewController : UIViewController <AWEMotionItemConfigProtocol>
+
+@property (retain, nonatomic) AWEInsightsShopCameraCornerView *fourCornersView;
+@property (retain, nonatomic) UIImageView *centerBackgroundImageView;
+@property (retain, nonatomic) UIView *topView;
+@property (retain, nonatomic) UIView *topMaskView;
+@property (retain, nonatomic) UIView *bottomMaskView;
+@property (retain, nonatomic) UIView *bottomView;
+@property (retain, nonatomic) UIImageView *tipsImageView;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) YYLabel *linkLabel;
+@property (retain, nonatomic) UIButton *actionBtn;
+@property (retain, nonatomic) AVCaptureDevice *device;
+@property (retain, nonatomic) AVCaptureDeviceInput *input;
+@property (retain, nonatomic) AVCaptureStillImageOutput *imageOutput;
+@property (retain, nonatomic) AVCaptureSession *session;
+@property (retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
+@property (retain, nonatomic) UIImage *image;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) unsigned long long currentOrientation;
+@property (retain, nonatomic) NSString *linkURL;
+@property (retain, nonatomic) NSString *linkText;
+@property (retain, nonatomic) NSString *tapText;
+@property (retain, nonatomic) NSString *previousPage;
+@property (retain, nonatomic) NSString *cameraPage;
+@property (retain, nonatomic) NSString *uploadPage;
+@property (retain, nonatomic) NSString *titleString;
+@property (retain, nonatomic) NSString *horizontalCameraTips;
+@property (retain, nonatomic) NSString *verticalCameraTips;
+@property (nonatomic) BOOL showMaskStyleImageView;
+@property (nonatomic) BOOL disableGallery;
+@property (nonatomic) BOOL isShooting;
+@property (nonatomic) BOOL isSessionRunningBeforeApplicationResignActive;
+@property (nonatomic) BOOL isSafeApi;
+@property (nonatomic) unsigned long long maskStyle;
+@property (retain, nonatomic) AWEInsightsShopPhotoUploadViewController *uploadVC;
+@property (copy, nonatomic) id /* block */ completion;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)motionItemConfig;
+- (BOOL)enableShake;
+- (void)didReceiveShakeEvent:(id)a0 error:(id)a1 from:(id)a2;
+- (double)shakeTimeInterval;
+- (long long)motionLevel;
+- (void)backBtnClicked;
+- (void)p_cameraDistrict;
+- (void)openPhotoAlbum;
+- (void)photoBtnDidClick;
+- (void)p_jumpToLinkURL;
+- (BOOL)p_forbidVertical;
+- (void)p_cameraRotation:(unsigned long long)a0;
+- (void)p_trackCameraRotation;
+- (id)p_currentDirection;
+- (id)initWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (void)applicationDidBecomeActive;
+- (void)applicationWillResignActive;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)startRunning;
+- (void)stopRunning:(id /* block */)a0;
+
+@end

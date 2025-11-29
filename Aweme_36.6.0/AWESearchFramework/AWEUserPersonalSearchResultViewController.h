@@ -1,0 +1,70 @@
+@class AWESearchRedirectGeneralSearchView, AWEUILoadingView, AWESearchEasterEggView, NSDate, NSDictionary, AWEUserPersonalSearchInfoHeader, UITapGestureRecognizer, AWEUserPersonalSearchDataController, UIViewController, NSObject, AWETrackerContext, NSString, AWESearchResultViewController, AWESearchFloatingBackgroundView, AWESearchTabConfig, AWESearchSchemaModel, AWESearchUtility;
+@protocol AWESearchActionListenerProtocol, AWEFeedCollectionViewControllerProtocol, AWESearchFeelGoodManagerProtocol, AWESearchChildViewControllerResultFilterProtocol;
+
+@interface AWEUserPersonalSearchResultViewController : UIViewController <AWESearchChildViewControllerProtocol>
+
+@property (nonatomic) BOOL hasSearch;
+@property (retain, nonatomic) NSDate *searchDate;
+@property (copy, nonatomic) NSString *researchKey;
+@property (copy, nonatomic) NSDictionary *researchExt;
+@property (retain, nonatomic) AWESearchUtility *searchUtility;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) AWESearchRedirectGeneralSearchView *redirectView;
+@property (retain, nonatomic) AWEUserPersonalSearchInfoHeader *infoHeader;
+@property (retain, nonatomic) AWEUserPersonalSearchDataController *dataController;
+@property (retain, nonatomic) UIViewController<AWEFeedCollectionViewControllerProtocol> *feedCollectionViewController;
+@property (retain, nonatomic) UITapGestureRecognizer *redirectGestureRecognizer;
+@property (nonatomic) BOOL loadmoreFooterShown;
+@property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *searchKeyword;
+@property (copy, nonatomic) NSDictionary *searchExtra;
+@property (copy, nonatomic) NSString *enterFromSecond;
+@property (weak, nonatomic) id<AWESearchChildViewControllerResultFilterProtocol> delegate;
+@property (weak, nonatomic) id<AWESearchActionListenerProtocol> listener;
+@property (weak, nonatomic) AWESearchResultViewController *searchResultViewController;
+@property (retain, nonatomic) AWESearchTabConfig *tabConfig;
+@property (retain, nonatomic) AWETrackerContext *trackerContext;
+@property (nonatomic) long long searchTabFeedType;
+@property (copy, nonatomic) NSString *personalSearchChannel;
+@property (copy, nonatomic) NSString *personalTrackTabType;
+@property (retain, nonatomic) AWESearchSchemaModel *routerModel;
+@property (copy, nonatomic) id /* block */ searchTabsUpdateBlock;
+@property (nonatomic) BOOL isFilterSearch;
+@property (nonatomic) unsigned long long publishTime;
+@property (nonatomic) unsigned long long sortType;
+@property (nonatomic) unsigned long long refreshType;
+@property (retain, nonatomic) NSString *refer;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (nonatomic) BOOL dismissTabBottomLine;
+@property (retain, nonatomic) AWESearchFloatingBackgroundView *floatingBackgroundView;
+@property (retain, nonatomic) AWESearchEasterEggView *easterEggView;
+@property (copy, nonatomic) NSString *tokenType;
+@property (copy, nonatomic) NSString *clickMoreMethod;
+@property (nonatomic) long long searchQueryInputTime;
+@property (nonatomic) long long searchButtonPressDuration;
+@property (nonatomic) long long searchButtonClickPositionX;
+@property (nonatomic) long long searchButtonClickPositionY;
+@property (copy, nonatomic) id /* block */ isShowingMiddlePageBlock;
+@property (copy, nonatomic) id /* block */ sugSessionIDBlock;
+@property (retain, nonatomic) NSObject<AWESearchFeelGoodManagerProtocol> *surveyManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (id)redirectTitle;
+- (void)configureUI;
+- (void)loadMoreData;
+- (void)saveSearchWord:(id)a0 wordType:(id)a1;
+- (void)fetchDataWithKeyword:(id)a0 ext:(id)a1 completion:(id /* block */)a2;
+- (void)trackViewMoreEvent:(id)a0;
+- (void)setupCardBindTrace;
+- (id)searchPage;
+- (void)handleRedirectAction;
+- (void).cxx_destruct;
+- (void)viewDidLoad;
+- (BOOL)isCurrentUser;
+
+@end

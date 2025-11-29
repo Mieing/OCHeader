@@ -1,0 +1,88 @@
+@class AWEAwemeModel, UILongPressGestureRecognizer, AWESearchAlbumTileLayoutController, AWEModernFeedFeedbackEntranceView, AWEModernFeedVideoFooterLynxView, UIView, NSString, UIViewController, UILabel;
+@protocol AWEAdSearchLearnMoreView, AWEModernFeedCellContext, AWEAwemeDetailTableViewControllerProtocol, AWEAdLearnMoreLynxButton;
+
+@interface AWEModernFeedTileImageAwemeViewController : AWEModernFeedBaseCellController <AWEModernFeedVideoFooterLynxViewDelegate, AWESearchRichAlbumTransitionOuterContextProvider>
+
+@property (retain, nonatomic) AWESearchAlbumTileLayoutController *albumTileLayoutController;
+@property (retain, nonatomic) id<AWEModernFeedCellContext> context;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) UILongPressGestureRecognizer *longPressGesture;
+@property (retain, nonatomic) AWEModernFeedVideoFooterLynxView *footerLynxView;
+@property (weak, nonatomic) UIViewController<AWEAwemeDetailTableViewControllerProtocol> *detailVC;
+@property (retain, nonatomic) AWEModernFeedFeedbackEntranceView *feedbackView;
+@property (retain, nonatomic) UILabel *searchRecommendLabel;
+@property (readonly, nonatomic) AWEAwemeModel *currentAweme;
+@property (nonatomic) BOOL lynxButtonLoadFail;
+@property (nonatomic) BOOL adLearnMoreNativeButtonDidShown;
+@property (nonatomic) BOOL shouldUpdateCommerceComponents;
+@property (retain, nonatomic) UILabel *eCommerceTitle;
+@property (retain, nonatomic) UIView<AWEAdLearnMoreLynxButton> *adLearnMoreLynxButton;
+@property (retain, nonatomic) UIView<AWEAdSearchLearnMoreView> *adLearnMoreNativeButton;
+@property (nonatomic) double searchTextStartTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldUseADTileControllerWith:(id)a0;
++ (void)__awe__codeRunnerRun_107;
+
+- (void)videoPlayerViewTapped:(id)a0;
+- (void)addLongPressGesture;
+- (id /* block */)shareConfigurationHandler;
+- (void)didEndShowing;
+- (BOOL)isTrendingPage;
+- (void)didStartShowing;
+- (void)didBecomeActiveForReason:(unsigned long long)a0;
+- (void)didResignActiveForReason:(unsigned long long)a0;
+- (BOOL)cellFrameModelIsBold;
+- (id)descTextTrackParams;
+- (void)updateCurrentCellFrameWithModel:(id)a0;
+- (void)updateSubviewFrames;
+- (void)gotoAlbumDetail;
+- (void)videoPlayerViewSingleTappedAction:(id)a0;
+- (void)albumTappedWithIndex:(long long)a0;
+- (void)commentVideoClickActionWithCommentIDs:(id)a0 showInputView:(BOOL)a1 enterMethod:(id)a2;
+- (void)delayReloadCurrentSection;
+- (void)showSharePanel;
+- (id)getGeneralSearchTrackBaseParams;
+- (void)updateVideoFooterLynxView;
+- (void)gotoADAlbumDetail;
+- (void)trackFeedbackViewShowEvent;
+- (void)addSearchRecommendLabelWithTitle:(id)a0;
+- (void)lynxButtonLoadFailHiddenView;
+- (double)searchAdStructureButtonHeight;
+- (id)lynxButtonLoadFailReferWithModel:(id)a0;
+- (void)trackFeedbackBtnClickEvent;
+- (void)searchADAlbumAdTextClickWithLabel:(id)a0 refer:(id)a1 adExtraData:(id)a2;
+- (void)footerLynxView:(id)a0 didChangedHeight:(double)a1;
+- (void)resetCommerceData;
+- (void)showAdLearnMoreNativeButtonIn0SecondIfNeeded;
+- (void)showAdLearnMoreLynxButtonIfNeeded;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adLearnMoreNativeButtonFrame;
+- (void)updateLearnMoreLynxButtonFrame;
+- (void)adAlbumTappedWithIndex:(long long)a0;
+- (BOOL)shouldShowAdLearnMoreNativeButton;
+- (BOOL)shouldShowAdLearnMoreNativeButtonIn0Second;
+- (void)configAdLearnMoreNativeButton;
+- (void)showAdLearnMoreNativeButtonWithAnimation:(BOOL)a0;
+- (void)updateCellFrameOfAdLearnMoreNativeButton;
+- (void)updateRadiausWithView:(id)a0;
+- (void)trackNativeButtonOtherShow;
+- (BOOL)shouldShowAdLearnMoreLynxButton;
+- (void)addLynxButton;
+- (void)updateLearnMoreLynxButtonData;
+- (void)updateCellFrameOfLynxButton;
+- (void)showAdLearnMoreLynxButton;
+- (void)resetAdLearnMoreButton;
+- (void)trackLynxButtonOtherShowFail;
+- (void)adLearnMoreNativeButtonTapped;
+- (void).cxx_destruct;
+- (id)contentView;
+- (id)transitionContext;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)viewDidLoad;
+- (void)handleLongPressGesture:(id)a0;
+- (void)updateWithModel:(id)a0;
+
+@end

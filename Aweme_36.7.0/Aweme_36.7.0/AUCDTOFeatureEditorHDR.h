@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureEditorHDR : MTLModel
+
+@end

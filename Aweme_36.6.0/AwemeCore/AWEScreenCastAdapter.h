@@ -1,0 +1,88 @@
+@class BDSCViewModel, NSString, BDByteScreenCastManager, BDSCProgressInfo, RxMultipleDelegate, NSNumber;
+@protocol AWEScreenCastObserver;
+
+@interface AWEScreenCastAdapter : NSObject <BDByteScreenCastManagerDelegate>
+
+@property (retain, nonatomic) BDByteScreenCastManager *castManager;
+@property (retain, nonatomic) BDSCProgressInfo *curProgressInfo;
+@property (nonatomic) unsigned long long playStatus;
+@property (copy, nonatomic) NSString *sceneID;
+@property (retain, nonatomic) RxMultipleDelegate<AWEScreenCastObserver> *castDelegates;
+@property (nonatomic) BOOL canContinuePlay;
+@property (copy, nonatomic) id /* block */ afterShowSearchViewBlock;
+@property (nonatomic) BOOL willExecuteShowSearchView;
+@property (retain, nonatomic) BDSCViewModel *currentViewModel;
+@property (retain) NSNumber *screenBottomDistance;
+@property (readonly, nonatomic) BOOL enableAirPlayMirrorForPlaylet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)adapterInitialized;
++ (void)markInitializedWithoutConfig;
++ (id)shareInstance;
+
+- (BOOL)isScreenCasting;
+- (BOOL)isSearchViewShowing;
+- (void)closeSearchDeviceViewController;
+- (id)byteScreenCastContext;
+- (id)controlViewConfig;
+- (void)updateDayMode:(BOOL)a0;
+- (void)showCastControlViewWithConfig:(id)a0;
+- (id)createCastControlViewWithConfig:(id)a0;
+- (void)startupScreenCastIfNeed;
+- (void)closeScreenCast;
+- (void)closeScreenCast:(BOOL)a0 disconnect:(BOOL)a1;
+- (void)closeScreenCastOnlyRemoveCastControlView;
+- (BOOL)isCastViewShowing;
+- (BOOL)isCastControlViewShowing;
+- (void)seekToProgress:(double)a0;
+- (void)preSearch;
+- (void)stopPreSearchIfNeeded;
+- (void)openFeedBackPage;
+- (void)castPlayProgressInfoChanged:(id)a0;
+- (void)castPlayStatusChanged:(unsigned long long)a0;
+- (void)setupBDByteAppInfo;
+- (void)registerBDByteCastManager;
+- (void)p_setupGeckoService;
+- (void)addScreenCastContextObserver;
+- (id)webJSBridgeHandler;
+- (void)dismissControlViewWithCompletion:(id /* block */)a0;
+- (id)echoScreenCastTrackParams;
+- (id)sceneConfigForSceneID:(id)a0;
+- (void)showConnectErrorAlert;
+- (BOOL)canSkipSearch;
+- (void)updateScreenCastControlViewConfig:(id)a0;
+- (void)showViewWithModel:(id)a0 config:(id)a1;
+- (void)updateViewModel:(id)a0 config:(id)a1;
+- (void)connectToDevice:(id)a0 onError:(id)a1;
+- (void)didConnectToDevice:(id)a0;
+- (void)castControlViewBackButtonClicked;
+- (void)castPlayVideoDidChange:(id)a0 isAuto:(BOOL)a1;
+- (void)startConnectToDevice:(id)a0;
+- (BOOL)shouldReuseItem:(id)a0 andConnectToDeviceSilently:(id)a1;
+- (void)castPlayDidClosed:(id)a0;
+- (id)castPlayEventExtraParams:(id)a0;
+- (void)castPlayAttemptToChangeToLandscape:(BOOL)a0;
+- (void)continuePlayButtonClicked:(id)a0;
+- (void)castPlayAttemptToShowToastWithTitle:(id)a0;
+- (void)searchViewDidDisAppear;
+- (void)castPlayNotSupportClarity:(id)a0;
+- (void)addCastObserver:(id)a0;
+- (void)removeCastObserver:(id)a0;
+- (void)updateCastTrackerService:(id)a0;
+- (void)startFetchUrl;
+- (void)didFetchUrlWithError:(id)a0;
+- (void)showSearchDevicesViewNeedDelay:(BOOL)a0;
+- (void)executeBlockAfterShowSearchView:(id /* block */)a0;
+- (void)castPlayWithPlayItem:(id)a0 onError:(id)a1;
+- (void)showTVToastWithContent:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (BOOL)isPlaying;
+- (id)init;
+- (void)updateSceneID:(id)a0;
+
+@end

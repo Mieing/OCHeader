@@ -1,0 +1,3 @@
+@interface HTSLiveHotChatRoot : GPBRootObject
+
+@end

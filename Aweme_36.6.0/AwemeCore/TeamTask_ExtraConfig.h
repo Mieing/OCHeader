@@ -1,0 +1,10 @@
+@class TeamTask_SpecialGiftCountConfig;
+
+@interface TeamTask_ExtraConfig : IESLivePBBaseMessage
+
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) TeamTask_SpecialGiftCountConfig *specialGiftCountConfig;
+
++ (id)descriptor;
+
+@end

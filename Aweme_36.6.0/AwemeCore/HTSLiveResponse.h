@@ -1,0 +1,24 @@
+@class NSString, NSMutableArray, NSMutableDictionary;
+
+@interface HTSLiveResponse : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *messagesArray;
+@property (readonly, nonatomic) unsigned long long messagesArray_Count;
+@property (copy, nonatomic) NSString *cursor;
+@property (nonatomic) long long fetchInterval;
+@property (nonatomic) long long now;
+@property (copy, nonatomic) NSString *internalExt;
+@property (nonatomic) int fetchType;
+@property (retain, nonatomic) NSMutableDictionary *routeParams;
+@property (readonly, nonatomic) unsigned long long routeParams_Count;
+@property (nonatomic) long long heartbeatDuration;
+@property (nonatomic) BOOL needAck;
+@property (copy, nonatomic) NSString *pushServer;
+@property (copy, nonatomic) NSString *liveCursor;
+@property (nonatomic) BOOL historyNoMore;
+@property (copy, nonatomic) NSString *proxyServer;
+@property (copy, nonatomic) NSString *pushServerV2;
+
++ (id)descriptor;
+
+@end

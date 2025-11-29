@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplayTeamPlayApiRoot : GPBRootObject
+
+@end

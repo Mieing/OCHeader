@@ -1,0 +1,88 @@
+@class UIProgressView, NSMutableDictionary, NSString, NSURL, BDPAppPageURL, BDPUniqueID;
+@protocol BDPPageProtocol;
+
+@interface BDPWebViewComponent : BDPBridgeWebView <BDPAppRouteChangeMessage, BDPWebViewImplInterface, BDPKeyboardResponderDelegate, BDPPageDiagnoseProtocol, BDPPageTimelineParamCollection, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, BDPWebViewComponentProtocol>
+
+@property (retain, nonatomic) BDPUniqueID *uniqueID;
+@property (nonatomic) struct CGPoint { double x; double y; } keyBoardPoint;
+@property (retain, nonatomic) NSMutableDictionary *rewriteAPIInjectRecord;
+@property (nonatomic) BOOL needRecoverWhenTerminated;
+@property (nonatomic) BOOL isReloadAlertShown;
+@property (copy, nonatomic) id /* block */ publishCallBack;
+@property (copy, nonatomic) id /* block */ canGoBackCallBack;
+@property (nonatomic) long long pageID;
+@property (retain, nonatomic) NSURL *lastValidURL;
+@property (copy, nonatomic) NSString *componentID;
+@property (copy, nonatomic) NSString *routeID;
+@property (retain, nonatomic) BDPAppPageURL *appPageURL;
+@property (weak, nonatomic) id<BDPPageProtocol> page;
+@property (retain, nonatomic) NSMutableDictionary *unfinishedRequestMap;
+@property (retain, nonatomic) NSMutableDictionary *failedReqeustMap;
+@property (retain, nonatomic) UIProgressView *progressView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)uploadOrderInfoWithAppID:(id)a0;
++ (void)enableInterceptorForConfiguration:(id)a0;
++ (void)registerSchemeHandlerClassForWebView:(id)a0;
++ (id)errorPageURL;
+
+- (void)setupObserver;
+- (void)onAppRouteChangePageDidEnterWithPageID:(long long)a0 pageURL:(id)a1 uniqueID:(id)a2;
+- (void)onKeyboardWillShow:(id)a0;
+- (void)onKeyboardWillHide:(id)a0;
+- (void)webviewWillAppear;
+- (void)webviewDidDisAppear;
+- (void)recieveInterruptionNotification:(id)a0;
+- (void)gatherDiagnoseInfo:(id)a0 triggerType:(id)a1;
+- (void)gatherDiagnoseInfo:(id)a0 webview:(id)a1 triggerType:(id)a2;
+- (void)webView:(id)a0 invoke:(id)a1 completion:(id /* block */)a2;
+- (void)webView:(id)a0 publish:(id)a1 completion:(id /* block */)a2;
+- (void)subscribeHandler:(id)a0 data:(id)a1;
+- (void)setupUserAgent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 configuration:(id)a1 pageID:(long long)a2 uniqueID:(id)a3 progressBarColor:(id)a4;
+- (void)updateWithURL:(id)a0 progressBar:(id)a1;
+- (void)routeEndParamWithRoteID:(id)a0 type:(id)a1 resData:(id /* block */)a2;
+- (void)setupCustomAPI;
+- (void)setupUserScript;
+- (void)setupProgressBar:(id)a0;
+- (void)addAppActivelistener;
+- (void)removeCustomAPI;
+- (unsigned long long)p_checkURL:(id)a0 uniqueID:(id)a1 isSubFrame:(BOOL)a2;
+- (BOOL)isURLInternal:(id)a0;
+- (id)onWebViewErrorWithURL:(id)a0 andErrorType:(unsigned long long)a1;
+- (void)subscribeHandler:(id)a0 dest:(unsigned long long)a1 data:(id)a2;
+- (id)getRedirectedURL:(id)a0 checkResult:(unsigned long long)a1;
+- (void)openInOuterBrowser;
+- (void)recordRewriteAPIInjectTime:(id)a0 isFinish:(BOOL)a1;
+- (void)updateProgressBar:(double)a0;
+- (void)applicationDidChangeStatus:(id)a0;
+- (void)setupWebviewComponentApiScript;
+- (id)onWebviewErrorWithError:(id)a0;
+- (void)loadFailedPage;
+- (id)onWebviewErrorMsgWithURL:(id)a0 andErrorType:(unsigned long long)a1;
+- (void)callbackInvoke:(long long)a0 data:(id)a1 fromH5:(BOOL)a2;
+- (void)injectJSWithPath:(id)a0;
+- (void)p_gatherUnfinishedReqeusts:(id)a0 routeID:(id)a1 webViewID:(long long)a2 diagnoseType:(id)a3;
+- (void)p_gatherFailedReqeusts:(id)a0 routeID:(id)a1 webViewID:(long long)a2 diagnoseType:(id)a3;
+- (id)p_diagnosePointsWithName:(id)a0 diagnoseType:(id)a1 params:(id)a2;
+- (void)showWebviewTerminateReloadAlert;
+- (void)webView:(id)a0 didFinishNavigation:(id)a1;
+- (void)webViewWebContentProcessDidTerminate:(id)a0;
+- (void).cxx_destruct;
+- (id)reload;
+- (void)webView:(id)a0 decidePolicyForNavigationAction:(id)a1 decisionHandler:(id /* block */)a2;
+- (void)setHidden:(BOOL)a0;
+- (void)setNavigationTitle:(id)a0;
+- (void)webView:(id)a0 didFailProvisionalNavigation:(id)a1 withError:(id)a2;
+- (id)webView:(id)a0 createWebViewWithConfiguration:(id)a1 forNavigationAction:(id)a2 windowFeatures:(id)a3;
+- (void)webView:(id)a0 runJavaScriptAlertPanelWithMessage:(id)a1 initiatedByFrame:(id)a2 completionHandler:(id /* block */)a3;
+- (void)dealloc;
+- (void)webView:(id)a0 didFailNavigation:(id)a1 withError:(id)a2;
+- (void)webView:(id)a0 didStartProvisionalNavigation:(id)a1;
+- (void)webView:(id)a0 decidePolicyForNavigationResponse:(id)a1 decisionHandler:(id /* block */)a2;
+- (void)userContentController:(id)a0 didReceiveScriptMessage:(id)a1;
+
+@end

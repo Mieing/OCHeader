@@ -1,0 +1,5 @@
+@interface FlowKit.FlowDeepResearchMarkdownConfigProvider : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ maxMarkdownViewWidth;
+}
+
+@end

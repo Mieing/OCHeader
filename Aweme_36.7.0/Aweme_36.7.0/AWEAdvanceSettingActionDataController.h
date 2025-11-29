@@ -1,0 +1,73 @@
+@class NSNumber, NSString, NSArray, AWEAwemeModel, AWEVideoPublishViewModel, NSMutableArray, NSIndexPath;
+@protocol AWEAdvanceSettingActionDataControllerDelegate;
+
+@interface AWEAdvanceSettingActionDataController : NSObject <AWEAdvanceSettingActionDataControllerProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (nonatomic) BOOL forbidDanmakuControlEnabled;
+@property (copy, nonatomic) NSString *danmakuControlForbidToast;
+@property (retain, nonatomic) NSArray *commentProtectionModeArray;
+@property (retain, nonatomic) NSMutableArray *items;
+@property (copy, nonatomic) NSString *permissionSettingTitle;
+@property (retain, nonatomic) NSMutableArray *cellClassArray;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (retain, nonatomic) NSNumber *duetPermission;
+@property (retain, nonatomic) AWEVideoPublishViewModel *publishViewModel;
+@property (nonatomic) BOOL isCommentPermissionScene;
+@property (retain, nonatomic) NSNumber *commentPermission;
+@property (retain, nonatomic) NSNumber *commentProtectionMode;
+@property (retain, nonatomic) NSNumber *danmakuPermission;
+@property (nonatomic) BOOL duetControlEnabled;
+@property (nonatomic) long long scene;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (weak, nonatomic) id<AWEAdvanceSettingActionDataControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)duetForbidToast;
+- (id)initWithDuetPermission:(id)a0 duetControllerEnabled:(BOOL)a1 scene:(long long)a2 publishModel:(id)a3;
+- (id)initWithCommentPermission:(id)a0 commentControllerEnabled:(BOOL)a1 scene:(long long)a2 publishModel:(id)a3;
+- (id)initWithDanmakuPermission:(id)a0 danmakuControllerEnabled:(BOOL)a1 scene:(long long)a2 publishModel:(id)a3;
+- (id)initForCommentPermissionSettingPageWithAwemeModel:(id)a0 permissionValue:(id)a1 enterMethod:(id)a2;
+- (void)constructPermissionItems;
+- (void)constructCommentPermissionItems:(BOOL)a0;
+- (void)constructDanmakuPermissionItems:(BOOL)a0;
+- (void)constructPermissionItemsWhenEnablePermissionOptimation;
+- (void)constructCommentProtectionModeItemsWithArray:(id)a0;
+- (BOOL)isVideoPublished;
+- (void)postDuetPermissionSettingWithSelectedIndexPath:(id)a0 withCompletion:(id /* block */)a1;
+- (BOOL)isBeforePublish;
+- (void)updateDuetPermissionSettingWithSelectedIndexPath:(id)a0;
+- (BOOL)isDuetScene;
+- (id)duetPermissionWithIndex:(long long)a0;
+- (void)updateCommentPermissionSettingWithSelectedIndexPath:(id)a0;
+- (void)clearCommentPermissionSettingGuideStorageIfNeeded;
+- (void)updateCommentProtectionModeSettingWithSelectedIndexPath:(id)a0;
+- (id)commentProtectionModeTrackTypeWithIndex:(unsigned long long)a0;
+- (void)updateDanmukuPermissionSettingWithSelectedIndexPath:(id)a0;
+- (id)storyForbidToast;
+- (long long)indexForDuetPermission:(id)a0;
+- (id)permissionWithIndexWhenEnablePermissionOptimation:(long long)a0;
+- (long long)indexForPermissionWhenEnablePermissionOptimation:(id)a0;
+- (id)shareToStorySettingTitle;
+- (id)commentForbidToast;
+- (BOOL)commentControlEnabled;
+- (long long)indexOfCommentPermission;
+- (BOOL)danmakuControlEnabled;
+- (long long)indexOfDanmakuPermission;
+- (id)duetPermissionTextDictEnglish;
+- (id)sceneTypeForTrack;
+- (void)changeDuetPermissionSettingWithSelectedIndexPath:(id)a0 withCompletion:(id /* block */)a1;
+- (id)initForDuetOrStoryPermissionSettingPageWithAwemeModel:(id)a0 scene:(long long)a1 permissionValue:(id)a2 controlEnable:(BOOL)a3;
+- (id)initForCommentProtectionModeSettingPageWithAwemeModel:(id)a0 commentProtectionMode:(id)a1 commentProtectionModeArray:(id)a2 enterMethod:(id)a3;
+- (id)initForDanmakuPermissionSettingPageWithAwemeModel:(id)a0 permissionValue:(id)a1 enterMethod:(id)a2 forbidDanmakuControlEnabled:(BOOL)a3 danmakuControlForbidToast:(id)a4;
+- (void)changeCommentPermissionBeforePublishSettingWithSelectedIndexPath:(id)a0 withCompletion:(id /* block */)a1;
+- (void)changeCommentPermissionSettingWithSelectedIndexPath:(id)a0 withCompletion:(id /* block */)a1;
+- (void)changeCommentProtectionModeWithSelectedIndexPath:(id)a0 completion:(id /* block */)a1;
+- (void)changeDanmakuPermissionBeforePublishSettingWithSelectedIndexPath:(id)a0 withCompletion:(id /* block */)a1;
+- (void)changeDanmakuPermissionSettingWithSelectedIndexPath:(id)a0 withCompletion:(id /* block */)a1;
+- (void).cxx_destruct;
+
+@end

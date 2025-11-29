@@ -1,0 +1,19 @@
+@class NSString;
+
+@interface AWEAppLogManagerService : HTSService <AWEAppLogManagerService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setAppLogFrequencyWithModel:(id)a0;
+- (double)retention_thresh;
+- (long long)v_raw;
+- (id)unique_key;
+- (id)caller;
+- (double)beta;
+- (long long)mode;
+- (long long)alpha;
+
+@end

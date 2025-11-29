@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface NameValuePairV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *value;
+@property (nonatomic) BOOL hasValue;
+
++ (id)descriptor;
+
+@end

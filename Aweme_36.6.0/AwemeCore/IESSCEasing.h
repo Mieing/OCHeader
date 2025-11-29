@@ -1,0 +1,3 @@
+@interface IESSCEasing : NSObject
+
+@end

@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceGetLatestInteractResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceGetLatestInteractResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetLatestInteractResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

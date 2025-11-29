@@ -1,0 +1,16 @@
+@interface IESGCPPBGameDetailSimpleEvaluationInfo : GPBMessage
+
+@property (nonatomic) long long handleEvaluation;
+@property (nonatomic) double evaluationAvgGrade;
+@property (nonatomic) long long evaluationTotal;
+@property (nonatomic) BOOL hiddenCommentSummary;
+@property (nonatomic) BOOL hiddenCommentTotal;
+
++ (id)descriptor;
+
+- (BOOL)shouldShowUserCommentEntrance;
+- (BOOL)shouldShowEvaluatePoint;
+- (BOOL)shouldShowEvaluateCount;
+- (long long)entranceThemeTypeFrom:(unsigned long long)a0;
+
+@end

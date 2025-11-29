@@ -1,0 +1,3 @@
+@interface BDSimBSFilterHelper : NSObject
+
+@end

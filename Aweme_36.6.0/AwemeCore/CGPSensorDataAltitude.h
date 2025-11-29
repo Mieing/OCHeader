@@ -1,0 +1,9 @@
+@interface CGPSensorDataAltitude : GPBMessage
+
+@property (nonatomic) int precision;
+@property (nonatomic) int altitude;
+@property (nonatomic) int accuracy;
+
++ (id)descriptor;
+
+@end

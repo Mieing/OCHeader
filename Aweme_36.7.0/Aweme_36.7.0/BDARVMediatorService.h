@@ -1,0 +1,86 @@
+@class NSDictionary, NSString;
+
+@interface BDARVMediatorService : NSObject <BDASDKProtocol, BDARVSDKProtocol>
+
+@property (copy, nonatomic) NSDictionary *systemInfoDictionary;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)protocolImp;
++ (id)ntType;
++ (id)mcc_mnc;
++ (id)rewardProtocolImp;
++ (id)appName;
++ (id)uid;
++ (id)channel;
++ (id)deviceID;
++ (id)sharedInstance;
++ (id)appid;
++ (id)carrier;
+
+- (void)trackAdEvent:(id)a0 tag:(id)a1 extra:(id)a2 adExtra:(id)a3;
+- (void)performanceEventV3:(id)a0 params:(id)a1;
+- (void)monitorService:(id)a0 value:(id)a1 category:(id)a2 extra:(id)a3;
+- (void)eventData:(id)a0;
+- (void)eventV3:(id)a0 params:(id)a1 isDoubleSending:(BOOL)a2;
+- (void)trackURLs:(id)a0 event:(id)a1;
+- (id)darkModeColorWithOriginalColor:(id)a0 alpha:(double)a1;
+- (void)renderTintColorWithTargetView:(id)a0 targetColor:(id)a1;
+- (void)_commonConfig;
+- (id)playerWithConfig:(id)a0;
+- (void)eventRewardData:(id)a0;
+- (void)clickEventData:(id)a0 type:(id)a1;
+- (id)preloadLiteWebViewWithModel:(id)a0;
+- (BOOL)handleActionWithParams:(id)a0;
+- (BOOL)openWebviewWithParams:(id)a0;
+- (unsigned long long)clipboardAndPersistenceToken:(id)a0 params:(id)a1;
+- (void)openFeedBackPageWithParams:(id)a0 adInfo:(id)a1 status:(id /* block */)a2;
+- (void)openDetailWithParams:(id)a0;
+- (void)preloadFormWithInfo:(id)a0;
+- (void)preloadMPWithInfo:(id)a0;
+- (void)preloadAppStoreWithInfo:(id)a0;
+- (void)preloadLynxLandingWithInfo:(id)a0;
+- (id)loadSpliceViewWithInfo:(id)a0;
+- (void)loadLivePlayViewWithInfo:(id)a0;
+- (id)createLivePlayViewWithInfo:(id)a0;
+- (void)livePlayerStatus:(unsigned long long)a0;
+- (void)cardViewContainer:(id)a0 dislikeAction:(id)a1 adInfo:(id)a2;
+- (id)requestHost;
+- (void)clearGeckoResource;
+- (void)originalVideoInfo:(id /* block */)a0;
+- (void)openLive:(id)a0 lynxUI:(id)a1 completion:(id /* block */)a2;
+- (BOOL)handleAppStoreActionModel:(id)a0;
+- (BOOL)setAmbientCategoryWithPlayer:(id)a0;
+- (long long)getOHRStatus;
+- (void)inspireRequestExtraParams:(id /* block */)a0;
+- (id)dislikeParams;
+- (void)openAdShoppingWithURL:(id)a0 info:(id)a1;
+- (id)videoEngineOptionsWithConfig:(id)a0;
+- (void)connectLiveWithRoomID:(id)a0 scene:(id)a1 params:(id)a2;
+- (void)addMessageSubscriberLiveWithMessage:(id)a0;
+- (void)disconnectWithLive:(id)a0;
+- (void)sendMessageToFeBlock:(id /* block */)a0;
+- (id)getBridgesFromBtm;
+- (void)bindLiveInnerPendantInitEvent:(id /* block */)a0;
+- (void)bindLiveInnerWidgetProgressEvent:(id /* block */)a0;
+- (void)bindLiveShortCutEvent:(id /* block */)a0;
+- (void)notifyLiveReachBonusTimeWithInfo:(id)a0;
+- (void)frequencyControlBroadcastToHost:(id)a0;
+- (id)injectLoadingView;
+- (BOOL)injectLoadingBackgroundDisabled;
+- (void)showInjectLoading;
+- (void)hideInjectLoading;
+- (id)douyinAuthInfo;
+- (void)openIMPageWithOpenUid:(id)a0 ext:(id)a1;
+- (void)dispatchRewardSessionEvent:(long long)a0;
+- (id)provideSessionContext;
+- (BOOL)largeFontAdaptationEnabled;
+- (BOOL)openFeedBackByHostEnabled;
+- (void)_checkIMPConformToProtocol;
+- (void)preloadResource:(id)a0 payload:(id)a1;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomToolbarPermissionAlertApiRoot : GPBRootObject
+
+@end

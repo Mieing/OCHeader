@@ -1,0 +1,78 @@
+@class IESLLGDLiveFloatManager, NSString, IESLLGDHalfContainerParams, LLDitoPageContext;
+@protocol LLDitoExtensionContainerProtocol, IESLLGDHalfContainerExtensionDelegate, LLDitoHalfContainerProtocol;
+
+@interface IESLLGDHalfContainerExtension : NSObject <LLDitoExtensionProtocol, IESLLPOIHalfScreenContainerProtocol, LLVSDContainerDelegate>
+
+@property (retain, nonatomic) id<LLDitoHalfContainerProtocol> mvManager;
+@property (retain, nonatomic) IESLLGDHalfContainerParams *halfParams;
+@property (retain, nonatomic) IESLLGDLiveFloatManager *liveFloatManager;
+@property (nonatomic) long long ditoMode;
+@property (nonatomic) long long currentViewState;
+@property (nonatomic) double lastOffset;
+@property (nonatomic) BOOL isFirstPopup;
+@property (nonatomic) BOOL needToCompensateCollapseStateChangeCallback;
+@property (weak, nonatomic) LLDitoPageContext *context;
+@property (weak, nonatomic) id<LLDitoExtensionContainerProtocol> container;
+@property (weak, nonatomic) id<IESLLGDHalfContainerExtensionDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)containerMode;
+- (void)disableGestures:(BOOL)a0;
+- (void)containerArrivingTopArea;
+- (void)containerLeavingTopArea;
+- (BOOL)containerShouldShowMask;
+- (void)detachLiveFloatOnTop;
+- (void)attachLiveFloatOnTop;
+- (void)didLoadPageModel:(id)a0;
+- (id /* block */)customCollapseAnimationBlock;
+- (id /* block */)customHalfExpandAnimationBlock;
+- (id /* block */)customDismissWithAnimationBlock;
+- (BOOL)shouldIgnoreGesture:(id)a0 state:(long long)a1 diretion:(unsigned long long)a2 containerOffset:(double)a3;
+- (void)didHandleHalfContainerGesture:(id)a0 scrollView:(id)a1 state:(long long)a2 diretion:(unsigned long long)a3 containerOffset:(double)a4;
+- (void)didHalfContainerStatusChange:(id)a0 state:(long long)a1;
+- (void)didHalfContainerOffsetChange:(id)a0 offset:(double)a1;
+- (void)didHalfContainerTapMaskView:(id)a0;
+- (BOOL)halfContainerShouldShowTapView;
+- (BOOL)enableDitoDynamicSwitchContainer;
+- (void)vsdContainer:(id)a0 stateChange:(unsigned long long)a1;
+- (void)vsdContainer:(id)a0 offsetChange:(double)a1;
+- (void)initializeExtension;
+- (void)startInitialAnimation;
+- (void)updateTopDistance:(double)a0 forceDispatch:(BOOL)a1;
+- (void)containerMoving;
+- (void)initLiveFloatIfsNeeds;
+- (void)expandToFullModeAfterPan;
+- (void)registerNotfications;
+- (void)detachLiveFloatOnTopInHalfMode;
+- (BOOL)isFromNearbySecondJump;
+- (void)pauseNearbyVideo;
+- (void)showHalfContainer;
+- (void)willSwitchTo:(long long)a0;
+- (void)didSwitchTo:(long long)a0;
+- (void)willHiddenContainerWhenDismiss;
+- (void)didHiddenContainerWhenDismiss;
+- (long long)convertContainerMode:(long long)a0;
+- (id)getConvertedDelegate;
+- (void)handleLiveFloatOnTopIfNeed;
+- (void)resetNearbyVideo;
+- (void)clickPoiFloatWindow:(id)a0;
+- (void)openContainerWithSourceViewController:(id)a0 style:(long long)a1 completion:(id /* block */)a2 shouldClose:(id /* block */)a3 close:(id /* block */)a4;
+- (void)updateHalfRadio:(double)a0;
+- (void)stopResponsePanGesture;
+- (void)resumeResponsePanGesture;
+- (void)didCancelSwitchTo:(long long)a0;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewWillAppear;
+- (void)closeContainer;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)currentContent;
+- (void)viewDidDisappear;
+- (void)viewWillDisappear;
+
+@end

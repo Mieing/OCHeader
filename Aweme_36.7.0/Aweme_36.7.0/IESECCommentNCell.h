@@ -1,0 +1,87 @@
+@class UILabel, IESECHighlightButton, MASConstraint, UIView, NSCalendar, IESECCommentItemView, IESECButton, IESECStoreCommentGoodsCard, IESECUIImageView, UIStackView, NSString, IESECCommentDetailModel, YYLabel, IESECCommentNoticeView;
+@protocol IESECCommentNCellActionDelegate;
+
+@interface IESECCommentNCell : UICollectionViewCell <IESECCommentItemViewDelegate, UIGestureRecognizerDelegate, IESECCommentNoticeDelegate, IESECCommentNCellProtocol>
+
+@property (retain, nonatomic) UIView *bgColorView;
+@property (retain, nonatomic) IESECCommentNoticeView *noticeView;
+@property (retain, nonatomic) IESECCommentNoticeView *similarNoticeView;
+@property (retain, nonatomic) UIView *userTitleView;
+@property (retain, nonatomic) IESECUIImageView *userImageView;
+@property (retain, nonatomic) UILabel *userNameLabel;
+@property (retain, nonatomic) UILabel *timeLabel;
+@property (retain, nonatomic) UILabel *memoLabel;
+@property (retain, nonatomic) IESECUIImageView *rankImageView;
+@property (retain, nonatomic) IESECButton *moreActionButton;
+@property (retain, nonatomic) UILabel *titleSubLabel;
+@property (retain, nonatomic) MASConstraint *subAtHasRankConstraint;
+@property (retain, nonatomic) MASConstraint *subAtNotHasRankConstraint;
+@property (retain, nonatomic) IESECCommentItemView *commentView;
+@property (retain, nonatomic) UIView *highlightBackground;
+@property (retain, nonatomic) UIView *appendContainerView;
+@property (retain, nonatomic) UIView *shopRelyView;
+@property (retain, nonatomic) YYLabel *shopReplyLabel;
+@property (retain, nonatomic) UILabel *browseCountsLabel;
+@property (retain, nonatomic) IESECHighlightButton *likeButton;
+@property (retain, nonatomic) UILabel *likeCountLabel;
+@property (retain, nonatomic) UIView *likeAndCountButton;
+@property (nonatomic) BOOL isAnimationing;
+@property (retain, nonatomic) IESECHighlightButton *commentPanelIcon;
+@property (retain, nonatomic) UILabel *commentPanelLabel;
+@property (retain, nonatomic) UIView *commentPanelButton;
+@property (retain, nonatomic) IESECCommentDetailModel *detailModel;
+@property (retain, nonatomic) NSCalendar *calendar;
+@property (retain, nonatomic) UILabel *regularCustomerLabel;
+@property (retain, nonatomic) UIStackView *tagStackView;
+@property (retain, nonatomic) UIView *fakeCornerView;
+@property (retain, nonatomic) UIView *meaninglessView;
+@property (retain, nonatomic) UIView *meaninglessOutsideView;
+@property (retain, nonatomic) IESECStoreCommentGoodsCard *productCard;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<IESECCommentNCellActionDelegate> delegate;
+@property (copy, nonatomic) id /* block */ clickLikeButtonBlock;
+@property (copy, nonatomic) id /* block */ clickUserLevelButtonBlock;
+@property (copy, nonatomic) id /* block */ clickGoldCardBlock;
+@property (copy, nonatomic) id /* block */ clickShopReplyBlock;
+
++ (id)getAppendStringWithDetailModel:(id)a0 appendTime:(id)a1;
+
+- (void)likeButtonTapped:(id)a0;
+- (void)updateAutoPlayState:(BOOL)a0;
+- (BOOL)ifRequestMixComment;
+- (double)commentItemCellCornerRadius;
+- (void)openCommentItemPreviewWithImageURLArray:(id)a0 selectedImageIndex:(long long)a1 videoModel:(id)a2 commentIndex:(long long)a3 commentId:(id)a4 enterFrom:(unsigned long long)a5;
+- (void)openCommentItemPreviewWithImageURLArray:(id)a0 selectedImageIndex:(long long)a1 videoModel:(id)a2;
+- (void)trackMediaItem:(id)a0;
+- (void)configureWithCommentModel:(id)a0 withNoticeString:(id)a1 noticeIconAction:(id)a2 commentIndex:(long long)a3;
+- (void)highlightCell:(BOOL)a0;
+- (void)updateLikeButtonStatus:(id)a0;
+- (void)openGoodsDetail;
+- (void)shopReplyFoldButtonTapped:(BOOL)a0;
+- (id)updateTimeLabel:(id)a0 isAppend:(BOOL)a1;
+- (long long)realCommentIndexWith:(long long)a0;
+- (BOOL)shouldUseTagStyleNewStyle;
+- (BOOL)isSortByTimeFromDataController;
+- (long long)commentDataType;
+- (void)userLevelButtonTapped:(id)a0;
+- (void)goldCardTapped:(id)a0;
+- (id)likeCountsFormated:(id)a0;
+- (void)moreActionButtonDidClick:(id)a0;
+- (void)commentPanelButtonClick:(id)a0;
+- (void)meaninglessAreaTapped:(id)a0;
+- (void)didSelectCommentSortByTimeWithNoticeView:(BOOL)a0;
+- (void)willDisplayCommentSortByTimeWithNoticeView:(BOOL)a0 once:(BOOL)a1;
+- (BOOL)commentTagStyleType;
+- (void)configureWithCommentModel:(id)a0 withNoticeString:(id)a1 commentIndex:(long long)a2;
+- (void)updateNoticeViewSortedStatus:(BOOL)a0;
+- (id)convertRankType:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupUI;
+
+@end

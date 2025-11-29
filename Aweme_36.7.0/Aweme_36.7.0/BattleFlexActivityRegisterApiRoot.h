@@ -1,0 +1,3 @@
+@interface BattleFlexActivityRegisterApiRoot : GPBRootObject
+
+@end

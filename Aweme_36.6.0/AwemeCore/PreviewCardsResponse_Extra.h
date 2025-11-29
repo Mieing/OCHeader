@@ -1,0 +1,12 @@
+@class PreviewCardsResponse_LogPb, NSMutableArray;
+
+@interface PreviewCardsResponse_Extra : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PreviewCardsResponse_LogPb *logPb;
+@property (nonatomic) BOOL hasLogPb;
+@property (retain, nonatomic) NSMutableArray *unreadExtraArray;
+@property (readonly, nonatomic) unsigned long long unreadExtraArray_Count;
+
++ (id)descriptor;
+
+@end

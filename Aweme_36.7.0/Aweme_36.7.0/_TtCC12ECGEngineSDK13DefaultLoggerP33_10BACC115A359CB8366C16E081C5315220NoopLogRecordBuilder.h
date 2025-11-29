@@ -1,0 +1,3 @@
+@interface _TtCC12ECGEngineSDK13DefaultLoggerP33_10BACC115A359CB8366C16E081C5315220NoopLogRecordBuilder : _TtCs12_SwiftObject
+
+@end

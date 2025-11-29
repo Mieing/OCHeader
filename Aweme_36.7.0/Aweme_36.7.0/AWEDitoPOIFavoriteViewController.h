@@ -1,0 +1,73 @@
+@class AWEGradientView, NSString, DitoMultiTabDataModel, NSDictionary, AWEUILoadingView, AWEDitoPOIFavoritePageContext, AWEPOILoadingView;
+
+@interface AWEDitoPOIFavoriteViewController : DitoGeneralContainerViewController <DitoMultiTabDelegateProtocol, AWEPOISyncFeedExtensionDelegateProtocol, DUXGridBreakPointResponder, AWEFavoriteSecondTabRedDotProtocol, AWETabListItemViewControllerProtocol>
+
+@property (nonatomic) BOOL needRequestWhenViewAppear;
+@property (nonatomic) BOOL shouldResetStartTime;
+@property (nonatomic) BOOL needRefreshWithHomepageRedDot;
+@property (nonatomic) BOOL isViewAppeared;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) AWEPOILoadingView *poiLoadingView;
+@property (retain, nonatomic) AWEDitoPOIFavoritePageContext *context;
+@property (nonatomic) BOOL isRequestingFirstPage;
+@property (retain, nonatomic) AWEGradientView *gradientView;
+@property (retain, nonatomic) AWEGradientView *gradientViewForSubTab;
+@property (nonatomic) BOOL hasViewAppear;
+@property (retain, nonatomic) DitoMultiTabDataModel *startDataModel;
+@property (copy, nonatomic) NSString *pageKey;
+@property (readonly, copy, nonatomic) NSDictionary *pageCacheConfig;
+@property (readonly, copy, nonatomic) NSDictionary *pagePreloadConfig;
+@property (nonatomic) BOOL hasRedDotWhenSwitched;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)tabContentScrollView;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)duxGrid_viewDidChangeBreakPointFrom:(struct { long long x0; long long x1; })a0 toBreakPoint:(struct { long long x0; long long x1; })a1;
+- (id)extraRequestParams;
+- (BOOL)isCacheExist:(id)a0;
+- (void)registerExtensions;
+- (id)extraBizParams;
+- (void)handleLynxBroadcastNotification:(id)a0;
+- (void)bindStateAndAction;
+- (id)DitoPageScene;
+- (void)didEndReload;
+- (void)didEndRequestWithResponse:(id)a0 error:(id)a1;
+- (void)didReceivePOICollectionStatusChanged:(id)a0;
+- (void)ditoViewControllerDidTapEmptyPagePrimaryButton:(id)a0;
+- (void)ditoViewControllerViewChangeToState:(unsigned long long)a0 withConfig:(id)a1;
+- (void)DitoMultiTabContainer:(id)a0 willMoveToTabModel:(id)a1 fromTabModel:(id)a2;
+- (void)DitoMultiTabContainer:(id)a0 didMoveToTabModel:(id)a1;
+- (BOOL)isFMPOptEnable;
+- (void)registerAgents;
+- (void)setupBuilder;
+- (BOOL)enableExperimentHalfContainer;
+- (BOOL)isPagePreloadEnable:(id)a0;
+- (BOOL)isNearbyGuideStyle;
+- (BOOL)hasForceInsertList;
+- (BOOL)isPageCacheEnable:(id)a0;
+- (void)receiveMainResponse:(id)a0 error:(id)a1 options:(id)a2;
+- (id)backgroundColorForVC;
+- (void)nearbyHalfConaitnerDidFullScreen:(id)a0;
+- (BOOL)shouldAvoidRequestUntilViewAppear;
+- (id)trackParamsForPageAutoTrackWithEventName:(id)a0 params:(id)a1;
+- (BOOL)hasMoreWithPageModel:(id)a0;
+- (id)awemeModelWithViewModelTag:(id)a0;
+- (id)zoomTransitionStartViewWithViewModelTag:(id)a0;
+- (void)sendMainRequest;
+- (id)extraPerformanceTrackParams;
+- (BOOL)shouldMultiTabDataSourcePreset;
+- (BOOL)shouldPreFetchAvoidSubPage;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)a0;
+- (id)createContext;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)themeDidChange;
+- (id)requestPath;
+
+@end

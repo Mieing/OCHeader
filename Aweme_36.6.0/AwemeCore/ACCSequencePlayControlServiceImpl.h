@@ -1,0 +1,77 @@
+@class ACCCameraSubscription, NSString, NSTimer, NSMutableSet, ACCRepositoryWorkspace;
+@protocol ACCSequenceEditServiceProtocol;
+
+@interface ACCSequencePlayControlServiceImpl : NSObject <ACCSequencePlayControlServiceProtocol>
+
+@property (nonatomic) long long stopFlagCount;
+@property (retain, nonatomic) NSTimer *autoplayTimer;
+@property (retain, nonatomic) NSTimer *autoplayTickTimer;
+@property (nonatomic) unsigned long long playMode;
+@property (nonatomic) long long pauseByMode;
+@property (nonatomic) BOOL isAutoplaying;
+@property (retain, nonatomic) NSTimer *assistTimer;
+@property (retain, nonatomic) ACCCameraSubscription *subscription;
+@property (retain, nonatomic) NSMutableSet *disableAppearFlagKeys;
+@property (retain, nonatomic) ACCRepositoryWorkspace *workspace;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> editService;
+@property (nonatomic) BOOL enableAutoplay;
+@property (nonatomic) BOOL editorDisappear;
+@property (nonatomic) BOOL isIndicatorWithAnimation;
+@property (nonatomic) double defaultAutoplayInterval;
+@property (nonatomic) double variableAutoplayInterval;
+@property (nonatomic) double assistTimerDiffInterval;
+@property (copy, nonatomic) id /* block */ assistTimerAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setEnableAutoplayNoSideEffect:(BOOL)a0;
+- (void)resetTimerFromCurrentWithResumeModel:(unsigned long long)a0;
+- (void)startAutoplayNested;
+- (void)startAutoplayNestedWithMode:(unsigned long long)a0;
+- (void)stopAutoplayNested;
+- (void)startAutoplayForced;
+- (void)startAutoplayForcedWithMode:(unsigned long long)a0;
+- (void)stopAutoplayForced;
+- (void)enterAutoplayMode;
+- (void)enterSingleMode;
+- (void)enterSingleModeForced;
+- (BOOL)exitSingleMode;
+- (void)enterPauseMode;
+- (BOOL)exitPauseMode;
+- (BOOL)exitPauseModeForced;
+- (void)clearPauseByMode;
+- (void)playerNotifyCurrentTime:(double)a0;
+- (void)refreshPlayDurationForIndex:(long long)a0 resetProgress:(BOOL)a1;
+- (void)resetPlayProgressForIndex:(long long)a0;
+- (void)resetPlayProgressForAllIndexes;
+- (BOOL)shouldForbidPlayWhenAppear;
+- (BOOL)shouldForbidPauseWhenDisappear;
+- (void)enterDisableAppearPlay:(id)a0;
+- (void)exitDisableAppearPlay:(id)a0;
+- (void)_stopAutoplayTimer;
+- (id)_playProgressAtIndex:(long long)a0;
+- (double)fetchTimerIntervalForIdx:(long long)a0 ignorePlayerTime:(BOOL)a1;
+- (void)_updatePlayProgress:(id)a0 duration:(double)a1 resetProgress:(BOOL)a2;
+- (void)_autoplayTimerHandler;
+- (void)_autoplayTickTimerHandler;
+- (void)_startAssistTimerWithInterval:(double)a0;
+- (void)_resetTimerFromCurrentWithResumeModel:(unsigned long long)a0;
+- (BOOL)exitPauseModeForced:(BOOL)a0;
+- (void)_playerNotifyCurrentTime:(double)a0;
+- (double)_fetchAssistTimerInterval:(double)a0;
+- (id)_autoplayingImageProjectAtIndex:(long long)a0;
+- (void)_updatePlayProgress:(id)a0 elapse:(double)a1;
+- (BOOL)disableSlidesAIClip;
+- (BOOL)isLiveModeForModel:(id)a0;
+- (void)_invalidateTimer;
+- (void).cxx_destruct;
+- (void)applicationDidBecomeActive;
+- (id)init;
+- (void)applicationWillResignActive;
+- (void)dealloc;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+
+@end

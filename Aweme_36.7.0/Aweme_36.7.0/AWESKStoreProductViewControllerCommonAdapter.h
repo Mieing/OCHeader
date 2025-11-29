@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface AWESKStoreProductViewControllerCommonAdapter : NSObject <AWESKStoreProductViewControllerCommonAdapter>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)weakTargetClass;
++ (BOOL)enableStoreKitControlDefaultValue;
+
+- (id)weakTarget;
+
+@end

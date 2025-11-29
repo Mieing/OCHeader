@@ -1,0 +1,44 @@
+@class NSArray, UICollectionView, AWEAwemeModel, NSString, AWEPlayInteractionContext;
+
+@interface AWEPlayInteractionCoCreatorNewInfoView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, AWEPlayInteractionCoCreatorInfoViewProtocol>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (copy, nonatomic) NSArray *acceptedCoCreators;
+@property (nonatomic) double containerWidth;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) id /* block */ infoViewTapped;
+@property (copy, nonatomic) id /* block */ showPostListPanel;
+@property (copy, nonatomic) id /* block */ registerAvatarShowTrack;
+@property (weak, nonatomic) AWEPlayInteractionContext *context;
+
++ (double)itemHeight;
++ (struct CGSize { double x0; double x1; })avatarImageSize;
+
+- (void)layoutSubviews;
+- (BOOL)isFolding;
+- (id)coCreatorModelWithAuthor;
+- (void)trackFollow:(id)a0;
+- (void)followUserWithIndexPath:(id)a0 cell:(id)a1;
+- (double)infoViewHeight;
+- (void)updateWithModel:(id)a0 containerWidth:(double)a1 acceptedCoCreators:(id)a2;
+- (void)updateCoCreatorLiveStatusIfNeeded;
+- (id)liveStatusEntranceConfig;
+- (BOOL)enableShowCoCreatorsLiveStatus;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)configureConstraints;
+- (void)configureSubviews;
+
+@end

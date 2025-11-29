@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface ComboHintData : IESLivePBBaseMessage
+
+@property (nonatomic) long long leftGiftCount;
+@property (retain, nonatomic) HTSLiveImage *hintImg;
+@property (nonatomic) BOOL hasHintImg;
+
++ (id)descriptor;
+
+@end

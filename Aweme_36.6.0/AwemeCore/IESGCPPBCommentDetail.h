@@ -1,0 +1,12 @@
+@class IESGCPPBCommentInfo, NSMutableArray;
+
+@interface IESGCPPBCommentDetail : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBCommentInfo *commentInfo;
+@property (nonatomic) BOOL hasCommentInfo;
+@property (retain, nonatomic) NSMutableArray *outSideCommentInfoArray;
+@property (readonly, nonatomic) unsigned long long outSideCommentInfoArray_Count;
+
++ (id)descriptor;
+
+@end

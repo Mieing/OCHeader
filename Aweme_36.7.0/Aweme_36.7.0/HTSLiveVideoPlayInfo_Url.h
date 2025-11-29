@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveVideoPlayInfo_Url : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *definition;
+@property (copy, nonatomic) NSString *main;
+@property (copy, nonatomic) NSString *backup;
+@property (nonatomic) long long height;
+@property (nonatomic) long long width;
+
++ (id)descriptor;
+
+@end

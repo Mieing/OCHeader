@@ -1,0 +1,70 @@
+@class AWEStoryColor, UICollectionView, UIVisualEffectView, IESEffectModel, AWEMusicNameInfoView, UIViewController, UIButton, UIView, UIColor, NSString, AWEStoryColorChooseView, NSArray, NSIndexPath;
+
+@interface AWELyricStickerPanelView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) UIViewController *viewController;
+@property (retain, nonatomic) UIVisualEffectView *blurView;
+@property (retain, nonatomic) UIView *topView;
+@property (retain, nonatomic) UIView *topFunctionView;
+@property (retain, nonatomic) UIView *colorChooseContainer;
+@property (retain, nonatomic) UICollectionView *lyricStyleCollectionView;
+@property (retain, nonatomic) AWEMusicNameInfoView *musicInfoView;
+@property (retain, nonatomic) UIButton *colorButton;
+@property (retain, nonatomic) UIButton *clipMusicButton;
+@property (nonatomic) BOOL isKaraoke;
+@property (nonatomic) BOOL isShowColorChoose;
+@property (retain, nonatomic) AWEStoryColorChooseView *colorChooseView;
+@property (retain, nonatomic) UIView *sepLine;
+@property (copy, nonatomic) NSArray *effectModels;
+@property (nonatomic) BOOL firstShow;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (retain, nonatomic) NSIndexPath *previousSelectedIndexPath;
+@property (retain, nonatomic) IESEffectModel *firstEffectModel;
+@property (copy, nonatomic) NSString *initialEffectId;
+@property (retain, nonatomic) UIColor *initialColor;
+@property (copy, nonatomic) NSString *musicId;
+@property (retain, nonatomic) IESEffectModel *currentEffectModel;
+@property (retain, nonatomic) UIView *seplineVisualView;
+@property (nonatomic) BOOL showing;
+@property (copy, nonatomic) id /* block */ showHandler;
+@property (copy, nonatomic) id /* block */ dismissHandler;
+@property (copy, nonatomic) id /* block */ clickMusicNameHandler;
+@property (copy, nonatomic) id /* block */ clickClipMusicHandler;
+@property (copy, nonatomic) id /* block */ selectColorHandler;
+@property (copy, nonatomic) id /* block */ selectStickerStyleHandler;
+@property (copy, nonatomic) NSString *creationId;
+@property (copy, nonatomic) NSString *shootWay;
+@property (readonly, nonatomic) AWEStoryColor *currentSelectColor;
+@property (readonly, nonatomic) BOOL isEmptyEffect;
+@property (nonatomic) BOOL disableChangeMusic;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)tapToClose;
+- (void)updateWithMusicModel:(id)a0 enableClip:(BOOL)a1;
+- (void)showWithEffectId:(id)a0 color:(id)a1;
+- (void)updateWithEffectModels:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 selectEffectId:(id)a1 color:(id)a2 isKaraoke:(BOOL)a3 viewController:(id)a4;
+- (void)resetStickerPanelState;
+- (void)p_clearSeletedCellExcept:(id)a0;
+- (void)p_selectAndDownloadEffectAtIndexPath:(id)a0;
+- (void)_setupViewComponents;
+- (void)p_hideColorChooseButton;
+- (void)p_selectWithCell:(id)a0 model:(id)a1 indexPath:(id)a2;
+- (void)clickMusicNameButton:(id)a0;
+- (void)clickColorButton:(id)a0;
+- (void)clickClipMusicButton:(id)a0;
+- (void)hide:(id /* block */)a0;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)didMoveToSuperview;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)show;
+
+@end

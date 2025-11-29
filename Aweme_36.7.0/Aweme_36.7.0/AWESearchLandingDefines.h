@@ -1,0 +1,3 @@
+@interface AWESearchLandingDefines : NSObject
+
+@end

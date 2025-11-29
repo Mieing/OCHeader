@@ -1,0 +1,96 @@
+@class MTLRenderPassDescriptor, NSString, CADisplayLink, UIImage, CAMetalLayer, NSNumber;
+@protocol MTLCommandBuffer, MTLTexture, MAMapService, MTLRenderCommandEncoder, MAMapRenderDelegate, MTLDevice, CAMetalDrawable, MTLCommandQueue;
+
+@interface MAMapMetalRender : UIView <MAMapRenderProtocol> {
+    id<MAMapService> _internalMapService;
+    CADisplayLink *_displayLink;
+    BOOL _isNeedReloadMap;
+    double _prevDrawableWidth;
+    double _prevDrawableHeight;
+    BOOL _isInDrawRectCycle;
+    NSString *_runLoopMode;
+    BOOL _willResignActiveReceived;
+    BOOL _isAllowDecreaseRenderFrame;
+    CAMetalLayer *_metalLayer;
+    id<MTLDevice> _device;
+    id<MTLCommandQueue> _commandQueue;
+    id<MTLTexture> _depthTexture;
+    id<MTLTexture> _stencilTexture;
+    id<MTLCommandBuffer> _commandBuffer;
+    id<CAMetalDrawable> _viewDrawable;
+    BOOL _isMetalDisabled;
+    MTLRenderPassDescriptor *_fboPassDescriptor;
+    struct CGSize { double width; double height; } _fboTextureSize;
+    NSNumber *_engineDrawDidStart;
+    MTLRenderPassDescriptor *_passDescriptor;
+    id<MTLRenderCommandEncoder> _currentCommandEncoder;
+    BOOL _commandBufferErrorLogged;
+    BOOL _isBindFBOEnableWhenRender;
+    BOOL _terrainEnabled;
+}
+
+@property (retain, nonatomic) UIImage *snapshotImage;
+@property (nonatomic) int trueFPS;
+@property (nonatomic) double lastTime;
+@property (weak, nonatomic) id<MAMapRenderDelegate> internalDelegate;
+@property (nonatomic) BOOL isRenderLoopDisabled;
+@property (nonatomic) unsigned long long currentFPS;
+@property (nonatomic) BOOL isAllowDecreaseRenderFrame;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)layerClass;
+
+- (void)onDisplayLink;
+- (void)startRender;
+- (void)drawRect;
+- (struct CGSize { double x0; double x1; })getDrawableSize;
+- (void)testShouldStartRender;
+- (void)resumeFPS;
+- (BOOL)canPerformDrawing;
+- (void)stopRender;
+- (void)calculateTrueFPS;
+- (void)initInternalMapService;
+- (void)updateEngineSize:(struct CGSize { double x0; double x1; })a0 viewPortSize:(struct CGSize { double x0; double x1; })a1;
+- (void)onCommandBufferCompleted:(id)a0;
+- (id)loadFBOMTLRenderPassDescriptor;
+- (id)createMTLRenderPassDescriptor:(id)a0 isClear:(BOOL)a1;
+- (void)metalEngineDrawBegin;
+- (void)beginOurOwnCommandEncoder:(BOOL)a0;
+- (void)endOurOwnCommandEncoder:(BOOL)a0;
+- (void)metalEngineDrawEnd;
+- (void)MAMapRenderDeallocOperation;
+- (void)onDidBecomeActiveNotification;
+- (void)onWillResignActiveNotification;
+- (id)mapService;
+- (void)updateRunLoopMode:(id)a0;
+- (void)reloadMap;
+- (void)outterControlledDisplay;
+- (void)removeSuperview;
+- (void)addRenderObserver:(id)a0 forKeyPath:(id)a1 options:(unsigned long long)a2 context:(void *)a3;
+- (void)removeRenderObserver:(id)a0 forKeyPath:(id)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 layer:(id)a1 device:(id)a2 commandQueue:(id)a3;
+- (id)getOurOwnCommandEncoder;
+- (id)getDevice;
+- (void)enableSnapshotMode:(struct CGSize { double x0; double x1; })a0;
+- (void)disableSnapshotMode:(struct CGSize { double x0; double x1; })a0;
+- (void)setIsBindFBOEnableWhenRender:(BOOL)a0;
+- (BOOL)isBindFBOEnableWhenRender;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 terrainEnabled:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)display;
+- (double)scaleFactor;
+- (BOOL)isPaused;
+- (void)setHidden:(BOOL)a0;
+- (void)commonInit;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)renderContext;
+- (void)setPresentsWithTransaction:(BOOL)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (void)willDestroy;
+
+@end

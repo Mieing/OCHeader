@@ -1,0 +1,64 @@
+@interface FlowKit.MessagingInputViewComponent : FlowInputBizUI.InputViewModel <UITextViewDelegate> {
+    void /* unknown type, empty encoding */ _viewController;
+    void /* unknown type, empty encoding */ _rootComponent;
+    void /* unknown type, empty encoding */ _immersiveModeComponent;
+    void /* unknown type, empty encoding */ _keyboardComponent;
+    void /* unknown type, empty encoding */ _expandComponent;
+    void /* unknown type, empty encoding */ _cameraComponent;
+    void /* unknown type, empty encoding */ _streamingButtonComponent;
+    void /* unknown type, empty encoding */ _instructionViewComponent;
+    void /* unknown type, empty encoding */ _voiceToCompleteComponent;
+    void /* unknown type, empty encoding */ _loadingAnimationComponent;
+    void /* unknown type, empty encoding */ _referenceViewComponent;
+    void /* unknown type, empty encoding */ _messageAdapater;
+    void /* unknown type, empty encoding */ _settingsProvider;
+    void /* unknown type, empty encoding */ _appInfoProvider;
+    void /* unknown type, empty encoding */ _inputViewDelegateComponent;
+    void /* unknown type, empty encoding */ _reeditingComponent;
+    void /* unknown type, empty encoding */ _temporaryChatComponent;
+    void /* unknown type, empty encoding */ _caseComponent;
+    void /* unknown type, empty encoding */ _isRecording;
+    void /* unknown type, empty encoding */ _messageService;
+    void /* unknown type, empty encoding */ inputViewEnterMethod;
+    void /* unknown type, empty encoding */ uploadTasks;
+    void /* unknown type, empty encoding */ cancellableSet;
+    void /* unknown type, empty encoding */ messageExt;
+    void /* unknown type, empty encoding */ messageEnterMethod;
+    void /* unknown type, empty encoding */ shouldOpenKeyboardWhenAppear;
+    void /* unknown type, empty encoding */ shouldOpenMainBotVoiceCallForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotPlusPanelCameraForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotAudioInputHandsfreeForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotMusicGenerationForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotImageGenerationForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotPhotoToAnswerForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotAutoWritingForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenMainBotInstructForShortcut;
+    void /* unknown type, empty encoding */ shouldOpenAcitonsPanelWhenAppear;
+    void /* unknown type, empty encoding */ openActionbarInstructionType;
+    void /* unknown type, empty encoding */ openActionBarInstructionTmplJson;
+    void /* unknown type, empty encoding */ openActionbarItemId;
+    void /* unknown type, empty encoding */ autoSendActionbarInstructionType;
+    void /* unknown type, empty encoding */ autoSendActionBarInstructionTmplJson;
+    void /* unknown type, empty encoding */ autoSendMessageJsonParam;
+    void /* unknown type, empty encoding */ autoFilledText;
+    void /* unknown type, empty encoding */ lastCameraTab;
+    void /* unknown type, empty encoding */ _defaultModeComponent;
+    void /* unknown type, empty encoding */ _attachmentModeComponent;
+    void /* unknown type, empty encoding */ _instructionModeComponent;
+    void /* unknown type, empty encoding */ _referenceModeComponent;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_continueChatMode;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_replayChatMode;
+    void /* unknown type, empty encoding */ _continuousSpeakModeComponent;
+    void /* unknown type, empty encoding */ debouncer;
+}
+
+- (void)scrollViewDidScroll:(id)a0;
+- (void)textViewDidBeginEditing:(id)a0;
+- (void)textViewDidEndEditing:(id)a0;
+- (void)textView:(id)a0 willPresentEditMenuWithAnimator:(id)a1;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)sendButtonAction:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

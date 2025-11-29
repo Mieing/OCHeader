@@ -1,0 +1,82 @@
+@class AWEFeedTabJumpStrategyItemModel, AWEAwemeModel, NSArray, AWEFeedTabJumpStrategyModel, NSString, AWEJumpTabInfoModel, AWEFeedTabJumpStorageManager, NSIndexPath;
+@protocol AWEFeedTrackControllerProtocol;
+
+@interface AWEFeedTabJumpGuideController : AWEBaseController <AWEFeedControllerProtocol, AWETabJumpGuideMessage, AWEFeedTabJumpGuideControllerPrivateProtocol, AWEFeedTrackControllerListenerProtocol>
+
+@property (nonatomic) BOOL isAppear;
+@property (nonatomic) BOOL isRefreshing;
+@property (nonatomic) BOOL isMaskViewShowing;
+@property (retain, nonatomic) AWEAwemeModel *currentAwemeModel;
+@property (retain, nonatomic) NSIndexPath *willDisplayIndexPath;
+@property (retain, nonatomic) NSIndexPath *didEndDisplayIndexPath;
+@property (weak, nonatomic) id<AWEFeedTrackControllerProtocol> feedTrackController;
+@property (retain, nonatomic) AWEFeedTabJumpStrategyModel *strategyModel;
+@property (retain, nonatomic) NSArray *supportTabIDList;
+@property (nonatomic) BOOL currentInteractionPureMode;
+@property (retain, nonatomic) AWEJumpTabInfoModel *currentJumpTabInfoModel;
+@property (retain, nonatomic) AWEFeedTabJumpStrategyItemModel *currentTabStrategy;
+@property (retain, nonatomic) NSArray *currentTriggerStrategies;
+@property (retain, nonatomic) AWEFeedTabJumpStorageManager *storageManager;
+@property (nonatomic) long long hasTriggerShow;
+@property (nonatomic) BOOL neewRetryShow;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEFeedTabJumpGuideControllerDOUYINLiteAdapterClass;
+
+- (id)referString;
+- (void)initialFetchCompletion:(id)a0 error:(id)a1;
+- (void)loadMoreCompletion:(id)a0 error:(id)a1 isFooterRefreshing:(BOOL)a2;
+- (void)refreshCompletion:(id)a0 error:(id)a1 needAnimation:(BOOL)a2;
+- (void)beginRefresh;
+- (void)scrollViewDidScrollEndWithActive;
+- (void)videoPlayer:(id)a0 updatePlayTime:(double)a1 totalTime:(double)a2;
+- (void)addNotification;
+- (void)onAwemeDiggNotification:(id)a0;
+- (void)onAddCommentNotification:(id)a0;
+- (void)onVideoFavoriteNotification:(id)a0;
+- (id)paramsForStayTime;
+- (id)paramsForTrackEventType:(unsigned long long)a0 initialContextParams:(id)a1;
+- (void)onPlayInteractionPureModeChangeNotification:(id)a0;
+- (id)nearbyService;
+- (void)trackTabJumpGuideShow;
+- (void)setupSettingsConfig;
+- (void)landingTabWithModel:(id)a0;
+- (void)removeTabJumpGuideForCurrentCell;
+- (void)setupTabJumpGuideIfNeeded;
+- (void)removeTabJumpGuideViewWithCell:(id)a0;
+- (BOOL)checkAwemeModel:(id)a0;
+- (id)checkJumpTabInfoModel:(id)a0 error:(id *)a1;
+- (BOOL)checkFrequencyControlForGuideView;
+- (id)generateTriggerStrategyListWithModelList:(id)a0 tabID:(id)a1 awemeModel:(id)a2;
+- (void)triggerEventWithStrategyModel:(id)a0 eventType:(long long)a1;
+- (void)showTabJumpGuideViewIfNeededWithModel:(id)a0;
+- (id)createJumpToMallTrackParamsWithMethod:(id)a0;
+- (id)aAWEFeedTabJumpGuideControllerDOUYINLiteAdapter;
+- (void)onVideoShareNotification:(id)a0;
+- (void)onAnchorToMallNotification:(id)a0;
+- (void)onAnchorToPOINotification:(id)a0;
+- (void)onAwemeFollowNotification:(id)a0;
+- (void)onAwemeBottomBarNotification:(id)a0;
+- (void)onFeedTabChangedNotification:(id)a0;
+- (void)onTabBarChangedNotification:(id)a0;
+- (void)onImageAlbumBackNotification:(id)a0;
+- (id)schemaWithPath:(id)a0 schema:(id)a1 byAddingQueryDict:(id)a2;
+- (void)showFeedTabJumpGuideButton:(id)a0;
+- (void)recordGuideShow;
+- (void)handleJumpModel:(id)a0;
+- (void)trackTabJumpGuideButtonClick;
+- (void)nearbyTrackEvent:(id)a0;
+- (void)trackProductEntranceShowToMallWithControllerTrackParam:(id)a0;
+- (void)handleUpdateLastShowTimestampWithTabID:(id)a0;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)viewDidLoad;
+- (void)resetData;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)viewWillDisappear;
+
+@end

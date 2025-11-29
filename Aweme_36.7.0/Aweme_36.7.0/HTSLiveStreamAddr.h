@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveStreamAddr : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *resolutionKey;
+@property (copy, nonatomic) NSString *resolutionName;
+@property (copy, nonatomic) NSString *tslPullURL;
+
++ (id)descriptor;
+
+@end

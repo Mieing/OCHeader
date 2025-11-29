@@ -1,0 +1,3 @@
+@interface StampMicroAppEntrancePermissionApiRoot : GPBRootObject
+
+@end

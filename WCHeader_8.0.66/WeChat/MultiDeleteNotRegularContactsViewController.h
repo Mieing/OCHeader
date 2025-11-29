@@ -1,0 +1,84 @@
+@class NSMutableDictionary, MultiDeleteNotRegularContactsMaskViewView, MMTableViewInfo, MMDeleteNotRegularContactLogic, NSMutableArray, MMAcceptAgreementCommonHeadView, ContactBatchModifyLogic, NSString, MMTableView, MMUIView, MMUILabel, MMUIActivityIndicatorView, MMUIButton;
+
+@interface MultiDeleteNotRegularContactsViewController : MMAcceptAgreementBaseViewController <ContactBatchModifyLogicDelegate, ContactInfoViewControllerDelegate, MMDeleteNotRegularContactLogicDelegate, IContactMgrExt, MMNavBarInteractiveDelegate> {
+    NSMutableArray *m_arrNeedDeleteNotRegularContact;
+    NSMutableDictionary *m_dicMultiSelect;
+    NSString *m_sessionId;
+    BOOL m_isLoading;
+    NSString *m_context;
+    BOOL m_rightBarButtonItemEnabled;
+    BOOL m_isAllDeleteLoading;
+    MMUIButton *m_sessionHeaderOperateBtn;
+    NSMutableArray *m_arrNoAddCreateTimeUserName;
+    MMAcceptAgreementCommonHeadView *m_commonHeadView;
+    MMTableViewInfo *m_tableViewInfo;
+    MMTableView *m_tableView;
+}
+
+@property (retain, nonatomic) MultiDeleteNotRegularContactsMaskViewView *operateButtonMaskView;
+@property (retain, nonatomic) MMUILabel *emptyTitleLabel;
+@property (retain, nonatomic) MMUIView *headerTitleView;
+@property (retain, nonatomic) MMUIButton *deleteButton;
+@property (retain, nonatomic) MMUIView *sessionHeaderView;
+@property (retain, nonatomic) MMUIActivityIndicatorView *dataLoadingIndicator;
+@property (retain, nonatomic) MMUILabel *descriptionLabel;
+@property (retain, nonatomic) ContactBatchModifyLogic *contactBatchModifyLogic;
+@property (retain, nonatomic) MMDeleteNotRegularContactLogic *deleteNotRegularContactLogic;
+@property (retain, nonatomic) NSString *contactsMaxLimitSortSessionid;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidLoad;
+- (void)initDeleteNotRegularContactsViewData;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)setupReportData;
+- (void)viewDidTransitionToNewSize;
+- (BOOL)shouldInteractiveDismiss;
+- (void)reloadTableData;
+- (void)makeDeleteNotRegularContactCell:(id)a0 cellInfo:(id)a1;
+- (void)handleSelectdContact:(id)a0;
+- (void)handleShowViewContact:(id)a0;
+- (void)updateSelectImageView:(BOOL)a0 selectedImageView:(id)a1;
+- (void)initNavigationBar;
+- (void)layoutHeaderView;
+- (void)layoutSessionHeaderView;
+- (id)genSessionHeaderTitleLable;
+- (id)genSessionHeaderOperateButton;
+- (void)layoutOperateButtonMaskView;
+- (void)layoutEmptyTitleView;
+- (void)updateOperateButtonMaskViewGradientLayer;
+- (void)makeLoadingDataState:(BOOL)a0;
+- (void)removeLoadingDataState;
+- (BOOL)isSelected:(id)a0;
+- (void)onDeleteButtonClick:(id)a0;
+- (void)deleteSelectedContacts;
+- (void)onClickSelectdContactBtn:(id)a0;
+- (void)onRighRefreshButtonClick;
+- (void)refreshAnimateRloadTableView;
+- (void)updateDeleteButtonStatus;
+- (void)onViewContact:(id)a0;
+- (id)getBaseParamDic;
+- (id)getDeleteContactParamDic;
+- (void)onDeleteContact:(id)a0;
+- (void)onModifyContact:(id)a0;
+- (void)handleDeteContact:(id)a0;
+- (void)OnContactBatchModify:(id)a0 withRet:(unsigned int)a1 errorMsg:(id)a2 isNetWorkError:(BOOL)a3;
+- (void)onDeleteFaildWithErrMsg:(id)a0;
+- (void)onDeleteFaildWithErrMsgTitle:(id)a0 errMsgContent:(id)a1;
+- (void)onGetNeedDeleteNotRegularContactListDone:(id)a0 context:(id)a1;
+- (void)handleNeedDeleteNotRegularContactList:(id)a0;
+- (void)onGetNeedDeleteNotRegularContactListFail:(id)a0;
+- (id)normalTintColor;
+- (BOOL)isSetNormalToBlackStyle;
+- (id)m_commonHeadView;
+- (void)setM_commonHeadView:(id)a0;
+- (id)m_tableViewInfo;
+- (void)setM_tableViewInfo:(id)a0;
+- (id)m_tableView;
+- (void)setM_tableView:(id)a0;
+- (void).cxx_destruct;
+
+@end

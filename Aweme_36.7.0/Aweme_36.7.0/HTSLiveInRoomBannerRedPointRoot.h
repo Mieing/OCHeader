@@ -1,0 +1,3 @@
+@interface HTSLiveInRoomBannerRedPointRoot : GPBRootObject
+
+@end

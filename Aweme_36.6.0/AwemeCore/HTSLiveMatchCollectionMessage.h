@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveCollectionItem;
+
+@interface HTSLiveMatchCollectionMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveCollectionItem *collectionItem;
+@property (nonatomic) BOOL hasCollectionItem;
+
++ (id)descriptor;
+
+@end

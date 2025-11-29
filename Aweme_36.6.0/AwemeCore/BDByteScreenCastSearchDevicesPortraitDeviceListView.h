@@ -1,0 +1,72 @@
+@class UIView, BDSCImageView, NSString, NSArray, BDByteScreenCastAppUIConfigInfo, BDByteScreenCastTracker, BDSCSearchListUIModel, BDSCSearchDeviceListView, UIVisualEffectView, BDSCBackgroundView;
+@protocol BDSCSearchDeviceNoNetworkViewProtocol, BDSCSearchDeviceLoadingViewProtocol, BDSCSearchDeviceNoDeviceViewProtocol, BDByteScreenCastSearchDevicesViewDelegate, BDSCSearchDeviceVPNActiveProtocol, BDSCSearchDeviceNoPermissionViewProtocol;
+
+@interface BDByteScreenCastSearchDevicesPortraitDeviceListView : UIView <UIGestureRecognizerDelegate, BDSCSearchDeviceListViewDelegate, BDByteScreenCastSearchDevicesView>
+
+@property (nonatomic) BOOL isLandscape;
+@property (nonatomic) double totalHeight;
+@property (nonatomic) double totalWidth;
+@property (retain, nonatomic) BDSCSearchListUIModel *uiModel;
+@property (retain, nonatomic) UIView *container;
+@property (retain, nonatomic) BDSCBackgroundView *backgroundView;
+@property (retain, nonatomic) UIVisualEffectView *visualEffectView;
+@property (retain, nonatomic) UIView *accessCloseView;
+@property (retain, nonatomic) BDSCImageView *topView;
+@property (retain, nonatomic) BDSCSearchDeviceListView *listView;
+@property (weak, nonatomic) UIView<BDSCSearchDeviceNoDeviceViewProtocol> *noDeviceView;
+@property (weak, nonatomic) UIView<BDSCSearchDeviceLoadingViewProtocol> *loadingView;
+@property (weak, nonatomic) UIView<BDSCSearchDeviceNoNetworkViewProtocol> *noNetworkView;
+@property (weak, nonatomic) UIView<BDSCSearchDeviceNoPermissionViewProtocol> *noPermissionView;
+@property (weak, nonatomic) UIView<BDSCSearchDeviceVPNActiveProtocol> *vpnActiveView;
+@property (nonatomic) BOOL didFindOtherDevices;
+@property (nonatomic) BOOL newStyle;
+@property (weak, nonatomic) UIView *popContainerView;
+@property (retain, nonatomic) BDByteScreenCastAppUIConfigInfo *appUIInfo;
+@property (nonatomic) unsigned long long viewType;
+@property (weak, nonatomic) id<BDByteScreenCastSearchDevicesViewDelegate> delegate;
+@property (nonatomic) unsigned long long playType;
+@property (nonatomic) BOOL hasLocalNetworkPermission;
+@property (nonatomic) BOOL isShowingSearchPage;
+@property (nonatomic) BOOL isVPNActive;
+@property (nonatomic) BOOL invalidDLNADeviceFound;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long long searchStatus;
+@property (copy, nonatomic) NSArray *devices;
+@property (retain, nonatomic) BDByteScreenCastTracker *byteCastTracker;
+@property (nonatomic) BOOL supportDanmaku;
+@property (nonatomic) BOOL supportClarityLimit;
+
+- (void)dismissWithAnimated:(BOOL)a0 completion:(id /* block */)a1;
+- (void)updateContainerHeight:(double)a0;
+- (void)deviceOrientationDidChange;
+- (void)singleTapped;
+- (BOOL)isLandscapeStyle;
+- (id)currentConnectedDevice;
+- (BOOL)optimizeSearchPanel;
+- (void)searchDeviceListView:(id)a0 deviceCellClicked:(id)a1;
+- (void)searchDeviceListView:(id)a0 searchBtnClicked:(id)a1;
+- (id)loadingViewForSearchDeviceListView:(id)a0;
+- (id)noNetworkViewForSearchDeviceListView:(id)a0;
+- (id)noDeviceViewForSearchDeviceListView:(id)a0;
+- (id)noPermissionViewForSearchDeviceListView:(id)a0;
+- (id)vpnActiveViewForSearchDeviceListView:(id)a0;
+- (void)showWithCompletion:(id /* block */)a0 fromParentViewController:(id)a1;
+- (void)updateWifiInfoWithNetworkStatus:(long long)a0;
+- (void)updateContentHeight;
+- (BOOL)failPageShowing;
+- (void)buildContraints;
+- (BOOL)isInLVSceneLandscapeStyle;
+- (BOOL)isVSSportsStyle;
+- (double)topBarContainerViewHeight;
+- (void)dismissSelectTableView;
+- (void)showSelectTableView;
+- (void)setupSubViews;
+- (void).cxx_destruct;
+- (void)removeFromSuperview;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+
+@end

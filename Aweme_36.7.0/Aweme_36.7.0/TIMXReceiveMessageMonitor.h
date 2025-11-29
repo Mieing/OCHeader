@@ -1,0 +1,3 @@
+@interface TIMXReceiveMessageMonitor : NSObject
+
+@end

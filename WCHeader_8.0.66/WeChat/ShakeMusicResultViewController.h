@@ -1,0 +1,72 @@
+@class MMWebImageView, ShakeMusicResultMediaView, MMMusicOpenThirdAppHelper, ShakeMusicInfo, UIView, MMMusicFavHandler, RichTextView, ShakeMusicPlayButton, MMUILabel, UIScrollView, NSString, MMMusicInfo, MMMusicForwardHandler, MMUIButton;
+
+@interface ShakeMusicResultViewController : MMUIViewController <MMMusicOpenThirdAppHelperDelegate, MMMusicOpenThirdAppHelperDataSource, MMMusicForwardHandlerDelegate, MMMusicForwardHandlerDataSource, MMMusicFavHandlerDelegate, MMMusicFavHandlerDataSource>
+
+@property (retain, nonatomic) MMWebImageView *musicCoverBgImageView;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) MMUILabel *recognitionResultLabel;
+@property (retain, nonatomic) UIScrollView *containerView;
+@property (retain, nonatomic) UIView *cardContainerView;
+@property (retain, nonatomic) ShakeMusicResultMediaView *mediaView;
+@property (retain, nonatomic) MMUILabel *songNameLabel;
+@property (retain, nonatomic) MMUILabel *singerNameLabel;
+@property (retain, nonatomic) MMWebImageView *musicCoverImageView;
+@property (retain, nonatomic) ShakeMusicPlayButton *playIconContainerButton;
+@property (retain, nonatomic) MMUIButton *forwardButton;
+@property (retain, nonatomic) MMUIButton *favButton;
+@property (retain, nonatomic) MMUIButton *musicSourceContainerButton;
+@property (retain, nonatomic) RichTextView *musicSourceRichTextView;
+@property (retain, nonatomic) ShakeMusicInfo *shakeMusicInfo;
+@property (retain, nonatomic) MMMusicInfo *musicInfo;
+@property (retain, nonatomic) MMMusicOpenThirdAppHelper *openThirdAppHelper;
+@property (retain, nonatomic) MMMusicForwardHandler *forwardHandler;
+@property (retain, nonatomic) MMMusicFavHandler *favHandler;
+@property (nonatomic) BOOL shouldNotStopMusic;
+@property (nonatomic) BOOL shouldUseCustomPopAnimation;
+@property (copy, nonatomic) id /* block */ onPopBlock;
+@property (nonatomic) unsigned long long openScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithShakeMusicInfo:(id)a0;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (BOOL)useTransparentNavibar;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (void)layoutInternal;
+- (void)layoutTopArea;
+- (void)layoutScrollView;
+- (void)layoutCardContainerView;
+- (void)layoutBottomArea;
+- (void)setupSubviews;
+- (void)loadData;
+- (id)mmNavigationController:(id)a0 animationControllerForOperation:(long long)a1 fromViewController:(id)a2 toViewController:(id)a3;
+- (void)closeButtonDidClick;
+- (void)playIconViewDidClick;
+- (void)forwardButtonDidClick;
+- (void)favButtonDidClick;
+- (void)didOpenThirdApp;
+- (id)generateEmptyMVModel;
+- (id)getMusicShareItem:(id)a0;
+- (void)mmMusicOpenThirdAppHelper:(id)a0 onOpen3rdMusicAppWithType:(unsigned long long)a1 source:(unsigned long long)a2;
+- (void)open3rdMusicWebPage;
+- (id)mmMusicOpenThirdAppHelperGetShareItem:(id)a0;
+- (void)mmMusicForwardHandlerOnStartLoading:(id)a0;
+- (void)mmMusicForwardHandlerOnEndLoading:(id)a0;
+- (void)mmMusicForwardHandlerOnShareActionSuccess:(id)a0;
+- (void)mmMusicForwardHandler:(id)a0 onShareToFriends:(id)a1 withSource:(unsigned long long)a2;
+- (void)mmMusicForwardHandler:(id)a0 getForwardViewControllerAndPresent:(id)a1;
+- (void)mmMusicForwardHandler:(id)a0 onShareToWcWithForwardViewController:(id)a1 andSource:(unsigned long long)a2;
+- (id)mmMusicForwardHandlerGetMusicShareItem:(id)a0;
+- (void)mmMusicFavHandlerOnStartLoading:(id)a0;
+- (void)mmMusicFavHandlerOnEndLoading:(id)a0;
+- (void)mmMusicFavHandlerOnAddFav:(id)a0;
+- (id)mmMusicFavHandlerGetMusicShareItem:(id)a0;
+- (void).cxx_destruct;
+
+@end

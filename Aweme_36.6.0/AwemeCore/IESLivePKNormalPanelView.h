@@ -1,0 +1,75 @@
+@class UIView, IESLiveTableViewCellDisplayTrackHelper, NSString, IESLivePKNormalPanelViewModel, UITableView, IESLiveRankPanelFancyAutoMatchView, IESLivePKPanelFancyAutoMatchView, UIViewController, IESLivePKRecommendTabView, UIScrollView;
+@protocol IESLivePKCustomPanelViewDelegate, IESHYContainerProtocol, IESHYControllerProtocol;
+
+@interface IESLivePKNormalPanelView : UIView <UITableViewDelegate, UITableViewDataSource, IESLiveTableViewCellDisplayTrackHelperDelegate, IESHYHybridViewLifecycleProtocol, IESLivePKRecommendTabViewDelegate, IESHYControllerDelegate>
+
+@property (nonatomic) BOOL canRefresh;
+@property (nonatomic) BOOL activityListShown;
+@property (retain, nonatomic) IESLivePKPanelFancyAutoMatchView *fancyAutoMatchView;
+@property (retain, nonatomic) UIView *pkTermLabelFloatingView;
+@property (retain, nonatomic) UIView<IESHYContainerProtocol> *hybridTopBanner;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) IESLiveTableViewCellDisplayTrackHelper *tableViewTrackHelper;
+@property (retain, nonatomic) IESLivePKRecommendTabView *recommendTabView;
+@property (weak, nonatomic) IESLivePKNormalPanelViewModel *viewModel;
+@property (nonatomic) BOOL didSetupNewStyleLayout;
+@property (nonatomic) double tempOffset;
+@property (nonatomic) BOOL hasShowFooterTracked;
+@property (retain, nonatomic) IESLiveRankPanelFancyAutoMatchView *rankMatchView;
+@property (retain, nonatomic) UIViewController<IESHYControllerProtocol> *hyController;
+@property (weak, nonatomic) id<IESLivePKCustomPanelViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)iesHYControllerDidFinishLoad:(id)a0;
+- (void)iesHYControllerDidDismiss:(id)a0;
+- (void)bindAction;
+- (long long)sectionForGroupType:(int)a0;
+- (BOOL)trackDisplayedCellWithIndexPath:(id)a0;
+- (void)updateWithViewModel;
+- (void)didUpdatePanelScrollViewOffset:(id)a0 deltaY:(double)a1;
+- (void)willPanelScrollViewBeginDragging;
+- (void)willPanelScrollViewEndDragging;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 diContext:(id)a1 viewModel:(id)a2;
+- (void)trackActivitySectionShow;
+- (void)normalPKViewDidAppear;
+- (void)normalPKViewDidDisAppear;
+- (BOOL)hasHeaderForSection:(long long)a0;
+- (void)onClickFriendSection;
+- (void)createNormalSectionHeader:(long long)a0 containerView:(id)a1;
+- (void)showPKTermLabelIfNeeded;
+- (void)updateHybridTopBannerViewIfNeed;
+- (void)openPopupPage;
+- (BOOL)isRankSeasonType;
+- (void)setupRankMatchView;
+- (void)setupFancyAutoMatchView;
+- (double)getNewStyleTableViewHeight;
+- (void)recordTableViewLoadDuration:(long long)a0;
+- (void)updateRankMatchView:(BOOL)a0;
+- (BOOL)isRandomOpt;
+- (void)updateFancyAutoMatchView:(BOOL)a0;
+- (BOOL)isListOpt;
+- (void)trackPkMoreMutualShowed;
+- (BOOL)hasFootForSection:(long long)a0;
+- (void)trackFriendSectionClicked;
+- (BOOL)isEmptyForSection:(long long)a0;
+- (void)setupSubViews;
+- (void)setupContainerView;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)layoutSubviews;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (double)sectionHeight;
+
+@end

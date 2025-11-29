@@ -1,0 +1,3 @@
+@interface EcExifItem : NSObject
+
+@end

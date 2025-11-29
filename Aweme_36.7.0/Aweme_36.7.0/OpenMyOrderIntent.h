@@ -1,0 +1,3 @@
+@interface OpenMyOrderIntent : INIntent
+
+@end

@@ -1,0 +1,10 @@
+@class FeedbackResponse_ResponseData;
+
+@interface FeedbackResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) FeedbackResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

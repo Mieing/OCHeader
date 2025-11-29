@@ -1,0 +1,72 @@
+@class NSString, VideoEncodeTask, NSMutableArray, NSObject;
+
+@interface VideoEncodeMgr : MMUserService <MMServiceProtocol>
+
+@property (retain, nonatomic) NSMutableArray *normalTaskQueue;
+@property (retain, nonatomic) NSMutableArray *highPriorityTaskQueue;
+@property (retain, nonatomic) NSObject *queueLockObject;
+@property (readonly, nonatomic) VideoEncodeTask *currentTask;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (id)getParamsForChatAlbumVideo:(id)a0;
+- (id)getParamsForChatAlbumVideo:(id)a0 withDuration:(double)a1;
+- (id)getParamsForChatVideo:(id)a0 encodeScene:(unsigned long long)a1 encodeJson:(id)a2;
+- (id)getParamsForChatVideo:(id)a0 withDuration:(double)a1 encodeScene:(unsigned long long)a2 encodeJson:(id)a3;
+- (id)getParamsForCompressChatAlbumVideo:(id)a0;
+- (id)getParamsForMomentAlbumVideo:(id)a0;
+- (id)getParamsForMomentAlbumVideo:(id)a0 withDuration:(double)a1;
+- (id)getParamsForMomentAlbumVideo:(id)a0 withEncodeScene:(unsigned long long)a1;
+- (id)getParamsForMomentAlbumVideo:(id)a0 withDuration:(double)a1 encodeScene:(unsigned long long)a2;
+- (BOOL)isEnableHEVCEncodeWithSightScene:(unsigned long long)a0 duration:(double)a1;
+- (id)getParamsForMomentAlbumWithEncodeScene:(unsigned long long)a0 videoSize:(struct CGSize { double x0; double x1; })a1 duration:(double)a2 fps:(float)a3 videoBitrate:(float)a4 audioSampleRate:(float)a5 audioChannel:(unsigned int)a6 audioBitrate:(float)a7;
+- (id)getParamsForFinderAlbumVideo:(id)a0;
+- (id)getParamsForFinderAlbumMegaVideo:(id)a0 renderSize:(struct CGSize { double x0; double x1; })a1;
+- (id)getParamsForFinderAlbumVideo:(id)a0 renderSize:(struct CGSize { double x0; double x1; })a1;
+- (id)getParamsForFinderAlbumVideo:(id)a0 renderSize:(struct CGSize { double x0; double x1; })a1 encodeScene:(unsigned long long)a2;
+- (id)getParamsForFinderAlbumVideo:(id)a0 withDuration:(double)a1 encodeScene:(unsigned long long)a2;
+- (id)getParamsForFinderAlbumVideoSize:(struct CGSize { double x0; double x1; })a0 duration:(double)a1 fps:(float)a2 videoBitrate:(float)a3 audioSampleRate:(float)a4 audioChannel:(unsigned int)a5 audioBitrate:(float)a6 encodeScene:(unsigned long long)a7;
+- (id)getParamsForFinderMiaojianPublisher;
+- (id)getParamsForChatAlbumVideoSize:(struct CGSize { double x0; double x1; })a0 duration:(double)a1 fps:(float)a2 videoBitrate:(float)a3 audioSampleRate:(float)a4 audioChannel:(unsigned int)a5 audioBitrate:(float)a6 encodeScene:(unsigned long long)a7 encodeJson:(id)a8;
+- (id)getParamsForChatVideoRecord;
+- (id)getParamsForMomentVideoRecord;
+- (id)getParamsForMomentsWithMiaoJianTemplate;
+- (id)getParamsForMomentsWithMiaoJianApp;
+- (id)getParamsForStoryAlbumVideo:(id)a0;
+- (id)getParamsForStoryAlbumVideo:(id)a0 withDuration:(double)a1;
+- (id)getParamsForStoryVideoRecord;
+- (id)getParamsForTextStateVideo:(id)a0;
+- (id)getParamsForHighQulity:(id)a0;
+- (id)getParamsForGameVideo:(id)a0;
+- (id)getParamsForFinderVideoRecord:(BOOL)a0;
+- (void)setDefaultStepConfigs:(id)a0;
+- (long long)getTimeMinuteCountFrom:(id)a0;
+- (id)getVideoEncodeJson:(unsigned long long)a0;
+- (id)getVideoConfigForScene:(unsigned long long)a0;
+- (id)getVideoConfigForScene:(unsigned long long)a0 encodeJson:(id)a1;
+- (id)startNewTaskForAsset:(id)a0 inputPath:(id)a1 outputPath:(id)a2 params:(id)a3 videoEncodeTaskParams:(id)a4 completionBlock:(id /* block */)a5;
+- (id)startMMAssetExportSessionTaskWithInputPath:(id)a0 outputPath:(id)a1 params:(id)a2 videoEncodeTaskParams:(id)a3 completionBlock:(id /* block */)a4;
+- (id)startNewTaskForAsset:(id)a0 inputPath:(id)a1 outputPath:(id)a2 params:(id)a3 videoEncodeTaskParams:(id)a4 configVideoComposition:(id)a5 completionBlock:(id /* block */)a6;
+- (id)startNewTaskForAsset:(id)a0 inputPath:(id)a1 outputPath:(id)a2 params:(id)a3 videoEncodeTaskParams:(id)a4 configVideoComposition:(id)a5 videoProgressCallback:(id /* block */)a6 completionBlock:(id /* block */)a7;
+- (id)startMAVExportSessionTaskWithMAVVideoComposition:(id)a0 config:(id)a1 inputPath:(id)a2 outputPath:(id)a3 params:(id)a4 videoEncodeTaskParams:(id)a5 completionBlock:(id /* block */)a6;
+- (id)startMAVExportSessionTaskWithMAVVideoComposition:(id)a0 config:(id)a1 inputPath:(id)a2 outputPath:(id)a3 params:(id)a4 videoEncodeTaskParams:(id)a5 progressCallback:(id /* block */)a6 completionBlock:(id /* block */)a7;
+- (BOOL)isTaskInQueue:(id)a0;
+- (void)removeTask:(id)a0;
+- (void)removeAllTasks;
+- (BOOL)makeTaskHighPriority:(id)a0;
+- (BOOL)makeTaskLowPriority:(id)a0;
+- (id)getTaskWithVideoAsset:(id)a0 inputPath:(id)a1 outputPath:(id)a2 includingReplicableTask:(BOOL)a3;
+- (void)addHighPriorityTask:(id)a0;
+- (void)addLowPriorityTask:(id)a0;
+- (void)checkQueue;
+- (unsigned int)getFullScreenAlrightHeightWith:(unsigned int)a0;
+- (id)getParamsForNearbyAlbumVideo:(id)a0 withDuration:(double)a1;
+- (id)getParamsForNearbyAlbumVideo:(id)a0;
+- (id)getParamsForNearbyVideoRecord;
+- (id)getParamsForNearbyAlbumVideoSize:(struct CGSize { double x0; double x1; })a0 duration:(double)a1 fps:(float)a2 videoBitrate:(float)a3 audioSampleRate:(float)a4 audioChannel:(unsigned int)a5 audioBitrate:(float)a6;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveMatchHostChangeRoot : GPBRootObject
+
+@end

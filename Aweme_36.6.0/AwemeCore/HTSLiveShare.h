@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveShare : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *shareURL;
+@property (copy, nonatomic) NSString *anchorShareText;
+@property (copy, nonatomic) NSString *userShareText;
+
++ (id)descriptor;
+
+@end

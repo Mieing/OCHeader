@@ -1,0 +1,10 @@
+@interface MSKunPeng : NSObject
+
++ (id)sharedInstance;
+
+- (void)addWing;
+- (void)wingsFlap;
+- (id)init;
+- (void)dealloc;
+
+@end

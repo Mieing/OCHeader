@@ -1,0 +1,3 @@
+@interface HTSLiveGameInstantPlayRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEIMAccessibilityCollectionView : UICollectionView
+
+@end

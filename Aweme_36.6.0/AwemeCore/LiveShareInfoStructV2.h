@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface LiveShareInfoStructV2 : GPBMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) long long roomId;
+@property (nonatomic) BOOL hasRoomId;
+@property (copy, nonatomic) NSString *uuid;
+@property (nonatomic) BOOL hasUuid;
+
++ (id)descriptor;
+
+@end

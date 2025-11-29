@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureEditorCanvas : MTLModel
+
+@end

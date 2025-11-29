@@ -1,0 +1,74 @@
+@class UIView, NSString, AVPictureInPictureVideoCallViewController, __RTVPiPSampleBufferDisplayView, UIViewController, AVPictureInPictureController, __RTVPiPContainerView, RxDeferred;
+@protocol RTVVoipConfigureManagerInterface, RxInjector, RTVPiPControllerDelegate;
+
+@interface RTVPiPController : NSObject <AVPictureInPictureControllerDelegate, AVPictureInPictureSampleBufferPlaybackDelegate, RTVPIPControllerInterface>
+
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (retain, nonatomic) AVPictureInPictureController *pipController;
+@property (retain, nonatomic) AVPictureInPictureVideoCallViewController *callViewController;
+@property (retain, nonatomic) UIViewController *pipViewController;
+@property (retain, nonatomic) __RTVPiPSampleBufferDisplayView *sampleBufferDisplayView;
+@property (retain, nonatomic) __RTVPiPContainerView *containerView;
+@property (retain, nonatomic) UIView *contentViewSnapshotView;
+@property (nonatomic, getter=isActive) BOOL active;
+@property (nonatomic) BOOL isStopping;
+@property (nonatomic) BOOL isSynchronizingPlaybackTime;
+@property (nonatomic) BOOL isSeekingPlaybackTime;
+@property (copy, nonatomic) id /* block */ seekCompletionHandler;
+@property (retain, nonatomic) RxDeferred *PiPDidStopDeferred;
+@property (readonly, nonatomic) id<RTVVoipConfigureManagerInterface> configureManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<RTVPiPControllerDelegate> delegate;
+@property (nonatomic) BOOL canStartPiPAutomaticallyFromInline;
+@property (nonatomic) BOOL requiresLinearPlayback;
+@property (nonatomic) BOOL snapshotDuringTransition;
+@property (nonatomic) BOOL stopWhenAppDidBecomeActive;
+
+- (void)rxAwakeFromPropertyInjection;
+- (void)__handleNotification:(id)a0;
+- (void)stopPiP;
+- (void)startPiP;
+- (BOOL)__checkAudioSessionContainMixAndDuck;
+- (BOOL)__checkAudioSessionContainMixOrDuck;
+- (void)registerPiPWithContainerView:(id)a0;
+- (void)unregisterPiP;
+- (void)setNeedupdateVideoFreamSize;
+- (void)setNeedUpdateVideoPlaceholderFrame;
+- (id)PiPDidStopPromise;
+- (struct CGSize { double x0; double x1; })__videoFrameSize;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })__videoPlaceholderFrame;
+- (void)__invalidateRate;
+- (void)__invalidatePlaybackTime;
+- (void)__invalidatePlayback;
+- (double)__currentPlaybackTime;
+- (void)__restoreContentView;
+- (void)resetPiP;
+- (void)preSetUpSnapShot;
+- (void)__configRTCAudioSessionOptions;
+- (void)__removeSnapshotViewIfNeed;
+- (BOOL)__isPlaying;
+- (void)__audioSessionNotContainMixAndDuck;
+- (void)__audioSessionContainMixAndDuck;
+- (void)pictureInPictureControllerDidStopPictureInPicture:(id)a0;
+- (void)pictureInPictureControllerDidStartPictureInPicture:(id)a0;
+- (void).cxx_destruct;
+- (void)pictureInPictureController:(id)a0 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(id /* block */)a1;
+- (void)pictureInPictureControllerWillStartPictureInPicture:(id)a0;
+- (void)pictureInPictureControllerWillStopPictureInPicture:(id)a0;
+- (void)pictureInPictureController:(id)a0 failedToStartPictureInPictureWithError:(id)a1;
+- (void)invalidateInfo;
+- (void)dealloc;
+- (id)__contentView;
+- (double)__duration;
+- (void)pictureInPictureController:(id)a0 setPlaying:(BOOL)a1;
+- (struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })pictureInPictureControllerTimeRangeForPlayback:(id)a0;
+- (BOOL)pictureInPictureControllerIsPlaybackPaused:(id)a0;
+- (void)pictureInPictureController:(id)a0 didTransitionToRenderSize:(struct { int x0; int x1; })a1;
+- (void)pictureInPictureController:(id)a0 skipByInterval:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1 completionHandler:(id /* block */)a2;
+- (double)__rate;
+- (id)__captureController;
+
+@end

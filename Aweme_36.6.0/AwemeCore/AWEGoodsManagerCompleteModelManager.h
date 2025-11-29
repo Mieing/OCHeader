@@ -1,0 +1,13 @@
+@class NSString, YYMemoryCache;
+
+@interface AWEGoodsManagerCompleteModelManager : NSObject <AWEUserMessage>
+
+@property (class, readonly, nonatomic) AWEGoodsManagerCompleteModelManager *shared;
+
+@property (readonly, nonatomic) YYMemoryCache *memoryCache;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+@end

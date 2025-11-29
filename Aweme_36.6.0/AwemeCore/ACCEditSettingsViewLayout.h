@@ -1,0 +1,3 @@
+@interface ACCEditSettingsViewLayout : NSObject
+
+@end

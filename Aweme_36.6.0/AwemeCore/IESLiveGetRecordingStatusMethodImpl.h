@@ -1,0 +1,10 @@
+@protocol IESLiveScreenRecordInterface;
+
+@interface IESLiveGetRecordingStatusMethodImpl : IESLiveGetRecordingStatusMethod
+
+@property (retain, nonatomic) id<IESLiveScreenRecordInterface> actionCreator;
+
+- (void)callWithParamModel:(id)a0 completionHandler:(id /* block */)a1;
+- (void).cxx_destruct;
+
+@end

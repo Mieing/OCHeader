@@ -1,0 +1,80 @@
+@class NSString, NSData;
+
+@interface MMTextStateMediaUploadTaskInfo : NSObject <PBCoding>
+
+@property (retain, nonatomic) NSString *tid;
+@property (retain, nonatomic) NSString *clientId;
+@property (retain, nonatomic) NSString *videoPath;
+@property (retain, nonatomic) NSString *imagePath;
+@property (retain, nonatomic) NSString *thumbPath;
+@property (nonatomic) unsigned int mediaType;
+@property (nonatomic) unsigned int createTime;
+@property (retain, nonatomic) NSString *localInfo;
+@property (retain, nonatomic) NSData *localInfoBuf;
+@property (nonatomic) double duration;
+@property (nonatomic) long long totalsize;
+@property (nonatomic) BOOL isRetrying;
+@property (nonatomic) unsigned int retryCount;
+@property (nonatomic) unsigned int enterQueueTime;
+@property (nonatomic) unsigned int startUploadTime;
+@property (nonatomic) unsigned int finishUploadTime;
+@property (nonatomic) unsigned int firstFailTime;
+@property (nonatomic) unsigned int lastFailTime;
+@property (nonatomic) int retCode;
+@property (nonatomic) int cgiRetCode;
+@property (nonatomic) BOOL startCndUpload;
+@property (nonatomic) unsigned int textStatePublishType;
+@property (retain, nonatomic) NSString *videoUrl;
+@property (retain, nonatomic) NSString *md5;
+@property (retain, nonatomic) NSString *videoMd5;
+@property (retain, nonatomic) NSString *thumbUrl;
+@property (retain, nonatomic) NSString *thumbMd5;
+@property (retain, nonatomic) NSString *imageUrl;
+@property (retain, nonatomic) NSString *imageMd5;
+@property (retain, nonatomic) NSString *originVideoArgs;
+@property (retain, nonatomic) NSString *exportVideoPath;
+@property (nonatomic) unsigned int audioChannelsPerFrame;
+@property (nonatomic) BOOL isSelectFromAlbum;
+@property (retain, nonatomic) NSString *nsCdnStatInfo;
+@property (nonatomic) BOOL isLivePhoto;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_tid;
++ (void)PBArrayAdd_clientId;
++ (void)PBArrayAdd_localInfo;
++ (void)PBArrayAdd_duration;
++ (void)PBArrayAdd_isRetrying;
++ (void)PBArrayAdd_retryCount;
++ (void)PBArrayAdd_enterQueueTime;
++ (void)PBArrayAdd_startUploadTime;
++ (void)PBArrayAdd_firstFailTime;
++ (void)PBArrayAdd_lastFailTime;
++ (void)PBArrayAdd_videoUrl;
++ (void)PBArrayAdd_md5;
++ (void)PBArrayAdd_videoMd5;
++ (void)PBArrayAdd_thumbUrl;
++ (void)PBArrayAdd_localInfoBuf;
++ (void)PBArrayAdd_createTime;
++ (void)PBArrayAdd_totalsize;
++ (void)PBArrayAdd_retCode;
++ (void)PBArrayAdd_finishUploadTime;
++ (void)PBArrayAdd_originVideoArgs;
++ (void)PBArrayAdd_exportVideoPath;
++ (void)PBArrayAdd_isSelectFromAlbum;
++ (void)PBArrayAdd_audioChannelsPerFrame;
++ (void)PBArrayAdd_startCndUpload;
++ (void)PBArrayAdd_textStatePublishType;
++ (void)initialize;
+
+- (id)getPBPropertyTable;
+- (id)getCDNReportInfo;
+- (id)mediaPath;
+- (BOOL)isRetryTimeout;
+- (BOOL)isStartUpload;
+- (BOOL)isVideoMedia;
+- (void).cxx_destruct;
+
+@end

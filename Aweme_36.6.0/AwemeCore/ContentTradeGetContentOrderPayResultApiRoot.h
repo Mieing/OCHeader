@@ -1,0 +1,3 @@
+@interface ContentTradeGetContentOrderPayResultApiRoot : GPBRootObject
+
+@end

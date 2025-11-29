@@ -1,0 +1,9 @@
+@interface AWEClassroomImpl.ClassroomDetailPageState : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ _pageState;
+    void /* unknown type, empty encoding */ _baseInfoState;
+    void /* unknown type, empty encoding */ _recommendInfoState;
+    void /* unknown type, empty encoding */ courseInfoState;
+    void /* unknown type, empty encoding */ lessonListState;
+}
+
+@end

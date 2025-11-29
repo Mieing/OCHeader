@@ -1,0 +1,74 @@
+@class MMUIButton, MMFinderLiveTask, UICollectionView, MMFinderLiveTaskId, FinderLiveGiftWallInfo, NSMutableArray, UIView, UIScrollView, MMUILabel, NSString, UICollectionViewFlowLayout, NSArray, MMLiveHalfScreenTitleBarView, UIImageView;
+
+@interface MMFinderLiveWishListDetailForAnchorPanel : MMPageSheetBaseView <MMLiveHalfScreenTitleBarViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (readonly, nonatomic) MMFinderLiveTask *liveTask;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIScrollView *scrollContentView;
+@property (retain, nonatomic) MMUILabel *headerTitleLabel;
+@property (retain, nonatomic) MMLiveHalfScreenTitleBarView *titleBarView;
+@property (retain, nonatomic) MMUIButton *settingButton;
+@property (retain, nonatomic) MMUILabel *priceTitleLabel;
+@property (retain, nonatomic) UIImageView *wishAchievedIconView;
+@property (retain, nonatomic) UIImageView *coinIconView;
+@property (retain, nonatomic) MMUILabel *priceLabel;
+@property (retain, nonatomic) NSMutableArray *targetGiftViews;
+@property (retain, nonatomic) NSArray *lastRewardWishList;
+@property (retain, nonatomic) NSArray *liveRewardWishes;
+@property (nonatomic) unsigned long long totalTargetCount;
+@property (nonatomic) unsigned long long totalCurCount;
+@property (nonatomic) BOOL isAchieved;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) unsigned int totalPrice;
+@property (retain, nonatomic) UICollectionView *giftWallCollectionView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *giftWallCollectionLayout;
+@property (nonatomic) double lastCollectionViewWidth;
+@property (retain, nonatomic) MMUILabel *giftWallTitleLabel;
+@property (retain, nonatomic) MMUIButton *helpButton;
+@property (retain, nonatomic) FinderLiveGiftWallInfo *giftWallInfo;
+@property (copy, nonatomic) id /* block */ clickModifyButtonCallBlock;
+@property (copy, nonatomic) id /* block */ giftWallBoardClickButtonCallBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)innerInit;
+- (void)dealloc;
+- (void)registerExtension;
+- (void)unResgisterExtension;
+- (void)setupPageSheetConfig;
+- (void)initViews;
+- (void)updateWithWishes:(id)a0 totalTargetCount:(unsigned long long)a1 totalCurCount:(unsigned long long)a2 isAchieved:(BOOL)a3 isActive:(BOOL)a4;
+- (void)showWithAnimated:(BOOL)a0;
+- (void)realShowWithAnimated:(BOOL)a0;
+- (void)pageSheetWillAppear;
+- (void)pageSheetDidAppear;
+- (void)pageSheetWillClose:(BOOL)a0;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)layoutContentView;
+- (void)layoutTitleBarView;
+- (void)layoutPriceView;
+- (double)contentWidth;
+- (double)contentHeight;
+- (void)updateCollectionLayout;
+- (void)reloadData;
+- (void)updateGiftWallHeaderInfo;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)onSettingButton;
+- (void)onHelpButtonClick;
+- (void)handleCreateNewWishButtonClick;
+- (void)onRemoveCurrentRewardWish;
+- (void)onMMLiveHalfScreenTitleBarLeftButtonClicked:(id)a0;
+- (BOOL)isGiftWallEnable;
+- (void).cxx_destruct;
+
+@end

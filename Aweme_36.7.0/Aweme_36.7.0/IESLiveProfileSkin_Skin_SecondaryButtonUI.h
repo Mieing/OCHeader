@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveProfileSkin_Skin_SecondaryButtonUI : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *iconColor;
+@property (copy, nonatomic) NSString *borderColor;
+@property (copy, nonatomic) NSString *backgroundColor;
+
++ (id)descriptor;
+
+@end

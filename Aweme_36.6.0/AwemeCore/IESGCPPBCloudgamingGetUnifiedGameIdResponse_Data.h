@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface IESGCPPBCloudgamingGetUnifiedGameIdResponse_Data : GPBMessage
+
+@property (copy, nonatomic) NSString *unifiedGameId;
+
++ (id)descriptor;
+
+@end

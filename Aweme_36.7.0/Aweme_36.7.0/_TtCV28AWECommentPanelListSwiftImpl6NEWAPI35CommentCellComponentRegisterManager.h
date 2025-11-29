@@ -1,0 +1,3 @@
+@interface _TtCV28AWECommentPanelListSwiftImpl6NEWAPI35CommentCellComponentRegisterManager : _TtCs12_SwiftObject
+
+@end

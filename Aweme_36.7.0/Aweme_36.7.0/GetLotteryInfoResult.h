@@ -1,0 +1,10 @@
+@class GetLotteryInfoResult_Data;
+
+@interface GetLotteryInfoResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetLotteryInfoResult_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

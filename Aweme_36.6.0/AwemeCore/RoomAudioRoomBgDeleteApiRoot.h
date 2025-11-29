@@ -1,0 +1,3 @@
+@interface RoomAudioRoomBgDeleteApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,71 @@
+@class IESLiveChatChannelSettingModel, NSString, IESLiveChatChannelSettingPanelItem, UIButton, IESLiveChatChannelSettingPanelModel, UITableView, RoomChannelInfo, IESLiveMessageChannelApi, UILabel;
+@protocol IESLiveRoomService, IESLiveChatChannelSettingPanelDelegate;
+
+@interface IESLiveChatChannelSettingPanel : UIView <UITableViewDelegate, UITableViewDataSource, IESLiveChatChannelSettingPanelCellDelegate>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) IESLiveChatChannelSettingPanelItem *panelItem;
+@property (retain, nonatomic) IESLiveChatChannelSettingModel *currentSettingModel;
+@property (retain, nonatomic) IESLiveChatChannelSettingModel *centerSettingModel;
+@property (retain, nonatomic) IESLiveChatChannelSettingPanelModel *liveVolumeCell;
+@property (retain, nonatomic) IESLiveChatChannelSettingPanelModel *chatVolumeCell;
+@property (retain, nonatomic) IESLiveMessageChannelApi *channelApi;
+@property (retain, nonatomic) UIButton *closeIcon;
+@property (retain, nonatomic) UIButton *backIcon;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *subtitleLabel;
+@property (retain, nonatomic) UIButton *disbandBtn;
+@property (retain, nonatomic) UIButton *quitBtn;
+@property (nonatomic) double panelHeight;
+@property (retain, nonatomic) RoomChannelInfo *channelInfo;
+@property (nonatomic) double chatVolume;
+@property (nonatomic) double liveVolume;
+@property (nonatomic) double beginChatVolume;
+@property (nonatomic) double beginLiveVolume;
+@property (nonatomic) BOOL chatVolumeHasChanged;
+@property (nonatomic) BOOL liveVolumeHasChanged;
+@property (nonatomic) BOOL shouldUpdateSetting;
+@property (nonatomic) BOOL showLiveVolumeCell;
+@property (weak, nonatomic) id<IESLiveChatChannelSettingPanelDelegate> delegate;
+@property (readonly, nonatomic) double pannelHeight;
+@property (readonly, nonatomic) BOOL shouldUpdate;
+@property (copy, nonatomic) id /* block */ chatVolumeChanged;
+@property (copy, nonatomic) id /* block */ liveVolumeChanged;
+@property (copy, nonatomic) id /* block */ chatVolumeEndChanged;
+@property (copy, nonatomic) id /* block */ liveVolumeEndChanged;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (copy, nonatomic) id /* block */ showBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)createPannelItemWithType:(unsigned long long)a0;
+- (void)createOwnPannelItem;
+- (void)createGuestPannelItem;
+- (void)changeIndexPathsShow:(BOOL)a0 withAnimation:(BOOL)a1;
+- (void)quitAlert;
+- (void)disbandChannel;
+- (void)quitChannel;
+- (void)closeIconClick;
+- (void)backIconClick;
+- (void)disbandAlert;
+- (void)settingPanelCell:(id)a0 switchChanged:(BOOL)a1;
+- (id)initWithItemType:(unsigned long long)a0 channelInfo:(id)a1 chatVolume:(double)a2 liveVolume:(double)a3 diContextAttacher:(id)a4 room:(id)a5;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)show;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupUI;
+- (void)calculateHeight;
+
+@end

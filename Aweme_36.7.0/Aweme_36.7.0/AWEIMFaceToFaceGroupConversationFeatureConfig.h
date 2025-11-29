@@ -1,0 +1,3 @@
+@interface AWEIMFaceToFaceGroupConversationFeatureConfig : AWEIMNormalGroupConversationFeatureConfig
+
+@end

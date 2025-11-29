@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface RivalsRecommendResponse_PanelBanner : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *bgImage;
+@property (nonatomic) BOOL hasBgImage;
+@property (copy, nonatomic) NSString *schemeURL;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,82 @@
+@class UIView, UILongPressGestureRecognizer, NSString, NSArray, UIImage, UIImageView, UITapGestureRecognizer, MACustomCalloutView, AMapSMCalloutView;
+@protocol MAAnnotationViewDelegate, MAAnnotation;
+
+@interface MAAnnotationView : UIView <UIGestureRecognizerDelegate, AMapSMCalloutViewDelegate, MARecyclableView> {
+    id<MAAnnotationViewDelegate> _internalDelegate;
+    struct MAMapPoint { double x; double y; } _centerMapPoint;
+    float _imageDegree;
+}
+
+@property (weak, nonatomic) id<MAAnnotationViewDelegate> internalDelegate;
+@property (copy, nonatomic) NSString *reuseIdentifier;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGestureGecognizer;
+@property (retain, nonatomic) UILongPressGestureRecognizer *longPressGestureGecognizer;
+@property (nonatomic) BOOL selectedBeforeStarting;
+@property (nonatomic) BOOL isDropStateChanged;
+@property (retain, nonatomic) AMapSMCalloutView *tip;
+@property (nonatomic) BOOL shouldImageViewFollowMapCamera;
+@property (nonatomic) double cameraOffsetY;
+@property (nonatomic) struct CATransform3D { double m11; double m12; double m13; double m14; double m21; double m22; double m23; double m24; double m31; double m32; double m33; double m34; double m41; double m42; double m43; double m44; } rotationTransform;
+@property (retain, nonatomic) NSArray *images;
+@property (nonatomic) float angleDegree;
+@property (nonatomic) float cameraDegree;
+@property (nonatomic) long long zIndex;
+@property (retain, nonatomic) id<MAAnnotation> annotation;
+@property (retain, nonatomic) UIImage *image;
+@property (readonly, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) MACustomCalloutView *customCalloutView;
+@property (nonatomic) struct CGPoint { double x; double y; } centerOffset;
+@property (nonatomic) struct CGPoint { double x; double y; } calloutOffset;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+@property (nonatomic, getter=isHighlighted) BOOL highlighted;
+@property (nonatomic, getter=isSelected) BOOL selected;
+@property (nonatomic) BOOL canShowCallout;
+@property (retain, nonatomic) UIView *leftCalloutAccessoryView;
+@property (retain, nonatomic) UIView *rightCalloutAccessoryView;
+@property (nonatomic, getter=isDraggable) BOOL draggable;
+@property (nonatomic) long long dragState;
+@property (nonatomic) BOOL canAdjustPositon;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)calloutAccessoryAction:(id)a0;
+- (BOOL)supportDragOperation;
+- (void)notifyCalloutAccessoryControlTapped:(id)a0;
+- (void)updateCenter;
+- (void)updateCameraDegree:(double)a0;
+- (void)removeTargetForControl:(id)a0;
+- (void)addTargetForControl:(id)a0;
+- (void)notifyDidChangeDragState:(long long)a0 fromOldState:(long long)a1;
+- (void)adjustCustomCallOutPosition;
+- (void)MAAnnotationViewDeallocOperation;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })imageViewVaildRect;
+- (BOOL)calloutViewShouldHighlight:(id)a0;
+- (void)calloutViewClicked:(id)a0;
+- (double)calloutView:(id)a0 delayForRepositionWithSize:(struct CGSize { double x0; double x1; })a1;
+- (void)setCarImages:(id)a0 imageDegree:(float)a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })validUnionRectBaseOnCoordinate;
+- (void)updateCenterWith:(struct CGPoint { double x0; double x1; })a0;
+- (void)updateCalloutViewOffsetForCameraDegree:(double)a0;
+- (BOOL)visible;
+- (void).cxx_destruct;
+- (void)setSelected:(BOOL)a0 animated:(BOOL)a1;
+- (id)internalDelegate;
+- (void)setInternalDelegate:(id)a0;
+- (void)prepareForReuse;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (struct CLLocationCoordinate2D { double x0; double x1; })coordinateForPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)initGestureRecognizers;
+- (void)longPressGesture:(id)a0;
+- (id)initWithAnnotation:(id)a0 reuseIdentifier:(id)a1;
+- (void)setDragState:(long long)a0 animated:(BOOL)a1;
+- (void)hideTipAnimated:(BOOL)a0;
+- (void)showTipAnimated:(BOOL)a0;
+
+@end

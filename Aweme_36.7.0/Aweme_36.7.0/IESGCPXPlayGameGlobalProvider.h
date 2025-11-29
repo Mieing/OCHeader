@@ -1,0 +1,3 @@
+@interface IESGCPXPlayGameGlobalProvider : NSObject
+
+@end

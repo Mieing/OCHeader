@@ -1,0 +1,80 @@
+@class AWEAdPanelBottomNavigationBar, NSString, AWEAdLandingTrackEvents, NSNumber, AWEAdPanelNavigationBar;
+
+@interface AWEAdLandingWebViewController : AWEAdWebViewController <UIScrollViewDelegate, AWEPageSheetPresentationObserving, AWEPageSheetPresentationPhaseTransitionDelegate, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) AWEAdPanelNavigationBar *navigationBar;
+@property (retain, nonatomic) AWEAdPanelBottomNavigationBar *bottomNavigationBar;
+@property (retain, nonatomic) AWEAdLandingTrackEvents *trackEvents;
+@property (retain, nonatomic) NSNumber *lastContentOffset;
+@property (nonatomic) BOOL isBottomNavigationShowing;
+@property (nonatomic) BOOL lockVerticalContentOffset;
+@property (nonatomic) long long phase;
+@property (nonatomic) BOOL isPreviewEnabled;
+@property (nonatomic) BOOL isReportTrackDisabled;
+@property (retain, nonatomic) Class trackEventsClass;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldShowBothNavigationStyleWithModel:(id)a0;
+
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (id)aweui_emptyPageBelowView;
+- (void)closeButtonAction:(id)a0;
+- (long long)initialPhaseForPageSheetPresentation:(id)a0;
+- (void)pageSheetPresentationWillBegin:(id)a0;
+- (BOOL)pageSheet:(id)a0 shouldDismissForReason:(long long)a1;
+- (void)pageSheetDidHorizontalPan:(id)a0;
+- (unsigned long long)phaseTransitionStyleForPageSheetPresentation:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })pageSheetPresentation:(id)a0 frameOfPresentedViewForPhase:(long long)a1;
+- (void)pageSheetPresentation:(id)a0 didTransitionToPhase:(long long)a1;
+- (void)updateNavigationButtonStatus;
+- (BOOL)shouldShowBothNavigationStyle;
+- (void)handlePageSheetPresentationNotification:(id)a0;
+- (void)setUpTrackEventsWithAweme:(id)a0;
+- (void)setUpBottomNavigationBarIfNeeded;
+- (void)tapWeb:(id)a0;
+- (void)trackPageView;
+- (long long)imageWithRenderingMode;
+- (BOOL)shouldSupportDarkMode;
+- (void)backButtonAction:(id)a0;
+- (void)forwardButtonAction:(id)a0;
+- (void)reportButtonAction:(id)a0;
+- (long long)adapter_imageWithRenderingMode;
+- (void)updateBottomNavigation;
+- (void)animateInBottomNavigation;
+- (void)animateOutBottomNavigation;
+- (void)trackDraggingDownDismissal;
+- (void)trackDraggingRightDismissal;
+- (void)trackTappingDismissal;
+- (void)trackButtonDismissal;
+- (void)trackReportButton;
+- (void)updateTopBannerPositionWithOffset:(double)a0;
+- (void)animateInTopBanner;
+- (void)animateOutTopBanner;
+- (void)moreButtonAction:(id)a0;
+- (void)updateWebViewToAlpha:(double)a0;
+- (BOOL)shouldPreventingCloseEvent;
+- (id)progressTrackTintColor;
+- (void)observeScrollIfNeeded;
+- (void)showViewController:(id)a0 withRouteInfo:(id)a1;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (id)initWithNibName:(id)a0 bundle:(id)a1;
+- (id)progressTintColor;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRequireFailureOfGestureRecognizer:(id)a1;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)webViewDidFinishLoad:(id)a0;
+- (void)updateBackButton;
+- (void)setUpNavigationBar;
+- (void)layoutWebView;
+
+@end

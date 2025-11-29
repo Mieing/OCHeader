@@ -1,0 +1,86 @@
+@class NSTimer, AWEPlayletPageContext, AWEPlayletCenterFeedDataController, AWEPlayletCenterPageNaviBarView, NSString, UIImageView, AWEPlayletSkylightViewController, AWEPlayletTracker, UIViewController, AWEPlayletWidgetControl;
+@protocol AWEAwemeDetailTableViewControllerProtocol;
+
+@interface AWEPlayletCenterFeedViewController : UIViewController <AWEPlayletSkylightViewControllerDelegate, AWEPlayletFeedDataControllerDelegate, AWEPlayVideoMessage, AWEAwemeDetailTableViewControllerDelegate, AWECapsuleContainerViewDelegate, AWERouterViewControllerProtocol, AWEPlayletCentralizationFeedViewControllerProtocol>
+
+@property (retain, nonatomic) UIImageView *backgroundView;
+@property (retain, nonatomic) AWEPlayletCenterPageNaviBarView *naviBarView;
+@property (retain, nonatomic) AWEPlayletSkylightViewController *skyLightViewController;
+@property (retain, nonatomic) UIViewController<AWEAwemeDetailTableViewControllerProtocol> *detailTableViewController;
+@property (retain, nonatomic) AWEPlayletCenterFeedDataController *dataController;
+@property (retain, nonatomic) AWEPlayletPageContext *context;
+@property (retain, nonatomic) AWEPlayletTracker *tracker;
+@property (nonatomic) long long currentIndex;
+@property (nonatomic) BOOL showSkylight;
+@property (nonatomic) BOOL canShowSkyLight;
+@property (nonatomic) BOOL hasTrackerShow;
+@property (nonatomic) BOOL hasTrackerFirstFrame;
+@property (retain, nonatomic) AWEPlayletWidgetControl *widgetControl;
+@property (retain, nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL hasShownWidgetGuide;
+@property (nonatomic) double insertLynxDataTimeInterval;
+@property (nonatomic) double skyLightReadyTime;
+@property (nonatomic) BOOL enterPageOpenSkyLight;
+@property (nonatomic) BOOL hasTrackerPageShow;
+@property (nonatomic) double skylightHeight;
+@property (nonatomic) BOOL isFromPlayletInnerBackup;
+@property (copy, nonatomic) NSString *cacheFailReason;
+@property (nonatomic) BOOL isFromPlayletInner;
+@property (nonatomic) double initTimeInterval;
+@property (copy, nonatomic) id /* block */ firstDisplayingAwemeReady;
+@property (copy, nonatomic) id /* block */ pureModeBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadSplitScreenAdapterClass;
+
+- (void)setPureMode:(BOOL)a0;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)detailTableViewController:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2 model:(id)a3;
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (BOOL)awe_shouldAutorotate;
+- (unsigned long long)awe_supportedInterfaceOrientations;
+- (BOOL)transition_shouldStartInteractiveTranstionForSlideDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (id)transition_destinatedViewControllerForSlideDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (void)trackPageShow;
+- (void)configUI;
+- (id)currentPageName;
+- (id)aAWEPadSplitScreenAdapter;
+- (void)updateSkylightCapsuleView:(BOOL)a0;
+- (id)feedTableViewController;
+- (void)lynxDataDidFinishFetchWithData:(id)a0 withPullType:(long long)a1;
+- (void)loadDataHasFinishedWithPullType:(long long)a0;
+- (void)openSearchPage;
+- (void)enterForSwitch;
+- (void)leaveForSwitch;
+- (void)hiddenBackgroundView;
+- (void)hiddenNaviBar;
+- (id)forceInsertSourceWithParams:(id)a0;
+- (void)configInsertModel;
+- (void)removePlayletInnerFromNavigationStack;
+- (void)requestWatchForFreeRight;
+- (BOOL)enableInsertPlayletFromWidget;
+- (void)showSkylight:(BOOL)a0 animated:(BOOL)a1 isAutoOpen:(BOOL)a2;
+- (double)skylightViewTopInset;
+- (id)getPublicLogExtra;
+- (void)autoOpenSkylight;
+- (void)showSkylight:(BOOL)a0 animated:(BOOL)a1;
+- (void)lynxViewDidFinishLoadWithContainerHeight:(long long)a0;
+- (void)stopTimer;
+- (void).cxx_destruct;
+- (void)startTimer;
+- (id)init;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)appWillResignActive:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)appDidBecomeActive:(id)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (id)pageContext;
+- (void)addObservers;
+
+@end

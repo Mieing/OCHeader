@@ -1,0 +1,3 @@
+@interface TIMXPBNImApiRoot : GPBRootObject
+
+@end

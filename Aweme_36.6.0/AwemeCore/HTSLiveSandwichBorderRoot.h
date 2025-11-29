@@ -1,0 +1,3 @@
+@interface HTSLiveSandwichBorderRoot : GPBRootObject
+
+@end

@@ -1,0 +1,70 @@
+@class ACCCameraSubscription, NSString, AWEStudioEditBeautyFeatureConfig, AWEEditerBeautyDataManager, AWEVideoPublishViewModel, AWERecordBeautyCacheManager;
+@protocol IESServiceProvider, ACCCameraService;
+
+@interface AWEEditerBeautyServiceImpl : NSObject <AWERecordBeautyDataManagerSubscriberProtocol, AWEEditerBeautyService>
+
+@property (retain, nonatomic) AWEStudioEditBeautyFeatureConfig *featureConfig;
+@property (retain, nonatomic) ACCCameraSubscription *subscription;
+@property (weak, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) AWEEditerBeautyDataManager *dataManager;
+@property (retain, nonatomic) AWERecordBeautyCacheManager *cacheManager;
+@property (nonatomic) BOOL isSidebarFloatingViewAppearing;
+@property (readonly, weak, nonatomic) AWEVideoPublishViewModel *repoContainer;
+@property (readonly, weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (nonatomic) long long takingEffectGender;
+@property (readonly, nonatomic) long long latestDetectedGender;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didUpdateRenderingData:(id)a0 oldAppliedItemModels:(id)a1;
+- (void)didChangeBeautyOnState:(BOOL)a0;
+- (void)updateBeautyAvailabilities;
+- (void)reloadBeautyInCamera;
+- (void)removeBeautyFromCamera;
+- (BOOL)isUsingBeauty;
+- (void)turnOnBeauty;
+- (void)turnOffBeauty;
+- (void)notifySidebarFloatingViewDidAppear;
+- (void)notifySidebarFloatingViewDidDisappear;
+- (void)notifyBeautyPanelViewDidAppear;
+- (void)notifyBeautyPanelViewDidDisappear;
+- (void)updateBeautyAvailabilitiesWithCompletionHandler:(id /* block */)a0;
+- (BOOL)isBeautyOn;
+- (BOOL)isDictionariesEqual:(id)a0 and:(id)a1;
+- (void)downloadAndUpdateSourceData:(id /* block */)a0 preUseCacheSucceedCallback:(id /* block */)a1;
+- (void)checkUpdateSourceDataWithCompletion:(id /* block */)a0 didPreUseCache:(BOOL)a1;
+- (void)handleFinishGenerateTree;
+- (void)handleFinishDownloadAllItemsAction;
+- (void)preUseCacheIfEnableWithGenerateTreeCallback:(id /* block */)a0 didFinishDownloadAllItemsCallback:(id /* block */)a1;
+- (id)p_generateDataFilterConfig;
+- (BOOL)p_hasValidCache;
+- (void)p_migrateDataIfNeeded;
+- (void)p_updateStateAfterUpdatingSourceData:(id)a0;
+- (BOOL)p_isBeautyAvailableWithResourcePath:(id)a0 tag:(id)a1;
+- (BOOL)p_updateComposerNodesIfNeededWithAppliedItemModels:(id)a0 oldAppliedItemModels:(id)a1;
+- (void)p_replaceComposerNodesWithAppliedItemModels:(id)a0 oldAppliedItemModels:(id)a1;
+- (void)APMApplyEffect:(id)a0;
+- (float)p_effectRatioAfterReduction;
+- (id)p_convertToVEComposerInfoFromItemModel:(id)a0 shouldUseValue:(BOOL)a1 value:(long long)a2;
+- (void)p_updateComposerNodesWithItemModel:(id)a0 appliedModel:(id)a1;
+- (long long)p_getABGroup;
+- (void)updateSourceDataUsingDownloadedData:(id /* block */)a0;
+- (void)upadteTakingEffectGender:(long long)a0;
+- (BOOL)hasDownloadedBeautyData;
+- (void)updateLastestDetectedGender:(long long)a0;
+- (void)saveCacheForGender:(long long)a0;
+- (void)saveCacheForGenders:(id)a0;
+- (void)removeCacheIfNeeded;
+- (void)asyncFetchCachedResponseIfNeed;
+- (void)p_isBeautyAvailableWithResourcePath:(id)a0 tag:(id)a1 completeHandler:(id /* block */)a2;
+- (void)updateBeautyAvailabilitiesWithSingleCompletionHandler:(id /* block */)a0;
+- (BOOL)isNeedReplaceEffectStatusWithRenderingData:(id)a0 oldAppliedItemModels:(id)a1;
+- (void)p_optimizationUpdateComposerNodesIfNeededWithAppliedItemModels:(id)a0 oldAppliedItemModels:(id)a1;
+- (void).cxx_destruct;
+- (id)initWithServiceProvider:(id)a0;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+
+@end

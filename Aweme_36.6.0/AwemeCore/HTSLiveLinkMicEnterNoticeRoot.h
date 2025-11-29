@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicEnterNoticeRoot : GPBRootObject
+
+@end

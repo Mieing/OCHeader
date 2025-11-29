@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface RanklistRoomResponse_InvisibleInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

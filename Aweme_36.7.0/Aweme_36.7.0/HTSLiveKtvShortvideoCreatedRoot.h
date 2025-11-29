@@ -1,0 +1,3 @@
+@interface HTSLiveKtvShortvideoCreatedRoot : GPBRootObject
+
+@end

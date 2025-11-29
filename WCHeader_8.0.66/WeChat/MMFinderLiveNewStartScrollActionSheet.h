@@ -1,0 +1,75 @@
+@class WCFinderLiveAnchorLogReporter, UIPanGestureRecognizer, UILabel, MMFinderLiveTaskId, WCLiveStarterScrollActionSheetViewModel, MMLiveShopShelfDragBar, MMFinderLiveModeModel, WCFinderStarterLiveViewModel, UIView, UIScrollView, MMScrollActionSheetItemView, NSString, WCFinderLiveStarterReporter, MMFinderLiveChooseModeView, NSArray, MMLiveActionSheetFlowLayoutView;
+@protocol MMFinderLiveNewStartScrollActionSheetDelegate;
+
+@interface MMFinderLiveNewStartScrollActionSheet : MMScrollActionSheet <MMLiveActionSheetFlowLayoutViewDelegate, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *liveTaskId;
+@property (retain, nonatomic) WCFinderStarterLiveViewModel *startVM;
+@property (retain, nonatomic) MMFinderLiveModeModel *modeModel;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (nonatomic) double previousPanPositionY;
+@property (retain, nonatomic) MMLiveShopShelfDragBar *dragBar;
+@property (retain, nonatomic) UIScrollView *bodyView;
+@property (retain, nonatomic) UIView *chooseModeHeader;
+@property (retain, nonatomic) UILabel *chooseModeHeaderLabel;
+@property (retain, nonatomic) MMFinderLiveChooseModeView *chooseModeView;
+@property (retain, nonatomic) NSArray *actionSheetItems;
+@property (retain, nonatomic) NSArray *sctionTitleArray;
+@property (retain, nonatomic) MMLiveActionSheetFlowLayoutView *anchorFlowLayoutView;
+@property (retain, nonatomic) WCFinderLiveAnchorLogReporter *reporter;
+@property (retain, nonatomic) WCFinderLiveStarterReporter *starterReporter;
+@property (weak, nonatomic) MMScrollActionSheetItemView *firstItemViewWithRedDot;
+@property (weak, nonatomic) id<MMFinderLiveNewStartScrollActionSheetDelegate> controllerDelegate;
+@property (copy, nonatomic) id /* block */ redDotQueryBlock;
+@property (copy, nonatomic) id /* block */ redDotCtrlInfoQueryBlock;
+@property (retain, nonatomic) WCLiveStarterScrollActionSheetViewModel *sheetVM;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithLiveTaskId:(id)a0 startVM:(id)a1;
+- (void)relayoutView;
+- (BOOL)useCornerCancelButton;
+- (void)onModeModelRefreshed;
+- (void)loadItemArray;
+- (void)poiItem:(id)a0;
+- (void)tagItem:(id)a0;
+- (void)gameStickerItem:(id)a0;
+- (void)visibilityItem:(id)a0;
+- (void)videoItem:(id)a0;
+- (void)noticeItem:(id)a0;
+- (void)promotionItem:(id)a0;
+- (void)addReplaySettingItemIntoRow:(id)a0;
+- (void)prizeItem:(id)a0;
+- (void)musicItem:(id)a0;
+- (void)connectMicItem:(id)a0;
+- (void)fansGroupItem:(id)a0;
+- (void)rewardWishItem:(id)a0;
+- (void)playTogetherItem:(id)a0;
+- (void)anchorOpPromotionCardItem:(id)a0;
+- (void)shoppingItem:(id)a0;
+- (void)trafficItemToRow:(id)a0;
+- (void)customizeRewardItem:(id)a0;
+- (void)moreFunctionItem:(id)a0;
+- (void)creatorCenterItem:(id)a0;
+- (void)anchorFeedbackEntrance:(id)a0;
+- (BOOL)shouldShowMoreRedDotForPath:(id)a0 type:(unsigned long long)a1;
+- (void)onActionSheetItemClicked:(id)a0 senderView:(id)a1;
+- (id)mmLiveActionSheetFlowLayoutView:(id)a0 getRedDotShowInfoAtPath:(id)a1;
+- (void)reportNewAnchorTaskSubPathWithType:(unsigned int)a0;
+- (id)itemArray;
+- (void)showInView:(id)a0;
+- (id)liveTask;
+- (void)configItemView:(id)a0 withItem:(id)a1;
+- (void)reportQuickReplyExpose;
+- (void)reportForSensitiveItemExpose;
+- (void)reportForSensitiveItemSelect;
+- (void)setUpEdgePanGesture;
+- (void)handlePopPanGesture:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)handleContentGestureChangeTo:(double)a0;
+- (void)handleContentGestureEnd;
+- (void).cxx_destruct;
+
+@end

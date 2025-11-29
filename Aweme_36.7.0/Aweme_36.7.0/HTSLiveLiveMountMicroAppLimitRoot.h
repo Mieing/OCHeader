@@ -1,0 +1,3 @@
+@interface HTSLiveLiveMountMicroAppLimitRoot : GPBRootObject
+
+@end

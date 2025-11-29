@@ -1,0 +1,12 @@
+@class NSString, IESLiveMultiChannelInfo;
+
+@interface IESLiveAnchorLinkmicChannelInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *linkmicIdStr;
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (retain, nonatomic) IESLiveMultiChannelInfo *multiChannelInfo;
+@property (nonatomic) BOOL hasMultiChannelInfo;
+
++ (id)descriptor;
+
+@end

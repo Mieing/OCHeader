@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveComboHintData : IESLivePBBaseMessage
+
+@property (nonatomic) long long count;
+@property (retain, nonatomic) HTSLiveImage *hintImg;
+@property (nonatomic) BOOL hasHintImg;
+@property (nonatomic) int comboHintType;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

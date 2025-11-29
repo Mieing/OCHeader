@@ -1,0 +1,78 @@
+@class UIView, AWEAlertContext, NSArray, NSString, AWEAntiAddictDailyAlertViewModel, CAShapeLayer, AWEAntiAddictDailyAlertSlider, UIImageView, UIButton, UILabel;
+@protocol AWEAntiAddictDailyAlertDelegate;
+
+@interface AWEAntiAddictDailyAlertView : UIView <AWEMessageReachPopViewProtocol>
+
+@property (retain, nonatomic) AWEAntiAddictDailyAlertViewModel *model;
+@property (retain, nonatomic) UIView *mainView;
+@property (retain, nonatomic) CAShapeLayer *maskLayer;
+@property (retain, nonatomic) UIView *outsideView;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *subtitleLabel;
+@property (retain, nonatomic) UIView *bottomView;
+@property (retain, nonatomic) UIButton *cancelButton;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (retain, nonatomic) UIView *dailyContainerView;
+@property (retain, nonatomic) AWEAntiAddictDailyAlertSlider *slider;
+@property (retain, nonatomic) UIImageView *bubbleImageView;
+@property (retain, nonatomic) UILabel *bubbleLabel;
+@property (copy, nonatomic) NSArray *sliderLabels;
+@property (nonatomic) unsigned long long currentGrade;
+@property (retain, nonatomic) NSArray *weights;
+@property (retain, nonatomic) NSArray *weightHints;
+@property (copy, nonatomic) id /* block */ onClose;
+@property (copy, nonatomic) id /* block */ didConsume;
+@property (copy, nonatomic) id /* block */ didShow;
+@property (retain, nonatomic) AWEAlertContext *alertContext;
+@property (nonatomic) BOOL didStartAnimation;
+@property (nonatomic) BOOL didFinishAnimation;
+@property (weak, nonatomic) id<AWEAntiAddictDailyAlertDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)alertIDForEvent:(id)a0;
+- (long long)alertPriorityForEvent:(id)a0;
+- (void)showWithContext:(id)a0 callbackWrapper:(id)a1;
+- (BOOL)canShow;
+- (void)showWithCloseCallback:(id /* block */)a0;
+- (void)updateViewLayout;
+- (id)mr_accessIDForEvent:(id)a0;
+- (BOOL)mr_enableAccessControlForEvent:(id)a0;
+- (id)translateWeightIntoString:(unsigned long long)a0 timeType:(unsigned long long)a1;
+- (void)viewDidShowWithSuccess:(BOOL)a0;
+- (void)updateMainViewCorner;
+- (void)setupDailyContainerView;
+- (void)breakpointDidUpdate;
+- (BOOL)isCenteredStyle;
+- (double)calculateMainViewWidth;
+- (void)presentWithAnimationIfNeeded;
+- (void)p_trackShow;
+- (void)dismissWithType:(unsigned long long)a0;
+- (void)p_setAntiAddictRemindState;
+- (void)p_setRemindInTimeType:(unsigned long long)a0;
+- (void)viewDidDismiss;
+- (void)p_trackCloseWithDismissType:(unsigned long long)a0;
+- (void)p_trackSetRemindSuccessWithValue:(id)a0;
+- (void)updateBubbleLabelIfNeeded;
+- (void)updateSliderTrackImage;
+- (id)p_minimumTrackImage;
+- (id)p_maximumTrackImage;
+- (void)outsideViewDidClick;
+- (void)closeButtonDidClick;
+- (void)cancelButtonDidClick;
+- (void)confirmButtonDidClick;
+- (id)p_thumbImageNormal;
+- (id)p_thumbImageHighlight;
+- (void)sliderTouchBegan:(id)a0;
+- (void)sliderTouchEnded:(id)a0;
+- (void)sliderValueChanged:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithViewModel:(id)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (BOOL)setupUI;
+
+@end

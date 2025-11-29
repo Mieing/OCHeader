@@ -1,0 +1,73 @@
+@class NSString;
+
+@interface DiscoverExposeEdgeArgs : NSObject
+
+@property (retain, nonatomic) NSString *finderTipsId;
+@property (nonatomic) unsigned int finderCtrlType;
+@property (nonatomic) unsigned int finderShowType;
+@property (nonatomic) unsigned long long finderReceTimeMs;
+@property (nonatomic) unsigned int finderExposeCount;
+@property (nonatomic) unsigned long long finderExposeFirstSec;
+@property (nonatomic) unsigned long long lastReceFinderRedDotMs;
+@property (nonatomic) unsigned long long lastFinderRedDotExposeMs;
+@property (nonatomic) unsigned long long lastEnterFinderMs;
+@property (nonatomic) unsigned long long lastExitFinderMs;
+@property (nonatomic) unsigned int isShowFinderBool;
+@property (nonatomic) unsigned int isShowFinderRedDotBool;
+@property (retain, nonatomic) NSString *liveTipsId;
+@property (nonatomic) unsigned int liveCtrlType;
+@property (nonatomic) unsigned int liveShowType;
+@property (nonatomic) unsigned long long liveReceTimeMs;
+@property (nonatomic) unsigned int liveExposeCount;
+@property (nonatomic) unsigned long long liveExposeFirstSec;
+@property (nonatomic) unsigned long long lastReceLiveRedDotMs;
+@property (nonatomic) unsigned long long lastLiveRedDotExposeMs;
+@property (nonatomic) unsigned long long lastEnterLiveMs;
+@property (nonatomic) unsigned long long lastExitLiverMs;
+@property (nonatomic) unsigned int isShowLiveBool;
+@property (nonatomic) unsigned int isShowLiveRedDotBool;
+@property (retain, nonatomic) NSString *fromSid;
+@property (nonatomic) unsigned long long fromSidStayTimeMs;
+@property (nonatomic) unsigned long long enterMs;
+@property (retain, nonatomic) NSString *findFriendsEntryRedDot;
+@property (retain, nonatomic) NSString *netType;
+@property (nonatomic) unsigned int newMsgOpenWechatBool;
+@property (nonatomic) unsigned int finderCacheSize;
+@property (nonatomic) unsigned int liveCacheSize;
+@property (nonatomic) unsigned long long lastFinderSyncMs;
+@property (nonatomic) unsigned int calendarFinderSyncCount;
+@property (nonatomic) unsigned int calendarLiveSyncCount;
+@property (nonatomic) unsigned int calendarMixSyncCount;
+@property (nonatomic) unsigned int calendarTotalSyncCount;
+@property (nonatomic) unsigned long long calendarDiscoverFirstExposeTimeMs;
+@property (nonatomic) unsigned int calendarDiscoverExposeCount;
+@property (nonatomic) unsigned long long calendarFinderRedDotFirstExposeTimeMs;
+@property (nonatomic) unsigned int calendarFinderRedDotFirstExposeCtrlType;
+@property (nonatomic) unsigned int calendarFinderRedDotExposeCount;
+@property (nonatomic) unsigned int calendarFinderRedDotTipsIdExposeCount;
+@property (nonatomic) unsigned int calendarFinderEnterCount;
+@property (nonatomic) unsigned int calendarFinderEnterCountWithRedDot;
+@property (nonatomic) unsigned int calendarFinderStayTimeSec;
+@property (nonatomic) unsigned long long calendarLiveRedDotFirstExposeTimeMs;
+@property (nonatomic) unsigned int calendarLiveRedDotFirstExposeCtrlType;
+@property (nonatomic) unsigned int calendarLiveRedDotExposeCount;
+@property (nonatomic) unsigned int calendarLiveRedDotTipsIdExposeCount;
+@property (nonatomic) unsigned int calendarLiveEnterCount;
+@property (nonatomic) unsigned int calendarLiveEnterCountWithRedDot;
+@property (nonatomic) unsigned int calendarLiveStayTimeSec;
+@property (nonatomic) unsigned int finderPushType;
+@property (retain, nonatomic) NSString *finderPushScene;
+@property (nonatomic) unsigned int finderIgnoreFreq;
+@property (nonatomic) unsigned int liveSubRecallType;
+@property (nonatomic) unsigned int liveIgnoreFreq;
+@property (nonatomic) unsigned int isHeadset;
+@property (nonatomic) unsigned int currBattery;
+@property (nonatomic) unsigned int finderDropRedDotCount;
+@property (nonatomic) unsigned int finderDeepReadCount;
+
+- (void)collectByEvent:(id)a0 andStayTimeMs:(unsigned long long)a1;
+- (id)toArgs;
+- (id)debugInfo;
+- (void).cxx_destruct;
+
+@end

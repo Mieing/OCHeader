@@ -1,0 +1,80 @@
+@class NSString, NSURL, NSURLSession, NSOperationQueue, NSDictionary, NSURLResponse, NSMutableArray, NSURLSessionDataTask, NSURLSessionConfiguration;
+
+@interface AWEParallelDownloader : NSObject <NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate>
+
+@property (retain, nonatomic) NSURL *urlToDownload;
+@property (retain, nonatomic) NSURL *destinationURL;
+@property (retain, nonatomic) NSURLSession *session;
+@property (retain, nonatomic) NSURLSessionConfiguration *sessionConfiguration;
+@property (retain, nonatomic) NSOperationQueue *operationQueue;
+@property (nonatomic) BOOL supportRange;
+@property (nonatomic) BOOL supportTempFile;
+@property (nonatomic) BOOL needCookie;
+@property (retain, nonatomic) NSMutableArray *locations;
+@property (nonatomic) long long pendingDownloads;
+@property (copy, nonatomic) id /* block */ completion;
+@property (copy, nonatomic) id /* block */ progressHandler;
+@property (retain, nonatomic) NSURLSessionDataTask *initialDataTask;
+@property (nonatomic) BOOL isSessionCancelled;
+@property (nonatomic) long long indexUsedForCreatingTempFiles;
+@property (retain, nonatomic) NSURLResponse *response;
+@property (nonatomic) long long contentLength;
+@property (nonatomic) long long receivedLength;
+@property (nonatomic) double startDownload;
+@property (nonatomic) BOOL needCommonParams;
+@property (nonatomic) BOOL ignoreX_TT_TOKEN;
+@property (copy, nonatomic) NSDictionary *allHeaderFields;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 needCommonParams:(BOOL)a3 ignoreX_TT_TOKEN:(BOOL)a4 progress:(id /* block */)a5 completion:(id /* block */)a6;
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportTempFile:(BOOL)a2 needCookie:(BOOL)a3 progress:(id /* block */)a4 completion:(id /* block */)a5;
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 needCommonParams:(BOOL)a3 progress:(id /* block */)a4 completion:(id /* block */)a5;
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportTempFile:(BOOL)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 supportTempFile:(BOOL)a3 needCommonParams:(BOOL)a4 ignoreX_TT_TOKEN:(BOOL)a5 progress:(id /* block */)a6 completion:(id /* block */)a7;
++ (id)downloadFileWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 supportTempFile:(BOOL)a3 needCommonParams:(BOOL)a4 ignoreX_TT_TOKEN:(BOOL)a5 needCookie:(BOOL)a6 progress:(id /* block */)a7 completion:(id /* block */)a8;
+
+- (void)_flex_swizzle_85ff8a00_URLSession:(id)a0 downloadTask:(id)a1 didFinishDownloadingToURL:(id)a2;
+- (void)_flex_swizzle_afa4c377_URLSession:(id)a0 downloadTask:(id)a1 didWriteData:(long long)a2 totalBytesWritten:(long long)a3 totalBytesExpectedToWrite:(long long)a4;
+- (void)URLSession:(id)a0 dataTask:(id)a1 didBecomeDownloadTask:(id)a2;
+- (void)_flex_swizzle_e365b498_URLSession:(id)a0 task:(id)a1 didCompleteWithError:(id)a2;
+- (void)URLSession:(id)a0 dataTask:(id)a1 didReceiveResponse:(id)a2 completionHandler:(id /* block */)a3;
+- (void)URLSession:(id)a0 dataTask:(id)a1 didReceiveData:(id)a2;
+- (void)_flex_swizzle_15fb259d_URLSession:(id)a0 task:(id)a1 willPerformHTTPRedirection:(id)a2 newRequest:(id)a3 completionHandler:(id /* block */)a4;
+- (void)connection:(id)a0 didFailWithError:(id)a1;
+- (void)connectionDidFinishLoading:(id)a0;
+- (void)connection:(id)a0 didReceiveResponse:(id)a1;
+- (void)connection:(id)a0 didReceiveData:(id)a1;
+- (id)connection:(id)a0 willSendRequest:(id)a1 redirectResponse:(id)a2;
+- (id)allCookieString;
+- (id)requestallHeaderFields;
+- (id)initWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 supportTempFile:(BOOL)a3 needCommonParams:(BOOL)a4 ignoreX_TT_TOKEN:(BOOL)a5 needCookie:(BOOL)a6 progress:(id /* block */)a7 completion:(id /* block */)a8;
+- (void)setCookieWithRequestIfNeeded:(id)a0;
+- (id)downloadCommonError:(id)a0;
+- (void)url:(id)a0 number:(long long)a1 eachRange:(long long)a2;
+- (id)moveFileDownloadAtTempLocation:(id)a0;
+- (void)downloadFinished;
+- (id)setCookieWithHeaderFields:(id)a0;
+- (id)tmpPathForURL:(id)a0;
+- (void)ttnetDownload:(id)a0 header:(id)a1 filePath:(id)a2;
+- (void)mergeFiles;
+- (BOOL)mergeFileWithFileHandle:(id)a0 fileLocation:(id)a1;
+- (void)clearTmpFiles;
+- (id)pathToDownloadDirectory;
+- (id)initWithURL:(id)a0 destinationURL:(id)a1 supportRange:(BOOL)a2 supportTempFile:(BOOL)a3 needCommonParams:(BOOL)a4 ignoreX_TT_TOKEN:(BOOL)a5 progress:(id /* block */)a6 completion:(id /* block */)a7;
+- (id)newPathForTempLocation:(id)a0;
+- (void).cxx_destruct;
+- (void)URLSession:(id)a0 task:(id)a1 willPerformHTTPRedirection:(id)a2 newRequest:(id)a3 completionHandler:(id /* block */)a4;
+- (void)URLSession:(id)a0 downloadTask:(id)a1 didWriteData:(long long)a2 totalBytesWritten:(long long)a3 totalBytesExpectedToWrite:(long long)a4;
+- (void)cancelSession:(id)a0;
+- (void)URLSession:(id)a0 downloadTask:(id)a1 didFinishDownloadingToURL:(id)a2;
+- (void)resume;
+- (void)dealloc;
+- (void)URLSession:(id)a0 task:(id)a1 didCompleteWithError:(id)a2;
+- (void)cancel;
+- (BOOL)createFile;
+
+@end

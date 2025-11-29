@@ -1,0 +1,3 @@
+@interface MethodInfoRoot : GPBRootObject
+
+@end

@@ -1,0 +1,73 @@
+@class UIImageView, MMUIButton, UILabel, KindaUIView, TrueKindaOnePxLineView, LiveRewardIncomeBizInfo, UIButton, UIView, RichTextView, MMUILabel, UITextField, MMTableView, WCPayDecimalKeyboardView, NSString, WecoinTaxCutEntranceInfo, WCPayWebImageView;
+@protocol WCCoinFetchMoneyInputViewControllerDelegate;
+
+@interface WCCoinFetchMoneyInputViewController : MMUIViewController <UITextFieldDelegate, ILinkEventExt, WCActionSheetDelegate, WCPayDecimalKeyboardViewDelegate>
+
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) UITextField *moneyTextField;
+@property (retain, nonatomic) MMUILabel *invalidTipsLabel;
+@property (retain, nonatomic) RichTextView *richTextView;
+@property (retain, nonatomic) MMUIButton *cardInfoBtn;
+@property (retain, nonatomic) UIView *m_buttonContentView;
+@property (retain, nonatomic) UIView *m_inputContentView;
+@property (retain, nonatomic) UILabel *m_topTipsLabel;
+@property (retain, nonatomic) UIView *m_topbarView;
+@property (retain, nonatomic) UIButton *m_maskTopbarButton;
+@property (retain, nonatomic) WCPayWebImageView *m_cardLogo;
+@property (retain, nonatomic) UIImageView *m_arrowImageView;
+@property (retain, nonatomic) UILabel *m_textFieldTitle;
+@property (retain, nonatomic) UILabel *m_unitLabel;
+@property (retain, nonatomic) UIView *m_moneyLineView;
+@property (nonatomic) double m_keyboardHeight;
+@property (retain, nonatomic) WCPayDecimalKeyboardView *keyboardView;
+@property (readonly, nonatomic) unsigned long long inputAmount;
+@property (retain, nonatomic) KindaUIView *taxCutView;
+@property (retain, nonatomic) TrueKindaOnePxLineView *taxCutTopLine;
+@property (retain, nonatomic) TrueKindaOnePxLineView *taxCutBotttomLine;
+@property (retain, nonatomic) UILabel *taxCutTitle;
+@property (retain, nonatomic) UILabel *taxCutDesc;
+@property (retain, nonatomic) UIImageView *taxCutArrow;
+@property (weak, nonatomic) id<WCCoinFetchMoneyInputViewControllerDelegate> delegate;
+@property (nonatomic) long long incomeBalance;
+@property (retain, nonatomic) WecoinTaxCutEntranceInfo *taxCutInfo;
+@property (retain, nonatomic) id userInfo;
+@property (retain, nonatomic) LiveRewardIncomeBizInfo *incomeBizInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)navigationBarBackgroundColor;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)viewDidPop:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidTransitionToNewSize;
+- (void)updateView;
+- (void)adjustButtonY;
+- (void)viewDidLoad;
+- (void)setupContentView;
+- (double)inputContentViewTopbarheight;
+- (void)makeCardInfoView:(id)a0;
+- (void)makeInputContentView:(id)a0;
+- (void)layoutTaxCutView;
+- (void)initInvalidTipsLabel;
+- (void)showInvalidTipsLabelWithContent:(id)a0;
+- (void)hideInvalidTipsLabel;
+- (void)textFieldDidChang:(id)a0;
+- (void)checkBtnStatus;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)checkIfFetchAmountInvalid:(unsigned int)a0;
+- (void)cardInfoBtnClick;
+- (void)activeTextField;
+- (unsigned long long)getCurrentFetchTotalAmount;
+- (void)clickTaxCutEntrance;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)updateTableViewOffset;
+- (void)keyboardViewConfirmBtnClick:(id)a0;
+- (void)onWCPayLQTTipsNewModalTapCancel;
+- (id)keyboardHostViewController;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,80 @@
+@class UIView, NSString, UILabel, EmoticonBoardView, MMGrowTextView, UIButton, MMUILabel, WCInputController, MMUIButton;
+
+@interface MMWebViewPlugin_InputKeyboard : MMWebViewPluginBase <EmoticonSearchViewControllerDelegate, EmoticonBoardViewDelegate, BaseEmoticonViewDelegate, InputControllerDelegate> {
+    id /* block */ _inputTextCallbackBlock;
+    unsigned long long _maxInputLen;
+    unsigned long long _showRemindWordCount;
+    WCInputController *_inputController;
+    UIView *_inputView;
+    EmoticonBoardView *_emoticonBoardView;
+    UIView *_clickSensingView;
+    UIButton *_expressionButton;
+    UILabel *_bottomRemindLabel;
+    MMGrowTextView *_growTextView;
+    NSString *_finishText;
+    BOOL _bIsAlreadySendEvent;
+    BOOL _bOnlyShowSmileyPanel;
+    double _smileyPanelDuration;
+}
+
+@property (nonatomic) unsigned long long currentShowType;
+@property (retain, nonatomic) MMUIButton *commentCancelBtn;
+@property (retain, nonatomic) MMUILabel *writeCommentLabel;
+@property (retain, nonatomic) UIView *backgroundGuardView;
+@property (retain, nonatomic) UIView *seperatorLine;
+@property (nonatomic) double editBoxHeight;
+@property (nonatomic) double textViewMargin;
+@property (nonatomic) double buttonMargin;
+@property (nonatomic) BOOL m_bIsShowJSKeyBoard;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (BOOL)handleEvent:(unsigned long long)a0 userInfo:(id)a1;
+- (void)resignResponder;
+- (void)showKeyBoardWithPlaceholder:(id)a0 defaultText:(id)a1 maxTextLen:(unsigned long long)a2 contentOffsetY:(id)a3 disableScrollAdjustment:(BOOL)a4 showRemindWordCount:(unsigned long long)a5 callBackBlock:(id /* block */)a6 customParams:(id)a7;
+- (void)hideKeyBoardByJsapiWithCB:(id /* block */)a0;
+- (BOOL)showEmotionBoardOnly:(double)a0 ToShow:(BOOL)a1 EmotionBoardHeight:(double *)a2 scene:(unsigned long long)a3;
+- (BOOL)showFullEmotionBoard:(double)a0 ToShow:(BOOL)a1 EmotionBoardHeight:(double *)a2 scene:(unsigned long long)a3;
+- (BOOL)showEmotionBoard:(double)a0 ToShow:(BOOL)a1 viewType:(int)a2 EmotionBoardHeight:(double *)a3 scene:(unsigned long long)a4;
+- (void)showInputViewWithPlaceholder:(id)a0 defaultText:(id)a1 contentOffsetY:(id)a2 disableScrollAdjustment:(BOOL)a3 customParams:(id)a4;
+- (void)showEmotionBoardAnimate:(int)a0;
+- (void)ensureInitInputViewWithCustomParams:(id)a0;
+- (void)onExpressionButtonClicked:(id)a0;
+- (void)onInputModeChangeTo:(long long)a0 Animated:(BOOL)a1;
+- (void)handlePanAndTabOnView:(id)a0;
+- (void)initInputToolView;
+- (void)initInputViewForShowTypeDefault;
+- (void)initInputViewForShowTypeComment;
+- (void)layoutInputToolViewForShowTypeCommentWithCustomParams:(id)a0;
+- (void)initEmoticonView;
+- (void)reloadExpressionButtonImage:(long long)a0;
+- (double)getVisibleHeight;
+- (void)MMGrowTextViewHeightDidChanged:(id)a0;
+- (void)didCommitText:(id)a0;
+- (void)textDidChanged:(id)a0 selectedRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)setupView:(double)a0;
+- (void)updateExpressionButtonPosition;
+- (void)keyboardWillShow;
+- (void)onHideKeyboard;
+- (void)callBackToJs;
+- (void)keyboardDidHide;
+- (void)clearViewAndController;
+- (void)onSendButtonClicked;
+- (void)OnEmoticonStateDidChanged:(BOOL)a0;
+- (void)onEmoticonSearchIconClicked;
+- (void)didSelectorEmoticon:(id)a0;
+- (void)didSelectorSelfDefinedEmotcion:(id)a0;
+- (void)deleteEmoticon;
+- (void)hideEmotionBoardAnimate;
+- (void)sendEmotionTextToJs:(id)a0;
+- (void)sendEmoticonToJS:(id)a0;
+- (double)inputViewHeightForShowTypeComment;
+- (void)onCommentCancelBtnClicked:(id)a0;
+- (void)onSearchEmoticonViewControllerSendEmoticon:(id)a0;
+- (void).cxx_destruct;
+
+@end

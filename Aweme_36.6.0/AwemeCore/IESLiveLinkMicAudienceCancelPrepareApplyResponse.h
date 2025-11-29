@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceCancelPrepareApplyResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceCancelPrepareApplyResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceCancelPrepareApplyResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

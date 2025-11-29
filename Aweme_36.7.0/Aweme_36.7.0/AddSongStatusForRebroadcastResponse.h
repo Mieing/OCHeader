@@ -1,0 +1,10 @@
+@class AddSongStatusForRebroadcastResponse_ResponseData;
+
+@interface AddSongStatusForRebroadcastResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AddSongStatusForRebroadcastResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

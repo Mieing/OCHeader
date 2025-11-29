@@ -1,0 +1,87 @@
+@class UIScrollView, NSDictionary, NSString;
+@protocol AWESearchHubbleDoubleListElementProtocol, AWESearchBehaviorContextProtocol;
+
+@interface AWESearchMiddleFeedViewController : AWESearchMiddleBaseViewController <AWESearchHubbleDoubleListElementDelegate, AWESearchCachalotLynxPipelineDelegate, UIGestureRecognizerDelegate>
+
+@property (weak, nonatomic) UIScrollView *scrollView;
+@property (nonatomic) BOOL didEverCallDidAppear;
+@property (nonatomic) BOOL hasHackComponentOnViewDidLoad;
+@property (nonatomic) BOOL gsViewDidDrawEnd;
+@property (nonatomic) BOOL isFirstDrawCompletion;
+@property (nonatomic) BOOL hasShowKeyboard;
+@property (copy, nonatomic) NSDictionary *pageTrackExtraParams;
+@property (retain, nonatomic) id<AWESearchHubbleDoubleListElementProtocol> doubleListElement;
+@property (retain, nonatomic) id<AWESearchBehaviorContextProtocol> searchBehaviorContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (Class)aAWESearchModuleServiceDOUYINJXAdapterClass;
+
+- (void)handleBroadcastNotification:(id)a0;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (id)initWithRouterModel:(id)a0;
+- (id)userRecommendSearchSwitch;
+- (id)fetchViewController;
+- (BOOL)enableGSPrefetch;
+- (id)p_getHistoryConfig;
+- (id)getLynxPipelineForCachalot;
+- (BOOL)enableTemplateBundle;
+- (void)returnTransferWith:(id)a0;
+- (void)resetReturnPrefetchGS:(BOOL)a0;
+- (void)transferSearchEventWithSearchSource:(id)a0;
+- (void)sendSearchBarInputElementDidClickedEvent;
+- (void)skipAutoShowKeyboardOnce;
+- (id)fromGid;
+- (id)middleFeedPreviousPage;
+- (id)middleFeedEnterFrom;
+- (void)setSearchHubbleDoubleListElement:(id)a0;
+- (void)setSearchHubbleDoubleListLeaveMethod:(id)a0;
+- (BOOL)enableUpdateUIForViewChange;
+- (id)getMiddlePageConfig;
+- (void)syncHistoryIfNeeded;
+- (BOOL)enableMiddlePagePrefetch;
+- (id)aAWESearchModuleServiceDOUYINJXAdapter;
+- (BOOL)enableSimplifyOfMoreHistoryPage;
+- (BOOL)enableUpdateGSData;
+- (void)lynxViewDidReload;
+- (id)middlePageTraceIdentifier;
+- (void)keyboardDidShowWithHeight:(double)a0;
+- (void)keyboardDidHideWithHeight:(double)a0;
+- (BOOL)enableUpdateGSSendTimeOpt;
+- (BOOL)enableUseNewGSReqInterface;
+- (void)guessSearchDataDidSend:(BOOL)a0;
+- (BOOL)enableRequestPackageSimplify;
+- (BOOL)enableMiddlePrelayout;
+- (BOOL)enableAdjustPreCardTime;
+- (id)p_getLynxInitConfig;
+- (void)updateMiddlePageInfoWithRouterModel:(id)a0;
+- (void)p_bindPanGesture;
+- (void)prepareVideoAbstractLottie;
+- (void)preCardUI;
+- (void)addMiddlePageTrackParams:(id)a0;
+- (id)p_getBusinessID;
+- (id)p_extraGlobalProps;
+- (id)p_penetrateParams;
+- (id)p_bizLogGlobalProps;
+- (id)p_bizGlobalProps;
+- (BOOL)p_isNeedToSyncMoreHistory;
+- (void)panMoveGesture:(id)a0;
+- (void)handleMainModuleFirstDrawCompletion;
+- (void)p_sendEventWithName:(id)a0 params:(id)a1;
+- (BOOL)enableCrashOpt;
+- (void)updateMoreHistoryDataIfNeeded;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (void)keyboardWillShow:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

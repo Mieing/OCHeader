@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface BattleStarActivityGradeChange : IESLivePBBaseMessage
+
+@property (nonatomic) long long star;
+@property (nonatomic) long long score;
+@property (copy, nonatomic) NSString *beforeGrade;
+@property (nonatomic) long long beforeLevel;
+@property (copy, nonatomic) NSString *currentGrade;
+@property (nonatomic) long long currentLevel;
+
++ (id)descriptor;
+
+@end

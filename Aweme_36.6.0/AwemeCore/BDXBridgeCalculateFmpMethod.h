@@ -1,0 +1,18 @@
+@class NSNumber;
+
+@interface BDXBridgeCalculateFmpMethod : BDXBridgeMethod
+
+@property (retain, nonatomic) NSNumber *fmpFinalNumber;
+
++ (id)metaInfo;
+
+- (Class)paramModelClass;
+- (void)callWithParamModel:(id)a0 completionHandler:(id /* block */)a1;
+- (void)callWithParamModel:(id)a0 completionHandler:(id /* block */)a1;
+- (Class)resultModelClass;
+- (void)iesll_callWithParamModel:(id)a0 completionHandler:(id /* block */)a1;
+- (void).cxx_destruct;
+- (long long)authType;
+- (id)methodName;
+
+@end

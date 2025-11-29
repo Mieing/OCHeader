@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpCommonRoot : GPBRootObject
+
+@end

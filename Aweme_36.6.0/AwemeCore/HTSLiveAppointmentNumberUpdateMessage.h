@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveAppointmentNumberUpdateMessage_Data;
+
+@interface HTSLiveAppointmentNumberUpdateMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveAppointmentNumberUpdateMessage_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

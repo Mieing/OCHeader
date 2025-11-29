@@ -1,0 +1,3 @@
+@interface RoomSwitchUpdateApiRoot : GPBRootObject
+
+@end

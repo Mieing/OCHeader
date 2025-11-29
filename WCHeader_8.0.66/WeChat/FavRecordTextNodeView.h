@@ -1,0 +1,85 @@
+@class UIView, NSString, MMTipsViewController, NSArray, FavRecordReferView, UIImageView, UIButton, RichTextView, UILabel, MMUIActivityIndicatorView;
+
+@interface FavRecordTextNodeView : FavRecordBaseNodeView <MMTipsViewControllerDelegate, MMRTCMenuResponderDelegate, MMRichTextSelectEventDelegate, ILinkEventExt, ITranslateRecordMgrExt> {
+    RichTextView *m_textDescLabel;
+    MMTipsViewController *m_oTranslateIntroView;
+    UIView *m_translateView;
+    RichTextView *m_translateRichTextView;
+    MMUIActivityIndicatorView *m_oTranslateLoadingView;
+    UILabel *m_translateSuccessLabel;
+    UIImageView *m_translateSuccessIconView;
+    NSArray *m_translateMenus;
+    UIButton *m_warningBtn;
+    FavRecordReferView *m_referView;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithDataSource:(id)a0;
+- (void)layoutSubviews;
+- (void)initTranslateView;
+- (void)initTranslateRichTextView;
+- (void)updateTranslateStatusButton;
+- (void)updateTranslateSuccessView;
+- (void)setTranslateText;
+- (id)getTranslateMenuItems;
+- (BOOL)isNetworkAvailable;
+- (void)addContentSubView;
+- (void)initTextDescLabel;
+- (void)initMsgReferView;
+- (void)onTouchUpInside;
+- (void)onClickAsRefer;
+- (void)onLongPressWithoutRchTextCoverView;
+- (void)removeRichTextCoverView;
+- (void)onLongTouch;
+- (void)onLongPressWithRchTextCoverView;
+- (id)getMMMenuItems;
+- (void)setTranslateSearchEntity;
+- (id)getMMTranslateMenuItems;
+- (void)onTouchCancel;
+- (id)getThumbImageView;
+- (void)onMenuControllerWillHide:(id)a0;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (void)onClickTransFeedback:(id)a0;
+- (void)onCopy:(id)a0;
+- (void)onCopyTranslate:(id)a0;
+- (void)onForward:(id)a0;
+- (void)onForwardTranslate:(id)a0;
+- (void)onTextFavorite:(id)a0;
+- (void)onFavoriteTranslate:(id)a0;
+- (void)setTextSearchEntity;
+- (void)showMenu;
+- (id)getMenuItems;
+- (BOOL)isShowTranslateMenu;
+- (void)showTranslateViewMenus;
+- (void)onTranslateRecordItem:(id)a0;
+- (void)translateRecordItem;
+- (void)onSetTranslateLanguage:(id)a0;
+- (void)onWebSearch:(id)a0;
+- (void)hideMenu;
+- (void)updateBkgImage:(BOOL)a0;
+- (void)updateBkgImageToNormal;
+- (void)updateBkgImage:(BOOL)a0 andView:(id)a1;
+- (BOOL)translatePreventLongPressLink;
+- (BOOL)shouldShowTopicText;
+- (void)onSingleTapRTCV;
+- (id)getViewController;
+- (void)onRichTextViewExit;
+- (id)getCurrentViewController;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onWeAppMPShortLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onSearchTopicClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 tipTag:(long long)a2;
+- (void)onTranslateRecordItemMessageFailed:(id)a0 errTip:(id)a1;
+- (void)onTranslateRecordItemMessageChanged:(id)a0;
+- (void)onTapMsgReferView;
+- (void)onLongPressMsgReplyView;
+- (id)accessibilityLabel;
+- (void).cxx_destruct;
+
+@end

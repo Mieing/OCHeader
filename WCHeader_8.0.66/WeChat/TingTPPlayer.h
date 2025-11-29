@@ -1,0 +1,77 @@
+@class TingSafeWeakProxy, TingTPAudioMixTtsImpl, TingTPResourceLoader, TingTPHearingAidImpl, NSString, TingTPAuditoryEnhImpl, WCAudioInfo, MMTimer;
+@protocol ITPPlayer;
+
+@interface TingTPPlayer : TingBizPlayer <ITPPlayerDelegate, TingTPResourceLoaderDelegate>
+
+@property (retain, nonatomic) id<ITPPlayer> player;
+@property (retain, nonatomic) WCAudioInfo *audioInfo;
+@property (retain, nonatomic) MMTimer *progressCheckTimer;
+@property (nonatomic) BOOL hasCallPrepared;
+@property (nonatomic) BOOL isPreload;
+@property (nonatomic) BOOL hasCallStoped;
+@property (nonatomic) BOOL hasCallStartPlayBeforePrepared;
+@property (nonatomic) BOOL isSeeking;
+@property (nonatomic) BOOL isMoovReady;
+@property (nonatomic) long long lagTime;
+@property (retain, nonatomic) TingTPResourceLoader *resourceLoader;
+@property (nonatomic) double lastRecordCurrentTime;
+@property (nonatomic) long long stuckTimerCheckTimes;
+@property (retain, nonatomic) TingSafeWeakProxy *safeProxy;
+@property (retain, nonatomic) TingTPAuditoryEnhImpl *auditoryEnhImpl;
+@property (retain, nonatomic) TingTPAudioMixTtsImpl *audioMixTtsImpl;
+@property (nonatomic) double startPrepareTime;
+@property (retain, nonatomic) TingTPHearingAidImpl *hearingAidImpl;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)startProgressCheckTimer;
+- (void)stopProgressCheckTimer;
+- (void)onProgressCheckTimerCallback;
+- (int)playerKernelType;
+- (id)view;
+- (void)reset;
+- (void)prepareToPlay;
+- (BOOL)shouldWaitForMoovReady;
+- (void)checkAuditoryEnhanceOpen;
+- (void)checkTPAudioMixTtsOpen;
+- (void)checkHearingAidOpen;
+- (void)setupDataSource;
+- (id)genVideoInfo:(id)a0;
+- (void)play;
+- (void)pause;
+- (void)resume;
+- (void)safePlayStart;
+- (BOOL)checkForceStopedState;
+- (void)stop;
+- (BOOL)shouldDeleteTargetFileWhenStop;
+- (void)seekToTime:(double)a0;
+- (BOOL)canSeek;
+- (double)duration;
+- (double)currentTime;
+- (double)displayTime;
+- (double)bufferedTime;
+- (void)setPlayRate:(float)a0;
+- (void)setVolume:(float)a0;
+- (void)checkSetPlayRate;
+- (id)getAuditoryEnhanceEffectArgs;
+- (void)setAudioMixPcmBuffer:(id)a0 hasMore:(BOOL)a1 streamType:(int)a2 sampleRate:(int)a3 sampleFormat:(int)a4 channelCount:(int)a5;
+- (id)generateReadyReportInfo;
+- (void)onPrepared:(id)a0;
+- (void)onCompletion:(id)a0;
+- (void)onPlayer:(id)a0 errorType:(long long)a1 errorCode:(long long)a2 arg1:(long long)a3 arg2:(long long)a4;
+- (void)onStateChange:(id)a0 preState:(unsigned long long)a1 currentState:(unsigned long long)a2;
+- (void)onPlayer:(id)a0 info:(unsigned long long)a1 extra1:(long long)a2 extra2:(long long)a3 extraObject:(id)a4;
+- (void)onPlayer:(id)a0 videoFrameOut:(id)a1;
+- (void)onSeekComplete:(id)a0;
+- (id)onPlayer:(id)a0 audioProcessFrameOut:(id)a1;
+- (int)tpKernelStateToTingEvent:(unsigned long long)a0;
+- (long long)durationInSeconds;
+- (BOOL)isBuffering;
+- (void)onResourceDownloadFailWithCode:(int)a0 expired:(BOOL)a1;
+- (void)onResourceDownloadFinished;
+- (void)onResourceMoovReady:(id)a0;
+- (void).cxx_destruct;
+
+@end

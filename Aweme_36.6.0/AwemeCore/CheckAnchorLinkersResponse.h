@@ -1,0 +1,10 @@
+@class CheckAnchorLinkersResponse_Data;
+
+@interface CheckAnchorLinkersResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CheckAnchorLinkersResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

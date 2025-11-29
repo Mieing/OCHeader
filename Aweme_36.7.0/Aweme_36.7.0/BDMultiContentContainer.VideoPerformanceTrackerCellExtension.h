@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.VideoPerformanceTrackerCellExtension : BDMultiContentContainer.VideoCellExtension
+
+@end

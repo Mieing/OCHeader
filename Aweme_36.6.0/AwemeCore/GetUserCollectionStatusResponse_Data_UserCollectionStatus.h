@@ -1,0 +1,8 @@
+@interface GetUserCollectionStatusResponse_Data_UserCollectionStatus : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isCollected;
+@property (nonatomic) long long lastCollectTime;
+
++ (id)descriptor;
+
+@end

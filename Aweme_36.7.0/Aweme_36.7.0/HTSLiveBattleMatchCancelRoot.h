@@ -1,0 +1,3 @@
+@interface HTSLiveBattleMatchCancelRoot : GPBRootObject
+
+@end

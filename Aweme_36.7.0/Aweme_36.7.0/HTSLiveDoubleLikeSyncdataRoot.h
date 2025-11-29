@@ -1,0 +1,3 @@
+@interface HTSLiveDoubleLikeSyncdataRoot : GPBRootObject
+
+@end

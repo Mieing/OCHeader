@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveLinkmicGameInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long playId;
+@property (copy, nonatomic) NSString *gameId;
+@property (copy, nonatomic) NSString *gameCategory;
+@property (nonatomic) int runningType;
+@property (nonatomic) int publicStreamType;
+
++ (id)descriptor;
+
+@end

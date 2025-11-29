@@ -1,0 +1,13 @@
+@class NSString, HTSLiveUser;
+
+@interface HTSLiveShareTicket : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasShare;
+@property (retain, nonatomic) HTSLiveUser *fromUser;
+@property (nonatomic) BOOL hasFromUser;
+@property (copy, nonatomic) NSString *packageRecordId;
+@property (nonatomic) BOOL hasGrabShare;
+
++ (id)descriptor;
+
+@end

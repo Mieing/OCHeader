@@ -1,0 +1,10 @@
+@class IESLiveLinkMicProfitGameStartResponse_ResponseData;
+
+@interface IESLiveLinkMicProfitGameStartResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicProfitGameStartResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDReaderMarginAttachment : BDReaderPlaceholderAttachment
+
+@end

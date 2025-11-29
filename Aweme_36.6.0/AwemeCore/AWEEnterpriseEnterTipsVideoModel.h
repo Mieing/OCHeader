@@ -1,0 +1,17 @@
+@class NSNumber, NSString, NSDictionary;
+
+@interface AWEEnterpriseEnterTipsVideoModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSNumber *itemId;
+@property (copy, nonatomic) NSString *itemTitle;
+@property (copy, nonatomic) NSDictionary *coverUrlDict;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

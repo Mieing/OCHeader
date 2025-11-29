@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveFastMatchResultTag : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *tagName;
+@property (copy, nonatomic) NSString *value;
+
++ (id)descriptor;
+
+@end

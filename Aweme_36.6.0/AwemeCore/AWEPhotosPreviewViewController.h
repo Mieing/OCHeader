@@ -1,0 +1,70 @@
+@class UIView, NSString, NSArray, UIButton, NSDictionary, NSMutableArray, AWEPhotosPreviewDonwloadAnimationButton, UICollectionView, UILabel;
+@protocol AWEPhotosPreviewViewControllerDelegate;
+
+@interface AWEPhotosPreviewViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, AWEZoomTransitionInnerContextProvider, UIGestureRecognizerDelegate, AWEPhotosPreviewCollectionViewCellDelegate, AWEPhotosPreviewFadeOutTransitionContextProvider>
+
+@property (retain, nonatomic) NSArray *thumbnailURLs;
+@property (retain, nonatomic) NSArray *imageURLs;
+@property (retain, nonatomic) NSArray *titles;
+@property (retain, nonatomic) NSArray *watermarks;
+@property (nonatomic) long long currentIndex;
+@property (retain, nonatomic) NSMutableArray *zoomScales;
+@property (retain, nonatomic) NSMutableArray *contentOffsets;
+@property (retain, nonatomic) NSArray *imageReqConfigs;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UILabel *pageLabel;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) AWEPhotosPreviewDonwloadAnimationButton *saveButton;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UIView *footerView;
+@property (copy, nonatomic) id /* block */ scrollToMoreCallback;
+@property (nonatomic) BOOL enableFooterView;
+@property (nonatomic) BOOL isWillScrollToDetail;
+@property (nonatomic) BOOL disableZoomTransition;
+@property (nonatomic) BOOL showSaveButton;
+@property (nonatomic) BOOL showCloseButton;
+@property (nonatomic) double startTime;
+@property (nonatomic) BOOL allowLoop;
+@property (retain, nonatomic) NSDictionary *trackParamDict;
+@property (copy, nonatomic) NSString *uniqueId;
+@property (weak, nonatomic) id<AWEPhotosPreviewViewControllerDelegate> delegate;
+@property (nonatomic) BOOL shouldUsePopDismiss;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (unsigned long long)fadeOutTransitionAllowedTriggerDirection;
+- (unsigned long long)zoomTransitionAllowedTriggerDirection;
+- (void)closeButtonClick;
+- (void)p_setupLabel;
+- (void)photosPreviewCollectionViewCell:(id)a0 didUpdateScollViewWithZoomScale:(double)a1 contentOffset:(struct CGPoint { double x0; double x1; })a2;
+- (void)p_setupLoopData;
+- (void)p_setupCollectionView;
+- (void)p_setupCloseButton;
+- (long long)fakeCurrentIndex;
+- (void)updateLabelAndCurrentIndex;
+- (void)publishEventToLynxWithIndex:(long long)a0;
+- (void)tapSaveImageButton;
+- (BOOL)shouldAddFakeLoopData;
+- (void)didScrollFromIndex:(long long)a0 toIndex:(long long)a1;
+- (void)dimissSelf;
+- (id)p_addFakeObjectToArray:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (BOOL)prefersStatusBarHidden;
+- (id)initWithConfiguration:(id)a0;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)handleTap;
+- (void)image:(id)a0 didFinishSavingWithError:(id)a1 contextInfo:(void *)a2;
+
+@end

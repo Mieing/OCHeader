@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface GetRoomChangeTextResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *changeText;
+@property (nonatomic) int changeStatus;
+
++ (id)descriptor;
+
+@end

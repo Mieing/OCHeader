@@ -1,0 +1,14 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveCustomPanel : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (retain, nonatomic) HTSLiveImage *onlineImg;
+@property (nonatomic) BOOL hasOnlineImg;
+@property (retain, nonatomic) HTSLiveImage *reviewImg;
+@property (nonatomic) BOOL hasReviewImg;
+@property (copy, nonatomic) NSString *rejectReason;
+
++ (id)descriptor;
+
+@end

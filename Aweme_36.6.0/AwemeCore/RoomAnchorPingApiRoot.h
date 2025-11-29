@@ -1,0 +1,3 @@
+@interface RoomAnchorPingApiRoot : GPBRootObject
+
+@end

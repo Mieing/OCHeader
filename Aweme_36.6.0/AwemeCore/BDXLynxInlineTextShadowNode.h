@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface BDXLynxInlineTextShadowNode : BDXLynxAbstractTextShadowNode <BDXLynxInlineElement>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)lynxLazyLoad;
+
+- (BOOL)needsEventSet;
+- (id)inlineAttributeString;
+- (BOOL)isVirtual;
+
+@end

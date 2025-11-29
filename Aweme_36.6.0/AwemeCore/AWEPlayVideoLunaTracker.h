@@ -1,0 +1,6 @@
+@interface AWEPlayVideoLunaTracker : AWEPlayVideoBaseTracker
+
+- (id)paramsForTrackerIn:(id)a0 type:(long long)a1 paramsModel:(id)a2;
+- (unsigned long long)p_musicDetailLunaBtnTypeWithModel:(id)a0;
+
+@end

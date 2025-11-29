@@ -1,0 +1,16 @@
+@interface ImageAlbumMusicInfoV2 : GPBMessage
+
+@property (nonatomic) int beginTime;
+@property (nonatomic) BOOL hasBeginTime;
+@property (nonatomic) int endTime;
+@property (nonatomic) BOOL hasEndTime;
+@property (nonatomic) int volume;
+@property (nonatomic) BOOL hasVolume;
+
++ (id)descriptor;
+
+- (int)volume;
+- (int)endTime;
+- (int)beginTime;
+
+@end

@@ -1,0 +1,9 @@
+@interface IESLiveGameCPExplainCardBackendRequestImpl : IESLiveBackendRequestBaseImpl
+
++ (void)ieslivekit_register_preloadrequstAction;
++ (id)requstBizPath;
+
+- (id)bizParams;
+- (unsigned long long)responseFormat;
+
+@end

@@ -1,0 +1,70 @@
+@class NSArray, NSDictionary, NSString, CJPayBDCreateOrderResponse, NSNumber, CJPayDefaultChannelShowConfig;
+
+@interface CJPayDyPayQualityHPMethodListDataManager : NSObject
+
+@property (nonatomic) BOOL usePlusXData;
+@property (nonatomic) BOOL hasRetain;
+@property (nonatomic) BOOL hasChoiceChanged;
+@property (copy, nonatomic) NSArray *methodListData;
+@property (copy, nonatomic) NSArray *methodListIndexArray;
+@property (copy, nonatomic) NSDictionary *payMethodDict;
+@property (nonatomic) BOOL isInCombineStatus;
+@property (retain, nonatomic) NSNumber *combinePrimaryPayMethodIndex;
+@property (retain, nonatomic) NSNumber *combineSecondaryPayMethodIndex;
+@property (nonatomic) unsigned long long combineSecondaryPayMethodType;
+@property (copy, nonatomic) NSArray *combineMethodListData;
+@property (copy, nonatomic) NSArray *combineMethodListIndexArray;
+@property (copy, nonatomic) NSArray *combinePrimaryMethodListData;
+@property (copy, nonatomic) NSArray *combinePrimaryMethodListIndexArray;
+@property (copy, nonatomic) NSDictionary *combinePrimaryPayMethodDict;
+@property (copy, nonatomic) NSDictionary *groupInfoDict;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *selectedConfig;
+@property (copy, nonatomic) NSDictionary *foldGroupInfoDict;
+@property (copy, nonatomic) NSString *combinePrimaryPayAmountStr;
+@property (copy, nonatomic) NSString *combineSecondaryPayAmountStr;
+@property (copy, nonatomic) id /* block */ payMethodClickBlock;
+@property (copy, nonatomic) id /* block */ changeCombineStates;
+@property (copy, nonatomic) id /* block */ changeCombinePrimaryPayMethod;
+@property (copy, nonatomic) id /* block */ topViewChangePayMethod;
+@property (copy, nonatomic) id /* block */ trackerBlock;
+@property (retain, nonatomic) CJPayBDCreateOrderResponse *response;
+
+- (void)p_alogWithStageName:(id)a0;
+- (void)trackerName:(id)a0 params:(id)a1;
+- (id)getCurrentSelectShowConfig;
+- (id)p_getAllPayMethodConfig;
+- (BOOL)isInCombinePage;
+- (void)changeUnCombine;
+- (BOOL)changePayGroupFoldStatus;
+- (void)p_buildCombinePayMethodListDataWhenRefreshResponseInCombinePage:(id)a0;
+- (void)updateCombinePayMethodList:(id)a0 primaryPayMethod:(id)a1;
+- (BOOL)p_isCombineGroup:(id)a0;
+- (id)p_buildDataSourceWithGroupInfo:(id)a0 isInCombineStatus:(BOOL)a1 isNeedFold:(BOOL)a2;
+- (BOOL)p_judgeIsNeedFoldWithGroupInfo:(id)a0 isNeedFold:(BOOL)a1;
+- (BOOL)p_payMethodNeedCombineStatus:(id)a0;
+- (id)getCurrentMethodExtTrackParams:(id)a0;
+- (void)p_changeFoldStatusWithGroupInfo:(id)a0 isNeedPosition:(BOOL)a1;
+- (BOOL)p_isInCombineGroup:(id)a0;
+- (id)p_buildPayMethodListData:(id)a0;
+- (void)updateCombineMethodListData;
+- (id)p_buildCombinePayDataSource:(id)a0;
+- (void)updateCombinePrimaryPayMethodListData:(id)a0;
+- (id)p_buildPayMethodListIndexArray:(id)a0;
+- (id)p_getDefaultCombinePrimaryPayMethodIndex:(id)a0;
+- (id)p_buildCombinePrimaryPayMethodListData:(id)a0;
+- (id)p_buildCombinePrimaryPayMethodListIndexArray:(id)a0;
+- (void)updateDataWithNewResponse:(id)a0;
+- (id)getCombineShowConfig:(id)a0;
+- (void)changePayMethodSelectedStatus:(id)a0;
+- (void)updatePayMethodListWithWithHasRetain:(BOOL)a0 usePlusXData:(BOOL)a1 hasChoiceChanged:(BOOL)a2;
+- (id)obtainMethodListData;
+- (id)obtainCombineMethodListData;
+- (id)obtainCombinePrimaryMethodListData;
+- (BOOL)isPayMethodChanged;
+- (id)getCombineSecondaryPayAmount;
+- (id)getBankListStr;
+- (id)getMethodShowConfigWithIndex:(long long)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,83 @@
+@class UIView, MMWebImageView, WCFinderHeadContactInfoView, NSString, WCFinderContact, WCFinderJumpInfo, WCFinderAuthInfoIconView, NSMutableArray, WCFinderHeadImageView, MMUIButton, UILabel;
+@protocol WCFinderHeadInfoViewDelegate;
+
+@interface WCFinderHeadInfoEasyView : UIView <WCFinderHeadImageViewDelegate, WCFinderContactExt, WCFinderHeadInfoViewProtocol, WCFinderJumpInfoViewProtocol>
+
+@property (retain, nonatomic) WCFinderHeadImageView *avatarView;
+@property (retain, nonatomic) UIView *avatarViewCircle;
+@property (retain, nonatomic) UILabel *avatarTextTipsLabel;
+@property (retain, nonatomic) WCFinderHeadContactInfoView *nameInfoView;
+@property (retain, nonatomic) WCFinderAuthInfoIconView *authView;
+@property (retain, nonatomic) UILabel *followedLabel;
+@property (retain, nonatomic) UILabel *descriptionLabel;
+@property (retain, nonatomic) MMUIButton *followBtn;
+@property (retain, nonatomic) MMWebImageView *brandLogoView;
+@property (retain, nonatomic) UIView *gestureView;
+@property (copy, nonatomic) NSString *descTipsStr;
+@property (nonatomic) BOOL enableShowFollowedLabel;
+@property (nonatomic) BOOL thisContentVMShouldShowFollowBtn;
+@property (nonatomic) BOOL hasJustBeenReset;
+@property (nonatomic) BOOL isFollowBtnDisplayingForBrandContact;
+@property (nonatomic) BOOL showCarouselFlag;
+@property (nonatomic) BOOL hideFollowBtnByCarousel;
+@property (nonatomic) BOOL hideAuthBtnByCarousel;
+@property (retain, nonatomic) WCFinderContact *contact;
+@property (retain, nonatomic) NSString *brandLogoUrl;
+@property (retain, nonatomic) NSMutableArray *elementsArray;
+@property (retain, nonatomic) NSMutableArray *customeAccessibleElements;
+@property (weak, nonatomic) id<WCFinderHeadInfoViewDelegate> delegate;
+@property (retain, nonatomic) WCFinderJumpInfo *avatarJumpInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)defaultHeight;
+
+- (void)updateConstraintsWithContact:(id)a0;
+- (void)updateDescriptionLabel:(id)a0;
+- (void)setShouldShowFollowTips:(BOOL)a0;
+- (void)setAvatarJumpInfo:(id)a0 withAnimated:(BOOL)a1;
+- (id)getAvatarImage;
+- (void)setShowFollowBtn:(BOOL)a0;
+- (void)updateFollowBtn:(BOOL)a0;
+- (void)setIsFollowBtnDisplayingWhenBrandContact:(BOOL)a0;
+- (BOOL)canFollowBtnShow;
+- (void)resetReuseState;
+- (id)userAvatarSnapshot;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })followBtnFrame;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })avatarFrame;
+- (void)reloadHeaderWithContact;
+- (BOOL)canShowAuthInfo;
+- (void)updateAccessibility;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setUpFullFeedContentSummaryHeaderViewLayout;
+- (id)genAvatarCircleWithCircleSize:(struct CGSize { double x0; double x1; })a0;
+- (void)beginFollowBtnAnimation;
+- (void)showFollowBtnWithAnimated:(BOOL)a0;
+- (void)updateFollowedLabel;
+- (BOOL)showCarouselString:(id)a0;
+- (void)hideCarouselString;
+- (void)updateBrandLogoImageUrl:(id)a0;
+- (void)addAvatarViewWithSize:(struct CGSize { double x0; double x1; })a0 leftMargin:(double)a1;
+- (void)removeDescriptionLabel;
+- (void)removeFollowBtn;
+- (void)removeAvatarJumpInfo;
+- (void)addGestureView;
+- (BOOL)hasFollowedLabel;
+- (BOOL)hasDescriptionLabel;
+- (BOOL)hasFollowBtn;
+- (BOOL)hasBrandLogo;
+- (void)finderHeadImageViewDidClick:(id)a0;
+- (id)jumpInfo;
+- (int)showPosition;
+- (id)updateContactOneTimeFlag:(id)a0;
+- (void)onFinderContactUpdate:(id)a0;
+- (void)onFinderContactFollowStatusUpdate:(id)a0;
+- (void)onFinderContactFollowStatusUpdateFailure:(id)a0;
+- (void)clickAvatorAndName:(id)a0;
+- (void)onClickFollowBtn:(id)a0;
+- (BOOL)isEqualToMyContact:(id)a0;
+- (void).cxx_destruct;
+
+@end

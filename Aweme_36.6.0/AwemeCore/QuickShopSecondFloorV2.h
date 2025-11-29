@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface QuickShopSecondFloorV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *processText;
+@property (nonatomic) BOOL hasProcessText;
+@property (copy, nonatomic) NSString *enterText;
+@property (nonatomic) BOOL hasEnterText;
+@property (copy, nonatomic) NSString *transBgText;
+@property (nonatomic) BOOL hasTransBgText;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetResolutionResponse : BDByteCastPPBaseCmdResponse
+
+@end

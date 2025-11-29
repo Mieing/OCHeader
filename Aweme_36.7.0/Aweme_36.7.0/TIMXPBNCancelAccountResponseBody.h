@@ -1,0 +1,8 @@
+@interface TIMXPBNCancelAccountResponseBody : GPBMessage
+
+@property (nonatomic) BOOL cancelResult;
+@property (nonatomic) BOOL hasCancelResult;
+
++ (id)descriptor;
+
+@end

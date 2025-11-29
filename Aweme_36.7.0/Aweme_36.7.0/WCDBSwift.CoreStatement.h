@@ -1,0 +1,6 @@
+@interface WCDBSwift.CoreStatement : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ core;
+    void /* unknown type, empty encoding */ recyclableHandleStatement;
+}
+
+@end

@@ -1,0 +1,86 @@
+@class AWETemplateBarContext, AWESearchBottomBarPanelView, AWETemplateBaseViewModel, AWEPlayInteractionSearchAnchorView, NSDictionary, UIView, AWEPlayInteractionContext, NSString, AWEPageContext, AWESearchAnchorListModel, NSArray, AWEAwemeModel, AWETemplateBarModel;
+@protocol AWETemplateSearchViewActionProtocol, AWETemplateSearchViewModelProtocol;
+
+@interface AWETemplateSearchViewProvider : AWETemplateViewBaseProvider <AWETemplateSearchViewActionProtocol>
+
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) AWEPlayInteractionSearchAnchorView *barView;
+@property (retain, nonatomic) AWESearchBottomBarPanelView *wordsPanelView;
+@property (retain, nonatomic) AWETemplateBaseViewModel<AWETemplateSearchViewActionProtocol, AWETemplateSearchViewModelProtocol> *viewModel;
+@property (retain, nonatomic) AWETemplateBarModel *barModel;
+@property (retain, nonatomic) AWETemplateBarContext *barContext;
+@property (retain, nonatomic) AWEPageContext *pageContext;
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) long long currentIndex;
+@property (nonatomic) unsigned long long currentTimeIndex;
+@property (nonatomic) long long holdRefreshType;
+@property (nonatomic) BOOL hasSarTriggered;
+@property (nonatomic) unsigned long long repeatCount;
+@property (nonatomic) double lastRefreshTime;
+@property (nonatomic) long long lastRefreshType;
+@property (nonatomic) BOOL panelHasShow;
+@property (nonatomic) BOOL searchReturnShowPanel;
+@property (nonatomic) BOOL isSAR;
+@property (nonatomic) BOOL isCommentPanelOpen;
+@property (copy, nonatomic) NSDictionary *extraInfo;
+@property (copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) AWESearchAnchorListModel *anchorModel;
+@property (copy, nonatomic) NSArray *searchAnchorWordsModel;
+@property (copy, nonatomic) NSArray *panelSearchAnchorWordsModel;
+@property (retain, nonatomic) AWEPlayInteractionContext *interactionContext;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (BOOL)shouldActiveWithData:(id)a0 scene:(unsigned long long)a1 context:(id)a2;
++ (BOOL)shouldActiveWithData:(id)a0 context:(id)a1 scene:(unsigned long long)a2 extraInfo:(id)a3;
+
+- (void)viewController_didEndDisplaying;
+- (void)viewController_viewDidAppear;
+- (void)viewController_viewDidDisappear;
+- (id)aAWEPadModuleAdapter;
+- (BOOL)handleElementWhenPriorityAvoid:(id)a0;
+- (void)viewDidChangeBreakPoint;
+- (id)initWithData:(id)a0 scene:(unsigned long long)a1 context:(id)a2;
+- (BOOL)isMultiIntent;
+- (void)viewDidTriggerActionWithSearchAnchorModel:(id)a0 type:(unsigned long long)a1;
+- (id)generateSchemaWithSearchAnchorModel:(id)a0;
+- (long long)fetchCurrentPictureIndex;
+- (double)fetchCurrentVideoPlayTime;
+- (id)initWithData:(id)a0 context:(id)a1 scene:(unsigned long long)a2 extraInfo:(id)a3;
+- (void)viewController_viewWillDisplay;
+- (void)configBarModelWith:(id)a0 context:(id)a1;
+- (BOOL)scrollBackKeepWord;
+- (id)fetchVideoDeleagte;
+- (id)fetchRichContentContainer;
+- (void)showWordsPanelView;
+- (void)updatePanelView;
+- (void)trackShowMasked:(id)a0 context:(id)a1;
+- (void)changeWordIfNeededWithRefreshType:(long long)a0;
+- (BOOL)enableShowPanelWith:(id)a0;
+- (id)wordsShowMaskedParamsWithModel:(id)a0 index:(unsigned long long)a1;
+- (long long)recomWordType;
+- (void)setInteractAreaPureMode:(BOOL)a0;
+- (BOOL)shouldChangeWordForSar;
+- (void)didTriggerSar:(id)a0;
+- (BOOL)changeWordPolling;
+- (BOOL)shouldFireAutoSwitchAfterSar;
+- (void)updateHoldTriggerRefreshType:(long long)a0;
+- (void)hitSAR;
+- (BOOL)enableAdjustPanelLayout;
+- (long long)slideInteractType;
+- (BOOL)enablePanelInnerSlide;
+- (BOOL)enableReturnShowPanel;
+- (id)barShowPanelConfig;
+- (id)panelShowBlockList;
+- (void).cxx_destruct;
+- (void)updateWithData:(id)a0;
+- (void)configuration;
+- (void)reset;
+- (void)dealloc;
+- (void)addObservers;
+
+@end

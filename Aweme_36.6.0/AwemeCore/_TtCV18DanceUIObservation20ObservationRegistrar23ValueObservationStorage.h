@@ -1,0 +1,3 @@
+@interface _TtCV18DanceUIObservation20ObservationRegistrar23ValueObservationStorage : _TtCs12_SwiftObject
+
+@end

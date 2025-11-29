@@ -1,0 +1,10 @@
+@class PropMineResult_Data;
+
+@interface PropMineResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PropMineResult_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

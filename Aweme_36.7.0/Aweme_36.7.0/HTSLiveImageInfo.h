@@ -1,0 +1,17 @@
+@class HTSLiveImage;
+
+@interface HTSLiveImageInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *img;
+@property (nonatomic) BOOL hasImg;
+@property (nonatomic) int start;
+@property (nonatomic) int duration;
+@property (nonatomic) int x;
+@property (nonatomic) int y;
+@property (nonatomic) int width;
+@property (nonatomic) int height;
+@property (nonatomic) BOOL needCircle;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,80 @@
+@class MMVcardItem, NSString, MMTableView;
+
+@interface VcardViewController : MMUIViewController <CNContactViewControllerDelegate, CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource, WCActionSheetDelegate, ILinkEventExt> {
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapSectionToSectionType;
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapPersonCellToCellType;
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapUrlCellToCellType;
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapBirthdayCellToCellType;
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapNoteCellToCellType;
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapLogoCellToCellType;
+    struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> { struct __tree<std::__value_type<unsigned long, unsigned long>, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>, std::allocator<std::__value_type<unsigned long, unsigned long>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned long, unsigned long>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned long, std::__value_type<unsigned long, unsigned long>, std::less<unsigned long>>> { unsigned long long __value_; } __pair3_; } __tree_; } _mapSoundCellToCellType;
+}
+
+@property (retain, nonatomic) MMVcardItem *vcardItem;
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) NSString *copyedText;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)containDigit:(id)a0;
+- (void)initPersonSectionCellType;
+- (void)initUrlSectionCellType;
+- (void)initBirthdaySectionCellType;
+- (void)initNoteSectionCellType;
+- (void)initLogoSectionCellType;
+- (void)initSoundSectionCellType;
+- (void)initCellType;
+- (void)initSectionType;
+- (void)initData;
+- (id)getShowName:(id)a0;
+- (void)initHeaderView;
+- (void)onAddContact:(id)a0;
+- (void)initFooterView;
+- (void)initView;
+- (void)onReturn;
+- (void)viewDidLoad;
+- (id)convertVcardAddressToCNAddress:(id)a0;
+- (void)addToExistContact;
+- (void)contactViewController:(id)a0 didCompleteWithContact:(id)a1;
+- (void)contactPickerDidCancel:(id)a0;
+- (void)contactPicker:(id)a0 didSelectContact:(id)a1;
+- (void)copyVcardPropertyToContact:(id)a0;
+- (void)createNewContact;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)callPhoneNumber:(id)a0;
+- (void)selectPersonSectionRow:(unsigned long long)a0;
+- (id)ensureHttpScheme:(id)a0;
+- (void)selectUrlSectionRow:(unsigned long long)a0;
+- (void)selectSoundSectionRow:(unsigned long long)a0;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (int)getLinesForLabelValueText:(id)a0;
+- (void)makeCell:(id)a0 col:(id)a1 value:(id)a2;
+- (id)validAddressFields:(id)a0;
+- (void)makeAddressCell:(id)a0 addressType:(id)a1 addressItem:(id)a2;
+- (void)makePersonSectionCell:(id)a0 row:(unsigned long long)a1;
+- (void)makeUrlSectionCell:(id)a0 row:(unsigned long long)a1;
+- (void)makeBirthdaySectionCell:(id)a0 row:(unsigned long long)a1;
+- (void)makeNoteSectionCell:(id)a0 row:(unsigned long long)a1;
+- (void)makeLogoSectionCell:(id)a0 row:(unsigned long long)a1;
+- (void)makeSoundCell:(id)a0;
+- (void)makeSoundSectionCell:(id)a0 row:(unsigned long long)a1;
+- (double)heightForCellText:(id)a0;
+- (double)heightForCellAddress:(id)a0;
+- (double)heightForPersonSectionRow:(unsigned long long)a0;
+- (double)heightForUrlSectionRow:(unsigned long long)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)a0 withSender:(id)a1;
+- (void)onCopy:(id)a0;
+- (void)showMenuItemForText:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 withView:(id)a2;
+- (void)onLinkLongPressed:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 withView:(id)a2;
+- (void)onPhoneLongPressed:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 withView:(id)a2;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

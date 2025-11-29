@@ -1,0 +1,3 @@
+@interface HTSLiveTeamPlayApplyListChangeRoot : GPBRootObject
+
+@end

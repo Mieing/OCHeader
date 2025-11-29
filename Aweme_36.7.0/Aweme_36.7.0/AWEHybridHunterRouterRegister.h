@@ -1,0 +1,3 @@
+@interface AWEHybridHunterRouterRegister : NSObject
+
+@end

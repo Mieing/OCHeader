@@ -1,0 +1,3 @@
+@interface AWECodeGenInterestActivityAlbumSetInnerVideoTopResponse : AWEBaseResponseModel
+
+@end

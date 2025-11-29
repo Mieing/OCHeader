@@ -1,0 +1,3 @@
+@interface BDECIMClientDefine : NSObject
+
+@end

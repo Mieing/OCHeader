@@ -1,0 +1,3 @@
+@interface OpenBootConfigApiRoot : GPBRootObject
+
+@end

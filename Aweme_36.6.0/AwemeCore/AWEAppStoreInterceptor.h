@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface AWEAppStoreInterceptor : NSObject <AWERequestInterceptorProtocal>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)checkRequest:(id)a0 isClickJump:(BOOL)a1 model:(id)a2 adInfo:(id)a3 error:(id *)a4;
++ (void)checkRequest:(id)a0 isClickJump:(BOOL)a1 model:(id)a2 error:(id *)a3;
+
+
+@end

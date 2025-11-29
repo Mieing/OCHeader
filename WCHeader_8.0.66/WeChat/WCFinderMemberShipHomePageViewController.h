@@ -1,0 +1,74 @@
+@class UIView, UITableViewDiffableDataSource, WCFinderTabSwitchView, UILabel, WCFinderMemberShipHomePageViewModel, NSString, WCFinderReuseQueue, UIViewController, WCFinderRefreshTableFooterView, WCFinderMSPostHeader, WCFinderEventDelegate;
+@protocol WCFinderCommentBaseViewProtocol;
+
+@interface WCFinderMemberShipHomePageViewController : MMUIViewController <UITableViewDelegate, WCFinderTabSwitchViewDataSource, WCFinderTabSwitchViewDelegate, WCFinderMeberShipActivityEvent, WCFinderMemberShipHomePageViewModelDelegate, WCFinderRefreshTableFooterViewDelegate, WCFinderStreamLoadingStateDelegate, WCPlayerConfigViewControllerDelegate, WCFinderMSPostHeaderDelegate, WCFinderFansProfileViewControllerDelegate, WCFinderCommentDetailViewControllerDelegate>
+
+@property (retain, nonatomic) WCFinderTabSwitchView *tabSwitchView;
+@property (retain, nonatomic) UITableViewDiffableDataSource *dataSource;
+@property (retain, nonatomic) WCFinderEventDelegate *delegate;
+@property (retain, nonatomic) WCFinderRefreshTableFooterView *footerView;
+@property (retain, nonatomic) UIViewController<WCFinderCommentBaseViewProtocol> *lastCommentVC;
+@property (retain, nonatomic) WCFinderReuseQueue *reuseQueue;
+@property (retain, nonatomic) UIView *originView;
+@property (retain, nonatomic) WCFinderMSPostHeader *postHeaderView;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) WCFinderMemberShipHomePageViewModel *viewModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)tableView;
+- (void)loadView;
+- (void)dealloc;
+- (void)updateContentInset:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0 minSize:(struct CGSize { double x0; double x1; })a1;
+- (void)registerCellForTableView:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (long long)numberOfTabSwitchView:(id)a0;
+- (id)tabSwitchView:(id)a0 titleForTabAtIndex:(long long)a1;
+- (BOOL)onTabSwitchViewUserSelectIdx:(long long)a0 oldIdx:(long long)a1 animated:(BOOL)a2 context:(void *)a3 completion:(id /* block */)a4;
+- (id)tableView:(id)a0 indexPath:(id)a1 cellForItemIdentifier:(id)a2;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)setEventDelegate:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)selectedPageChanged:(id)a0;
+- (void)onDisplayPageFeedArrayChanged;
+- (void)reloadData;
+- (void)reloadFooter;
+- (void)onClickViewAllCommentAction:(id)a0 isActiveInput:(BOOL)a1 isFromCommentButton:(BOOL)a2 enterType:(unsigned long long)a3;
+- (void)showCommentListWithContentVM:(id)a0 shouldEnterKeyBoard:(BOOL)a1 refCommentID:(unsigned long long)a2 commentAction:(unsigned long long)a3 showTitle:(BOOL)a4 enterType:(unsigned long long)a5 appendCommentModel:(id)a6;
+- (id)zoneViewController;
+- (void)didClickFooterRefreshRetry:(id)a0;
+- (void)finderFooterDidTriggerRefresh:(id)a0;
+- (void)onLoadingStateChanged:(id)a0;
+- (void)onActivityViewModelPageChanged;
+- (void)onActivityChangeStickyTopTo:(BOOL)a0 contentVM:(id)a1 success:(BOOL)a2 errorInfo:(id)a3;
+- (void)onActivityFeedClickComment:(id)a0 enterType:(unsigned long long)a1;
+- (void)onActivityFeedClickMore:(id)a0;
+- (void)changeContentVM:(id)a0 stickyTopStatus:(BOOL)a1;
+- (void)onDelete:(id)a0;
+- (void)onRealDelete:(id)a0;
+- (void)onReport:(id)a0;
+- (void)onActivityFeed:(id)a0 clickPhoto:(id)a1 photoIndex:(long long)a2 originViewArr:(id)a3;
+- (void)onActivityFeed:(id)a0 clickVideo:(id)a1 originRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2 originView:(id)a3;
+- (void)onCloseFullScreenPlayComplete:(id)a0;
+- (void)onActivityFeed:(id)a0 clickTextLink:(id)a1 fromLikeList:(BOOL)a2;
+- (void)showUserProfile:(id)a0 contactType:(int)a1 profileRefScene:(unsigned long long)a2 vc:(id)a3;
+- (void)onActivityFeed:(id)a0 notifyHeightChanged:(id)a1;
+- (void)onActivityFeedLongPress:(id)a0;
+- (BOOL)isSelfFeed:(id)a0;
+- (void)onActivityFeedClickHeader:(id)a0;
+- (void)onActivityFeed:(id)a0 turnToLiked:(BOOL)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)onClickInputView;
+- (void)impactFeedbackWithStyle:(long long)a0;
+- (void)fansProfileViewController:(id)a0 clickFinderActionWithWXUsername:(id)a1;
+- (void)clickCommentNickname:(id)a0 username:(id)a1 contact:(id)a2 isWeChatFriend:(BOOL)a3 dataItem:(id)a4;
+- (void).cxx_destruct;
+
+@end

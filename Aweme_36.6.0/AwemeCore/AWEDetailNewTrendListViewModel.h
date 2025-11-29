@@ -1,0 +1,77 @@
+@class NSMutableDictionary, AWEDetailNewTrendVideoListSectionViewModel, AWEDetailNewTrendRelatedRequestModel, AWEDetailNewTrendListTracker, AWEDetailNewTrendListDataContext, AWEDetailTrendCommonTrackParams, AWEDetailNewTrendSeparateCellSectionViewModel, NSMutableArray, AWEDetailNewTrendMiddleListSectionViewModel, AWEDetailNewTrendTitleListSectionViewModel, NSMutableSet, AWEDetailNewTrendHeaderSectionViewModel, AWEDetailNewTrendDescriptionCellSectionViewModel, AWEDetailNewMoreTrendCellSectionViewModel;
+
+@interface AWEDetailNewTrendListViewModel : AWEBaseListViewModel
+
+@property (retain, nonatomic) AWEDetailNewTrendListDataContext *dataContext;
+@property (retain, nonatomic) AWEDetailNewTrendListTracker *tracker;
+@property (retain, nonatomic) AWEDetailNewTrendHeaderSectionViewModel *headerSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewTrendTitleListSectionViewModel *titleSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewTrendDescriptionCellSectionViewModel *descriptionSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewTrendVideoListSectionViewModel *videoSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewTrendMiddleListSectionViewModel *middleSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewTrendSeparateCellSectionViewModel *separateSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewMoreTrendCellSectionViewModel *moreTrendSectionViewModel;
+@property (retain, nonatomic) AWEDetailNewTrendRelatedRequestModel *trendRelatedRequestModel;
+@property (retain, nonatomic) NSMutableArray *moreTrendCellModels;
+@property (retain, nonatomic) NSMutableSet *moreTrendIDs;
+@property (retain, nonatomic) NSMutableDictionary *sameActionSchemaInfo;
+@property (nonatomic) BOOL isCurrentLoadDataStatus;
+@property (nonatomic) BOOL isCurrentLoadSchemaDataStatus;
+@property (retain, nonatomic) NSMutableDictionary *paramDict;
+@property (retain, nonatomic) AWEDetailTrendCommonTrackParams *commonTrackParams;
+
+- (void)setupViewModel;
+- (id)sectionViewModels;
+- (void)configTitleUIWithModel:(id)a0;
+- (BOOL)isHotTrendStatus:(id)a0;
+- (id)configTitleCellModelWithTrendHeadTitleModel:(id)a0;
+- (void)requestMoreTrendWithTrendID:(id)a0 completeHandler:(id /* block */)a1 didShootwayActionBlock:(id /* block */)a2 didSelectItemActionBlock:(id /* block */)a3 displayItemTrackActionBlock:(id /* block */)a4;
+- (id)skeletonTitleCellModel:(id)a0;
+- (id)skeletonVideoListCellModel;
+- (void)configVideoUIWithModel:(id)a0;
+- (id)skeletonMiddleCellModel;
+- (void)configMiddleUIWithModel:(id)a0;
+- (id)skeletonMoreTrendCellModel;
+- (void)configMoreTrendUIWithModels:(id)a0;
+- (id)configVideoCellModelWithAwemeListDataControllerDataSource:(id)a0 didSelectItemActionBlock:(id /* block */)a1 dynamicCalculateColorActionBlock:(id /* block */)a2;
+- (id)configMusicAndEffectCellModel:(id)a0 trendMaterialModel:(id)a1 didSelectMusicItemActionBlock:(id /* block */)a2 didSelectEffectItemActionBlock:(id /* block */)a3 didCollectionMusicItemActionBlock:(id /* block */)a4 didCollectionEffectItemActionBlock:(id /* block */)a5 didTryPlayItemActionBlock:(id /* block */)a6 didUseMusicItemActionBlock:(id /* block */)a7 didUseTrendMaterialItemActionBlock:(id /* block */)a8;
+- (void)collectMusic:(id)a0 commonParams:(id)a1 isCollectStatus:(BOOL)a2 updateUIBlock:(id /* block */)a3;
+- (void)collectStickerOrTemplate:(id)a0 isCollectStatus:(BOOL)a1 updateUIBlock:(id /* block */)a2;
+- (void)configDescriptionUIWithModel:(id)a0;
+- (void)replaceBySectionViewModels;
+- (id)coverPhotoUrlsWithAwemeModel:(id)a0;
+- (id)musicCellModel:(id)a0 didSelectMusicItemActionBlock:(id /* block */)a1 didCollectionMusicItemActionBlock:(id /* block */)a2 didUseItemActionBlock:(id /* block */)a3;
+- (id)effectCellModel:(id)a0 didSelectEffectItemActionBlock:(id /* block */)a1 didCollectionEffectItemActionBlock:(id /* block */)a2 didTryPlayItemActionBlock:(id /* block */)a3 didUseItemActionBlock:(id /* block */)a4;
+- (double)cellHightWithMusicCellModel:(id)a0 effectCellModel:(id)a1;
+- (id)musicCoverPhoto:(id)a0;
+- (id)musicTitle:(id)a0;
+- (BOOL)hasMatchedLunaSong:(id)a0;
+- (BOOL)canShowMatchedLunaSongInHeader:(id)a0;
+- (BOOL)matchedLunaSongisSame:(id)a0;
+- (BOOL)isLunaSongAbove:(id)a0;
+- (BOOL)isLunaMV:(id)a0;
+- (BOOL)isLunaUGBtnEnable:(id)a0;
+- (void)detailTrendTrackWithEvent:(id)a0 paramDict:(id)a1;
+- (long long)diversionMediaType:(id)a0;
+- (id)materialDescriptionForType:(long long)a0;
+- (void)collectSticker:(id)a0 isCollectStatus:(BOOL)a1 updateUIBlock:(id /* block */)a2;
+- (void)collectPixelTemplate:(id)a0 isCollectStatus:(BOOL)a1 updateUIBlock:(id /* block */)a2;
+- (void)collectVideoTemplate:(id)a0 isCollectStatus:(BOOL)a1 updateUIBlock:(id /* block */)a2;
+- (id)trendCellModelAtIndex:(long long)a0 relatedResponseTrendsModel:(id)a1 didShootwayActionBlock:(id /* block */)a2 didSelectItemActionBlock:(id /* block */)a3 displayItemTrackActionBlock:(id /* block */)a4;
+- (void)requestSchemaList:(id)a0;
+- (id)videoCellModelCoverPhoto:(id)a0;
+- (id)videoCellModelAvatars:(id)a0;
+- (id)videoCellModelTitle:(id)a0;
+- (id)videoCellModelSubTitle:(id)a0;
+- (id)schemaRelatedNetworkProvider:(id)a0;
+- (id)bottomInfoDict:(id)a0 relatedResponseTrendsModel:(id)a1;
+- (id)materialReqModels:(id)a0;
+- (id)activityMobMap:(id)a0 bottomInfoDict:(id)a1;
+- (id)extraInfo:(id)a0 bottomInfoDict:(id)a1;
+- (id)schemaRequestActivityMobMapParams;
+- (id)schemaRequestExtraInfoParams:(id)a0 mapId:(id)a1;
+- (id)commonExtraInfoForRequestingShootSameSchema:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,9 @@
+@interface RivalsRecommendResponse_AutoMatchInfoConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long inviteLimitSec;
+@property (nonatomic) long long speedUpLevel;
+@property (nonatomic) long long pkAutoMatchIndex;
+
++ (id)descriptor;
+
+@end

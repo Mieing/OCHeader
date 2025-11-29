@@ -1,0 +1,50 @@
+@interface IESLiveCommunityModuleABInterface : NSObject
+
++ (id)audienceMoreToolsInterfaceWithDiContext:(id)a0;
++ (id)entranceInterfaceWithDiContext:(id)a0;
++ (id)toolbarInterfaceWithDiContext:(id)a0;
++ (id)shortTouchInterfaceWithDiContext:(id)a0;
++ (id)shareInterfaceWithDiContext:(id)a0;
++ (id)diggInterfaceWithDiContext:(id)a0;
++ (BOOL)couldDisableLandscapeMissionWithDiContext:(id)a0;
++ (id)anchorModuleVRInterfaceWithDiContext:(id)a0;
++ (id)currentSelectedPublicScreenInfoModelWithDiContext:(id)a0;
++ (id)roomProfileInterfeceWithDiContext:(id)a0;
++ (id)roomCountInterfaceWithDiContext:(id)a0;
++ (id)userPreviewInterfaceWithDiContext:(id)a0;
++ (void)bringMediaIntroduceToFrontIfNeedWithDiContext:(id)a0;
++ (id)clearInterfaceWithDiContext:(id)a0;
++ (id)landscapeMoreToolsInterfaceWithDiContext:(id)a0;
++ (id)reportInterfaceWithDiContext:(id)a0;
++ (id)mSequenceInterfaceWithDiContext:(id)a0;
++ (id)indicatorInterfaceWithDiContext:(id)a0;
++ (id)taskBannerInterfaceWithDiContext:(id)a0;
++ (BOOL)showFeedbackCardBlockQuitRoomWithDIContext:(id)a0;
++ (id)reservationInterfaceWithDiContext:(id)a0;
++ (id)categoryInterfaceWithDiContext:(id)a0;
++ (id)followGuideInterfaceWithDiContext:(id)a0;
++ (id)closeGuideCoordinatorInterfaceWithDiContext:(id)a0;
++ (id)closeProviderWithDiContext:(id)a0;
++ (id)configShortTouchInterfaceWithDiContext:(id)a0;
++ (id)topLeftBannerInterfaceWithDiContext:(id)a0;
++ (id)topRightCardInterfaceWithDiContext:(id)a0;
++ (id)bottomRightCardInterfaceWithDiContext:(id)a0;
++ (id)dataCenterInterfaceWithDiContext:(id)a0;
++ (Class)activityABManagerWithDiContext:(id)a0;
++ (id)lotteryInterfaceWithDiContext:(id)a0;
++ (id)liveTipInterfaceWithDiContext:(id)a0;
++ (id)IMEntranceInterfaceWithDiContext:(id)a0;
++ (id)chatChannelInterfaceWithDiContext:(id)a0;
++ (id)messageFeaturedInterfaceWithDiContext:(id)a0;
++ (id)interactContainerWithDiContext:(id)a0;
++ (void)removeRightBottomViewWithDiContext:(id)a0;
++ (BOOL)enableMessageChannelWithDiContext:(id)a0;
++ (BOOL)messageChannelEnableExtentHeightWithDiContext:(id)a0;
++ (void)joinChannelWithInviteID:(id)a0 diContext:(id)a1;
++ (id)topicInterfaceWithDiContext:(id)a0;
++ (id)welfareInterfaceWithDiContext:(id)a0;
++ (id)communityInteractSubInterfaceWithDIContext:(id)a0;
++ (id)guidePromptRouterWithDIContext:(id)a0;
++ (id)introductionServiceInterfaceWithDIContext:(id)a0;
+
+@end

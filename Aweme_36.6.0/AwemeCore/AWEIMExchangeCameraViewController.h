@@ -1,0 +1,78 @@
+@class AWEIMMessageConversation, NSDictionary, AFDMomentCameraAlbumViewModel, AWEIMExchangeCameraPreviewViewModel, AWEIMExchangeCameraLocationViewModel, AFDMomentCameraFlashViewModel, AFDMomentCameraBeautyViewModel, AFDMomentCameraViewController, AWEIMExchangeCameraNavigationBar, NSString, AWEIMExchangeCameraDeleteViewModel, AWEIMExchangeCameraPublishViewModel, AFDMomentCameraFlipViewModel, AWEIMMessageBaseViewController, AWEIMExchangeCameraTraceViewModel, AWEIMExchangeAlbumRandomViewModel, AWEIMExchangeCameraTitleViewModel;
+@protocol AWEInnerNotificationController;
+
+@interface AWEIMExchangeCameraViewController : UIViewController <AWEZoomTransitionInnerContextProvider, AFDMomentCameraViewControllerDelegate, AWERouterViewControllerProtocol, AWEIMMessageDataEventProtocol>
+
+@property (nonatomic) long long targetIndex;
+@property (nonatomic) long long quoteServerMessageId;
+@property (nonatomic) long long followBatchID;
+@property (retain, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL idleTimerDisabledFlag;
+@property (nonatomic) BOOL isActivityScene;
+@property (nonatomic) BOOL isQuoteRequestMessage;
+@property (nonatomic) BOOL isToAlbumRandom;
+@property (retain, nonatomic) AFDMomentCameraViewController *cameraVC;
+@property (retain, nonatomic) AWEIMExchangeCameraNavigationBar *navigationBar;
+@property (retain, nonatomic) AWEIMMessageConversation *conversation;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) NSString *entrance;
+@property (retain, nonatomic) NSString *enterMethod;
+@property (weak, nonatomic) AWEIMMessageBaseViewController *baseVC;
+@property (retain, nonatomic) id<AWEInnerNotificationController> notificationController;
+@property (copy, nonatomic) NSString *paramsForActivity;
+@property (copy, nonatomic) NSDictionary *paramDict;
+@property (nonatomic) BOOL isOnlyExchangeLocation;
+@property (weak, nonatomic) AFDMomentCameraFlipViewModel *flipViewModel;
+@property (weak, nonatomic) AWEIMExchangeCameraLocationViewModel *locationViewModel;
+@property (weak, nonatomic) AWEIMExchangeCameraDeleteViewModel *deleteViewModel;
+@property (retain, nonatomic) AFDMomentCameraFlashViewModel *flashViewModel;
+@property (retain, nonatomic) AFDMomentCameraBeautyViewModel *beautyViewModel;
+@property (retain, nonatomic) AWEIMExchangeCameraPublishViewModel *publishViewModel;
+@property (retain, nonatomic) AWEIMExchangeCameraTitleViewModel *titleViewModel;
+@property (retain, nonatomic) AFDMomentCameraAlbumViewModel *albumViewModel;
+@property (retain, nonatomic) AWEIMExchangeCameraTraceViewModel *traceViewModel;
+@property (retain, nonatomic) AWEIMExchangeAlbumRandomViewModel *randomViewModel;
+@property (retain, nonatomic) AWEIMExchangeCameraPreviewViewModel *previewViewModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (long long)zoomTransitionItemOffset;
+- (BOOL)transition_shouldStartInteractiveTranstionToVC:(id)a0;
+- (void)uploadPreHeat;
+- (void)setupBinding;
+- (void)onCloseButtonTapped;
+- (void)setCameraConfig;
+- (BOOL)camera_isLandingToCamera;
+- (id)camera_relationTag;
+- (void)camera_showCloseFriendGuide:(BOOL)a0 dismissBlock:(id /* block */)a1;
+- (id)camera_enterFrom;
+- (id)camera_enterMethod;
+- (void)discardCurrentPhoto;
+- (void)onExchangeMessageUpdated:(id)a0;
+- (void)setupViewModelData;
+- (void)preDownloadMessageImageWithMessage:(id)a0;
+- (void)setupContainerScrollView;
+- (void)setupCameraVC;
+- (void)updateContainerScrollViewLayout:(BOOL)a0;
+- (void)updateCameraVCViewLayout;
+- (void)onFlashButtonTapped;
+- (void)onFlipButtonTapped;
+- (void)onBeautyButtonTapped;
+- (BOOL)isQuoteExchangeImageCamera;
+- (void)routerToMediaDisplayViewController;
+- (void)triggerCameraVCAppear;
+- (void)triggerCameraVCDisAppear;
+- (void).cxx_destruct;
+- (long long)preferredStatusBarStyle;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)setupNavigationBar;
+
+@end

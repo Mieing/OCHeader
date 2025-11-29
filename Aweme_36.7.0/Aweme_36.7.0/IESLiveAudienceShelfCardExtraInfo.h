@@ -1,0 +1,15 @@
+@class NSString, NSDictionary, NSArray;
+
+@interface IESLiveAudienceShelfCardExtraInfo : IESLiveDynamicModel
+
+@property (nonatomic) long long cardNumber;
+@property (nonatomic) BOOL isExplaining;
+@property (nonatomic) BOOL isPin;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSDictionary *trackCommonParams;
+@property (copy, nonatomic) NSString *logExtra;
+@property (nonatomic) long long cardId;
+@property (copy, nonatomic) NSDictionary *productParamDict;
+@property (retain, nonatomic) NSArray *supplementLabelArray;
+
+@end

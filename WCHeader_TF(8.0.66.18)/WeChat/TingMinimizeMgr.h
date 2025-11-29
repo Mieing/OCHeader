@@ -1,0 +1,88 @@
+@class NSMutableDictionary, TingTapePlayingInfo, TingMinimizeBaseTask, NSString, MinimizeTaskStateView;
+
+@interface TingMinimizeMgr : NSObject <ITingPlayCenterMgrExt, ITingRouterExt, MinimizeTaskContainerInfoDelegate, TingMinimizeTaskDelegate, TingItemDataServiceExtension, TingObjcAudioChatListener, TingObjcInPageStateManagerListener, TingAudioRecorderListener, TingPlayerMinimizeHelperDelegate, IMinimizeTaskDelegateInterface, MinimizeTaskStateInfoDelegate>
+
+@property (retain, nonatomic) TingTapePlayingInfo *playingInfo;
+@property (retain, nonatomic) TingMinimizeBaseTask *task;
+@property (nonatomic) BOOL disableMinimizeTask;
+@property (retain, nonatomic) NSMutableDictionary *dictNextLaunchOptions;
+@property (weak, nonatomic) MinimizeTaskStateView *voicePeakPowerCallback;
+@property (nonatomic) double lastPeakCallbackTime;
+@property (nonatomic) BOOL audioRecorderStarted;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)dissambeVersionIsTingViewControllerTop;
++ (BOOL)isTingViewControllerTop:(id)a0;
++ (BOOL)shouldTingAppPresentWithMiniAnimation;
++ (BOOL)shouldTingAppPopWithMiniAnimation;
++ (BOOL)shouldTingAppPopAndAddMinimization;
++ (BOOL)canTingAppAddMinimization;
++ (BOOL)isConvertToStateFloating;
+
+- (id)init;
+- (void)dealloc;
+- (void)registerObserver;
+- (void)unregiesterObserver;
+- (void)initMinimizeTask;
+- (void)activeMinimizeTask;
+- (void)deactiveMinimizeTask;
+- (BOOL)hasActiveMinimieTask;
+- (void)setMinimizeTaskFold:(BOOL)a0 animated:(BOOL)a1 interrupted:(BOOL)a2;
+- (void)setMinimizeDisable:(BOOL)a0;
+- (void)setNextLaunchOptions:(id)a0 clientId:(id)a1;
+- (void)removeAllNextLaunchOptions;
+- (void)updateMinimizeTaskStateWithContext:(id)a0;
+- (void)updateMinimizeTaskStateWithContext:(id)a0 animated:(BOOL)a1;
+- (id)copyContainerView;
+- (void)restoreStateFromPlayingInfo:(id)a0;
+- (void)performActionWithAuthorization:(id /* block */)a0;
+- (void)updateTaskData;
+- (id)audioChatService;
+- (BOOL)hasMinimizeTask;
+- (id)nextLaunchOptionForClientId:(id)a0;
+- (void)onAddMinimizeTaskAnimiated:(BOOL)a0 voiceTic:(BOOL)a1 fold:(BOOL)a2;
+- (void)onRemoveMinimizeTaskAnimiated:(BOOL)a0 onlyFade:(BOOL)a1;
+- (void)onFoldMinimizeTask;
+- (void)onTerminateMinimizeTask;
+- (void)onActiveMinimizeTask;
+- (void)willOpenMinimizeTask;
+- (BOOL)enableAudioInteraction;
+- (void)onOpenTask;
+- (id)minimizeTaskData;
+- (BOOL)canAddMinimizeTask;
+- (BOOL)isPlayerInForground;
+- (BOOL)isPlayerModuleActive;
+- (id)player;
+- (void)onTingPlayingInfoUpdate:(id)a0;
+- (void)onTingAppBePresentedFromScene:(int)a0;
+- (BOOL)onEnterMinimizedTask:(id)a0 openContext:(id)a1 taskEnterScene:(unsigned int)a2;
+- (void)onRemoveMinimizedTask:(id)a0;
+- (void)onMinimizedTaskItemExposed:(id)a0;
+- (void)createPlayerIfNeeded:(id)a0;
+- (BOOL)isMinimizeTaskPlaying:(id)a0;
+- (void)onOutContentTask:(id)a0 replacedByAnotherTaskData:(id)a1;
+- (void)onOuterContentTaskFoldStateChanged:(id)a0 fold:(BOOL)a1;
+- (void)onPlayPauseBtnClicked:(id)a0 isToPlay:(BOOL)a1;
+- (void)onNextBtnClicked:(id)a0;
+- (void)openTingSmartAssistantPage;
+- (void)onVoiceControlRecordStart:(id)a0;
+- (void)handleVoiceRecordEnd:(BOOL)a0;
+- (void)onVoiceControlRecordEnd:(id)a0;
+- (void)onVoiceControlRecordCancalled:(id)a0;
+- (void)startVoiceRecord;
+- (void)updateTaskData:(id)a0 musicChatStatus:(int)a1;
+- (void)onStatusChanged:(id)a0 status:(int)a1;
+- (void)onResposne:(id)a0 errorCode:(long long)a1 extraData:(id)a2;
+- (void)resetVoicePeakPowerCallback;
+- (void)onLevelMeterChange:(id)a0 peakPower:(float)a1;
+- (void)onBizEvent:(int)a0 extraData:(id)a1;
+- (void)onInPageStateChanged:(BOOL)a0;
+- (void)triggerVibrationFeedback;
+- (void)onBuffer:(id)a0;
+- (void)onAudioRecorderStarted;
+- (void).cxx_destruct;
+
+@end

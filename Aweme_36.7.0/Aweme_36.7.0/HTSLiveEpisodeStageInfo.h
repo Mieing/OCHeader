@@ -1,0 +1,8 @@
+@interface HTSLiveEpisodeStageInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long episodeId;
+@property (nonatomic) int stage;
+
++ (id)descriptor;
+
+@end

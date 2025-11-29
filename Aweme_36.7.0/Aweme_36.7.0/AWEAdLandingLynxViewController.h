@@ -1,0 +1,82 @@
+@class AWEAdLandingTrackEvents, AWEPageSheetPresentationNavigationController, AWEAdPanelNavigationBar, AWEAdWebViewController, AWEAdLandingLynxPageContext, UIView, UIScrollView, NSString, AWEAdPanelBottomNavigationBar, AWEAwemeModel, AWEBDARifleViewController, AWEAdTaskContext, NSNumber;
+@protocol UIScrollViewDelegate, IESWebViewProtocol, AWEPageSheetUIModifyDelegate;
+
+@interface AWEAdLandingLynxViewController : UIViewController <AWEPageSheetPresentationObserving, AWEPageSheetPresentationPhaseTransitionDelegate, AWEBDARifleViewControllerLifeCycleProtocol, UIGestureRecognizerDelegate, UIScrollViewDelegate, AWEAdLandingLynxViewController>
+
+@property (retain, nonatomic) AWEBDARifleViewController *lynxViewController;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) AWEAdPanelNavigationBar *navigationBar;
+@property (retain, nonatomic) AWEAdPanelBottomNavigationBar *bottomNavigationBar;
+@property (retain, nonatomic) NSNumber *lastContentOffset;
+@property (nonatomic) BOOL lockVerticalContentOffset;
+@property (nonatomic) long long phase;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) AWEAdWebViewController *webViewController;
+@property (retain, nonatomic) id<UIScrollViewDelegate> lynxScrollViewDelegate;
+@property (nonatomic) BOOL isBottomNavigationShowing;
+@property (retain, nonatomic) UIView<IESWebViewProtocol> *webView;
+@property (retain, nonatomic) AWEAdLandingTrackEvents *trackEvents;
+@property (weak, nonatomic) id<AWEPageSheetUIModifyDelegate> pageSheetUIDelegate;
+@property (weak, nonatomic) AWEPageSheetPresentationNavigationController *navigationContainer;
+@property (retain, nonatomic) AWEAdLandingLynxPageContext *lynxPageContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isPreviewEnabled;
+@property (retain, nonatomic) AWEAdTaskContext *context;
+
++ (BOOL)shouldShowBothNavigationStyleWithModel:(id)a0;
++ (id)convertInfoWithAwemeModel:(id)a0 lynxComponent:(id)a1;
++ (BOOL)openAdLandingLynxViewControllerWithContext:(id)a0;
++ (BOOL)isBackGroundVideoPlayingInFeedSceneWithViewController:(id)a0;
+
+- (void)closeButtonAction:(id)a0;
+- (void)handleCloseWebViewBlock;
+- (long long)initialPhaseForPageSheetPresentation:(id)a0;
+- (void)pageSheetPresentationWillBegin:(id)a0;
+- (BOOL)pageSheet:(id)a0 shouldDismissForReason:(long long)a1;
+- (void)pageSheetDidHorizontalPan:(id)a0;
+- (unsigned long long)phaseTransitionStyleForPageSheetPresentation:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })pageSheetPresentation:(id)a0 frameOfPresentedViewForPhase:(long long)a1;
+- (void)pageSheetPresentation:(id)a0 didTransitionToPhase:(long long)a1;
+- (void)reportButtonClicked;
+- (void)rifleViewControllerDidFinishLoad:(id)a0;
+- (void)rifleViewController:(id)a0 didReceiveFirstLoad:(double)a1;
+- (void)rifleViewController:(id)a0 loadFailedWithErrorInfo:(id)a1;
+- (void)rifleViewControllerDidClose:(id)a0;
+- (void)updateNavigationButtonStatus;
+- (BOOL)shouldShowBothNavigationStyle;
+- (void)handlePageSheetPresentationNotification:(id)a0;
+- (void)setUpTrackEventsWithAweme:(id)a0;
+- (void)setUpBottomNavigationBarIfNeeded;
+- (void)tapWeb:(id)a0;
+- (void)registerLynxBridge;
+- (void)trackPageView;
+- (long long)imageWithRenderingMode;
+- (BOOL)shouldSupportDarkMode;
+- (void)backButtonAction:(id)a0;
+- (void)forwardButtonAction:(id)a0;
+- (void)reportButtonAction:(id)a0;
+- (long long)adapter_imageWithRenderingMode;
+- (void)updateBottomNavigation;
+- (void)animateInBottomNavigation;
+- (void)animateOutBottomNavigation;
+- (void)trackDraggingDownDismissal;
+- (void)trackDraggingRightDismissal;
+- (void)trackTappingDismissal;
+- (void)trackButtonDismissal;
+- (void)trackReportButton;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (id)init;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRequireFailureOfGestureRecognizer:(id)a1;
+- (void)updateBackButton;
+- (void)setUpNavigationBar;
+
+@end

@@ -1,0 +1,3 @@
+@interface OpenRankListReq : BaseReq
+
+@end

@@ -1,0 +1,13 @@
+@interface TSPKAlbumOfUIImagePickerControllerPipeline : TSPKDetectPipeline
+
++ (id)stubbedClass;
++ (id)stubbedInstanceAPIs;
++ (BOOL)isEntryDefaultEnable;
++ (id)stubbedCAPIs;
++ (void)preload;
++ (id)dataType;
++ (id)pipelineType;
+
+- (BOOL)deferPreload;
+
+@end

@@ -1,0 +1,3 @@
+@interface InteractionTickleApiRoot : GPBRootObject
+
+@end

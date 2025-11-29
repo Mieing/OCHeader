@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface PlayListTabTitleFont : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *startColor;
+@property (copy, nonatomic) NSString *endColor;
+@property (nonatomic) double angle;
+@property (nonatomic) long long textSizeUnselect;
+@property (nonatomic) long long textSizeSelected;
+
++ (id)descriptor;
+
+@end

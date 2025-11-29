@@ -1,0 +1,3 @@
+@interface _TtCC12ECGEngineSDK26DefaultStableMeterProvider16NoopMeterBuilder : _TtCs12_SwiftObject
+
+@end

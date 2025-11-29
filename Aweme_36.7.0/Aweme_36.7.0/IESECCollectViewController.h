@@ -1,0 +1,75 @@
+@class UIStackView, NSString, IESECCollectEventImpl, IESECLinearGradientLayer, IESECCollectSkeletonView, IESECCollectDataController, NSDictionary, IESECCollectContext, IESECCollectTrackerHelper;
+
+@interface IESECCollectViewController : IESECYataBaseViewController <AWEECReferProperty, AWEFavoriteDetailItemProtocol, AWETabListItemViewControllerProtocol, IESECYataRecommendContainer, YataDependencyProvider, IESECCollectSkeletonViewDelegate>
+
+@property (copy, nonatomic) NSDictionary *routerParams;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *secUserID;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long long theme;
+@property (retain, nonatomic) IESECCollectContext *context;
+@property (retain, nonatomic) IESECCollectDataController *dataController;
+@property (retain, nonatomic) UIStackView *sortPanelView;
+@property (retain, nonatomic) IESECCollectSkeletonView *skeletonView;
+@property (retain, nonatomic) IESECLinearGradientLayer *bodyGradientLayer;
+@property (nonatomic) BOOL forbidTriggerScroll;
+@property (retain, nonatomic) IESECCollectEventImpl *eventImpl;
+@property (retain, nonatomic) IESECCollectTrackerHelper *trackerHelper;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)tabContentScrollView;
+- (void)onFetchBegin:(id)a0;
+- (BOOL)onFetchEndBizValidWithDataObject:(id)a0;
+- (void)onProtocolReloadEnd:(unsigned long long)a0 success:(BOOL)a1;
+- (id)yata_sessionID;
+- (id)yata_renderConfig;
+- (id)yata_netBizConfigDelegate;
+- (id)yata_extendFieldsNameArray;
+- (id)yata_trackerService;
+- (id)yata_eventImpl;
+- (BOOL)canLoadMore;
+- (id)recommendURLString;
+- (void)configWithProfileExploreStyle:(BOOL)a0;
+- (void)closeCurrentPage;
+- (id)recommendExtraParams;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })viewPortOnWindow;
+- (id)setupYataInstance;
+- (void)reloadRecommendSection;
+- (double)recommendCellHeight;
+- (id)eventNameGULDidShow;
+- (void)recommendScrollDidCreatedWith:(BOOL)a0;
+- (void)loadFinishWith:(BOOL)a0 error:(id)a1 isLynxRecommend:(BOOL)a2;
+- (void)openSortPanel;
+- (void)closeSortPanel;
+- (void)setupHybridSubscriber;
+- (void)updateAfterFirstQuerySuccess;
+- (void)requestQueryWithScene:(id)a0 extraExParams:(id)a1 completion:(id /* block */)a2;
+- (void)loadingMoreAction;
+- (void)reconnect;
+- (long long)pageType;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (id)contentScrollView;
+- (void)viewDidLoad;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)setupUI;
+
+@end

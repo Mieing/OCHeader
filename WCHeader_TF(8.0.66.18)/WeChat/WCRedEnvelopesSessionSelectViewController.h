@@ -1,0 +1,96 @@
+@class NSMutableArray, NSString, WCDataSearcher, CreateChatLogic, WCRedEnvelopesMultiSelectContactsViewController, NSObject, MMTableView;
+@protocol WCRedEnvelopesSessionSelectViewControllerDelegate;
+
+@interface WCRedEnvelopesSessionSelectViewController : MMUIViewController <IFTSContactMgrExt, WCSearchDelegate, WCDataSearchDelegate, UITableViewDelegate, UITableViewDataSource, ContactsDataLogicDelegate> {
+    long long m_iSessionType;
+    MMTableView *m_tableView;
+    NSMutableArray *m_arrContacts;
+    NSMutableArray *m_selectedContacts;
+    WCRedEnvelopesMultiSelectContactsViewController *m_oWCRedEnvelopesMultiSelectContactsViewController;
+    WCDataSearcher *_searcher;
+    NSString *_taskKey;
+    NSString *nsCurrentSearchText;
+    NSMutableArray *arrSearchResultOfContacts;
+    NSMutableArray *arrSearchResultOfGroup;
+}
+
+@property (nonatomic) BOOL m_bShowNewSession;
+@property (nonatomic) BOOL m_bFilterMyContact;
+@property (nonatomic) unsigned long long barTitleType;
+@property (nonatomic) unsigned long long confirmType;
+@property (weak, nonatomic) id<WCRedEnvelopesSessionSelectViewControllerDelegate> m_delegate;
+@property (retain, nonatomic) CreateChatLogic *m_createChatLogic;
+@property (retain, nonatomic) NSString *nsNewSessionCellTitle;
+@property (retain, nonatomic) NSObject *userData;
+@property (retain, nonatomic) NSString *m_backSecondConfirmTitle;
+@property (retain, nonatomic) NSString *m_backSecondConfirmCancel;
+@property (retain, nonatomic) NSString *m_backSecondConfirmConfirm;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getGroupDispName:(id)a0;
+
+- (id)init;
+- (void)dealloc;
+- (void)initData;
+- (void)onContactsDataChange;
+- (BOOL)onFilterContactCandidate:(id)a0;
+- (void)onCancel:(id)a0;
+- (void)cancelConfirm;
+- (void)initBarItem;
+- (void)initTitle;
+- (void)initSearchBar;
+- (void)initTableView;
+- (void)initView;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(BOOL)a0;
+- (long long)getSectionType:(long long)a0;
+- (long long)changeToAllCantactSection:(long long)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)makeNewSessionCell:(id)a0;
+- (BOOL)isSelected:(id)a0;
+- (id)getCellImage:(id)a0;
+- (void)makeCell:(id)a0 contact:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (id)sectionIndexTitlesForTableView:(id)a0;
+- (long long)tableView:(id)a0 sectionForSectionIndexTitle:(id)a1 atIndex:(long long)a2;
+- (void)handleSelectNewSession;
+- (void)onConfirm;
+- (void)switchSelect:(id)a0 atIndexPath:(id)a1;
+- (void)callbackDelegate;
+- (void)performCallback;
+- (void)onDone:(id)a0;
+- (void)onSelect:(id)a0;
+- (id)getGroupDispName:(id)a0;
+- (void)handleSelectIndexPath:(id)a0 tableView:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (void)didClickImageAtIndex:(unsigned int)a0 withKey:(id)a1;
+- (void)onCreateChatContactReturn:(id)a0;
+- (id)cellForSearchViewTable:(id)a0 index:(id)a1;
+- (double)heightForSearchViewTable:(id)a0;
+- (void)didSearchViewTableSelect:(id)a0;
+- (long long)numberOfSectionsForSearchViewTable:(id)a0;
+- (long long)numberOfRowsInSection:(long long)a0 ForSearchViewTable:(id)a1;
+- (double)heightForHeaderInSection:(long long)a0 ForSearchViewTable:(id)a1;
+- (id)viewForHeaderInSection:(long long)a0 ForSearchViewTable:(id)a1;
+- (id)titleForHeaderInSection:(long long)a0 ForSearchViewTable:(id)a1;
+- (void)SearchBarBecomeActive;
+- (void)doSearch:(id)a0 Pre:(BOOL)a1;
+- (void)delaySearchImp:(id)a0;
+- (void)delaySearch:(id)a0 slowMode:(BOOL)a1;
+- (void)cancelSearch;
+- (void)wcsSearchBar:(id)a0 textDidChange:(id)a1;
+- (void)addFakeViewWhenAsynSearchNotReturn;
+- (void)removeFakeViewWhenAsynSearchIsReturn;
+- (void)onFTSContactSearchFinish:(id)a0;
+- (void)FilterSearchResultOfNormalContacts:(id)a0;
+- (void).cxx_destruct;
+
+@end

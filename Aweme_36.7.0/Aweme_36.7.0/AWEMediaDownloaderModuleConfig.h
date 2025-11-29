@@ -1,0 +1,21 @@
+@class NSString;
+
+@interface AWEMediaDownloaderModuleConfig : NSObject
+
+@property (class, readonly, nonatomic) NSString *loadingViewTitle;
+@property (class, readonly, nonatomic) BOOL shouldLocalSaveNeedsAssets;
+@property (class, readonly, nonatomic) BOOL shouldForceRemux;
+@property (class, readonly, nonatomic) BOOL enableCaptionWatermark;
+@property (class, readonly, nonatomic) BOOL enableUseEndWaterMark;
+@property (class, readonly, nonatomic) BOOL enableSnapchatConfig;
+@property (class, readonly, nonatomic) BOOL enableSuffixSceneConfig;
+
++ (id)loadingViewTitle;
++ (BOOL)shouldForceRemux;
++ (BOOL)enableSnapchatConfig;
++ (BOOL)shouldLocalSaveNeedsAssets;
++ (BOOL)enableCaptionWatermark;
++ (BOOL)enableUseEndWaterMark;
++ (BOOL)enableSuffixSceneConfig;
+
+@end

@@ -1,0 +1,78 @@
+@class UIView, IESLiveLGameAnchorCameraView, NSString, IESLivePrivacyPolicyToken, IESLiveLGameScreenCastWindow, UIImageView, IESLiveLGameDuringLiveModel, BDLOCNativeGameInstance;
+@protocol IESLiveLGameScreenCastForwardProtocol;
+
+@interface IESLiveLGameScreenCastManager : NSObject <IESLiveLGameScreenCastAction, IESLiveAnchorRoomStatusChangeEvents, IESLiveAnchorCameraPermissionHandler, IESLiveAnchorPrivacyPermissionProtocol, IESLiveLGameAnchorCameraViewDelegate, IESLivePrivacyContextProvider>
+
+@property (weak, nonatomic) BDLOCNativeGameInstance *gameInstance;
+@property (weak, nonatomic) UIView *castScreenView;
+@property (nonatomic) BOOL cameraIsOpen;
+@property (retain, nonatomic) UIImageView *tempImageView;
+@property (retain, nonatomic) IESLiveLGameAnchorCameraView *anchorCameraView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } anchorCameraPreviewFrame;
+@property (retain, nonatomic) IESLivePrivacyPolicyToken *privacyToken;
+@property (nonatomic) BOOL recordISRunning;
+@property (nonatomic) BOOL isGameScreenAppear;
+@property (nonatomic) unsigned long long castCondition;
+@property (retain, nonatomic) id<IESLiveLGameScreenCastForwardProtocol> forwardImpl;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } cameraRect;
+@property (nonatomic) struct CGSize { double width; double height; } originOutputSize;
+@property (nonatomic) BOOL isGameScreenCasting;
+@property (retain, nonatomic) IESLiveLGameDuringLiveModel *duringLiveModel;
+@property (retain, nonatomic) IESLiveLGameScreenCastWindow *screenCastWindow;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (BOOL)canHandleVideoCapture;
+- (void)pauseAnchorLiveWithType:(unsigned long long)a0;
+- (void)resumeAnchorLiveWithType:(long long)a0;
+- (BOOL)needIgnoreProcessGeneralVideoCaptureByResumeType_old:(long long)a0;
+- (id)providePrivacyContextForKey:(id)a0;
+- (void)addBackgroundView;
+- (id)needIgnoreProcessGeneralVideoCaptureByResumeType:(long long)a0;
+- (void)registerHandler;
+- (void)nativeGameCameraStatusChange:(BOOL)a0;
+- (void)startConfigReady;
+- (id)initWithInstance:(id)a0 duringModel:(id)a1;
+- (void)removeScreenCastWindow;
+- (void)sendFrameBuffer:(struct __CVBuffer { } *)a0 withCMTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1;
+- (void)sendAudioFrame:(id)a0;
+- (void)didReceiveMergeStreamFailed:(id)a0;
+- (void)changeRecordStatus:(BOOL)a0;
+- (void)anchorCameraPositionChanged:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)isLiveRecording;
+- (void)setupScreenCast;
+- (void)handleEventViewWillDisappear;
+- (void)changeAnchorCameraViewTo:(BOOL)a0;
+- (void)updateCameraOpenStatus:(BOOL)a0;
+- (void)startGameSEI;
+- (void)showScreenCastWindowIfNeed;
+- (void)stopGameScreenCastIfNeed;
+- (void)sendEvent:(long long)a0 extra:(id)a1;
+- (void)removeAnchorCameraView;
+- (void)stopGameSEI;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getAnchorCameraInitFrame:(long long)a0 cameraViewSize:(struct CGSize { double x0; double x1; })a1;
+- (void)hideScreenCastWindow;
+- (void)handleEventTaskAndCommonReady;
+- (void)handleEventFirstFrame;
+- (void)handleEventWarmBootDone;
+- (void)handelEventViewWillAppear;
+- (void)handleEventViewDidAppear;
+- (void)handleEventViewDidDisappear;
+- (void)startScreencastWhenBootDone;
+- (void)registerPrivacyHandlerIfNeeded;
+- (void)startScreenCastIfNeed;
+- (void)setupAnchorCameraView;
+- (void)updateCameraRectWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)generateBackgroundView:(id)a0 parentFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 cameraFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)sendEvent:(long long)a0;
+- (id)appID;
+- (void).cxx_destruct;
+- (void)reset;
+- (void)dealloc;
+- (void)removeBackgroundView;
+- (void)updateModel:(id)a0;
+
+@end

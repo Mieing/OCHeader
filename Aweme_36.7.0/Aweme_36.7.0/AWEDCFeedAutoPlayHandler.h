@@ -1,0 +1,72 @@
+@class AWEDCFeedAutoPlayDefaultRule, NSMutableDictionary, UIView, NSArray, NSString;
+@protocol AWEDCFeedAutoPlayContainerProtocol, AWEDCFeedAutoPlayCardProtocol;
+
+@interface AWEDCFeedAutoPlayHandler : NSObject <UIScrollViewDelegate>
+
+@property (weak, nonatomic) id<AWEDCFeedAutoPlayContainerProtocol> container;
+@property (weak, nonatomic) UIView<AWEDCFeedAutoPlayCardProtocol> *currentActiveView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } activeRect;
+@property (nonatomic) BOOL isActive;
+@property (retain, nonatomic) NSMutableDictionary *rulePlugins;
+@property (weak, nonatomic) UIView<AWEDCFeedAutoPlayCardProtocol> *currentTransitionActiveView;
+@property (nonatomic) long long scrollTriggerCount;
+@property (nonatomic) double lastDidScrollTime;
+@property (nonatomic) double scrollingSpeedX;
+@property (nonatomic) double scrollingSpeedY;
+@property (nonatomic) double lastContentOffsetX;
+@property (nonatomic) double lastContentOffsetY;
+@property (retain, nonatomic) AWEDCFeedAutoPlayDefaultRule *defaultRule;
+@property (weak, nonatomic) AWEDCFeedAutoPlayHandler *superHandler;
+@property (nonatomic) BOOL calculateWhenEndDecelerating;
+@property (retain, nonatomic) NSArray *sortedRules;
+@property (nonatomic) unsigned long long activeAdditionScene;
+@property (nonatomic) double activeRectTop;
+@property (nonatomic) double activeRectBottom;
+@property (nonatomic) double shouldNotActiveHeight;
+@property (nonatomic) double activeRatio;
+@property (nonatomic) BOOL shouldFilterStaticCard;
+@property (nonatomic) unsigned long long style;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)currentPlayingIndex;
+- (double)__calculateRelativeCenterY:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)classNameWithReferString;
+- (void)__activeCard:(id)a0;
+- (void)__resignCard:(id)a0;
+- (void)forceBecomeActive:(id)a0;
+- (void)__calculateToActiveCell:(unsigned long long)a0;
+- (void)___activeCardIfNeeded:(id)a0;
+- (void)__resignWithEnteringFullScreen;
+- (id)onlyCalculateAimViewWithoutActiveWithScene:(unsigned long long)a0;
+- (BOOL)autoPlayUpdateSetting;
+- (BOOL)__floatEqualZero:(double)a0;
+- (void)__updateHandlerToCard;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })__calculateActiveRect;
+- (void)__updateScrollSpeedInfo;
+- (void)__clearScrollSpeedInfo;
+- (void)resetVideoViewWithAweme:(id)a0;
+- (void)endForceBecomeActive:(id)a0;
+- (void)enterFullScreen:(id)a0 withForceActive:(BOOL)a1;
+- (void)becomeActiveWithScene:(unsigned long long)a0;
+- (void)becomeActiveNeedReset:(BOOL)a0;
+- (void)recalculateToActiveNeedReset:(BOOL)a0 scence:(unsigned long long)a1;
+- (id)onlyCalculateAimViewWithoutActive;
+- (void)changeActiveCardIfNeeded:(id)a0;
+- (void)resignActiveCurrentTransitionActiveViewIfNeed;
+- (void)resignCard:(id)a0;
+- (void)becomeActive;
+- (void)scrollViewDidScrollToTop:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)resignActive;
+- (void)addRule:(id)a0;
+- (void)scrollViewDidEndScrolling;
+- (id)initWithContainer:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+
+@end

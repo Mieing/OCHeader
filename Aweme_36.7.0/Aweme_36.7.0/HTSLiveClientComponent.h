@@ -1,0 +1,16 @@
+@class NSMutableDictionary;
+
+@interface HTSLiveClientComponent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableDictionary *portraitComponentMap;
+@property (readonly, nonatomic) unsigned long long portraitComponentMap_Count;
+@property (retain, nonatomic) NSMutableDictionary *landscapeComponentMap;
+@property (readonly, nonatomic) unsigned long long landscapeComponentMap_Count;
+@property (nonatomic) BOOL isOpen;
+@property (nonatomic) long long templateId;
+@property (retain, nonatomic) NSMutableDictionary *previewDefaultComponentMap;
+@property (readonly, nonatomic) unsigned long long previewDefaultComponentMap_Count;
+
++ (id)descriptor;
+
+@end

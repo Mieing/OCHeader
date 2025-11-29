@@ -1,0 +1,3 @@
+@interface HTSLiveRoomStreamAdaptationRoot : GPBRootObject
+
+@end

@@ -1,0 +1,12 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveLinkMicOChannelNotifyMsg : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *toastMsg;
+
++ (id)descriptor;
+
+@end

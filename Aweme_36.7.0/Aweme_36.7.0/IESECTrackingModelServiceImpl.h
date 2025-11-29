@@ -1,0 +1,81 @@
+@class NSString;
+
+@interface IESECTrackingModelServiceImpl : NSObject <IESECTrackingModelService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)registerBtmPage:(id)a0 params:(id /* block */)a1;
++ (id)createBtmWithBtmInfo:(id)a0 clickedView:(id)a1 enterNewPage:(BOOL)a2;
++ (void)forwardToCustomPage:(id)a0;
++ (void)returnFromCustomPage:(id)a0;
++ (id)fillEventParamOrigin:(id)a0 eventName:(id)a1;
++ (id)createBtmChainWithBtmInfo:(id)a0 clickedView:(id)a1 enterNewPage:(BOOL)a2 addBtmChain:(BOOL)a3 chainLength:(long long)a4 targetPages:(id)a5 description:(id)a6;
++ (void)registerPageShowWillEndHandler:(id /* block */)a0 forPage:(id)a1;
++ (void)registerPageShowWillEndWithExtraInfoHandler:(id /* block */)a0 forPage:(id)a1;
++ (void)registerPageDidAppearHandler:(id /* block */)a0 forPage:(id)a1;
++ (id)getBTMPageInfo:(id)a0;
++ (id)getPageIdFromBtm:(id)a0;
++ (id)btmIdOfCurrentJumpNode;
++ (void)reenqueueJumpNodeWithBtmId:(id)a0;
++ (void)dequeueJumpNodeWithBtmId:(id)a0;
++ (id)getBcmFullParamsForKey:(id)a0 responder:(id)a1;
++ (id)getBcmFullParamsForKey:(id)a0 responder:(id)a1 chainLength:(long long)a2;
++ (id)btmListWithSourceBtmToken:(id)a0;
++ (void)forbiddenBubbleForView:(id)a0;
++ (BOOL)isOrignalReportEnableWithPageName:(id)a0;
++ (BOOL)isBstBindEnableWithPageName:(id)a0;
++ (id)bstTag;
++ (id)bstInjectLynxWithUniqueKey:(id)a0;
++ (void)clearViewStatusCacheOfResponder:(id)a0;
++ (void)addBstABConfig:(id)a0;
++ (void)markResponderAsBtmPage:(id)a0;
++ (id)createJumpSourceBtmTokenWithBtm:(id)a0 host:(id)a1 bcm:(id)a2;
++ (BOOL)registerBtmPage:(id)a0 pageBtm:(id)a1 sourceBtmToken:(id)a2;
++ (BOOL)updateBtmPage:(id)a0 sourceBtmToken:(id)a1;
++ (id)createReportParamsWithBtm:(id)a0 host:(id)a1;
++ (BOOL)setBcmPageParams:(id)a0 host:(id)a1 clearOldValue:(BOOL)a2;
++ (id)getBcmChainWithHost:(id)a0 chainLength:(unsigned long long)a1;
++ (id)getBcmChainWithStandardContentWithHost:(id)a0 chainLength:(unsigned long long)a1;
++ (id)getBcmChainWithStandardContentWithBtmModel:(id)a0 chainLength:(unsigned long long)a1;
++ (id)btmSdkConfigSettings;
++ (BOOL)btmUseV2Api;
++ (id)appendEventParams:(id)a0 responder:(id)a1;
++ (id)appendEntranceInfoWithString:(id)a0 responder:(id)a1;
++ (id)appendEntranceInfoWithDictionary:(id)a0 responder:(id)a1;
++ (id)appendEntranceInfoWithString:(id)a0 responder:(id)a1 scene:(id)a2;
++ (id)appendEntranceInfoWithDictionary:(id)a0 responder:(id)a1 scene:(id)a2;
++ (id)appendEntranceInfoWhenCartAddWithString:(id)a0 btmModel:(id)a1;
++ (id)appendEntranceInfoWhenCartAddWithDictionary:(id)a0 btmModel:(id)a1;
++ (id)appendEntranceInfoWhenCartAddWithString:(id)a0 sourceBtmToken:(id)a1;
++ (id)appendEntranceInfoWhenCartAddWithDictionary:(id)a0 sourceBtmToken:(id)a1;
++ (id)appendEntranceInfoWhenBuyNowWithString:(id)a0 sourceBtmToken:(id)a1;
++ (id)appendEntranceInfoWhenBuyNowWithDictionary:(id)a0 sourceBtmToken:(id)a1;
++ (void)setBcmUnitParams:(id)a0 forBizKey:(id)a1 responder:(id)a2;
++ (id)extraParamsForEvent:(id)a0 params:(id)a1 responder:(id)a2;
++ (id)getBcmChainWhenBuyNowWithResponder:(id)a0;
++ (void)setCurrentPage:(id)a0 BtmId:(id)a1;
++ (void)setBcmPageParams:(id)a0 forBizKey:(id)a1 responder:(id)a2;
++ (void)appendBcmPageParams:(id)a0 forBizKey:(id)a1 responder:(id)a2;
++ (void)registerExposureHandler:(id /* block */)a0 forView:(id)a1;
++ (void)registerClickHandler:(id /* block */)a0 forView:(id)a1;
++ (void)setCurrentPage:(id)a0 BtmAutoManaged:(BOOL)a1;
++ (id)getBcmChainWhenCartAddWithBtmModel:(id)a0;
++ (id)getBcmChainWhenBuyNowWithSourceBtmToken:(id)a0;
++ (id)getBcmChainWhenCartAddWithSourceBtmToken:(id)a0;
++ (void)checkEntranceInfoSize:(id)a0;
++ (id)removeEntranceInfoKeys:(id)a0;
++ (void)bindView:(id)a0 withBtmId:(id)a1 trackMap:(id)a2 uniqueKey:(id)a3 enterNewPage:(BOOL)a4 addBtmChain:(BOOL)a5 chainLength:(long long)a6 targetPages:(id)a7 description:(id)a8 bcmStorage:(id)a9 enableSendingClick:(BOOL)a10;
++ (void)sendEventType:(id)a0 withView:(id)a1 BtmId:(id)a2 trackMap:(id)a3 descriptionInfo:(id)a4;
++ (void)autoShowTrackWithView:(id)a0 btm:(id)a1 eventName:(id)a2 uniqueKey:(id)a3 ruleKey:(id)a4 reporter:(id /* block */)a5;
++ (void)clickTrackWithView:(id)a0 btm:(id)a1 eventName:(id)a2 uniqueKey:(id)a3 ruleKey:(id)a4 reporter:(id /* block */)a5;
++ (void)appendBcmUnitParams:(id)a0 forBizKey:(id)a1 responder:(id)a2;
++ (id)getEntranceInfoForGlobalProps:(id)a0 query:(id)a1 responder:(id)a2;
++ (id)btmList;
++ (id)entranceInfoEmergencyConfig;
++ (id)hybirdResponderForContainerID:(id)a0;
+
+
+@end

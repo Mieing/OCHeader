@@ -1,0 +1,72 @@
+@class UIColor, HTSEventContext, NSDictionary, IESLiveKTVTuningEffectViewModel, IESLiveComponentContext, IESLiveKTVCommonApi, NSString;
+@protocol HTSLiveStreamPlayerProvider, HTSKVStore, IESLiveTuningStorePlayerProtocol, IESLiveRoomService, IESLiveInteractionLinkerService;
+
+@interface IESLiveKTVTuningStore : NSObject <HTSLiveRoomRemoteActions, IESLiveKTVTuningActions>
+
+@property (retain, nonatomic) IESLiveKTVCommonApi *ktvApi;
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (nonatomic) double maxVoiceVolume;
+@property (nonatomic) double maxMusicVolume;
+@property (nonatomic) double maxMusicPushVolume;
+@property (nonatomic) double maxEarVolumee;
+@property (nonatomic) double maxOthersVolume;
+@property (nonatomic) float assignedChorusModeLeaderVoiceVolume;
+@property (nonatomic) float assignedChorusModeNormalVoiceVolume;
+@property (weak, nonatomic) id<HTSKVStore> kvStore;
+@property (retain, nonatomic) NSDictionary *volumeSetting;
+@property (nonatomic) int layout;
+@property (nonatomic) unsigned long long currentRoleType;
+@property (weak, nonatomic) id<HTSLiveStreamPlayerProvider> streamPlayer;
+@property (weak, nonatomic) id<IESLiveInteractionLinkerService> linker;
+@property (nonatomic) BOOL isLiveRoom;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (nonatomic) float voiceVolumePercent;
+@property (nonatomic) float musicVolumePercent;
+@property (nonatomic) float earVolumePercent;
+@property (nonatomic) float othersVolumePercent;
+@property (nonatomic) double toneVolume;
+@property (nonatomic) BOOL reverberationEnabled;
+@property (nonatomic) BOOL cellularEnhanceEnabled;
+@property (nonatomic) BOOL enableKTVToneChange;
+@property (weak, nonatomic) id<IESLiveTuningStorePlayerProtocol> player;
+@property (retain, nonatomic) IESLiveKTVTuningEffectViewModel *tuningEffectViewModel;
+@property (retain, nonatomic) UIColor *effectTitleColor;
+@property (nonatomic) BOOL isSoloKTV;
+@property (nonatomic) BOOL isVideoChorusConcertMode;
+@property (nonatomic) BOOL isCDNSinger;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)updateVoiceVolume:(float)a0;
+- (void)didCloseLiveRoomWithDuration:(double)a0;
+- (void)setEarReturnOn:(BOOL)a0;
+- (void)setRemoteUserDefaultPlaybackVolume:(float)a0;
+- (void)setRemoteAudioPlaybackVolume:(float)a0 rtcUid:(id)a1;
+- (void)voiceValueChanged:(float)a0 isStore:(BOOL)a1;
+- (void)musicValueChanged:(float)a0;
+- (void)earValueChanged:(float)a0;
+- (void)othersValueChanged:(float)a0 isStore:(BOOL)a1;
+- (void)toneValueChanged:(double)a0;
+- (void)musicPushVolumeChanged:(long long)a0;
+- (void)toggleEarReturnMode;
+- (void)toggleReverberationMode;
+- (void)toggleCurrentTuningEffectWithNameID:(id)a0;
+- (id)initWithRoom:(id)a0 layout:(int)a1 eventContext:(id)a2 componentContext:(id)a3;
+- (BOOL)savedEarReturnEnabled;
+- (void)updateUILayout:(int)a0;
+- (id)p_kvStoreKeyFrom:(id)a0;
+- (float)storedVoiceVolume;
+- (void)resetVideoChorusOtherPeoplerVolumeKV;
+- (void)setAssignedLeaderChorusModeVoiceVolume:(BOOL)a0;
+- (void)resetVoiceVolume;
+- (void).cxx_destruct;
+- (void)stop;
+- (void)enter;
+- (void)reset;
+- (void)exit;
+
+@end

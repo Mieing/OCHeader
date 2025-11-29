@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveNotifyMessage_ContentList : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *contentsArray;
+@property (readonly, nonatomic) unsigned long long contentsArray_Count;
+@property (copy, nonatomic) NSString *highLightColor;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, HTSLiveText;
+
+@interface HTSLiveRechargeButtonTouch : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveText *buttonText;
+@property (nonatomic) BOOL hasButtonText;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

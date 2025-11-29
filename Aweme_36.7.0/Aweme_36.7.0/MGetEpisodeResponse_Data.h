@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface MGetEpisodeResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *episodesArray;
+@property (readonly, nonatomic) unsigned long long episodesArray_Count;
+
++ (id)descriptor;
+
+@end

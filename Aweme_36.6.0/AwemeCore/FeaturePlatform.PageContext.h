@@ -1,0 +1,12 @@
+@interface FeaturePlatform.PageContext : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ page;
+    void /* unknown type, empty encoding */ scopeContext;
+    void /* unknown type, empty encoding */ viewContainer;
+    void /* unknown type, empty encoding */ actionBuilder;
+    void /* unknown type, empty encoding */ componentLoader;
+    void /* unknown type, empty encoding */ lifecycleOwner;
+    void /* unknown type, empty encoding */ coordinatorExecutor;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_initialAction;
+}
+
+@end

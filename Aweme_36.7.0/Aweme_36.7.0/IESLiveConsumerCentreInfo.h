@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface IESLiveConsumerCentreInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

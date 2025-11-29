@@ -1,0 +1,81 @@
+@class NSString, NSSet, NSMutableSet, AWEUserRecommendPerformanceMeasureTask, NSNumber;
+
+@interface AWEUserRecommendCardTrackManager : NSObject <AWEUserRecommendCardTrackManagerProtocol>
+
+@property (retain, nonatomic) NSMutableSet *friendCardImpressionSet;
+@property (retain, nonatomic) NSMutableSet *followCardImpressionSet;
+@property (retain, nonatomic) AWEUserRecommendPerformanceMeasureTask *refreshPerformanceTask;
+@property (retain, nonatomic) AWEUserRecommendPerformanceMeasureTask *loadMorePerformanceTask;
+@property (retain, nonatomic) NSMutableSet *liteInteractSet;
+@property (nonatomic) BOOL hasTrackedCloseFriendsCardShow;
+@property (nonatomic) BOOL hasTrackedAddressListCardShow;
+@property (retain, nonatomic) NSMutableSet *sharePlatformImpressionSet;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *previousPage;
+@property (copy, nonatomic) NSString *showMethod;
+@property (copy, nonatomic) NSSet *firstShownUsers;
+@property (copy, nonatomic) NSString *cardType;
+@property (nonatomic) long long recommendType;
+@property (retain, nonatomic) NSNumber *isHighlight;
+@property (copy, nonatomic) NSSet *highlightedUsers;
+@property (copy, nonatomic) NSString *userID;
+@property (nonatomic) BOOL isFromHighValueUserSource;
+@property (nonatomic) long long fromPageType;
+@property (nonatomic) long long prePageType;
+@property (nonatomic) long long subPageType;
+@property (nonatomic) long long fromAction;
+@property (nonatomic) long long transitionedFromPageType;
+@property (nonatomic) long long transitionedPrePageType;
+@property (retain, nonatomic) NSString *liteInteractEnterMethod;
+@property (copy, nonatomic) NSString *liteInteractEnterFrom;
+@property (copy, nonatomic) NSString *enterPosition;
+@property (nonatomic) long long bigCardImpr;
+@property (retain, nonatomic) NSString *scene;
+@property (copy, nonatomic) NSString *enterFromTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWELiteUGSocialModuleAdapterClass;
++ (id)recommendUserTypeForUser:(id)a0;
+
+- (void)dealloc;
+- (void)trackListStartRefreshing;
+- (void)trackListStartLoadingMore;
+- (void)trackListFinishRefreshing;
+- (void)trackListFinishLoadingMore;
+- (void)trackListDismissedBeforeAppear;
+- (void)trackListLoadingViewAppear;
+- (id)aAWELiteUGSocialModuleAdapter;
+- (void)trackFollowCard:(id)a0 eventType:(id)a1;
+- (void)trackFollowCard:(id)a0 eventType:(id)a1 extraParams:(id)a2;
+- (void)trackFollow:(id)a0;
+- (BOOL)isNextUser:(id)a0;
+- (void)trackFriendCard:(id)a0 eventType:(id)a1;
+- (void)trackFriendCard:(id)a0 eventType:(id)a1 extraParams:(id)a2;
+- (void)trackUnfollow:(id)a0;
+- (void)trackEnterProfile:(id)a0 enterMethod:(id)a1;
+- (void)p_trackHighValueUser:(id)a0 eventType:(id)a1;
+- (id)p_gdLabel;
+- (void)trackInsertedUserImpression:(id)a0;
+- (void)trackInsertedUserDelete:(id)a0;
+- (void)trackApprove:(id)a0;
+- (void)trackFollowRefuse:(id)a0;
+- (void)trackClickPrivacyTips;
+- (void)trackCloseFollowCard;
+- (void)trackQuickReplyWithUser:(id)a0 eventType:(id)a1;
+- (void)trackEnterChatWitUser:(id)a0;
+- (void)trackAddressListCardActionType:(id)a0;
+- (void)trackAddProfileFriendsCardForPlatform:(id)a0 actionType:(id)a1;
+- (void)trackListLifeCycleStart;
+- (void)trackListReceiveRefreshResponseWithCount:(long long)a0;
+- (void)trackListReceiveLoadMoreResponseWithCount:(long long)a0;
+- (void)trackListEncounterError;
+- (void)trackDeleteUser:(id)a0;
+- (void)trackEmptyFollowList;
+- (void).cxx_destruct;
+- (void)clear;
+- (id)init;
+
+@end

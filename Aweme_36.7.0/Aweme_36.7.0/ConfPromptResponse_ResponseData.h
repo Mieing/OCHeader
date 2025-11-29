@@ -1,0 +1,9 @@
+@interface ConfPromptResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int duration;
+@property (nonatomic) int promptMaxCount;
+@property (nonatomic) int textLimit;
+
++ (id)descriptor;
+
+@end

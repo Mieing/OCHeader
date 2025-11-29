@@ -1,0 +1,3 @@
+@interface WCFinderHistoryFeedPage : WCFinderHistoryAllPage
+
+@end

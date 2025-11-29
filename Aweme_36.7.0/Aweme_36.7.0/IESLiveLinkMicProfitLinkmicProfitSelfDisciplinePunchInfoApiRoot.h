@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitSelfDisciplinePunchInfoApiRoot : GPBRootObject
+
+@end

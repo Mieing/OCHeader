@@ -1,0 +1,3 @@
+@interface HTSLiveGameUpdateStatusRoot : GPBRootObject
+
+@end

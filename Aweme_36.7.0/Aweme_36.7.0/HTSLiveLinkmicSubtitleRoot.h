@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicSubtitleRoot : GPBRootObject
+
+@end

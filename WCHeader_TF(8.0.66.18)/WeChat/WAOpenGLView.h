@@ -1,0 +1,86 @@
+@class NSString, WAEJJavaScriptView;
+@protocol WAOpenGLScreenCanvasDelegate, WAOpenGLViewDelegate;
+
+@interface WAOpenGLView : UIView <EJNativeLogViewDelegate, EJFileSystemDelegate, EJScreenCanvasDelegate, EJExternalTextureDelegate> {
+    WAEJJavaScriptView *_glView;
+    double _startTime;
+}
+
+@property (weak, nonatomic) id<WAOpenGLViewDelegate> delegate;
+@property (weak, nonatomic) id<WAOpenGLScreenCanvasDelegate> screenCanvasDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 context:(struct OpaqueJSContext { } *)a1 appId:(id)a2 name:(const char *)a3 config:(id)a4;
+- (id)initWithFrameOnlyMainThreadPart:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)commonInit;
+- (void)setupJSContextOnSubThread:(struct OpaqueJSContext { } *)a0 appId:(id)a1 name:(const char *)a2 config:(id)a3;
+- (void)initSubContext:(struct OpaqueJSContext { } *)a0;
+- (void)layoutSubviews;
+- (void)loadScriptAtPath:(id)a0;
+- (void)clearCaches;
+- (struct OpaqueJSValue { } *)evaluateScript:(id)a0 sourceURL:(id)a1;
+- (struct OpaqueJSValue { } *)evaluateScript:(id)a0 sourceURL:(id)a1 ignoreException:(BOOL)a2;
+- (void)pause;
+- (void)resume;
+- (void)suspend;
+- (void)stop:(BOOL)a0;
+- (void)setInterrupt:(BOOL)a0;
+- (void)setReportVarianceFps:(BOOL)a0;
+- (BOOL)isEnterBackground;
+- (BOOL)isFileExist:(id)a0;
+- (id)getFileData:(id)a0;
+- (id)createImageWithSvgData:(id)a0 resize:(struct CGSize { double x0; double x1; })a1 scale:(double)a2;
+- (id)getFileDataWithUrl:(id)a0;
+- (void)cancelAllFileTask;
+- (void)gameKVReport:(unsigned int)a0 logstr:(id)a1;
+- (void)log:(id)a0 func:(const char *)a1 line:(int)a2;
+- (void)systemLog:(id)a0;
+- (void)logError:(id)a0 desc:(id)a1 stack:(id)a2;
+- (void)logGLError:(int)a0 name:(id)a1;
+- (void)onFrameTimeout:(int)a0;
+- (void)onFrameBegin;
+- (void)onFrameEnd;
+- (void)onFirstFrameRendered:(unsigned int)a0;
+- (void)onEJViewEnterBackground;
+- (void)onEJViewEnterForeground;
+- (unsigned int)getRunDuration;
+- (long long)getVarianceFps;
+- (unsigned long long)getMainCanvasContextType;
+- (struct { long long x0; long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; long long x10; long long x11; })getPerformance;
+- (void)resetJankInfo;
+- (void)enableDebug:(BOOL)a0;
+- (void)setLandScape:(BOOL)a0;
+- (void)setComponent:(BOOL)a0;
+- (struct __CVBuffer { } *)getPixelBuffer:(unsigned int)a0;
+- (void)getImageFromOffscreenCanvas:(id)a0;
+- (id)getCanvasImage:(unsigned int)a0;
+- (id)getCanvasImageWithScaleFactor:(unsigned int)a0 Factor:(float)a1;
+- (void)getCanvasImageAsync:(unsigned int)a0 callback:(id /* block */)a1;
+- (void)setUseCommandBuffer:(BOOL)a0;
+- (void)present;
+- (void)setGestureDelegate:(id)a0;
+- (void)setBindingDelegate:(id)a0;
+- (id)getObjClass;
+- (BOOL)setCaptureDelegate:(unsigned int)a0 mark:(unsigned int)a1 options:(id)a2 delegate:(id)a3;
+- (void)onGLViewStyleChanged:(unsigned int)a0 withStyle:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (struct WasmAdaptorImpl { void /* function */ **x0; id x1; id x2; id x3; BOOL x4; BOOL x5; int x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; id x14; id x15; id x16; } *)createWasmWebGLAdaptor;
+- (void *)sg_get_context:(struct OpaqueJSValue { } *)a0;
+- (void)sg_retain_context:(void *)a0;
+- (void)sg_release_context:(void *)a0;
+- (void)sg_make_current:(void *)a0;
+- (void)sg_swap:(void *)a0;
+- (unsigned int)sg_get_texture:(struct OpaqueJSValue { } *)a0;
+- (void *)sg_get_state:(void *)a0;
+- (id)onCreateScreenCanvas:(unsigned int)a0 viewId:(int)a1;
+- (void)onScreenCanvasCreated:(unsigned int)a0 view:(id)a1;
+- (void)onScreenCanvasDestroyed:(unsigned int)a0 view:(id)a1;
+- (void)onScreenCanvasFrameChanged:(unsigned int)a0 view:(id)a1 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (struct __CVBuffer { } *)providePixelBufferByViewId:(unsigned int)a0 withType:(id)a1;
+- (void).cxx_destruct;
+
+@end

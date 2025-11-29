@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface BDPPluginAudioPlayerImpl : NSObject <BDPAudioPlayerPluginDelegate>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedPlugin;
++ (void)bootstrapLaunch;
+
+- (id)bdp_audioPlayer;
+
+@end

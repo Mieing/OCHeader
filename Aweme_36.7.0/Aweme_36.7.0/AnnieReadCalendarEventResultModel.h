@@ -1,0 +1,17 @@
+@class NSNumber, NSString;
+
+@interface AnnieReadCalendarEventResultModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *startDate;
+@property (retain, nonatomic) NSNumber *endDate;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *notes;
+@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *location;
+@property (retain, nonatomic) NSNumber *alarmOffset;
+@property (nonatomic) BOOL allDay;
+@property (copy, nonatomic) NSString *repeatFrequency;
+@property (retain, nonatomic) NSNumber *repeatInterval;
+@property (retain, nonatomic) NSNumber *repeatCount;
+
+@end

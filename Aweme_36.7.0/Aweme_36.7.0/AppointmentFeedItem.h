@@ -1,0 +1,13 @@
+@class AppointmentFeedPlaceholder, Appointment;
+
+@interface AppointmentFeedItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long type;
+@property (retain, nonatomic) AppointmentFeedPlaceholder *placeholder;
+@property (nonatomic) BOOL hasPlaceholder;
+@property (retain, nonatomic) Appointment *appointment;
+@property (nonatomic) BOOL hasAppointment;
+
++ (id)descriptor;
+
+@end

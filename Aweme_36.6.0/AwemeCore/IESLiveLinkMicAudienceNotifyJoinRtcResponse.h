@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceNotifyJoinRtcResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceNotifyJoinRtcResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceNotifyJoinRtcResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

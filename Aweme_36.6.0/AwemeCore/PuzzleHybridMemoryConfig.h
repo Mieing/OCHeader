@@ -1,0 +1,3 @@
+@interface PuzzleHybridMemoryConfig : PuzzleHybridAPMBaseConfig
+
+@end

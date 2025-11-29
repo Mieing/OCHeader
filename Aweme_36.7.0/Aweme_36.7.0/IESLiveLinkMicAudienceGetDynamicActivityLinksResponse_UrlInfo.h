@@ -1,0 +1,14 @@
+@class NSString, IESLiveLinkMicAudienceGetDynamicActivityLinksResponse_ActivityContent;
+
+@interface IESLiveLinkMicAudienceGetDynamicActivityLinksResponse_UrlInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *URL;
+@property (copy, nonatomic) NSString *failBackURL;
+@property (copy, nonatomic) NSString *lIZIZ;
+@property (copy, nonatomic) NSString *lIZJ;
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetDynamicActivityLinksResponse_ActivityContent *activityContent;
+@property (nonatomic) BOOL hasActivityContent;
+
++ (id)descriptor;
+
+@end

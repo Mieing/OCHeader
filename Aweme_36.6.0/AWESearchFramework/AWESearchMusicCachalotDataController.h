@@ -1,0 +1,76 @@
+@class NSString, AWESearchGlobalDoodleConfigModel, AWESearchCorrectModel, AWESearchMusicListenMusicModeInfo, AWESearchFrequencyManager, NSDictionary, AWESearchHarmfulCategoryManager, AWERiskPreventModel, AWESearchDynamicPreLayoutManager, AWESearchMusicSelectMusicModeInfo, NSNumber;
+@protocol CachalotRenderPipelineComponentViewModel, AWESearchMusicCachalotDataControllerDelegate;
+
+@interface AWESearchMusicCachalotDataController : AWESearchVerticalDataController <AWESearchMusicCachalotRequestParamsDelegate>
+
+@property (retain, nonatomic) AWESearchDynamicPreLayoutManager *preLayoutManager;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL isRecommend;
+@property (nonatomic) long long count;
+@property (retain, nonatomic) NSNumber *cursor;
+@property (copy, nonatomic) NSString *correctName;
+@property (retain, nonatomic) AWERiskPreventModel *riskPreventModel;
+@property (nonatomic) BOOL fromHotSearch;
+@property (retain, nonatomic) AWESearchCorrectModel *correctModel;
+@property (nonatomic) BOOL isSwitchTab;
+@property (copy, nonatomic) NSString *previousSearchID;
+@property (copy, nonatomic) NSString *previousTab;
+@property (copy, nonatomic) NSString *initialSearchSource;
+@property (copy, nonatomic) NSDictionary *searchRequestLogQueries;
+@property (copy, nonatomic) NSString *extra;
+@property (copy, nonatomic) NSString *ecomScene;
+@property (retain, nonatomic) AWESearchFrequencyManager *frequencyManager;
+@property (retain, nonatomic) AWESearchHarmfulCategoryManager *harmfulCategoryManager;
+@property (copy, nonatomic) id /* block */ beforeBuildRequestBlock;
+@property (nonatomic) BOOL isAuthorSearch;
+@property (retain, nonatomic) AWESearchGlobalDoodleConfigModel *extraModel;
+@property (copy, nonatomic) NSDictionary *searchExtraParams;
+@property (weak, nonatomic) id<AWESearchMusicCachalotDataControllerDelegate> musicDelegate;
+@property (nonatomic) long long renderType;
+@property (nonatomic) long long previousTabSelected;
+@property (nonatomic) long long tabSelected;
+@property (retain, nonatomic) AWESearchMusicListenMusicModeInfo *listenMusicModel;
+@property (retain, nonatomic) AWESearchMusicSelectMusicModeInfo *selectMusicModel;
+@property (copy, nonatomic) NSString *searchChannel;
+@property (retain, nonatomic) id<CachalotRenderPipelineComponentViewModel> currentRootModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setContainerConfig:(id)a0;
+- (id)syncGetSearchQishuiMusicFormat;
+- (Class)customResponseClass;
+- (Class)customRequestParamsClass;
+- (void)refreshResponse:(id)a0;
+- (void)loadMoreResponse:(id)a0;
+- (BOOL)cachalot_refreshWithCompletion:(id /* block */)a0;
+- (void)setupRequestParamsDelegate;
+- (BOOL)hasListenMusicsInfo;
+- (BOOL)hasSelectMusicsInfo;
+- (void)clearRenderInfo:(BOOL)a0;
+- (void)setupCurrentRootModel:(id)a0;
+- (void)setupLogPassback:(id)a0;
+- (void)setupCursor:(id)a0;
+- (void)setupHasMore:(BOOL)a0;
+- (void)setupCorrectName:(id)a0;
+- (void)setupCorrectModel:(id)a0;
+- (id)p_handleSearchMusicList:(id)a0 isRefresh:(BOOL)a1;
+- (id)getLogPassBack;
+- (id)p_extractDynamicPatchListFromRootModel:(id)a0;
+- (id)p_getCurrentMusicsArray;
+- (id)getCurrentRootModel;
+- (id)musicCachalotRequestCommonParams;
+- (id)getCorrectModel;
+- (id)getCursor;
+- (id)musicCachalotRequestRefreshParams;
+- (id)musicCachalotRequestLoadMoreParams;
+- (id)getCorrectName;
+- (BOOL)getHasMore;
+- (void)registerPreprocessClass:(Class)a0;
+- (long long)getItemCounts;
+- (void).cxx_destruct;
+- (void)clear;
+- (id)init;
+
+@end

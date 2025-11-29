@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicChannelLinkmicChannelGetRtcInfoApiRoot : GPBRootObject
+
+@end

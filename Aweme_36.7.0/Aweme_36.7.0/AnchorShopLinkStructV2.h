@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface AnchorShopLinkStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *keyword;
+@property (nonatomic) BOOL hasKeyword;
+@property (copy, nonatomic) NSString *URL;
+@property (nonatomic) BOOL hasURL;
+
++ (id)descriptor;
+
+@end

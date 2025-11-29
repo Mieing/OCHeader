@@ -1,0 +1,10 @@
+@class HTSLiveLinkMicSendEmojiMessage;
+
+@interface IESLiveLinkMicAudienceSendEmojiResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveLinkMicSendEmojiMessage *emojiMsg;
+@property (nonatomic) BOOL hasEmojiMsg;
+
++ (id)descriptor;
+
+@end

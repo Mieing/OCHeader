@@ -1,0 +1,8 @@
+@interface IESLiveKTVMidiScoreSEIParser : IESLiveBaseKTVSEIParser
+
++ (void)ieslivekit_register_sei_parser;
+
+- (unsigned long long)seiType;
+- (id)seiRootKey;
+
+@end

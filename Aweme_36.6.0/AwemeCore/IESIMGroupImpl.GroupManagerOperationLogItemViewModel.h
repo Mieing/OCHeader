@@ -1,0 +1,10 @@
+@interface IESIMGroupImpl.GroupManagerOperationLogItemViewModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ name;
+    void /* unknown type, empty encoding */ avatar;
+    void /* unknown type, empty encoding */ time;
+    void /* unknown type, empty encoding */ content;
+    void /* unknown type, empty encoding */ itemSize;
+    void /* unknown type, empty encoding */ tagConfig;
+}
+
+@end

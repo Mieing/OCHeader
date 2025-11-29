@@ -1,0 +1,10 @@
+@class HTSLiveStarWishConfigContent;
+
+@interface IESLiveLinkMicProfitGetStarWishSettingResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveStarWishConfigContent *settingContent;
+@property (nonatomic) BOOL hasSettingContent;
+
++ (id)descriptor;
+
+@end

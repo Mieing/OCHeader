@@ -1,0 +1,7 @@
+@interface FlowChatCore.RateLimitResponse : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ is_limit;
+    void /* unknown type, empty encoding */ limit_time;
+    void /* unknown type, empty encoding */ limit_tips;
+}
+
+@end

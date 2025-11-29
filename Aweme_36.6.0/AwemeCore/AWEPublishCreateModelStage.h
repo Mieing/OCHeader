@@ -1,0 +1,84 @@
+@class AWEPublishCreateModelParamContext, NSString, NSArray, AWEVideoPublishViewModel, AWEPublishCreateModelParamManager, AWECreateAwemeResponse;
+
+@interface AWEPublishCreateModelStage : AWEPublishMultiSplitableCreateModelStage
+
+@property (retain, nonatomic) AWEVideoPublishViewModel *publishViewModel;
+@property (copy, nonatomic) NSString *resourceId;
+@property (copy, nonatomic) NSString *coverTextResourceId;
+@property (copy, nonatomic) NSString *cropedCoverResourceId;
+@property (copy, nonatomic) NSString *videoCoverResourceId;
+@property (copy, nonatomic) NSString *paymentVideoCoverResourceId;
+@property (copy, nonatomic) NSString *originImageInfos;
+@property (copy, nonatomic) NSString *originVideoInfos;
+@property (copy, nonatomic) NSString *clipDataStr;
+@property (nonatomic) long long publishRetryCount;
+@property (nonatomic) long long maxRetryCount;
+@property (nonatomic) double retryInterval;
+@property (copy, nonatomic) NSString *longitude;
+@property (copy, nonatomic) NSString *latitude;
+@property (copy, nonatomic) NSArray *imageIds;
+@property (nonatomic) BOOL isSinglePhotoAsImageAlbumPublish;
+@property (retain, nonatomic) AWECreateAwemeResponse *createAwemeResponse;
+@property (retain, nonatomic) AWEPublishCreateModelParamManager *paramManager;
+@property (retain, nonatomic) AWEPublishCreateModelParamContext *paramContext;
+
++ (Class)aACCMidVideoCreationProtocolClass;
++ (unsigned long long)imageCategory:(id)a0;
++ (unsigned long long)p_calculateNewImageAlbumTypeForSlides:(id)a0;
++ (BOOL)p_hasDynamicImageForNormalNewImageAlbum:(id)a0;
++ (id)clipDataStrForSlides:(id)a0;
++ (id)jsonStringFromUrisWithFlowModel:(id)a0;
+
+- (BOOL)canRetryWithError:(id)a0;
+- (id)objectToString:(id)a0;
+- (BOOL)isImageAlbum:(id)a0;
+- (id)p_jsonStringEncoded:(id)a0;
+- (void)p_mergePublishParams:(id)a0 toDict:(id)a1;
+- (BOOL)isImageAlbumOrMixed:(id)a0;
+- (void)setupWithFlowModelIfNeeded;
+- (void)updateFlowModelIfNeeded;
+- (id)aACCMidVideoCreationProtocol;
+- (id)addPublishModelParamsWithParams:(id)a0;
+- (void)p_run;
+- (id)initWithModel:(id)a0 imageInfos:(id)a1 isSinglePhotoAsImageAlbumPublish:(BOOL)a2 coverTextResourceId:(id)a3 cropedCoverResourceId:(id)a4 videoCoverResourceId:(id)a5;
+- (void)setupWithModel:(id)a0 resourceId:(id)a1 coverTextResourceId:(id)a2 cropedCoverResourceId:(id)a3 videoCoverResourceId:(id)a4;
+- (BOOL)p_canLocation;
+- (void)getAppStatusOnMainThreadWithCompletion:(id /* block */)a0;
+- (void)p_requestLocationWithCompleteBlock:(id /* block */)a0;
+- (void)p_removeTextContentFromMentionedUserInfo;
+- (void)handleDraftForCreateModelSucceed;
+- (void)p_showSecondVerificationWithModel:(id)a0 error:(id)a1;
+- (void)publishAwemeWithCompletion:(id /* block */)a0;
+- (void)addRequestParameterWithUseCase:(id)a0;
+- (void)p_autoAddIntelligentChapter;
+- (void)p_addAnchorInfo:(id)a0;
+- (void)p_addDynamicStickerAnchorInfo:(id)a0;
+- (void)p_addCoCreatorInfo:(id)a0;
+- (void)p_addXiguaPrivacyInfoIfNeeded:(id)a0;
+- (id)p_jsonObjectDecoded:(id)a0;
+- (BOOL)needSetCustomCoverImageURI;
+- (id)p_addNewImageAlbumParamsDict;
+- (void)precheckPublishModel:(id)a0 beforeCreateAwemeWithParams:(id)a1;
+- (void)configPublishExceptionAnchorContext:(id)a0;
+- (void)configPublishExceptionJSONValidContext:(id)a0;
+- (void)trackTextEvent:(id)a0 model:(id)a1 error:(id)a2 isBeforeRequest:(BOOL)a3;
+- (void)setupConvertAwemeForImageAlbumBindVideo:(id)a0;
+- (void)reportHashtagInfo:(id)a0;
+- (void)reportJoinMixEventWith:(id)a0;
+- (void)p_trackCreateForDXUpgradeUserWithModel:(id)a0 success:(BOOL)a1;
+- (void)p_getCacheLocation;
+- (void)p_useLocation:(id)a0 isCache:(BOOL)a1 error:(id)a2;
+- (BOOL)isForbidden:(id)a0;
+- (BOOL)hasPublishStoryTooMany:(id)a0;
+- (BOOL)shouldShowCaptchaAlert:(id)a0;
+- (BOOL)shouldShowSecondVerification:(id)a0;
+- (id)initWithModel:(id)a0 resourceId:(id)a1;
+- (id)initWithModel:(id)a0 resourceId:(id)a1 coverTextResourceId:(id)a2 cropedCoverResourceId:(id)a3 videoCoverResourceId:(id)a4;
+- (id)initWithModel:(id)a0 resourceId:(id)a1 uploadCoverResourceModel:(id)a2;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)commonInit;
+- (void)run;
+
+@end

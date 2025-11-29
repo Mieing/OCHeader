@@ -1,0 +1,14 @@
+@class UrlStructV2;
+
+@interface LabelIconStructV2 : GPBMessage
+
+@property (retain, nonatomic) UrlStructV2 *iconImg;
+@property (nonatomic) BOOL hasIconImg;
+@property (nonatomic) int position;
+@property (nonatomic) BOOL hasPosition;
+@property (nonatomic) int scale;
+@property (nonatomic) BOOL hasScale;
+
++ (id)descriptor;
+
+@end

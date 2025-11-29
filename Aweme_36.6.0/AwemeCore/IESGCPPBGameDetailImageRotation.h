@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBGameDetailImageRotation : GPBMessage
+
+@property (copy, nonatomic) NSString *URL;
+@property (copy, nonatomic) NSString *rotation;
+
++ (id)descriptor;
+
+@end

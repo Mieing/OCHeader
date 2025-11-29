@@ -1,0 +1,3 @@
+@interface IESECSliceXTextInputSuffixIconView : UIView
+
+@end

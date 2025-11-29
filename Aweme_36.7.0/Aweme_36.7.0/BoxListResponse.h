@@ -1,0 +1,12 @@
+@class BoxListResponse_Extra, NSMutableArray;
+
+@interface BoxListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+@property (retain, nonatomic) BoxListResponse_Extra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

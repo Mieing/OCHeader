@@ -1,0 +1,12 @@
+@class IESLiveText;
+
+@interface IESLiveFormComp_FormItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveText *key;
+@property (nonatomic) BOOL hasKey;
+@property (retain, nonatomic) IESLiveText *value;
+@property (nonatomic) BOOL hasValue;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@interface HTSLivePaidLiveSubscribe : IESLivePBBaseMessage
+
+@property (nonatomic) long long paidLiveType;
+@property (nonatomic) long long subscribeEventTime;
+
++ (id)descriptor;
+
+@end

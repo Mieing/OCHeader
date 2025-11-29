@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveGiftPanelTopperTray_PeriodText : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) int dailyShowTimes;
+@property (nonatomic) int priority;
+@property (nonatomic) int panelEnum;
+@property (nonatomic) int key;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

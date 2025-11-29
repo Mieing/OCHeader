@@ -1,0 +1,9 @@
+@class IESLiveUploadLogToSlardarAndGetSlardarURLUploadLogToSlardarAndGetSlardarURLDataModel;
+
+@interface IESLiveUploadLogToSlardarAndGetSlardarURLUploadLogToSlardarAndGetSlardarURLResultModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) IESLiveUploadLogToSlardarAndGetSlardarURLUploadLogToSlardarAndGetSlardarURLDataModel *data;
+
+- (void).cxx_destruct;
+
+@end

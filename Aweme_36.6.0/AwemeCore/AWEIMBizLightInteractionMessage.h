@@ -1,0 +1,83 @@
+@class AWEIMLinkTextUtility, NSArray, NSString, NSDictionary, NSAttributedString, AWEURLModel;
+
+@interface AWEIMBizLightInteractionMessage : AWEIMMessage <AWEIMFeedMediaDisplayable, AWEIMQuoteMessageV2Protocol, AWEIMMessageConfigProtocol>
+
+@property (retain, nonatomic) AWEIMLinkTextUtility *textUtility;
+@property (retain, nonatomic) NSArray *templateArray;
+@property (retain, nonatomic) AWEURLModel *urlModel;
+@property (copy, nonatomic) NSString *md5;
+@property (nonatomic) BOOL contentIsAvailable;
+@property (nonatomic) unsigned long long realCoverHeight;
+@property (nonatomic) unsigned long long realCcoverWidth;
+@property (copy, nonatomic) NSString *objectTitle;
+@property (copy, nonatomic) NSString *subjectTitle;
+@property (copy, nonatomic) NSString *objectTitleV2;
+@property (copy, nonatomic) NSString *subjectTitleV2;
+@property (nonatomic) unsigned long long coverHeight;
+@property (nonatomic) unsigned long long coverWidth;
+@property (copy, nonatomic) NSArray *urlList;
+@property (copy, nonatomic) NSString *uri;
+@property (copy, nonatomic) NSString *contentText;
+@property (copy, nonatomic) NSString *contentTitle;
+@property (copy, nonatomic) NSString *itemId;
+@property (copy, nonatomic) NSString *uid;
+@property (copy, nonatomic) NSString *quoteTitle;
+@property (copy, nonatomic) NSAttributedString *quoteAttributedContent;
+@property (nonatomic) struct CGSize { double width; double height; } quoteAttributedContentSize;
+@property (nonatomic) long long sceneType;
+@property (copy, nonatomic) NSString *comment;
+@property (copy, nonatomic) NSString *commentID;
+@property (nonatomic) long long commentContentType;
+@property (nonatomic) unsigned long long refType;
+@property (copy, nonatomic) NSAttributedString *commentCopyText;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSArray *richTextInfos;
+@property (nonatomic) BOOL shouldShowComment;
+@property (copy, nonatomic) NSString *objectTitleText;
+@property (copy, nonatomic) NSString *subjectTitleText;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) NSString *secUid;
+@property (readonly, copy, nonatomic) NSString *fileId;
+@property (readonly, copy, nonatomic) NSString *secretKey;
+@property (readonly, nonatomic) int fileType;
+@property (copy, nonatomic) NSString *assetId;
+@property (copy, nonatomic) NSDictionary *extra;
+
++ (Class)viewModelClass;
+
+- (id)initWithContentDict:(id)a0;
+- (BOOL)isAllowedCellEdit;
+- (BOOL)isUserCellType;
+- (id)getContentDict;
+- (id)contentComponentName;
+- (id)calculateAttributedContent;
+- (BOOL)supportRefactorCell;
+- (id)quoteContentComponentName;
+- (BOOL)enableBubbleColorWithType:(long long)a0 isQuoteReply:(BOOL)a1;
+- (BOOL)isAllowedEmojiReply;
+- (id)invisibleString;
+- (id)makeFeedMediaDisplayModel;
+- (BOOL)shouldShowNicknameWithMessageType;
+- (BOOL)shouldChangeVisibleStatus;
+- (id)itemIDUsedForContentAvailableRefresh;
+- (id)md5WithUrlModel:(id)a0;
+- (BOOL)needFetchCommentStatus;
+- (BOOL)shouldMomentUseOriginSize;
+- (BOOL)p_unavaliableDousanMessage;
+- (BOOL)shouldShowAuthorInfo;
+- (double)preferQuoteTitleMaxWidth;
+- (BOOL)shouldShowBriefCommentLabel;
+- (BOOL)shouldShowCommentLabel;
+- (BOOL)isCommentAvailable;
+- (void)updateUrlModelWithUrlModel:(id)a0;
+- (BOOL)needShowContentModeCenter;
+- (id)supportMessageMenuTypeList;
+- (void).cxx_destruct;
+- (id)contentAttributes;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (BOOL)shouldShowPlayIcon;
+
+@end

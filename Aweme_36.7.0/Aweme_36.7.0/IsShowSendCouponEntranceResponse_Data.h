@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IsShowSendCouponEntranceResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long statusCode;
+@property (copy, nonatomic) NSString *statusMsg;
+@property (nonatomic) BOOL showEntranceResult;
+@property (copy, nonatomic) NSString *jumpURL;
+@property (copy, nonatomic) NSString *copyWriting;
+
++ (id)descriptor;
+
+@end

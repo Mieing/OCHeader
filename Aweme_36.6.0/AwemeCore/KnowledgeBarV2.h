@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface KnowledgeBarV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL hasContent;
+@property (copy, nonatomic) NSString *knowledgeSchema;
+@property (nonatomic) BOOL hasKnowledgeSchema;
+@property (copy, nonatomic) NSString *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,9 @@
+@interface AWECommentPanelListSwiftImpl.CommentBindingHostManager : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ callDealloc;
+    void /* unknown type, empty encoding */ aweBindings;
+    void /* unknown type, empty encoding */ bindings;
+    void /* unknown type, empty encoding */ aweBindinglock;
+    void /* unknown type, empty encoding */ bindinglock;
+}
+
+@end

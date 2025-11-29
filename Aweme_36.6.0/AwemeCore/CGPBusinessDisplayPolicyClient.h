@@ -1,0 +1,9 @@
+@interface CGPBusinessDisplayPolicyClient : GPBMessage
+
+@property (nonatomic) int action;
+@property (nonatomic) int content;
+@property (nonatomic) int status;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailCloudLaunchButtonApiRoot : GPBRootObject
+
+@end

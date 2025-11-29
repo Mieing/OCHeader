@@ -1,0 +1,71 @@
+@class WCPlayerPlayArgs, NSRecursiveLock, WCPlayerPlaybackInfo, WCPlayerResourceLoader, WCPlayerReporter, WCPlayerLayerView, WCDownloadArgsWrap;
+@protocol WCCorePlayerDelegate;
+
+@interface WCCorePlayer : WCPlayerObject
+
+@property (retain, nonatomic) NSRecursiveLock *lock;
+@property (nonatomic) double seekingTime;
+@property (retain, nonatomic) WCPlayerPlayArgs *playerArgs;
+@property (retain, nonatomic) WCPlayerLayerView *displayView;
+@property (retain, nonatomic) WCPlayerPlaybackInfo *playbackInfo;
+@property (retain, nonatomic) WCDownloadArgsWrap *downloadArgsWrap;
+@property (retain, nonatomic) WCPlayerResourceLoader *resourceloader;
+@property (retain, nonatomic) WCPlayerReporter *reporter;
+@property (weak, nonatomic) id<WCCorePlayerDelegate> delegate;
+@property (copy, nonatomic) id /* block */ playbackCallback;
+@property (nonatomic) BOOL isPreparing;
+@property (nonatomic) BOOL isPrepared;
+@property (nonatomic) BOOL isBuffering;
+@property (nonatomic) BOOL isSeeking;
+@property (nonatomic) double seekTime;
+@property (nonatomic) long long seekCount;
+
+- (id)initWithPlayerArgs:(id)a0 playbackInfo:(id)a1 downloadArgsWrap:(id)a2 resourceloader:(id)a3;
+- (void)dealloc;
+- (double)duration;
+- (float)videoBitrate;
+- (float)audioBitrate;
+- (long long)videoDecodeFrmCnt;
+- (long long)videoRenderFrmCnt;
+- (double)currentTime;
+- (double)playablePos;
+- (void)setVolume:(double)a0;
+- (double)getVolume;
+- (struct CGSize { double x0; double x1; })presentationSize;
+- (struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })preferredTransform;
+- (float)playbackRate;
+- (void)setPlaybackRate:(float)a0;
+- (void)prepareAsync;
+- (void)start;
+- (void)stop;
+- (void)pause;
+- (void)releasePlayer;
+- (void)pauseBuffering;
+- (void)resumeBuffering;
+- (void)addPeriodicTimeObserver;
+- (void)removeTimeObserver;
+- (void)setVideoRenderInBackgroundEnable:(BOOL)a0;
+- (void)setAllowsExternalPlayback:(BOOL)a0;
+- (id)syncCaptureVideo;
+- (long long)videoFrameRate;
+- (void)forceResumePlayWhenHaveBuffer;
+- (struct __CVBuffer { } *)getCurrentPixelBuffer;
+- (id)getPlayerItemVideoOutput;
+- (void)captureVideoWithFinishBlock:(id /* block */)a0;
+- (void)switchResourceloaderDelegate:(id)a0 resourceUrl:(id)a1 resourceType:(long long)a2 swithMode:(long long)a3;
+- (void)setPlayerToMuted:(BOOL)a0;
+- (BOOL)muted;
+- (void)setPlayerLoop:(BOOL)a0;
+- (void)setPreferredPeakBitRate:(double)a0;
+- (void)setCallbackVideoFrameEnable:(BOOL)a0;
+- (id)getPlayerAsset;
+- (id)getPlayerItem;
+- (id)getAVPlayer;
+- (BOOL)isEnableCallbackVideoFrame;
+- (void)setPlayerContentMode:(long long)a0;
+- (void)seekNoCallbackToTime:(double)a0;
+- (void)seekToTime:(double)a0 isAccurate:(BOOL)a1;
+- (void)seekToTime:(double)a0 isAccurate:(BOOL)a1 isNoCallbackSeek:(BOOL)a2;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,10 @@
+@class HTSLiveUser;
+
+@interface HTSLiveMyInteractTabItem_VisitorItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *visitor;
+@property (nonatomic) BOOL hasVisitor;
+
++ (id)descriptor;
+
+@end

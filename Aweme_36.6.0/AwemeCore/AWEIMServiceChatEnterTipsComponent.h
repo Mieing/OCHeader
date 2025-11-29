@@ -1,0 +1,32 @@
+@class NSString;
+@protocol AWEIMMessageTabPopupViewInterface;
+
+@interface AWEIMServiceChatEnterTipsComponent : AWEIMComponentBase <AWEIMMessageTabPopupViewProtocol, DUXSheetDelegate>
+
+@property (nonatomic) BOOL isShowing;
+@property (weak, nonatomic) id<AWEIMMessageTabPopupViewInterface> messageTabPopupViewInterface;
+@property (copy, nonatomic) id /* block */ onClose;
+@property (copy) NSString *lastShowedUid;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)canCreateComponentWithContext:(id)a0;
+
+- (void)sheetDidDismiss:(id)a0;
+- (id)alertIDForEvent:(id)a0;
+- (long long)alertPriorityForEvent:(id)a0;
+- (BOOL)canShowWithContext:(id)a0;
+- (BOOL)shouldCancelAllOtherPendingAlertsWhenShowedWithContext:(id)a0;
+- (void)showWithCloseCallback:(id /* block */)a0;
+- (void)afterInitialComponentAllResolved:(id)a0;
+- (void)hostVC_viewDidAppear;
+- (BOOL)isDisplayingCurrentPopupView;
+- (BOOL)canLimitShowWithinTime;
+- (BOOL)canShowPopupView;
+- (void)showPopupView;
+- (void)reportServiceStatusToServer;
+- (void).cxx_destruct;
+
+@end

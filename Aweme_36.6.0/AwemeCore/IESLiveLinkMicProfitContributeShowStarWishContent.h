@@ -1,0 +1,8 @@
+@interface IESLiveLinkMicProfitContributeShowStarWishContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long targetScore;
+@property (nonatomic) long long curScore;
+
++ (id)descriptor;
+
+@end

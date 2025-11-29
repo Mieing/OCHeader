@@ -1,0 +1,3 @@
+@interface AWERTVInteractionInvokeOperationJoin : AWERTVInteractionInvokeOperation
+
+@end

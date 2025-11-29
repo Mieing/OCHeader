@@ -1,0 +1,76 @@
+@class AWEHPProfileSideBarViewController, AWEHPProfileSideBarControllerManager, AWEHPProfileSideBarNetworkManager, NSMutableDictionary, AWEHPProfileSideBarManagerContext, AWELeftSideBarModel, NSString;
+
+@interface AWEHPProfileSideBarManager : NSObject <AWEUserMessage, AWEHPProfileSideBarViewControllerDelegate, AWEHPProfileSideBarManagerProtocol>
+
+@property (retain, nonatomic) AWEHPProfileSideBarNetworkManager *networkManager;
+@property (retain, nonatomic) AWEHPProfileSideBarControllerManager *controllerManager;
+@property (retain, nonatomic) AWEHPProfileSideBarControllerManager *bottomControllerManager;
+@property (retain, nonatomic) AWEHPProfileSideBarViewController *viewController;
+@property (retain, nonatomic) AWELeftSideBarModel *model;
+@property (retain, nonatomic) AWEHPProfileSideBarControllerManager *secondaryControllerManager;
+@property (retain, nonatomic) NSMutableDictionary *secondaryControllerManagers;
+@property (nonatomic) BOOL hasRequest;
+@property (nonatomic) double openBeginTime;
+@property (nonatomic) double openEndTime;
+@property (nonatomic) BOOL userHasOpen;
+@property (nonatomic) BOOL vcIsAppear;
+@property (nonatomic) long long status;
+@property (nonatomic) long long themeStyle;
+@property (retain, nonatomic) AWEHPProfileSideBarManagerContext *context;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (long long)sideBarStatus;
+- (id)getHPSideBarControllerLoadModelWithOriginModel:(id)a0;
+- (void)setHPSideBarViewControllerManager:(id)a0 withBusinessId:(id)a1;
+- (void)updateHPSideBarContentViewWithBusinessId:(id)a0;
+- (void)recoverHPSideBarContentViewWithBusinessId:(id)a0;
+- (void)onHPProfileSideBarDidOpen;
+- (void)onHPProfileSideBarWillClose;
+- (void)onHPProfileSideBarDidClose;
+- (void)removeSubItemControllerUsingRecursiveWithBusinessId:(id)a0;
+- (id)getProfileSideBarTrackContext;
+- (void)p_resetModel;
+- (void)tryRequestSidebarAllModuleDataIfNeed;
+- (void)p_checkShouldBeginOpenPerfMonitorWithEnterMethod:(id)a0;
+- (void)p_checkShouldEndOpenPerfMonitor;
+- (void)p_resetHPProfileSideBar;
+- (void)p_checkShouldCancelOpenPerfMonitor;
+- (void)tryReloadThemeStyleIfNeed;
+- (void)reloadSideBarViewThemeChange:(long long)a0;
+- (void)reloadSideBarViewControllerWithModel:(id)a0;
+- (void)p_callAccountChangeSideBarReload;
+- (id)getCurrentLeftSideBarModel;
+- (id)checkAndFilterModel:(id)a0;
+- (void)requestSidebarAllModuleData;
+- (void)reloadSideBarViewControllerIfNeedWithModel:(id)a0 userId:(id)a1;
+- (void)tryCacheSideData:(id)a0 withUserID:(id)a1 withCurrentCacheHash:(id)a2 traceInfo:(id)a3 completion:(id /* block */)a4;
+- (id)checkAndFilterModuleModels:(id)a0 withBusinessIds:(id)a1;
+- (id)checkAndFilterItemModels:(id)a0 withBusinessIds:(id)a1;
+- (BOOL)currentUserHasOpenSideBar;
+- (void)themeReload:(id)a0;
+- (void)scrollViewDidScroll:(id)a0 scrollView:(id)a1;
+- (void)undertakeHostViewDidLoad;
+- (void)undertakeHostViewWillAppear;
+- (void)undertakeHostViewDidAppear;
+- (void)undertakeHostViewWillDisappear;
+- (void)undertakeHostViewDidDisappear;
+- (void)onHPProfileSideBarWillOpen:(id)a0;
+- (void)onHPProfileSideBarCancelOpen;
+- (void)onHPProfileSideBarCancelClose;
+- (id)getSideBarViewController;
+- (void)enterSecondaryControllerPageWithBusinessId:(id)a0;
+- (id)getSubItemControllerUsingRecursiveWithBusinessId:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewWillAppear:(id)a0;
+- (void)viewDidAppear:(id)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(id)a0;
+- (void)viewWillDisappear:(id)a0;
+
+@end

@@ -1,0 +1,6 @@
+@interface BDAResourceKit_iOS.AdWebViewResourceLoader : _TtCs12_SwiftObject
+
+- (void)didReceiveMemoryWarningNotification;
+- (void)didReceiveApplicationWillTerminalNotification;
+
+@end

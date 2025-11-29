@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface HTSLiveWantToListenSongRemovedContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *songIdArray;
+@property (readonly, nonatomic) unsigned long long songIdArray_Count;
+
++ (id)descriptor;
+
+@end

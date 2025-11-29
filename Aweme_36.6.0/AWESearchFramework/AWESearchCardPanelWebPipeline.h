@@ -1,0 +1,3 @@
+@interface AWESearchCardPanelWebPipeline : AWESearchCachalotWebPipeline
+
+@end

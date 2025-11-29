@@ -1,0 +1,72 @@
+@class AVAudioPlayer, NSString, IESSoloKTVScrollLyricView, IESLiveSoloKTVStartButton, IESLiveGCDTimer, IESLiveSoloKTVLoadingUtil, IESLiveSoloKTVPieceTitleView, IESLiveSoloKTVSingPieceSlider, IESLiveLyricViewConfig, IESLiveSoloKTVSingPieceModel;
+
+@interface IESLiveSoloKTVSingPieceController : UIViewController <AVAudioPlayerDelegate>
+
+@property (retain, nonatomic) IESLiveSoloKTVSingPieceModel *model;
+@property (retain, nonatomic) IESLiveSoloKTVPieceTitleView *titleView;
+@property (retain, nonatomic) IESSoloKTVScrollLyricView *lyricView;
+@property (retain, nonatomic) IESLiveLyricViewConfig *lyricConfig;
+@property (retain, nonatomic) IESLiveSoloKTVStartButton *startBtn;
+@property (retain, nonatomic) IESLiveSoloKTVLoadingUtil *loadingUtil;
+@property (retain, nonatomic) IESLiveSoloKTVSingPieceSlider *leftSlider;
+@property (retain, nonatomic) IESLiveSoloKTVSingPieceSlider *rightSlider;
+@property (retain, nonatomic) AVAudioPlayer *audioPlayer;
+@property (retain, nonatomic) IESLiveGCDTimer *durationTimer;
+@property (nonatomic) double beginYOffset;
+@property (nonatomic) double sliderHeight;
+@property (nonatomic) double scrollSpeed;
+@property (nonatomic) double topMargin;
+@property (retain, nonatomic) IESLiveGCDTimer *scrollTimer;
+@property (nonatomic) BOOL hasInitLyric;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } rowRange;
+@property (nonatomic) double startTime;
+@property (nonatomic) double endTime;
+@property (nonatomic) long long scaleRatio;
+@property (copy, nonatomic) id /* block */ onSingPieceResult;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)trackPageShow;
+- (void)closeTimer;
+- (void)scrollContentOffset:(BOOL)a0;
+- (void)trackPageClick:(id)a0;
+- (void)addSliderToLyricView;
+- (void)updateViewIfNeed;
+- (void)updateSelectData;
+- (void)seekAndPlay:(double)a0;
+- (void)initLyricViewWithHeight:(double)a0 completion:(id /* block */)a1;
+- (void)stopOrPause:(BOOL)a0;
+- (void)panAction:(id)a0 isLeft:(BOOL)a1;
+- (void)moveSlider:(BOOL)a0 y:(double)a1;
+- (void)animateAttachSliderAll;
+- (double)minMoveY:(BOOL)a0;
+- (double)maxMoveY:(BOOL)a0;
+- (void)scrollSlider:(BOOL)a0 isLeft:(BOOL)a1;
+- (void)animateAttachSlider:(BOOL)a0;
+- (void)updateLyricSelected;
+- (struct _NSRange { unsigned long long x0; unsigned long long x1; })getSelectdRowRange;
+- (struct _NSRange { unsigned long long x0; unsigned long long x1; })getSelectdRowRangeOrigin;
+- (void)startDurationTimer;
+- (void)closeDurationTimer;
+- (void)scrollScrollViewIfNeed:(BOOL)a0;
+- (void)keepLeftOverRight:(BOOL)a0;
+- (void)requestStartKTV;
+- (void)leftPanAction:(id)a0;
+- (void)rightPanAction:(id)a0;
+- (void)updateSelectDataOrigin;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (long long)preferredStatusBarStyle;
+- (void)startTimer:(BOOL)a0;
+- (void)addObserver;
+- (void)didBecomeActive:(id)a0;
+- (void)willResignActive:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)updateTimeLabel;
+
+@end

@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface IESLiveRemoveStorageParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *type;
+
+@end

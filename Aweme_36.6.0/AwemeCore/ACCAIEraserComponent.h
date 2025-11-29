@@ -1,0 +1,74 @@
+@class NSString, UIImage, AWEStudioEditAIEraserFeatureConfig, UIImageView, UIButton, ACCTrimCropZoomTransitionDelegate, NSMutableArray, UIViewController;
+@protocol ACCAIEditConflictManagerProtocol, ACCEditViewContainer, ACCSequenceEditServiceProtocol, ACCEditServiceProtocol, AWEStudioAIEraseFeaturePublicAPI, ACCEditSpecialEffectServiceProtocol, ACCCTRServiceProtocol, ACCRealLivePhotoService, AWEAIEraserTrasnsitionAnimeProtocol;
+
+@interface ACCAIEraserComponent : ACCFeatureComponent <ACCSequenceEditServicePlayerSubscriber, ACCTrimCropZoomTransitionContextProvider, ACCAIEditConflictManagerSubscription, ACCFeatureComponentReloadableProtocol, ACCRealLivePhotoServiceSubscriber>
+
+@property (retain, nonatomic) AWEStudioEditAIEraserFeatureConfig *featureConfig;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCCTRServiceProtocol> ctrService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (weak, nonatomic) id<ACCRealLivePhotoService> realLivePhotoService;
+@property (weak, nonatomic) id<ACCAIEditConflictManagerProtocol> AIConflictsManager;
+@property (weak, nonatomic) id<AWEStudioAIEraseFeaturePublicAPI> fpAIErasePublicAPI;
+@property (retain, nonatomic) ACCTrimCropZoomTransitionDelegate *transitionDelegate;
+@property (retain, nonatomic) UIViewController<AWEAIEraserTrasnsitionAnimeProtocol> *aiEraserViewController;
+@property (retain, nonatomic) UIButton *aiEraserButton;
+@property (retain, nonatomic) UIImageView *itemNewHintView;
+@property (retain, nonatomic) UIImage *originImageBeforeErase;
+@property (retain, nonatomic) NSMutableArray *originImageArrayBeforeErase;
+@property (retain, nonatomic) NSString *toastText;
+@property (nonatomic) long long lastSelectedTab;
+@property (nonatomic) long long lastSelectedSliderValue;
+@property (nonatomic) BOOL disableByConflicts;
+@property (nonatomic) double originScale;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })targetViewFrame;
+- (void)componentWillAppear;
+- (void)componentDidAppear;
+- (void)componentWillDisappear;
+- (void)componentDidDisappear;
+- (void)sequenceEditService:(id)a0 didTransferToIndex:(long long)a1 editMode:(unsigned long long)a2 isAutoTransfer:(BOOL)a3;
+- (void)AIEditorConflictHeadChange;
+- (void)livePhotoDidChangeMode:(unsigned long long)a0;
+- (void)sequenceEditService:(id)a0 changedWithAddedIndexSet:(id)a1 deletedIndexSet:(id)a2;
+- (void)clearAllAIEditorConflicts;
+- (BOOL)needTrimZoomTranstionIn;
+- (id)barItem;
+- (id)zoomTransitionStartView;
+- (id)getImageSlotWithProject:(id)a0;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (unsigned long long)preferredLoadPhase;
+- (void)bindViewModel;
+- (void)bindServices:(id)a0;
+- (void)componentDidReload;
+- (void)componentWillReload;
+- (BOOL)shouldSupportAIEraser;
+- (BOOL)eraseFPEnabled;
+- (void)addBarItem;
+- (void)observerLivePhotoSignalAndRefreshToolbar;
+- (void)updateOriginImage;
+- (void)setUpOriginImage;
+- (float)getMainSlotOriginScale;
+- (id)newFlagBarItemTitleView;
+- (void)aiEraserClicked;
+- (void)updateItemView;
+- (BOOL)needShowAIEraseBarItem;
+- (id)getCroppedImageWithPublishModel:(id)a0 image:(id)a1;
+- (struct CGSize { double x0; double x1; })renderSizeWithImageSize:(struct CGSize { double x0; double x1; })a0 canvasSize:(struct CGSize { double x0; double x1; })a1;
+- (void)replaceMainTrackAssetWithImage:(id)a0;
+- (void)removeNewHintView;
+- (void)resetSequenceMediaContainerView;
+- (id)cropImage:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 rotation:(double)a2 flipped:(BOOL)a3;
+- (BOOL)needTrimZoomTranstionOut;
+- (void).cxx_destruct;
+- (id)bottomView;
+- (void)willTransitionIn;
+
+@end

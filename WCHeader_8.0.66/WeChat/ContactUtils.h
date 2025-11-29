@@ -1,0 +1,53 @@
+@interface ContactUtils : NSObject
+
++ (id)getContactWithUserName:(id)a0;
++ (BOOL)isOpenMultiSelectContactsStyleSwitch;
++ (id)getContactsSelectOpenIMContactsStr:(BOOL)a0;
++ (void)resetCellDisableStateWithCell:(id)a0 isEnabled:(BOOL)a1;
++ (void)checkAccoutDeleteSessionAndContact:(id)a0;
++ (id)generateSystemMessage:(id)a0 fromUserName:(id)a1;
++ (BOOL)checkMsgContentLogicIsNeedCached;
++ (id)getDicOpenImChatRoomAddGroupMemberReprot:(id)a0 chatRoomContact:(id)a1 targetContact:(id)a2;
++ (id)safeGetAllSessionArray;
++ (BOOL)checkDeleteNotRegularContactNumberMoreThanThreshold;
++ (unsigned int)getDeleteNotRegularContactNumberThreshold;
++ (BOOL)checkNeedDoVerifyUserPreCheck;
++ (unsigned int)getSessionForwardRecentMaxCount;
++ (unsigned int)getSessionForwardMostoftenMaxCount;
++ (unsigned int)getSessionForwardMaxCount;
++ (BOOL)getProfileRecommendOpenSwitch;
++ (BOOL)getProfileRecommendSystemMsgOpenSwitch;
++ (unsigned int)getProfileRecommendEffectiveMaxLimitedTime;
++ (unsigned int)getProfileRecommendCanGetMaxLimitedTime;
++ (unsigned int)getProfileRecommendTextMessageMinCount;
++ (unsigned int)getProfileRecommendCanExposureMaxCount;
++ (BOOL)getQRCodeLocalGenOpenSwitch;
++ (BOOL)getMultiSelectMsgBatchSelectedOpenSwitch;
++ (BOOL)getPersonalQRCodeNewDesignOpenSwitch;
++ (BOOL)getSendVerifyAddImageOpenSwitch;
++ (BOOL)getChatRoomProfileOptimizeOpenSwitch;
++ (unsigned long long)preloadSendVerifyAddImagesSize;
++ (unsigned long long)cleanCacheSendVerifyAddImagesToClean;
++ (BOOL)getCreateGroupNewStypeOpenSwitch;
++ (BOOL)getDeleteContactKeepChatHistoryOpenSwitch;
++ (BOOL)getCanDeleteContactInNewSynOpenSwitch;
++ (BOOL)getProfileShowPermissioInFriendInfoOpenSwitch;
++ (BOOL)getChatRoomQRCodeAccessOpenSwitch:(id)a0;
++ (unsigned int)getJoinChatRoomByQRCodeMemberSizeLimit;
++ (BOOL)getContactTagOptimizeOpenSwitch;
++ (BOOL)getContactTagDBOptimizeOpenSwitch;
++ (BOOL)getContactTagRecommendOpenSwitch;
++ (BOOL)getContactTagRecentlyUsedOpenSwitch;
++ (BOOL)getCreateGroupStrongValidationOpenSwitch;
++ (BOOL)getContactShareCardOpenSwitch;
++ (BOOL)getChatRoomNotificationCloseOptimizationOpenSwitch;
++ (BOOL)getSettingAddMeWayOtherOpenSwitch;
++ (BOOL)getTagSearchOptimizeOpenSwitch;
++ (BOOL)getSendVerifyMsgBusinessCardImageC2COpenSwitch;
++ (BOOL)getForbidStrangerContactAddSceneOpenSwitch;
++ (BOOL)getYuanbaoSearchForwardImproveOpenSwitch;
++ (BOOL)getForceFoundUpdateStrangerHeadImageOpenSwitch;
++ (BOOL)getSyncUseDeleteContactOplogOpenSwitch;
++ (BOOL)getAsyncUseDeleteContactOplogOpenSwitch;
+
+@end

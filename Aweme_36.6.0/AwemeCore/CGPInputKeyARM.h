@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CGPInputKeyARM : GPBMessage
+
+@property (nonatomic) int keyCode;
+@property (nonatomic) int action;
+@property (copy, nonatomic) NSString *value;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,71 @@
+@class NSTimer, NSString, AWEPublishFlowModel, NSMutableDictionary, NSDictionary, AWEPublishInfiniTask, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface AWEPublishTaskProgressExceptionMonitor : NSObject <AWEPublishInfiniTaskFlowNotificationMessageServiceSubscriber, AWEPublishTaskProgressExceptionMonitorServiceProtocol>
+
+@property (weak, nonatomic) AWEPublishInfiniTask *task;
+@property (weak, nonatomic) AWEPublishFlowModel *flowModel;
+@property (retain, nonatomic) NSTimer *timer;
+@property (nonatomic) struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } dataLock;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *threadTrackUploadQueue;
+@property (readonly, nonatomic) BOOL enable;
+@property (readonly, nonatomic) double trackInterval;
+@property (readonly, nonatomic) NSDictionary *taskRetryIntervalConfigs;
+@property (readonly, nonatomic) long long taskRetryIntervalIncreaseRate;
+@property (readonly, nonatomic) long long maxRetryCount;
+@property (readonly, nonatomic) long long uploadLogSampling;
+@property (readonly, nonatomic) double taskRetryDurationIncreasePerVideoDurationSec;
+@property (readonly, nonatomic) double taskRetryMaxVideoDurationLimit;
+@property (nonatomic) BOOL isRunning;
+@property (nonatomic) long long currentRetryCount;
+@property (retain, nonatomic) NSMutableArray *currentMonitorStageTypes;
+@property (retain, nonatomic) NSMutableArray *runningStages;
+@property (retain, nonatomic) NSMutableArray *finishStages;
+@property (nonatomic) long long taskNoProgressResponseDuration;
+@property (nonatomic) long long taskNoProgressIncreaseDuration;
+@property (nonatomic) long long taskNoProgressIncreaseDurationTotal;
+@property (nonatomic) long long currentRetryInterval;
+@property (retain, nonatomic) NSMutableDictionary *lastReceivedProgressMap;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)appWillResignActiveNotification;
+- (void)appDidBecomeActiveNotification;
+- (void)bindServices:(id)a0;
+- (void)stage:(id)a0 didChangeStatus:(long long)a1;
+- (void)stage:(id)a0 didUpdateProgress:(double)a1;
+- (void)onPublishFailed;
+- (void)runDataSync:(id /* block */)a0;
+- (void)onStageFinish:(id)a0;
+- (void)onStageRunning:(id)a0;
+- (void)onStageFaild:(id)a0;
+- (void)onStagePendding:(id)a0;
+- (void)resetProgressResponseTime;
+- (void)addMonitorStage:(id)a0;
+- (void)addPublishFlowTagName:(id)a0;
+- (void)removeMonitorStage:(id)a0;
+- (void)onPublishFinish;
+- (void)onPublishStart;
+- (void)startBaseTimer;
+- (void)reloadCurrentRetryInterval;
+- (void)removePublishFlowTag;
+- (BOOL)shouldMonitorStage:(id)a0;
+- (void)handleRetryTask;
+- (void)trackOnProgressNoIncrease;
+- (BOOL)isPrePublish;
+- (void)trackOnTaskDidRetryWithStage:(id)a0;
+- (id)commTrackInfo;
+- (void)uploadProgressNoIncreaseErrorToSlardar:(id)a0;
+- (BOOL)enableUploadToSlardar;
+- (void)dataLock:(id /* block */)a0;
+- (void)runSerialUploadTimeSafe:(id /* block */)a0;
+- (void).cxx_destruct;
+- (void)pause;
+- (void)execute;
+- (void)stop;
+- (void)invalidateTimer;
+- (void)setupConfig;
+
+@end

@@ -1,0 +1,18 @@
+@class NSString, GPBEnumArray;
+
+@interface PaidLiveInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int paidLiveCreateRight;
+@property (nonatomic) BOOL replayRight;
+@property (nonatomic) BOOL hasSign;
+@property (retain, nonatomic) GPBEnumArray *paidLiveCreateRightsArray;
+@property (readonly, nonatomic) unsigned long long paidLiveCreateRightsArray_Count;
+@property (nonatomic) BOOL needRecall;
+@property (copy, nonatomic) NSString *recallText;
+@property (nonatomic) long long recallType;
+@property (nonatomic) BOOL skipTicketList;
+@property (nonatomic) BOOL hasUpcomingTicket;
+
++ (id)descriptor;
+
+@end

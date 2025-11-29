@@ -1,0 +1,78 @@
+@class NSString, AWEIMSecondaryCommentDataController, AWEAwemeModel, NSMutableArray, UITableView;
+
+@interface AWEIMSecondaryCommentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AWEIMSecondaryCommentCellDelegate, AWEUserMessage, AWERouterViewControllerProtocol, AWEIMSecondaryCommentViewControllerProtocol>
+
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) AWEIMSecondaryCommentDataController *dataController;
+@property (retain, nonatomic) NSMutableArray *dataSource;
+@property (copy, nonatomic) NSString *noticeID;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) BOOL isCommentMultiItemPolymeric;
+@property (nonatomic) BOOL isCommentAIClonePolymeric;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (void)aweui_emptyPagePrimaryButtonTapped:(id)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })aweui_emptyPageEdgeInsets;
+- (void)didFinishBlockUser:(id)a0 status:(long long)a1;
+- (void)didFinishUnBlockUser:(id)a0 status:(long long)a1;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)backBtnClicked;
+- (void)p_loadMoreData;
+- (void)p_endRefreshing;
+- (void)p_refreshDataWithInitial:(BOOL)a0;
+- (void)p_setupDataSource;
+- (void)trackAndTransToProfileWithUser:(id)a0 enterMethod:(id)a1 enterPosition:(id)a2;
+- (void)clickHeaderViewCloseTapped;
+- (void)updateUserStatus:(id)a0 status:(long long)a1;
+- (void)secondaryCommentCellNameLabelTapped:(id)a0 comment:(id)a1;
+- (void)secondaryCommentCellAvatarTapped:(id)a0 comment:(id)a1;
+- (void)secondaryCommentCellCoverTapped:(id)a0 comment:(id)a1;
+- (void)secondaryCommentCellContentReplyUserTapped:(id)a0 comment:(id)a1;
+- (void)secondaryCommentCellContentStickerTapped:(id)a0 comment:(id)a1;
+- (void)secondaryCommentCellContentImageListTapped:(id)a0 comment:(id)a1;
+- (void)secondaryCommentCellCommentContentTapped:(id)a0 comment:(id)a1;
+- (id /* block */)aweNotice_secondaryNoticeNoMoreNoticeActionBlock:(id)a0 dataSource:(id)a1 noticeID:(id)a2 commentModel:(id)a3;
+- (void)aweNotice_showPopWindowViewWithTitle:(id)a0 actionTitle:(id)a1 noticeID:(id)a2 commentModel:(id)a3 completion:(id /* block */)a4;
+- (id)aweNotice_trackerCommentParamsWithAction:(id)a0 noticeID:(id)a1 commentModel:(id)a2;
+- (id)aweNotice_popWindowSheetView:(id)a0 actionTitle:(id)a1;
+- (id)aweNotice_secondaryNoticeCommentProductRowActionsWithTableView:(id)a0 indexPath:(id)a1 dataSource:(id)a2 originDataSource:(id)a3 classType:(Class)a4 noticeID:(id)a5;
+- (void)showTopPromptIfNeed;
+- (void)p_trackerInnerMessageWithAction:(id)a0 commentModel:(id)a1;
+- (id)swipeActionsWithClassType:(Class)a0 indexPath:(id)a1 tableView:(id)a2;
+- (void)p_clickCellWithModel:(id)a0 isFromCover:(BOOL)a1;
+- (id /* block */)userBlockActionCompletionWithCell:(id)a0 comment:(id)a1;
+- (void)showPopWindowWithTitle:(id)a0 actionTitle:(id)a1 model:(id)a2 completion:(id /* block */)a3;
+- (id)getSecondaryNegativeCommentBaseParams:(id)a0;
+- (id)commentRelationTagWithComment:(id)a0;
+- (id /* block */)deleteCommentActionCompletionWithCell:(id)a0 comment:(id)a1;
+- (BOOL)showCommentDeleteAlertIfNeed:(BOOL)a0 comment:(id)a1;
+- (BOOL)canShowTopPrompt;
+- (BOOL)isTheSameDay:(id)a0 lastDate:(id)a1;
+- (void)secondaryNegativeCommentCellUserBlockTapped:(id)a0 comment:(id)a1;
+- (void)secondaryNegativeCommentCellDislikeTapped:(id)a0 comment:(id)a1;
+- (void)secondaryNegativeCommentCellDeleteCommentTapped:(id)a0 comment:(id)a1;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (id)headerView;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 willBeginEditingRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didEndEditingRowAtIndexPath:(id)a1;
+
+@end

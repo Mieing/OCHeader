@@ -1,0 +1,76 @@
+@class CJPayHalfVerifyPasswordV2ViewController, NSString, NSDictionary, CJPayOrderConfirmResponse, CJPayEvent, CJPayHalfVerifyPasswordBaseViewController, CJPayVerifyPasswordViewModel;
+
+@interface CJPayVerifyItemPassword : CJPayVerifyItem
+
+@property (nonatomic) BOOL hasInputSuccess;
+@property (nonatomic) BOOL isInputPassword;
+@property (copy, nonatomic) NSString *recogFaceSource;
+@property (copy, nonatomic) NSString *lastPWD;
+@property (nonatomic) long long verifyTimes;
+@property (retain, nonatomic) CJPayOrderConfirmResponse *confirmResponse;
+@property (retain, nonatomic) CJPayEvent *event;
+@property (copy, nonatomic) NSDictionary *voucherSwell;
+@property (retain, nonatomic) CJPayHalfVerifyPasswordBaseViewController *verifyPasscodeVC;
+@property (retain, nonatomic) CJPayVerifyPasswordViewModel *viewModel;
+@property (retain, nonatomic) CJPayHalfVerifyPasswordV2ViewController *verifyPasscodeVCv2;
+
+- (void)event:(id)a0 params:(id)a1;
+- (id)checkType;
+- (void)showLoading:(BOOL)a0;
+- (void)handleVerifyResponse:(id)a0;
+- (BOOL)p_lynxRetain:(id)a0;
+- (id)getLatestCacheData;
+- (void)requestVerifyWithCreateOrderResponse:(id)a0 event:(id)a1;
+- (BOOL)shouldHandleVerifyResponse:(id)a0;
+- (id)checkTypeName;
+- (BOOL)shouldShowRetainVC;
+- (void)p_voucherSwell:(id)a0;
+- (BOOL)p_isBioLynxPopUpNeedDegrade;
+- (BOOL)p_lynxPopup:(id)a0;
+- (void)p_lynxPopAction:(unsigned long long)a0 popupSource:(id)a1 data:(id)a2;
+- (void)p_requestVerifyItem;
+- (void)p_verifyAuthWithVerifyInfo:(id)a0;
+- (void)p_setShowKeyBoard:(id)a0;
+- (void)forgetPasswordBtnTapped;
+- (void)buildPwdParamWithCompletion:(id /* block */)a0;
+- (id)buildPwdParam;
+- (void)p_showBioPaymentVerifyPage:(id)a0 extEventData:(id)a1;
+- (void)p_showSmsVerifyPage:(id)a0;
+- (void)p_fromDypayHomePageCancelRetain;
+- (id)p_guideTypeKey;
+- (id)p_buildPwdParamWith:(id)a0;
+- (void)p_showPasswordViewController;
+- (id)p_getGuideChoose;
+- (id)p_getGuideType;
+- (id)p_getIsFingerprintDefault;
+- (void)p_handleSwitchPasswordEvent:(id)a0;
+- (void)cancelFromPasswordLock;
+- (void)createVerifyPasscodeVC;
+- (void)p_switchOtherVerifyWithResponse:(id)a0;
+- (id)p_getFaceRecogScene;
+- (void)p_verifyByRecogFaceWithVerifyInfo:(id)a0;
+- (void)p_confirmPayWithAuthTokenDict:(id)a0;
+- (void)p_continueToPay:(id)a0;
+- (id)p_getRecogFaceSourceWithpopupSource:(id)a0 popupEventType:(unsigned long long)a1;
+- (void)p_handleBioVerifyLocked;
+- (id)p_buildEventSwitchToBio;
+- (BOOL)p_isNeedShowOpenBioGuide;
+- (BOOL)p_isNeedShowSkipPwdGuide;
+- (void)p_availableShowKeyBoard:(id)a0;
+- (void)p_faceVerifyVoucherSwell:(id)a0;
+- (BOOL)usePasswordVCWithChooseMethod;
+- (void)createVerifyPasscodeVCWithChooseMethod;
+- (id)createPassCodeViewModel;
+- (BOOL)isNeedShowOpenBioGuide;
+- (id)createVerifyPasswordViewModelWithChooseMethod;
+- (id)getPasswordVC;
+- (void)p_showKeybord;
+- (void)p_voucherSwellAttrExpansion:(id)a0;
+- (void)p_oldGotoForgetPwdVCFromVC:(id)a0;
+- (void).cxx_destruct;
+- (void)receiveEvent:(id)a0;
+- (void)closeAction;
+- (id)init;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,10 @@
+@class ShowChatResponse_ResponseData;
+
+@interface ShowChatResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ShowChatResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

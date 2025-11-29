@@ -1,0 +1,16 @@
+@class AWESearchPlayerInteractorBottomContainerComponentModel, AWESearchPlayerInteractorComponentConfigModel, AWESearchPlayerInteractorTitleContainerComponentModel, AWESearchPlayerInteractorTransformContainerComponentModel, AWESearchPlayerInteractorLeftBottomContainerComponentModel, AWESearchPlayerInteractorRightBottomContainerComponentModel, AWESearchPlayerInteractorLeftTopContainerComponentModel;
+
+@interface AWESearchPlayerInteractorComponentModel : AWESearchComponentBasicModel
+
+@property (retain, nonatomic) AWESearchPlayerInteractorLeftTopContainerComponentModel *leftTopContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorLeftBottomContainerComponentModel *leftBottomContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorRightBottomContainerComponentModel *rightBottomContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorBottomContainerComponentModel *bottomContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorTitleContainerComponentModel *titleContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorTransformContainerComponentModel *transformContainerModel;
+@property (retain, nonatomic) AWESearchPlayerInteractorComponentConfigModel *playerConfig;
+
+- (void).cxx_destruct;
+- (id)initWithDictionary:(id)a0;
+
+@end

@@ -1,0 +1,74 @@
+@class BDSCURLPreParseConfig, NSDictionary, BDSCLocalNetworkAlertConfig, BDSCPreSearchConfig, BDSCProtocolPriorityConfig, BDSCConnectErrorConfig, BDSCCastProxyConfig, NSString, BDSCResearchCardConfig, BDSCClarityLimitConfig, BDSCSearchDeviceShowStrategy, BDSCRedirectURLConfig, NSArray;
+
+@interface BDSCABTestInfo : NSObject
+
+@property (retain, nonatomic) BDSCProtocolPriorityConfig *protocolPriorityConfig;
+@property (retain, nonatomic) BDSCClarityLimitConfig *clarityLimitConfig;
+@property (retain, nonatomic) BDSCPreSearchConfig *preSearchConfig;
+@property (retain, nonatomic) BDSCRedirectURLConfig *redirectURLConfig;
+@property (retain, nonatomic) BDSCLocalNetworkAlertConfig *localNetworkAlertConfig;
+@property (retain, nonatomic) BDSCConnectErrorConfig *connectErrorConfig;
+@property (retain, nonatomic) BDSCSearchDeviceShowStrategy *deviceShowConfig;
+@property (nonatomic) BOOL enableDeviceOffline;
+@property (nonatomic) BOOL enableBDLinkOffline;
+@property (nonatomic) BOOL enableDLNAOffline;
+@property (nonatomic) BOOL enableLelinkOffline;
+@property (nonatomic) BOOL disableSearchLoadingWhenCache;
+@property (nonatomic) long long checkAliveInterval;
+@property (nonatomic) BOOL useNewFeedbackUrl;
+@property (nonatomic) BOOL enableAirPlay;
+@property (nonatomic) long long autoConnectType;
+@property (nonatomic) double statusQueryInterval;
+@property (nonatomic) BOOL enableSwitchVideoBeforePlayOptimization;
+@property (nonatomic) long long beforePlayGuideType;
+@property (nonatomic) BOOL enableRetryCheckConnect;
+@property (retain, nonatomic) BDSCResearchCardConfig *researchCardConfig;
+@property (nonatomic) BOOL enableSwitchDeviceOptimization;
+@property (nonatomic) BOOL enableDeviceChooseTag;
+@property (nonatomic) BOOL enableSaveResolution;
+@property (nonatomic) BOOL closeDLNAStopAction;
+@property (nonatomic) BOOL enableTrackPlayOnSwitchDevice;
+@property (nonatomic) BOOL enableCastControlUIV2;
+@property (nonatomic) long long bdleTransmissionStrategy;
+@property (nonatomic) BOOL enableBDLEAutoResolution;
+@property (nonatomic) BOOL enableBDLEMessageBusV2;
+@property (copy, nonatomic) NSDictionary *bdleMessageBusParams;
+@property (nonatomic) BOOL enableBDLEStatusSyncWithDLNA;
+@property (copy, nonatomic) NSArray *stopActionManufacturerList;
+@property (retain, nonatomic) BDSCURLPreParseConfig *urlPreParseConfig;
+@property (nonatomic) BOOL enableGetLVUrlFromFeed;
+@property (retain, nonatomic) BDSCRedirectURLConfig *checkStatusConfig;
+@property (nonatomic) BOOL enableAirPlayMirrorForPlaylet;
+@property (nonatomic) BOOL enableAirPlayWidely;
+@property (retain, nonatomic) NSArray *airPlayMirrorScenes;
+@property (retain, nonatomic) NSArray *airPlayDisplayScenes;
+@property (nonatomic) BOOL airPlayMirrorPaidLiveEnabled;
+@property (nonatomic) BOOL enableLocalCast;
+@property (nonatomic) BOOL openLocalCast;
+@property (copy, nonatomic) NSString *searchRecommendTitle;
+@property (nonatomic) BOOL enableTopSpeedCast;
+@property (copy, nonatomic) NSDictionary *topSpeedCastConfig;
+@property (nonatomic) BOOL optimizeSearchPanel;
+@property (retain, nonatomic) BDSCCastProxyConfig *castProxyConfig;
+@property (nonatomic) BOOL enableLiveRoomPauseStreaming;
+@property (nonatomic) BOOL castproxyKeepAliveEnable;
+@property (nonatomic) BOOL castproxyResumeOptimizationEnable;
+@property (nonatomic) BOOL audioSessionOptimized;
+@property (nonatomic) BOOL playControlOptimized;
+@property (nonatomic) BOOL useNewPendant;
+@property (copy, nonatomic) NSArray *castSceneIds;
+@property (nonatomic) BOOL enableCastState;
+@property (nonatomic) BOOL enableCastRetryCast;
+@property (nonatomic) double autoHidePendantInterval;
+@property (nonatomic) double pendantShrinkAnimationDuration;
+@property (nonatomic) double pendantShrinkAnimationDelayDuration;
+@property (copy, nonatomic) NSDictionary *pendantScenes;
+
+- (id)abValueForKey:(id)a0;
+- (id)abValueForKey:(id)a0 exposure:(BOOL)a1;
+- (BOOL)isValidNumberValue:(id)a0;
+- (void).cxx_destruct;
+- (void)exposure;
+- (void)setupConfig;
+
+@end

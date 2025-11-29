@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESGCPPBGameCPVideoInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *videoCoverURL;
+@property (copy, nonatomic) NSString *videoPlayURL;
+@property (nonatomic) int rotation;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,95 @@
+@class CMessageWrap, NSString, NSArray, NSMutableDictionary, NSMutableString, MMFinderLiveRedPacketMessage, NSMutableArray, HistoryMsgsInfo, CContact, WCFinderClubSystemMessage, RevokeWrap;
+
+@interface CExtendInfoOfSysNewXmlForBiz : NSObject <IMessageWrapForBizExt, IMsgExtendOperation, ISysNewXmlMsgExtendOperation, NSCopying> {
+    BOOL m_hasParsedForDisplay;
+}
+
+@property (retain, nonatomic) NSMutableString *m_showContent;
+@property (retain, nonatomic) NSMutableArray *m_arrMembers;
+@property (retain, nonatomic) NSString *m_qrCode;
+@property (retain, nonatomic) NSString *m_url;
+@property (retain, nonatomic) NSMutableString *m_sessionShowContent;
+@property (retain, nonatomic) NSString *m_newXmlType;
+@property (nonatomic) long long m_msgInnerType;
+@property (retain, nonatomic) NSString *m_inviterName;
+@property (retain, nonatomic) NSString *m_reportExtraData;
+@property (retain, nonatomic) CContact *m_inviterContact;
+@property (retain, nonatomic) NSMutableArray *m_arrInviteeMembers;
+@property (retain, nonatomic) NSMutableDictionary *m_dicQuitRoomInfo;
+@property (retain, nonatomic) NSString *m_nsInviteTickets;
+@property (nonatomic) BOOL m_bNewInv;
+@property (nonatomic) BOOL m_bNewApprove;
+@property (nonatomic) BOOL m_bHasApprove;
+@property (nonatomic) BOOL m_bNeedReloadSubView;
+@property (retain, nonatomic) NSString *m_fromChatUserName;
+@property (retain, nonatomic) NSString *m_nsInviteReason;
+@property (retain, nonatomic) NSString *m_nsRevokeContent;
+@property (nonatomic) unsigned long long m_revokedReferSvrid;
+@property (retain, nonatomic) NSString *m_revokedAtUserList;
+@property (nonatomic) unsigned int m_revokedMsgInnerType;
+@property (nonatomic) BOOL m_bCanFold;
+@property (nonatomic) BOOL m_bFolded;
+@property (nonatomic) BOOL m_bIsUpdatableMsgSubscribeMsg;
+@property (nonatomic) unsigned int m_updatableMsgType;
+@property (retain, nonatomic) CMessageWrap *m_historyRecordMsg;
+@property (retain, nonatomic) HistoryMsgsInfo *m_historyMsgsInfo;
+@property (nonatomic) unsigned long long m_ui64MassMsgSvrID;
+@property (nonatomic) BOOL m_bHadAddNewHistoryMsg;
+@property (retain, nonatomic) MMFinderLiveRedPacketMessage *m_liveRedPacketMessage;
+@property (retain, nonatomic) WCFinderClubSystemMessage *m_finderClubMessage;
+@property (retain, nonatomic) NSArray *m_mergeArrReaderWaps;
+@property (retain, nonatomic) RevokeWrap *revokeWrap;
+@property (nonatomic) unsigned int m_inviterJoinScene;
+@property (retain, nonatomic) NSString *m_inviterQRCode;
+@property (nonatomic) unsigned int m_inviterQRCodeExpiredTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) CMessageWrap *m_refMessageWrap;
+
++ (void)CreateExtendInfoWithTypeForBiz:(unsigned int)a0 retExtendInfo:(id *)a1;
+
+- (id)init;
+- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (BOOL)isQRCodeScene:(id)a0;
+- (BOOL)isInvitationScene:(id)a0;
+- (BOOL)isAdminExplainScene:(id)a0;
+- (BOOL)isSucceedContactScene:(id)a0;
+- (BOOL)isNewSucceedContactScene:(id)a0;
+- (BOOL)isWebviewScene:(id)a0;
+- (BOOL)isInviterScene:(id)a0;
+- (BOOL)isApproveScene:(id)a0;
+- (BOOL)isOpenIMApproveScene:(id)a0;
+- (BOOL)isApproveToInviterScene:(id)a0;
+- (BOOL)isProfileScene:(id)a0;
+- (BOOL)isJumpChatScene:(id)a0;
+- (BOOL)isEditRevokeContentScene:(id)a0;
+- (BOOL)isNewRevokeContentScene:(id)a0;
+- (BOOL)isChatroomMuteExptScene:(id)a0;
+- (BOOL)isChatroomHistoryRecordScene:(id)a0;
+- (BOOL)isCreateFinderClubAcccountScene:(id)a0;
+- (BOOL)isTransferFinderClubAcccountScene:(id)a0;
+- (BOOL)isFinderClubFeedScene:(id)a0;
+- (BOOL)isFinderClubProfileScene:(id)a0;
+- (void)parseTextNode:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (void)parseLinkNode:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)parseFirstChild:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)parseNextSibling:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (void)ChangeForDisplayAnyhow;
+- (void)ChangeForDisplay;
+- (id)GetDisplayContent;
+- (id)GetDisplaySessionContent;
+- (void)parseCommonNewXmlMsg:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (void)parseTemplateNewXmlMsg:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (void)parseTemplateContentNode:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)getXMLNodeWithName:(const char *)a0 fromNode:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a1 useOwnMsgType:(unsigned long long)a2;
+- (void)requestFinderClubInfoIfNeeded:(BOOL)a0;
+- (id)parseTextNodeSucceedContact:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0 isNewSucceed:(BOOL)a1;
+- (id)getResultWithRegularInString:(id)a0 WithPatterns:(id)a1;
+- (void)parseAAUnpayNotifyNewXmlMsg;
+- (void)parseHistoryRecord;
+- (void).cxx_destruct;
+
+@end

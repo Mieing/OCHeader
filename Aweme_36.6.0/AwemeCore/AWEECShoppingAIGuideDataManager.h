@@ -1,0 +1,86 @@
+@class AWEECShoppingGuideMessageSyncModel, AWEECShoppingAIGuideConnectionManager, NSString, AWEECShoppingGuideSUGModel, AWEECShoppingAIGuideMessageGroupViewModel, AWEECShoppingAIGuideDatabase, NSMutableArray, NSDateFormatter, AWEECShoppingAIGuideContext, NSDictionary, AWEECShoppingGuideMessageSourceModel;
+@protocol AWEECShoppingAIGuideDataManagerDelegate;
+
+@interface AWEECShoppingAIGuideDataManager : NSObject <AWEECShoppingAIGuideConnectionManagerDelegate>
+
+@property (retain, nonatomic) AWEECShoppingAIGuideDatabase *dataBase;
+@property (nonatomic) unsigned long long historyCount;
+@property (retain, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *waitingModel;
+@property (retain, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *stopModel;
+@property (retain, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *welcomeModel;
+@property (retain, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *bottomSugModel;
+@property (copy, nonatomic) NSString *nextWord;
+@property (retain, nonatomic) NSDateFormatter *dateFormatter;
+@property (nonatomic) BOOL shouldCreateSession;
+@property (retain, nonatomic) AWEECShoppingAIGuideMessageGroupViewModel *lastQueryViewModel;
+@property (nonatomic) long long expireInterval;
+@property (retain, nonatomic) AWEECShoppingAIGuideContext *context;
+@property (weak, nonatomic) id<AWEECShoppingAIGuideDataManagerDelegate> delegate;
+@property (nonatomic) BOOL isFirstEnter;
+@property (nonatomic) BOOL didDataSetup;
+@property (nonatomic) BOOL isWaiting;
+@property (nonatomic) BOOL isReceiving;
+@property (nonatomic) BOOL didError;
+@property (nonatomic) BOOL isOffline;
+@property (copy, nonatomic) NSString *sessionIdString;
+@property (nonatomic) BOOL historyIsLoaded;
+@property (nonatomic) BOOL welcomeInfoIsAppend;
+@property (nonatomic) BOOL welcomeInfoIsStore;
+@property (nonatomic) BOOL isAddingBottomSug;
+@property (retain, nonatomic) NSMutableArray *internalMessageViewModels;
+@property (retain, nonatomic) AWEECShoppingAIGuideConnectionManager *connectionManager;
+@property (copy, nonatomic) NSString *lastQuery;
+@property (copy, nonatomic) NSDictionary *lastQueryExtra;
+@property (copy, nonatomic) NSString *lastRawQuery;
+@property (retain, nonatomic) AWEECShoppingGuideSUGModel *lastEnterSUG;
+@property (retain, nonatomic) AWEECShoppingGuideMessageSourceModel *currentSourceModel;
+@property (retain, nonatomic) AWEECShoppingGuideMessageSyncModel *currentSyncModel;
+@property (nonatomic) double currentQueryTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)geckoResourceLocalPathWithPath:(id)a0;
+
+- (void)prepareGeckoResource;
+- (void)retryLastQuery;
+- (void)chatFlowDidFailWithError:(id)a0;
+- (void)chatFlowDidResponseWithModel:(id)a0;
+- (void)chatFlowDidEndResponse;
+- (id)messageViewModels;
+- (void)updateMessageWithModel:(id)a0 store:(BOOL)a1;
+- (void)loadHistoryDataWithCompletion:(id /* block */)a0;
+- (BOOL)createSessionIfNeeded:(BOOL)a0;
+- (BOOL)historyNotExpired;
+- (void)appendMessageWithModel:(id)a0 store:(BOOL)a1;
+- (void)loadPageDynamicDataWithScene:(unsigned long long)a0;
+- (void)appendWelcomeInfoIfNeed:(BOOL)a0;
+- (void)requestBizDynamicStreamData;
+- (void)loadOldWelcomeInfoWithEnvType:(unsigned long long)a0;
+- (void)loadWelcomeInfoWithScene:(unsigned long long)a0;
+- (void)dealOldWelcomeModel:(id)a0;
+- (void)removeHintMessage;
+- (void)storeWelcomeModel;
+- (void)updateMessageWithModel:(id)a0 store:(BOOL)a1 completion:(id /* block */)a2;
+- (void)dataStartReceive;
+- (void)updateReceiveStatus;
+- (void)dealRespCardsData:(id)a0 withOperationType:(id)a1;
+- (void)dealRespTopFloatCardData:(id)a0 withOperationType:(id)a1;
+- (void)setupDataWithCompletion:(id /* block */)a0;
+- (void)sendQuery:(id)a0 queryExtra:(id)a1 withRawQuery:(id)a2 enterSUGModel:(id)a3 storeQuery:(BOOL)a4;
+- (void)didUpdateMsg;
+- (void)tryAddBottomSugModel;
+- (void)forceCreateNewSession;
+- (void)loadOldHistoryDataWithCompletion:(id /* block */)a0;
+- (void)updateDynamicMessageWithModel:(id)a0 store:(BOOL)a1;
+- (void)cleanDataWithBlock:(id /* block */)a0 completion:(id /* block */)a1;
+- (void)sendQuery:(id)a0 queryExtra:(id)a1 withRawQuery:(id)a2 enterSUGModel:(id)a3;
+- (void)requestPageConfigWithExtraInfo:(id)a0 localDataCompletion:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)endUpdatingWithType:(unsigned long long)a0 error:(id)a1;
+- (void)saveCurrentStatusWithDynamicModel:(id)a0;
+- (void).cxx_destruct;
+- (unsigned long long)messageCount;
+- (id)initWithContext:(id)a0 delegate:(id)a1;
+
+@end

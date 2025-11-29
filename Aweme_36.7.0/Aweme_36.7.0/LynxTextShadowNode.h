@@ -1,0 +1,88 @@
+@class LynxTextRenderer, LynxTextIndent, NSString, NSMutableAttributedString, LineSpacingAdaptation;
+
+@interface LynxTextShadowNode : LynxBaseTextShadowNode <LynxCustomMeasureDelegate>
+
+@property (retain, nonatomic) LynxTextRenderer *textRenderer;
+@property (retain, nonatomic) LineSpacingAdaptation *lineSpacingAdaptation;
+@property (nonatomic) unsigned long long textOverflow;
+@property (nonatomic) long long overflow;
+@property (nonatomic) unsigned long long whiteSpace;
+@property (nonatomic) long long maxLineNum;
+@property (nonatomic) long long maxTextLength;
+@property (nonatomic) long long textVerticalAlign;
+@property (retain, nonatomic) NSMutableAttributedString *attrString;
+@property (nonatomic) BOOL enableTailColorConvert;
+@property (nonatomic) BOOL hyphen;
+@property (nonatomic) double maxAscender;
+@property (nonatomic) double maxDescender;
+@property (nonatomic) double maxLineAscender;
+@property (nonatomic) double maxLineDescender;
+@property (nonatomic) double maxTruncationLineAscender;
+@property (nonatomic) double maxTruncationLineDescender;
+@property (nonatomic) double maxXHeight;
+@property (nonatomic) BOOL isCalcVerticalAlignValue;
+@property (retain, nonatomic) LynxTextIndent *textIndent;
+@property (nonatomic) long long textSingleLineVerticalAlign;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)lynxLazyLoad;
++ (id)__lynx_prop_config__131632;
++ (id)__lynx_prop_config__132033;
++ (id)__lynx_prop_config__133434;
++ (id)__lynx_prop_config__134835;
++ (id)__lynx_prop_config__135836;
++ (id)__lynx_prop_config__136837;
++ (id)__lynx_prop_config__137738;
++ (id)__lynx_prop_config__138539;
++ (id)__lynx_prop_config__139440;
++ (id)__lynx_prop_config__140941;
++ (id)__lynx_prop_config__142642;
++ (id)__lynx_prop_config__143543;
++ (id)__lynx_prop_config__144444;
++ (id)__lynx_prop_config__145445;
++ (id)__lynx_prop_config__146846;
+
+- (void)setBackgroundColor:(id)a0 requestReset:(BOOL)a1;
+- (void)setOverflowX:(unsigned long long)a0 requestReset:(BOOL)a1;
+- (void)setOverflowY:(unsigned long long)a0 requestReset:(BOOL)a1;
+- (void)setOverflow:(unsigned long long)a0 requestReset:(BOOL)a1;
+- (id)initWithSign:(long long)a0 tagName:(id)a1;
+- (void)adoptNativeLayoutNode:(long long)a0;
+- (void)layoutDidStart;
+- (struct CGSize { double x0; double x1; })measureNode:(id)a0 withWidth:(double)a1 widthMode:(long long)a2 height:(double)a3 heightMode:(long long)a4;
+- (struct MeasureResult { struct CGSize { double x0; double x1; } x0; double x1; })measureWithMeasureParam:(id)a0 MeasureContext:(id)a1;
+- (void)alignWithAlignParam:(id)a0 AlignContext:(id)a1;
+- (id)getExtraBundle;
+- (BOOL)needsEventSet;
+- (void)determineLineSpacing:(id)a0;
+- (void)updateNonVirtualOffspringLayout;
+- (BOOL)enableTextNonContiguousLayout;
+- (id)generateAttributedString:(id)a0 withTextMaxLength:(long long)a1 withDirection:(long long)a2;
+- (void)dispatchLayoutEvent;
+- (void)layoutDidUpdate;
+- (void)calculateLineAscenderAndDescenderForAttributeStr:(id)a0 MeasureParam:(id)a1 MeasureContext:(id)a2;
+- (void)updateLineHeightWithMaxLineAscender:(float)a0 maxLineDescender:(float)a1;
+- (void)calculateLineSpaceForAttributedStr:(id)a0;
+- (void)calculateTruncationLineAscenderAndDescenderMeasureParam:(id)a0 MeasureContext:(id)a1;
+- (void)alignOneLine:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a0 lineRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 layoutManager:(id)a2 textContainer:(id)a3 alignContext:(id)a4 nativeNodeSignSet:(id)a5;
+- (void)modifyLineHeightForStorage:(id)a0;
+- (void)addVerticalAlignCenterInline:(id)a0;
+- (void)updateHiddenAttachmentFrame:(id)a0 signSet:(id)a1 attachments:(id)a2;
+- (void)setMaxeLine:(long long)a0 requestReset:(BOOL)a1;
+- (void)setTextMaxLength:(long long)a0 requestReset:(BOOL)a1;
+- (void)setWhiteSpace:(unsigned long long)a0 requestReset:(BOOL)a1;
+- (void)setTextOverflow:(unsigned long long)a0 requestReset:(BOOL)a1;
+- (void)setTextVerticalAlign:(id)a0 requestReset:(BOOL)a1;
+- (void)setVerticalTextAlign:(id)a0 requestReset:(BOOL)a1;
+- (void)setEnableTailColorConvert:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)setHyphens:(int)a0 requestReset:(BOOL)a1;
+- (void)setTextIndent:(id)a0 requestReset:(BOOL)a1;
+- (void)setXAutoFontSize:(id)a0 requestReset:(BOOL)a1;
+- (void)setXAutoFontSizePresetSizes:(id)a0 requestReset:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)setVerticalAlign:(id)a0;
+
+@end

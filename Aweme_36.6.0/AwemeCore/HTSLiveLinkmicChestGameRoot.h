@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicChestGameRoot : GPBRootObject
+
+@end

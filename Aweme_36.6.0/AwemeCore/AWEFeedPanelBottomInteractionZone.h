@@ -1,0 +1,76 @@
+@class YYLabel, UIViewController, AWEAwemeModel, AWEPageContext, UIView, NSObject, UIButton;
+@protocol AWEPlayInteractionContextProtocol, AWEPlayInteractionFavoriteElementViewModelProtocol, AWEFeedVideoButtonProtocol, AWECommentListViewControllerProtocol, AFDFeedVideoButtonProtocol, AWEPlayInteractionCommentElementViewModelProtocol, AWEPlayInteractionShareElementViewModelProtocol, AWECommentInputViewManagerProtocol, AWEPlayInteractionViewControllerProtocol, AWEAwemeFeedVideoButtonProtocol, AWEPlayInteractionLikeElementViewModelProtocol;
+
+@interface AWEFeedPanelBottomInteractionZone : UIView
+
+@property (retain, nonatomic) UIButton<AWEFeedVideoButtonProtocol, AWEAwemeFeedVideoButtonProtocol, AFDFeedVideoButtonProtocol> *commentButton;
+@property (retain, nonatomic) UIButton<AWEFeedVideoButtonProtocol, AWEAwemeFeedVideoButtonProtocol, AFDFeedVideoButtonProtocol> *likeButton;
+@property (retain, nonatomic) UIButton<AWEFeedVideoButtonProtocol, AWEAwemeFeedVideoButtonProtocol, AFDFeedVideoButtonProtocol> *favoriteButton;
+@property (retain, nonatomic) UIButton<AWEFeedVideoButtonProtocol, AWEAwemeFeedVideoButtonProtocol, AFDFeedVideoButtonProtocol> *shareButton;
+@property (retain, nonatomic) UIView *buttonContainerView;
+@property (retain, nonatomic) UIView *inputContainerView;
+@property (retain, nonatomic) YYLabel *inputGuideLabel;
+@property (retain, nonatomic) UIView *backgroundMaskView;
+@property (retain, nonatomic) id<AWEPlayInteractionLikeElementViewModelProtocol> likeViewModel;
+@property (retain, nonatomic) NSObject<AWEPlayInteractionFavoriteElementViewModelProtocol> *favViewModel;
+@property (retain, nonatomic) id<AWEPlayInteractionShareElementViewModelProtocol> shareViewModel;
+@property (retain, nonatomic) id<AWEPlayInteractionCommentElementViewModelProtocol> commentViewModel;
+@property (retain, nonatomic) UIViewController<AWECommentListViewControllerProtocol> *commentVC;
+@property (retain, nonatomic) id<AWECommentInputViewManagerProtocol> commentInputViewManager;
+@property (weak, nonatomic) AWEPageContext<AWEPlayInteractionContextProtocol> *context;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (weak, nonatomic) UIViewController<AWEPlayInteractionViewControllerProtocol> *container;
+@property (retain, nonatomic) UIView *discoverEntranceView;
+@property (nonatomic) BOOL isDCStyle;
+
+- (void)updateCommentCount;
+- (void)onThemeChanged;
+- (BOOL)alertIfNotValidForAction:(long long)a0;
+- (BOOL)isCommentConditionExperiment;
+- (void)bindEvent;
+- (void)onAwemeFavoriteNotification:(id)a0;
+- (void)updateShareCount;
+- (void)announceAccessibility:(id)a0;
+- (void)onCommentAddNotification:(id)a0;
+- (id)themeColorTransformedFrom:(id)a0;
+- (void)addMaskView;
+- (id)initWithContext:(id)a0 isDCStyle:(BOOL)a1;
+- (void)setupContainer:(id)a0 panelController:(id)a1;
+- (void)onCommentTotalCountNotification:(id)a0;
+- (void)setupDiscoverEntranceView;
+- (void)onSharePanelDidDismiss:(id)a0;
+- (void)onCommentDeleteNotification:(id)a0;
+- (BOOL)enableShowDiscoverEntranceView;
+- (void)setInteractActions;
+- (void)setupButtonContainerView;
+- (void)setupInputGuideView;
+- (double)getButtonContanierWidth;
+- (double)getButtonContainerLeftOffset;
+- (id)getLikeStr;
+- (void)makeConstraintInsideButton:(id)a0;
+- (void)updateLikeButtonUI;
+- (id)getCommentStr;
+- (id)getFavoriteStr;
+- (void)updateFavoriteButtonUI;
+- (id)getShareStr;
+- (double)getCommentInputViewHeight;
+- (double)getCommentInpurContainerViewRightOffset;
+- (double)getCommentInputContainerViewWidth;
+- (id)replaceStringForBigFontMode:(id)a0;
+- (void)dismissMaskView;
+- (void)doCollectedAction;
+- (void)doShareAction;
+- (void)doDiggAction;
+- (void)doCommentAction;
+- (id)composeAdExtraDataFromModel:(id)a0;
+- (BOOL)changeCommentEnterSource;
+- (void)setCommmentVCBlock;
+- (void)clickCommentView;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+- (void)dealloc;
+- (void)setupUI;
+- (void)addObservers;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEEmptyPageSectionInnerCell : UICollectionViewCell
+
+@end

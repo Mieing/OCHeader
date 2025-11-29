@@ -1,0 +1,12 @@
+@interface TIMXPBNGetConversationApplyRequestBody : GPBMessage
+
+@property (nonatomic) long long userId;
+@property (nonatomic) BOOL hasUserId;
+@property (nonatomic) long long convShortId;
+@property (nonatomic) BOOL hasConvShortId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+
++ (id)descriptor;
+
+@end

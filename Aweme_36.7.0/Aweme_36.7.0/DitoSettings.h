@@ -1,0 +1,56 @@
+@interface DitoSettings : NSObject
+
++ (BOOL)enablePadAdapter;
++ (BOOL)enableCubeLogOptParams;
++ (BOOL)enableLogChunkSize;
++ (BOOL)enableDitoPageStayTime;
++ (BOOL)enableDitoRefreshNode;
++ (BOOL)enableHMDCustomContext;
++ (BOOL)enableSinkTargetSubviewID;
++ (BOOL)enableTempoPerfAnalysis;
++ (BOOL)enableCubeSafeUpdate;
++ (BOOL)sendDitoBodyScrollDy;
++ (BOOL)enableHalfContainerOffsetFloatRound;
++ (id)ditoGeneralRequestPathWhiteList;
++ (BOOL)enablePrefetchGecko;
++ (id)prefetchGeckoArr;
++ (id)prefetchGeckoArrWithPOIGurdReleaseAccessKey;
++ (id)sideBarIdSelectorArr;
++ (BOOL)enableLynxLoadStrategyTrueForever;
++ (BOOL)enableHeadlessLynxCard;
++ (id)goodsDetailPrimaryCardNodeTag;
++ (id)goodsDetailSecondaryCardNodeTag;
++ (BOOL)enableDitoLynxCardPartialUpdate;
++ (BOOL)enableDitoImmediateUpdate;
++ (BOOL)enableFMPLogOptParamsV2;
++ (BOOL)enableFMPLogAddCachePageScene;
++ (BOOL)tryRepeatAnchorPageSwitch;
++ (long long)tryRepeatAnchorPageStableCount;
++ (int)tryRepeatAnchorPageStableDetectInterval;
++ (BOOL)enableBodyContainerFirstNodeTopMargin;
++ (id)ditoNewArcNodeTagArr;
++ (BOOL)fixScrollConflict;
++ (BOOL)enableChildInterceptScroll;
++ (BOOL)allowJsbControlDitoScroll;
++ (BOOL)enableStickSubViewVariableHeight;
++ (BOOL)enableDitoCommonParams;
++ (BOOL)enableDitoQualityParams;
++ (BOOL)fixMarketingAtmosphereOcclusion;
++ (BOOL)enableDequeueOutsideCellForRow;
++ (BOOL)enableDitoAutoBlurIme;
++ (BOOL)fixCrashHalfContainerManager;
++ (BOOL)enableDitoBtmExtension;
++ (BOOL)fixFavoriteSubPageRegister;
++ (BOOL)fixFullScreenPanClose;
++ (id)loadBodyFirstPageSceneArr;
++ (BOOL)fixFullContainerManagerBounce;
++ (BOOL)fixFullContainerManagerScrollViewBounce;
++ (BOOL)enableHalfContainerTypeUpdate;
++ (BOOL)enableFMPLogOptParams;
++ (BOOL)enableDitoNestedScrollExtensionV2;
++ (BOOL)enableHalfContainerGestureControlWhenClose;
++ (BOOL)enableStickFloatZeroChange;
++ (BOOL)fixElevatorMissDitoSubView;
++ (id)settings;
+
+@end

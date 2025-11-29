@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface ItemSmartEmojiStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL hasContent;
+
++ (id)descriptor;
+
+@end

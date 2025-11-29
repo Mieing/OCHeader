@@ -1,0 +1,3 @@
+@interface BDARVSifWrapperView : UIView
+
+@end

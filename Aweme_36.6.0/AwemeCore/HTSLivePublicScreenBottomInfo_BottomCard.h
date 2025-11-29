@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLivePublicScreenBottomInfo_BottomCard : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) long long priority;
+@property (nonatomic) long long duration;
+@property (copy, nonatomic) NSString *bizParams;
+
++ (id)descriptor;
+
+@end

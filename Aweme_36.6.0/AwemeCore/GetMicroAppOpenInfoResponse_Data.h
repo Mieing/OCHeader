@@ -1,0 +1,10 @@
+@class PresetCardList;
+
+@interface GetMicroAppOpenInfoResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PresetCardList *presetCardList;
+@property (nonatomic) BOOL hasPresetCardList;
+
++ (id)descriptor;
+
+@end

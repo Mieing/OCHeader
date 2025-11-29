@@ -1,0 +1,3 @@
+@interface DUXBaseTextField : UITextField
+
+@end

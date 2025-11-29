@@ -1,0 +1,3 @@
+@interface KtvCheckOrderSongApiRoot : GPBRootObject
+
+@end

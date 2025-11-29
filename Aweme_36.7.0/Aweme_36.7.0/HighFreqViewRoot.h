@@ -1,0 +1,3 @@
+@interface HighFreqViewRoot : GPBRootObject
+
+@end

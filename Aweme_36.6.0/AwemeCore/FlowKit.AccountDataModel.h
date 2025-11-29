@@ -1,0 +1,6 @@
+@interface FlowKit.AccountDataModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ base_account_info;
+    void /* unknown type, empty encoding */ connect_account_info;
+}
+
+@end

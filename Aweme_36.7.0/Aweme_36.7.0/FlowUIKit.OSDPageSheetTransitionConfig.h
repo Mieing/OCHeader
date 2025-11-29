@@ -1,0 +1,15 @@
+@interface FlowUIKit.OSDPageSheetTransitionConfig : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ transitionHeight;
+    void /* unknown type, empty encoding */ transitionToDismissPercent;
+    void /* unknown type, empty encoding */ presentedViewTopEdge;
+    void /* unknown type, empty encoding */ indictorTopEdge;
+    void /* unknown type, empty encoding */ shouldShowMaskLayer;
+    void /* unknown type, empty encoding */ maskBackgroundColor;
+    void /* unknown type, empty encoding */ contentBackgroundColor;
+    void /* unknown type, empty encoding */ duration;
+    void /* unknown type, empty encoding */ dismissAnimatorControlPoints;
+    void /* unknown type, empty encoding */ recognizeOtherGestureDelegate;
+    void /* unknown type, empty encoding */ useFullSizeView;
+}
+
+@end

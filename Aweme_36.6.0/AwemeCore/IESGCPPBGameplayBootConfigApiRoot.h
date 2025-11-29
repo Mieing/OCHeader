@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplayBootConfigApiRoot : GPBRootObject
+
+@end

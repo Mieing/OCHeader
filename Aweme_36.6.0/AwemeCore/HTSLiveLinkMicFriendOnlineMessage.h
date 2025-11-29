@@ -1,0 +1,13 @@
+@class HTSLiveCommon, HTSLiveUser;
+
+@interface HTSLiveLinkMicFriendOnlineMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveUser *friend_p;
+@property (nonatomic) BOOL hasFriend_p;
+@property (nonatomic) BOOL inRoom;
+
++ (id)descriptor;
+
+@end

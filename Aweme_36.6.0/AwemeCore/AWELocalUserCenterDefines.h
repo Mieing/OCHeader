@@ -1,0 +1,3 @@
+@interface AWELocalUserCenterDefines : NSObject
+
+@end

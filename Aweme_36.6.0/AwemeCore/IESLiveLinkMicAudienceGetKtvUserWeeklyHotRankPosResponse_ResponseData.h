@@ -1,0 +1,8 @@
+@interface IESLiveLinkMicAudienceGetKtvUserWeeklyHotRankPosResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int rank;
+@property (nonatomic) long long hot;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,72 @@
+@class ACCInfoStickerCreateModelGenerator, NSString, NSMutableSet, NSNumber, ACCAEInfoStickerViewModel;
+@protocol ACCStudioPerfUtilServiceProtocol, ACCAdvanceEditStickerServiceProtocol, AEKPreviewEditor, AEKInfoStickerEditor, ACCAEDraftService, ACCStickerPanelServiceProtocol, DVEEditingContextProtocol, AEKVideoEditor, AEKRuntimeStickerEditor, DVETrackEventProtocol, DVEPlayerServiceProtocol, ACCAEMenuRouteProtocol;
+
+@interface ACCAEInfoStickerComponent : ACCAdvanceEditComponent <ACCStickerPannelObserver, ACCAEInfoStickerDelegate, AEKDiffChangeSubscriber, ACCAdvanceEditDataRepositorySubscriber>
+
+@property (weak, nonatomic) id<ACCAEDraftService> draftService;
+@property (weak, nonatomic) id<ACCStickerPanelServiceProtocol> stickerPanelService;
+@property (weak, nonatomic) id<ACCAdvanceEditStickerServiceProtocol> stickerService;
+@property (weak, nonatomic) id<DVEEditingContextProtocol> editingContext;
+@property (weak, nonatomic) id<ACCStudioPerfUtilServiceProtocol> perfService;
+@property (weak, nonatomic) id<DVETrackEventProtocol> trackEvent;
+@property (weak, nonatomic) id<DVEPlayerServiceProtocol> playerService;
+@property (weak, nonatomic) id<ACCAEMenuRouteProtocol> menuRouteService;
+@property (retain, nonatomic) ACCAEInfoStickerViewModel *viewModel;
+@property (retain, nonatomic) ACCInfoStickerCreateModelGenerator *createModelGenerator;
+@property (nonatomic) BOOL isFirst;
+@property (nonatomic) BOOL hasDidAppear;
+@property (nonatomic) BOOL isCopying;
+@property (retain, nonatomic) NSNumber *pinchValue;
+@property (retain, nonatomic) NSNumber *hasRotateValue;
+@property (retain, nonatomic) NSMutableSet *infoStickerEffectIds;
+@property (weak, nonatomic) id<AEKInfoStickerEditor> infoStickerEditor;
+@property (weak, nonatomic) id<AEKVideoEditor> videoEditor;
+@property (weak, nonatomic) id<AEKPreviewEditor> preview;
+@property (weak, nonatomic) id<AEKRuntimeStickerEditor> runtimeSticker;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentDidAppear;
+- (void)diffResults:(id)a0 fromSource:(unsigned long long)a1;
+- (BOOL)isImageAlbumEdit;
+- (void)componentDidMount;
+- (id)serviceBinding;
+- (void)syncDataOnWillTransitionIn;
+- (void)syncDataOnSaveWithPublishModel:(id)a0;
+- (void)syncDataForLiveDraftWithPublishModel:(id)a0;
+- (void)selectedSegmentDidChangeWithNew:(id)a0 old:(id)a1;
+- (void)addInfoStickerWithContext:(id)a0;
+- (void)replaceInfoStickerWithContext:(id)a0 willDeleteStickerId:(id)a1;
+- (BOOL)handleSelectSticker:(id)a0 fromTab:(id)a1 willSelectHandle:(id /* block */)a2 dismissPanelHandle:(id /* block */)a3;
+- (unsigned long long)stickerPriority;
+- (BOOL)handleThirdPartySelectSticker:(id)a0 fromTab:(id)a1 willSelectHandle:(id /* block */)a2 dismissPanelHandle:(id /* block */)a3;
+- (BOOL)handleReplaceStickerWithContext:(id)a0 willSelectHandle:(id /* block */)a1 dismissPanelHandle:(id /* block */)a2;
+- (void)registerMenuActions;
+- (void)menuActionCopy:(id)a0;
+- (void)menuActionDelete:(id)a0;
+- (void)recoverSticker;
+- (void)syncDataWithPublishModel:(id)a0 isLiveDraft:(BOOL)a1;
+- (void)menuActionFlip:(id)a0;
+- (void)menuActionApplyToCurrent:(id)a0;
+- (void)menuActionApplyToAll:(id)a0;
+- (id)selectedStickerTrack;
+- (void)copyWithStickerId:(id)a0 extraParams:(id)a1;
+- (void)nleDoneWithActionName:(id)a0;
+- (void)trackWithStickerId:(id)a0 event:(id)a1 extraParams:(id)a2;
+- (id)addInfoStickerWithCreateSticker:(id)a0 willReplacedStickerId:(id)a1 doneActionName:(id)a2;
+- (id)stickerConfigWithStickerData:(id)a0;
+- (void)deselectSticker:(id)a0;
+- (void)selectSticker:(id)a0;
+- (id)processURSWithPath:(id)a0;
+- (void)trackInfoStickerApplyWithParams:(id)a0;
+- (void)addInfoStickerWithContext:(id)a0 completion:(id /* block */)a1;
+- (void)addInfoStickerWithContext:(id)a0 willReplacedStickerId:(id)a1 completion:(id /* block */)a2;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })newStickerStartTime;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })validDurationWithStart:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)didSelectStickerTrack:(id)a0;
+- (void)didDeselectStickerTrack:(id)a0;
+- (void).cxx_destruct;
+
+@end

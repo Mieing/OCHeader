@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface CGPInputTouchArray : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *touchesArray;
+@property (readonly, nonatomic) unsigned long long touchesArray_Count;
+
++ (id)descriptor;
+
+@end

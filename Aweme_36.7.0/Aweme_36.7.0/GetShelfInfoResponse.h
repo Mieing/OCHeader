@@ -1,0 +1,10 @@
+@class GetShelfInfoResponse_Data;
+
+@interface GetShelfInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetShelfInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

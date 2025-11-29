@@ -1,0 +1,22 @@
+@class NSString;
+
+@interface TIMXPBNClientACKRequestBody : GPBMessage
+
+@property (nonatomic) long long startTimeStamp;
+@property (nonatomic) BOOL hasStartTimeStamp;
+@property (nonatomic) int cmd;
+@property (nonatomic) BOOL hasCmd;
+@property (nonatomic) int networkType;
+@property (nonatomic) BOOL hasNetworkType;
+@property (copy, nonatomic) NSString *logid;
+@property (nonatomic) BOOL hasLogid;
+@property (nonatomic) long long clientTimeStamp;
+@property (nonatomic) BOOL hasClientTimeStamp;
+@property (nonatomic) long long serverMessageId;
+@property (nonatomic) BOOL hasServerMessageId;
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+
++ (id)descriptor;
+
+@end

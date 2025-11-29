@@ -1,0 +1,70 @@
+@class UITextView, NSString, IESLiveEmojiTextParser, IESLiveCommentContext, IESLiveCommentWidgetInputHelper;
+@protocol IESLiveCommentWidgetInputDelegate;
+
+@interface IESLiveCommentWidgetInputView : UIView <UITextViewDelegate>
+
+@property (retain, nonatomic) IESLiveCommentContext *commentContext;
+@property (retain, nonatomic) UITextView *commentTextView;
+@property (retain, nonatomic) UITextView *commentCopyTextView;
+@property (nonatomic) long long characterInputLimit;
+@property (retain, nonatomic) UITextView *placeHolderLabel;
+@property (nonatomic) long long activityEmojiInputLimit;
+@property (retain, nonatomic) IESLiveEmojiTextParser *textParser;
+@property (copy, nonatomic) NSString *currentText;
+@property (nonatomic) double currentHeight;
+@property (nonatomic) BOOL isInTempReplaceText;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } tempReplaceTextRange;
+@property (nonatomic, getter=isKeyboardActivated) BOOL keyboardActivated;
+@property (nonatomic) BOOL realMentionEnable;
+@property (retain, nonatomic) IESLiveCommentWidgetInputHelper *inputHelper;
+@property (weak, nonatomic) id<IESLiveCommentWidgetInputDelegate> delegate;
+@property (nonatomic) double lastTextChangeTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)disableLocalizations;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 diContext:(id)a1;
+- (id)realPlaceholderText;
+- (id)initWithCommentContext:(id)a0 text:(id)a1 placeHolder:(id)a2 withChararcterLimit:(long long)a3 activityEmojiCount:(long long)a4 mentionEnable:(BOOL)a5 diContext:(id)a6;
+- (void)activateKeyboardMode:(BOOL)a0;
+- (void)refreshPlaceHolderStr:(id)a0;
+- (void)insertText:(id)a0 source:(id)a1;
+- (void)startInsertTextForTemp;
+- (void)insertForTempText:(id)a0;
+- (void)endInsertTextForTemp;
+- (void)insertFusionEmojiWithModel:(id)a0;
+- (void)addAtUser:(id)a0;
+- (BOOL)canAddAtUser:(id)a0;
+- (void)removeAtUser:(id)a0;
+- (id)initWithCommentContext:(id)a0 diContext:(id)a1;
+- (void)editDidRemoveUsers:(id)a0;
+- (void)addTextViewObserver;
+- (void)setupTextParser;
+- (void)setupPlaceHoderLabel;
+- (double)getCurrentTextViewLengthWithTexView:(id)a0 cutTextWhenBeyondLimit:(BOOL)a1;
+- (struct _NSRange { unsigned long long x0; unsigned long long x1; })scanMentionParamStringRange;
+- (void)updateHeightIfNeeded;
+- (BOOL)checkTextViewIfReachMaxLengthWithInsertText:(id)a0 replaceLength:(long long)a1;
+- (BOOL)textView:(id)a0 checkActivityEmojiIfReachMaxCountWithInsertText:(id)a1 replaceRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2;
+- (BOOL)updateLowPcuGuideChatWithTextView:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 withText:(id)a2 source:(id)a3;
+- (void)trackInputBoxQuickInteractionShowWithType:(id)a0 clickArea:(id)a1;
+- (void)replaceWithText:(id)a0 withRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (struct _NSRange { unsigned long long x0; unsigned long long x1; })currentCursorRange;
+- (double)calculatePlaceHolderHeightChangeWithWidth:(double)a0;
+- (double)calculateTextViewHeightChangeWithWidth:(double)a0;
+- (void)replaceWithText:(id)a0;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })sizeThatFits:(struct CGSize { double x0; double x1; })a0;
+- (void)dealloc;
+- (BOOL)textViewShouldBeginEditing:(id)a0;
+- (void)textViewDidEndEditing:(id)a0;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)setupViews;
+- (void)backspace;
+- (void)setupTextView;
+- (void)setCharacterLimit:(long long)a0;
+
+@end

@@ -1,0 +1,10 @@
+@class PaidLiveTicketDataResponse_PaidLiveTicketDataData;
+
+@interface PaidLiveTicketDataResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PaidLiveTicketDataResponse_PaidLiveTicketDataData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface UrgeGiftListResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *giftsArray;
+@property (readonly, nonatomic) unsigned long long giftsArray_Count;
+
++ (id)descriptor;
+
+@end

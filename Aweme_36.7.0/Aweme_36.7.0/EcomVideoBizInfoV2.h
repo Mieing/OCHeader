@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface EcomVideoBizInfoV2 : GPBMessage
+
+@property (nonatomic) int ecomVideoType;
+@property (nonatomic) BOOL hasEcomVideoType;
+@property (copy, nonatomic) NSString *ecomVideoProductIds;
+@property (nonatomic) BOOL hasEcomVideoProductIds;
+@property (copy, nonatomic) NSString *ecomWindowProductIds;
+@property (nonatomic) BOOL hasEcomWindowProductIds;
+
++ (id)descriptor;
+
+@end

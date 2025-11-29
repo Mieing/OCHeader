@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceGetKtvUserWeeklyHotRankPosResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceGetKtvUserWeeklyHotRankPosResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetKtvUserWeeklyHotRankPosResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,72 @@
+@class NSString, NSArray, UIImageView, NSDictionary, AWEPOIInfoModel, YYLabel, UIButton, UICollectionView, UILabel, NSIndexPath;
+@protocol AWENewPublishPOITableViewCellDelegate;
+
+@interface AWENewPublishPOITableViewCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (retain, nonatomic) AWEPOIInfoModel *poiInfo;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (copy, nonatomic) NSArray *poiInfoModels;
+@property (retain, nonatomic) NSIndexPath *latestIndexPathForSelected;
+@property (retain, nonatomic) YYLabel *operationActivityLabel;
+@property (nonatomic) BOOL didSatisfyPoiHintStrengthenCondition;
+@property (nonatomic) BOOL hasShowOperationActivityOnce;
+@property (nonatomic) BOOL hasSetOperationActivity;
+@property (retain, nonatomic) UILabel *rightDetailTextLabel;
+@property (copy, nonatomic) NSDictionary *poiListInfo;
+@property (copy, nonatomic) NSString *currentCityCode;
+@property (copy, nonatomic) NSString *recordSugShowString;
+@property (copy, nonatomic) NSString *creationId;
+@property (nonatomic) BOOL isLivePlayBack;
+@property (retain, nonatomic) UIImageView *gradientView;
+@property (retain, nonatomic) UIImageView *loadingView;
+@property (nonatomic) long long accessState;
+@property (readonly, nonatomic) unsigned long long sugListCount;
+@property (readonly, nonatomic) double sugViewHeight;
+@property (retain, nonatomic) UIImageView *iconImageView;
+@property (retain, nonatomic) UIButton *accessButton;
+@property (retain, nonatomic) UILabel *activityLabel;
+@property (weak, nonatomic) id<AWENewPublishPOITableViewCellDelegate> delegate;
+@property (nonatomic) BOOL showRecommendView;
+@property (nonatomic) BOOL disableShowRecommendViewAlways;
+@property (nonatomic) BOOL showActivityView;
+@property (retain, nonatomic) UICollectionView *poiRecommendCollectionView;
+@property (nonatomic, getter=isDisable) BOOL disable;
+@property (retain, nonatomic) NSString *publishModelId;
+@property (nonatomic) BOOL privateAccount;
+@property (retain, nonatomic) NSDictionary *commomTrackParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)addSubviewsForContentView;
+- (void)endLoading;
+- (void)setupStyleInfo;
+- (void)trackClearLocation;
+- (void)setShowRecommendView:(BOOL)a0 animated:(BOOL)a1;
+- (void)updateCollectionViewHiddenAnimated:(BOOL)a0 completion:(id /* block */)a1;
+- (void)trySelectRecommendCellWithPOI:(id)a0;
+- (void)accessButtonPressed:(id)a0;
+- (void)trackActivityLabelShowWithActivityVM:(id)a0;
+- (void)p_accesssButtonisEnabled:(BOOL)a0 imageName:(id)a1 accessibilityEnable:(BOOL)a2 accessibilityLabel:(id)a3;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1 isLivePlayBack:(BOOL)a2;
+- (double)p_suffixTitleWidth:(id)a0;
+- (void)setTitle:(id)a0 anchorType:(long long)a1 imageUrlArray:(id)a2;
+- (void)setActivityVM:(id)a0;
+- (void)setSugVM:(id)a0;
+- (void)setRightDetailText:(id)a0;
+- (void)setAdvancedPOISettingsVM:(id)a0;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (unsigned long long)accessibilityTraits;
+- (void)startLoading;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (id)accessibilityElements;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+
+@end

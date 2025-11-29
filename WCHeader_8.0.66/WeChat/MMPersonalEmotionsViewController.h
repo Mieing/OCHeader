@@ -1,0 +1,83 @@
+@class UIView, NSString, MMTimer, UICollectionViewFlowLayout, StoreEmoticonTopicProxyLogic, UIImageView, UIViewController, NSMutableArray, EmoticonCellLikeButton, UICollectionView, InfiniteLoopContainerView, EmotionCollectionFooterView;
+
+@interface MMPersonalEmotionsViewController : MMUIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, EmoticonStoreMgrExt, EmoticonBoughtListMgrExt, InfiniteLoopContainerViewDelegate, EmotionCollectionFooterViewDelegate, EmoticonRecommendMgrExt> {
+    UICollectionView *_collectionView;
+    UICollectionViewFlowLayout *_layout;
+    UIView *m_collectionHeaderView;
+    EmoticonCellLikeButton *m_designerEmojiEntranceView;
+    UIImageView *m_designerEmojiEntranceReddot;
+    InfiniteLoopContainerView *_bannerView;
+    EmotionCollectionFooterView *_footerView;
+    NSMutableArray *_storeItemArray;
+    NSMutableArray *_storeAdsArray;
+    unsigned int _scene;
+    unsigned int _reqType;
+    unsigned long long _sessionId;
+    BOOL _isLoadedFromCache;
+    unsigned int _topHotNum;
+    MMTimer *_timer;
+    UIView *_chartsContainerView;
+    BOOL m_isOpenDesignerEmoji;
+    UIViewController *m_contentsViewController;
+}
+
+@property (retain, nonatomic) StoreEmoticonTopicProxyLogic *topicVCPorxy;
+@property (nonatomic) unsigned long long searchScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (id)initWithEmotionScene:(unsigned int)a0 AndParentViewController:(id)a1;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (BOOL)shouldInteractivePop;
+- (void)clearSearchDisplayController;
+- (void)stopBannerPageTimer;
+- (void)initBannerPageTimer;
+- (void)changeBannerToNextPage;
+- (void)configViews;
+- (void)configData;
+- (void)configCollectionView;
+- (void)configHeaderView;
+- (void)configBanner;
+- (void)configDesignerEmojiEntranceView;
+- (void)reloadData;
+- (void)reloadAdsFromMgr;
+- (void)tryInitViewOfSearchController;
+- (void)adjustContentInsetAndSearchBarMask;
+- (void)clickEmotionCharts;
+- (void)clickDesignerEmojiEntrance;
+- (void)reportEmoticonStoreExposure;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)setupChartsContainerWithHeaderView:(id)a0;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidTransitionToNewSize;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)OnStoreListChanged:(id)a0 withRet:(unsigned long long)a1 withReqType:(unsigned int)a2 data:(id)a3;
+- (unsigned long long)numberOfItemsInContainerView:(id)a0;
+- (id)containerView:(id)a0 viewForItemAtIndex:(unsigned long long)a1;
+- (struct CGSize { double x0; double x1; })adjustedSizeForBanner;
+- (void)containerView:(id)a0 onTapItemAtIndex:(unsigned long long)a1;
+- (void)containerView:(id)a0 onItemDidFullyDisplayInContainerViewAtIndex:(unsigned long long)a1;
+- (void)openPageForBannerSet:(id)a0 IsFromBanner:(BOOL)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)MMRefreshCollectionFooterDidTriggerRefresh:(id)a0;
+- (void)OnEmoticonRecommendNewStateChangedForDesignerEmojiEntranceNew:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

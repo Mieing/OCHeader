@@ -1,0 +1,10 @@
+@class NSMutableDictionary;
+
+@interface IESGCPPBInteractionPlayConfigResponse_Data : GPBMessage
+
+@property (retain, nonatomic) NSMutableDictionary *createSchemaMap;
+@property (readonly, nonatomic) unsigned long long createSchemaMap_Count;
+
++ (id)descriptor;
+
+@end

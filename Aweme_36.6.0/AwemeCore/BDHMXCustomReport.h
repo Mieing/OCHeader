@@ -1,0 +1,51 @@
+@interface BDHMXCustomReport : NSObject
+
++ (void)reportCustomPayload:(id)a0;
++ (id)generateIDForContainer;
++ (void)invalidateID:(id)a0 andData:(BOOL)a1;
++ (void)deleteData:(id)a0 isForce:(BOOL)a1;
++ (void)attach:(id)a0 webView:(id)a1;
++ (void)attach:(id)a0 LynxView:(id)a1;
++ (void)detach:(id)a0 webView:(id)a1;
++ (void)detach:(id)a0 LynxView:(id)a1;
++ (void)reportContainerError:(id)a0 withID:(id)a1 withError:(id)a2;
++ (void)collectBoolean:(id)a0 field:(id)a1 data:(BOOL)a2;
++ (void)collectString:(id)a0 field:(id)a1 data:(id)a2;
++ (void)collectLong:(id)a0 field:(id)a1 data:(long long)a2;
++ (void)collectInt:(id)a0 field:(id)a1 data:(int)a2;
++ (void)fetchContainerData:(id)a0 block:(id /* block */)a1;
++ (void)fetchAggregationPerfTiming:(id)a0 level:(unsigned long long)a1 waitCompleteData:(unsigned long long)a2 completion:(id /* block */)a3;
++ (void)reportContainerError:(id)a0 withID:(id)a1 withError:(id)a2 containerBid:(id)a3;
++ (void)reportWithEventName:(id)a0 bizTag:(id)a1 commonParams:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 type:(long long)a7 platform:(long long)a8 aid:(id)a9 bid:(id)a10 maySample:(unsigned long long)a11;
++ (void)webReportCustomWithEventName:(id)a0 bid:(id)a1 webView:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 baseInfo:(id)a7 maySample:(unsigned long long)a8;
++ (void)addContext:(id)a0 containerId:(id)a1;
++ (void)lynxReportCustomWithEventName:(id)a0 bid:(id)a1 LynxView:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 maySample:(unsigned long long)a7;
++ (void)webReportCustomWithEventName:(id)a0 bid:(id)a1 webView:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 maySample:(unsigned long long)a7;
++ (void)webReportCustomPayload:(id)a0;
++ (void)reportHybridInfoWithUrl:(id)a0 bid:(id)a1;
++ (void)bindCrashInfoToHybridWithUrl:(id)a0 schema:(id)a1;
++ (BOOL)diffDictionaryAllKeys:(id)a0 diffDict:(id)a1 depth:(long long)a2 maxDepath:(long long)a3;
++ (BOOL)diffCustomReport:(id)a0 diffRecord:(id)a1;
++ (id)formatDictToDiffWithEventName:(id)a0 bizTag:(id)a1 url:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 aid:(id)a7 bid:(id)a8 baseInfo:(id)a9 maySample:(BOOL)a10;
++ (void)useFormatDiffDictToReport:(id)a0 repeatCount:(long long)a1 platform:(long long)a2;
++ (void)lynxReportCustomWithEventName:(id)a0 bid:(id)a1 bidSource:(unsigned long long)a2 LynxView:(id)a3 metric:(id)a4 category:(id)a5 extra:(id)a6 timing:(id)a7 baseInfo:(id)a8 maySample:(unsigned long long)a9;
++ (void)lynxReportCustomWithEventName:(id)a0 bid:(id)a1 LynxView:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 baseInfo:(id)a7 maySample:(unsigned long long)a8;
++ (id)callSelectorWith:(id)a0 obj:(id)a1;
++ (id)xcallObjectSelectorWith:(id)a0 obj:(id)a1;
++ (BOOL)xcallLynxDeplicationCheckDynamicWithPefDict:(id)a0 customRecord:(id)a1;
++ (void)reportWithEventName:(id)a0 bizTag:(id)a1 commonParams:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 type:(long long)a7 platform:(long long)a8 aid:(id)a9 bid:(id)a10 bidSource:(unsigned long long)a11 containerBid:(id)a12 baseInfo:(id)a13 maySample:(unsigned long long)a14;
++ (void)webReportCustomWithEventName:(id)a0 bid:(id)a1 bidSource:(unsigned long long)a2 webView:(id)a3 metric:(id)a4 category:(id)a5 extra:(id)a6 timing:(id)a7 baseInfo:(id)a8 maySample:(unsigned long long)a9;
++ (BOOL)xcallWebDeplicationCheckDynamicWithPefDict:(id)a0 customRecord:(id)a1;
++ (void)reportWithEventName:(id)a0 bizTag:(id)a1 commonParams:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 type:(long long)a7 platform:(long long)a8 aid:(id)a9 bid:(id)a10 baseInfo:(id)a11 maySample:(unsigned long long)a12;
++ (id)bidSourceDescription:(unsigned long long)a0;
++ (id)customReportServiceWithSampleLevel:(unsigned long long)a0;
++ (void)getBidWithUrl:(id)a0 schema:(id)a1 containerBid:(id)a2 complete:(id /* block */)a3;
++ (void)reportResourceStatus:(id)a0 resourceStatus:(long long)a1 resourceType:(long long)a2 resourceURL:(id)a3 resourceVersion:(id)a4;
++ (id)transformContainerType:(long long)a0;
++ (void)reportWithEventName:(id)a0 containerId:(id)a1 commonParams:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 type:(long long)a6 platform:(long long)a7 aid:(id)a8 bid:(id)a9 containerBid:(id)a10 maySample:(unsigned long long)a11;
++ (void)lynxReportCustomPayload:(id)a0;
++ (void)reportWithEventName:(id)a0 containerId:(id)a1 commonParams:(id)a2 metric:(id)a3 category:(id)a4 extra:(id)a5 timing:(id)a6 type:(long long)a7 platform:(long long)a8 aid:(id)a9 bid:(id)a10 maySample:(unsigned long long)a11;
++ (void)reportResourceStatus:(id)a0 resourceStatus:(long long)a1 resourceType:(long long)a2 resourceURL:(id)a3;
++ (void)reportFallBack:(long long)a0 sourceUrl:(id)a1 sourceContainer:(long long)a2 targetUrl:(id)a3 targetContainer:(long long)a4 aid:(id)a5;
+
+@end

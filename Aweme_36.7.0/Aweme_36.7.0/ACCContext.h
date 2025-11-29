@@ -1,0 +1,3 @@
+@interface ACCContext : NSObject
+
+@end

@@ -1,0 +1,10 @@
+@class PersonalKaraokeEndResponse_ResponseData;
+
+@interface PersonalKaraokeEndResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PersonalKaraokeEndResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

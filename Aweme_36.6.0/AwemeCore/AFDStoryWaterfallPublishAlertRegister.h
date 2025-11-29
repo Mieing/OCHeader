@@ -1,0 +1,3 @@
+@interface AFDStoryWaterfallPublishAlertRegister : NSObject
+
+@end

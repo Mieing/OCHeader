@@ -1,0 +1,3 @@
+@interface BDPNovelChapterDetail : BDPNovelBaseDetail
+
+@end

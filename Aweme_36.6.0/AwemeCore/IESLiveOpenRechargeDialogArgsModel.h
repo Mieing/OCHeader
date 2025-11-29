@@ -1,0 +1,13 @@
+@class NSString, NSNumber;
+
+@interface IESLiveOpenRechargeDialogArgsModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *version;
+@property (retain, nonatomic) NSNumber *displayType;
+@property (copy, nonatomic) NSString *orderId;
+@property (copy, nonatomic) NSString *isBalanceEnough;
+@property (copy, nonatomic) NSString *isFirstPackage;
+
++ (id)modelCustomPropertyMapper;
+
+@end

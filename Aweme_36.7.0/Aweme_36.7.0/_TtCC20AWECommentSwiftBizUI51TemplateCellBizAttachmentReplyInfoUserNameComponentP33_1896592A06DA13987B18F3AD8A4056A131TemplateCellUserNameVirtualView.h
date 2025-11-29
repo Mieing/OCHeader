@@ -1,0 +1,3 @@
+@interface _TtCC20AWECommentSwiftBizUI51TemplateCellBizAttachmentReplyInfoUserNameComponentP33_1896592A06DA13987B18F3AD8A4056A131TemplateCellUserNameVirtualView : AWECommentSwiftBizUI.TemplateCellVirtualLabel
+
+@end

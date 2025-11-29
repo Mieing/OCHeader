@@ -1,0 +1,3 @@
+@interface HTSLiveActivityEffectRoot : GPBRootObject
+
+@end

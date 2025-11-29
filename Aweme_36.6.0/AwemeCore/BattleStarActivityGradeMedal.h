@@ -1,0 +1,14 @@
+@class HTSLiveImage;
+
+@interface BattleStarActivityGradeMedal : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *gradeMedal;
+@property (nonatomic) BOOL hasGradeMedal;
+@property (retain, nonatomic) HTSLiveImage *levelImage;
+@property (nonatomic) BOOL hasLevelImage;
+@property (retain, nonatomic) HTSLiveImage *badgeImage;
+@property (nonatomic) BOOL hasBadgeImage;
+
++ (id)descriptor;
+
+@end

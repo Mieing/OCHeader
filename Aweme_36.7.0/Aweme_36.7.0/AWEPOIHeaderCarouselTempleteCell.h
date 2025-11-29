@@ -1,0 +1,3 @@
+@interface AWEPOIHeaderCarouselTempleteCell : UICollectionViewCell
+
+@end

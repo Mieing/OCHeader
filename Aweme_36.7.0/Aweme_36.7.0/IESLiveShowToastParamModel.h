@@ -1,0 +1,11 @@
+@class NSString, NSNumber;
+
+@interface IESLiveShowToastParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *message;
+@property (copy, nonatomic) NSString *customIcon;
+@property (copy, nonatomic) NSString *icon;
+@property (retain, nonatomic) NSNumber *duration;
+@property (nonatomic) BOOL useContainerToast;
+
+@end

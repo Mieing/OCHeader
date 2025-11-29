@@ -1,0 +1,10 @@
+@interface ShowFollowButton : GPBMessage
+
+@property (nonatomic) BOOL showButton;
+@property (nonatomic) BOOL hasShowButton;
+@property (nonatomic) int showTag;
+@property (nonatomic) BOOL hasShowTag;
+
++ (id)descriptor;
+
+@end

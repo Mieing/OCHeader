@@ -1,0 +1,3 @@
+@interface AWEECLiveCouponRouterHandler : NSObject
+
+@end

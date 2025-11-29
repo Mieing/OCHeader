@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESGCPPBReserveGameResponse_Data : GPBMessage
+
+@property (copy, nonatomic) NSString *orderId;
+@property (copy, nonatomic) NSString *dialogTips;
+@property (nonatomic) BOOL isSelectWifiAutoDownload;
+@property (nonatomic) long long reserveId;
+
++ (id)descriptor;
+
+@end

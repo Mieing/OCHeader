@@ -1,0 +1,32 @@
+@class NSString, IESLiveRivalExtraInfo_LinkerInfo, IESLiveBattleUserSettings, IESLiveRivalExtraInfo_GameInfo, IESLiveAnchorLinkmicUserSettings;
+
+@interface IESLiveRivalExtraInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) int textType;
+@property (copy, nonatomic) NSString *label;
+@property (nonatomic) int anchorLayer;
+@property (retain, nonatomic) IESLiveRivalExtraInfo_LinkerInfo *linkerInfo;
+@property (nonatomic) BOOL hasLinkerInfo;
+@property (retain, nonatomic) IESLiveAnchorLinkmicUserSettings *linkmicUserSettings;
+@property (nonatomic) BOOL hasLinkmicUserSettings;
+@property (retain, nonatomic) IESLiveBattleUserSettings *battleUserSettings;
+@property (nonatomic) BOOL hasBattleUserSettings;
+@property (nonatomic) long long videoShowScore;
+@property (retain, nonatomic) IESLiveRivalExtraInfo_GameInfo *gameInfo;
+@property (nonatomic) BOOL hasGameInfo;
+@property (copy, nonatomic) NSString *signExtra;
+@property (copy, nonatomic) NSString *recommendInfo;
+@property (nonatomic) int fromServerInviteType;
+
++ (id)descriptor;
+
+- (BOOL)isFold;
+- (BOOL)isAllPlaceTaken;
+- (BOOL)isAllPlaceTaken;
+- (BOOL)isAllPlaceTaken;
+- (BOOL)isInvitationAllowedWithFollowStatus:(long long)a0 inInteractionOrNot:(BOOL)a1;
+- (BOOL)isInvitationAllowedWithFollowStatus:(long long)a0 inInteractionOrNot:(BOOL)a1;
+- (BOOL)isInvitationAllowedWithFollowStatus:(long long)a0 inInteractionOrNot:(BOOL)a1 isFromRelationInviteeList:(BOOL)a2;
+
+@end

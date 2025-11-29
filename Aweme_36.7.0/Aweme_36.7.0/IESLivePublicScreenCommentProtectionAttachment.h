@@ -1,0 +1,3 @@
+@interface IESLivePublicScreenCommentProtectionAttachment : IESLivePSCommentProtectionAttachment
+
+@end

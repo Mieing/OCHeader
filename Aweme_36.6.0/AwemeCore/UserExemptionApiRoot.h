@@ -1,0 +1,3 @@
+@interface UserExemptionApiRoot : GPBRootObject
+
+@end

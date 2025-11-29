@@ -1,0 +1,3 @@
+@interface HTSLiveInstantCommandRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@interface AWEInfraABRegister : NSObject
+
+@property (class, readonly, nonatomic) BOOL enableBDWebImage;
+@property (class, readonly, nonatomic) BOOL enableBDWebImageCache;
+@property (class, readonly, nonatomic) BOOL enableBDWebImageQueue;
+
++ (void)_aweLazyRegisterLoad;
++ (BOOL)shouldDefaultValue;
+
+@end

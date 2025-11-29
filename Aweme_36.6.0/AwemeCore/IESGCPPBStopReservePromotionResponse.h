@@ -1,0 +1,10 @@
+@class IESGCPPBStopReservePromotionResponse_Data;
+
+@interface IESGCPPBStopReservePromotionResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBStopReservePromotionResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

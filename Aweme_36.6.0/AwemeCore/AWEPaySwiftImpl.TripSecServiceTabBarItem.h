@@ -1,0 +1,18 @@
+@interface AWEPaySwiftImpl.TripSecServiceTabBarItem : UIView {
+    void /* unknown type, empty encoding */ showElementModel;
+    void /* unknown type, empty encoding */ selected;
+    void /* unknown type, empty encoding */ position;
+    void /* unknown type, empty encoding */ contentWidth;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_selectedBackgroundView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_selectedBackgroundPaddingView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_contentView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_stackView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_iconView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_titleView;
+}
+
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWECFRescript : NSObject
+
+@end

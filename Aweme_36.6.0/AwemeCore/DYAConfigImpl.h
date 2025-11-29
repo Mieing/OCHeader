@@ -1,0 +1,84 @@
+@class NSString, DUXLoadingToast;
+
+@interface DYAConfigImpl : NSObject <AWEAppBytedSettingMessage, TTAccountUIDelegate, DYAPassportConfig>
+
+@property (retain, nonatomic) DUXLoadingToast *sdkAuthLoadingToast;
+@property (nonatomic) BOOL enableConsoleLog;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)defaultInstance;
+
+- (void)didFinishPassportQueryButFailAweme;
+- (void)trackData:(id)a0 logTypeStr:(id)a1;
+- (void)trackService:(id)a0 status:(long long)a1 extra:(id)a2;
+- (void)accountsdk:(id)a0 showAlertWithTitle:(id)a1 message:(id)a2 actions:(id)a3;
+- (void)accountsdk:(id)a0 OpenAppJumpURL:(id)a1 completion:(id /* block */)a2;
+- (void)accountsdk:(id)a0 openLoginPanelWithParams:(id)a1 completion:(id /* block */)a2;
+- (void)accountsdk:(id)a0 showLoadingForScene:(id)a1;
+- (void)accountsdk:(id)a0 dismissLoadingForScene:(id)a1;
+- (void)accountsdk:(id)a0 routerOpenWithSchema:(id)a1 params:(id)a2;
+- (BOOL)hasAgreedPrivacy;
+- (void)bytedSettingDidChange;
+- (unsigned long long)maxAccountNumber;
+- (BOOL)enableMultiLogin;
+- (BOOL)telecomFromV2;
+- (unsigned long long)fileSettingSize;
+- (void)logWithKey:(id)a0 trackParams:(id)a1 level:(unsigned long long)a2 message:(id)a3;
+- (void)trackEvent:(id)a0 platform:(unsigned long long)a1 params:(id)a2 needStagingFlag:(BOOL)a3;
+- (void)processMiddleCheckWithURL:(id)a0 originalParams:(id)a1 error:(id)a2 rawData:(id)a3 completion:(id /* block */)a4;
+- (BOOL)enableChinaMobileService;
+- (BOOL)enableChinaTelecomService;
+- (BOOL)enableChinaUnionService;
+- (BOOL)enableStoreAccountInUserDefault;
+- (BOOL)enableVCDV2;
+- (void)requestJSONWithMethod:(unsigned long long)a0 URLString:(id)a1 parameters:(id)a2 headers:(id)a3 completion:(id /* block */)a4;
+- (id)bussinessModelFromJSON:(id)a0;
+- (BOOL)rebindPhoneAddVerifyProgress;
+- (BOOL)isRestRequestUseSaas;
+- (BOOL)isThirdBindUseSaas;
+- (BOOL)loginPanelShowOpt;
+- (BOOL)isPhoneRequestUseSaas;
+- (BOOL)isOneKeyRequestUseSaas;
+- (BOOL)isSwitchAccountRequestUseSaaS;
+- (BOOL)enablePrefetchLogin;
+- (BOOL)vcdAccountLoginOptimize;
+- (id)requestCommonHeaders;
+- (id)requestCommonParameters;
+- (id)liteUserCommonParams;
+- (void)requestJSONWithMethod:(unsigned long long)a0 URLString:(id)a1 parameters:(id)a2 headers:(id)a3 withResponseCompletion:(id /* block */)a4;
+- (BOOL)isErrorCodeUseSaas;
+- (void)recordSDKIsProcess:(BOOL)a0;
+- (void)processNewPageFromMiddle:(id)a0 urlString:(id)a1 errorType:(unsigned long long)a2 completion:(id /* block */)a3;
+- (void)queryPassportSuccess:(id)a0 accountIfServerReturn:(id)a1 completion:(id /* block */)a2;
+- (BOOL)isSwitchAccountRequestUseSaaSGet;
+- (BOOL)isSwitchAccountControlGroupToPost;
+- (BOOL)useSwitchAccountSaaSSDK;
+- (void)addUserToSaaS:(id)a0;
+- (void)deleteSaaSUserList:(id)a0;
+- (void)clearSaaSUser;
+- (id)verifyIDURLtring;
+- (void)userDidChange:(id)a0 oriUser:(id)a1;
+- (BOOL)enableNewWriteStrategy;
+- (BOOL)enableNewReadStrategy;
+- (id)userProfileSelfExtraParamsWithContext:(id)a0;
+- (void)recordProfileSelfDuration:(long long)a0;
+- (long long)loginInterfaceFusionProfileRetryCount;
+- (long long)switchAccountCacheUserTimeInLoginInterfaceFusion;
+- (void)didSwitchToBackgroundHotsoonUser;
+- (void)willShowWeiboH5Page;
+- (BOOL)loginSuccessTimeOpt;
+- (id)defaultLoginPaths;
+- (void)setupTTAccountSDK;
+- (id)IDVerificationInfoURLString;
+- (void)processBeforeFetchAwemeWithPreURL:(id)a0 accountIfServerReturn:(id)a1 completion:(id /* block */)a2;
+- (id)getHTTPHeadersFromResponseDataObject:(id)a0;
+- (BOOL)enableMultiLoginAsCommonParam;
+- (void).cxx_destruct;
+- (id)init;
+- (id)domain;
+- (void)dealloc;
+
+@end

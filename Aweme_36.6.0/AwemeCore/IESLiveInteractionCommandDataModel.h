@@ -1,0 +1,10 @@
+@class NSNumber;
+
+@interface IESLiveInteractionCommandDataModel : IESLiveBridgeModel
+
+@property (nonatomic) long long status;
+@property (retain, nonatomic) NSNumber *actorId;
+
++ (id)modelCustomPropertyMapper;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEPublishLandingRouterRegister : NSObject
+
+@end

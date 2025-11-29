@@ -1,0 +1,17 @@
+@class NSString, NSMutableDictionary, HTSLiveText;
+
+@interface HTSLivePlayModeGuideBubbleContent : IESLivePBBaseMessage
+
+@property (nonatomic) int playMode;
+@property (copy, nonatomic) NSString *toast;
+@property (nonatomic) int playModeEnhanceType;
+@property (retain, nonatomic) HTSLiveText *text;
+@property (nonatomic) BOOL hasText;
+@property (copy, nonatomic) NSString *schema;
+@property (retain, nonatomic) NSMutableDictionary *extra;
+@property (readonly, nonatomic) unsigned long long extra_Count;
+@property (nonatomic) int anchorShowPosition;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,83 @@
+@class NSMutableDictionary, NSDictionary, UIAlertView, NSString;
+
+@interface TTAccountAuthLoginManager : NSObject <UIAlertViewDelegate>
+
+@property (retain, nonatomic) NSMutableDictionary *platformAccounts;
+@property (retain, nonatomic) NSDictionary *classMap;
+@property (retain, nonatomic) UIAlertView *unbindAlert;
+@property (retain, nonatomic) UIAlertView *giveUpAlert;
+@property (copy, nonatomic) NSDictionary *alertContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getUserInfoWithScene:(long long)a0 completion:(id /* block */)a1;
++ (BOOL)handleOpenURL:(id)a0 options:(id)a1;
++ (BOOL)handleOpenURL:(id)a0 sourceApplication:(id)a1 annotation:(id)a2;
++ (BOOL)didFinishLaunchingWithOptions:(id)a0;
++ (BOOL)continueUserActivity:(id)a0 restorationHandler:(id /* block */)a1;
++ (BOOL)continueUserActivity:(id)a0 coldLaunch:(BOOL)a1 restorationHandler:(id /* block */)a2;
++ (BOOL)canSSOForPlatform:(long long)a0;
++ (BOOL)canWebSSOForPlatform:(long long)a0;
++ (void)requestLoginForPlatform:(long long)a0 inCustomWebView:(BOOL)a1 willLogin:(id /* block */)a2 completion:(id /* block */)a3;
++ (BOOL)canCustomWebSSOForPlatform:(long long)a0;
++ (void)requestLoginForPlatform:(long long)a0 willLogin:(id /* block */)a1 completion:(id /* block */)a2;
++ (void)requestLogoutForPlatform:(long long)a0 completion:(id /* block */)a1;
++ (void)requestLoginOnlyForPlatform:(long long)a0 willLogin:(id /* block */)a1 completion:(id /* block */)a2;
++ (void)requestBindV2ForPlatform:(long long)a0 inCustomWebView:(BOOL)a1 willBind:(id /* block */)a2 completion:(id /* block */)a3;
++ (void)requestAuthInfoForPlatform:(long long)a0 inCustomWebView:(BOOL)a1 completion:(id /* block */)a2;
++ (id)platformAppIdForAccountAuthType:(long long)a0;
++ (void)registerAppId:(id)a0 forPlatform:(long long)a1;
++ (long long)accountAuthTypeForPlatform:(id)a0;
++ (BOOL)isAppInstalledForPlatform:(long long)a0;
++ (id)localizedDisplayNameForPlatform:(long long)a0;
++ (id)getAppInstallUrlForPlatform:(long long)a0;
++ (void)requestAuthUserInfoForPlatform:(long long)a0 inCustomWebView:(BOOL)a1 completion:(id /* block */)a2;
++ (id)loginWithSSOCallback:(id)a0 forPlatform:(long long)a1 willLogin:(id /* block */)a2 completion:(id /* block */)a3;
++ (id)pureLoginWithThirdPartySSOCallback:(id)a0 forPlatform:(long long)a1 willLogin:(id /* block */)a2 completion:(id /* block */)a3;
++ (id)pureLoginWithThirdPartySSOCallback:(id)a0 extraParams:(id)a1 forPlatform:(long long)a2 willLogin:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)bindWithThirdPartySSOCallback:(id)a0 forPlatform:(long long)a1 willLogin:(id /* block */)a2 completion:(id /* block */)a3;
++ (id)bindWithThirdPartySSOCallback:(id)a0 extraParams:(id)a1 forPlatform:(long long)a2 willLogin:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)authCallbacContinuekForReason:(long long)a0 params:(id)a1 forPlatform:(long long)a2 willLogin:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)canQuickLoginWithAweme:(id /* block */)a0;
++ (void)checkIsSilentRegisterSupportedForPlatform:(long long)a0 completed:(id /* block */)a1;
++ (void)checkIsbindMobileFromPlatformSupported:(long long)a0 completed:(id /* block */)a1;
++ (void)bindMobileFromPlatform:(long long)a0 completed:(id /* block */)a1;
++ (void)silentRegisterAndLoginPlatform:(long long)a0 completed:(id /* block */)a1;
++ (id)startAuthSwitchBindWithReq:(id)a0 trackParams:(id)a1 completion:(id /* block */)a2;
++ (id)authBindLoginWithAuthResponse:(id)a0 mobile:(id)a1 smsCode:(id)a2 profileKey:(id)a3 completion:(id /* block */)a4;
++ (void)registerAuthPlatformWithType:(long long)a0;
++ (void)registerPlatformAuthAccount:(Class)a0;
++ (id)accountAuthInstanceForPlatformType:(long long)a0;
++ (void)authLoginForPlatform:(long long)a0 inCustomWebView:(BOOL)a1 willLogin:(id /* block */)a2 completion:(id /* block */)a3;
++ (void)handleCallbackWithInst:(id)a0 authResponse:(id)a1 error:(id)a2 willLogin:(id /* block */)a3 completedBlock:(id /* block */)a4;
++ (void)requestAuthUserInfoForPlatform:(long long)a0 extraParams:(id)a1 inCustomWebView:(BOOL)a2 completion:(id /* block */)a3;
++ (id)getThirdpartUserInfoWithDict:(id)a0 completion:(id /* block */)a1;
++ (void)requestLoginForPlatform:(long long)a0 requestAuthReason:(long long)a1 inCustomWebView:(BOOL)a2 willLogin:(id /* block */)a3 completion:(id /* block */)a4;
++ (id)platformForAccountAuthType:(long long)a0;
++ (id)loginOrBindWithSSOCallback:(id)a0 extraParams:(id)a1 isForLogin:(BOOL)a2 forPlatform:(long long)a3 willLogin:(id /* block */)a4 completion:(id /* block */)a5;
++ (void)alertAccountUnbindWithAuthResponse:(id)a0 passError:(id)a1 willLogin:(id /* block */)a2 completion:(id /* block */)a3;
++ (BOOL)alertWhenAuthLoginFailWithResponse:(id)a0 willLogin:(id /* block */)a1 completion:(id /* block */)a2;
++ (Class)accountAuthClassForPlatformType:(long long)a0;
++ (void)requestLoginSuggestionForPlatform:(long long)a0 completion:(id /* block */)a1;
++ (void)authLoginForPlatform:(long long)a0 completion:(id /* block */)a1;
++ (void)requestBindForPlatform:(long long)a0 willBind:(id /* block */)a1 completion:(id /* block */)a2;
++ (void)requestBindForPlatform:(long long)a0 inCustomWebView:(BOOL)a1 willBind:(id /* block */)a2 completion:(id /* block */)a3;
++ (void)requestUnbindForPlatform:(long long)a0 completion:(id /* block */)a1;
++ (void)requestAuthForPlatform:(long long)a0 request:(id)a1 willLogin:(id /* block */)a2 authCompletion:(id /* block */)a3;
++ (id)sharedInstance;
++ (BOOL)handleOpenURL:(id)a0;
+
+- (BOOL)handleOpenURL:(id)a0 options:(id)a1;
+- (BOOL)handleOpenURL:(id)a0 sourceApplication:(id)a1 annotation:(id)a2;
+- (void)registerAuthPlatformWithType:(long long)a0;
+- (void)registerPlatformAuthAccount:(Class)a0;
+- (id)accountAuthInstanceForPlatformType:(long long)a0;
+- (long long)accountAuthTypeForPlatformName:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)alertView:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (BOOL)handleOpenURL:(id)a0;
+
+@end

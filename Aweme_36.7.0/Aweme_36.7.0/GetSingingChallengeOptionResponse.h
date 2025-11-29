@@ -1,0 +1,10 @@
+@class GetSingingChallengeOptionResponse_ResponseData;
+
+@interface GetSingingChallengeOptionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetSingingChallengeOptionResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

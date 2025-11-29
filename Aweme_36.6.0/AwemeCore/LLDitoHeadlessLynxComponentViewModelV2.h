@@ -1,0 +1,3 @@
+@interface LLDitoHeadlessLynxComponentViewModelV2 : LLDitoLynxComponentViewModelV2
+
+@end

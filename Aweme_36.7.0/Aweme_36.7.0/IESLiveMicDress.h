@@ -1,0 +1,16 @@
+@class IESLiveVoiceWave, IESLiveLinkmicCustomizedRandomEmoji, IESLiveLinkmicBadge;
+
+@interface IESLiveMicDress : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveVoiceWave *voiceDress;
+@property (nonatomic) BOOL hasVoiceDress;
+@property (retain, nonatomic) IESLiveVoiceWave *voiceWave;
+@property (nonatomic) BOOL hasVoiceWave;
+@property (retain, nonatomic) IESLiveLinkmicBadge *badge;
+@property (nonatomic) BOOL hasBadge;
+@property (retain, nonatomic) IESLiveLinkmicCustomizedRandomEmoji *customizedRandomEmoji;
+@property (nonatomic) BOOL hasCustomizedRandomEmoji;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomChannelChannelCreateApiRoot : GPBRootObject
+
+@end

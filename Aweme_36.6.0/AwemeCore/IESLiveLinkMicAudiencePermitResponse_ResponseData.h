@@ -1,0 +1,18 @@
+@class NSString;
+
+@interface IESLiveLinkMicAudiencePermitResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *accessKey;
+@property (nonatomic) long long linkmicId;
+@property (nonatomic) int vendor;
+@property (copy, nonatomic) NSString *rtcAppId;
+@property (copy, nonatomic) NSString *rtcAppSign;
+@property (copy, nonatomic) NSString *linkmicIdStr;
+@property (nonatomic) long long rivalLinkmicId;
+@property (copy, nonatomic) NSString *rivalLinkmicIdStr;
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (copy, nonatomic) NSString *remoteLinkerSessionId;
+
++ (id)descriptor;
+
+@end

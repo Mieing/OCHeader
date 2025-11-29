@@ -1,0 +1,18 @@
+@class LinkUserInfoStructV2;
+
+@interface CommerceUserStructV2 : GPBMessage
+
+@property (nonatomic) int starAtlas;
+@property (nonatomic) BOOL hasStarAtlas;
+@property (nonatomic) BOOL showStarAtlasCooperation;
+@property (nonatomic) BOOL hasShowStarAtlasCooperation;
+@property (nonatomic) BOOL hasAdsEntry_p;
+@property (nonatomic) BOOL hasHasAdsEntry_p;
+@property (retain, nonatomic) LinkUserInfoStructV2 *linkUserInfo;
+@property (nonatomic) BOOL hasLinkUserInfo;
+@property (nonatomic) int adInfluencerType;
+@property (nonatomic) BOOL hasAdInfluencerType;
+
++ (id)descriptor;
+
+@end

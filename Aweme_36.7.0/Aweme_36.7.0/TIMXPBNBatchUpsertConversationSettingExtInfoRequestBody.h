@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNBatchUpsertConversationSettingExtInfoRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *upsertSettingExtraListArray;
+@property (readonly, nonatomic) unsigned long long upsertSettingExtraListArray_Count;
+
++ (id)descriptor;
+
+@end

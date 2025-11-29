@@ -1,0 +1,12 @@
+@class HTSLiveMultiChorusSongItem, IESLiveKtvSongStruct;
+
+@interface WantToSingSongListResponse_SongListItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveKtvSongStruct *song;
+@property (nonatomic) BOOL hasSong;
+@property (retain, nonatomic) HTSLiveMultiChorusSongItem *multiChorusSongItem;
+@property (nonatomic) BOOL hasMultiChorusSongItem;
+
++ (id)descriptor;
+
+@end

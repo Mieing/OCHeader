@@ -1,0 +1,12 @@
+@class GPBStringEnumDictionary, NSMutableDictionary;
+
+@interface IESGCPPBVisibleCheckResponse_Data : GPBMessage
+
+@property (retain, nonatomic) GPBStringEnumDictionary *checkResult;
+@property (readonly, nonatomic) unsigned long long checkResult_Count;
+@property (retain, nonatomic) NSMutableDictionary *resultMsg;
+@property (readonly, nonatomic) unsigned long long resultMsg_Count;
+
++ (id)descriptor;
+
+@end

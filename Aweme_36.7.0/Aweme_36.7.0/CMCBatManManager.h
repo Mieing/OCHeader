@@ -1,0 +1,80 @@
+@class DUXToast, UILabel, AWEBatManXToken, NSDictionary, AWEBatManLoadingView, UIButton, UIView, AWEBatManDisConnectedView, NSString, CMCBatManLoadingViewController, CMCBatManBannerView, AWEAwemeModel, NSError;
+@protocol AWEAdOperationViewController, AWEBatManProtocol, AWEAdOperationWebViewController, AWECommerceComponentContext;
+
+@interface CMCBatManManager : NSObject <AWEBatManLoadStatusDelegate, AWECommerceComponentProtocol, CMCBatManManagerProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) id<AWEBatManProtocol> batMan;
+@property (retain, nonatomic) id<AWEAdOperationWebViewController> adOperationWebViewController;
+@property (retain, nonatomic) id<AWEAdOperationViewController> adOperationViewController;
+@property (nonatomic) unsigned long long interval;
+@property (weak, nonatomic) UIView *batManView;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UILabel *batManCountDownLabel;
+@property (retain, nonatomic) UIButton *downloadButton;
+@property (retain, nonatomic) UIView *batManCountDownView;
+@property (retain, nonatomic) CMCBatManBannerView *bannerView;
+@property (retain, nonatomic) AWEBatManLoadingView *loadingView;
+@property (retain, nonatomic) AWEBatManDisConnectedView *disconnectedView;
+@property (nonatomic) double loadTimeStamp;
+@property (retain, nonatomic) CMCBatManLoadingViewController *loadingVC;
+@property (nonatomic) BOOL enterBackground;
+@property (nonatomic) BOOL shouldShowBatMan;
+@property (copy, nonatomic) NSString *lastBatManID;
+@property (nonatomic) int initStatus;
+@property (nonatomic) int loadStatus;
+@property (nonatomic) long long stayDuration;
+@property (nonatomic) long long playDuration;
+@property (retain, nonatomic) AWEBatManXToken *XTokenModel;
+@property (nonatomic) BOOL isNotFirstTimeUseXToken;
+@property (retain, nonatomic) NSError *backError;
+@property (retain, nonatomic) NSDictionary *backInfo;
+@property (retain, nonatomic) DUXToast *toast;
+@property (nonatomic) BOOL toastShown;
+@property (nonatomic) BOOL nativeMaskView;
+@property (nonatomic) long long bannerViewRemainTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWECommerceComponentContext> commerceContext;
+
++ (BOOL)canShowComponentWithContext:(id)a0;
+
+- (int)batManCenterOrientation;
+- (void)closeBatManAction:(id)a0;
+- (void)setupBatManWithModel:(id)a0;
+- (void)preloadXToken;
+- (void)setupBatManConfig;
+- (void)playBatManNotification:(id)a0;
+- (void)trackFirstOpenBatMan;
+- (BOOL)canUseXToken;
+- (void)setupBatManView;
+- (void)preloadAdOperationWebView;
+- (void)bannerButtonAction:(id)a0;
+- (void)showDownloadButtonAction;
+- (id)checkEnterSource:(long long)a0;
+- (void)preloadBatMan;
+- (void)closeBatMan;
+- (void)beginBatMan;
+- (void)showToastView;
+- (void)showDownLoadButton;
+- (void)handleCardClickToAppStoreTracker;
+- (void)downLoadButtonAction:(id)a0;
+- (void)dragViewMoved:(id)a0;
+- (void)batManCenterStatusDidChanged:(unsigned long long)a0;
+- (void)batManCenterUserDidClosedBatMan;
+- (void)batMan:(id)a0 playTimeCountDown:(unsigned long long)a1;
+- (void)batManCenterErrorDidChanged:(id)a0 withInfo:(id)a1;
+- (void)firstPlayBatMan;
+- (void)closeBatManNotification:(id)a0;
+- (void)shownDownLoadButton;
+- (void)prepareForDisplay;
+- (void)willEnterForeground;
+- (void).cxx_destruct;
+- (void)didEnterBackground;
+- (id)init;
+- (void)addObserver;
+- (void)openAppStore;
+
+@end

@@ -1,0 +1,8 @@
+@interface AWEKnowledgeSwiftBasic.KnowledgeCommonAlertEvent : NSObject <AWEAlertEventProtocol>
+
++ (id)eventID;
++ (id)eventDescription;
+
+- (id)init;
+
+@end

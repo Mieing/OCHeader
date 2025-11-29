@@ -1,0 +1,3 @@
+@interface HTSLiveCommerceRoot : GPBRootObject
+
+@end

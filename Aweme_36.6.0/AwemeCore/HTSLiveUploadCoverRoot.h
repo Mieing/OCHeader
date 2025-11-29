@@ -1,0 +1,3 @@
+@interface HTSLiveUploadCoverRoot : GPBRootObject
+
+@end

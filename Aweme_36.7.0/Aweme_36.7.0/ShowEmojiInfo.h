@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface ShowEmojiInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long emojiId;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+
++ (id)descriptor;
+
+@end

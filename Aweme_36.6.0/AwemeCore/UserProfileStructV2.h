@@ -1,0 +1,10 @@
+@interface UserProfileStructV2 : GPBMessage
+
+@property (nonatomic) double headModelScore;
+@property (nonatomic) BOOL hasHeadModelScore;
+
++ (id)descriptor;
+
+- (double)headModelScore;
+
+@end

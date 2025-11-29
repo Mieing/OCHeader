@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveRankEnterInfo_Page : IESLivePBBaseMessage
+
+@property (nonatomic) int jumpRankType;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) int contentType;
+@property (copy, nonatomic) NSString *backgroundColor;
+
++ (id)descriptor;
+
+@end

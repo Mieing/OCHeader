@@ -1,0 +1,3 @@
+@interface BDCTStringConst : NSObject
+
+@end

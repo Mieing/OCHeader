@@ -1,0 +1,15 @@
+@class IESLiveOpenExplainCardSettingDialogIconModel, NSString, IESLiveOpenExplainCardSettingDialogCoverUrlModel, NSDictionary, IESLiveOpenExplainCardSettingDialogShelfInfoModel;
+
+@interface IESLiveOpenExplainCardSettingDialogOpenPlatformModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *path;
+@property (retain, nonatomic) IESLiveOpenExplainCardSettingDialogIconModel *icon;
+@property (copy, nonatomic) NSString *title;
+@property (retain, nonatomic) IESLiveOpenExplainCardSettingDialogCoverUrlModel *coverUrl;
+@property (copy, nonatomic) NSDictionary *extra;
+@property (copy, nonatomic) NSString *appName;
+@property (retain, nonatomic) IESLiveOpenExplainCardSettingDialogShelfInfoModel *shelfInfo;
+
++ (id)modelCustomPropertyMapper;
+
+@end

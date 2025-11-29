@@ -1,0 +1,3 @@
+@interface AWEGameSearchLynx : NSObject
+
+@end

@@ -1,0 +1,3 @@
+@interface StampMemoryAbilityStatusApiRoot : GPBRootObject
+
+@end

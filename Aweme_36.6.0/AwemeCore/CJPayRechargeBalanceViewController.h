@@ -1,0 +1,78 @@
+@class UILabel, NSDictionary, CJPayButton, CJPayBDCreateOrderResponse, CJPayAccountInsuranceTipView, NSMutableArray, UIView, UIScrollView, CJPayRechargeMainView, NSString, CJPayBalanceRechargeController, CJPayLoadingButton, CJPayDefaultChannelShowConfig;
+
+@interface CJPayRechargeBalanceViewController : CJPayThemeBaseViewController <CJPaySmallChangeVCDelegate, CJPayBaseLoadingProtocol>
+
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIView *scrollContentView;
+@property (retain, nonatomic) CJPayRechargeMainView *mainView;
+@property (retain, nonatomic) UILabel *serviceTipsLabel;
+@property (retain, nonatomic) CJPayAccountInsuranceTipView *safeGuardTipView;
+@property (retain, nonatomic) CJPayButton *rechargeRecordButton;
+@property (retain, nonatomic) CJPayBDCreateOrderResponse *orderResponse;
+@property (copy, nonatomic) id /* block */ completion;
+@property (copy, nonatomic) NSDictionary *bizParams;
+@property (copy, nonatomic) NSString *bizUrl;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *defaultConfig;
+@property (retain, nonatomic) NSMutableArray *notSufficientIds;
+@property (retain, nonatomic) CJPayBalanceRechargeController *frontCashierController;
+@property (retain, nonatomic) CJPayBalanceRechargeController *frontCashierCtrlFromCardList;
+@property (retain, nonatomic) CJPayLoadingButton *confirmBtn;
+@property (retain, nonatomic) CJPayLoadingButton *staticConfirmBtn;
+@property (copy, nonatomic) NSString *memBizOrderNo;
+@property (nonatomic) BOOL disableShowKeyboard;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)supportStdNaviBar;
+- (BOOL)cjAllowTransition;
+- (void)appDidInBackground;
+- (void)p_adapterTheme;
+- (void)p_trackerWithEventName:(id)a0 params:(id)a1;
+- (void)bindCardFromCardList:(id /* block */)a0;
+- (id)initWithBizParams:(id)a0 bizurl:(id)a1 response:(id)a2 completionBlock:(id /* block */)a3;
+- (void)p_bindCard:(id /* block */)a0;
+- (void)silentRefresh;
+- (void)p_confirmClick;
+- (void)p_updateOrderResponse;
+- (void)silentRefreshAndCheckVoucher:(id)a0;
+- (void)p_bindCardSuccessPreClose;
+- (void)p_insertConfirmBtn;
+- (void)p_becomeFirstResponder;
+- (BOOL)p_isHitBindCardTest;
+- (void)p_confirmPayWithBindCardAndPay:(BOOL)a0 invokeFromCardList:(BOOL)a1;
+- (void)p_silentRefreshWithCheckVoucher:(BOOL)a0;
+- (id)p_buildBizParams:(id)a0 isNeedCheckVoucher:(BOOL)a1;
+- (BOOL)p_rechargePageIsTopVC;
+- (void)p_refreshCreateOrderResponseWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)tapContent;
+- (void)p_trackPromotionWithEvent:(id)a0 param:(id)a1;
+- (void)gotoChooseCard;
+- (void)p_updateConfirmBtnState;
+- (id)p_genConfirmBtn;
+- (void)rechargeRecordClick;
+- (void)p_setupUIForStandardNaviBar;
+- (id)p_baseTrackerParams;
+- (void)p_trackCardSelectImp;
+- (void)p_openNativeResultPageWithResponse:(id)a0;
+- (void)p_openLynxResultPageWithResponse:(id)a0;
+- (void)p_startPaymentWithContext:(id)a0 isBindCardAndPay:(BOOL)a1 invokeFromCardList:(BOOL)a2 completion:(id /* block */)a3;
+- (void)p_startRechargeOrBindCard;
+- (void)resignResponder;
+- (void)keyboardWillHide;
+- (void).cxx_destruct;
+- (void)keyboardWillShow:(id)a0;
+- (void)startLoading;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)stopLoading;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)keyboardDidHide;
+- (void)setupViews;
+- (void)appWillEnterForeground;
+- (void)back;
+
+@end

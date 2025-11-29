@@ -1,0 +1,87 @@
+@class NSString;
+
+@interface AWELongVideoModuleService : HTSService <AWELongVideoModuleService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)showPaymentPopupWithMixModel:(id)a0 params:(id)a1 completion:(id /* block */)a2;
++ (void)requestLoginBeforePlayletCollectWithCompleteBlock:(id /* block */)a0;
++ (void)requestPlayletCollectWithID:(id)a0 action:(unsigned long long)a1 completeBlock:(id /* block */)a2;
++ (BOOL)shouldUpdateVideoIfNeedForPlayletPaidVideo:(id)a0 error:(id)a1;
++ (void)savePlayletID:(id)a0 playCurrentEpisode:(id)a1;
++ (id)userPlayletListControllerWithDataController:(id)a0 hideNavigationBar:(BOOL)a1;
++ (void)trackNetworkServiceName:(id)a0 response:(id)a1 error:(id)a2 otherParams:(id)a3;
++ (void)trackPlayletModelServiceName:(id)a0 playletModels:(id)a1;
++ (void)trackMixNetworkServiceName:(id)a0 model:(id)a1 error:(id)a2;
++ (void)trackVideoPaymentServiceName:(id)a0 mixID:(id)a1 modelList:(id)a2 error:(id)a3;
++ (void)trackVideoPaymentServiceName:(id)a0 model:(id)a1 awemeID:(id)a2 error:(id)a3;
++ (BOOL)isPlayletPanelShowed;
++ (void)uploadPaymentVideoWatchRecordIfNeed:(id)a0 seconds:(double)a1 videoDuration:(double)a2;
++ (id)pushPlayletTableViewWithCardAwemeModel:(id)a0 logExtraDic:(id)a1 currentIndex:(long long)a2;
++ (id)pushPlayletTableViewWithCardAwemeModel:(id)a0 logExtraDic:(id)a1 currentIndex:(long long)a2 isUseModernFullscreenMagnifyTransition:(BOOL)a3 transitionFromContextProvider:(id)a4;
++ (void)requestPaymentMixVideoWithAwemeID:(id)a0 uploadTrack:(BOOL)a1;
++ (void)requestPaymentVideoWithAwemeID:(id)a0 referString:(id)a1 playProgress:(double)a2 uploadTrack:(BOOL)a3 isIgnore302Error:(BOOL)a4;
++ (void)requestIAAPaymentVideoWithAwemeID:(id)a0 uploadTrack:(BOOL)a1 afterLogin:(BOOL)a2;
++ (void)requestIAAPaymentVideoWithAwemeID:(id)a0 referString:(id)a1 playProgress:(double)a2 uploadTrack:(BOOL)a3 completion:(id /* block */)a4;
++ (void)preloadSeriesAwemeRequestWithParams:(id)a0 holder:(id)a1 scene:(id)a2 enterFrom:(id)a3;
++ (id)tokenPreloadRequestWithParams:(id)a0 holder:(id)a1 scene:(id)a2;
++ (BOOL)filterPaidAwemeModel:(id)a0;
++ (Class)aweAwemePlayletInnerFeedNaviBarControllerClass;
++ (Class)aweAWEPlayletCardDataControllerClass;
++ (id)reasonPaidUnlockVideoForPlaylet:(id)a0;
++ (id)reasonPaidVideoForPlaylet:(id)a0;
++ (id)aweShowRegisterCellNameWithModel:(id)a0;
++ (Class)playletPaymentUtils;
++ (id)playletDataControllerWithPlayletID:(id)a0 preCurrentEpisode:(id)a1 offset:(id)a2 filterPaymentVideo:(BOOL)a3 disableInsertAd:(long long)a4 outerParams:(id)a5;
++ (id)playletUserListDataController;
++ (Class)collectionManager;
++ (id)playletCollectionManager;
++ (id)createNewPlayletBottomBarView;
++ (Class)aAWELongVideoModuleServiceAdapterClass;
+
+- (void)traceWithEventName:(id)a0 parameters:(id)a1 awemeModel:(id)a2;
+- (Class)playletUtil;
+- (Class)videoHallViewControllerClass;
+- (id)paidStreamControlWithConfig:(id)a0;
+- (id)videoScreenRecordingBlockerWithRelatedObject:(id)a0 keyPath:(id)a1 handler:(id /* block */)a2;
+- (id)playletCenterViewController;
+- (id)playletTabViewController;
+- (id)playletCenterV2ViewController;
+- (id)playletTabV2ViewController;
+- (BOOL)shouldInterceptForPlay:(id)a0;
+- (void)requestPlayletDetailInfo:(id)a0 completeBlock:(id /* block */)a1;
+- (void)playletFastEnterWithAwemeModel:(id)a0 enterFrom:(id)a1 scene:(id)a2;
+- (BOOL)enableUsePaidStreamControlWithAwemeModel:(id)a0 sceneString:(id)a1;
+- (BOOL)shouldUseBottomBarController;
+- (void)traceWithEventName:(id)a0 indexDictionary:(id)a1 otherParameters:(id)a2;
+- (id)playletWidgetManager;
+- (id)createVideoTryWatchViewWithConfig:(id)a0;
+- (id)playletTabMidInsertManager;
+- (Class)longVideoUtil;
+- (Class)videoHallUtilsClass;
+- (Class)theaterUtil;
+- (id)createVideoHallFeedDataController;
+- (id)longVideoPaymentManager;
+- (id)longVideoTimeRecorder;
+- (Class)longVideoMonitorUtil;
+- (id)paidStreamIAPPaymentWithModel:(id)a0 enterFrom:(id)a1;
+- (id)paidStreamVIPPaymentWithModel:(id)a0;
+- (void)preloadIAAPaymentWithConfig:(id)a0;
+- (id)preloadedIAAPaymentForConfig:(id)a0;
+- (Class)theaterWatchTaskOutputerClass;
+- (id)theaterWatchTaskOutputer;
+- (Class)longVideoInteractController;
+- (id)createPlayletWaterMarkView;
+- (id)createMixVideoPaymentCardManager;
+- (id)createPlayletVideoPaymentCardManager;
+- (id)playletUserProfileTabViewControllerWithUserID:(id)a0 targetUser:(id)a1;
+- (id)guideTrackManager;
+- (id)playletBottomView;
+- (id)createPaidStreamIAAGetRewardInfoManagerWithAuthConfig:(id)a0;
+- (id)aAWELongVideoModuleServiceAdapter;
+- (id)longVideoPlayerView;
+
+@end

@@ -1,0 +1,10 @@
+@class GPBInt64BoolDictionary;
+
+@interface TIMXPBNUserIsInMyBlackResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64BoolDictionary *isIn;
+@property (readonly, nonatomic) unsigned long long isIn_Count;
+
++ (id)descriptor;
+
+@end

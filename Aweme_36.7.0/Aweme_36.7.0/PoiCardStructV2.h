@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface PoiCardStructV2 : GPBMessage
+
+@property (nonatomic) int isShow;
+@property (nonatomic) BOOL hasIsShow;
+@property (copy, nonatomic) NSString *URL;
+@property (nonatomic) BOOL hasURL;
+
++ (id)descriptor;
+
+@end

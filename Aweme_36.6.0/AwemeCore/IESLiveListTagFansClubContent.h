@@ -1,0 +1,11 @@
+@class NSString, GPBInt32ObjectDictionary;
+
+@interface IESLiveListTagFansClubContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt32ObjectDictionary *icons;
+@property (readonly, nonatomic) unsigned long long icons_Count;
+@property (copy, nonatomic) NSString *clubName;
+
++ (id)descriptor;
+
+@end

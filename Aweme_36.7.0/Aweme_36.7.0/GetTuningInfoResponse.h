@@ -1,0 +1,10 @@
+@class GetTuningInfoResponse_ResponseData;
+
+@interface GetTuningInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetTuningInfoResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

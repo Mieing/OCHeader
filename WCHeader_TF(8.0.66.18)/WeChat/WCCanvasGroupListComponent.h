@@ -1,0 +1,83 @@
+@class UIView, NSString, WCCanvasArrowRightIcon, WCCanvasAdPageIndicator, MMScrollView, NSMutableArray, UILabel, MMTimer;
+
+@interface WCCanvasGroupListComponent : WCCanvasComponent <UIScrollViewDelegate, scrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MMTableViewDelegate>
+
+@property (retain, nonatomic) UIView *m_blackMask;
+@property (retain, nonatomic) MMScrollView *m_scrollView;
+@property (retain, nonatomic) WCCanvasAdPageIndicator *pageIndicator;
+@property (nonatomic) unsigned int m_iCurIndex;
+@property (retain, nonatomic) NSMutableArray *m_arrTable;
+@property (retain, nonatomic) UILabel *m_pageLabel;
+@property (nonatomic) long long pageLabelCurrentPage;
+@property (retain, nonatomic) WCCanvasArrowRightIcon *arrowRightIcon;
+@property (nonatomic) BOOL needRelayout;
+@property (nonatomic) BOOL shouldFixSearchCanvas;
+@property (retain, nonatomic) MMTimer *autoCarouselTimer;
+@property (nonatomic) BOOL carouselRunningFlag;
+@property (nonatomic) BOOL componentAppearedFlag;
+@property (nonatomic) BOOL componentBackgroundFlag;
+@property (nonatomic) BOOL componentDraggingFlag;
+@property (nonatomic) BOOL turnPageAnimatingFlag;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })calcSizeForCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
++ (double)calcHeightForTableViewWithGroup:(id)a0 maxWidth:(double)a1 advertiseInfo:(id)a2 orientation:(long long)a3;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (void)clearStatus;
+- (void)resetScrollView;
+- (void)animationShowWithIndex:(unsigned long long)a0;
+- (void)addItemToScrollView;
+- (BOOL)shouldShowRightDirectionIcon:(int)a0;
+- (BOOL)shouldForbidDelegateShowArrowDown;
+- (BOOL)shouldShowDownDirectionIcon;
+- (void)configureWithCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
+- (void)componentWillAppearInMainScreen:(BOOL)a0;
+- (void)componentDidFullyAppearInMainScreen:(BOOL)a0;
+- (void)componentAppearFactorChagneInMainScreen;
+- (void)componentWillDisappearInMainScreen:(BOOL)a0;
+- (void)componentWillResumeState:(BOOL)a0;
+- (void)componentReportAddExposureCount;
+- (BOOL)encoreShakeShouldForbidShakeSpecialView;
+- (id)fetchFirstComponentForType:(int)a0;
+- (void)shareComponentDidBeClickedWithType:(long long)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)setPageCtrlTo:(unsigned int)a0;
+- (void)setPageCtrlColorFor:(unsigned int)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)initArrowRightIcon;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)notifyWillAppearPage:(long long)a0;
+- (void)notifyFullyAppearPage:(long long)a0;
+- (void)notifyDisappearPage:(long long)a0;
+- (void)componentReportAddExposureCountWithPage:(long long)a0;
+- (void)componentDidEnterBackground;
+- (void)componentWillEnterForeground;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (double)getPreloadWebViewBottomInScrollGroupComponent;
+- (BOOL)hasPreloadWebViewInScrollGroupComponent;
+- (long long)getDataIndexFromViewIndex:(long long)a0;
+- (long long)getViewIndexFromDataIndex:(long long)a0;
+- (void)adjustScrollView;
+- (void)tryStartAutoCarousel;
+- (void)stopAutoCarousel;
+- (void)turnPageImmediatelyAndInitTimer;
+- (void)turnPage;
+- (void)updatePageIndicatorByScrollView;
+- (void)setPageIndicatorFrame;
+- (void).cxx_destruct;
+
+@end

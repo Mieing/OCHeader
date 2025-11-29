@@ -1,0 +1,3 @@
+@interface IESLiveKtvProfitKtvGetSingingSongInfoApiRoot : GPBRootObject
+
+@end

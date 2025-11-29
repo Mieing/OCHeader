@@ -1,0 +1,3 @@
+@interface HTSLiveBackrecordVideoRoot : GPBRootObject
+
+@end

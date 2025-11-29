@@ -1,0 +1,13 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveShowMultiCameraChangeMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *cameraInfosArray;
+@property (readonly, nonatomic) unsigned long long cameraInfosArray_Count;
+@property (nonatomic) long long randomlyBreakUpTime;
+
++ (id)descriptor;
+
+@end

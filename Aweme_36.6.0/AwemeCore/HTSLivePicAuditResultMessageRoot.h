@@ -1,0 +1,3 @@
+@interface HTSLivePicAuditResultMessageRoot : GPBRootObject
+
+@end

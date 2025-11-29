@@ -1,0 +1,16 @@
+@class NSString, HTSLiveFlexImageStruct;
+
+@interface HTSLiveChatItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long headSize;
+@property (nonatomic) long long contentSize;
+@property (copy, nonatomic) NSString *contentColor;
+@property (retain, nonatomic) HTSLiveFlexImageStruct *background;
+@property (nonatomic) BOOL hasBackground;
+@property (nonatomic) long long backgroundHight;
+@property (nonatomic) long long backgroundWidth;
+@property (nonatomic) long long useRate;
+
++ (id)descriptor;
+
+@end

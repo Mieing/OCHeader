@@ -1,0 +1,3 @@
+@interface RoomHighlightCommonPictureTextApiRoot : GPBRootObject
+
+@end

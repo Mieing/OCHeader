@@ -1,0 +1,10 @@
+@class NSArray;
+
+@interface IESLiveSyncDiamondListParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSArray *diamondList;
+
++ (id)modelContainerPropertyGenericClass;
++ (id)modelCustomPropertyMapper;
+
+@end

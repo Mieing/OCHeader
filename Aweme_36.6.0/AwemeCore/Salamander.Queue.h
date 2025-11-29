@@ -1,0 +1,7 @@
+@interface Salamander.Queue : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ name;
+    void /* unknown type, empty encoding */ isSerial;
+    void /* unknown type, empty encoding */ ref;
+}
+
+@end

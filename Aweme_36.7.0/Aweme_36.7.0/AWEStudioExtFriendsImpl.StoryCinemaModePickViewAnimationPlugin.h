@@ -1,0 +1,3 @@
+@interface AWEStudioExtFriendsImpl.StoryCinemaModePickViewAnimationPlugin : AWEStudioExtFriendsImpl.StoryCinemaModeBaseFilterPlugin
+
+@end

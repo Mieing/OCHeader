@@ -1,0 +1,81 @@
+@class NSString;
+
+@interface BrandTimelineExposeInfo : MMObject
+
+@property (copy, nonatomic) NSString *bizUsername;
+@property (nonatomic) unsigned int bizUin;
+@property (nonatomic) unsigned int mid;
+@property (nonatomic) unsigned int idx;
+@property (nonatomic) unsigned int itemIndex;
+@property (nonatomic) unsigned int exposePos;
+@property (nonatomic) unsigned int exposeCount;
+@property (nonatomic) unsigned int exposeBrowseState;
+@property (nonatomic) unsigned int expandState;
+@property (nonatomic) unsigned int isExpandDafault;
+@property (nonatomic) BOOL isValidExpose;
+@property (nonatomic) unsigned int exposeRatio;
+@property (nonatomic) unsigned int createTime;
+@property (nonatomic) unsigned int exposeTimeStamp;
+@property (nonatomic) unsigned long long exposeTimeStampInMs;
+@property (nonatomic) unsigned int isStar;
+@property (nonatomic) unsigned int isNewMsg;
+@property (nonatomic) unsigned int msgType;
+@property (copy, nonatomic) NSString *itemInfoStr;
+@property (nonatomic) unsigned int isClick;
+@property (nonatomic) unsigned int isLargeCover;
+@property (nonatomic) unsigned int isOftenReadBiz;
+@property (nonatomic) unsigned int isPayContent;
+@property (nonatomic) unsigned int itemShowType;
+@property (nonatomic) unsigned int cardType;
+@property (nonatomic) unsigned long long recId;
+@property (copy, nonatomic) NSString *recReason;
+@property (copy, nonatomic) NSString *exptType;
+@property (copy, nonatomic) NSString *event;
+@property (copy, nonatomic) NSString *cardId;
+@property (nonatomic) unsigned int recRk;
+@property (nonatomic) unsigned int recStyle;
+@property (copy, nonatomic) NSString *recInfo;
+@property (copy, nonatomic) NSString *recExtraData;
+@property (copy, nonatomic) NSString *aggregationTitle;
+@property (copy, nonatomic) NSString *aggregationUrl;
+@property (copy, nonatomic) NSString *cardTitle;
+@property (nonatomic) unsigned int subPos;
+@property (copy, nonatomic) NSString *videoId;
+@property (copy, nonatomic) NSString *wordingReportInfo;
+@property (nonatomic) unsigned int weight;
+@property (copy, nonatomic) NSString *rankSessionId;
+@property (copy, nonatomic) NSString *resortBuffer;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) BOOL isAutoPlay;
+@property (nonatomic) unsigned int autoPlayTime;
+@property (nonatomic) unsigned int actType;
+@property (copy, nonatomic) NSString *finderFeedObjectId;
+@property (copy, nonatomic) NSString *contentId;
+@property (copy, nonatomic) NSString *finderId;
+@property (nonatomic) unsigned int cardSequenceIdx;
+@property (nonatomic) unsigned int styleInfo;
+@property (nonatomic) unsigned int showFinder;
+@property (copy, nonatomic) NSString *aid;
+@property (copy, nonatomic) NSString *traceId;
+@property (nonatomic) BOOL hasReportRealTimeExposed;
+@property (nonatomic) BOOL hasReportRealTimeValidExposed;
+
++ (id)readerKeyPrefix;
++ (id)genKeyForBaseItemViewModel:(id)a0;
++ (void)fillData:(id)a0 withFinderFixedCellViewModel:(id)a1 index:(long long)a2;
++ (void)fillData:(id)a0 withFinderScrollableCellViewModel:(id)a1 index:(long long)a2;
++ (void)fillData:(id)a0 withinterestData:(id)a1 index:(long long)a2;
++ (id)genInfoKeyForReaderItemCell:(id)a0 itemIndex:(unsigned int)a1;
++ (id)genInfoKeyWithRecAppMsgViewModel:(id)a0;
++ (id)genInfoKeyWithFinderFixedCellViewModel:(id)a0 index:(long long)a1;
++ (id)genInfoKeyWithFinderScrollableCellViewModel:(id)a0 index:(long long)a1;
++ (id)genInfoKeyWithMPInterestCard:(id)a0 interestData:(id)a1 index:(long long)a2;
++ (id)genInfoKeyForCanvasRecMsg:(id)a0;
++ (id)genInfoKeyForCanvasAdMsg:(id)a0;
+
+- (id)initWithItemViewModel:(id)a0 sectionIndex:(unsigned long long)a1 newMsgSequenceId:(unsigned long long)a2 curTime:(unsigned int)a3 curTimeInMs:(unsigned long long)a4 isStar:(BOOL)a5;
+- (id)initWithBTCanvasMsgSectionData:(id)a0 sectionIndex:(unsigned long long)a1 newMsgSequenceId:(unsigned long long)a2 curTime:(unsigned int)a3 curTimeInMs:(unsigned long long)a4;
+- (id)initWithRecommendAppMsgViewModel:(id)a0 sectionIndex:(unsigned long long)a1 newMsgSequenceId:(unsigned long long)a2 curTime:(unsigned int)a3 curTimeInMs:(unsigned long long)a4;
+- (void).cxx_destruct;
+
+@end

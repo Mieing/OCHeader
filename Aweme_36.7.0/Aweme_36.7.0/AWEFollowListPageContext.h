@@ -1,0 +1,82 @@
+@class UIView, NSString, NSError, AWEFollowListClassificationEntrance, UIButton, NSMutableSet, UICollectionView, NSMutableArray, NSNumber;
+
+@interface AWEFollowListPageContext : AWEPageContext
+
+@property (nonatomic) long long enterScene;
+@property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *secUserID;
+@property (copy, nonatomic) NSString *userName;
+@property (nonatomic) long long followingNumber;
+@property (nonatomic) long long fansNumber;
+@property (copy, nonatomic) NSString *fansString;
+@property (nonatomic) long long friendsNumber;
+@property (nonatomic) unsigned long long currentSelectedType;
+@property (nonatomic) BOOL isViewDidAppear;
+@property (nonatomic) long long currentSelectedIndex;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (nonatomic) BOOL showRecommendInvite;
+@property (nonatomic) BOOL isFriends;
+@property (copy, nonatomic) NSString *fromRequestID;
+@property (nonatomic) BOOL isFromHighValueUser;
+@property (readonly, nonatomic) BOOL isMine;
+@property (nonatomic) BOOL finishFirstCleanEntranceUpdate;
+@property (retain, nonatomic) UIButton *fansEntranceButton;
+@property (nonatomic) double followingListVCHeight;
+@property (nonatomic) long long followingFollowerListToast;
+@property (nonatomic) long long fansPageToast;
+@property (nonatomic) BOOL isHitActiveFansGrayed;
+@property (copy, nonatomic) NSString *fansAnalysisFansCountString;
+@property (copy, nonatomic) NSString *hotsoonText;
+@property (copy, nonatomic) NSString *hotsoonTextForFansList;
+@property (nonatomic) BOOL userListHasMore;
+@property (nonatomic) BOOL hotsoonUserListHasMore;
+@property (nonatomic) BOOL isSortRefreshing;
+@property (nonatomic) long long followStatus;
+@property (nonatomic) BOOL bubbleHasJudgeShown;
+@property (weak, nonatomic) UICollectionView *followListCollectionView;
+@property (nonatomic) BOOL followListNeedSkipGuideToast;
+@property (nonatomic) BOOL isTabSimplification;
+@property (nonatomic) BOOL usingCache;
+@property (retain, nonatomic) NSError *requestError;
+@property (nonatomic) int canEntranceShowBadge;
+@property (nonatomic) int hasEntranceShowBadge;
+@property (nonatomic) BOOL fansListDealloc;
+@property (retain, nonatomic) NSNumber *followingNumberFromProfile;
+@property (retain, nonatomic) NSNumber *fansNumberFromProfile;
+@property (nonatomic) BOOL blockTa;
+@property (nonatomic) BOOL blockByTa;
+@property (nonatomic) BOOL onlySelfView;
+@property (weak, nonatomic) AWEFollowListClassificationEntrance *categoryEntrance;
+@property (weak, nonatomic) UIView *followListView;
+@property (retain, nonatomic) NSNumber *followingCount;
+@property (nonatomic) BOOL followListHeaderTotalHeight;
+@property (copy, nonatomic) NSString *statusMsg;
+@property (nonatomic) long long topCount;
+@property (nonatomic) double searchBarHeight;
+@property (nonatomic) BOOL searchtracked;
+@property (nonatomic) BOOL hasLoadedList;
+@property (retain, nonatomic) NSMutableSet *eventSet;
+@property (nonatomic) BOOL isHotsoonAuthrizeRelation;
+@property (nonatomic) BOOL isHotsoonAuthrizeRelationForFanList;
+@property (nonatomic) BOOL isKeyBoardShown;
+@property (nonatomic) unsigned long long friendsListPosition;
+@property (readonly, nonatomic) unsigned long long activeUserSourceType;
+@property (nonatomic) BOOL isMoreMenuShowing;
+@property (nonatomic) BOOL needUpdateTopCount;
+@property (readonly, nonatomic) BOOL needReverseLibra;
+@property (retain, nonatomic) NSMutableArray *removingUids;
+@property (nonatomic) long long taIsFriendSwitchStatus;
+@property (copy, nonatomic) id /* block */ endEditingBlock;
+@property (nonatomic) long long defaultFollowSortType;
+@property (nonatomic) long long selectedGroupFilterType;
+@property (copy, nonatomic) NSString *insertIds;
+@property (nonatomic) long long defaultLandingFansStyle;
+
++ (Class)aAWERelationDOUYINHTSAdapterClass;
+
+- (id)aAWERelationDOUYINHTSAdapter;
+- (BOOL)shouldShowVCDAuthorizedViewInFanList;
+- (BOOL)shouldShowVCDAuthorizedView;
+- (void).cxx_destruct;
+
+@end

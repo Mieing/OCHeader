@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicChannelLinkmicChannelSilenceApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,14 @@
+@class NSString, IESLiveMVUrlStruct;
+
+@interface IESLiveMVBaseInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *vid;
+@property (copy, nonatomic) NSString *coverURL;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) int duration;
+@property (retain, nonatomic) IESLiveMVUrlStruct *downloadAddr;
+@property (nonatomic) BOOL hasDownloadAddr;
+
++ (id)descriptor;
+
+@end

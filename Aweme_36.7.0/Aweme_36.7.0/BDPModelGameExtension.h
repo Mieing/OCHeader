@@ -1,0 +1,70 @@
+@class NSString, NSArray, NSDictionary;
+
+@interface BDPModelGameExtension : NSObject <NSCopying, NSCoding, BDPODRMetaBriefProtocol>
+
+@property (copy, nonatomic) NSString *appID;
+@property (copy, nonatomic) NSString *biz_md5;
+@property (copy, nonatomic) NSString *encrypted_biz_md5;
+@property (copy, nonatomic) NSArray *plugins;
+@property (nonatomic) long long type;
+@property (nonatomic) long long mixType;
+@property (copy, nonatomic) NSString *bundleMetaODRVersion;
+@property (copy, nonatomic) NSString *version;
+@property (nonatomic) BOOL isODRModeInMemory;
+@property (nonatomic) BOOL hasReadODRMode;
+@property (copy, nonatomic) NSString *loadResourceReason;
+@property (retain, nonatomic) NSDictionary *maODRPlugins;
+@property (nonatomic) BOOL usingGameEnginePlugin;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic) unsigned long long versionState;
+@property (copy, nonatomic) NSString *scVersionStateJson;
+@property (copy, nonatomic) NSString *scAppExtJson;
+@property (copy, nonatomic) NSString *loadingBg;
+@property (copy, nonatomic) NSString *innerCodeXZPath;
+@property (copy, nonatomic) NSArray *odrResourcesURLs;
+@property (copy, nonatomic) NSString *odrResourcesMD5;
+@property (nonatomic) long long odrResourcesLength;
+@property (copy, nonatomic) NSString *odrCodesTag;
+@property (copy, nonatomic) NSString *odrCodesMD5;
+@property (nonatomic) long long odrCodesLength;
+@property (nonatomic) long long odrCodesOriginalVersionCode;
+@property (nonatomic) long long versionCode;
+@property (nonatomic) BOOL fastDebugMode;
+@property (copy, nonatomic) NSString *versionType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)isRV;
+- (BOOL)isODRMode;
+- (BOOL)isODRMeta;
+- (void)updateODRAppFromGameExtension:(id)a0;
+- (BOOL)hasODRMetaData;
+- (void)updateODRXLoadRecord:(double)a0;
+- (id)getPluginPathArray;
+- (BOOL)isMainPkgAfterSplit;
+- (id)deocodeMD5:(id)a0 withIv:(id)a1 key:(id)a2;
+- (void)resetODRParamsIfNeeded;
+- (void)handlePluginAndBizMd5WithDict:(id)a0 decryptKey:(id)a1 iv:(id)a2 buildTag:(id)a3;
+- (id)handleGameEnginePlugins:(id)a0 withBuildTag:(id)a1;
+- (id)handlePlugins:(id)a0 buildTag:(id)a1;
+- (id)getODRTag:(id)a0;
+- (void)buildSCGameODRMeta;
+- (void)checkLocalODR;
+- (BOOL)readODRModeFromSettings;
+- (BOOL)isODRVersionBehind;
+- (BOOL)isVPNConnected:(id)a0;
+- (BOOL)isInhouseODRXApp:(id)a0;
+- (BOOL)shouldSwitchToOdrXWithMode:(unsigned long long)a0;
+- (BOOL)isCarrierCN;
+- (BOOL)checkODRXLoadRecordBefore:(long long)a0;
+- (id)initWithDictionary:(id)a0 versionType:(id)a1 key:(id)a2 iv:(id)a3 buildTag:(id)a4;
+- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (BOOL)enablePlugin;
+- (BOOL)isInDebugMode;
+
+@end

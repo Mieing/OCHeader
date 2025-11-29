@@ -1,0 +1,17 @@
+@class NSDictionary;
+
+@interface _TtCC10BDChainLog23ChainLogStatisticCenterP33_E2F2AADE98887AEE990D65A06DEB853C8FileData : _TtCC10BDChainLog23ChainLogStatisticCenterP33_E2F2AADE98887AEE990D65A06DEB853C9BasicData {
+    void /* function */ funcDict;
+}
+
+@property (nonatomic, copy) NSDictionary *funcDict;
+
++ (id)funcDictJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (id)initWithDictionary:(id)a0 error:(id *)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (id)initWithCoder:(id)a0;
+
+@end

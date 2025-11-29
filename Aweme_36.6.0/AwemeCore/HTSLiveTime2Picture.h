@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveTime2Picture : IESLivePBBaseMessage
+
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+@property (copy, nonatomic) NSString *pictureURL;
+
++ (id)descriptor;
+
+@end

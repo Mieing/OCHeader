@@ -1,0 +1,3 @@
+@interface AWEStoryImpl.StoryHistoryVisibilitySectionViewModel : AWEStoryKit.StoryKitBaseSectionViewModel
+
+@end

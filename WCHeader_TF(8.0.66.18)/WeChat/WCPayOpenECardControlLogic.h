@@ -1,0 +1,78 @@
+@class WCPayBindECardCgi, NSString, WCPayQryBankList4BindCgi, WCPayLQTOpenLqbAccountCgi, MMTipsViewController, WCPayEcardModelView, WCPayLQTDetailControlLogic, WCPayOpenECardCgi, WCPayOpenECardAuthCgi, OpenECardReq;
+@protocol WCPayOpenECardControlLogicDelegate;
+
+@interface WCPayOpenECardControlLogic : WCPayECardBaseControlLogic <WCPayEcardModelViewDelegate, MMTipsViewControllerDelegate, WCPayOpenECardAuthCgiDelegate, WCPayQryBankList4BindCgiDelegate, WCPayOpenECardCgiDelegate, WCPayBindECardCgiDelegate, WCPayPayPwdViewControllerDelegate, WCPayECardBankCardListViewControllerDelegate, WCPayECardSelectCardTypeViewControllerDelegate, WCPayVerifyPayCardViewControllerDelegate, MMWebViewDelegate, WCPayECardSuccessViewControllerDelegate, WCPayLQTOpenLqbAccountCgiDelegate, WCPayLQTDetailControlLogicDelegate, WCPayAddPayCardDelegate>
+
+@property (retain, nonatomic) WCPayOpenECardAuthCgi *openECardAuthCgi;
+@property (retain, nonatomic) WCPayQryBankList4BindCgi *bankListCgi;
+@property (retain, nonatomic) WCPayOpenECardCgi *openECardCgi;
+@property (retain, nonatomic) WCPayBindECardCgi *bindECardCgi;
+@property (retain, nonatomic) WCPayLQTOpenLqbAccountCgi *lqbOpenAccoutCgi;
+@property (retain, nonatomic) NSString *jsapiToken;
+@property (retain, nonatomic) NSString *jsapiExtraData;
+@property (retain, nonatomic) WCPayLQTDetailControlLogic *lqtDetailControlLogic;
+@property (nonatomic) BOOL bIsOpenECardSucc;
+@property (nonatomic) BOOL bIsReuseExistingEcard;
+@property (retain, nonatomic) NSString *bindCardSerial;
+@property (nonatomic) BOOL bIsQryBankListAfterBindCard;
+@property (retain, nonatomic) MMTipsViewController *verifyTips;
+@property (retain, nonatomic) NSString *currentInputMobile;
+@property (retain) OpenECardReq *openEcardReq;
+@property (retain) WCPayEcardModelView *openEcardModelView;
+@property (weak, nonatomic) id<WCPayOpenECardControlLogicDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithData:(id)a0 delegate:(id)a1;
+- (void)stopLogic;
+- (void)startLogic;
+- (void)WCPayViewControllerDidBeRemoved:(id)a0;
+- (void)MMUIViewControllerDidBeRemoved:(id)a0;
+- (void)startOpenECardWithBankType:(id)a0 PhoneNumber:(id)a1 bindSerial:(id)a2 bankCardNo:(id)a3 isisRepeatSend:(BOOL)a4 fromScene:(int)a5;
+- (void)startOpenECardWithBankType:(id)a0 PhoneNumber:(id)a1 bindSerial:(id)a2 bankCardNo:(id)a3 isisRepeatSend:(BOOL)a4 fromScene:(int)a5 bankCardInfo:(id)a6;
+- (void)startQueryBankCardList;
+- (void)showPasswordVC;
+- (void)PayPwdBack;
+- (void)PayPwdRightActionBack;
+- (void)VerifyPayPwdNext:(id)a0;
+- (void)eCardBankListVC:(id)a0 didSelectedCard:(id)a1;
+- (void)eCardBankListVCDidChoseNewCard:(id)a0;
+- (void)eCardBankListVCBack;
+- (void)vc:(id)a0 didSelectCardType:(id)a1;
+- (void)VerifyPayCardBack;
+- (void)VerifyPayCardNext:(id)a0;
+- (void)VerifyPayCardAgain:(id)a0;
+- (void)webViewReturn:(id)a0;
+- (void)successVCFinished:(id)a0;
+- (void)OnCheckWCPayJsApiRequest:(id)a0 Error:(id)a1;
+- (void)sendOpenEcardAuthRequestWithPwd:(id)a0;
+- (void)openECardAuthCgi:(id)a0 didGetResponse:(id)a1;
+- (void)openECardAuthCgi:(id)a0 didFailWithError:(id)a1;
+- (void)OnVerifyPayPassword:(id)a0;
+- (void)openECardCgi:(id)a0 didGetResponse:(id)a1;
+- (void)openECardCgi:(id)a0 didFailWithError:(id)a1;
+- (void)qryBankList4BindCgi:(id)a0 didGetResponse:(id)a1;
+- (void)qryBankList4BindCgi:(id)a0 didFailWithError:(id)a1;
+- (void)OnGetBindingCardBin:(id)a0 AvailableBank:(id)a1 userExInfoResponse:(id)a2 Error:(id)a3;
+- (void)bindECardCgi:(id)a0 didGetResponse:(id)a1;
+- (void)bindECardCgi:(id)a0 didFailWithError:(id)a1;
+- (void)sendLqbOpenAccountRequest;
+- (void)onGetLqbOpenAccountCgiResp:(id)a0;
+- (void)clickLqbOpenAccountError;
+- (void)gotoLQTDetailControLogic:(id)a0;
+- (void)onLQTDetailControlLogicStop;
+- (void)startAddPayCardLogic;
+- (void)onAddPayCardResult:(BOOL)a0 newCardBindSerial:(id)a1;
+- (void)queryBankListForBindFailOrCancel;
+- (void)openECardAfterBindNewCard;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 tipTag:(long long)a2;
+- (void)onWCPayEcardModelViewShowKeyboard:(id)a0;
+- (void)onWCPayEcardModelViewHideKeyboard;
+- (void)onWCPayEcardModelViewClickNewCardLink;
+- (void)onWCPayEcardModelViewTextChange:(id)a0;
+- (void).cxx_destruct;
+
+@end

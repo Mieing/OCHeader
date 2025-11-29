@@ -1,0 +1,81 @@
+@class UIView, IESIMPublishMessageNavigationBar, NSArray, UIScrollView, NSString, UIButton, UITableView, NSDictionary, UIViewController, AWEIMMessageConversation, AWEIMConversationContext;
+@protocol IESIMLoadingViewProtocol, IESIMPublishMessagePostComponentInterface, IESIMPublishMessageBackgroundColorService, IESIMPublishMessageDataComponentInterface, IESIMPublishMessageTrackComponentInterface, IESIMPublishMessageScreenshotComponentInterface;
+
+@interface IESIMPublishMessageViewController : AWEIMComponentViewController <UITableViewDelegate, UITableViewDataSource, AWEPublishTaskMessage, AWEIMInAppPushProtocol, AWEIMComponentManagerDependency>
+
+@property (retain, nonatomic) AWEIMConversationContext *componentContext;
+@property (retain, nonatomic) id<IESIMPublishMessageDataComponentInterface> dataSource;
+@property (retain, nonatomic) id<IESIMPublishMessagePostComponentInterface> postService;
+@property (retain, nonatomic) id<IESIMPublishMessageBackgroundColorService> backgroundColorService;
+@property (retain, nonatomic) id<IESIMPublishMessageTrackComponentInterface> trackService;
+@property (retain, nonatomic) id<IESIMPublishMessageScreenshotComponentInterface> screenshotService;
+@property (retain, nonatomic) IESIMPublishMessageNavigationBar *navigationbar;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) UIView *topMaskView;
+@property (retain, nonatomic) UIView *bottomMaskView;
+@property (retain, nonatomic) UIScrollView *scrollview;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (retain, nonatomic) UIView<IESIMLoadingViewProtocol> *loadingView;
+@property (retain, nonatomic) NSArray *messages;
+@property (retain, nonatomic) NSArray *groups;
+@property (retain, nonatomic) AWEIMMessageConversation *conversation;
+@property (copy, nonatomic) id /* block */ onPostCallback;
+@property (retain, nonatomic) NSDictionary *extraInfo;
+@property (copy, nonatomic) NSString *currentStage;
+@property (nonatomic) BOOL isFormat;
+@property (nonatomic) BOOL isConfirmButtonTapped;
+@property (nonatomic) long long checkConfirmActionRetryCount;
+@property (nonatomic) double beginTime;
+@property (weak, nonatomic) AWEIMConversationContext *convContext;
+@property (copy, nonatomic) NSString *formatTrackEntrance;
+@property (weak, nonatomic) UIViewController *hostViewController;
+@property (nonatomic) BOOL isAutoPublish;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)publishMessages:(id)a0 conversation:(id)a1 extraInfo:(id)a2 onPostCallback:(id /* block */)a3;
++ (void)addInvisibleViewController:(id)a0 toHost:(id)a1;
+
+- (void)task:(id)a0 didBeginWithInfo:(id)a1;
+- (BOOL)canShowInnerPush;
+- (id)componentsNameArrayWithContext:(id)a0;
+- (void)p_showLoading;
+- (BOOL)enableMemoryOptimizeWithNunki;
+- (void)didReceiveMemeoryDangerLevelTopNotification;
+- (BOOL)p_userDidCancel:(id)a0;
+- (void)p_trackTransImageToVideoEvent:(id)a0;
+- (void)p_trackStageBegin;
+- (void)trackFormatPostWithEventType:(id)a0;
+- (void)p_checkAndPerformConfirmAction;
+- (void)p_onConfirmAction;
+- (void)p_trackMemoryWarningReason:(id)a0;
+- (void)addGradientForView:(id)a0 colorConfig:(id)a1;
+- (void)setupNavigation;
+- (void)onBackTapped;
+- (id)p_trackObjectWithStage:(id)a0;
+- (void)p_hideLoading;
+- (void)updateTopMaskView;
+- (void)updateBottomMaskView;
+- (id)p_viewModelWithIndexPath:(id)a0;
+- (id)p_stageScreenshotInfo;
+- (void)p_removeSelfIfNeed;
+- (void)p_transVideoWithImage:(id)a0;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)setupDataSource;
+- (void)setupView;
+- (void)updateUI;
+
+@end

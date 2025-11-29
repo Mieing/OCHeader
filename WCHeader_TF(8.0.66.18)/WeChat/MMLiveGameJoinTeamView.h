@@ -1,0 +1,76 @@
+@class MMWebImageView, MMUIButton, MMFinderLiveTaskId, MMLiveGameJoinTeamShowGiftView, UIButton, UIView, MMLiveJoinGameAudiencePaymentView, NSString, MMFinderLiveGameTeamInfo, RichTextView, MMUILabel, MMUIView, UIImageView;
+@protocol MMLiveGameJoinTeamViewDelegate;
+
+@interface MMLiveGameJoinTeamView : MMPageSheetBaseView <UIGestureRecognizerDelegate, WCFinderLiveExt, MMWebImageViewDelegate, MMLiveJoinGameAudiencePaymentViewDelegate, ILinkEventExt, WCCoinBuyCoinLogicDelegate>
+
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) MMUIButton *closeBtn;
+@property (retain, nonatomic) MMLiveGameJoinTeamShowGiftView *showGiftBtn;
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) MMUILabel *rankDescLabel;
+@property (retain, nonatomic) MMUILabel *teamupMemberDescLabel;
+@property (retain, nonatomic) MMUIButton *teamupStartButton;
+@property (retain, nonatomic) RichTextView *explainDescLabel;
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (retain, nonatomic) MMFinderLiveGameTeamInfo *gameTeamInfo;
+@property (nonatomic) unsigned int curJoinTeamMode;
+@property (retain, nonatomic) UIButton *anchorView;
+@property (retain, nonatomic) MMUIView *topSepratorLine;
+@property (retain, nonatomic) MMUIView *downSepratorLine;
+@property (retain, nonatomic) MMWebImageView *rankIcon;
+@property (retain, nonatomic) NSString *rankIconUrl;
+@property (retain, nonatomic) MMUILabel *rankScoreDescLabel;
+@property (retain, nonatomic) MMUILabel *otherDescLabel;
+@property (retain, nonatomic) UIImageView *arrowImageView;
+@property (retain, nonatomic) MMLiveJoinGameAudiencePaymentView *paymentView;
+@property (nonatomic) BOOL isShow;
+@property (nonatomic) BOOL shouldReport;
+@property (weak, nonatomic) id<MMLiveGameJoinTeamViewDelegate> operationDelegate;
+@property (nonatomic) BOOL paidForNextRound;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)dealloc;
+- (void)registerExtension;
+- (void)unRegisterExtension;
+- (void)initUI;
+- (void)layoutUI;
+- (void)layoutSubviews;
+- (double)contentViewHeight;
+- (void)showWithAnimated:(BOOL)a0;
+- (void)pageSheetDidAppear;
+- (void)dismissWithAnimated:(BOOL)a0;
+- (void)updatePanelInfo;
+- (void)fetchGameTeamInfo;
+- (id)liveTask;
+- (void)updateWithGameTeamInfo:(id)a0;
+- (void)handlePaymentTitle:(unsigned long long)a0;
+- (id)getJoinGameTeamButtonText:(unsigned int)a0 gameTeamInfo:(id)a1;
+- (unsigned long long)getJoinTeamExposureAction:(unsigned int)a0;
+- (unsigned long long)getJoinTeamAction:(unsigned int)a0;
+- (id)secondaryPaymentView;
+- (void)onClickCloseButton;
+- (void)onClickShowGiftButtonDown;
+- (void)onClickShowGiftButton;
+- (void)onTeamUpStartButtonClicked;
+- (void)onTeamUpBookNextButtonClick;
+- (void)onTeamUpPayButtonClicked;
+- (BOOL)checkJumpInfoValid;
+- (void)tapArrow;
+- (void)onMMLiveJoinGameAudiencePaymentViewClickPayButton;
+- (void)onMMLiveJoinGameAudiencePaymentViewClickCoinButton;
+- (void)buyCoinCancel:(id)a0;
+- (void)buyCoinFail:(id)a0;
+- (void)buyCoinSuccess:(id)a0;
+- (void)onGetFinderLiveGameLiveTeamUpInfoWithTaskId:(id)a0 appMsgGameTeamInfo:(id)a1;
+- (void)onGetFinderLiveMessage:(id)a0 taskId:(id)a1 onlineContacts:(id)a2 msgList:(id)a3 finderLiveInfo:(id)a4 onlineCount:(unsigned int)a5 liveInfoEnable:(BOOL)a6 liveClosed:(BOOL)a7 liveExtFlag:(unsigned int)a8 onlineViewCount:(unsigned int)a9 ktvPlayerCount:(unsigned int)a10 nextRequestInterval:(unsigned int)a11 currentLikeCount:(unsigned long long)a12 extraClientConfigUpdated:(BOOL)a13 liveGameData:(id)a14 respContext:(id)a15;
+- (BOOL)isFollowState;
+- (void)onLoadImageOK:(id)a0;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (id)audienceLogReporter;
+- (void).cxx_destruct;
+
+@end

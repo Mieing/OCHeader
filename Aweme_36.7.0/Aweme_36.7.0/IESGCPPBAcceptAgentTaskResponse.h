@@ -1,0 +1,10 @@
+@class IESGCPPBAcceptAgentTaskResponse_Data;
+
+@interface IESGCPPBAcceptAgentTaskResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBAcceptAgentTaskResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

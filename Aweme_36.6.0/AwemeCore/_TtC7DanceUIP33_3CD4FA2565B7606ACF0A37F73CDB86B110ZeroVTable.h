@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_3CD4FA2565B7606ACF0A37F73CDB86B110ZeroVTable : DanceUI._AnyAnimatableDataVTable
+
+@end

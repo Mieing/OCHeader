@@ -1,0 +1,13 @@
+@protocol IESLiveMessageConfig;
+
+@interface IESLiveIMBaseClient : IESLiveIMClientWrapper
+
+@property (retain, nonatomic) id<IESLiveMessageConfig> bizConfig;
+
+- (void)channel:(id)a0 opened:(id)a1;
+- (void)setupHttpFetcherWithConfig:(id)a0;
+- (BOOL)isWebsocketFirst;
+- (id)initWithConfig:(id)a0 netConfig:(id)a1 decoder:(id)a2;
+- (void).cxx_destruct;
+
+@end

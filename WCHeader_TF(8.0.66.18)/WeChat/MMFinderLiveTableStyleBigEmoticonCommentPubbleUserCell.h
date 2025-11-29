@@ -1,0 +1,71 @@
+@class MMFinderLiveMemberSignView, MMHeadImageView, MMFinderLiveGlobalRankSignView, NSMutableArray, UIView, MMUILabel, NSString, MMUIView, MMFinderLiveGameRankSignView, MMEmoticonView, MMFinderLiveFansGroupSignView, MMFinderLiveGameEsportSignView, MMFinderLiveProductQuestionSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveNormalTextSignView;
+
+@interface MMFinderLiveTableStyleBigEmoticonCommentPubbleUserCell : MMFinderLiveTableStyleCommentPubbleCell <IStoreEmotionSingleDownloadMgrExt>
+
+@property (nonatomic) unsigned long long resourceState;
+@property (nonatomic) unsigned long long badgeSignCnt;
+@property (retain, nonatomic) MMHeadImageView *headImageView;
+@property (retain, nonatomic) MMEmoticonView *emoticonView;
+@property (retain, nonatomic) UIView *loadingView;
+@property (retain, nonatomic) UIView *failView;
+@property (retain, nonatomic) MMUILabel *signLabel;
+@property (retain, nonatomic) MMUIView *signBackView;
+@property (retain, nonatomic) MMFinderLiveProductQuestionSignView *productQuestionSignView;
+@property (retain, nonatomic) MMFinderLiveGlobalRankSignView *globalRankSignView;
+@property (retain, nonatomic) MMFinderLiveMemberSignView *memberSignView;
+@property (retain, nonatomic) MMFinderLiveFansGroupSignView *fansGroupSignView;
+@property (retain, nonatomic) MMFinderLiveGameRankSignView *gameRankSignView;
+@property (retain, nonatomic) MMFinderLiveGameEsportSignView *gameEsportSignView;
+@property (retain, nonatomic) MMFinderLiveLiveRoleSignView *roleSignView;
+@property (retain, nonatomic) MMFinderLiveLiveRoleSignView *mysteriousSignView;
+@property (retain, nonatomic) MMFinderLiveNormalTextSignView *buySignView;
+@property (retain, nonatomic) MMFinderLiveNormalTextSignView *frequentWatchSignView;
+@property (retain, nonatomic) MMFinderLiveNormalTextSignView *followerSignView;
+@property (retain, nonatomic) NSMutableArray *signViewArraryForLayout;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithCellFrame:(id)a0;
+- (BOOL)isUITypeValid;
+- (double)maxCornerRadius;
+- (void)layoutUI;
+- (void)updateBackGroundColor;
+- (id)signText;
+- (void)layoutHeadImageView;
+- (void)layoutSignLabel;
+- (void)layoutGlobalRankSignView;
+- (void)layoutMemberSignView;
+- (void)layoutMysteriousSignView;
+- (void)layoutProductQuestionSignView;
+- (void)layoutLiveRoleSignView;
+- (void)layoutFansGroupSignView;
+- (void)layoutGameEsportSignView;
+- (void)layoutGameRankSignView;
+- (void)layoutBuySignView;
+- (void)layoutFrequentWatchSignView;
+- (void)layoutFollowerSignView;
+- (void)updateSignViewOrigins;
+- (void)updateHeaderImageOrigin;
+- (void)layoutCommentLabel;
+- (void)updateCommentLabelOrigin;
+- (void)layoutContentView;
+- (void)hideContentView;
+- (void)updateContentViewOrigin;
+- (void)createEmoticonViewIfNeeded;
+- (void)createFailViewIfNeeded;
+- (void)createLoadingViewIfNeeded;
+- (BOOL)reuseWithCellFrame:(id)a0;
+- (BOOL)needSignLabel;
+- (BOOL)isLoading;
+- (BOOL)isFailed;
+- (void)retryLoadingEmoticon;
+- (BOOL)checkInlineCommentStyle:(double)a0;
+- (double)getContentViewWidth;
+- (void)onSingleEmotionDownloadOkWithWrap:(id)a0 imageData:(id)a1;
+- (void)onSingleEmotionDownloadFailedWithMd5:(id)a0;
+- (id)getSelfAccessibility;
+- (void).cxx_destruct;
+
+@end

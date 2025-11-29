@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceKtvGetUserFollowRelationApiRoot : GPBRootObject
+
+@end

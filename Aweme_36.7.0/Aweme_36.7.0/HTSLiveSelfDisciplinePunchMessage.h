@@ -1,0 +1,17 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveSelfDisciplinePunchMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int msgType;
+@property (nonatomic) long long toUserId;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long punchDuration;
+@property (copy, nonatomic) NSString *toastText;
+@property (nonatomic) int punchStatus;
+@property (copy, nonatomic) NSString *toUserOpenId;
+
++ (id)descriptor;
+
+@end

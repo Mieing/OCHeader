@@ -1,0 +1,10 @@
+@class LeaveMultiChorusResponse_ResponseData;
+
+@interface LeaveMultiChorusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LeaveMultiChorusResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

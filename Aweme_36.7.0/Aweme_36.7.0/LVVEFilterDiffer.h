@@ -1,0 +1,3 @@
+@interface LVVEFilterDiffer : LVVEBaseDiffer
+
+@end

@@ -1,0 +1,3 @@
+@interface _TtC15AWEIMGrowthImplP33_BD630F8A9A5A57BF036E7C011308277E15JSBRegistration : _TtCs12_SwiftObject
+
+@end

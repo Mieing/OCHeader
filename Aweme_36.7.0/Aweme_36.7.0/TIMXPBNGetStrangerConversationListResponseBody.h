@@ -1,0 +1,16 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetStrangerConversationListResponseBody : GPBMessage
+
+@property (nonatomic) long long nextCursor;
+@property (nonatomic) BOOL hasNextCursor;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (nonatomic) int totalUnread;
+@property (nonatomic) BOOL hasTotalUnread;
+@property (retain, nonatomic) NSMutableArray *conversationListArray;
+@property (readonly, nonatomic) unsigned long long conversationListArray_Count;
+
++ (id)descriptor;
+
+@end

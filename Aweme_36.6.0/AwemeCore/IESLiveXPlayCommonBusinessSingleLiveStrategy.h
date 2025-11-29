@@ -1,0 +1,76 @@
+@class IESLiveXPlayInteractInstance, IESLiveXPlayAnchorGuideAPI, NSString, BDXBridgeEventSubscriber;
+@protocol IESLiveXPlayAudioStreamService, IESLiveOpenPlatformShareScreenService, IESLiveVideoEffectProcessing, IESLiveRealStreamingProvider;
+
+@interface IESLiveXPlayCommonBusinessSingleLiveStrategy : IESLiveXPlayCommonBusinessBaseStrategy <IESLiveXPlayInteractInstanceDelegate, IESLiveGameXPlayContainerBusinessDelegate>
+
+@property (retain, nonatomic) id<IESLiveXPlayAudioStreamService> audioStreamService;
+@property (retain, nonatomic) id<IESLiveOpenPlatformShareScreenService> shareScreenService;
+@property (retain, nonatomic) id<IESLiveVideoEffectProcessing> effectProcessingService;
+@property (weak, nonatomic) id<IESLiveRealStreamingProvider> streamProvider;
+@property (retain, nonatomic) IESLiveXPlayAnchorGuideAPI *guideAPI;
+@property (nonatomic) BOOL isInShareScreen;
+@property (nonatomic) struct CGSize { double width; double height; } originalOutputSize;
+@property (nonatomic) long long lastAnchorScreenStatus;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } ndcAnchorPreViewFrame;
+@property (nonatomic) double xplayGameRatio;
+@property (retain, nonatomic) IESLiveXPlayInteractInstance *interactInstance;
+@property (nonatomic) long long mixType;
+@property (nonatomic) BOOL renderModeFill;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *lynxEventSubscriber;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)unsubscribeEvent;
+- (void)sendFrameBufferToAppId:(id)a0 pixelBuffer:(struct __CVBuffer { } *)a1 rotation:(long long)a2 withCMTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a3;
+- (void)sendAudioFrameToAppId:(id)a0 frame:(id)a1 timestamp:(long long)a2;
+- (void)interactWillJoinChannel;
+- (void)subscribeEvent;
+- (void)updateCameraVideoRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)isXPlayRtcConnecting;
+- (void)resetCastContext;
+- (void)updateAnchorScreenStatus:(long long)a0;
+- (void)setCameraOutputSize;
+- (BOOL)enableServerMergeStream;
+- (void)monitorServiceError:(id)a0 status:(id)a1 error:(id)a2;
+- (void)loadXPlayGameWithCompletion:(id /* block */)a0;
+- (void)handleCloseXPlayGame:(id)a0 completion:(id /* block */)a1;
+- (void)willSwitchToScene:(long long)a0;
+- (void)didSwitchToScene:(long long)a0;
+- (void)switchScene:(id)a0 completion:(id /* block */)a1;
+- (void)handleXPlayStatusDidUpdate:(long long)a0 extraInfo:(id)a1;
+- (void)handleXPlayDidReceiveCustomMessage:(id)a0;
+- (void)handleXPlayDidReceiveMergeStreamFail:(id)a0;
+- (id)initWithXPlayVC:(id)a0 xplayGameModel:(id)a1;
+- (void)showXplayWithCompletion:(id /* block */)a0;
+- (void)restartXplayGame;
+- (BOOL)isSupportMultiInteract;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })previewAreaInsetWithContainer:(struct CGSize { double x0; double x1; })a0 mixerScale:(double)a1;
+- (void)restoreLocalMergeStream:(long long)a0;
+- (void)stopShareScreen:(BOOL)a0;
+- (void)startShareScreen;
+- (void)gameCheckAnchorGuideInfoWithMiniAppID:(id)a0 guideType:(id)a1;
+- (id)getShareScreenRenderMode;
+- (void)monitorService:(id)a0 status:(id)a1 extra:(id)a2;
+- (void)monitorRtcInfoIfNeed;
+- (void)setupCastContext:(long long)a0 source:(long long)a1;
+- (void)setupCameraPreview:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })videoInputSize:(double)a0;
+- (void)stopXPlayInteract;
+- (void)sendCloudMessageWithAction:(id)a0 type:(id)a1 params:(id)a2;
+- (void)xplayInteractBeforeJoinChannel:(id)a0;
+- (void)xplayInteract:(id)a0 firstRemoteVideoFrameWithUid:(id)a1;
+- (void)xplayInteract:(id)a0 receivesError:(id)a1;
+- (void)xplayInteract:(id)a0 didOfflineOfUid:(id)a1;
+- (void)xplayInteractLostConnection:(id)a0;
+- (void)playContainer:(id)a0 didUpdateClearScreenState:(BOOL)a1;
+- (void)playContainer:(id)a0 didUpdateAnchorPreViewNdcFrameToInstanceView:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 ndcFrameToScreen:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)playContainer:(id)a0 didUpdateAnchorPreViewStatus:(long long)a1;
+- (void)setupCameraOutputSize;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)startVideoCapture;
+- (void)stopVideoCapture;
+
+@end

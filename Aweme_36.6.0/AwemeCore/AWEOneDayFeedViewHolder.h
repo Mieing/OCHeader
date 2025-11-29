@@ -1,0 +1,3 @@
+@interface AWEOneDayFeedViewHolder : AWEBaseListViewHolder
+
+@end

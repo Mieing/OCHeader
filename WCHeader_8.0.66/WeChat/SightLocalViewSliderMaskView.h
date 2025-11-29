@@ -1,0 +1,74 @@
+@class UIColor, WCVideoCropImageSliderTouch, UIImageView, UIView, UILabel;
+@protocol SightLocalViewSliderMaskViewDelegate;
+
+@interface SightLocalViewSliderMaskView : UIControl
+
+@property (retain, nonatomic) UIImageView *startFlag;
+@property (retain, nonatomic) UIImageView *endFlag;
+@property (retain, nonatomic) UIView *playFlag;
+@property (retain, nonatomic) UIColor *lineColor;
+@property (retain, nonatomic) UIView *durationMarkerView;
+@property (retain, nonatomic) UILabel *durationMarkerLabel;
+@property (retain, nonatomic) UIView *startTimeMarkerView;
+@property (retain, nonatomic) UILabel *startTimeMarkerLabel;
+@property (retain, nonatomic) UIView *highlightMaskLeftShadow;
+@property (retain, nonatomic) UIView *highlightMaskRightShadow;
+@property (nonatomic, getter=isStartFlagOnTouch) BOOL startFlagOnTouch;
+@property (nonatomic, getter=isEndFlagOnTouch) BOOL endFlagOnTouch;
+@property (retain, nonatomic) WCVideoCropImageSliderTouch *lastTouch;
+@property (nonatomic) BOOL isInLargeMode;
+@property (weak, nonatomic) id<SightLocalViewSliderMaskViewDelegate> delegate;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } validFrame;
+@property (nonatomic) double totalDuration;
+@property (nonatomic) double maxDuration;
+@property (nonatomic) double minDuration;
+@property (nonatomic) long long sideFlagStyle;
+@property (nonatomic) BOOL isDurationMarkerEnabled;
+@property (nonatomic) BOOL isStartTimeMarkerEnabled;
+@property (nonatomic) double startTimeMarkerKeepTimeSec;
+@property (nonatomic) BOOL isHighlightMaskEnabled;
+@property (nonatomic) double maskRectRadius;
+@property (retain, nonatomic) UIColor *customLineSliderBorderColor;
+@property (retain, nonatomic) UIColor *customHightlightMaskShadowColor;
+@property (retain, nonatomic) UIColor *customDurationMarkerViewColor;
+@property (retain, nonatomic) UIColor *customDurationMarkerLabelColor;
+
+- (void)_initViewIfNeeded;
+- (void)_initStartFlagIfNeeded;
+- (void)_initPlayFlagIfNeeded;
+- (void)_initEndFlagIfNeeded;
+- (void)_initDurationMarkerViewIfNeeded;
+- (void)_relayoutDurationMarkerViewTimeSec:(double)a0;
+- (void)_initStartTimeMarkerViewIfNeeded;
+- (void)_relayoutStartTimeMarkerViewTimeSec:(double)a0;
+- (void)_showStartTimeMarkerViewIfNeeded;
+- (void)_hideStartTimeMarkerView;
+- (void)_initHighlightMaskIfNeeded;
+- (void)_relayoutHighlightMaskWithThumbListContentMinX:(double)a0 thumbListContentMaxX:(double)a1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (double)minimumRange;
+- (double)maxRange;
+- (double)positionOfStartFlag;
+- (double)positionOfPlayFlag;
+- (double)positionOfEndFlag;
+- (double)leftOfStartFlag;
+- (double)rightOfEndFlag;
+- (void)movePlayFlagFromPosition:(double)a0 toPosition:(double)a1 withinTime:(double)a2;
+- (void)stopMovingPlayFlag;
+- (void)setStartFlagPosition:(double)a0 andEndFlagPosition:(double)a1;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })extendedFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)beginTrackingWithTouch:(id)a0 withEvent:(id)a1;
+- (BOOL)continueTrackingWithTouch:(id)a0 withEvent:(id)a1;
+- (void)endTrackingWithTouch:(id)a0 withEvent:(id)a1;
+- (void)cancelTrackingWithEvent:(id)a0;
+- (void)switchToLargeMode:(BOOL)a0;
+- (void)positionOfPlayFlagDidChange;
+- (void)playFlagDidStopMovingAtStartFlag:(BOOL)a0;
+- (void)refreshThumbImagesCollectionViewContentInset;
+- (double)_getSideFlagWidth;
+- (id)_getSideFlagImage;
+- (long long)_getSideFlagImageContentMode;
+- (void).cxx_destruct;
+
+@end

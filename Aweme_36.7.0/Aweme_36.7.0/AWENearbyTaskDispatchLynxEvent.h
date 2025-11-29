@@ -1,0 +1,3 @@
+@interface AWENearbyTaskDispatchLynxEvent : NSObject
+
+@end

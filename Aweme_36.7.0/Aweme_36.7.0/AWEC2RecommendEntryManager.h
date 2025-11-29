@@ -1,0 +1,55 @@
+@interface AWEC2RecommendEntryManager : NSObject
+
++ (BOOL)c2EntryStrategyV2Enable;
++ (BOOL)c2EntryStrategyV3Enable;
++ (long long)getC2EntryActionType;
++ (void)recoveryC2EntryByManual;
++ (void)updateRecentlyClientClickTimes:(long long)a0;
++ (void)updateRecentlySlideTimes:(long long)a0;
++ (void)updateRecentlyStayTime:(double)a0;
++ (void)updateRecentlyEnterTimes:(long long)a0;
++ (void)resetStrategyInfo;
++ (id)getValidActionFromDictionary:(id)a0;
++ (id)c2EntryStrategyDictV2;
++ (id)getActionConfigFromDictionary:(id)a0;
++ (id)c2EntryStrategyDictV3;
++ (id)c2EntryStrategyV3RoundConfigMap;
++ (long long)c2EntryStrategyV3CurrentRoundCount;
++ (id)c2EntryStrategyV3RoundKeyList;
++ (id)c2EntryStrategyV3RoundConfigForKey:(id)a0;
++ (BOOL)couldRecordRecentInfo;
++ (void)clearRecentInfo;
++ (void)clearEasyCloseInfo;
++ (void)startRecordRoundInfo;
++ (void)startC2EntryStrategyRoundCount;
++ (void)clearRoundInfo;
++ (void)clearC2EntryStrategyRoundCount;
++ (void)clearStrategyInfo;
++ (long long)c2EntryStrategyV2Version;
++ (long long)c2EntryStrategyV3Version;
++ (long long)c2EntryStrategyWeakEnterType;
++ (void)startC2EntryStrategy;
++ (void)endC2EntryStrategy;
++ (long long)daysBetweenTimestamp:(double)a0 andTimestamp:(double)a1;
++ (BOOL)updateC2StrategyVersion;
++ (BOOL)couldApplyEntryStrategy;
++ (long long)getC2EntryV2ActionType;
++ (long long)getC2EntryV3ActionType;
++ (id)c2EntryStrategyV2RoundConfig;
++ (long long)daysBetweenRoundStartTimestampAndNow;
++ (void)startRecordRecentActionInfo;
++ (BOOL)hasValidUsedFeedDoubleColumnWithRoundConfig:(id)a0;
++ (BOOL)hasShowEasyClose;
++ (void)startShowC2EntryEasyClose;
++ (long long)daysBetweenEasyCloseTimestampAndNow;
++ (long long)c2EntryStrategyV2EasyCloseDays;
++ (id)c2EntryStrategyV3CurrentRoundConfig;
++ (long long)c2EntryStrategyV3ExitType;
++ (void)updateC2EntryStrategyRoundCount;
++ (void)weakC2EntryByManual;
++ (void)closeC2EntryByManual;
++ (void)closeC2EntryByAuto;
++ (long long)daysBetweenStrategyStartTimestampAndNow;
++ (id)sharedInstance;
+
+@end

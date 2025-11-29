@@ -1,0 +1,10 @@
+@class SubscribeListResponseData;
+
+@interface SubscribeListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SubscribeListResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

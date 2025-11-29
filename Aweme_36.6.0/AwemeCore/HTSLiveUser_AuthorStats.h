@@ -1,0 +1,12 @@
+@interface HTSLiveUser_AuthorStats : IESLivePBBaseMessage
+
+@property (nonatomic) long long videoTotalCount;
+@property (nonatomic) long long videoTotalPlayCount;
+@property (nonatomic) long long videoTotalShareCount;
+@property (nonatomic) long long videoTotalSeriesCount;
+@property (nonatomic) long long varietyShowPlayCount;
+@property (nonatomic) long long videoTotalFavoriteCount;
+
++ (id)descriptor;
+
+@end

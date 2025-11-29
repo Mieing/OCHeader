@@ -1,0 +1,77 @@
+@class NSDate, UIView, IESLiveGradientView, NSString, UIImageView, IESLiveAnimatedImageView, IESLiveFeedBigNoodleLabel, UILabel;
+@protocol IESLivePlayerProtocol, HTSLiveFeedItem, IESLiveWebPPlayer, HTSLiveFeedCellDelegate;
+
+@interface HTSLiveFeedCompactCollectionViewCell : UICollectionViewCell <IESLivePlayerControllerDelegate, HTSLiveFeedCellUpdater, IESLiveFeedDrawerPreviewCellProtocol>
+
+@property (retain, nonatomic) UIView *bgContainerView;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) UIView *coverContainerView;
+@property (retain, nonatomic) IESLiveGradientView *gradientView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UILabel *locationLabel;
+@property (retain, nonatomic) IESLiveFeedBigNoodleLabel *watchCountLabel;
+@property (retain, nonatomic) UIImageView *watchIconImageView;
+@property (retain, nonatomic) IESLiveAnimatedImageView *tagView;
+@property (retain, nonatomic) UIImageView *redPacketIcon;
+@property (nonatomic) BOOL hadSetupUI;
+@property (nonatomic) BOOL isLandscape;
+@property (retain, nonatomic) UILabel *avatarNameLabel;
+@property (retain, nonatomic) UIImageView *avatarImageView;
+@property (retain, nonatomic) UIImageView *verifyImageView;
+@property (retain, nonatomic) UIImageView *operationTag;
+@property (retain, nonatomic) UIImageView *contentTag;
+@property (nonatomic) BOOL isPreviewing;
+@property (weak, nonatomic) id<IESLivePlayerProtocol> player;
+@property (retain, nonatomic) NSDate *startPreviewDate;
+@property (retain, nonatomic) UIImageView<IESLiveWebPPlayer> *coverDynamicMask;
+@property (retain, nonatomic) id<HTSLiveFeedItem> item;
+@property (nonatomic) BOOL isFromRecommand;
+@property (nonatomic) unsigned long long cellStyle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isFeedDrawerMode;
+@property (weak, nonatomic) id<HTSLiveFeedCellDelegate> delegate;
+
+- (void)didSetAttachingDIContext;
+- (void)player:(id)a0 loadStateDidChange:(unsigned long long)a1;
+- (void)makeConstraints;
+- (void)player:(id)a0 didReceiveMetaInfo:(id)a1 processed:(BOOL)a2;
+- (void)p_updateConstraints;
+- (void)updateWithRoomModel:(id)a0;
+- (BOOL)canPreview;
+- (void)setupCommonUI;
+- (BOOL)useNewCoverStyle;
+- (void)setupCoverUI;
+- (BOOL)drawerCoverStyle_convertTitleAndAvatarName;
+- (BOOL)drawerCoverStyle_showWatchHotIcon;
+- (void)makeNewUIConstraints;
+- (void)makeCoverUIConstraints;
+- (BOOL)drawerCoverStyle_hideAvatarImageView;
+- (BOOL)shouldShowEnterpriseVerify;
+- (BOOL)drawerCoverStyle_hideAvatarName;
+- (void)updateEnterpriseVerifyImageValue;
+- (void)coverLoadCompleted:(id)a0;
+- (void)feedCoverImageStartLoad:(double)a0 endTime:(double)a1;
+- (void)realStopPreview;
+- (void)trackLivePreviewDuratin;
+- (long long)liveDrawerCoverStyle;
+- (void)update:(id)a0 isFeedDrawer:(BOOL)a1;
+- (void)startPreviewWithPlayer:(id)a0 withDuration:(double)a1;
+- (void)setupNewUI;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
+- (double)bottomPadding;
+- (void).cxx_destruct;
+- (void)prepareForReuse;
+- (unsigned long long)accessibilityTraits;
+- (double)leadingPadding;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)isPreview;
+- (void)setupUI;
+- (void)stopPreview;
+- (void)refreshLayout;
+
+@end

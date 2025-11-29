@@ -1,0 +1,73 @@
+@class UIScreenEdgePanGestureRecognizer, UIView, NSString, UIResponder, AWESearchWebNovelNativeReaderHelper, AWESearchSynthesisNovelDataEngine, BDXWebView, AWESearchSynthesisNovelTracker, NSDictionary, AWESearchSynthesisNovelViewController, NSObject, AWESearchWebViewTranscodingManager;
+@protocol BDXKitViewProtocol;
+
+@interface AWESearchWebPreloadPlugin : IWKPluginObject <UIGestureRecognizerDelegate, IWKInstancePlugin>
+
+@property (weak, nonatomic) BDXWebView *webView;
+@property (retain, nonatomic) UIView<BDXKitViewProtocol> *preView;
+@property (retain, nonatomic) UIView<BDXKitViewProtocol> *nextView;
+@property (retain, nonatomic) AWESearchWebViewTranscodingManager *transcodingManager;
+@property (retain, nonatomic) UIView *loadingBackView;
+@property (retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgePanGesture;
+@property (retain, nonatomic) AWESearchSynthesisNovelViewController *novelViewController;
+@property (retain, nonatomic) AWESearchSynthesisNovelDataEngine *novelDataEngine;
+@property (retain, nonatomic) AWESearchSynthesisNovelTracker *novelTracker;
+@property (nonatomic) BOOL dataUpdated;
+@property (retain, nonatomic) NSDictionary *searchParams;
+@property (copy, nonatomic) id /* block */ didRecieveTranscodeBlock;
+@property (copy, nonatomic) id /* block */ didLoadTranscodeScriptBlock;
+@property (copy, nonatomic) id /* block */ didReceiveNotificationBlock;
+@property (copy, nonatomic) id /* block */ didRecieveOriginTranscodeDataBlock;
+@property (copy, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (retain, nonatomic) NSObject *monitorContex;
+@property (copy, nonatomic) NSString *subPageType;
+@property (copy, nonatomic) NSDictionary *result;
+@property (copy, nonatomic) NSString *transcodingExtra;
+@property (retain, nonatomic) UIResponder *originalWeb;
+@property (copy, nonatomic) NSString *originUrl;
+@property (copy, nonatomic) NSDictionary *webSchemeParams;
+@property (copy, nonatomic) NSDictionary *trackParams;
+@property (nonatomic) long long transcodeDataInjectTime;
+@property (nonatomic) double onTranscodeBeginTime;
+@property (nonatomic) BOOL shouldShowSuccessBottomNotification;
+@property (nonatomic) BOOL isNovelTranscode;
+@property (nonatomic) BOOL isNovelPreload;
+@property (retain, nonatomic) AWESearchWebNovelNativeReaderHelper *readerHelper;
+@property (nonatomic) long long transcodeSource;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)webViewWillDealloc:(id)a0;
+- (id)webView:(id)a0 loadRequest:(id)a1;
+- (id)webView:(id)a0 loadData:(id)a1 MIMEType:(id)a2 characterEncodingName:(id)a3 baseURL:(id)a4;
+- (id)webView:(id)a0 loadHTMLString:(id)a1 baseURL:(id)a2;
+- (id)monitorTrackParams:(id)a0;
+- (void)loadmoreChapterList;
+- (void)sccRejected:(id)a0;
+- (void)reportTranscodeResultWithRequestUrl:(id)a0 Code:(long long)a1;
+- (void)registerWebTranscodeJSBridge;
+- (void)removeLoadingBGView;
+- (void)stopTranscodeProcess:(id)a0;
+- (void)loadTranscodingScript;
+- (void)updateTranscodeData:(id)a0 dataSource:(long long)a1 pageType:(id)a2;
+- (void)showLoadingBackView;
+- (void)performTranscoding:(BOOL)a0;
+- (void)serverDataPerformTranscoding;
+- (id)preloadWithUrl:(id)a0 webType:(id)a1;
+- (void)returnToOriginalWeb;
+- (void)openNativeReaderWithUrl:(id)a0 fromClickSource:(id)a1;
+- (void)swipeRightGoBack:(id)a0;
+- (id)webView:(id)a0 didFinishNavigation:(id)a1;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (id)webView:(id)a0 decidePolicyForNavigationAction:(id)a1 decisionHandler:(id /* block */)a2;
+- (void)goBack;
+- (id)webView:(id)a0 didFailProvisionalNavigation:(id)a1 withError:(id)a2;
+- (id)webView:(id)a0 didFailNavigation:(id)a1 withError:(id)a2;
+- (id)webView:(id)a0 didStartProvisionalNavigation:(id)a1;
+- (void)onLoad:(id)a0;
+
+@end

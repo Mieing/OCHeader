@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveWishContributor : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *contributorsArray;
+@property (readonly, nonatomic) unsigned long long contributorsArray_Count;
+@property (nonatomic) long long totalCount;
+@property (nonatomic) BOOL showScore;
+
++ (id)descriptor;
+
+@end

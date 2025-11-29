@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpUserRoomMetaApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,12 @@
+@class ReplyResponse_ResponseData, ReplyResponse_ReplyExtra;
+
+@interface ReplyResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ReplyResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) ReplyResponse_ReplyExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

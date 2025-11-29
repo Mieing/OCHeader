@@ -1,0 +1,3 @@
+@interface ShowGetInEpisodeBannerApiRoot : GPBRootObject
+
+@end

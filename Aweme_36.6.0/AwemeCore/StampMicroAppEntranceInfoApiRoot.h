@@ -1,0 +1,3 @@
+@interface StampMicroAppEntranceInfoApiRoot : GPBRootObject
+
+@end

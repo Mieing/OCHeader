@@ -1,0 +1,9 @@
+@interface HTSLiveChatInputPanel_CarrierItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long carrierId;
+@property (nonatomic) int carrierType;
+@property (nonatomic) long long priority;
+
++ (id)descriptor;
+
+@end

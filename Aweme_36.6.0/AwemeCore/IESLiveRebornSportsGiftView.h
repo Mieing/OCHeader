@@ -1,0 +1,56 @@
+@class UIView, NSString, HTSLiveArtTextLabel, CALayer, IESLiveGCDTimer, CAGradientLayer, IESLiveImageView, UILabel;
+
+@interface IESLiveRebornSportsGiftView : IESLiveSonicAndSportsBaseView {
+    BOOL isAnimating;
+    BOOL isComboView;
+    BOOL isGroup;
+    BOOL isFaked;
+    NSString *giftKey;
+    id /* block */ onAnimationEnd;
+}
+
+@property (retain, nonatomic) IESLiveImageView *containerView;
+@property (retain, nonatomic) UILabel *nickNameLabel;
+@property (retain, nonatomic) UILabel *descriptionLabel;
+@property (retain, nonatomic) UIView *comboContainerView;
+@property (retain, nonatomic) HTSLiveArtTextLabel *comboNumberLabel;
+@property (retain, nonatomic) IESLiveGCDTimer *stopAnimationTimer;
+@property (retain, nonatomic) CAGradientLayer *flashLayer;
+@property (retain, nonatomic) CALayer *outlineMaskLayer;
+@property (retain, nonatomic) CALayer *maskLayer;
+@property (nonatomic) BOOL disableAnimation;
+
+- (void)didSetAttachingDIContext;
+- (void)stopAnimationWithCompletionHandler:(id /* block */)a0;
+- (void)updateWithGiftAnimationNode:(id)a0;
+- (void)startFlashAnimation;
+- (BOOL)isFaked;
+- (void)setIsFaked:(BOOL)a0;
+- (id /* block */)onAnimationEnd;
+- (void)setOnAnimationEnd:(id /* block */)a0;
+- (void)p_updateColorIndexWithPrice:(unsigned long long)a0;
+- (void)setIsComboView:(BOOL)a0;
+- (BOOL)fromCurrentUser;
+- (void)startAnimationWithCompletionHandler:(id /* block */)a0 messageListCallback:(id /* block */)a1;
+- (void)startComboAnimation:(id)a0 groupCount:(id)a1 upperBound:(BOOL)a2 completionHandler:(id /* block */)a3 messageListCallback:(id /* block */)a4;
+- (void)setGiftKey:(id)a0;
+- (BOOL)isComboView;
+- (void)p_renderComboCount:(id)a0 upperBound:(BOOL)a1;
+- (void)startAnimationWithCompletionHandler:(id /* block */)a0 shouldAutoStop:(BOOL)a1 messageListCallback:(id /* block */)a2;
+- (void)startComboAnimation:(id)a0 groupCount:(id)a1 upperBound:(BOOL)a2 completionHandler:(id /* block */)a3 shouldAutoStop:(BOOL)a4 messageListCallback:(id /* block */)a5;
+- (void)p_setStaticImageOnGiftTrayWithURL:(id)a0;
+- (void)upgradeWithGiftAnimationNode:(id)a0;
+- (void)p_setContainerViewWidth:(id)a0;
+- (void)p_updateContainerWidthIfNeeded:(id)a0;
+- (double)p_getComboContainerWidthWithText:(id)a0;
+- (void)startAnimation;
+- (void).cxx_destruct;
+- (BOOL)isAnimating;
+- (void)setIsAnimating:(BOOL)a0;
+- (BOOL)isGroup;
+- (void)setIsGroup:(BOOL)a0;
+- (void)dealloc;
+- (id)giftKey;
+- (void)layoutUI;
+
+@end

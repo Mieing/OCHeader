@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveFormat265SuperResource : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *resourceUri;
+@property (retain, nonatomic) HTSLiveImage *resourceURL;
+@property (nonatomic) BOOL hasResourceURL;
+@property (copy, nonatomic) NSString *md5;
+
++ (id)descriptor;
+
+@end

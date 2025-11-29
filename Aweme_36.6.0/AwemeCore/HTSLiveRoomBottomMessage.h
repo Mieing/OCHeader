@@ -1,0 +1,22 @@
+@class NSString, HTSLiveCommon, HTSLiveImage, HTSLiveFlexImageStruct;
+
+@interface HTSLiveRoomBottomMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *contentColor;
+@property (copy, nonatomic) NSString *customArrowImageName;
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *color;
+@property (copy, nonatomic) NSString *actionContent;
+@property (nonatomic) long long actionType;
+@property (nonatomic) long long pushMessageDisplayTime;
+@property (retain, nonatomic) HTSLiveImage *actionIcon;
+@property (nonatomic) BOOL hasActionIcon;
+@property (retain, nonatomic) HTSLiveFlexImageStruct *newBackgroundImage;
+@property (nonatomic) BOOL hasNewBackgroundImage;
+@property (copy, nonatomic) NSString *source;
+
++ (id)descriptor;
+
+@end

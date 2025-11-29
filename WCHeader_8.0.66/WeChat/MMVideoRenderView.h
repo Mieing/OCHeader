@@ -1,0 +1,97 @@
+@class CALayer, UITapGestureRecognizer, MMCameraFocusSquare, UIPinchGestureRecognizer, CAEAGLLayer, EAGLContext, MMOpenGLContext;
+@protocol MMVideoRenderViewDelegate;
+
+@interface MMVideoRenderView : UIView {
+    BOOL _isInBackground;
+    BOOL _isInitOpenglParam;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } _frameRect;
+    float _imageVertices[8];
+    const float *_preferredConversion;
+    const float *_preferredOffsetVec3;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } _frame;
+    CALayer *_layer;
+    unsigned long long _busyCount;
+    UIPinchGestureRecognizer *_pinchGestureRecognizer;
+    UITapGestureRecognizer *_tapGestureRecognizer;
+    MMCameraFocusSquare *_focusSquare;
+    unsigned int _originYuvYTexture;
+}
+
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } videoRect;
+@property (retain, nonatomic) CAEAGLLayer *eaglLayer;
+@property (retain, nonatomic) EAGLContext *curContext;
+@property (nonatomic) unsigned int renderBuffer;
+@property (nonatomic) unsigned int frameBuffer;
+@property (nonatomic) unsigned int yuvYTexture;
+@property (nonatomic) unsigned int yuvUTexture;
+@property (nonatomic) unsigned int yuvVTexture;
+@property (nonatomic) unsigned int maskTexture;
+@property (nonatomic) unsigned int vertexShader;
+@property (nonatomic) unsigned int fragmentShader;
+@property (nonatomic) unsigned int programHandle;
+@property (nonatomic) unsigned int positionSlot;
+@property (nonatomic) unsigned int texCoordSlot;
+@property (nonatomic) unsigned int yuvTypeUniform;
+@property (nonatomic) unsigned int textureUniformY;
+@property (nonatomic) unsigned int textureUniformU;
+@property (nonatomic) unsigned int textureUniformV;
+@property (nonatomic) unsigned int textureUniformMask;
+@property (nonatomic) unsigned int yuvConversionMatrixUniform;
+@property (nonatomic) unsigned int yuvOffsetMatrixUniform;
+@property (nonatomic) unsigned int mRawDataFrameType;
+@property (nonatomic) long long scene;
+@property (nonatomic) long long renderMode;
+@property (nonatomic) long long rotation;
+@property (weak, nonatomic) id<MMVideoRenderViewDelegate> delegate;
+@property (nonatomic) BOOL mirror;
+@property (nonatomic) BOOL renderable;
+@property (nonatomic) BOOL focusable;
+@property (nonatomic) int videoBlockThreshold;
+@property (nonatomic) int streamType;
+@property (nonatomic) int blockIntervalMs;
+@property (readonly, nonatomic) struct CGSize { double width; double height; } bufSize;
+@property (readonly, nonatomic) unsigned long long lastBlockDuration;
+@property (nonatomic) BOOL enableGestures;
+@property (nonatomic) BOOL isInRotationAnimation;
+@property (nonatomic) BOOL isMainThreadLag2024T31Enabled;
+@property (copy, nonatomic) id /* block */ onRenderEvent;
+@property (retain, nonatomic) MMOpenGLContext *context;
+@property struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } normalizedDisplayRect;
+@property (nonatomic) BOOL disableOpaqueRender;
+
++ (Class)layerClass;
++ (const float *)textureCoordinatesForRotation:(unsigned long long)a0;
+
+- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)awakeFromNib;
+- (void)layoutSubviews;
+- (void)removeFromSuperview;
+- (void)setup;
+- (void)dealloc;
+- (void)cleanup;
+- (void)setupLayer;
+- (void)setupRenderBuffer;
+- (void)setupFrameBuffer;
+- (void)setupTexture;
+- (unsigned int)compileShader:(id)a0 withType:(unsigned int)a1;
+- (void)compileShaders;
+- (id)getVertexShaderStr;
+- (id)getFlagmentShaderStr;
+- (void)renderWeEffectFrame:(id)a0;
+- (void)renderTexture:(unsigned int)a0 width:(long long)a1 height:(long long)a2 maskTexture:(unsigned int)a3;
+- (void)innerRenderTexture:(unsigned int)a0 width:(long long)a1 height:(long long)a2 maskTexture:(unsigned int)a3;
+- (void)convertYUVToRGBOutput;
+- (void)calculateVertices;
+- (unsigned long long)calculateRotation;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getCurrFrameRect;
+- (void)applicationDidBecomeActive:(id)a0;
+- (void)applicationDidEnterBackground:(id)a0;
+- (void)handlePinch:(id)a0;
+- (void)initFocusView;
+- (void)deallocFocusView;
+- (void)focusTap:(id)a0;
+- (void)focusAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void).cxx_destruct;
+
+@end

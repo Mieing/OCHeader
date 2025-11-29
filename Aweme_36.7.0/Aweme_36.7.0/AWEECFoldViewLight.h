@@ -1,0 +1,84 @@
+@class NSArray, BDXLynxFoldViewSlotLight, AWEECLynxFoldView, NSString, BDXLynxFoldViewToolBarLight, BDXLynxFoldViewHeaderLight;
+
+@interface AWEECFoldViewLight : LynxUI <AWEECFoldViewProtocol>
+
+@property (nonatomic) BOOL bounceWithToolBar;
+@property (nonatomic) double scrollViewFilter;
+@property (nonatomic) BOOL shouldInvalidateLayout;
+@property (retain, nonatomic) AWEECLynxFoldView *foldview;
+@property (weak, nonatomic) BDXLynxFoldViewToolBarLight *toolbar;
+@property (weak, nonatomic) BDXLynxFoldViewHeaderLight *header;
+@property (weak, nonatomic) BDXLynxFoldViewSlotLight *slot;
+@property (nonatomic) double preOffset;
+@property (nonatomic) double preNestedOffset;
+@property (nonatomic) double granularity;
+@property (nonatomic) BOOL forceDetachScroll;
+@property (retain, nonatomic) NSArray *excludeLynxUINames;
+@property (nonatomic) double topPaddingForNative;
+@property (nonatomic) long long headerOverSlot;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)__lynx_prop_config__6613;
++ (id)__lynx_prop_config__6664;
++ (id)__lynx_prop_config__6705;
++ (id)__lynx_prop_config__6746;
++ (id)__lynx_prop_config__6787;
++ (id)__lynx_prop_config__6838;
++ (id)__lynx_prop_config__6879;
++ (id)__lynx_prop_config__69410;
++ (id)__lynx_prop_config__69811;
++ (id)__lynx_prop_config__71012;
++ (id)__lynx_ui_method_config__71713;
++ (id)__lynx_ui_method_config__75016;
++ (id)__lynx_ui_method_config__76217;
++ (id)__lynx_ui_method_config__77318;
++ (id)__lynx_props_group_config__94722;
+
+- (void)layoutDidFinished;
+- (void)updateFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 withPadding:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a1 border:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 margin:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a3 withLayoutAnimation:(BOOL)a4;
+- (void)finishLayoutOperation;
+- (void)removeChild:(id)a0 atIndex:(long long)a1;
+- (id)scrollBy:(double)a0 deltaY:(double)a1;
+- (void)gestureDidSet;
+- (void)onGestureScrollBy:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)isScrollContainer;
+- (void)consumeInternalGesture:(BOOL)a0;
+- (BOOL)canConsumeGesture:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)getGestureBorder:(BOOL)a0;
+- (void)nestedScrollViewDidScroll:(id)a0;
+- (void)foldViewDidScroll:(id)a0;
+- (void)clearRefs;
+- (id)findPotentialRootScrollableLynxUI:(id)a0;
+- (void)bindViewPagerRecursively:(id)a0 depth:(long long)a1;
+- (void)setupTabbarPro:(id)a0 withViewPager:(id)a1;
+- (void)setupSlotDrag;
+- (void)setBounces:(BOOL)a0 requestReset:(BOOL)a1;
+- (BOOL)checkScrollable:(id)a0;
+- (void)ensureGestureConsumer;
+- (void)allowVerticalBounce:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)granularity:(double)a0 requestReset:(BOOL)a1;
+- (void)scrollBarEnable:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)refreshMode:(id)a0 requestReset:(BOOL)a1;
+- (void)scrollEnable:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)setForceDetach:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)setScrollFilter:(id)a0 requestReset:(BOOL)a1;
+- (void)setScrollExclude:(id)a0 requestReset:(BOOL)a1;
+- (void)setTopPadding:(id)a0 requestReset:(BOOL)a1;
+- (void)setFoldExpanded:(id)a0 withResult:(id /* block */)a1;
+- (void)scrollsToTop:(id)a0 withResult:(id /* block */)a1;
+- (void)getScrollInfo:(id)a0 withResult:(id /* block */)a1;
+- (void)scrollBy:(id)a0 withResult:(id /* block */)a1;
+- (void)didIndexChanged:(unsigned long long)a0;
+- (void)headerOverSlot:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)iosScrollsToTop:(BOOL)a0 requestReset:(BOOL)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (void)scrollViewDidEndScrolling;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)insertChild:(id)a0 atIndex:(long long)a1;
+- (id)createView;
+
+@end

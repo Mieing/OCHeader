@@ -1,0 +1,10 @@
+@class CreatorCertificationChkResponse_Data;
+
+@interface CreatorCertificationChkResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CreatorCertificationChkResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

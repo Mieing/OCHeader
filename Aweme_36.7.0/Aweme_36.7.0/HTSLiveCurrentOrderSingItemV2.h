@@ -1,0 +1,12 @@
+@class HTSLiveOrderSingItemV2, HTSLiveMicrophoneTaskDataV2;
+
+@interface HTSLiveCurrentOrderSingItemV2 : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveOrderSingItemV2 *currentSingItem;
+@property (nonatomic) BOOL hasCurrentSingItem;
+@property (retain, nonatomic) HTSLiveMicrophoneTaskDataV2 *microphoneTaskData;
+@property (nonatomic) BOOL hasMicrophoneTaskData;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,9 @@
+@interface IESLiveInteractiveDebugConfig : NSObject
+
++ (unsigned long long)debugInteractStreamVendor;
++ (BOOL)debugShowInteractInfo;
++ (BOOL)debugEnableSetMixPriority;
++ (BOOL)debugEnableClientStream;
++ (BOOL)enableDebug;
+
+@end

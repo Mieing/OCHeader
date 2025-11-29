@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface IESLiveUpdateGiftDynamicOperationInfoParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *touchPosition;
+@property (nonatomic) BOOL shouldDisplay;
+
+@end

@@ -1,0 +1,77 @@
+@class NSDictionary, AWEPayRPDetailUserInfoView, UILabel, AWEPayRPDetailCommandView, NSString, AWEIMDouyinRedPacketModel, AWEPayRPDetailEmoticonView, AWEPayLynxPromotionCardView, AWEIMDouyinRedPacketUserInfo, NSArray, AWEPayRPDetailPromotionView, AWEPayRPDetailBestLuckView, YYLabel, AWEPayRPDetailTipsView, UIButton, UIView, AWEIMDouyinRedPacketCoverModel, AWEYapRPDetailPromotionInfo, MASConstraint, AWEYapLotteryResultInfo, BDImageView;
+@protocol IESIMConversationProtocol;
+
+@interface AWEPayAmountInteractionView : UIView
+
+@property (retain, nonatomic) UIView *lastView;
+@property (retain, nonatomic) BDImageView *emoticonImageView;
+@property (retain, nonatomic) UILabel *emoticonReplyLabel;
+@property (retain, nonatomic) UILabel *previewTips;
+@property (copy, nonatomic) NSString *bottomTipsContent;
+@property (copy, nonatomic) NSString *topTipsContent;
+@property (nonatomic) long long amount;
+@property (retain, nonatomic) id<IESIMConversationProtocol> conversation;
+@property (nonatomic) BOOL isFollowUpdated;
+@property (nonatomic) BOOL isFollow;
+@property (nonatomic) BOOL sendFromMe;
+@property (retain, nonatomic) MASConstraint *selfBottomToLastView;
+@property (retain, nonatomic) MASConstraint *selfBottomToInteraction;
+@property (retain, nonatomic) MASConstraint *interactionTopToLastView;
+@property (copy, nonatomic) NSString *conversationID;
+@property (retain, nonatomic) AWEIMDouyinRedPacketUserInfo *userInfo;
+@property (retain, nonatomic) AWEIMDouyinRedPacketModel *infoModel;
+@property (retain, nonatomic) AWEIMDouyinRedPacketCoverModel *coverModel;
+@property (nonatomic) unsigned long long productType;
+@property (nonatomic) long long interactiontype;
+@property (nonatomic) BOOL isCommandRedPacket;
+@property (nonatomic) BOOL showCommandAnimation;
+@property (retain, nonatomic) NSArray *emoticonModels;
+@property (retain, nonatomic) AWEYapRPDetailPromotionInfo *detailPromotionInfo;
+@property (retain, nonatomic) AWEYapLotteryResultInfo *lotteryResultInfo;
+@property (copy, nonatomic) NSDictionary *schemaExtraParams;
+@property (copy, nonatomic) id /* block */ trackerBlock;
+@property (copy, nonatomic) id /* block */ updateFrameBlock;
+@property (retain, nonatomic) AWEPayRPDetailUserInfoView *userInfoView;
+@property (retain, nonatomic) UILabel *wishesLabel;
+@property (retain, nonatomic) AWEPayRPDetailCommandView *commandView;
+@property (retain, nonatomic) UIView *amountView;
+@property (retain, nonatomic) UILabel *amountLabel;
+@property (retain, nonatomic) UIButton *changeLink;
+@property (retain, nonatomic) UILabel *blessRewardLabel;
+@property (retain, nonatomic) UIView *blessRewardContainerView;
+@property (retain, nonatomic) YYLabel *topTipsLabel;
+@property (retain, nonatomic) UIView *seperatorView;
+@property (retain, nonatomic) UIView *seperator;
+@property (retain, nonatomic) UIView *interactionContainer;
+@property (retain, nonatomic) AWEPayRPDetailBestLuckView *bestLuckView;
+@property (retain, nonatomic) AWEPayRPDetailEmoticonView *multiEmoticonView;
+@property (retain, nonatomic) AWEPayLynxPromotionCardView *lynxCardView;
+@property (retain, nonatomic) AWEPayRPDetailTipsView *detailTipsView;
+@property (retain, nonatomic) AWEPayRPDetailPromotionView *promotionView;
+
+- (void)p_addObserver;
+- (void)playFollowAnimation;
+- (void)p_config;
+- (void)p_setupUserInfoView;
+- (void)p_setupWishesLabel;
+- (void)p_setupCommandView;
+- (void)p_setupAmountArea;
+- (void)p_setupLotteryTips;
+- (void)p_setupInteraction;
+- (void)p_setupInfoArea;
+- (void)p_updateSelf;
+- (id)p_getYuanAmount:(id)a0;
+- (void)p_setupBindCardPromotion:(id)a0;
+- (void)p_updateInteractin:(id)a0;
+- (void)p_configTopTipsContentForExclusiveRP;
+- (void)p_configTopTipsContentForSingleRP;
+- (void)p_configTopTipsContentForGroupRP;
+- (void)p_ownerAvatarTapped:(id)a0;
+- (void)p_followUser;
+- (void)p_redirectToChange:(id)a0;
+- (void)hideInteractionContainer;
+- (void).cxx_destruct;
+- (void)refreshUI;
+- (void)dealloc;
+
+@end

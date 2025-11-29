@@ -1,0 +1,3 @@
+@interface IESECListKitBaseListSectionSupplementaryView : UICollectionReusableView
+
+@end

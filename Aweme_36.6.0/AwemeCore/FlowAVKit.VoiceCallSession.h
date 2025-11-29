@@ -1,0 +1,60 @@
+@interface FlowAVKit.VoiceCallSession : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ _settingsProvider;
+    void /* unknown type, empty encoding */ _voiceCallProvider;
+    void /* unknown type, empty encoding */ listeners;
+    void /* unknown type, empty encoding */ callID;
+    void /* unknown type, empty encoding */ sessionID;
+    void /* unknown type, empty encoding */ logger;
+    void /* unknown type, empty encoding */ samiSession;
+    void /* unknown type, empty encoding */ configuration;
+    void /* unknown type, empty encoding */ context;
+    void /* unknown type, empty encoding */ engine;
+    void /* unknown type, empty encoding */ tracker;
+    void /* unknown type, empty encoding */ messageSpan;
+    void /* unknown type, empty encoding */ asrTailSpan;
+    void /* unknown type, empty encoding */ llmSpan;
+    void /* unknown type, empty encoding */ ttsHeadSpan;
+    void /* unknown type, empty encoding */ bsSpan;
+    void /* unknown type, empty encoding */ comfortSpan;
+    void /* unknown type, empty encoding */ asrContent;
+    void /* unknown type, empty encoding */ asrFirstPackageDidArrive;
+    void /* unknown type, empty encoding */ ttsFirstPackageDidArrive;
+    void /* unknown type, empty encoding */ ttsNormalFirstPackageDidArrive;
+    void /* unknown type, empty encoding */ ttsContent;
+    void /* unknown type, empty encoding */ lastTTSTaskId;
+    void /* unknown type, empty encoding */ lastTTSStartTS;
+    void /* unknown type, empty encoding */ questionId;
+    void /* unknown type, empty encoding */ status;
+    void /* unknown type, empty encoding */ newConversationId;
+    void /* unknown type, empty encoding */ lastMsgIdForTrack;
+    void /* unknown type, empty encoding */ messageID;
+    void /* unknown type, empty encoding */ agentID;
+    void /* unknown type, empty encoding */ agentIntention;
+    void /* unknown type, empty encoding */ shouldClearIntention;
+    void /* unknown type, empty encoding */ agentIntentionParams;
+    void /* unknown type, empty encoding */ agentTool;
+    void /* unknown type, empty encoding */ teaTagsTimeCost;
+    void /* unknown type, empty encoding */ hasManualEndedASR;
+    void /* unknown type, empty encoding */ enableVUIStreamReceiveMessageIdNonEmpty;
+    void /* unknown type, empty encoding */ _persistentAppletPayloadParams;
+    void /* unknown type, empty encoding */ audioStream;
+    void /* unknown type, empty encoding */ eventStream;
+    void /* unknown type, empty encoding */ asrTextStream;
+    void /* unknown type, empty encoding */ ttsTextStream;
+    void /* unknown type, empty encoding */ ttsPlayoutHandler;
+    void /* unknown type, empty encoding */ enableAvatar;
+    void /* unknown type, empty encoding */ isActive;
+    void /* unknown type, empty encoding */ chatTaskID;
+    void /* unknown type, empty encoding */ _connectingStatus;
+    void /* unknown type, empty encoding */ appInBackground;
+    void /* unknown type, empty encoding */ locationPermission;
+    void /* unknown type, empty encoding */ lastMediaPlayerContext;
+    void /* unknown type, empty encoding */ mediaPlayerSceneManager;
+    void /* unknown type, empty encoding */ currentModalType;
+    void /* unknown type, empty encoding */ samiEventBoardcaster;
+}
+
+- (void)applicationDidEnterBackground;
+- (void)applicationWillEnterForeground;
+
+@end

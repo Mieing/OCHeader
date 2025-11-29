@@ -1,0 +1,18 @@
+@interface BDXContainerBridgeProvider : NSObject
+
++ (id)xbridgeMethodWithCardModel:(id)a0 container:(id)a1;
++ (id)p_BDX_registerInfo_BDXBridgeBulletGetVisibleInfoMethodProviderBDXContainerBridgeProvider;
++ (id)BDX_registerInfo_BDXBridgeBulletGetVisibleInfoMethodProviderBDXContainerBridgeProvider;
++ (id)p_BDX_registerInfo_BDXBridgeBulletSetTracertMethodProviderBDXContainerBridgeProvider;
++ (id)BDX_registerInfo_BDXBridgeBulletSetTracertMethodProviderBDXContainerBridgeProvider;
++ (id)p_BDX_registerInfo_BDXBridgeBulletStartRecordMethodProviderBDXContainerBridgeProvider;
++ (id)BDX_registerInfo_BDXBridgeBulletStartRecordMethodProviderBDXContainerBridgeProvider;
++ (id)p_BDX_registerInfo_BDXBridgeBulletStopRecordMethodProviderBDXContainerBridgeProvider;
++ (id)BDX_registerInfo_BDXBridgeBulletStopRecordMethodProviderBDXContainerBridgeProvider;
++ (id)p_BDX_registerInfo_BDXBridgePrefetchMethodProviderBDXContainerBridgeProvider;
++ (id)BDX_registerInfo_BDXBridgePrefetchMethodProviderBDXContainerBridgeProvider;
++ (id)xbridgeMethodWithContext:(id)a0 container:(id)a1;
++ (id)p_BDX_registerInfo_BDXRequestMethodBridgeProviderBDXContainerBridgeProvider;
++ (id)BDX_registerInfo_BDXRequestMethodBridgeProviderBDXContainerBridgeProvider;
+
+@end

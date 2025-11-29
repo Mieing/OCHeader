@@ -1,0 +1,78 @@
+@class IESLiveGroupLiveContainerApi, NSMutableDictionary, BDXBridgeEventSubscriber, NSDictionary, IESLiveGroupLiveComponentView, NSString, HTSLiveGroupLiveContainerData, IESLiveComponentContext, HTSEventContext, NSMutableSet, IESLiveInteractPluginRequestApi, IESLiveGroupLiveComponentViewLoader, IESLiveGroupLiveComponentFoldView;
+
+@interface IESLiveGroupLiveComponentViewModel : NSObject <IESLiveMessageSubscriber, IESLiveSEIListener, IESLiveAnchorRoomStatusChangeEvents, IESLiveAnchorInteractToolLynxContainerService, IESLiveCloudCollaborateAction>
+
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (retain, nonatomic) HTSEventContext *eventContext;
+@property (retain, nonatomic) IESLiveGroupLiveContainerApi *groupLiveContainerAPI;
+@property (retain, nonatomic) IESLiveGroupLiveComponentViewLoader *groupLiveLoader;
+@property (retain, nonatomic) HTSLiveGroupLiveContainerData *containerData;
+@property (retain, nonatomic) IESLiveGroupLiveComponentView *groupLiveComponentView;
+@property (retain, nonatomic) IESLiveGroupLiveComponentFoldView *groupLiveFoldView;
+@property (nonatomic) long long currentContainerType;
+@property (nonatomic) BOOL isFirstLoadLynx;
+@property (copy, nonatomic) NSString *currentInteractiveID;
+@property (copy, nonatomic) NSString *currentShowStyle;
+@property (nonatomic) double timeStamp;
+@property (copy, nonatomic) NSString *seiUpdateTs;
+@property (retain, nonatomic) NSDictionary *gameEventParams;
+@property (retain, nonatomic) NSMutableDictionary *viewLoaderMap;
+@property (nonatomic) long long currentOrientation;
+@property (nonatomic) long long currentZOrder;
+@property (nonatomic) long long currentLayerID;
+@property (retain, nonatomic) NSMutableSet *availableZOrders;
+@property (retain, nonatomic) NSMutableSet *availableLayerIds;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *containerDidLoadSubscriber;
+@property (retain, nonatomic) IESLiveInteractPluginRequestApi *requestApi;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)didSetAttachingDIContext;
+- (BOOL)isGroupLive;
+- (unsigned long long)supportSeiTypes;
+- (void)onParseredWithSEIResult:(id)a0;
+- (id)currentMountBusinessInfo;
+- (void)endCloudCollaborate;
+- (void)pauseAnchorLiveWithType:(unsigned long long)a0;
+- (void)resumeAnchorLiveWithType:(long long)a0;
+- (void)stopAnchorLive;
+- (void)unlockScreen;
+- (void)recordToolUsageWith:(id)a0 use:(BOOL)a1;
+- (void)trackAnchorInteractiveExtensionOver:(id)a0;
+- (void)handlezoneClicked;
+- (BOOL)isGamePlusItemRunningWithContainerID:(id)a0;
+- (long long)runningGamePlusContainerCount;
+- (void)setupContainerWithContainerID:(id)a0 url:(id)a1 position:(id)a2 payload:(id)a3 extraInfo:(id)a4;
+- (void)updateContainerWithContainerID:(id)a0 payload:(id)a1;
+- (void)closeContainerWithContainerID:(id)a0;
+- (void)fetchGroupLiveContainerInfo;
+- (void)handleGamePlusInteractPluginWhenResumeLive;
+- (void)addSubscribeContainerDidLoadEvent;
+- (void)removeContainerDidLoadEventIfNeed;
+- (void)forEachViewLoaderWithBlock:(id /* block */)a0;
+- (void)handleGroupLiveFetchContainerData:(id)a0;
+- (void)handleInteractPluginGamePlusMessage:(id)a0;
+- (void)trackPlayModeWatch;
+- (BOOL)isDestroyMessage:(id)a0;
+- (float)getFloatValueFromDict:(id)a0 key:(id)a1;
+- (void)storeCurrentInfo;
+- (void)newHandleGroupLiveFetchContainerData:(id)a0;
+- (BOOL)shouldDestroyGroupLiveComponent:(struct IESLiveGroupLiveNDC { id x0; id x1; double x2; double x3; double x4; double x5; struct IESLiveGroupLiveParams { long long x0; id x1; id x2; } x6; id x7; BOOL x8; })a0 type:(long long)a1;
+- (long long)getAvailableZOrder;
+- (long long)getAvailableLayerID;
+- (id)setupViewLoaderWithContainerID:(id)a0;
+- (void)reportAnchorFormatMonitor:(id)a0 category_1:(id)a1 category_2:(id)a2 extra:(id)a3;
+- (id)initWithComponentContext:(id)a0 eventContext:(id)a1;
+- (BOOL)isShowContainerForVarietyShowGame;
+- (id)groupLiveTrackerParams;
+- (void).cxx_destruct;
+- (void)lockScreen;
+- (void)messageReceived:(id)a0;
+- (void)updatePosition:(id)a0;
+
+@end

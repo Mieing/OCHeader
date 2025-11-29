@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastUpdateGameSocreRoot : GPBRootObject
+
+@end

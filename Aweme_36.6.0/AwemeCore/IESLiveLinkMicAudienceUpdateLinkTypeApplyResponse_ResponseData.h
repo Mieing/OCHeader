@@ -1,0 +1,13 @@
+@class NSString, IESLiveMultiRtcInfo;
+
+@interface IESLiveLinkMicAudienceUpdateLinkTypeApplyResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rtcExtInfo;
+@property (copy, nonatomic) NSString *liveCoreExtInfo;
+@property (retain, nonatomic) IESLiveMultiRtcInfo *multiRtcInfo;
+@property (nonatomic) BOOL hasMultiRtcInfo;
+@property (copy, nonatomic) NSString *ackMessage;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastOpenChatRoot : GPBRootObject
+
+@end

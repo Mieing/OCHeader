@@ -1,0 +1,3 @@
+@interface RoomLiveTabApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,14 @@
+@interface HighValueAreaV2 : GPBMessage
+
+@property (nonatomic) long long xMin;
+@property (nonatomic) BOOL hasXMin;
+@property (nonatomic) long long xMax;
+@property (nonatomic) BOOL hasXMax;
+@property (nonatomic) long long yMin;
+@property (nonatomic) BOOL hasYMin;
+@property (nonatomic) long long yMax;
+@property (nonatomic) BOOL hasYMax;
+
++ (id)descriptor;
+
+@end

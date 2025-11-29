@@ -1,0 +1,3 @@
+@interface IESECLiveRegionTokenDefine : NSObject
+
+@end

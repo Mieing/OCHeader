@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AppointmentActionResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int code;
+@property (copy, nonatomic) NSString *message;
+@property (nonatomic) long long appointmentId;
+
++ (id)descriptor;
+
+@end

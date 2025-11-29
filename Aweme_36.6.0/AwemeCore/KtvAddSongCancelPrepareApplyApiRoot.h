@@ -1,0 +1,3 @@
+@interface KtvAddSongCancelPrepareApplyApiRoot : GPBRootObject
+
+@end

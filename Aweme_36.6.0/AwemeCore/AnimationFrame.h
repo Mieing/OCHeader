@@ -1,0 +1,3 @@
+@interface AnimationFrame : NSObject
+
+@end

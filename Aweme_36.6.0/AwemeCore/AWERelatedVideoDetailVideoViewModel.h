@@ -1,0 +1,71 @@
+@class AWEAwemeModel, AWERVDetailPageContext, AWERelatedVideoDetailVideoInteractView, AWERelatedVideoVideoPlayerViewController, AWERelatedVideoDetailVideoViewController, BDImageView, AWERVLVRightPanelContainerViewController, UIViewController, UIImpactFeedbackGenerator;
+@protocol AWEFeedSafetyCheckProtocol, AWEAwemePlayInteractionInteractorProtocol, AWERVLVSlidingPanelContainerViewControllerProtocol, AWEAwemePlayInteractionRouterProtocol;
+
+@interface AWERelatedVideoDetailVideoViewModel : NSObject
+
+@property (weak, nonatomic) AWERelatedVideoDetailVideoViewController *container;
+@property (nonatomic) BOOL isCollecting;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) BDImageView *panelImageView;
+@property (retain, nonatomic) UIImpactFeedbackGenerator *impactFeedbackGenerator;
+@property (retain, nonatomic) id<AWEFeedSafetyCheckProtocol> safetyCheckHandler;
+@property (retain, nonatomic) AWERVDetailPageContext *pageContext;
+@property (retain, nonatomic) id<AWEAwemePlayInteractionInteractorProtocol> interactor;
+@property (retain, nonatomic) id<AWEAwemePlayInteractionRouterProtocol> router;
+@property (retain, nonatomic) AWERelatedVideoDetailVideoInteractView *bottomInteractView;
+@property (retain, nonatomic) UIViewController<AWERVLVSlidingPanelContainerViewControllerProtocol> *containerVC;
+@property (retain, nonatomic) AWERVLVRightPanelContainerViewController *rightVC;
+@property (retain, nonatomic) AWERelatedVideoVideoPlayerViewController *videoViewController;
+
+- (id)logExtraDict;
+- (double)playerViewHeight;
+- (void)onAwemeDiggNotification:(id)a0;
+- (void)onAwemeDeleteNotification:(id)a0;
+- (void)onAwemeFavoriteNotification:(id)a0;
+- (void)handleVideoPrivacyCheckNotification:(id)a0;
+- (void)handleVideoSafetyCheckNotification:(id)a0;
+- (BOOL)transferToUserProfile;
+- (void)showNewPressPanel;
+- (void)postDidCollectNotificationWithAction:(unsigned long long)a0;
+- (void)trackCollectWithEventName:(id)a0;
+- (void)addToWatchLater;
+- (void)showSuccessShareVideoNoticeTip:(id)a0;
+- (void)executeScaleAnimation:(id)a0;
+- (void)refreshModel:(id)a0 params:(id)a1;
+- (void)transferToNewRelatedVideoVC:(id)a0;
+- (void)transferToDetailTableVC;
+- (void)filterDataBeforeEnterInnerFlowPage:(id)a0;
+- (void)resumeDataAfterExitInnerFlowPage:(id)a0;
+- (void)handleClickMoreMenu;
+- (void)trackShowMixPanel;
+- (id)filterCacheDataBeforeEnterInnerFlowPageIfNeed:(id)a0;
+- (id)resumeDataHandleRecallVideoIfNeed:(id)a0;
+- (id)resumeDataHandleCacheVideoIfNeed:(id)a0;
+- (id)detailContextForDetailTableVC;
+- (BOOL)tryTransferToXiguaApp;
+- (id)userProfileViewController;
+- (void)trackEnterInnerflowSortDataWithCount:(long long)a0;
+- (void)trackClickMoreMenu;
+- (void)collectMeidumVideo;
+- (void)updateRewardCount:(long long)a0;
+- (void)trackClickRewardButton;
+- (BOOL)isInvalidNextAutoPlayModel:(id)a0;
+- (void)shareForLongVideo;
+- (void)shareWithSceneType:(long long)a0;
+- (void)digWithSceneType:(long long)a0;
+- (void)commentWithSceneType:(long long)a0;
+- (void)collectionWithSceneType:(long long)a0;
+- (void)rewardAction;
+- (void)trackShowRewardButtonEntrance;
+- (void)handleRecallMessage:(id)a0;
+- (void)watchLaterAction;
+- (void)showMixPanel;
+- (void)transferToLiveRoom;
+- (BOOL)collectAddVideoHallEntrance;
+- (void)postFavoriteButtonClickedNotificationWithAction:(unsigned long long)a0;
+- (id)model;
+- (void).cxx_destruct;
+- (id)initWithContainer:(id)a0;
+- (void)dealloc;
+
+@end

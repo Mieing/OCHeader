@@ -1,0 +1,82 @@
+@class UIView, NSString, AFDCloseFriendsVisitorSourceTypeView, AWEUserListPanelCellItem, UIButton, UIViewController, DUXPopover, AWEPopoverActionSheet;
+@protocol AWEIMCustomQuickReplyControllerHandlerPortocol, AWEIMActiveUserInfoService;
+
+@interface AWEUserListPanelCell : AWEUIListTableViewCell <AWEUserMessage, AWEPadUIAdaptionViewTransitionObserver, AWEUserListPanelCellProtocol>
+
+@property (retain, nonatomic) AWEUserListPanelCellItem *item;
+@property (nonatomic) double actionButtonWidth;
+@property (retain, nonatomic) UIButton *moreAction;
+@property (retain, nonatomic) UIView *highlightBackgroundView;
+@property (weak, nonatomic) UIViewController *topViewController;
+@property (retain, nonatomic) UIView *onlineDotView;
+@property (copy, nonatomic) NSString *uniqueFlag;
+@property (retain, nonatomic) id<AWEIMCustomQuickReplyControllerHandlerPortocol> imCustomQuickReplyHandler;
+@property (nonatomic) BOOL replyFriendIMShowTracked;
+@property (nonatomic) BOOL replyFriendIMshowTrackedByMoreAction;
+@property (nonatomic) BOOL getLightedSourceWhenUpdate;
+@property (weak, nonatomic) AWEPopoverActionSheet *popover;
+@property (weak, nonatomic) DUXPopover *duxPopover;
+@property (retain, nonatomic) id<AWEIMActiveUserInfoService> activeInfo;
+@property (copy, nonatomic) NSString *currentLoginUid;
+@property (retain, nonatomic) AFDCloseFriendsVisitorSourceTypeView *sourceTypeView;
+@property (copy, nonatomic) NSString *pageIdentifier;
+@property (nonatomic) BOOL useLocalRecReason;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)identifier;
+
+- (void)didFinishFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)didFinishUnFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)didFinishBlockUser:(id)a0 status:(long long)a1;
+- (void)didFinishHideMyPostFromUser:(id)a0 status:(long long)a1;
+- (void)didFinishShowMyPostToUser:(id)a0 status:(long long)a1;
+- (void)didFinishHidePostFromHer:(id)a0 status:(long long)a1;
+- (void)didFinishUnHidePostFromHer:(id)a0 status:(long long)a1;
+- (void)didFinishSetRemarkWithUser:(id)a0;
+- (void)awe_viewController:(id)a0 willTransitionToSize:(struct CGSize { double x0; double x1; })a1 transitionCoordinator:(id)a2;
+- (void)onAWEUIThemeChange;
+- (void)didChangePrivateRelationWithUser:(id)a0 relationType:(long long)a1 relationValue:(long long)a2;
+- (void)followBtnClicked;
+- (void)highlightWithColor:(id)a0 completion:(id /* block */)a1;
+- (void)highlightWithColor:(id)a0;
+- (BOOL)shouldShowLightInteractionEntrance;
+- (BOOL)shouldShowSendMessageEntrance;
+- (id)lightInteractionSource;
+- (BOOL)shouldShowPokeButton;
+- (void)_refreshFollowBtnUI;
+- (id)__getSuperTableView;
+- (void)__tapMoreAction;
+- (BOOL)shouldShowMoreActionByFriendWatch;
+- (double)recommendLabelWidth;
+- (id)stringWithRewardAmount:(long long)a0;
+- (void)__pressMoreAction;
+- (void)__pressRelease;
+- (BOOL)favoriteCellShouldShowFollowFriendsTitle;
+- (void)__trackRewardCellIMEventType:(id)a0;
+- (BOOL)shouldLightInteractionChangeToSendMsg;
+- (void)__trackPokeClickWithEventType:(id)a0 withButtonType:(long long)a1;
+- (void)__trackQuickReplyWithEventType:(id)a0;
+- (void)refreshBottomRightCornerIcon;
+- (void)updateActiveStatusWithShareModel:(id)a0;
+- (void)p_unfollowUser;
+- (void)__preSetSendMessageParamsWithPid:(id)a0;
+- (BOOL)isECommerceBoostInfoPanelCell;
+- (void)__trackEnterChat;
+- (id)__getRelationContext;
+- (void)__tapMoreActionWithDUXPopover;
+- (BOOL)isFavoriteListCell;
+- (void)__unhideMyPost;
+- (void)__hideMyPost;
+- (void)updateWithItem:(id)a0;
+- (void).cxx_destruct;
+- (void)setHighlighted:(BOOL)a0 animated:(BOOL)a1;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)prepareForReuse;
+- (id)userModel;
+- (void)dealloc;
+- (void)_refreshUI;
+
+@end

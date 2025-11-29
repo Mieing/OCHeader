@@ -1,0 +1,76 @@
+@class NSString, MMKV;
+
+@interface AWELandscapeFeedPiPController : AWELandscapeFeedBaseController <AWEFeedPiPDelegate>
+
+@property (nonatomic) double pipDuration;
+@property (nonatomic) double pipStartTimeStamp;
+@property (nonatomic) double pipEndTimeStamp;
+@property (nonatomic) BOOL isAppearing;
+@property (nonatomic) BOOL isLoadMoreNoMoreData;
+@property (retain, nonatomic) MMKV *mmkv;
+@property (nonatomic) double pipStartPlayTimeStamp;
+@property (nonatomic) double pipEndPlayTimeStamp;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)updatePlayTime:(double)a0 canPlayTime:(double)a1 totalTime:(double)a2;
+- (void)currentPlayVideoDidChangePlayState:(long long)a0;
+- (double)getCurrentPlayTime;
+- (void)p_appDidBecomeActive:(id)a0;
+- (void)p_addObserversAndNotifications;
+- (void)pip_init;
+- (void)pip_updateStatus;
+- (void)handlePiPStorageSwitchChangeNotification:(id)a0;
+- (void)updatePlayTime;
+- (void)pip_stopPiPIfActive;
+- (void)trackSmallWindowPlayTimeWithDuration:(id)a0;
+- (void)pip_playWhenTableViewDidEndDisplay:(id)a0;
+- (void)trackCloseSmallWindowModeWithEventType:(id)a0;
+- (void)trackSmallWindowModeDurationWithDuration:(id)a0 enterMethod:(id)a1;
+- (void)pip_updateProgress:(id)a0 playTime:(double)a1 totalTime:(double)a2;
+- (void)trackPiPVideoWithEvent:(id)a0;
+- (void)trackEnterSmallWindowMode;
+- (void)trackSmallWindowFailWithParams:(id)a0;
+- (void)trackPiPVideoWithEvent:(id)a0 params:(id)a1;
+- (void)p_pipUpdateStatus;
+- (void)p_pipUpdatePregress:(id)a0 playTime:(double)a1 totalTime:(double)a2;
+- (void)pip_playWithIndex:(long long)a0;
+- (void)pip_playNext;
+- (void)pip_serviceWillStart:(id)a0;
+- (void)pip_serviceDidStart:(id)a0;
+- (void)pip_service:(id)a0 willStopForRestore:(BOOL)a1;
+- (void)pip_service:(id)a0 didStopForRestore:(BOOL)a1;
+- (void)pip_service:(id)a0 restoreFromForeground:(BOOL)a1;
+- (void)pip_service:(id)a0 failedToStartWithError:(id)a1;
+- (void)pip_service:(id)a0 didTransToNewSize:(struct CGSize { double x0; double x1; })a1;
+- (void)pip_service:(id)a0 seekToTime:(double)a1 completion:(id /* block */)a2;
+- (void)pip_service:(id)a0 isPlaying:(BOOL)a1;
+- (void)pip_service:(id)a0 getPlayerContext:(id)a1;
+- (void)pip_service:(id)a0 unbindPlayerContext:(id)a1;
+- (void)pip_service:(id)a0 bindPlayerContext:(id)a1;
+- (void)pip_servicePreBtnClicked:(id)a0;
+- (void)pip_servicePlayBtnClicked:(id)a0;
+- (void)pip_serviceNextBtnClicked:(id)a0;
+- (void)pip_serviceTrackForClickVideoPlay:(id)a0;
+- (void)pip_serviceTrackForProgressSpeed:(id)a0 isFront:(BOOL)a1;
+- (void)pip_service:(id)a0 triggeredWithType:(unsigned long long)a1 ToScene:(id)a2;
+- (void)pip_playPre;
+- (void)handleLandscapeFeedAutoPlayNextNotification:(id)a0;
+- (void)p_pipPlayWhenTableViewDidEndDisplay;
+- (void)applicationWillResignActive:(id)a0;
+- (void)applicationWillEnterForeground:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)applicationWillTerminate:(id)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+
+@end

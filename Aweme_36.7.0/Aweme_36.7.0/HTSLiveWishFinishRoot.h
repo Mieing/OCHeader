@@ -1,0 +1,3 @@
+@interface HTSLiveWishFinishRoot : GPBRootObject
+
+@end

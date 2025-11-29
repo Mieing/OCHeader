@@ -1,0 +1,18 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveToolBarComponentData : IESLivePBBaseMessage
+
+@property (nonatomic) int groupId;
+@property (nonatomic) int componentType;
+@property (nonatomic) int opType;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *schemaURL;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (nonatomic) long long showType;
+@property (nonatomic) long long dataStatus;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

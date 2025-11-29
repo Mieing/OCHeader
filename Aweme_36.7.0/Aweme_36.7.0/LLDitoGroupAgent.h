@@ -1,0 +1,3 @@
+@interface LLDitoGroupAgent : LLDitoComponentAgent
+
+@end

@@ -1,0 +1,12 @@
+@class LabelImageStyleV2, UrlStructV2;
+
+@interface LabelImageInfoV2 : GPBMessage
+
+@property (retain, nonatomic) UrlStructV2 *image;
+@property (nonatomic) BOOL hasImage;
+@property (retain, nonatomic) LabelImageStyleV2 *style;
+@property (nonatomic) BOOL hasStyle;
+
++ (id)descriptor;
+
+@end

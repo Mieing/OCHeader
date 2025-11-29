@@ -1,0 +1,90 @@
+@class NSMutableString, YTLiveDetector, NSMutableArray, YtTimerCounter;
+
+@interface SilentLivenessState : BaseState {
+    struct { struct TC_FaceShape { struct TC_FaceProfile { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } faceProfile; struct TC_LeftEyebrow { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } leftEyebrow; struct TC_RightEyebrow { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } rightEyebrow; struct TC_LeftEye { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } leftEye; struct TC_RightEye { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } rightEye; struct TC_Nose { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } nose; struct TC_Mouth { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } mouth; struct TC_Pupil { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *__begin_; void *__end_; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *__value_; } __end_cap_; } points; } pupil; } faceShape; struct vector<float, std::allocator<float>> { float *__begin_; float *__end_; struct __compressed_pair<float *, std::allocator<float>> { float *__value_; } __end_cap_; } facePointsVis; float cls; } trackInfo;
+    struct YTPOSE { float pitch; float yaw; float roll; } pose;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } detectRect;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } previewRect;
+    float eyeOpenThreshold;
+    BOOL needEyeOpenCheck;
+    int pitchThreshold;
+    int yawThreshold;
+    int rollThreshold;
+    float bigThreshold;
+    float smallThreshold;
+    float inRectThreshold;
+    float blurDetectThreshold;
+    float faceInRectRatio;
+    int continueCloseEyeCount;
+    int continueBlurCount;
+    BOOL isManual;
+    BOOL triggerLiveBeginEventFlag;
+    BOOL tipFilterFlag;
+    BOOL needBigFaceMode;
+    int stableFrameCount;
+    struct vector<float, std::allocator<float>> { float *__begin_; float *__end_; struct __compressed_pair<float *, std::allocator<float>> { float *__value_; } __end_cap_; } bestShape;
+    struct vector<float, std::allocator<float>> { float *__begin_; float *__end_; struct __compressed_pair<float *, std::allocator<float>> { float *__value_; } __end_cap_; } eyeShape;
+    struct vector<float, std::allocator<float>> { float *__begin_; float *__end_; struct __compressed_pair<float *, std::allocator<float>> { float *__value_; } __end_cap_; } mouthShape;
+    struct Mat { int flags; int dims; int rows; int cols; char *data; int *refcount; char *datastart; char *dataend; char *datalimit; struct MatAllocator *allocator; struct MSize { int *p; } size; struct MStep { unsigned long long *p; unsigned long long buf[2]; } step; } bestMat;
+    float maxEyeScore;
+    float minEyeScore;
+    float maxMouthScore;
+    float minMouthScore;
+    float maxInRectRatio;
+    double maxBlureScore;
+    float maxShelterScore;
+    float bigThresholdBuffer;
+    float smallThresholdBuffer;
+    float poseThresholdBuffer;
+    int continueNoValidFaceCount;
+    int continueNoValidFaceCountThreshold;
+    BOOL needForcePoseCheckFlag;
+    BOOL needShelterCheckFlag;
+    YtTimerCounter *timeCounter;
+    YtTimerCounter *predetectTimeCounter;
+    int currentTipAdvise;
+    int currentShelterResult;
+    int previousShelterResult;
+    int continueShelterCount;
+    int frameNum;
+    BOOL needFaceDirectionDetect;
+}
+
+@property (nonatomic) int sameUITipCount;
+@property (nonatomic) BOOL firstStableStatePass;
+@property (retain, nonatomic) YTLiveDetector *liveDetector;
+@property (retain, nonatomic) NSMutableString *currentTips;
+@property (nonatomic) int continuousPassCount;
+@property (nonatomic) int currentAdvise;
+@property (nonatomic) int currentShelter;
+@property (retain, nonatomic) NSMutableArray *currentFacePoints;
+
++ (id)parseAdvise:(int)a0;
+
+- (void)loadWithName:(id)a0 withSDKConfigData:(id)a1;
+- (void)unload;
+- (void)enter;
+- (void)exit;
+- (void)reset;
+- (void)addFaceShapePoint:(struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; })a0 withFacePoints:(void *)a1;
+- (id)convertFaceFiveShape:(struct vector<float, std::allocator<float>> { float *x0; float *x1; struct __compressed_pair<float *, std::allocator<float>> { float *x0; } x2; })a0;
+- (struct vector<float, std::allocator<float>> { float *x0; float *x1; struct __compressed_pair<float *, std::allocator<float>> { float *x0; } x2; })covnertFaceShape:(void *)a0;
+- (void)checkBestImage:(struct Mat { int x0; int x1; int x2; int x3; char *x4; int *x5; char *x6; char *x7; char *x8; struct MatAllocator *x9; struct MSize { int *x0; } x10; struct MStep { unsigned long long *x0; unsigned long long x1[2]; } x11; })a0 withTrackInfo:(struct { struct TC_FaceShape { struct TC_FaceProfile { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x0; struct TC_LeftEyebrow { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x1; struct TC_RightEyebrow { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x2; struct TC_LeftEye { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x3; struct TC_RightEye { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x4; struct TC_Nose { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x5; struct TC_Mouth { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x6; struct TC_Pupil { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x7; } x0; struct vector<float, std::allocator<float>> { float *x0; float *x1; struct __compressed_pair<float *, std::allocator<float>> { float *x0; } x2; } x1; float x2; })a1 withInRectRatio:(float)a2 withBlurScore:(double)a3 mouthScore:(float)a4 eyeScore:(float)a5;
+- (int)stableShelter:(int)a0;
+- (void)update:(struct Mat { int x0; int x1; int x2; int x3; char *x4; int *x5; char *x6; char *x7; char *x8; struct MatAllocator *x9; struct MSize { int *x0; } x10; struct MStep { unsigned long long *x0; unsigned long long x1[2]; } x11; })a0 withTimeStamp:(unsigned long long)a1;
+- (void)updateSDKSetting:(id)a0;
+- (void)handleEvent:(id)a0;
+- (void)moveToNextState;
+- (void)handleInnerAction:(id)a0 data:(id)a1;
+- (int)faceLocationDetect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 targetRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (int)getFacePreviewAdvise:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 faceInPreview:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 pitch:(float)a2 yaw:(float)a3 roll:(float)a4 imageWidth:(int)a5 imageHeight:(int)a6 faceRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a7 facePoints:(id)a8;
+- (float)preCheckCloseEye:(struct TC_FaceShape { struct TC_FaceProfile { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x0; struct TC_LeftEyebrow { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x1; struct TC_RightEyebrow { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x2; struct TC_LeftEye { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x3; struct TC_RightEye { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x4; struct TC_Nose { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x5; struct TC_Mouth { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x6; struct TC_Pupil { struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> { void *x0; void *x1; struct __compressed_pair<tiny_cv::Point_<float> *, std::allocator<tiny_cv::Point_<float>>> { void *x0; } x2; } x0; } x7; })a0;
+- (int)shelterJudge:(struct vector<float, std::allocator<float>> { float *x0; float *x1; struct __compressed_pair<float *, std::allocator<float>> { float *x0; } x2; })a0;
+- (id)parseShelter:(int)a0;
+- (void)sendUIEventWithPose:(int)a0 withBlock:(int)a1;
+- (void)sendUIEventWithValue:(id)a0 withType:(id)a1;
+- (BOOL)checkActionStage;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

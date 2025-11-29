@@ -1,0 +1,3 @@
+@interface KtvGetChorusOrderedSongListApiRoot : GPBRootObject
+
+@end

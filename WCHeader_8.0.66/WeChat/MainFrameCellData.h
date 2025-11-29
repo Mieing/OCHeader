@@ -1,0 +1,91 @@
+@class NSString, NSIndexPath, MMSessionInfo;
+
+@interface MainFrameCellData : NSObject <PBCoding> {
+    BOOL m_isNeedUpdateDataForUI;
+}
+
+@property (retain, nonatomic) MMSessionInfo *m_sessionInfo;
+@property (nonatomic) unsigned long long m_n64MesSvrID;
+@property (retain, nonatomic) NSString *m_nsHeadImgUsrName;
+@property (retain, nonatomic) NSString *m_nsHeadImgUrl;
+@property (nonatomic) BOOL m_timeIsMoreThanAWeek;
+@property (nonatomic) BOOL m_isFirstInitTimeText;
+@property (readonly, nonatomic) BOOL m_isHavenInitedWithSessionInfo;
+@property (nonatomic) BOOL m_bIsSenderFromSelf;
+@property (retain, nonatomic) NSString *m_textForNameLabel;
+@property (retain, nonatomic) NSString *m_textForMessageLabel;
+@property (retain, nonatomic) NSString *m_textForGreenLabel;
+@property (retain, nonatomic) NSString *m_textForTimeLabel;
+@property (retain, nonatomic) NSString *m_prefixTextForQuoteMessage;
+@property (retain, nonatomic) NSString *m_oldTextForNameLabel;
+@property (nonatomic) float m_widthForMessageLabelText;
+@property (nonatomic) float m_widthForGreenLabelText;
+@property (nonatomic) float m_widthForTimeLabelText;
+@property (nonatomic) float m_widthForNameLabelText;
+@property (nonatomic) int m_widthCacheVersion;
+@property (nonatomic) BOOL m_bIsRoomDisplayEmpty;
+@property (retain, nonatomic) NSString *m_nsRealUsrName;
+@property (nonatomic) long long m_lastUnReadCount;
+@property (nonatomic) BOOL m_bIsModifyContact;
+@property (nonatomic) BOOL m_bContainsEmoji;
+@property (nonatomic) BOOL m_bIsNeedSaveCellData;
+@property (retain, nonatomic) NSString *cpKeyForNickname;
+@property (retain, nonatomic) NSString *cpKeyForMessage;
+@property (nonatomic) BOOL isNicknameUnsafe;
+@property (nonatomic) BOOL isMessageUnsafe;
+@property (retain, nonatomic) NSIndexPath *currIndexPath;
+@property (nonatomic) BOOL isPositionChanged;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_m_nsHeadImgUsrName;
++ (void)PBArrayAdd_m_nsHeadImgUrl;
++ (void)PBArrayAdd_m_timeIsMoreThanAWeek;
++ (void)PBArrayAdd_m_widthForTimeLabelText;
++ (void)PBArrayAdd_m_widthForNameLabelText;
++ (void)PBArrayAdd_m_bIsSenderFromSelf;
++ (void)PBArrayAdd_m_textForNameLabel;
++ (void)PBArrayAdd_m_textForMessageLabel;
++ (void)PBArrayAdd_m_textForGreenLabel;
++ (void)PBArrayAdd_m_textForTimeLabel;
++ (void)PBArrayAdd_m_prefixTextForQuoteMessage;
++ (void)PBArrayAdd_m_widthForMessageLabelText;
++ (void)PBArrayAdd_m_widthForGreenLabelText;
++ (void)PBArrayAdd_m_bIsRoomDisplayEmpty;
++ (void)PBArrayAdd_m_widthCacheVersion;
++ (void)PBArrayAdd_m_n64MesSvrID;
++ (void)PBArrayAdd_m_bContainsEmoji;
++ (void)initialize;
++ (id)digestForMsg:(id)a0;
++ (id)digestForMsg:(id)a0 withSender:(id)a1;
++ (id)getReplaceContentForLinkText:(id)a0;
++ (id)pathForCellData:(id)a0;
++ (id)dirForCellDataFile;
++ (id)dirNameForCurrentEnvironment;
++ (void)deleteCellDataFromLocal:(id)a0;
+
+- (id)getPBPropertyTable;
+- (id)init;
+- (id)initWithSessionInfo:(id)a0;
+- (void)updateTimeField:(unsigned int)a0;
+- (int)currentVersion;
+- (void)checkDataIsValid;
+- (void)updateExtensionRegister:(id)a0;
+- (void)makeTextForNameLabel;
+- (void)makeTextForMessageLabel;
+- (void)tryMakeTemplateMessageLabel:(id)a0;
+- (id)getGroupName;
+- (void)makeTextSession:(id)a0;
+- (id)getAppName:(id)a0;
+- (void)makeTextForQuoteMessage;
+- (void)makeTextForPluginMessage;
+- (void)updateDataAfterPBDecode:(id)a0;
+- (void)updateData:(id)a0;
+- (void)updateDataFieldForUI;
+- (void)updateTextForTimeLabel;
+- (void)updateWidthForNameLabel;
+- (void).cxx_destruct;
+
+@end

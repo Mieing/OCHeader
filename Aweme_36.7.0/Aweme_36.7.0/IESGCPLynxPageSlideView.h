@@ -1,0 +1,70 @@
+@class UIButton, IESGCPDetailContentNode, NSString, IESGCPAudienceDetailViewConfig, UIView, MASConstraint, IESGCPDetailData;
+@protocol IESGCPLynxCardViewProtocol;
+
+@interface IESGCPLynxPageSlideView : UIView <IESHYHybridViewLifecycleProtocol, IESGCPDIContextSubscriber, IESGCPGameDetailLynxPageSlideViewService, IESGCPAudienceDetailSlideViewProtocol>
+
+@property (nonatomic) BOOL isLynxCardFromPreload;
+@property (nonatomic) unsigned long long firstPageDataState;
+@property (nonatomic) BOOL didUpdateSecondPageData;
+@property (retain, nonatomic) IESGCPAudienceDetailViewConfig *detailViewConfig;
+@property (nonatomic) BOOL isFullScreen;
+@property (retain, nonatomic) IESGCPDetailContentNode *node;
+@property (retain, nonatomic) IESGCPDetailData *detailData;
+@property (retain, nonatomic) UIView *lynxContainerView;
+@property (retain, nonatomic) id<IESGCPLynxCardViewProtocol> lynxCardView;
+@property (retain, nonatomic) MASConstraint *lynxCardViewHeightConstraint;
+@property (retain, nonatomic) MASConstraint *bottomContainerBottomConstraint;
+@property (retain, nonatomic) MASConstraint *bottomContainerHeightConstraint;
+@property (retain, nonatomic) UIView *bottomContainerView;
+@property (nonatomic) double bottomContainerViewHeight;
+@property (retain, nonatomic) MASConstraint *closeButtonTopConstraint;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a0;
+- (void)viewDidFirstScreen;
+- (void)viewDidFinishLoadWithURL:(id)a0;
+- (void)viewDidPageUpdate;
+- (void)viewDidLoadFailedWithUrl:(id)a0 error:(id)a1;
+- (void)didSetGameCPDIContext;
+- (id)hybridView;
+- (void)gameDetailVC_viewDidAppear:(BOOL)a0 gameDetailVC:(id)a1;
+- (void)gameDetailVC_viewDidDisAppear:(BOOL)a0 gameDetailVC:(id)a1;
+- (void)navigateTo:(id)a0 params:(id)a1;
+- (void)gameDetailProgress:(double)a0;
+- (void)audienceDetailHeightDidChange:(double)a0;
+- (void)reloadNode:(id)a0 themeConfig:(id)a1;
+- (void)setScrollViewToStickyTopWithDuration:(double)a0 complete:(id /* block */)a1;
+- (void)layoutWithConfig:(id)a0 detailThemeConfig:(id)a1 isFullScreen:(BOOL)a2;
+- (id)detailViewModel;
+- (void)addDebugTagWithView:(id)a0 isPreLoad:(BOOL)a1;
+- (id)lynxInitialData:(BOOL)a0;
+- (id)lynxUrlAppendQueryItems;
+- (id)getGameDetailPageLynxSchema;
+- (id)getHybridViewWithLifeDelegate:(id)a0 schema:(id)a1;
+- (void)updateViewsLayout;
+- (void)updateGameDetailLynxPageData;
+- (void)updateLynxFirstPageDataIfNeeded;
+- (void)updateGameDetailSecondPageData;
+- (void)updateLynxFirstPageData:(BOOL)a0 useJSEvent:(BOOL)a1;
+- (void)onLynxViewLoadSuccess;
+- (void)onLynxViewLoadFail;
+- (BOOL)isLynxViewLoadFail;
+- (void)showCloseButtonIfNeeded;
+- (void)sendFullScreenStateChangeEvent:(BOOL)a0;
+- (void)onFullScreenStatusChange;
+- (id)createHybridViewWithLifeDelegate:(id)a0 pageSchema:(id)a1;
+- (BOOL)isLynxViewLoadSuccess;
+- (void)layoutViews;
+- (void)setContentHidden:(BOOL)a0;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)scrollView;
+- (void)setupViews;
+- (void)didTapCloseButton;
+- (void)updateContent:(id)a0;
+
+@end

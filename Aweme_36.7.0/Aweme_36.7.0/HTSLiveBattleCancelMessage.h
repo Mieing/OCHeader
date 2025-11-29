@@ -1,0 +1,11 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveBattleCancelMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long channelId;
+
++ (id)descriptor;
+
+@end

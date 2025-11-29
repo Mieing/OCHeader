@@ -1,0 +1,3 @@
+@interface HTSLiveRanklistHourEnterRoot : GPBRootObject
+
+@end

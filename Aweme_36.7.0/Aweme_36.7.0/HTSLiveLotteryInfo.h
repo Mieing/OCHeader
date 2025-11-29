@@ -1,0 +1,15 @@
+@class NSString, HTSLiveLotteryProductShortInfo;
+
+@interface HTSLiveLotteryInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long lotteryType;
+@property (copy, nonatomic) NSString *enterIcon;
+@property (copy, nonatomic) NSString *icon;
+@property (copy, nonatomic) NSString *activityId;
+@property (nonatomic) long long openTime;
+@property (retain, nonatomic) HTSLiveLotteryProductShortInfo *productInfo;
+@property (nonatomic) BOOL hasProductInfo;
+
++ (id)descriptor;
+
+@end

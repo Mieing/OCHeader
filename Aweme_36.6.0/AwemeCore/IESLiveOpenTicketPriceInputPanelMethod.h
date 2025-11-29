@@ -1,0 +1,7 @@
+@interface IESLiveOpenTicketPriceInputPanelMethod : AnnieBridgeMethod
+
+- (Class)paramModelClass;
+- (Class)resultModelClass;
+- (id)methodName;
+
+@end

@@ -1,0 +1,70 @@
+@class IESLiveVSMessageBoardApi, HTSEventContext, NSString, HTSLiveImage, InteractDressInfoResponse_DressInfo, NSMutableDictionary, NSDictionary, HTSLiveCommentsSyncData, IESLiveVSMessageBoardInputPanelView, NSMutableArray, UIView, IESLiveVSMessageBoardStore;
+
+@interface IESVSMessageBoardCommonAbility : NSObject <IESLiveVSMessageBoardInputPanelDelegate, IESLiveDataSyncDelegate, HTSLiveStreamPlayerAction, IESLiveVSMessageBoardRouter>
+
+@property (retain, nonatomic) IESLiveVSMessageBoardApi *api;
+@property (retain, nonatomic) NSMutableDictionary *thumbup_list;
+@property (retain, nonatomic) IESLiveVSMessageBoardInputPanelView *inputPanelView;
+@property (retain, nonatomic) IESLiveVSMessageBoardStore *store;
+@property (copy, nonatomic) id /* block */ openInputPanelJSB;
+@property (copy, nonatomic) NSDictionary *inputPanelReplyParams;
+@property (retain, nonatomic) id model;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (copy, nonatomic) NSString *roomID;
+@property (copy, nonatomic) NSString *episodeID;
+@property (copy, nonatomic) NSString *OwnerID;
+@property (copy, nonatomic) NSString *originEpisodeID;
+@property (retain, nonatomic) HTSLiveCommentsSyncData *commentDataCache;
+@property (copy, nonatomic) NSString *thumbupListDataStr;
+@property (copy, nonatomic) NSString *uiConfig;
+@property (nonatomic) BOOL firstFetchVSMessageBoard;
+@property (retain, nonatomic) HTSLiveImage *iconImage;
+@property (copy, nonatomic) NSString *toolbarDataJsonStr;
+@property (copy, nonatomic) NSString *toolbarDataSchemaURL;
+@property (copy, nonatomic) NSString *dressInfoForWeb;
+@property (retain, nonatomic) InteractDressInfoResponse_DressInfo *dressUpModel;
+@property (retain, nonatomic) NSMutableArray *entityIdArray;
+@property (copy, nonatomic) NSString *paySchema;
+@property (retain, nonatomic) UIView *messageBoardView;
+@property (nonatomic) long long messagePuzzleViewCount;
+@property (retain, nonatomic) id panelWebViewObserve;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithModel:(id)a0 context:(id)a1;
+- (void)subscribedSyncDataWithValue:(id)a0 version:(long long)a1;
+- (void)subscribedSyncDataUpdatedWithValue:(id)a0 oldVersion:(long long)a1 newVersion:(long long)a2;
+- (void)didSetAttachingDIContext;
+- (void)setUIConfig:(id)a0;
+- (void)updateConfigWithParams:(id)a0;
+- (void)openVSMessageBoardInputPanelWithParameters:(id)a0 completion:(id /* block */)a1;
+- (void)setVSMessageBoardCommentCacheDataWithKey:(id)a0 value:(id)a1;
+- (void)getVSMessageBoardCommentCacheDataWithKeys:(id)a0 requestFrom:(id)a1 completion:(id /* block */)a2;
+- (void)setupBoard;
+- (void)openVSMessageBoardViewWithSchema:(id)a0 source:(id)a1;
+- (void)showMessageBoardEntraceWithSource:(id)a0;
+- (id)getPanelWebViewObserve;
+- (void)handlePuzzleNotifation:(id)a0;
+- (void)fetchVSMessageBoardDressUpList;
+- (void)initFetchVSMessageBoard;
+- (BOOL)shouldShowRedDotRecord:(id)a0;
+- (long long)dressUpThemeSkinRecord:(id)a0;
+- (long long)dressUpExclusiveMedalRecord:(id)a0;
+- (void)clearInputPanelWithClearDraft:(BOOL)a0;
+- (void)openInputView;
+- (void)getEntityIdArray;
+- (void)inputPanel:(id)a0 commentDidChange:(id)a1;
+- (void)inputPanelDidClickSend:(id)a0;
+- (void)inputPanelDismiss:(id)a0 isSendClicked:(BOOL)a1;
+- (void)setupAbility;
+- (void)openScalePanel;
+- (void)updatePayStatus;
+- (void)paidForVSPrivilege;
+- (BOOL)isVertical;
+- (void).cxx_destruct;
+- (id)room;
+- (id)episode;
+
+@end

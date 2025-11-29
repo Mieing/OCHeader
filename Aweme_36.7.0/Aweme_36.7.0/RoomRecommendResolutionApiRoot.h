@@ -1,0 +1,3 @@
+@interface RoomRecommendResolutionApiRoot : GPBRootObject
+
+@end

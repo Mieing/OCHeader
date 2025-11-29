@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface AWEUserCodeVerifyDOUYINAdapter : NSObject <AWEUserCodeVerifyCommonAdapter>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)weakTargetClass;
+
+- (BOOL)shouldMixTypeWhenRequestCodeVerify;
+- (id)weakTarget;
+
+@end

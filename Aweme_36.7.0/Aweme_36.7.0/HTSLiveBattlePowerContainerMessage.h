@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveBattlePowerContainerMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long channelId;
+@property (nonatomic) long long battleId;
+@property (copy, nonatomic) NSString *reverseInfo;
+@property (copy, nonatomic) NSString *container;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface PoiFootprintStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) BOOL hasTitle;
+@property (copy, nonatomic) NSString *schema;
+@property (nonatomic) BOOL hasSchema;
+
++ (id)descriptor;
+
+@end

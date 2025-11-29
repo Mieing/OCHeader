@@ -1,0 +1,3 @@
+@interface AWECommentPanelListSwiftImpl.CommentDisableContentOffsetRestorationAnchorSettings : _TtCs12_SwiftObject
+
+@end

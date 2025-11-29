@@ -1,0 +1,8 @@
+@interface HTSLiveConfigData_NumRule : IESLivePBBaseMessage
+
+@property (nonatomic) long long threshold;
+@property (nonatomic) long long emojiNum;
+
++ (id)descriptor;
+
+@end

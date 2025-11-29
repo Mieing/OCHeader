@@ -1,0 +1,3 @@
+@interface HTSLiveFireworkMessageRoot : GPBRootObject
+
+@end

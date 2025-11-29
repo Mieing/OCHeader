@@ -1,0 +1,7 @@
+@interface SalamanderAnnieX.AnniexCheckPermissionV2 : NSObject
+
++ (void)checkPermissionV2:(id)a0 :(id /* block */)a1 :(id)a2;
+
+- (id)init;
+
+@end

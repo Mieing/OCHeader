@@ -1,0 +1,3 @@
+@interface AWELongVideoImpl.___EntertainmentRTSFeedAbilityService_class : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,65 @@
+@interface AWEIncentiveSwiftImpl.IncentivePendantManager : NSObject <AWELiteUGSPTimeMessage, AWEDigitalWellbeingMessage, AWEBasicModeMessage, AWEUserMessage> {
+    void /* unknown type, empty encoding */ pendantVM;
+    void /* unknown type, empty encoding */ feedVVDiversionPendantVM;
+    void /* unknown type, empty encoding */ isDYPendantFoldBeforeFeedVVStyle;
+    void /* unknown type, empty encoding */ processbarExtHandler;
+    void /* unknown type, empty encoding */ _currentItemID;
+    void /* unknown type, empty encoding */ _searchLongVideoLimitItem;
+    void /* unknown type, empty encoding */ awardExitModel;
+    void /* unknown type, empty encoding */ lastGlobalWidgetInitialShowed;
+    void /* unknown type, empty encoding */ lastGlobalWidgetHasFold;
+    void /* unknown type, empty encoding */ hasBlockedByDeviceIDEmpty;
+    void /* unknown type, empty encoding */ hasSetupDOUYINIncentivePendant;
+    void /* unknown type, empty encoding */ incentivePendantNewUserV2StableSwitch;
+    void /* unknown type, empty encoding */ incentivePendantNewUserV2ElegantScrollSwitch;
+    void /* unknown type, empty encoding */ isAdVV;
+    void /* unknown type, empty encoding */ videoType;
+    void /* unknown type, empty encoding */ kFetchDOUYINVideoTaskInfoRetryMaxCount;
+    void /* unknown type, empty encoding */ fetchDOUYINVideoTaskInfoRetryCount;
+    void /* unknown type, empty encoding */ isFetchingDOUYINIncentiveVideoTask;
+    void /* unknown type, empty encoding */ shouldUseFeedVVDiversionPendantVM;
+    void /* unknown type, empty encoding */ hasSetupActivitySettings;
+    void /* unknown type, empty encoding */ feedVVDiversionHandler;
+    void /* unknown type, empty encoding */ feedVVDiversionSettingsModel;
+    void /* unknown type, empty encoding */ feedVVDiversionFreqControl;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_feedVVDiversionItemDict;
+    void /* unknown type, empty encoding */ feedVVDiversionShowTimer;
+    void /* unknown type, empty encoding */ isFeedVVDiversionPendantStyle;
+    void /* unknown type, empty encoding */ feedVVDiversionCacheInfo;
+    void /* unknown type, empty encoding */ isFetchingPendantTask;
+    void /* unknown type, empty encoding */ hasFetchedTask;
+    void /* unknown type, empty encoding */ hasFetchedTaskSync;
+    void /* unknown type, empty encoding */ hasProcessBarSetup;
+    void /* unknown type, empty encoding */ hasFetchedPendantTask;
+    void /* unknown type, empty encoding */ isFetchingUnloginTask;
+    void /* unknown type, empty encoding */ isRedPacketShowing;
+    void /* unknown type, empty encoding */ unloginTaskCompletion;
+    void /* unknown type, empty encoding */ playletInfo;
+    void /* unknown type, empty encoding */ playletAdInfo;
+    void /* unknown type, empty encoding */ playletBizParamJson;
+    void /* unknown type, empty encoding */ playletBizParams;
+    void /* unknown type, empty encoding */ playletInfoNotReady;
+    void /* unknown type, empty encoding */ _playletId;
+    void /* unknown type, empty encoding */ playletTaskPageRemoveSamePageSwitch;
+    void /* unknown type, empty encoding */ saveSurpriseBoxIsTaskStart;
+    void /* unknown type, empty encoding */ saveSurpriseBoxPendantList;
+    void /* unknown type, empty encoding */ saveSurpriseBoxCycle;
+    void /* unknown type, empty encoding */ isFromColdStart;
+    void /* unknown type, empty encoding */ lock;
+    void /* unknown type, empty encoding */ aliYAPInstalled;
+    void /* unknown type, empty encoding */ gdLabel;
+}
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)willStartLogin;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)teenModeDidChange:(BOOL)a0 isLogout:(BOOL)a1;
+- (void)spTimeDidChanged:(unsigned long long)a0 byMode:(unsigned long long)a1;
+- (void)basicModeDidChange:(BOOL)a0;
+- (void)updateFeedVVDiversionInfo;
+- (void)recoverNormalPendantStyleIfNeeded;
+- (void)commonParamsDeviceIdDidReady;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

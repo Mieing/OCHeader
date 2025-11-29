@@ -1,0 +1,7 @@
+@interface CreatorCertificationChkResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL needCertification;
+
++ (id)descriptor;
+
+@end

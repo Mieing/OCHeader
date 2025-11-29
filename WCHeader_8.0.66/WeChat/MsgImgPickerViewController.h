@@ -1,0 +1,88 @@
+@class UIView, NSString, NSArray, MsgNewImgDataLogic, NSMutableDictionary, MsgFastBrowseView, UIButton, MsgDataSaveLogic, NSMutableSet, MultiSelectController;
+@protocol MsgImgPickerViewControllerDelegate;
+
+@interface MsgImgPickerViewController : MMUIViewController <MsgFastBrowseViewDelegate, MultiSelectContollerDelegate, MsgImgDataLogicDelegate, IMsgExt, MsgDataSaveLogicDelegate, MsgImgFullScreenViewControllerDelegate, MsgImgWeakBrowseViewControllerDelegate, ViewAppMsgControllerDelegate, WCActionSheetDelegate, MsgNewImgDataLogicDelegate, MsgImgPickerPreviewViewControllerDelegate, MsgImgPickerPreviewViewControllerDataSource> {
+    MsgFastBrowseView *m_msgFastBrowseView;
+    UIView *m_filterFooterView;
+    UIButton *m_previewButton;
+    UIButton *m_confirmButton;
+    MultiSelectController *m_multiSelectController;
+    MsgNewImgDataLogic *m_newDataLogic;
+    MsgDataSaveLogic *m_MsgDataSaveLogic;
+    BOOL m_bHasLoadData;
+    NSMutableSet *m_arrMsgExpired;
+    NSMutableDictionary *m_dicEditeImage;
+}
+
+@property (retain, nonatomic) NSArray *selectedImages;
+@property (nonatomic) BOOL previewOriginSelectedImageOnly;
+@property (retain, nonatomic) NSArray *originSelectedImgs;
+@property (copy, nonatomic) id /* block */ downloadCompletion;
+@property (retain, nonatomic) NSString *m_nsChatName;
+@property (nonatomic) unsigned long long m_eFilterType;
+@property (weak, nonatomic) id<MsgImgPickerViewControllerDelegate> delegate;
+@property (nonatomic) long long maxSelectCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (id)navigationBarBackgroundColor;
+- (BOOL)navigationBarBlurEffect;
+- (long long)overrideUserInterfaceStyle;
+- (void)viewWillAppear:(BOOL)a0;
+- (id)getViewController;
+- (BOOL)useBlackStatusbar;
+- (void)initData;
+- (BOOL)onMsgImgDataMatch:(id)a0;
+- (BOOL)onMsgNewImgLogicDataMatch:(id)a0;
+- (BOOL)messageWrapMatchImageWithoutVideo:(id)a0;
+- (void)onMsgNewImgDataLogicLoadOKWithLast:(id)a0 Next:(id)a1;
+- (id)getMsgFrom:(id)a0;
+- (void)initNavBar;
+- (void)initView;
+- (void)addFilterFooterView:(id)a0;
+- (id)getSelectArray;
+- (id)genUserNameLocalWithMsg:(id)a0;
+- (void)initFilterFooterView;
+- (void)viewDidTransitionToNewSize;
+- (void)onCancel;
+- (void)onPreviewSelectedImage:(id)a0;
+- (void)onConfirmSelection:(id)a0;
+- (void)downloadSelectedImageIfNeedWithCompletion:(id /* block */)a0;
+- (void)startDownload;
+- (void)onMsgDataSaveLogicEnd:(BOOL)a0 expiredMsgs:(id)a1;
+- (void)realPreviewSelectedImageWithPreviewSelectedOnly:(BOOL)a0 startIndex:(long long)a1;
+- (void)realConfirmSelection;
+- (void)updateSelectedImages;
+- (void)msgImgPickerPreviewViewControllerDidChangeSelectionForImageAtIndex:(long long)a0;
+- (void)msgImgPickerPreviewViewControllerDidConfirmSelection;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })msgImgViewFrameGlobal:(id)a0;
+- (long long)totalImageCount;
+- (long long)selectedImageCount;
+- (id)imageAtIndex:(long long)a0;
+- (BOOL)hasSelectedImageAtIndex:(long long)a0;
+- (id)simpleMsgArrayForPreview;
+- (id)msgInfoAtIndex:(long long)a0;
+- (long long)previewIndexForMsgInfo:(id)a0;
+- (id)selectedMsgInfosForPreview;
+- (void)updateEditeMsgImg:(id)a0 editeReusltImage:(id)a1;
+- (id)getEditeImageForMsgInfo:(id)a0;
+- (id)getCurrentViewController;
+- (void)onMultiOprationComplete;
+- (void)onForwardMessageOK;
+- (void)onMsgFastBrowseViewGetMoreMsg:(id)a0 Last:(BOOL)a1 Next:(BOOL)a2;
+- (id)expiredMsgForMsgFastBrowseView:(id)a0;
+- (id)messageWrapsForMsgFastBrowseView:(id)a0;
+- (void)onSquareImgClicked:(id)a0 withInfo:(id)a1 withOffset:(unsigned int)a2;
+- (BOOL)msgFastBrowseView:(id)a0 willChangeCheckMarkTo:(BOOL)a1 withMsgInfo:(id)a2;
+- (void)msgFastBrowseView:(id)a0 didChangeCheckMarkTo:(BOOL)a1 withMsgInfo:(id)a2;
+- (void)onSquareImgUpdate:(id)a0 withInfo:(id)a1;
+- (void)OnDelMsg:(id)a0 MsgWrap:(id)a1;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface ACCChapterMediaTimelinePointView : UIView
+
+@end

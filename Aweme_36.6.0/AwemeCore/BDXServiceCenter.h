@@ -1,0 +1,3 @@
+@interface BDXServiceCenter : NSObject
+
+@end

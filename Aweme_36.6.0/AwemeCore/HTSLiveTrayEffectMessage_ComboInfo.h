@@ -1,0 +1,13 @@
+@class GPBInt64Array;
+
+@interface HTSLiveTrayEffectMessage_ComboInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long seqId;
+@property (retain, nonatomic) GPBInt64Array *numListArray;
+@property (readonly, nonatomic) unsigned long long numListArray_Count;
+@property (retain, nonatomic) GPBInt64Array *durationListArray;
+@property (readonly, nonatomic) unsigned long long durationListArray_Count;
+
++ (id)descriptor;
+
+@end

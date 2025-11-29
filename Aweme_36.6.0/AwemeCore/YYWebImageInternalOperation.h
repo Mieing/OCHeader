@@ -1,0 +1,84 @@
+@class NSURLCredential, NSString, NSRecursiveLock, YYImageDecoder, YYImageCache, NSURLResponse, NSURLRequest, NSMutableData, NSURLConnection;
+
+@interface YYWebImageInternalOperation : NSOperation <NSURLConnectionDelegate, YYWebImageOperation>
+
+@property (readonly, nonatomic) NSURLRequest *request;
+@property (readonly, nonatomic) NSURLRequest *request;
+@property (readonly, nonatomic) NSURLResponse *response;
+@property (readonly, nonatomic) YYImageCache *cache;
+@property (readonly, nonatomic) NSString *cacheKey;
+@property (readonly, nonatomic) unsigned long long options;
+@property (nonatomic) BOOL shouldUseCredentialStorage;
+@property (getter=isExecuting) BOOL executing;
+@property (getter=isFinished) BOOL finished;
+@property (getter=isCancelled) BOOL cancelled;
+@property (getter=isStarted) BOOL started;
+@property (retain, nonatomic) NSRecursiveLock *lock;
+@property (retain, nonatomic) NSURLConnection *connection;
+@property (retain, nonatomic) NSMutableData *data;
+@property (nonatomic) long long expectedSize;
+@property (nonatomic) unsigned long long taskID;
+@property (nonatomic) double lastProgressiveDecodeTimestamp;
+@property (retain, nonatomic) YYImageDecoder *progressiveDecoder;
+@property (nonatomic) BOOL progressiveIgnored;
+@property (nonatomic) BOOL progressiveDetected;
+@property (nonatomic) unsigned long long progressiveScanedLength;
+@property (nonatomic) unsigned long long progressiveDisplayCount;
+@property (copy, nonatomic) id /* block */ progress;
+@property (copy, nonatomic) id /* block */ transform;
+@property (copy, nonatomic) id /* block */ completion;
+@property (retain, nonatomic) NSURLCredential *credential;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)_networkThreadMain:(id)a0;
++ (void)_aweLazyRegisterLoad_Monitor;
++ (id)_networkThread;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)a0;
++ (id)_imageQueue;
+
+- (void)URLSession:(id)a0 downloadTask:(SEL)a1 didFinishDownloadingToURL:(void /* unknown type, empty encoding */)a2;
+- (void)URLSession:(id)a0 downloadTask:(id)a1 didWriteData:(long long)a2 totalBytesWritten:(long long)a3 totalBytesExpectedToWrite:(long long)a4;
+- (void)URLSession:(id)a0 dataTask:(id)a1 didBecomeDownloadTask:(id)a2;
+- (void)URLSession:(id)a0 task:(id)a1 didCompleteWithError:(id)a2;
+- (void)URLSession:(id)a0 dataTask:(id)a1 didReceiveResponse:(id)a2 completionHandler:(id /* block */)a3;
+- (void)URLSession:(id)a0 dataTask:(id)a1 didReceiveData:(id)a2;
+- (void)URLSession:(id)a0 task:(id)a1 willPerformHTTPRedirection:(id)a2 newRequest:(id)a3 completionHandler:(id /* block */)a4;
+- (void)_flex_swizzle_914c2602_connection:(id)a0 didFailWithError:(id)a1;
+- (void)_flex_swizzle_a8b9f56f_connectionDidFinishLoading:(id)a0;
+- (void)_flex_swizzle_55d870c7_connection:(id)a0 didReceiveResponse:(id)a1;
+- (void)_flex_swizzle_a919fc9c_connection:(id)a0 didReceiveData:(id)a1;
+- (id)connection:(id)a0 willSendRequest:(id)a1 redirectResponse:(id)a2;
+- (void)bdwebimage_start;
+- (void)BDWebImageURLConnectionDidFinishLoading:(id)a0;
+- (void)BDWebImageURLConnection:(id)a0 didFailWithError:(id)a1;
+- (void)BDWebImage_didReceiveImageFromWeb:(id)a0;
+- (void)BDWebImage_startRequest:(id)a0;
+- (const void *)bd_computedKeyFromString:(id)a0;
+- (void)bd_monitor_start:(id)a0;
+- (double)bd_monitor_stop:(id)a0;
+- (void)_didReceiveImageFromDiskCache:(id)a0;
+- (void)_startRequest:(id)a0;
+- (void)_didReceiveImageFromWeb:(id)a0;
+- (void)_cancelOperation;
+- (void)_startOperation;
+- (id)initWithRequest:(id)a0 options:(unsigned long long)a1 cache:(id)a2 cacheKey:(id)a3 progress:(id /* block */)a4 transform:(id /* block */)a5 completion:(id /* block */)a6;
+- (void)connection:(id)a0 didReceiveData:(id)a1;
+- (void).cxx_destruct;
+- (void)connectionDidFinishLoading:(id)a0;
+- (BOOL)isConcurrent;
+- (void)connection:(id)a0 willSendRequestForAuthenticationChallenge:(id)a1;
+- (void)connection:(id)a0 didFailWithError:(id)a1;
+- (BOOL)isAsynchronous;
+- (void)_finish;
+- (void)start;
+- (void)dealloc;
+- (void)cancel;
+- (void)connection:(id)a0 didReceiveResponse:(id)a1;
+- (id)connection:(id)a0 willCacheResponse:(id)a1;
+- (BOOL)connectionShouldUseCredentialStorage:(id)a0;
+- (void)_endBackgroundTask;
+
+@end

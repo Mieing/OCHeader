@@ -1,0 +1,82 @@
+@class NSString, MMPageSheetAdapter, DelaySwitchSettingLogic, MMTableViewInfo, NSNumber, CContact;
+@protocol ContactInfoAssistDelegate;
+
+@interface ContactSetPermissionsViewController : ContactBaseSetPermissionsViewController <MMPageSheetAdapterDelegate, WCActionSheetDelegate> {
+    DelaySwitchSettingLogic *m_delaySwitchLogic;
+    id<ContactInfoAssistDelegate> m_delegate;
+    CContact *m_contact;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) MMTableViewInfo *tableViewInfo;
+@property (retain, nonatomic) NSNumber *m_isSocialBlackSwitchOn;
+@property (retain, nonatomic) NSNumber *m_isOutsiderSwitchOn;
+@property (retain, nonatomic) NSNumber *m_isWCBlackSwitchOn;
+@property (nonatomic) BOOL bDisableAllOperation;
+@property (nonatomic) unsigned int m_uiVerify;
+@property (nonatomic) BOOL isInPageSheetMode;
+@property (weak, nonatomic) MMPageSheetAdapter *pageSheetAdapter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldShowSetPermissionsWithUserName:(id)a0;
+
+- (void)setTitleInPageSheetModeIfNeeded:(id)a0;
+- (void)initLeftBarItemInPageSheetModeIfNeeded;
+- (void)initRightBarItemInPageSheetModeIfNeeded;
+- (double)getContentViewYInPageSheetMode;
+- (double)getVisibleHeight;
+- (void)pageSheetWillClose:(id)a0 closeType:(long long)a1;
+- (void)addPermissionSectionInPageSheetMode;
+- (id)createInitLeftBarItem;
+- (id)createInitRightBarItem;
+- (id)getRightBarButtonItem;
+- (void)resetTableViewInPageSheetMode;
+- (id)genLeftSubSymbolView;
+- (void)dismissSheetAdapterWithAnimated;
+- (void)resetRightBarButtonEnabled:(BOOL)a0;
+- (BOOL)checkDataHadChange;
+- (void)opAllPermissionInPageSheetMode;
+- (void)opOutsiderInPageSheetMode:(id)a0;
+- (void)opWCBlacklistInPageSheetMode:(id)a0;
+- (void)opSocialBlackPermissionInPageSheetMode;
+- (void)onDoneInPageSheetMode:(id)a0;
+- (void)setOpOutsiderAndWCBlacklist:(id)a0;
+- (void)onCancelInPageSheetMode:(id)a0;
+- (void)reportContactSetPermissionsPageSheetUnexp:(unsigned int)a0;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (BOOL)shouldRestrictContentViewSize;
+- (double)getContentViewY;
+- (void)operateSuccess;
+- (void)operateFail;
+- (void)initView;
+- (void)reloadTableView;
+- (void)addPermissionSection;
+- (void)showPermissionsCell;
+- (void)setDelegate:(id)a0;
+- (BOOL)isInMyContactList;
+- (BOOL)isNeedVerify;
+- (BOOL)getIsSocialBlackSwitchOn:(id)a0;
+- (BOOL)getIsOutsiderSwitchOn:(id)a0;
+- (BOOL)getIsWCBlackSwitchOn:(id)a0;
+- (void)commitAllSwitchSetting;
+- (void)opSocialBlackPermission;
+- (void)opAllPermission;
+- (void)opOutsider:(id)a0;
+- (void)didOpOutsider:(BOOL)a0;
+- (void)opWCBlacklist:(id)a0;
+- (void)didOpWCBlacklist:(BOOL)a0;
+- (id)m_contact;
+- (void)setM_contact:(id)a0;
+- (id)pageSheetAdapter;
+- (void)setPageSheetAdapter:(id)a0;
+- (void).cxx_destruct;
+
+@end

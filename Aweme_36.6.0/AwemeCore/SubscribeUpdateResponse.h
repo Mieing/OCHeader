@@ -1,0 +1,10 @@
+@class SubscribeUpdateResponseData;
+
+@interface SubscribeUpdateResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SubscribeUpdateResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

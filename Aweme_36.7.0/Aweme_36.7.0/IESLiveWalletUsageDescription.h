@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESLiveWalletUsageDescription : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *descriptionListArray;
+@property (readonly, nonatomic) unsigned long long descriptionListArray_Count;
+
++ (id)descriptor;
+
+@end

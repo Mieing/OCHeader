@@ -1,0 +1,3 @@
+@interface AWECommentMediaFeedSwfitImpl.CommentMediaFeedUserNameContainerViewUtil : _TtCs12_SwiftObject
+
+@end

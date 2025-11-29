@@ -1,0 +1,3 @@
+@interface RoomReachReportApiRoot : GPBRootObject
+
+@end

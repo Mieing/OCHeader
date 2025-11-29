@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IosIdentity : GPBMessage
+
+@property (copy, nonatomic) NSString *idfv;
+@property (copy, nonatomic) NSString *idfa;
+@property (copy, nonatomic) NSString *uuid;
+
++ (id)descriptor;
+
+@end

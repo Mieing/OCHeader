@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveRoomTagOfflineInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long tagType;
+@property (copy, nonatomic) NSString *userToast;
+
++ (id)descriptor;
+
+@end

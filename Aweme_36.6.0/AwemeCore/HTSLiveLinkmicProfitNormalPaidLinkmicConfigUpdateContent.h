@@ -1,0 +1,12 @@
+@class NSString, IESLiveNormalPaidLinkmicInfo;
+
+@interface HTSLiveLinkmicProfitNormalPaidLinkmicConfigUpdateContent : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL waitingUserNeedLeave;
+@property (copy, nonatomic) NSString *waitingUserToast;
+@property (retain, nonatomic) IESLiveNormalPaidLinkmicInfo *normalPaidLinkmicInfo;
+@property (nonatomic) BOOL hasNormalPaidLinkmicInfo;
+
++ (id)descriptor;
+
+@end

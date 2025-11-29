@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface CommentWordsRecommendStructV2 : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *zeroCommentArray;
+@property (readonly, nonatomic) unsigned long long zeroCommentArray_Count;
+
++ (id)descriptor;
+
+@end

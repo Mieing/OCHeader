@@ -1,0 +1,3 @@
+@interface KtvRebroadcastApiRoot : GPBRootObject
+
+@end

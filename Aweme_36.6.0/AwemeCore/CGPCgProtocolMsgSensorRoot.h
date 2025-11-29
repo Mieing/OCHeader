@@ -1,0 +1,3 @@
+@interface CGPCgProtocolMsgSensorRoot : GPBRootObject
+
+@end

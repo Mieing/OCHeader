@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveGameIntroduceShowMessage;
+
+@interface HTSLiveGameIntroduceMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveGameIntroduceShowMessage *gameIntroduce;
+@property (nonatomic) BOOL hasGameIntroduce;
+
++ (id)descriptor;
+
+@end

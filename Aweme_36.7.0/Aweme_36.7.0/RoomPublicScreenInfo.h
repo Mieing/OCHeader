@@ -1,0 +1,12 @@
+@class NSString, RoomPublicScreenAttachments;
+
+@interface RoomPublicScreenInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RoomPublicScreenAttachments *attachments;
+@property (nonatomic) BOOL hasAttachments;
+@property (copy, nonatomic) NSString *backgroundColor;
+@property (copy, nonatomic) NSString *longPressColor;
+
++ (id)descriptor;
+
+@end

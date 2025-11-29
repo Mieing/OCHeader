@@ -1,0 +1,11 @@
+@interface AWEStudioMediaServiceMointor : NSObject
+
++ (id)sharedInstance;
+
+- (void)p_audioSessionMediaServicesWereLostNotification;
+- (void)p_audioSessionMediaServicesWereResetNotification;
+- (id)init;
+- (void)dealloc;
+- (void)addObservers;
+
+@end

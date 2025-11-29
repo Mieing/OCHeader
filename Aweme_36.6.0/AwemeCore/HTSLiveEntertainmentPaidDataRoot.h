@@ -1,0 +1,3 @@
+@interface HTSLiveEntertainmentPaidDataRoot : GPBRootObject
+
+@end

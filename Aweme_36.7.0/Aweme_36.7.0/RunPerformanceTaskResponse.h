@@ -1,0 +1,10 @@
+@class RunPerformanceTaskResponse_Data;
+
+@interface RunPerformanceTaskResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RunPerformanceTaskResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

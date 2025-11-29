@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveTaskProps : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *elementlistPropsArray;
+@property (readonly, nonatomic) unsigned long long elementlistPropsArray_Count;
+@property (copy, nonatomic) NSString *className;
+@property (copy, nonatomic) NSString *currentBgColor;
+@property (copy, nonatomic) NSString *backGroundColor;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,9 @@
+@interface IESLiveKtvSongStruct_ChallengeInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int ktvChallengeType;
+@property (nonatomic) BOOL isSuccess;
+@property (nonatomic) double score;
+
++ (id)descriptor;
+
+@end

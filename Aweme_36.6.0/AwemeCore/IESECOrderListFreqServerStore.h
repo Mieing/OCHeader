@@ -1,0 +1,17 @@
+@class NSDictionary, NSString;
+
+@interface IESECOrderListFreqServerStore : MTLModel <MTLJSONSerializing>
+
+@property (retain, nonatomic) NSDictionary *view;
+@property (retain, nonatomic) NSDictionary *click;
+@property (retain, nonatomic) NSDictionary *close;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

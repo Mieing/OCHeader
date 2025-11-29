@@ -1,0 +1,80 @@
+@class NSData, NSString, MPScreenshotArticleInfo, CMessageWrap, MessageExpItem, WAScreenshotContextInfo, ImageInfo, MMAsset, SourceImgInfo;
+
+@interface CExtendInfoOfImg : NSObject <IMessageWrapExt, IMsgExtendOperation, NSCopying>
+
+@property (nonatomic) unsigned int m_uiHDImgSize;
+@property (nonatomic) unsigned int m_uiNormalImgSize;
+@property (nonatomic) unsigned int m_uiHevcNormalImgSize;
+@property (retain, nonatomic) NSString *m_nsImgHDUrl;
+@property (retain, nonatomic) NSString *m_nsImgMidUrl;
+@property (retain, nonatomic) NSString *m_nsAesKey;
+@property (retain, nonatomic) NSString *m_nsMsgThumbUrl;
+@property (retain, nonatomic) NSString *m_nsMsgThumbAesKey;
+@property (retain, nonatomic) MessageExpItem *m_oMsgExpItem;
+@property (nonatomic) unsigned int m_uiMsgThumbSize;
+@property (nonatomic) unsigned int m_uiMsgThumbWidth;
+@property (nonatomic) unsigned int m_uiMsgThumbHeight;
+@property (retain, nonatomic) NSString *m_nsAutoDownloadControl;
+@property (retain, nonatomic) NSData *m_dtImg;
+@property (retain, nonatomic) ImageInfo *m_oImageInfo;
+@property (retain, nonatomic) MMAsset *m_asset;
+@property (retain, nonatomic) NSData *wxamData;
+@property (nonatomic) BOOL m_isCanUpload;
+@property (nonatomic) unsigned int m_uiScene;
+@property (retain, nonatomic) NSString *m_nsMsgMd5;
+@property (retain, nonatomic) NSString *m_nsAppID;
+@property (retain, nonatomic) NSString *m_nsAppName;
+@property (nonatomic) unsigned int m_uiAppVersion;
+@property (nonatomic) BOOL m_bIsForceUpdate;
+@property (retain, nonatomic) NSString *m_nsAppMediaTagName;
+@property (retain, nonatomic) NSString *m_nsAppMessageExt;
+@property (retain, nonatomic) NSString *m_nsAppMessageAction;
+@property (retain, nonatomic) NSData *m_dtSenderMidImg;
+@property (retain, nonatomic) NSString *m_nsAttachFileKey;
+@property (nonatomic) unsigned int m_uiContinueUploadCount;
+@property (retain, nonatomic) NSString *m_authkey;
+@property (retain, nonatomic) NSString *m_imgDataHash;
+@property (retain, nonatomic) NSString *m_platformSignature;
+@property (retain, nonatomic) NSString *m_imgSourceUrl;
+@property (nonatomic) BOOL m_forbidShowSource;
+@property (retain, nonatomic) WAScreenshotContextInfo *m_weappScreenshotContextInfo;
+@property (retain, nonatomic) SourceImgInfo *m_sourceImgInfo;
+@property (retain, nonatomic) MPScreenshotArticleInfo *m_mpScreenshotArticleInfo;
+@property (retain, nonatomic) NSString *m_nsOriginSourceDataMd5;
+@property (retain, nonatomic) NSString *m_phash;
+@property (retain, nonatomic) NSString *m_pdqhash;
+@property (readonly, nonatomic) NSString *secInfo;
+@property (nonatomic) BOOL m_isSpatial;
+@property (nonatomic) unsigned int m_LivePhotoDuration;
+@property (nonatomic) unsigned int m_LivePhotoStillImageTimeMs;
+@property (nonatomic) unsigned long long m_LivePhotoHDSize;
+@property (retain, nonatomic) NSString *m_nsLivePhotoHDMd5;
+@property (retain, nonatomic) NSString *m_nsLivePhotoHDUrl;
+@property (retain, nonatomic) NSString *m_nsLivePhotoHDAeskey;
+@property (nonatomic) unsigned long long m_LivePhotoSize;
+@property (retain, nonatomic) NSString *m_nsLivePhotoMd5;
+@property (retain, nonatomic) NSString *m_nsLivePhotoUrl;
+@property (retain, nonatomic) NSString *m_nsLivePhotoAeskey;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) CMessageWrap *m_refMessageWrap;
+
++ (void)CreateExtendInfoWithType:(unsigned int)a0 retExtendInfo:(id *)a1;
+
+- (BOOL)isUploadHDImage;
+- (id)init;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)parseLiveNode:(struct XmlReaderNode_t { int x0; char *x1; struct XmlReaderNode_t *x2; struct XmlReaderNode_t *x3; struct XmlReaderNode_t *x4; struct XmlReaderNode_t **x5; struct XmlReaderAttr_t *x6; struct XmlReaderAttr_t **x7; int x8; } *)a0;
+- (void)ChangeForDisplay;
+- (void)UpdateContent:(id)a0;
+- (void)setImage:(id)a0 withData:(id)a1 isOriginImage:(BOOL)a2;
+- (void)setImage:(id)a0 isOriginImage:(BOOL)a1;
+- (BOOL)IsHDImg;
+- (void)genearteThumbIfNeed;
+- (id)GetThumbPath;
+- (id)GetDownloadThumbPath;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface SportsMatchInfoApiRoot : GPBRootObject
+
+@end

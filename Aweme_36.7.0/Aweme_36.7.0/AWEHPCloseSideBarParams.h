@@ -1,0 +1,3 @@
+@interface AWEHPCloseSideBarParams : AWEHPOperateSideBarBaseParams
+
+@end

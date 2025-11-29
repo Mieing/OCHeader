@@ -1,0 +1,90 @@
+@class LVVideoCropInfo, NSString, NSArray, AVURLAsset, LVStable, LVGamePlay, LVDraftVideoPayloadPackage, AVAsset;
+
+@interface LVDraftVideoPayload : LVDraftPayload {
+    struct shared_ptr<CutSame::MaterialVideo> { struct MaterialVideo *__ptr_; struct __shared_weak_count *__cntrl_; } _cppmodel;
+}
+
+@property (retain, nonatomic) LVDraftVideoPayloadPackage *package;
+@property (copy, nonatomic) NSString *resourceIdentifier;
+@property (retain, nonatomic) AVURLAsset *video;
+@property (retain, nonatomic) AVURLAsset *reversedVideo;
+@property (retain, nonatomic) AVURLAsset *intensifiesVideo;
+@property (retain, nonatomic) AVURLAsset *reverseIntensifiesVideo;
+@property (retain, nonatomic) AVURLAsset *intensifiesAudio;
+@property (retain, nonatomic) AVAsset *photoAsset;
+@property (retain, nonatomic) AVURLAsset *gameplayVideo;
+@property (nonatomic) struct CGSize { double x0; double x1; } size;
+@property (copy, nonatomic) NSString *reverseRelativePath;
+@property (copy, nonatomic) NSString *intensifiesRelativePath;
+@property (copy, nonatomic) NSString *reverseIntensifiesRelativePath;
+@property (copy, nonatomic) NSString *intensifiesAudioRelativePath;
+@property (copy, nonatomic) NSString *coverPath;
+@property (copy, nonatomic) NSString *mediaImagePath;
+@property (readonly, nonatomic) unsigned long long appliedResourceExtraTypeOption;
+@property (nonatomic) long long aiMatting;
+@property (copy, nonatomic) NSString *cartoonPath;
+@property (copy, nonatomic) NSString *categoryID;
+@property (copy, nonatomic) NSString *categoryName;
+@property (nonatomic) long long checkFlag;
+@property (retain, nonatomic) LVVideoCropInfo *crop;
+@property (nonatomic) unsigned long long cropRatio;
+@property (nonatomic) double cropScale;
+@property (nonatomic) long long durationMilliSeconds;
+@property (nonatomic) long long extraTypeOption;
+@property (retain, nonatomic) LVGamePlay *gameplay;
+@property (copy, nonatomic) NSString *gameplayAlgorithm;
+@property (copy, nonatomic) NSString *gameplayPath;
+@property (nonatomic) long long height;
+@property (copy, nonatomic) NSString *intensifiesAudioPath;
+@property (copy, nonatomic) NSString *intensifiesPath;
+@property (copy, nonatomic) NSString *materialID;
+@property (copy, nonatomic) NSString *materialName;
+@property (copy, nonatomic) NSString *materialUrl;
+@property (copy, nonatomic) NSString *relativePath;
+@property (copy, nonatomic) NSArray *paths;
+@property (copy, nonatomic) NSString *reverseIntensifiesPath;
+@property (copy, nonatomic) NSString *reversePath;
+@property (retain, nonatomic) LVStable *stable;
+@property (copy, nonatomic) NSArray *typeOption;
+@property (nonatomic) double volume;
+@property (nonatomic) long long width;
+
++ (id)instanceWithCPPModel:(struct shared_ptr<CutSame::MaterialVideo> { struct MaterialVideo *x0; struct __shared_weak_count *x1; })a0;
++ (id)generateAlbumResourceIdentifierWithIdentifier:(id)a0 modificationDate:(id)a1;
++ (BOOL)isValidAlbumResourceIdentifier:(id)a0;
+
+- (id)initWithCPPModel:(struct shared_ptr<CutSame::MaterialVideo> { struct MaterialVideo *x0; struct __shared_weak_count *x1; })a0;
+- (struct CGSize { double x0; double x1; })cropSize;
+- (id)copyToAnother;
+- (struct shared_ptr<CutSame::MaterialVideo> { struct MaterialVideo *x0; struct __shared_weak_count *x1; })cppmodel;
+- (id)videoAbsolutePath;
+- (void)updatePhoto:(id)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (id)copyToNewObject;
+- (id)initWithType:(unsigned long long)a0 payloadID:(id)a1;
+- (void)copyCategoryToNewObject:(id)a0;
+- (void)copyCategoryToNewObject:(id)a0;
+- (void)setCPPModel:(struct shared_ptr<CutSame::MaterialVideo> { struct MaterialVideo *x0; struct __shared_weak_count *x1; })a0;
+- (void)updateVideo:(id)a0 isReverse:(BOOL)a1;
+- (void)updateInfoWithAsset:(id)a0;
+- (id)gameplayAbsolutePath;
+- (id)reversedVideoAbsolutePath;
+- (id)intensifiesVideoAbsolutePath;
+- (id)reverseIntensifiesVideoAbsolutePath;
+- (id)intensifiesAudioAbsolutePath;
+- (id)initWithAsset:(id)a0 type:(unsigned long long)a1 resourceID:(id)a2 pathExtension:(id)a3;
+- (void)updateAudioStrongVideo:(id)a0 isReverse:(BOOL)a1;
+- (void)updateAudio:(id)a0;
+- (void)updateGamePlayAsset;
+- (BOOL)isAppliedResourceExtraType:(unsigned long long)a0;
+- (void)addResourceExtraType:(unsigned long long)a0;
+- (void)removeResourceExtraType:(unsigned long long)a0;
+- (id)initWithDictionary:(id)a0 error:(id *)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })duration;
+- (id).cxx_construct;
+- (void)setDuration:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

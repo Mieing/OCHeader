@@ -1,0 +1,5 @@
+@interface AWECommentSwiftBizUI.TemplateCellDependencyServiceManager : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ service;
+}
+
+@end

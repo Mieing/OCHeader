@@ -1,0 +1,6 @@
+@interface Hero.ExprNode : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ range;
+    void /* unknown type, empty encoding */ name;
+}
+
+@end

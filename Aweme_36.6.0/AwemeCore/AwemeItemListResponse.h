@@ -1,0 +1,12 @@
+@class AwemeItem, AwemeItemListExtra;
+
+@interface AwemeItemListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AwemeItemListExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+@property (retain, nonatomic) AwemeItem *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

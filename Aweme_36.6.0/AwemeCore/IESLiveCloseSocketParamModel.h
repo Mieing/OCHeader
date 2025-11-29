@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface IESLiveCloseSocketParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *socketTaskID;
+@property (copy, nonatomic) NSString *containerID;
+
+@end

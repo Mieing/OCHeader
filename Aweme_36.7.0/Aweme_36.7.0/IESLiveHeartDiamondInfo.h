@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveHeartDiamondInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *percent;
+@property (retain, nonatomic) HTSLiveImage *heartDiamondIcon;
+@property (nonatomic) BOOL hasHeartDiamondIcon;
+@property (nonatomic) int level;
+
++ (id)descriptor;
+
+@end

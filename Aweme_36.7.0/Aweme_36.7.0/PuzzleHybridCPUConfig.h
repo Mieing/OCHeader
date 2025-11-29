@@ -1,0 +1,3 @@
+@interface PuzzleHybridCPUConfig : PuzzleHybridAPMBaseConfig
+
+@end

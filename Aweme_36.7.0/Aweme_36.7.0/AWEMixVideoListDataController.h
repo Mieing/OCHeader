@@ -1,0 +1,72 @@
+@class NSString, AWEMixVideoLocalDataBase, AWEMixVideoModel, AWEMixVideoListDataNode, NSObject, NSNumber;
+@protocol OS_dispatch_queue, AWEUserProFileAdVideoDataController;
+
+@interface AWEMixVideoListDataController : AWEListDataController <AWEMixVideoListDataControllerProtocol>
+
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *mixDataQueue;
+@property (retain, nonatomic) AWEMixVideoListDataNode *currentRecommendNodeCache;
+@property (retain, nonatomic) AWEMixVideoLocalDataBase *localDataBase;
+@property (nonatomic) BOOL hasFilteredData;
+@property (retain, nonatomic) AWEMixVideoListDataNode *currentNode;
+@property (retain, nonatomic) AWEMixVideoListDataNode *currentRecommendNode;
+@property (nonatomic) BOOL skipLocalCache;
+@property (copy, nonatomic) NSString *mixAuthorID;
+@property (copy, nonatomic) id /* block */ requestFinishBlock;
+@property (retain, nonatomic) id<AWEUserProFileAdVideoDataController> adVideoDataController;
+@property (retain, nonatomic) AWEMixVideoModel *mixVideoModel;
+@property (copy, nonatomic) NSString *mixVideoID;
+@property (copy, nonatomic) NSNumber *minCursor;
+@property (copy, nonatomic) NSNumber *maxCursor;
+@property (copy, nonatomic) NSString *previousPage;
+@property (nonatomic) BOOL hasRecommendMix;
+@property (nonatomic) BOOL enabledLocalDataBase;
+
+- (void)setLoadmoreHasMore:(BOOL)a0;
+- (BOOL)loadmoreHasMore;
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)initFetchWithCompletion:(id /* block */)a0;
+- (void)setRefreshHasMore:(BOOL)a0;
+- (void)setLoadPreviousHasPrevious:(BOOL)a0;
+- (BOOL)refreshHasMore;
+- (void)loadPreviousWithCompletion:(id /* block */)a0;
+- (BOOL)loadPreviousHasPrevious;
+- (void)setRefreshHasPrevious:(BOOL)a0;
+- (BOOL)refreshHasPrevious;
+- (void)loadMoreFromEpisode:(long long)a0 completion:(id /* block */)a1;
+- (long long)lastEpisode;
+- (void)fetchWithCount:(long long)a0 type:(long long)a1 completion:(id /* block */)a2;
+- (void)loadPreviousWithDataType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)loadMoreWithDataType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)setupRecommendDataWithDataType:(unsigned long long)a0;
+- (void)syncWith:(id)a0;
+- (id)sortArrayByExcuteDate:(id)a0;
+- (void)resetDataForEpisode:(long long)a0;
+- (void)mixInnerLoadMoreFromEpisode:(long long)a0 completion:(id /* block */)a1;
+- (void)syncWithAwemeModels:(id)a0;
+- (void)initFetchWithDataType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)refreshWithDataType:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)loadMoreWithDataType:(unsigned long long)a0 currentAwemeModel:(id)a1 completion:(id /* block */)a2;
+- (void)loadMoreFromEpisode:(long long)a0 forSegment:(BOOL)a1 completion:(id /* block */)a2;
+- (void)preloadMoreFromEpisode:(long long)a0;
+- (BOOL)isLocalDataExistsFromEpisode:(long long)a0;
+- (void)fetchWithCount:(long long)a0 dataType:(unsigned long long)a1 pullType:(long long)a2 currentAwemeModel:(id)a3 completion:(id /* block */)a4;
+- (long long)firstEpisode;
+- (BOOL)hasFirstMixVideoData;
+- (BOOL)hasLastMixVideoData;
+- (void)clearAndCacheCurrentRecommendNode;
+- (id)getNodeWithDataType:(unsigned long long)a0;
+- (void)fetchFinishSetDataSource:(id)a0 filteredArray:(id)a1 indexSet:(id)a2;
+- (void)trackCompilationListMonitorWithModel:(id)a0 dataType:(unsigned long long)a1 mixType:(id)a2 error:(id)a3;
+- (void)fetchWithCount:(long long)a0 dataType:(unsigned long long)a1 pullDown:(BOOL)a2 cursor:(id)a3 currentAwemeModel:(id)a4 completion:(id /* block */)a5 block:(id /* block */)a6;
+- (BOOL)compilationLogInfoEnabled;
+- (id)videoMixDataSource;
+- (void).cxx_destruct;
+- (id)dataSource;
+- (id)description;
+- (id)init;
+- (void)setDataSource:(id)a0;
+- (void)resetData;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)refreshWithCompletion:(id /* block */)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface FlowKit.BotMessagingRouterParameterHandlingComponent : _TtCC7FlowKit25BotMessagingRootComponent33CentralizedEventHandlingComponent
+
+@end

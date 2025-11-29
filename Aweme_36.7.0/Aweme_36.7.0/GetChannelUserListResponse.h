@@ -1,0 +1,10 @@
+@class GetChannelUserListResponse_ResponseData;
+
+@interface GetChannelUserListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetChannelUserListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class IESLiveRoomLinkInnerPreParam;
+
+@interface IESLiveRoomLinkInnerWillDisplayRequestTask : IESLiveLinkTask
+
+@property (retain, nonatomic) IESLiveRoomLinkInnerPreParam *innerPreParam;
+
+- (void)updateContextParam:(id)a0;
+- (void).cxx_destruct;
+- (void)run;
+
+@end

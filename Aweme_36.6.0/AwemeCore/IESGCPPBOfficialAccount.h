@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface IESGCPPBOfficialAccount : GPBMessage
+
+@property (nonatomic) int appId;
+@property (nonatomic) long long userId;
+@property (copy, nonatomic) NSString *nickName;
+@property (copy, nonatomic) NSString *avatarUri;
+@property (copy, nonatomic) NSString *secUid;
+@property (copy, nonatomic) NSString *fansNum;
+@property (nonatomic) BOOL isFollow;
+
++ (id)descriptor;
+
+@end

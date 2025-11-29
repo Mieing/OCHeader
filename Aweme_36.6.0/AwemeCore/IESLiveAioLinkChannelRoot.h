@@ -1,0 +1,3 @@
+@interface IESLiveAioLinkChannelRoot : GPBRootObject
+
+@end

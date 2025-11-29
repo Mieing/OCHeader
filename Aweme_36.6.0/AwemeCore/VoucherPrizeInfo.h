@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface VoucherPrizeInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *prizeAmount;
+@property (copy, nonatomic) NSString *prizeBatchName;
+@property (nonatomic) long long expireTime;
+@property (copy, nonatomic) NSString *prizeUnit;
+@property (copy, nonatomic) NSString *desc;
+
++ (id)descriptor;
+
+@end

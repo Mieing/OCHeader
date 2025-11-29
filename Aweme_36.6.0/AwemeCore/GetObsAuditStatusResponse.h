@@ -1,0 +1,10 @@
+@class GetObsAuditStatusResponse_AuditStatus;
+
+@interface GetObsAuditStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetObsAuditStatusResponse_AuditStatus *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

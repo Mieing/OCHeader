@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface StartStampInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *screenShotUri;
+@property (copy, nonatomic) NSString *startPageURL;
+@property (copy, nonatomic) NSString *customizedCoverUri;
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *customizedTitle;
+
++ (id)descriptor;
+
+@end

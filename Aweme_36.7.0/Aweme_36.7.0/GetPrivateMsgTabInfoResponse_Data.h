@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface GetPrivateMsgTabInfoResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long statusCode;
+@property (copy, nonatomic) NSString *statusMsg;
+@property (copy, nonatomic) NSString *tabText;
+@property (copy, nonatomic) NSString *tabDesc;
+@property (nonatomic) int tabStatus;
+@property (copy, nonatomic) NSString *settingDesc;
+
++ (id)descriptor;
+
+@end

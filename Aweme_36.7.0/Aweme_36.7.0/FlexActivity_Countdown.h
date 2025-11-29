@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface FlexActivity_Countdown : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) long long timestamp;
+
++ (id)descriptor;
+
+@end

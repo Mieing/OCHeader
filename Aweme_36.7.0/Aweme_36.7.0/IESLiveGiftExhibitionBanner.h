@@ -1,0 +1,25 @@
+@class NSString, HTSLiveImage, IESLiveGiftExhibitionBanner_UIConfig, NSMutableArray, IESLiveGiftExhibitionBanner_UniverseInfo;
+
+@interface IESLiveGiftExhibitionBanner : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) int lightedCount;
+@property (nonatomic) int totalCount;
+@property (copy, nonatomic) NSString *jumpSchema;
+@property (retain, nonatomic) HTSLiveImage *achievedIcon;
+@property (nonatomic) BOOL hasAchievedIcon;
+@property (retain, nonatomic) NSMutableArray *achievedGiftsArray;
+@property (readonly, nonatomic) unsigned long long achievedGiftsArray_Count;
+@property (retain, nonatomic) HTSLiveImage *lightSweepAnimation;
+@property (nonatomic) BOOL hasLightSweepAnimation;
+@property (retain, nonatomic) IESLiveGiftExhibitionBanner_UIConfig *uiConfig;
+@property (nonatomic) BOOL hasUiConfig;
+@property (nonatomic) int gradeLevel;
+@property (retain, nonatomic) HTSLiveImage *levelUpAnimation;
+@property (nonatomic) BOOL hasLevelUpAnimation;
+@property (retain, nonatomic) IESLiveGiftExhibitionBanner_UniverseInfo *universeInfo;
+@property (nonatomic) BOOL hasUniverseInfo;
+
++ (id)descriptor;
+
+@end

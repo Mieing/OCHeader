@@ -1,0 +1,11 @@
+@class JoinChannelRtcInfo;
+
+@interface LinkMicJoinChannelResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) JoinChannelRtcInfo *rtcInfo;
+@property (nonatomic) BOOL hasRtcInfo;
+@property (nonatomic) long long silenceStatus;
+
++ (id)descriptor;
+
+@end

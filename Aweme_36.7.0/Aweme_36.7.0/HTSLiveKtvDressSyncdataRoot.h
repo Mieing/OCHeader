@@ -1,0 +1,3 @@
+@interface HTSLiveKtvDressSyncdataRoot : GPBRootObject
+
+@end

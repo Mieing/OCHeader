@@ -1,0 +1,70 @@
+@class WCDataItem, NSArray, UICollectionView, WCAdSliderCardSlideJumpInfo, WCAdCardEmitterView, AdExposureTimerHelper, NSString;
+@protocol WCAdSliderCardViewDelegate;
+
+@interface WCAdSliderCardView : MMUIView <UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, WCAdSliderCardCellViewDelegate>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (nonatomic) long long sliderCardStyle;
+@property (retain, nonatomic) NSArray *cardList;
+@property (nonatomic) long long cardType;
+@property (retain, nonatomic) WCAdSliderCardSlideJumpInfo *slideJumpInfo;
+@property (retain, nonatomic) WCDataItem *dataItem;
+@property (nonatomic) BOOL canAutoPlay;
+@property (nonatomic) long long exposureIndex;
+@property (nonatomic) long long totalCellCount;
+@property (retain, nonatomic) WCAdCardEmitterView *emitterView;
+@property (nonatomic) BOOL canAddEmitter;
+@property (retain, nonatomic) AdExposureTimerHelper *cardSlideTimer;
+@property (nonatomic) double distanceBeginDragging;
+@property (nonatomic) double lastScrollDistance;
+@property (weak, nonatomic) id<WCAdSliderCardViewDelegate> delegate;
+@property (nonatomic) BOOL isDetail;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 sliderCardStyle:(long long)a1 cardList:(id)a2 cardType:(long long)a3 slideJumpInfo:(id)a4 dataItem:(id)a5 isDetail:(BOOL)a6;
+- (void)dealloc;
+- (void)initView;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (BOOL)collectionView:(id)a0 shouldHighlightItemAtIndexPath:(id)a1;
+- (BOOL)collectionView:(id)a0 shouldSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (BOOL)onMediaPlayEnd;
+- (void)onCellClick:(long long)a0 clickType:(long long)a1;
+- (void)initCollectionView;
+- (void)checkAndResetIndex;
+- (BOOL)nextPage;
+- (void)autoPlay;
+- (void)autoPause;
+- (void)checkCellPlayState;
+- (void)pauseAllCell;
+- (void)pauseCell:(long long)a0;
+- (void)checkCellExposure;
+- (id)sortIndexPathArray:(id)a0;
+- (void)updateVisibleCellData:(id)a0 dataItem:(id)a1;
+- (long long)currentExposureIndex;
+- (void)contentItemWillDisplay;
+- (BOOL)isSlideJumpStyle;
+- (void)doSlideJump;
+- (BOOL)isBeginDraggingDistanceValidToJump;
+- (void)setTitleForFooterView:(id)a0 withReleaseStyle:(BOOL)a1;
+- (double)getCurrentDistance:(id)a0;
+- (void)handlePanGesture:(id)a0;
+- (id)fetchEmitterContainerView;
+- (void).cxx_destruct;
+
+@end

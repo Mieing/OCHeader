@@ -1,0 +1,3 @@
+@interface HTSLiveVerificationCodeRoot : GPBRootObject
+
+@end

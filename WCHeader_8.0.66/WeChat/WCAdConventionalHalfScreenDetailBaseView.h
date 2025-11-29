@@ -1,0 +1,74 @@
+@class WCDataItem, WCAdContactInfoHalfScreenViewController, WCAdConventionalHalfScreenScrollView, WCAdConventionalDetailContainerViewController, CContact, NSString, WCAdCardBtnInfo;
+@protocol WCAdConventionalHalfScreenDetailViewDelegate;
+
+@interface WCAdConventionalHalfScreenDetailBaseView : MMUIView <WCAdContactInfoHalfScreenViewControllerDelegate, WCAdConventionalHalfScreenScrollViewDelegate, WCAdConventionalDetailContainerViewControllerDelegate>
+
+@property (retain, nonatomic) WCAdCardBtnInfo *actionInfo;
+@property (retain, nonatomic) WCDataItem *dataItem;
+@property (retain, nonatomic) WCAdContactInfoHalfScreenViewController *contactViewController;
+@property (retain, nonatomic) WCAdConventionalHalfScreenScrollView *contentScrollView;
+@property (retain, nonatomic) WCAdConventionalDetailContainerViewController *containerViewController;
+@property (retain, nonatomic) CContact *contactInfo;
+@property (weak, nonatomic) id<WCAdConventionalHalfScreenDetailViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 clickActionInfo:(id)a1 dataItem:(id)a2 delegate:(id)a3;
+- (void)showActionMenue;
+- (void)dealloc;
+- (void)configSubviews;
+- (double)fetchContentScrollViewMarginTop;
+- (double)fetchContentScrollViewEmptyAreaHeight;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (double)fetchHeightPercent;
+- (id)fetchContentViewToDoTransition;
+- (void)layoutDetailPageSheetWithReset:(BOOL)a0;
+- (void)layoutDetailPageSheet;
+- (void)tryToAdaptDetailLayout;
+- (void)onHostViewWillEnter;
+- (void)onHostViewDidEnter;
+- (void)onHostViewDidExit;
+- (void)onViewWillAppear;
+- (void)onViewDidAppear;
+- (void)onViewWillDisappear;
+- (void)onViewDidDisappear;
+- (BOOL)isDetailPageSheetPinToTop;
+- (void)dismissDetailPageSheet;
+- (void)resumeDetailPageSheet;
+- (void)tryToLoadWeWorkContact;
+- (void)tryToShowWeWorkContact;
+- (void)tryToResumeWeWorkContact;
+- (void)showWeWorkContact:(id)a0 animated:(BOOL)a1;
+- (void)tryToLoadWebViewContent;
+- (void)tryToResumeContentScrollView;
+- (void)onKeyboardWillShow:(id)a0;
+- (BOOL)isActionInfoValidForDetailContainerVC;
+- (void)tryToLoadDetailContainerVC;
+- (void)tryToResumeDetailContainerVC;
+- (void)showDetailContainerVCWithAnimated:(BOOL)a0;
+- (id)onHalfScreenScrollViewFetchDataItem;
+- (unsigned long long)onHalfScreenScrollViewFetchContentItemScene;
+- (double)onHalfScreenScrollViewFetchCalculatedHeight;
+- (void)onHalfScreenScrollViewCeilingTopWithPercent:(double)a0 animated:(BOOL)a1;
+- (void)onHalfScreenScrollViewUpdateTitle:(id)a0;
+- (void)onHalfScreenScrollViewWillAddViewController:(id)a0;
+- (void)onHalfScreenScrollViewWillShowViewController:(id)a0;
+- (void)onHalfScreenScrollViewDidChangeVisibleHeight:(double)a0;
+- (void)onHalfScreenScrollViewDidPinToTop;
+- (void)onHalfScreenScrollViewWillStickToBottom;
+- (void)onHalfScreenScrollViewUpdateAnimatingState:(BOOL)a0;
+- (void)onContactInfoHalfScreenPageSheetWillClose;
+- (void)onContactInfoHalfScreenPageSheetDidClose;
+- (void)onContactInfoHalfScreenPageSheetDidChangeVisibleHeight:(double)a0;
+- (id)onContactInfoHalfScreenHitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)onDetailContainerViewPageSheetWillClose;
+- (void)onDetailContainerViewPageSheetDidClose;
+- (void)onDetailContainerViewPageSheetDidChangeVisibleHeight:(double)a0;
+- (id)onDetailContainerViewHitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)onDetailContainerViewPageSheetTryToDismissParent:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

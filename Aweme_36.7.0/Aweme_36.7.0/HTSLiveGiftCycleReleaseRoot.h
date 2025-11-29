@@ -1,0 +1,3 @@
+@interface HTSLiveGiftCycleReleaseRoot : GPBRootObject
+
+@end

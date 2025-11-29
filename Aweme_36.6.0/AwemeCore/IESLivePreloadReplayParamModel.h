@@ -1,0 +1,9 @@
+@class NSString, NSNumber;
+
+@interface IESLivePreloadReplayParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *episodeID;
+@property (copy, nonatomic) NSString *episode;
+@property (retain, nonatomic) NSNumber *preloadSize;
+
+@end

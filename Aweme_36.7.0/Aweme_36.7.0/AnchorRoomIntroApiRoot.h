@@ -1,0 +1,3 @@
+@interface AnchorRoomIntroApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,87 @@
+@class NSString, NSTimer, NSDate, NSObject, UIView;
+@protocol AWEAdComponentExamineManager, AWEAdPromptViewManager, AWEAdMannorLivePreManager;
+
+@interface AWELivePreStreamAdPromptElement : AWELiveLeftElement <AWECommerceLeaveConvertPageMessage>
+
+@property (retain, nonatomic) NSObject<AWEAdPromptViewManager> *adPromptViewManager;
+@property (retain, nonatomic) NSTimer *cardShowTimer;
+@property (retain, nonatomic) NSTimer *cardHideTimer;
+@property (retain, nonatomic) NSObject<AWEAdPromptViewManager> *secondAdPromptViewManager;
+@property (retain, nonatomic) NSTimer *secondCardShowTimer;
+@property (nonatomic) BOOL hasTrackedDouPlusPlay;
+@property (nonatomic) BOOL hasTrackedDouPlusOver;
+@property (retain, nonatomic) NSDate *liveShowDate;
+@property (retain, nonatomic) NSDate *firstFrameDate;
+@property (nonatomic) BOOL isMannorResetting;
+@property (retain, nonatomic) id<AWEAdMannorLivePreManager> adMannorManager;
+@property (retain, nonatomic) id<AWEAdComponentExamineManager> adComponentExamineManager;
+@property (weak, nonatomic) UIView *adMannorBottomSlotView;
+@property (nonatomic) BOOL isMannorStrongStyleShowing;
+@property (nonatomic) BOOL isIntimateChatOn;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldActivateElement;
++ (Class)aAWECommerceLiveHTSAdapterClass;
+
+- (void)initializeElement;
+- (void)viewController_viewDidAppear;
+- (void)onUserQuitLiveRoom:(id)a0;
+- (void)viewController_viewDidDisAppear;
+- (unsigned long long)excludeStatus;
+- (id)slotIdentity;
+- (void)showLiveElementWithWillAnimations:(id /* block */)a0 animations:(id /* block */)a1 completion:(id /* block */)a2;
+- (BOOL)shouldActivateElementWithData:(id)a0;
+- (void)prepareForDisPlay;
+- (void)onUserEnterLiveRoom:(id)a0;
+- (void)preloadElement;
+- (void)streamPlayer_startToPlay;
+- (void)stopWatch;
+- (void)trackAdBreak;
+- (void)setUpAdCardIfNeeded;
+- (BOOL)isAcquaintanceRoom;
+- (void)streamPlayer_firstFrame;
+- (void)streamPlayer_stop;
+- (void)streamPlayer_finish;
+- (void)streamPlayer_error:(id)a0;
+- (double)bottomContainerBottomOffSet;
+- (id)aAWECommerceLiveHTSAdapter;
+- (long long)p_playedDuration;
+- (void)iesLiveTrackEvent:(id)a0 params:(id)a1;
+- (BOOL)shouldLoadFeedLiveCard;
+- (void)updatePaidLiveAdCardParamsWithTimeInterval:(id)a0;
+- (void)dismissAdCardIfNeeded;
+- (BOOL)isAdPromptStrongWith:(id)a0 code:(unsigned long long)a1;
+- (void)trackGuestLinkMicRoomShow:(BOOL)a0;
+- (void)resetMannorCard:(id)a0;
+- (void)resetMannor;
+- (void)resetAdCardIfNeeded;
+- (void)resetSecondAdCardIfNeeded;
+- (void)updateAdCardShowStatusWithOpen:(BOOL)a0;
+- (id)getLivePreStreamContext;
+- (void)trackAdLiveShowFailed:(long long)a0;
+- (BOOL)shouldShowMannorAdComponent;
+- (void)setupMannorCard;
+- (void)rewardAdDrawSceneCellShow;
+- (void)adTrackShow;
+- (void)trackAdPlay;
+- (void)invalidateAdCardTimer;
+- (void)trackAdOver;
+- (void)trackAdLiveClickSource:(id)a0;
+- (BOOL)shouldShowAdCard;
+- (void)dismissAdSecondCardIfNeeded;
+- (void)showSecondAdCardIfNeeded;
+- (void)showAdCardIfNeeded;
+- (id)adLiveEvent;
+- (void)makeBottomContainer:(id)a0 withOffset:(double)a1;
+- (void)setUpSecondAdCardIfNeeded;
+- (void)mannorCardShow;
+- (void).cxx_destruct;
+- (void)setData:(id)a0;
+- (unsigned long long)priority;
+- (void)reset;
+- (void)viewDidLoad;
+
+@end

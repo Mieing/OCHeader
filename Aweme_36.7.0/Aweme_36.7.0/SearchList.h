@@ -1,0 +1,87 @@
+@class SearchListLayoutImp, NSString, NSArray, LynxListAppearEventEmitter, NSDictionary, UICollectionViewLayout, NSMutableArray, SearchListDataSource;
+@protocol SearchDynamicElementStatusDelegate;
+
+@interface SearchList : LynxUIListLoader <LynxUIListInspector, SearchDynamicElementProtocol, UICollectionViewDelegate, SearchListLayoutDelegate>
+
+@property (retain, nonatomic) NSArray *filteredComponentsList;
+@property (retain, nonatomic) NSMutableArray *headerIndexPathList;
+@property (retain, nonatomic) NSMutableArray *footerIndexPathList;
+@property (retain, nonatomic) NSMutableArray *headerItemKeyList;
+@property (retain, nonatomic) NSMutableArray *footerItemKeyList;
+@property (retain, nonatomic) LynxListAppearEventEmitter *appearEventCourier;
+@property (nonatomic) BOOL noRecursiveLayout;
+@property (nonatomic) BOOL enableAsyncBindContainerID;
+@property (nonatomic) BOOL forceReloadData;
+@property (retain, nonatomic) UICollectionViewLayout *layout;
+@property (nonatomic) BOOL enableReuseFix;
+@property (nonatomic) BOOL enableResetContentOffset;
+@property (nonatomic) BOOL searchListDidAppear;
+@property (nonatomic) BOOL enableOnCellAppearEventFix;
+@property (retain, nonatomic) SearchListLayoutImp *layoutImp;
+@property (nonatomic) BOOL fixedContentOffset;
+@property (retain, nonatomic) SearchListDataSource *dataSource;
+@property (copy, nonatomic) id /* block */ prepareToUpdateCellBlock;
+@property (nonatomic) BOOL enableUpdateAnimation;
+@property (nonatomic) BOOL shouldUpdateDataSource;
+@property (retain, nonatomic) NSDictionary *curComponents;
+@property (retain, nonatomic) NSDictionary *diffResultFromTasm;
+@property (retain, nonatomic) NSDictionary *listNoDiffInfo;
+@property (nonatomic) BOOL isNodiffMode;
+@property (nonatomic) BOOL enablePagePanBackGesture;
+@property (nonatomic) double panBackGestureLeftEdge;
+@property (nonatomic) BOOL enableSearchListPagePanBack;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<SearchDynamicElementStatusDelegate> statusDelegate;
+
++ (id)__lynx_prop_config__770;
++ (id)__lynx_prop_config__841;
+
+- (void)setSign:(long long)a0;
+- (void)layoutDidFinished;
+- (void)updateFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 withPadding:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a1 border:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 margin:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a3 withLayoutAnimation:(BOOL)a4;
+- (BOOL)isScrollContainer;
+- (void)propsDidUpdate;
+- (void)onNodeReady;
+- (BOOL)notifyParent;
+- (void)updateDataSource;
+- (void)didEndShowing;
+- (void)didStartShowing;
+- (void)viewWillDisAppear;
+- (void)sendLayoutCompleteEvent;
+- (void)performBatchUpdates:(id /* block */)a0 completion:(id /* block */)a1 animated:(BOOL)a2;
+- (void)onComponentLayoutUpdated:(id)a0;
+- (void)setUpdateAnimation:(id)a0 requestReset:(BOOL)a1;
+- (void)setCurComponents:(id)a0 requestReset:(BOOL)a1;
+- (void)updateListActionInfo:(id)a0 requestReset:(BOOL)a1;
+- (void)setInitialScrollIndexIfNeeded;
+- (double)getCellOffsetByIndex:(int)a0;
+- (id)p_getDiffResultBetweenBefore:(id)a0 after:(id)a1;
+- (id)p_mergeDiffResultWithPrivateDiffResult:(id)a0 andLynxDiffResult:(id)a1 ignoreIndexList:(id)a2;
+- (id)noDiffNodeList;
+- (void)setNoDiffNodeList:(id)a0;
+- (id)p_getDiffResultForNodiffBetweenBefore:(id)a0 after:(id)a1;
+- (id)searchdynamic_buildNewListPlatformInfo:(id)a0;
+- (id)searchdynamic_buildNewUpdateListInfo:(id)a0;
+- (void)invalidateLayoutAtIndexPath:(id)a0 newFrames:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)miscellaneousComponentAsyncUpdated:(id)a0;
+- (void)sendBatchUpdatesComplete:(BOOL)a0;
+- (void)searchListPanBack;
+- (id)getLynxElementType;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (id)initWithLayout:(id)a0;
+- (struct CGPoint { double x0; double x1; })contentOffset;
+- (void)prepareForReuse;
+- (id)init;
+- (void)setContentOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (id)createView;
+- (void)frameDidChange;
+
+@end

@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveEmojiTemplateGetResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *recommendScriptArray;
+@property (readonly, nonatomic) unsigned long long recommendScriptArray_Count;
+@property (retain, nonatomic) NSMutableArray *bubblesArray;
+@property (readonly, nonatomic) unsigned long long bubblesArray_Count;
+
++ (id)descriptor;
+
+@end

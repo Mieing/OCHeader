@@ -1,0 +1,85 @@
+@class UIView, NSString, NSArray, UIFont, NSDictionary, AWEURLModel, AWEIMUser, UIColor;
+@protocol AWEIMMessageListNaviBarInterface;
+
+@interface AWEIMFansGroupTopDynamicDomainInteractor : AWEIMComponentBase <AWEIMMessageListNaviBarViewProvider, AWEIMLivingContainerViewProtocol, AWEIMConversationInfoOtherSubscriberProtocol, AWEIMFansGroupTopDynamicDomainDelegateProtocol, AWEIMConversationDidFetchPeerFullDetailUserAction, AWEIMMessageListUserInfoAction, AWEIMFansGroupTopDynamicDomainInteractorInterface>
+
+@property (nonatomic) long long type;
+@property (copy, nonatomic) NSString *showText;
+@property (copy, nonatomic) NSString *scheme;
+@property (retain, nonatomic) AWEURLModel *darkIconURL;
+@property (retain, nonatomic) AWEURLModel *lightIconURL;
+@property (retain, nonatomic) AWEURLModel *darkBackgroundImageURL;
+@property (retain, nonatomic) AWEURLModel *lightBackgroundImageURL;
+@property (nonatomic) unsigned long long schemeType;
+@property (retain, nonatomic) UIView *dynamicDomainView;
+@property (copy, nonatomic) NSArray *thisTimeReadAids;
+@property (nonatomic) unsigned long long aidCount;
+@property (retain, nonatomic) AWEIMUser *peerUser;
+@property (nonatomic) BOOL hasFetchedDataOver;
+@property (nonatomic) BOOL shouldTrackTopDynamicDomainShow;
+@property (retain, nonatomic) NSDictionary *dynamicDomainInfo;
+@property (nonatomic) BOOL usingDiffInfo;
+@property (nonatomic) double fetchTime;
+@property (nonatomic) BOOL didClickTopDynamicDomain;
+@property (retain, nonatomic) UIColor *customizedTextColor;
+@property (retain, nonatomic) UIFont *customizedTextFont;
+@property BOOL hostVCViewDidAppearDone;
+@property (weak, nonatomic) id<AWEIMMessageListNaviBarInterface> naviBarService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)enableWithCon:(id)a0;
++ (BOOL)enableMedicalRoleWithCon:(id)a0;
++ (id)groupTypeStringFromIESCon:(id)a0;
++ (id)showTypeStringFromShowType:(long long)a0;
++ (BOOL)isEnterpriseType:(long long)a0;
++ (BOOL)canCreateComponentWithContext:(id)a0;
+
+- (void)afterInitialComponentAllResolved:(id)a0;
+- (long long)naviBarPriority;
+- (id)naviBarView;
+- (long long)naviBarPosition;
+- (struct CGSize { double x0; double x1; })naviBarViewIntrinsicContentSize;
+- (double)naviBarViewCustomSpacing;
+- (void)naviBarViewWillAppearToPosition:(long long)a0;
+- (void)componentDidMounted:(id)a0;
+- (void)hostVC_viewDidAppear;
+- (void)hostVC_viewDidAppearAndRender;
+- (id)conversationInfoOtherRequestParams;
+- (void)updateConversationInfoOtherData:(id)a0 source:(id)a1;
+- (void)didFetchFullDetailUser:(id)a0 fullDetailUser:(id)a1;
+- (void)p_viewDidAppear;
+- (void)didFetchPeerFullDetailUser:(id)a0;
+- (id)vcParent;
+- (double)dynamicDomainViewWidth;
+- (void)didFetchIMUser:(id)a0;
+- (void)trackDynamicDomainViewShowIfNeeded;
+- (void)resetDynamicViewIfNeed;
+- (void)__updateConversationInfoOtherData:(id)a0 source:(id)a1;
+- (void)__modifyDynamicDomainViewUsingTemplateWithStyle:(long long)a0 ignoreTheme:(BOOL)a1 addDotView:(BOOL)a2;
+- (BOOL)__shouldUseDiffInfo:(id)a0;
+- (id)__leadingRoleID;
+- (void)__buildDefaultWindowDomainWithConType:(unsigned long long)a0;
+- (void)__modifyDynamicDomainViewUsingLivingContainerWithStyle:(unsigned long long)a0;
+- (void)__updateNaviBarRightContainer;
+- (void)__buildDefaultLiveSubscriberSpaceDomain;
+- (void)__trackTopFunctionAreaActionWithActionType:(long long)a0;
+- (void)__trackStoreEntranceActionWithActionType:(long long)a0;
+- (unsigned char)isTrackBroadcastWithSchema:(id)a0;
+- (void)__trackLivesdkLiveSubscribeVIPBroadcastEvent:(BOOL)a0;
+- (void)__trackLivesdkLiveSubscriberSpaceEvent:(BOOL)a0;
+- (id)__createBTMChainWithActionType:(long long)a0;
+- (id)urlEncodeSchema:(id)a0;
+- (void)__tryChangeDynamicDomainAfterClick;
+- (void)tryBuildDynamicDomainView;
+- (void)__trackShowFanGroupEntranceEvent;
+- (void)__trackLivesdkLiveShowEvent;
+- (id)__showTypeString;
+- (id)__groupTypeString;
+- (void)didTapLivingViewWithUser:(id)a0;
+- (void)didClickDynamicDomainView;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveRoomAuthRoot : GPBRootObject
+
+@end

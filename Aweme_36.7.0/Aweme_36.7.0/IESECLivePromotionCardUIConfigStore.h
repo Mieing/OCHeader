@@ -1,0 +1,77 @@
+@class IESECLiveNormalUIConfig;
+
+@interface IESECLivePromotionCardUIConfigStore : IESECLiveComponentUIConfigStoreBase
+
+@property (retain, nonatomic) IESECLiveNormalUIConfig *containerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *titleContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *priceContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *buttonContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *bottomContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *titleUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *titleNormalLineSpacingUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *titleTagLineSpacingUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *titleTagIconUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageTopContainerUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageTopContainerIndexTagUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageIntroducingUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageIntroducingAnimationUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageBottomButtonUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageHotSaleUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *imageStatusMaskUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoLineHeightUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoLineSpacingUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoSaleHighlightsUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoUserInterestUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoCustomTagUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoCouponButtonUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoPlatformTagUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoProgressTintTextUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoProgressTintMinimumLengthUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoCountDownUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoStatusImageTextWithIconUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *infoStatusImageTextWithoutIconUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *priceInfoUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *priceCountDownUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *priceTextUIConfig;
+@property (retain, nonatomic) IESECLiveNormalUIConfig *buttonAddCartIconUIConfig;
+
+- (void)setupUIConfigs;
+- (void)setupTitleUIConfig;
+- (void)setupTitleNormalLineSpacingUIConfig;
+- (void)setupTitleTagLineSpacingUIConfig;
+- (void)setupContainerUIConfig;
+- (void)setupImageContainerUIConfig;
+- (void)setupTitleContainerUIConfig;
+- (void)setupInfoContainerUIConfig;
+- (void)setupPriceContainerUIConfig;
+- (void)setupButtonContainerUIConfig;
+- (void)setupBottomContainerUIConfig;
+- (void)setupTitleTagIconUIConfig;
+- (void)setupImageTopContainerUIConfig;
+- (void)setupImageTopContainerIndexTagUIConfig;
+- (void)setupImageIntroducingUIConfig;
+- (void)setupImageIntroducingAnimationUIConfig;
+- (void)setupImageBottomButtonUIConfig;
+- (void)setupImageHotSaleUIConfig;
+- (void)setupImageStatusMaskUIConfig;
+- (void)setupInfoLineHeightUIConfig;
+- (void)setupInfoLineSpacingUIConfig;
+- (void)setupInfoSaleHighlightsUIConfig;
+- (void)setupInfoUserInterestUIConfig;
+- (void)setupInfoCustomTagUIConfig;
+- (void)setupInfoCouponButtonUIConfig;
+- (void)setupInfoPlatformTagUIConfig;
+- (void)setupInfoProgressTintTextUIConfig;
+- (void)setupInfoProgressTintMinimumLengthUIConfig;
+- (void)setupInfoCountDownUIConfig;
+- (void)setupInfoStatusImageTextWithIconUIConfig;
+- (void)setupInfoStatusImageTextWithoutIconUIConfig;
+- (void)setupPriceInfoUIConfig;
+- (void)setupPriceCountDownUIConfig;
+- (void)setupPriceTextUIConfig;
+- (void)setupButtonAddCartIconUIConfig;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface UnfulfilledDetail : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) int action;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

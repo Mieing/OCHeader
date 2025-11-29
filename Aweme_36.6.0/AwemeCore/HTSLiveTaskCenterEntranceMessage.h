@@ -1,0 +1,15 @@
+@class NSString, HTSLiveCommon, HTSLiveTouchPositionMeta, HTSLiveTreasureDetail;
+
+@interface HTSLiveTaskCenterEntranceMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveTouchPositionMeta *meta;
+@property (nonatomic) BOOL hasMeta;
+@property (retain, nonatomic) HTSLiveTreasureDetail *detail;
+@property (nonatomic) BOOL hasDetail;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

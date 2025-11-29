@@ -1,0 +1,15 @@
+@class NSNumber, NSString, NSDictionary;
+
+@interface IESLiveDoLiveCertDoLiveCertResultModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *certStatus;
+@property (retain, nonatomic) NSNumber *manualStatus;
+@property (retain, nonatomic) NSNumber *ageRange;
+@property (retain, nonatomic) NSNumber *errorCode;
+@property (copy, nonatomic) NSString *errorMsg;
+@property (copy, nonatomic) NSString *ticket;
+@property (copy, nonatomic) NSDictionary *extData;
+
++ (id)modelCustomPropertyMapper;
+
+@end

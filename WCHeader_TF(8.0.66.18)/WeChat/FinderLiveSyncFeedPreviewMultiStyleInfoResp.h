@@ -1,0 +1,11 @@
+@class FinderLiveSyncFeedPreviewMultiStyleInfoResp_BuyTogetherInfo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo;
+
+@interface FinderLiveSyncFeedPreviewMultiStyleInfoResp : WXPBGeneratedMessage
+
+@property (retain, nonatomic) FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo *hotShopInfo;
+@property (retain, nonatomic) FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo *recommendCouponInfo;
+@property (retain, nonatomic) FinderLiveSyncFeedPreviewMultiStyleInfoResp_BuyTogetherInfo *buyTogetherInfo;
+
++ (void)initialize;
+
+@end

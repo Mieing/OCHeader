@@ -1,0 +1,74 @@
+@class NSError, NSString, NSArray, NSDictionary, NSMutableSet, NSObject, NSMutableArray, NSNumber;
+@protocol OS_dispatch_group, IESIMSearchEngineProtocol, AFDMentionAilabDefaultUserListDataControllerProtocol, AWECommentSearchManagerDelegate;
+
+@interface AWECommentSearchManager : NSObject <AWECommentSearchManagerProtocol>
+
+@property (retain, nonatomic) NSArray *localRecentList;
+@property (retain, nonatomic) NSArray *friendList;
+@property (retain, nonatomic) NSArray *followingList;
+@property (retain, nonatomic) NSMutableSet *mentionUserIDSet;
+@property (retain, nonatomic) NSMutableSet *recentMentionUserIDSet;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *searchGroup;
+@property (retain, nonatomic) id<IESIMSearchEngineProtocol> searchEngine;
+@property (retain, nonatomic) NSMutableArray *searchLocalResultList;
+@property (retain, nonatomic) NSMutableArray *searchRemoteResultList;
+@property (copy, nonatomic) NSArray *recentMentionList;
+@property (retain, nonatomic) NSMutableArray *remoteDefaultResultList;
+@property (retain, nonatomic) NSObject<AFDMentionAilabDefaultUserListDataControllerProtocol> *ailabDefaultUserListDataController;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *group;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *ailabGroup;
+@property (retain, nonatomic) NSNumber *cursor;
+@property (readonly, nonatomic) NSString *keyword;
+@property (retain, nonatomic) NSMutableArray *dataList;
+@property (retain, nonatomic) NSArray *defaultDataList;
+@property (nonatomic) BOOL isRequestingOnAir;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL shouldFilterRecentMention;
+@property (retain, nonatomic) NSError *error;
+@property (readonly, nonatomic) BOOL noResult;
+@property (readonly, nonatomic) BOOL isDefaultSearchManager;
+@property (readonly, nonatomic) BOOL networkAvailable;
+@property (copy, nonatomic) NSDictionary *logPassback;
+@property (copy, nonatomic) NSString *groupId;
+@property (nonatomic) BOOL isFromSignatureEdit;
+@property (nonatomic) BOOL isFromCommentEasterEgg;
+@property (weak, nonatomic) id<AWECommentSearchManagerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)searchUserWithCompletion:(id /* block */)a0;
+- (id)initWithKeyword:(id)a0;
+- (void)p_setupSearchEngine;
+- (id)p_convertToAWEIMUser:(id)a0;
+- (id)p_convertToAWEUser:(id)a0;
+- (void)p_trackMentionListResponse:(id)a0;
+- (void)fetchAilabDefaultListWithCompletion:(id /* block */)a0;
+- (void)searchLocalAwemeUserWithCompletion:(id /* block */)a0;
+- (void)fetchAilabSearchDataAndLocalContactsWithCompletion:(id /* block */)a0;
+- (void)searchSuggestWordsDataWithCompletion:(id /* block */)a0;
+- (void)fetchRecentContactWithCompletion:(id /* block */)a0;
+- (void)p_fetchLocalDataSourceWithCompletion:(id /* block */)a0;
+- (id)p_combineWithRemovingDuplicationWithListA:(id)a0 listB:(id)a1;
+- (id)p_filterNotFriendUser:(id)a0;
+- (long long)currentCacheScene;
+- (void)p_processDefaultMentionList:(id)a0 recentMentionList:(id)a1 isLoadMore:(BOOL)a2 hasMore:(BOOL)a3;
+- (void)fetchDefaultListWithCompletion:(id /* block */)a0;
+- (void)p_fetchWithAilabDefaultUserListDataControllerIfLoadMore:(BOOL)a0 withCompletion:(id /* block */)a1;
+- (void)setAilabDefaultUserListDataControllerIfNeeded;
+- (void)p_recordMentionIDs:(id)a0;
+- (void)p_recordRecentMentionIDs:(id)a0;
+- (void)unfoldRecentMentionList;
+- (id)p_filterRecentMentionFromUserList:(id)a0;
+- (id)p_filterUserList:(id)a0 withUserIDs:(id)a1;
+- (id)p_fillRecentDatasource:(id)a0 withDataIfNeeded:(id)a1;
+- (id)p_generateSugContext;
+- (void)p_prepareRemoteSugDataWithResponseList:(id)a0 logPassback:(id)a1;
+- (void)p_fetchRemoteSearchSugDataWithCompletion:(id /* block */)a0;
+- (void)fetchMentionListWithCompletion:(id /* block */)a0;
+- (void)searchRemoteSugAwemeUserWithCompletion:(id /* block */)a0;
+- (void).cxx_destruct;
+- (void)reset;
+
+@end

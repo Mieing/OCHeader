@@ -1,0 +1,78 @@
+@class UIView, IESGCPEmptyView, UITapGestureRecognizer, IESGCPAudienceDetailViewScrollActionDispatcher, NSString, UIButton, MASConstraint, UIPanGestureRecognizer, IESGCPDetailThemeConfig, IESGCPAudienceDetailViewConfig, IESGCPDetailBackgroundView;
+@protocol IESGCPBaseDetailViewDelegate, IESGCPAudienceDetailSlideViewProtocol;
+
+@interface IESGCPAudienceDetailView : UIView <UIGestureRecognizerDelegate, IESGCPSegmentSlideViewDelegate, IESGCPDIContextSubscriber, IESGCPGameDetailNavBarActions, IESGCPGameDetailTabNavigatorActions, IESGCPBaseDetailViewProtocol>
+
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) IESGCPEmptyView *emptyView;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) IESGCPDetailBackgroundView *gradientBackgroundView;
+@property (retain, nonatomic) UIView *titleContainerView;
+@property (retain, nonatomic) MASConstraint *titleContainerHeight;
+@property (nonatomic) BOOL enableLynxFullPage;
+@property (retain, nonatomic) UIView<IESGCPAudienceDetailSlideViewProtocol> *segmentSlideContainerView;
+@property (retain, nonatomic) MASConstraint *heightConstraint;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (retain, nonatomic) IESGCPAudienceDetailViewConfig *config;
+@property (retain, nonatomic) UITapGestureRecognizer *closeTap;
+@property (nonatomic) BOOL hasSetupData;
+@property (retain, nonatomic) IESGCPDetailThemeConfig *themeConfig;
+@property (retain, nonatomic) IESGCPAudienceDetailViewScrollActionDispatcher *scrollActionDispatcher;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<IESGCPBaseDetailViewDelegate> delegate;
+@property (nonatomic) BOOL isFullScreen;
+@property (retain, nonatomic) NSString *currentTabID;
+@property (nonatomic) BOOL isOpenAsFullScreen;
+@property (nonatomic) BOOL canHalfScreen;
+@property (nonatomic) BOOL useBackIcon;
+@property (nonatomic) BOOL presentAnimationSwitch;
+@property (copy, nonatomic) id /* block */ onRetryBtnClick;
+@property (retain, nonatomic) IESGCPAudienceDetailViewConfig *detailViewConfig;
+
+- (id)loadingBackgroundView;
+- (void)didSetGameCPDIContext;
+- (void)setScrollViewToStickyTop;
+- (void)tabNavView:(id)a0 didSelectTabId:(id)a1;
+- (void)audienceDetailParentScrollOffsetDidChange:(double)a0 stickyProgress:(double)a1;
+- (void)viewDidTransition;
+- (void)dismissSelf:(BOOL)a0;
+- (void)navBarView:(id)a0 onNavBarClicked:(unsigned long long)a1 detailTab:(id)a2;
+- (void)showErrorContentView:(BOOL)a0;
+- (void)layoutWithConfig:(id)a0 detailThemeConfig:(id)a1;
+- (void)reloadTitleBarNode:(id)a0;
+- (void)changeHeightConstraint:(double)a0;
+- (void)resetContentViewTransformInitialState;
+- (void)liveAudienceDetailViewDidTransition;
+- (void)videoAudienceDetailViewDidTransition;
+- (void)setScrollViewToStickyTopWithDuration:(double)a0;
+- (void)setContentToFullModeWithAnimation:(BOOL)a0 complete:(id /* block */)a1;
+- (void)closeTap:(id)a0;
+- (void)setContentViewTransformInitialState;
+- (void)addDebugViewAt:(id)a0;
+- (void)toastError:(id)a0;
+- (void)setContentToHalfMode;
+- (void)setContentToFullModeWithAnimation:(BOOL)a0 duration:(double)a1 complete:(id /* block */)a2;
+- (void)contentViewHeightDidChange:(double)a0;
+- (id)preferredLayoutConfig;
+- (void)updateTitleContainerViewOpaqueFrom:(double)a0;
+- (id)createSegmentSlideContainerView;
+- (void)scrollViewDidScroll:(id)a0 isParent:(BOOL)a1;
+- (void)willShowContentView;
+- (void)hideContentView:(BOOL)a0 completion:(id /* block */)a1;
+- (void)reloadNode:(id)a0 themeConfig:(id)a1 error:(id)a2;
+- (id)initWithDIContext:(id)a0 IsOpenAsFullScreen:(BOOL)a1 canHalfScreen:(BOOL)a2 useBackIcon:(BOOL)a3 presentAnimationSwitch:(BOOL)a4;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)handleError:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)pan:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (void)setup;
+- (id)contentContainer;
+- (void)showContentView;
+- (void)didTapCloseButton:(id)a0;
+
+@end

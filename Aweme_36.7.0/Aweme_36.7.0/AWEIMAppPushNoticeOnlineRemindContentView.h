@@ -1,0 +1,73 @@
+@class NSString, UIImageView, NSTimer, UILabel, UIView, AWEIMOnlienRemindPushModel;
+@protocol AWEInnerNotificationContentOperator, AWEIMStreakDisplayManagerProtocol;
+
+@interface AWEIMAppPushNoticeOnlineRemindContentView : UIView <AWEIMStreakDisplayManagerDelegate, AWEInnerNotificationContent>
+
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UILabel *statusLabel;
+@property (retain, nonatomic) UIView *imStreakView;
+@property (retain, nonatomic) UILabel *contentLabel;
+@property (retain, nonatomic) UIImageView *avatarImageView;
+@property (retain, nonatomic) UIImageView *firstMultiAvatarImageView;
+@property (retain, nonatomic) UIImageView *secondMultiAvatarImageView;
+@property (retain, nonatomic) UIView *onlineView;
+@property (retain, nonatomic) UIView *actionView;
+@property (retain, nonatomic) UILabel *actionLable;
+@property (retain, nonatomic) UIImageView *actionImageView;
+@property (retain, nonatomic) AWEIMOnlienRemindPushModel *pushModel;
+@property (retain, nonatomic) id<AWEIMStreakDisplayManagerProtocol> imStreakDisplayManager;
+@property (retain, nonatomic) UIImageView *extImageView;
+@property (retain, nonatomic) UIImageView *extImageBackground;
+@property (retain, nonatomic) NSTimer *customDismissTimer;
+@property (weak, nonatomic) id<AWEInnerNotificationContentOperator> notificationOperator;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)disablePullIndicatorView;
+- (void)renderModel:(id)a0 context:(id)a1;
+- (id)customIMStreakTextPreferTheme;
+- (id)customIMStreakTextFont;
+- (void)asyncDidUpdateIMStreakView;
+- (void)handleTapAction;
+- (void)viewDidDisappearWithReason:(long long)a0;
+- (double)dismissTimerInterval;
+- (BOOL)disableUseBusinessTypeDeterminDismissTimerInterval;
+- (BOOL)hitStreakUpdateExp;
+- (id)p_enterFrom;
+- (BOOL)p_hitReplaceHiWithPoke;
+- (void)p_openProfile;
+- (void)p_tapActionView;
+- (id)p_onlineRemindPushType;
+- (id)p_imRemindPushType;
+- (id)p_sceneGreetSourcePath;
+- (id)p_birthdayWishSourcePath;
+- (void)p_openVoipCallWithVideo:(BOOL)a0;
+- (void)p_openPlayRemote;
+- (void)p_openRTVGame;
+- (void)p_trackEnterChatEvent;
+- (void)p_sendGreet;
+- (BOOL)p_hasSceneGreetSource;
+- (void)p_sendSceneGreet;
+- (BOOL)p_hasBirthdayWishSource;
+- (void)p_sendBirthdayWish;
+- (void)p_openFriendList;
+- (void)p_handleRTVAction;
+- (void)p_setUpUI;
+- (void)p_trackPushEventAction:(id)a0;
+- (void)p_openFlaotChat;
+- (void)layoutWhenStreakViewShowOrUpdate;
+- (void)updateConsecutiveChatStatusWithPushModel:(id)a0;
+- (id)p_greetlightInteractionSourceWithModel:(id)a0;
+- (id)p_chatType;
+- (void)p_configureWithOnlineRemindPushModel:(id)a0;
+- (BOOL)p_isSceneGreetingType;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (id)init;
+- (id)businessType;
+- (id)view;
+- (struct CGSize { double x0; double x1; })intrinsicContentSize;
+
+@end

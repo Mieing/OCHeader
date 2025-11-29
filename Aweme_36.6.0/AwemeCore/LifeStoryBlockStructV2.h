@@ -1,0 +1,10 @@
+@interface LifeStoryBlockStructV2 : GPBMessage
+
+@property (nonatomic) BOOL lifeStoryBlock;
+@property (nonatomic) BOOL hasLifeStoryBlock;
+@property (nonatomic) BOOL lifeStoryBlocked;
+@property (nonatomic) BOOL hasLifeStoryBlocked;
+
++ (id)descriptor;
+
+@end

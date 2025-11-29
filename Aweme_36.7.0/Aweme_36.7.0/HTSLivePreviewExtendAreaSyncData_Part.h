@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface HTSLivePreviewExtendAreaSyncData_Part : IESLivePBBaseMessage
+
+@property (nonatomic) int fontSize;
+@property (nonatomic) int interval;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL cuttable;
+@property (nonatomic) BOOL deleted;
+@property (copy, nonatomic) NSString *fontColor;
+@property (nonatomic) BOOL bold;
+
++ (id)descriptor;
+
+@end

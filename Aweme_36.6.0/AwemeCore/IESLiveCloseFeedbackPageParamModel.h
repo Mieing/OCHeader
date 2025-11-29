@@ -1,0 +1,11 @@
+@class NSNumber, NSString;
+
+@interface IESLiveCloseFeedbackPageParamModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *feedback;
+@property (copy, nonatomic) NSString *action;
+@property (copy, nonatomic) NSString *toastInfo;
+
++ (id)modelCustomPropertyMapper;
+
+@end

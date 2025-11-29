@@ -1,0 +1,71 @@
+@class BDWebImageRequest, NSMutableDictionary, TTVideoEngine, NSDictionary, BDXAudioModel, NSString;
+@protocol BDXAudioModelPlayerDelegate;
+
+@interface BDXAudioModelPlayer : NSObject <TTVideoEngineDelegate>
+
+@property (retain, nonatomic) TTVideoEngine *engine;
+@property (nonatomic) unsigned long long curPlayerType;
+@property (retain, nonatomic) NSMutableDictionary *nowPlayingInfo;
+@property (retain, nonatomic) BDWebImageRequest *req;
+@property (nonatomic) BOOL wasInteraction;
+@property (retain, nonatomic) id playCommandTarget;
+@property (retain, nonatomic) id pauseCommandTarget;
+@property (retain, nonatomic) id previousCommandTarget;
+@property (retain, nonatomic) id nextCommandTarget;
+@property (retain, nonatomic) id seekCommandTarget;
+@property (nonatomic) BOOL globalPlayCommandEnable;
+@property (nonatomic) BOOL globalPauseCommandEnable;
+@property (nonatomic) BOOL globalPreviousTrackCommandEnable;
+@property (nonatomic) BOOL globalNextTrackCommandEnable;
+@property (nonatomic) BOOL globalPlaybackPositionCommand;
+@property (weak, nonatomic) id<BDXAudioModelPlayerDelegate> delegate;
+@property (readonly, nonatomic) double duration;
+@property (readonly, nonatomic) double currentTime;
+@property (readonly, nonatomic) double cacheTime;
+@property (readonly, nonatomic) long long status;
+@property (readonly, nonatomic) long long loadStatus;
+@property (readonly, nonatomic) long long playBitrate;
+@property (nonatomic) BOOL loop;
+@property (retain, nonatomic) NSDictionary *headers;
+@property (nonatomic) BOOL needNowPlayingInfo;
+@property (nonatomic) double updateInterval;
+@property (retain, nonatomic) BDXAudioModel *curModel;
+@property (nonatomic) BOOL asyncPrepare;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)videoEngineUserStopped:(id)a0;
+- (void)videoEngine:(id)a0 playbackStateDidChanged:(long long)a1;
+- (void)videoEngine:(id)a0 loadStateDidChanged:(unsigned long long)a1;
+- (void)videoEngineDidFinish:(id)a0 error:(id)a1;
+- (void)videoEngineDidFinish:(id)a0 videoStatusException:(long long)a1;
+- (void)videoEngineCloseAysncFinish:(id)a0;
+- (void)videoEnginePrepared:(id)a0;
+- (void)videoEngineReadyToPlay:(id)a0;
+- (void)refreshNowPlayingInfo;
+- (void)mute:(BOOL)a0;
+- (void)setPlayModel:(id)a0;
+- (void)updateTag:(id)a0;
+- (id)transferStatusDesByStatus:(long long)a0;
+- (id)transferLoadStatusDesByStatus:(long long)a0;
+- (void)setupNowPlayingInfo:(id)a0;
+- (void)clearRemoteCommand;
+- (void)storeGlobalCommandStatus;
+- (void)restoreGlobalCommandStatus;
+- (void)setupRemoteCommand;
+- (void)preRemoteCommandEnable:(BOOL)a0;
+- (void)nextRemoteCommandEnable:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (void)setVolume:(float)a0;
+- (void)prepare;
+- (void)resume;
+- (void)dealloc;
+- (void)seekTo:(double)a0;
+- (id)initWithPlayerType:(unsigned long long)a0;
+
+@end

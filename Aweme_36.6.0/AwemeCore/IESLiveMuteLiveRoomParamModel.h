@@ -1,0 +1,9 @@
+@interface IESLiveMuteLiveRoomParamModel : IESLiveBridgeModel
+
+@property (nonatomic) BOOL longMute;
+@property (nonatomic) BOOL mute;
+@property (nonatomic) BOOL stopLivePlay;
+
++ (id)modelCustomPropertyMapper;
+
+@end

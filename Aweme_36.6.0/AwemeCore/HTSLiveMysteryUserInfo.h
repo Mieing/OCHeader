@@ -1,0 +1,16 @@
+@class NSString, HTSLiveMysteryUserImage;
+
+@interface HTSLiveMysteryUserInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long userId;
+@property (copy, nonatomic) NSString *idStr;
+@property (copy, nonatomic) NSString *liveRoomIdStr;
+@property (copy, nonatomic) NSString *nickName;
+@property (retain, nonatomic) HTSLiveMysteryUserImage *avatarThumb;
+@property (nonatomic) BOOL hasAvatarThumb;
+@property (nonatomic) BOOL mystery;
+@property (copy, nonatomic) NSString *userOpenid;
+
++ (id)descriptor;
+
+@end

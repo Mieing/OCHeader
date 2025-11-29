@@ -1,0 +1,3 @@
+@interface HTSLivePreviewFeaturedChatSyncdataRoot : GPBRootObject
+
+@end

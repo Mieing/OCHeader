@@ -1,0 +1,85 @@
+@class NSString, NSArray, AWEPOIDouDiscountResModel, AWEPoiRankConfigModel, NSMutableDictionary, AWEURLModel, AWEPOILynxModel, NSMutableArray, NSNumber;
+
+@interface AWEPOIFeedListDataController : AWEListDataController <AWEPOIFeedListDataControllerProtocol>
+
+@property (nonatomic) unsigned long long sceneType;
+@property (copy, nonatomic) NSArray *poiRankResources;
+@property (nonatomic) unsigned long long preloadStatus;
+@property (copy, nonatomic) NSArray *lastShowPOIs;
+@property (nonatomic) long long nextCursor;
+@property (nonatomic) BOOL hasMore;
+@property (copy, nonatomic) NSString *removeAwemeID;
+@property (retain, nonatomic) NSMutableDictionary *awemeIDToCursor;
+@property (nonatomic) BOOL didSuccessGetRefreshData;
+@property (copy, nonatomic) NSString *dynamicText;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+@property (copy, nonatomic) NSArray *hotWordList;
+@property (retain, nonatomic) AWEPOIDouDiscountResModel *douDiscountRes;
+@property (copy, nonatomic) NSString *rankGenre;
+@property (copy, nonatomic) NSString *rankTab;
+@property (copy, nonatomic) NSString *detailRank;
+@property (copy, nonatomic) NSString *rankPoiDistrict;
+@property (copy, nonatomic) NSString *rankTitle;
+@property (retain, nonatomic) AWEURLModel *rankBarIconURL;
+@property (retain, nonatomic) AWEURLModel *rankFloatIconURL;
+@property (retain, nonatomic) AWEPoiRankConfigModel *rankConfig;
+@property (copy, nonatomic) NSString *rankBottomURL;
+@property (copy, nonatomic) NSString *rankTopURL;
+@property (nonatomic) long long innerStoreListTheme;
+@property (copy, nonatomic) NSString *poiRankRes;
+@property (copy, nonatomic) NSString *douDiscountOuterGroupID;
+@property (copy, nonatomic) NSString *douDiscountOuterGroupType;
+@property (copy, nonatomic) NSString *ipName;
+@property (nonatomic) long long rankType;
+@property (copy, nonatomic) NSString *ipTheme;
+@property (nonatomic) long long rankFloatIconWidth;
+@property (nonatomic) long long rankFloatIconHeight;
+@property (nonatomic) long long rankBarIconWidth;
+@property (nonatomic) long long rankBarIconHeight;
+@property (copy, nonatomic) NSString *poiID;
+@property (copy, nonatomic) NSString *sessionID;
+@property (copy, nonatomic) NSString *extraParams;
+@property (nonatomic) long long pageCount;
+@property (copy, nonatomic) NSArray *initialAwemeList;
+@property (retain, nonatomic) NSNumber *initialCursor;
+@property (retain, nonatomic) NSNumber *initialPageCount;
+@property (nonatomic) BOOL isStopLoadingView;
+@property (readonly, nonatomic) NSMutableArray *poiRankDataSource;
+@property (readonly, nonatomic) NSMutableArray *poiRankAwemeDataSource;
+@property (nonatomic) long long refreshCount;
+@property (nonatomic) long long loadMoreCount;
+@property (retain, nonatomic) AWEPOILynxModel *poiFeedFixLayer;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getExpectedImageSizeInfo;
+
+- (BOOL)loadmoreHasMore;
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)initFetchWithCompletion:(id /* block */)a0;
+- (void)fetchWithCount:(long long)a0 pullType:(long long)a1 completion:(id /* block */)a2;
+- (id)initWithSceneType:(unsigned long long)a0;
+- (void)enablePreloading;
+- (void)trackDouDiscountPerformanceWithFirstFrameDuration:(long long)a0 outerGroupId:(id)a1;
+- (id)poiRankInfoWithIndex:(long long)a0;
+- (void)trackDouDiscountInnerListDuration;
+- (id)poiRankFeedList;
+- (id)p_baseParameters:(BOOL)a0;
+- (void)p_bindSingleAwemeWithPOIRankRes:(id)a0;
+- (id /* block */)isPOIRankStructEqualBlock;
+- (id)filterDuplicatedPOIDatasourceWithArray:(id)a0 isEqual:(id /* block */)a1;
+- (void)setPoiRankDataSource:(id)a0;
+- (void)setPoiRankAwemeDataSource:(id)a0;
+- (void)monitorFeedListNetworkWithResponse:(id)a0 error:(id)a1 starTimeInterval:(double)a2 parseDataTimeInterval:(double)a3 isPreloadRequest:(BOOL)a4 isLoadMoreRequest:(BOOL)a5 recieveDataInterval:(double)a6 serverTimeInterval:(double)a7 clientTimeInterval:(double)a8;
+- (id)cursorForAwemeID:(id)a0;
+- (void)insertAwemeListOnTop:(id)a0;
+- (void).cxx_destruct;
+- (id)tabs;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)refreshWithCompletion:(id /* block */)a0;
+- (void)setCustomTitle:(id)a0;
+
+@end

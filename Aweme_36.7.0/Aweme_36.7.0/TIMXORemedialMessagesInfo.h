@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface TIMXORemedialMessagesInfo : NSObject {
+    long long _readIndex;
+    NSString *_messageIdentifier;
+}
+
+- (void).cxx_destruct;
+
+@end

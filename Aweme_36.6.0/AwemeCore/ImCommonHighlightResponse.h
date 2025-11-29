@@ -1,0 +1,10 @@
+@class ImCommonHighlightResponse_Response;
+
+@interface ImCommonHighlightResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ImCommonHighlightResponse_Response *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

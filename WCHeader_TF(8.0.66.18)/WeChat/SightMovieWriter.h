@@ -1,0 +1,72 @@
+@class AVAssetWriterInputPixelBufferAdaptor, NSString, AVAssetWriterInput, NSObject, AQAudioRecorder, MMovieCompressor, AVAssetWriter;
+@protocol OS_dispatch_queue, SightMovieWriterDelegate;
+
+@interface SightMovieWriter : NSObject <MMovieCompressorDelegate>
+
+@property (retain, nonatomic) NSString *m_videoPath;
+@property (retain, nonatomic) NSString *m_audioPath;
+@property (retain, nonatomic) NSString *m_moviePath;
+@property (retain, nonatomic) AVAssetWriter *m_writer;
+@property (nonatomic) BOOL m_isRecording;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } m_startTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } m_initializeTime;
+@property (nonatomic) BOOL videoEncodingIsFinished;
+@property (retain, nonatomic) AVAssetWriterInput *m_videoInput;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } m_previousVideoTime;
+@property (nonatomic) unsigned long long m_videoTimeStamp;
+@property (nonatomic) unsigned long long m_videoFrame;
+@property (retain, nonatomic) AVAssetWriterInputPixelBufferAdaptor *m_PixelBufferInput;
+@property (retain, nonatomic) MMovieCompressor *m_audioCompressor;
+@property (nonatomic) double m_audioBitrate;
+@property (nonatomic) struct CGSize { double width; double height; } m_videoSize;
+@property (nonatomic) long long m_videoOrientation;
+@property (nonatomic) struct CGAffineTransform { double a; double b; double c; double d; double tx; double ty; } m_preferredTransform;
+@property (nonatomic) unsigned long long m_audioTimeStamp;
+@property (nonatomic) BOOL m_disableWritingToFile;
+@property (nonatomic) BOOL m_compressAudio;
+@property (nonatomic) BOOL needAudio;
+@property (retain, nonatomic) AQAudioRecorder *recorder;
+@property (weak, nonatomic) id<SightMovieWriterDelegate> delegate;
+@property (nonatomic) float maxMovieDuration;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } correctVideoDuration;
+@property (nonatomic) long long videoOrientation;
+@property (readonly, nonatomic) int outputType;
+@property (nonatomic) BOOL forceMPEG4;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *writtingQueue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFilePath:(id)a0 videoOrientation:(long long)a1 videoSize:(struct CGSize { double x0; double x1; })a2 compressAudio:(BOOL)a3 audioBitrate:(double)a4;
+- (id)initWithFilePath:(id)a0 videoOrientation:(long long)a1 videoSize:(struct CGSize { double x0; double x1; })a2 compressAudio:(BOOL)a3 audioBitrate:(double)a4 codecSettings:(id)a5;
+- (id)initWithFilePath:(id)a0 videoOrientation:(long long)a1 videoSize:(struct CGSize { double x0; double x1; })a2 compressAudio:(BOOL)a3 audioBitrate:(double)a4 codecSettings:(id)a5 needAudio:(BOOL)a6;
+- (void)initWriterOutputWithCodecSettings:(id)a0;
+- (void)setOutput:(id)a0;
+- (id)getOutput;
+- (BOOL)isWriting;
+- (void)prepareWriting;
+- (void)realWriting;
+- (void)startWriting;
+- (void)finishWriting;
+- (void)cancelWriting;
+- (void)appendAudioSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (void)appendVideoSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (void)appendVideoPixelBuffer:(id)a0 frameTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1;
+- (void)startAmr;
+- (void)stopAmr;
+- (void)cancelAmr;
+- (id)makeNewPath:(id)a0 withSubfix:(id)a1;
+- (void)compressAudio;
+- (void)mMovieCompressor:(id)a0 onMovieCompressFinished:(id)a1 thumbImg:(id)a2 ret:(unsigned int)a3;
+- (void)mMovieCompressor:(id)a0 onMovieCompressFailed:(unsigned int)a1;
+- (void)tryMergeOutputVideo;
+- (void)compressionImplementationDefault:(id)a0;
+- (void)compressionImplementationExportOnce:(id)a0;
+- (void)exportSessionError:(id)a0;
+- (unsigned long long)writerCompressionImplementation;
+- (void)compressMovieWithExport:(id)a0 startTime:(struct timeval { long long x0; int x1; })a1;
+- (void)notifyOutput:(id)a0;
+- (void).cxx_destruct;
+
+@end

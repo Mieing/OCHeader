@@ -1,0 +1,86 @@
+@class NSHashTable, NSString, NSArray, IESLiveStrategyCloudFeatureCenter, NSMutableDictionary, NSDictionary, NSMutableArray, NSNumber;
+@protocol IESLiveNewAIService, IESLiveStrategyAdapter, HTSKVStore, IESLiveStrategyRoomTrackerCharacterCollector, IESLiveClientAIInjector, IESLiveWatchDurationManagerInterface, IESLiveClientDiagnoseAdapter, IESLiveNetworkQualityInfoService, IESLiveStrategyDataCenterDelegate;
+
+@interface IESLiveStrategyDataCenterV2 : NSObject <IESLiveStrategyRoomTrackerCharacterObserver, IESLiveTrackerDelegate, IESLiveStrategyDataCenterProtocol, IESLiveStrategyFeatureProtocol> {
+    struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } _safeAccessLock;
+}
+
+@property (retain, nonatomic) NSNumber *roomId;
+@property (retain, nonatomic) IESLiveStrategyCloudFeatureCenter *cloudFeatureCenter;
+@property (retain, nonatomic) id<IESLiveClientDiagnoseAdapter> clientDiagnose;
+@property (copy) NSDictionary *clientDiagnoseDict;
+@property (retain, nonatomic) NSMutableDictionary *trackEventDict;
+@property (copy, nonatomic) NSArray *defaultPublishPointArray;
+@property (retain, nonatomic) NSMutableDictionary *charactorValueDict;
+@property (retain) NSDictionary *externalCharacterValueDict;
+@property (nonatomic) double startLiveTime;
+@property (retain, nonatomic) NSMutableArray *roomFeature;
+@property (copy, nonatomic) id /* block */ clientDiagnoseBlock;
+@property (retain, nonatomic) id<IESLiveClientAIInjector> clientAIInjector;
+@property (weak, nonatomic) id player;
+@property (retain, nonatomic) id<IESLiveNetworkQualityInfoService> networkQualityInfoService;
+@property (retain, nonatomic) id<HTSKVStore> kvStore;
+@property (retain, nonatomic) id streamPlayerSpeedMonitorService;
+@property (retain, nonatomic) id<IESLiveNewAIService> aiService;
+@property (retain, nonatomic) id<IESLiveStrategyAdapter> strategyAdapter;
+@property (retain, nonatomic) id<IESLiveWatchDurationManagerInterface> watchDurationCollector;
+@property (nonatomic) double externalCharacterLastUpdateTime;
+@property (nonatomic) double externalCharacterUpdateInterval;
+@property (nonatomic) BOOL deviceInfoOptimize;
+@property (nonatomic) BOOL netCharacterCollectEnable;
+@property (nonatomic) BOOL disableTackerInterceptor;
+@property (retain, nonatomic) id<IESLiveStrategyRoomTrackerCharacterCollector> roomTackerCharacterCollector;
+@property (retain, nonatomic) NSHashTable *characterObservers;
+@property (nonatomic) BOOL enableDebug;
+@property (weak, nonatomic) id<IESLiveStrategyDataCenterDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)addClientDiagnose:(id)a0;
+- (void)removeClientDiagnose;
+- (void)addWeakPlayer:(id)a0;
+- (void)collectionGameCategory:(id)a0;
+- (void)collectPublishPointWithStreamDataString:(id)a0;
+- (void)collectVpass:(BOOL)a0;
+- (void)collectVpassSrType:(long long)a0;
+- (void)collectVpassSrIsOn:(BOOL)a0;
+- (void)collectEnterFromMerge:(id)a0;
+- (void)collectEnterMethod:(id)a0;
+- (void)collectEnterAction:(id)a0;
+- (void)collectRoomcart:(long long)a0;
+- (void)batchCollectInformation:(id)a0;
+- (void)clearRoomFeature;
+- (void)storeRoomFeature:(id)a0;
+- (void)collectStartLiveTimeStamp:(double)a0;
+- (void)collectCurrentAnchorPushResolution:(id)a0;
+- (void)collectCurrentAnchorPushMaxBitrate:(long long)a0 minBitrate:(long long)a1 defaultBitrate:(long long)a2;
+- (void)collectCurrentAnchorPushFrameRate:(long long)a0;
+- (void)collectFeedPreviewPlayerViewShortSide:(long long)a0;
+- (void)updateDataFeature:(id)a0 value:(id)a1;
+- (id)publishPointWithStreamDataString:(id)a0;
+- (id)supportQualityCharacterInfo:(id)a0;
+- (BOOL)isTopNAnchor:(id)a0;
+- (id)topNAnchorProfile:(id)a0;
+- (void)addStrategyCharacterObserver:(id)a0;
+- (void)removeStrategyCharacterObserver:(id)a0;
+- (id)characterValueForKey:(id)a0;
+- (void)willCommitTrackEvent:(id)a0 params:(id)a1;
+- (int)audioPlayType;
+- (void)trackerCharacterDidChange:(id)a0 roomID:(id)a1;
+- (id)cloudCharacterValueForKey:(id)a0 anchorId:(id)a1;
+- (void)trackEventCount:(id)a0;
+- (void)storeCharacter:(id)a0 key:(id)a1;
+- (id)getDefaultPublishPointList;
+- (id)postProcessCharacter:(id)a0;
+- (id)roomCharacterReverseKeyMapper;
+- (void)removeTrackerEvent;
+- (void)prefetchExternalCharactorValue;
+- (id)updateCharacterValue:(id)a0;
+- (id)roomCharacterKeyMapper;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+
+@end

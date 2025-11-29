@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveMultiChorusSimpleSong : IESLivePBBaseMessage
+
+@property (nonatomic) long long songId;
+@property (copy, nonatomic) NSString *songName;
+@property (copy, nonatomic) NSString *songIdStr;
+
++ (id)descriptor;
+
+@end

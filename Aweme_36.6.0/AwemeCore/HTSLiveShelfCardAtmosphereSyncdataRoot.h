@@ -1,0 +1,3 @@
+@interface HTSLiveShelfCardAtmosphereSyncdataRoot : GPBRootObject
+
+@end

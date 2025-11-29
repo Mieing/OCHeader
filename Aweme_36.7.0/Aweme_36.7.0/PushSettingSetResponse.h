@@ -1,0 +1,10 @@
+@class PushSettingSetResponse_ResponseData;
+
+@interface PushSettingSetResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PushSettingSetResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

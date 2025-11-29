@@ -1,0 +1,3 @@
+@interface RoomActivityRoomSkinApiRoot : GPBRootObject
+
+@end

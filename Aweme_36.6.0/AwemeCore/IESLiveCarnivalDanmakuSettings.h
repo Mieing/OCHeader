@@ -1,0 +1,75 @@
+@class NSMutableDictionary, NSDictionary, NSArray, GPBMessage, IESLiveCarnivalDanmakuTemplate, NSString;
+@protocol IESLiveRoomService, IESLiveRevenueInteractModule;
+
+@interface IESLiveCarnivalDanmakuSettings : NSObject <IESLiveEZDanmakuSettingsProtocol>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) GPBMessage *activateMessage;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } normalDanmakuFrame;
+@property (retain, nonatomic) NSMutableDictionary *maskOuterAreas;
+@property (retain, nonatomic) NSDictionary *maskABConfig;
+@property (retain, nonatomic) id<IESLiveRevenueInteractModule> revenueInteractModule;
+@property (copy, nonatomic) NSArray *contourInteractIDList;
+@property (nonatomic) long long orientation;
+@property (nonatomic) BOOL chatCarnivalEggShowAlone;
+@property (nonatomic) double angle;
+@property (nonatomic) BOOL counterclockwise;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } metaFrame;
+@property (nonatomic) double danmakuHeight;
+@property (nonatomic) double danmakuSpeed;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } channelInset;
+@property (nonatomic) double alpha;
+@property (retain, nonatomic) NSMutableDictionary *contourBounds;
+@property (nonatomic) BOOL useMask;
+@property (nonatomic) BOOL pkMask;
+@property (nonatomic) BOOL gradientBorderDisable;
+@property (nonatomic) BOOL useBlurMask;
+@property (nonatomic) double danmakuScale;
+@property (retain, nonatomic) IESLiveCarnivalDanmakuTemplate *specialPlayEggItem;
+@property (copy, nonatomic) NSArray *templates;
+@property (copy, nonatomic) NSDictionary *templatesDict;
+@property (copy, nonatomic) NSArray *eggs;
+@property (nonatomic) long long eggsRateTotal;
+@property (nonatomic) long long templatesRateTotal;
+@property (nonatomic) BOOL hideCarnivalDanmakuArea;
+@property (nonatomic) BOOL needMaskDelay;
+@property (nonatomic) BOOL supoortGenaralChoseChannel;
+@property (nonatomic) unsigned long long carnivalType;
+@property (nonatomic) BOOL reverseDanmakuDirection;
+@property (nonatomic) BOOL verticalWordLayout;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } eggRandomRange;
+@property (nonatomic) long long danmakuScene;
+@property (copy, nonatomic) NSArray *danmakuRandomConfigs;
+@property (nonatomic) unsigned long long supportOrientation;
+@property (nonatomic) long long areaType;
+@property (nonatomic) long long fontSizeType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })maskOuterAreaForInteractID:(id)a0 withRatio:(double)a1;
+- (BOOL)canSupportOrientation:(long long)a0;
+- (void)configWithCarnivalMessage:(id)a0;
+- (void)configWithGeneralCarnivalMessage:(id)a0;
+- (unsigned long long)checkSupportShowType:(long long)a0;
+- (void)setupChatCarnivalTemplatesWithMessage:(id)a0;
+- (void)setupEggsTemplatesWithMessage:(id)a0;
+- (void)resetFrameWithOrientation:(long long)a0 normalDanmakuFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)setupGeneralCarnivalTemplatesWithMessage:(id)a0;
+- (void)setupGeneralEggsTemplatesWithMessage:(id)a0;
+- (void)setupGeneralSpecialPlayWithMessage:(id)a0;
+- (void)resetUseMaskStatus:(long long)a0;
+- (BOOL)isMultiStreamWithCurrentScene:(unsigned long long)a0;
+- (BOOL)isHorizontalStream;
+- (BOOL)usePrivilegeRegion;
+- (double)danmakuScaleFromFontSizeType;
+- (BOOL)carnivalSupportSettings;
+- (id)initWithCarnivalMessage:(id)a0 orientation:(long long)a1 normalDanmakuFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2 room:(id)a3 attachingDIContext:(id)a4;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })displayedFrame;
+- (double)maskDelay;
+- (void)componentOrientationChanged:(long long)a0 normalDanmakuFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)publicScreenLayoutChangedWithNormalDanmakuFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void).cxx_destruct;
+
+@end

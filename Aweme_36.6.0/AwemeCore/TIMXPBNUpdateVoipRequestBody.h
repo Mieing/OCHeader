@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TIMXPBNUpdateVoipRequestBody : GPBMessage
+
+@property (copy, nonatomic) NSString *channelId;
+@property (nonatomic) BOOL hasChannelId;
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) int vType;
+@property (nonatomic) BOOL hasVType;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,86 @@
+@class NSLock, NSString, NSArray, NSData, IESInfoStickerParam, IESInfoTextTemplateStickerParams, NSDictionary, HTSGLFramebuffer, IESMMKeyFrameInfo, HTSGLContext, HTSGLPicture, NSMutableDictionary;
+
+@interface IESInfoSticker : NSObject <KeyFrameOperationDelegate, NSCopying>
+
+@property (readonly, nonatomic) unsigned long long acc_stickerType;
+@property (readonly, nonatomic) unsigned long long acc_karaokeType;
+@property (readonly, nonatomic) BOOL acc_isNotNormalInfoSticker;
+@property (readonly, nonatomic) BOOL acc_isImageSticker;
+@property (readonly, nonatomic) BOOL acc_isTextSticker;
+@property (readonly, nonatomic) BOOL acc_isCustomerSticker;
+@property (readonly, nonatomic) BOOL acc_isBizInfoSticker;
+@property (readonly, nonatomic) unsigned long long acc_fromXiangSuType;
+@property (readonly, nonatomic) BOOL acc_isKeyFrameSticker;
+@property (retain, nonatomic) HTSGLPicture *picture;
+@property (retain, nonatomic) IESMMKeyFrameInfo *infoStickerKeyframeInfo;
+@property (retain, nonatomic) NSLock *pinLock;
+@property (retain, nonatomic) HTSGLContext *mainContext;
+@property (retain, nonatomic) NSString *resourcePath;
+@property (readonly, nonatomic) NSString *absoluteResourcePath;
+@property (nonatomic) long long stickerId;
+@property (nonatomic) void *handle;
+@property (nonatomic) double startTime;
+@property (nonatomic) double duration;
+@property (retain, nonatomic) IESInfoStickerParam *param;
+@property (nonatomic) BOOL needDisplayTop;
+@property (nonatomic) struct CGSize { double width; double height; } size;
+@property (copy, nonatomic) NSArray *effectInfo;
+@property (copy, nonatomic) NSDictionary *userinfo;
+@property (nonatomic) short layer;
+@property (nonatomic) BOOL changeStickerDuration;
+@property (nonatomic) BOOL isNeedRemove;
+@property (nonatomic) BOOL isEffectRemoved;
+@property (nonatomic) BOOL isSrtInfoSticker;
+@property (nonatomic) BOOL isSrtFirstTime;
+@property (nonatomic) BOOL isTextSticker;
+@property (nonatomic) BOOL isTextTemplateSticker;
+@property (nonatomic) BOOL isBrushSticker;
+@property (retain, nonatomic) NSString *brushParam;
+@property (retain, nonatomic) IESInfoTextTemplateStickerParams *textTemplateStickerParams;
+@property (nonatomic) BOOL isSubTextSticker;
+@property (nonatomic) BOOL isRichTextSticker;
+@property (retain, nonatomic) NSString *textParam;
+@property (retain, nonatomic) NSArray *animParams;
+@property (retain, nonatomic) NSString *emojiUtf8Str;
+@property (retain, nonatomic) HTSGLFramebuffer *sourceFrame;
+@property (retain, nonatomic) NSString *pinResultPath;
+@property (retain, nonatomic) NSMutableDictionary *pinTimeMappingDic;
+@property (retain, nonatomic) NSMutableDictionary *orderlySrcPtsDic;
+@property (retain, nonatomic) NSData *pindata;
+@property (nonatomic) long long pinStatus;
+@property (nonatomic) BOOL isNeedForceUpdateOneFrame;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)infoStickerWithDic:(id)a0;
++ (id)acc_stickerKeyMapping;
++ (BOOL)acc_isImageStickerWithStickerType:(unsigned long long)a0;
++ (unsigned long long)acc_stickerTypeWithUserInfo:(id)a0;
+
+- (id)toDicInfo;
+- (id)initWithResource:(id)a0 context:(id)a1;
+- (id)initWithImage:(id)a0 context:(id)a1;
+- (void)setkeyFrameInfo:(id)a0 withPts:(unsigned long long)a1;
+- (void)removekeyFrameInfo:(unsigned long long)a0;
+- (void)removeallKeyFrameInfo;
+- (id)getKeyFrameInfo;
+- (void)completeUpdateAllkeyFrames;
+- (unsigned long long)getKeyFrameNum;
+- (void)sortAllSrcPTS_ForSegment;
+- (BOOL)needRefreshKeyFrame;
+- (id)toDicInfo:(id)a0;
+- (BOOL)copyPinTimeMapDataFromSegmentID:(id)a0 toSegmentID:(id)a1;
+- (BOOL)removePinTimeMapDataForSegmentID:(id)a0;
+- (id)getStickerPinMapData;
+- (void)buildStickerPinMapDicWithData:(id)a0;
+- (void)clearPinResult;
+- (double)getMappedPtsWithSrcPts:(long long)a0 segmentID:(id)a1;
+- (BOOL)acc_isMaskInfoSticker;
+- (long long)compare:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

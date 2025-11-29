@@ -1,0 +1,62 @@
+@interface FlowIMX.FlowIMChatServiceImpl : NSObject <FlowIMX.FlowIMChatService> {
+    void /* unknown type, empty encoding */ delegateArray;
+    void /* unknown type, empty encoding */ hasTriggerChunkRecover;
+    void /* unknown type, empty encoding */ hasTriggerSendingRecover;
+    void /* unknown type, empty encoding */ _interruptedSendingMessages;
+    void /* unknown type, empty encoding */ messageReceivingCompensationProcess;
+    void /* unknown type, empty encoding */ _chunkInterruptInfoCache;
+    void /* unknown type, empty encoding */ receiveHandler;
+    void /* unknown type, empty encoding */ patch;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_notifier;
+}
+
+- (void)_private_asyncQueue:(id /* block */)a0;
+- (void)asyncGetUpToDateMessageBy:(id)a0 callback:(id /* block */)a1;
+- (BOOL)enableSendRecvDBOpt;
+- (void)asyncGetMessageBy:(id)a0 callback:(id /* block */)a1;
+- (long long)localIndexOfServerIndex:(long long)a0;
+- (id)getMessageBy:(id)a0 caller:(id)a1 file:(id)a2;
+- (id)getMessageByLocal:(id)a0 caller:(id)a1 file:(id)a2;
+- (void)asyncGetMessageByLocal:(id)a0 callback:(id /* block */)a1;
+- (id)getLatestMessageBy:(id)a0 caller:(id)a1 file:(id)a2;
+- (void)asyncGetLatestMessageBy:(id)a0 callback:(id /* block */)a1;
+- (id)getMessagesByReplyMessageId:(id)a0 caller:(id)a1 file:(id)a2;
+- (void)asyncGetMessagesByReplyMessageId:(id)a0 callback:(id /* block */)a1;
+- (id)getUpToDateMessageBy:(id)a0 caller:(id)a1 file:(id)a2;
+- (void)deleteTrailUserData:(id)a0;
+- (id)parseToFlowIMMessage:(id)a0;
+- (void)retryBotReplyMessageWithConversationID:(id)a0 retryMsgID:(id)a1 botID:(id)a2 callback:(id /* block */)a3;
+- (void)sendMessageList:(id)a0 callBack:(id /* block */)a1;
+- (void)sendMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)interrupt:(id)a0 callBack:(id /* block */)a1;
+- (void)addMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)modifyMessageBizExtWithRequest:(id)a0 success:(id /* block */)a1 fail:(id /* block */)a2;
+- (void)getMessageList:(id)a0 cursor:(id)a1 waitingForCloudIfNeed:(BOOL)a2 callBack:(id /* block */)a3;
+- (void)feedback:(id)a0 callBack:(id /* block */)a1;
+- (void)confirRegenerateMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)reeditedMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)reeditedMessages:(id)a0 callBack:(id /* block */)a1;
+- (void)deleteMessagesWithMsgIDs:(id)a0 callBack:(id /* block */)a1;
+- (void)retryMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)regenerateMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)resumeMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)sendCmd:(id)a0 callBack:(id /* block */)a1;
+- (void)updateLocalMessageSendingStatus:(id)a0 status:(long long)a1 callBack:(id /* block */)a2;
+- (void)addMessages:(id)a0 callBack:(id /* block */)a1;
+- (void)fetchMessageList:(id)a0 cursor:(id)a1 scene:(long long)a2 needRecoverChunk:(BOOL)a3 callBack:(id /* block */)a4;
+- (void)resendMessage:(id)a0 callBack:(id /* block */)a1;
+- (BOOL)isHitIgnoreInterrupt:(id)a0;
+- (void)updateMsgContent:(id)a0 callBack:(id /* block */)a1;
+- (void)modifyMessageExtWithMessage:(id)a0 callBack:(id /* block */)a1;
+- (void)modifySectionNameWithRequest:(id)a0 callBack:(id /* block */)a1;
+- (void)updateLocalMessageStatus:(id)a0 status:(long long)a1 callBack:(id /* block */)a2;
+- (void)tryUpdateLocalMessageSendingStatus:(id)a0 if:(long long)a1 to:(long long)a2 callBack:(id /* block */)a3;
+- (void)recoverChunkMessagesFromDB;
+- (void)recoverNormalSendingMessage;
+- (void)regenerateSwitch:(id)a0 conversationId:(id)a1 currentIndex:(long long)a2 regenerateSwitch:(long long)a3;
+- (void)addDelegate:(id)a0;
+- (void)removeDelegate:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveLinkMicAudienceListFriendsResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *userArray;
+@property (readonly, nonatomic) unsigned long long userArray_Count;
+@property (copy, nonatomic) NSString *notice;
+
++ (id)descriptor;
+
+@end

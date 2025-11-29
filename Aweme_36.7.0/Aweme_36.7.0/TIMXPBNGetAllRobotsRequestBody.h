@@ -1,0 +1,12 @@
+@interface TIMXPBNGetAllRobotsRequestBody : GPBMessage
+
+@property (nonatomic) int inboxType;
+@property (nonatomic) BOOL hasInboxType;
+@property (nonatomic) long long cursor;
+@property (nonatomic) BOOL hasCursor;
+@property (nonatomic) int limit;
+@property (nonatomic) BOOL hasLimit;
+
++ (id)descriptor;
+
+@end

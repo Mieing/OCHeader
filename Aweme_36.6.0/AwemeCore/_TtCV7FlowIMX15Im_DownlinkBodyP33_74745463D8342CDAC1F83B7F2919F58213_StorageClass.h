@@ -1,0 +1,57 @@
+@interface _TtCV7FlowIMX15Im_DownlinkBodyP33_74745463D8342CDAC1F83B7F2919F58213_StorageClass : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ _newMessageNotify;
+    void /* unknown type, empty encoding */ _sendMessageAckDownlinkBody;
+    void /* unknown type, empty encoding */ _sendMessageListAckDownlinkBody;
+    void /* unknown type, empty encoding */ _fetchChunkMessageDownlinkBody;
+    void /* unknown type, empty encoding */ _chunkUpdateDownlinkBody;
+    void /* unknown type, empty encoding */ _replyEndDownlinkBody;
+    void /* unknown type, empty encoding */ _pullChainDownlinkBody;
+    void /* unknown type, empty encoding */ _pullSingeChainDownlinkBody;
+    void /* unknown type, empty encoding */ _pullRecentConvChainDownlinkBody;
+    void /* unknown type, empty encoding */ _pullCmdChainDownlinkBody;
+    void /* unknown type, empty encoding */ _clearMsgContextDownlinkBody_p;
+    void /* unknown type, empty encoding */ _localMessageDownlinkBody;
+    void /* unknown type, empty encoding */ _createConvDownlinkBody;
+    void /* unknown type, empty encoding */ _getConvInfoDownlinkBody;
+    void /* unknown type, empty encoding */ _batchGetConvInfoDownlinkBody;
+    void /* unknown type, empty encoding */ _updateConversationDownlinkBody;
+    void /* unknown type, empty encoding */ _conversationAutoGenDownlinkBody;
+    void /* unknown type, empty encoding */ _getParticipantDownlinkBody;
+    void /* unknown type, empty encoding */ _batchGetConversationParticipantsDownlinkBody;
+    void /* unknown type, empty encoding */ _batchDeleteUserConversationDownlinkBody;
+    void /* unknown type, empty encoding */ _sendConvInDownLinkBody;
+    void /* unknown type, empty encoding */ _sendConvOutDownLinkBody;
+    void /* unknown type, empty encoding */ _retryBotReplyDownLinkBody;
+    void /* unknown type, empty encoding */ _multiPutMessageAckDownlinkBody;
+    void /* unknown type, empty encoding */ _commonCmdNotify;
+    void /* unknown type, empty encoding */ _updateConvParticipantNotify;
+    void /* unknown type, empty encoding */ _updateConvInfoNotify;
+    void /* unknown type, empty encoding */ _operateConvNotify;
+    void /* unknown type, empty encoding */ _refreshConvParticipantInfoNotify;
+    void /* unknown type, empty encoding */ _clearMsgContextNotify_p;
+    void /* unknown type, empty encoding */ _clearMsgHistoryNotify_p;
+    void /* unknown type, empty encoding */ _markReadNotify;
+    void /* unknown type, empty encoding */ _updateMsgStatusNotify;
+    void /* unknown type, empty encoding */ _suggestQuestionUpdateNotify;
+    void /* unknown type, empty encoding */ _deleteUserConversationNotify;
+    void /* unknown type, empty encoding */ _deleteConversationParticipantsNotify;
+    void /* unknown type, empty encoding */ _feedbackMsgNotify;
+    void /* unknown type, empty encoding */ _pullMsgNotify;
+    void /* unknown type, empty encoding */ _fixRegenerateMsgNotify;
+    void /* unknown type, empty encoding */ _breakStreamMsgNotify;
+    void /* unknown type, empty encoding */ _dissolveConversationNotify;
+    void /* unknown type, empty encoding */ _botReplyLoadingUpdateNotify;
+    void /* unknown type, empty encoding */ _cancelFollowNotify;
+    void /* unknown type, empty encoding */ _updateMessageAttrNotify;
+    void /* unknown type, empty encoding */ _openFullDuplexCallNotify;
+    void /* unknown type, empty encoding */ _updateSectionNotify;
+    void /* unknown type, empty encoding */ _cellInfoUpdateNotify;
+    void /* unknown type, empty encoding */ _oauthResultNotify;
+    void /* unknown type, empty encoding */ _userPenaltyChangeNotify;
+    void /* unknown type, empty encoding */ _conversationPenaltyChangeNotify;
+    void /* unknown type, empty encoding */ _mailboxActivatedNotify;
+    void /* unknown type, empty encoding */ _appActionDownlinkBody;
+    void /* unknown type, empty encoding */ _sseHeartbeatBody;
+}
+
+@end

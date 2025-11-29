@@ -1,0 +1,74 @@
+@class UIView, NSString, NSArray, UIColor, MMGrowTextView, MMUILabel, WCInputController, MMUIButton;
+
+@interface MMFinderLiveLinkPromoteEditPanel : MMPageSheetBaseView <InputControllerDelegate>
+
+@property (retain, nonatomic) MMUIButton *rightButton;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *inputContentBackView;
+@property (retain, nonatomic) MMGrowTextView *growTextView;
+@property (retain, nonatomic) WCInputController *inputController;
+@property (retain, nonatomic) MMUILabel *inputTipLabel;
+@property (retain, nonatomic) MMUILabel *errorTipLabel;
+@property (nonatomic) BOOL isKeyboardShow;
+@property (nonatomic) double keyboardHeight;
+@property (retain, nonatomic) NSArray *extensionLinkAllowedList;
+@property (readonly, nonatomic) BOOL hasCopyArticleLink;
+@property (retain, nonatomic) NSString *copiedArticleLink;
+@property (nonatomic) BOOL hasClickInputTipLabel;
+@property (nonatomic) BOOL isPageWillClose;
+@property (retain, nonatomic) UIColor *tipLabelColor;
+@property (readonly, nonatomic) NSString *titleText;
+@property (readonly, nonatomic) NSString *validUriPrefixes;
+@property (nonatomic) unsigned long long keyboardAdjustBehavior;
+@property (nonatomic) BOOL resignFirstResponderOnTap;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)innerInit;
+- (id)getGrowTextView;
+- (void)initNotifications;
+- (void)setupPageSheetConfig;
+- (void)layoutSubviews;
+- (void)pageSheetWillAppear;
+- (void)pageSheetWillClose:(BOOL)a0;
+- (void)onPageSheetContainerBgTapped;
+- (id)getCurrentLeftButton;
+- (id)getCurrentRightButton;
+- (void)layoutUI;
+- (void)layoutOtherUI;
+- (void)layoutContentView;
+- (double)contentWidth;
+- (double)contentHeight;
+- (void)updateDetailViewFrameAnimated:(BOOL)a0;
+- (void)layoutInputContentBackView;
+- (void)layoutGrowTextView;
+- (double)getGrowTextViewHeight;
+- (void)updateInputTipLabel:(id)a0;
+- (void)layoutInputTipLabel;
+- (void)layoutErrorTipLabel;
+- (void)initInputController;
+- (void)updateNavRightButtonEnable;
+- (void)updateInputTipLabelHidden;
+- (void)onLeftButtonAction;
+- (void)onRightButtonAction;
+- (void)onLinkConfirmed:(id)a0;
+- (void)onInputTipLabelTap:(id)a0;
+- (void)didCommitText:(id)a0;
+- (void)textViewTextDidChange;
+- (double)getVisibleHeight;
+- (void)makeInputBecomeFirstResponder;
+- (void)showErrorTips:(id)a0;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)animateAdjustTextViewWithDuration:(double)a0;
+- (void)getExtensionLinkAllowedList;
+- (void)detectCopyArticleLink;
+- (void)updateCopiedArticleLink:(id)a0;
+- (BOOL)checkLinkTextValid:(id)a0;
+- (id)placeholderText;
+- (void).cxx_destruct;
+
+@end

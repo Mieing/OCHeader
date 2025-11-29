@@ -1,0 +1,3 @@
+@interface RoomAudioRoomBgApiRoot : GPBRootObject
+
+@end

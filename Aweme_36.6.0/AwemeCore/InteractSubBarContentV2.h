@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface InteractSubBarContentV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveLikeEggSyncdataRoot : GPBRootObject
+
+@end

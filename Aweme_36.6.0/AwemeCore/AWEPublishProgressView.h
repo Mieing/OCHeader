@@ -1,0 +1,84 @@
+@class UITapGestureRecognizer, NSString, NSHashTable, UIView, UIButton;
+@protocol AWETaskProgressViewProtocol, AWEPublishCancelDialogProtocol;
+
+@interface AWEPublishProgressView : UIView <AWEPublishTaskMessage, AWEPublishCancelDialogDelegate, AWEPublishProgressViewProtocol>
+
+@property (retain, nonatomic) UIButton *button;
+@property (retain, nonatomic) UIView<AWETaskProgressViewProtocol> *currentTaskView;
+@property (retain, nonatomic) UIView<AWETaskProgressViewProtocol> *nextTaskView;
+@property (weak, nonatomic) UITapGestureRecognizer *taskViewGestureRecognizer;
+@property (nonatomic) BOOL isInPublish;
+@property (nonatomic) BOOL isFirstPublishStimulateAnimating;
+@property (retain, nonatomic) id token;
+@property (nonatomic) BOOL needShowFlag;
+@property (retain, nonatomic) id<AWEPublishCancelDialogProtocol> cancelDialog;
+@property (copy, nonatomic) id /* block */ canBeginShowBlock;
+@property (copy, nonatomic) id /* block */ addProgressViewInControllerBlock;
+@property (copy, nonatomic) id /* block */ didClickBlock;
+@property (copy, nonatomic) id /* block */ beginPublishBlock;
+@property (copy, nonatomic) id /* block */ endPublishBlock;
+@property (nonatomic) unsigned long long displayType;
+@property (nonatomic) BOOL isInFollowFeed;
+@property (retain, nonatomic) NSHashTable *containerTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEFeedModuleServiceDOUYINJXAdapterClass;
++ (Class)aAWEStudioDOUYINSSAdapterClass;
++ (struct CGSize { double x0; double x1; })taskViewSize;
++ (Class)aAWEStudioPublishAwemeAdapterClass;
++ (Class)aAWEDSStudioAdapterClass;
++ (id)createTaskProgressViewForTask:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
++ (Class)aAWEPublishProgressViewDOUYINLiteAdapterClass;
++ (struct CGSize { double x0; double x1; })viewSize;
+
+- (void)task:(id)a0 didAppendWithInfo:(id)a1;
+- (void)task:(id)a0 progressDidChangeWithInfo:(id)a1;
+- (void)task:(id)a0 didRemoveWithResult:(long long)a1 error:(id)a2 info:(id)a3;
+- (void)task:(id)a0 didResumeAtStage:(id)a1;
+- (id)aAWEFeedModuleServiceDOUYINJXAdapter;
+- (BOOL)canShow:(id)a0;
+- (id)aAWEStudioDOUYINSSAdapter;
+- (void)showAddToControllerIfNeeded;
+- (void)forceShow:(BOOL)a0;
+- (void)p_hide;
+- (void)p_removeSubViews;
+- (void)configPorgressView;
+- (BOOL)configProgressViewCondition:(id)a0;
+- (void)p_dequeue;
+- (void)p_beginPublish;
+- (void)showProgressIfNeed:(id)a0;
+- (void)enableCancelAction;
+- (void)taskProgressViewTapped:(id)a0;
+- (void)replaceCurrentTaskViewWithAnimation;
+- (void)configProgressViewWithTaskV2:(id)a0;
+- (void)p_enableCancelSheetAfterSeconds:(double)a0 forTask:(id)a1;
+- (void)configNextPublishTask:(id)a0 withAnimation:(BOOL)a1;
+- (void)publishCancelDialogDidFinish;
+- (id)aAWEStudioPublishAwemeAdapter;
+- (id)aAWEDSStudioAdapter;
+- (void)onRetryViewShow:(id)a0;
+- (void)onRetryViewHide:(id)a0;
+- (void)publishShareToastWithType:(unsigned long long)a0 task:(id)a1 model:(id)a2;
+- (void)showPublishShareToastWithTask:(id)a0;
+- (void)showWelfareActivityOutOfMoneyAlertWithTask:(id)a0;
+- (void)p_buttonPressed;
+- (void)configProgressViewWithQuickShareTask:(id)a0;
+- (BOOL)p_enableAutoSaveShareContentWithTask:(id)a0;
+- (BOOL)isToastPublishWithNoWaterMarkOfSharePanel:(id)a0;
+- (id)aAWEPublishProgressViewDOUYINLiteAdapter;
+- (BOOL)p_ifHotSearchPageNeedShowToast:(id)a0;
+- (void)showSaveDraftSuccessToastOnTaskCancellation:(id)a0;
+- (void)p_fetchTokenWithContext:(id)a0 isFlowerRedPacketPublish:(BOOL)a1;
+- (BOOL)p_hasAlbumPermission;
+- (id)generalPublishString;
+- (void).cxx_destruct;
+- (void)setHidden:(BOOL)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (BOOL)show:(BOOL)a0;
+- (void)dismiss:(BOOL)a0;
+
+@end

@@ -1,0 +1,14 @@
+@interface TIMXPBNGetConversationSpecifiedMessageListRequestBody : GPBMessage
+
+@property (nonatomic) int messageListType;
+@property (nonatomic) BOOL hasMessageListType;
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (nonatomic) long long offset;
+@property (nonatomic) BOOL hasOffset;
+@property (nonatomic) long long count;
+@property (nonatomic) BOOL hasCount;
+
++ (id)descriptor;
+
+@end

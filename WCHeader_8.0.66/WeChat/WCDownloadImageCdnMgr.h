@@ -1,0 +1,95 @@
+@class NSString, NSMutableDictionary, NSMutableSet, OrderedDictionary;
+@protocol WCCdnDownloadImageDelegate;
+
+@interface WCDownloadImageCdnMgr : NSObject <ICdnComMgrExt, CNetworkStatusExt, WCMomentsNetworkEvaluatorExt> {
+    int _maxThumbDownloadCount;
+    int _maxImageDownloadCount;
+    OrderedDictionary *_dicThumbPendingTask;
+    OrderedDictionary *_dicImagePendingTask;
+    NSMutableDictionary *_dicThumbRunningTaskInfo;
+    NSMutableDictionary *_dicImageRunningTaskInfo;
+    NSMutableSet *_chokedTaskIDs;
+    NSMutableSet *_filteredChokedTaskIDs;
+    long long _currScene;
+}
+
+@property (retain, nonatomic) NSMutableDictionary *mediaThumbDownloadStateDic;
+@property (readonly, nonatomic) long long category;
+@property (weak, nonatomic) id<WCCdnDownloadImageDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (long long)imageDownloadCategoryForDataItem:(id)a0;
++ (long long)imageDownloadCategoryForMediaItem:(id)a0;
+
+- (id)initWithCategory:(long long)a0;
+- (void)dealloc;
+- (id)createTaskInfo;
+- (void)StartDownloadImage:(id)a0 downloadType:(long long)a1;
+- (void)StartDownloadImage:(id)a0 downloadType:(long long)a1 needNotify:(BOOL)a2 force:(BOOL)a3;
+- (void)StartDownloadImage:(id)a0 downloadType:(long long)a1 needNotify:(BOOL)a2 force:(BOOL)a3 preloadItem:(id)a4;
+- (void)StartDownloadImage:(id)a0 downloadType:(long long)a1 needNotify:(BOOL)a2 force:(BOOL)a3 preloadItem:(id)a4 isAd:(BOOL)a5;
+- (void)startDownloadWCImage:(id)a0 downloadType:(long long)a1 needNotify:(BOOL)a2 force:(BOOL)a3 preloadItem:(id)a4 isAd:(BOOL)a5;
+- (void)startDownloadWWImage:(id)a0 downloadType:(long long)a1 needNotify:(BOOL)a2 force:(BOOL)a3 preloadItem:(id)a4 isAd:(BOOL)a5;
+- (void)StartBatchDownloadThumb:(id)a0 targetMedias:(id)a1;
+- (void)StopDownloadImage:(id)a0 downloadType:(long long)a1;
+- (void)CheckAllQueue;
+- (void)CheckQueue:(long long)a0;
+- (BOOL)realStartDownloadSnsImage:(id)a0;
+- (BOOL)realStartDownloadSnsWCImage:(id)a0;
+- (BOOL)realStartDownloadSnsWWImage:(id)a0;
+- (void)createFileForTaskInfo:(id)a0;
+- (BOOL)isCacheExist:(id)a0 downloadType:(long long)a1;
+- (BOOL)isTaskPending:(id)a0 downloadType:(long long)a1;
+- (BOOL)isTaskRunning:(id)a0 downloadType:(long long)a1;
+- (BOOL)isBatchTaskExistSameFeed:(id)a0;
+- (BOOL)finishBatchTask:(id)a0;
+- (id)getRunningTaskContainsTaskId:(id)a0;
+- (id)getRunningTaskContainsTaskId:(id)a0 downloadType:(long long *)a1;
+- (id)getWcUrlForMediaItem:(id)a0 downloadType:(long long)a1;
+- (id)getUrlForMediaItem:(id)a0 downloadType:(long long)a1;
+- (id)getDataUrl:(id)a0;
+- (void)removePendingTask:(id)a0;
+- (void)removeRunningTask:(id)a0;
+- (void)pullDownloadMediaToFront:(id)a0 downloadType:(long long)a1;
+- (void)setDownloadScene:(long long)a0;
+- (BOOL)isImageTaskExist:(id)a0 downloadType:(long long)a1;
+- (id)getOneBatchMediaItemInfoForCdnResult:(id)a0 taskInfo:(id)a1;
+- (id)getOneBatchMediaItemInfoByIndex:(unsigned int)a0 taskInfo:(id)a1;
+- (void)transSingleDownloadTaskFromBatchTask:(id)a0;
+- (void)updateDownloadConcurrentCount;
+- (void)useDefaultImageDownloadConcurrentCount;
+- (BOOL)isReachConcurrentLimit:(long long)a0;
+- (unsigned int)getMaxConcurrentCount:(long long)a0;
+- (id)filterBatchMedias:(id)a0;
+- (id)getDicPendingTask:(long long)a0;
+- (id)getDicRunningTask:(long long)a0;
+- (void)addRunningTask:(id)a0 type:(long long)a1;
+- (id)genTaskIdFor:(id)a0 type:(long long)a1;
+- (id)genBatchTaskIdForTid:(id)a0;
+- (id)genBatchTaskItemIdFor:(id)a0;
+- (id)getMediaIdFromTaskId:(id)a0;
+- (long long)getDownloadTypeFromTaskId:(id)a0;
+- (void)markChokedInfoForStartingTask:(id)a0;
+- (void)markRunningTasksAsSuspended;
+- (void)markRunningTasksAsSufferedFromBadNetwork;
+- (void)checkChokedRunningTasksForType:(long long)a0;
+- (void)checkChokedRunningTask:(id)a0 forType:(long long)a1;
+- (void)OnCdnDownloadProgress:(id)a0;
+- (void)reportDownloadRecord:(id)a0 taskInfo:(id)a1;
+- (void)OnCdnDownload:(id)a0;
+- (BOOL)onPostHandleResult:(id)a0 cdnInfo:(id)a1;
+- (void)applicationDidEnterBackground:(id)a0;
+- (void)applicationWillSuspend:(id)a0;
+- (void)ReachabilityChange:(unsigned int)a0;
+- (void)networkEvaluator:(id)a0 networkConnectionStatusDidChange:(unsigned int)a1;
+- (void)networkEvaluator:(id)a0 networkLinkConditionDidChange:(long long)a1;
+- (void)logMd5WithRaw:(id)a0 andJpg:(id)a1 andUrl:(id)a2 idInfo:(id)a3;
+- (void)debugTask:(id)a0;
+- (unsigned int)getMediaDownloadStatus:(id)a0 downloadType:(long long)a1;
+- (void)fillMediaDownloadStat:(id)a0 taskInfo:(id)a1;
+- (void).cxx_destruct;
+
+@end

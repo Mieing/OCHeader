@@ -1,0 +1,3 @@
+@interface EEABTestRegister : NSObject
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AutoOpenConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long status;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *describe;
+
++ (id)descriptor;
+
+@end

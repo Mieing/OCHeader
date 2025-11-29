@@ -1,0 +1,3 @@
+@interface IESGCPDetailTeamPlayBarView : IESGCPDetailInteractionBarView
+
+@end

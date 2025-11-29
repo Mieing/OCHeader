@@ -1,0 +1,76 @@
+@class IESECListKitSharedData, NSDictionary, IESECTabKitContainerStatusVC, IESECTabKitTabPerfInfo, NSMutableArray, UIScrollView, IESECTabKitHybridModel, NSString, IESECTabKitTabModel, IESECServiceProxy, IESECListKitCardPreloader, IESECListKitBFFViewController, IESECTabKitDIContext;
+@protocol IESECTabKitTabElementDelegate, IESECTabKitMonitorService, IESECTabKitAbilityService, IESECTabKitHybridProviderProtocol, IESECTabKitDataService, IESECTabKitContainerTrackService;
+
+@interface IESECTabKitHybridTabElement : UIViewController <UIScrollViewDelegate, UICollectionViewDelegate, IESECListCardsContextDelegate, IESECListKitBFFViewControllerDelegate, IESECTabKitTabElementProtocol, IESECTabKitHybridTabElement>
+
+@property (copy, nonatomic) NSString *bizTag;
+@property (nonatomic) unsigned long long cursor;
+@property (nonatomic) BOOL firstFetch;
+@property (nonatomic) BOOL isRequestOnAir;
+@property (nonatomic) BOOL hasReportMonitor;
+@property (nonatomic) long long closeClickArea;
+@property (weak, nonatomic) IESECTabKitDIContext *context;
+@property (retain, nonatomic) IESECTabKitTabModel *tabModel;
+@property (retain, nonatomic) NSMutableArray *tabKitBridges;
+@property (retain, nonatomic) IESECTabKitHybridModel *hybridModel;
+@property (retain, nonatomic) IESECTabKitTabPerfInfo *tabPerfInfo;
+@property (retain, nonatomic) IESECListKitBFFViewController *listVC;
+@property (retain, nonatomic) IESECTabKitContainerStatusVC *statusVC;
+@property (retain, nonatomic) IESECListKitCardPreloader *lynxCardPreloader;
+@property (retain, nonatomic) IESECListKitSharedData *sharedData;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitDataService> *dataService;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitMonitorService> *monitorService;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitContainerTrackService> *trackService;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitAbilityService> *abilityService;
+@property (retain, nonatomic) id<IESECTabKitHybridProviderProtocol> provider;
+@property (readonly, nonatomic) BOOL bdx_statusBarHidden;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<IESECTabKitTabElementDelegate> delegate;
+@property (readonly, nonatomic) UIScrollView *scrollView;
+@property (readonly, nonatomic) long long statusBarStyle;
+@property (copy, nonatomic) NSDictionary *customBtmParams;
+@property (copy, nonatomic) NSDictionary *globalProps;
+
+- (void)currentCardsWriteAlogMethodName:(id)a0 paramModel:(id)a1 result:(id)a2 context:(id)a3;
+- (id)currentListContextIdForCards;
+- (void)sendEvent:(id)a0 params:(id)a1;
+- (void)registerBridge:(id)a0;
+- (void)loadMoreData;
+- (void)registerBridges;
+- (void)configBtmTrackerV2;
+- (id)listKitEnvIdentifier;
+- (void)configRefreshFooter;
+- (void)viewVisibilityChange:(BOOL)a0;
+- (void)reportMonitor;
+- (BOOL)hiddenStatusBar;
+- (void)reloadWithTabModel:(id)a0;
+- (id)providersMap;
+- (void)resetHeightMode;
+- (id)trackEventModelWithEventName:(id)a0;
+- (void)reportPageLeave;
+- (id)customBridges;
+- (void)configRefreshHeaderIfNeeded;
+- (void)requestData:(id /* block */)a0 isRefresh:(BOOL)a1;
+- (void)footerEndRefreshingWithHasMore:(BOOL)a0;
+- (void)initFetchData;
+- (void)handleCloseEvent:(id)a0 params:(id)a1;
+- (void)handleContainerDestroyEvent:(id)a0;
+- (void)initialProvider;
+- (void)setupListVCDelegate;
+- (void)preloadLynxTemplates;
+- (void)reportPageVisit;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (id)initWithContext:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)setupViews;
+- (id)envIdentifier;
+
+@end

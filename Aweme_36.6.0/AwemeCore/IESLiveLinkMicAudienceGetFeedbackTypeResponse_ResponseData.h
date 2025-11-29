@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESLiveLinkMicAudienceGetFeedbackTypeResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *issueCategoriesArray;
+@property (readonly, nonatomic) unsigned long long issueCategoriesArray_Count;
+
++ (id)descriptor;
+
+@end

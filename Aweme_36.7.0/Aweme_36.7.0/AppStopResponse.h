@@ -1,0 +1,10 @@
+@class AppStopResponse_Data;
+
+@interface AppStopResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AppStopResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,80 @@
+@class NSString, NSMutableDictionary, NSRecursiveLock;
+
+@interface MMDiskUsageScanStat : NSObject <PBCoding>
+
+@property (nonatomic) unsigned int m_totalStartTime;
+@property (nonatomic) unsigned int m_totalEndTime;
+@property (nonatomic) unsigned int m_totalUsedTime;
+@property (nonatomic) unsigned int m_totalScanCount;
+@property (nonatomic) unsigned int m_totalFolderNum;
+@property (nonatomic) unsigned int m_totalDelFolderNum;
+@property (nonatomic) unsigned int m_totalFileNum;
+@property (nonatomic) unsigned long long m_totalFileSize;
+@property (nonatomic) unsigned int m_totalDelFileNum;
+@property (nonatomic) unsigned long long m_totalDelFileSize;
+@property (retain, nonatomic) NSMutableDictionary *m_dicTotalBizStat;
+@property (retain, nonatomic) NSMutableDictionary *m_dicTotalFileTypeInUseStat;
+@property (retain, nonatomic) NSMutableDictionary *m_dicTotalWechatFileClassStat;
+@property (nonatomic) unsigned long long m_totalLogicFileSize;
+@property (nonatomic) unsigned int m_totalPuffyFileNum;
+@property (nonatomic) unsigned long long m_totalPuffyFileSize;
+@property (nonatomic) unsigned long long m_totalPuffyLogicFileSize;
+@property (nonatomic) unsigned long long hardlinkIgnoreSize;
+@property (nonatomic) unsigned long long hardlinkIgnoreCnt;
+@property (nonatomic) unsigned long long hardlinkTotalCnt;
+@property (nonatomic) unsigned long long cowIgnoreSize;
+@property (nonatomic) unsigned long long cowIgnoreCnt;
+@property (nonatomic) unsigned long long cowTotalCnt;
+@property (nonatomic) unsigned int m_curStartTime;
+@property (nonatomic) unsigned int m_curEndTime;
+@property (nonatomic) unsigned int m_curUsedTime;
+@property (nonatomic) unsigned int m_curScannedFolderNum;
+@property (nonatomic) unsigned int m_curAddFolderNum;
+@property (nonatomic) unsigned int m_curScannedFileNum;
+@property (nonatomic) unsigned int m_curDelFolderNum;
+@property (nonatomic) unsigned int m_curDelFileNum;
+@property (nonatomic) unsigned long long m_curDelFileSize;
+@property (nonatomic) unsigned int m_hitCacheCount;
+@property (nonatomic) unsigned int m_setCacheCount;
+@property (nonatomic) unsigned int m_refreshCacheTimeCount;
+@property (nonatomic) unsigned int m_timeOutCacheCount;
+@property (nonatomic) unsigned int m_fileModifyCacheCount;
+@property (nonatomic) unsigned int m_changeCacheCount;
+@property (nonatomic) unsigned int m_midImgWxamFileCount;
+@property (nonatomic) unsigned int m_midImgTotalFileCount;
+@property (nonatomic) BOOL m_isStart;
+@property (retain, nonatomic) NSRecursiveLock *markLock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_m_totalStartTime;
++ (void)PBArrayAdd_m_totalEndTime;
++ (void)PBArrayAdd_m_totalUsedTime;
++ (void)PBArrayAdd_m_totalScanCount;
++ (void)PBArrayAdd_m_totalFolderNum;
++ (void)PBArrayAdd_m_totalFileNum;
++ (void)PBArrayAdd_m_totalFileSize;
++ (void)PBArrayAdd_m_dicTotalBizStat;
++ (void)PBArrayAdd_m_totalDelFolderNum;
++ (void)PBArrayAdd_m_totalDelFileNum;
++ (void)PBArrayAdd_m_totalDelFileSize;
++ (void)PBArrayAdd_m_dicTotalFileTypeInUseStat;
++ (void)PBArrayAdd_m_dicTotalWechatFileClassStat;
++ (void)PBArrayAdd_m_totalLogicFileSize;
++ (void)PBArrayAdd_m_totalPuffyFileNum;
++ (void)PBArrayAdd_m_totalPuffyFileSize;
++ (void)PBArrayAdd_m_totalPuffyLogicFileSize;
++ (void)initialize;
+
+- (id)getPBPropertyTable;
+- (id)init;
+- (void)markStartTime;
+- (void)markStopTime:(BOOL)a0;
+- (id)currentScanSummary;
+- (id)totalScanSummy;
+- (id)getFileClassDetailInfo;
+- (void).cxx_destruct;
+
+@end

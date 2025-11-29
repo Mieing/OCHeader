@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkMicPositionListChangeContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *positionsArray;
+@property (readonly, nonatomic) unsigned long long positionsArray_Count;
+
++ (id)descriptor;
+
+@end

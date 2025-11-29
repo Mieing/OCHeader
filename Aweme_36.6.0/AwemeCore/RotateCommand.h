@@ -1,0 +1,10 @@
+@interface RotateCommand : LolaDrawCommand
+
+@property (nonatomic) double angle;
+
+- (void)configWithData:(id)a0 context:(id)a1;
+- (void)draw:(id)a0 context:(struct CGContext { } *)a1;
+- (id)typeStr;
+- (void)recycle;
+
+@end

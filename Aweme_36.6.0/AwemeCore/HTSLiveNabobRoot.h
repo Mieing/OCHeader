@@ -1,0 +1,3 @@
+@interface HTSLiveNabobRoot : GPBRootObject
+
+@end

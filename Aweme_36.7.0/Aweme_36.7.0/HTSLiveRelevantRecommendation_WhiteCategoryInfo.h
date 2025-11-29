@@ -1,0 +1,7 @@
+@interface HTSLiveRelevantRecommendation_WhiteCategoryInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long firstLevelTagId;
+
++ (id)descriptor;
+
+@end

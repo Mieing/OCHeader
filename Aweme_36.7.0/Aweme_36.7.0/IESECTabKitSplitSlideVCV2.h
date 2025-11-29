@@ -1,0 +1,88 @@
+@class NSString, IESECTabKitSplitIndicatorView, IESECServiceProxy, IESECTabKitDIContext, UIView, UIPanGestureRecognizer, UITapGestureRecognizer;
+@protocol IESECTabKitEventSubscriber, IESECTabKitLayoutService, IESECTabKitEventService, IESECTabKitInterceptCloseService, IESECTabKitDataService;
+
+@interface IESECTabKitSplitSlideVCV2 : UIViewController <UIGestureRecognizerDelegate, IESECTabKitEventSubscriber, IESECTabKitSplitSlideVC> {
+    BOOL _isPrePlaying;
+    Class _feedPlayerControl;
+}
+
+@property (retain, nonatomic) IESECTabKitDIContext *tabKitCtx;
+@property (nonatomic) double splitRatio;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitDataService> *dataService;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitLayoutService> *layoutService;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitInterceptCloseService> *interceptCloseService;
+@property (retain, nonatomic) IESECServiceProxy<IESECTabKitEventService, IESECTabKitEventSubscriber> *eventService;
+@property (nonatomic) struct CGPoint { double x; double y; } panStartPoint;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (retain, nonatomic) UIView *maskBgView;
+@property (retain, nonatomic) IESECTabKitSplitIndicatorView *splitIndicatorView;
+@property (nonatomic) BOOL isFirstWillAppear;
+@property (nonatomic) BOOL isFirstDidAppear;
+@property (nonatomic) BOOL willAutoSlideToFull;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) unsigned long long screenState;
+@property (readonly, nonatomic) BOOL isSlideFirstAnimated;
+@property (readonly, nonatomic) UIView *slideContainerView;
+@property (readonly, nonatomic) double curSlideY;
+@property (readonly, nonatomic) double slideInitialY;
+@property (readonly, nonatomic) double slideFullMinY;
+@property (readonly, nonatomic) double slideSplitMaxY;
+@property (readonly, nonatomic) double curSlideDistance;
+@property (readonly, nonatomic) double maxSlideDistance;
+@property (nonatomic) double upSlideMinY;
+@property (nonatomic) double fullScreenStateY;
+@property (nonatomic) double autoUpSlideToFullY;
+@property (nonatomic) double maskAlpha;
+@property (nonatomic) BOOL overflowShow;
+@property (nonatomic) long long splitRadius;
+@property (nonatomic) BOOL disableAutoSlide;
+@property (nonatomic) BOOL disableUpFullScreen;
+@property (nonatomic) BOOL disablePullDownClose;
+@property (nonatomic) BOOL splitIndicatorHidden;
+@property (nonatomic) double splitIndicatorTopOffset;
+
+- (void)addGestures;
+- (void)setupBindings;
+- (BOOL)panGestureShouldBegin:(id)a0;
+- (void)iesectabkit_didMoveToTabItem:(id)a0 moveType:(unsigned long long)a1;
+- (void)iesectabkit_didTapAtTopTabItem:(id)a0;
+- (void)changeScreenState:(unsigned long long)a0 animated:(BOOL)a1;
+- (void)configSplitIndicatorView;
+- (void)playFeedPlayerIfNeeded;
+- (void)configSlideContainerFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 animated:(BOOL)a1 updateScreenStateImmediate:(BOOL)a2 completion:(id /* block */)a3;
+- (void)configCornerRadius;
+- (void)configSlideContainerHeight;
+- (void)reloadSplitStyleWithConfig:(id)a0;
+- (void)autoSlideIfNeeded;
+- (void)willUpdateScreenState;
+- (void)updateScreenState;
+- (void)configSlideFinalState;
+- (BOOL)shouldSlideToFull;
+- (void)interruptPan;
+- (BOOL)validateSlideOffset:(double)a0;
+- (BOOL)shouldUpdateToFullScreenState;
+- (BOOL)slideContainerNotReachFullMinY;
+- (BOOL)slideContainerNotReachSplitMaxY;
+- (BOOL)tapGestureHitDismiss:(id)a0;
+- (void)initParams:(id)a0;
+- (void)configSplitIndicator;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (id)initWithContext:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillLayoutSubviews;
+- (void)dismissAction;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)sendScrollEvent;
+- (void)setupViews;
+- (void)handlePanGesture:(id)a0;
+
+@end

@@ -1,0 +1,19 @@
+@class NSMutableArray;
+
+@interface AWESearchScanHistoryContentFlowLayout : UICollectionViewFlowLayout
+
+@property (retain, nonatomic) NSMutableArray *layoutAttributes;
+@property (retain, nonatomic) NSMutableArray *itemAttributes;
+@property (retain, nonatomic) NSMutableArray *headerAttributes;
+
+- (long long)p_itemAttributesIndexOfIndexPath:(id)a0;
+- (void).cxx_destruct;
+- (id)layoutAttributesForItemAtIndexPath:(id)a0;
+- (struct CGSize { double x0; double x1; })collectionViewContentSize;
+- (id)layoutAttributesForSupplementaryViewOfKind:(id)a0 atIndexPath:(id)a1;
+- (id)layoutAttributesForDecorationViewOfKind:(id)a0 atIndexPath:(id)a1;
+- (void)prepareLayout;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)init;
+
+@end

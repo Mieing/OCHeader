@@ -1,0 +1,12 @@
+@class UrlStructV2;
+
+@interface AwemeLabelStructV2 : GPBMessage
+
+@property (retain, nonatomic) UrlStructV2 *labelURL;
+@property (nonatomic) BOOL hasLabelURL;
+@property (nonatomic) int labelType;
+@property (nonatomic) BOOL hasLabelType;
+
++ (id)descriptor;
+
+@end

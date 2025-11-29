@@ -1,0 +1,14 @@
+@class NSString, BattleUserInfo;
+
+@interface PKRecord : IESLivePBBaseMessage
+
+@property (nonatomic) long long battleStartTime;
+@property (nonatomic) int resultType;
+@property (retain, nonatomic) BattleUserInfo *userInfo;
+@property (nonatomic) BOOL hasUserInfo;
+@property (copy, nonatomic) NSString *anchorScoreText;
+@property (copy, nonatomic) NSString *oppositeScoreText;
+
++ (id)descriptor;
+
+@end

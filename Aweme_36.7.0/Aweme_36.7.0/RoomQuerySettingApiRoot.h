@@ -1,0 +1,3 @@
+@interface RoomQuerySettingApiRoot : GPBRootObject
+
+@end

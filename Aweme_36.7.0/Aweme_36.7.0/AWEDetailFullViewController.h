@@ -1,0 +1,88 @@
+@class UIView, AWEDetailShimmerContainerView, NSArray, AWEDetailNewStyleShootButton, NSString, AWEDetailNaviBar, AWEDetailShimmerView, UILabel;
+@protocol AWEDetailManagerProtocol;
+
+@interface AWEDetailFullViewController : AWEDetailBaseViewController <AWEDetailFullNaviBarHost, AWEDetailViewControllerProtocol, AWEDetailUnifyNaviBarHost, AWERouterViewControllerProtocol, AWEDetailEnterAwemeDetailHost> {
+    UILabel *_noMoreTipLabel;
+}
+
+@property (retain, nonatomic) AWEDetailShimmerContainerView *shimmerContainerView;
+@property (retain, nonatomic) AWEDetailShimmerView *awemeListShimmerView;
+@property (nonatomic) BOOL isloading;
+@property (nonatomic) BOOL isHalfScreen;
+@property (retain, nonatomic) UIView *naviBarBackgroundView;
+@property (retain, nonatomic) AWEDetailNewStyleShootButton *actionButton;
+@property (weak, nonatomic) id<AWEDetailManagerProtocol> detailManager;
+@property (retain, nonatomic) id<AWEDetailManagerProtocol> strongDetailManager;
+@property (retain, nonatomic) AWEDetailNaviBar *customNaviBar;
+@property (nonatomic) BOOL defultHalf;
+@property (nonatomic) BOOL useUnifyNaviBarAnimate;
+@property (nonatomic) BOOL useUnifyOptimizeStyle;
+@property (copy, nonatomic) NSArray *cachedHeaderViews;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isFullPage;
+
+- (id)dux_sheetShouldRecognizeAsynchronousWithGestures;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)duxGrid_viewDidChangeBreakPointFrom:(struct { long long x0; long long x1; })a0 toBreakPoint:(struct { long long x0; long long x1; })a1;
+- (void)setupInjectServiceOnInit;
+- (void)registerNotificationsOnInit;
+- (void)registerBusinessHandlersOnInit;
+- (void)setupUIOnViewDidLoad;
+- (void)setupConstraintsOnViewDidLoad;
+- (void)bindViewModelOnViewDidLoad;
+- (void)handleDetailInfoFetchStateChange;
+- (void)handleCollectionViewUpdateCompletion;
+- (id)noMoreTipLabel;
+- (void)configPlayInteractionViewController:(id)a0;
+- (void)popUpHalfScreenDetailPageWithHeight:(double)a0 animation:(BOOL)a1;
+- (void)didExpandToFullPage;
+- (void)didFoldToHalfPage;
+- (void)willExpandToFullPage;
+- (void)willFoldToHalfPage;
+- (void)partialSheetDidClickMaskArea;
+- (BOOL)shouldPlayVideoWhenFold;
+- (void)FullpageDidChangeProgress:(double)a0 withUserInteraction:(BOOL)a1 offset:(double)a2;
+- (id)sheetContentScrollView;
+- (void)setAwemeModelForViewModel:(id)a0 trackDict:(id)a1;
+- (id)partialSheetSuppressingGestures;
+- (void)onActionButtonClicked:(id)a0;
+- (BOOL)cellIsVisibleToUser:(id)a0;
+- (double)collectionViewOffsetFixer;
+- (double)naviBarBottomOffsetY;
+- (id)customNaviBarForHandler:(id)a0;
+- (id)contentCollectionViewForHandler:(id)a0;
+- (id)naviBarBackgroundViewForHandler:(id)a0;
+- (double)awemeListSectionOffsetY;
+- (id)headerViewsForHandler:(id)a0;
+- (void)setCollectionViewContentInsetTop:(double)a0;
+- (id)placeHolderNaviBarObject;
+- (id)placeHolderShimmerViewObject;
+- (BOOL)shouldUseWideStyleActionButton;
+- (void)setupConstraintsForActionButtons:(id)a0;
+- (void)handleNaviBarObjectChange;
+- (void)handleShimmerViewObjectChange;
+- (BOOL)shouldShowFetchLoading;
+- (void)updateAwemeListShimmerViewIfNeeded;
+- (double)getAwemeListTopOffset;
+- (double)getAwemeListBottomOffset;
+- (void)onNaviBarCloseButtonClicked:(id)a0;
+- (BOOL)VCIsBeingDismissed;
+- (void)updateViewHeightWhileProgress:(double)a0;
+- (BOOL)shouldChangeCollectButtonAlpha;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })headerViewFrame;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })titleLabelFrame;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })collectButtonFrame;
+- (BOOL)isFullPageWithFrameCheck;
+- (void)buildTopShareButton;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (BOOL)accessibilityScroll:(long long)a0;
+
+@end

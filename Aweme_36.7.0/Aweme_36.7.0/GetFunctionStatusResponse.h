@@ -1,0 +1,10 @@
+@class GetFunctionStatusResponse_ResponseData;
+
+@interface GetFunctionStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetFunctionStatusResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

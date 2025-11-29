@@ -1,0 +1,71 @@
+@class AWEAwemeModel, AWERVDetailVideoRelatedVideoTabLoadingView, UIView, UIScrollView, AWERVDetailPageContext, AWEGradientView, NSString, NSMutableSet, AWERelatedVideoVacantView, NSIndexPath;
+@protocol AWECommentInputViewProtocol;
+
+@interface AWERelatedVideoDetailVideoRelatedVideoWaterFlowViewController : AWEBaseListViewController <UICollectionViewDelegate, AWEZoomTransitionOuterContextProvider, AWERelatedVideoDetailVideoRelatedVideoViewControllerProtocol>
+
+@property (retain, nonatomic) AWERVDetailVideoRelatedVideoTabLoadingView *loadingView;
+@property (retain, nonatomic) AWERelatedVideoVacantView *retryView;
+@property (retain, nonatomic) AWEGradientView *gradientView;
+@property (retain, nonatomic) AWEAwemeModel *aweModel;
+@property (retain, nonatomic) UIView<AWECommentInputViewProtocol> *commentInputView;
+@property (retain, nonatomic) NSMutableSet *exposedCellSet;
+@property (nonatomic) BOOL isNotFirstRefresh;
+@property (nonatomic) BOOL disableCellSelectActoin;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (nonatomic) BOOL isPlayingBeforeShowAlert;
+@property (readonly, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) AWERVDetailPageContext *pageContext;
+@property (copy, nonatomic) id /* block */ onDidScroll;
+@property (copy, nonatomic) id /* block */ didCreateInputView;
+@property (copy, nonatomic) id /* block */ didHideInputView;
+@property (copy, nonatomic) id /* block */ willHideInputView;
+@property (copy, nonatomic) id /* block */ didShowInputView;
+@property (copy, nonatomic) id /* block */ willShowInputView;
+@property (copy, nonatomic) id /* block */ didGetSuggestWords;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)listDidReloadDataWithCollectionView:(id)a0;
+- (id)zoomTransitionStartViewForOffset:(long long)a0;
+- (id)logExtraDict;
+- (id)layoutForCollectionView;
+- (id)sectionControllerClassArray;
+- (void)dataSourceDidCreateSectionController:(id)a0 forSectionViewModel:(id)a1;
+- (void)bindObserve;
+- (void)handleSafetyPreCheckNotification:(id)a0;
+- (void)refreshWithFirstRequestResponse:(id)a0 requestTime:(double)a1;
+- (void)startRequestAnimating;
+- (void)refreshModel:(id)a0 params:(id)a1;
+- (void)refreshRelatedVideosWithItemID:(id)a0 scene:(id)a1 params:(id)a2 completion:(id /* block */)a3;
+- (void)scrollToVideoListWithAnimated:(BOOL)a0;
+- (void)setupWithRelatedPreloadVideos:(id)a0 forModel:(id)a1;
+- (BOOL)shouldShowTagWordsTab;
+- (double)getMetaInfoViewHeight;
+- (void)selectIndex:(long long)a0 word:(id)a1;
+- (double)footerResetedInsetOffset;
+- (void)respondsToSelectCellForDiversionTypeYummeWithAwemeModel:(id)a0;
+- (void)changePlayRelatedVideo:(id)a0;
+- (void)respondsToSelectCellForDiversionTypeDefaultWithAwemeModel:(id)a0;
+- (void)respondsToSelectCellForDiversionTypeNotDiversionWithAwemeModel:(id)a0;
+- (void)respondsToSelectCellForDiversionTypeXiguaWithAwemeModel:(id)a0;
+- (id)guideXiguaCommonParams;
+- (void)determineRetryViewStyle;
+- (void)recordFeedRequestTimeWithCache:(BOOL)a0;
+- (void)updateLoadingViewLayoutIfNeed;
+- (long long)defaultFilterTabWordsCount;
+- (void)updateGradientViewIfNeed;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)keyboardWillShow:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)stopLoading;
+- (void)viewDidLoad;
+- (void)setupCollectionView:(id)a0;
+- (void)playVideo;
+- (void)pauseVideo;
+
+@end

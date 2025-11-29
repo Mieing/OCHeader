@@ -1,0 +1,3 @@
+@interface HTSLivePaidLiveDataRoot : GPBRootObject
+
+@end

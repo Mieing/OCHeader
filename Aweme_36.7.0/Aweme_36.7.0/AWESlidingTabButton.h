@@ -1,0 +1,71 @@
+@class UIFont, NSString, UIView, UIImageView, AWESlidingTabMixTypeModel, DUXPopover, UILabel, AWESearchBadge;
+
+@interface AWESlidingTabButton : UIButton <IESIMSlidingTabButtonProtocol, DUXPopoverDelegate>
+
+@property (retain, nonatomic) UIImageView *trailingIconView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (nonatomic) BOOL isAlienatedTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWESearchBadge *badge;
+@property (retain, nonatomic) DUXPopover *popover;
+@property (nonatomic) long long buttonStyle;
+@property (retain, nonatomic) UIView *circleDot;
+@property (retain, nonatomic) UIImageView *iconImageView;
+@property (retain, nonatomic) UIImageView *mixImageView;
+@property (retain, nonatomic) UILabel *iconTitleLabel;
+@property (nonatomic) double iconImageViewRatio;
+@property (nonatomic) double buttonWidth;
+@property (nonatomic) double lineWidth;
+@property (nonatomic) double lineX;
+@property (retain, nonatomic) UIFont *normalFont;
+@property (retain, nonatomic) UIFont *selectedFont;
+@property (nonatomic) double titlePadding;
+@property (nonatomic) BOOL enableSwitchAnimation;
+@property (nonatomic) BOOL forceUseDarkTheme;
+@property (retain, nonatomic) UIView *customView;
+@property (retain, nonatomic) UIImageView *trailingIconView;
+@property (weak, nonatomic) id delegate;
+@property (retain, nonatomic) AWESlidingTabMixTypeModel *mixModel;
+@property (nonatomic) BOOL isMixedStyle;
+@property (nonatomic) double titleMinLength;
+
+- (void)popoverDidDisappear:(id)a0;
+- (double)buttonOriginWidth;
+- (void)clearGuide;
+- (id)showDotAndIsAlienatedTab:(BOOL)a0;
+- (id)showBadgeText:(id)a0 isAlienatedTab:(BOOL)a1;
+- (id)showBadgeNum:(long long)a0 isAlienatedTab:(BOOL)a1;
+- (void)adjustBadgeForEcommerce;
+- (id)initWithForceUseDarkTheme:(BOOL)a0;
+- (void)setMixedImageButton;
+- (void)configureText:(id)a0 image:(id)a1 selectedText:(id)a2 selectedImage:(id)a3;
+- (void)setImageAndTitleStyleButton;
+- (void)showDot:(BOOL)a0 color:(id)a1;
+- (BOOL)isDotShown;
+- (void)configureText:(id)a0 imageName:(id)a1 selectedText:(id)a2 selectedImageName:(id)a3;
+- (void)configureCustomView:(id)a0;
+- (void)updateTrailingIconWithoutAnimationWithImage:(id)a0;
+- (void)updateTrailingIconWithoutAnimationWithImage:(id)a0 offsetX:(double)a1;
+- (void)updateTrailingIconWithImage:(id)a0 transform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a1;
+- (void)updateTrailingIconAnimatedWithImage:(id)a0 transform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a1;
+- (void)updateBadgeFrame;
+- (id)showPopoverWithStyle:(long long)a0 text:(id)a1 iconURL:(id)a2 showArrow:(BOOL)a3 showDuration:(long long)a4 clickBlock:(id /* block */)a5 dismissBlock:(id /* block */)a6;
+- (void)redrawBadge:(id)a0 isAlienatedTab:(BOOL)a1;
+- (id)accessibilityLabel;
+- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setSelected:(BOOL)a0;
+- (unsigned long long)accessibilityTraits;
+- (id)init;
+- (void)layoutSubviews;
+- (void)accessibilityElementDidBecomeFocused;
+
+@end

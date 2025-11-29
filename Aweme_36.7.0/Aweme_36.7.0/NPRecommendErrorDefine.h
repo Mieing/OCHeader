@@ -1,0 +1,3 @@
+@interface NPRecommendErrorDefine : NSObject
+
+@end

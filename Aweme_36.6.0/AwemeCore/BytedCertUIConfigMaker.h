@@ -1,0 +1,14 @@
+@interface BytedCertUIConfigMaker : NSObject
+
+- (id /* block */)secondBackgroundColor;
+- (id /* block */)secondTextColor;
+- (id /* block */)actionLabelFont;
+- (id /* block */)actionCountTipLabelFont;
+- (id /* block */)faceDetectionBgImage;
+- (id /* block */)backBtnImage;
+- (id /* block */)primaryColor;
+- (id /* block */)backgroundColor;
+- (id /* block */)textColor;
+- (id /* block */)isDarkMode;
+
+@end

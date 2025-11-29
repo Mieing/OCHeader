@@ -1,0 +1,50 @@
+@interface _TtCV7FlowIMX13Im_UplinkBodyP33_0CE77254541B6B8808098F9EF8E7AF6713_StorageClass : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ _sendMessageBody;
+    void /* unknown type, empty encoding */ _sendMessageListBody;
+    void /* unknown type, empty encoding */ _fetchChunkMessageUplinkBody;
+    void /* unknown type, empty encoding */ _summonBotUplinkBody;
+    void /* unknown type, empty encoding */ _pullChainUplinkBody;
+    void /* unknown type, empty encoding */ _pullSingeChainUplinkBody;
+    void /* unknown type, empty encoding */ _pullRecentConvChainUplinkBody;
+    void /* unknown type, empty encoding */ _pullCmdUplinkBody;
+    void /* unknown type, empty encoding */ _markConvReadUplinkBody;
+    void /* unknown type, empty encoding */ _clearMsgContextUplinkBody_p;
+    void /* unknown type, empty encoding */ _clearMsgHistoryUplinkBody_p;
+    void /* unknown type, empty encoding */ _batchUpdateMsgStatusUplinkBody;
+    void /* unknown type, empty encoding */ _updateMsgContentUplinkBody;
+    void /* unknown type, empty encoding */ _feedbackMsgUplinkBody;
+    void /* unknown type, empty encoding */ _regenerateMsgUplinkBody;
+    void /* unknown type, empty encoding */ _fixRegenerateMsgUplinkBody;
+    void /* unknown type, empty encoding */ _switchRegenerateMsgUplinkBody;
+    void /* unknown type, empty encoding */ _breakStreamMsgUplinkBody;
+    void /* unknown type, empty encoding */ _retryBotReplyUplinkBody;
+    void /* unknown type, empty encoding */ _multiPutMessageUplinkBody;
+    void /* unknown type, empty encoding */ _localMessageSyncUplinkBody;
+    void /* unknown type, empty encoding */ _createConvUplinkBody;
+    void /* unknown type, empty encoding */ _getConvInfoUplinkBody;
+    void /* unknown type, empty encoding */ _batchGetConvInfoUplinkBody;
+    void /* unknown type, empty encoding */ _operateConvUplinkBody;
+    void /* unknown type, empty encoding */ _deleteUserConvUplinkBody;
+    void /* unknown type, empty encoding */ _dissolveConversationUplinkBody;
+    void /* unknown type, empty encoding */ _updateConversationUplinkBody;
+    void /* unknown type, empty encoding */ _conversationAutoGenUplinkBody;
+    void /* unknown type, empty encoding */ _addParticipantUplinkBody;
+    void /* unknown type, empty encoding */ _quitConversationUplinkBody;
+    void /* unknown type, empty encoding */ _deleteParticipantUplinkBody;
+    void /* unknown type, empty encoding */ _getParticipantUplinkBody;
+    void /* unknown type, empty encoding */ _updateConversationNameUplinkBody;
+    void /* unknown type, empty encoding */ _batchGetConversationParticipantsUplinkBody;
+    void /* unknown type, empty encoding */ _updateConversationParticipantUplinkBody;
+    void /* unknown type, empty encoding */ _batchDeleteUserConversationUplinkBody;
+    void /* unknown type, empty encoding */ _updateConversationCreateSceneUplinkBody;
+    void /* unknown type, empty encoding */ _operateCellUplinkBody;
+    void /* unknown type, empty encoding */ _sendConvInUplinkBody;
+    void /* unknown type, empty encoding */ _sendConvOutUplinkBody;
+    void /* unknown type, empty encoding */ _autoSpeakUplinkBody;
+    void /* unknown type, empty encoding */ _updateSectionUplinkBody;
+    void /* unknown type, empty encoding */ _commonCmdUplinkBody;
+    void /* unknown type, empty encoding */ _appActionBody;
+    void /* unknown type, empty encoding */ _materialUploadUplinkBody;
+}
+
+@end

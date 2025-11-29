@@ -1,0 +1,71 @@
+@class TTVideoEngine, UIView, AWEAdLongVideoContext, AWELongVideoAdPageContext, AWEAdLongVideoInteractionView, AWEAdLVPlayerPreloader, CADisplayLink, NSString, AWELongVideoAdPlayerContext, AWEAdLongVideoContainerViewModel;
+@protocol AWEAdLandscapeLongVideoDelegate, AWEAdLongVideoContainerInteractionDelegate, AWEAdLongVideoPlayerControllDelegate, AWEAdLongVideoContainerLifeCycleDelegate, AWEAdRelatedLongVideoDelegate;
+
+@interface AWEAdLongVideoContainerViewController : UIViewController <AWEAdLongVideoContainerViewController, TTVideoEngineDelegate, TTVideoEngineDataSource>
+
+@property (retain, nonatomic) AWEAdLongVideoContainerViewModel *viewModel;
+@property (retain, nonatomic) TTVideoEngine *playerViewController;
+@property (retain, nonatomic) UIView *playerBackgroundView;
+@property (retain, nonatomic) AWEAdLongVideoInteractionView *interactionView;
+@property (retain, nonatomic) AWELongVideoAdPlayerContext *playerContext;
+@property (retain, nonatomic) AWELongVideoAdPageContext *pageCongtext;
+@property (retain, nonatomic) AWEAdLongVideoContext *currentLongVideoContext;
+@property (retain, nonatomic) AWEAdLVPlayerPreloader *preloader;
+@property (retain, nonatomic) CADisplayLink *playerDisplayLink;
+@property (nonatomic) double displayRemainingTime;
+@property (nonatomic) BOOL showAdCompleted;
+@property (nonatomic) double duration;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } portraitFrame;
+@property (nonatomic) BOOL isViewAppeared;
+@property (weak, nonatomic) id<AWEAdRelatedLongVideoDelegate> relatedLongVideoDelegate;
+@property (weak, nonatomic) id<AWEAdLandscapeLongVideoDelegate> landscapeLongVideoDelegate;
+@property (weak, nonatomic) id<AWEAdLongVideoContainerLifeCycleDelegate> lifeCycleDelegate;
+@property (weak, nonatomic) id<AWEAdLongVideoContainerInteractionDelegate> interactionDelegate;
+@property (weak, nonatomic) id<AWEAdLongVideoPlayerControllDelegate> landscapeLongVideoPlayerDelegate;
+@property (copy, nonatomic) id /* block */ landingscapeVideoClickBlock;
+@property (nonatomic) long long orientationType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)player:(id)a0 updatePlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (void)videoEngineUserStopped:(id)a0;
+- (void)videoEngine:(id)a0 playbackStateDidChanged:(long long)a1;
+- (void)videoEngine:(id)a0 loadStateDidChanged:(unsigned long long)a1;
+- (void)videoEngineDidFinish:(id)a0 error:(id)a1;
+- (void)videoEngineDidFinish:(id)a0 videoStatusException:(long long)a1;
+- (void)videoEngineCloseAysncFinish:(id)a0;
+- (void)videoEngine:(id)a0 mdlKey:(id)a1 hitCacheSze:(long long)a2;
+- (void)setupGesture;
+- (void)bindOberserver;
+- (void)clearCurrentLongVideoAdData;
+- (void)updatePlayerTimer;
+- (void)refreshWithAdModels:(id)a0;
+- (void)adConatinerShowCompleted;
+- (void)didTappedMainAreaView:(id)a0;
+- (void)didTappedEnterFullScreenView:(id)a0;
+- (void)didTappedLearnMoreView:(id)a0;
+- (void)didTappedBackbutton;
+- (void)didTappedTimerCloseAdView:(id)a0;
+- (void)updateInterActionViewWithModel:(id)a0 orientationType:(long long)a1;
+- (void)clickOpenAppOrLandingPageWithArea:(long long)a0;
+- (void)updateTimeLabelWithRemainTime:(double)a0 canCloseRemainTime:(double)a1;
+- (void)updatePlayerViewFrame;
+- (void)initialAllData;
+- (void)setupPlayerTimer;
+- (BOOL)isAdContainerDislaying;
+- (BOOL)shouldRefreshAdContainerWithAwemeModel:(id)a0;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (id)init;
+- (void)updateTimer;
+- (void)didResignActive;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)setupPlayer;
+- (void)refreshWithContext:(id)a0;
+
+@end

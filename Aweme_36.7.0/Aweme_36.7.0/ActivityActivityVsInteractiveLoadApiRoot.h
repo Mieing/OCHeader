@@ -1,0 +1,3 @@
+@interface ActivityActivityVsInteractiveLoadApiRoot : GPBRootObject
+
+@end

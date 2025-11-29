@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface IESGCPPBCommentSourceInfo_Promotescenesub : GPBMessage
+
+@property (copy, nonatomic) NSString *subScene;
+
++ (id)descriptor;
+
+@end

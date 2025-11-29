@@ -1,0 +1,3 @@
+@interface AWEIMCommerceCouponViewCellBuilder : AWEIMCommerceCouponViewBuilder
+
+@end

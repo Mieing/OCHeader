@@ -1,0 +1,74 @@
+@class UIAccessibilityElement, NSString, IESECLiveContext, NSDictionary, UIView, CALayer, NSMutableArray;
+@protocol IESECLiveGoodsListViewModelProtocol, IESECLiveGoodsListViewProtocol;
+
+@interface IESECLiveGoodsListContainer : IESECEventForwardingView <IESECLiveGoodsListContainerAtomicProtocol, IESECLiveGoodsListViewV2Delegate, CAAnimationDelegate, IESECLiveGoodsListContainerService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) IESECLiveContext *liveContext;
+@property (retain, nonatomic) id<IESECLiveGoodsListViewModelProtocol> viewModel;
+@property (retain, nonatomic) UIView<IESECLiveGoodsListViewProtocol> *listView;
+@property (retain, nonatomic) CALayer *cartAddanimationLayer;
+@property (retain, nonatomic) NSDictionary *extraInfo;
+@property (retain, nonatomic) NSMutableArray *accessibleElements;
+@property (retain, nonatomic) UIAccessibilityElement *blankAccessibilityElement;
+@property (readonly, nonatomic) BOOL isShowing;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)ecomEntranceForm;
+- (id)businessContext;
+- (void)unmount;
+- (id)popContainerView;
+- (id)coreParams;
+- (struct CGSize { double x0; double x1; })maskSize;
+- (id)jumpHandler;
+- (void)registerAtomicBasicAbility;
+- (void)forceLoginWithClickCompletion:(id /* block */)a0;
+- (id)panelSizeHeightPercent;
+- (id)panelEnvironment;
+- (struct CGSize { double x0; double x1; })panelSize;
+- (BOOL)p_isCurrentLandscape;
+- (void)mountWithParams:(id)a0;
+- (long long)getAddCartAnimationStyle;
+- (void)liveContext:(id)a0 changeStore:(id)a1 completion:(id /* block */)a2;
+- (void)liveContext:(id)a0 changeListComponentVisibility:(id)a1 completion:(id /* block */)a2;
+- (void)liveContext:(id)a0 showPromotionGuide:(id)a1 completion:(id /* block */)a2;
+- (void)addSubActionForChangeStore:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getGoodsListSKUFrame;
+- (void)p_createListViewIfNeeded;
+- (id)listViewEnvironment;
+- (void)rearrangeLayout;
+- (void)p_forceUpdateToOrientation:(long long)a0;
+- (id)nameForListViewClickAreaType:(long long)a0;
+- (void)setCurrentAccessibilityPage:(long long)a0;
+- (id)getAccessElement;
+- (id)skuView;
+- (void)listView:(id)a0 willProcessClickEvent:(id)a1;
+- (void)listView:(id)a0 didClickWithEvent:(id)a1;
+- (void)listView:(id)a0 enterSKU:(BOOL)a1 extraInfo:(id)a2;
+- (id)initWithViewModel:(id)a0 liveContext:(id)a1;
+- (BOOL)isEqualToCGZero:(struct CGPoint { double x0; double x1; })a0;
+- (void)preloadListView;
+- (void)iPadCloseTopFuncView:(BOOL *)a0;
+- (struct CGPoint { double x0; double x1; })getFinalCartAnimStartPointWithPromotionID:(id)a0;
+- (id)currentLiveContext;
+- (void)viewDidAppear;
+- (BOOL)isAccessibilityElement;
+- (void)reloadData;
+- (id)tracker;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (id)accessibilityElements;
+- (void)viewWillAppear;
+- (void)dealloc;
+- (unsigned long long)corners;
+- (long long)accessibilityElementCount;
+- (void)viewDidDisappear;
+- (void)viewWillDisappear;
+
+@end

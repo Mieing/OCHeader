@@ -1,0 +1,74 @@
+@class HandOffRecordFileUploadMgr, NSMutableDictionary, NSString, MMHandOffItem, HandOffMsgFileUploadMgr, OrderedDictionary, NSMutableArray;
+
+@interface HandOffMgr : MMUserService <HandOffCDNUploadMgrDelegate, IOnlineClientMgrExt, MMServiceProtocol>
+
+@property (retain, nonatomic) OrderedDictionary *curHandOffItemLists;
+@property (retain, nonatomic) NSMutableDictionary *floatWindowItemDict;
+@property (retain, nonatomic) NSMutableArray *cgiArray;
+@property (retain, nonatomic) NSMutableArray *handOffListXMLArray;
+@property (retain, nonatomic) HandOffMsgFileUploadMgr *handoffUploadMgr;
+@property (retain, nonatomic) HandOffRecordFileUploadMgr *recordFileUploadMgr;
+@property (nonatomic) BOOL isBackDeviceLogin;
+@property (nonatomic) BOOL manuallyForceSendAllList;
+@property (nonatomic) unsigned int sendSeqNum;
+@property (retain, nonatomic) NSMutableArray *receiveCommandQueue;
+@property (readonly, nonatomic) MMHandOffItem *curHandOffItem;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)onServiceEnterBackground;
+- (void)onServiceEnterForeground;
+- (void)onServiceTerminate;
+- (void)onServiceMemoryWarning;
+- (void)setCurrentHandOffItem:(id)a0;
+- (void)modCurrentWebViewHandoffItem:(id /* block */)a0;
+- (void)modCurrentMiniProgramHandoffItem:(id /* block */)a0;
+- (void)removeCurrentHandOffItem;
+- (void)removeHandOffItem:(id)a0;
+- (void)handleFloatWindow:(id)a0 withOpCode:(long long)a1;
+- (void)sendAllList;
+- (void)receiveMessage:(id)a0;
+- (void)sendOpenCommand:(id)a0;
+- (BOOL)canSendOpenCommand;
+- (BOOL)canSendOpenCommandForOnlineInfo:(id)a0;
+- (BOOL)canSendOpenCommandForFinder;
+- (BOOL)canSendOpenCommandForFinderLive;
+- (BOOL)isXwechatDeviceForDeviceType:(unsigned int)a0;
+- (BOOL)isXwechatDeviceSupportHandoffWithDeviceType:(unsigned int)a0 clientVersion:(unsigned int)a1;
+- (void)safeAddHandoffItemToLast:(id)a0;
+- (void)safeRemoveHandoffItemFromList:(id)a0;
+- (void)clearCurrentHandoff;
+- (void)recoverCurrentHandoff;
+- (void)handoff:(id)a0 withOp:(long long)a1;
+- (void)modCurrentItem:(id)a0;
+- (void)sendHandOffItemToBackDeviceWith:(id)a0 WithOpCode:(long long)a1;
+- (void)sendCGIToBackDeviceWith:(id)a0;
+- (void)checkCgiQueue;
+- (id)generateHandOffListXMLBy:(id)a0 WithOpCode:(long long)a1;
+- (void)loadFloatWindowDataByMinimizeTasks;
+- (BOOL)handOffEnabled;
+- (BOOL)forceSendAllList;
+- (BOOL)isInfiniteFloatWindowEnabled;
+- (void)pushToHandOffHandleQueue:(id)a0;
+- (void)batchHandleCommand;
+- (void)handleWebPageUrlHandOffMsgWith:(id)a0 opCode:(long long)a1;
+- (void)handleFilePageMsgWith:(id)a0 opCode:(long long)a1;
+- (void)handleMiniProgramMsgWith:(id)a0 opCode:(long long)a1;
+- (void)uploadAttach:(id)a0;
+- (void)stopUploadAttach:(id)a0;
+- (void)renewCDNInfoForFileItemSucceed:(id)a0;
+- (void)renewCDNInfoForFileItemFailed:(id)a0;
+- (void)sendUploadProgressForFileItem:(id)a0;
+- (void)onLoginWeb;
+- (void)onLogoutWeb;
+- (id)getFileHandoffItem:(id)a0;
+- (id)__minimizedHandoffItemWithBizName:(id)a0 bizTaskKey:(id)a1;
+- (void)__setMinimizedHandoffItemWithBizName:(id)a0 handOffItem:(id)a1;
+- (void)__removeMinimizedHandoffItemWithBizName:(id)a0 bizTaskKey:(id)a1;
+- (void).cxx_destruct;
+
+@end

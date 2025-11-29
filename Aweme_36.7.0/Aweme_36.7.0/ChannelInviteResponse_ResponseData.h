@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface ChannelInviteResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long inviteId;
+@property (copy, nonatomic) NSString *shareText;
+@property (nonatomic) long long roomType;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface NewGiftActivityRankResponse_Reward : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rewardName;
+@property (copy, nonatomic) NSString *rewardDescription;
+@property (retain, nonatomic) HTSLiveImage *rewardImage;
+@property (nonatomic) BOOL hasRewardImage;
+@property (copy, nonatomic) NSString *rewardSubTitle;
+
++ (id)descriptor;
+
+@end

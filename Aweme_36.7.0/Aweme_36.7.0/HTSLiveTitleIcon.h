@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface HTSLiveTitleIcon : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (nonatomic) int sizeType;
+
++ (id)descriptor;
+
+@end

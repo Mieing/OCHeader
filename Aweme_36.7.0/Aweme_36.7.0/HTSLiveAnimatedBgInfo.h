@@ -1,0 +1,13 @@
+@class NSString, HTSLiveShowArea, HTSLiveImage;
+
+@interface HTSLiveAnimatedBgInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveShowArea *showArea;
+@property (nonatomic) BOOL hasShowArea;
+@property (copy, nonatomic) NSString *fileFormat;
+@property (retain, nonatomic) HTSLiveImage *animatedBg;
+@property (nonatomic) BOOL hasAnimatedBg;
+
++ (id)descriptor;
+
+@end

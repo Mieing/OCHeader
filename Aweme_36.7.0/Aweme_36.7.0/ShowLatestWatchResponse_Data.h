@@ -1,0 +1,10 @@
+@class HTSLiveEpisode;
+
+@interface ShowLatestWatchResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveEpisode *episode;
+@property (nonatomic) BOOL hasEpisode;
+
++ (id)descriptor;
+
+@end

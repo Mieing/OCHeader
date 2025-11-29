@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface FontInfo : GPBMessage
+
+@property (nonatomic) float fontScale;
+@property (copy, nonatomic) NSString *fontSizeUnify;
+
++ (id)descriptor;
+
+@end

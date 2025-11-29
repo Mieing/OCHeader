@@ -1,0 +1,3 @@
+@interface BDPCDDynamicCardBusinessTagGroupModel : BDPCDDynamicCardAtomicModel
+
+@end

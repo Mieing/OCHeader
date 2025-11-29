@@ -1,0 +1,92 @@
+@class MMTipsViewController, NSString, WCAccountSwitchLogic, WCSearchBar, WCAccountLogoutLogic, WCTableViewNormalCellManager, WCTableViewManager;
+
+@interface NewSettingViewController : MMUIViewController <WCAccountSwitchLogicDelegate, WCAccountLogoutLogicDelegate, MMTipsViewControllerDelegate, MMNewTipsMgrExt, ElderModeExt, MMLimitedModeExt> {
+    WCTableViewManager *m_tableViewMgr;
+    WCAccountSwitchLogic *m_switchLogic;
+    WCAccountLogoutLogic *m_logoutLogic;
+    MMTipsViewController *m_introView;
+    BOOL _initialContentOffsetSet;
+}
+
+@property (weak, nonatomic) WCTableViewNormalCellManager *pluginCellInfo;
+@property (retain, nonatomic) WCSearchBar *searchBar;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)useNewSettingMenuTransformation;
++ (BOOL)showSearchBarExpt;
++ (void)handleJumpPlugin:(id)a0 params:(id)a1;
+
+- (void)setSettingIndexRootNode:(id)a0;
+- (id)settingIndexRootNode;
+- (void)setupSearchRelatedFeatures;
+- (void)buildAndCacheSettingIndexTree;
+- (id)getSettingIndexTree;
+- (void)clearSettingIndexTree;
+- (void)setupSearchBar;
+- (void)handleSearchBarTapped:(id)a0;
+- (void)handleSearchResultSelection:(id)a0;
+- (void)navigateToFinalSearchResultPage:(id)a0;
+- (void)performActionForNode:(id)a0 withHostNode:(id)a1;
+- (void)highlightForNode:(id)a0 withHostNode:(id)a1;
+- (void)ensureViewLoaded:(id)a0;
+- (void)performSelector:(SEL)a0 onTarget:(id)a1;
+- (void)dealloc;
+- (id)init;
+- (void)showNotificationView;
+- (void)showPrivateConfigView;
+- (void)showPrivateConfigViewWithContactVerify:(BOOL)a0 animated:(BOOL)a1;
+- (void)showDeviceListView;
+- (void)showSettingGeneralUserInterface;
+- (void)showChatCell;
+- (void)showVoipCell;
+- (void)showOtherFunctionCell;
+- (void)showGeneralView;
+- (void)showCloudRoamView;
+- (void)onClearData;
+- (void)handleChatLog;
+- (void)showClearLocalDataView;
+- (void)handleWCDBRecover;
+- (void)showAboutMMView;
+- (void)showWechatLabView;
+- (void)reloadTableData;
+- (double)maxWidthForBottomViews;
+- (void)addBottomView;
+- (id)genFooterButtonListViewWithMaxWidth:(double)a0;
+- (void)showAgreementWebviewWithUrl:(id)a0;
+- (void)addSectionForVisionOS;
+- (void)showRepairView;
+- (id)cellInfoForAbout;
+- (id)cellInfoForNotifySetting;
+- (void)showCollectionList;
+- (void)showShareList;
+- (void)showWebViewByUrl:(id)a0;
+- (void)showAccountView;
+- (void)showProfileView;
+- (void)onShowElderMode;
+- (void)onShowLimitedMode;
+- (void)showPrivacySummaryPage;
+- (void)willAppear;
+- (void)viewDidTransitionToNewSize;
+- (void)viewDidLoad;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)showQuitActionSheet:(id)a0;
+- (void)onAccountLogoutLogicCancel;
+- (void)gotoSwitchAccount;
+- (void)showLoginInfo;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 tipTag:(long long)a2;
+- (void)showDebugViewController;
+- (void)openChatBotDebugToolsViewController;
+- (void)onAccountSwitchLogicCancel;
+- (void)showFeedbackView;
+- (id)getVCWithDeepLinkName:(id)a0;
+- (void)setupDeepLinkConfig;
+- (void)onTipsShowInfoChangeWithPathKey:(id)a0;
+- (void)onLimitedModeChanged;
+- (void)registerYReportSdk;
+- (void)onSetElderModeOn:(BOOL)a0 success:(BOOL)a1;
+- (void).cxx_destruct;
+
+@end

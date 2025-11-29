@@ -1,0 +1,3 @@
+@interface HTSLiveContentOpenCoinRoot : GPBRootObject
+
+@end

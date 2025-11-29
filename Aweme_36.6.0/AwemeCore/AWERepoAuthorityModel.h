@@ -1,0 +1,85 @@
+@class NSString, NSArray, AWEPublishPrivacyPermissionModel, AWEVideoDraftExclusionModel, AWERepoAuthorityContext, AWEVideoDraftPrivacyExtraModel, AFDPrivacyPublishParamsModel, NSNumber;
+@protocol ACCWorkspaceReader, AWEPublishPrivacyPermissionData, ACCPublishRepository, ACCRepoDataContext, ACCRepoDraftPrivacyExtraData;
+
+@interface AWERepoAuthorityModel : NSObject <ACCRepositoryCompareProtocol, AWERepositoryDraftProtocol, ACCRepositoryDraftContextDeprecated, ACCRepositoryReeditContextProtocol, ACCRepoRegister, ACCRepositoryContextDeprecated, ACCRepositoryTrackContextDeprecated, ACCRepositoryRequestParamsDeprecated, ACCCreationDataAccess, ACCRepoAuthorityData>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long long privacyType;
+@property (nonatomic) long long privacyPermissionType;
+@property (copy, nonatomic) NSArray *dontShareUidList;
+@property (retain, nonatomic) AWEVideoDraftExclusionModel *exclusionModel;
+@property (retain, nonatomic) AWEVideoDraftPrivacyExtraModel<ACCRepoDraftPrivacyExtraData> *privacyExtraModel;
+@property (retain, nonatomic) AWEPublishPrivacyPermissionModel<AWEPublishPrivacyPermissionData> *tempStoryPermission;
+@property (nonatomic) BOOL initCompleted;
+@property (nonatomic) long long itemComment;
+@property (nonatomic) long long itemDanmaku;
+@property (nonatomic) long long itemDownload;
+@property (retain, nonatomic) NSNumber *itemDuet;
+@property (retain, nonatomic) NSNumber *itemReact;
+@property (retain, nonatomic) AFDPrivacyPublishParamsModel *lastPublishedPrivacyParamsModel;
+@property (nonatomic) BOOL shouldShowGrant;
+@property (retain, nonatomic) NSNumber *downloadType;
+@property (retain, nonatomic) NSNumber *itemShare;
+@property (retain, nonatomic) AWERepoAuthorityContext *authorityContext;
+@property (nonatomic) long long xiguaPrivacyType;
+@property (nonatomic) BOOL isXiguaStarAtlasVideo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<ACCPublishRepository> repoDeprecated;
+@property (weak, nonatomic) id<ACCRepoDataContext> dataContext;
+@property (weak, nonatomic) id<ACCWorkspaceReader> workspaceReader;
+
++ (id)repo_dataProtocol;
++ (id)descWithPrivacyType:(unsigned long long)a0;
++ (id)privacyTraceMap;
+
+- (BOOL)isNotPublic;
+- (BOOL)isCloseFriends;
+- (BOOL)isPartOfVisible;
+- (id)acc_publishRequestParams:(id)a0;
+- (id)initWithDraft:(id)a0;
+- (void)saveWithDraft:(id)a0;
+- (BOOL)isTendPublic;
+- (BOOL)isTendMutualFollow;
+- (void)updatePrivacyType:(unsigned long long)a0 identifier:(id)a1;
+- (void)updatePrivacyPermissionType:(id /* block */)a0;
+- (BOOL)isTendPrivate;
+- (void)updateFromAweme:(id)a0;
+- (id)acc_publishTrackEventParams:(id)a0;
+- (id)customEidtStatusCompareParams:(id)a0 scene:(long long)a1;
+- (BOOL)isModifiedComparesToModel:(id)a0;
+- (id)isModifiedTrackInfoComparesToModel:(id)a0;
+- (BOOL)isOnlyPrivate;
+- (void)draftWillBeSavedWithID:(id)a0;
+- (void)modelDidRetrievedFromDraftWithID:(id)a0;
+- (id)acc_publishRequestParams:(id)a0 needCheck:(BOOL)a1;
+- (void)checkPrivacyPermissionWithContext:(id)a0 beforePrivacyPermissionType:(long long)a1 checkHandler:(id /* block */)a2;
+- (BOOL)isPublicAndDontShare;
+- (void)configVisibleParams:(id)a0 inPublishRequestParams:(id)a1 needCheck:(BOOL)a2;
+- (void)checkPrivacyRecordWithPublishViewModel:(id)a0;
+- (BOOL)needUserStatusWithPrivacyPermissionType:(long long)a0;
+- (id)commentPermissionTextDictEnglish;
+- (long long)defaultXiguaPrivacyTypeWithIsPrivateAccount:(BOOL)a0;
+- (BOOL)isTendMateVisible;
+- (long long)getPrivacyPermissionTypeForDraftModel:(id)a0;
+- (void)setupPrivacyPermissionTypeForDraftModel:(id)a0;
+- (void)setupDefaultPrivacyPermissionTypeForDraftModel:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (BOOL)isEqualToObject:(id)a0;
+
+@end

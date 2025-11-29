@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceFastMatchResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceFastMatchResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceFastMatchResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,9 @@
+@interface WCDBSwift.RWLock : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ mutex;
+    void /* unknown type, empty encoding */ cond;
+    void /* unknown type, empty encoding */ reader;
+    void /* unknown type, empty encoding */ writer;
+    void /* unknown type, empty encoding */ pending;
+}
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface PermissionThresholdInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *status;
+
++ (id)descriptor;
+
+@end

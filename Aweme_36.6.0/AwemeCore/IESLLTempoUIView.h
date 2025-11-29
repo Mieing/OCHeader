@@ -1,0 +1,70 @@
+@class IESLLTempoExposureManager, IESLLTempoResourceModel, NSDictionary, BDXBridge, NSObject, NSMutableArray, IESLLTempoContext, NSString, IESLLTempoExprCoreRunner, IESLLTempoContextStore, IESLLTempoExposureGlobalObserver, IESLLTempoLogger, NSArray, IESLLTempoTemplateRender, IESLLTempoPerfUtil;
+@protocol IESLLTempoEventManagerProviderProtocol, IESLLTempoResourceProviderProtocol, OS_dispatch_queue, IESLLTempoUIViewLifecycleDelegate;
+
+@interface IESLLTempoUIView : UIView <BDXBridgeContainerProtocol, IESLLTempoTemplateRenderDelegate, IESLLTempoEventManagerProviderLifecycleDelegate>
+
+@property (readonly, nonatomic) unsigned long long bdx_engineType;
+@property (readonly, nonatomic) BDXBridge *bdx_bridge;
+@property (readonly, copy, nonatomic) NSString *bdx_containerID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) IESLLTempoContext *context;
+@property (retain, nonatomic) IESLLTempoContextStore *contextStore;
+@property (retain, nonatomic) IESLLTempoExprCoreRunner *exprRunner;
+@property (retain, nonatomic) IESLLTempoTemplateRender *templateRender;
+@property (retain, nonatomic) IESLLTempoResourceModel *resourceModel;
+@property (retain, nonatomic) id<IESLLTempoResourceProviderProtocol> resourceProvider;
+@property (retain, nonatomic) id<IESLLTempoEventManagerProviderProtocol> eventManagerProvider;
+@property (retain, nonatomic) NSMutableArray *nativeModules;
+@property (retain, nonatomic) IESLLTempoExposureManager *exposureManager;
+@property (retain, nonatomic) IESLLTempoExposureGlobalObserver *exposureGlobalObserver;
+@property (retain, nonatomic) IESLLTempoLogger *errLogger;
+@property (retain, nonatomic) IESLLTempoLogger *perfLogger;
+@property (copy, nonatomic) NSString *url;
+@property (retain, nonatomic) NSArray *jsbMethods;
+@property (retain, nonatomic) NSDictionary *jsbMethodBlocks;
+@property (copy, nonatomic) NSString *bid;
+@property (nonatomic) BOOL enableCache;
+@property (retain, nonatomic) IESLLTempoPerfUtil *perfUtil;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *tempoChildQueue;
+@property (nonatomic) BOOL isLoadEventManager;
+@property (nonatomic) long long threadStrategy;
+@property (nonatomic) BOOL hitPreload;
+@property (weak, nonatomic) id<IESLLTempoUIViewLifecycleDelegate> lifecycleDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)bdx_namespace;
+- (id)bdx_URL;
+- (void)bdx_setUpBridgeWithContainerID:(id)a0;
+- (void)bdx_setUpBridgeWithConfiguration:(id)a0;
+- (id)bdx_configuration;
+- (id)viewWithIdSelector:(id)a0;
+- (void)loadAnimation;
+- (void)sendEvent:(id)a0 params:(id)a1 isSticky:(BOOL)a2;
+- (void)loadData:(id)a0 globalProps:(id)a1;
+- (void)registerExprFunc:(id)a0;
+- (void)preloadData:(id)a0 globalProps:(id)a1;
+- (void)updateData:(id)a0 globalProps:(id)a1 componentID:(id)a2 source:(long long)a3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 configModel:(id)a1;
+- (void)loadExprRunner;
+- (void)tempoTemplateRenderDidLoadSuccess:(id)a0;
+- (void)tempoTemplateRender:(id)a0 timingInfo:(id)a1;
+- (void)tempoTemplateRender:(id)a0 viewDidChangeContentSize:(struct CGSize { double x0; double x1; })a1;
+- (void)initLoggerWithConfigModel:(id)a0;
+- (void)loadOriginTreeWithError:(id *)a0;
+- (void)loadFontFace;
+- (void)loadDataOnlyEventManger;
+- (void)loadResourceAndDecodeWithCompletionQueue:(id)a0 complete:(id /* block */)a1;
+- (void)tempoTemplateRenderDidPreloadSuccess:(id)a0;
+- (void)tempoTemplateRenderDidUpdateSuccess:(id)a0;
+- (void)tempoEventManagerProvider:(id)a0 didReceiveError:(id)a1;
+- (void).cxx_destruct;
+- (void)handleError:(id)a0;
+- (void)dealloc;
+
+@end

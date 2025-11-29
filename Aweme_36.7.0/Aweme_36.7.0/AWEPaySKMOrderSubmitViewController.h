@@ -1,0 +1,78 @@
+@class AWEPaySKMAmountInputContainer, AWEPaySKMOrderSubmitPromotionView, UIView, NSString, AWEPaySKMPayeeInfoModel, UIImageView, AWEPayIconNameStackView, UIButton, AWEPaySKMDynamicCodeViewController, NSDictionary, AWEPayInputAlert, UILabel;
+
+@interface AWEPaySKMOrderSubmitViewController : CJPayFullPageBaseViewController <AWERouterViewControllerProtocol, CJPayAPIDelegate>
+
+@property (retain, nonatomic) UIView *topBackContainerView;
+@property (retain, nonatomic) UIView *userInfoView;
+@property (retain, nonatomic) AWEPaySKMAmountInputContainer *inputContainer;
+@property (retain, nonatomic) AWEPaySKMOrderSubmitPromotionView *promotionView;
+@property (retain, nonatomic) UIImageView *bottomLogImageView;
+@property (retain, nonatomic) UIButton *addRemarkBtn;
+@property (retain, nonatomic) UIImageView *topBgImageView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) AWEPayIconNameStackView *nameView;
+@property (retain, nonatomic) UIImageView *iconImageView;
+@property (retain, nonatomic) UIView *errorView;
+@property (retain, nonatomic) UILabel *errorMsgLabel;
+@property (retain, nonatomic) UIButton *retryBtn;
+@property (retain, nonatomic) UIImageView *errImageView;
+@property (retain, nonatomic) UIButton *confirmBtn;
+@property (copy, nonatomic) NSString *invokeURLString;
+@property (copy, nonatomic) NSString *codeToken;
+@property (copy, nonatomic) NSString *codeDisplayTimeInterval;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *verifyId;
+@property (retain, nonatomic) AWEPaySKMPayeeInfoModel *payee;
+@property (nonatomic) BOOL isSubmittingOrder;
+@property (weak, nonatomic) AWEPaySKMDynamicCodeViewController *dynamicCodeVC;
+@property (nonatomic) BOOL isPersonalCode;
+@property (nonatomic) BOOL isPaySuccess;
+@property (nonatomic) BOOL isSelfCode;
+@property (retain, nonatomic) AWEPayInputAlert *inputAlert;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (nonatomic) BOOL allowInputAmount;
+@property (nonatomic) double pageShowTime;
+@property (nonatomic) BOOL limitTipDidShow;
+@property (copy, nonatomic) NSString *codeBizType;
+@property (nonatomic) BOOL isDownloadCode;
+@property (nonatomic) BOOL pageDidShowed;
+@property (retain, nonatomic) NSDictionary *extraParams;
+@property (copy, nonatomic) NSString *source;
+@property (copy, nonatomic) NSString *tid;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (BOOL)aweDisableFullscreenPopTransition;
+- (id)getTrackCommonParams;
+- (void)onResponse:(id)a0;
+- (void)hideLoading;
+- (void)setupNavigation;
+- (void)reportTrackEvent:(id)a0 params:(id)a1;
+- (void)submitOrder;
+- (void)checkCodeValid;
+- (void)fetchUserInfo;
+- (void)pushPayStatus:(unsigned long long)a0;
+- (void)showNormalView:(BOOL)a0;
+- (void)requestPromotions;
+- (void)showErrorPage:(BOOL)a0 canRetry:(BOOL)a1 errImageIcon:(id)a2;
+- (id)combineExtraParams:(id)a0;
+- (id)getExtInfoStr:(id)a0;
+- (void)needRiskCheck:(id)a0;
+- (id)getExtInfo:(id)a0;
+- (void)addRemarkDidClick:(id)a0;
+- (void)close;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)retry;
+- (void)setupUI;
+- (void)showLoading;
+
+@end

@@ -1,0 +1,9 @@
+@class FinderLocation;
+
+@interface FinderLiveModLivePOIRequest : WXPBGeneratedMessage
+
+@property (retain, nonatomic) FinderLocation *location;
+
++ (void)initialize;
+
+@end

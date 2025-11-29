@@ -1,0 +1,10 @@
+@class RoundStopResponse_Data;
+
+@interface RoundStopResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) RoundStopResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

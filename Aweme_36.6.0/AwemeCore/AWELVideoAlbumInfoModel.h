@@ -1,0 +1,82 @@
+@class AWEPaymentEntertainmentProductModel, NSString, NSArray, AWELongVideoInteractControlInfoModel, AWELVideoAdInfoModel, AWEURLModel, AWELVideoXiguaGuideModel, AWEPaymentChargeInfoModel, AWELVideoPaymentInfo, NSNumber;
+
+@interface AWELVideoAlbumInfoModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *albumID;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+@property (nonatomic) long long status;
+@property (nonatomic) long long episodeUpdateAt;
+@property (nonatomic) long long seqsCount;
+@property (nonatomic) long long seriesRank;
+@property (copy, nonatomic) NSString *seriesTab;
+@property (copy, nonatomic) NSString *seriesID;
+@property (nonatomic) long long label;
+@property (copy, nonatomic) NSString *labelText;
+@property (copy, nonatomic) NSArray *rewardList;
+@property (copy, nonatomic) NSArray *categoryStrType;
+@property (copy, nonatomic) NSArray *categoryStrTopic;
+@property (copy, nonatomic) NSString *region;
+@property (nonatomic) long long releaseTime;
+@property (retain, nonatomic) AWEURLModel *cover;
+@property (copy, nonatomic) NSArray *coverList;
+@property (copy, nonatomic) NSArray *largeCoverList;
+@property (copy, nonatomic) NSArray *mediumCoverList;
+@property (copy, nonatomic) NSArray *thumbCoverList;
+@property (copy, nonatomic) NSArray *actorList;
+@property (copy, nonatomic) NSString *intro;
+@property (copy, nonatomic) NSString *updateCycle;
+@property (nonatomic) long long pattern;
+@property (copy, nonatomic) NSArray *languageList;
+@property (nonatomic) long long duration;
+@property (copy, nonatomic) NSArray *albumTypeList;
+@property (nonatomic) BOOL isCollect;
+@property (nonatomic) long long collectCount;
+@property (nonatomic) BOOL isLocatedAlbum;
+@property (retain, nonatomic) NSNumber *groupSource;
+@property (copy, nonatomic) NSString *score;
+@property (copy, nonatomic) NSString *awemeID;
+@property (retain, nonatomic) AWELVideoAdInfoModel *adInfo;
+@property (nonatomic) long long playVVCount;
+@property (nonatomic) BOOL isSelected;
+@property (nonatomic) BOOL isDRM;
+@property (retain, nonatomic) AWELVideoPaymentInfo *paymentInfo;
+@property (retain, nonatomic) AWELongVideoInteractControlInfoModel *interactControlInfo;
+@property (retain, nonatomic) AWELVideoXiguaGuideModel *xiguaGuide;
+@property (retain, nonatomic) AWEPaymentChargeInfoModel *paymentChargeInfo;
+@property (retain, nonatomic) AWEPaymentEntertainmentProductModel *paymentProductInfo;
+@property (nonatomic) long long albumTag;
+@property (nonatomic) long long totalChargeCount;
+@property (nonatomic) long long remainChargeCount;
+@property (nonatomic) BOOL supportTotalAlbumPayment;
+@property (copy, nonatomic) NSString *albumTypeName;
+@property (copy, nonatomic) NSString *languageInfoName;
+@property (retain, nonatomic) NSNumber *albumOriginVVCount;
+@property (copy, nonatomic) NSString *albumOriginVVText;
+@property (copy, nonatomic) NSString *compassID;
+@property (nonatomic) long long resourceType;
+@property (copy, nonatomic) NSString *scheme;
+@property (copy, nonatomic) NSArray *tags;
+@property (copy, nonatomic) NSArray *actors;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)coverJSONTransformer;
++ (id)coverListJSONTransformer;
++ (id)largeCoverListJSONTransformer;
++ (id)mediumCoverListJSONTransformer;
++ (id)thumbCoverListJSONTransformer;
++ (id)paymentInfoJSONTransformer;
++ (id)interactControlInfoJSONTransformer;
++ (id)xiguaGuideJSONTransformer;
++ (id)actorListJSONTransformer;
++ (id)languageListJSONTransformer;
++ (id)actorsJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+- (long long)albumType;
+
+@end

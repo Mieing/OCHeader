@@ -1,0 +1,12 @@
+@class NSError, AWEAwemeModel;
+
+@interface AWEMusicCoverRequestPayload : NSObject
+
+@property (nonatomic) long long index;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) NSError *error;
+@property (nonatomic) double duration;
+
+- (void).cxx_destruct;
+
+@end

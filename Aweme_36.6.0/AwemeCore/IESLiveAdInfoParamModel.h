@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface IESLiveAdInfoParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) NSString *roomID;
+
+@end

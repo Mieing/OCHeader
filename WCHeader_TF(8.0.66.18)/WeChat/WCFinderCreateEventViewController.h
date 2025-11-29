@@ -1,0 +1,77 @@
+@class MMWebImageView, MMUIButton, UILabel, UIDatePicker, WCFinderEventModel, UIView, UIButton, CAGradientLayer, RichTextView, NSString, UIScrollView, MMTextView, UIImage;
+@protocol WCFinderCreateEvenDelegate;
+
+@interface WCFinderCreateEventViewController : MMUIViewController <MMImageCropperDelegate, UITextViewDelegate, ILinkEventExt>
+
+@property (retain, nonatomic) WCFinderEventModel *event;
+@property (retain, nonatomic) UIImage *choosedImage;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (retain, nonatomic) MMWebImageView *backgroundImageView;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (retain, nonatomic) MMTextView *activityNameTextView;
+@property (retain, nonatomic) MMTextView *activityDescTextView;
+@property (retain, nonatomic) UIButton *timeButton;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIDatePicker *datePicker;
+@property (retain, nonatomic) UIView *dateActionSheet;
+@property (retain, nonatomic) UIView *transparentView;
+@property (retain, nonatomic) MMWebImageView *headImageView;
+@property (retain, nonatomic) UILabel *nameLabel;
+@property (retain, nonatomic) UIView *nameBackground;
+@property (retain, nonatomic) UIView *descBackground;
+@property (retain, nonatomic) UILabel *nameCountLabel;
+@property (retain, nonatomic) UILabel *descCountLabel;
+@property (retain, nonatomic) UIButton *imageButton;
+@property (retain, nonatomic) RichTextView *statementView;
+@property (retain, nonatomic) MMUIButton *agreetButton;
+@property (retain, nonatomic) UIView *agreetView;
+@property (weak, nonatomic) id<WCFinderCreateEvenDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithEvent:(id)a0;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (BOOL)useTransparentNavibar;
+- (void)layoutViews;
+- (void)layoutComponents;
+- (void)showReadOnly;
+- (void)updateNoAlubm;
+- (void)updateAlbum;
+- (void)scrollToEditZone;
+- (void)updateConfirmButtonStatus;
+- (void)updatePostWarning;
+- (void)OnCancel;
+- (void)OnReturn;
+- (void)postEvent:(id)a0;
+- (void)onDelAlbum;
+- (void)onChooseImage;
+- (void)onShowAlbumActionSheet;
+- (void)onNameEdit;
+- (void)onDescEdit;
+- (void)onEndEditing;
+- (void)onShowActionSheet;
+- (void)onHideActionSheet;
+- (void)onDateChanged;
+- (void)onAgreementCheckBoxClick;
+- (void)keyboardWillShow:(double)a0;
+- (void)keyboardWillHide:(BOOL)a0;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)textViewDidBeginEditing:(id)a0;
+- (void)showError:(id)a0;
+- (BOOL)canCreateEvent;
+- (BOOL)eventInfoRequired;
+- (id)endDateStr;
+- (void)MMImagePickerManager:(id)a0 didFinishPickingImageWithInfo:(id)a1;
+- (void)MMImagePickerManagerDidCancel:(id)a0;
+- (void)imageCropper:(id)a0 didFinished:(id)a1;
+- (void)imageCropperDidCancel:(id)a0;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)registerYReportSdk;
+- (void).cxx_destruct;
+
+@end

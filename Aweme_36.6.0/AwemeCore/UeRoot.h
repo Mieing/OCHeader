@@ -1,0 +1,3 @@
+@interface UeRoot : GPBRootObject
+
+@end

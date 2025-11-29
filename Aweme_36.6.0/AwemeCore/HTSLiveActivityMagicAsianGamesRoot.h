@@ -1,0 +1,3 @@
+@interface HTSLiveActivityMagicAsianGamesRoot : GPBRootObject
+
+@end

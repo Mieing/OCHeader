@@ -1,0 +1,82 @@
+@class UINavigationController, NSString, NewLifeImagePickViewController, CaptureVideoInfo, UIImage, NSMutableArray, NSMutableDictionary;
+
+@interface WebviewJSEventHandler_chooseMedia : WebviewJSEventHandlerBase <WCActionSheetDelegate, MMImagePickerManagerDelegate, IWebviewResourceManagerExt, NewLifeImagePickViewControllerDelegate> {
+    UINavigationController *m_oVideoPicker;
+    CaptureVideoInfo *m_oVideoInfo;
+    UIImage *m_oThumbImg;
+    NSString *m_nsThumbLocalId;
+    NSString *m_nsSourceType;
+    NSMutableArray *m_localIds;
+    NSMutableDictionary *m_livePhotoLocalIds;
+    long long m_livePhotoCount;
+    unsigned long long m_liveProcessStartTime;
+    BOOL m_livePhotoProcessAllDone;
+    long long m_totalCount;
+    BOOL m_userDidSelectOrCancel;
+    BOOL _isFromLiteApp;
+    struct vector<std::optional<MetaData>, std::allocator<std::optional<MetaData>>> { void *__begin_; void *__end_; struct __compressed_pair<std::optional<MetaData> *, std::allocator<std::optional<MetaData>>> { void *__value_; } __end_cap_; } _metaDatas;
+}
+
+@property (nonatomic) unsigned int mediaType;
+@property (nonatomic) long long sourceType;
+@property (nonatomic) unsigned int maxDuration;
+@property (nonatomic) long long sizeType;
+@property (nonatomic) long long count;
+@property (nonatomic) long long cameraDirection;
+@property (retain, nonatomic) NSString *appId;
+@property (nonatomic) BOOL livePhotoMode;
+@property (nonatomic) BOOL canSendGif;
+@property (nonatomic) BOOL isFromPicker;
+@property (nonatomic) BOOL isSwitch;
+@property (nonatomic) BOOL isAutoConfirm;
+@property (nonatomic) double delayDuration;
+@property (nonatomic) unsigned long long initSelectTabIndex;
+@property (weak, nonatomic) NewLifeImagePickViewController *imagePickViewController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)handleJSEvent:(id)a0 HandlerFacade:(id)a1 ExtraData:(id)a2;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)onCancelSelectAssets:(id)a0;
+- (void)onFinishSelectAssets:(id)a0 assets:(id)a1;
+- (void)showTimeline;
+- (id)generateSightOptionObj;
+- (id)generateTimelineOptionObj;
+- (id)generateAlbumOptionObj;
+- (void)showSightCamera;
+- (void)showVideoPicker;
+- (void)addSightCameraReadyObserver;
+- (void)switchCamera;
+- (void)onShortVideoTaken:(id)a0 thumbImg:(id)a1 editVideoAttr:(id)a2 paramModel:(id)a3;
+- (void)onSightPictureTaken:(id)a0 imageData:(id)a1 withFrontCamera:(BOOL)a2 editImageAttr:(id)a3;
+- (void)onSightCameraCancel:(id)a0;
+- (void)onSightCameraViewControllerStartEditing;
+- (void)onSightCameraViewControllerEndEditing;
+- (void)onSightCameraViewWillDisappear:(BOOL)a0;
+- (void)MMImagePickerManagerDidCancel:(id)a0;
+- (void)MMImagePickerManagerDidPopOrDismiss:(id)a0;
+- (void)MMImagePickerManager:(id)a0 didFinishPickingImageWithInfo:(id)a1;
+- (void)MMImagePickerManager:(id)a0 didFinishPickingVideoWithInfo:(id)a1;
+- (void)onLocalImageSaveFinish:(id)a0;
+- (void)handleVideo:(id)a0 ImagePicker:(id)a1;
+- (void)processVideoFromPicker:(id)a0;
+- (void)processVideo:(id)a0;
+- (void)handleImageByImage:(id)a0;
+- (void)tryResponse;
+- (void)handleImageByLoacalIds:(id)a0;
+- (int)getVideoDuration:(id)a0;
+- (void)asyncHandleCancel;
+- (void)didTakeVideo;
+- (void)dismissPicker;
+- (void)setVideoPreviewHidden:(BOOL)a0 inPicker:(id)a1;
+- (void)processLivePhotos:(id)a0;
+- (void)processLivePhotosDidFinish:(id)a0 index:(int)a1;
+- (void)MMSightCameraDidBePopedOrDismissed;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

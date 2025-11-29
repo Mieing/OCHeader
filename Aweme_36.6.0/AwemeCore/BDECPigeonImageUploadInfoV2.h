@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface BDECPigeonImageUploadInfoV2 : NSObject
+
+@property (copy, nonatomic) NSString *accessKeyId;
+@property (copy, nonatomic) NSString *secretAccessKey;
+@property (copy, nonatomic) NSString *sessionToken;
+@property (copy, nonatomic) NSString *expiredTime;
+@property (copy, nonatomic) NSString *currentTime;
+@property (copy, nonatomic) NSString *serviceId;
+
+- (void).cxx_destruct;
+
+@end

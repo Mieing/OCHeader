@@ -1,0 +1,77 @@
+@class NSString, UIActivityIndicatorView, UICollectionView, UILabel, IESLiveWebpLoadingView;
+@protocol IESLiveEffectPanelContentCellDatasource, IESLiveEffectPanelContentCellDelegate;
+
+@interface IESLiveEffectPanelContentCell : UICollectionViewCell <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, IESLiveEffectPanelItemCellDatasource, IESLiveEffectPanelContentCellDatasource, IESLiveEffectPanelContentCellDelegate>
+
+@property (retain, nonatomic) UICollectionView *itemCollectionView;
+@property (retain, nonatomic) IESLiveWebpLoadingView *loadingView;
+@property (retain, nonatomic) UIActivityIndicatorView *indicator;
+@property (retain, nonatomic) UILabel *emptyLabel;
+@property (nonatomic) long long lastDownloadingIndex;
+@property (retain, nonatomic) UICollectionView *secondTabCollectionView;
+@property (retain, nonatomic) UICollectionView *subContentCollectionView;
+@property (nonatomic) BOOL isSubTabLayout;
+@property (weak, nonatomic) id<IESLiveEffectPanelContentCellDatasource> datasource;
+@property (weak, nonatomic) id<IESLiveEffectPanelContentCellDelegate> delegate;
+@property (nonatomic) long long contentIndex;
+@property (nonatomic) unsigned long long currentSecondTabIndex;
+@property (nonatomic) BOOL isFavorTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContextCallOnce;
+- (void)configSubviews;
+- (void)configCollectionView;
+- (void)configLoadingView;
+- (void)locatePanelAtEffect:(id)a0 secondaryIndex:(long long)a1;
+- (void)configTabCollectionView;
+- (void)reLayoutSubViewIfNeed;
+- (void)configSubContentCollectionView;
+- (BOOL)hasSecondTab;
+- (id)contentCell:(id)a0 categoryModelAtIndex:(long long)a1;
+- (id)secondCategoryModelForIndex:(long long)a0;
+- (void)removeSelectItemCell;
+- (void)doSelectItemAt:(id)a0;
+- (void)updateCellSelected;
+- (id)currentSelectEffectId;
+- (BOOL)isCellSelected:(long long)a0 currentEffectId:(id)a1;
+- (void)doSelectSecondTabAtIndex:(id)a0;
+- (void)loadEffectListForItemCell:(id)a0 indexPath:(id)a1;
+- (long long)getCurrentSecondTabIndex;
+- (void)itemCell:(id)a0 willDispalyAtIndexPath:(id)a1 secondaryIndex:(long long)a2;
+- (id)effectModelForIndex:(long long)a0;
+- (void)itemCell:(id)a0 didTappedItemCellAtIndex:(id)a1 secondaryIndex:(long long)a2;
+- (BOOL)contentCell:(id)a0 isEffectForbiddenAtIndexPath:(id)a1 secondaryIndex:(long long)a2;
+- (void)onItemCellSelcted:(id)a0 IndexPath:(id)a1;
+- (void)itemCell:(id)a0 willDownloadItemCellAtIndexPath:(id)a1 secondaryIndex:(long long)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)itemCell:(id)a0 didSelectItemCellAtIndex:(id)a1 secondaryIndex:(long long)a2;
+- (id)secondCategoryCellForIndexPath:(id)a0;
+- (void)contentCell:(id)a0 didSelectSubCategoryAtIndex:(long long)a1;
+- (void)updateCategoryCollectionViewWithContentOffsetX:(double)a0;
+- (void)reloadDataWithContentIndex:(long long)a0;
+- (void)categoryEffectsAtIndexPath:(id)a0 secondaryIndex:(long long)a1 completion:(id /* block */)a2;
+- (id)selectedItemIdForPanelView;
+- (id)itemCell:(id)a0 effectModelAtIndex:(long long)a1;
+- (BOOL)itemCell:(id)a0 isFavorAtIndex:(long long)a1;
+- (BOOL)itemCell:(id)a0 isEffectForbiddenAtIndex:(long long)a1;
+- (void)reloadDataWithSubContentIndex:(long long)a0;
+- (id)currentSecondCategoryModel;
+- (void)locatePanelAtSubCategoryIndex:(long long)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)startLoadingAnimation;
+- (void)stopLoadingAnimation;
+- (id)cellForIndexPath:(id)a0;
+
+@end

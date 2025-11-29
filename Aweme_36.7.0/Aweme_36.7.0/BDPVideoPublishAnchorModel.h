@@ -1,0 +1,3 @@
+@interface BDPVideoPublishAnchorModel : NSObject
+
+@end

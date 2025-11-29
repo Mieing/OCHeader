@@ -1,0 +1,75 @@
+@class NSMutableDictionary, UICollectionView, AWEIMStrangerMultiTabHeaderView, NSDictionary, AWEIMTopNoticeTipView, AWEIMStrangerPrivateMsgSettingTopTipInteractor, AWEIMStrangerReadStateTopTipViewInteractor, UIView, NSString, AWEIMStrangerTracker, AWEIMPriorityQueueSyncDispatcher, AWEIMStrangerChatListViewModel, AWEIMStrangerTrashChatListViewModel, NSArray, AWEIMStrangerBlockMessageTopTipViewInteractor;
+
+@interface AWEIMStrangerMultiTabViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IESIMActionSheetDelegate, AWEIMStrangerTrackeDelegate, AWEIMStrangerQuickManagerDelegate, AWEIMStrangerChatListViewModelActionDelegate, AWEIMStrangerCommonTopTipViewInteractorDelegate, AWEIMStrangerMultiTabHeaderViewDelegate, AWERouterViewControllerProtocol>
+
+@property (retain, nonatomic) UICollectionView *multiTabCollectionView;
+@property (copy, nonatomic) NSDictionary *routerParamDict;
+@property (retain, nonatomic) AWEIMStrangerMultiTabHeaderView *multiHeader;
+@property (retain, nonatomic) NSMutableDictionary *childVCDict;
+@property (copy, nonatomic) NSArray *tabTypeArray;
+@property (copy, nonatomic) NSArray *headerDataArray;
+@property (retain, nonatomic) NSMutableDictionary *headerModelDict;
+@property (nonatomic) long long currentShowingIndex;
+@property (retain, nonatomic) AWEIMStrangerTrashChatListViewModel *trashChatListVM;
+@property (retain, nonatomic) AWEIMStrangerChatListViewModel *strangerChatListVM;
+@property (retain, nonatomic) AWEIMStrangerTracker *tracker;
+@property (weak, nonatomic) AWEIMTopNoticeTipView *topTipView;
+@property (retain, nonatomic) AWEIMPriorityQueueSyncDispatcher *topTipViewDispatcher;
+@property (retain, nonatomic) AWEIMStrangerReadStateTopTipViewInteractor *readStateTopTipViewInteractor;
+@property (retain, nonatomic) AWEIMStrangerBlockMessageTopTipViewInteractor *blockMessageTopTipViewInteractor;
+@property (retain, nonatomic) AWEIMStrangerPrivateMsgSettingTopTipInteractor *privateMsgSettingTopTipViewInteractor;
+@property (nonatomic) BOOL hasTrashStranger;
+@property (nonatomic) BOOL didFetchData;
+@property (retain, nonatomic) UIView *moreActionContainerView;
+@property (retain, nonatomic) UIView *moreActionView;
+@property (nonatomic) double time_point;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)autoDispatchFloatingViewWithPriority:(long long)a0 priorityObject:(id)a1;
+- (id)rootVC;
+- (void)backBtnClicked:(id)a0;
+- (void)configTracker;
+- (void)layoutCollectionView;
+- (id)strangerTracker;
+- (BOOL)isInTrashBox;
+- (void)setUpTipView;
+- (void)tryToShowBlockMessageTopTipView;
+- (void)tryShowTipsView;
+- (void)showOrHidePrivateSettingTipWithValue:(long long)a0;
+- (void)showOrHidePrivateSettingTipIfNeed;
+- (void)addTopTipView:(id)a0;
+- (void)removeTopTipView:(id)a0;
+- (void)showOrHidePrivateSettingTip;
+- (void)showOrHidePrivateSettingTipWithSelect:(long long)a0;
+- (void)unreadCountDidUpdate:(long long)a0 type:(long long)a1;
+- (void)multiTabHeaderView:(id)a0 didClickItemAtIndex:(long long)a1;
+- (void)addMarkReadCofig;
+- (void)moreActionBtnClicked;
+- (void)addNavigationBarUnreadViewIfNeeded;
+- (id)getStrangerFetcher;
+- (id)__viewModelForTabType:(long long)a0;
+- (long long)__tabTypeForIndex:(long long)a0;
+- (void)cleanAllBtnClicked;
+- (id)__initialChildViewControllerForTabType:(long long)a0;
+- (void)showBlockMessageTopTipView;
+- (void)showReadStateTopTipView;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)init;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)setup;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)setupData;
+
+@end

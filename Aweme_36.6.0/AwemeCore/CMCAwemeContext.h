@@ -1,0 +1,80 @@
+@class AWESearchAdModel, AWEURLModel, UIResponder, NSDictionary, UIViewController, AWESearchAdModule, UIView, AWECommentModel, NSString, AWEAdWebviewInfo, AWEAwemeModel, NSNumber, AWEChallengeModel, AWEOriginalAdModel;
+@protocol AWEPlayInteractionViewControllerProtocol, IESVideoPlayerProtocol;
+
+@interface CMCAwemeContext : CMCContext
+
+@property (retain, nonatomic) AWEAwemeModel *aweme;
+@property (retain, nonatomic) NSString *adEventName;
+@property (retain, nonatomic) NSString *currentAnchorPriority;
+@property (nonatomic) long long loopTimes;
+@property (copy, nonatomic) id /* block */ getLoopTimes;
+@property (retain, nonatomic) NSNumber *duration;
+@property (retain, nonatomic) NSNumber *videoLength;
+@property (retain, nonatomic) NSString *currentPlayingVideoURLString;
+@property (weak, nonatomic) UIView *playerView;
+@property (weak, nonatomic) UIView *tableViewCell;
+@property (weak, nonatomic) UIView *interactionView;
+@property (weak, nonatomic) UIResponder *clickedTarget;
+@property (copy, nonatomic) NSString *btmInfo;
+@property (weak, nonatomic) id<IESVideoPlayerProtocol> videoPlayer;
+@property (copy, nonatomic) id /* block */ route;
+@property (copy, nonatomic) NSDictionary *extra;
+@property (nonatomic) long long transitionState;
+@property (retain, nonatomic) UIViewController *destinationViewController;
+@property (retain, nonatomic) AWEAdWebviewInfo *webViewInfo;
+@property (retain, nonatomic) NSString *reportFrom;
+@property (retain, nonatomic) NSString *enterMethod;
+@property (nonatomic) long long viewerAction;
+@property (retain, nonatomic) NSString *refer;
+@property (nonatomic) long long splashAnimationType;
+@property (retain, nonatomic) AWECommentModel *comment;
+@property (retain, nonatomic) AWECommentModel *linkComment;
+@property (copy, nonatomic) id /* block */ openProfile;
+@property (retain, nonatomic) NSString *clickPosition;
+@property (nonatomic) BOOL isSearchResult;
+@property (nonatomic) long long commentLinkType;
+@property (retain, nonatomic) NSString *linkType;
+@property (retain, nonatomic) NSString *linkEventName;
+@property (nonatomic) BOOL isLynxButtonActionClick;
+@property (nonatomic) BOOL isLynxButtonClick;
+@property (nonatomic) BOOL isLeftButton;
+@property (nonatomic) BOOL isNativeClick;
+@property (nonatomic) BOOL isComponentClick;
+@property (nonatomic) BOOL isLynxCardViewClick;
+@property (nonatomic) BOOL isConvertMiddleWillingnesClick;
+@property (nonatomic) BOOL isClickInHalfPage;
+@property (nonatomic) double currentPlaybackTime;
+@property (nonatomic) long long playState;
+@property (nonatomic) double videoDuration;
+@property (nonatomic) BOOL isAdOperationShowing;
+@property (nonatomic) BOOL isFromECommerce;
+@property (retain, nonatomic) AWEOriginalAdModel *adModel;
+@property (nonatomic) long long hotSpotVideoIndex;
+@property (retain, nonatomic) NSNumber *adLiveDuration;
+@property (nonatomic) long long searchAggregationType;
+@property (retain, nonatomic) AWESearchAdModule *searchAdModule;
+@property (retain, nonatomic) AWESearchAdModel *searchAdModel;
+@property (nonatomic) BOOL isMerchandiseType;
+@property (nonatomic) BOOL needRoomInfo;
+@property (nonatomic) BOOL useFadeInPush;
+@property (nonatomic) long long adSearchProductTabEndorseType;
+@property (retain, nonatomic) NSNumber *creativeID;
+@property (retain, nonatomic) NSNumber *adID;
+@property (retain, nonatomic) AWEURLModel *trackURLList;
+@property (copy, nonatomic) NSString *searchLogExtra;
+@property (nonatomic) BOOL withoutClickButtonTrack;
+@property (nonatomic) BOOL avoidClickTrack;
+@property (nonatomic) BOOL avoidClick3rdTrack;
+@property (retain, nonatomic) AWEChallengeModel *challenge;
+@property (nonatomic) BOOL avoidFetchQCPXCoupon;
+@property (nonatomic) BOOL isClueArea;
+@property (copy, nonatomic) NSString *frequentlyAskedQuestions;
+@property (nonatomic) BOOL useNewAdReportUrl;
+@property (weak, nonatomic) UIViewController<AWEPlayInteractionViewControllerProtocol> *interactionContainer;
+
++ (id)contextWithAweme:(id)a0;
+
+- (id)initWithAweme:(id)a0;
+- (void).cxx_destruct;
+
+@end

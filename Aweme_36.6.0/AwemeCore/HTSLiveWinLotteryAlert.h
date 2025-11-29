@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveWinLotteryAlert : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *buttonLabel;
+
++ (id)descriptor;
+
+@end

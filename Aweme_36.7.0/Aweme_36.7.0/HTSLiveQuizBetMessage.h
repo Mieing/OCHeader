@@ -1,0 +1,13 @@
+@class HTSLiveCommon, GPBInt64Int64Dictionary;
+
+@interface HTSLiveQuizBetMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long quizId;
+@property (retain, nonatomic) GPBInt64Int64Dictionary *optionMoney;
+@property (readonly, nonatomic) unsigned long long optionMoney_Count;
+
++ (id)descriptor;
+
+@end

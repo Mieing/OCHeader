@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveBattleUserSettingsList : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *listArray;
+@property (readonly, nonatomic) unsigned long long listArray_Count;
+@property (copy, nonatomic) NSString *nextCursor;
+
++ (id)descriptor;
+
+@end

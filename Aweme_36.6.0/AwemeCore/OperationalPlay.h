@@ -1,0 +1,11 @@
+@class MultipleMatches3;
+
+@interface OperationalPlay : IESLivePBBaseMessage
+
+@property (nonatomic) int operationalPlayType;
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) MultipleMatches3 *multipleMatches3;
+
++ (id)descriptor;
+
+@end

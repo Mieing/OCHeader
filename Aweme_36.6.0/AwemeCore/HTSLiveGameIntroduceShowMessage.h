@@ -1,0 +1,16 @@
+@class NSString, HTSLiveAtmosphereContent, HTSLiveIntroduceDispatchStrategy;
+
+@interface HTSLiveGameIntroduceShowMessage : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) int msgType;
+@property (retain, nonatomic) HTSLiveIntroduceDispatchStrategy *dispatchStrategy;
+@property (nonatomic) BOOL hasDispatchStrategy;
+@property (copy, nonatomic) NSString *updatedData;
+@property (nonatomic) long long introduceType;
+@property (retain, nonatomic) HTSLiveAtmosphereContent *atmosphereContent;
+@property (nonatomic) BOOL hasAtmosphereContent;
+
++ (id)descriptor;
+
+@end

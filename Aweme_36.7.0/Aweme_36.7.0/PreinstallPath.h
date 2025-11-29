@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface PreinstallPath : GPBMessage
+
+@property (copy, nonatomic) NSString *path;
+
++ (id)descriptor;
+
+@end

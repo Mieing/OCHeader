@@ -1,0 +1,10 @@
+@class TIMXPBNProfile;
+
+@interface TIMXPBNProfileGetInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNProfile *profile;
+@property (nonatomic) BOOL hasProfile;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,8 @@
+@class NSNumber;
+
+@interface IESLiveCreateChatGroupParamModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *type;
+@property (retain, nonatomic) NSNumber *groupType;
+
+@end

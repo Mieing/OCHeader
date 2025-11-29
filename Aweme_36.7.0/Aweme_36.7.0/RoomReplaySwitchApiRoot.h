@@ -1,0 +1,3 @@
+@interface RoomReplaySwitchApiRoot : GPBRootObject
+
+@end

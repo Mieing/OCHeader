@@ -1,0 +1,78 @@
+@class DUXTabBarContainerController, AWEOpenShareAlbumCollectionVC, UICollectionView, NSDate, UILabel, UITapGestureRecognizer, NSMutableArray, UIButton, UIView, AWEOpenShareResp, DUXButton, NSString, AWEOpenShareAlbumNonSelectCollectionVC, AWEOpenShareAlbumResponseModel, DUXDivider, AVPlayerViewController, DUXNavigationBar, DUXCheckBox, AWEOpenShareAlbumVideoModel, AVPlayer;
+
+@interface AWEOpenShareAlbumViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, DUXTabBarContainerDelegate>
+
+@property (retain, nonatomic) AVPlayer *player;
+@property (retain, nonatomic) UICollectionView *selectResultCollectionView;
+@property (retain, nonatomic) DUXButton *confirmButton;
+@property (retain, nonatomic) DUXNavigationBar *topBarView;
+@property (retain, nonatomic) UIView *selectResultView;
+@property (retain, nonatomic) AWEOpenShareAlbumVideoModel *currentModel;
+@property (retain, nonatomic) UILabel *choiceLabel;
+@property (retain, nonatomic) DUXCheckBox *tickCheckbox;
+@property (retain, nonatomic) AVPlayerViewController *playerVC;
+@property (retain, nonatomic) DUXDivider *divider;
+@property (retain, nonatomic) UIButton *whiteBackButton;
+@property (nonatomic) long long currentSelection;
+@property (retain, nonatomic) UITapGestureRecognizer *titleBarTapGesture;
+@property (nonatomic) long long maxSelection;
+@property (retain, nonatomic) NSDate *viewDidLoadDate;
+@property (retain, nonatomic) NSString *overMaxSelectionTipsText;
+@property (nonatomic) BOOL canSelectVideo;
+@property (retain, nonatomic) UIView *tabBarContainerView;
+@property (retain, nonatomic) DUXTabBarContainerController *tabBarContainer;
+@property (retain, nonatomic) AWEOpenShareAlbumCollectionVC *allowSelectCollectionVC;
+@property (retain, nonatomic) AWEOpenShareAlbumNonSelectCollectionVC *nonSelectCollectionVC;
+@property (nonatomic) BOOL isRequesting;
+@property (copy, nonatomic) id /* block */ completion;
+@property (retain, nonatomic) AWEOpenShareResp *resp;
+@property (retain, nonatomic) NSString *cardType;
+@property (retain, nonatomic) AWEOpenShareAlbumResponseModel *albumRespModel;
+@property (retain, nonatomic) NSMutableArray *allowModels;
+@property (retain, nonatomic) NSMutableArray *blockModels;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)numberOfControllers:(id)a0;
+- (id)slidingViewController:(id)a0 viewControllerAtIndex:(long long)a1;
+- (void)slidingViewController:(id)a0 didFinishTransitionToIndex:(unsigned long long)a1;
+- (void)playerItemDidReachEnd;
+- (void)updateSelectedResultView;
+- (void)willEnterForeGround;
+- (void)playerViewPressed;
+- (BOOL)checkShouldShowAlert;
+- (void)showQuestionDialog;
+- (void)playVideoWithModel:(id)a0 playingNext:(BOOL)a1;
+- (void)processPlayerViewAndLayer;
+- (void)stopPlayingVideo;
+- (void)crossPressed;
+- (void)playPrevious;
+- (void)configHiddenTopBar:(BOOL)a0;
+- (void)configDefaultTopBar:(BOOL)a0 shouldAnimate:(BOOL)a1;
+- (void)addOrRemoveTitleTapGesture:(BOOL)a0;
+- (void)updateTickCheckboxAndLabel;
+- (void)didSelectCellWithModel:(id)a0;
+- (void)updateCustomVideos;
+- (void)updateExistingSelectionsWithOriginalNumber:(id)a0;
+- (void)updateConfirmButton;
+- (id)selectedModels;
+- (id)customBarView;
+- (void)tickPressed;
+- (void)confirmPressed;
+- (void)cakReorderableCollectionView:(id)a0 itemAtIndexPath:(id)a1 didMoveToIndexPath:(id)a2;
+- (void)stopPlaying;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (struct CGSize { double x0; double x1; })cellSize;
+- (void)setupUI;
+- (void)playNext;
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveProfilePicSpliceLabel : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *profileListArray;
+@property (readonly, nonatomic) unsigned long long profileListArray_Count;
+
++ (id)descriptor;
+
+@end

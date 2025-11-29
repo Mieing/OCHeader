@@ -1,0 +1,74 @@
+@class UIView, NSString, NSArray, IESLiveVideoPlayerController, HTSEventForwardingView, UIButton, IESLiveVSPrivilegeVideoPlayerControl, NSDictionary, HTSLiveAmazingBackgroundView, UILabel;
+@protocol IESHYContainerProtocol;
+
+@interface IESLiveVSPrivilegeVideoPlayerViewController : UIViewController <IESLiveVideoPlayerControllerDelegate>
+
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIButton *backButton;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIButton *backButtonForLandscape;
+@property (retain, nonatomic) UILabel *titleLabelForLandscape;
+@property (retain, nonatomic) HTSLiveAmazingBackgroundView *topGradientView;
+@property (retain, nonatomic) HTSLiveAmazingBackgroundView *bottomGradientView;
+@property (retain, nonatomic) HTSEventForwardingView *playerControlContainerView;
+@property (retain, nonatomic) IESLiveVSPrivilegeVideoPlayerControl *playerControl;
+@property (retain, nonatomic) IESLiveVideoPlayerController *playerController;
+@property (retain, nonatomic) UIView<IESHYContainerProtocol> *hybridView;
+@property (copy, nonatomic) id /* block */ orientationChangedCompletion;
+@property (copy, nonatomic) id /* block */ autoHideBlock;
+@property (nonatomic) BOOL isAnimating;
+@property (nonatomic) BOOL playerControlShow;
+@property (nonatomic) double lastStartPlayTimeInterval;
+@property (copy, nonatomic) NSString *privilegeDescriptionInfo;
+@property (nonatomic) BOOL needForbidRecord;
+@property (nonatomic) BOOL isAlbumType;
+@property (readonly, copy, nonatomic) NSArray *videoModels;
+@property (nonatomic) unsigned long long currentIndex;
+@property (nonatomic) BOOL needStartFromHistory;
+@property (copy, nonatomic) id /* block */ playingIndexWhenDismissBlock;
+@property (copy, nonatomic) NSString *albumHybridViewURLString;
+@property (copy, nonatomic) NSDictionary *trackParamters;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)commonParameters;
+- (void)backClick;
+- (void)screenCapturedDidChange:(id)a0;
+- (void)trackVideoPlayStart;
+- (void)videoReadyToDisPlayOfPlayerController:(id)a0;
+- (void)playerController:(id)a0 updateCurrent:(double)a1 duration:(double)a2;
+- (void)playerController:(id)a0 playerDidFinishError:(id)a1;
+- (void)tapContainerView;
+- (id)currentPlayingVideoID;
+- (void)updateVideoDataSource:(id)a0 toPlayAtIndex:(unsigned long long)a1;
+- (void)showAlertForScreenRecordingIfNeeded;
+- (void)setupForAlbum;
+- (void)setupForVideo;
+- (void)trackSlideSeekBar;
+- (long long)watchedDurationAndNeedUpdateStartTime:(BOOL)a0;
+- (void)trackVideoWatchedTimeInterval:(double)a0;
+- (void)trackClickChangeOrientationButton;
+- (void)changeOrientationCompletion:(id /* block */)a0;
+- (void)trackClickPauseButton;
+- (BOOL)playIfEnable;
+- (void)layoutPlayerIfNeededForOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)updateUIForInterfaceOrientationIsPortrait:(BOOL)a0;
+- (void)playAtIndex:(unsigned long long)a0 startTime:(id)a1;
+- (BOOL)isPortraitStreamForPlayerController:(id)a0;
+- (void)cancelAutoHideIfNeeded;
+- (void)autoHide;
+- (void)showPlayerControl:(BOOL)a0 animated:(BOOL)a1;
+- (void)trackClickBackButton;
+- (void)becomeActive;
+- (void).cxx_destruct;
+- (void)enterBackground;
+- (long long)currentInterfaceOrientation;
+- (void)reset;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidDisappear:(BOOL)a0;
+- (BOOL)isScreenRecording;
+
+@end

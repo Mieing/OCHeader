@@ -1,0 +1,77 @@
+@class AWESearchAnchorModel, UILabel, UIView, AWEAwemeModel, AWESearchScanInnerEntranceGuideHelper, UIImageView, UIButton, AWESearchScanInnerEntranceGuidePopover, NSString, NSDictionary, AWESearchScanEntranceButton, AWESearchScanInnerEntranceModel;
+
+@interface AWESearchEntranceView : UIView <UIGestureRecognizerDelegate, DUXPopoverDelegate, AWESearchEntranceViewProtocol>
+
+@property (retain, nonatomic) UIImageView *searchIcon;
+@property (retain, nonatomic) UIImageView *backgroundImage;
+@property (retain, nonatomic) UILabel *placeHolderTextLabel;
+@property (retain, nonatomic) UIButton *rightButton;
+@property (retain, nonatomic) UIButton *rightCameraButton;
+@property (retain, nonatomic) AWESearchScanEntranceButton *rightScanEntranceButton;
+@property (retain, nonatomic) UIView *voiceOverPlaceHolder;
+@property (retain, nonatomic) UIView *rightLine;
+@property (retain, nonatomic) AWESearchAnchorModel *recommendWord;
+@property (retain, nonatomic) AWESearchScanInnerEntranceModel *scanEntranceModel;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (weak, nonatomic) AWESearchScanInnerEntranceGuidePopover *currentShowingPopover;
+@property (retain, nonatomic) AWESearchScanInnerEntranceGuideHelper *scanGuideFreqHelper;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) double rightBtnTextWidth;
+@property (retain, nonatomic) NSDictionary *scanEntranceConfigTable;
+@property (nonatomic) double showTS;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterFromSecond;
+@property (copy, nonatomic) NSString *awemeID;
+@property (retain, nonatomic) NSDictionary *ECommerceLogExtra;
+@property (retain, nonatomic) NSDictionary *logPassback;
+@property (retain, nonatomic) NSDictionary *logExtraDict;
+@property (copy, nonatomic) id /* block */ rightButtonClickBlock;
+@property (copy, nonatomic) id /* block */ rightCameraButtonClickBlock;
+@property (copy, nonatomic) id /* block */ rightScanEntranceButtonClickBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)popoverDidDisappear:(id)a0;
+- (void)popoverDidAppear:(id)a0;
+- (id)ecommerceSearchBarTrackParams;
+- (id)searchBarConfig;
+- (void)rightButtonClicked;
+- (void)updateWithRecommendWord:(id)a0 isMasked:(BOOL)a1;
+- (void)updateWithModel:(id)a0 extra:(id)a1;
+- (void)trackTrendingWordsShowIfNeed;
+- (void)trackPhotoSearchClick;
+- (void)trackSearchBarClickEventWithArea:(id)a0;
+- (void)detailTableVCDidDisappear;
+- (BOOL)enableBigMode;
+- (BOOL)searchBtnShow;
+- (BOOL)searchFontShadow;
+- (double)searchBtnFontSize;
+- (BOOL)showCameraButton;
+- (BOOL)searchIconShow;
+- (id)searchDefaultSearchWord;
+- (void)updateUIWithScanEntrance:(unsigned long long)a0;
+- (id)trendingWordsTrackParamsInfoWithBTMInfo:(id)a0;
+- (void)dismissScanGuideBubble;
+- (id)getSearchScanCommonParams:(id)a0;
+- (void)addSearchEntranceButton;
+- (BOOL)searchScanGuideShouldShow:(id)a0;
+- (void)showScanGuideBubble:(id)a0;
+- (id)photoSearchTrackParamsInfo;
+- (double)suggestWordFontSize;
+- (id)suggestWordFontColor;
+- (double)searchBarAlpha;
+- (int)searchBarBorderStyle;
+- (id)searchBtnFontColor;
+- (void)rightCameraButtonClicked;
+- (void)rightScanEntranceButtonClicked;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 enterFrom:(id)a1;
+- (int)searchBarStyle;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)layoutSubviews;
+- (void)updateUI;
+- (void)updateWithText:(id)a0;
+
+@end

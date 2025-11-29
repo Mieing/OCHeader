@@ -1,0 +1,16 @@
+@class NSString, EcomPrice;
+
+@interface EcomPop : IESLivePBBaseMessage
+
+@property (nonatomic) long long productId;
+@property (nonatomic) long long promotionId;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *cover;
+@property (retain, nonatomic) EcomPrice *minPrice;
+@property (nonatomic) BOOL hasMinPrice;
+@property (copy, nonatomic) NSString *sellingPoint;
+@property (copy, nonatomic) NSString *jumanjiJson;
+
++ (id)descriptor;
+
+@end

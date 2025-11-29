@@ -1,0 +1,12 @@
+@class NSString, NSNumber;
+
+@interface IESLiveGameCpAnchorPromoteParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *gameId;
+@property (copy, nonatomic) NSString *anchorId;
+@property (retain, nonatomic) NSNumber *status;
+@property (retain, nonatomic) NSNumber *promotingQuantity;
+
++ (id)modelCustomPropertyMapper;
+
+@end

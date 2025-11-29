@@ -1,0 +1,13 @@
+@class NSMutableArray, HTSLiveRoomBattleProcessInfo;
+
+@interface IESLiveLinkMicAudienceReplyCrossRoomLinkResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *guestInfosArray;
+@property (readonly, nonatomic) unsigned long long guestInfosArray_Count;
+@property (retain, nonatomic) HTSLiveRoomBattleProcessInfo *processInfo;
+@property (nonatomic) BOOL hasProcessInfo;
+@property (nonatomic) int realCrossRoomKind;
+
++ (id)descriptor;
+
+@end

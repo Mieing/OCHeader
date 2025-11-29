@@ -1,0 +1,3 @@
+@interface GamecpAwemeShowPadApiRoot : GPBRootObject
+
+@end

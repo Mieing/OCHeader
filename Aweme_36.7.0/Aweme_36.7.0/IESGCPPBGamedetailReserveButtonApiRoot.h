@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailReserveButtonApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class FinishKtvResponse_ResponseData;
+
+@interface FinishKtvResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) FinishKtvResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

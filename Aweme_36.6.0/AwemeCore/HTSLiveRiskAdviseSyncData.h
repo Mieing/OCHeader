@@ -1,0 +1,11 @@
+@class HTSLiveText;
+
+@interface HTSLiveRiskAdviseSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long createTime;
+@property (retain, nonatomic) HTSLiveText *adviseText;
+@property (nonatomic) BOOL hasAdviseText;
+
++ (id)descriptor;
+
+@end

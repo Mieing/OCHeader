@@ -1,0 +1,17 @@
+@class NSString, NSMutableArray, HTSLiveActivityLiveRecommendConfig_EpisodeInfo;
+
+@interface HTSLiveActivityLiveRecommendConfig : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *level;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+@property (nonatomic) int liveType;
+@property (retain, nonatomic) NSMutableArray *actorUidsArray;
+@property (readonly, nonatomic) unsigned long long actorUidsArray_Count;
+@property (retain, nonatomic) HTSLiveActivityLiveRecommendConfig_EpisodeInfo *episodeInfo;
+@property (nonatomic) BOOL hasEpisodeInfo;
+
++ (id)descriptor;
+
+@end

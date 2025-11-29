@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveRelevantRecommendation_Episode : IESLivePBBaseMessage
+
+@property (nonatomic) long long episodeId;
+@property (copy, nonatomic) NSString *episodeName;
+@property (retain, nonatomic) HTSLiveImage *episodeCover;
+@property (nonatomic) BOOL hasEpisodeCover;
+@property (copy, nonatomic) NSString *currentPeriod;
+@property (nonatomic) long long seasonId;
+@property (copy, nonatomic) NSString *itemId;
+
++ (id)descriptor;
+
+@end

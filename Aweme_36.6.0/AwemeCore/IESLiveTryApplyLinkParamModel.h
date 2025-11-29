@@ -1,0 +1,13 @@
+@class NSString, NSNumber;
+
+@interface IESLiveTryApplyLinkParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *source;
+@property (nonatomic) BOOL isTask;
+@property (copy, nonatomic) NSString *activityName;
+@property (retain, nonatomic) NSNumber *applyType;
+@property (copy, nonatomic) NSString *applySource;
+
++ (id)modelCustomPropertyMapper;
+
+@end

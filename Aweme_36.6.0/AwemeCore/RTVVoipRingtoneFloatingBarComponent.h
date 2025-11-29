@@ -1,0 +1,3 @@
+@interface RTVVoipRingtoneFloatingBarComponent : NSObject
+
+@end

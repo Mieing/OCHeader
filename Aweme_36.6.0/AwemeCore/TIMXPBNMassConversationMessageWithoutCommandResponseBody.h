@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface TIMXPBNMassConversationMessageWithoutCommandResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+@property (nonatomic) long long nextIndexInConversationV2;
+@property (nonatomic) BOOL hasNextIndexInConversationV2;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class TIMXPBNConversationInfo;
+
+@interface TIMXPBNConversationInfoUpdatedNotify : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNConversationInfo *conversation;
+@property (nonatomic) BOOL hasConversation;
+
++ (id)descriptor;
+
+@end

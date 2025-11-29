@@ -1,0 +1,3 @@
+@interface HTSLivePermissionCheckTriggerSyncdataRoot : GPBRootObject
+
+@end

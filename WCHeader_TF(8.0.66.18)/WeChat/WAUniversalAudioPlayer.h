@@ -1,0 +1,73 @@
+@class WAUniversalAudioPlayerCachePool, WAUniversalAudioPlayerInfo, NSString, WAUniversalAudioLoader, AVAudioPlayerNode, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue, WAUniversalAudioPlayerDelegate, WAUniversalAudioEngineProtocol;
+
+@interface WAUniversalAudioPlayer : NSObject <WAUniversalAudioLoaderDelegate>
+
+@property (retain, nonatomic) WAUniversalAudioPlayerInfo *playerInfo;
+@property (retain, nonatomic) AVAudioPlayerNode *playerNode;
+@property (retain, nonatomic) WAUniversalAudioLoader *loader;
+@property (nonatomic) BOOL shouldPlay;
+@property (retain, nonatomic) NSMutableArray *playerDataQueue;
+@property (nonatomic) BOOL isPaused;
+@property (nonatomic) BOOL isStopped;
+@property (nonatomic) double pausedTime;
+@property (copy, nonatomic) NSString *audioID;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *audioQueue;
+@property (nonatomic) BOOL record_isPlaying;
+@property (nonatomic) double record_volume;
+@property (retain, nonatomic) WAUniversalAudioPlayerCachePool *cachePool;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *fileQueue;
+@property (nonatomic) long long recordSampleTime;
+@property (nonatomic) unsigned int playErrCount;
+@property (nonatomic) BOOL ioCycleFixLogic;
+@property (weak, nonatomic) id<WAUniversalAudioPlayerDelegate> delegate;
+@property (weak, nonatomic) id<WAUniversalAudioEngineProtocol> audioEngine;
+@property (nonatomic) double volume;
+@property (readonly, nonatomic) double currentTime;
+@property (readonly, nonatomic) BOOL isPlaying;
+@property (nonatomic) unsigned long long bus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithAudioID:(id)a0 audioQueue:(id)a1 cachePool:(id)a2 fileQueue:(id)a3;
+- (void)dealloc;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (void)seek:(double)a0;
+- (void)loadAudio:(id)a0;
+- (void)destroy;
+- (void)terminateWithError:(id)a0;
+- (void)didDeatchPlayerNode;
+- (void)playImplementation;
+- (void)pauseImplementation;
+- (void)stopImplementation;
+- (void)seekImplementation:(double)a0;
+- (void)loadAudioImplementation:(id)a0;
+- (void)destroyImplementation;
+- (BOOL)isPlayingImplementation;
+- (void)setVolumeImplementation:(double)a0;
+- (double)volumeImplementation;
+- (double)currentTimeImplementation;
+- (void)terminateWithErrorImplementation:(id)a0;
+- (void)didDeatchPlayerNodeImplementation;
+- (void)onLoaderDidLoaded:(id)a0;
+- (void)onLoaderDidSeeked:(id)a0;
+- (void)onLoaderDidError:(id)a0 error:(id)a1;
+- (BOOL)reloadData:(BOOL)a0 error:(id *)a1 force:(BOOL)a2;
+- (void)cleanPlayerDataQueue;
+- (void)cleanLoader;
+- (void)resetAudioInfo;
+- (void)internalStop;
+- (void)internalPause;
+- (void)resetPlayerTime;
+- (BOOL)scheduleSegment:(id)a0 startTime:(double)a1 error:(id *)a2;
+- (void)playFileDidFinished:(id)a0 queue:(id)a1;
+- (BOOL)scheduleBuffer:(id)a0 interrupts:(BOOL)a1 loop:(BOOL)a2 error:(id *)a3;
+- (void)playPCMBufferDidFinished:(id)a0 queue:(id)a1;
+- (void)throwError:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,97 @@
+@class AWEPushSettingSectionedActionSheetView, NSString, NSArray, AWEIMChatSettingHalfScreenViewController, AWEPushSettingActionSheet, AWEHalfScreenBaseViewController;
+
+@interface AWEChatSettingViewModel : AWESettingBaseViewModel <AFDSettingSearchDelegate> {
+    NSArray *_sectionDataArray;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL localCallPushValue;
+@property (nonatomic) BOOL localFriendOnlienPushValue;
+@property (weak, nonatomic) AWEHalfScreenBaseViewController *actionSheetVC;
+@property (weak, nonatomic) AWEPushSettingActionSheet *multiSwitchSheet;
+@property (weak, nonatomic) AWEPushSettingSectionedActionSheetView *multiSwitchWithSectionSheet;
+@property (weak, nonatomic) AWEIMChatSettingHalfScreenViewController *imToPigeonViewController;
+
++ (id)settingSearchRegisterDic;
++ (unsigned long long)itemStatusWithSettingItem:(id)a0;
++ (Class)aAWEUserCenterModuleServiceCommonAdapterClass;
++ (BOOL)canShowIMToPigeonItemModel;
++ (BOOL)shouldIgnoreSearchGiphy;
++ (BOOL)shouldIgnoreMsgDBRebuild;
++ (id)sttingsPageURL:(long long)a0;
++ (id)settingSearchRegisterDic_privateAndCall;
+
+- (BOOL)isVoipRingtoneHasBeenSet;
+- (id)switchItemModelWithTitle:(id)a0 needIcon:(BOOL)a1 isSwitchOn:(BOOL)a2 isEnable:(BOOL)a3 hasLineView:(BOOL)a4 switchChangeBlock:(id /* block */)a5;
+- (id)switchItemModelWithTitle:(id)a0 needIcon:(BOOL)a1 isSwitchOn:(BOOL)a2 isEnable:(BOOL)a3 isDisableWithTitleAndSwtich:(BOOL)a4 hasLineView:(BOOL)a5 switchChangeBlock:(id /* block */)a6;
+- (void)switchUrgeEnterpriseCommitChangeBlock:(BOOL)a0;
+- (id)aAWEUserCenterModuleServiceCommonAdapter;
+- (void)initModel;
+- (void)switchSearchGiphy:(BOOL)a0;
+- (void)tapRecentDeleteChatCell;
+- (void)switchIMKeyboardReturn:(BOOL)a0;
+- (void)switchOfflinePushDetail:(BOOL)a0;
+- (void)switchPrivateMessageVibrate:(BOOL)a0;
+- (void)switchConsecutiveChatDays:(BOOL)a0;
+- (void)switchCloseFriendsMoment:(BOOL)a0;
+- (void)switchPrivateMessagePush:(BOOL)a0;
+- (void)configPrivateMessagePush;
+- (void)configCallPush;
+- (void)switchCallPush:(BOOL)a0;
+- (void)switchCallKitPush:(BOOL)a0;
+- (void)switchRtvCellularOptimizeEnable:(BOOL)a0;
+- (void)editIMTickle;
+- (void)switchFriendOnlinePush:(BOOL)a0;
+- (void)tapMsgDBRebuild;
+- (void)cameraEditSaveToLocalSwitchOn:(BOOL)a0;
+- (void)switchIMFeedShare:(BOOL)a0;
+- (id)refactorSectionDataArray;
+- (id)getConfigIMToPigeonItemModel;
+- (id)getConfigPrivateAndCallItemModel;
+- (void)p_themeChanged;
+- (void)updateOtherStatusFromNetword;
+- (void)updatePushStatusFromNetword;
+- (void)updateConsecutiveChatDaysItem;
+- (BOOL)shouldIgnoreOfflinePushDetail;
+- (void)updateOfflinePushDetail;
+- (BOOL)shouldIgnorePrivateMessageVibrate;
+- (void)updatePrivateMessageVibrate;
+- (void)updateCloseFriendsMomentItem;
+- (void)updateIMFeedQuickShareBtnEnableItem;
+- (void)updateUrgeEnterpriseCommitItem;
+- (void)updateSearchGiphyItem;
+- (void)updateIMKeyboardReturnSwitch;
+- (void)updateRingtoneItem;
+- (void)updateCameraEditSaveToLocal;
+- (void)updateIMTickle;
+- (void)updatePrivateAndCallSwitchItem;
+- (id)getConfigPrivateAndCallTitleString;
+- (id)getConfigPrivateAndCallSections;
+- (void)p_trackRingtoneSettingShowWithStatus:(BOOL)a0 extraDict:(id)a1;
+- (id)getIMToPigeonDetailString;
+- (void)showIMToPigeonPopupOnViewController:(id)a0;
+- (id)getIMToPigeonItems;
+- (id)getIMToPigeonHeaderView;
+- (id)getRingtoneItemModel;
+- (void)switchIMToPigeonPush:(BOOL)a0;
+- (void)switchUrgeEnterpriseOn:(BOOL)a0;
+- (void)p_trackNotificationSwitchWithLabel:(id)a0 status:(BOOL)a1;
+- (void)updatePrivateMessagePushItem;
+- (void)updateIMToPigeonItem;
+- (void)updateCallPushItem;
+- (void)updateCallKitPushItem;
+- (void)updateFriendOnlinePushItem;
+- (id)getConfigPrivateAndCallSwitchItems;
+- (void)trackClickEvent:(id)a0;
+- (id)sectionDataArray;
+- (void)setSectionDataArray:(id)a0;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)updateModel;
+
+@end

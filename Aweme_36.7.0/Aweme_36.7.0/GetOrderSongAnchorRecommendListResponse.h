@@ -1,0 +1,10 @@
+@class GetOrderSongAnchorRecommendListResponse_ResponseData;
+
+@interface GetOrderSongAnchorRecommendListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetOrderSongAnchorRecommendListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

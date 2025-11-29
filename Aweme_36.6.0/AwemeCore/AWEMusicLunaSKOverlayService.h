@@ -1,0 +1,73 @@
+@class DUXPopover, NSDictionary, NSString, UIView, SKOverlay;
+@protocol AWEMusicLunaSKOverlayServiceTargetSceneDelegate;
+
+@interface AWEMusicLunaSKOverlayService : HTSService <AWEMusicLunaSKOverlayService, SKOverlayDelegate>
+
+@property (retain, nonatomic) SKOverlay *skoverlay;
+@property (retain, nonatomic) NSDictionary *sixEssential;
+@property (nonatomic) BOOL isDownload;
+@property (nonatomic) BOOL isOpenStore;
+@property (nonatomic) BOOL hasTouchedSKOverlay;
+@property (retain, nonatomic) DUXPopover *popover;
+@property (weak, nonatomic) id<AWEMusicLunaSKOverlayServiceTargetSceneDelegate> currentSceneDelegate;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL isPrepareShowing;
+@property (nonatomic) unsigned long long currentScene;
+@property (retain, nonatomic) NSDictionary *currentDiversionInfo;
+@property (nonatomic) unsigned long long lastDismissReason;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } SKOverlayFrame;
+@property (retain, nonatomic) UIView *toastAnchorView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)handleOverlayEvent:(id)a0;
+- (void)handleActiveEvent:(id)a0;
+- (unsigned long long)getCurrentLunaSKOverlayStatus;
+- (void)showSKOverlayWithDiversionInfo:(id)a0;
+- (void)showSKOverlayWithDiversionInfo:(id)a0 targetSceneDelegate:(id)a1;
+- (void)showRecoverSKOverlayWithAvoidPoupType:(unsigned long long)a0;
+- (void)setSKOverlayDiversionInfo:(id)a0 targetSceneDelegate:(id)a1;
+- (void)dismissSKOverlayWithReason:(unsigned long long)a0;
+- (BOOL)canShowWithScene:(unsigned long long)a0;
+- (void)requestSixEssentialInfoWithScene:(unsigned long long)a0 Completion:(id /* block */)a1;
+- (void)p_requestSixEssential;
+- (void)p_setUpSkoverlay;
+- (void)requestSixEssentialInfoWithCompletion:(id /* block */)a0;
+- (BOOL)p_osVersionIsAvailable;
+- (void)reportDiversionLunaInfo;
+- (void)p_trackSKOverlayDidClickedWithParams:(id)a0;
+- (BOOL)p_canShowSKOverlayWithScene:(unsigned long long)a0;
+- (id)p_makeSixEssentialWithScene:(unsigned long long)a0;
+- (id)p_elementStr:(id)a0 key:(id)a1;
+- (BOOL)p_canShowToastWithScene:(unsigned long long)a0;
+- (id)p_popoverContentViewWithContent:(id)a0 contentColor:(id)a1 backgroundColor:(id)a2;
+- (void)p_toastDidShow;
+- (void)p_refreshToastRecordWithScene:(unsigned long long)a0;
+- (id)p_toastShowCountKeyWithScene:(unsigned long long)a0;
+- (long long)p_toastShowLimitCount;
+- (id)p_toastLastShowDateWithScene:(unsigned long long)a0;
+- (void)p_refreshSKOverlayRecordWithScene:(unsigned long long)a0;
+- (id)p_userCloseSKOverlayCountKeyWithScene:(unsigned long long)a0;
+- (long long)p_userCloseLimitCount;
+- (id)p_lastUserCloseDateSKOverlayWithScene:(unsigned long long)a0;
+- (id)p_blockList;
+- (BOOL)p_checkIsBlockListVCWhenShowing;
+- (void)p_setUpNotification;
+- (void)p_trackSKOverlayDidShow;
+- (void)p_showToastIfNeeded;
+- (void)p_recordUserDidClose;
+- (void)p_removeSKOverlayNotifications;
+- (void)setUp;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+- (void)show;
+- (void)windowDidResignKey:(id)a0;
+- (void)storeOverlay:(id)a0 willStartPresentation:(id)a1;
+- (void)storeOverlay:(id)a0 didFinishPresentation:(id)a1;
+- (void)storeOverlay:(id)a0 willStartDismissal:(id)a1;
+- (void)storeOverlay:(id)a0 didFinishDismissal:(id)a1;
+
+@end

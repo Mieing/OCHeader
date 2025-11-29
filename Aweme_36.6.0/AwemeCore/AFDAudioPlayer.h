@@ -1,0 +1,75 @@
+@class NSString, NSTimer, TTVideoEngine, NSArray, NSDictionary;
+@protocol AFDAudioPlayerDelegate;
+
+@interface AFDAudioPlayer : NSObject <TTVideoEngineDelegate>
+
+@property (retain, nonatomic) TTVideoEngine *engine;
+@property (retain, nonatomic) NSTimer *loadTimer;
+@property (retain, nonatomic) NSTimer *timeoutTimer;
+@property (retain, nonatomic) NSTimer *engineTimer;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) BOOL isTimeout;
+@property (nonatomic) BOOL needLoop;
+@property (nonatomic) BOOL shouldIgnoreGlobeMute;
+@property (nonatomic) BOOL audioEffectEnabled;
+@property (copy, nonatomic) NSString *key;
+@property (readonly, nonatomic) double currentTime;
+@property (readonly, nonatomic) double duration;
+@property (nonatomic) double startTime;
+@property (nonatomic) BOOL needCookie;
+@property (copy, nonatomic) NSArray *directPlayURLs;
+@property (copy, nonatomic) NSString *localUrlString;
+@property (copy, nonatomic) NSDictionary *audioEffectExternInfo;
+@property (weak, nonatomic) id<AFDAudioPlayerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)videoEngineUserStopped:(id)a0;
+- (void)videoEngine:(id)a0 playbackStateDidChanged:(long long)a1;
+- (void)videoEngineDidFinish:(id)a0 error:(id)a1;
+- (void)videoEngineDidFinish:(id)a0 videoStatusException:(long long)a1;
+- (void)videoEngineCloseAysncFinish:(id)a0;
+- (void)videoEngine:(id)a0 mdlKey:(id)a1 hitCacheSze:(long long)a2;
+- (void)continueAudioPlay;
+- (void)playAudioSeekToTime:(double)a0;
+- (void)setAudioEffectType:(long long)a0;
+- (void)setAudioEffectSrcLoudness:(double)a0;
+- (void)setAudioEffectSrcPeak:(double)a0;
+- (void)setAudioEffectTargetLoudness:(double)a0;
+- (void)setAudioEffectForbidCompressor:(BOOL)a0;
+- (void)prepareToPlayWithAudioEffectInfo:(id)a0;
+- (void)enginePlay;
+- (void)addLoadTimer;
+- (void)addEngineTimer;
+- (void)removeLoadTimer;
+- (void)removeTimeoutTimer;
+- (void)removeEngineTimer;
+- (void)updateLoadState;
+- (void)addTimeoutTimer;
+- (void)loadTimeout;
+- (id)initWithAudioEffectEnabled:(BOOL)a0;
+- (void)playWithStartTime:(double)a0;
+- (id)initWithAudioEffectEnabled:(BOOL)a0 needLoop:(BOOL)a1 ignoreGlobeMute:(BOOL)a2;
+- (void)switchGlobalMuteStatus:(BOOL)a0;
+- (void)setPlayBackCategory;
+- (void)trackTriggerPlayAudioWithIsSuccess:(BOOL)a0 isTimeout:(BOOL)a1 status:(long long)a2;
+- (void)engineDidStartPlay;
+- (void)engineDidPausePlay;
+- (void)engineDidPlayFailed;
+- (void)engineDidStopPlay;
+- (void)engineDidFinishPlay;
+- (void)trackHitCacheFile;
+- (void)setDirectPlayURLs:(id)a0 key:(id)a1;
+- (void)updateTime;
+- (void)clearTimer;
+- (void)setCurrentTime:(double)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (void)dealloc;
+- (void)setupEngine;
+
+@end

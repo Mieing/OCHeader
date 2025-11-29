@@ -1,0 +1,3 @@
+@interface MelonGetLotteryConfigApiRoot : GPBRootObject
+
+@end

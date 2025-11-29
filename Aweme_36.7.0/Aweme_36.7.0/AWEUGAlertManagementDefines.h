@@ -1,0 +1,3 @@
+@interface AWEUGAlertManagementDefines : NSObject
+
+@end

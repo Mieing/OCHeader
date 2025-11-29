@@ -1,0 +1,74 @@
+@class UIView, NSString, NSArray, UIImage, AWEVideoPublishViewModel, AWEDealWithServerPhotoManager, ACCCanvasAdaptor, IESEffectModel, AWEMVExportSession;
+@protocol UIViewControllerTransitioningDelegate, ACCTextLoadingViewProtcol, ACCCanvasMakerProtocol;
+
+@interface AWEACCMVTemplateManagerImpl : NSObject <ACCMVTemplateManagerProtocol, UINavigationControllerDelegate>
+
+@property (retain, nonatomic) AWEDealWithServerPhotoManager *serverPhotoManager;
+@property (retain, nonatomic) AWEMVExportSession *mvExportSession;
+@property (retain, nonatomic) NSArray *mvResources;
+@property (retain, nonatomic) NSArray *originImages;
+@property (retain, nonatomic) NSArray *selectedAssetNames;
+@property (retain, nonatomic) UIView<ACCTextLoadingViewProtcol> *loadingView;
+@property (retain, nonatomic) IESEffectModel *effect;
+@property (retain, nonatomic) UIImage *image;
+@property (nonatomic) double generateBeginTime;
+@property (retain, nonatomic) id<UIViewControllerTransitioningDelegate> nextTranslationTransitionDelegate;
+@property (copy, nonatomic) id /* block */ successBlock;
+@property (retain, nonatomic) id<ACCCanvasMakerProtocol> canvasMaker;
+@property (retain, nonatomic) ACCCanvasAdaptor *canvasAdaptor;
+@property (retain, nonatomic) AWEVideoPublishViewModel *publishModel;
+@property (copy, nonatomic) id /* block */ cancelBlock;
+@property (copy, nonatomic) id /* block */ customerTransferHandler;
+@property (copy, nonatomic) id /* block */ configPublishModelHandler;
+@property (nonatomic) BOOL disableExportUI;
+@property (nonatomic) BOOL disableAutoUseMVMusic;
+@property (nonatomic) BOOL isMultiProjects;
+@property (nonatomic) BOOL hasEnterFlash;
+@property (copy, nonatomic) id /* block */ customerTransitioningSetting;
+@property (copy, nonatomic) id /* block */ enableAnimated;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)configPublishModel:(id)a0;
+- (id)localMusicAssetForURL:(id)a0;
+- (id /* block */)enterVideoEditorBlock;
+- (void)updatePublishModelForDetailMusic:(id)a0;
+- (void)exportMVVideoWithImage:(id)a0 doneBlock:(id /* block */)a1 failedBlock:(id /* block */)a2;
+- (void)exportMVVideoWithImage:(id)a0 musicId:(id)a1 needLoading:(BOOL)a2 doneBlock:(id /* block */)a3 failedBlock:(id /* block */)a4;
+- (void)exportMVVideoWithAssetModels:(id)a0 failedBlock:(id /* block */)a1 successBlock:(id /* block */)a2;
+- (void)exportSingleVideoWithAssetModels:(id)a0 musicModel:(id)a1 failedBlock:(id /* block */)a2 successBlock:(id /* block */)a3;
+- (void)exportMVVideoWithAssetModels:(id)a0 needsLoading:(BOOL)a1 failedBlock:(id /* block */)a2 successBlock:(id /* block */)a3;
+- (void)exportMVVideoWithFilePaths:(id)a0 failedBlock:(id /* block */)a1 successBlock:(id /* block */)a2;
+- (void)exportSaveMVVideoWithFilePaths:(id)a0 failedBlock:(id /* block */)a1 successBlock:(id /* block */)a2;
+- (void)exportTextVideoWithImage:(id)a0 failedBlock:(id /* block */)a1 successBlock:(id /* block */)a2;
+- (id)infiniSinglePhotoImportModelConfig:(id)a0 withAssetModels:(id)a1;
+- (void)executeTextToVideoExportingWithImage:(id)a0 onFailed:(id /* block */)a1;
+- (id)createMVExportSessionWithImage:(id)a0;
+- (void)triggerTextModeMoniterSucceeed:(BOOL)a0 startTime:(double)a1;
+- (void)p_runExporting;
+- (BOOL)p_isCanvasEnable;
+- (void)executeExportingNeedsLoading:(BOOL)a0 isSinglePhoto:(BOOL)a1 failed:(id /* block */)a2;
+- (void)fetchSlidesCoverWithAssetModels:(id)a0 workspace:(id)a1 withResultBlock:(id /* block */)a2;
+- (BOOL)enableisInfiniWithAssetModels:(id)a0;
+- (void)openPublishPageWithPublishViewModel:(id)a0;
+- (void)openEditorWithPublishViewModel:(id)a0;
+- (id)createMVExportSessionWithAssetModels:(id)a0;
+- (id)createMVExportSessionWithFilePaths:(id)a0;
+- (void)triggerMoniterSucceeed:(BOOL)a0 isSinglePhoto:(BOOL)a1 startTime:(double)a2;
+- (void)executeExportingNeedsLoading:(BOOL)a0 failed:(id /* block */)a1;
+- (void)handleMVError;
+- (void)p_runExportForMVWithExportAssetModels:(id)a0;
+- (void)updatePublishModelWithVideoData:(id)a0;
+- (void)jumpToVideoEditViewController;
+- (void)updatePublishModelForMVMusic:(id)a0;
+- (void)updatePublishVideoSizeInfo;
+- (void)updatePublishImageInfo;
+- (void)clearImageSource;
+- (void)prepareDataFromExportAssets:(id)a0;
+- (void)serverHandlePhotoWithCompletionBlock:(id /* block */)a0 effect:(id)a1;
+- (void)replaceEditorWithPublishViewModel:(id)a0;
+- (void).cxx_destruct;
+
+@end

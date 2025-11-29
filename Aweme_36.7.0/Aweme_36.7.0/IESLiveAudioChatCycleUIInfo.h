@@ -1,0 +1,11 @@
+@class NSString, GPBInt64ObjectDictionary;
+
+@interface IESLiveAudioChatCycleUIInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *uiInfo;
+@property (readonly, nonatomic) unsigned long long uiInfo_Count;
+@property (copy, nonatomic) NSString *upTimeMs;
+
++ (id)descriptor;
+
+@end

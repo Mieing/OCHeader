@@ -1,0 +1,85 @@
+@class NSString, NSMutableDictionary, NSDictionary;
+
+@interface AWENearbyTabDotManager : NSObject <AWENearbyGeneralGiudeHandleProtocol, AWEUserMessage, AWENearbyGuideDotProtocol, AWEMRGrouponGuideDotDelegateProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) id /* block */ tabDotShowCompletion;
+@property (copy, nonatomic) id /* block */ tabDotHideCompletion;
+@property (copy, nonatomic) id /* block */ tabDotDowngradeCompletion;
+@property (retain, nonatomic) NSMutableDictionary *removeDotTimers;
+@property (retain, nonatomic) NSMutableDictionary *removeDotTstTimers;
+@property (retain, nonatomic) NSMutableDictionary *downGradeDotTimers;
+@property (retain, nonatomic) NSMutableDictionary *currentDotModels;
+@property (retain, nonatomic) NSDictionary *tabDotImpHandls;
+@property (nonatomic) BOOL nearbyBubbleIsShowing;
+@property (nonatomic) BOOL grouponBubbleIsShowing;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)allocWithZone:(struct _NSZone { } *)a0;
++ (id)sharedInstance;
+
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)didFinishLogin;
+- (BOOL)canHandleGuideWithMode:(id)a0;
+- (void)handleGuideModel:(id)a0 completion:(id /* block */)a1;
+- (void)callBackGuideWithModel:(id)a0 completion:(id /* block */)a1;
+- (id)shouldShowGrouponDotDotModel:(id)a0;
+- (id)handleGuideModelDidShow:(id)a0 dotModel:(id)a1 completion:(id /* block */)a2;
+- (void)handleGuideModelDidDowngrade:(id)a0 dotModel:(id)a1;
+- (void)handleGuideModelDidRemoveCompletion:(id)a0 dotModel:(id)a1 removeType:(unsigned long long)a2;
+- (void)handleGuideModelDidHide:(id)a0 dotModel:(id)a1;
+- (BOOL)shouldGrouponDotReverse;
+- (BOOL)verifyGrouponGlobalLiftTabDotFreqs;
+- (void)tryRecoverStorageTabDot;
+- (void)removeNearbyDotWithPageType:(long long)a0 removeType:(unsigned long long)a1 completion:(id /* block */)a2;
+- (BOOL)removeNearbyDotWithScene:(unsigned long long)a0 pageType:(long long)a1 removeType:(unsigned long long)a2 completion:(id /* block */)a3;
+- (void)registetabDotAblityImp:(id)a0 showDotBlk:(id /* block */)a1 hideDotBlk:(id /* block */)a2 downGradeBlk:(id /* block */)a3;
+- (void)showNearbyDotWithDotModel:(id)a0 completion:(id /* block */)a1;
+- (BOOL)hasNearbyTabDotWithPageType:(long long)a0;
+- (BOOL)canUpdateDotWithModel:(id)a0;
+- (id)getCurrentDotCopyWithPageType:(long long)a0;
+- (void)removeCurrentDotModelWithType:(unsigned long long)a0 pageType:(long long)a1;
+- (void)tryShowTabDotWithGeneralMsg:(id)a0 withCompletion:(id /* block */)a1;
+- (id)adaptFreqsArrayWithJsonPath:(id)a0;
+- (BOOL)isEscapeSettings:(unsigned long long)a0 withGeneralGuideModel:(id)a1;
+- (id)tabDotAvoidRuleWithModel:(id)a0;
+- (id)fqcWithTabDotModel:(id)a0;
+- (id)gloabalLifeTabDotFreqsWithPageType:(long long)a0;
+- (id)shouldShowNearbyGuideTabDotWithModel:(id)a0;
+- (void)tryRecoverStorageTabDotPageType:(long long)a0;
+- (BOOL)downGradeIfCanWithDotModel:(id)a0;
+- (void)trackNoticeShowWithDotModel:(id)a0;
+- (void)storageTabDotWithModel:(id)a0;
+- (void)cleanStorageTabPageType:(long long)a0;
+- (void)checkCurrentTabDotAfterApplicationActive;
+- (void)stopDotRemoveTimerPageType:(long long)a0;
+- (void)trackTabDotChangeWithAction:(long long)a0 dotModel:(id)a1;
+- (void)p_showNearbyDotWithDotModel:(id)a0 completion:(id /* block */)a1;
+- (void)trackTabDotShowResult:(BOOL)a0 notShowReason:(id)a1 dotModel:(id)a2;
+- (void)checkDowngradeWithDotModel:(id)a0;
+- (id)handleMainFrameTabDotShowResult:(long long)a0 dotModel:(id)a1;
+- (void)tabDotHasShowSucceedWithDotModel:(id)a0;
+- (void)trackTabDotRemoveWithRemoveType:(unsigned long long)a0 dotModel:(id)a1;
+- (void)p_removeNearbyDotWithPageType:(long long)a0 removeType:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)handleTimerWithDotModel:(id)a0;
+- (void)removeCurrentDotModelPageType:(long long)a0;
+- (BOOL)downCurrentDotModelPageType:(long long)a0;
+- (void)stopNearbyAndGroupOnDotRemoveTime;
+- (void).cxx_destruct;
+- (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { } *)a0;
+- (void)addObserver;
+- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

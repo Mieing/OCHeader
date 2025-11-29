@@ -1,0 +1,11 @@
+@class HTSLiveRoomBattleThemeParam;
+
+@interface HTSLiveRoomBattleMode : IESLivePBBaseMessage
+
+@property (nonatomic) int roomBattleModeType;
+@property (readonly, nonatomic) int battleModeInfoOneOfCase;
+@property (retain, nonatomic) HTSLiveRoomBattleThemeParam *roomBattleThemeParam;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,80 @@
+@class PatRevokeTipsView, NSString, CommonMessageViewModelExtTarget, NSArray, MMReferPartialInfo, CommonMessageSourceInfoHandler;
+
+@interface CommonMessageViewModel : BaseMessageViewModel <PatRevokeTipsViewDelegate, IMsgExt, CommonMessageViewModelExtTargetDelegate> {
+    unsigned long long m_bgBubbleType;
+    unsigned long long m_maskBubbleType;
+    BOOL m_isShowChatRoomDisplayName;
+    BOOL m_isChatRoomOwnerOrAdmin;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) unsigned int thumbDownloadStatus;
+@property (retain, nonatomic) CommonMessageViewModelExtTarget *extTarget;
+@property (nonatomic) struct CGSize { double width; double height; } replyTextSize;
+@property (retain, nonatomic) NSArray *replyTextStyles;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } replyTextInset;
+@property (retain, nonatomic) MMReferPartialInfo *referPartInfo;
+@property (retain, nonatomic) CommonMessageSourceInfoHandler *sourceInfoHandler;
+@property (nonatomic) BOOL canShowSendingView;
+@property (nonatomic) unsigned long long shakeHeadAnimationType;
+@property (nonatomic) double shakeHeadAnimationProgress;
+@property (retain, nonatomic) PatRevokeTipsView *patRevokeTipsView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)downloadThumbImageIfNeed;
+- (void)onMessageDownloadThumbImageOK;
+- (id)getReplyString;
+- (id)additionalAccessibilityDescription2;
+- (id)accessibilityMessageType;
+- (double)getVCVisableHeight:(double)a0;
+- (double)getPatSystemMessageAddHeight:(id)a0;
+- (double)getNavigationBarBottomInWindow;
+- (void)showPatRevokeTipsWithHeadImageView:(id)a0;
+- (void)tryHiddenPathRevokeTipsWhenCellDisappear;
+- (void)onPatRevokeTipsViewHidden;
+- (void)onClickRevokeTipsWithChatName:(id)a0;
+- (id)initWithMessageWrap:(id)a0 contact:(id)a1 chatContact:(id)a2;
+- (void)dealloc;
+- (BOOL)canShowReplyMessage;
+- (BOOL)canReplyMessageJump;
+- (struct CGSize { double x0; double x1; })calculateReplyTextSize;
+- (BOOL)hasReferImage;
+- (id)getReferImageViewWithSize:(struct CGSize { double x0; double x1; })a0;
+- (id)getReferImage;
+- (void)updateChatContact:(id)a0;
+- (void)updateChatContactAdminStatus:(BOOL)a0;
+- (id)chatRoomTextStateIconDescription;
+- (BOOL)isShowHeadImage;
+- (BOOL)isShowChatRoomDisplayName;
+- (BOOL)calIsShowChatRoomDisplayName;
+- (BOOL)checkIsChatRoomOwnerOrAdmin;
+- (BOOL)isShowSourceView;
+- (BOOL)shouldShowSourceViewInContent;
+- (BOOL)isSupportSourceViewBottomClick;
+- (id)sourceTitle;
+- (double)sourceTitleMaxWidth;
+- (id)sourceIcon;
+- (id)sourceTag;
+- (id)sourceIconUrlString;
+- (BOOL)isShowAppMessageBlockButton;
+- (BOOL)isShowSendingView;
+- (BOOL)isShowSendFailView;
+- (id)bgBubbleInfo;
+- (id)maskBubbleInfo;
+- (BOOL)shouldShowRoomTodoView;
+- (BOOL)hasSetRoomTodoFlag;
+- (id)customJumpAppId;
+- (BOOL)shouldShowWeAppEntranceTail;
+- (struct CGSize { double x0; double x1; })measure:(struct CGSize { double x0; double x1; })a0;
+- (void)resetLayoutCache;
+- (void)onExtMsgRevoked:(id)a0 n64MsgId:(long long)a1;
+- (void)OnMsgDownloadAppAttachSuccess:(id)a0 MsgWrap:(id)a1;
+- (void).cxx_destruct;
+
+@end

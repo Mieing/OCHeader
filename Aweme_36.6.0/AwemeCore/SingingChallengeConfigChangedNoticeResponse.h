@@ -1,0 +1,10 @@
+@class SingingChallengeConfigChangedNoticeResponse_ResponseData;
+
+@interface SingingChallengeConfigChangedNoticeResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SingingChallengeConfigChangedNoticeResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

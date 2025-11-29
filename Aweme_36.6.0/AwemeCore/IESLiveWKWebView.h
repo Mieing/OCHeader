@@ -1,0 +1,75 @@
+@class UIView, NSString, UIScreenEdgePanGestureRecognizer, IESLiveWKWebViewDelegateWrapper, PuzzleContext, BDXThreadSafeDictionary, NSDictionary, NSMutableSet, UIScrollView;
+@protocol PuzzleHybridStateCenterProtocol, IESLiveLanguageService, IESLiveDebugService, IESLivePiperProtocol, IESLiveHybridContainerDelegate, IESLiveWebViewService, IESHYHybridViewLifecycleProtocol;
+
+@interface IESLiveWKWebView : IESWKWebView <UIGestureRecognizerDelegate, IESLiveWebViewProtocol, IESLiveWebViewReuseProtocol>
+
+@property (retain, nonatomic) IESLiveWKWebViewDelegateWrapper *delegateWrapper;
+@property (retain, nonatomic) NSMutableSet *bridgeHandlers;
+@property (retain, nonatomic) id<IESLiveWebViewService> webViewService;
+@property (retain, nonatomic) id<IESLiveDebugService> debugService;
+@property (retain, nonatomic) UIScreenEdgePanGestureRecognizer *backNavigationGesture;
+@property (retain, nonatomic) UIScreenEdgePanGestureRecognizer *forwardNavigationGesture;
+@property (nonatomic) BOOL allowBackNavigationGesture;
+@property (nonatomic) BOOL allowForwardNavigationGesture;
+@property (nonatomic) BOOL enableBackGesture;
+@property (copy, nonatomic) NSString *urlString;
+@property (retain, nonatomic) id<IESLiveLanguageService> languageService;
+@property (nonatomic) BOOL enableSecLink;
+@property (copy, nonatomic) NSString *secLinkScene;
+@property (nonatomic) BOOL hasInjectedGlobalProps;
+@property (retain, nonatomic) NSDictionary *routerParams;
+@property (nonatomic) double initTime;
+@property (retain, nonatomic) NSDictionary *initialData;
+@property (retain, nonatomic) id<IESLivePiperProtocol> liveBridge;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic, getter=canGoBack) BOOL canGoBack;
+@property (readonly, nonatomic, getter=canGoForward) BOOL canGoForward;
+@property (readonly, nonatomic, getter=isLoading) BOOL loading;
+@property (readonly, nonatomic) UIScrollView *scrollView;
+@property (readonly, copy, nonatomic) NSString *containerID;
+@property (readonly, nonatomic) UIView *rawView;
+@property (retain, nonatomic) PuzzleContext *context;
+@property (retain, nonatomic) id<PuzzleHybridStateCenterProtocol> stateCenter;
+@property (readonly, nonatomic) unsigned long long kernalType;
+@property (weak, nonatomic) id<IESHYHybridViewLifecycleProtocol> lifecycleDelegate;
+@property (copy, nonatomic) NSString *liveBusiness;
+@property (readonly, copy, nonatomic) NSDictionary *initialMethodsMap;
+@property (retain, nonatomic) BDXThreadSafeDictionary *lazyCreateMethodsMap;
+@property (weak, nonatomic) id<IESLiveHybridContainerDelegate> liveHybridContainerDelegate;
+
+- (void)didSetAttachingDIContext;
+- (void)sendEvent:(id)a0 params:(id)a1;
+- (void)triggerLayout;
+- (id)currentRequestURL;
+- (id)ies_namespace;
+- (void)addPiperHandler:(id)a0;
+- (void)registerHandlerBlock:(id /* block */)a0 forMethod:(id)a1 authType:(unsigned long long)a2;
+- (void)secureGoBackWithReachEndBlock:(id /* block */)a0;
+- (void)addXBridgeMethods;
+- (void)webViewEndReuse;
+- (id)generateJsSourceWithPramName:(id)a0 dict:(id)a1;
+- (void)didReceiveSecureLinkResponse:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 url:(id)a1 routerParam:(id)a2;
+- (id)currentWebViewScene;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 url:(id)a1 liveParam:(id)a2 settings:(id)a3;
+- (void)panScreenEdgeLeft;
+- (void)checkEnableSeclinkWithParamDict:(id)a0;
+- (void)checkInjectGlobalPropertiesWithURL:(id)a0;
+- (void)setupDelegateWrapper:(id)a0;
+- (void)setTimeStampOfWebPageWithDict:(id)a0;
+- (void)addGestureRecognizer:(id)a0;
+- (void).cxx_destruct;
+- (void)updateData:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizer:(id)a0 shouldRequireFailureOfGestureRecognizer:(id)a1;
+- (void)dealloc;
+- (void)loadData;
+- (void)loadWithURL:(id)a0;
+- (void)scaleToFit;
+- (void)loadURLRequest:(id)a0;
+
+@end

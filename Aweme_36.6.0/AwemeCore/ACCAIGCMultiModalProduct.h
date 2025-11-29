@@ -1,0 +1,82 @@
+@class ACCAIGCEffectViewModel, NSString, AWEVideoPublishViewModel;
+@protocol AWEEditKit, AEKMegaEditor, AEKEditMediaGenrePublicAPI, IESServiceProvider, ACCSequenceEditServiceProtocol, ACCEditViewContainer, ACCEditServiceProtocol;
+
+@interface ACCAIGCMultiModalProduct : NSObject <ACCAIGCMultiModalProductProtocol>
+
+@property (weak, nonatomic) id<AEKMegaEditor> megaEditor;
+@property (weak, nonatomic) id<AEKEditMediaGenrePublicAPI> mediaGenreService;
+@property (retain, nonatomic) AWEVideoPublishViewModel *publishModel;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<AWEEditKit> editKit;
+@property (weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (retain, nonatomic) ACCAIGCEffectViewModel *effectViewModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isMultiModalWithRepoAIGC:(id)a0;
++ (void)setAIEditMateInfoWithResult:(id)a0 publishViewModel:(id)a1;
++ (long long)decisionOutcomeTypeWithRepoAIGC:(id)a0 withCustomModel:(id)a1;
++ (BOOL)hasDownloadServerResult:(id)a0 publishModel:(id)a1;
++ (id)getDraftPathwithPublishModel:(id)a0;
++ (BOOL)isClientRenderWithRepoAIGC:(id)a0;
++ (BOOL)isHiddenAIGCBottomBar:(id)a0;
++ (BOOL)isHasServerResult:(id)a0;
++ (void)setAigcMetaInfoWithResult:(id)a0 PublishViewModel:(id)a1;
++ (BOOL)isNeedPostProcessWithEffectModel:(id)a0;
++ (void)mangerServerResultWithBusinessResult:(id)a0 draftFolderPath:(id)a1 effect:(id)a2 finishCompletion:(id /* block */)a3;
++ (void)updateVideoDurationWithPublishViewModel:(id)a0;
++ (void)loraUgcBannerSetMsgStrategyEffectToRepoAIGCWithPublishViewModel:(id)a0;
++ (id)getMetaJsonsDicWithResult:(id)a0;
++ (BOOL)shouldApplyUgcBannerSetMsgStrategyEffectToRepoAIGC;
++ (BOOL)disableAIGCEffect:(id)a0;
++ (BOOL)initialNavigationIsRecord:(id)a0;
++ (BOOL)aigcHasSingleVideoResult:(id)a0;
++ (id)getMetaJsonDicWithResultFromAIEdit:(id)a0;
+
+- (void)updateCoverImage:(id)a0;
+- (void)updateMainTrackSingleImageWithfilePath:(id)a0 completion:(id /* block */)a1;
+- (void)updateSaveLocalWithPaths:(id)a0;
+- (void)updateCoverImageWithPaths:(id)a0 fromPostProcess:(BOOL)a1;
+- (void)processModal:(long long)a0 imagePaths:(id)a1 videoPaths:(id)a2 livePhotoImagePaths:(id)a3 livePhotoVideoPaths:(id)a4 completion:(id /* block */)a5;
+- (void)updateBGMAudioInfoWithCompletion:(id /* block */)a0;
+- (void)recoverVideoAudioVolume;
+- (void)recoverLivePhotoVolume;
+- (void)recoverAIGCVolume;
+- (id)initPublishModel:(id)a0 editService:(id)a1 editKit:(id)a2 serviceProvider:(id)a3 sequenceEditService:(id)a4 viewContainer:(id)a5 effectViewModel:(id)a6;
+- (void)updateCropAndExpandBarItem;
+- (void)transferToSingleImageWithPaths:(id)a0 completion:(id /* block */)a1;
+- (void)transferToMultiImageWithPaths:(id)a0 completion:(id /* block */)a1;
+- (void)transferToVideoWithPaths:(id)a0 completion:(id /* block */)a1;
+- (void)transferToSlidesWithImagePaths:(id)a0 videoPaths:(id)a1 completion:(id /* block */)a2;
+- (void)transferToLivePhotoWithImagePaths:(id)a0 videoPaths:(id)a1 completion:(id /* block */)a2;
+- (void)updateMainTracSingleImageWithImagePaths:(id)a0 completion:(id /* block */)a1;
+- (void)updateImagesWithImagePaths:(id)a0 completion:(id /* block */)a1;
+- (void)updateMainTracVideoWithVideoPaths:(id)a0 completion:(id /* block */)a1;
+- (void)updateMixedMediaWithImagePaths:(id)a0 withVideoPaths:(id)a1 completion:(id /* block */)a2;
+- (void)updateLivePhotoWithImagePaths:(id)a0 withVideoPaths:(id)a1 completion:(id /* block */)a2;
+- (void)exportAssetModelsWithImagePaths:(id)a0 withVideoPaths:(id)a1 completion:(id /* block */)a2;
+- (void)updateDraftData;
+- (void)updateRepoImageInfo:(id)a0;
+- (void)updateMultiImageCache:(id)a0;
+- (void)replaceAllWithProjectsWithAssets:(id)a0 isMulti:(BOOL)a1 completion:(id /* block */)a2;
+- (void)updateRepoInfoAndCoverImage:(id)a0;
+- (void)replayMusic;
+- (void)updateMainTracVideoInfoResultFilePath:(id)a0 completion:(id /* block */)a1;
+- (void)updateBarItemWithEditorAssetChange;
+- (void)updateVideoAudioInfo;
+- (void)updateStickerTimeLine;
+- (void)updateMusicDurationScene;
+- (void)renderAndUpdateRepoInfoWithVideoData:(id)a0 imagePaths:(id)a1 completion:(id /* block */)a2;
+- (void)updateLoraLiveBarItem;
+- (void)handleServerResultImages:(id)a0;
+- (void)updateLivePhotoImagesWithPaths:(id)a0;
+- (void)updateLivePhotoVideoWithPaths:(id)a0;
+- (void)updateWatermarkLivePhotoImagesWithPaths:(id)a0;
+- (void)updateWatermarkLivePhotoVideoWithPaths:(id)a0;
+- (void).cxx_destruct;
+
+@end

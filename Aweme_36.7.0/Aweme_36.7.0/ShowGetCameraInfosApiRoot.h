@@ -1,0 +1,3 @@
+@interface ShowGetCameraInfosApiRoot : GPBRootObject
+
+@end

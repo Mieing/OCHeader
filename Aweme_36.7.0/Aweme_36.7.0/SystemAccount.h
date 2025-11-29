@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface SystemAccount : GPBMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *type;
+
++ (id)descriptor;
+
+@end

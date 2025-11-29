@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicAiSilenceStatusRoot : GPBRootObject
+
+@end

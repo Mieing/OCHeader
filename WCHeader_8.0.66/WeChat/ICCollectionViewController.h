@@ -1,0 +1,76 @@
+@class ICCollectionStatInfo, NSString, ICCollectionView, NSMutableArray;
+
+@interface ICCollectionViewController : MMUIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ICFlowBatchFetchingDelegate>
+
+@property (retain, nonatomic) ICCollectionStatInfo *statInfo;
+@property (retain, nonatomic) ICCollectionView *collectionView;
+@property (retain, nonatomic) NSMutableArray *sectionItems;
+@property (nonatomic) BOOL isLoadingNewData;
+@property (nonatomic) BOOL isLoadingMoreData;
+@property (nonatomic) BOOL hasMoreData;
+@property (nonatomic) BOOL isFirstLoad;
+@property (weak, nonatomic) id loadingNewId;
+@property (weak, nonatomic) id loadingMoreId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (id)collectionLayout;
+- (void)viewDidTransitionToNewSize;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (BOOL)shouldBeginBatchFetching;
+- (void)startBatchFetching:(id)a0;
+- (BOOL)isLoadingData;
+- (BOOL)shouldLoadNewData;
+- (void)willLoadNewData;
+- (void)fetchNewData;
+- (void)stopFetchingNewData;
+- (void)stopLoadingNewData:(id)a0;
+- (id)loadNewData:(BOOL)a0 completion:(id /* block */)a1;
+- (void)processLoadNewDataResult:(id)a0 error:(id)a1 shouldClearOldData:(BOOL)a2 isFirstLoad:(BOOL)a3 processCompletion:(id /* block */)a4;
+- (void)didFinishLoadNewData:(id)a0 error:(id)a1 hasMore:(BOOL)a2 isFirstLoad:(BOOL)a3;
+- (BOOL)shouldLoadMoreData;
+- (void)willLoadMoreData;
+- (void)fetchMoreData;
+- (void)fetchMoreData:(id)a0;
+- (void)didApplyCacheDataWithHasMoreData:(BOOL)a0;
+- (void)stopFetchingMoreData;
+- (void)stopLoadingMoreData:(id)a0;
+- (id)loadMoreData:(BOOL)a0 completion:(id /* block */)a1;
+- (void)processLoadMoreDataResult:(id)a0 error:(id)a1 isFirstLoad:(BOOL)a2;
+- (void)didFinishLoadMoreData:(id)a0 error:(id)a1 hasMore:(BOOL)a2 isFirstLoad:(BOOL)a3;
+- (id)indexPathOfDataItem:(id)a0;
+- (id)indexPathOfDataItemWhere:(id /* block */)a0;
+- (id)allSectionItems;
+- (id)lastDataItem;
+- (id)lastSectionItems;
+- (id)dataItemAt:(id)a0;
+- (void)appendDataItem:(id)a0;
+- (void)insertDataItem:(id)a0 at:(id)a1;
+- (void)replaceDataItem:(id)a0 at:(id)a1;
+- (void)removeDataItemAt:(id)a0;
+- (long long)dataItemCount;
+- (void)replaceSectionItems:(id)a0 at:(long long)a1;
+- (void)insertSectionItems:(id)a0 at:(id)a1;
+- (void)appendDataItems:(id)a0 atSection:(long long)a1;
+- (void)appendSectionItems:(id)a0;
+- (void)removeSectionAt:(unsigned long long)a0;
+- (long long)sectionCount;
+- (long long)sectionItemCountAt:(long long)a0;
+- (id)sectionItemsAt:(long long)a0;
+- (void)removeAllDataItem;
+- (void)reloadDataItems:(id)a0;
+- (void)reset;
+- (void).cxx_destruct;
+
+@end

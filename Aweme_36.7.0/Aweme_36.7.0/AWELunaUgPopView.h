@@ -1,0 +1,85 @@
+@class UIView, AWELunaUgPopViewBrightButton, AWEGuideLunaPopViewConfig, NSString, CALayer, CAShapeLayer, UIButton, NSDictionary, UIPanGestureRecognizer, CAGradientLayer, UIImageView, AWEMusicStreamingRadioView;
+
+@interface AWELunaUgPopView : UIView <UIGestureRecognizerDelegate>
+
+@property (nonatomic) double popViewShowTimestamp;
+@property (retain, nonatomic) CALayer *topCircularGradientLayer;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) double animationDuration;
+@property (retain, nonatomic) UIView *customMaskView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) CAShapeLayer *shapeLayer;
+@property (retain, nonatomic) AWELunaUgPopViewBrightButton *mainButton;
+@property (retain, nonatomic) UIButton *closeBtn;
+@property (retain, nonatomic) AWEMusicStreamingRadioView *radioView;
+@property (retain, nonatomic) CAGradientLayer *coverMaskLayer;
+@property (nonatomic) unsigned long long loadingStatus;
+@property (retain, nonatomic) NSDictionary *trackParams;
+@property (retain, nonatomic) UIImageView *blackRecordImageView;
+@property (retain, nonatomic) UIImageView *lunaIconImageView;
+@property (retain, nonatomic) UIView *topDragBarView;
+@property (nonatomic) BOOL enableDragClose;
+@property (retain, nonatomic) AWELunaUgPopViewBrightButton *newWhiteMainButton;
+@property (retain, nonatomic) UIImageView *titleEntranceIcon;
+@property (retain, nonatomic) CALayer *backgroundGradientLayer;
+@property (retain, nonatomic) AWEGuideLunaPopViewConfig *config;
+@property (nonatomic) unsigned long long selectedResult;
+@property (copy, nonatomic) id /* block */ showBlock;
+@property (copy, nonatomic) id /* block */ loadingFinishBlock;
+@property (copy, nonatomic) id /* block */ popViewDidClickBlock;
+@property (copy, nonatomic) id /* block */ popViewWillCloseBlock;
+@property (copy, nonatomic) id /* block */ popViewDidCloseBlock;
+@property (copy, nonatomic) id /* block */ popViewWillDiversionBlock;
+@property (copy, nonatomic) id /* block */ selectChangedBlock;
+@property (copy, nonatomic) id /* block */ shouldCloseOnClick;
+@property (copy, nonatomic) id /* block */ shouldShowConfirmAlert;
+@property (copy, nonatomic) id /* block */ confirmAlertDidShow;
+@property (copy, nonatomic) id /* block */ confirmAlertDidClick;
+@property (copy, nonatomic) id /* block */ popViewElementDidShowBlock;
+@property (copy, nonatomic) id /* block */ showNewConfirmAlert;
+@property (nonatomic) BOOL directJump;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)coverImageView;
++ (id)coverDiversionInfoView;
++ (id)songCoverImageView;
+
+- (void)contentViewPanAction:(id)a0;
+- (void)showInView:(id)a0 duration:(double)a1;
+- (id)p_lightColorNamed:(id)a0;
+- (void)hideWithDuration:(double)a0 closeType:(id)a1;
+- (void)p_setUIShowingState;
+- (void)p_updateButtonConfig;
+- (void)p_userRelationDidShow;
+- (void)p_viewElementShowWithType:(id)a0;
+- (void)mainBtnShowDiversionBubble;
+- (void)p_didClickWithType:(id)a0;
+- (void)p_addPopViewLayerIfNeeded;
+- (void)p_popViewDidAppear;
+- (id)p_backgroundStartColor;
+- (id)p_backgroundEndColor;
+- (void)hideWithDuration:(double)a0 closeType:(id)a1 songInfo:(id)a2;
+- (void)p_didClickWithType:(id)a0 songInfo:(id)a1;
+- (void)p_handleConfirmAlertWithClickType:(id)a0 songInfo:(id)a1;
+- (void)maskViewTapAction:(id)a0;
+- (void)p_didClickCloseButton;
+- (void)p_didClickMainButton;
+- (void)p_didClickTitleMiniEntrance;
+- (id)p_contentBackgroundColorGradientLayer;
+- (double)getPopViewContentHeight;
+- (void)showEnable:(BOOL)a0;
+- (id)p_contentCoverImageGradientLayer:(id)a0;
+- (id)p_contentTopCircularGradientMaskLayer;
+- (double)p_mainBtnHeightWithBigFontMode;
+- (void).cxx_destruct;
+- (void)updateWithConfig:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)layoutSubviews;
+- (id)initWithConfig:(id)a0;
+- (void)show;
+- (void)showInView:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEIMEmoticonCollectionListModel : AWEIMCollectionListModel
+
+@end

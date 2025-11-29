@@ -1,0 +1,12 @@
+@class GPBInt64ObjectDictionary;
+
+@interface IESLiveMultiAnchorLinkmicLiveCoreInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *liveCoreInfoMap;
+@property (readonly, nonatomic) unsigned long long liveCoreInfoMap_Count;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *pushStreamModeLiveCoreMap;
+@property (readonly, nonatomic) unsigned long long pushStreamModeLiveCoreMap_Count;
+
++ (id)descriptor;
+
+@end

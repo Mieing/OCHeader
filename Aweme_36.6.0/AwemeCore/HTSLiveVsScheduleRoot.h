@@ -1,0 +1,3 @@
+@interface HTSLiveVsScheduleRoot : GPBRootObject
+
+@end

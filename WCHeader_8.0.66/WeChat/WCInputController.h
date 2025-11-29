@@ -1,0 +1,80 @@
+@class EmoticonBoardView, NSString, MMGrowTextView, UIScrollView, UIView;
+@protocol InputControllerDelegate;
+
+@interface WCInputController : MMObject <MMGrowTextViewDelegate, EmoticonBoardViewDelegate, BaseEmoticonViewDelegate, WXKeyBoardActiveReceiver> {
+    double _fKeyboardAnimationDuration;
+    long long _iKeyboardAnimationCurve;
+}
+
+@property (weak, nonatomic) UIView *inputView;
+@property (weak, nonatomic) MMGrowTextView *textView;
+@property (weak, nonatomic) UIScrollView *scrollView;
+@property (weak, nonatomic) EmoticonBoardView *emoticonBoardView;
+@property (weak, nonatomic) UIView *customContainerView;
+@property (weak, nonatomic) UIView *backgroundView;
+@property (nonatomic) double fInputViewY;
+@property (nonatomic) double fScrollViewY;
+@property (nonatomic) double fScrollViewOriginY;
+@property (weak, nonatomic) id<InputControllerDelegate> delegate;
+@property (nonatomic) long long eInputMode;
+@property (nonatomic) BOOL bAnimationCutHeight;
+@property (nonatomic) double fKeyboardHeight;
+@property (nonatomic) BOOL isKeyBoardShow;
+@property (nonatomic) double inputViewBottomSpace;
+@property (nonatomic) BOOL bShouldInputViewFadeIn;
+@property (nonatomic) BOOL bInputViewShowing;
+@property (nonatomic) BOOL bShouldDisableScrollWhenHideKeyboard;
+@property (readonly, copy, nonatomic) NSString *lastPastedText;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)didSelectorEmoticon:(id)a0;
+- (void)didSelectorSelfDefinedEmotcion:(id)a0;
+- (void)onEmoticonSearchIconClicked;
+- (void)deleteEmoticon;
+- (void)resignTextView;
+- (void)resignResponder;
+- (void)becomeTextView;
+- (void)TextViewHeightDidChanged:(id)a0;
+- (void)setKeyboardAnimationDuration:(double)a0;
+- (void)setKeyboardAnimationCurve:(long long)a0;
+- (BOOL)TextViewDidDelete;
+- (void)showKeyBoard:(double)a0;
+- (void)showEmoticonBoard;
+- (void)keyboardWillShow:(double)a0;
+- (BOOL)shouldInterceptExpressionPanelOnKeyboardChanged:(BOOL)a0;
+- (void)keyboardWillHide:(BOOL)a0;
+- (void)doHideKeybaord;
+- (void)AnimationDidStop:(id)a0;
+- (void)onSystemHideKeyboard;
+- (void)inputModeChangeButtonClicked:(long long)a0;
+- (void)inputModeChangeButtonClicked;
+- (void)inputViewYDidChange;
+- (void)updateScrollViewY:(double)a0;
+- (void)TextViewDidEnter:(id)a0;
+- (void)TextViewExceedMaxLength:(id)a0;
+- (void)TextDidChanged:(id)a0 selectedRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)MMGrowTextViewBeginEditing:(id)a0;
+- (void)MMGrowTextViewEndEditing:(id)a0;
+- (void)MMGrowTextView:(id)a0 willPastedText:(id)a1;
+- (void)onGrowTextViewDidShowMenuControllerWithMenuItemArr:(id)a0;
+- (void)onClickTextViewSendText:(id)a0;
+- (void)onGrowTextViewMenuItemClicked:(unsigned long long)a0 growTextView:(id)a1;
+- (BOOL)shouldRespondToKeyBoardEvent;
+- (void)updateTabbarSendButtonState;
+- (void)textViewCommit;
+- (void)TextViewDidChangeSelection:(id)a0;
+- (void)changeTextViewColorForEmoticonState:(BOOL)a0;
+- (void)onSendButtonClicked;
+- (void)OnEmoticonStateDidChanged:(BOOL)a0;
+- (void)OnEmoticonPidDidChanged:(id)a0;
+- (id)supportMessageTypes;
+- (unsigned int)activeScene;
+- (void)sendMessage:(id)a0;
+- (void).cxx_destruct;
+
+@end

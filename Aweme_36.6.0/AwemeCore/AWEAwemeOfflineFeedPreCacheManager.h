@@ -1,0 +1,87 @@
+@class NSLock, NSString, NSRecursiveLock, NSTimer, NSArray, NSMutableDictionary, NSDictionary, AWEAwemeOfflineDataController, NSObject, NSMutableArray, AWEHotListDataController, NSMutableSet;
+@protocol OS_dispatch_queue;
+
+@interface AWEAwemeOfflineFeedPreCacheManager : NSObject
+
+@property (retain, nonatomic) NSMutableDictionary *feedPreCacheList;
+@property (retain, nonatomic) NSMutableArray *feedCachedList;
+@property (retain, nonatomic) NSMutableArray *pauseModels;
+@property (retain, nonatomic) NSMutableArray *downloadingModels;
+@property (retain, nonatomic) NSMutableDictionary *downloadedDict;
+@property (retain, nonatomic) NSDictionary *cacheStatusMap;
+@property (retain, nonatomic) NSRecursiveLock *lock;
+@property (retain, nonatomic) NSLock *queueLock;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *readWriteQueue;
+@property (nonatomic) long long lastExitReason;
+@property (retain, nonatomic) NSString *cachePath;
+@property (retain, nonatomic) NSTimer *offLineFeedCacheTimer;
+@property (retain, nonatomic) NSArray *validCachedFeedsInCurrentSession;
+@property (retain, nonatomic) AWEAwemeOfflineDataController *offLineDataController;
+@property (retain, nonatomic) AWEHotListDataController *foryouFeedDataController;
+@property (nonatomic) long long currentType;
+@property (retain, nonatomic) NSString *currentSession;
+@property (nonatomic) long long countEnterOffline;
+@property (nonatomic) long long shouldCachedCount;
+@property (nonatomic) long long cachedCount;
+@property (nonatomic) long long cacheSizeTotal;
+@property (nonatomic) BOOL isDownloadFinished;
+@property (nonatomic) BOOL isHomepagePlayerStop;
+@property (nonatomic) BOOL isHomepagePreloadTaskZero;
+@property (nonatomic) BOOL cachesAlreadyRead;
+@property (nonatomic) BOOL cachesAlreadyReadV2;
+@property (copy, nonatomic) id /* block */ cachesAlreadyReadCompletion;
+@property (retain, nonatomic) NSMutableSet *playedVideos;
+
++ (BOOL)checkNetworkIsWifi;
++ (BOOL)checkNetworkReachable;
++ (BOOL)checkNetworkIsWWAN;
++ (id)sharedInstance;
+
+- (id)filterDuplicatedDatasourceWithArray:(id)a0 isEqual:(id /* block */)a1;
+- (void)onNetworkChanged:(id)a0;
+- (void)getFeedCacheFromFileWithCompletion:(id /* block */)a0;
+- (void)videoSafetyCheckIfNeeded;
+- (unsigned long long)loadMoreType;
+- (void)setupBinding;
+- (void)clearCachedVideo;
+- (BOOL)checkLeftSpaceEnough;
+- (id)getFeedCache;
+- (id)getValidCacheFromLocalCache:(id)a0;
+- (void)enableAutoTrimForURLString:(id)a0 URLKey:(id)a1;
+- (id)setProFeedPreCache:(id)a0;
+- (void)asyncFeedPreCacheListToStorage;
+- (void)disableAutoTrimForURLString:(id)a0 URLKey:(id)a1;
+- (void)storageToFlieWithFeedPreCacheList:(id)a0 key:(id)a1 completion:(id /* block */)a2;
+- (void)invalidateFeedCacheTimer;
+- (void)processFeedPreCacheModels:(id)a0;
+- (id)getFeedCachedModels;
+- (void)getFeedCachedDictFromFileWithCompletion:(id /* block */)a0;
+- (void)fetchFeedOrContinueDownloading;
+- (BOOL)checkIfSwitchIdChanged;
+- (void)handleVideoSafetyPreCheckWithResults:(id)a0;
+- (void)videoPrivacySafetyCheck:(id)a0;
+- (id)getFeedNoCachedModels;
+- (void)clearDuplicatedFeedPreCacheModels;
+- (void)cleanCacheIfNeeded;
+- (id)getFeedCachedDic;
+- (void)clearCacheInOffline:(BOOL)a0;
+- (void)cancelPreLoadTask;
+- (void)continueProloadTask;
+- (void)recordCacheLoadRecoverWithReason:(long long)a0;
+- (id)clearDuplicatedDownloadeModels:(id)a0;
+- (void)preloadOneCacheFeed:(id)a0;
+- (void)preloadCacheFeed:(id)a0 completion:(id /* block */)a1;
+- (id)getFeedPreCacheModels;
+- (void)asyncFeedCacheListToStorage;
+- (void)recordCacheLoadFinishWith:(long long)a0;
+- (void)loadMoreWithCount:(long long)a0;
+- (double)getDownLoadState;
+- (void)storageToFlieWithFeedCacheList:(id)a0 key:(id)a1 completion:(id /* block */)a2;
+- (void)updateSessionAndBuryData;
+- (void).cxx_destruct;
+- (id)init;
+- (void)applicationWillTerminate;
+- (void)dealloc;
+- (void)appDidEnterBackground;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveLowPcuGuideRoot : GPBRootObject
+
+@end

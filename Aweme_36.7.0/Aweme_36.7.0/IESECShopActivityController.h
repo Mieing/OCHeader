@@ -1,0 +1,80 @@
+@class NSString, NSMutableDictionary, CADisplayLink, IESECServiceProxy, UIView, IESECUserTrackerPageContext, IESECShopGoldCoinTaskScrollingFilter;
+@protocol IESECShopLayoutService, IESECShopStateService, IESECShopDataService, IESECShopForwardCoService, IESECShopMarqueeProtocol;
+
+@interface IESECShopActivityController : IESECShopControllerV2 <IESECShopEventSubscriber, IESECShopActivityController> {
+    BOOL _didFinishExtensionAreaAnimation;
+    Class _pageDisplayCycle;
+    BOOL _isFirstViewWillAppear;
+    BOOL _isFirstViewDidAppear;
+    BOOL _isFirstFullScreen;
+    double _lastLeaveShopTime;
+    BOOL _needUpdateInterceptionConfig;
+    BOOL _closeRedPack;
+}
+
+@property (retain, nonatomic) IESECUserTrackerPageContext *eggPageContext;
+@property (retain, nonatomic) IESECShopGoldCoinTaskScrollingFilter *goldCoinTaskScrollingFilter;
+@property (retain, nonatomic) UIView<IESECShopMarqueeProtocol> *marqueeView;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) BOOL isNeedPostRequest;
+@property (nonatomic) double stayDuration;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopDataService> *dataService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopStateService> *stateService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopLayoutService> *layoutService;
+@property (retain, nonatomic) IESECServiceProxy<IESECShopForwardCoService> *forwardCoService;
+@property (retain, nonatomic) NSMutableDictionary *redPackInterceptionConfig;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)startDisplayLink;
+- (void)setupBinding;
+- (void)hostInjectionViewWillDisappear;
+- (void)hostInjectionDidOpenPage;
+- (void)hostInjectionWillClosePage;
+- (void)hostInjectionWillOpenNextPage;
+- (void)hostInjectionPageWillAppearAgain;
+- (long long)currentPageContentMode;
+- (void)hostInjectionDidPageSwitchMode;
+- (void)hostInjectionDidPageScroll:(double)a0;
+- (id)pageDisplayExtraDict;
+- (void)displayLinkDidTrigger:(id)a0;
+- (void)showMarqueeView;
+- (void)controllerDidLoad;
+- (void)controllerWillAppear:(BOOL)a0;
+- (void)controllerWillDisappear:(BOOL)a0;
+- (void)iesecshop_pagerView:(id)a0 willMoveToTab:(id)a1;
+- (void)iesecshop_pagerView:(id)a0 didMoveToTab:(id)a1;
+- (void)iesecshop_pagerView:(id)a0 mainScrollViewDidScroll:(id)a1;
+- (void)iesecshop_pagerView:(id)a0 mainScrollViewWillBeginDragging:(id)a1;
+- (void)iesecshop_pagerView:(id)a0 tabScrollViewDidScroll:(id)a1;
+- (void)didSetControllerManagerV2:(id)a0;
+- (void)iesecshop_containerDidMoveToParentViewController:(id)a0;
+- (void)iesecshop_screenStateDidChange:(unsigned long long)a0;
+- (void)iesecshop_didTapAtBottomTabItem:(id)a0;
+- (void)iesecshop_didFinishExtensionAreaAnimation;
+- (void)subscribePendantCloseEvent;
+- (void)unsubscribeStaticXBridgeEvents;
+- (void)enableDisplayCycleIfNeeded;
+- (void)subscribeStaticXBridgeEvents;
+- (void)updateInterceptionConfigIfNeed;
+- (void)subscribeXBridgeEvents;
+- (void)sendMarketingPageVisibilityChangeEvent:(BOOL)a0;
+- (void)unsubscribeXBridgeEvents;
+- (void)handleFeTopTabs;
+- (void)handleExtraSchemaIfNeeded;
+- (void)triggerFirstFullScreen;
+- (void)requestWhenStayStorePageIfNeed;
+- (void)p_didEndScrolling;
+- (BOOL)p_exceedMarqueeViewShowLimit;
+- (void)dismissMarqueeView;
+- (void)controllerDidAppear:(BOOL)a0;
+- (void)controllerDidDisappear:(BOOL)a0;
+- (void).cxx_destruct;
+- (id)fromViewController;
+- (id)init;
+- (void)dealloc;
+- (void)stopDisplayLink;
+
+@end

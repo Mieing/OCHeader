@@ -1,0 +1,10 @@
+@class MGetCameraInfoByIDResponse_Entry;
+
+@interface MGetCameraInfoByIDResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) MGetCameraInfoByIDResponse_Entry *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

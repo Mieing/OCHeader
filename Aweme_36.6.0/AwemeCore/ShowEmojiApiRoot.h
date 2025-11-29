@@ -1,0 +1,3 @@
+@interface ShowEmojiApiRoot : GPBRootObject
+
+@end

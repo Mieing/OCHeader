@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveRoomReplayInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long replayDuration;
+@property (copy, nonatomic) NSString *replayURL;
+@property (copy, nonatomic) NSString *contentUniqId;
+
++ (id)descriptor;
+
+@end

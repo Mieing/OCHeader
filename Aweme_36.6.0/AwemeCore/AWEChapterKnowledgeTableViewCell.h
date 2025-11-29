@@ -1,0 +1,81 @@
+@class UIStackView, UIView, AWEAwemeModel, AWERelatedVideoPlayingAnimationView, AWEChapterPanelUIConfig, UIImageView, UIButton, AWEPageContext, AWEChapterInfo, NSString, UILabel, AWEChapterContext;
+@protocol AWEPlayInteractionContextProtocol, AWELandscapeChapterPanelControllerProtocol;
+
+@interface AWEChapterKnowledgeTableViewCell : UITableViewCell <AWEChapterTableViewCellProtocol>
+
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIView *spaceView;
+@property (retain, nonatomic) AWERelatedVideoPlayingAnimationView *playingAnimationView;
+@property (retain, nonatomic) UIView *titleContainerView;
+@property (retain, nonatomic) UIView *timeContainerView;
+@property (retain, nonatomic) UIStackView *stackView;
+@property (retain, nonatomic) UIImageView *playImageView;
+@property (retain, nonatomic) UILabel *timeLabel;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *keyPointLabel;
+@property (retain, nonatomic) UIButton *shareChapterButton;
+@property (retain, nonatomic) UIButton *loopChapterButton;
+@property (retain, nonatomic) UIButton *expandChapterButton;
+@property (retain, nonatomic) UIImageView *expandArrowImageView;
+@property (retain, nonatomic) AWEChapterPanelUIConfig *uiConfig;
+@property (retain, nonatomic) AWEPageContext<AWEPlayInteractionContextProtocol> *contextInfo;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) double timeLabelUniformWidth;
+@property (retain, nonatomic) AWEChapterInfo *chapterInfo;
+@property (copy, nonatomic) id /* block */ chapterShareButtonBlock;
+@property (nonatomic) long long chapterIndex;
+@property (nonatomic) long long chapterPanelStyle;
+@property (copy, nonatomic) id /* block */ loopChapterButtonAction;
+@property (copy, nonatomic) id /* block */ expandChapterButtonAction;
+@property (nonatomic) BOOL hasSubContent;
+@property (weak, nonatomic) id<AWELandscapeChapterPanelControllerProtocol> delegate;
+@property (copy, nonatomic) id /* block */ contentTrackerBlock;
+@property (nonatomic) BOOL hasChapterKnowledge;
+@property (retain, nonatomic) AWEChapterContext *chapterContext;
+@property (nonatomic) BOOL isLoop;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEFeedModuleServiceDOUYINJXAdapterClass;
++ (double)heightWithChapterInfo:(id)a0 width:(double)a1 context:(id)a2;
++ (double)heightForKnowledgeCell:(id)a0 model:(id)a1 context:(id)a2 width:(double)a3 hasKnowledge:(BOOL)a4;
++ (id)fontWithWeight:(long long)a0 context:(id)a1;
++ (double)timeWidthWithModel:(id)a0 context:(id)a1;
++ (id)identifier;
+
+- (id)aAWEFeedModuleServiceDOUYINJXAdapter;
+- (void)configWithUIConfig:(id)a0;
+- (void)updateSelectedStatus:(BOOL)a0;
+- (void)configureWithChapterInfo:(id)a0 model:(id)a1 context:(id)a2 coverImageLoadCompletion:(id /* block */)a3;
+- (id /* block */)getChapterShareButtonAction;
+- (void)setChapterShareButtonAction:(id /* block */)a0;
+- (long long)getChapterIndex;
+- (long long)getChapterPanelStyle;
+- (id /* block */)getLoopChapterButtonAction;
+- (id /* block */)getChapterExpandButtonAction;
+- (void)setChapterExpandButtonAction:(id /* block */)a0;
+- (void)configShareButton;
+- (void)configWithChapterInfo:(id)a0;
+- (BOOL)enableLoopButton;
+- (id)fontWithWeight:(long long)a0;
+- (struct CGSize { double x0; double x1; })playIconSize;
+- (void)shareChapterButtonClicked:(id)a0;
+- (void)loopChapterButtonClicked:(id)a0;
+- (void)configExtraViews;
+- (BOOL)chapterKnowledgeIsEmpty;
+- (void)configKnowledgeView;
+- (void)configExpandButton;
+- (void)configKeyPointView;
+- (void)configLoopButton;
+- (void)expandChapterButtonClicked:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)canBeShared;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)prepareForReuse;
+- (void)layoutSubviews;
+- (void)setupSubviews;
+- (double)titleLabelPadding;
+
+@end

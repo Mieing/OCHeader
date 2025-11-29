@@ -1,0 +1,88 @@
+@class NSString, AWEPerfFPSScene, AWEBinding, UIScrollView, AWEPadSplitTransitionNotificationManager;
+@protocol AWEPadSplitViewService;
+
+@interface AWEPadSplitViewBaseBizAdapter : NSObject <AWEPadSplitViewBizAdapter, AWEPadSplitViewDelegate, AWEPadSplitViewBizAdapterOverride>
+
+@property (nonatomic) double stayTime;
+@property (nonatomic) double stayTimestampMark;
+@property (nonatomic) double showBeginTimestamp;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL isAppear;
+@property (nonatomic) BOOL disableUpdateTabBarOffset;
+@property (weak, nonatomic) UIScrollView *storyContainerView;
+@property (nonatomic) double currentOffsetX;
+@property (nonatomic) long long containerDisappearReason;
+@property (nonatomic) double startWillShowTime;
+@property (nonatomic) double startWillDismissTime;
+@property (nonatomic) double startWillTransTime;
+@property (retain, nonatomic) AWEPerfFPSScene *fpsScene;
+@property (retain, nonatomic) AWEPadSplitTransitionNotificationManager *transitionNotificationManager;
+@property (nonatomic) long long systemAlertVCPresentTimes;
+@property (retain, nonatomic) AWEBinding *appearObserver;
+@property (weak, nonatomic) id<AWEPadSplitViewService> service;
+@property (nonatomic) BOOL hasTabBar;
+@property (copy, nonatomic) id /* block */ updateOffsetBlock;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) long long splitShowType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL enableTapDismiss;
+@property (nonatomic) BOOL enableHorizontalSlideDismiss;
+@property (nonatomic) BOOL enableVerticalSlideDismiss;
+@property (nonatomic) BOOL enableSlideToFullScreen;
+
++ (BOOL)enableAWEPerfFPSMonitor;
+
+- (void)calculateStayTime;
+- (void)viewControllerTransitionNotification:(id)a0;
+- (void)updatePrimaryModel:(id)a0;
+- (void)updatePrimaryModel:(id)a0;
+- (void)setupInitInfo;
+- (void)setupInitInfo;
+- (void)updateTabBarOffsetIfNeeded;
+- (void)updateTabBarOffsetIfNeeded;
+- (void)service:(id)a0 willShowViewController:(id)a1 source:(long long)a2;
+- (void)service:(id)a0 didShowViewController:(id)a1 source:(long long)a2;
+- (void)service:(id)a0 willDismissViewController:(id)a1 source:(long long)a2;
+- (void)service:(id)a0 didDismissViewController:(id)a1 source:(long long)a2;
+- (void)service:(id)a0 willDismissType:(long long)a1;
+- (void)service:(id)a0 willCancelDismissType:(long long)a1;
+- (void)service:(id)a0 updateSecondaryViewOffsetX:(double)a1;
+- (void)serviceContainerWillAppear:(id)a0;
+- (BOOL)service:(id)a0 gestureRecognizer:(id)a1 shouldBeRequiredToFailByGestureRecognizer:(id)a2;
+- (BOOL)service:(id)a0 gestureRecognizerShouldBegin:(id)a1;
+- (void)service:(id)a0 transitionStartWithViewController:(id)a1;
+- (void)service:(id)a0 transitionFinishWithViewController:(id)a1;
+- (void)service:(id)a0 transitionCancelWithViewController:(id)a1;
+- (BOOL)service:(id)a0 enableVerticalSlideDismissFollowHandWithDirection:(long long)a1;
+- (void)service:(id)a0 scrollViewWillBeginDragging:(id)a1;
+- (void)service:(id)a0 scrollViewDidEndScroll:(id)a1;
+- (void)service:(id)a0 panGestureStartWithPanDirection:(long long)a1;
+- (void)service:(id)a0 panGestureCancelWithPanDirection:(long long)a1;
+- (void)service:(id)a0 panGestureEndWithPanDirection:(long long)a1;
+- (void)splitViewDismissWithStayTime:(double)a0 duration:(double)a1;
+- (void)splitViewDismissWithStayTime:(double)a0 duration:(double)a1;
+- (void)secondaryViewDidAppear:(id)a0;
+- (void)secondaryViewDidAppear:(id)a0;
+- (void)secondaryViewDidDisappear:(id)a0;
+- (void)secondaryViewDidDisappear:(id)a0;
+- (void)enterSystemAlertVc;
+- (void)exitSystemAlertVc;
+- (id)fpsCommonParams;
+- (void)trackMultiScreenClickWithExtraParams:(id)a0 viewController:(id)a1;
+- (void)trackMultiScreenOpenedWithExtraParams:(id)a0 viewController:(id)a1;
+- (void)trackMultiScreenClosedWithExtraParams:(id)a0 viewController:(id)a1;
+- (id)currentSceneString;
+- (id)commonTrackParamsWithVC:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)setupObservers;
+- (void)setupObservers;
+- (id)initWithService:(id)a0;
+- (void)dealloc;
+- (void)appDidEnterBackground;
+- (void)appDidBecomeActive;
+
+@end

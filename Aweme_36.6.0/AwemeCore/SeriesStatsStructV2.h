@@ -1,0 +1,18 @@
+@interface SeriesStatsStructV2 : GPBMessage
+
+@property (nonatomic) long long playVv;
+@property (nonatomic) BOOL hasPlayVv;
+@property (nonatomic) long long collectVv;
+@property (nonatomic) BOOL hasCollectVv;
+@property (nonatomic) long long currentEpisode;
+@property (nonatomic) BOOL hasCurrentEpisode;
+@property (nonatomic) long long updatedToEpisode;
+@property (nonatomic) BOOL hasUpdatedToEpisode;
+@property (nonatomic) long long totalEpisode;
+@property (nonatomic) BOOL hasTotalEpisode;
+@property (nonatomic) long long lastAddedItemTime;
+@property (nonatomic) BOOL hasLastAddedItemTime;
+
++ (id)descriptor;
+
+@end

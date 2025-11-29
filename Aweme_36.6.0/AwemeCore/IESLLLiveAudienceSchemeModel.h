@@ -1,0 +1,3 @@
+@interface IESLLLiveAudienceSchemeModel : NSObject
+
+@end

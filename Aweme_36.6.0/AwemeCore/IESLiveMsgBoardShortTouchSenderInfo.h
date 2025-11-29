@@ -1,0 +1,11 @@
+@class HTSLiveUser;
+
+@interface IESLiveMsgBoardShortTouchSenderInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *sender;
+@property (nonatomic) BOOL hasSender;
+@property (nonatomic) long long msgDisappearTime;
+
++ (id)descriptor;
+
+@end

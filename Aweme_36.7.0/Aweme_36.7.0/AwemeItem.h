@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage;
+
+@interface AwemeItem : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+@property (retain, nonatomic) HTSLiveImage *darkCover;
+@property (nonatomic) BOOL hasDarkCover;
+@property (retain, nonatomic) HTSLiveImage *lightCover;
+@property (nonatomic) BOOL hasLightCover;
+@property (copy, nonatomic) NSString *data_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,70 @@
+@class MMUILabel, MMWebImageView, UIView, NSString, WCFinderLiveInfo, WCFinderLiveNowView, WCFinderGetLiveInfoModel, NotifyMessageViewModel, UILabel, MMUIButton;
+
+@interface TemplateNotifyMessageCellView : BaseMessageCellView <MMWebImageViewDelegate, ServiceNotifyMsgMgrExt>
+
+@property (nonatomic) BOOL liveImageLoaded;
+@property (readonly, nonatomic) NotifyMessageViewModel *viewModel;
+@property (retain, nonatomic) WCFinderLiveInfo *liveInfo;
+@property (retain, nonatomic) WCFinderGetLiveInfoModel *getLiveInfoModel;
+@property (retain, nonatomic) MMUILabel *blockSloganLabel;
+@property (retain, nonatomic) MMWebImageView *avatarImageView;
+@property (retain, nonatomic) UILabel *nickNameLabel;
+@property (retain, nonatomic) MMWebImageView *authIconImageView;
+@property (retain, nonatomic) MMUIButton *headerMenuButton;
+@property (retain, nonatomic) UIView *lineView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *liveMaskView;
+@property (retain, nonatomic) WCFinderLiveNowView *logoView;
+@property (retain, nonatomic) WCFinderLiveNowView *liveMaskTipsView;
+@property (retain, nonatomic) MMWebImageView *liveImageView;
+@property (readonly, nonatomic) NSString *liveChannelExtra;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setViewModel:(id)a0;
+- (void)prepareForReuse;
+- (void)layoutContentView;
+- (id)genDisplayViewWithItemInfo:(id)a0 longestKeyLabelWidth:(double)a1 maxDisplayViewWidth:(double)a2;
+- (id)itemLabelWithTitle:(id)a0 width:(double)a1 font:(id)a2;
+- (id)itemValueLabelWithTitle:(id)a0 width:(double)a1 font:(id)a2;
+- (id)itemValueLabelWithTitle:(id)a0 width:(double)a1 font:(id)a2 maxLine:(unsigned long long)a3;
+- (id)genLineView;
+- (id)genNickNameLabel;
+- (id)muteSloganStr;
+- (id)muteSloganFont;
+- (struct CGSize { double x0; double x1; })muteSloganSize;
+- (id)genblockSloganLabel;
+- (id)genTitleLabel;
+- (void)initLiveImageView;
+- (id)genAvatarImageView;
+- (id)genMoreLiveAvatarImageView;
+- (id)genAuthIconImageView;
+- (id)genHeaderMenuButton;
+- (void)refreshLiveMaskEffect;
+- (void)onAppear;
+- (void)updateLiveStatus;
+- (void)onMoreButton:(id)a0;
+- (void)reportMoreButton:(id)a0 isCick:(BOOL)a1 isCancel:(BOOL)a2;
+- (void)onTouchUpInside;
+- (BOOL)isAutoPlaying;
+- (void)report21158Click;
+- (id)genLiveRoomAlternativeDataItem:(id)a0;
+- (BOOL)shouldShowMoreButton;
+- (BOOL)shouldShowComplaintEntry;
+- (BOOL)canAutoPlayVideoWithoutSound;
+- (void)autoPauseVideoWithoutSound;
+- (void)autoPlayVideoWithoutSound;
+- (void)complaintEntry;
+- (void)onLiveInfoUpdated;
+- (BOOL)isFinderLiveTeamUpMsg;
+- (BOOL)isFinderGameLiveRefundMsg;
+- (BOOL)isFinderLiveFansGroupLiveMsg;
+- (BOOL)isCustomNotifyMsg;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)onLoadImageOK:(id)a0;
+- (void)onNotifyInfoChangeWithMsg:(id)a0;
+- (void).cxx_destruct;
+
+@end

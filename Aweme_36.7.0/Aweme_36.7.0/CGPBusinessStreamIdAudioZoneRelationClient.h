@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CGPBusinessStreamIdAudioZoneRelationClient : GPBMessage
+
+@property (nonatomic) int subCmd;
+@property (nonatomic) int audioZone;
+@property (copy, nonatomic) NSString *uid;
+
++ (id)descriptor;
+
+@end

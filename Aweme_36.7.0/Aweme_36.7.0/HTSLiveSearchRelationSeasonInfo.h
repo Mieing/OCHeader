@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface HTSLiveSearchRelationSeasonInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int seasonUpdateStatus;
+@property (nonatomic) long long seasonId;
+@property (retain, nonatomic) GPBInt64Array *episodeIdsArray;
+@property (readonly, nonatomic) unsigned long long episodeIdsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,78 @@
+@class ChatBotVoIPReportData, UIViewPropertyAnimator, ChatBotVOIPBoardViewQuestionView, ChatBotVoIPRoomInfo, UITableView, UIVisualEffectView, NSMutableArray, UIView, ChatBotVOIPBoardViewStreamTextCell, NSString, ChatBotVOIPBoardViewWeAppProcessView, NSMutableSet, ChatBotVoIPReportDataPB, QuestionInfo;
+@protocol ChatBotVOIPBoardViewDelegate;
+
+@interface ChatBotVOIPBoardView : UIView <UITableViewDelegate, UITableViewDataSource, IChatBotVoipMsgExt, IChatBotVoIPExt, ChatBotStreamTextDelegate, IChatBotExt>
+
+@property (retain, nonatomic) ChatBotVoIPRoomInfo *roomInfo;
+@property (retain, nonatomic) UIVisualEffectView *boardView;
+@property (retain, nonatomic) UIView *shadowView;
+@property (retain, nonatomic) ChatBotVOIPBoardViewQuestionView *questionView;
+@property (retain, nonatomic) QuestionInfo *questionInfo;
+@property (retain, nonatomic) ChatBotVOIPBoardViewWeAppProcessView *weAppProcessView;
+@property (retain, nonatomic) ChatBotVOIPBoardViewStreamTextCell *curStreamTextCell;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) NSMutableArray *messageArray;
+@property (retain, nonatomic) NSMutableArray *cellHeightArr;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } circlrFrame;
+@property (retain, nonatomic) UIView *sendButton;
+@property (nonatomic) BOOL isAnimating;
+@property (nonatomic) BOOL isShowBoard;
+@property (retain, nonatomic) UIViewPropertyAnimator *animator;
+@property (nonatomic) BOOL canProcessWeApp;
+@property (retain, nonatomic) NSMutableSet *completedProcessWeAppSessionIdSet;
+@property (retain, nonatomic) UIView *videoView;
+@property (retain, nonatomic) UIView *weAppContainerView;
+@property (nonatomic) int openScene;
+@property (retain, nonatomic) ChatBotVoIPReportData *reportData;
+@property (retain, nonatomic) ChatBotVoIPReportDataPB *baseReportDataPB;
+@property (nonatomic) unsigned int roomType;
+@property (weak, nonatomic) id<ChatBotVOIPBoardViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 roomInfo:(id)a1 openScene:(int)a2;
+- (void)dealloc;
+- (id)getDisplayMsgList;
+- (void)initView;
+- (void)layoutBoardView;
+- (void)layoutTableView;
+- (void)layoutSendButton;
+- (void)layoutQuestionView;
+- (void)layoutWeAppProcessView;
+- (void)removeWeAppProcessViewAndRecord;
+- (BOOL)isNeedHideSendToMe:(id)a0;
+- (void)onTapFlipCamera;
+- (void)onTapSendToMe;
+- (void)layoutWeAppContainerView;
+- (void)showQuestionViewStart;
+- (void)showQuestionViewNext;
+- (void)showQuestionViewEnd;
+- (void)stopProcessWeApp:(BOOL)a0;
+- (void)setCanProcessWeApp;
+- (void)startCircleAnimation;
+- (void)stopCircleAnimation;
+- (void)runScaleAnimation;
+- (void)showBoardAnimation:(BOOL)a0;
+- (void)clearMessageTable;
+- (void)hideBoardAnimation;
+- (void)layoutVideoView;
+- (void)removeVideoView;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)onStreamTextHeightChange:(double)a0;
+- (void)onRecvMsgInfo:(id)a0;
+- (void)onRecvStreamText:(id)a0 textSeq:(int)a1;
+- (void)onRecvWeAppProccessMsg:(id)a0;
+- (void)onRecvQuestionInfo:(id)a0;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)onChatBotVoipNotifyToMinimize;
+- (void)onChatBotVoipNotifyToStopWeAppProcess:(BOOL)a0;
+- (void)onUserSendMsgToChatBot:(id)a0 needLaunchVoIP:(BOOL)a1;
+- (void)onTTSBegin:(id)a0;
+- (void)onChatBotLocationGet:(struct CLLocationCoordinate2D { double x0; double x1; })a0 posTitle:(id)a1 isSuccess:(BOOL)a2 needAuth:(BOOL)a3 callId:(id)a4 context:(id)a5;
+- (void).cxx_destruct;
+
+@end

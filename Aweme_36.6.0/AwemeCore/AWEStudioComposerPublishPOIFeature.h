@@ -1,0 +1,3 @@
+@interface AWEStudioComposerPublishPOIFeature : AWEStudioComposerBaseFeatureConfig
+
+@end

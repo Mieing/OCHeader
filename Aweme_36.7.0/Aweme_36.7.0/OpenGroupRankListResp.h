@@ -1,0 +1,10 @@
+@class OpenGroupRankListResp_Data;
+
+@interface OpenGroupRankListResp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) OpenGroupRankListResp_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

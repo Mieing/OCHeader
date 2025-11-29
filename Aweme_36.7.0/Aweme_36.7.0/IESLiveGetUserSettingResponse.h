@@ -1,0 +1,10 @@
+@class IESLiveGetUserSettingResponse_UserSetting;
+
+@interface IESLiveGetUserSettingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveGetUserSettingResponse_UserSetting *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

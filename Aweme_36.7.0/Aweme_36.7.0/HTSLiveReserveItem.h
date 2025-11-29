@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveReserveItem : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *reserveTodayNum;
+@property (copy, nonatomic) NSString *reserveTotalNum;
+@property (nonatomic) int reserveStatus;
+
++ (id)descriptor;
+
+@end

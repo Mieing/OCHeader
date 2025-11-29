@@ -1,0 +1,3 @@
+@interface AWECodeGenAlbumDeleteMediaResponse : AWEBaseResponseModel
+
+@end

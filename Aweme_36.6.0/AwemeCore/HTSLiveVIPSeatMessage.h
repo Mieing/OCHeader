@@ -1,0 +1,13 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveVIPSeatMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *topUsersArray;
+@property (readonly, nonatomic) unsigned long long topUsersArray_Count;
+@property (nonatomic) long long totalCount;
+
++ (id)descriptor;
+
+@end

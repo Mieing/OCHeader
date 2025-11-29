@@ -1,0 +1,15 @@
+@class GPBInt64Int64Dictionary, HTSLiveImage;
+
+@interface HTSLiveGradeBuffInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long buffLevel;
+@property (nonatomic) int status;
+@property (nonatomic) long long endTime;
+@property (retain, nonatomic) GPBInt64Int64Dictionary *statsInfo;
+@property (readonly, nonatomic) unsigned long long statsInfo_Count;
+@property (retain, nonatomic) HTSLiveImage *buffBadge;
+@property (nonatomic) BOOL hasBuffBadge;
+
++ (id)descriptor;
+
+@end

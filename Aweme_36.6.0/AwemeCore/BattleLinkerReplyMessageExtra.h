@@ -1,0 +1,8 @@
+@interface BattleLinkerReplyMessageExtra : IESLivePBBaseMessage
+
+@property (nonatomic) long long inviteType;
+@property (nonatomic) int anchorAuthRole;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface KtvRecommendListApiRoot : GPBRootObject
+
+@end

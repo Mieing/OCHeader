@@ -1,0 +1,72 @@
+@class NSError, AVAssetReader, AVAssetReaderOutput, VEPlayerMattingManager, UIImage, NSString, VEConfigData, VEVideoReaderUnit, NSObject, VEAudioReaderUnit, VEInsertFrameReader, VETransData;
+@protocol OS_dispatch_queue;
+
+@interface VECompileReaderUnit : VEUnitObject <IVECompileReader>
+
+@property (retain, nonatomic) NSError *readerError;
+@property (nonatomic) unsigned long long pixelFormat;
+@property (retain, nonatomic) VETransData *transData;
+@property (retain, nonatomic) AVAssetReader *reader;
+@property (retain, nonatomic) AVAssetReaderOutput *videoOutput;
+@property (retain, nonatomic) AVAssetReaderOutput *audioOutput;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *videoDecodeQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *audioDecodeQueue;
+@property (nonatomic) unsigned long long transStatus;
+@property (nonatomic) unsigned long long videoTransStatus;
+@property (nonatomic) unsigned long long audioTransStatus;
+@property (nonatomic) struct opaqueCMSampleBuffer { } *lastSampleBuffer;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } latestVideoSampleTime;
+@property (retain, nonatomic) VEInsertFrameReader *insertReader;
+@property (retain, nonatomic) VEAudioReaderUnit *audioReaderUnit;
+@property (retain, nonatomic) VEVideoReaderUnit *videoReaderUnit;
+@property (retain, nonatomic) VEConfigData *configData;
+@property (nonatomic) BOOL exportReaptErrorOpt;
+@property (retain, nonatomic) VEPlayerMattingManager *mattingManager;
+@property (nonatomic) BOOL enable10BitSDR;
+@property (copy, nonatomic) id /* block */ completeBlock;
+@property (copy, nonatomic) id /* block */ faceDetectEvent;
+@property (retain, nonatomic) UIImage *waterMarkImage;
+@property (retain, nonatomic) NSError *error;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } startTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } previousVideoFrameTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } previousAudioFrameTime;
+@property (nonatomic) int detectPendingCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) NSString *route;
+@property (nonatomic) long long curVideoStage;
+@property (nonatomic) long long curAudioStage;
+
+- (BOOL)initVideoReader:(id)a0;
+- (id)getReaderError;
+- (id)initWithVideoData:(id)a0 outUrl:(id)a1 usenewModule:(BOOL)a2 completionHandler:(id /* block */)a3;
+- (BOOL)initAssetReader;
+- (id)videoReaderOutput;
+- (id)audioReaderOutput;
+- (void)logAssets:(id)a0 additionInfo:(id)a1;
+- (void)logVolumeInfoInMap:(id)a0 additionInfo:(id)a1;
+- (BOOL)initAudioReader:(id)a0;
+- (void)logVideoCompositionInvalidReason;
+- (void)cancelReaderWithError:(id)a0;
+- (long long)getReaderStatus;
+- (id)initWithVideoData:(id)a0 outUrl:(id)a1 completionHandler:(id /* block */)a2;
+- (BOOL)getVideoWriterFinish;
+- (BOOL)getAudioWriterFinish;
+- (void)cancelReader;
+- (void)pauseForBackground;
+- (void)resumeForBackground;
+- (BOOL)processSampleData:(id)a0;
+- (id)requstSampleData:(unsigned long long)a0;
+- (BOOL)setConfig:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (BOOL)videoComposition:(id)a0 shouldContinueValidatingAfterFindingInvalidValueForKey:(id)a1;
+- (BOOL)videoComposition:(id)a0 shouldContinueValidatingAfterFindingEmptyTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a1;
+- (BOOL)videoComposition:(id)a0 shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:(id)a1;
+- (BOOL)videoComposition:(id)a0 shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:(id)a1 layerInstruction:(id)a2 asset:(id)a3;
+- (BOOL)startReader;
+- (void)stopReader;
+
+@end

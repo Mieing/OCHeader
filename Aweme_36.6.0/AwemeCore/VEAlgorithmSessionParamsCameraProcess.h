@@ -1,0 +1,3 @@
+@interface VEAlgorithmSessionParamsCameraProcess : VEAlgorithmSessionParams
+
+@end

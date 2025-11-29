@@ -1,0 +1,3 @@
+@interface HTSLiveKtvStreamSingSyncdataRoot : GPBRootObject
+
+@end

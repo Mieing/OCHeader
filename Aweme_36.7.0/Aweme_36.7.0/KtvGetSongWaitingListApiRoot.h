@@ -1,0 +1,3 @@
+@interface KtvGetSongWaitingListApiRoot : GPBRootObject
+
+@end

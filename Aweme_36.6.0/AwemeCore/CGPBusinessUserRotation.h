@@ -1,0 +1,10 @@
+@class GPBInt32Value;
+
+@interface CGPBusinessUserRotation : GPBMessage
+
+@property (retain, nonatomic) GPBInt32Value *rotation;
+@property (nonatomic) BOOL hasRotation;
+
++ (id)descriptor;
+
+@end

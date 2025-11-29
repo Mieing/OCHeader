@@ -1,0 +1,11 @@
+@class HTSLiveAnchorAudioConf;
+
+@interface AnchorAudioChatResp : IESLivePBBaseMessage
+
+@property (nonatomic) long long auth;
+@property (retain, nonatomic) HTSLiveAnchorAudioConf *anchorConf;
+@property (nonatomic) BOOL hasAnchorConf;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,88 @@
+@class UIView, WCStoryBgmSearchCgiObj, EditVideoBGMPlayer, EditVideoBGMSearchResultView, NSString, UIButton, EditVideoBGMFetchFeedbackLogic, UITextField, NSMutableArray, RecommendedMusicInfo, UILabel, MMUIActivityIndicatorView;
+@protocol EditVideoBGMSearchViewDelegate;
+
+@interface EditVideoBGMSearchView : MMUIView <EditVideoBGMSearchTagViewDelegate, EditVideoBGMSearchResultViewDelegate, EditVideoBGMPlayerDelegate, UITextFieldDelegate, MMUITextFieldDelegate, EditVideoBGMFetchFeedbackLogicDelegate, WCAudioModuleDelegate> {
+    NSString *_audioModuleIdentifier;
+}
+
+@property (retain, nonatomic) UIView *tapAndPanView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *topBarView;
+@property (retain, nonatomic) UIButton *topFinishView;
+@property (retain, nonatomic) UITextField *textField;
+@property (retain, nonatomic) UIView *tagView;
+@property (retain, nonatomic) MMUIActivityIndicatorView *indicatorView;
+@property (retain, nonatomic) UILabel *tipLabel;
+@property (retain, nonatomic) EditVideoBGMSearchResultView *searchResultView;
+@property (retain, nonatomic) EditVideoBGMPlayer *bgmPlayer;
+@property (retain, nonatomic) RecommendedMusicInfo *selectedMusicInfo;
+@property (retain, nonatomic) WCStoryBgmSearchCgiObj *bgmSearchObj;
+@property (nonatomic) unsigned long long searchId;
+@property (nonatomic) unsigned int nextSearchPageOffset;
+@property (retain, nonatomic) NSMutableArray *searchResultMusicList;
+@property (retain, nonatomic) NSString *searchKey;
+@property (nonatomic) BOOL isLoadingMoreData;
+@property (nonatomic) BOOL isNoMoreData;
+@property (retain, nonatomic) EditVideoBGMFetchFeedbackLogic *kvReportlogic;
+@property (nonatomic) unsigned long long maxExposureIndex;
+@property (nonatomic) BOOL isLastInputModeDictation;
+@property (weak, nonatomic) id<EditVideoBGMSearchViewDelegate> delegate;
+@property (nonatomic) unsigned long long recommentId;
+@property (retain, nonatomic) NSMutableArray *musicList;
+@property (nonatomic) unsigned int entranceType;
+@property (nonatomic) BOOL isSearchingAfterInputEnabled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)initData;
+- (void)initView;
+- (void)addTapAndPanView;
+- (void)addTapGesture;
+- (void)addPanGesture;
+- (void)addContentView;
+- (void)addTopBarView;
+- (void)addTopCancelView;
+- (void)addTopFinishView;
+- (void)setTopFinishViewEnable:(BOOL)a0;
+- (void)addTitleView;
+- (void)addSearchView;
+- (id)genTextFieldRightView;
+- (void)startSearchWith:(id)a0 andResignInputField:(BOOL)a1;
+- (void)showSearchingView;
+- (void)unShowSearchingView;
+- (void)showNotFoundTips;
+- (void)proccessSearchResultWithKeyword:(id)a0 requestId:(unsigned long long)a1 andMusicList:(id)a2;
+- (void)proccessSearchResultMoreData:(unsigned long long)a0 andMusicList:(id)a1;
+- (BOOL)becomeFirstResponder;
+- (unsigned long long)bussId;
+- (void)reportWithType:(unsigned long long)a0;
+- (void)readyToPlay;
+- (void)onTap:(id)a0;
+- (void)onCancelBtnClick;
+- (void)onFinishBtnClick;
+- (void)onTextFieldCleanBtnClick;
+- (void)onSelectTag:(id)a0;
+- (void)onSelectSearchViewClick;
+- (void)onSelectSearchResult:(id)a0 index:(unsigned long long)a1;
+- (void)onSelectSearchViewTripLoadMoreData;
+- (void)onEditVideoBGMPlayerReadyToPlay;
+- (void)onEditVideoBGMPlayerPlaytoEnd;
+- (BOOL)textFieldShouldReturn:(id)a0;
+- (void)textFieldEditingChanged:(id)a0;
+- (void)mmTextFieldDidChange:(id)a0;
+- (void)inputModeDidChange:(id)a0;
+- (unsigned long long)editVideoBGMFetchFeedbackLogicGetBussnessId;
+- (void)audioModuleInterruptionBegin:(id)a0 param:(id)a1;
+- (void)audioModuleInterruptionEnd:(id)a0 param:(id)a1;
+- (void)_updateAudioSession;
+- (void)_activeAudioModule;
+- (void)_deactiveAudioModule;
+- (id)_getAudioModuleIdentifier;
+- (void)_tryToUpdatePlayerToMute:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

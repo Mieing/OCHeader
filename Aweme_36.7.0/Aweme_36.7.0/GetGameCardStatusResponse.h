@@ -1,0 +1,10 @@
+@class GetGameCardStatusResponse_Data;
+
+@interface GetGameCardStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetGameCardStatusResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

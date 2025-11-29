@@ -1,0 +1,71 @@
+@class IESLiveAudienceListModel, UIStackView, NSString, IESLiveNewAudienceListEnterView, IESLiveUserSeqlistStore, UIView, IESLiveNewOnlineWatchUserView;
+@protocol IESLiveAudienceListActions, IESLivePerfSampler, IESLiveRoomSeqlist;
+
+@interface IESLiveUserSeqlistFragment : IESLiveRoomComponent <IESLiveUserSeqlistReaction>
+
+@property (retain, nonatomic) id<IESLiveAudienceListActions> audienceListAction;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (nonatomic) double appearTime;
+@property (retain, nonatomic) UIView<IESLiveRoomSeqlist> *userListView;
+@property (nonatomic) long long orientation;
+@property (retain, nonatomic) IESLiveUserSeqlistStore *store;
+@property (retain, nonatomic) IESLiveNewAudienceListEnterView *audienceEnterView;
+@property (retain, nonatomic) IESLiveNewOnlineWatchUserView *onlineWatchUser;
+@property (retain, nonatomic) IESLiveAudienceListModel *audienceListModel;
+@property (nonatomic) BOOL isShowedEnterView;
+@property (retain, nonatomic) UIStackView *portraitWrapper;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)componentOrientationTransitionBegin:(long long)a0;
+- (void)componentOrientationTransitioning:(long long)a0;
+- (void)hideComponent;
+- (void)showComponent;
+- (void)handleOrientationChanged:(long long)a0;
+- (void)remoteRoomDataReady:(id)a0;
+- (void)componentRefresh;
+- (void)showAudienceRankList;
+- (void)refreshUserCount:(id)a0;
+- (void)refreshFlowStimulateViewWithStyle:(long long)a0 userCount:(id)a1 icon:(id)a2 isKeep:(BOOL)a3;
+- (void)endShowFlowStimulateViewWithStyle:(long long)a0 userCount:(id)a1;
+- (void)refreshDouPlusUserCount:(id)a0;
+- (void)refreshFreshmanSupportUserCount:(id)a0 icon:(id)a1 params:(id)a2;
+- (void)setRoomIndicatorWithStyle:(long long)a0 roomIndicatorInfo:(id)a1 params:(id)a2;
+- (void)showFullIndicatorViewWithStyle:(long long)a0 roomIndicatorInfo:(id)a1;
+- (void)refreshRoomIndicatorViewWithStyle:(long long)a0 roomIndicatorInfo:(id)a1;
+- (void)endShowRoomIndicatorViewWithStyle:(long long)a0 roomIndicatorInfo:(id)a1;
+- (void)p_showUserList:(id)a0;
+- (void)showUserListViewStatus:(BOOL)a0;
+- (void)renderUserListViewIfNeed;
+- (void)refreshTotalUser:(id)a0;
+- (void)makeAudienceEnterVisible:(BOOL)a0;
+- (void)refreshAudienceRankList:(id)a0;
+- (void)updateAudienceEnterState:(BOOL)a0;
+- (void)startShowDouPlusView;
+- (void)setDouPlusHint:(id)a0;
+- (void)showNewDouPlusOrder:(id)a0;
+- (void)endShowDouPlusView;
+- (void)endShowFreshmanSupportView:(id)a0;
+- (BOOL)shouldNotRenderInCurrentScene;
+- (BOOL)shouldShowAudienceList;
+- (void)setUserListViewHidden:(BOOL)a0 logTag:(id)a1;
+- (void)renderAudienceEnterView;
+- (void)didUpdateUserCount;
+- (void)tryAddOnlineWatchUser;
+- (void)updateUserListViewAndBottomViewWithOrientation:(long long)a0;
+- (BOOL)enableUserList;
+- (void)removeAudienceEnterView;
+- (void)enterDouplusPageView;
+- (void)handleRoomUserStats;
+- (void)tryAddEnterView;
+- (void)updateLandcspeDisplayIfNeed;
+- (void)refreshVerticalUserCount:(id)a0 horizontalUserCount:(id)a1 trueValue:(long long)a2;
+- (void).cxx_destruct;
+
+@end

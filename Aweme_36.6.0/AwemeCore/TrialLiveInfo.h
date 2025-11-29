@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface TrialLiveInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL enableTrialLive;
+@property (nonatomic) long long totalTimes;
+@property (nonatomic) long long currentTimes;
+@property (nonatomic) long long remainTimes;
+@property (copy, nonatomic) NSString *prompts;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,80 @@
+@class MMFinderLiveMusicSettingSearchTableViewModel, UILabel, MMFinderLiveTaskId, MMUISearchBar, WCTimeLineFooterView, MMFinderLiveMusicSettingSearchViewModel, UIView, UIScrollView, NSString, OrderedDictionary, MMUIActivityIndicatorView, MMUILabel, WCFinderTabPageHeaderView, MMTableView, NSArray;
+@protocol MMFinderLiveMusicSettingReportDelegate;
+
+@interface MMFinderLiveMusicSettingSearchPanel : MMPageSheetBaseView <MMFinderLiveMusicSettingSearchDelegate, MMRefreshTableFooterDelegate, UIScrollViewDelegate, UISearchBarDelegate, MMFinderLiveMusicSettingSearchTableDelegate, WCFinderTabPageViewBasicViewDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (weak, nonatomic) id<MMFinderLiveMusicSettingReportDelegate> reportDelegate;
+@property (retain, nonatomic) NSString *aiAssistantId;
+@property (retain, nonatomic) NSArray *tingLists;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) MMUISearchBar *searchBar;
+@property (retain, nonatomic) UIView *selectFromTingView;
+@property (retain, nonatomic) WCFinderTabPageHeaderView *tabPageView;
+@property (retain, nonatomic) UIScrollView *tabsScrollView;
+@property (retain, nonatomic) OrderedDictionary *tabTableViewsDic;
+@property (retain, nonatomic) OrderedDictionary *tingTableModelsDic;
+@property (retain, nonatomic) MMTableView *searchTableView;
+@property (retain, nonatomic) WCTimeLineFooterView *footerView;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView;
+@property (retain, nonatomic) MMUILabel *emptyTipsLabel;
+@property (retain, nonatomic) MMFinderLiveMusicSettingSearchViewModel *searchViewModel;
+@property (retain, nonatomic) MMFinderLiveMusicSettingSearchTableViewModel *searchTableViewModel;
+@property (retain, nonatomic) NSString *curSearchText;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)showWithTaskId:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 musicLists:(id)a2 aiAssistantId:(id)a3 reportDelegate:(id)a4;
++ (id)createSearchBar;
+
+- (id)initWithTaskId:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 tingLists:(id)a2 aiAssistantId:(id)a3 reportDelegate:(id)a4;
+- (void)showWithAnimated:(BOOL)a0;
+- (void)initSubviews;
+- (void)setupPageSheetConfig;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)layoutTingListViews;
+- (void)layoutEmptyTipsLabel;
+- (void)layoutContentView;
+- (void)layoutSearchBar;
+- (void)layoutTableView;
+- (void)layoutTipLabel;
+- (void)layoutActivityIndicatorView;
+- (void)hideEmptyTips;
+- (void)hideFooterView;
+- (void)updateFooterView:(unsigned long long)a0;
+- (void)showTipsLabelWithText:(id)a0;
+- (void)hideTipsLabel;
+- (void)startLoading;
+- (void)stopLoading;
+- (double)contentWidth;
+- (double)contentHeight;
+- (void)initSelectFromTingView;
+- (void)initSearchBar;
+- (void)initTabsBar;
+- (void)initTingListScrollView;
+- (void)createTableViewWithTingItem:(id)a0;
+- (void)initSearchTableViewAndFooter;
+- (id)createSearchTableViewModel;
+- (id)createSearchViewModel;
+- (id)createSearchTableFooterView;
+- (void)createEmptyTipsLabel;
+- (void)musicDataSearchBarTextDidBeginEditing:(id)a0;
+- (void)musicDataSearchBarEndSearch:(id)a0;
+- (void)musicDataSearchBarWillSearch:(id)a0 searchText:(id)a1;
+- (void)onGetMusicDataSearchResult:(int)a0 resultArray:(id)a1 continueFlag:(unsigned int)a2;
+- (void)onGetMusicDataContinueSearchResult:(int)a0 resultArray:(id)a1 continueFlag:(unsigned int)a2;
+- (void)handleAfterGetSearchResultWithContinueFlag:(unsigned int)a0;
+- (void)onMMFinderLiveMusicSettingSearchTableScroll;
+- (void)MMRefreshTableFooterDidTriggerRefresh:(id)a0;
+- (void)finderTabPageView:(id)a0 didSelectIndex:(unsigned long long)a1 isTriggerByUser:(BOOL)a2;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)adjustUIOnSelectIndexChange;
+- (void).cxx_destruct;
+
+@end

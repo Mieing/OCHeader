@@ -1,0 +1,3 @@
+@interface AWEComlianceJsBridgeRegister : NSObject
+
+@end

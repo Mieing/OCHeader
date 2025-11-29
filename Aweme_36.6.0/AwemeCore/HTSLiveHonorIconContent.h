@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveHonorIconContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *iconTitle;
+
++ (id)descriptor;
+
+@end

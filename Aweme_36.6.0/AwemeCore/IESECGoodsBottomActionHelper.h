@@ -1,0 +1,75 @@
+@class IESECXBridgeEventSubscriber, NSString, NSDictionary, IESECGoodsDetailParameters, IESECGoodsDetailTracker, UIViewController;
+@protocol IESECGoodsDetailContainerProtocol;
+
+@interface IESECGoodsBottomActionHelper : NSObject <IESECReserveGoodsDidFinishMessage, IESECGoodsBottomActionProtocol>
+
+@property (retain, nonatomic) IESECGoodsDetailParameters *parameters;
+@property (nonatomic) BOOL isFetchingSKU;
+@property (nonatomic) BOOL isFetchingLimit;
+@property (readonly, nonatomic) IESECGoodsDetailTracker *tracker;
+@property (readonly, nonatomic) long long currentMode;
+@property (retain, nonatomic) IESECXBridgeEventSubscriber *subscriber;
+@property (nonatomic) BOOL starButtonIsSelected;
+@property (nonatomic) long long firstCardCount;
+@property (nonatomic) BOOL hideAddCartSuccessToast;
+@property (retain, nonatomic) NSString *addCartSuccessToastMsg;
+@property (weak, nonatomic) id<IESECGoodsDetailContainerProtocol> delegate;
+@property (weak, nonatomic) UIViewController *containerVC;
+@property (copy, nonatomic) NSString *bstGroupType;
+@property (copy, nonatomic) NSDictionary *standardChainParam;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (nonatomic) long long index;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)favoriteActionButtonDidTapWithCompletion:(id /* block */)a0;
+- (void)addToShoppingCartActionWithSKUInfo:(id)a0;
+- (void)openAddrBook;
+- (void)goToOrderPageWithCouponId:(id)a0 actionType:(long long)a1 withSKUInfo:(id)a2 onViewController:(id)a3 entranceInfoParamsForSKU:(id)a4 completion:(id /* block */)a5;
+- (void)goToNativeOrderPageWithCouponId:(id)a0 actionType:(long long)a1 withSKUInfo:(id)a2 onViewController:(id)a3 entranceInfoParamsForSKU:(id)a4 completion:(id /* block */)a5;
+- (void)didTriggerAction:(long long)a0 withFirstCardCount:(long long)a1;
+- (void)didTriggerAction:(long long)a0;
+- (void)reserveGoods:(id)a0 finishedWithToastString:(id)a1 success:(BOOL)a2;
+- (void)buyButtonDidTap:(long long)a0;
+- (void)viewShopPage;
+- (void)addToShoppingCart;
+- (void)viewCartFromBottomIcon;
+- (void)openBottomTips;
+- (void)customButtonDidTap;
+- (void)shareButtonDidTap;
+- (BOOL)serveMallFeedVC;
+- (BOOL)serveGoodsFeedVC;
+- (id)configStoreSourceParams;
+- (id)getSourceBtmTokenWithBtm:(id)a0 needBcm:(BOOL)a1;
+- (void)addToShoppingCartAction;
+- (void)monitorRateStartWithPageAction:(id)a0 extraParams:(id)a1;
+- (void)monitorAddToCartRateEndWithSuccess:(BOOL)a0 Model:(id)a1 extraParams:(id)a2;
+- (void)monitorDurationWithAction:(id)a0 startTime:(double)a1 extraParams:(id)a2;
+- (void)trackInnerAddCartFlyAnimation;
+- (id)getAddCartClickBTM;
+- (void)addToShoppingCartActionWithSKUInfo:(id)a0 BTMModel:(id)a1;
+- (void)monitorBuyNowRateEndWithSuccess:(BOOL)a0 extraParams:(id)a1;
+- (id)p_orderParamsForDirectlyBuy:(BOOL)a0 skuInfo:(id)a1 entranceInfoParamsForSKU:(id)a2 actionType:(long long)a3 onViewController:(id)a4;
+- (BOOL)serveSameGoodsVC;
+- (void)showSKUViewControllerWithActionType:(long long)a0;
+- (id)addNGroupType:(id)a0 dict:(id)a1;
+- (id)p_extraOrderParamsForSKUWithActionType:(long long)a0;
+- (void)checkSKUInfoIsBuyAction:(long long)a0;
+- (void)viewShoppingCart;
+- (BOOL)serveStoreFeedVC;
+- (BOOL)serveWinFeedVC;
+- (void)reservationPromotion:(id)a0 activityManager:(id)a1 parameters:(id)a2;
+- (void)openInsurancePageWithDisclaimerShowConfig:(id)a0;
+- (void)openAuctionPanel:(id)a0;
+- (void)purchaseActionWithTargetPromotion:(id)a0 type:(long long)a1;
+- (void)openThirdBusinessPageWithDisclaimerShowConfig:(id)a0;
+- (id)getBtmFromBtmId:(id)a0;
+- (id)addTrackParamsForFullScreen:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithParameters:(id)a0;
+- (void)dealloc;
+- (id)pageName;
+
+@end

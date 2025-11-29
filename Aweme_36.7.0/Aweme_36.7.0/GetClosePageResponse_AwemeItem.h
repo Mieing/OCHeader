@@ -1,0 +1,14 @@
+@class NSString, GetClosePageResponse_Cover;
+
+@interface GetClosePageResponse_AwemeItem : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *awemeId;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long createTime;
+@property (retain, nonatomic) GetClosePageResponse_Cover *cover;
+@property (nonatomic) BOOL hasCover;
+
++ (id)descriptor;
+
+@end

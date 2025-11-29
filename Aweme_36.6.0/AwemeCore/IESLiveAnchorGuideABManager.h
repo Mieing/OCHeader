@@ -1,0 +1,82 @@
+@class NSString;
+
+@interface IESLiveAnchorGuideABManager : NSObject <IESLiveAnchorGuideABManagerProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)liveAnchorGuideUseNewCertTips;
++ (id)liveGuideStartLiveAgreementUrl;
++ (BOOL)liveGuideOpenRequestParamsCheckEnable;
++ (double)liveAnchorGuideDirtyCameraDetectThresholdValue;
++ (long long)liveGuideResolutionOptStrategy;
++ (id)liveGuideInformationConfig;
++ (id)liveAnchorTopicConfig;
++ (id)liveEnableOpenTopic;
++ (long long)startLiveChallengeDetailOptimize;
++ (id)liveAnchorPromptConfig;
++ (id)startLiveChallengeEntranceTip;
++ (id)liveForbbidenDetailPage;
++ (id)liveObsHelpPage;
++ (id)liveObsHelperUrl;
++ (BOOL)liveSettingEnableRoomIntro;
++ (BOOL)isAudioThemeEnabledForAnchor;
++ (BOOL)isAudioKTVThemeEnabledForAnchor;
++ (BOOL)isAudioBackgroundAnimatedEnabled;
++ (BOOL)isAudioThemeCacheAllFrameEnabled;
++ (double)audioThemeCacheFreeMemoryRatio;
++ (BOOL)isAudioThemeUseStaticBackground;
++ (BOOL)liveContinueChatRoomEnable;
++ (id)anchorGuideShowURL;
++ (BOOL)livePaidLiveCreateTicketNew;
++ (BOOL)livePaidEnableNoPermissionIcon;
++ (id)liveAnchorGuideKTVCustomThemeList;
++ (BOOL)liveGuideEnableSpeedTest;
++ (long long)liveGuideSpeedTestCount;
++ (BOOL)liveGuideReplaySettingUpdateFixEnable;
++ (BOOL)liveGuideMediaContentOptEnable;
++ (BOOL)liveGuideContentPanelAllOptEnable;
++ (BOOL)liveAnchorEnableNotResumeLiveTrack;
++ (long long)liveGuideInformationTitleNumberOfLines;
++ (long long)liveGuideInformationContentNumberOfLines;
++ (id)liveAnnouncementFansLuckyMoneyLinkText;
++ (BOOL)liveAnchorTopicEnable;
++ (long long)liveAnchorTopicShowTimes;
++ (BOOL)liveAnchorEnableGuideAiAgent;
++ (BOOL)liveAnchorEnableResumeLiveAlertOpt;
++ (id)liveAnchorResumeLiveAlertTitle;
++ (id)liveAnchorResumeLiveAlertActionTitle;
++ (id)liveAnchorResumeLiveAlertCancelTitle;
++ (id)liveAnchorResumeLiveAlertTerminateDesc;
++ (id)liveAnchorResumeLiveAlertBGExitDesc;
++ (id)liveAnchorResumeLiveAlertOOMDesc;
++ (id)liveAnchorResumeLiveAlertDefaultDesc;
++ (id)livePartnerDownloadUri;
++ (BOOL)liveCheckComputerLiveCapability;
++ (id)livePreviewAudioInteractionShortcutConfig;
++ (long long)anchorTaskV3;
++ (id)liveAnchorPreviewUserCountIntro;
++ (BOOL)liveAnchorEnableSaveGiftStatus;
++ (id)liveCertificationProtocolConfig;
++ (BOOL)liveEnablePermissionFailNoOperation;
++ (BOOL)liveEnableGuideActivity;
++ (long long)liveAnchorPoiEnableCount;
++ (BOOL)liveEnableGuideLooperBanner;
++ (BOOL)liveGuideInterceptLayoutNewStyle;
++ (BOOL)liveAudienceEnableAnnouncementHighlight;
++ (BOOL)liveAnchorAnnouncementBrokerEnable;
++ (id)livePreviewDesireUrl;
++ (BOOL)liveOpenLiveReportLocation;
++ (id)liveUseServerSubTextLists;
++ (BOOL)liveAnchorEnableActivitySchema;
++ (BOOL)liveGuideToolbarUpdateRightActionFixEnable;
++ (BOOL)liveGuideOpenStrategyOpt;
++ (BOOL)liveGuideLoopBannerFixOutBounds;
++ (BOOL)liveNewAnchorMoreOperationHintBubble;
++ (BOOL)ttliveEnableBubbleRefresh;
++ (BOOL)enablePartnerLynxToAnniex;
+
+
+@end

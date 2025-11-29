@@ -1,0 +1,95 @@
+@class SPXAudioRecorder, NSString, SilkAudioRecorder, BaseUploadVoiceMgr, MMNewUploadVoiceMgr, AMRAudioRecorder, MMNewVoiceInputCacheLogic;
+
+@interface AudioSender : MMUserService <UploadVoiceDelegate, WCAudioModuleDelegate, AudioRecorderEventExt, MMNewVoiceInputCacheLogicDelegate, AudioRecorderDelegate, MMServiceProtocol> {
+    SPXAudioRecorder *m_spxrecorder;
+    SilkAudioRecorder *m_silkRecorder;
+    BaseUploadVoiceMgr *m_upload;
+    MMNewUploadVoiceMgr *m_cgiUpload;
+    NSString *m_monoServiceId;
+    AMRAudioRecorder *m_amrrecorder;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) MMNewVoiceInputCacheLogic *transcacheLogic;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)IsVoiceUseCdnUpload;
+
+- (void)OnPartSent:(id)a0 ErrNo:(unsigned int)a1;
+- (void)onCdnUploadFail:(id)a0;
+- (void)audioModuleInterruptionBegin:(id)a0 param:(id)a1;
+- (void)cancelUploadAudioMsg;
+- (void)onGetResultText:(id)a0 InputId:(unsigned int)a1;
+- (void)onEndVoiceTrans:(unsigned int)a0 VoiceIds:(id)a1 showSimplifyButton:(BOOL)a2 simplifyButtonText:(id)a3 cancelSimplifyButtonText:(id)a4;
+- (void)onVoiceTransTimeout:(unsigned int)a0;
+- (void)cleanTranscacheLogic;
+- (void)onRecordStartFail:(id)a0;
+- (BOOL)OnRecorderPrepareSend:(id)a0;
+- (void)OnRecorderLevelMeter:(id)a0 Peak:(float)a1;
+- (void)OnRecorderBeginRecording:(id)a0 ErrNo:(int)a1;
+- (void)OnRecorderEndRecording:(id)a0;
+- (void)OnOutputPcmBuffer:(id)a0 UserData:(id)a1;
+- (void)tryShowVoiceTransMsgWithChatName:(id)a0;
+- (void)OnRecorderPart:(id)a0 Offset:(unsigned int)a1 Len:(unsigned int)a2 EndFlag:(unsigned int)a3 ForceDelete:(BOOL)a4 Duration:(unsigned int)a5;
+- (void)onAudioRecordStart;
+- (void)onAudioRecordHandleBuffer;
+- (id)getChatName:(id)a0;
+- (id)getAudioFileName:(id)a0 LocalID:(unsigned int)a1;
+- (id)getTmpAudioFileName:(unsigned int)a0;
+- (BOOL)addMessageToDB:(id)a0;
+- (BOOL)updateMessageToDB:(id)a0;
+- (BOOL)deleteMessageFromDB:(id)a0;
+- (BOOL)prepareSend:(id)a0;
+- (void)notifyOnBeginRecording:(unsigned int)a0 ErrNo:(int)a1;
+- (void)notifyOnEndRecording:(unsigned int)a0;
+- (void)addMonoService;
+- (void)removeMonoService;
+- (id)init;
+- (void)initFacade:(id)a0;
+- (void)onServiceInit;
+- (void)dealloc;
+- (BOOL)isNeedSpeexAudioByUsrName:(id)a0;
+- (BOOL)isNeedRecordBySilkByUsername:(id)a0;
+- (BOOL)isNeedRecordBySilkForQQOfflineMsg;
+- (BOOL)CanStartRecordFrom:(id)a0 ToUser:(id)a1;
+- (BOOL)StartRecordFrom:(id)a0 ToUser:(id)a1 UserInfo:(id)a2;
+- (BOOL)syncStartUsingRecorder:(id)a0;
+- (void)asyncStartUsingRecorder:(id)a0;
+- (unsigned int)silkAudioDuration;
+- (unsigned int)receivedBufferCount;
+- (BOOL)canStartRecordForFormat:(unsigned int)a0;
+- (unsigned int)startRecordForFormat:(unsigned int)a0;
+- (id)GetTmpAudio:(unsigned int)a0;
+- (id)getCurrentRecorder;
+- (BOOL)CancelRecord;
+- (void)stop;
+- (BOOL)StopRecord;
+- (BOOL)StopRecordWithAudioId:(unsigned int)a0;
+- (BOOL)isRecording;
+- (BOOL)IsNeedRecordPrepareStatus;
+- (id)StartTranslateWithVoiceRecording:(unsigned int)a0;
+- (void)PauseVoiceTranslating;
+- (void)ResumeVoiceTranslating;
+- (void)StopVoiceTransWithInputId:(unsigned int)a0;
+- (id)StopRecordAndStartTransVoiceMsgWithLanguage:(unsigned int)a0;
+- (unsigned int)reTransVoiceWithLanguage:(unsigned int)a0;
+- (BOOL)SendOriVoiceMsgWithUserData:(id)a0;
+- (void)ResendVoiceMsg:(id)a0 MsgWrap:(id)a1;
+- (BOOL)StopRecordingInTransState:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

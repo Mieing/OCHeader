@@ -1,0 +1,72 @@
+@class NSString, ByteRTCRoom, IESLiveInteractPureRTCstreamConfig, ByteRTCEngine, IESLiveInteractRTCMixAudioEngine, NSMutableArray, NSMutableDictionary;
+@protocol IESLiveInteractPureRTCStreamDelegate;
+
+@interface IESLiveInteractPureRTCStreamClientImpl_Douyin : NSObject <IESLiveInteractPureRTCStreamClient, ByteRTCEngineDelegate, ByteRTCRoomDelegate, ByteRTCWTNStreamDelegate>
+
+@property (retain, nonatomic) ByteRTCEngine *rtcEngine;
+@property (retain, nonatomic) ByteRTCRoom *rtcRoom;
+@property (retain, nonatomic) IESLiveInteractPureRTCstreamConfig *config;
+@property (retain, nonatomic) IESLiveInteractRTCMixAudioEngine *mixEngine;
+@property (retain, nonatomic) NSMutableArray *sessions;
+@property (retain, nonatomic) NSMutableDictionary *rtcVideoSinks;
+@property (nonatomic) BOOL audioCaptureEnabled;
+@property (weak, nonatomic) id<IESLiveInteractPureRTCStreamDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setupWithConfig:(id)a0;
+- (void)enableAudioMixing;
+- (void)joinRoom;
+- (void)enableAudioCapture:(BOOL)a0;
+- (void)joinRoomWithVisibility:(BOOL)a0;
+- (void)muteLocalAudioStream:(BOOL)a0;
+- (void)muteLocalVideoStream:(BOOL)a0;
+- (void)muteRemoteAudioStreamWithStringUid:(id)a0 mute:(BOOL)a1;
+- (void)muteAllRemoteAudioStreams:(BOOL)a0;
+- (void)muteAllRemoteVideoStreams:(BOOL)a0;
+- (void)muteRemoteVideoStreamWithStringUid:(id)a0 mute:(BOOL)a1;
+- (void)setRemoteVolume:(long long)a0;
+- (void)startPlayPublicStream;
+- (void)stopPlayPublicStream;
+- (void)disableAudioMixing;
+- (BOOL)isAudioMixingEnabled;
+- (void)pushAudioMixingStreamData:(float **)a0 samples:(long long)a1 sampleRate:(long long)a2 channels:(long long)a3;
+- (void)setAudioMixingVolume:(int)a0;
+- (BOOL)isInVideo;
+- (void)createSessionWithUid:(id)a0;
+- (id)findSessionWithUid:(id)a0;
+- (void)setPublicStreamVolume:(long long)a0;
+- (void)pushExternalVideoFrame:(struct __CVBuffer { } *)a0 pts:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1;
+- (void)leaveRoom;
+- (void)setVideoEncoderConfig:(id)a0;
+- (void)setVideoSourceType:(long long)a0;
+- (void)onWTNDataMessageReceived:(id)a0 andMessage:(id)a1 andSourceType:(long long)a2;
+- (void)onWTNPlayStateChanged:(id)a0 oldState:(long long)a1 newState:(long long)a2 reason:(long long)a3 elapse:(long long)a4;
+- (void)rtcEngine:(id)a0 onAudioDeviceStateChanged:(id)a1 device_type:(long long)a2 device_state:(long long)a3 device_error:(long long)a4;
+- (void)rtcEngine:(id)a0 onConnectionStateChanged:(long long)a1;
+- (void)rtcEngine:(id)a0 onError:(long long)a1;
+- (void)rtcEngine:(id)a0 onFirstLocalAudioFrame:(long long)a1;
+- (void)rtcEngine:(id)a0 onFirstRemoteAudioFrame:(id)a1;
+- (void)rtcEngine:(id)a0 onLocalAudioPropertiesReport:(id)a1;
+- (void)rtcEngine:(id)a0 onPushPublicStreamResult:(id)a1 publicStreamId:(id)a2 errorCode:(long long)a3;
+- (void)rtcEngine:(id)a0 onRemoteAudioPropertiesReport:(id)a1 totalRemoteVolume:(long long)a2;
+- (void)rtcEngine:(id)a0 onSEIMessageReceived:(id)a1 andMessage:(id)a2;
+- (void)rtcEngine:(id)a0 onUserStartAudioCapture:(id)a1 uid:(id)a2;
+- (void)rtcEngine:(id)a0 onUserStopAudioCapture:(id)a1 uid:(id)a2;
+- (void)rtcRoom:(id)a0 onNetworkQuality:(id)a1 remoteQualities:(id)a2;
+- (void)rtcRoom:(id)a0 onRoomStateChangedWithReason:(id)a1 withUid:(id)a2 state:(long long)a3 reason:(long long)a4;
+- (void)rtcRoom:(id)a0 onUserJoined:(id)a1;
+- (void)rtcRoom:(id)a0 onUserLeave:(id)a1 reason:(unsigned long long)a2;
+- (void)rtcRoom:(id)a0 onUserPublishStreamAudio:(id)a1 uid:(id)a2 isPublish:(BOOL)a3;
+- (void)rtcRoom:(id)a0 onUserPublishStreamVideo:(id)a1 uid:(id)a2 isPublish:(BOOL)a3;
+- (void)setAudioScenario:(long long)a0;
+- (void)setUserVisibility:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)startAudioCapture;
+- (void)destroy;
+- (id)initWithConfig:(id)a0;
+- (void)stopAudioCapture;
+
+@end

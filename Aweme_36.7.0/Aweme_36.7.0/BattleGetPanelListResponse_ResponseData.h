@@ -1,0 +1,23 @@
+@class NSString, NSMutableArray, BattleGetPanelListResponse_AutoMatchInfo;
+
+@interface BattleGetPanelListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *listArray;
+@property (readonly, nonatomic) unsigned long long listArray_Count;
+@property (nonatomic) BOOL selfDataSwitch;
+@property (nonatomic) int anchorPkCheck;
+@property (retain, nonatomic) NSMutableArray *canNotPassAnchorIdsArray;
+@property (readonly, nonatomic) unsigned long long canNotPassAnchorIdsArray_Count;
+@property (nonatomic) BOOL useServerPanelList;
+@property (retain, nonatomic) BattleGetPanelListResponse_AutoMatchInfo *matchInfo;
+@property (nonatomic) BOOL hasMatchInfo;
+@property (retain, nonatomic) NSMutableArray *tabListArray;
+@property (readonly, nonatomic) unsigned long long tabListArray_Count;
+@property (nonatomic) int selectTabType;
+@property (copy, nonatomic) NSString *customEntranceTag;
+@property (nonatomic) BOOL showAuxiliaryTab;
+@property (nonatomic) long long curAuxiliaryType;
+
++ (id)descriptor;
+
+@end

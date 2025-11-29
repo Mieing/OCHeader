@@ -1,0 +1,11 @@
+@class AutoExchangeSettingPanelPopup;
+
+@interface SetAutoExchangeStatusResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int syncStatus;
+@property (retain, nonatomic) AutoExchangeSettingPanelPopup *popup;
+@property (nonatomic) BOOL hasPopup;
+
++ (id)descriptor;
+
+@end

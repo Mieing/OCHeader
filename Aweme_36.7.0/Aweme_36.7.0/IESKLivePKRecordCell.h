@@ -1,0 +1,74 @@
+@class UIView, HTSLivePKApi, NSString, NSAttributedString, HTSLiveRoom, UIImageView, UIButton, NSDictionary, RecordResponse_BattleRecord, ReserveRecord, UILabel, RecordResponse_BattleRecord_FeedbackInfo;
+
+@interface IESKLivePKRecordCell : UITableViewCell <IESHYControllerDelegate>
+
+@property (nonatomic) long long feedbackTendency;
+@property (retain, nonatomic) RecordResponse_BattleRecord *item;
+@property (retain, nonatomic) UIImageView *pkResultIcon;
+@property (retain, nonatomic) UIButton *oneMoreButton;
+@property (retain, nonatomic) UILabel *pkConsecutiveWinLabel;
+@property (retain, nonatomic) UILabel *invalidLabel;
+@property (retain, nonatomic) UIImageView *feedbackIcon;
+@property (retain, nonatomic) UILabel *feedbackLabel;
+@property (retain, nonatomic) UIView *feedbackView;
+@property (retain, nonatomic) ReserveRecord *reserveItem;
+@property (retain, nonatomic) UILabel *reserveOptionLabel;
+@property (retain, nonatomic) UIButton *replyReserveButton;
+@property (nonatomic) long long listNum;
+@property (retain, nonatomic) UIView *livingAnimationView;
+@property (retain, nonatomic) UILabel *nicknameLabel;
+@property (retain, nonatomic) UILabel *timeLabel;
+@property (retain, nonatomic) UILabel *arrowLabel;
+@property (retain, nonatomic) UIView *rankSeasonView;
+@property (retain, nonatomic) UIView *tagContainerView;
+@property (retain, nonatomic) UIImageView *avatarView;
+@property (retain, nonatomic) UIImageView *avatarDecorateView;
+@property (retain, nonatomic) UIView *separatorLine;
+@property (retain, nonatomic) HTSLivePKApi *pkApi;
+@property (nonatomic) BOOL isReserve;
+@property (copy, nonatomic) NSString *activityName;
+@property (copy, nonatomic) NSString *source;
+@property (copy, nonatomic) NSAttributedString *activityText;
+@property (nonatomic) long long consesutiveWinCount;
+@property (retain, nonatomic) RecordResponse_BattleRecord_FeedbackInfo *feedbackInfo;
+@property (copy, nonatomic) NSDictionary *userInfo;
+@property (retain, nonatomic) HTSLiveRoom *room;
+@property (copy, nonatomic) id /* block */ openActionWithNavBarOverlay;
+@property (nonatomic) long long recordTypeToMove;
+@property (nonatomic) unsigned long long pkRecordCategoryType;
+@property (nonatomic) unsigned long long reserveRecordType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)iesHYControllerDidDismiss:(id)a0;
+- (void)bindAction;
+- (void)trackWithEvent:(id)a0 extraParams:(id)a1;
+- (void)updateUserInfo;
+- (void)didTapInviteButton;
+- (void)updateFeedbackView;
+- (void)getFeedbackContentTendency;
+- (void)showPreviewView;
+- (id)setupRankSeasonView;
+- (void)openHybridRankSeasonView;
+- (id)getResultImageStrWithPkResult:(int)a0;
+- (void)openHybridFeedbackPage;
+- (BOOL)isNeedFeedbackIcon;
+- (void)updatePKRecordTagContainerView:(id)a0;
+- (void)updateTagContainerView:(long long)a0 itemGender:(long long)a1 itemNickName:(id)a2 tagsArray:(id)a3 isLink:(BOOL)a4;
+- (void)requestInvite:(id)a0;
+- (void)updateBattleReserveTagContainerView:(id)a0;
+- (void)realInvite;
+- (void)feedbackPageTapped;
+- (void)rankSeasonViewTapped;
+- (void)openHybridWithType:(long long)a0;
+- (void)didTapReplyReserveButton;
+- (void)updatePKRecordWithRecordData:(id)a0 showConsecutiveWin:(BOOL)a1 listNum:(long long)a2;
+- (void)updateReserveRecordWithRecordData:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)prepareForReuse;
+- (void)layoutUI;
+
+@end

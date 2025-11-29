@@ -1,0 +1,88 @@
+@class NSString, NSRecursiveLock, NSMutableDictionary, CSCScanSessionReportFFEInfo, NSMutableArray, NSMutableSet, NSObject, CameraScanGoodsExtensionDetectorConfig, MMTimer;
+@protocol OS_dispatch_queue, CameraScanGoodsExtensionDetectorDelegate;
+
+@interface CameraScanGoodsExtensionDetector : MMObject <CameraScanGoodsExtCGITaskDelegate>
+
+@property (nonatomic) BOOL isActive;
+@property (retain, nonatomic) CameraScanGoodsExtensionDetectorConfig *config;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *engineQueue;
+@property (nonatomic) void *focusEngine;
+@property (nonatomic) struct RerankStrategy { float x0; int x1; float x2; float x3; float x4; } *rerankStrategy;
+@property (nonatomic) long long detectByServerFrame;
+@property (nonatomic) long long fullImageTrackID;
+@property (nonatomic) long long fullImageSvrTrackID;
+@property (nonatomic) unsigned long long sessionId;
+@property (retain, nonatomic) MMTimer *checkQueueTimer;
+@property (retain, nonatomic) NSMutableSet *setTrackIdDetected;
+@property (retain, nonatomic) NSMutableArray *arrTaskActiveRecord;
+@property (retain, nonatomic) NSMutableArray *arrWaitingCGITask;
+@property (retain, nonatomic) NSMutableDictionary *dictActiveCGITasks;
+@property (retain, nonatomic) NSMutableDictionary *dictTrackId2ReqKey;
+@property (retain, nonatomic) NSMutableDictionary *dictTrackId2ExchangeInfo;
+@property (nonatomic) unsigned long long popAndRequestTaskCount;
+@property (retain, nonatomic) CSCScanSessionReportFFEInfo *engineLogInfo;
+@property (retain, nonatomic) NSRecursiveLock *detectedTrackIdLock;
+@property (retain, nonatomic) NSString *lastSvrImageHash;
+@property (nonatomic) long long hammingDistanceThreshold;
+@property (retain, nonatomic) NSString *lastSvrPostImageHash;
+@property (nonatomic) long long hammingDistancePostThreshold;
+@property (weak, nonatomic) id<CameraScanGoodsExtensionDetectorDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)logInfoFFEConfig:(struct Config { BOOL x0; int x1; int x2; int x3; int x4; int x5; float x6; BOOL x7; int x8; int x9; float x10; BOOL x11; BOOL x12; char *x13; char *x14; BOOL x15; int x16; BOOL x17; int x18; int x19; int x20; float x21; float x22; char *x23; char *x24; int x25; float x26; float x27; float x28; float x29; struct vector<FFE::HeadInfo, std::allocator<FFE::HeadInfo>> { struct HeadInfo *x0; struct HeadInfo *x1; struct __compressed_pair<FFE::HeadInfo *, std::allocator<FFE::HeadInfo>> { struct HeadInfo *x0; } x2; } x30; int x31; int x32; int x33; float x34; float x35; float x36; int x37; int x38; float x39; char *x40; char *x41; float x42; int x43; int x44; BOOL x45; BOOL x46; BOOL x47; float x48; })a0 prefix:(id)a1;
+
+- (id)initWithDetectorWorkQueue:(id)a0 sessionId:(unsigned long long)a1 config:(id)a2;
+- (void)dealloc;
+- (id)needDetectByServerFallback:(id)a0;
+- (id)getPHASHVale:(struct Mat { int x0; int x1; int x2; int x3; char *x4; int *x5; char *x6; char *x7; char *x8; struct MatAllocator *x9; struct MSize { int *x0; } x10; struct MStep { unsigned long long *x0; unsigned long long x1[2]; } x11; })a0;
+- (BOOL)isPostSimlarWithLastImage:(id)a0;
+- (BOOL)isSimlarWithLastImage:(id)a0;
+- (void)setupFocusEngine;
+- (void)setupRerankStrategy;
+- (void)setupCoreMembers;
+- (void)setupScanCombineService;
+- (void)clearCoreMembers;
+- (void)destroyCoreMembers;
+- (void)becomeActive;
+- (void)resignActive;
+- (void)renew;
+- (void)clear;
+- (void)stopProcessIncomingResult;
+- (void)recoverProcessIncomingResult;
+- (void)callDetectLocalItemInMainThread:(id)a0;
+- (id)handleDetectImageProcessResult:(id)a0;
+- (void)remoteHandleDetectImageProcessResult:(id)a0 localDetectResult:(id)a1;
+- (void)retrackRemoteObjectBySvrFallback:(id)a0 completion:(id /* block */)a1;
+- (void)retrackRemoteObject:(id)a0 completion:(id /* block */)a1;
+- (BOOL)isNormalizeRectValid:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)resetNoBoxesCnt;
+- (id)curFFEReportInfo;
+- (void)handleResumeDetectedLocalItems:(id)a0;
+- (void)handleDetectItemViewModelsWithCGITask:(id)a0 shouldNotifyUI:(BOOL)a1;
+- (void)pushCGITaskToQueue:(id)a0;
+- (void)checkQueue;
+- (void)cancelTaskWithTaskId:(unsigned int)a0;
+- (void)cancelAllDetectTask;
+- (unsigned long long)headRequestingTaskDurantionBeforeNow;
+- (unsigned long long)maxRequestingTaskCount;
+- (unsigned long long)minTaskRequestingInterval;
+- (void)onCameraScanGoodsExtCGITaskFailed:(id)a0 errCode:(unsigned int)a1;
+- (void)onCameraScanGoodsExtCGITaskSuccess:(id)a0;
+- (void)onCameraScanGoodsExtCGITaskAskForPreload:(id)a0;
+- (void)onCameraScanGoodsExtCGITaskUploadSuccess:(id)a0;
+- (void)onCameraScanGoodsExtCGITaskExchangedSuccess:(id)a0;
+- (void)callTrackGoodsWhenExtCGITaskDidReceiveUploadResponse:(id)a0 completion:(id /* block */)a1;
+- (void)onCameraScanGoodsExtCGITaskRetrackFinish:(id)a0 result:(BOOL)a1;
+- (double)uploadTimeout;
+- (double)exchangeTimeout;
+- (unsigned long long)uploadImageDataEncodeType;
+- (BOOL)enableMotionDetectors;
+- (BOOL)isTrackIdDetected:(id)a0;
+- (void)addTrackIdToDetectedSet:(id)a0;
+- (void)removeAllTranckIds;
+- (void).cxx_destruct;
+
+@end

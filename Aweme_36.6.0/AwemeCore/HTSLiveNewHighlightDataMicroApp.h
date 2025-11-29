@@ -1,0 +1,19 @@
+@class NSString, HTSLiveNewPinCommon;
+
+@interface HTSLiveNewHighlightDataMicroApp : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *scene;
+@property (nonatomic) long long pinId;
+@property (nonatomic) long long msgId;
+@property (copy, nonatomic) NSString *microAppId;
+@property (copy, nonatomic) NSString *microAppAvatar;
+@property (copy, nonatomic) NSString *microAppName;
+@property (copy, nonatomic) NSString *microAppIntroduction;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *nickName;
+@property (retain, nonatomic) HTSLiveNewPinCommon *pinCommon;
+@property (nonatomic) BOOL hasPinCommon;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveGamecpCommonRoot : GPBRootObject
+
+@end

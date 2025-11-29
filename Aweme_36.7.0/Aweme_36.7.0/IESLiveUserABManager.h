@@ -1,0 +1,52 @@
+@interface IESLiveUserABManager : NSObject
+
++ (BOOL)liveUserBlockSilenceNeedInfo;
++ (BOOL)liveNotMsequenceProgrammeShow;
++ (BOOL)optProfileAudienceAvatarRefresh;
++ (double)liveEndingBlockingStrategyTimeout;
++ (id)liveMinorRefundConfig;
++ (BOOL)mseqAudienceEnterLastLiveRoom;
++ (BOOL)enableMSeqJumpOptimize;
++ (id)liveParallaxLynxSchema;
++ (BOOL)liveRoomAvatarAppointmentLabelEnable;
++ (int)liveRoomAvatarAppointmentLabelDuration;
++ (BOOL)disableMseqUseReport;
++ (BOOL)liveEnableEarnCountFormat;
++ (BOOL)liveProfileViewOpt;
++ (long long)liveProfileViewStyle;
++ (long long)liveProfileTempStateDuration;
++ (id)liveUserSeqExactlyScore;
++ (BOOL)enableShowAuthInfo;
++ (BOOL)liveAcquaintanceAnonymousShowReportEnable;
++ (long long)liveUseNativeAlert;
++ (BOOL)enableUserCardElementReuse;
++ (long long)userCardCacheMaxCount;
++ (BOOL)liveProfileNewShopCard;
++ (long long)fansclubBubbleAb;
++ (BOOL)userPreviewAddFansGroup;
++ (BOOL)fansGroupEnableMediaRoom;
++ (id)showAuthTagsTimeInterval;
++ (BOOL)liveProfileCardV3;
++ (id)liveWatchRoomNumLimit;
++ (BOOL)roomAnchorTabBrandAnimation;
++ (BOOL)roomAnchorTabBrandLabel;
++ (id)liveBottomProfileFollowGuideConfig;
++ (long long)liveBuyAtEaseShowTimeInterval;
++ (BOOL)liveFansclubParticipateIncentive;
++ (BOOL)liveUsercardEnablePoi;
++ (BOOL)liveUserCardEnablePublicGroup;
++ (BOOL)liveSeqlistLoadOpt;
++ (long long)liveDisableNoBeautyTag;
++ (BOOL)liveEnableProfileHeight;
++ (BOOL)livePaidCardAddPadding;
++ (BOOL)liveEnableParallax;
++ (BOOL)liveEnableAutoRemoveParallax;
++ (long long)liveUserCardGiftExhibitionAnimPlayTimes;
++ (long long)liveUserCardSkipPrivacyLevel;
++ (long long)liveUserCardUserNewRequest;
++ (BOOL)liveUserCardPopupBackground;
++ (BOOL)anchorUserCardEnablePrefetch;
++ (BOOL)userCardPrefetch;
++ (BOOL)liveMyLiveEnabled;
+
+@end

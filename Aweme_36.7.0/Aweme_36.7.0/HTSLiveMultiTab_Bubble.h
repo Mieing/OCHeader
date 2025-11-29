@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveMultiTab_Bubble : IESLivePBBaseMessage
+
+@property (nonatomic) int switch_p;
+@property (nonatomic) long long bubbleId;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long delay;
+@property (copy, nonatomic) NSString *bubbleText;
+
++ (id)descriptor;
+
+@end

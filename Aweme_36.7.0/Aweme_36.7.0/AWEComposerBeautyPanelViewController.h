@@ -1,0 +1,73 @@
+@class UIView, AWEComposerBeautyTopBarViewController, NSString, UIButton, AWEComposerBeautyPrimaryItemsViewController, AWEComposerBeautyViewModel, UIViewController, UILabel, AWEComposerBeautySubItemsViewController;
+@protocol AWEComposerBeautyPanelViewControllerDelegate, ACCBeautyUIConfigProtocol;
+
+@interface AWEComposerBeautyPanelViewController : UIViewController <AWEComposerBeautyTopBarViewControllerDelegate, AWEComposerBeautySubItemsViewControllerDelegate, AWEComposerBeautyPrimaryItemsViewControllerDelegate>
+
+@property (retain, nonatomic) AWEComposerBeautyTopBarViewController *topBarViewController;
+@property (retain, nonatomic) AWEComposerBeautyPrimaryItemsViewController *primaryViewController;
+@property (retain, nonatomic) AWEComposerBeautySubItemsViewController *effectsViewController;
+@property (retain, nonatomic) AWEComposerBeautySubItemsViewController *childEffectsViewController;
+@property (retain, nonatomic) UIViewController *currentViewController;
+@property (retain, nonatomic) UIView *headerView;
+@property (retain, nonatomic) UILabel *beautyPromptLabel;
+@property (retain, nonatomic) UIButton *resetButton;
+@property (retain, nonatomic) AWEComposerBeautyViewModel *viewModel;
+@property (retain, nonatomic) id<ACCBeautyUIConfigProtocol> uiConfig;
+@property (nonatomic) BOOL childEffectsDisplayed;
+@property (nonatomic) BOOL couldOptimizeUI;
+@property (weak, nonatomic) id<AWEComposerBeautyPanelViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)p_bindViewModel;
+- (id)tabTitles;
+- (void)updateUIConfig:(id)a0;
+- (void)reloadPanel;
+- (void)p_setupItemsViewController;
+- (void)p_setupTopBar;
+- (void)p_updateChildEffectsWithCurrentCategory;
+- (void)updateResetButtonToDisabled:(BOOL)a0;
+- (void)updateBeautySubItemsViewIfIsOn:(BOOL)a0;
+- (void)updateResetModeButton;
+- (void)composerBeautyTopBarDidTapResetButton;
+- (void)p_setupPrimaryViewController;
+- (void)p_setupEffectViewController;
+- (void)p_setupChildEffectsViewController;
+- (void)p_showNeededViewController;
+- (void)p_insertViewController:(id)a0 removeViewController:(id)a1 animated:(BOOL)a2 leftToRight:(BOOL)a3 completion:(id /* block */)a4;
+- (void)p_insertViewController:(id)a0 removeViewController:(id)a1 animated:(BOOL)a2 completion:(id /* block */)a3;
+- (double)p_animationDuration;
+- (double)p_animationOffset;
+- (void)p_makePanelContraintsWithView:(id)a0;
+- (void)p_insertViewControllerWithCurrentCategory;
+- (void)trackToggleBeautySwitchManuallyWithFinalState:(BOOL)a0;
+- (void)updateBeautySwitchIsOn:(BOOL)a0 isManually:(BOOL)a1;
+- (void)p_showChildEffectsForEffectWrapper:(id)a0;
+- (void)p_showSubEffectsForCategoryWrapper:(id)a0;
+- (void)composerBeautyTopBarDidTapBackButton;
+- (void)composerBeautyTopBarDidSelectTabAtIndex:(long long)a0;
+- (void)composerBeautyTopBarDidSwitch:(BOOL)a0 isManually:(BOOL)a1;
+- (void)composerSubItemsViewController:(id)a0 didSelectEffect:(id)a1 canceledEffect:(id)a2 fromDownload:(BOOL)a3;
+- (void)composerSubItemsViewController:(id)a0 didSelectEffectSet:(id)a1;
+- (void)composerSubItemsViewController:(id)a0 didSelectEffect:(id)a1 forParentItem:(id)a2;
+- (void)composerSubItemsViewControllerDidFinishDownloadingAllEffects;
+- (void)composerSubItemsViewController:(id)a0 didTapOnToggleView:(BOOL)a1 isManually:(BOOL)a2;
+- (void)composerSubItemsViewController:(id)a0 didTapResetCategory:(id)a1;
+- (BOOL)composerSubItemsViewController:(id)a0 shouldResetButtonEnabledWithCategory:(id)a1;
+- (void)composerSubItemsViewController:(id)a0 didSelectEffect:(id)a1 lastEffect:(id)a2;
+- (void)composerPrimaryItemsViewController:(id)a0 didSelectCategory:(id)a1 parentCategory:(id)a2;
+- (void)composerPrimaryItemsViewController:(id)a0 didEnterCategory:(id)a1 parentCategory:(id)a2;
+- (id)initWithViewModelAndOptimizedUI:(id)a0;
+- (void)updateCurrentSelectedEffectWithStrength:(double)a0;
+- (BOOL)isShowingChildItems;
+- (BOOL)isShowingEffectsItems;
+- (BOOL)isShowingPrimayItems;
+- (void)p_closeChildEffectsViewControllerWithAnimated:(BOOL)a0;
+- (void).cxx_destruct;
+- (id)initWithViewModel:(id)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+
+@end

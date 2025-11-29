@@ -1,0 +1,3 @@
+@interface AWEEcomSearchParamProviderUtil : NSObject
+
+@end

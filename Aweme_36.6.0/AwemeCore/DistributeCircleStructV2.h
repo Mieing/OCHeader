@@ -1,0 +1,16 @@
+@interface DistributeCircleStructV2 : GPBMessage
+
+@property (nonatomic) int distributeType;
+@property (nonatomic) BOOL hasDistributeType;
+@property (nonatomic) BOOL campusBlockInteraction;
+@property (nonatomic) BOOL hasCampusBlockInteraction;
+@property (nonatomic) BOOL isCampus;
+@property (nonatomic) BOOL hasIsCampus;
+
++ (id)descriptor;
+
+- (BOOL)isCampus;
+- (BOOL)campusBlockInteraction;
+- (int)distributeType;
+
+@end

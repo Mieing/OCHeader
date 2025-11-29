@@ -1,0 +1,72 @@
+@class NSHashTable, UIView, NSArray, NSString, MBReporter, MagicBrushService, NSMutableDictionary, MBBuildConfig, MBRuntime;
+
+@interface MagicBrushBiz : NSObject <IMBExtraInfoDelegate, IMMFontMgrExt, NSCopying>
+
+@property (retain, nonatomic) NSMutableDictionary *runtimeDict;
+@property (retain, nonatomic) NSHashTable *lifecycleListenerHashTable;
+@property (retain, nonatomic) NSArray *tempListenersArray;
+@property (retain, nonatomic) MBRuntime *mainRuntime;
+@property (retain, nonatomic) UIView *mainRuntimeView;
+@property (copy, nonatomic) MBBuildConfig *buildConfig;
+@property (weak, nonatomic) MagicBrushService *service;
+@property (retain, nonatomic) NSString *inherentBizName;
+@property (retain, nonatomic) NSMutableDictionary *pluginsDict;
+@property (retain, nonatomic) NSMutableDictionary *publicServicesDict;
+@property (nonatomic) double createdTime;
+@property (retain, nonatomic) MBReporter *reporter;
+@property (copy) NSString *bizName;
+@property (readonly, nonatomic) unsigned long long status;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)setup:(id)a0;
+- (void)destroy;
+- (void)start;
+- (id)buildExperimental;
+- (int)getMaxRefreshRate;
+- (void)pause;
+- (void)resume;
+- (void)evaluate:(id)a0 callback:(id /* block */)a1;
+- (void)dispatch:(id)a0 data:(id)a1;
+- (void)registerLifecycleListener:(id)a0;
+- (void)unregisterLifecycleListener:(id)a0;
+- (void)setMute:(BOOL)a0;
+- (id)extractNameFromSubContextId:(unsigned int)a0;
+- (void)notifyOnCreated;
+- (void)notifyOnMainScriptInjected:(id)a0;
+- (void)notifyOnResume;
+- (void)notifyOnPause;
+- (void)notifyOnDestroy:(int)a0;
+- (void)notifyOnJSException:(id)a0 msg:(id)a1 extra:(id)a2;
+- (void)endWithResult:(unsigned long long)a0 result:(id)a1;
+- (id)getPublicServiceInfo:(id)a0;
+- (id)getPluginInfo:(id)a0;
+- (void)checkMagicBrushJson;
+- (void)onLoad;
+- (void)onError:(id)a0 extra:(id)a1;
+- (id)getFileData:(id)a0;
+- (void)onTerminated:(id)a0;
+- (void)onCanvasCreated:(unsigned int)a0 view:(id)a1;
+- (void)onCanvasDestroyed:(unsigned int)a0 view:(id)a1;
+- (void)onCanvasFrameChanged:(unsigned int)a0 view:(id)a1 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)onCanvasViewFirstFrameRendered:(unsigned int)a0;
+- (id)getAudioFilePath:(id)a0;
+- (void)onVConsoleLog:(id)a0;
+- (void)onSwitchVConsole:(BOOL)a0;
+- (id)getArrayBuffer:(unsigned int)a0;
+- (id)insertNativeArrayBufferWithBuffer:(void *)a0 length:(unsigned long long)a1 permission:(unsigned long long)a2 dataRef:(id)a3;
+- (void)removeNativeArrayBuffer:(int)a0;
+- (void)onThemeChanged:(id)a0;
+- (void)onLanguageChanged:(id)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)applicationDidBecomeActive:(id)a0;
+- (void)applicationDidEnterBackground:(id)a0;
+- (BOOL)checkStatusUnavailable:(id)a0;
+- (void)onFontSizeChange;
+- (id)getMBEnv;
+- (void).cxx_destruct;
+
+@end

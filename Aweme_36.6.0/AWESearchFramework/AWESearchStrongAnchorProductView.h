@@ -1,0 +1,40 @@
+@class UILabel, NSString;
+@protocol AWESearchComponentProtocol, AWESearchContainerProtocol;
+
+@interface AWESearchStrongAnchorProductView : UIView <AWESearchPluginProtocol>
+
+@property (retain, nonatomic) UILabel *hasTailLabel;
+@property (nonatomic) double hasTailLabelWidth;
+@property (nonatomic) double hasTailLabelLength;
+@property (retain, nonatomic) UILabel *bottomMajorLabel;
+@property (weak, nonatomic) id<AWESearchComponentProtocol> componentContext;
+@property (weak, nonatomic) id<AWESearchContainerProtocol> containerContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)pluginDidLoad;
+- (void)pluginDidRemove;
+- (void)updateWithModel:(id)a0 forceUpdate:(BOOL)a1;
+- (void)pluginViewDidAppear:(BOOL)a0;
+- (void)pluginViewDidDisappear:(BOOL)a0;
+- (void)pluginDidEndShowing;
+- (void)pluginDidStartShowing;
+- (void)pluginViewWillAppear:(BOOL)a0;
+- (void)pluginViewWillDisappear:(BOOL)a0;
+- (void)pluginViewDidLoad;
+- (void)updateWithChunkModel:(id)a0;
+- (id)provideProtocol;
+- (id)broadcastProtocolList;
+- (id)receiveProtocolList;
+- (void)pluginPrepareForReuse;
+- (void)setModelOnly:(id)a0;
+- (long long)stringToComponentAlign:(id)a0;
+- (long long)convertFromInteger:(long long)a0;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (void)didResignActive;
+- (void)updateWithModel:(id)a0;
+
+@end

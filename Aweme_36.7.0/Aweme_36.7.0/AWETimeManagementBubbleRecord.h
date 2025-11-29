@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface AWETimeManagementBubbleRecord : MTLModel <MTLJSONSerializing>
+
+@property (nonatomic) long long showTimes;
+@property (nonatomic) BOOL hasClicked;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+
+@end

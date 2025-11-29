@@ -1,0 +1,18 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveEasterEggData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL hasEasterEgg;
+@property (nonatomic) long long stage;
+@property (nonatomic) long long totalStage;
+@property (nonatomic) long long effectsNum;
+@property (nonatomic) long long startCount;
+@property (nonatomic) long long endCount;
+@property (nonatomic) long long count;
+@property (copy, nonatomic) NSString *panelURL;
+@property (retain, nonatomic) HTSLiveImage *entranceIcon;
+@property (nonatomic) BOOL hasEntranceIcon;
+
++ (id)descriptor;
+
+@end

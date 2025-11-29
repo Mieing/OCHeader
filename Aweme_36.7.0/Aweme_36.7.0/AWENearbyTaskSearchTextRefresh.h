@@ -1,0 +1,3 @@
+@interface AWENearbyTaskSearchTextRefresh : NSObject
+
+@end

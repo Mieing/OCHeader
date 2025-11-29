@@ -1,0 +1,3 @@
+@interface IESIMCodeGenConversationFloatingBarUpdateResponseModel : AWEBaseResponseModel
+
+@end

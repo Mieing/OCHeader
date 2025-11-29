@@ -1,0 +1,17 @@
+@interface AWENewScanImpl.ScanTrackItem : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ isShapedType;
+    void /* unknown type, empty encoding */ enterFrom;
+    void /* unknown type, empty encoding */ previousPage;
+    void /* unknown type, empty encoding */ feature;
+    void /* unknown type, empty encoding */ landingPage;
+    void /* unknown type, empty encoding */ contentType;
+    void /* unknown type, empty encoding */ enterFromSource;
+    void /* unknown type, empty encoding */ tabName;
+    void /* unknown type, empty encoding */ logExtraDict;
+    void /* unknown type, empty encoding */ qrCodeType;
+    void /* unknown type, empty encoding */ detectImage;
+    void /* unknown type, empty encoding */ position;
+    void /* unknown type, empty encoding */ points;
+}
+
+@end

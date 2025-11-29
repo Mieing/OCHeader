@@ -1,0 +1,12 @@
+@class NSMutableArray, MySubscribeHistoryListResponse_ResponseExtra;
+
+@interface MySubscribeHistoryListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+@property (retain, nonatomic) MySubscribeHistoryListResponse_ResponseExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

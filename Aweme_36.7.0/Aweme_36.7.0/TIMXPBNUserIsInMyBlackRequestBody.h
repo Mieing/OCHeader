@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNUserIsInMyBlackRequestBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *userIdArray;
+@property (readonly, nonatomic) unsigned long long userIdArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,5 @@
+@interface AWESpeCategoryKit.FeedListContainerMonitorConfig : AWESpeCategoryKit.FeedListBaseMarkConfig {
+    void /* unknown type, empty encoding */ $__lazy_storage_$_launch;
+}
+
+@end

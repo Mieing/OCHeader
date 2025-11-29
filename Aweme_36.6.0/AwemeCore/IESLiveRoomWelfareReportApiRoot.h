@@ -1,0 +1,3 @@
+@interface IESLiveRoomWelfareReportApiRoot : GPBRootObject
+
+@end

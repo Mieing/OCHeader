@@ -1,0 +1,7 @@
+@interface CSJInterstitialLandscape9To16CoverView : CSJInterstitialCoverView
+
+- (void)pbu_override_buildView;
+- (void)pbu_override_buildViewData;
+- (void)layoutSubviews;
+
+@end

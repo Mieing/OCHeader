@@ -1,0 +1,10 @@
+@class UpdateStampStatusResponse_ResponseData;
+
+@interface UpdateStampStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateStampStatusResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

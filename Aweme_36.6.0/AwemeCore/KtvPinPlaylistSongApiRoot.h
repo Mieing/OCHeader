@@ -1,0 +1,3 @@
+@interface KtvPinPlaylistSongApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class EpisodeScreenResponse_ResponseData;
+
+@interface EpisodeScreenResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) EpisodeScreenResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

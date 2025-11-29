@@ -1,0 +1,86 @@
+@class UIStackView, UIView, NSArray, NSString, NSMutableDictionary, NSDictionary, LSIMChatPanelView, UIButton, NSNumber, UIColor;
+@protocol LSIMInputVCDelegate, LSIMGrowingTextViewProtocol;
+
+@interface LSIMInputViewController : UIViewController <LSIMGrowingTextViewDelegate, LSIMInputViewControllerProtocol>
+
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *bottomHolderView;
+@property (retain, nonatomic) UIView *inputBarContainer;
+@property (retain, nonatomic) UIStackView *rightContainer;
+@property (retain, nonatomic) UIButton *plusButton;
+@property (retain, nonatomic) UIButton *sendButton;
+@property (retain, nonatomic) UIView *panelsContainer;
+@property (retain, nonatomic) LSIMChatPanelView *chatPanel;
+@property (copy, nonatomic) NSDictionary *rightModelsMap;
+@property (copy, nonatomic) NSDictionary *rightItemsMap;
+@property (copy, nonatomic) NSArray *rightButtons;
+@property (retain, nonatomic) NSMutableDictionary *panelMap;
+@property (copy, nonatomic) NSArray *chatPanelConfig;
+@property (nonatomic) long long currentInputType;
+@property (weak, nonatomic) UIView *currentChatPanelView;
+@property (nonatomic) NSNumber *customPanelType;
+@property (retain, nonatomic) UIColor *textViewBackgroudColor;
+@property (nonatomic) BOOL keyboardDisplaying;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } keyboardBounds;
+@property (nonatomic) BOOL isHeightAnimated;
+@property (nonatomic) double textViewHeight;
+@property (nonatomic) double animateDuration;
+@property (nonatomic) long long animateCurve;
+@property (nonatomic) long long quickReplyState;
+@property (nonatomic) BOOL floatMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<LSIMInputVCDelegate> inputVCDelegate;
+@property (readonly, nonatomic) UIView *view;
+@property (retain, nonatomic) UIView<LSIMGrowingTextViewProtocol> *textView;
+@property (nonatomic) long long maxTextLength;
+
++ (double)defaultInputHeight;
+
+- (void)initLayout;
+- (void)resetButtonsSelected;
+- (BOOL)refreshTextViewFrameIfNeed;
+- (void)sendButtonClicked:(id)a0;
+- (void)rotatePlusButton:(id)a0;
+- (void)showInputPanelWithType:(long long)a0;
+- (void)setupInputBarRightItemsWithModelArray:(id)a0;
+- (void)refreshInputVCFrameInInit;
+- (void)setupChatPanelWithModelArray:(id)a0;
+- (void)setupRightContainerItems;
+- (id)createItemWithModel:(id)a0;
+- (void)refreshInputViewYWithAnimated:(long long)a0;
+- (void)closeKeyboardIfNeeded;
+- (void)setupChatPanel;
+- (id)customPanelWithInputViewType:(id)a0;
+- (void)resetInputTypeToNone;
+- (void)refreshRightButtonsWithText:(id)a0;
+- (double)inputBarHeightWithVMargin;
+- (double)chatDetailContainerHeight;
+- (double)inputViewHeightInScreenWithType:(long long)a0;
+- (double)inputViewYWithType:(long long)a0;
+- (void)updateInputVCFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 inputViewType:(long long)a1 oldInputViewType:(long long)a2;
+- (void)refreshBottomHolderViewInNewType:(long long)a0;
+- (void)plusButtonClicked:(id)a0;
+- (void)addTextInInputViewAndShowKeyboard:(id)a0 trackParams:(id)a1;
+- (void)hideKeyboard;
+- (void)sendMessage:(id)a0;
+- (void).cxx_destruct;
+- (void)showKeyboard;
+- (void)viewDidLayoutSubviews;
+- (void)keyboardWillShow:(id)a0;
+- (id)init;
+- (void)keyboardWillHide:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)setupUI;
+- (void)addObservers;
+- (void)removeObservers;
+- (void)initData;
+
+@end

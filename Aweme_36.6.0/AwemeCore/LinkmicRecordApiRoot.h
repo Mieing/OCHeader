@@ -1,0 +1,3 @@
+@interface LinkmicRecordApiRoot : GPBRootObject
+
+@end

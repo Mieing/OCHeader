@@ -1,0 +1,19 @@
+@class NSString;
+
+@interface AWELiveNetworkQualityInfoServiceImpl : NSObject <IESLiveNetworkQualityInfoService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)transportRttMs;
+- (long long)httpRttMs;
+- (long long)downstreamThroughputKbps;
+- (double)upstreamLossRate;
+- (double)downstreamLossRate;
+- (id)networkFilterHeadersFromTag:(unsigned long long)a0;
+- (unsigned long long)bitrate;
+- (long long)netType;
+
+@end

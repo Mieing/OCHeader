@@ -1,0 +1,10 @@
+@class VideoShareResponse_ResponseData;
+
+@interface VideoShareResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) VideoShareResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

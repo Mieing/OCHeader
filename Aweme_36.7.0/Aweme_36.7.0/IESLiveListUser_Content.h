@@ -1,0 +1,14 @@
+@class IESLiveListUserLinkmicAudienceContent, IESLiveListUserLinkmicContent, IESLiveListUserPKContent;
+
+@interface IESLiveListUser_Content : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveListUserPKContent *pkContent;
+@property (nonatomic) BOOL hasPkContent;
+@property (retain, nonatomic) IESLiveListUserLinkmicContent *linkmicContent;
+@property (nonatomic) BOOL hasLinkmicContent;
+@property (retain, nonatomic) IESLiveListUserLinkmicAudienceContent *linkmicAudienceContent;
+@property (nonatomic) BOOL hasLinkmicAudienceContent;
+
++ (id)descriptor;
+
+@end

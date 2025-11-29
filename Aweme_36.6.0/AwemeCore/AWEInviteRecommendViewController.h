@@ -1,0 +1,75 @@
+@class UIView, NSString, AWEInviteSearchViewController, AWEInviteRecommendSearchTableViewCell, UIImageView, AWEAnimatedButton, UITableView, NSObject, NSMutableArray, UILabel;
+@protocol AWEUserRecommendTableViewManagerProtocol;
+
+@interface AWEInviteRecommendViewController : UIViewController <AWERouterViewControllerProtocol, CAAnimationDelegate, AWEFindFriendsSearchDelegate, UITableViewDataSource, UITableViewDelegate, AWEUserRecommendTableViewManagerDataSource, AWEInviteRecommendViewControllerProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) UIView *searchPlaceHolderView;
+@property (retain, nonatomic) AWEAnimatedButton *searchPlaceHolderContainerView;
+@property (retain, nonatomic) UIImageView *searchIconImageView;
+@property (retain, nonatomic) UILabel *searchPlaceHolderLabel;
+@property (retain, nonatomic) AWEInviteSearchViewController *searchVC;
+@property (retain, nonatomic) AWEInviteRecommendSearchTableViewCell *searchCell;
+@property (retain, nonatomic) NSObject<AWEUserRecommendTableViewManagerProtocol> *recommendTableViewManager;
+@property (retain, nonatomic) NSMutableArray *dataSource;
+@property (nonatomic) unsigned long long inviteType;
+@property (nonatomic) long long recommendType;
+@property (copy, nonatomic) NSString *userID;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) NSString *previousPage;
+@property (nonatomic) BOOL isHalfScreen;
+@property (copy, nonatomic) NSString *searchText;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isRecommendCombine;
+@property (copy, nonatomic) NSString *fromRequestID;
+
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (void)aweui_emptyPagePrimaryButtonTapped:(id)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })aweui_emptyPageEdgeInsets;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)backBtnClicked:(id)a0;
+- (id)recommendSectionProvider;
+- (void)recommendSectionDidBecomeEmpty;
+- (void)recommendSectionDidBecomeNonEmpty;
+- (void)searchUser;
+- (void)showSearchPlaceHolderView;
+- (void)hideSearchPlaceHolderView;
+- (id)cellModelForRowAtIndexPath:(id)a0;
+- (void)p_setUpPlachHolderViewWithSearchText:(id)a0;
+- (void)p_showSearchPlaceHolderView;
+- (void)searchTextDidChanged:(id)a0;
+- (void)handleScanTapped;
+- (id)initWithInviteType:(unsigned long long)a0 recommendType:(long long)a1 userID:(id)a2 enterFrom:(id)a3 previousPage:(id)a4;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)configureDataSource;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupUI;
+- (void)refreshData;
+- (void)setupNavigationBar;
+
+@end

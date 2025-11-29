@@ -1,0 +1,10 @@
+@class IsIndividualPlayerResponse_Data;
+
+@interface IsIndividualPlayerResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IsIndividualPlayerResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

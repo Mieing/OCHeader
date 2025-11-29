@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface SimpleGetDiamondOrderResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *orderId;
+@property (nonatomic) int orderStatus;
+
++ (id)descriptor;
+
+@end

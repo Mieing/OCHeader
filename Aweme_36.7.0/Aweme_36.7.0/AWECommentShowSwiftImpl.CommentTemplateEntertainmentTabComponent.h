@@ -1,0 +1,3 @@
+@interface AWECommentShowSwiftImpl.CommentTemplateEntertainmentTabComponent : AWECommentSwiftBizUI.CommentTemplateTabComponent
+
+@end

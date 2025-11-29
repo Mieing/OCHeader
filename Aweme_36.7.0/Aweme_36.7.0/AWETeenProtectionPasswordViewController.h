@@ -1,0 +1,87 @@
+@class AWETeenModePasswordViewHolder, NSString;
+
+@interface AWETeenProtectionPasswordViewController : UIViewController <AWETeenModePasswordViewHolderDelegate, AWETeenProtectionPasswordViewControllerProtocol>
+
+@property (retain, nonatomic) AWETeenModePasswordViewHolder *viewHolder;
+@property (nonatomic) unsigned long long type;
+@property (copy, nonatomic) NSString *inputPassword;
+@property (nonatomic) BOOL forUpdatingPassword;
+@property (nonatomic) BOOL isEdit;
+@property (nonatomic) BOOL shouldShowChildRequestBindingEntry;
+@property (copy, nonatomic) NSString *onePassword;
+@property (copy, nonatomic) NSString *oldPassword;
+@property (nonatomic) long long triggerTime;
+@property (nonatomic) BOOL teenModeEnabled;
+@property (nonatomic) BOOL dismissVCWhenSucceed;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *UIID;
+@property (copy, nonatomic) NSString *userType;
+@property (nonatomic) BOOL showMoreInfo;
+@property (nonatomic) unsigned long long homeType;
+@property (nonatomic) BOOL underFourTeenLeave;
+@property (nonatomic) BOOL onlyPopPasswordVCWhenSucceed;
+@property (nonatomic) BOOL notTeenEntrancePath;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEChildModeModuleServiceCommonAdapterClass;
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
+
+- (void)trackEvent:(id)a0 params:(id)a1;
+- (void)attributedLabel:(id)a0 didSelectLinkWithURL:(id)a1;
+- (BOOL)awe_shouldAutorotate;
+- (unsigned long long)awe_supportedInterfaceOrientations;
+- (void)handleBroadcastNotification:(id)a0;
+- (void)backBtnClicked;
+- (id)aAWEChildModeModuleServiceCommonAdapter;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (void)p_setupSubviews;
+- (id)clickEventName;
+- (void)trackPageAppear;
+- (id)initWithType:(unsigned long long)a0 andHomeType:(unsigned long long)a1;
+- (void)p_setupNotifications;
+- (BOOL)shouldShowPasswordHintLabel;
+- (BOOL)shouldShowMoreInfoTextView;
+- (BOOL)shouldShowRetrievePasswordLabel;
+- (void)updateInputPassword:(id)a0;
+- (void)passwordNextAction;
+- (void)didTapGuardianPlatformBindingButton;
+- (id /* block */)passwordTextFieldTextDidChangeBlock;
+- (BOOL)hasValidPassword;
+- (id)childrenAgreementURLString;
+- (void)p_trackGuardianPlatformEventsIfNeededWithActionType:(id)a0;
+- (void)trackPageClick:(BOOL)a0;
+- (void)trackAppealClick;
+- (void)p_nextAction;
+- (id)showEventName;
+- (void)p_setupViewHolder;
+- (void)p_showReenterGuideIfNeeded;
+- (BOOL)shouldHideChildRequestBindingEntry;
+- (unsigned long long)p_passwordViewType;
+- (void)transferToAppropriateVCAfterEditProfile;
+- (id)p_reenterGuideKey;
+- (void)p_transferToConfirmPassword;
+- (void)p_checkTwicePassword;
+- (void)p_updatePassword;
+- (void)p_manageSwitchOperation;
+- (void)trackPageClick:(BOOL)a0 isTeenMode:(BOOL)a1;
+- (BOOL)shouldShowProfileEditPageAfterConfirmPassword;
+- (void)transferToAppropriateVC:(id /* block */)a0;
+- (void)onlyPopPasswordViewControllers:(id /* block */)a0;
+- (void)transferToEntranceViewController:(id /* block */)a0;
+- (void)transferToTeenProtectionHomeViewController:(id /* block */)a0;
+- (BOOL)notShouldShowRetrievePasswordLabel;
+- (void)setBtnStyle:(id)a0;
+- (void).cxx_destruct;
+- (BOOL)textView:(id)a0 shouldInteractWithURL:(id)a1 inRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2 interaction:(long long)a3;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (id)commonDict;
+
+@end

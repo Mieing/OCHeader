@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface HTSLiveTaskDetail : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) long long currentValue;
+@property (nonatomic) long long targetValue;
+@property (copy, nonatomic) NSString *desc;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+
++ (id)descriptor;
+
+@end

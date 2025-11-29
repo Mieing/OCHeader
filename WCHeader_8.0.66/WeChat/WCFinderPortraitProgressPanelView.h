@@ -1,0 +1,83 @@
+@class NSTimer, WCFinderPlayerLoadingView, WCFinderPhotoProgressBar, UIButton, WCFinderCommonTipsView, WCFinderPortraitProgressBar, WCFinderProgressBar, TextStateBlurButton, MMUIButton;
+@protocol WCFinderPortraitProgressPanelViewDelegate;
+
+@interface WCFinderPortraitProgressPanelView : WCFinderProgressPanelView {
+    WCFinderProgressBar *_progressBar;
+}
+
+@property (retain, nonatomic) NSTimer *stateChangeTimer;
+@property (retain, nonatomic) WCFinderPortraitProgressBar *immersiveProgressBar;
+@property (retain, nonatomic) WCFinderPhotoProgressBar *photoProgressBar;
+@property (nonatomic) unsigned long long startDragStyle;
+@property (retain, nonatomic) WCFinderPlayerLoadingView *playerloadingView;
+@property (retain, nonatomic) UIButton *rotateButton;
+@property (retain, nonatomic) TextStateBlurButton *exitPinchInButton;
+@property (nonatomic) struct CGPoint { double x; double y; } pauseButtonCenter;
+@property (retain, nonatomic) MMUIButton *voiceOverButton;
+@property (weak, nonatomic) WCFinderCommonTipsView *progressAnchorTips;
+@property (nonatomic) unsigned long long lastType;
+@property (weak, nonatomic) id<WCFinderPortraitProgressPanelViewDelegate> portraitDelegate;
+
+- (void)dealloc;
+- (void)removeFromSuperview;
+- (void)resetUIViewState;
+- (id)extendProgressPanGes;
+- (unsigned long long)getStratImmersiveProgressBarDragStyle;
+- (BOOL)curSupportType:(unsigned long long)a0;
+- (BOOL)isLowestType;
+- (void)setCurType:(unsigned long long)a0;
+- (void)resetDefaultType;
+- (void)updateCurProgressType;
+- (void)setTimeHidden:(BOOL)a0;
+- (void)setHidden:(BOOL)a0;
+- (BOOL)isInteracting;
+- (void)cancelTimer;
+- (void)becomeInteractive;
+- (void)resignInteractive;
+- (void)becomeLowest;
+- (void)becomeStatic;
+- (void)resignStatic;
+- (void)onVoiceOverStatusChanged;
+- (void)showProgressAnchor:(double)a0;
+- (void)setViewsOverLapPlayerIsTranslucent:(BOOL)a0;
+- (void)_showAnchorTipsView;
+- (void)clickPlayAnchor;
+- (void)hidePlaceHolder:(id)a0;
+- (double)anchorProgress;
+- (BOOL)canShowAnchor;
+- (void)onClickCloseBtn:(id)a0;
+- (void)onClickRotateButton:(id)a0;
+- (void)onClickVoiceOverButton:(id)a0;
+- (void)hideAllSubControlWhileInteractive;
+- (void)fireBecomeSmaller;
+- (void)becomeSmaller;
+- (void)becomeBiger;
+- (double)progressCenterY;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)checkProgressBarStatus;
+- (void)updateConfig;
+- (unsigned long long)_defaultProgressType;
+- (void)updateProgressElementsWithCurrentPlayPosition:(double)a0 videoDuration:(double)a1 forbidProgressBarMovAnim:(BOOL)a2 contentVM:(id)a3 manual:(BOOL)a4;
+- (void)layoutProgressBar;
+- (void)updateControlsEnhanceColor;
+- (void)updateControlsLayout;
+- (void)updateOtherControlsLayout;
+- (void)updateControlsHiddenState;
+- (BOOL)isShowing;
+- (void)updatePhotoProgressBarWithIndex:(unsigned long long)a0 precent:(double)a1;
+- (void)startLoading;
+- (void)stopLoading;
+- (BOOL)isAnimating;
+- (BOOL)isNewLoading;
+- (BOOL)isPinchInState;
+- (id)dynamicWhiteColor;
+- (BOOL)canVideoFeedPlay;
+- (id)progressBar;
+- (id)createRecoverTimerWithTinterval:(double)a0 selector:(SEL)a1 userInfo:(id)a2;
+- (id)longVideoEntry;
+- (unsigned long long)progressStyle;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getMediaArea;
+- (id)finderProgressBarGetContentVM;
+- (void).cxx_destruct;
+
+@end

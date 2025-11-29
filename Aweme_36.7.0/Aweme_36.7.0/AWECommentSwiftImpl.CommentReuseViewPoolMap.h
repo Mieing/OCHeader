@@ -1,0 +1,10 @@
+@interface AWECommentSwiftImpl.CommentReuseViewPoolMap : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ reusePoolOptimize;
+    void /* unknown type, empty encoding */ supportReuseComponent;
+    void /* unknown type, empty encoding */ pools;
+    void /* unknown type, empty encoding */ currentUniqueId;
+    void /* unknown type, empty encoding */ didPreCreated;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_allowUniqueKeyMap;
+}
+
+@end

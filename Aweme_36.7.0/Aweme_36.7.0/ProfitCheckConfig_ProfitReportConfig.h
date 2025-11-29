@@ -1,0 +1,9 @@
+@interface ProfitCheckConfig_ProfitReportConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long profitType;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long reportType;
+
++ (id)descriptor;
+
+@end

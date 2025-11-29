@@ -1,0 +1,72 @@
+@class UIViewController, NSString, IESECFeedCommentContext, IESECFeedCommentDataController, IESECTracker, IESECFeedCommentEmptyPageView, UITableView;
+@protocol IESECFeedCommentViewControllerContainerDelegate;
+
+@interface IESECFeedCommentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, IESECFeedCommentTableViewCellActionDelegate, IESECFeedCommentEmptyPageViewProtocol, IESECFeedCommentTableViewTemplateCellActionDelegate>
+
+@property (retain, nonatomic) IESECFeedCommentContext *context;
+@property (retain, nonatomic) IESECFeedCommentDataController *dataController;
+@property (retain, nonatomic) IESECTracker *tracker;
+@property (retain, nonatomic) IESECFeedCommentEmptyPageView *emptyContentView;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL fromCommentVC;
+@property (retain, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) id<IESECFeedCommentViewControllerContainerDelegate> containerDelegate;
+@property (nonatomic) BOOL isBGColorWhite;
+@property (nonatomic) BOOL isShowInContainerView;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *accountType;
+@property (weak, nonatomic) UIViewController *container;
+@property (copy, nonatomic) id /* block */ fetchDataSucceed;
+@property (copy, nonatomic) id /* block */ cellWillDisplay;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)replyCountForSection:(long long)a0;
+- (void)updateReplyCountForSection:(long long)a0 count:(long long)a1;
+- (long long)currentDataSourceCount;
+- (id)modelIdentifierInSection:(long long)a0;
+- (id)initWithCommentContext:(id)a0;
+- (void)showNetworkError;
+- (void)showEmptyPage;
+- (void)showNormalPage;
+- (void)_endRefreshing;
+- (void)showNetworkErrorWhileLoading;
+- (void)updateEmptyViewWithNetworkError;
+- (void)updateEmptyViewWithNetworkErrorWhileLoading;
+- (void)updateEmptyViewWithNoResult;
+- (void)fetchCommentDataWithCompletion:(id /* block */)a0;
+- (void)retryLoadData;
+- (id)modelInSection:(long long)a0;
+- (BOOL)canCommentReplyForSection:(long long)a0;
+- (id)productIDForSection:(long long)a0;
+- (void)tableViewCell:(id)a0 updateCommentLikeWithDetailModel:(id)a1;
+- (void)openMediaPreviewWithDetailModel:(id)a0 detailModel:(id)a1 index:(long long)a2;
+- (void)tableViewCell:(id)a0 replyTap:(id)a1;
+- (BOOL)applyTemplateCell;
+- (void)openCommentItemPreviewWithImageURLArray:(id)a0 selectedImageIndex:(long long)a1 videoModel:(id)a2;
+- (void)getInitialCommentPageData;
+- (void)tableViewCell:(id)a0 updateCommentLikeWithCommentID:(id)a1;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)tableView:(id)a0 willDisplayHeaderView:(id)a1 forSection:(long long)a2;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (long long)sectionForIdentifier:(id)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)tableView:(id)a0 willDisplayFooterView:(id)a1 forSection:(long long)a2;
+- (void)tableView:(id)a0 didEndDisplayingHeaderView:(id)a1 forSection:(long long)a2;
+- (void)tableView:(id)a0 didEndDisplayingFooterView:(id)a1 forSection:(long long)a2;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupUI;
+
+@end

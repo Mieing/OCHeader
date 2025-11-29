@@ -1,0 +1,12 @@
+@class IESLiveLinkmicMediaInfo, NSString;
+
+@interface IESLiveEarlyInitRtcEnginelData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isInWaiting;
+@property (retain, nonatomic) IESLiveLinkmicMediaInfo *mediaInfo;
+@property (nonatomic) BOOL hasMediaInfo;
+@property (copy, nonatomic) NSString *onerAppid;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveChatCarnivalSyncdataRoot : GPBRootObject
+
+@end

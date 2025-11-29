@@ -1,0 +1,87 @@
+@class NSTimer, NSString, NSHashTable, NSDate, NSMutableDictionary, NSObject, NSMutableArray, IESIMThirdPartyDataManagerConfig;
+@protocol IESIMThirdPartyConversationProtocol, IESIMThirdPartyBoxMangerDelegate, OS_dispatch_semaphore, OS_dispatch_queue;
+
+@interface IESIMThirdPartyDataManager : NSObject <IESIMTIMXLifeMessage, TIMXOThirdPartyChangeObserverDelegate, IESIMThirdPartyDataManagerProtocol>
+
+@property (nonatomic) int bizId;
+@property (nonatomic) int inboxType;
+@property (nonatomic) unsigned long long topN;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue;
+@property (copy, nonatomic) NSString *observerToken;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) long long lastSortOrder;
+@property (retain, nonatomic) NSHashTable *chatListeners;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *chatListenerLock;
+@property (nonatomic) int unreadCount;
+@property (nonatomic) int importantUnreadCount;
+@property (retain, nonatomic) id<IESIMThirdPartyConversationProtocol> hintConversation;
+@property (retain, nonatomic) NSDate *firstUnreadConversationUpdatedAt;
+@property (nonatomic) long long source;
+@property (retain) NSMutableArray *chatList;
+@property (retain, nonatomic) NSMutableDictionary *chatDict;
+@property (retain, nonatomic) NSMutableDictionary *cachedConvModelDict;
+@property (retain, nonatomic) NSTimer *logTotalUnreadCountChangeTimer;
+@property (retain, nonatomic) NSMutableArray *totalUnreadCountChangedInfoArr;
+@property (readonly, nonatomic) NSObject<OS_dispatch_queue> *loggerTotalUnreadCountChangeQueue;
+@property (nonatomic) int hintUnreadCount;
+@property (nonatomic) int hintImportantUnreadCount;
+@property (retain, nonatomic) NSMutableDictionary *cachedHintConvModelDict;
+@property (retain, nonatomic) NSTimer *logTotalHintUnreadCountChangeTimer;
+@property (retain, nonatomic) NSMutableArray *totalHintUnreadCountChangedInfoArr;
+@property (readonly, copy, nonatomic) IESIMThirdPartyDataManagerConfig *config;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<IESIMThirdPartyBoxMangerDelegate> delegate;
+
++ (int)updateUnreadCountInfo:(id)a0 chatId:(id)a1 cachedConvModelDict:(id)a2 newUnreadCount:(int)a3 newImportUnreadCount:(int)a4 completion:(id /* block */)a5;
+
+- (void)syncConversations:(id)a0 completion:(id /* block */)a1;
+- (void)deleteConversationWithLastIndexDict:(id)a0 completion:(id /* block */)a1;
+- (void)loadSessions;
+- (void)markConversationAsRead:(id)a0 completion:(id /* block */)a1;
+- (void)iesim_timxInstanceMounted:(id)a0;
+- (void)iesim_timxInstanceUnmounted:(id)a0;
+- (void)markAllConversationsAsReadWithInboxes:(id)a0 bizId:(int)a1 completion:(id /* block */)a2;
+- (id)initWithBizID:(int)a0 inboxType:(int)a1 topN:(unsigned long long)a2;
+- (void)fetchDataWithTopN:(unsigned long long)a0 completion:(id /* block */)a1;
+- (void)binaryInsertChatList:(id)a0 context:(id)a1 completion:(id /* block */)a2;
+- (void)notifyChatListChangedWithContext:(id)a0;
+- (void)printLogArr:(id)a0 unreadTypeStr:(id)a1;
+- (void)printLogOfTotalUnreadCountChangedInfoArr;
+- (BOOL)needHandelThirdPartyChangeWithContext:(id)a0;
+- (void)binaryInsertChatIDList:(id)a0 context:(id)a1;
+- (void)removeChatWithIdentifiers:(id)a0 context:(id)a1 completion:(id /* block */)a2;
+- (void)binaryInsertChatListV2:(id)a0 context:(id)a1 completion:(id /* block */)a2;
+- (long long)locationOfChatAtChatArray:(id)a0;
+- (void)addUnreadCountChangeLogWithInfo:(id)a0;
+- (void)processChatDictAndListWithBlock:(id /* block */)a0 context:(id)a1 completion:(id /* block */)a2;
+- (void)removeChatWithIdentifiersV2:(id)a0 context:(id)a1 completion:(id /* block */)a2;
+- (void)updateChatListByRemoveChatId:(id)a0 listInfo:(id)a1 hintInfo:(id)a2;
+- (void)preProcessConvUnreadCount:(id)a0;
+- (void)addListUnreadCountChangeLogWithInfo:(id)a0;
+- (void)addHintUnreadCountChangeLogWithInfo:(id)a0;
+- (void)printLogOfFilteredConvIdToFilteredReasonMap:(id)a0;
+- (void)updateHintConversation;
+- (void)printChatListChangeWithContext:(id)a0;
+- (void)tryToLogTUC;
+- (void)addUnreadCountChangeLogWithInfo:(id)a0 handlerNewChangeInfoBlock:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)tryToLogHintTUC;
+- (void)conversationsCreated:(id)a0 context:(id)a1;
+- (void)conversationsUpdated:(id)a0 context:(id)a1;
+- (void)conversationsDeleted:(id)a0 context:(id)a1;
+- (id)maxMessageCreateAt;
+- (void)updateConversations:(id)a0 completion:(id /* block */)a1;
+- (void)markAllConversationsAsReadWithCompletion:(id /* block */)a0;
+- (void)markAllConversationHintAsReadWithCompletion:(id /* block */)a0;
+- (void)loadMoreChatListWithLimit:(int)a0 completion:(id /* block */)a1;
+- (void)resetLoadMore;
+- (void)cropChatListToLimit:(int)a0;
+- (void)addChatListener:(id)a0;
+- (void)removeChatListener:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+
+@end

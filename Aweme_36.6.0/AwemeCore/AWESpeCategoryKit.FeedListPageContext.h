@@ -1,0 +1,16 @@
+@interface AWESpeCategoryKit.FeedListPageContext : AWEPageContext {
+    void /* unknown type, empty encoding */ pageState;
+    void /* unknown type, empty encoding */ refer;
+    void /* unknown type, empty encoding */ enterFrom;
+    void /* unknown type, empty encoding */ previousPage;
+    void /* unknown type, empty encoding */ enterMethod;
+    void /* unknown type, empty encoding */ isGraphicDetailRecommend;
+    void /* unknown type, empty encoding */ innerDataControllerStore;
+    void /* unknown type, empty encoding */ innerDataControllerMakerStore;
+    void /* unknown type, empty encoding */ logExtra;
+}
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,85 @@
+@class NSHashTable, CAKAlbumSearchViewModel, CAKAlbumAIMemoriesSearchBar, CAKAIMemoriesErrorView, CAKAlbumViewModel, NSString, UIButton, CAKAIMemoriesSkeletonView, NSMutableArray, UICollectionView, DUXSearchBarTextAction;
+@protocol CAKAlbumAIMemoriesSearchViewControllerDelegate;
+
+@interface CAKAlbumAIMemoriesSearchViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CAKAlbumInsightSectionCellDelegate, CAKAlbumInsightCollectSectionCellDelegate, CAKAlbumPreviewAndSelectControllerDelegate>
+
+@property (retain, nonatomic) CAKAlbumSearchViewModel *viewModel;
+@property (retain, nonatomic) CAKAlbumAIMemoriesSearchBar *searchBar;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) DUXSearchBarTextAction *searchAction;
+@property (retain, nonatomic) UIButton *searchButton;
+@property (nonatomic) BOOL viewAppearTracked;
+@property (retain, nonatomic) NSHashTable *trackedSections;
+@property (retain, nonatomic) NSHashTable *trackedItems;
+@property (retain, nonatomic) CAKAIMemoriesSkeletonView *loadingView;
+@property (retain, nonatomic) CAKAIMemoriesErrorView *errorView;
+@property (nonatomic) long long originPreviewCollectionCount;
+@property (nonatomic) double startShowDataTime;
+@property (nonatomic) BOOL hasSetShowDataTime;
+@property (nonatomic) double showDataTime;
+@property (nonatomic) BOOL hasTrackedCollectionSectionShow;
+@property (retain, nonatomic) NSMutableArray *hasTrackedInsightSectionTypeArray;
+@property (weak, nonatomic) id<CAKAlbumAIMemoriesSearchViewControllerDelegate> delegate;
+@property (weak, nonatomic) CAKAlbumViewModel *albumViewModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)searchBarHeight;
+
+- (void)dismissLoadingView;
+- (double)searchBarHeight;
+- (void)dismissErrorView;
+- (void)setupBindings;
+- (void)showNormalView;
+- (void)tapSearchBarInput;
+- (void)trackSearchButtonShowWithShowMethod:(long long)a0;
+- (void)updateUIToDismissState:(id)a0;
+- (void)updateUIToShowState;
+- (void)replaceGlobalSelectedAssetsWithSelectCollection:(id)a0;
+- (void)resetGlobalSelectedAssets;
+- (void)presentPreviewViewController:(id)a0;
+- (void)previewControllerCellStatusDidChange:(id)a0;
+- (void)previewControllerDidLoad:(id)a0 forAlbumAsset:(id)a1 bottomView:(id)a2;
+- (void)previewControllerDidDisappear:(id)a0 forAlbumAsset:(id)a1 bottomView:(id)a2;
+- (void)previewController:(id)a0 didClickNextButton:(id)a1;
+- (void)previewController:(id)a0 updateNextButtonTitle:(id)a1;
+- (BOOL)previewController:(id)a0 shouldDisableSelectForCurrentSelectingIndex:(id)a1;
+- (void)showInViewController:(id)a0 containerView:(id)a1 sourceSearchBar:(id)a2 animation:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)dismissWithDestSearchBar:(id)a0 animation:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)didTapSearchButton;
+- (void)searchWithText:(id)a0 triggerType:(long long)a1 queryType:(id)a2;
+- (BOOL)shouldShowLargeEmptyCell;
+- (void)didTapPermissionSettingButton;
+- (BOOL)p_hasCollectionSection;
+- (void)sectionCell:(id)a0 didSelectAIMemoriesItem:(id)a1 index:(long long)a2;
+- (void)sectionCell:(id)a0 willDisplayAIMemoriesItem:(id)a1 atIndex:(long long)a2;
+- (void)collectionSectionCell:(id)a0 didSelectCollectionItem:(id)a1 index:(long long)a2;
+- (void)collectionSectionCell:(id)a0 willDisplayCollectionItem:(id)a1 atIndex:(long long)a2;
+- (BOOL)searchBarPlaceholderMatchSuggestionSearchCondition:(id)a0;
+- (long long)numberOfItems;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)initWithViewModel:(id)a0;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplaySupplementaryView:(id)a1 forElementKind:(id)a2 atIndexPath:(id)a3;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (id)initWithCoder:(id)a0;
+- (id)initWithNibName:(id)a0 bundle:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)previewControllerWillDismiss:(id)a0;
+- (void)setupViews;
+- (void)showLoadingView;
+- (void)showErrorView;
+- (double)footerHeight;
+- (void)backButtonTapped;
+
+@end

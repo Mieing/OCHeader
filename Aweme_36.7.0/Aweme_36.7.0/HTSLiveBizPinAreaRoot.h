@@ -1,0 +1,3 @@
+@interface HTSLiveBizPinAreaRoot : GPBRootObject
+
+@end

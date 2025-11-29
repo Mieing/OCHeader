@@ -1,0 +1,11 @@
+@class GPBInt64ObjectDictionary;
+
+@interface IESLiveTeamfightEggInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *teamEggMap;
+@property (readonly, nonatomic) unsigned long long teamEggMap_Count;
+@property (nonatomic) int teamBattleTeamType;
+
++ (id)descriptor;
+
+@end

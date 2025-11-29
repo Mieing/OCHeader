@@ -1,0 +1,6 @@
+@interface ACCRecognitionGrootConfig : NSObject
+
++ (id)grootStickerId;
++ (BOOL)enabled;
+
+@end

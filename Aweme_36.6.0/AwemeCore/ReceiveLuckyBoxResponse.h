@@ -1,0 +1,10 @@
+@class ReceiveLuckyBoxResponse_ResponseData;
+
+@interface ReceiveLuckyBoxResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ReceiveLuckyBoxResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

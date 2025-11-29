@@ -1,0 +1,3 @@
+@interface PaidLivePaidLiveAnchorApiRoot : GPBRootObject
+
+@end

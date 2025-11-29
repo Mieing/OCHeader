@@ -1,0 +1,84 @@
+@class UIView, UILabel, MMLiveFlowFeedCarouselCommentView, WCFinderMoreLiveFriendLikeRecommendReasonView, NSString, MMFinderLiveFeedHighlightTagView, WCFinderAuthInfoIconView, RichTextView, WCFinderHeadImageView, MMUILabel, UIScrollView;
+@protocol WCFinderLiveFlowFeedGenericCellDelegate;
+
+@interface WCFinderLiveFlowFeedGenericCell : WCFinderLiveFeedGenericCdnCell <WCFinderFeedContentVMLiveExt, ILinkEventExt, MMLiveFlowFeedCarouselCommentViewDelegate>
+
+@property (retain, nonatomic) WCFinderMoreLiveFriendLikeRecommendReasonView *friendLikeReasonView;
+@property (retain, nonatomic) RichTextView *innerRecommendReasonLabel;
+@property (retain, nonatomic) MMUILabel *innerRecommendExpandActionLabel;
+@property (retain, nonatomic) UIScrollView *innerRecommendReasonView;
+@property (retain, nonatomic) RichTextView *recommendReasonLabel;
+@property (retain, nonatomic) UIView *recommendReasonView;
+@property (retain, nonatomic) UIView *authorView;
+@property (retain, nonatomic) UIView *avatorContainer;
+@property (retain, nonatomic) WCFinderHeadImageView *avatorImageView;
+@property (retain, nonatomic) RichTextView *nicknameTV;
+@property (retain, nonatomic) WCFinderAuthInfoIconView *authInfoIconView;
+@property (retain, nonatomic) UILabel *audienceNumLabel;
+@property (nonatomic) BOOL hasInitialize;
+@property (retain, nonatomic) MMFinderLiveFeedHighlightTagView *highlightTagView;
+@property (retain, nonatomic) RichTextView *descLabel;
+@property (retain, nonatomic) MMLiveFlowFeedCarouselCommentView *carouselCommentView;
+@property (retain, nonatomic) NSString *innerRecommendReason;
+@property (nonatomic) long long innerRecommendLabelState;
+@property (nonatomic) long long liveFlowCardCommentLines;
+@property (nonatomic) long long liveFlowCardCommentDurationInMs;
+@property (nonatomic) long long liveFlowCardCommentFirstDurationInMs;
+@property (nonatomic) long long liveFlowCardCommentDualIntervalInMs;
+@property (weak, nonatomic) id<WCFinderLiveFlowFeedGenericCellDelegate> delegate;
+@property (nonatomic) BOOL hideAudienceNum;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)cellIdentifier;
++ (double)maxRecommendWidthInCellWidth:(double)a0;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)initViewsIfNeeded;
+- (void)updateStyle;
+- (void)initViews;
+- (void)prepareForReuse;
+- (void)updateSkeletonable:(id)a0;
+- (void)updateWithFeedVM:(id)a0;
+- (void)onFriendLikeClick;
+- (BOOL)shouldHideAudienceNum;
+- (void)updateHighLightTag;
+- (void)updateHeadImage;
+- (void)relayoutNickname;
+- (void)layoutUI;
+- (void)layoutCarouselComment;
+- (void)layoutRecommendReasonView;
+- (id)getAudienceNumWordingWithDataItem:(id)a0;
+- (void)onAuthorViewDidClick;
+- (id)accessibilityLabel;
+- (id)accessibilityHint;
+- (void)updateAllUIElementsShow:(BOOL)a0 animate:(BOOL)a1;
+- (void)onPlayStop;
+- (void)onRecommendExpandActionTapped;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onFeedLiveOnlineCountChange:(long long)a0 participantWording:(id)a1;
+- (void)onFeedLiveStatusChanged:(id)a0 state:(unsigned long long)a1;
+- (void)onFeedLiveCoverInfoUpdate:(id)a0;
+- (void)onFeedHighlightTagUpdate;
+- (void)onLiveRoomMsgInfoUpdate;
+- (void)delayShowCarouselComment;
+- (BOOL)isFlowRightCard;
+- (void)onLiveFriendLikeListUpdate;
+- (void)onCarouselCommentsDisplayLineChanged;
+- (void)onCarouselCommentsAllItemsDisplayEnd;
+- (void)showCarouselComment;
+- (void)hideCarouselComment:(BOOL)a0;
+- (BOOL)showFriendLike;
+- (BOOL)showRecommendReason;
+- (BOOL)showInnerRecommendReason;
+- (BOOL)showDescription;
+- (id)displayDescription;
+- (double)avatarImageDescLabelMargin;
+- (id)customDescription;
+- (double)avatarImageNickNameMargin;
+- (double)descLabelRecommendReasonMargin;
+- (void).cxx_destruct;
+
+@end

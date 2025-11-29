@@ -1,0 +1,3 @@
+@interface AWECommentInputLynxViewModel : NSObject
+
+@end

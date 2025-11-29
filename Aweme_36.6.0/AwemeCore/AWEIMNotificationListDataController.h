@@ -1,0 +1,93 @@
+@class NSObject, AWENotificationModelNew, NSString, NSMutableSet, NSArray, NSMutableArray, AWEIMNotificationnNoticeSettingsModel;
+@protocol OS_dispatch_queue;
+
+@interface AWEIMNotificationListDataController : AWEListDataController {
+    NSObject<OS_dispatch_queue> *_executeQueue;
+}
+
+@property (nonatomic) long long topGroup;
+@property (nonatomic) long long count;
+@property (nonatomic) long long maxTime;
+@property (nonatomic) long long minTime;
+@property (retain, nonatomic) AWENotificationModelNew *latestFansNotice;
+@property (retain, nonatomic) NSMutableArray *commentPolymericNoticeIDArray;
+@property (retain, nonatomic) NSMutableSet *fansNoticeUIDs;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) double width;
+@property (nonatomic) long long lastReadTime;
+@property (nonatomic) long long unreadCount;
+@property (copy, nonatomic) NSString *vcdToastText;
+@property (retain, nonatomic) AWEIMNotificationnNoticeSettingsModel *noticeSettings;
+@property (nonatomic) long long noticeGroup;
+@property (nonatomic) BOOL isForPreload;
+@property (nonatomic) BOOL hasFinishedInitRefesh;
+@property (copy, nonatomic) NSString *noticeTabName;
+@property (copy, nonatomic) NSString *noticeID;
+@property (copy, nonatomic) NSString *delNoticeToast;
+@property (copy, nonatomic) NSArray *noticeSubCategories;
+@property (nonatomic) BOOL isSubDataController;
+@property (nonatomic) BOOL hasPullRetry;
+@property (copy, nonatomic) NSString *topNoticeIDs;
+
++ (id)contentLabelFont;
++ (id)getNewInteractCellStyleContentAttStrWithStr:(id)a0;
++ (id)getNewInteractCellStyleTimeAttStrWithStr:(id)a0;
++ (double)contentWidthWithContainerW:(double)a0 model:(id)a1;
++ (id)vsVideoCommentDescWithType:(long long)a0;
++ (id)commentDescWithTypeForNewStyle:(long long)a0;
++ (id)commentDescForOwnPostedCommentWithTypeForNewStyle:(long long)a0;
++ (id)getNewInteractCellStyleCommentContentFontColor;
++ (id)getNewInteractCellStyleCommentContentFont;
++ (id)getNewInteractCellStyleDescAttStrWithStr:(id)a0;
++ (id)getNewInteractCellStyleCommentContentAttStrWithModel:(id)a0;
++ (id)getNewInteractCellStylePlaceholderGifTag;
++ (struct CGSize { double x0; double x1; })computeSizeForAssemblyContent:(id)a0 withWidth:(double)a1;
++ (id)getNewInteractCellStyleContentAttStrWithTimeStr:(id)a0 withTime:(id)a1 withSupplement:(id)a2;
++ (id)atDescWithTypeForNewStyle:(long long)a0;
++ (void)preCaculateLayoutForComment:(id)a0 width:(double)a1;
++ (void)preCaculateLayoutForAt:(id)a0 width:(double)a1;
++ (void)attachAssemblyContent:(id)a0 withMuteImage:(id)a1;
++ (double)avatarTop;
++ (double)typeIconLeft;
++ (double)typeIconTop;
++ (void)preCalculateLayoutForForward:(id)a0 width:(double)a1;
++ (double)avatarWidth;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)initFetchWithCompletion:(id /* block */)a0;
+- (id)getExpectedSizeInfo;
+- (void)getFansNoticeCacheWithCompletion:(id /* block */)a0;
+- (void)updateFansNoticeCache:(id)a0;
+- (void)removeCacheIfNeededWithNoticeID:(id)a0;
+- (BOOL)isFansNoticeCacheExpired;
+- (id)initWithNoticeGroup:(long long)a0 topGroup:(long long)a1 count:(long long)a2 maxTime:(double)a3 minTime:(double)a4;
+- (void)taskManagerRefreshWithCompletion:(id /* block */)a0;
+- (long long)__obtainUnreadCount;
+- (id)_getURLString;
+- (id)_getParamsForLoadMore:(BOOL)a0;
+- (id)filterNoticeModelList:(id)a0;
+- (void)__assignUnreadCount;
+- (long long)__getCurrentNoticeGroup;
+- (void)p_trackRequestNoticeListWithGroup:(long long)a0;
+- (void)p_trackNoticeListResponseWithGroup:(long long)a0 error:(id)a1;
+- (void)setIsUnreadToNotiModel:(id)a0;
+- (unsigned long long)__getSubTask;
+- (void)__addNoticeSLOTrackWithNoticeType:(long long)a0 isEmpty:(BOOL)a1 error:(id)a2;
+- (id)filteredNoticesWithModel:(id)a0;
+- (void)processFansNotice:(id)a0 completion:(id /* block */)a1 refresh:(BOOL)a2 needUpdateUnreadCount:(BOOL)a3;
+- (void)p_addEmptyListMonitorWithResponse:(id)a0 group:(long long)a1 error:(id)a2;
+- (void)__dataSourceBackupProcess:(id)a0 error:(id)a1 completion:(id /* block */)a2;
+- (void)__dataPullRetryIfNeed:(id)a0 error:(id)a1 completion:(id /* block */)a2;
+- (void)refreshUnreadFansNoticeCountWithResponse:(id)a0;
+- (id)filterNoticeArrayRemoveDuplicateFansNoticeUIDs:(id)a0 isRefresh:(BOOL)a1;
+- (id)noticeArrayRemoveDuplicateItem:(id)a0;
+- (void)updateFansNoticeStatusCache:(id /* block */)a0;
+- (void)_setReadTimeToNotiModel:(id)a0;
+- (void)pullRetryWithModel:(id)a0 completion:(id /* block */)a1;
+- (void)__updateCacheWithRemovedNoticeID:(id)a0 oldCache:(id)a1;
+- (id)__removedNoticeWithNoticeID:(id)a0 oldCache:(id)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (void)refreshWithCompletion:(id /* block */)a0;
+
+@end

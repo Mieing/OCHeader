@@ -1,0 +1,12 @@
+@class EcomAuction;
+
+@interface EcomCampaign : IESLivePBBaseMessage
+
+@property (nonatomic) long long remainingSeconds;
+@property (retain, nonatomic) EcomAuction *auction;
+@property (nonatomic) BOOL hasAuction;
+@property (nonatomic) long long type;
+
++ (id)descriptor;
+
+@end

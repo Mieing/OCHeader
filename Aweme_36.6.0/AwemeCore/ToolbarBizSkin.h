@@ -1,0 +1,10 @@
+@class HTSLiveImage;
+
+@interface ToolbarBizSkin : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+
++ (id)descriptor;
+
+@end

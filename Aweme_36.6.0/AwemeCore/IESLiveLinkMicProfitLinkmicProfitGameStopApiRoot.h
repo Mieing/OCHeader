@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitGameStopApiRoot : GPBRootObject
+
+@end

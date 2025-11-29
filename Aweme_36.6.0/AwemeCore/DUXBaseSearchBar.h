@@ -1,0 +1,3 @@
+@interface DUXBaseSearchBar : UISearchBar
+
+@end

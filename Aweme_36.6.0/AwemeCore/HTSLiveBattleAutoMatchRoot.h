@@ -1,0 +1,3 @@
+@interface HTSLiveBattleAutoMatchRoot : GPBRootObject
+
+@end

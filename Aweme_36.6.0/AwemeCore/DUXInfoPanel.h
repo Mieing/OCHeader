@@ -1,0 +1,74 @@
+@class UIView, NSString, NSArray, UIImage, NSURL, UIStackView, BDImageView, DUXInfoPanelUIConfigModel, CAGradientLayer, UILabel, UIScrollView;
+@protocol IESIMInfoPanelContent, DUXInfoPanelContent;
+
+@interface DUXInfoPanel : UIView <IESIMInfoPanelProtocol, IESLLInfoPanelInterface>
+
+@property (retain, nonatomic) UIImage *image;
+@property (retain, nonatomic) NSURL *imageURL;
+@property (nonatomic) struct CGSize { double x0; double x1; } imageSize;
+@property (readonly, nonatomic) BDImageView *imageView;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *detail;
+@property (retain, nonatomic) id<IESIMInfoPanelContent> content;
+@property (copy, nonatomic) NSArray *actions;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) BDImageView *iesll_imageView;
+@property (nonatomic) long long iesll_imageStyle;
+@property (copy, nonatomic) NSString *iesll_title;
+@property (copy, nonatomic) NSString *iesll_detail;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) BDImageView *imageView;
+@property (retain, nonatomic) UILabel *titleLable;
+@property (retain, nonatomic) UIScrollView *detailScrollView;
+@property (nonatomic) double detailPerferMaxHeight;
+@property (nonatomic) BOOL shouldShowDetailMask;
+@property (retain, nonatomic) UIView *detailMaskView;
+@property (retain, nonatomic) CAGradientLayer *detailMaskAlphaLayer;
+@property (retain, nonatomic) UILabel *detailLable;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIStackView *stackView;
+@property (retain, nonatomic) DUXInfoPanelUIConfigModel *uiConfig;
+@property (retain, nonatomic) UIImage *image;
+@property (retain, nonatomic) NSURL *imageURL;
+@property (nonatomic) struct CGSize { double width; double height; } imageSize;
+@property (nonatomic) long long imageStyle;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *detail;
+@property (retain, nonatomic) id<DUXInfoPanelContent> content;
+@property (copy, nonatomic) NSArray *actions;
+@property (nonatomic) unsigned long long enlargeType;
+
+- (id)initWithImage:(id)a0 imageStyle:(long long)a1 title:(id)a2 detail:(id)a3 actions:(id)a4;
+- (id)initWithImage:(id)a0 imageStyle:(long long)a1 title:(id)a2 detail:(id)a3 content:(id)a4 actions:(id)a5;
+- (id)initWithImage:(id)a0 imageStyle:(long long)a1 title:(id)a2 detail:(id)a3 content:(id)a4 actions:(id)a5 enlargeType:(unsigned long long)a6;
+- (void)iesim_setImageStyle:(long long)a0;
+- (long long)p_duxInfoPanelImageStyleWithIESIMStyle:(long long)a0;
+- (long long)iesll_imageStyle;
+- (void)setIesll_imageStyle:(long long)a0;
+- (id)iesll_imageView;
+- (id)iesll_title;
+- (void)setIesll_title:(id)a0;
+- (id)iesll_detail;
+- (void)setIesll_detail:(id)a0;
+- (void)addActionButtonWithStyle:(unsigned long long)a0 sizeStyle:(unsigned long long)a1 title:(id)a2 target:(id)a3 action:(SEL)a4;
+- (void)detailShouldScrollWithHeight:(double)a0 withMask:(BOOL)a1;
+- (void)updateFrameIfNeeded;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 enlargeType:(unsigned long long)a1;
+- (void)detailShouldScrollWithHeight:(double)a0 withMask:(BOOL)a1 withDetail:(id)a2;
+- (void)setupStackViewConstrains;
+- (void)detailShouldScrollWithHeight:(double)a0;
+- (void)setupConstraints;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (struct CGSize { double x0; double x1; })intrinsicContentSize;
+- (void)setupUI;
+- (void)setDetailTextAlignment:(long long)a0;
+
+@end

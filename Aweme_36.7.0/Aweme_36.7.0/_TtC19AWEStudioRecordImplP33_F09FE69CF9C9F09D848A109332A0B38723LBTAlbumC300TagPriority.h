@@ -1,0 +1,3 @@
+@interface _TtC19AWEStudioRecordImplP33_F09FE69CF9C9F09D848A109332A0B38723LBTAlbumC300TagPriority : _TtCs12_SwiftObject
+
+@end

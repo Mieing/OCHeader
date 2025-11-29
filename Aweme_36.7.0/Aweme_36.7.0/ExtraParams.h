@@ -1,0 +1,10 @@
+@class NSMutableDictionary;
+
+@interface ExtraParams : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableDictionary *predictDict;
+@property (readonly, nonatomic) unsigned long long predictDict_Count;
+
++ (id)descriptor;
+
+@end

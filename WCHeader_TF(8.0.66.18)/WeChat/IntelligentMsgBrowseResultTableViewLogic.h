@@ -1,0 +1,85 @@
+@class IntelligentRefreshTableFooterView, NSString, SimpleImgInfo, NSMutableDictionary, MMUIView, NSMutableArray, MMTableView;
+@protocol IntelligentMsgBrowseResultTableViewLogicDelegate, IntelligentMsgBrowseViewDelegate;
+
+@interface IntelligentMsgBrowseResultTableViewLogic : MMObject <MMRefreshTableFooterDelegate, IFTSIntelligentMessageMgrExt, UITableViewDataSource, UITableViewDelegate> {
+    SimpleImgInfo *m_curImgInfo;
+    NSMutableArray *m_arrImgInfo;
+    unsigned long long m_colNum;
+    double m_margin;
+    struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } m_frame;
+    NSMutableArray *m_needLoadArray;
+    double m_scrollOffset;
+    IntelligentRefreshTableFooterView *m_nextLoadingView;
+    NSMutableDictionary *m_dicSectionTitle;
+    NSMutableDictionary *m_dicMsgsByTitle;
+    NSMutableDictionary *m_dicSectionSelected;
+    struct map<NSString *, bool, CompareNSString, std::allocator<std::pair<NSString *const, bool>>> { struct __tree<std::__value_type<NSString *, bool>, std::__map_value_compare<NSString *, std::__value_type<NSString *, bool>, CompareNSString>, std::allocator<std::__value_type<NSString *, bool>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<NSString *, bool>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<NSString *, std::__value_type<NSString *, bool>, CompareNSString>> { unsigned long long __value_; } __pair3_; } __tree_; } m_dicMsgSelected;
+    NSMutableDictionary *m_dicWeakMedia;
+    MMUIView *m_nullDataNextLoadingView;
+}
+
+@property (retain, nonatomic) MMTableView *m_tableView;
+@property (weak, nonatomic) id<IntelligentMsgBrowseViewDelegate> m_browseViewDelegate;
+@property (nonatomic) unsigned int m_style;
+@property (nonatomic) BOOL m_bIsShowMenu;
+@property (weak, nonatomic) id<IntelligentMsgBrowseResultTableViewLogicDelegate> m_delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)initUI;
+- (void)initData;
+- (void)reSizeFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)rebuildMsgData:(id)a0;
+- (void)resetData;
+- (void)updateLoadinNextMore:(BOOL)a0;
+- (void)updateNextMore:(BOOL)a0;
+- (id)getNextLoadingViewText;
+- (void)updateNextLoadingViewText;
+- (void)resetNormalNextLoadingView;
+- (void)showNullDataNextLoadingView;
+- (id)getSimpleMsgFrom:(id)a0;
+- (id)getArrSectionData;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getMediaFrameWithMsgWrap:(id)a0;
+- (id)getMediaViewWithMsgWrap:(id)a0;
+- (BOOL)getIsHadBuildPriorityBuildIndexMsg;
+- (BOOL)getIsInitialHadBuildPriorityBuildIndexMsg;
+- (BOOL)checkIsHadDelayLoadingStatus;
+- (unsigned long long)getArrImgCount;
+- (void)clearNextLoadingView;
+- (id)getNextLoadingView;
+- (void)IntelligentMsgBrowseResultTableViewDidScroll:(id)a0;
+- (void)IntelligentMsgBrowseResultTableViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)IntelligentMsgBrowseResultTableViewDidEndDecelerating:(id)a0;
+- (void)relaodCellWhenScrollViewStop;
+- (void)_genImgCell:(id)a0 indexPath:(id)a1;
+- (void)IntelligentMsgBrowseResultTableViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)IntelligentMsgBrowseResultTableViewWillBeginDragging:(id)a0;
+- (void)setM_scrollOffset:(double)a0;
+- (void)setTableViewContentInset:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
+- (void)onTransitionToNewSize;
+- (void)endHighLightedCurMsg;
+- (void)startHighLightedCurMsg;
+- (id)getIndexPathOfCurMsg;
+- (void)setCurMsgHighlighted:(BOOL)a0 animated:(BOOL)a1;
+- (long long)numberOfSectionsInIntelligentMsgBrowseResultTableView:(id)a0;
+- (long long)IntelligentMsgBrowseResultTableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)IntelligentMsgBrowseResultTableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)IntelligentMsgBrowseResultTableView:(id)a0 titleForHeaderInSection:(long long)a1;
+- (id)IntelligentMsgBrowseResultTableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (double)IntelligentMsgBrowseResultTableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (long long)calcImgItemIndex:(long long)a0 num:(long long)a1;
+- (void)genImgCell:(id)a0 indexPath:(id)a1;
+- (id)getMsgImageSquareThumbView:(unsigned int)a0;
+- (id)IntelligentMsgBrowseResultTableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (BOOL)IntelligentMsgBrowseResultTableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (long long)IntelligentMsgBrowseResultTableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (void)onClickMsgSquareThumb:(id)a0;
+- (void)onButtonLongClick:(id)a0;
+- (void)MMRefreshTableFooterDidTriggerRefresh:(id)a0;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

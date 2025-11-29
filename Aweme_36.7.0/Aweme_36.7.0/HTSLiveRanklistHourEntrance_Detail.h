@@ -1,0 +1,16 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveRanklistHourEntrance_Detail : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *pagesArray;
+@property (readonly, nonatomic) unsigned long long pagesArray_Count;
+@property (nonatomic) int ranklistType;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *ranklistExtra;
+@property (copy, nonatomic) NSString *entranceExtra;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *iconURL;
+
++ (id)descriptor;
+
+@end

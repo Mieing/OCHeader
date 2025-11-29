@@ -1,0 +1,3 @@
+@interface IESECClientAIRequestResponse : IESECHTTPResponse
+
+@end

@@ -1,0 +1,55 @@
+@interface AnnieX.BidConfig : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ bid;
+    void /* unknown type, empty encoding */ hitSample;
+    void /* unknown type, empty encoding */ settingId;
+    void /* unknown type, empty encoding */ eventNameSample;
+    void /* unknown type, empty encoding */ custom_p0;
+    void /* unknown type, empty encoding */ custom_p1;
+    void /* unknown type, empty encoding */ custom_p2;
+    void /* unknown type, empty encoding */ custom_p3;
+    void /* unknown type, empty encoding */ custom_p4;
+    void /* unknown type, empty encoding */ custom_p5;
+    void /* unknown type, empty encoding */ custom_p6;
+    void /* unknown type, empty encoding */ custom_p7;
+    void /* unknown type, empty encoding */ custom_p8;
+    void /* unknown type, empty encoding */ perf_web;
+    void /* unknown type, empty encoding */ ajax_web;
+    void /* unknown type, empty encoding */ static_perf_web;
+    void /* unknown type, empty encoding */ static_error_web;
+    void /* unknown type, empty encoding */ js_exception_web;
+    void /* unknown type, empty encoding */ blank_web;
+    void /* unknown type, empty encoding */ fetch_error_web;
+    void /* unknown type, empty encoding */ jsb_error_web;
+    void /* unknown type, empty encoding */ jsb_perf_web;
+    void /* unknown type, empty encoding */ falcon_perf_web;
+    void /* unknown type, empty encoding */ native_error_web;
+    void /* unknown type, empty encoding */ navigation_start_web;
+    void /* unknown type, empty encoding */ static_sri_web;
+    void /* unknown type, empty encoding */ performance_lynx;
+    void /* unknown type, empty encoding */ blank_lynx;
+    void /* unknown type, empty encoding */ fetch_error_lynx;
+    void /* unknown type, empty encoding */ jsb_error_lynx;
+    void /* unknown type, empty encoding */ jsb_perf_lynx;
+    void /* unknown type, empty encoding */ native_error_lynx;
+    void /* unknown type, empty encoding */ navigation_start_lynx;
+    void /* unknown type, empty encoding */ performance_reactnative;
+    void /* unknown type, empty encoding */ blank_reactnative;
+    void /* unknown type, empty encoding */ fetch_error_reactnative;
+    void /* unknown type, empty encoding */ jsb_error_reactnative;
+    void /* unknown type, empty encoding */ native_error_reactnative;
+    void /* unknown type, empty encoding */ container_error;
+    void /* unknown type, empty encoding */ js_exception_lynx;
+    void /* unknown type, empty encoding */ static_error_lynx;
+    void /* unknown type, empty encoding */ tea_switch;
+    void /* unknown type, empty encoding */ res_loader_perf_web;
+    void /* unknown type, empty encoding */ res_loader_error_web;
+    void /* unknown type, empty encoding */ res_loader_perf_template_web;
+    void /* unknown type, empty encoding */ res_loader_error_template_web;
+    void /* unknown type, empty encoding */ res_loader_perf_lynx;
+    void /* unknown type, empty encoding */ res_loader_error_lynx;
+    void /* unknown type, empty encoding */ res_loader_perf_template_lynx;
+    void /* unknown type, empty encoding */ res_loader_error_template_lynx;
+    void /* unknown type, empty encoding */ end_to_end;
+}
+
+@end

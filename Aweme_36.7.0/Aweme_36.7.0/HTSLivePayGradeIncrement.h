@@ -1,0 +1,10 @@
+@class GPBInt64Int64Dictionary;
+
+@interface HTSLivePayGradeIncrement : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Int64Dictionary *increments;
+@property (readonly, nonatomic) unsigned long long increments_Count;
+
++ (id)descriptor;
+
+@end

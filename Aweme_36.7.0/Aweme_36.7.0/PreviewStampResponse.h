@@ -1,0 +1,10 @@
+@class PreviewStampResponse_Data;
+
+@interface PreviewStampResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PreviewStampResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

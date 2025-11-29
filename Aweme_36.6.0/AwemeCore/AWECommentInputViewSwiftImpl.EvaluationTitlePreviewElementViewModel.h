@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.EvaluationTitlePreviewElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

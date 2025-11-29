@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveMicDressButton_ButtonInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *toast;
+@property (nonatomic) BOOL disable;
+@property (copy, nonatomic) NSString *schema;
+@property (nonatomic) BOOL clickToNext;
+
++ (id)descriptor;
+
+@end

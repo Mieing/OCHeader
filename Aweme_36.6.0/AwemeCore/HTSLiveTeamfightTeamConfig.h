@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface HTSLiveTeamfightTeamConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long maxMember;
+@property (retain, nonatomic) NSMutableArray *guestListArray;
+@property (readonly, nonatomic) unsigned long long guestListArray_Count;
+
++ (id)descriptor;
+
+@end

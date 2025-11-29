@@ -1,0 +1,3 @@
+@interface IESLiveKtvProfitKtvProfitChangeMvApiRoot : GPBRootObject
+
+@end

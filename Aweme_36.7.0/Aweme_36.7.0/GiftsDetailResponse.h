@@ -1,0 +1,10 @@
+@class GiftsDetailResponse_Data;
+
+@interface GiftsDetailResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GiftsDetailResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

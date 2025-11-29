@@ -1,0 +1,73 @@
+@class WXGBackupBasicLogic, WXGChatLogProtoHandler, MMTimer, WXGLocalAreaCommunicationClient, ChatMigrationHeartBeatMonitor, NSObject, NSString;
+@protocol OS_dispatch_queue, WXGBackupLogicDelegate;
+
+@interface WXGBackupLogic : NSObject <LocalAreaCommunicationClientDelegate, WXGBackupBasicLogicDelegate, ChatMigrationHeartBeatMonitorDelegate>
+
+@property (retain, nonatomic) WXGLocalAreaCommunicationClient *networkHandler;
+@property (retain, nonatomic) WXGChatLogProtoHandler *protoHandler;
+@property (retain, nonatomic) WXGBackupBasicLogic *processLogic;
+@property (nonatomic) BOOL bGetFirstPacket;
+@property (retain, nonatomic) ChatMigrationHeartBeatMonitor *heartBeatMonitor;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *processLogicQueue;
+@property (retain, nonatomic) MMTimer *sendHeartBeatTimer;
+@property (nonatomic) BOOL bInDilutedNetwork;
+@property (nonatomic) BOOL bDone;
+@property (nonatomic) BOOL bHeartBeatLate;
+@property (nonatomic) double transferDataStartTime;
+@property (nonatomic) long long otherSideSupportExt;
+@property (weak, nonatomic) id<WXGBackupLogicDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)startLogic;
+- (void)stopLogic;
+- (void)confirmLogic;
+- (void)cancelLogic;
+- (void)restartLogic;
+- (void)startAuthenticate;
+- (BOOL)isInDilutedNetwork;
+- (unsigned long long)getAlreadyTransferSize;
+- (void)reportDisconnect;
+- (BOOL)sendData:(id)a0;
+- (BOOL)sendCommandResponseWithCommand:(int)a0;
+- (BOOL)sendCommandRequestWithCommand:(int)a0 withData:(id)a1;
+- (void)sendFirstAuthenticateRequestPakage;
+- (void)sendSecondAuthenticateRequestPakage;
+- (void)sendCancelRequest;
+- (void)restSendHeartBeatTimer;
+- (void)p_sendHeartBeat;
+- (void)sendHeartBeatResponseWithAck:(unsigned long long)a0;
+- (void)sendHeartBeatRequestWithAck:(unsigned long long)a0;
+- (void)p_dataProcess:(id)a0 andLength:(unsigned int)a1;
+- (id)makeProcessLogifyForCommand:(int)a0;
+- (void)processCommandRequestData:(id)a0;
+- (void)processCommandResponseData:(id)a0;
+- (void)processAuthResponseData:(id)a0;
+- (void)processCancelRequestData:(id)a0;
+- (void)processHeartBeatRequestData:(id)a0;
+- (void)processHeartBeatResponseData:(id)a0;
+- (void)onClientReciveData:(id)a0 andLength:(unsigned int)a1;
+- (void)onClientDisconnect;
+- (void)onClientConnectFail;
+- (void)onClientTransferSendSpeed:(float)a0 sendLength:(unsigned long long)a1 receiveSpeed:(float)a2 receiveLength:(unsigned long long)a3;
+- (BOOL)onBasicLogicSendData:(id)a0;
+- (void)onBasicLogicNotifyEvent:(unsigned long long)a0;
+- (void)onBasicProgresssCurrentSession:(unsigned long long)a0 totalSession:(unsigned long long)a1;
+- (void)onBasicLogicAlert:(unsigned long long)a0;
+- (void)processNotifyCode:(unsigned long long)a0;
+- (void)processOnMainThreadNotifyCode:(unsigned long long)a0;
+- (void)processAlertCode:(unsigned long long)a0;
+- (void)processOnMainThreadAlertCode:(unsigned long long)a0;
+- (void)onHeartBeatPacketSendWithAckID:(unsigned long long)a0;
+- (void)onHeartBeatOK;
+- (void)onHeartBeatLate;
+- (void)onHeartBeatAckIDWrong;
+- (BOOL)isLogicRetransfer;
+- (id)getConnectDebugInfo;
+- (BOOL)isSupportWXAM;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,81 @@
+@class NSData, NSString, SdkOauthAuthorizeResp, MMUIViewController, NSMutableArray, OauthScopeInfo, OpenSDKOAuthRequest, GetUserGrantInfoBuffer, SetUserGrantInfoBuffer;
+@protocol OpenSDKAuthorizeLoginManagerDelegate;
+
+@interface OpenSDKAuthorizeLoginManager : MMObject <MMAuthorizeViewControllerDelegate, PBMessageObserverDelegate, MMTipsViewControllerDelegate, OpenSDKAuthNeedFaceDetectViewControllerDelegate>
+
+@property (retain, nonatomic) OpenSDKOAuthRequest *curReq;
+@property (retain, nonatomic) NSString *appName;
+@property (retain, nonatomic) NSString *iconUrl;
+@property (retain, nonatomic) NSMutableArray *avatarList;
+@property (nonatomic) unsigned int avatarLimit;
+@property (nonatomic) unsigned int defaultAvatarId;
+@property (nonatomic) BOOL isBanModifyAvatar;
+@property (retain, nonatomic) NSString *defaultAvatarImgUrl;
+@property (retain, nonatomic) NSString *defaultAvatarImgFileId;
+@property (retain, nonatomic) OauthScopeInfo *userInfoScope;
+@property (retain, nonatomic) OauthScopeInfo *friendsInfoScope;
+@property (retain, nonatomic) NSMutableArray *arrOtherScopeInfo;
+@property (retain, nonatomic) NSMutableArray *arrComfirmScopeInfo;
+@property (nonatomic) unsigned long long curStep;
+@property (nonatomic) unsigned int selectedAvatarId;
+@property (nonatomic) BOOL isUseNewPage;
+@property (nonatomic) BOOL needNotifySvrWhenConfirm;
+@property (retain, nonatomic) NSString *redirectUrl;
+@property (retain, nonatomic) NSString *userConfirmRedirectUrl;
+@property (retain, nonatomic) NSString *userConfirmWording;
+@property (retain, nonatomic) NSData *OAuthAuthorizeResp_iLinkAuthBuffer;
+@property (nonatomic) int errCode;
+@property (retain, nonatomic) NSString *errMsg;
+@property (retain, nonatomic) SdkOauthAuthorizeResp *curOauthResp;
+@property (retain, nonatomic) GetUserGrantInfoBuffer *getUserGrantInfoBuffer;
+@property (nonatomic) BOOL isHaveGamecenterPage;
+@property (retain, nonatomic) SetUserGrantInfoBuffer *setUserGrantInfoBuffer;
+@property (nonatomic) unsigned int sessionID;
+@property (nonatomic) unsigned int stayStartTime;
+@property (nonatomic) unsigned long long stepStartTime;
+@property (nonatomic) BOOL isCurAuthReqFinished;
+@property (retain, nonatomic) MMUIViewController *baseVC;
+@property (weak, nonatomic) id<OpenSDKAuthorizeLoginManagerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)fillAuthAuthorizeReq:(id)a0 WithLoginReq:(id)a1;
++ (void)fillAuthConfirmReq:(id)a0 WithLoginReq:(id)a1;
+
+- (void)dealloc;
+- (id)initWithAuthReq:(id)a0;
+- (void)startLogic;
+- (void)initDataWithResp:(id)a0;
+- (void)initScopeInfo:(id)a0;
+- (void)startWorkFlow;
+- (BOOL)stepToNextStepByComfirm:(BOOL)a0 interrupt:(BOOL *)a1 animated:(BOOL)a2;
+- (void)startUserInfoAuthorizeWithAnimated:(BOOL)a0;
+- (void)startFriendsAuthorizeWithAnimated:(BOOL)a0;
+- (void)startOtherScopeAuthorizeWithAnimated:(BOOL)a0;
+- (void)startOverseasAuthorizeWithAnimated:(BOOL)a0;
+- (void)loadDataFromSvr;
+- (void)sendCancelOprationToSvr;
+- (void)sendDenyOperationToSvr;
+- (void)sendConfirmOprationToSvrWithScopes:(id)a0;
+- (void)doOAuthComfirm:(id)a0 fromVC:(id)a1;
+- (void)checkSendConfirmOprationToSvrWithScopes:(id)a0;
+- (void)sendAuthorizeComfirmCGI:(id)a0;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)handleOauthResponse:(id)a0;
+- (void)handleConfirmResp:(id)a0;
+- (void)onScopeViewControllerConfirm:(id)a0;
+- (void)onScopeViewControllerDeny:(id)a0;
+- (void)onScopeViewControllerClose:(id)a0;
+- (void)showErrCode:(int)a0 errMsg:(id)a1;
+- (void)reportAuthOperate:(unsigned long long)a0 step:(unsigned long long)a1 isShowAuthView:(BOOL)a2 errCode:(int)a3;
+- (void)reportAuthCostTime:(unsigned int)a0 errCode:(int)a1;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1;
+- (BOOL)shouldShowGameInfoAuthorizePage;
+- (void)startGameInfoAuthorizeWithAnimated:(BOOL)a0;
+- (void)onCancelFaceDetect;
+- (void)onFaceRecogFinish:(unsigned int)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,74 @@
+@class UIView, MMIUIPage, KindaProxy, NSString, WCPayBlurViewHelper, KindaLayout, MMVoidCallback, MMVoidBoolI32Callback;
+@protocol KindaViewControllerControlDelegate;
+
+@interface KindaViewController : MMUIViewController <MMIUIPagePlatformFuncDelegate, MMIUIPagePlatformDelegate>
+
+@property (retain, nonatomic) MMIUIPage *m_page;
+@property (retain, nonatomic) KindaLayout *m_layout;
+@property (retain, nonatomic) MMVoidCallback *m_leftCallback;
+@property (retain, nonatomic) MMVoidCallback *m_rightCallback;
+@property (retain, nonatomic) MMVoidBoolI32Callback *m_keyboardShowCallback;
+@property (weak, nonatomic) id<KindaViewControllerControlDelegate> m_controlDelegate;
+@property (retain, nonatomic) KindaProxy *kindProxy;
+@property (retain, nonatomic) UIView *yogaSuperView;
+@property (retain, nonatomic) WCPayBlurViewHelper *blurViewHelper;
+@property (nonatomic) BOOL isGreen;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithPage:(id)a0 withDelegate:(id)a1;
+- (void)dealloc;
+- (id)navigationBarBackgroundColor;
+- (BOOL)useBlackStatusbar;
+- (void)viewDidTransitionToNewSize;
+- (BOOL)shouldInteractivePop;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (long long)overrideUserInterfaceStyle;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillBePoped:(BOOL)a0;
+- (void)viewDidBeInteractivePoped;
+- (void)setupNavigationBar;
+- (void)onClickLeftItem;
+- (void)onClickRightItem;
+- (long long)currentPlatform;
+- (void)setTitle:(id)a0;
+- (id)getTitle;
+- (void)setTopLeftBackBtnCallbackImpl:(id)a0;
+- (void)setTopRightCallbackImpl:(id)a0;
+- (void)setTopRightBtnImage:(id)a0;
+- (void)setTopRightBtnImage:(id)a0 color:(id)a1;
+- (void)setTopRightBtnTitle:(id)a0 color:(id)a1;
+- (void)setTopLeftBtnTitleAndCallbackImpl:(id)a0 callback:(id)a1;
+- (void)setTopRightBtnBgIsGreen:(BOOL)a0;
+- (void)setTopRightBtnDone;
+- (void)refreshNavigationBar;
+- (void)setBackgroundColor:(id)a0;
+- (void)closeUI:(BOOL)a0;
+- (id)previousViewController;
+- (void)endEditing;
+- (void)beginIgnoringInteractionEvents;
+- (void)endIgnoringInteractionEvents;
+- (void)keyboardWillShown:(id)a0;
+- (void)keyboardDidShown:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)setKeyBoardShowCallbackImpl:(id)a0;
+- (void)startLoading:(id)a0 block:(BOOL)a1;
+- (void)stopLoading;
+- (void)setSubTitleDefaultColor;
+- (void)setSubTitleVisibility:(long long)a0;
+- (void)setWindowSoftInputAdjustMode:(long long)a0;
+- (void)addReportInfo:(id)a0;
+- (void)triggerReport:(long long)a0 customKey:(id)a1;
+- (void)setSubTitle:(id)a0;
+- (void)setBackBtnVisible:(BOOL)a0;
+- (void)setScreenBrightness:(float)a0;
+- (void)setScreenKeepOn:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

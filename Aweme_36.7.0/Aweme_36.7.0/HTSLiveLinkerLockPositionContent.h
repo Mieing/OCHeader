@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkerLockPositionContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *lockedPositionsArray;
+@property (readonly, nonatomic) unsigned long long lockedPositionsArray_Count;
+
++ (id)descriptor;
+
+@end

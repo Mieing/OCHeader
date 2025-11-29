@@ -1,0 +1,10 @@
+@class DisableUserMicrophoneResponse_Data;
+
+@interface DisableUserMicrophoneResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DisableUserMicrophoneResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

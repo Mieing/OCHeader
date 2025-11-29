@@ -1,0 +1,7 @@
+@interface ShowPadResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL showPad;
+
++ (id)descriptor;
+
+@end

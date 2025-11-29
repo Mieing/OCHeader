@@ -1,0 +1,3 @@
+@interface AWESearchSwiftInterfaceModuleServiceWrapper : NSObject
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveInteractcontrolSyncdataRoot : GPBRootObject
+
+@end

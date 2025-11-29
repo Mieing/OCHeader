@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface InteractGetSelfCommentResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL success;
+@property (retain, nonatomic) NSMutableArray *commentArray;
+@property (readonly, nonatomic) unsigned long long commentArray_Count;
+
++ (id)descriptor;
+
+@end

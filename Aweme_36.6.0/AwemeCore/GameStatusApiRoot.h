@@ -1,0 +1,3 @@
+@interface GameStatusApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class PinPlaylistSongResponse_ResponseData;
+
+@interface PinPlaylistSongResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PinPlaylistSongResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,70 @@
+@class AWEStickerPickerTabViewLayout, NSArray, NSString, NSMutableDictionary, NSDictionary, AWEStickerPickerSectionManager, NSObject, NSMutableArray, AWEDouyinStickerCategoryModel, NSNumber;
+@protocol OS_dispatch_queue, AWEStickerPickerDataContainerProtocol;
+
+@interface AWEStickerPicckerDataSource : NSObject <AWEStickerPickerModelDataSource>
+
+@property (retain, nonatomic) AWEStickerPickerTabViewLayout *tabViewLayout;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *dataHanleQueue;
+@property (retain, nonatomic) NSMutableDictionary *effectMap;
+@property (retain, nonatomic) NSMutableArray *dataContainers;
+@property (retain, nonatomic) id<AWEStickerPickerDataContainerProtocol> currentDataContainer;
+@property (retain, nonatomic) AWEStickerPickerSectionManager *sectionManager;
+@property (nonatomic) BOOL isLoadingCategoryList;
+@property (retain, nonatomic) NSNumber *searchFeatureOpened;
+@property (readonly, nonatomic) BOOL categoryListIsLoading;
+@property (nonatomic) BOOL needFavorite;
+@property (nonatomic) BOOL needDIY;
+@property (nonatomic) BOOL isOnRecordingPage;
+@property (readonly, nonatomic) id<AWEStickerPickerDataContainerProtocol> dataContainer;
+@property (readonly, copy, nonatomic) NSArray *categoryArray;
+@property (copy, nonatomic) id /* block */ tabSizeUpdateHandler;
+@property (copy, nonatomic) id /* block */ stickerCategoryFilterBlock;
+@property (copy, nonatomic) id /* block */ stickerFilterBlock;
+@property (retain, nonatomic) NSDictionary *loadEffectRequestExtraParameters;
+@property (readonly, nonatomic) BOOL enableStickerSearch;
+@property (readonly, nonatomic) AWEDouyinStickerCategoryModel *favoriteCategoryModel;
+@property (readonly, nonatomic) AWEDouyinStickerCategoryModel *DIYCategoryModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)stickerPickerModel:(id)a0 changeFavoriteWithEffectIDs:(id)a1 panelName:(id)a2 favorite:(BOOL)a3 completionHandler:(id /* block */)a4;
+- (void)stickerPickerModel:(id)a0 fetchCategoryListForPanelName:(id)a1 completionHandler:(id /* block */)a2;
+- (void)stickerPickerModel:(id)a0 fetchFavoriteForPanelName:(id)a1 category:(id)a2 completionHandler:(id /* block */)a3;
+- (void)stickerPickerModel:(id)a0 fetchDIYEffectListForPanelName:(id)a1 category:(id)a2 completion:(id /* block */)a3;
+- (void)stickerPickerModel:(id)a0 fetchEffectListForPanelName:(id)a1 category:(id)a2 completionHandler:(id /* block */)a3;
+- (void)stickerPickerModel:(id)a0 fetchEffectListForPanelName:(id)a1 category:(id)a2 pageCount:(long long)a3 cursor:(long long)a4 sortingPosition:(long long)a5 completionHandler:(id /* block */)a6;
+- (struct CGSize { double x0; double x1; })cellSizeForTabIndex:(long long)a0;
+- (void)openSearchFeature:(BOOL)a0;
+- (void)addEffectsToMap:(id)a0;
+- (id)effectFromMapForId:(id)a0;
+- (void)addDataContainer:(id)a0;
+- (void)insertPrioritizedStickers:(id)a0;
+- (void)useDataContainer:(id)a0;
+- (id)dataContainer:(id)a0 effectFromMapForId:(id)a1;
+- (struct CGSize { double x0; double x1; })dataContainer:(id)a0 cellSizeForTabIndex:(long long)a1;
+- (void)dataContainer:(id)a0 insertPrioritizedStickers:(id)a1;
+- (void)mergeWithInsertStickers:(id)a0;
+- (id)effectFilterCategory:(id)a0;
+- (void)updateTabLayoutForCategory:(id)a0 tabIndex:(long long)a1;
+- (id)toInsertCategoryWithDataContainer:(id)a0;
+- (id)filterEffects:(id)a0 category:(id)a1;
+- (void)dataContainer:(id)a0 updateEffectArrayForCategoryKey:(id)a1 effectArray:(id)a2;
+- (void)dataContainer:(id)a0 addEffectToFavorite:(id)a1;
+- (void)handleCategoryResponse:(id)a0 panelName:(id)a1 dataContainer:(id)a2;
+- (void)onEffectListCheckUpdateCallback:(BOOL)a0 panelName:(id)a1 category:(id)a2 dataContainer:(id)a3 completionHandler:(id /* block */)a4;
+- (id)transformCategoriesWithResponse:(id)a0 panelName:(id)a1 dataContainer:(id)a2;
+- (id)filterCategories:(id)a0;
+- (id)dataContainer:(id)a0 filterEffects:(id)a1 categoryKey:(id)a2;
+- (id)dataContainer:(id)a0 effectArrayForCategoryKey:(id)a1;
+- (void)fetchCategoryListForPanelName:(id)a0 dataContainer:(id)a1 completionHandler:(id /* block */)a2;
+- (void)fetchEffectListWithPanelName:(id)a0 category:(id)a1 dataContainer:(id)a2 completionHandler:(id /* block */)a3;
+- (void)fetchEffectListV2WithPanelName:(id)a0 category:(id)a1 pageCount:(long long)a2 cursor:(long long)a3 sortingPosition:(long long)a4 dataContainer:(id)a5 completionHandler:(id /* block */)a6;
+- (void)fetchMyEffectListForPanelName:(id)a0 completionHandler:(id /* block */)a1;
+- (void)dataContainer:(id)a0 updateFavorite:(BOOL)a1 effectIDS:(id)a2;
+- (id)searchFeatureOpenedValue;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

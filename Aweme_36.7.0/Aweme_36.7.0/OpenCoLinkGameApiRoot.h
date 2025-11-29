@@ -1,0 +1,3 @@
+@interface OpenCoLinkGameApiRoot : GPBRootObject
+
+@end

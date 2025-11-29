@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface RelationRecommendStructV2 : GPBMessage
+
+@property (nonatomic) long long recommendType;
+@property (nonatomic) BOOL hasRecommendType;
+@property (copy, nonatomic) NSString *relationTextKey;
+@property (nonatomic) BOOL hasRelationTextKey;
+
++ (id)descriptor;
+
+@end

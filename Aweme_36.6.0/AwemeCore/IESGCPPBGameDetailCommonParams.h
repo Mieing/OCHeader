@@ -1,0 +1,20 @@
+@class IESGCPPBGameDetailCommonMetaData, IESGCPPBGameDetailCommonReverseInfo, IESGCPPBUserGameStats, IESGCPPBGameDetailCommonStyleInfo, IESGCPPBGameDetailCommonDownloadInfo, IESGCPPBGameDetailCommonGameInfo;
+
+@interface IESGCPPBGameDetailCommonParams : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBGameDetailCommonGameInfo *commonGameInfo;
+@property (nonatomic) BOOL hasCommonGameInfo;
+@property (retain, nonatomic) IESGCPPBGameDetailCommonDownloadInfo *commonDownloadInfo;
+@property (nonatomic) BOOL hasCommonDownloadInfo;
+@property (retain, nonatomic) IESGCPPBGameDetailCommonReverseInfo *commonReverseInfo;
+@property (nonatomic) BOOL hasCommonReverseInfo;
+@property (retain, nonatomic) IESGCPPBGameDetailCommonStyleInfo *commonStyleInfo;
+@property (nonatomic) BOOL hasCommonStyleInfo;
+@property (retain, nonatomic) IESGCPPBUserGameStats *userGameStats;
+@property (nonatomic) BOOL hasUserGameStats;
+@property (retain, nonatomic) IESGCPPBGameDetailCommonMetaData *commonMetaData;
+@property (nonatomic) BOOL hasCommonMetaData;
+
++ (id)descriptor;
+
+@end

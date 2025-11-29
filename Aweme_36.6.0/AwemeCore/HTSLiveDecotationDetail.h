@@ -1,0 +1,12 @@
+@class HTSLiveDecoration;
+
+@interface HTSLiveDecotationDetail : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveDecoration *textDecoration;
+@property (nonatomic) BOOL hasTextDecoration;
+@property (retain, nonatomic) HTSLiveDecoration *imageDecoration;
+@property (nonatomic) BOOL hasImageDecoration;
+
++ (id)descriptor;
+
+@end

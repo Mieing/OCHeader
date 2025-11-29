@@ -1,0 +1,3 @@
+@interface ShowAddShowCenterApiRoot : GPBRootObject
+
+@end

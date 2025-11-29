@@ -1,0 +1,3 @@
+@interface HTSLiveProfileViewMessageRoot : GPBRootObject
+
+@end

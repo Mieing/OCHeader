@@ -1,0 +1,10 @@
+@class IESGCPPBSetUserGamePropDataAuthResponse_Data;
+
+@interface IESGCPPBSetUserGamePropDataAuthResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBSetUserGamePropDataAuthResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

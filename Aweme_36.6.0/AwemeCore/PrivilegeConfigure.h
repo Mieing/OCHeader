@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface PrivilegeConfigure : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) int privilegeType;
+
++ (id)descriptor;
+
+@end

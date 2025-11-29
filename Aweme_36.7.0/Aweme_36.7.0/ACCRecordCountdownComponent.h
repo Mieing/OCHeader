@@ -1,0 +1,72 @@
+@class UIViewController, NSString, AWEDelayRecordView, NSTimer, ACCCountDownViewModel, AWERecordLoadingView, AVPlayer;
+@protocol ACCRecordSwitchModeService, ACCRecordPropService, AWERecordAuthService, ACCRecorderViewContainer, ACCRecordSystemLivePhotoService, ACCRecordSidebarService, ACCShootSourceService, ACCRecordButtonService, ACCRecordFlowService, ACCCameraService;
+
+@interface ACCRecordCountdownComponent : ACCFeatureComponent <AWEAudioWaveformSliderViewDelegate, ACCPanelViewDelegate, ACCRecordVideoEventHandler, ACCRecordConfigDurationHandler, ACCRecordFlowServiceSubscriber, ACCCameraLifeCircleEvent, ACCRecordPropServiceSubscriber>
+
+@property (readonly, weak, nonatomic) UIViewController *containerVC;
+@property (retain, nonatomic) AWEDelayRecordView *delayRecordView;
+@property (retain, nonatomic) AVPlayer *player;
+@property (retain, nonatomic) NSTimer *audioWaveformPlayTimer;
+@property (retain, nonatomic) id<ACCRecorderViewContainer> viewContainer;
+@property (retain, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) id<ACCRecordFlowService> flowService;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) id<ACCRecordPropService> propService;
+@property (weak, nonatomic) id<ACCRecordSidebarService> sidebarService;
+@property (retain, nonatomic) id<ACCRecordButtonService> recordButtonService;
+@property (retain, nonatomic) id<ACCShootSourceService> shootSourceService;
+@property (retain, nonatomic) id<ACCRecordSystemLivePhotoService> systemLivePhotoService;
+@property (retain, nonatomic) id<AWERecordAuthService> recordAuthService;
+@property (retain, nonatomic) ACCCountDownViewModel *viewModel;
+@property (nonatomic) unsigned long long dismissType;
+@property (nonatomic) BOOL isFirstAppear;
+@property (nonatomic) BOOL applicationActive;
+@property (retain, nonatomic) AWERecordLoadingView *loadingView;
+@property (nonatomic) BOOL forbidCountdown;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentWillAppear;
+- (void)componentDidAppear;
+- (void)cameraService:(id)a0 didChangeDuration:(double)a1 totalDuration:(double)a2;
+- (void)panelViewController:(id)a0 didShowPanelView:(id)a1;
+- (void)flowServiceDidUpdateDuration:(double)a0;
+- (void)flowServiceDidAddFragment:(id)a0;
+- (void)panelViewController:(id)a0 willShowPanelView:(id)a1;
+- (void)panelViewController:(id)a0 willDismissPanelView:(id)a1;
+- (void)panelViewController:(id)a0 didDismissPanelView:(id)a1;
+- (void)propServiceDidApplyProp:(id)a0 success:(BOOL)a1;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)componentDidUnmount;
+- (unsigned long long)preferredLoadPhase;
+- (void)bindViewModel;
+- (id)serviceBinding;
+- (void)bindServices:(id)a0;
+- (void)didSetMaxDuration:(double)a0;
+- (id)recordVideoEvent;
+- (void)audioWaveformRemoveTimer;
+- (void)audioWaveformAddTimerIfNeeded;
+- (void)updateDelayRecordButtonWithMode:(long long)a0;
+- (BOOL)isPhotoModeAndSupportShootingVideo;
+- (void)handleClickDelayStartAction;
+- (void)configPlayerWithAudioURL:(id)a0;
+- (void)audioWaveformPlayTimerAction;
+- (void)clickDelayRecord;
+- (void)clickDelayRecordView;
+- (void)switchDelayModebuttonClicked:(id)a0;
+- (void)destoryPlayer;
+- (void)beginCountDownRecord;
+- (void)updateCountDownTrackData;
+- (id)countdownButtonCustomView;
+- (void)updateDelayRecordUIWithCurrentDuration:(double)a0;
+- (void)audioWaveformSliderView:(id)a0 touchEnd:(double)a1;
+- (void)applicationWillResignActive:(id)a0;
+- (void).cxx_destruct;
+- (void)applicationDidBecomeActive:(id)a0;
+- (void)setupUI;
+- (void)setupPlayer;
+
+@end

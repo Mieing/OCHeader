@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface GetKaraokeLyricTemplateListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *templateListArray;
+@property (readonly, nonatomic) unsigned long long templateListArray_Count;
+@property (nonatomic) BOOL hasMore;
+
++ (id)descriptor;
+
+@end

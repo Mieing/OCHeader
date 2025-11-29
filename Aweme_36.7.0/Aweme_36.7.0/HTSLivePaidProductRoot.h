@@ -1,0 +1,3 @@
+@interface HTSLivePaidProductRoot : GPBRootObject
+
+@end

@@ -1,0 +1,85 @@
+@class CMMDB, NSString, NSRecursiveLock, OplogDataLogic, NSDate, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface NewSyncService : MMUserService <PBMessageObserverDelegate, INewSyncExt, MMServiceProtocol> {
+    BOOL m_bHasInit;
+    unsigned int m_uiSelector;
+    unsigned int m_uiSyncScene;
+    unsigned int m_uiSyncContinueCount;
+    NSString *m_lastSyncKeyMd5;
+    NSDate *m_tLastNotify;
+    NSDate *m_tLastLongConnDisconnect;
+    CMMDB *m_oMMDB;
+    NSRecursiveLock *m_oLock;
+    OplogDataLogic *m_oplogData;
+    BOOL m_bNeedSyncOplog;
+    BOOL m_bSyncOplog;
+    BOOL m_bSyncOpError;
+    BOOL m_bSyncOperating;
+    BOOL m_lastSyncFinishCallingExtension;
+    unsigned int m_syncEventID;
+    BOOL m_bIsSyncPause;
+    BOOL m_isGettingData;
+    BOOL m_bFirstSyncAfterBgfgChange;
+    BOOL m_bNeedSync;
+}
+
+@property BOOL m_bHasSync;
+@property (readonly, nonatomic) NSObject<OS_dispatch_queue> *actionNotifySyncQueue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)InitDB:(id)a0 Lock:(id)a1;
+- (BOOL)isGettingData;
+- (void)resetGettingData;
+- (void)SetLastNotifyTime:(id)a0;
+- (void)SetLastLongConnDisconectTime:(id)a0;
+- (void)onServiceClearData;
+- (void)onServiceEnterBackground;
+- (void)onServiceEnterForeground;
+- (void)onWillSuspend;
+- (BOOL)StartNewInit:(unsigned int)a0;
+- (BOOL)InternalCreateSync:(unsigned int)a0;
+- (BOOL)creatPBNewSyncEvent:(unsigned int)a0;
+- (BOOL)NotifyToSync;
+- (void)NeedToSync;
+- (void)ApnsNotifySync;
+- (void)BackGroundToForeGroundSync;
+- (void)ProcessStartSync;
+- (BOOL)BackGroundFetchToSync;
+- (BOOL)VOIPPushAwakeToNewSyncByLocalNotification;
+- (BOOL)VOIPPushAwakeToSyncByCallKit;
+- (BOOL)VOIPPushAwakeToSyncByVoIP;
+- (BOOL)SlientPushAwakeToNewSync;
+- (void)AfterManualAuthNotifySync;
+- (void)LongLinkTimerSync;
+- (void)setNeedSyncWithScene:(int)a0;
+- (void)checkNeedSync;
+- (unsigned int)GetSelector;
+- (void)SetSelector:(unsigned int)a0;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)HandleSyncResp:(id)a0 handleResult:(BOOL)a1;
+- (void)markSyncOperating;
+- (void)HandleNewSyncPush:(id)a0;
+- (BOOL)ignoreNotifyDataWhenSyncOperating;
+- (void)startSyncOplog;
+- (BOOL)InsertOplog:(unsigned int)a0 Oplog:(id)a1 Sync:(BOOL)a2;
+- (void)checkSyncOplog;
+- (void)NeedToSyncOplog;
+- (void)HandleOplog:(id)a0 Event:(unsigned int)a1;
+- (unsigned int)StartOplog:(unsigned int)a0 Oplog:(id)a1;
+- (void)StartOplog:(unsigned int)a0 Oplog:(id)a1 complete:(id /* block */)a2;
+- (void)StartMultipleOplog:(id)a0 callbackBlock:(id /* block */)a1;
+- (void)makeSyncPause;
+- (void)makeSyncResume;
+- (BOOL)handleBatchMessages:(id)a0 ignoreSession:(BOOL)a1;
+- (void)onNewSyncOplogOK;
+- (void)onNewSyncOplogFail;
+- (BOOL)IsLastSyncFinishCallingExtension;
+- (void).cxx_destruct;
+
+@end

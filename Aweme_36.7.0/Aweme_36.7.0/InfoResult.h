@@ -1,0 +1,10 @@
+@class InfoResult_InfoData;
+
+@interface InfoResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) InfoResult_InfoData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

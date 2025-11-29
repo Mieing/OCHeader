@@ -1,0 +1,3 @@
+@interface AWENearbyTaskInsertFeedCard : NSObject
+
+@end

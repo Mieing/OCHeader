@@ -1,0 +1,91 @@
+@class NSTimer, NSString, CJPayIAPConfigModel, CJPayContainerConfig, NSHashTable, MMKV, NSDictionary, NSMutableDictionary, NSObject, NSDate, NSMutableArray, CJPaySettings;
+@protocol OS_dispatch_queue;
+
+@interface CJPaySettingsManager : NSObject <CJPayRequestParamInjectDataProtocol, CJPaySettingPushProtocol> {
+    NSHashTable *_listenerTable;
+    NSMutableDictionary *_stableSettings;
+    NSDate *_lastConnectedTime;
+    NSMutableArray *_deploys;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) CJPaySettings *currentSettings;
+@property (retain, nonatomic) CJPaySettings *remoteSettings;
+@property (retain, nonatomic) CJPaySettings *localSettings;
+@property (retain, nonatomic) CJPayIAPConfigModel *iapConfigModel;
+@property (retain, nonatomic) CJPayContainerConfig *containerConfig;
+@property (copy, nonatomic) NSDictionary *settingsDict;
+@property (nonatomic) unsigned long long retryCount;
+@property (copy, nonatomic) NSDictionary *themeModelDic;
+@property (nonatomic) BOOL failSign;
+@property (retain, nonatomic) NSTimer *timer;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *settingsQueue;
+@property (retain, nonatomic) MMKV *mmkv;
+@property (nonatomic) BOOL preCheckTaskIsCompleted;
+@property (nonatomic) BOOL isEnablePush;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)settingsInit;
++ (void)setEnableRTSSettings:(BOOL)a0;
++ (BOOL)cj_boolValueForKeyPath:(id)a0;
++ (void)registerPlugin;
++ (BOOL)cj_boolValueForKeyPath:(id)a0 defaultValue:(BOOL)a1;
++ (id)injectReskInfoData;
++ (id)injectDevInfoData;
++ (id)cj_stringValueForKeyPath:(id)a0;
++ (id)cj_arrayForKeyPath:(id)a0 defaultValue:(id)a1;
++ (id)cj_arrayValueForKeyPath:(id)a0;
++ (int)cj_intValueForKeyPath:(id)a0;
++ (BOOL)enableRTSSettings;
++ (BOOL)cj_boolValueForKeyPath:(id)a0 defaultValue:(BOOL)a1 stable:(BOOL)a2;
++ (id)cj_objectForKeyPath:(id)a0 defaultValue:(id)a1 stable:(BOOL)a2;
++ (id)cj_stringForKeyPath:(id)a0 defaultValue:(id)a1;
++ (id)cj_stringForKeyPath:(id)a0 defaultValue:(id)a1 stable:(BOOL)a2;
++ (int)cj_intValueForKeyPath:(id)a0 defaultValue:(int)a1;
++ (int)cj_intValueForKeyPath:(id)a0 defaultValue:(int)a1 stable:(BOOL)a2;
++ (id)cj_arrayForKeyPath:(id)a0 defaultValue:(id)a1 stable:(BOOL)a2;
++ (id)shared;
+
+- (void)reportSettingsWithAction:(id)a0;
+- (void)fetchSettingsByPush;
+- (void)handleMergedRequest;
+- (void)safelyAddDeploy:(id)a0;
+- (void)recordConnectedTime:(id)a0;
+- (id)latestSettingsConfig;
+- (void)processSettingsLogic:(id)a0 config:(id)a1;
+- (void)onPushManagerConnectionStateChanged:(id)a0;
+- (void)setStableSettingsWithObject:(id)a0 forKeyPath:(id)a1;
+- (void)overrideSettings:(id)a0;
+- (void)onReceiveSettingPushData:(id)a0;
+- (id)p_deviceModel;
+- (BOOL)isAppUpgrade;
+- (BOOL)p_existLocalSettings;
+- (BOOL)p_checkLaunchIntervalExceed7Days;
+- (void)retryRequest:(long long)a0 deploys:(id)a1;
+- (void)pullConfigWithAction:(long long)a0 deploys:(id)a1 completion:(id /* block */)a2;
+- (id)p_getLocalSettings;
+- (id)p_queryParameters;
+- (void)p_handleSettingsResponse:(id)a0 actionModel:(id)a1;
+- (void)p_updateSettingsTimeWithSettingsResponse:(id)a0;
+- (void)p_preloadSecurityLoading:(id)a0;
+- (void)p_preloadFaceVerifyFullLeadPageImage:(id)a0;
+- (void)p_persistSettings:(id)a0;
+- (void)notifySettingsChange:(id)a0 config:(id)a1;
+- (BOOL)isMoreThanSevenDaysBetween:(id)a0 and:(id)a1;
+- (BOOL)isRepeatedPush:(id)a0 completion:(id /* block */)a1;
+- (BOOL)isNeedToUpdateStaticSettings:(id)a0;
+- (id)findValueInDict:(id)a0 path:(id)a1;
+- (void)unRegisterListener:(id)a0;
+- (void)stopTimer;
+- (void).cxx_destruct;
+- (id)init;
+- (void)applicationWillResignActive;
+- (void)registerListener:(id)a0;
+
+@end

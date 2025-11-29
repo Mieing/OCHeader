@@ -1,0 +1,10 @@
+@class IESGCPPBAnchorIntroduceCardResponse_Data;
+
+@interface IESGCPPBAnchorIntroduceCardResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBAnchorIntroduceCardResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

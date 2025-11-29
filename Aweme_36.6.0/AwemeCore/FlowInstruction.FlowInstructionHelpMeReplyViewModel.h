@@ -1,0 +1,3 @@
+@interface FlowInstruction.FlowInstructionHelpMeReplyViewModel : FlowInstruction.FlowInstructionBizViewModel
+
+@end

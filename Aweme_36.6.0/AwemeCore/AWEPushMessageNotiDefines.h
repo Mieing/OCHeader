@@ -1,0 +1,3 @@
+@interface AWEPushMessageNotiDefines : NSObject
+
+@end

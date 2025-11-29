@@ -1,0 +1,12 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveTaskCenterCommonMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long bizType;
+@property (copy, nonatomic) NSString *data_p;
+
++ (id)descriptor;
+
+@end

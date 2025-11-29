@@ -1,0 +1,14 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLivePanelComponentItem : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) int status;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *displayText;
+@property (copy, nonatomic) NSString *schemaURL;
+
++ (id)descriptor;
+
+@end

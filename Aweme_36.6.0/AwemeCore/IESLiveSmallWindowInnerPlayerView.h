@@ -1,0 +1,74 @@
+@class HTSEventContext, NSString, UIView, NSDate, UIButton, IESLiveOnePipPreferenceOptionsModel, HTSLiveRoom, UILabel;
+@protocol IESLivePlayerProtocol;
+
+@interface IESLiveSmallWindowInnerPlayerView : UIView <HTSLiveAudienceActions, IESLiveSmallWindowPlayerViewProtocol>
+
+@property (retain, nonatomic) UIView *operationContainer;
+@property (retain, nonatomic) UIView *bizDecorationView;
+@property (retain, nonatomic) UIView *streamContainer;
+@property (retain, nonatomic) UIView *bgContainer;
+@property (retain, nonatomic) UILabel *countDownLabel;
+@property (nonatomic) BOOL isLinkMic;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) NSDate *startDate;
+@property (retain, nonatomic) NSDate *silentDate;
+@property (nonatomic) BOOL isUserSetMuted;
+@property (retain, nonatomic) UIButton *closeBtn;
+@property (retain, nonatomic) UIButton *audioBtn;
+@property (nonatomic) BOOL hasSetPlayerView;
+@property (retain, nonatomic) id<IESLivePlayerProtocol> playerController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isInRoom;
+@property (retain, nonatomic) HTSLiveRoom *roomModel;
+@property (copy, nonatomic) NSString *currentSmallWindowFrom;
+@property (retain, nonatomic) IESLiveOnePipPreferenceOptionsModel *preferenceOptionsModel;
+@property (copy, nonatomic) id /* block */ smallWindowTrack;
+@property (copy, nonatomic) id /* block */ muteStateDidChanged;
+@property (copy, nonatomic) id /* block */ closeWindowHandler;
+@property (copy, nonatomic) id /* block */ enterRoomHandler;
+@property (copy, nonatomic) id /* block */ preLoadFinished;
+@property (copy, nonatomic) id /* block */ loadStateChange;
+@property (copy, nonatomic) id /* block */ receiveStreamDryUp;
+@property (nonatomic) double smallWindowCornerRadius;
+@property (nonatomic) double innerPadding;
+
+- (void)didSetAttachingDIContext;
+- (void)setupContainer;
+- (void)setMute:(BOOL)a0 callTrace:(id)a1;
+- (void)liveWillSuspend;
+- (void)liveWillFinished;
+- (void)setupPlayerView;
+- (void)didClickCloseBtn;
+- (void)switchResolution:(id)a0 complete:(id /* block */)a1;
+- (void)buildBgView;
+- (void)didClickBackToLive;
+- (BOOL)enableAttachScreenWhenGestureCancelled;
+- (id)htsLiveStreamPlayerProvider;
+- (void)prePlay;
+- (void)liveDidEnded;
+- (void)countDownWithTime:(long long)a0;
+- (void)trackWithEvent:(id)a0 extraParam:(id)a1;
+- (void)buildOperationView;
+- (void)didClickMuteBtn;
+- (void)updateAudioBtnStatus;
+- (void)retainContainerSizeIfNeeded;
+- (BOOL)resizeWithFixedSizeIfNeeded;
+- (double)horizontalMaxHeightWithFrom:(id)a0;
+- (void)buildAudioPlayer;
+- (void)addAudioControl;
+- (void)buildAudioModeView;
+- (void)p_closeSmallWindowWithFinish:(BOOL)a0;
+- (void)showLiveEndView;
+- (id)initWithPreferenceModel:(id)a0 diContext:(id)a1;
+- (BOOL)_shouldBusinessDownplayQuality;
+- (void).cxx_destruct;
+- (void)play;
+- (void)stop;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)dealloc;
+- (void)resizeWindow;
+
+@end

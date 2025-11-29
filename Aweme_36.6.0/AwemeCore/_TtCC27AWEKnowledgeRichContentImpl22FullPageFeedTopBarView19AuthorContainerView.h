@@ -1,0 +1,16 @@
+@interface _TtCC27AWEKnowledgeRichContentImpl22FullPageFeedTopBarView19AuthorContainerView : UIView {
+    void /* unknown type, empty encoding */ $__lazy_storage_$_avatarView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_nicknameLabel;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_followButton;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_poiAnchorContainerView;
+    void /* unknown type, empty encoding */ clickAvatarHandler;
+    void /* unknown type, empty encoding */ clickNicknameHandler;
+    void /* unknown type, empty encoding */ clickFollowButtonHandler;
+}
+
+- (void)didClickFollowButton;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+
+@end

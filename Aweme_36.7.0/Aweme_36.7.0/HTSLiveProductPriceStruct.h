@@ -1,0 +1,16 @@
+@class NSString, GPBInt32Array;
+
+@interface HTSLiveProductPriceStruct : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *amount;
+@property (copy, nonatomic) NSString *currency;
+@property (nonatomic) long long pos;
+@property (retain, nonatomic) GPBInt32Array *payTypeArray;
+@property (readonly, nonatomic) unsigned long long payTypeArray_Count;
+@property (copy, nonatomic) NSString *fullPrice;
+@property (nonatomic) long long countdownTimestamp;
+@property (copy, nonatomic) NSString *start;
+
++ (id)descriptor;
+
+@end

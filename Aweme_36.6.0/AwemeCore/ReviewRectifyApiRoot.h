@@ -1,0 +1,3 @@
+@interface ReviewRectifyApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface BDECPigeonPatchDefine : NSObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface FallReasonContainer : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *elementsArray;
+@property (readonly, nonatomic) unsigned long long elementsArray_Count;
+
++ (id)descriptor;
+
+@end

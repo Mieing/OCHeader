@@ -1,0 +1,84 @@
+@class BDLynxViewBaseParams, NSString, PuzzleContext, IESLynxMonitor, UIView, BDXThreadSafeDictionary, NSDictionary, NSMutableSet, PuzzleLynxResourceProvider, BDLynxView;
+@protocol IESFalconMetaData, IESLiveHybridContainerDelegate, PuzzleHybridStateCenterProtocol, IESLivePiperProtocol, IESLiveWebViewService, IESHYHybridViewLifecycleProtocol;
+
+@interface IESLiveLynxView : UIView <BDLynxClientViewDelegate, IESLiveLynxViewProtocol> {
+    NSString *liveBusiness;
+    PuzzleContext *_context;
+}
+
+@property (retain, nonatomic) BDLynxViewBaseParams *baseParams;
+@property (retain, nonatomic) NSString *url;
+@property (retain, nonatomic) NSDictionary *initialData;
+@property (retain, nonatomic) NSMutableSet *bridgeHandlers;
+@property (retain, nonatomic) IESLynxMonitor *lynxMonitor;
+@property (retain, nonatomic) BDLynxView *bdLynxView;
+@property (copy, nonatomic) NSDictionary *releaseLog;
+@property (nonatomic) long long showTime;
+@property (nonatomic) BOOL enableFontScale;
+@property (retain, nonatomic) id<IESLiveWebViewService> webviewService;
+@property (nonatomic) double initTime;
+@property (retain, nonatomic) id<IESFalconMetaData> falconMeta;
+@property (copy, nonatomic) NSDictionary *routerParams;
+@property (nonatomic) BOOL enableOfflineImage;
+@property (retain, nonatomic) id<IESLivePiperProtocol> liveBridge;
+@property (retain, nonatomic) PuzzleLynxResourceProvider *resourceProvider;
+@property (readonly, copy, nonatomic) NSString *fallbackURL;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy, nonatomic) NSString *containerID;
+@property (weak, nonatomic) id<IESLiveHybridContainerDelegate> liveHybridContainerDelegate;
+@property (readonly, nonatomic) PuzzleContext *context;
+@property (readonly, copy, nonatomic) NSString *liveBusiness;
+@property (readonly, nonatomic) UIView *rawView;
+@property (retain, nonatomic) id<PuzzleHybridStateCenterProtocol> stateCenter;
+@property (readonly, nonatomic) unsigned long long kernalType;
+@property (weak, nonatomic) id<IESHYHybridViewLifecycleProtocol> lifecycleDelegate;
+@property (readonly, copy, nonatomic) NSDictionary *initialMethodsMap;
+@property (retain, nonatomic) BDXThreadSafeDictionary *lazyCreateMethodsMap;
+
+- (void)didSetAttachingDIContext;
+- (void)viewDidChangeIntrinsicContentSize:(struct CGSize { double x0; double x1; })a0;
+- (void)viewDidStartLoading;
+- (void)viewDidFirstScreen;
+- (void)viewDidFinishLoadWithURL:(id)a0;
+- (void)viewDidUpdate;
+- (void)viewDidRecieveError:(id)a0;
+- (void)sendEvent:(id)a0 params:(id)a1;
+- (void)triggerLayout;
+- (id)currentRequestURL;
+- (id /* block */)loadImageWithURL:(id)a0 size:(struct CGSize { double x0; double x1; })a1 contextInfo:(id)a2 completion:(id /* block */)a3;
+- (void)addPiperHandler:(id)a0;
+- (void)registerHandlerBlock:(id /* block */)a0 forMethod:(id)a1 authType:(unsigned long long)a2;
+- (void)saveReleaseSendLog:(id)a0;
+- (void)setLiveBusiness:(id)a0;
+- (void)secureGoBackWithReachEndBlock:(id /* block */)a0;
+- (void)addXBridgeMethods;
+- (BOOL)inFontScaleListWith:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 URL:(id)a1 routerParam:(id)a2 initialData:(id)a3 fallbackURL:(id)a4 diContext:(id)a5;
+- (void)setupStateCenter:(id)a0;
+- (id)initialPropertiesWithInitialData:(id)a0;
+- (id)generateLynxBaseParams;
+- (void)addLynxViewWithURL:(id)a0;
+- (id)globalPropertiesWithURL:(id)a0;
+- (void)startLynxMonitor;
+- (void)reportOffline;
+- (void)resetPreferredFrame;
+- (void)trackFallback:(id)a0 error:(id)a1;
+- (id)absouteResourceURL:(id)a0 error:(id *)a1;
+- (void)requestWebImageWithURL:(id)a0 downSampling:(BOOL)a1 targetSize:(struct CGSize { double x0; double x1; })a2 callBack:(id /* block */)a3;
+- (BOOL)isAbsoluteURL:(id)a0;
+- (void).cxx_destruct;
+- (void)updateData:(id)a0;
+- (void)removeFromSuperview;
+- (void)setContext:(id)a0;
+- (BOOL)canGoBack;
+- (id)scrollView;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (BOOL)isOffline;
+- (void)loadData;
+- (void)loadWithURL:(id)a0;
+
+@end

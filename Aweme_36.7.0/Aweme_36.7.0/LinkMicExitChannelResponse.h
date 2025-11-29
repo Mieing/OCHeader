@@ -1,0 +1,10 @@
+@class LinkMicExitChannelResponse_ResponseData;
+
+@interface LinkMicExitChannelResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LinkMicExitChannelResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

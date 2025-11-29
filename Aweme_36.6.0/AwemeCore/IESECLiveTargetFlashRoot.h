@@ -1,0 +1,3 @@
+@interface IESECLiveTargetFlashRoot : GPBRootObject
+
+@end

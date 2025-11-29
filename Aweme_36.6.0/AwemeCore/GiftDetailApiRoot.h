@@ -1,0 +1,3 @@
+@interface GiftDetailApiRoot : GPBRootObject
+
+@end

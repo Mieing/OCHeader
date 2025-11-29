@@ -1,0 +1,10 @@
+@class HTSLiveGameGiftData_MonkeyData;
+
+@interface HTSLiveGameGiftData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGameGiftData_MonkeyData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

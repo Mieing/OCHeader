@@ -1,0 +1,22 @@
+@class NSString, NSMutableArray;
+
+@interface TIMXPBNConversationCoreSearchQuery : GPBMessage
+
+@property (nonatomic) long long convShortId;
+@property (nonatomic) BOOL hasConvShortId;
+@property (copy, nonatomic) NSString *convName;
+@property (nonatomic) BOOL hasConvName;
+@property (copy, nonatomic) NSString *convStatus;
+@property (nonatomic) BOOL hasConvStatus;
+@property (nonatomic) long long creatStartTime;
+@property (nonatomic) BOOL hasCreatStartTime;
+@property (nonatomic) long long creatEndTime;
+@property (nonatomic) BOOL hasCreatEndTime;
+@property (nonatomic) long long ownerId;
+@property (nonatomic) BOOL hasOwnerId;
+@property (retain, nonatomic) NSMutableArray *extListArray;
+@property (readonly, nonatomic) unsigned long long extListArray_Count;
+
++ (id)descriptor;
+
+@end

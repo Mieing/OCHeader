@@ -1,0 +1,3 @@
+@interface AnimationLeakRoot : GPBRootObject
+
+@end

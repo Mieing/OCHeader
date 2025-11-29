@@ -1,0 +1,92 @@
+@class WAPackageInfoCacheLogic, WAPublicResModel, NSString, WAPublicResInfoStorage, WAAppBrandNotifyInfo, NSMutableArray, WAPackageDownloadLogic, WAPublicResInfo;
+
+@interface WAPublicResCacheMgr : MMUserService <WAPackageDownloadLogicDelegate, MMServiceProtocol> {
+    WAPackageDownloadLogic *_pkgDownloadLogic;
+    WAPackageInfoCacheLogic *_pkgInfoCacheLogic;
+    NSString *_curDownloadUrlStr;
+    BOOL _bIsDownloading;
+    BOOL _bDownloadTestLibWithoutToast;
+    WAPublicResInfoStorage *m_resInfoStorage;
+    WAPublicResInfo *_curServerRetInfo;
+    long long _startDownloadTime;
+    id /* block */ _syncUpdatePubLibHandler;
+    id /* block */ _asyncUpdatePubLibHandler;
+    id /* block */ _testForceUpdatePubLibHandler;
+    id /* block */ _bizUpdatePubLibHandler;
+}
+
+@property (retain, nonatomic) WAPublicResModel *publicResModel;
+@property (retain, nonatomic) NSMutableArray *unpackedCheckSum;
+@property (retain, nonatomic) WAAppBrandNotifyInfo *publicDebugInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getPublicRelativePath:(unsigned long long)a0;
++ (id)getBundlePublicRelativePath:(unsigned long long)a0;
++ (id)getBundlePublicRelativePathWithFileName:(id)a0;
++ (id)getBundle;
++ (id)getBundlePubResJsWithType:(unsigned long long)a0;
++ (id)getBundlePubResDataWithType:(unsigned long long)a0;
++ (id)extensionIMsgExtRegisterKeyList;
+
+- (id)init;
+- (void)dealloc;
+- (id)getTaskPublicResModel;
+- (BOOL)isReachPubLibResUpdateGap;
+- (void)checkUpdatePublicResPkg;
+- (void)checkUpdatePublicResPkgOnAppVersionChangeFrom:(unsigned int)a0 to:(unsigned int)a1;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)loadResInfoStorage;
+- (void)saveResInfoStorage:(id)a0;
+- (void)checkAndClearPubRes;
+- (BOOL)isDebugMd5Unpacked:(id)a0;
+- (BOOL)isReleaseMd5Unpacked:(id)a0;
+- (void)markDebugMd5Unpacked:(id)a0;
+- (void)markReleaseMd5Unpacked:(id)a0;
+- (BOOL)isMd5Unpacked:(id)a0 prefix:(id)a1;
+- (void)markMd5Unpacked:(id)a0 prefix:(id)a1;
+- (id)genTokenMd5:(id)a0 prefix:(id)a1;
+- (BOOL)verifyLocalCacheChecksum:(id)a0 debugModeType:(unsigned long long)a1 version:(unsigned long long)a2;
+- (BOOL)verifyLocalCacheChecksum:(id)a0 debugModeType:(unsigned long long)a1 version:(unsigned long long)a2 forceIgnoreCheckSum:(BOOL)a3;
+- (BOOL)verifyLocalCacheChecksum:(id)a0 pkgFilePath:(id)a1 forceIgnoreCheckSum:(BOOL)a2;
+- (void)subThread_verifyLocalCacheChecksum:(id)a0 pkgFilePath:(id)a1 forceIgnoreCheckSum:(BOOL)a2 completion:(id /* block */)a3;
+- (BOOL)loadPublicPkgInfoLocalCache:(unsigned long long)a0 version:(unsigned long long)a1;
+- (id)getPubResDataWithPubType:(unsigned long long)a0 version:(unsigned long long)a1 resType:(unsigned long long)a2 forAppid:(id)a3;
+- (id)getPubResDataWithPubType:(unsigned long long)a0 version:(unsigned long long)a1 relativePath:(id)a2 forAppid:(id)a3;
+- (id)getLocalCacheDataWithFullUrl:(id)a0 version:(unsigned long long)a1;
+- (unsigned int)getBundlePubVersion;
+- (void)unpackPubResFromBundle;
+- (BOOL)unpackPubResFromBundleZipPath:(id)a0;
+- (BOOL)createDirIfNotExist:(id)a0;
+- (void)unpackPubResFromBundleIfNeeded;
+- (id)getPublicForceLocalCacheData:(unsigned long long)a0;
+- (id)getPublicForceLocalCacheDataWithRelativePath:(id)a0;
+- (id)getCurrentPublicReleaseInfo;
+- (BOOL)hasDownloadedPublib;
+- (BOOL)hasBundlePublib;
+- (BOOL)hasValidPublibToPreload;
+- (void)tryUpdatePublicResPkgWithCompleteHandler:(id /* block */)a0;
+- (void)syncUpdatePublicResPkgFromLaunchWithInfo:(id)a0 completeHandler:(id /* block */)a1;
+- (void)asyncUpdatePublicResPkgFromLaunchWithInfo:(id)a0 completeHandler:(id /* block */)a1;
+- (BOOL)isNeedDownloadPublicDebugModePkg:(id)a0;
+- (BOOL)isDownloading;
+- (BOOL)downloadPublicPkgWithUrl:(id)a0 patchUrl:(id)a1;
+- (BOOL)downloadDebugPublicPkgWithInfo:(id)a0;
+- (void)syncHandlerActionWithRet:(BOOL)a0;
+- (void)onDownloadTaskCompletion:(long long)a0 taskUrl:(id)a1 filePath:(id)a2 protocolInfo:(id)a3 totalLength:(unsigned long long)a4;
+- (void)reportKvInfo:(BOOL)a0 debugMode:(BOOL)a1 downloadPercent:(unsigned int)a2 eventID:(unsigned int)a3;
+- (void)reportPatchUpdateKvInfo:(BOOL)a0 debugMode:(unsigned long long)a1 errCode:(unsigned long long)a2 publicInfo:(id)a3 isPatch:(BOOL)a4 pkgSize:(unsigned int)a5 filePath:(id)a6 protocolInfo:(id)a7;
+- (void)removeDustPublicPkgBeyondShouldKeepVersionArr:(id)a0;
+- (BOOL)updatePublicResPkgWithScene:(unsigned long long)a0;
+- (void)onCgiResponse:(id)a0 forEvent:(unsigned int)a1;
+- (void)onGetNewXmlMsg:(id)a0 type:(id)a1 msgContent:(id)a2;
+- (void)parseNotifyMsg:(id)a0;
+- (void)processPublicPkgUpdateNotifyVersion:(unsigned int)a0 pkgUrl:(id)a1 patchUrl:(id)a2 md5:(id)a3 isForceUpdate:(BOOL)a4 scene:(unsigned long long)a5 updateType:(unsigned int)a6;
+- (void)destroyAllLoadedOldPublibBackgroundTask;
+- (void)test_forceUpdatePubLibToVersion:(unsigned int)a0 completeHandler:(id /* block */)a1;
+- (void).cxx_destruct;
+
+@end

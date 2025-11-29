@@ -1,0 +1,74 @@
+@class NSString, WCFinderFeedContentVM, MMFinderLiveFansGroupOperationPanel;
+
+@interface MMLiveOpenApiMgr : MMUserService <MMLiveTaskDelegate, WCFinderLiveExt, MMFinderLiveFansGroupOperationReportDelegate, MMServiceProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) WCFinderFeedContentVM *lastContentVM;
+@property (nonatomic) BOOL tempSwitchPause;
+@property BOOL joinTeamBusy;
+@property (retain, nonatomic) MMFinderLiveFansGroupOperationPanel *fansGroupOperationPanel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)routeToGameLiveWithAppId:(id)a0 opensdkVersion:(unsigned int)a1 extInfo:(id)a2 sameAccount:(BOOL)a3 failCallback:(id /* block */)a4 rootVC:(id)a5;
+- (void)refreshGameLiveLaunchModelWith:(id)a0 appId:(id)a1;
+- (BOOL)preJudgeSuccessWithExtInfoDic:(id)a0 sameAccount:(BOOL)a1 failCallback:(id /* block */)a2;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)clearDataWithLiveId:(unsigned long long)a0;
+- (BOOL)routeToLiveFromOpenSDKWithAppId:(id)a0 extInfo:(id)a1 startInfo:(id)a2 sameAccount:(BOOL)a3 failCallback:(id /* block */)a4 rootVC:(id)a5;
+- (BOOL)createVideoLiveWithAppId:(id)a0 extInfo:(id)a1 startInfo:(id)a2 failCallback:(id /* block */)a3 rootVC:(id)a4;
+- (BOOL)routeToLiveWithAppId:(id)a0 extInfo:(id)a1 failCallback:(id /* block */)a2 rootVC:(id)a3;
+- (void)enterLiveRoomWithLiveId:(unsigned long long)a0 finderUserName:(id)a1 oberver:(id)a2;
+- (void)createLiveRoomWithAppId:(id)a0 andExtInfo:(id)a1 nav:(id)a2 startInfo:(id)a3;
+- (void)exitLiveRoomWithLiveId:(unsigned long long)a0 finderUserName:(id)a1;
+- (void)shareToFriendWithLiveId:(unsigned long long)a0 fromViewController:(id)a1;
+- (void)shareToMomentWithLiveId:(unsigned long long)a0 fromViewController:(id)a1;
+- (void)openFansClubWithLiveId:(unsigned long long)a0 fromViewController:(id)a1;
+- (BOOL)isLivePushing;
+- (BOOL)minimizeWithLiveId:(unsigned long long)a0;
+- (BOOL)dismissLiveMinimizationWithLiveId:(unsigned long long)a0;
+- (BOOL)enableCustomVideoCaptureWithLiveId:(unsigned long long)a0 enable:(BOOL)a1;
+- (BOOL)sendCustomVideoDataWithLiveId:(unsigned long long)a0 withPixelBuffer:(struct __CVBuffer { } *)a1 pixelFormat:(long long)a2 rotation:(long long)a3 timestampMs:(unsigned long long)a4;
+- (BOOL)sendCustomVideoDataWithLiveId:(unsigned long long)a0 withVideoData:(id)a1 pixelFormat:(long long)a2 rotation:(long long)a3 timestampMs:(unsigned long long)a4 width:(double)a5 height:(double)a6;
+- (BOOL)enableCustomAudioCaptureWithLiveId:(unsigned long long)a0 enable:(BOOL)a1;
+- (BOOL)sendCustomAudioDataWithLiveId:(unsigned long long)a0 withAudioData:(id)a1 sampleRate:(long long)a2 channels:(int)a3 timestampMs:(unsigned long long)a4;
+- (BOOL)enableMixExternalAudioWithLiveId:(unsigned long long)a0 enablePublish:(BOOL)a1 playout:(BOOL)a2;
+- (BOOL)mixExternalAudioDataWithLiveId:(unsigned long long)a0 withAudioData:(id)a1 sampleRate:(long long)a2 channels:(int)a3 timestampMs:(unsigned long long)a4;
+- (void)enableAudioVolumeEvaluation:(unsigned long long)a0 withLiveId:(unsigned long long)a1;
+- (void)openLiveRoomViewWithLiveId:(unsigned long long)a0 navigationController:(id)a1;
+- (void)closeLive:(unsigned long long)a0 navigationController:(id)a1 delegate:(id)a2;
+- (void)joinTeam:(unsigned long long)a0 gameInfo:(id)a1 complete:(id /* block */)a2;
+- (void)enableLocalVideo:(BOOL)a0 withLiveId:(unsigned long long)a1;
+- (void)enableLocalAudio:(BOOL)a0 withLiveId:(unsigned long long)a1;
+- (void)setVoiceVolume:(long long)a0 withLiveId:(unsigned long long)a1;
+- (void)updateLiveRoomCoverImage:(id)a0 withLiveId:(unsigned long long)a1;
+- (void)setExperimentConfig:(id)a0 withParams:(id)a1 withLiveId:(unsigned long long)a2;
+- (void)setVideoEncoderParamWithWidth:(double)a0 height:(double)a1 withLiveId:(unsigned long long)a2;
+- (id)getSelfFinderContact;
+- (id)getLiveRoomInfoWithLiveId:(unsigned long long)a0;
+- (void)getLiveOnlineMemberListWithLiveId:(unsigned long long)a0;
+- (void)pauseLiveWithLiveId:(unsigned long long)a0 withCompleteBlock:(id /* block */)a1;
+- (void)resumeLiveWithLiveId:(unsigned long long)a0 withCompleteBlock:(id /* block */)a1;
+- (void)cgiUpdateTopic:(id)a0 completion:(id /* block */)a1;
+- (void)onGetFinderLiveMessage:(id)a0 taskId:(id)a1 onlineContacts:(id)a2 msgList:(id)a3 finderLiveInfo:(id)a4 onlineCount:(unsigned int)a5 liveInfoEnable:(BOOL)a6 liveClosed:(BOOL)a7 liveExtFlag:(unsigned int)a8 onlineViewCount:(unsigned int)a9 ktvPlayerCount:(unsigned int)a10 nextRequestInterval:(unsigned int)a11 currentLikeCount:(unsigned long long)a12 extraClientConfigUpdated:(BOOL)a13 liveGameData:(id)a14 respContext:(id)a15;
+- (void)onFinderGetLiveOnlineMember:(id)a0 taskId:(id)a1 onlineMemberResult:(id)a2;
+- (void)onGetFinderLiveAlertInfoWithTaskId:(id)a0 alertInfo:(id)a1;
+- (void)onJoinFinderLiveError:(id)a0 finderDataItem:(id)a1 joinLiveContext:(id)a2 errorPage:(id)a3;
+- (void)onReportFansGroupOperationActionType:(long long)a0;
+- (void)onReportFansGroupNoticeActionType:(long long)a0 notice:(id)a1 level:(unsigned long long)a2 imageUrl:(id)a3 visibility:(long long)a4;
+- (BOOL)isLiveRoomMsgTypeSupport:(id)a0;
+- (unsigned int)convertFromLiveCommentMsgType:(id)a0;
+- (long long)convertToTRTCVideoRotation:(long long)a0;
+- (long long)convertToTRTCVideoPixelFormat:(long long)a0;
+- (long long)convertToTRTCAudioSampleRate:(long long)a0;
+- (long long)convertToUIImageOrientation:(long long)a0 mirrored:(BOOL)a1;
+- (id)getContentVM:(id)a0 fromViewController:(id)a1;
+- (void).cxx_destruct;
+
+@end

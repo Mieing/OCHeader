@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLiveMatrixInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

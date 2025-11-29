@@ -1,0 +1,3 @@
+@interface AWEStudioComposerPublishHashTagRecommendFeature : AWEStudioComposerBaseFeatureConfig
+
+@end

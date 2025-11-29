@@ -1,0 +1,15 @@
+@class HTSLivePlayerInfo;
+
+@interface SubstitutionInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLivePlayerInfo *enterPlayer;
+@property (nonatomic) BOOL hasEnterPlayer;
+@property (retain, nonatomic) HTSLivePlayerInfo *exitPlayer;
+@property (nonatomic) BOOL hasExitPlayer;
+@property (nonatomic) long long matchTime;
+@property (nonatomic) double elapsed;
+@property (nonatomic) double elapsedPlus;
+
++ (id)descriptor;
+
+@end

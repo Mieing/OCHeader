@@ -1,0 +1,53 @@
+@interface MJSpeechUtilities : NSObject
+
++ (long long)mj_submitAsyncSTTRequestWithAudioID:(id)a0 voiceIDForRequest:(id)a1 audioSlice:(id)a2 audioDurationMillis:(unsigned long long)a3 isRequestCgi:(BOOL)a4 cgiHelper:(id)a5 completionHandler:(id /* block */)a6;
++ (long long)mj_queryAsyncSTTRequestWithAudioID:(id)a0 submitTaskID:(id)a1 contextBuff:(id)a2 isRequestCgi:(BOOL)a3 cgiHelper:(id)a4 completionHandler:(id /* block */)a5;
++ (void)mj_cancelRequest:(id)a0 isRequestCgi:(BOOL)a1 cgiHelper:(id)a2;
++ (void)mj_cancelRequests:(id)a0 isRequestCgi:(BOOL)a1 cgiHelper:(id)a2;
++ (BOOL)isValidVoiceMaterialID:(id)a0;
++ (unsigned long long)voiceTypeWithMaterialID:(id)a0;
++ (BOOL)isTTSType:(id)a0;
++ (BOOL)isVocalEnhancementType:(id)a0;
++ (BOOL)isMiaojianTTSMaterialID:(id)a0;
++ (id)parseRoleIDWithMaterialID:(id)a0;
++ (long long)recorderSampleRate;
++ (long long)sampleRateWithRoleID:(id)a0;
++ (BOOL)isValidAudioSampleRate:(long long)a0;
++ (unsigned long long)hashWithCaptionItems:(id)a0;
++ (BOOL)hasTTSPrefixInFileName:(id)a0;
++ (id)getExtraParamsForMiaojianTTSTimbreEnabled;
++ (long long)requestSpeechRecognitionByILinkWithAudioID:(id)a0 audioData:(id)a1 sliceIndex:(long long)a2 isEnd:(BOOL)a3 completionHandler:(id /* block */)a4;
++ (id)decodePCMDataWithResponseData:(id)a0;
++ (void)cancelAllRequests;
++ (void)cancelRequest:(id)a0;
++ (void)cancelRequests:(id)a0;
++ (BOOL)hasVoiceClonePrefixWithRoleID:(id)a0;
++ (BOOL)isVoiceCloneRoleID:(id)a0;
++ (id)voiceCloneRoleID;
++ (void)saveVoiceCloneRoleIDToMMKV:(id)a0;
++ (void)removeVoiceCloneRoleIDFromMMKV;
++ (BOOL)extendSegmentDurationToAudioDurationForSegmentViewModel:(id)a0 audioFileAtPath:(id)a1;
++ (long long)submitAsyncSTSRequestWithAudioID:(id)a0 audioData:(id)a1 audioDurationMillis:(unsigned long long)a2 roleID:(id)a3 completionHandler:(id /* block */)a4;
++ (long long)queryAsyncSTSRequestWithAudioID:(id)a0 submitTaskID:(id)a1 contextBuff:(id)a2 completionHandler:(id /* block */)a3;
++ (long long)submitAsyncSTTRequestWithAudioID:(id)a0 audioData:(id)a1 audioDurationMillis:(unsigned long long)a2 completionHandler:(id /* block */)a3;
++ (long long)queryAsyncSTTRequestWithAudioID:(id)a0 submitTaskID:(id)a1 contextBuff:(id)a2 completionHandler:(id /* block */)a3;
++ (long long)submitAsyncLongSTTRequestWithAudioID:(id)a0 voiceIDForRequest:(id)a1 audioSlice:(id)a2 audioDurationMillis:(unsigned long long)a3 completionHandler:(id /* block */)a4;
++ (long long)queryAsyncLongSTTRequestWithAudioID:(id)a0 submitTaskID:(id)a1 contextBuff:(id)a2 completionHandler:(id /* block */)a3;
++ (id)fillTTSQueryIntervalWithSubmitRespInfo:(id)a0 text:(id)a1;
++ (id)fillTTSQueryIntervalWithQueryRespInfo:(id)a0;
++ (long long)submitAsyncTTSRequestWithText:(id)a0 roleID:(id)a1 completionHandler:(id /* block */)a2;
++ (long long)queryAsyncTTSRequestWithSubmitTaskID:(id)a0 materialID:(id)a1 completionHandler:(id /* block */)a2;
++ (double)getAudioDurationWithPCMData:(id)a0 sampleRate:(long long)a1 bitsPerChannel:(long long)a2;
++ (id)alignByBytesPerSampleWithPCMData:(id)a0 bytesPerSample:(long long)a1;
++ (id)createZeroValuePCMDataWithPaddingDuration:(double)a0 sampleRate:(long long)a1 bitsPerChannel:(long long)a2;
++ (id)changeSpeedWithPCMData:(id)a0 audioDuration:(double)a1 targetDuration:(double)a2 sampleRate:(long long)a3 bitsPerChannel:(long long)a4;
++ (id)spliceTTSResponsesWithPCMDatas:(id)a0 captionItems:(id)a1 totalDuration:(struct { long long x0; int x1; unsigned int x2; long long x3; })a2 sampleRate:(long long)a3 bitsPerChannel:(long long)a4;
++ (id)splitToSlicesFromAudioData:(id)a0;
++ (long long)requestSpeechCloneRegTextWithCompletionHandler:(id /* block */)a0;
++ (long long)submitAsyncSpeechCloneRequestWithWithAudioID:(id)a0 voiceID:(id)a1 audioSlice:(id)a2 text:(id)a3 extraParams:(id)a4 completionHandler:(id /* block */)a5;
++ (long long)queryAsyncSpeechCloneRequestWithSubmitTaskID:(id)a0 contextBuff:(id)a1 completionHandler:(id /* block */)a2;
++ (long long)submitAsyncSpeechSynthRequestWithSubmitTaskID:(id)a0 text:(id)a1 materialID:(id)a2 completionHandler:(id /* block */)a3;
++ (long long)queryAsyncSpeechSynthRequestWithSubmitTaskID:(id)a0 contextBuff:(id)a1 completionHandler:(id /* block */)a2;
++ (id)addWavHeaderForPCMData:(id)a0 sampleRate:(long long)a1 channelCount:(long long)a2;
+
+@end

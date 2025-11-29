@@ -1,0 +1,74 @@
+@class UIView, NSString, NSArray, ACCTextTypeFaceViewController, ACCTextStyleViewController, UITextView, UIButton, AWETextTemplateController, NSValue, ACCTextStickerEditToolContainerView, ACCTextStickerEditInputHandler;
+@protocol ACCAETextStickerTracker, ACCAETextStickerInputViewDelegate;
+
+@interface ACCAETextStickerInputView : UIView <UITextViewDelegate, AWETextTemplateControllerDelegate, ACCTextStickerEditToolContainerViewDelegate>
+
+@property (copy, nonatomic) NSString *stickerId;
+@property (nonatomic) long long clipIndex;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (retain, nonatomic) UITextView *textView;
+@property (retain, nonatomic) UITextView *dummyTextView;
+@property (retain, nonatomic) UIView *textMaskView;
+@property (retain, nonatomic) NSArray *itemViews;
+@property (retain, nonatomic) NSArray *configTypes;
+@property (retain, nonatomic) ACCTextTypeFaceViewController *stylePickerView;
+@property (retain, nonatomic) ACCTextStyleViewController *fontPickerView;
+@property (nonatomic) long long selectedTab;
+@property (nonatomic) BOOL disableTextTemplate;
+@property (nonatomic) BOOL enableTextRefactor;
+@property (retain, nonatomic) ACCTextStickerEditToolContainerView *toolContainerView;
+@property (retain, nonatomic) AWETextTemplateController *textTemplateView;
+@property (nonatomic) BOOL hasTextTemplateAppear;
+@property (retain, nonatomic) ACCTextStickerEditInputHandler *inputHelper;
+@property (retain, nonatomic) NSString *text;
+@property (readonly, nonatomic) struct _NSRange { unsigned long long x0; unsigned long long x1; } changeRange;
+@property (readonly, nonatomic, getter=isEditing) BOOL editing;
+@property (retain, nonatomic) NSValue *textTemplateContentOffsetValue;
+@property (weak, nonatomic) id<ACCAETextStickerInputViewDelegate> delegate;
+@property (weak, nonatomic) id<ACCAETextStickerTracker> tracker;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)commonTrackParams;
+- (void)setupItems;
+- (void)changeToStickerId:(id)a0;
+- (void)updateTextTemplateWithEffectId:(id)a0 categoryIndex:(long long)a1;
+- (void)beginToEditText;
+- (void)beginToEditTextTemplate;
+- (void)beginToEditStyle;
+- (void)switchToClipAtIndex:(long long)a0 withText:(id)a1;
+- (void)updateFontId:(id)a0;
+- (void)updateWithColor:(id)a0 textStyle:(unsigned long long)a1 textAlignment:(long long)a2;
+- (double)toolContainerViewHeight;
+- (void)refreshToolContentViewWithHeight:(double)a0;
+- (id)initWithStickerId:(id)a0 text:(id)a1 selectConfig:(id)a2 disableTextTemplate:(BOOL)a3 enableTextRefactor:(BOOL)a4;
+- (BOOL)enableTextTemplate;
+- (void)layoutTextViewIfNeeded;
+- (void)switchSelectedTab:(long long)a0;
+- (void)textMaskViewTapped:(id)a0;
+- (id)toolItemViewWithTab:(long long)a0;
+- (void)setupStylePickerView;
+- (void)setupFontPickerView;
+- (void)setupTextTemplateView;
+- (void)keyboardViewTapped:(id)a0;
+- (id)toolItemWitTitle:(id)a0 imageName:(id)a1 sel:(SEL)a2;
+- (void)styleViewTapped:(id)a0;
+- (void)fontViewTapped:(id)a0;
+- (void)templateViewTapped:(id)a0;
+- (id)toolbarTypeValueWithKey:(id)a0;
+- (void)stickerPickerController:(id)a0 didSelectSticker:(id)a1 extraParams:(id)a2 indexPath:(id)a3 categoryIdentifier:(id)a4;
+- (void)stickerPickerController:(id)a0 didDeselectSticker:(id)a1;
+- (void)trackDidDeselectSticker:(id)a0 cancelMethod:(id)a1;
+- (void)switchToToolOption:(unsigned long long)a0;
+- (void).cxx_destruct;
+- (void)endEditing;
+- (void)layoutSubviews;
+- (void)textViewDidChange:(id)a0;
+- (void)textViewDidChangeSelection:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)setupUI;
+- (void)confirmButtonTapped:(id)a0;
+
+@end

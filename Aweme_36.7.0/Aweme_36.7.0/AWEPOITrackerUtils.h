@@ -1,0 +1,96 @@
+@class NSNumber, NSString;
+
+@interface AWEPOITrackerUtils : NSObject <AWEPOITrackerUtilsProtocol>
+
+@property (class, retain) NSNumber *poiClassCode;
+@property (class, readonly) NSString *poiChannelCode;
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)trackerParamsForEnterPOIDetailWithPOIID:(id)a0 enterFrom:(id)a1 enterMethod:(id)a2 extraParams:(id)a3;
++ (void)addPOITrackerInfosForPOIInfo:(id)a0 toParams:(id)a1 enterFrom:(id)a2;
++ (void)addPOITrackerLocalInfoFromModel:(id)a0 toParams:(id)a1;
++ (void)addPOITrackerInfosForPOIInfo:(id)a0 toParams:(id)a1 enterFrom:(id)a2 withAwemeModel:(id)a3;
++ (void)uploadAnchorCoreTrackerWithContext:(id)a0 actionType:(unsigned long long)a1 scene:(unsigned long long)a2;
++ (BOOL)isInTheSmeCityWithCityCode:(id)a0;
++ (id)trackerParamsForEnterPOIDetailWithPOIInfo:(id)a0 enterFrom:(id)a1 enterMethod:(id)a2 extraParams:(id)a3;
++ (void)uploadLocalLifeAnchorSuperviewShowWithAweme:(id)a0 scene:(id)a1;
++ (void)uploadLocalLifeAnchorShowExceptionWithAweme:(id)a0 code:(unsigned long long)a1 scene:(id)a2;
++ (id)serviceTypeStringWithType:(unsigned long long)a0;
++ (id)lifeShareTrackInfoWithSecInfo:(id)a0;
++ (void)addLifeShareExtClientParams:(id)a0 toAweme:(id)a1;
++ (void)updateBcmPageParamsWithAweme:(id)a0 isViewAppear:(BOOL)a1;
++ (void)updateBcmPageParamsWithAweme:(id)a0 params:(id)a1;
++ (id)lifeAnchorCoreBuryPointLogExtraDataWithAweme:(id)a0;
++ (id)lifeShareTrackParamsWithAweme:(id)a0;
++ (void)addShareVideoParamsForFeedPOIAnchorWith:(id)a0 params:(id)a1;
++ (void)addPOITrackerInfosForPOIInfo:(id)a0 toParams:(id)a1;
++ (id)lifeShareTrackParamsWithPOIInfo:(id)a0;
++ (id)lifeShareTrackParamsWithPOIInfo:(id)a0 needStringifyExt:(BOOL)a1;
++ (id)lifeShareTrackParamsWithAweme:(id)a0 needStringifyExt:(BOOL)a1;
++ (void)uploadAnchorNormalTrackerWithContext:(id)a0 actionType:(unsigned long long)a1;
++ (id)trackerParamsForEnterPOIDetailWithPOIItem:(id)a0 enterFrom:(id)a1 enterMethod:(id)a2 extraParams:(id)a3;
++ (void)uploadAnchorGeneralTrackerWithContext:(id)a0 actionType:(unsigned long long)a1 scene:(unsigned long long)a2;
++ (id)lifeAnchorCoreTrackerLogExtraDataWithContext:(id)a0 scene:(unsigned long long)a1;
++ (id)trackerParamsForPOIFromAweme:(id)a0;
++ (id)socialParamsFromSource:(id)a0;
++ (id)extraParamsForClickAndExpandWithAweme:(id)a0;
++ (id)trackParamsForMiniAppCommonParamsWithContext:(id)a0 scene:(unsigned long long)a1;
++ (void)uploadAnchorMiniAppBuryPointIfNeededWithContext:(id)a0 actionType:(unsigned long long)a1 scene:(unsigned long long)a2;
++ (id)p_anchorCoreParamsWithContext:(id)a0 scene:(unsigned long long)a1;
++ (id)p_lifeMallChannelParamsWithContext:(id)a0;
++ (id)p_anchorMiniAppBuryPointCommonParamsWithContext:(id)a0 scene:(unsigned long long)a1;
++ (BOOL)isAnchorHasMinorTags:(id)a0;
++ (id)p_anchorTextTypeShowStatusTrackerParamsWithContext:(id)a0 actionType:(unsigned long long)a1;
++ (BOOL)isUploadShouldShowTracker:(id)a0;
++ (id)p_anchorShouldShowTrackerParamsWithContext:(id)a0;
++ (id)p_anchorNormalTrackerParamsWithContext:(id)a0;
++ (void)setValue:(id)a0 forKey:(id)a1 inParamDict:(id)a2;
++ (id)getCurrentDeviceLocationWithToken:(id)a0 encodeType:(unsigned long long)a1;
++ (id)distanceKmForTrackWithCurrentLocation:(id)a0 latitude:(double)a1 longitude:(double)a2;
++ (BOOL)poiCouponDisplayedForPOI:(id)a0;
++ (long long)isImportantPOI:(id)a0;
++ (id)trackerParamsForPOILocationType:(id)a0;
++ (id)p_anchorCoreTrackerCommonParamsWithContext:(id)a0;
++ (id)p_anchorCoreTrackerForPOICommonParamsWithContext:(id)a0;
++ (id)p_anchorCoreTrackerForTradeCommonParamsWithContext:(id)a0;
++ (id)p_anchorCoreTrackerForPOIListCommonParamsWithContext:(id)a0;
++ (id)p_commentCommonParamsWithContext:(id)a0;
++ (void)addPOITrackerInfosForPOIInfo:(id)a0 toParams:(id)a1 enterFrom:(id)a2 logExtraDict:(id)a3 context:(id)a4 withAwemeModel:(id)a5;
++ (id)baseTrackerParamsForListPOIInfo:(id)a0 enterFrom:(id)a1;
++ (id)trackerParamsForPOITradeInfo:(id)a0;
++ (id)distanceKmForTrackWithLatitude:(double)a0 longitude:(double)a1;
++ (void)p_addLiveRoomInfoToParams:(id)a0 aweme:(id)a1;
++ (void)p_addRelatedToHotInfoToParams:(id)a0 aweme:(id)a1;
++ (void)p_addSeverLifeLogExtraToParams:(id)a0 context:(id)a1;
++ (void)p_addAnchorCardInfoToParams:(id)a0 aweme:(id)a1;
++ (id)p_anchorNormalTrackerForPoiParamsWithContext:(id)a0;
++ (id)p_anchorNormalTrackerForTradeParamsWithContext:(id)a0;
++ (id)lifeAnchorCoreBuryPointLogExtraDataWithAweme:(id)a0 scene:(unsigned long long)a1;
++ (void)uploadLocalLifeAnchorFailShowWithAweme:(id)a0 code:(unsigned long long)a1 scene:(id)a2 params:(id)a3;
++ (id)baseTrackerParamsForListPOIInfo:(id)a0;
++ (BOOL)poiCouponDisplayedForPOIItem:(id)a0;
++ (id)getClueTrackParamsFromUserModel:(id)a0;
++ (void)uploadAnchorRenderTimeWithAweme:(id)a0 params:(id)a1;
++ (id)trackerParamsForPOISuffix:(id)a0;
++ (id)trackerParamsForPOISuffixType:(id)a0;
++ (id)trackerParamsForPOIMinorTags:(id)a0;
++ (double)refreshTimeInterval;
++ (id)getCurrentDeviceLocationWithToken:(id)a0 auth:(id)a1 encodeType:(unsigned long long)a2;
++ (id)_lastTimestampMap;
++ (id)_deviceLocationMap;
++ (BOOL)ifBizDowngradeGetCurrentLocation;
++ (id)getDowngradeCurrentLocation;
++ (void)addPOITrackerLocalInfoFromModel:(id)a0 toParams:(id)a1 withLogExtraDict:(id)a2;
++ (id)lifeShareExtWithAweme:(id)a0;
++ (id)lifeShareTrackParamsWithPOIInfo:(id)a0 lifeShareExtByClient:(id)a1 needStringifyExt:(BOOL)a2;
++ (id)lifeShareTrackParamsWithPOIInfo:(id)a0 lifeShareExtByClient:(id)a1;
++ (id)lifeShareTrackSecInfoWithInfo:(id)a0;
++ (id)p_anchorTrackerParamsWithContext:(id)a0;
++ (id)getCurrentLocation;
+
+
+@end

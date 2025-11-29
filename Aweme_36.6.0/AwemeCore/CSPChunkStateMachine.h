@@ -1,0 +1,83 @@
+@class NSHashTable, NSError, TTHttpResponse, NSString, CSPChunkStateMachineMonitorRecord, CSPChunkRequestManager, NSDictionary, NSNumber;
+@protocol CSPCommonRequestInfo, CSPChunkResponseSerializer, CSPChunkResponse;
+
+@interface CSPChunkStateMachine : NSObject <CSPChunkRequestDelegate> {
+    struct _opaque_pthread_rwlock_t { long long x0; char x1[192]; } *_stateLock;
+    struct _opaque_pthread_rwlock_t { long long x0; char x1[192]; } *_receiveIdxLock;
+    struct _opaque_pthread_rwlock_t { long long x0; char x1[192]; } *_latestErrorLock;
+    struct _opaque_pthread_rwlock_t { long long x0; char x1[192]; } *_latestResponseLock;
+    unsigned long long _currentState;
+}
+
+@property (retain, nonatomic) CSPChunkRequestManager *manager;
+@property (weak, nonatomic) id<CSPChunkResponseSerializer> responseSerializer;
+@property (retain, nonatomic) NSHashTable *delegates;
+@property (retain, nonatomic) id<CSPChunkResponse> latestResponse;
+@property (retain, nonatomic) NSError *latestError;
+@property (copy, nonatomic) NSDictionary *mergeAppendBaseJSON;
+@property (retain, nonatomic) NSNumber *thisACKType;
+@property (nonatomic) long long receiveIdx;
+@property (readonly, nonatomic) double numberOfBytesReceived;
+@property (readonly, nonatomic) BOOL predictDidHit;
+@property (readonly, nonatomic) CSPChunkStateMachineMonitorRecord *monitorRecord;
+@property (readonly, nonatomic) TTHttpResponse *ttResponse;
+@property (readonly) id<CSPCommonRequestInfo> requestInfo;
+@property (nonatomic) BOOL enableMultiAppendChunk;
+@property (nonatomic) BOOL cacheCallbackMode;
+@property (nonatomic) BOOL highNetworkPriority;
+@property (nonatomic) BOOL dataProcessAndCallbackSeparate;
+@property (nonatomic) BOOL fixReceivingEOFEarly;
+@property (nonatomic) BOOL fixBreakIllegalContent;
+@property (nonatomic) BOOL fixGlobalChunkReceivedTS;
+@property (retain, nonatomic) Class requestSerializerClass;
+@property (retain, nonatomic) NSNumber *customProtectTimeout;
+@property (retain, nonatomic) NSNumber *customHeaderReceiveTimeout;
+@property (retain, nonatomic) NSNumber *customReadBodyTimeout;
+@property (nonatomic) BOOL highThreadPriority;
+@property (nonatomic) double defaultThreadPriority;
+@property (nonatomic) BOOL highRequestMethodPriority;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didReceiveJSON:(id)a0;
+- (void)didReceiveAllData;
+- (void)chunkRequestDidEndWithCommonResponse:(id)a0 withError:(id)a1 forceCanceled:(BOOL)a2;
+- (void)clearBeforeNewLink;
+- (void)willStartReadChunk;
+- (void)didStartReadChunk;
+- (void)willEndReadChunk:(long long)a0;
+- (void)didEndReadChunk:(long long)a0;
+- (id)initWithResponseSerializer:(id)a0;
+- (void)startNewStreamWithUrlString:(id)a0 params:(id)a1 method:(id)a2 needCommonParams:(BOOL)a3 headerField:(id)a4 enableHttpCache:(BOOL)a5 uploadBlock:(id /* block */)a6;
+- (void)forceStreamEnd;
+- (void)startNewStreamWithUrlString:(id)a0 params:(id)a1 method:(id)a2 needCommonParams:(BOOL)a3 headerField:(id)a4 enableHttpCache:(BOOL)a5;
+- (void)registerThreadBlockMonitor:(id)a0;
+- (id)p_parseACKFromJSONDictionary:(id)a0;
+- (unsigned long long)p_parseResultStatusFromJSONDictionary:(id)a0;
+- (id)chunkTimeStamp;
+- (BOOL)p_enableMultiAppendMergeOptimize;
+- (void)p_addReceiveIdx:(BOOL)a0;
+- (id)p_parseResponseFromJSONDictionary:(id)a0;
+- (void)p_handlePatchData:(id)a0;
+- (void)p_handlePatchOperationsData:(id)a0;
+- (void)p_handleGlobalChunkData:(id)a0;
+- (id)p_numberOfBytesReceived;
+- (void)p_handlePredictResponse:(id)a0;
+- (void)p_handleACK:(BOOL)a0 extraInfo:(id)a1;
+- (void)p_handleReplaceFirstScreenResponse:(id)a0;
+- (void)p_handleMachineStateFlowError:(unsigned long long)a0 withResultStatus:(unsigned long long)a1;
+- (id)p_parseACKExtraFromJSONDictionary:(id)a0;
+- (void)p_handleSyncPageParams:(id)a0;
+- (void)p_handleAppendMoreResponse:(id)a0;
+- (void)registerStateDelegate:(id)a0;
+- (void)removeStateDelegate:(id)a0;
+- (void)startNewStreamWithUrlString:(id)a0 params:(id)a1 method:(id)a2;
+- (void)triggerCallback:(id /* block */)a0;
+- (void)setCurrentState:(unsigned long long)a0;
+- (void).cxx_destruct;
+- (unsigned long long)currentState;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,98 @@
+@class NSString, NSMutableDictionary, NSMutableSet, NSObject, NSMutableArray;
+@protocol OS_dispatch_queue;
+
+@interface WAContactMgr : MMUserService <MMServiceProtocol> {
+    NSObject<OS_dispatch_queue> *_worker_queue;
+    NSMutableDictionary *_dicContactCache;
+    NSMutableDictionary *_dicAppid2UsernameCache;
+    NSMutableArray *_arrSingleAttrSyncWait;
+    NSMutableArray *_arrSingleAttrSyncRequest;
+    unsigned int _singleAttrSyncRequestInterval;
+    unsigned int _singleAttrSyncRequestIntervalWhenHitInvalidateContactCmd;
+    NSMutableArray *_arrBatchAttrSyncWait;
+    NSMutableSet *_setBatchAttrSyncRequest;
+    unsigned int _batchAttrSyncRequestInterval;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isKeyValidWithKey:(id)a0 keyType:(unsigned long long)a1;
+
+- (id)getLocalBackUpContactWithUsername:(id)a0;
+- (id)getLocalBackUpContactWithAppid:(id)a0;
+- (BOOL)saveLocalBackUpContact:(id)a0;
+- (BOOL)deleteLocalBackUpContactWithUsername:(id)a0;
+- (id)getCContactWithWeAppUserName:(id)a0;
+- (id)getAllCContactOfWeApp;
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (id)getWeAppContactWithKey:(id)a0 type:(unsigned long long)a1;
+- (id)getWeAppContact:(id)a0;
+- (id)getWeAppContactWithUsrName:(id)a0 appId:(id)a1;
+- (id)getAllWeAppContact;
+- (id)getAllWeAppUserName;
+- (void)deleteWeAppContactList:(id)a0;
+- (void)updateWeAppContactWithKey:(id)a0 updateType:(unsigned long long)a1;
+- (void)updateWeAppContactWithKey:(id)a0 updateType:(unsigned long long)a1 isForce:(BOOL)a2 requestSource:(id)a3;
+- (void)updateWeAppContact:(id)a0;
+- (void)updateWeAppContact:(id)a0 isForce:(BOOL)a1;
+- (void)updateWeAppContactWithAppid:(id)a0;
+- (void)updateWeAppContactWithAppid:(id)a0 isForce:(BOOL)a1;
+- (void)batchUpdateWeAppContact:(id)a0;
+- (void)batchUpdateWeAppContactWithArrAppid:(id)a0 completionHandler:(id /* block */)a1;
+- (BOOL)modifyWxAppOptWithBitMask:(unsigned int)a0 bitValue:(unsigned int)a1 userName:(id)a2;
+- (BOOL)modifyHeadImageStatus:(id)a0 withUserName:(id)a1;
+- (BOOL)modifyLastLaunchTime:(unsigned int)a0 withUserName:(id)a1;
+- (void)updateContactCacheAndCallModifyContact:(id)a0;
+- (BOOL)updateContactListToDBAndCache:(id)a0;
+- (void)notifyContactListModify:(id)a0;
+- (void)mainthread_callExtensionModifyContact:(id)a0;
+- (void)mainthread_callExtensionModifyContactList:(id)a0;
+- (void)mainthread_callExtensionDeleteContact:(id)a0;
+- (id)getContactFromCacheWithKey:(id)a0 type:(unsigned long long)a1;
+- (id)getContactFromCache:(id)a0;
+- (id)getContactFromCacheWithAppid:(id)a0;
+- (void)setContactListToCache:(id)a0;
+- (void)removeContactListInCache:(id)a0;
+- (void)reloadOnConfigUpdated;
+- (void)loadWxaAttrSyncRequestInterval;
+- (id)getNewContactWithUserName:(id)a0 bizAttr:(id)a1;
+- (void)updateContact:(id)a0 withBizAttr:(id)a1;
+- (void)mainThread_updateWeAppContact:(id)a0;
+- (void)markWaitTaskBeForcedUpdated:(id)a0;
+- (BOOL)checkIsInSingleRequestingQueue:(id)a0;
+- (BOOL)checkIsInSingleWaitingQueue:(id)a0;
+- (BOOL)checkIsInQueue:(id)a0 withTask:(id)a1;
+- (void)checkWxaAttrSyncWaitQueue;
+- (void)removeUpdateTask:(id)a0;
+- (BOOL)isContactInUpdateInterval:(id)a0;
+- (BOOL)isUsernameInContactUpdateInterval:(id)a0;
+- (BOOL)isBufferInUpdateInterval:(id)a0;
+- (BOOL)isBufferInBatchUpdateInterval:(id)a0;
+- (BOOL)isBufferInUpdateIntervalByPrefetchInvalidateContact:(id)a0;
+- (BOOL)isUsernameHasHigherRemoteContactVersion:(id)a0 getReportId:(unsigned int *)a1;
+- (id)getLocalBizAttrSyncBufferForUsername:(id)a0;
+- (id)getDBBizAttrSyncBufferForUsername:(id)a0;
+- (BOOL)requestWxaAttrSync:(id)a0;
+- (void)onResponseWxaAttrSync:(id)a0;
+- (void)reportResponse:(id)a0;
+- (void)executeIssueContactCmd:(id)a0;
+- (BOOL)checkResponseVersion:(id)a0 username:(id)a1 report:(unsigned int)a2;
+- (void)processWxaAttrSyncResponse:(id)a0 completeHandlerOnMainThread:(id /* block */)a1;
+- (void)workThread_processWxaAttrSyncResponse:(id)a0 withUserName:(id)a1 requestBuffer:(id)a2 completeHandlerOnMainThread:(id /* block */)a3;
+- (void)setHeadImageStatusForNewContact:(id)a0 withOldContact:(id)a1;
+- (void)mainThread_batchUpdateWeAppContactWithArrAppid:(id)a0 completionHandler:(id /* block */)a1;
+- (void)mainThread_batchUpdateWeAppContact:(id)a0;
+- (void)checkBatchWxaAttrSyncWaitQueue;
+- (BOOL)requestBatchWxaAttrSync:(id)a0 versionList:(id)a1;
+- (void)onResponseBatchWxaAttrSync:(id)a0;
+- (void)processBatchWxaAttrSyncWithRequestedBufferDic:(id)a0 response:(id)a1 completeHandlerOnMainThread:(id /* block */)a2;
+- (void)workThread_processBatchWxaAttrSyncWithRequestedBufferDic:(id)a0 response:(id)a1 completeHandlerOnMainThread:(id /* block */)a2;
+- (void)onCgiResponse:(id)a0 forEvent:(unsigned int)a1;
+- (id)getUsernameForAppid:(id)a0;
+- (void).cxx_destruct;
+
+@end

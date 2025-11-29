@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface HTSLiveMatchEffect : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL showEffect;
+@property (retain, nonatomic) HTSLiveImage *effectResource;
+@property (nonatomic) BOOL hasEffectResource;
+
++ (id)descriptor;
+
+@end

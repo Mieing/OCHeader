@@ -1,0 +1,74 @@
+@class BDXBridgeEventSubscriber, NSDictionary, UITableView, NSMutableArray, UIButton, UIView, NSString, IESLiveTimeNoticeViewModel, IESLiveWebpLoadingView, IESLiveAnnouncementPromptView, IESLiveAnnouncementViewModel, IESLiveActionSheetPresentViewController, UIImageView;
+
+@interface IESLiveAnnouncementEditPanelView : UIView <UITableViewDelegate, UITableViewDataSource, IESLiveAnnouncementTimeNoticeReaction, IESLiveAnnouncementEditContentCellDelegate>
+
+@property (retain, nonatomic) UIImageView *questionImageView;
+@property (retain, nonatomic) IESLiveAnnouncementPromptView *promptView;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) NSMutableArray *itemIndexArray;
+@property (retain, nonatomic) NSDictionary *itemDict;
+@property (retain, nonatomic) IESLiveAnnouncementViewModel *viewModel;
+@property (retain, nonatomic) IESLiveTimeNoticeViewModel *timeNoticeViewModel;
+@property (retain, nonatomic) IESLiveActionSheetPresentViewController *timeSettingViewPresentor;
+@property (retain, nonatomic) IESLiveActionSheetPresentViewController *dateViewPresentor;
+@property (retain, nonatomic) IESLiveActionSheetPresentViewController *moreSettingsPresentor;
+@property (nonatomic) BOOL iskeyboardShown;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (copy, nonatomic) id /* block */ finishBlock;
+@property (retain, nonatomic) IESLiveWebpLoadingView *loadingView;
+@property (retain, nonatomic) UIButton *submitButton;
+@property (retain, nonatomic) UIView *topContainer;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *eventSubscriber;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)onBackButtonTapped;
+- (void)keyBoardWillShow:(id)a0;
+- (void)keyBoardWillHidden:(id)a0;
+- (void)refreshSubmitButtonState;
+- (void)showQuitAlert;
+- (void)openNewPageIfNeeded;
+- (id)openLiveTime;
+- (id)weekSchedule;
+- (id)relatedLuckyMoney;
+- (id)announcementContent;
+- (id)moreSettings;
+- (void)subscribeLuckyMoneyMessge;
+- (void)deleteCurrentAnnouncement;
+- (void)doFinishCallback;
+- (id)createTimeNoticeViewModel;
+- (id)datesStringWithSelectedDays:(id)a0;
+- (void)refreshMaskLayer:(id)a0;
+- (id)getExpireDateText:(id)a0;
+- (id)expireTimeSettingView;
+- (void)presentSettingsView:(id)a0;
+- (id)getIndexPathWithItemType:(unsigned long long)a0;
+- (void)changeRelatedLuckyMoneyInfoAndAction:(id)a0;
+- (void)showLuckyMoneyRelateActionView;
+- (id)strWithWeekDay:(long long)a0;
+- (void)saveCurrentAnnouncement;
+- (void)updateCellDetailText:(id)a0;
+- (void)openLiveTimeDataChanged:(id)a0 update:(BOOL)a1;
+- (void)weekScheduleDataChanged:(id)a0 update:(BOOL)a1;
+- (void)onTextChanged;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 viewModel:(id)a1 finishBlock:(id /* block */)a2;
+- (void)showWithHostVC:(id)a0 viewModel:(id)a1;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (void)dismissWithCompletion:(id /* block */)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)dealloc;
+- (id)expireTime;
+- (void)startLoadingAnimation;
+- (void)stopLoadingAnimation;
+- (void)setUpContent;
+
+@end

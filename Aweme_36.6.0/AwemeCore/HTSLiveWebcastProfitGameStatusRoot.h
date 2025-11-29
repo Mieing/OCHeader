@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastProfitGameStatusRoot : GPBRootObject
+
+@end

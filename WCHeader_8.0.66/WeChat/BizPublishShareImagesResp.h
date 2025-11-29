@@ -1,0 +1,3 @@
+@interface BizPublishShareImagesResp : BaseResp
+
+@end

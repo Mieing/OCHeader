@@ -1,0 +1,75 @@
+@class AWESearchScanOCRContext, UIImageView, NSArray, UIView, NSString;
+@protocol AWESearchScanOCRContainerProtocol;
+
+@interface AWESearchScanOCRController : NSObject <UIGestureRecognizerDelegate, AWESearchScanOCRControllerProtocol>
+
+@property (retain, nonatomic) AWESearchScanOCRContext *context;
+@property (weak, nonatomic) UIView<AWESearchScanOCRContainerProtocol> *container;
+@property (retain, nonatomic) UIView *startCursor;
+@property (retain, nonatomic) UIView *endCursor;
+@property (retain, nonatomic) UIImageView *startCursorIcon;
+@property (retain, nonatomic) UIImageView *endCursorIcon;
+@property (retain, nonatomic) UIImageView *selectArrowUpIcon;
+@property (retain, nonatomic) UIImageView *selectArrowDownIcon;
+@property (retain, nonatomic) UIImageView *copyArrowUpIcon;
+@property (retain, nonatomic) UIImageView *copyArrowDownIcon;
+@property (retain, nonatomic) UIView *maskContainerView;
+@property (nonatomic) unsigned long long currentTapOCRIndex;
+@property (copy, nonatomic) NSArray *viewArray;
+@property (copy, nonatomic) NSArray *rectArray;
+@property (nonatomic) BOOL fromClickSelectText;
+@property (nonatomic) BOOL hasAddViews;
+@property (nonatomic) unsigned long long startIndex;
+@property (nonatomic) unsigned long long endIndex;
+@property (nonatomic) unsigned long long stableIndex;
+@property (nonatomic) unsigned long long dynamicIndex;
+@property (nonatomic) unsigned long long startIndexBeforePan;
+@property (nonatomic) unsigned long long endIndexBeforePan;
+@property (readonly, nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } OCRRect;
+@property (copy, nonatomic) NSString *OCRText;
+@property (retain, nonatomic) UIView *tapView;
+@property (retain, nonatomic) UIView *textSelectView;
+@property (retain, nonatomic) UIView *textCopyView;
+@property (copy, nonatomic) id /* block */ searchOCRText;
+@property (copy, nonatomic) id /* block */ willShowOCRViewBlock;
+@property (copy, nonatomic) id /* block */ clickSelectTextBlock;
+@property (copy, nonatomic) id /* block */ willShowTextSelectViewBlock;
+@property (copy, nonatomic) id /* block */ didClickTextSelectViewBlock;
+@property (copy, nonatomic) id /* block */ willShowTextCopyViewBlock;
+@property (copy, nonatomic) id /* block */ didClickTextCopyViewBlock;
+@property (copy, nonatomic) id /* block */ didStopCursorDraggingBlock;
+@property (copy, nonatomic) id /* block */ clickTapOCRView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)handleCursorPan:(id)a0;
+- (void)setOCRViewHidden:(BOOL)a0;
+- (void)hiddenTextSelectView;
+- (void)updateTextSelectViewWithCircleRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)switchOCREnable:(BOOL)a0;
+- (void)updateViewsWithCircleRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)updateViewsWithContext:(id)a0;
+- (void)debug_addOCRView;
+- (void)applyMaskWithZero;
+- (void)hiddenTextCopyView;
+- (void)updateViewsWithFirstIndex:(unsigned long long)a0 lastIndex:(unsigned long long)a1 showCopyView:(BOOL)a2;
+- (void)impUpdateViewsWithFirstIndex:(unsigned long long)a0 lastIndex:(unsigned long long)a1;
+- (void)updateCopyViewWithFirstIndex:(unsigned long long)a0 lastIndex:(unsigned long long)a1;
+- (void)impApplyMaskWithRects:(id)a0;
+- (unsigned long long)findIndexWithLocation:(struct CGPoint { double x0; double x1; })a0 isReverse:(BOOL)a1;
+- (void)updateIndexIsReverse:(BOOL)a0;
+- (void)copyOCRTextToPasteboard:(id)a0;
+- (void)handleSelectTextAction:(id)a0;
+- (id)impViewArray;
+- (id)impRectArray;
+- (void)applyMaskWithRects:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)setupUI;
+- (void)handleTap:(id)a0;
+- (id)circleView;
+
+@end

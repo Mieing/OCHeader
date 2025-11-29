@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBTeamPlayConfig_TeamPlayJoinRoomSchema : GPBMessage
+
+@property (copy, nonatomic) NSString *cloudGame;
+@property (copy, nonatomic) NSString *mobileGame;
+
++ (id)descriptor;
+
+@end

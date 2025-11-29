@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceGetMVTabListResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceGetMVTabListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetMVTabListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESFeatureRecordModel : NSObject
+
+@end

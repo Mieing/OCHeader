@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface DisableInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL disableEditTitle;
+@property (nonatomic) BOOL disableEditCover;
+@property (copy, nonatomic) NSString *disableEditTitleToast;
+@property (copy, nonatomic) NSString *disableEditCoverToast;
+
++ (id)descriptor;
+
+@end

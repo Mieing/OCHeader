@@ -1,0 +1,3 @@
+@interface HTSLiveGameBackgroundImageRoot : GPBRootObject
+
+@end

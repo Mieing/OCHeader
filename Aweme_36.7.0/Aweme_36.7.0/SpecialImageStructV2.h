@@ -1,0 +1,24 @@
+@class ProductCommentImageInfoV2, NSString, ProductImagePriceInfoV2, ImageDescInfoV2, LifeCardTransImageInfoStructV2, LifeEvaluationImageInfoV2;
+
+@interface SpecialImageStructV2 : GPBMessage
+
+@property (retain, nonatomic) ImageDescInfoV2 *descInfo;
+@property (nonatomic) BOOL hasDescInfo;
+@property (retain, nonatomic) ProductImagePriceInfoV2 *productInfo;
+@property (nonatomic) BOOL hasProductInfo;
+@property (copy, nonatomic) NSString *detailSchema;
+@property (nonatomic) BOOL hasDetailSchema;
+@property (nonatomic) int imageType;
+@property (nonatomic) BOOL hasImageType;
+@property (retain, nonatomic) LifeEvaluationImageInfoV2 *lifeEvaluationInfo;
+@property (nonatomic) BOOL hasLifeEvaluationInfo;
+@property (copy, nonatomic) NSString *extraInfo;
+@property (nonatomic) BOOL hasExtraInfo;
+@property (retain, nonatomic) ProductCommentImageInfoV2 *productComment;
+@property (nonatomic) BOOL hasProductComment;
+@property (retain, nonatomic) LifeCardTransImageInfoStructV2 *lifeCardTransImageInfo;
+@property (nonatomic) BOOL hasLifeCardTransImageInfo;
+
++ (id)descriptor;
+
+@end

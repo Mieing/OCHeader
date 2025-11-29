@@ -1,0 +1,83 @@
+@class NSString, NSDate;
+
+@interface TIMXMessageNewPropertyORM : TIMXBaseORM <WCTTableCoding, TIMXMessageNewPropertyModelProtocol>
+
+@property (retain, nonatomic) NSString *belongingMessageID;
+@property (retain, nonatomic) NSString *belongingConversationID;
+@property (retain, nonatomic) NSString *propertyKey;
+@property (retain, nonatomic) NSString *idempotentID;
+@property (nonatomic) long long sender;
+@property (retain, nonatomic) NSString *senderSecID;
+@property (retain, nonatomic) NSDate *createdTime;
+@property (retain, nonatomic) NSString *value;
+@property (nonatomic) long long needDelete;
+@property (nonatomic) long long version;
+@property (nonatomic) long long status;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)senderSecID;
++ (id)__wcdbtyper;
++ (const void *)objectRelationalMappingForWCDB;
++ (const void *)AllProperties;
++ (const void *)AnyProperty;
++ (id /* block */)PropertyNamed;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (const void *)objectRelationalMapping;
++ (id)allBridgeProperties;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (const void *)__wcdb_synthesize_11:(void *)a0;
++ (const void *)__wcdb_synthesize_13:(void *)a0;
++ (const void *)__wcdb_synthesize_15:(void *)a0;
++ (const void *)__wcdb_synthesize_17:(void *)a0;
++ (const void *)__wcdb_synthesize_19:(void *)a0;
++ (const void *)__wcdb_synthesize_21:(void *)a0;
++ (void)__wcdb_index_31:(void *)a0;
++ (const void *)ss_version;
++ (id)swift_ss_version;
++ (const void *)ss_status;
++ (id)swift_ss_status;
++ (const void *)idempotentID;
++ (const void *)needDelete;
++ (const void *)ss_value;
++ (id)swift_ss_value;
++ (const void *)belongingConversationID;
++ (const void *)belongingMessageID;
++ (const void *)ss_belongingConversationID;
++ (const void *)ss_belongingMessageID;
++ (id)swift_ss_belongingConversationID;
++ (id)swift_ss_belongingMessageID;
++ (const void *)ss_propertyKey;
++ (const void *)ss_idempotentID;
++ (const void *)ss_sender;
++ (const void *)ss_senderSecID;
++ (const void *)ss_createdTime;
++ (const void *)ss_needDelete;
++ (id)swift_ss_propertyKey;
++ (id)swift_ss_idempotentID;
++ (id)swift_ss_sender;
++ (id)swift_ss_senderSecID;
++ (id)swift_ss_createdTime;
++ (id)swift_ss_needDelete;
++ (void)__wcdb_table_constraint_23:(void *)a0;
++ (void)__wcdb_table_constraint_25:(void *)a0;
++ (void)__wcdb_table_constraint_27:(void *)a0;
++ (void)__wcdb_table_constraint_29:(void *)a0;
++ (const void *)version;
++ (const void *)sender;
++ (const void *)value;
++ (const void *)allProperties;
++ (const void *)createdTime;
++ (const void *)status;
++ (const void *)propertyKey;
+
+- (void)createPropertyORMWithPBNPropertyItem:(id)a0 withKey:(id)a1 withMessageID:(id)a2 withConversationID:(id)a3;
+- (void).cxx_destruct;
+- (id)initWithRootObject:(id)a0;
+
+@end

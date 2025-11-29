@@ -1,0 +1,14 @@
+@class HTSLiveCommon, HTSLiveText;
+
+@interface HTSLiveFansclubGuideMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveText *title;
+@property (nonatomic) BOOL hasTitle;
+@property (retain, nonatomic) HTSLiveText *subTitle;
+@property (nonatomic) BOOL hasSubTitle;
+
++ (id)descriptor;
+
+@end

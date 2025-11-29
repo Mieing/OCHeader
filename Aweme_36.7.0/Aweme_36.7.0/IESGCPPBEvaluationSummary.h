@@ -1,0 +1,13 @@
+@interface IESGCPPBEvaluationSummary : GPBMessage
+
+@property (nonatomic) double avgGrade;
+@property (nonatomic) long long total;
+@property (nonatomic) BOOL isEvaluated;
+@property (nonatomic) int hiddenEvaluation;
+@property (nonatomic) int handleEvaluation;
+@property (nonatomic) BOOL hiddenCommentSummary;
+@property (nonatomic) BOOL hiddenTotal;
+
++ (id)descriptor;
+
+@end

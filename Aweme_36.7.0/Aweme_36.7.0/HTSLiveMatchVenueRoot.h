@@ -1,0 +1,3 @@
+@interface HTSLiveMatchVenueRoot : GPBRootObject
+
+@end

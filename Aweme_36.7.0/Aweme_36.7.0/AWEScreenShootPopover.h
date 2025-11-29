@@ -1,0 +1,73 @@
+@class NSTimer, AWEAwemeModel, UIView, NSString, NSMutableDictionary, UIButton, NSMutableArray, AWEScreenShootPopoverCoverView;
+
+@interface AWEScreenShootPopover : UIView <AWEScreenShootPopoverCoverViewDelegate, UIGestureRecognizerDelegate, CAAnimationDelegate>
+
+@property (retain, nonatomic) NSTimer *autoHideTimer;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIButton *extraButton;
+@property (nonatomic) double popoverHeight;
+@property (nonatomic) double popoverWidth;
+@property (nonatomic) double leftRightDistance;
+@property (nonatomic) BOOL popoverLeft;
+@property (copy, nonatomic) id /* block */ dismissCompletion;
+@property (retain, nonatomic) NSMutableDictionary *actionTitleDic;
+@property (nonatomic) BOOL isClickImage;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (copy, nonatomic) NSString *searchContent;
+@property (copy, nonatomic) NSString *searchIntentTrack;
+@property (copy, nonatomic) NSString *searchIntentDataText;
+@property (copy, nonatomic) NSString *searchIntentDataIntent;
+@property (nonatomic) unsigned long long searchIntent;
+@property (nonatomic) BOOL commentVCShow;
+@property (nonatomic) unsigned long long currentHighlightSearchStyle;
+@property (retain, nonatomic) NSMutableArray *panelOutActionArray;
+@property (retain, nonatomic) AWEScreenShootPopoverCoverView *coverView;
+@property (nonatomic) double autoDismissTime;
+@property (nonatomic) BOOL hasSearchIcon;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)trackParams;
+- (void)showOnView:(id)a0 withCover:(BOOL)a1 withAnimated:(BOOL)a2;
+- (void)startAutoHideIfNeeded;
+- (id)getHideAnimation;
+- (void)coverViewDidHit;
+- (id)getStringByIntent:(unsigned long long)a0;
+- (void)p_searchButtonClicked;
+- (id)imageForSearch;
+- (void)p_shareButtonClicked;
+- (void)p_reportButtonClicked;
+- (id)panelListArray;
+- (id)initWithModel:(id)a0 withCommentVCShow:(BOOL)a1;
+- (unsigned long long)setupHighlightSearchStyle;
+- (void)setupIntentData;
+- (BOOL)canUseHighlightSearchPopoverUI;
+- (void)setupHighlightSearchPopoverUI;
+- (BOOL)shouldHideSearchBtn;
+- (BOOL)shouldHideClientServiceBtn;
+- (void)clickPhotoShareTrack;
+- (void)clickFeedBackTrack;
+- (void)jumpToScanPage;
+- (void)clickSearchSimilarTrack;
+- (void)cancelSearchIconTrack;
+- (void)coverOnView:(id)a0;
+- (id)p_fetchScreenShootPopoverHighlightSearchStyleNewText;
+- (void)p_searchButtonClickedWithImage;
+- (void)p_shareButtonClickedCanShareOutside;
+- (unsigned long long)p_fetchSearchIntent;
+- (void)p_fetchIntentData;
+- (id)addButtonWithActionType:(unsigned long long)a0;
+- (void)setupUIWithThumbnailStrongButton;
+- (void)setupUIWithThumbnail;
+- (void)setupUIWithoutThumbnail;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (void)layoutSubviews;
+- (void)dismiss:(id /* block */)a0;
+- (void)setupUI;
+- (void)didPan:(id)a0;
+
+@end

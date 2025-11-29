@@ -1,0 +1,3 @@
+@interface InteractionSecretChatApiRoot : GPBRootObject
+
+@end

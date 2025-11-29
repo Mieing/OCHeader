@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AccountInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *account;
+@property (nonatomic) long long fansNum;
+@property (copy, nonatomic) NSString *fansNumStr;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,82 @@
+@class NSDictionary, NSMutableArray;
+
+@interface LSSConfigurationManager : NSObject
+
+@property (nonatomic) int udpProbeMode;
+@property (nonatomic) BOOL canUseIpv6Address;
+@property (nonatomic) int udpProbeResult;
+@property (nonatomic) BOOL shouldForbidUseLocalDns;
+@property (nonatomic) int shouldSleepTimeInForbidLocalDnsMode;
+@property (nonatomic) BOOL shouldEnablePersonalTransParmas;
+@property (retain, nonatomic) NSDictionary *transInitParamsMap;
+@property (nonatomic) float maxBandWidthMultiple;
+@property (nonatomic) float minBandWidthMultiple;
+@property (nonatomic) BOOL shouldEnablePitaya;
+@property (nonatomic) BOOL roomInfoPeconnEnabled;
+@property (nonatomic) BOOL enableSetConfigToLiveIO;
+@property (nonatomic) BOOL enableSetDeviceInfo;
+@property (copy, nonatomic) NSDictionary *settingsConfig;
+@property (nonatomic) BOOL shouldEnableDynamicSR;
+@property (nonatomic) float lowCpuRate;
+@property (nonatomic) float highCpuRate;
+@property (nonatomic) int lowAvaliableMemory;
+@property (nonatomic) int highAvaliableMemory;
+@property (nonatomic) float lowGpuRate;
+@property (nonatomic) float highGpuRate;
+@property (nonatomic) float lowBatteryLevel;
+@property (nonatomic) float highBatteryLevel;
+@property (nonatomic) float lowThermalLevel;
+@property (nonatomic) float highThermalLevel;
+@property (nonatomic) BOOL shouldEnableStartPlayBufferStrategy;
+@property (nonatomic) double attenuationCoefficient;
+@property (nonatomic) int attenuationTimeOffset;
+@property (nonatomic) int maxStartPlayBuffer;
+@property (nonatomic) int minStartPlayBuffer;
+@property (nonatomic) BOOL shouldEnableNetConnectionTypeStrategy;
+@property (retain, nonatomic) NSDictionary *netConnectionTypeStrategyMap;
+@property (nonatomic) BOOL shouldEnableGetHttpDnsIpFirstResponse;
+@property (nonatomic) BOOL shouldEnableGetUidParameter;
+@property (nonatomic) BOOL settingsMgrEnabled;
+@property (nonatomic) BOOL enableTopN;
+@property (nonatomic) int collectTime;
+@property (nonatomic) BOOL nativeRequestEnabled;
+@property (nonatomic) BOOL getHotDomains;
+@property (nonatomic) int getHotDomainsInterval;
+@property (nonatomic) int requiredIpv6IpCount;
+@property (nonatomic) int requiredIpv4IpCount;
+@property (nonatomic) int maxRetryTimes;
+@property (nonatomic) long long autoRetrySyncInterval;
+@property (nonatomic) BOOL retryRequestEnabled;
+@property (nonatomic) BOOL enableNewNativeArch;
+@property (nonatomic) BOOL enableNativeNodeOptimize;
+@property (readonly, nonatomic) BOOL enablePreConnect;
+@property (readonly, nonatomic) BOOL shouldUseMonitorDnsTimeout;
+@property (readonly, nonatomic) BOOL shouldForceUpdateLocalDns;
+@property (readonly, nonatomic) double localDNSTimeoutInSeconds;
+@property (readonly, nonatomic, getter=isGlobalHTTPDNSEnabled) BOOL globalHTTPDNSEnabled;
+@property (readonly, nonatomic) BOOL shouldUseIPv6;
+@property (readonly, nonatomic) BOOL shouldUseHTTPDNSForPull;
+@property (readonly, nonatomic) BOOL shouldUseHTTPDNSForPush;
+@property (readonly, nonatomic) BOOL shouldUseHTTPDNSForLocalDnsTimeoutNode;
+@property (readonly, nonatomic) BOOL shouldEnablePerformanceOptimization;
+@property (readonly, nonatomic) BOOL shouldUseIpv6Probe;
+@property (readonly, nonatomic) BOOL shouldCollectPerformanceData;
+@property (readonly, nonatomic) BOOL disableLocalDNSLock;
+@property (readonly, nonatomic) BOOL globalShouldUseUdpProbe;
+@property (retain, nonatomic) NSMutableArray *udpProbeInfosArr;
+@property (nonatomic) BOOL enableHttpDns;
+@property (nonatomic) double localDNSTimeout;
+@property (nonatomic) BOOL enableMonitorDnsTimeout;
+@property (nonatomic) BOOL enableUseHTTPDNSForPull;
+@property (nonatomic) BOOL enableUseHTTPDNSForPush;
+@property (nonatomic) BOOL enableUseNewOptRecordStruct;
+@property (nonatomic) BOOL enableSuggestQuic;
+
++ (id)sharedConfiguration;
+
+- (void)updateTransParams:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)updateWithConfiguration:(id)a0;
+
+@end

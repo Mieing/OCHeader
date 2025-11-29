@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.ImageContentAdapterCellConfig : BDMultiContentContainer.ImageContentCellConfig
+
+@end

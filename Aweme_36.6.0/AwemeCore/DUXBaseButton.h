@@ -1,0 +1,3 @@
+@interface DUXBaseButton : UIButton
+
+@end

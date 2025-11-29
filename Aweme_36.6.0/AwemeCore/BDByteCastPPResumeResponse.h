@@ -1,0 +1,3 @@
+@interface BDByteCastPPResumeResponse : BDByteCastPPBaseCmdResponse
+
+@end

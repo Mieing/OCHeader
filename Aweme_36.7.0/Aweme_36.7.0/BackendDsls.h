@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface BackendDsls : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dslsArray;
+@property (readonly, nonatomic) unsigned long long dslsArray_Count;
+
++ (id)descriptor;
+
+@end

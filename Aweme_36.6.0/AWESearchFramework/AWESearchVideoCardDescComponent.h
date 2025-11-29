@@ -1,0 +1,83 @@
+@class AWEAwemeModel, UIView, AWEModernFeedContentView, NSString, AWEFeedVideoTagView, NSDictionary, UILabel, AWEGeneralSearchVideoCardModel;
+
+@interface AWESearchVideoCardDescComponent : AWESearchComponent <AWESearchVideoCardDescComponentProtocol>
+
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) AWEModernFeedContentView *contentDescView;
+@property (retain, nonatomic) AWEGeneralSearchVideoCardModel *bindedModel;
+@property (retain, nonatomic) AWEFeedVideoTagView *descVideoTagView;
+@property (retain, nonatomic) UILabel *hotSpotTagView;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) BOOL searchFeedStyle;
+@property (nonatomic) BOOL generalSearchHasVideoTag;
+@property (copy, nonatomic) NSDictionary *syncGetAWESearchAbstractUIStyle;
+@property (nonatomic) long long searchDescClickIntoFeed;
+@property (nonatomic) BOOL generalSearchTextInfoGoven;
+@property (nonatomic) BOOL currentModelFromSetupModelOnly;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })componentSizeForModel:(id)a0 width:(double)a1;
++ (BOOL)enableFixQualityLayoutDescEmptyOffset;
++ (struct CGSize { double x0; double x1; })p_calculateComponentSize:(double)a0 withModel:(id)a1;
+
+- (void)didClickAdContentDesc;
+- (void)didClickAdTag;
+- (void)didClickAdHashTag;
+- (void)trackSearchResultClick:(id)a0;
+- (BOOL)awe_isFoldText:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (BOOL)openCommentPanelInflow;
+- (id)playerProvider;
+- (void)didSelectLinkWithURL:(id)a0;
+- (void)trackClickCommentBtn;
+- (void)updateWithModel:(id)a0 forceUpdate:(BOOL)a1;
+- (void)componentViewDidAppear:(BOOL)a0;
+- (void)updateWithChunkModel:(id)a0;
+- (id)provideProtocol;
+- (id)broadcastProtocolList;
+- (void)updateSubviewFrames;
+- (BOOL)isShowFullTextButton;
+- (void)trackEventWithURLString:(id)a0;
+- (id)tokenTypeForModel:(id)a0;
+- (void)didClickGifDetailTagWithSticker:(id)a0;
+- (void)trackChallengTitleClick:(id)a0;
+- (BOOL)isClickJumpTime:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)trackEventForHashTag:(id)a0;
+- (void)preloadTimor;
+- (void)updateSubviewsContent:(BOOL)a0;
+- (void)setModelOnly:(id)a0;
+- (id)accessibilityElementsArr;
+- (id)p_getVideoCardBtmDcmInfoDict;
+- (void)_trackEventForPersonDetail:(id)a0 toUserID:(id)a1;
+- (void)clickTextAreaToInFlow:(id)a0;
+- (void)clickTextAreaToInFlow:(id)a0 clickIcon:(BOOL)a1;
+- (id)p_context;
+- (id)searchTransitionParams:(id)a0;
+- (BOOL)openCommentPanelInflowWithClickIcon:(BOOL)a0;
+- (long long)videoAbstractStrategy;
+- (void)setupABTest;
+- (BOOL)awe_canExpandFoldPureText;
+- (void)awe_expandPureText;
+- (void)awe_foldPureText;
+- (void)_updateSubviewsWithModel:(id)a0 animated:(BOOL)a1;
+- (void)showHotSpotTagView;
+- (void)showDescVideoTagView;
+- (void)awe_trackEventForHotSpotTagWithTopic:(id)a0 actionType:(id)a1;
+- (id)_getTagIdForHashtag:(id)a0 awemeModel:(id)a1;
+- (id)commentProvider;
+- (void)p_updateWithModel:(id)a0 forceUpdate:(BOOL)a1;
+- (void)p_super_updateWithModel:(id)a0 forceUpdate:(BOOL)a1;
+- (BOOL)awe_isAbstractAiIcon:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (BOOL)awe_isSummaryAiIcon:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (BOOL)awe_isShortAnswerAiIcon:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (id)interactor;
+- (void).cxx_destruct;
+- (id)init;
+- (id)componentView;
+- (void)setupUI;
+- (id)router;
+- (id)textType;
+
+@end

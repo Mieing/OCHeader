@@ -1,0 +1,82 @@
+@class NSSet, NSMutableDictionary, FTSTopHitItem, NSString, NSMutableArray;
+@protocol FTSTopHitDelegate;
+
+@interface FTSTopHitMgr : NSObject {
+    NSMutableArray *_arrTopHitContactItem;
+    NSMutableArray *_arrTopHitAddressBookItem;
+    NSMutableDictionary *_dicTopHitExtItem;
+    FTSTopHitItem *_thMemberMatchedGroup;
+    NSMutableDictionary *_dicTopHitResultItem;
+    NSMutableDictionary *_dicTopHitResultItemValue;
+    NSMutableDictionary *_dicTopHitResultCache;
+    NSMutableArray *_arrAllTopHitMMGroupResult;
+    NSString *_lastQueryText;
+    BOOL _hasInit;
+    BOOL _bNeedSearch;
+    BOOL _needSaveContactTopHit;
+    BOOL _needSaveAddressBookTopHit;
+    BOOL _needSaveExtTopHit;
+    unsigned int _thType;
+}
+
+@property (weak, nonatomic) id<FTSTopHitDelegate> delegateForContactSearch;
+@property (weak, nonatomic) id<FTSTopHitDelegate> delegateForFeatureSearch;
+@property (weak, nonatomic) id<FTSTopHitDelegate> delegateForWeAppSearch;
+@property (weak, nonatomic) id<FTSTopHitDelegate> delegateForFinderSearch;
+@property (weak, nonatomic) id<FTSTopHitDelegate> delegateForKFContactSearch;
+@property (weak, nonatomic) id<FTSTopHitDelegate> delegateForWeShopSearch;
+@property (readonly, nonatomic) NSSet *ignoreSpecTypes;
+
+- (id)init;
+- (id)initWithType:(unsigned int)a0;
+- (void)dealloc;
+- (void)initData;
+- (void)doInitWorker;
+- (void)cancelSearch;
+- (void)setNeedsSearchNextTime;
+- (void)searchTopHit:(id)a0 dicCheckList:(id)a1 matchTips:(id)a2;
+- (BOOL)isNormalOrChatRoomContact:(id)a0;
+- (BOOL)isSessionActiveForContact:(id)a0;
+- (void)searchTopHit:(id)a0 dicCheckList:(id)a1 matchTips:(id)a2 maxCount:(unsigned int)a3;
+- (void)trySearchMemberGroup:(id)a0 andTargetKeys:(id)a1 dictionary:(id)a2 dicMatchTip:(id)a3;
+- (BOOL)isTopHitList:(id)a0 keyContainsValue:(id)a1;
+- (void)removeInvalidValue:(id)a0 withTopHitItem:(id)a1 withTopHitKey:(id)a2;
+- (id)targetKeysForTopHitType:(unsigned int)a0;
+- (id)findTopHitValue:(id)a0 key:(id)a1;
+- (id)findContactInArray:(id)a0 key:(id)a1;
+- (BOOL)checkTopHitMatchInfo:(id)a0 matchTip:(id)a1;
+- (void)calWithMMGroupDisplayResult:(id)a0 otherCount:(unsigned long long)a1;
+- (void)removeBaseTopHitResult:(id)a0 count:(unsigned long long)a1;
+- (void)selectItem:(id)a0 type:(unsigned int)a1;
+- (void)selectMMGroup:(id)a0 matchTip:(id)a1;
+- (void)mergeTopHitMMGroup:(id)a0 withDicMember:(id)a1;
+- (void)addScore:(id)a0 arrTopHitItem:(id)a1;
+- (id)getTopHitItemKey:(id)a0;
+- (id)convertTopHitKeyFromType:(unsigned int)a0;
+- (unsigned int)convertFeatureIDFromItemKey:(id)a0;
+- (BOOL)selectItemKey:(id)a0 typeKey:(id)a1;
+- (void)sortTopHitValueList:(id)a0;
+- (BOOL)hasTopHit:(unsigned int)a0;
+- (unsigned int)getTopHitCount:(unsigned int)a0;
+- (id)getTopHitItems:(unsigned int)a0;
+- (void)clearTopHitResult;
+- (void)clearTopHitValue;
+- (id)pathForTopHitContactItem;
+- (id)pathForTopHitExtItem;
+- (void)tryLoadTopHitItem;
+- (void)trySaveTopHitItem;
+- (void)trySaveTopHitContactItem;
+- (void)trySaveTopHitExtItem;
+- (void)onEnterBackGround;
+- (void)onClearData;
+- (void)onAppTerminate;
+- (void)removeTopHitItem:(id)a0 forTopHitType:(unsigned int)a1;
+- (BOOL)isContactType:(unsigned int)a0;
+- (BOOL)isOpenRemovalABTest;
+- (void)tryReportTopHitStatus;
+- (void)doReportTopHitStatus;
+- (void)checkAndFillTimestamp;
+- (void)logSearchInfo;
+- (void).cxx_destruct;
+
+@end

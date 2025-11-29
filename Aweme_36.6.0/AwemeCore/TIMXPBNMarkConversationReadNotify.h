@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface TIMXPBNMarkConversationReadNotify : GPBMessage
+
+@property (copy, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL hasConversationId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+@property (nonatomic) long long readIndex;
+@property (nonatomic) BOOL hasReadIndex;
+@property (nonatomic) long long readIndexV2;
+@property (nonatomic) BOOL hasReadIndexV2;
+
++ (id)descriptor;
+
+@end

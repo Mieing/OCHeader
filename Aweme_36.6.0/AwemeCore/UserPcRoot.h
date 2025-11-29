@@ -1,0 +1,3 @@
+@interface UserPcRoot : GPBRootObject
+
+@end

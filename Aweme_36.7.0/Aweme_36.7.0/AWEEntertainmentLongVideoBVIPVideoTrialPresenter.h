@@ -1,0 +1,3 @@
+@interface AWEEntertainmentLongVideoBVIPVideoTrialPresenter : AWEEntertainmentBaseVideoTrialPresenter
+
+@end

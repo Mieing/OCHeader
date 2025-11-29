@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GetFormatConfigResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *commandsArray;
+@property (readonly, nonatomic) unsigned long long commandsArray_Count;
+
++ (id)descriptor;
+
+@end

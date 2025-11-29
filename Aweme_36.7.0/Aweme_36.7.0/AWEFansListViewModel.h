@@ -1,0 +1,82 @@
+@class AWEBaseListSectionViewModel, AWEFansListSearchBarSectionViewModel, AWERelationCommonSectionViewModel, AWEFansListSearchSectionViewModel, NSString, AWEFollowListFooterViewModel, AWEFansListUserListSectionViewModel, AWEFansListFilteredUserListSectionViewModel, AWEFansListFansAnalysisSectionViewModel, AWEEmptyPageSectionViewModel, AWEFansListCategorySectionViewModel, AWEFansListMixFansCountSectionViewModel, AWEFansListQuickAccessSectionViewModel, AWEFollowListPageContext, AWEFansListFansStyleSectionViewModel;
+@protocol AWEUserRecommendSectionViewModelProtocol;
+
+@interface AWEFansListViewModel : AWEBaseListViewModel <AWEUserMessage>
+
+@property (retain, nonatomic) AWEFansListSearchBarSectionViewModel *searchBarVM;
+@property (retain, nonatomic) AWEFansListUserListSectionViewModel *userListVM;
+@property (retain, nonatomic) AWEFansListFilteredUserListSectionViewModel *filteredUserListVM;
+@property (retain, nonatomic) AWEFansListCategorySectionViewModel *categoryVM;
+@property (retain, nonatomic) AWERelationCommonSectionViewModel *countVM;
+@property (retain, nonatomic) AWEFansListMixFansCountSectionViewModel *mixFansCountVM;
+@property (retain, nonatomic) AWERelationCommonSectionViewModel *fansToolVM;
+@property (retain, nonatomic) AWEFansListSearchSectionViewModel *searchListVM;
+@property (retain, nonatomic) AWEFansListQuickAccessSectionViewModel *quickAreaVM;
+@property (retain, nonatomic) AWEFansListFansAnalysisSectionViewModel *fansAnalysisVM;
+@property (retain, nonatomic) AWEEmptyPageSectionViewModel *emptyVM;
+@property (retain, nonatomic) AWEBaseListSectionViewModel<AWEUserRecommendSectionViewModelProtocol> *recommendVM;
+@property (retain, nonatomic) AWEFollowListFooterViewModel *footerVM;
+@property (retain, nonatomic) AWEFansListFansStyleSectionViewModel *fansStyleVM;
+@property (nonatomic) BOOL searching;
+@property (nonatomic) BOOL hideRefreshHeader;
+@property (nonatomic) BOOL isCategoryFiltering;
+@property (nonatomic) BOOL needFetchRecommendData;
+@property (nonatomic) BOOL blockTa;
+@property (nonatomic) BOOL blockByTa;
+@property (nonatomic) BOOL onlySelfView;
+@property (copy, nonatomic) NSString *vcd;
+@property (copy, nonatomic) NSString *statusMsg;
+@property (retain, nonatomic) AWEFollowListPageContext *pageContext;
+@property (nonatomic) BOOL hasMore;
+@property (readonly, nonatomic) BOOL isOnlyEmptyPage;
+@property (nonatomic) BOOL hiddenMJFooter;
+@property (copy, nonatomic) id /* block */ didBlockUser;
+@property (copy, nonatomic) id /* block */ didChangeSort;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWERelationDOUYINHTSAdapterClass;
++ (Class)aAWEConcernRelationCommonAdapterClass;
+
+- (void)didFinishBlockUser:(id)a0 status:(long long)a1 followStatus:(long long)a2 followerStatus:(long long)a3;
+- (void)didFinishRemoveFansWithUser:(id)a0;
+- (void)fetchListData;
+- (void)loadMoreListData;
+- (void)setupViewModel;
+- (BOOL)showSearch;
+- (id)aAWERelationDOUYINHTSAdapter;
+- (long long)maximumLoadFansCount;
+- (long long)maximumLoadPageNumber;
+- (BOOL)shouldShowHelpDeskEntrance;
+- (void)fetchUserListData;
+- (id)emptyPageConfigForState:(unsigned long long)a0;
+- (id)sectionComponents;
+- (void)trackAccuracyCheckIfNeed;
+- (void)fetchRecommendDataIfNeeded;
+- (void)updateRecommendSectionIfNeeded;
+- (id)stateString:(long long)a0;
+- (BOOL)showRecommend;
+- (BOOL)showEmpty;
+- (BOOL)showQuickArea;
+- (BOOL)showFansToolEntrance;
+- (BOOL)showCategoryView;
+- (BOOL)showFansCount;
+- (BOOL)shouldShowFansCountDetail;
+- (BOOL)showVCD;
+- (BOOL)showVCDNotMine;
+- (BOOL)commonRecommendCondition;
+- (BOOL)p_shouldShowFansCount;
+- (BOOL)fansDidFinishNetworkRequest;
+- (BOOL)recommendDidFinishNetworkRequest;
+- (id)recommendManagerContext;
+- (BOOL)emptyRecommend;
+- (id)aAWEConcernRelationCommonAdapter;
+- (BOOL)fansAndRecommendDidFinishNetworkRequest;
+- (long long)recommendExitTerminateAfterCloseMaxTimes;
+- (long long)recommendExitDaysAfterClose;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

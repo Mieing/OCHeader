@@ -1,0 +1,14 @@
+@class NSString, UrlStructV2;
+
+@interface OriginalAudioStructV2 : GPBMessage
+
+@property (retain, nonatomic) UrlStructV2 *playURL;
+@property (nonatomic) BOOL hasPlayURL;
+@property (copy, nonatomic) NSString *vid;
+@property (nonatomic) BOOL hasVid;
+@property (nonatomic) double volume;
+@property (nonatomic) BOOL hasVolume;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class PriorSongGiftBoardResponse_ResponseData;
+
+@interface PriorSongGiftBoardResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PriorSongGiftBoardResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

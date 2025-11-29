@@ -1,0 +1,7 @@
+@interface Swinject.ObjectScope : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ description;
+    void /* unknown type, empty encoding */ storageFactory;
+    void /* unknown type, empty encoding */ parent;
+}
+
+@end

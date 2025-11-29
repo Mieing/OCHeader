@@ -1,0 +1,3 @@
+@interface IESLivePKUser : IESLiveListUser
+
+@end

@@ -1,0 +1,10 @@
+@class IESLiveKtvProfitPlayMVResponse_ResponseData;
+
+@interface IESLiveKtvProfitPlayMVResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveKtvProfitPlayMVResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

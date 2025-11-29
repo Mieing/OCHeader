@@ -1,0 +1,72 @@
+@class NSString, NSDictionary, NSArray, IESEffectModel, NSNumber, ACCAIGCLoraUgcPromptModel;
+
+@interface AWEEffectModelMixinAIGCInfo : NSObject
+
+@property (weak, nonatomic) IESEffectModel *hostEffectModel;
+@property (retain, nonatomic) NSString *modelMD5;
+@property (retain, nonatomic) NSDictionary *extraDict;
+@property (retain, nonatomic) NSDictionary *sdkExtraDict;
+@property (retain, nonatomic) NSDictionary *bizExtra;
+@property (readonly, nonatomic) BOOL isAILoraUGC;
+@property (readonly, nonatomic) BOOL isAILora;
+@property (readonly, nonatomic) BOOL isAILoraOrUGC;
+@property (readonly, nonatomic) BOOL isAILoraLive;
+@property (readonly, nonatomic) BOOL isAILoraDYEH;
+@property (readonly, nonatomic) BOOL isAIMultiLora;
+@property (readonly, nonatomic) BOOL isAIRealCamera;
+@property (readonly, nonatomic) BOOL isAICameraI2V;
+@property (readonly, nonatomic) BOOL isAIEffectUGC;
+@property (readonly, nonatomic) BOOL isAIFollowShoot;
+@property (readonly, nonatomic) BOOL isAIEditFollowShoot;
+@property (readonly, nonatomic) BOOL isSupportScenarioOnlyInRecord;
+@property (readonly, nonatomic) unsigned long long requestType;
+@property (readonly, nonatomic) ACCAIGCLoraUgcPromptModel *ugcPrompt;
+@property (readonly, copy, nonatomic) NSString *keyWordsListString;
+@property (readonly, nonatomic) BOOL isSupportNewAigcPipeline;
+@property (readonly, copy, nonatomic) NSString *initialNavigation;
+@property (readonly, nonatomic) BOOL isDependEditEffectEsg;
+@property (readonly, nonatomic) BOOL clientRender;
+@property (readonly, nonatomic) BOOL needPostProcess;
+@property (readonly, copy, nonatomic) NSString *newAigcPipelineUGCPrompt;
+@property (readonly, nonatomic) NSString *afterProcessEffectId;
+@property (readonly, nonatomic) NSString *aigcTypeForTrack;
+@property (readonly, copy, nonatomic) NSString *AISubType;
+@property (readonly, nonatomic) BOOL isSupportCloudEdit;
+@property (readonly, nonatomic) BOOL enterEditCancelCurrentMusic;
+@property (readonly, nonatomic) BOOL ugcFusionEffectShouldCancelMusic;
+@property (readonly, nonatomic) BOOL isUGCEffectCarrySampleImage;
+@property (readonly, copy, nonatomic) NSString *ugcSampleImageUri;
+@property (readonly, copy, nonatomic) NSDictionary *ugcSampleImageDict;
+@property (readonly, copy, nonatomic) NSArray *ugcSampleImageList;
+@property (readonly, copy, nonatomic) NSDictionary *ugcReferenceVideoDict;
+@property (readonly, copy, nonatomic) NSString *referenceType;
+@property (readonly, nonatomic) NSNumber *ugcFusionOutputMultiImagesCount;
+@property (readonly, nonatomic) long long aigcGenerateTimeConsuming;
+@property (readonly, nonatomic) long long noticeBtnStartShowTime;
+@property (readonly, nonatomic) NSArray *loraAiMultiPersonTemplate;
+@property (readonly, nonatomic) NSArray *loraAiMultiPersonTemplateModels;
+@property (readonly, nonatomic) NSArray *loraAiMultiPersonTemplateModelsSorted;
+@property (readonly, nonatomic) long long inputMinCount;
+@property (readonly, nonatomic) long long inputMaxCount;
+@property (readonly, nonatomic) BOOL aiMusic;
+@property (readonly, nonatomic) NSString *loraStaticCoverUrl;
+@property (readonly, nonatomic) NSString *loraResourceType;
+@property (readonly, nonatomic) NSString *fusionResourceType;
+@property (readonly, nonatomic) NSString *resourceType;
+@property (readonly, nonatomic) unsigned long long maxTimeout;
+@property (readonly, nonatomic) double extendRecordDuration;
+@property (readonly, nonatomic) BOOL timeConsumingPropUnified;
+@property (readonly, nonatomic) BOOL aigcStickerSupportRecord;
+@property (readonly, nonatomic) BOOL timeConsumingPropNeedReset;
+@property (readonly, nonatomic) long long ugcVersion;
+@property (nonatomic) BOOL isForAIGCTransition;
+@property (readonly, nonatomic) BOOL canPreUploadTOS;
+@property (readonly, nonatomic) BOOL isEffectSupportOutputResource;
+@property (readonly, copy, nonatomic) NSString *workflowInfoString;
+
+- (BOOL)p_isAiDance;
+- (id)p_supportingScenario;
+- (id)ugcFusionResourceInfo;
+- (void).cxx_destruct;
+
+@end

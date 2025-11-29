@@ -1,0 +1,72 @@
+@class NSString, NSDictionary, NSMutableDictionary, AWEIMGroupEntrySettingViewModel, UITableView;
+@protocol IESIMConversationProtocol, IESIMGroupEntryLimitsViewControllerDelegate;
+
+@interface AWEIMGroupEntryLimitsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AWEIMGroupEntryLimitsSwitchStyleCellDelegate, IESIMPopoverDelegate, IESIMGroupEntryLimitsViewControllerProtocol, IESIMGroupOpenCapabilityViewController>
+
+@property (retain, nonatomic) id<IESIMConversationProtocol> conversation;
+@property (retain, nonatomic) NSString *conversationId;
+@property (retain, nonatomic) AWEIMGroupEntrySettingViewModel *viewModel;
+@property (retain, nonatomic) NSDictionary *preGroupEntryLimitDict;
+@property (retain, nonatomic) NSMutableDictionary *groupEntryLimitDict;
+@property (retain, nonatomic) UITableView *tableView;
+@property (nonatomic) BOOL isBubbleShowing;
+@property (copy, nonatomic) NSDictionary *extraDic;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (nonatomic) BOOL isDisappearedBecauseOfPush;
+@property (nonatomic) BOOL useCardStyle;
+@property (copy, nonatomic) id /* block */ selectedCompletionBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<IESIMGroupEntryLimitsViewControllerDelegate> delegate;
+
+- (void)popoverDidDisappear:(id)a0;
+- (void)updateUITheme;
+- (void)themeDidChange:(id)a0;
+- (void)backBtnClicked;
+- (id)initWithGroupEntrySettingMenuModel:(id)a0 groupEntryLimitDict:(id)a1 groupManagementInfo:(id)a2 conversation:(id)a3;
+- (void)updateSwitchStatusWithModel:(id)a0 willOn:(BOOL)a1 completion:(id /* block */)a2;
+- (id)initWithGroupEntrySettingMenuModel:(id)a0 groupEntryLimitDict:(id)a1 extra:(id)a2 selectedCompletion:(id /* block */)a3;
+- (id)initWithGroupEntrySettingMenuModel:(id)a0 groupEntryLimitDict:(id)a1 groupManagementInfo:(id)a2 conversation:(id)a3 extra:(id)a4 selectedCompletion:(id /* block */)a5;
+- (void)createEntrySettingLinkWithExtraMenus:(id)a0;
+- (void)fetchGroupEntryLimitInfo;
+- (id)getEntryLimitDictFromEntryLimits:(id)a0;
+- (void)__trackUpdateLimit;
+- (id)entrySettingDetailTitle;
+- (id)__updateGroupEntryLimitWithSelectedKey:(id)a0 selectedValue:(id)a1 menu:(id)a2 atSection:(long long)a3;
+- (id)__checkIsEnableContinueWithSelectedKey:(id)a0 selectedValue:(id)a1 menu:(id)a2;
+- (void)trackClickRemoveExpiredMemberSwitchWithOn:(BOOL)a0;
+- (id)__updateGroupEntrySettingsWithSelectedKey:(id)a0 selectedValue:(id)a1 atSection:(long long)a2 menu:(id)a3;
+- (id)getGroupUpdateRequestEntryLimitDict:(id)a0 selectedValue:(id)a1;
+- (id)__updateGroupEntrySettingsWithRequestGroupEntryLimitDict:(id)a0;
+- (id)__actionCheckBizExtWithSelectedKey:(id)a0 selectedValue:(id)a1 menu:(id)a2;
+- (id)__cardStyleCellIdentifierWithString:(id)a0;
+- (id)detailTitleForCellWithSettingModel:(id)a0;
+- (BOOL)isSelectedWithIndexPath:(id)a0;
+- (void)__showBubbleWithTargetView:(id)a0 content:(id)a1;
+- (void)arrowClickedForSection:(long long)a0;
+- (id)translateEntryLimitsDictToTrackerDict:(id)a0 entrySettings:(id)a1;
+- (void)addMultiSelectChangesToUpdatedLimits:(id)a0 fromStatus:(id)a1 toStatus:(id)a2 entrySetting:(id)a3;
+- (void)addNormalChangesToUpdatedLimits:(id)a0 fromStatus:(id)a1 toStatus:(id)a2 entrySetting:(id)a3;
+- (void)addNormalChangesExtraMenusToUpdatedLimits:(id)a0 fromStatus:(id)a1 toStatus:(id)a2 entrySetting:(id)a3;
+- (id)formatMultiSelectValue:(id)a0;
+- (id)initWithGroupEntrySettingMenuModel:(id)a0 GroupEntryLimitDict:(id)a1;
+- (id)initWithGroupEntrySettingMenuModel:(id)a0 groupEntryLimitDict:(id)a1 context:(id)a2 selectedCompletion:(id /* block */)a3;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupUI;
+
+@end

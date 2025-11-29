@@ -1,0 +1,72 @@
+@class NSTimer, NSString, NSSet, NSMutableDictionary, BDPAudioInterruptionConfig, BDPUniqueID, NSMutableArray, WKWebView;
+
+@interface BDPPluginVideoComponent : BDPBridgeInstancePlugin <BDPVideoPlayerStateDelegate, BDPAppRouteChangeMessage, BDPContainerLifeCycleMessage, BDPElementFullscreenMessage, BDPPipStateDelegate, BDPUserScreenRecordDelegate, BDPAudioInterruptionDelegate, BDPVideoContainerProtocol>
+
+@property (nonatomic) long long pageID;
+@property (weak, nonatomic) WKWebView *page;
+@property (retain, nonatomic) BDPUniqueID *uniqueID;
+@property (retain, nonatomic) NSMutableDictionary *playerList;
+@property (retain, nonatomic) NSMutableArray *pauseListAudioInterruption;
+@property (retain, nonatomic) NSMutableArray *pauseListRouteChange;
+@property (retain, nonatomic) NSSet *diagnoseEventsSet;
+@property (retain, nonatomic) NSMutableDictionary *videoIdMap;
+@property (retain, nonatomic) BDPAudioInterruptionConfig *audioInterruptionConfig;
+@property (copy, nonatomic) id /* block */ preRenderDelayBlock;
+@property (retain, nonatomic) NSTimer *preRenderTimer;
+@property (nonatomic) long long keepFullScreenType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)appWillEnterForground;
+- (void)applicationExitWithUniqueID:(id)a0;
+- (void)enterFullscreenWithPageID:(long long)a0 orientation:(long long)a1 element:(id)a2 uniqueID:(id)a3;
+- (void)exitFullscreenWithPageID:(long long)a0 element:(id)a1 uniqueID:(id)a2;
+- (void)onAppRouteChangePageDidEnterWithPageID:(long long)a0 pageURL:(id)a1 uniqueID:(id)a2;
+- (void)enableScreenRecord;
+- (void)heapPhonesUnavailable;
+- (void)pauseByInterrupt;
+- (void)resumeByInterrupt;
+- (id)getInterruptUniqueID;
+- (long long)getPageID;
+- (void)disableScreenRecord;
+- (void)forceExitFullScreen;
+- (void)bdp_videoPlayerStateChange:(long long)a0 videoPlayer:(id)a1 extra:(id)a2;
+- (BOOL)preRenderMpIdEnable:(id)a0;
+- (BOOL)needDelayPreRender;
+- (void)startPipWithPlayer:(id)a0;
+- (void)stopPipWithPlayer:(id)a0;
+- (BOOL)h265DeviceTypeEnable:(id)a0;
+- (void)bdp_trackVideoEventWithState:(long long)a0 videoPlayer:(id)a1 extra:(id)a2;
+- (void)trackVideoEventWithEventName:(id)a0 params:(id)a1;
+- (id)generateCommonData:(id)a0 player:(id)a1;
+- (void)subscribeHandlerToService:(id)a0 data:(id)a1;
+- (void)subscribeHandlerToPage:(id)a0 data:(id)a1;
+- (void)pausePipWithPlay:(id)a0;
+- (void)subscribeProgressEventWithVideoPlayer:(id)a0 componentID:(id)a1;
+- (void)execPreRenderBlockIfNeed;
+- (BOOL)needTransformPreRenderEvent:(id)a0;
+- (void)reportDiagnose:(id)a0 params:(id)a1;
+- (void)stopPipOnAppRouteChangePageDidEnterWithPageID:(long long)a0;
+- (void)stopPipByForce;
+- (void)playerWillShowInPip:(id)a0;
+- (void)playerDidDismissFromPip:(id)a0 showPip:(BOOL)a1 resume:(BOOL)a2;
+- (void)playerDidCloseByUser:(id)a0;
+- (void)videoPlayerStateChange:(long long)a0 videoPlayer:(id)a1 extra:(id)a2;
+- (void)trackVideoEventWithState:(long long)a0 videoPlayer:(id)a1 extra:(id)a2;
+- (BOOL)useNativeControlVideo;
+- (void)insertVideoPlayerWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)updateVideoPlayerWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)removeVideoPlayerWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)setVideoWaterMarkWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)operateVideoContextWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)setMediaVolumeWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)getMediaVolumeWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)canIUseVideoFormatWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void)videoEventReadyWithParam:(id)a0 callback:(id /* block */)a1 instance:(id)a2;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+
+@end

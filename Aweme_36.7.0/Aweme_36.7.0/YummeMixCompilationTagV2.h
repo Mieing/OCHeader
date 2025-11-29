@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface YummeMixCompilationTagV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *level1;
+@property (nonatomic) BOOL hasLevel1;
+@property (copy, nonatomic) NSString *level2;
+@property (nonatomic) BOOL hasLevel2;
+@property (copy, nonatomic) NSString *level3;
+@property (nonatomic) BOOL hasLevel3;
+
++ (id)descriptor;
+
+@end

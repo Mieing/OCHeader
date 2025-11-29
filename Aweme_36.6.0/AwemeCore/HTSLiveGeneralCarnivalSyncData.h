@@ -1,0 +1,11 @@
+@class HTSLiveGeneralCarnivalMessage;
+
+@interface HTSLiveGeneralCarnivalSyncData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGeneralCarnivalMessage *carnivalMessage;
+@property (nonatomic) BOOL hasCarnivalMessage;
+@property (nonatomic) long long millSecondTimeStamp;
+
++ (id)descriptor;
+
+@end

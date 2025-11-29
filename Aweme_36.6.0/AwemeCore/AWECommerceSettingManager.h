@@ -1,0 +1,34 @@
+@class NSString;
+
+@interface AWECommerceSettingManager : HTSService <AWECommerceSettingManager>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)starAtlasProfileLink;
++ (BOOL)enablePreloadComponent;
++ (BOOL)useNewEggVersion;
++ (id)byteAdSDKConfig;
++ (BOOL)enableAwesomeSplashCacheStrongCheck;
++ (long long)adGapInteractiveDuration;
++ (long long)adGapInteractiveDetailNum;
++ (long long)longVideoAdThreshold;
++ (BOOL)enableTimeObserverBoundaryCheck;
++ (BOOL)enableIAPInterception;
++ (id)enableSendStagingAdLog;
++ (id)getAdTrackerEventWithNoVideo;
++ (BOOL)enableAppStorCallInAsyncThread;
++ (BOOL)isValidCommerceAppStoreAction;
++ (id)lightMissionReportTime;
++ (BOOL)shouldUseAppStoreSDK;
++ (BOOL)forbidAnchorListRequest;
++ (BOOL)shouldRequestAppManager;
++ (BOOL)shouldOpenSplashTaskInHotsoon;
++ (BOOL)isForbidSKStoreProductViewController;
++ (BOOL)shouldAnchorLandingPageHandoverToLynxPage;
++ (BOOL)enableNewSearchTrackingCallback;
+
+
+@end

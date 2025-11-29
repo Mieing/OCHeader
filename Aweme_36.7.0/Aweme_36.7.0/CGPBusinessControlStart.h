@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface CGPBusinessControlStart : GPBMessage
+
+@property (nonatomic) int role;
+@property (nonatomic) int result;
+@property (retain, nonatomic) NSMutableArray *playersArray;
+@property (readonly, nonatomic) unsigned long long playersArray_Count;
+
++ (id)descriptor;
+
+@end

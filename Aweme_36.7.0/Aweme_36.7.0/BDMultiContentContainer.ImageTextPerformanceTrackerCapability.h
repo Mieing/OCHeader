@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.ImageTextPerformanceTrackerCapability : BDMultiContentContainer.Capability
+
+@end

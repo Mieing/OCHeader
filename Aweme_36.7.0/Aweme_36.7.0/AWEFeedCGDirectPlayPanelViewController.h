@@ -1,0 +1,72 @@
+@class AWEAwemePageContext, NSString, NSDictionary, UIImage, BDXBridgeEventSubscriber, AWEAwemeModel, AWEFeedCGDirectPlayMaskView;
+@protocol IESGCPCGPreviewItem, AWEFeedCGDirectPlayCardControllerDelegate, AWEPlayInteractionViewControllerProtocol;
+
+@interface AWEFeedCGDirectPlayPanelViewController : UIViewController <AWEFeedCGDirectPlayMaskViewDelegate, IESGCPCGPreviewItemDelegate, AWESpecialCardPanelProtocol>
+
+@property (weak, nonatomic) id<AWEFeedCGDirectPlayCardControllerDelegate> delegate;
+@property (retain, nonatomic) AWEFeedCGDirectPlayMaskView *maskView;
+@property (retain, nonatomic) UIImage *snapshot;
+@property (retain, nonatomic) id<IESGCPCGPreviewItem> cgPreviewItem;
+@property (retain, nonatomic) NSDictionary *gameInfo;
+@property (nonatomic) BOOL isGameReady;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *subscriber;
+@property (nonatomic) BOOL isShowed;
+@property (nonatomic) double startPreloadTime;
+@property (nonatomic) double preloadSuccessTime;
+@property (retain, nonatomic) AWEAwemeModel *insertModel;
+@property (nonatomic) BOOL isSubscribed;
+@property (retain, nonatomic) NSDictionary *cgTrackCommonParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (copy, nonatomic) NSString *referString;
+@property (weak, nonatomic) AWEAwemePageContext *outerPageContext;
+@property (weak, nonatomic) id<AWEPlayInteractionViewControllerProtocol> interactionDelegate;
+
+- (void)trackCardShow;
+- (void)onLeftButtonClick;
+- (id)trackCommonParams;
+- (void)onFeedCardDidInsert:(id)a0;
+- (void)onFeedCardDismiss:(id)a0;
+- (void)onActionButtonClick;
+- (void)updateCadInfo;
+- (void)trackCardCanNotShowWithReason:(id)a0 errCode:(long long)a1;
+- (void)trackCardPreloadDurationWithShowResult:(BOOL)a0;
+- (void)traceCGDirectCardWithStep:(id)a0 errCode:(long long)a1 errMsg:(id)a2 extraInfo:(id)a3;
+- (void)showRevealingStateToastIfNeeded;
+- (void)showCGView:(id)a0;
+- (void)getGameSnapshotWithColorPicking:(BOOL)a0;
+- (void)showPlaceholderImage;
+- (void)trackGcpEvent:(id)a0 params:(id)a1;
+- (void)colorPickingFromImage:(id)a0;
+- (BOOL)isLandscapeGame;
+- (void)onAppDidEnterBackgroundNotification:(id)a0;
+- (BOOL)isRevealingState;
+- (void)trackCardCanShow;
+- (void)enterMainContainer;
+- (void)trackCardClickWithBtnType:(id)a0;
+- (void)trackAweEvent:(id)a0 params:(id)a1;
+- (void)onPreviewItemReadyToPlay;
+- (void)onPreviewItemStatusChange:(long long)a0 code:(long long)a1 info:(id)a2;
+- (void)onExitMainContainer;
+- (void)onServerPushMessageReceived:(id)a0;
+- (void)onFirstFrameReceived;
+- (void)onGameSubscriptionStatusChanged:(BOOL)a0;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)initWithDelegate:(id)a0;
+- (void)addObserver;
+- (void)reset;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)removeObserver;
+- (void)setupUI;
+- (void)handleTapGesture;
+- (void)didEndDisplaying;
+- (void)updateWithModel:(id)a0;
+- (void)willDisplay;
+- (void)pageWillDisappear:(BOOL)a0;
+
+@end

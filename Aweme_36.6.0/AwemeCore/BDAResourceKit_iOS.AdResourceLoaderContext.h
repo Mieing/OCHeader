@@ -1,0 +1,7 @@
+@interface BDAResourceKit_iOS.AdResourceLoaderContext : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ taskContext;
+    void /* unknown type, empty encoding */ preloadType;
+    void /* unknown type, empty encoding */ webViewPreloadInfo;
+}
+
+@end

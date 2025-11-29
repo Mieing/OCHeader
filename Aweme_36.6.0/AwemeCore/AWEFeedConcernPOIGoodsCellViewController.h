@@ -1,0 +1,72 @@
+@class UIView, AWELifeCardHotView, AWEFeedConcernPOIGoodsCardTip, NSString, AWEFeedConcernGoodsCardMonitor, UIImageView, AWEGradientView, NSMutableArray, LOTAnimationView, AWEImmersiveImageView, AWEFeedConcernPOIGoodsCardScrollTipsView, AWEFeedConcernPOIGoodsContentProvider;
+@protocol AWEFeedConcernPOIGoodsCardProtocol, AWEFeedConcernPOIGoodsInfoHeaderProtocol, AWEPOIDynamicCardProtocol;
+
+@interface AWEFeedConcernPOIGoodsCellViewController : AWEFeedCellViewController <AWEPlayVideoMessage>
+
+@property (retain, nonatomic) AWEFeedConcernPOIGoodsContentProvider *provider;
+@property (retain, nonatomic) UIView<AWEFeedConcernPOIGoodsCardProtocol> *contentCardView;
+@property (retain, nonatomic) UIView *poiContentView;
+@property (retain, nonatomic) AWEGradientView *failoffGradientView;
+@property (retain, nonatomic) UIView<AWEFeedConcernPOIGoodsInfoHeaderProtocol> *headFeedInfoView;
+@property (retain, nonatomic) UIImageView *backgroundImageView;
+@property (retain, nonatomic) LOTAnimationView *backgroundLottieView;
+@property (retain, nonatomic) UIView<AWEPOIDynamicCardProtocol> *lynxBackgroundView;
+@property (retain, nonatomic) AWEImmersiveImageView *immersiveImageView;
+@property (retain, nonatomic) AWEFeedConcernPOIGoodsCardScrollTipsView *scrollTipsView;
+@property (retain, nonatomic) AWEFeedConcernPOIGoodsCardTip *goodsCardTip;
+@property (retain, nonatomic) AWELifeCardHotView *bgTouchHotView;
+@property (nonatomic) struct CGPoint { double x; double y; } bgcurPoint;
+@property (retain, nonatomic) AWELifeCardHotView *immersiveImageHotView;
+@property (getter=isShowed) BOOL showed;
+@property (nonatomic) double bindModelTime;
+@property (nonatomic) double enterTime;
+@property (nonatomic) double cardImageLoadedTime;
+@property (retain, nonatomic) NSMutableArray *didBecomeActiveTimes;
+@property (retain, nonatomic) NSMutableArray *willResignActiveTimes;
+@property (retain, nonatomic) NSMutableArray *viewWillAppearTimes;
+@property (retain, nonatomic) NSMutableArray *viewWillDisAppearTimes;
+@property (copy, nonatomic) NSString *currentSessionID;
+@property (retain, nonatomic) AWEFeedConcernGoodsCardMonitor *monitor;
+@property (nonatomic) struct CGSize { double width; double height; } goodsImageSize;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)playerDidReadyForDisplay:(id)a0;
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (void)didDisplay;
+- (id)modelForPlayer:(id)a0;
+- (void)reportStayDuration;
+- (BOOL)shouldRespondSingleClick;
+- (BOOL)shouldRespondDoubleClick;
+- (void)__buildUI;
+- (void)__layoutUI;
+- (void)UIApplicationWillResignActiveNotification:(id)a0;
+- (void)UIApplicationDidBecomeActiveNotification:(id)a0;
+- (void)setupGradientBackground;
+- (void)setupBackgroundImage;
+- (void)setupBackgroundAnimationEffect;
+- (void)setupHeaderInfoView;
+- (void)cleanUpImmersiveImageViews;
+- (void)setupImmersiveImageViews;
+- (void)__startCardAnimation;
+- (void)showCardTips;
+- (void)poiSingleNewGoodsCardAnimationWithDelay:(double)a0;
+- (void)poiSinglePromotionCardAnimationWithDelay:(double)a0;
+- (void)poiMultiPromotionCardAnimationWithDelay:(double)a0;
+- (void)__animateWithDuration:(double)a0 delay:(double)a1 timingFunction:(id)a2 animations:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)reportHotPoint:(struct CGPoint { double x0; double x1; })a0 componetName:(id)a1;
+- (void)reportImageStatisticWithParams:(id)a0;
+- (void)__addAction;
+- (void).cxx_destruct;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)configureWithModel:(id)a0;
+- (void)didEndDisplaying;
+- (void)setupContentView;
+- (void)willDisplay;
+
+@end

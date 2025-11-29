@@ -1,0 +1,3 @@
+@interface PaidLiveTicketExplainCardApiRoot : GPBRootObject
+
+@end

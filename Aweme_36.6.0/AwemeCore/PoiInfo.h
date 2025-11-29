@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage;
+
+@interface PoiInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isPoiEnabled;
+@property (nonatomic) long long poiId;
+@property (copy, nonatomic) NSString *poiName;
+@property (copy, nonatomic) NSString *poiIdStr;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *city;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *jumpSchema;
+
++ (id)descriptor;
+
+@end

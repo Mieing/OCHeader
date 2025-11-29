@@ -1,0 +1,3 @@
+@interface ACCDislikeMusicResponseModel : ACCBaseApiModel
+
+@end

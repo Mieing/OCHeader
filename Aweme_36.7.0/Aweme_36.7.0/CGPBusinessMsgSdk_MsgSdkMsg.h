@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CGPBusinessMsgSdk_MsgSdkMsg : GPBMessage
+
+@property (copy, nonatomic) NSString *mid;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) long long time;
+
++ (id)descriptor;
+
+@end

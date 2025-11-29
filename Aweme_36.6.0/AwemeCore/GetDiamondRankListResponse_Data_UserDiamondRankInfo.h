@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface GetDiamondRankListResponse_Data_UserDiamondRankInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long userId;
+@property (copy, nonatomic) NSString *nickName;
+@property (copy, nonatomic) NSString *avatarURL;
+@property (nonatomic) long long diamonds;
+
++ (id)descriptor;
+
+@end

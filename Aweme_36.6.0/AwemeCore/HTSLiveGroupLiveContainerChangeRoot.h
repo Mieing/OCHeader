@@ -1,0 +1,3 @@
+@interface HTSLiveGroupLiveContainerChangeRoot : GPBRootObject
+
+@end

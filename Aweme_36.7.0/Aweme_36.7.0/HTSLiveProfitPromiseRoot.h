@@ -1,0 +1,3 @@
+@interface HTSLiveProfitPromiseRoot : GPBRootObject
+
+@end

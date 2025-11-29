@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.DefaultLivePhotoHandlerExtension : BDMultiContentContainer.HandlerExtension
+
+@end

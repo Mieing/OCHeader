@@ -1,0 +1,10 @@
+@interface TIMXPBNModifyMessagePropertyResponseBody : GPBMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) long long version;
+@property (nonatomic) BOOL hasVersion;
+
++ (id)descriptor;
+
+@end

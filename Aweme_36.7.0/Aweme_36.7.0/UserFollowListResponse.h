@@ -1,0 +1,10 @@
+@class UserFollowListResponseData;
+
+@interface UserFollowListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UserFollowListResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

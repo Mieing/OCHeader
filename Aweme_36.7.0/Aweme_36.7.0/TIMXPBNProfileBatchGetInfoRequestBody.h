@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNProfileBatchGetInfoRequestBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *useridsArray;
+@property (readonly, nonatomic) unsigned long long useridsArray_Count;
+
++ (id)descriptor;
+
+@end

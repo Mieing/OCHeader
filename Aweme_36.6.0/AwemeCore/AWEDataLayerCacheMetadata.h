@@ -1,0 +1,22 @@
+@class NSDictionary;
+
+@interface AWEDataLayerCacheMetadata : NSObject {
+    struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } _lock;
+    BOOL _isAvailable;
+    BOOL _saveInDB;
+    id _value;
+    int _rawValueType;
+    unsigned long long _lastRead;
+    unsigned long long _lastUpdate;
+    unsigned long long _maxAge;
+    int _cleanable;
+    int _cacheType;
+    NSDictionary *_extra;
+}
+
++ (id)sharedDeletedMetadata;
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

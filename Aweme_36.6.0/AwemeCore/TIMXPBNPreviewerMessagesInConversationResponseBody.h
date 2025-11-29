@@ -1,0 +1,20 @@
+@class NSString, NSMutableArray;
+
+@interface TIMXPBNPreviewerMessagesInConversationResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *messagesArray;
+@property (readonly, nonatomic) unsigned long long messagesArray_Count;
+@property (nonatomic) long long nextCursor;
+@property (nonatomic) BOOL hasNextCursor;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) long long checkCode;
+@property (nonatomic) BOOL hasCheckCode;
+@property (copy, nonatomic) NSString *checkMessage;
+@property (nonatomic) BOOL hasCheckMessage;
+
++ (id)descriptor;
+
+@end

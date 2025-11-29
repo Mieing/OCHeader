@@ -1,0 +1,3 @@
+@interface IESLiveCircleRoot : GPBRootObject
+
+@end

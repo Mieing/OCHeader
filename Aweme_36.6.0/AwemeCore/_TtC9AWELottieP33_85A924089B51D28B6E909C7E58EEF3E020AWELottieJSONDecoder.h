@@ -1,0 +1,3 @@
+@interface _TtC9AWELottieP33_85A924089B51D28B6E909C7E58EEF3E020AWELottieJSONDecoder : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,7 @@
+@interface UpdateGroupVoteResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+
++ (id)descriptor;
+
+@end

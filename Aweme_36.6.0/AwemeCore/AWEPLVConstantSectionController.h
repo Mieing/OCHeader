@@ -1,0 +1,21 @@
+@class AWEPLVConstantSectionViewModel;
+
+@interface AWEPLVConstantSectionController : AWEPadBaseListSectionController
+
+@property (readonly, nonatomic) AWEPLVConstantSectionViewModel *viewModel;
+
++ (Class)sectionViewModelClass;
++ (Class)aAWEPadModuleAdapterClass;
+
+- (id)aAWEPadModuleAdapter;
+- (struct CGSize { double x0; double x1; })cellContentSizeWithCollectionViewSize:(struct CGSize { double x0; double x1; })a0;
+- (long long)numberOfItemsInOnLineWithCollectionViewSize:(struct CGSize { double x0; double x1; })a0;
+- (long long)calculateSectionItemCount;
+- (long long)numberOfItemsInOnLineWithCollection:(id)a0;
+- (long long)numberOfItems;
+- (double)minimumLineSpacing;
+- (double)minimumInteritemSpacing;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })inset;
+- (double)dynamicPadding;
+
+@end

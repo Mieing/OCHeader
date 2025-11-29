@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface IESGCPPBGameDetailNotice : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) int actionType;
+@property (nonatomic) int noticeType;
+@property (copy, nonatomic) NSString *jumpContent;
+@property (nonatomic) long long gameStage;
+@property (copy, nonatomic) NSString *landscapeJumpContent;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveLuckyBoxMessage_ImgText : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *image;
+@property (nonatomic) BOOL hasImage;
+@property (copy, nonatomic) NSString *text;
+
++ (id)descriptor;
+
+@end

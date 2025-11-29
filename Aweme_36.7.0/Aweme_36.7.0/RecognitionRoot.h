@@ -1,0 +1,3 @@
+@interface RecognitionRoot : GPBRootObject
+
+@end

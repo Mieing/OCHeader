@@ -1,0 +1,74 @@
+@class NSString, MMPageSheetAdapter, QuickReplyMsgViewController, NSMutableArray, QuickReplyMsgReporter;
+
+@interface QuickReplyMsgMgr : MMUserService <QuickReplyMsgViewControllerDelegate, IMMNewSessionMgrExt, IMsgExt, SettingNotificationViewControllerDelegate, MessagePageSheetAdapterDelegate, MMUIViewControllerExt, BaseMsgViewControllerExt, IExptServiceExt, IUpdateProfileMgrExt, INewSyncExt, MMServiceProtocol>
+
+@property (retain, nonatomic) QuickReplyMsgViewController *replyMsgViewController;
+@property (retain, nonatomic) NSString *replyingSession;
+@property (nonatomic) BOOL recordingUnreadMsg;
+@property (nonatomic) BOOL isShowingNotifyView;
+@property (nonatomic) long long notifyViewStyle;
+@property (retain, nonatomic) NSMutableArray *missedUnreadMsgs;
+@property (retain, nonatomic) NSMutableArray *pendingNotifyItems;
+@property (retain, nonatomic) QuickReplyMsgReporter *reporter;
+@property (weak, nonatomic) MMPageSheetAdapter *pageSheetAdapter;
+@property (nonatomic) BOOL isPageSheetHasAppear;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)startRecordUnreadMsg;
+- (void)startRecordUnreadMsgWithBizType:(long long)a0 bizInfo:(id)a1 style:(long long)a2;
+- (void)stopRecordUnreadMsg;
+- (void)showQuickReplyMsg:(id)a0 message:(id)a1 timeout:(double)a2;
+- (void)showQuickReplyItem:(id)a0;
+- (void)showQuickReplyItem:(id)a0 timeout:(double)a1;
+- (void)showPageSheetSession:(id)a0;
+- (void)showPageSheetWithLogic:(id)a0 withPageSheetDelegate:(id)a1;
+- (void)showPageSheetWithLogic:(id)a0 withPageSheetDelegate:(id)a1 fromViewController:(id)a2;
+- (void)showPageSheetWithLogic:(id)a0 fromViewController:(id)a1;
+- (void)showPageSheetSession:(id)a0 fromViewController:(id)a1;
+- (void)showPageSheetSession:(id)a0 fromViewController:(id)a1 withPageSheetDelegate:(id)a2;
+- (void)handleShowPageSheetSession:(id)a0;
+- (void)disableMessageNotify:(BOOL)a0;
+- (void)disableMessageNotifyInToday;
+- (void)disableMessageNotifyOneHouer;
+- (void)clearTemporaryDisableSetting;
+- (BOOL)isNotifyTemporaryClosed;
+- (BOOL)isNewBannerSettingEnable;
+- (BOOL)isBannerContentSettingEnable;
+- (long long)quickReplyDetailSetting;
+- (BOOL)isNotifySettingClose;
+- (void)reportSystemSetting;
+- (void)onQuickReplyMsgDismissed:(BOOL)a0;
+- (void)onQuickReplyOpenNotifySetting;
+- (void)onSettingFinderUnreadMsgChange:(BOOL)a0;
+- (void)onNewMsgArriving:(id)a0 NotifyFlag:(long long)a1;
+- (void)OnAddMsg:(id)a0 MsgWrap:(id)a1;
+- (void)onEnterBaseMsgSession:(id)a0;
+- (void)onNewSyncEnterSession:(id)a0 createTime:(unsigned int)a1;
+- (BOOL)recordUnreadMsgAtReplying:(id)a0;
+- (void)handleMissedUnreadMsg;
+- (void)handleMissedUnreadMsgWithDetailSetting:(long long)a0;
+- (void)requestCanShowMsgDetail:(id /* block */)a0;
+- (void)removePendingMsgsWithUsername:(id)a0;
+- (BOOL)canShowPushAtCurrentPage:(id)a0;
+- (BOOL)canShowPushAtViewController:(id)a0 sessionUserName:(id)a1;
+- (BOOL)canShowPushForContact:(id)a0 msgWrap:(id)a1;
+- (BOOL)isReplying;
+- (long long)currNotifyViewStyle;
+- (id)getCurrentTopViewController;
+- (BOOL)isOutdateMsg:(id)a0;
+- (void)pageSheetPresentWillBegin:(id)a0;
+- (void)pageSheetWillAppear:(id)a0;
+- (void)pageSheetDidClose:(id)a0 closeType:(long long)a1;
+- (void)onMsgPageSheetMarkUnread:(id)a0;
+- (void)onMsgPageSheetEnterFullscreen:(id)a0;
+- (void)MMUIViewControllerDidAppear:(id)a0;
+- (void)onExptItemListChange;
+- (void)onProfileChange;
+- (void).cxx_destruct;
+
+@end

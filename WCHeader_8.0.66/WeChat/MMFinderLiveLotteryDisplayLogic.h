@@ -1,0 +1,86 @@
+@class MMFinderLivePageSheetNoticeView, NSMutableDictionary, NSString, MMFinderLiveTaskId, NSMutableSet, MMLiveLotteryDetailCardView, MMFinderLiveLotteryPacketDisplayLogic;
+
+@interface MMFinderLiveLotteryDisplayLogic : NSObject <WCFinderLiveExt, MMLiveLotteryDetailCardViewDelegate, LiveLotteryPacketDisplayDelegate, MMFinderLiveLotteryDisplayExt>
+
+@property (retain, nonatomic) MMFinderLiveLotteryPacketDisplayLogic *lotteryPacketDisplayLogic;
+@property (retain, nonatomic) MMLiveLotteryDetailCardView *lotteryDetailCardView;
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (retain, nonatomic) NSMutableDictionary *displayLotteryDict;
+@property (retain, nonatomic) NSString *displayingLotteryId;
+@property (retain, nonatomic) NSString *recentDisplayedLotteryId;
+@property (nonatomic) BOOL isManualUpdatingLotteryRecord;
+@property (nonatomic) unsigned long long checkLotteryStateTime;
+@property (retain, nonatomic) NSMutableSet *mysteriousAttendLotteryFailTipsShowSet;
+@property (weak, nonatomic) MMFinderLivePageSheetNoticeView *mysteriousNoticeView;
+@property (copy, nonatomic) id /* block */ attendLotteryActionBlock;
+@property (copy, nonatomic) id /* block */ getCurrentContentIsShowBlock;
+@property (copy, nonatomic) id /* block */ willShowLotteryDetailCardBlock;
+@property (copy, nonatomic) id /* block */ updatePanelLotteryBlock;
+@property (copy, nonatomic) id /* block */ goPackageGiftBlock;
+@property (copy, nonatomic) id /* block */ freeGameTeamUpBlock;
+@property (copy, nonatomic) id /* block */ updateLotteryStateBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)initRecentDisplayLotteryIdWithLiveTaskId:(id)a0;
++ (id)initRecentDisplayLotteryIdWithLiveTaskId:(id)a0 liveRoomKey:(id)a1;
++ (void)checkAndClearOverTimeLotteryCache;
++ (void)updateRecentAttendLotteryCacheWithLotteryId:(id)a0 taskId:(id)a1;
++ (void)updateRecentAttendLotteryCacheWithLotteryId:(id)a0 taskId:(id)a1 liveRoomKey:(id)a2;
+
+- (id)initWithPacketDisplayLogic:(id)a0 lotteryCardView:(id)a1 taskId:(id)a2;
+- (void)initRecentDisplayLotteryId;
+- (void)dealloc;
+- (void)onEnterLive;
+- (void)onExitLive;
+- (void)registerExtension;
+- (void)unRegisterExtension;
+- (void)showCurrentLotteryyDetailCardView;
+- (void)showMysteriousTipsIfNeededWithConfirmCompletion:(id /* block */)a0;
+- (BOOL)canShowCurrentLotteryyDetailCardView;
+- (BOOL)updateAudienceAbnormalClosedPageInfo:(id)a0 audienceAbnormalClosedPageInfo:(id)a1;
+- (void)onGetFinderLiveLotteryInfoWithTaskId:(id)a0 liveLotteryInfos:(id)a1 lotteryDrawInfos:(id)a2 fromJoinLive:(BOOL)a3;
+- (void)updateLotteryDetailCardView:(id)a0 checkState:(BOOL)a1;
+- (BOOL)isSelfAttendInLottery:(id)a0;
+- (void)checkAndUpdateRecentLotteryId;
+- (void)updateLiveLotteryInfo:(id)a0 lotteryDrawInfo:(id)a1;
+- (void)updateLiveLotteryInfoWithRefresh:(id)a0 lotteryDrawInfo:(id)a1;
+- (void)checkLotteryCancelState;
+- (long long)getDisplayLogicState;
+- (void)checkSelfHasWinInLottery;
+- (void)updateDisplayingLotteryId;
+- (void)clearCurrentLottery;
+- (BOOL)isCurrentLotteryCompleted;
+- (id)getRunningLotteryIdExcept:(id)a0;
+- (id)getLastSelfAttendLotteryInfo;
+- (id)finderLiveTask;
+- (void)getLiveLotteryRecordWithLotteryId:(id)a0 successBlock:(id /* block */)a1 failBlock:(id /* block */)a2;
+- (void)getLiveLotteryRecord:(id)a0 lastBuffer:(id)a1 successBlock:(id /* block */)a2 failBlock:(id /* block */)a3;
+- (void)joinLiveFollowLottery;
+- (void)joinLiveNoticeLottery;
+- (void)handleClaimMethodFreeGameTeamUp:(id)a0;
+- (void)onMMLiveLotteryDetailCardViewGoPackageGift:(id)a0;
+- (void)onMMLiveLotteryDetailCardViewClose;
+- (void)onMMLiveLotteryDetailCardViewUserParticipate;
+- (void)onMMLiveLotteryDetailCardViewAnchorCancel;
+- (void)showToastForCancelLotteryWithErrorType:(int)a0 errorPage:(id)a1;
+- (BOOL)needAutoOpenLotteryDetailCard;
+- (void)willAutoOpenLotteryDetailCard;
+- (void)willUpdatePanelLottery:(id)a0;
+- (void)willManualOpenLotteryDetailCard;
+- (BOOL)isCurrentContentShow;
+- (void)updateRecentAttendLotteryCache;
+- (void)checkAndUpdateLotteryRecord;
+- (void)stopCheckAndUpdateLotteryRecord;
+- (void)freeOrderUpdateLotteryInfoWithLotteryId:(id)a0;
+- (void)manualUpdateLotteryRecord;
+- (BOOL)needCheckLotteryState;
+- (void)onAttendLotteryRejectByHideIdentity;
+- (void)onForceUpdateCurrentLotteryRecord:(long long)a0;
+- (void)onCancelLotteryRecord:(id)a0;
+- (id)displayingLottery;
+- (void).cxx_destruct;
+
+@end

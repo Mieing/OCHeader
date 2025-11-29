@@ -1,0 +1,71 @@
+@class UIColor, NSString, NSArray, UIView, UIGestureRecognizer, AWESlidingViewController, NSMutableArray, UIScrollView;
+@protocol AWEFamiliarSegmentedControlDelegate;
+
+@interface AFDMultiTabSegmentedControl : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate, AFDSegmentedControlProtocol, AWESlidingTabbarProtocol>
+
+@property (nonatomic) BOOL animateLineDismiss;
+@property (retain, nonatomic) NSMutableArray *itemViews;
+@property (retain, nonatomic) NSArray *items;
+@property (retain, nonatomic) UIView *darkSelectedLineView;
+@property (retain, nonatomic) UIView *lightSelectedLineView;
+@property (retain, nonatomic) UIView *seperateView;
+@property (weak, nonatomic) UIGestureRecognizer *singleTap;
+@property (nonatomic) long long resizeFrameParam;
+@property (nonatomic) long long playingIndex;
+@property (retain, nonatomic) UIView *container;
+@property (retain, nonatomic) UIScrollView *multiTabSegmentedControlScollWrapperView;
+@property (retain, nonatomic) UIView *bgMaskView;
+@property (retain, nonatomic) UIColor *darkSelectedLineViewColor;
+@property (retain, nonatomic) UIColor *lightSelectedLineViewColor;
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) long long selectedIndex;
+@property (copy) id /* block */ indexChangeBlock;
+@property (copy) id /* block */ indexNoChangeAfterScrollBlock;
+@property (copy) id /* block */ indexRepeatedClickBlock;
+@property (copy) id /* block */ singleTapClickedBlock;
+@property (weak, nonatomic) id<AWEFamiliarSegmentedControlDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) AWESlidingViewController *slidingViewController;
+
+- (void)buildUI;
+- (void)replaceItem:(id)a0 atIndex:(long long)a1;
+- (void)setSelectedIndex:(long long)a0 animated:(BOOL)a1 tapped:(BOOL)a2;
+- (void)slidingControllerDidScroll:(id)a0 isFigureDragging:(BOOL)a1;
+- (void)updateSelectedLineViewWithCurrentIndex:(long long)a0;
+- (id)initWithItems:(id)a0 defaultSelectedIndex:(long long)a1;
+- (void)reloadWithItems:(id)a0 selectedIndex:(long long)a1;
+- (void)updateSegmentThemeChangedToDark:(BOOL)a0 currentIndex:(long long)a1;
+- (void)tabChangedProgress:(double)a0 fromIndex:(long long)a1 toIndex:(long long)a2;
+- (id)initWithItems:(id)a0 defaultSelectedIndex:(long long)a1 scene:(unsigned long long)a2;
+- (void)p_buildSegmentItemView;
+- (void)p_layoutSelectedLineView;
+- (id)p_labelAtIndex:(long long)a0;
+- (void)p_buildMultiTabUI;
+- (long long)titleIconOffsetWithIndex:(long long)a0;
+- (double)bottomLineOffset;
+- (double)labelLeftPadding;
+- (void)tab:(id)a0 changeToSelected:(BOOL)a1 animated:(BOOL)a2 index:(long long)a3;
+- (void)p_updateItemViewYellowDotWithIndex:(long long)a0 isHidden:(BOOL)a1;
+- (id)p_itemAtIndex:(long long)a0;
+- (void)segmentedControlTapped:(long long)a0;
+- (void)repeatTapIndex:(long long)a0;
+- (id)titleFontWithSelected:(BOOL)a0 atIndex:(long long)a1;
+- (void)updateItem:(id)a0 atIndex:(long long)a1 animeted:(BOOL)a2;
+- (id)labelForIndex:(long long)a0;
+- (void)showItemViewYellowDotWithIndex:(long long)a0;
+- (void)hideItemViewYellowDotWithIndex:(long long)a0;
+- (void)updateDropDownArrowWithHidden:(BOOL)a0 currentIndex:(long long)a1;
+- (void)setContainerAlpha:(double)a0;
+- (BOOL)itemViewIsShowingYellowDotWithIndex:(long long)a0;
+- (void)tap:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidScroll:(id)a0;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)layoutSubviews;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)setSelectedIndex:(long long)a0 animated:(BOOL)a1;
+
+@end

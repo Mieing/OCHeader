@@ -1,0 +1,13 @@
+@class TempStateAreaResponse_Resource;
+
+@interface TempStateAreaResponse_Elem : IESLivePBBaseMessage
+
+@property (nonatomic) long long elemType;
+@property (nonatomic) long long elemId;
+@property (nonatomic) long long itemId;
+@property (retain, nonatomic) TempStateAreaResponse_Resource *resource;
+@property (nonatomic) BOOL hasResource;
+
++ (id)descriptor;
+
+@end

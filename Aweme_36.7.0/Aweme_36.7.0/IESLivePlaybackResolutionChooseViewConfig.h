@@ -1,0 +1,3 @@
+@interface IESLivePlaybackResolutionChooseViewConfig : IESLiveResolutionChooseViewBaseConfig
+
+@end

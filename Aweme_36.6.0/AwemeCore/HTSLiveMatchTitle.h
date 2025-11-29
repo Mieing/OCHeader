@@ -1,0 +1,11 @@
+@class NSString, HTSLiveMatchTitle_TitleIcon;
+
+@interface HTSLiveMatchTitle : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *roomTitle;
+@property (retain, nonatomic) HTSLiveMatchTitle_TitleIcon *titleIcon;
+@property (nonatomic) BOOL hasTitleIcon;
+
++ (id)descriptor;
+
+@end

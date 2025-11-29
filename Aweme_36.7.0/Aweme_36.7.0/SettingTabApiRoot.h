@@ -1,0 +1,3 @@
+@interface SettingTabApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,8 @@
+@interface HTSLiveCardCondition : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) long long value;
+
++ (id)descriptor;
+
+@end

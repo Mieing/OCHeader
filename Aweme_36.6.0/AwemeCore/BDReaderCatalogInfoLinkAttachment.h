@@ -1,0 +1,3 @@
+@interface BDReaderCatalogInfoLinkAttachment : BDReaderLinkAttachment
+
+@end

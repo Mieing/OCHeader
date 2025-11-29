@@ -1,0 +1,3 @@
+@interface AWELazyRegisterTransition : NSObject
+
+@end

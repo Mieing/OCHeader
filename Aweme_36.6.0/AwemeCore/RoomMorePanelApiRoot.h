@@ -1,0 +1,3 @@
+@interface RoomMorePanelApiRoot : GPBRootObject
+
+@end

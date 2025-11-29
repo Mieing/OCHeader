@@ -1,0 +1,81 @@
+@class MultipleTextStateCardFooterDotsView, MMLRUCache, TextStateHeaderSectionView, NSArray, UIScrollView, UIView, NSString;
+@protocol MultipleTextStateCardViewDataSource, WCStatusViewDelegate, MultipleTextStateCardViewDelegate, TextStateBaseCardContentViewDelegate;
+
+@interface MultipleTextStateCardView : UIView <UIScrollViewDelegate, WCStatusViewDelegate>
+
+@property (weak, nonatomic) id<WCStatusViewDelegate> statusViewDelegate;
+@property (nonatomic) unsigned long long activeIndex;
+@property (retain, nonatomic) MMLRUCache *cardViewCache;
+@property (nonatomic) unsigned long long candidateActiveIndex;
+@property (retain, nonatomic) UIScrollView *autoLoopView;
+@property (retain, nonatomic) TextStateHeaderSectionView *headerView;
+@property (retain, nonatomic) MultipleTextStateCardFooterDotsView *dotsView;
+@property (retain, nonatomic) UIView *draggingGuideView;
+@property (weak, nonatomic) id<MultipleTextStateCardViewDataSource> dataSource;
+@property (weak, nonatomic) id<MultipleTextStateCardViewDelegate> delegate;
+@property (weak, nonatomic) id<TextStateBaseCardContentViewDelegate> cardContentDelegate;
+@property (retain, nonatomic) NSArray *infoList;
+@property (nonatomic) double headerTopPadding;
+@property (nonatomic) double footerBottomPadding;
+@property (nonatomic) BOOL showDraggingGuide;
+@property (nonatomic) double cornerRadius;
+@property (readonly, nonatomic) BOOL isSingle;
+@property (nonatomic) unsigned long long startPosition;
+@property (nonatomic) BOOL scrollEnabled;
+@property (nonatomic) BOOL passthroughTouches;
+@property (nonatomic) unsigned long long positionInCardList;
+@property (retain, nonatomic) NSString *cardListId;
+@property (nonatomic) double contentAlpha;
+@property (nonatomic) BOOL shouldShowLocationDistance;
+@property (nonatomic) BOOL forbidUpdateData;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)popAnimationForView:(id)a0;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)initData;
+- (void)initView;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)layoutSubviews;
+- (void)updateAutoLoopView;
+- (void)updateDotsView;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)isSameInfoList:(id)a0;
+- (void)setShouldShowLocationDistance:(BOOL)a0;
+- (BOOL)shouldShowLocationDistance;
+- (double)contentBottomPadding;
+- (void)updateScrollEnabled;
+- (id)activeTextState;
+- (id)activeCardView;
+- (id)cardViewAtIndex:(unsigned long long)a0;
+- (void)createOrUpdatePopAnimation;
+- (void)removePopAnimation;
+- (void)startCardViewAtIndex:(unsigned long long)a0 needReset:(BOOL)a1;
+- (void)onWCStatusViewShowGroup:(id)a0 view:(id)a1;
+- (void)pauseCardViewAtIndex:(unsigned long long)a0;
+- (void)pauseActiveCardView;
+- (void)stopActiveCardView;
+- (void)residentStopActiveCardView;
+- (void)startActiveCardView;
+- (void)restartActiveCardView;
+- (void)updateActiveIndex;
+- (void)updateIndexByInnerIndex:(unsigned long long)a0;
+- (void)updateActiveIndexToIndex:(unsigned long long)a0 animated:(BOOL)a1;
+- (void)reloadAutoLoopView;
+- (BOOL)ensureCreateCardViewAtIndex:(unsigned long long)a0;
+- (void)updateAutoLoopContent;
+- (void)handlePanGesture:(id)a0;
+- (unsigned long long)nextIndexForIndex:(unsigned long long)a0;
+- (unsigned long long)prevIndexForIndex:(unsigned long long)a0;
+- (void)onWillDisplayCardViewAtIndex:(unsigned long long)a0;
+- (void)showFromStartPosition;
+- (void)showTextStateAtIndex:(unsigned long long)a0;
+- (void)showNextTextStateAnimated;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void).cxx_destruct;
+
+@end

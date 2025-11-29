@@ -1,0 +1,3 @@
+@interface CECImageAlbumEditorGeometry : NSObject
+
+@end

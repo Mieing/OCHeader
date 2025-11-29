@@ -1,0 +1,3 @@
+@interface BDTuringAccessibilityModel : BDTuringPictureVerifyModel
+
+@end

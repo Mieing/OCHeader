@@ -1,0 +1,16 @@
+@class NSString, HTSLiveUser;
+
+@interface HTSLiveRoomUserSeqMessage_Contributor : IESLivePBBaseMessage
+
+@property (nonatomic) long long score;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long rank;
+@property (nonatomic) long long delta;
+@property (nonatomic) BOOL isHidden;
+@property (copy, nonatomic) NSString *scoreDescription;
+@property (copy, nonatomic) NSString *exactlyScore;
+
++ (id)descriptor;
+
+@end

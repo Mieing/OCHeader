@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBOnlineUserInfo : GPBMessage
+
+@property (nonatomic) long long userId;
+@property (copy, nonatomic) NSString *avatarThumbURL;
+
++ (id)descriptor;
+
+@end

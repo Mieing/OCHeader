@@ -1,0 +1,3 @@
+@interface IESLiveLinkmicThemedCompetitionRoot : GPBRootObject
+
+@end

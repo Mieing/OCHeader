@@ -1,0 +1,5 @@
+@interface ACCVideoHelper : NSObject
+
++ (struct CGSize { double x0; double x1; })screenDisplaySizeForVideoSize:(struct CGSize { double x0; double x1; })a0;
+
+@end

@@ -1,0 +1,72 @@
+@class NSLock, ACCAIGCLoraProfileModel, NSString, UIImage, NSArray, AWEUserModel, AFDProfileAvatarFunctionModel;
+@protocol ACCAIGCRecordListDataSourceProtocol, AFDProfileAvatarViewControllerProtocol, AWEProfileAvatarPreviewPendantManagerProtocol;
+
+@interface AFDProfileAvatarFunctionManager : NSObject <AWEUserMessage>
+
+@property (retain, nonatomic) AWEUserModel *user;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *formatModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *chanageAvatarModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *saveAvatarModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *decorationModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *QRModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *likeAvatarModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *shareProfileModel;
+@property (retain, nonatomic) AFDProfileAvatarFunctionModel *AIGCModel;
+@property (retain, nonatomic) id<AWEProfileAvatarPreviewPendantManagerProtocol> decorationManager;
+@property (retain, nonatomic) NSLock *likeLock;
+@property (nonatomic) long long highlightFunctionType;
+@property (retain, nonatomic) ACCAIGCLoraProfileModel *profileInfoModel;
+@property (retain, nonatomic) id<ACCAIGCRecordListDataSourceProtocol> dataSource;
+@property (weak, nonatomic) id<AFDProfileAvatarViewControllerProtocol> delegate;
+@property (retain, nonatomic) UIImage *image;
+@property (nonatomic) long long fromPageType;
+@property (nonatomic) long long prePageType;
+@property (nonatomic) long long fromAction;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) NSArray *functionModel;
+@property (retain, nonatomic) NSArray *topFunctionModel;
+@property (retain, nonatomic) NSArray *dismissBlocks;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewControllerDidAppear;
+- (BOOL)shouldAccountShowAIGCLibrary;
+- (void)handleFunctionWithType:(long long)a0;
+- (void)handleDisplayWithType:(long long)a0;
+- (void)p_setupFunctionModels;
+- (void)p_setupObserve;
+- (void)p_reportFormatShow;
+- (BOOL)shouldShowAIGCLibrary;
+- (BOOL)shouldShowFormat;
+- (void)p_preLoadNeededData;
+- (BOOL)shouldShowChangeAvatarItem;
+- (BOOL)shouldShowLikeItem;
+- (BOOL)shouldShowDecorationItem;
+- (BOOL)shouldShowQRItem;
+- (BOOL)profileOfflineWithComponentType:(id)a0;
+- (void)trackAvatarFunctionWithComponentType:(id)a0 isClick:(BOOL)a1;
+- (void)didClickedChanageAvatar;
+- (void)didClickedSaveAvatar;
+- (void)didClickedDecoration;
+- (void)didClickedQR;
+- (void)didClickedLikeButton;
+- (void)didDoubleClickedToLike;
+- (void)didSwitchVirtualAvatarClicked;
+- (void)didClickShareProfile;
+- (void)didClickFormat;
+- (void)didClickAIGC;
+- (void)didClickedLike;
+- (BOOL)shouldShowVirtualAvatar;
+- (id)p_relationContext;
+- (BOOL)shouldHighlightButtonWithType:(long long)a0;
+- (long long)p_functionTypeFromString:(id)a0;
+- (BOOL)shouldShowSaveAvatarItem;
+- (void).cxx_destruct;
+- (id)initWithUser:(id)a0;
+- (void)dealloc;
+- (void)image:(id)a0 didFinishSavingWithError:(id)a1 contextInfo:(void *)a2;
+
+@end

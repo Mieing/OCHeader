@@ -1,0 +1,3 @@
+@interface AWEIMPopupRedPacketRouter : NSObject
+
+@end

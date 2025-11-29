@@ -1,0 +1,10 @@
+@class UpdateGroupVoteResponse_Data;
+
+@interface UpdateGroupVoteResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateGroupVoteResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

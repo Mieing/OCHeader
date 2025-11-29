@@ -1,0 +1,16 @@
+@class NSString, HTSLiveText;
+
+@interface HTSLiveHotfixGiftDataForProp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveText *displayText;
+@property (nonatomic) BOOL hasDisplayText;
+@property (copy, nonatomic) NSString *describe;
+@property (nonatomic) long long giftId;
+@property (nonatomic) long long groupCount;
+@property (nonatomic) long long repeatCount;
+@property (nonatomic) long long comboCount;
+@property (nonatomic) long long msgId;
+
++ (id)descriptor;
+
+@end

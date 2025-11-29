@@ -1,0 +1,3 @@
+@interface IESLLPendantABTestManager : NSObject
+
+@end

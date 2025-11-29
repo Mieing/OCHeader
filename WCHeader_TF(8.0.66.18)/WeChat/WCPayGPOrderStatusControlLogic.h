@@ -1,0 +1,70 @@
+@class WCPayPayMoneyLogic, NSString, CContact;
+@protocol WCPayGPOrderStatusControlLogicDelegate;
+
+@interface WCPayGPOrderStatusControlLogic : WCPayControlLogic <PBMessageObserverDelegate, WCPayGPOrderStatusViewControllerDelegate, WCPayPayMoneyLogicDelegate, WCBaseControlMgrExt, WCBaseControlLogicDeleagte, MMTipsViewControllerDelegate, MMUseCaseCallback, WCPayGPLaunchControlLogicDelegate, WCPayGPMoneyInputViewControllerDelegate>
+
+@property (retain, nonatomic) WCPayPayMoneyLogic *payMoneyLogic;
+@property (nonatomic) unsigned long long currentLogicScene;
+@property (nonatomic) unsigned int msgLocalID;
+@property (retain, nonatomic) NSString *curAlertRightBtnUrl;
+@property (retain, nonatomic) NSString *sign;
+@property (nonatomic) unsigned int ver;
+@property (nonatomic) BOOL bIsLaunchSucc;
+@property (retain, nonatomic) CContact *launchContact;
+@property (nonatomic) unsigned long long customizeAAPayAmount;
+@property (weak, nonatomic) id<WCPayGPOrderStatusControlLogicDelegate> orderStatusDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initWithBillNum:(id)a0 withOrderStatusFromScene:(unsigned long long)a1 withChatroomContact:(id)a2 withLogicScene:(unsigned long long)a3 selectedMessageWrap:(id)a4;
+- (id)initWithBillNum:(id)a0 withOrderStatusFromScene:(unsigned long long)a1 withChatroomContact:(id)a2 withLogicScene:(unsigned long long)a3 withMsgLocalID:(unsigned int)a4;
+- (id)initWithJSParam:(id)a0;
+- (void)stopLogic;
+- (void)startLogic;
+- (void)cancelCloseOrderFromSysMsg;
+- (void)confirmCloseOrderFromSysMsg;
+- (void)cancelCloseUnPayNotifyFromSysMsg;
+- (void)confirmCloseUnPayNotifyFromSysMsg;
+- (void)onOrderStatusViewControllerCancel;
+- (void)onPayerClickPayMoneyButton:(id)a0;
+- (void)onLauncherClickSendPayNotifyMsgBtn;
+- (void)onLauncherClickCloseOrderBtn;
+- (void)onPayerClickCloseUnPayNotify;
+- (void)startPayMoneyLogic;
+- (void)startPayMoneyLogic:(BOOL)a0;
+- (void)onClickViewBalanceLink;
+- (void)onClickLaunchNewGroupPayBtn;
+- (void)handleCustomizeAAClickPayMoneyButton;
+- (void)onWCPayGPMoneyInputViewControllerBack;
+- (void)onWCPayGPMoneyInputViewControllerConfirmWithMoney:(unsigned long long)a0 payReason:(id)a1;
+- (void)onWCBaseLogicDidStop:(unsigned int)a0;
+- (void)handleQryPaySuccFinish;
+- (void)dismissAndStopLogic;
+- (void)showSetPwdTipsView;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 withText:(id)a2 withTipsVC:(id)a3;
+- (void)ContinueDismissAndStopLogic;
+- (void)delayStopLogic;
+- (void)addAAPaySuccessSysMsg;
+- (BOOL)updateC2CNewXmlMsgContentWithRespXml:(id)a0;
+- (void)activtyMoneyTextFieldIfNecessary;
+- (BOOL)gotoViewController:(id)a0;
+- (void)getAAOrderDetailFromSvr;
+- (void)queryAAPaySuccFromSvrWithTransId:(id)a0;
+- (void)onGetAAPaySuccResponse:(id)a0;
+- (void)onGetAAOrderDetailResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)onGetAAOrderPrePayResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)onGetCloseAAOrderResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)onGetSendPayNotifyMsgResponse:(id)a0 eventID:(unsigned int)a1;
+- (void)onGetAACloseUnpayNotifyResonse:(id)a0 eventID:(unsigned int)a1;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)prepayAlertViewConfirmClick;
+- (void)openH5WithUrl:(id)a0;
+- (void)call:(id)a0;
+- (void)onLaunchGroupPaySuccWithContact:(id)a0;
+- (void)onLaunchControlLogicStop;
+- (void).cxx_destruct;
+
+@end

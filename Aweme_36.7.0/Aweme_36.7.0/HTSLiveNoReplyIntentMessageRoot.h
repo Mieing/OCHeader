@@ -1,0 +1,3 @@
+@interface HTSLiveNoReplyIntentMessageRoot : GPBRootObject
+
+@end

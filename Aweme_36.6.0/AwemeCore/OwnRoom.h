@@ -1,0 +1,14 @@
+@class GPBInt64Array, NSMutableArray, GPBInt32Array;
+
+@interface OwnRoom : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *roomIdsArray;
+@property (readonly, nonatomic) unsigned long long roomIdsArray_Count;
+@property (retain, nonatomic) NSMutableArray *roomIdsStrArray;
+@property (readonly, nonatomic) unsigned long long roomIdsStrArray_Count;
+@property (retain, nonatomic) GPBInt32Array *roomIdsDisplayArray;
+@property (readonly, nonatomic) unsigned long long roomIdsDisplayArray_Count;
+
++ (id)descriptor;
+
+@end

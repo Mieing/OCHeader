@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBGameAward : GPBMessage
+
+@property (copy, nonatomic) NSString *yearPlatform;
+@property (copy, nonatomic) NSString *awardName;
+
++ (id)descriptor;
+
+@end

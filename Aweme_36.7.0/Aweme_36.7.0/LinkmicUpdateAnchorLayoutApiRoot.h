@@ -1,0 +1,3 @@
+@interface LinkmicUpdateAnchorLayoutApiRoot : GPBRootObject
+
+@end

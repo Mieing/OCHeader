@@ -1,0 +1,10 @@
+@class UpdateAudienceAddSongSettingResponse_ResponseData;
+
+@interface UpdateAudienceAddSongSettingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateAudienceAddSongSettingResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

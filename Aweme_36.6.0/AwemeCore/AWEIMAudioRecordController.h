@@ -1,0 +1,78 @@
+@class NSData, NSString, UIView, AWEIMAudioIndicatorView, NSMutableArray, FBKVOController, UIViewController, AWEIMConversationContext;
+@protocol AWEIMAudioInputTouchViewProtocol, AWEIMAudioRecordControllerDelegate, IESIMAudioMessageRecorderInterface;
+
+@interface AWEIMAudioRecordController : NSObject <AWEIMAudioInputTouchViewDelegate, AWEIMAudioMessageRecorderDelegate, AWEIMAudioRecordControllerProtocol>
+
+@property (nonatomic) unsigned long long effectTouchSessionID;
+@property (nonatomic) unsigned long long currentTouchSessionID;
+@property (retain, nonatomic) NSMutableArray *restoreWindowGR;
+@property (retain, nonatomic) NSData *recordData;
+@property (copy, nonatomic) NSString *recordFilePath;
+@property (nonatomic) BOOL sendAudioRefactor;
+@property (nonatomic) double startSendTime;
+@property (nonatomic) double startTime;
+@property (nonatomic) double didStartTime;
+@property (nonatomic) double firstDotTime;
+@property (copy, nonatomic) NSString *conversationID;
+@property (weak, nonatomic) UIView<AWEIMAudioInputTouchViewProtocol> *audioInputView;
+@property (weak, nonatomic) UIViewController *viewController;
+@property (weak, nonatomic) AWEIMConversationContext *context;
+@property (retain, nonatomic) FBKVOController *vmKVO;
+@property (retain, nonatomic) id<IESIMAudioMessageRecorderInterface> recorder;
+@property (retain, nonatomic) AWEIMAudioIndicatorView *audioIndicatorView;
+@property (weak, nonatomic) id<AWEIMAudioRecordControllerDelegate> delegate;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) NSString *resourceFrom;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)audioInputTouchViewTouchDownInside:(id)a0;
+- (void)audioInputTouchViewTouchUpOutside:(id)a0 cancelled:(BOOL)a1;
+- (void)audioRecorderStartRecord:(id)a0 error:(id)a1;
+- (void)audioRecorderExceedLimitTime:(id)a0;
+- (void)audioRecorderNotifyLeftSecondBeforeExceedLimit:(id)a0 secondsLeftBeforeExceedLimit:(long long)a1;
+- (void)configWindowGesture;
+- (void)restoreWindowGesture;
+- (void)p_updateFinalChannelVolume;
+- (float)p_normalizedSoundPower;
+- (void)p_observeRecorder;
+- (void)p_unobserveRecorder;
+- (void)touchViewTouchDown;
+- (void)p_updateAudioCountDown:(long long)a0;
+- (void)touchViewTouchUp;
+- (void)audioRecorderDidFinishRecording:(id)a0 success:(BOOL)a1 action:(unsigned long long)a2 error:(id)a3;
+- (void)audioRecorderPeriodicTimeRecording:(id)a0;
+- (id)p_generateNewAudioBubbleWithPowers:(id)a0 totalTime:(double)a1;
+- (void)enablePanToPopGR;
+- (void)p_checkRealRecorderForBizTracker;
+- (void)p_trackAudioRecordStartForMethod:(id)a0;
+- (void)p_trackAudioRecordPerformanceWithType:(id)a0 status:(BOOL)a1 errorCode:(long long)a2;
+- (void)p_trackAudioRecordFinishedForAction:(unsigned long long)a0;
+- (BOOL)sendRecordMessageIfNeededWithFilePath:(id)a0 audioRecorder:(id)a1;
+- (BOOL)sendRecordMessageIfNeededWithData:(id)a0 audioRecorder:(id)a1;
+- (void)p_recordCompletionCleanup;
+- (id)p_generateAudioBubbleWithPowers:(id)a0 totalTime:(double)a1;
+- (id)prepareQuotedContent;
+- (void)p_stopTranslate;
+- (void)p_startTranslate;
+- (void)audioInputTouchViewTouchUp:(BOOL)a0 action:(unsigned long long)a1;
+- (void)disablePanToPopGR;
+- (void)audioInputTouchViewTouchMoveToRecord:(id)a0;
+- (void)audioInputTouchViewTouchMoveToCancel:(id)a0;
+- (void)audioInputTouchViewTouchMoveToTranslate:(id)a0;
+- (void)audioInputTouchViewTouchUpInside:(id)a0 cancelled:(BOOL)a1 isInTranslate:(BOOL)a2;
+- (BOOL)audioInputTouchViewIsInTranslate:(id)a0;
+- (void)audioInputTouchViewDidTapCancel:(id)a0;
+- (void)audioInputTouchViewDidTapSendAudio:(id)a0;
+- (void)audioInputTouchViewDidTapSendText:(id)a0 content:(id)a1;
+- (id)p_rounding:(float)a0 afterPoint:(long long)a1;
+- (void).cxx_destruct;
+- (void)clear;
+- (id)init;
+- (id)inputViewController;
+- (void)dealloc;
+- (void)p_updateVolume;
+
+@end

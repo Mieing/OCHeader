@@ -1,0 +1,3 @@
+@interface OpenUserApiRoot : GPBRootObject
+
+@end

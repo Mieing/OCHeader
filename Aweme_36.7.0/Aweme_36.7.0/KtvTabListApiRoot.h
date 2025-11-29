@@ -1,0 +1,3 @@
+@interface KtvTabListApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class QuerySettingResponse_Data;
+
+@interface QuerySettingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) QuerySettingResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

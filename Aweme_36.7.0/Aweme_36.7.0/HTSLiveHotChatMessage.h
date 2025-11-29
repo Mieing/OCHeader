@@ -1,0 +1,27 @@
+@class HTSLiveText, NSString, HTSLiveCommon, NSMutableDictionary, GPBInt64Array, NSMutableArray, HTSLiveHighlightAreaPriorityConfig;
+
+@interface HTSLiveHotChatMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+@property (retain, nonatomic) GPBInt64Array *numArray;
+@property (readonly, nonatomic) unsigned long long numArray_Count;
+@property (nonatomic) long long duration;
+@property (retain, nonatomic) GPBInt64Array *showDurationArray;
+@property (readonly, nonatomic) unsigned long long showDurationArray_Count;
+@property (nonatomic) long long sequenceId;
+@property (retain, nonatomic) NSMutableArray *hotListArray;
+@property (readonly, nonatomic) unsigned long long hotListArray_Count;
+@property (retain, nonatomic) HTSLiveText *rtfContent;
+@property (nonatomic) BOOL hasRtfContent;
+@property (nonatomic) long long chatContentType;
+@property (retain, nonatomic) HTSLiveHighlightAreaPriorityConfig *highlightAreaPriorityConfig;
+@property (nonatomic) BOOL hasHighlightAreaPriorityConfig;
+@property (retain, nonatomic) NSMutableDictionary *extra;
+@property (readonly, nonatomic) unsigned long long extra_Count;
+
++ (id)descriptor;
+
+@end

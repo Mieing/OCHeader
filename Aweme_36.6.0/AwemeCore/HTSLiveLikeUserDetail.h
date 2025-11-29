@@ -1,0 +1,11 @@
+@class HTSLiveUser;
+
+@interface HTSLiveLikeUserDetail : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) long long count;
+
++ (id)descriptor;
+
+@end

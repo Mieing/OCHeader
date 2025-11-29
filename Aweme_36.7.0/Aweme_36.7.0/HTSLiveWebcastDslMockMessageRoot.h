@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastDslMockMessageRoot : GPBRootObject
+
+@end

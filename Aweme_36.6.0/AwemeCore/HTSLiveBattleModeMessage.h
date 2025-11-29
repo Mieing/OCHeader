@@ -1,0 +1,14 @@
+@class HTSLiveBattleModeMessage_StealTowerData, HTSLiveCommon;
+
+@interface HTSLiveBattleModeMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long mode;
+@property (retain, nonatomic) HTSLiveBattleModeMessage_StealTowerData *stealTowerData;
+@property (nonatomic) BOOL hasStealTowerData;
+@property (nonatomic) long long now;
+
++ (id)descriptor;
+
+@end

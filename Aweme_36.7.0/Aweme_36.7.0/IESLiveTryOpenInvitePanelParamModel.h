@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveTryOpenInvitePanelParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *source;
+@property (nonatomic) BOOL isTask;
+@property (copy, nonatomic) NSString *activityName;
+
++ (id)modelCustomPropertyMapper;
+
+@end

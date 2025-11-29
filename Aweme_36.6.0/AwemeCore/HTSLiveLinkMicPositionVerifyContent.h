@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkMicPositionVerifyContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long currentVerifyPosition;
+@property (retain, nonatomic) NSMutableArray *verifyPositionItemsArray;
+@property (readonly, nonatomic) unsigned long long verifyPositionItemsArray_Count;
+@property (retain, nonatomic) NSMutableArray *finalPositionItemsArray;
+@property (readonly, nonatomic) unsigned long long finalPositionItemsArray_Count;
+
++ (id)descriptor;
+
+@end

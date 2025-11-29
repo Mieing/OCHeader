@@ -1,0 +1,10 @@
+@class BattleStateTransitionResponse_ResponseData;
+
+@interface BattleStateTransitionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) BattleStateTransitionResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

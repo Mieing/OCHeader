@@ -1,0 +1,3 @@
+@interface ShowCollectApiRoot : GPBRootObject
+
+@end

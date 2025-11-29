@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface GetGoldRewardResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *displayText;
+
++ (id)descriptor;
+
+@end

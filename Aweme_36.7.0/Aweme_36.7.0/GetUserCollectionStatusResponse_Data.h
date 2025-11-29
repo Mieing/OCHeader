@@ -1,0 +1,10 @@
+@class GetUserCollectionStatusResponse_Data_UserCollectionStatus;
+
+@interface GetUserCollectionStatusResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetUserCollectionStatusResponse_Data_UserCollectionStatus *userCollectionStatus;
+@property (nonatomic) BOOL hasUserCollectionStatus;
+
++ (id)descriptor;
+
+@end

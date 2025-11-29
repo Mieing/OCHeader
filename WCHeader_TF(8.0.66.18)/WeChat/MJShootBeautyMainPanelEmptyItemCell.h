@@ -1,0 +1,3 @@
+@interface MJShootBeautyMainPanelEmptyItemCell : MJShootBeautyMainPanelItemCell
+
+@end

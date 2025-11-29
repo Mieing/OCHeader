@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentInputViewCommentListConfiguration : AWECommentInputViewSwiftImpl.CommentInputViewConfiguration
+
+@end

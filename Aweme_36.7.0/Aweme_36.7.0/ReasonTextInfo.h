@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface ReasonTextInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL hasContent;
+
++ (id)descriptor;
+
+@end

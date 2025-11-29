@@ -1,0 +1,3 @@
+@interface IESECBDImageShadowNode : LynxImageShadowNode
+
+@end

@@ -1,0 +1,60 @@
+@interface AWELeftSideBarSettingManager : NSObject
+
++ (BOOL)AWELeftSideBarUIStyleUseNewGridStyle;
++ (id)helpDeskUrl;
++ (BOOL)helpDeskAddSourceEnabled;
++ (long long)sideBarUIOptStyle;
++ (BOOL)moreFunctionOptEnabled;
++ (BOOL)fixAmbienceRelease;
++ (BOOL)enableNewTransitionOpt;
++ (BOOL)padSynchronousEnabled;
++ (BOOL)leftSideBarLeftmostChannelScrollHotArea;
++ (BOOL)fixHotReloadRedDotError;
++ (BOOL)checkSideBarEntranceNeedFirstCheckAdded;
++ (double)transitionOverlayBlockThreshold;
++ (id)entranceBadgeBlackSet;
++ (long long)leftSideBarBannerLynxContainerDelayAutoPlayInternal;
++ (long long)leftSideBarBannerLynxContainerAutoPlayInternal;
++ (BOOL)useLayoutAttributesUpdateItemCellOrigin;
++ (BOOL)sideBarCustomHeaderViewUpdateConstraintOpt;
++ (BOOL)homeSidebarEntranceNumericalRedDotDisable;
++ (BOOL)homeSidebarEntranceRedDotDisable;
++ (double)leftSideBarCaptionBubbleStayTime;
++ (double)leftSideBarCaptionBubbleWidth;
++ (struct CGSize { double x0; double x1; })leftSidebarEntrySquareAnimSize;
++ (struct CGSize { double x0; double x1; })leftSideBarEntryAnimImageSize;
++ (BOOL)functionContainerListCellAddCorner;
++ (BOOL)homeSidebarEntranceViewDisable;
++ (BOOL)homeSidebarEntranceBubbleDisable;
++ (BOOL)isConsumeEntranceBadgeOptimizationEnabled;
++ (long long)leftSideBarAfterAnimeBubbleTimeInterval;
++ (double)leftSidebarPopViewTaskLifePeriod;
++ (BOOL)disablePresenterCreateInColdLaunch;
++ (BOOL)checkPresenterCreateInFeedReady;
++ (BOOL)checkPresenterCreateOnMainThread;
++ (BOOL)checkPresenterCreateConditionOnMainThread;
++ (BOOL)leftSideBarEntranceBadgeAccessPz;
++ (BOOL)useNewCheckEntranceEnable;
++ (BOOL)sideBarDataPreFetchEnabled;
++ (Class)aAWELeftSideBarDOUYINLiteAdapterClass;
++ (long long)leftSideBarRecentVisitUserRedPointStrategy;
++ (BOOL)isNotificationUseServerTimeEnabled;
++ (BOOL)iOS12DismissAdapter;
++ (BOOL)fixCancelPresentDispatchOnClose;
++ (long long)leftSideBarNotificationSideBarScrollHotArea;
++ (long long)leftSideBarProfileSideBarScrollHotArea;
++ (BOOL)fixStatusBarAppearance;
++ (BOOL)deleteOptimizePresentForNavigationFlagEnabled;
++ (BOOL)useModalPresentationOverFullScreenEnabled;
++ (BOOL)useURLPathAsRequestKeyForAppIcon;
++ (BOOL)recentVisitUserUpdateConditionOpt;
++ (id)homeSidebarEntranceConfig;
++ (Class)aAWELeftSideBarDOUYINAdapterClass;
++ (id)leftSideBarEnableSettingsDict;
++ (BOOL)leftSideBarUseNewDarkBackgroundColor;
++ (BOOL)changeSettingPageBusinessTypeEnabled;
+
+- (id)aAWELeftSideBarDOUYINLiteAdapter;
+- (id)aAWELeftSideBarDOUYINAdapter;
+
+@end

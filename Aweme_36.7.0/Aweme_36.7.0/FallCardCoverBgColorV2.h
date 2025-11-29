@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface FallCardCoverBgColorV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *forWhite;
+@property (nonatomic) BOOL hasForWhite;
+@property (copy, nonatomic) NSString *forDark;
+@property (nonatomic) BOOL hasForDark;
+
++ (id)descriptor;
+
+@end

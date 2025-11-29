@@ -1,0 +1,12 @@
+@class PageNameStyle;
+
+@interface PageNameStyleInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PageNameStyle *styleBeforeSelected;
+@property (nonatomic) BOOL hasStyleBeforeSelected;
+@property (retain, nonatomic) PageNameStyle *styleAfterSelected;
+@property (nonatomic) BOOL hasStyleAfterSelected;
+
++ (id)descriptor;
+
+@end

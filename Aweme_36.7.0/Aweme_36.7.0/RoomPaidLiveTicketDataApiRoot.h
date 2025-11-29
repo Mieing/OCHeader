@@ -1,0 +1,3 @@
+@interface RoomPaidLiveTicketDataApiRoot : GPBRootObject
+
+@end

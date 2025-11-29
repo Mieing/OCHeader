@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface IapFailJumpConfigResult_ResultData_Toast : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *toast;
+
++ (id)descriptor;
+
+@end

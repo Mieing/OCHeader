@@ -1,0 +1,7 @@
+@interface BizReplyResult_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long retCode;
+
++ (id)descriptor;
+
+@end

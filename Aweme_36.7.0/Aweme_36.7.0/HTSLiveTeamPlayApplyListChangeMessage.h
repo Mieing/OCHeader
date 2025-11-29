@@ -1,0 +1,10 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveTeamPlayApplyListChangeMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+
++ (id)descriptor;
+
+@end

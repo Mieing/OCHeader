@@ -1,0 +1,13 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveHighlightCommentPosition : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long eventTime;
+@property (nonatomic) double x;
+@property (nonatomic) double y;
+
++ (id)descriptor;
+
+@end

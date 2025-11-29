@@ -1,0 +1,3 @@
+@interface AWELynxBridgeRegister : NSObject
+
+@end

@@ -1,0 +1,14 @@
+@class HTSLiveImage;
+
+@interface HTSLiveEggItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *background;
+@property (nonatomic) BOOL hasBackground;
+@property (nonatomic) long long backgroundHight;
+@property (nonatomic) long long backgroundWidth;
+@property (nonatomic) long long useRate;
+@property (nonatomic) long long isDynamicEgg;
+
++ (id)descriptor;
+
+@end

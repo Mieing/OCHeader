@@ -1,0 +1,12 @@
+@class HTSLiveShowCenterShowInfo, HTSLiveSeasonBriefInfo;
+
+@interface HTSLiveEpisodeCorrelationSeasonInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveSeasonBriefInfo *seasonBriefInfo;
+@property (nonatomic) BOOL hasSeasonBriefInfo;
+@property (retain, nonatomic) HTSLiveShowCenterShowInfo *showInfo;
+@property (nonatomic) BOOL hasShowInfo;
+
++ (id)descriptor;
+
+@end

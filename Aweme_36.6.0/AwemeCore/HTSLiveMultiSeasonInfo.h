@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveMultiSeasonInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *seasonTagsArray;
+@property (readonly, nonatomic) unsigned long long seasonTagsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveGroupLiveGiftRecipientRecommendRoot : GPBRootObject
+
+@end

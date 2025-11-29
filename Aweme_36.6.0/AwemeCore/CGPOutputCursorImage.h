@@ -1,0 +1,14 @@
+@class NSData;
+
+@interface CGPOutputCursorImage : GPBMessage
+
+@property (nonatomic) int id_p;
+@property (nonatomic) int w;
+@property (nonatomic) int h;
+@property (nonatomic) int x;
+@property (nonatomic) int y;
+@property (copy, nonatomic) NSData *data_p;
+
++ (id)descriptor;
+
+@end

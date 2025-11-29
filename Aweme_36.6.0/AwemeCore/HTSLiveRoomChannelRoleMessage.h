@@ -1,0 +1,11 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveRoomChannelRoleMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int newRole;
+
++ (id)descriptor;
+
+@end

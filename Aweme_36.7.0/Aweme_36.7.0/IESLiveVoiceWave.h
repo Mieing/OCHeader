@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveVoiceWave : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *dressId;
+@property (retain, nonatomic) HTSLiveImage *lowImg;
+@property (nonatomic) BOOL hasLowImg;
+@property (retain, nonatomic) HTSLiveImage *mediumImg;
+@property (nonatomic) BOOL hasMediumImg;
+@property (retain, nonatomic) HTSLiveImage *highImg;
+@property (nonatomic) BOOL hasHighImg;
+
++ (id)descriptor;
+
+@end

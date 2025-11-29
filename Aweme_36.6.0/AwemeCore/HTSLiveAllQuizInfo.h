@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveAllQuizInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long status;
+
++ (id)descriptor;
+
+@end

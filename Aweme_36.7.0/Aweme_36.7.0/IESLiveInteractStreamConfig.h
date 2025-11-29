@@ -1,0 +1,70 @@
+@class IESLiveInteractUser, NSString, NSDictionary, NSNumber;
+
+@interface IESLiveInteractStreamConfig : NSObject <IESLivePushStreamEntryConfig>
+
+@property (retain, nonatomic) IESLiveInteractUser *roomOwner;
+@property (retain, nonatomic) IESLiveInteractUser *currentUser;
+@property (nonatomic) long long mode;
+@property (nonatomic) long long playMode;
+@property (nonatomic) long long videoProfile;
+@property (copy, nonatomic) NSString *publishUrl;
+@property (copy, nonatomic) NSString *customPublishUrl;
+@property (nonatomic) long long streamWidth;
+@property (nonatomic) long long streamHeight;
+@property (nonatomic) long long streamFps;
+@property (nonatomic) long long streamBitrate;
+@property (nonatomic) long long streamAudioCodec;
+@property (nonatomic) long long streamVideoCodec;
+@property (nonatomic) long long customizedAudioProfile;
+@property (nonatomic) struct IESLiveVideoProfile_s { long long width; long long height; long long fps; long long bitrate; } userCustomizedProfile;
+@property (nonatomic) BOOL enableExternVideo;
+@property BOOL retainLastVideoFrame;
+@property (nonatomic) BOOL enableExternAudio;
+@property (nonatomic) unsigned long long externAudioSampleRate;
+@property (nonatomic) unsigned long long externAudioChannelsPerFrame;
+@property (copy, nonatomic) NSString *projectKey;
+@property (nonatomic) BOOL enableMixedLivePush;
+@property (nonatomic) BOOL enableMixedLiveCoreLivePush;
+@property (nonatomic) BOOL useExternalRender;
+@property (nonatomic) BOOL useExternalAudioRender;
+@property (nonatomic) BOOL enableSetupAudioPushStream;
+@property (nonatomic) BOOL enableReportRTCRoomError;
+@property (nonatomic) BOOL enableSingleViewSR;
+@property (copy, nonatomic) NSString *appID;
+@property (copy, nonatomic) NSString *appVersion;
+@property (copy, nonatomic) NSString *appChannelType;
+@property (nonatomic) long long streamGop;
+@property (nonatomic) long long streamAudioChannels;
+@property (nonatomic) long long streamAduioSamplerate;
+@property (nonatomic) long long streamAudiobitrate;
+@property (copy, nonatomic) NSDictionary *rtcExtInfo;
+@property (nonatomic) BOOL forceGlobalAPIServer;
+@property (nonatomic) long long envMode;
+@property (copy, nonatomic) NSString *abTestConfig;
+@property (copy, nonatomic) NSString *channelName;
+@property (retain, nonatomic) NSNumber *clientType;
+@property (copy, nonatomic) NSString *deviceId;
+@property (nonatomic) BOOL audioCaptureAsync;
+@property (copy, nonatomic) NSDictionary *sdkParams;
+@property (copy, nonatomic) NSString *metaDataString;
+@property (nonatomic) BOOL defaultAudioScenarioIsMedia;
+@property (copy, nonatomic) NSDictionary *audioMetricConfig;
+@property (nonatomic) BOOL needSecondMix;
+@property (nonatomic) BOOL needBypassFOV;
+@property (copy, nonatomic) NSString *linkerSessionId;
+@property (retain, nonatomic) NSNumber *invisibleWhenJoinRTC;
+@property (nonatomic) BOOL isStartInteractUnpublish;
+@property (nonatomic) BOOL enableMuteRemoteDisableAEC;
+@property (nonatomic) BOOL disableReportPerfSample;
+@property (nonatomic) BOOL ignoreLiveCoreStreamingParamsUpdateWhenMixOnServer;
+@property (nonatomic) BOOL notStartAudioCaptureDefault;
+@property (nonatomic) long long pushStreamMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

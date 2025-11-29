@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface HTSLiveView : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *bannersArray;
+@property (readonly, nonatomic) unsigned long long bannersArray_Count;
+@property (retain, nonatomic) NSMutableArray *feedbacksArray;
+@property (readonly, nonatomic) unsigned long long feedbacksArray_Count;
+@property (nonatomic) long long expireTime;
+
++ (id)descriptor;
+
+@end

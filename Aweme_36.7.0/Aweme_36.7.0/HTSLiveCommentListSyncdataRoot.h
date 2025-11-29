@@ -1,0 +1,3 @@
+@interface HTSLiveCommentListSyncdataRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface IESECLiveDelayParamRoot : GPBRootObject
+
+@end

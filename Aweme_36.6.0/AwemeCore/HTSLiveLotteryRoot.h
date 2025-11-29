@@ -1,0 +1,3 @@
+@interface HTSLiveLotteryRoot : GPBRootObject
+
+@end

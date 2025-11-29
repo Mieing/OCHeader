@@ -1,0 +1,82 @@
+@class NSString, AWEGrouponLifeFeedsVideoComponentVM, AWENearbyPaddingLabel, UIImageView, AWEGradientView, AWEGrouponLifeFeedsUserInfoView, NSObject, AWEBinding, UIViewController, UILabel, AWEGouponC2FeedDualAnchorView;
+@protocol AWEAwemePlayInteractionInteractorProtocol, AWEAwemePlayVideoControllerProtocol, AWEAwemePlayVideoTrackProtocol, AWEAwemePlayVideoProtocol;
+
+@interface AWEGrouponLifeFeedsVideoComponentView : AWEGrouponLifeFeedsBaseComponentView <AWEPlayVideoDelegate, AWEAwemeDetailTableViewControllerDelegate>
+
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) AWEGouponC2FeedDualAnchorView *coverBottomView;
+@property (retain, nonatomic) AWEGradientView *coverBottomGradient;
+@property (retain, nonatomic) AWEGouponC2FeedDualAnchorView *coverTopView;
+@property (retain, nonatomic) AWEGrouponLifeFeedsUserInfoView *userInfoView;
+@property (retain, nonatomic) AWENearbyPaddingLabel *adLabel;
+@property (retain, nonatomic) NSObject<AWEAwemePlayInteractionInteractorProtocol> *interactor;
+@property (retain, nonatomic) AWEBinding *bindDiggCount;
+@property (retain, nonatomic) AWEBinding *bindDiggStatus;
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoProtocol, AWEAwemePlayVideoControllerProtocol, AWEAwemePlayVideoTrackProtocol> *playerViewController;
+@property (nonatomic) BOOL innerScrollCanTrack;
+@property (nonatomic) double latstEnterInnerTimeSt;
+@property (nonatomic) double innerDidCreateTimeSt;
+@property (nonatomic) long long lastInnerLoadmoreIndex;
+@property (nonatomic) BOOL innerFmpTracked;
+@property (retain, nonatomic) AWEGradientView *largeCardBottomGradientView;
+@property (nonatomic) double displayTime;
+@property (retain, nonatomic) AWEGrouponLifeFeedsVideoComponentVM *videoViewModel;
+@property (nonatomic) BOOL playing;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)cardPadding;
+
+- (void)detailTableViewControllerDidLoadFinish:(id)a0;
+- (void)videoPlayerDidReadyForDisplay:(id)a0;
+- (void)detailTableViewControllerWillExit:(id)a0 currentAwemeModel:(id)a1;
+- (void)detailTableViewControllerDidScroll:(id)a0 detailVC:(id)a1 isScrollDown:(BOOL)a2 index:(long long)a3;
+- (void)player:(id)a0 playbackFailedWithError:(id)a1;
+- (void)player:(id)a0 updatePlayTime:(double)a1 canPlayTime:(double)a2 totalTime:(double)a3;
+- (void)playerWillStartNextLoop:(id)a0;
+- (void)player:(id)a0 didChangePlaybackToAction:(long long)a1;
+- (void)updateCoverImage;
+- (void)stopPlay;
+- (void)startPlay;
+- (void)handleTapGes:(id)a0;
+- (void)bindViewModel:(id)a0;
+- (void)onAwemeDiggNotification:(id)a0;
+- (void)setupPlayerViewController;
+- (void)playWithMute:(BOOL)a0;
+- (id)feedbackModelWithLongPress:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })coverFrame;
+- (void)trackCoverDidShow:(id)a0;
+- (void)resetVideoPlayerVC;
+- (void)trackPreviewPlayStart;
+- (void)resetPlay;
+- (void)trackInnerDidShow:(id)a0;
+- (void)playEnd;
+- (void)updateInfoWithCellWidth:(double)a0;
+- (void)updateUILayout;
+- (void)clickWithModel:(id)a0 clickType:(unsigned long long)a1;
+- (void)trackCellClickWithAweme:(id)a0 clickType:(unsigned long long)a1;
+- (void)registerPlayerObsever;
+- (void)__handleVideoPlayFailed:(id)a0;
+- (void)unRegisterPlayerObsever;
+- (void)updatePlayerVC;
+- (void)clickDigg;
+- (void)clickAnchorView;
+- (void)trackDiggResult:(BOOL)a0;
+- (void)updateTitleContentData;
+- (id)commonLiveEnvParamsWithAweme:(id)a0 extraInfo:(id)a1;
+- (id)playerLogExtraParams;
+- (id)fittedStringForLabel:(id)a0 withOriginalAttributedString:(id)a1;
+- (id)fetchAdRequestParams;
+- (void).cxx_destruct;
+- (void)pause;
+- (BOOL)canPlay;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)addObserver;
+- (void)setupUI;
+- (void)playStart;
+- (void)tapAction:(id)a0;
+
+@end

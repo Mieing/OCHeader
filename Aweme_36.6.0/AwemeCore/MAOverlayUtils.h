@@ -1,0 +1,3 @@
+@interface MAOverlayUtils : NSObject
+
+@end

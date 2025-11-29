@@ -1,0 +1,10 @@
+@class SelfDataConfig;
+
+@interface GetBattleSelfDataConfigResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SelfDataConfig *selfConfig;
+@property (nonatomic) BOOL hasSelfConfig;
+
++ (id)descriptor;
+
+@end

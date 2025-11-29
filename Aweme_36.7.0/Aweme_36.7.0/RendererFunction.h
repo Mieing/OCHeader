@@ -1,0 +1,3 @@
+@interface RendererFunction : NSObject
+
+@end

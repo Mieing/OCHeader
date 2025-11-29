@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface GetFormatConfigResponse_command : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *iconURL;
+
++ (id)descriptor;
+
+@end

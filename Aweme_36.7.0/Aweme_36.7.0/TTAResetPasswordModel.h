@@ -1,0 +1,3 @@
+@interface TTAResetPasswordModel : TTAUserModel
+
+@end

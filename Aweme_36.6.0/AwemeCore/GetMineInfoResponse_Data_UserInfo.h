@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface GetMineInfoResponse_Data_UserInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *openId;
+@property (copy, nonatomic) NSString *secNickName;
+@property (copy, nonatomic) NSString *secAvatarURL;
+@property (copy, nonatomic) NSString *role;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString, IESLiveLinkmicProfitEggRewardInfo, IESLiveLinkmicProfitEggTaskInfo;
+
+@interface IESLiveLinkmicProfitEggInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *eggId;
+@property (nonatomic) int eggType;
+@property (nonatomic) int status;
+@property (retain, nonatomic) IESLiveLinkmicProfitEggTaskInfo *taskInfo;
+@property (nonatomic) BOOL hasTaskInfo;
+@property (retain, nonatomic) IESLiveLinkmicProfitEggRewardInfo *rewardInfo;
+@property (nonatomic) BOOL hasRewardInfo;
+
++ (id)descriptor;
+
+@end

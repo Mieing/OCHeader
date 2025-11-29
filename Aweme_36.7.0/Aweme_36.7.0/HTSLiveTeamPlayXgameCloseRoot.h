@@ -1,0 +1,3 @@
+@interface HTSLiveTeamPlayXgameCloseRoot : GPBRootObject
+
+@end

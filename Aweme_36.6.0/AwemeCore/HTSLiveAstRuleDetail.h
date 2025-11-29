@@ -1,0 +1,12 @@
+@class NSString, HTSLiveASTNode;
+
+@interface HTSLiveAstRuleDetail : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rule;
+@property (retain, nonatomic) HTSLiveASTNode *root;
+@property (nonatomic) BOOL hasRoot;
+@property (copy, nonatomic) NSString *ruleKeyName;
+
++ (id)descriptor;
+
+@end

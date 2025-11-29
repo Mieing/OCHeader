@@ -1,0 +1,84 @@
+@class RingToneSettingCellHandler, WCTableViewCellManager, NSString, WCActionSheet, DelaySwitchSettingLogic, UISwitch, MMNotificationSetting;
+@protocol SettingNotificationViewControllerDelegate;
+
+@interface SettingNotificationViewController : NewSettingBaseViewController <NewMessageRingBroadcast, ILinkEventExt, WCActionSheetDelegate> {
+    WCActionSheet *m_remindSwitchActionSheet;
+    DelaySwitchSettingLogic *m_delaySwitchLogic;
+    UISwitch *m_msgRemindSwitch;
+    UISwitch *m_voipRemindSwitch;
+    UISwitch *m_pushDetailSwitch;
+    UISwitch *m_finderRemindSwitch;
+}
+
+@property (retain, nonatomic) RingToneSettingCellHandler *ringToneSettingCellHandler;
+@property (retain, nonatomic) WCTableViewCellManager *globalUnreadMsgCellInfo;
+@property (nonatomic) BOOL hasQuickReplyRedDot;
+@property (retain, nonatomic) WCTableViewCellManager *notifyRemindCellInfo;
+@property (retain, nonatomic) WCTableViewCellManager *voipNotifyRemindCellInfo;
+@property (nonatomic) BOOL shouldHighlightNotifyRemindSwitch;
+@property (nonatomic) BOOL shouldHighlightVoipNotifyRemindSwitch;
+@property (weak, nonatomic) id<SettingNotificationViewControllerDelegate> delegate;
+@property (nonatomic) BOOL highlightMsgNotifySetting;
+@property (retain, nonatomic) MMNotificationSetting *notificationSetting;
+@property (nonatomic) BOOL isIndexingMode;
+@property (nonatomic) BOOL hasPreloadedData;
+@property (nonatomic) BOOL isRouted;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setupHighlightNotifyRemindSwitch;
+- (void)setupHighlightVoipNotifyRemindSwitch;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)refreshSysSetting;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)onShowSystemSettingFromSys:(id)a0;
+- (void)onShowSystemSettingFromAlert:(id)a0;
+- (void)onShowSystemSetting:(id)a0;
+- (void)soundSwitchChanged:(id)a0;
+- (void)vibrationSwitchChanged:(id)a0;
+- (void)doSetPrivateConfig:(unsigned int)a0 on:(BOOL)a1 bitset:(unsigned int)a2;
+- (void)pushDetailSwitchChanged:(id)a0;
+- (void)msgNotificationRemindSwitchChanged:(id)a0;
+- (void)voipNotificationRemindSwitchChanged:(id)a0;
+- (void)voipNotificationUseCallKitSwitchChanged:(id)a0;
+- (void)finderNotificationRemindSwitchChanged:(id)a0;
+- (void)showMsgRemindSwitchActionSheet:(id)a0;
+- (void)showVoipRemindSwitchActionSheet:(id)a0;
+- (void)showFinderRemindSwitchActionSheet:(id)a0;
+- (void)showPushDetailSwitchActionSheet:(id)a0;
+- (void)onShowNotifyContentSetting:(id)a0;
+- (void)onQuickReplyBannerSwitchChanged:(id)a0;
+- (void)onQuickReplyNotifyContentSetting:(id)a0;
+- (void)msgNotificationRemindSwitchSetting:(BOOL)a0;
+- (void)voipNotificationRemindSwitchSetting:(BOOL)a0;
+- (void)voipNotificationUseCallKitSwitchSetting:(BOOL)a0;
+- (void)finderNotificationRemindSwitchSetting:(BOOL)a0;
+- (void)reloadTableData;
+- (id)quickReplyNotifySettingCell;
+- (id)quickReplyNotifyContentSettingCell;
+- (id)genRichTextSectionFooterView:(id)a0;
+- (void)makeQuickReplyCellWithTips:(id)a0 cellInfo:(id)a1;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (id)makeSwitchCellWithColName:(id)a0 action:(SEL)a1 on:(BOOL)a2 forbidOp:(BOOL)a3 viewId:(id)a4;
+- (id)makeSwitchCellWithColName:(id)a0 action:(SEL)a1 on:(BOOL)a2 forbidOp:(BOOL)a3 detailText:(id)a4 viewId:(id)a5;
+- (void)setupSwitchReportForCell:(id)a0 viewId:(id)a1;
+- (id)makeNotificationCellWithRow:(unsigned long long)a0;
+- (id)makeNotificationRemindCellWithRow:(unsigned long long)a0;
+- (id)makePushDetailCellWithRow:(unsigned long long)a0;
+- (unsigned int)getUseCallKitConfigValue;
+- (id)titleForFooterInSection:(long long)a0;
+- (id)titleForHeaderInSection:(long long)a0;
+- (void)onMessageRingTypeChanged;
+- (void)checkShowRingbackSwitch;
+- (void)preLoadGlobalRing;
+- (void)reportClickWithViewId:(id)a0;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)registerYReportSdk;
+- (void).cxx_destruct;
+
+@end

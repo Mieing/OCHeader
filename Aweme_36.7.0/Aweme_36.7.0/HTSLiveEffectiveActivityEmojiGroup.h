@@ -1,0 +1,12 @@
+@class HTSLiveActivityEmojiGroup;
+
+@interface HTSLiveEffectiveActivityEmojiGroup : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveActivityEmojiGroup *emojiGroup;
+@property (nonatomic) BOOL hasEmojiGroup;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+
++ (id)descriptor;
+
+@end

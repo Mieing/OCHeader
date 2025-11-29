@@ -1,0 +1,77 @@
+@class UIStackView, NSString, NSArray, IESECPopoverDialog, IESECGoodsDetailBottomMainButton, IESECGoodsDetailBottomViewModel, IESECLLDCLynxManager, UILabel, LOTAnimationView;
+
+@interface IESECGoodsDetailBottomView : UIView <IESECGoodsDetailViewUpdateMessage, IESECGoodsDetailContainerBottomViewProtocol>
+
+@property (retain, nonatomic) IESECGoodsDetailBottomViewModel *viewModel;
+@property (copy, nonatomic) NSArray *bottomItemsViewList;
+@property (copy, nonatomic) NSArray *bottomButtonsViewList;
+@property (copy, nonatomic) NSArray *bottomButtonsViewListSmallMode;
+@property (nonatomic) BOOL hasCartItem;
+@property (retain, nonatomic) UILabel *cartNumLabel;
+@property (nonatomic) double buttonContainerWidth;
+@property (retain, nonatomic) UIStackView *buttonContaierView;
+@property (retain, nonatomic) UIStackView *buttonContaierViewSmallMode;
+@property (retain, nonatomic) IESECLLDCLynxManager *lynxManager;
+@property (nonatomic) BOOL isSuperMarketBottom;
+@property (nonatomic) BOOL shouldAnimateAfterUpdateCartCount;
+@property (nonatomic) BOOL isAnimating;
+@property (retain, nonatomic) LOTAnimationView *cartLottieView;
+@property (nonatomic) BOOL isSmallMode;
+@property (nonatomic) BOOL isNotPageFirstAppear;
+@property (copy, nonatomic) NSString *addCartGuideTimeStamp;
+@property (retain, nonatomic) IESECPopoverDialog *popoverDialog;
+@property (retain, nonatomic) IESECGoodsDetailBottomMainButton *smallModeddCartButton;
+@property (retain, nonatomic) IESECGoodsDetailBottomMainButton *normalAddCartButton;
+@property (nonatomic) double scaleFactor;
+@property (copy, nonatomic) NSString *identifier;
+@property (retain, nonatomic) IESECGoodsDetailBottomMainButton *addCartButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)iesec_respondEvent:(id)a0;
+- (void)trackShow;
+- (id)cartView;
+- (void)setupUIInContainerView:(id)a0;
+- (double)bottomViewContentHeightForMode:(long long)a0;
+- (double)getCartItemOffsetX;
+- (void)updateBottomViewInSmallMode:(BOOL)a0;
+- (void)showAddCartGuide:(id)a0;
+- (void)goodsDetailLynxViewNeedUpdateWithParams:(id)a0 goodsDetailUID:(id)a1;
+- (void)goodsDetailDidUpdateWithSKUChange:(id)a0 skuModifyType:(unsigned long long)a1 goodsDetailUID:(id)a2;
+- (double)superContainerWidth;
+- (void)setupWholeViewWithViewModel:(id)a0;
+- (void)setupSuperMarketLynxView:(id)a0;
+- (void)sendPageVisibilityEvent:(BOOL)a0;
+- (void)handleItemAction:(id)a0;
+- (void)dealWithCartItem;
+- (void)updateBottomItemsContent;
+- (unsigned long long)cartItemIndex;
+- (id)cartItem;
+- (id)cartLabelLottieName;
+- (void)updateBottomItemAccessibility:(id)a0 withText:(id)a1;
+- (void)updateCartNum;
+- (void)updateCartItemAccessibility;
+- (void)startCartAnimation;
+- (void)addButtonSeparatorIfNeeded;
+- (void)setupBottomButtonsSmallMode;
+- (void)updateBottomButtonsContent;
+- (void)addButtonSeparatorIfNeededSmallMode;
+- (void)updateSuperMarketCardElement:(id)a0;
+- (void)setupBottomItems;
+- (void)setupBottomButtons;
+- (void)dismissPopoverDialog;
+- (BOOL)showAddCartGuideFreqCondition:(id)a0;
+- (void)addCartGuidePopoverDialog:(id)a0;
+- (void)showPopoverDialog:(id)a0;
+- (id)initWithViewModel:(id)a0 lynxManager:(id)a1;
+- (void)updateViewContentWithStyle:(unsigned long long)a0 viewModel:(id)a1;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (id)initWithViewModel:(id)a0;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)dealloc;
+- (void)viewDidDisappear;
+
+@end

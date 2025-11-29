@@ -1,0 +1,10 @@
+@class IESLiveCommonCardResponseData;
+
+@interface IESLiveCommonCardResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveCommonCardResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,16 @@
+@interface AWEClassroomImpl.ClassroomDetailViewModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ $__lazy_storage_$_dataContext;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_tracker;
+    void /* unknown type, empty encoding */ lessonInfoManager;
+    void /* unknown type, empty encoding */ state;
+    void /* unknown type, empty encoding */ _courseInfo;
+    void /* unknown type, empty encoding */ _recommendInfo;
+    void /* unknown type, empty encoding */ feedbackUnread;
+    void /* unknown type, empty encoding */ courseRequestFinishTime;
+    void /* unknown type, empty encoding */ lessonRequestFinishTime;
+    void /* unknown type, empty encoding */ resultCode;
+    void /* unknown type, empty encoding */ isAudioUrl;
+    void /* unknown type, empty encoding */ onceShowClassroomGuideCard;
+}
+
+@end

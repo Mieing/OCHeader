@@ -1,0 +1,3 @@
+@interface HTSLiveRealtimeStatusCenterRoot : GPBRootObject
+
+@end

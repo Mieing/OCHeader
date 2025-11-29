@@ -1,0 +1,80 @@
+@class UIView, MMUIImageView, NSArray, FinderLiveSquareStyleInfo, NSString, NSMutableSet, UICollectionView, MMUILabel, UIViewController, NSIndexPath;
+@protocol WCFinderFeedBaseViewControllerProtocol, WCFinderLiveCompleteRecommendContentViewDelegate;
+
+@interface WCFinderLiveCompleteRecommendContentView : UIView <WCFinderDiscoveryNearbyLiveCollectionViewCellDelegate, UICollectionViewDelegate, UICollectionViewDataSource, WCFinderLiveHomePageRecommendGuideFooterViewDelegate>
+
+@property (retain, nonatomic) NSArray *itemArr;
+@property (retain, nonatomic) UIView *verticalLineView;
+@property (retain, nonatomic) UICollectionView *videoCollectionView;
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) MMUILabel *timeLabel;
+@property (retain, nonatomic) MMUILabel *goSquareLabel;
+@property (retain, nonatomic) MMUILabel *goSquareActionLabel;
+@property (retain, nonatomic) MMUIImageView *arrowImageView;
+@property (nonatomic) double itemBottom;
+@property (nonatomic) unsigned long long tabId;
+@property (nonatomic) double videoCollectionViewHeight;
+@property (retain, nonatomic) NSMutableSet *reportedDataItemTidSet;
+@property (nonatomic) BOOL completeVCHasReported;
+@property (weak, nonatomic) id<WCFinderLiveCompleteRecommendContentViewDelegate> delegate;
+@property (nonatomic) BOOL openAudienceNewLiveRecomend;
+@property (nonatomic) double containerViewHeight;
+@property (retain, nonatomic) FinderLiveSquareStyleInfo *styleInfo;
+@property (readonly, nonatomic) UIView *videoContainerView;
+@property (weak, nonatomic) UIViewController<WCFinderFeedBaseViewControllerProtocol> *currentViewController;
+@property (nonatomic) BOOL autoPlaying;
+@property (retain, nonatomic) NSIndexPath *leftIndexPath;
+@property (retain, nonatomic) NSIndexPath *rightIndexPath;
+@property (retain, nonatomic) NSString *sessionExtraKey;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)contentViewWidthAndHeightScale;
+
+- (id)init;
+- (void)layoutSubviews;
+- (void)stopAutoPlay;
+- (void)startPlayWithIndexPath:(id)a0;
+- (BOOL)isCellFullExpose:(id)a0 topMargin:(double)a1;
+- (BOOL)checkAutoPlay:(struct CGPoint { double x0; double x1; })a0 topMargin:(double)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (void)bindNewExposeReport:(id)a0 elementModel:(id)a1 collectionView:(id)a2;
+- (void)reportNewValidRatioExposeStart:(id)a0;
+- (void)reportFeedExpose:(id)a0;
+- (void)reportNewValidRatioExposeEnd:(id)a0;
+- (void)updateFeedExpose:(id)a0;
+- (void)reportFeedExposeEnd:(id)a0;
+- (void)updateFeedExposeEnd:(id)a0;
+- (void)reportFeedAutoPlayIfNeeded:(id)a0 play:(BOOL)a1 index:(unsigned long long)a2;
+- (void)report21053ExposeActionWithDataItem:(id)a0 index:(unsigned long long)a1;
+- (void)report21053ClickActionWithDataItem:(id)a0 index:(unsigned long long)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)checkVisibleCellExpose;
+- (BOOL)checkCellExposeAtIndexPath:(id)a0 fromCollectionView:(id)a1;
+- (void)onRecommendGuideClickAction:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (double)getCollectionViewCellWidth;
+- (double)getLiveCompleteRecommendContentViewHeight:(double)a0 openAudienceNewLiveRecomend:(BOOL)a1;
+- (double)getCollectionViewCellHeight;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (double)itemMargin;
+- (double)videoContainerViewPadding;
+- (void)layoutCardItem:(id)a0;
+- (void)updateJumpInfoTabId:(unsigned long long)a0;
+- (void)updateVideoContainerViewHeight;
+- (void)onViewWillAppear;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (void)onClickCoverContact:(id)a0 contentVM:(id)a1;
+- (void)clickRecommendUrl:(id)a0;
+- (void)onClickRecommendItem:(id)a0 dataItem:(id)a1 index:(long long)a2;
+- (void)actionButtonClick:(id)a0;
+- (void)onClickedGoSquare;
+- (void).cxx_destruct;
+
+@end

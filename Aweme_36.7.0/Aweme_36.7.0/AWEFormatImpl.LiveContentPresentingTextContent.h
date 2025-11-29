@@ -1,0 +1,7 @@
+@interface AWEFormatImpl.LiveContentPresentingTextContent : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ content;
+    void /* unknown type, empty encoding */ typer;
+    void /* unknown type, empty encoding */ hasAudio;
+}
+
+@end

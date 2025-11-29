@@ -1,0 +1,3 @@
+@interface DUXBaseControl : UIControl
+
+@end

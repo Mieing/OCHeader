@@ -1,0 +1,81 @@
+@class UIView, NSData, UIImage, NSArray, NSURL, IESLiveAudioMVBackgroundAdapter, RACSubject, IESLiveBackGroundCutInfo, RACSignal, RACTwoTuple, NSString, IESLiveAudioThemeBackgroundAdapter;
+@protocol IESLiveRoomService, IESLiveAudioBackgroundViewDataSource;
+
+@interface IESLiveAudioBackgroundViewModel : NSObject <IESLiveAudioBackgroundViewDataSource, IESLiveBigPartyRoomThemeImageUpdatable>
+
+@property (retain, nonatomic) IESLiveAudioMVBackgroundAdapter *mvAdapter;
+@property (retain, nonatomic) IESLiveAudioThemeBackgroundAdapter *themeAdapter;
+@property (nonatomic) long long backgroundType;
+@property (nonatomic) BOOL backgroundMaskViewHidden;
+@property (retain, nonatomic) NSURL *videoBgFileUrl;
+@property (retain, nonatomic) NSData *gifImageData;
+@property (copy, nonatomic) NSArray *imageAnimatedBg;
+@property (copy, nonatomic) NSArray *imageBg;
+@property (copy, nonatomic) NSArray *downgradingBg;
+@property (retain, nonatomic) UIImage *placeholderImage;
+@property (retain, nonatomic) UIView *videoMVBackgroundView;
+@property (retain, nonatomic) RACTwoTuple *transitionBackground;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } visibleRect;
+@property (retain, nonatomic) RACSubject *backgroundChangedSubject;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (nonatomic) BOOL backgroundImageViewHidden;
+@property (nonatomic) BOOL backgroundAnimatedImageViewHidden;
+@property (nonatomic) BOOL backgroundVideoPlayerHidden;
+@property (nonatomic) BOOL backgroundInAuditMaskHidden;
+@property (nonatomic) BOOL backgroundImageAlphaGradientHidden;
+@property (retain, nonatomic) IESLiveBackGroundCutInfo *backGroundCutInfo;
+@property (retain, nonatomic) IESLiveBackGroundCutInfo *backgroundExcuteInfo;
+@property BOOL isInBackground;
+@property (weak, nonatomic) id<IESLiveAudioBackgroundViewDataSource> dataSource;
+@property (readonly, nonatomic) RACSignal *backgroundChangedSignal;
+@property (readonly, nonatomic) UIImage *defaultImage;
+@property (nonatomic) BOOL isAnchor;
+@property (nonatomic) BOOL themePanelPreview;
+@property (nonatomic) BOOL isUGC;
+@property (retain, nonatomic) Class abSource;
+@property (retain, nonatomic) UIImage *bgImage;
+@property (retain, nonatomic) UIImage *animatedBgImage;
+@property (retain, nonatomic) UIImage *downgradingBgImage;
+@property (nonatomic) BOOL enableCut;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)viewModelWithAudioBgData:(id)a0;
++ (id)thumbnailViewModelWithAudioBgData:(id)a0;
++ (id)thumbnailViewModelWithAudioBgData:(id)a0 isUGC:(BOOL)a1;
++ (id)viewModel;
+
+- (void)didSetAttachingDIContext;
+- (BOOL)isAudioBackgroundAnimatedEnabled;
+- (BOOL)isAudioThemeCacheAllFrameEnabled;
+- (BOOL)audioThemeCacheFreeMemoryRatio;
+- (BOOL)isAudioThemeUseStaticBackground;
+- (BOOL)currentIsMv;
+- (id)initWithAudioBgData:(id)a0 isThumbnail:(BOOL)a1;
+- (void)updateThemeBackgroundModelWithNeed:(BOOL)a0;
+- (void)refreshTheme:(id)a0 isForce:(BOOL)a1;
+- (void)updateRoomThemeImageBgUrls:(id)a0 imageAnimatedBgUrls:(id)a1 imageStaticBgUrls:(id)a2 audioThemeType:(long long)a3;
+- (void)updateRoomThemeImageBg:(id)a0 imageAnimatedBg:(id)a1 imageStaticBg:(id)a2 audioThemeType:(long long)a3;
+- (void)updateBackgroundIfNeededWithPlaceholderImage:(id)a0;
+- (void)updateBackgroundImageViewHidden:(BOOL)a0;
+- (void)updateWithThemeEnabled:(BOOL)a0;
+- (void)updateWithStrategy:(id)a0;
+- (void)updateBackgroundModel:(id)a0 sendChangeSignal:(BOOL)a1;
+- (void)refreshTheme:(id)a0;
+- (void)forceRefreshTheme:(id)a0;
+- (void)startMVModeWithMVBackground:(id)a0 mvBackgroundType:(unsigned long long)a1;
+- (void)stopMVMode;
+- (BOOL)hasBgData;
+- (void)setCutInfoWithGuestViewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 slots:(id)a1;
+- (void)setCutInfoWithGuestViewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 slots:(id)a1 radius:(double)a2;
+- (void).cxx_destruct;
+- (void)addObserver;
+- (void)dealloc;
+- (BOOL)isVideo;
+- (void)appWillEnterForeground;
+- (void)appDidEnterBackground;
+- (void)clean;
+
+@end

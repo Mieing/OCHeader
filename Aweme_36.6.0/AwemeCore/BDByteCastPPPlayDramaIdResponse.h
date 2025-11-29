@@ -1,0 +1,3 @@
+@interface BDByteCastPPPlayDramaIdResponse : BDByteCastPPBaseCmdResponse
+
+@end

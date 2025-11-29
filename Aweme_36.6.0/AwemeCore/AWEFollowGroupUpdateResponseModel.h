@@ -1,0 +1,3 @@
+@interface AWEFollowGroupUpdateResponseModel : AWEBaseApiModel
+
+@end

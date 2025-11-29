@@ -1,0 +1,78 @@
+@class NSTimer, UIView, NSString, UIImageView, BDARVVideoBanner, BDARVVideoAlertView, UIButton, UILabel;
+@protocol BDARVideoAlertViewProtocol;
+
+@interface BDARewardedVideoAdController : BDARewardedVideoAdBaseController <BDARVVideoBannerDelegate, BDARVPlayerDelegate>
+
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) BDARVVideoBanner *banner;
+@property (retain, nonatomic) UIButton *muteButton;
+@property (nonatomic) BOOL isMuted;
+@property (retain, nonatomic) id<BDARVideoAlertViewProtocol> alertController;
+@property (retain, nonatomic) BDARVVideoAlertView *alertView;
+@property (retain, nonatomic) UIView *skipBackgroundView;
+@property (retain, nonatomic) UIButton *skipButton;
+@property (retain, nonatomic) UIView *line;
+@property (retain, nonatomic) UILabel *durationLabel;
+@property (nonatomic) BOOL hasShowOver;
+@property (retain, nonatomic) UILabel *adLabel;
+@property (retain, nonatomic) NSTimer *countDownTextTimer;
+@property (nonatomic) long long leftTime;
+@property (nonatomic) BOOL pauseCountDown;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)closeBtnClick:(id)a0;
+- (void)skStoreViewDidAppear:(id)a0;
+- (void)player:(id)a0 loadStateDidChanged:(unsigned long long)a1;
+- (void)player:(id)a0 playbackTimeChanged:(double)a1;
+- (void)preloadResource;
+- (void)initAdDate:(id)a0;
+- (void)hotReloadVideo;
+- (id)playerStatusInfo;
+- (void)skStoreViewDidDisappear:(id)a0;
+- (void)indicatorViewRetry:(id)a0;
+- (void)pauseAdVideo;
+- (void)resumeAdVideo;
+- (id)getCallBackInfo;
+- (void)pauseAdVideoWithDisappear:(BOOL)a0;
+- (void)configVideo;
+- (void)layoutCloseBtn;
+- (void)sendShowOverEvent;
+- (void)resetBanner;
+- (id)nativeAdModel;
+- (void)sendShowEvent;
+- (void)layoutSubviewsAfterConfigVideo;
+- (BOOL)isTimeOptScene;
+- (void)continueCountDownText;
+- (void)becomeEffective;
+- (void)sendVideoEventWithLabel:(id)a0 refer:(id)a1 adExtra:(id)a2 trackURLs:(id)a3;
+- (void)showVideoAnimation;
+- (void)bannerDidClick:(id)a0 tag:(id)a1 refer:(id)a2;
+- (void)sendClickEventWithRefer:(id)a0 adExtra:(id)a1;
+- (BOOL)isEffective;
+- (void)cancelClose:(id)a0;
+- (void)confirmClose:(id)a0;
+- (void)muteBtnClick:(id)a0;
+- (void)bannerDidClick:(id)a0 tag:(id)a1;
+- (void)bannerBtnDidClick:(id)a0 tag:(id)a1;
+- (void)player:(id)a0 didFinishedWithType:(unsigned long long)a1 error:(id)a2;
+- (void)playerReadyToDisPlay:(id)a0;
+- (void)closeAlertBtn;
+- (void)sendLandingADWithLabel:(id)a0 refer:(id)a1 adExtra:(id)a2;
+- (void)applicationWillResignActive:(id)a0;
+- (void)initCommon;
+- (void)close;
+- (void).cxx_destruct;
+- (void)prepareForReuse;
+- (void)applicationDidBecomeActive:(id)a0;
+- (id)player;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)applicationWillTerminate:(id)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)showAlert;
+
+@end

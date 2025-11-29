@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveRoomShortTouchAreaConfig_ForbiddenType : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *reason;
+
++ (id)descriptor;
+
+@end

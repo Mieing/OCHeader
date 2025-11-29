@@ -1,0 +1,3 @@
+@interface AWEMVSkeletonSmallCardSectionViewModel : AWEBaseListSectionViewModel
+
+@end

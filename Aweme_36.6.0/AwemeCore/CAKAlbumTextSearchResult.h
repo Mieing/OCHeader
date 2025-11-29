@@ -1,0 +1,3 @@
+@interface CAKAlbumTextSearchResult : CAKAlbumSearchResult
+
+@end

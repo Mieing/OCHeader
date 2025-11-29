@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicAiUserRoot : GPBRootObject
+
+@end

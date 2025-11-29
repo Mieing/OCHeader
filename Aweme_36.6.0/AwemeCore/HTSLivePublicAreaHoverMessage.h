@@ -1,0 +1,19 @@
+@class NSString, HTSLiveCommon, HTSLiveImage, HTSLivePublicAreaCommon;
+
+@interface HTSLivePublicAreaHoverMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLivePublicAreaCommon *publicAreaCommon;
+@property (nonatomic) BOOL hasPublicAreaCommon;
+@property (copy, nonatomic) NSString *mainContent;
+@property (copy, nonatomic) NSString *secondaryContent;
+@property (retain, nonatomic) HTSLiveImage *hoverIcon;
+@property (nonatomic) BOOL hasHoverIcon;
+@property (nonatomic) int hoverHeight;
+@property (copy, nonatomic) NSString *scene;
+@property (nonatomic) int priority;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkMicArmies_UserArmies : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *userArmiesArray;
+@property (readonly, nonatomic) unsigned long long userArmiesArray_Count;
+
++ (id)descriptor;
+
+@end

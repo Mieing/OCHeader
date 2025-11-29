@@ -1,0 +1,66 @@
+@interface DYALoginService : NSObject
+
++ (void)trackUserProtocolStatus:(BOOL)a0;
++ (void)startSMSLoginWithPhoneNumber:(id)a0 ticket:(id)a1 extraParams:(id)a2 code:(id)a3 authOpposite:(BOOL)a4 completion:(id /* block */)a5;
++ (void)startLoginWithOAuthInfo:(id)a0 platform:(unsigned long long)a1 context:(id)a2 completion:(id /* block */)a3;
++ (void)startSSOLogin:(id)a0 platform:(unsigned long long)a1 context:(id)a2 completion:(id /* block */)a3;
++ (Class)aAWEPassportServiceHTSAdapterClass;
++ (void)handleOauthLoginWithOAuthInfo:(id)a0 platform:(unsigned long long)a1 context:(id)a2 urlString:(id)a3 error:(id)a4 model:(id)a5 completion:(id /* block */)a6;
++ (void)removeUserModeIfNeedWithPlatform:(unsigned long long)a0;
++ (void)queryVCDAccountIfNeeded;
++ (void)userLoginWithParams:(id)a0 context:(id)a1 completion:(id /* block */)a2;
++ (void)handleCheckQRConnectError:(id)a0 model:(id)a1 completion:(id /* block */)a2;
++ (void)startCarrierLoginWithRequest:(id)a0 completion:(id /* block */)a1;
++ (void)startCombineLoginWithRequest:(id)a0 completion:(id /* block */)a1;
++ (void)startSMSLoginWithPhoneNumber:(id)a0 code:(id)a1 authOpposite:(BOOL)a2 completion:(id /* block */)a3;
++ (void)startValidateMobileLoginWithToken:(id)a0 maskMobile:(id)a1 phoneNumber:(id)a2 completion:(id /* block */)a3;
++ (void)startSMSContinueLoginWithPhoneNumber:(id)a0 ticket:(id)a1 params:(id)a2 hasMixed:(BOOL)a3 completion:(id /* block */)a4;
++ (void)startSaasSMSContinueLoginWithPhoneNumber:(id)a0 ticket:(id)a1 params:(id)a2 originalParams:(id)a3 hasMixed:(BOOL)a4 completion:(id /* block */)a5;
++ (void)startPasswordLoginWithPhoneNumber:(id)a0 password:(id)a1 completion:(id /* block */)a2;
++ (void)startLogout:(id)a0 completion:(id /* block */)a1;
++ (void)startLogoutBackgroundUser:(id)a0 completion:(id /* block */)a1;
++ (void)startOneKeyLogin:(id)a0 authOpposite:(BOOL)a1 completion:(id /* block */)a2;
++ (void)checkVerifiedEnvLogin:(id)a0 completion:(id /* block */)a1;
++ (void)startVerifiedEnvLogin:(id)a0 completion:(id /* block */)a1;
++ (void)startSharedLoginEnvCheck:(id)a0 completion:(id /* block */)a1;
++ (void)startPrefetchLogin:(id)a0 completion:(id /* block */)a1;
++ (void)startSSOLogin:(id)a0 platform:(unsigned long long)a1 completion:(id /* block */)a2;
++ (void)startUpstreamSMSLoginWithMobileLoginTicket:(id)a0 completion:(id /* block */)a1;
++ (void)startVerifyTicketLogin:(id)a0 completion:(id /* block */)a1;
++ (void)startVerifyTicketLogin:(id)a0 scene:(id)a1 completion:(id /* block */)a2;
++ (void)startUpstreamSMSBindLoginWithTicket:(id)a0 completion:(id /* block */)a1;
++ (void)startCancelDeleteWithTicket:(id)a0 completion:(id /* block */)a1;
++ (void)registerWithPhoneNumber:(id)a0 code:(id)a1 completion:(id /* block */)a2;
++ (void)registerWithEmail:(id)a0 password:(id)a1 context:(id)a2 completion:(id /* block */)a3;
++ (void)registerWithUsername:(id)a0 password:(id)a1 context:(id)a2 multiLogin:(BOOL)a3 completion:(id /* block */)a4;
++ (void)userLoginWithEmail:(id)a0 password:(id)a1 context:(id)a2 completion:(id /* block */)a3;
++ (void)userPhoneLoginWithNotLoginTicket:(id)a0 password:(id)a1 completion:(id /* block */)a2;
++ (void)userEmailLoginWithNotLoginTicket:(id)a0 password:(id)a1 completion:(id /* block */)a2;
++ (void)userLoginWithHandle:(id)a0 password:(id)a1 completion:(id /* block */)a2;
++ (void)startOriginMobileOneClickLoginWithPhoneNumber:(id)a0 smsCodeKey:(id)a1 verifyTicket:(id)a2 completion:(id /* block */)a3;
++ (void)startOriginMobileSMSLoginWithPhoneNumber:(id)a0 smsCodeKey:(id)a1 verifyTicket:(id)a2 completion:(id /* block */)a3;
++ (void)startMobileReusedOneClickLoginWithPhoneNumber:(id)a0 smsCodeKey:(id)a1 completion:(id /* block */)a2;
++ (void)startMobileReusedSMSLoginWithPhoneNumber:(id)a0 smsCodeKey:(id)a1 completion:(id /* block */)a2;
++ (void)startSharedLoginWithParams:(id)a0 completion:(id /* block */)a1;
++ (void)multiAccountListlogin:(id)a0 accountModel:(id)a1 completion:(id /* block */)a2;
++ (void)emailLoginWithEmail:(id)a0 code:(id)a1 completion:(id /* block */)a2;
++ (void)smsLoginWithNotLoginTicket:(id)a0 code:(id)a1 completion:(id /* block */)a2;
++ (void)requestTrustAccountsWithParams:(id)a0 completion:(id /* block */)a1;
++ (void)larkLoginWithCode:(id)a0 ticketStr:(id)a1 verifyTicket:(id)a2 completion:(id /* block */)a3;
++ (void)getLoginQRCodeWithCompletion:(id /* block */)a0;
++ (void)checkQRConnectWithToken:(id)a0 completion:(id /* block */)a1;
++ (void)getTransferTokenWithState:(id)a0 completion:(id /* block */)a1;
++ (void)transferLoginWithState:(id)a0 token:(id)a1 completion:(id /* block */)a2;
++ (void)startAuthLoginWithParams:(id)a0 completion:(id /* block */)a1;
++ (void)sendPushWithParams:(id)a0 completion:(id /* block */)a1;
++ (void)checkPushResultWithToken:(id)a0 completion:(id /* block */)a1;
++ (void)getThemeDataWithCompletion:(id /* block */)a0;
++ (void)getForceLoginGuideDataWithCompletion:(id /* block */)a0;
++ (void)getBindGuideDataWithCompletion:(id /* block */)a0;
++ (void)startUpCurrentLoginAreaEnv:(id /* block */)a0;
++ (void)rebindManualReviewResult:(id /* block */)a0;
++ (void)manualAbandonRebindRequest:(id /* block */)a0;
+
+- (id)aAWEPassportServiceHTSAdapter;
+
+@end

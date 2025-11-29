@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface ACCTemplateClipInfo : MTLModel <MTLJSONSerializing>
+
+@property (nonatomic) double scaleX;
+@property (nonatomic) double scaleY;
+@property (nonatomic) double transformX;
+@property (nonatomic) double transformY;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+
+@end

@@ -1,0 +1,13 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveActivityCouponInvalidMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *roomId;
+@property (nonatomic) int invalidType;
+@property (copy, nonatomic) NSString *anchorToastContent;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,76 @@
+@class NSString, IESLiveEmojiTextParser, IESLivePlaybackDanmakuContentView, NSObject;
+@protocol IESLivePlaybackDanmakuStoreProtocol, IESLivePlaybackDanmakuEngineProtocol, IESLivePlaybackDanmakuSettingFragmentProtocol, IESLivePlaybackDanmakuFilterSerivce, OS_dispatch_queue, IESLivePlaybackDanmakuComponentManagerProtocol;
+
+@interface IESLivePlaybackDanmakuFragment : IESLivePlaybackComponent <IESLivePlaybackDanmakuActions, IESLivePlaybackDanmakuViewAction, IESLivePlaybackCommentAction, IESLivePlaybackCustomAutoHideAnimService, IESLiveAirPlayAction, IESLivePlaybackAutoRotateAction, IESVSVideoPlayAction, IESLivePlaybackDanmakuProvider, IESLivePlaybackRoomAction, IESLivePlaybackComponentLifeCycle>
+
+@property (retain, nonatomic) NSObject<IESLivePlaybackDanmakuStoreProtocol> *store;
+@property (retain, nonatomic) NSObject<IESLivePlaybackDanmakuEngineProtocol> *danmukuEngine;
+@property (retain, nonatomic) NSObject<IESLivePlaybackDanmakuSettingFragmentProtocol> *danmakuSettingFragment;
+@property (retain, nonatomic) IESLivePlaybackDanmakuContentView *danmakuContainerView;
+@property (retain, nonatomic) IESLiveEmojiTextParser *emoticonParser;
+@property (nonatomic) long long orientation;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } videoFrame;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *danmuProcessQueue;
+@property (nonatomic) BOOL danmakuPaused;
+@property (nonatomic) BOOL componentDisappear;
+@property (nonatomic) BOOL componentFirstAppear;
+@property (nonatomic) BOOL orientationTipsDidShow;
+@property (weak, nonatomic) id<IESLivePlaybackDanmakuFilterSerivce> danmakuFilterService;
+@property (retain, nonatomic) NSObject<IESLivePlaybackDanmakuComponentManagerProtocol> *componentManager;
+@property (nonatomic) BOOL enableDanmakuBeforeScreenCast;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentDidAppear;
+- (void)componentDidDisappear;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)willAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)didAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)componentDidMount;
+- (void)bindViewModel;
+- (id)danmakuView;
+- (void)showDanmakuSettingPanel;
+- (void)landscapeViewsTransformToHidden:(BOOL)a0;
+- (void)portraitViewsTransformToHidden:(BOOL)a0;
+- (void)airplayStateDidChange:(BOOL)a0;
+- (void)onAirplayPlay;
+- (void)onAirplayPause;
+- (void)addDanmakuNodeWithMessage:(id)a0;
+- (void)onRotateOrientationTipsShow;
+- (void)onRotateOrientationTipsDismiss;
+- (void)didUpdatePlaybackEpisode:(id)a0;
+- (void)onVideoPlay;
+- (void)onVideoPause;
+- (void)onVideoFrameChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)commentDidStart;
+- (void)commentDidEnd;
+- (BOOL)usePadNewStyle;
+- (void)cleanDanmaku;
+- (void)pauseDanmaku;
+- (void)resumeDanmaku;
+- (void)cleanDanmakuQueue;
+- (BOOL)isCurrentUserEnableNormalDanmaku;
+- (void)danmakuShowInScreenWithNode:(id)a0;
+- (void)setDanmakuContentViewAlpha:(double)a0 withAnimation:(BOOL)a1;
+- (void)danmaku:(id)a0 didTouch:(id)a1;
+- (void)danmaku:(id)a0 addMessage:(id)a1;
+- (void)danmaku:(id)a0 reportMessage:(id)a1;
+- (void)danmakuDisplayInWeak:(BOOL)a0;
+- (void)resetDanmukuContainer:(long long)a0;
+- (void)setupEmoticonTextParser;
+- (void)prepareForDanmakuSetting;
+- (void)p_updateDanmakuOrientation:(long long)a0;
+- (BOOL)p_enableDanmuNode;
+- (void)addNormalDanmukuNodeWith:(id)a0;
+- (void)addWelcomeDanmukuNodeWith:(id)a0;
+- (void)phone_resetDanmukuContainer:(long long)a0;
+- (void)p_addNormalDanmukuNodeWith:(id)a0 onQueue:(BOOL)a1;
+- (void)componentDidLayout;
+- (void)p_addWelcomeDanmukuNodeWith:(id)a0 onQueue:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)setup;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface CreateInfoResponse_FansClubConfig : IESLivePBBaseMessage
+
+@property (nonatomic) int fansClubType;
+@property (nonatomic) BOOL typeEditable;
+@property (copy, nonatomic) NSString *editDisableToast;
+@property (copy, nonatomic) NSString *rulePageURL;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpGroupAcceptAgentTaskApiRoot : GPBRootObject
+
+@end

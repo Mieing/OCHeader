@@ -1,0 +1,80 @@
+@class NSDictionary, NSString;
+
+@interface AWEEcomSearchRouterModel : NSObject
+
+@property (copy, nonatomic) NSDictionary *initialProperties;
+@property (copy, nonatomic) NSString *originSchema;
+@property (copy, nonatomic) NSDictionary *propertyKeyMap;
+@property (readonly, copy, nonatomic) NSString *keyword;
+@property (readonly, copy, nonatomic) NSString *searchChannel;
+@property (readonly, copy, nonatomic) NSString *searchType;
+@property (readonly, copy, nonatomic) NSString *searchSource;
+@property (readonly, copy, nonatomic) NSString *enterFrom;
+@property (readonly, copy, nonatomic) NSString *enterFromSecond;
+@property (readonly, copy, nonatomic) NSString *enterMethod;
+@property (readonly, copy, nonatomic) NSString *gid;
+@property (readonly, copy, nonatomic) NSString *groupId;
+@property (readonly, copy, nonatomic) NSString *awemeId;
+@property (readonly, copy, nonatomic) NSString *authorId;
+@property (readonly, copy, nonatomic) NSString *roomId;
+@property (readonly, copy, nonatomic) NSString *productId;
+@property (readonly, copy, nonatomic) NSString *ecomSceneId;
+@property (readonly, copy, nonatomic) NSString *shopId;
+@property (readonly, copy, nonatomic) NSString *requestId;
+@property (readonly, copy, nonatomic) NSString *clickTime;
+@property (readonly, copy, nonatomic) NSString *sourceBTMToken;
+@property (readonly, nonatomic) BOOL mallHomepagePopup;
+@property (readonly, copy, nonatomic) NSString *filePath;
+@property (readonly, copy, nonatomic) NSString *productName;
+@property (readonly, copy, nonatomic) NSString *backgroundColor;
+@property (readonly, copy, nonatomic) NSString *floatScreen;
+@property (readonly, copy, nonatomic) NSString *tabName;
+@property (readonly, copy, nonatomic) NSString *deliverySessionID;
+@property (readonly, copy, nonatomic) NSString *federationInfo;
+@property (readonly, copy, nonatomic) NSString *extra;
+@property (readonly, copy, nonatomic) NSString *clientExtra;
+@property (readonly, copy, nonatomic) NSString *clientEngineExtra;
+@property (readonly, copy, nonatomic) NSString *searchPassthroughParams;
+@property (readonly, copy, nonatomic) NSString *transEventExtra;
+@property (readonly, copy, nonatomic) NSString *searchScanParams;
+@property (readonly, copy, nonatomic) NSString *photoSearchPreviousPage;
+@property (readonly, copy, nonatomic) NSString *productDetail;
+@property (readonly, copy, nonatomic) NSString *firstCategoryId;
+@property (readonly, copy, nonatomic) NSString *videoPlayTime;
+@property (readonly, nonatomic) BOOL needSendCloseMessage;
+@property (readonly, copy, nonatomic) NSString *searchResultPageTheme;
+@property (readonly, copy, nonatomic) NSString *searchEntrance;
+@property (readonly, nonatomic) BOOL forbidFirstEnterAnim;
+@property (readonly, nonatomic) BOOL forbidBackgroundAnim;
+@property (readonly, copy, nonatomic) NSString *imageURL;
+@property (readonly, copy, nonatomic) NSString *searchImageURL;
+@property (readonly, nonatomic) long long specialInteractionType;
+@property (readonly, nonatomic) long long showScreenShotPanel;
+@property (readonly, copy, nonatomic) NSString *clientParams;
+@property (readonly, nonatomic) BOOL ueCanSwipeUp;
+@property (readonly, copy, nonatomic) NSString *shotFilePath;
+@property (readonly, nonatomic) BOOL showEnterToast;
+@property (readonly, copy, nonatomic) NSString *uniqueId;
+@property (readonly, nonatomic) long long hasRecognitionAnim;
+@property (readonly, nonatomic) long long resultPanelPattern;
+@property (readonly, nonatomic) long long resultPanelAnim;
+@property (readonly, nonatomic) long long canDragPanel;
+@property (readonly, nonatomic) long long canDragPanelFS;
+@property (readonly, nonatomic) long long hasCropArea;
+@property (readonly, nonatomic) long long hasCropAreaFS;
+@property (readonly, nonatomic) long long toolBarStyle;
+@property (readonly, nonatomic) long long backIconStyle;
+@property (readonly, copy, nonatomic) NSString *titleName;
+@property (readonly, nonatomic) long long enablePullDownClose;
+
++ (id)modelWithParams:(id)a0 schema:(id)a1;
+
+- (void)parsePropertiesWithParams:(id)a0;
+- (id)initWithParams:(id)a0 schema:(id)a1;
+- (BOOL)isVerifiedKey:(id)a0;
+- (void)coreParamsCheck;
+- (id)schemaRegisterKeys;
+- (id)schemaCoreParams;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEDCFeedSwitchPreviewContext : AWEPageContext
+
+@end

@@ -1,0 +1,3 @@
+@interface AnchorAnchorVirtualGameApiRoot : GPBRootObject
+
+@end

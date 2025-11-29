@@ -1,0 +1,75 @@
+@class NSString, NSMutableDictionary, NSDictionary, NSMutableSet, WACanvasFileHelper, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue, MMWebCanvasLogicJsEngineDelegate;
+
+@interface MMWebCanvasLogicJsEngine : MMWebCanvasBaseJsEngine <MMCanvasLogicClientContextDelegate, MMWebJSContextWasmDelegate>
+
+@property (retain, nonatomic) NSDictionary *configInfo;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *preloadQueue;
+@property (retain, nonatomic) NSMutableArray *arrEngineContext;
+@property (retain, nonatomic) NSMutableDictionary *dicClientJSContexts;
+@property (retain, nonatomic) NSMutableDictionary *eventQueue2Client;
+@property (retain, nonatomic) NSMutableSet *setClientLaunchingQueue;
+@property (retain, nonatomic) NSMutableDictionary *dicClientLaunchUpdateParams;
+@property (retain, nonatomic) WACanvasFileHelper *fileHelper;
+@property (nonatomic) BOOL finishedSetup;
+@property BOOL hasStopped;
+@property (weak, nonatomic) id<MMWebCanvasLogicJsEngineDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithBasePkgInfo:(id)a0 bizPkgInfo:(id)a1 delegate:(id)a2;
+- (void)dealloc;
+- (void)internalInit;
+- (void)setup:(id /* block */)a0;
+- (BOOL)hasSetup;
+- (void)stopEngine;
+- (void)stopAllJsContextTimers;
+- (void)delayReleaseJsEngine;
+- (void)initMainContext;
+- (void)initEngineContext;
+- (id)canvasClientContextWithId:(id)a0;
+- (void)addClientContextWithParams:(id)a0;
+- (void)updateClientContextViewDelegate:(id)a0 canvasId:(id)a1 deleteHandler:(id /* block */)a2;
+- (void)resetClientContextViewDelegateAndHandler:(id)a0 fromViewDelegate:(id)a1;
+- (void)attach:(id)a0;
+- (void)detach:(id)a0;
+- (void)reflow:(id)a0;
+- (void)reflowAll;
+- (void)pause;
+- (void)pause:(id)a0;
+- (void)resume;
+- (void)resume:(id)a0;
+- (void)stop;
+- (void)stop:(id)a0;
+- (void)enterBackground;
+- (void)enterForeground;
+- (void)onScreenShot;
+- (void)onScroll:(id)a0;
+- (void)enterPage;
+- (void)exitPage;
+- (void)setupClient:(id)a0 metaInfo:(id)a1 bizType:(id)a2;
+- (void)addClientEventToQueue:(id)a0 canvasId:(id)a1;
+- (void)addClientEventToQueue:(id)a0;
+- (void)checkAndDispatchEventToClientInEventQueue:(id)a0;
+- (void)checkAndDispatchEventToClientInEventQueue;
+- (void)dispatchEvent:(id)a0 eventInfo:(id)a1;
+- (void)dispatchEventToClient:(id)a0 event:(id)a1;
+- (void)dispatchEventToClient:(id)a0 event:(id)a1 eventInfo:(id)a2;
+- (void)dispatchCallback:(id)a0 params:(id)a1;
+- (void)onTransferMessage:(id)a0 targetOrigin:(id)a1;
+- (id)onGetLayoutDataForCanvasId:(id)a0;
+- (void)onSaveLayoutData:(id)a0 forCanvasId:(id)a1;
+- (void)onCanvasSetHeight:(double)a0 forCanvasId:(id)a1;
+- (void)onCallbackWithId:(id)a0 params:(id)a1;
+- (void)onCallbackWithId:(id)a0 eventInfo:(id)a1;
+- (void)onCallbackPopUpCanvasClose:(id)a0 callbackId:(id)a1;
+- (void)onPreloadImageWithUrl:(id)a0 canvasId:(id)a1;
+- (void)onDeleteCanvasCardByCardId:(id)a0 fromCanvasId:(id)a1;
+- (id)getCurrentWebviewViewController;
+- (id)getFileData:(id)a0;
+- (void).cxx_destruct;
+
+@end

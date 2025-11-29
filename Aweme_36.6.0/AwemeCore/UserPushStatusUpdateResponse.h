@@ -1,0 +1,10 @@
+@class UserPushStatusUpdateResponseData;
+
+@interface UserPushStatusUpdateResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UserPushStatusUpdateResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

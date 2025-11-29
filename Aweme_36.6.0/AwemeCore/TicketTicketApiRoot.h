@@ -1,0 +1,3 @@
+@interface TicketTicketApiRoot : GPBRootObject
+
+@end

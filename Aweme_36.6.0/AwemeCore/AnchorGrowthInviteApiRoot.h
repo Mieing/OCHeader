@@ -1,0 +1,3 @@
+@interface AnchorGrowthInviteApiRoot : GPBRootObject
+
+@end

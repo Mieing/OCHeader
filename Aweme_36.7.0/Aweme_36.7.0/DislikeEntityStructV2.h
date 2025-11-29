@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface DislikeEntityStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+@property (copy, nonatomic) NSString *serverExtra;
+@property (nonatomic) BOOL hasServerExtra;
+
++ (id)descriptor;
+
+@end

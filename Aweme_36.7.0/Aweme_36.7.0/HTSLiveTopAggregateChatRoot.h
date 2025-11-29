@@ -1,0 +1,3 @@
+@interface HTSLiveTopAggregateChatRoot : GPBRootObject
+
+@end

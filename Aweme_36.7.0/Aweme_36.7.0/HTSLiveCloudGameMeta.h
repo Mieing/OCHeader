@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface HTSLiveCloudGameMeta : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class DSLUploadResponse_PreviewResp;
+
+@interface DSLUploadResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) DSLUploadResponse_PreviewResp *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

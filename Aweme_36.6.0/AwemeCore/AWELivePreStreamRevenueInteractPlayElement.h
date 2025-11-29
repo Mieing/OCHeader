@@ -1,0 +1,85 @@
+@class IESLiveRevenueInteractPlayBuilder, NSString, IESLiveRevenueInteractPlayStateManager, IESLiveRevenueInteractPlayInstance, GPBMessage, IESLiveLinkMicListResponse;
+@protocol IESLiveRevenueInteractModulePKInterface, IESLiveRevenueInteractModuleMultiLinkInterface;
+
+@interface AWELivePreStreamRevenueInteractPlayElement : AWELiveBaseElement <AWELivePreStreamMessageSubscriber, IESLiveRevenueInteractInnerAction, IESLiveRevenueInteractPlayStateAction, AWELivePreviewBusinessMessage, AWELiveRevenueSharePreStreamProtocol, IESLiveRevenueInteractModule>
+
+@property (retain, nonatomic) IESLiveRevenueInteractPlayBuilder *builder;
+@property (retain, nonatomic) IESLiveRevenueInteractPlayInstance *instance;
+@property (nonatomic) BOOL hasInstance;
+@property (nonatomic) BOOL hasXPlayInstance;
+@property (retain, nonatomic) IESLiveRevenueInteractPlayStateManager *stateManager;
+@property (nonatomic) unsigned long long currentScene;
+@property (retain, nonatomic) GPBMessage *cachedPlayMessage;
+@property (retain, nonatomic) IESLiveLinkMicListResponse *cachedListResult;
+@property (nonatomic) unsigned long long scene;
+@property (weak, nonatomic) id<IESLiveRevenueInteractModulePKInterface> subPKInterface;
+@property (weak, nonatomic) id<IESLiveRevenueInteractModuleMultiLinkInterface> subMultiLinkerInterface;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldActivateElement;
+
+- (void)initializeElement;
+- (void)componentBindService;
+- (void)onUserQuitLiveRoom:(id)a0;
+- (id)coreTrackParams;
+- (void)onUserEnterLiveRoom:(id)a0;
+- (void)preloadElement;
+- (void)onMessageReceivce:(id)a0 withDict:(id)a1;
+- (BOOL)isInPlaying;
+- (unsigned long long)currentInteractiveScene;
+- (BOOL)isInRevenueInteractScene;
+- (id)linkedUsers;
+- (id)linkerUserWithUserID:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })streamRect;
+- (BOOL)enableSendGiftToOthers;
+- (id)connectionTypeForTrack;
+- (id)roomStatusForTrack;
+- (BOOL)isTransformingScene;
+- (void)showFeedbackViewFromSource:(long long)a0;
+- (void)trackWithEvent:(id)a0 extra:(id)a1;
+- (void)sendEffectRenderInfo;
+- (unsigned long long)anchorListCount;
+- (id)currentBusinessInfo;
+- (id)smallGiftViews;
+- (id)anchorViewFrames;
+- (id)uidToRenderKeys;
+- (unsigned long long)currentRoleType;
+- (id)currentLayoutTypeStr;
+- (unsigned long long)clientMixStreamType;
+- (id)pkInterface;
+- (id)multiLinkInterface;
+- (void)startRevenueInteractWithScene:(unsigned long long)a0;
+- (void)endRevenueInteractWithScene:(unsigned long long)a0;
+- (void)receiveChannelMessage:(id)a0;
+- (void)audienceSmoothEnterRoomDidEnd;
+- (void)setupLiveRoomModel:(id)a0 preStreamContainer:(id)a1 previewStreamScene:(long long)a2;
+- (void)videoAudioStreamPlayer_startToPlay;
+- (void)didFetchEnterRoomListResult:(id)a0;
+- (void)didReadyToPlay:(unsigned long long)a0;
+- (void)didReceivedLinkedUserLeaved:(id)a0;
+- (void)onInteractionEnd:(unsigned long long)a0;
+- (void)videoAudioStreamPlayer_pause;
+- (void)didChangeStateFrom:(unsigned long long)a0 to:(unsigned long long)a1;
+- (void)destroyInstance;
+- (BOOL)needCacheDataWithDataType:(id)a0;
+- (BOOL)needLoadInstanceWithMessage:(id)a0;
+- (void)loadInstanceWithData:(id)a0;
+- (BOOL)isRevenueLinkerScene;
+- (void)loadXPlayInstanceWithData:(id)a0;
+- (id)baseTrackParam;
+- (void)handleMessage:(id)a0;
+- (void)configure;
+- (void).cxx_destruct;
+- (void)setData:(id)a0;
+- (void)prepareForReuse;
+- (id)connectionType;
+- (id)provider;
+- (void)reset;
+- (void)dealloc;
+- (id)anchorCount;
+- (void)clean;
+
+@end

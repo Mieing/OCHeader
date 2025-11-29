@@ -1,0 +1,73 @@
+@class NSTimer, UIView, NSString, CALayer, UIImageView, UIButton, AWEIronManLandingPageDeepRelationViewModel, MASConstraint, UICollectionView, CAGradientLayer, UIPageControl, UILabel;
+@protocol AWEIronManLandingPageRecentTrendsCellDelegate;
+
+@interface AWEIronManLandingPageRecentTrendsCell : UITableViewCell <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, AWEIronManLandingPageItemInteractionDelegate>
+
+@property (retain, nonatomic) UIView *recentContentView;
+@property (retain, nonatomic) UIView *gradientView;
+@property (retain, nonatomic) UIButton *recentLoadMoreBtn;
+@property (retain, nonatomic) UILabel *recentlyNumsLabel;
+@property (retain, nonatomic) UIImageView *recentlyIconView;
+@property (retain, nonatomic) UILabel *recentlyTitleLabel;
+@property (retain, nonatomic) UIView *speLineView;
+@property (retain, nonatomic) UICollectionView *recentlyUseScrollView;
+@property (retain, nonatomic) UIPageControl *pageIndicatorView;
+@property (retain, nonatomic) NSTimer *scrollTimer;
+@property (nonatomic) long long currentPage;
+@property (nonatomic) BOOL fromAutoScroll;
+@property (nonatomic) BOOL userScrollFlag;
+@property (nonatomic) BOOL inBackground;
+@property (nonatomic) BOOL timerPaused;
+@property (retain, nonatomic) MASConstraint *botCons;
+@property (retain, nonatomic) MASConstraint *widthCons;
+@property (weak, nonatomic) CAGradientLayer *gradientLayer1;
+@property (weak, nonatomic) CAGradientLayer *gradientLayer2;
+@property (weak, nonatomic) CALayer *coverLayer;
+@property (nonatomic) double currentHeight;
+@property (nonatomic) long long currentInterval;
+@property (nonatomic) long long triggerInterval;
+@property (weak, nonatomic) id<AWEIronManLandingPageRecentTrendsCellDelegate> delegate;
+@property (retain, nonatomic) AWEIronManLandingPageDeepRelationViewModel *viewModel;
+@property (nonatomic) BOOL pageIsDisappear;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)awe_themeDidChange:(long long)a0;
+- (void)appWillEnterForegroundNotification;
+- (void)startTimerIfNeed;
+- (void)trackModuleShow;
+- (double)getCellHeight;
+- (void)trackItemShowWithItemModel:(id)a0 event:(id)a1 extra:(id)a2;
+- (void)itemDidClick:(id)a0 extra:(id)a1;
+- (void)updateWhenDisplay;
+- (void)trackModuleClick:(id)a0 index:(long long)a1;
+- (void)invalidateScrollTimer;
+- (void)loadMoreRecentAction;
+- (void)recentSectionLayout;
+- (void)setupGradientWithTheme:(long long)a0;
+- (void)appWillEnterBackgroundNotification;
+- (void)tryChangeCurrentPageToPageIndex:(long long)a0 fromAutoScroll:(BOOL)a1;
+- (void)scrollToNextRecentItem;
+- (void)startScrollTimer;
+- (id)buildTrackDictWithItem:(id)a0;
+- (id)getShowReason:(id)a0;
+- (void)afterTimerEnvChanged;
+- (void)updateLayout;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)addObserver;
+- (void)pauseTimer;
+- (void)layoutSubviews;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)resumeTimer;
+- (void)setUpUI;
+
+@end

@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetDanmakuResponse : BDByteCastPPBaseCmdResponse
+
+@end

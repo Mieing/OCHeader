@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface ItemShareListResponse_ShareData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *itemType;
+@property (retain, nonatomic) NSMutableArray *itemListArray;
+@property (readonly, nonatomic) unsigned long long itemListArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface DisplaylinkLeakRoot : GPBRootObject
+
+@end

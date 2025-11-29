@@ -1,0 +1,11 @@
+@class NSDictionary;
+
+@interface DTRpcBaseOperationMXXT : DTURLRequestOperationMXXT
+
+@property (retain, nonatomic) NSDictionary *responseJSON;
+@property (retain, nonatomic) NSDictionary *resultJSON;
+@property (retain, nonatomic) NSDictionary *addHeaders;
+
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveWalletMobileInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *safeMobileNumber;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) int showType;
+
++ (id)descriptor;
+
+@end

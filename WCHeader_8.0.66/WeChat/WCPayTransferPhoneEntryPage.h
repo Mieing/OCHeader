@@ -1,0 +1,74 @@
+@class UIView, MMBadgeView, NSString, UIImageView, WCPayCss, RichTextView, UILabel, KindaUIView;
+@protocol WCPayTransferPhoneEntryPageDelegate;
+
+@interface WCPayTransferPhoneEntryPage : WCPayBaseViewController <ILinkEventExt>
+
+@property (weak) id<WCPayTransferPhoneEntryPageDelegate> m_delegate;
+@property (retain) WCPayCss *css;
+@property (retain) UIView *containerView;
+@property (retain) UIView *headerView;
+@property (retain) UILabel *mainTitle;
+@property (retain) UIView *mainTitleLine;
+@property (retain) KindaUIView *toBankContainer;
+@property (retain) UIImageView *toBankIcon;
+@property (retain) UIView *toBankDescContainer;
+@property (retain) UIView *toBankTitleContainer;
+@property (retain) UILabel *toBankTitle;
+@property (retain) MMBadgeView *toBankBadgeView;
+@property (retain) UILabel *toBankDesc;
+@property (retain) UIImageView *toBankArrow;
+@property (retain) UIView *toBankLine;
+@property (retain) KindaUIView *toPhoneContainer;
+@property (retain) UIImageView *toPhoneIcon;
+@property (retain) UIView *toPhoneDescContainer;
+@property (retain) UILabel *toPhoneTitle;
+@property (retain) UIView *toPhoneTitleContainer;
+@property (retain) MMBadgeView *toPhoneBadgeView;
+@property (retain) UILabel *toPhoneDesc;
+@property (retain) UIImageView *toPhoneArrow;
+@property (retain) UIView *toPhoneLine;
+@property (retain) UIView *bottomContainer;
+@property (retain) RichTextView *setUpButton;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)viewDidBeDismissed:(BOOL)a0;
+- (id)navigationBarBackgroundColor;
+- (void)viewDidLoad;
+- (void)setDelegate:(id)a0;
+- (void)refreshViewWithData:(id)a0;
+- (void)updateView;
+- (void)updateHeaderView;
+- (void)updateMainTitle;
+- (void)updateMainTitleLine;
+- (void)updateToBankContainer;
+- (void)updateToBankIcon;
+- (void)updateToBankDescContainer;
+- (void)updateToBankTitleContainer;
+- (void)updateToBankTitle;
+- (void)updateToBankBadge;
+- (void)updateToBankDesc;
+- (void)updateToBankArrow;
+- (void)updateToBankLine;
+- (void)updateToPhoneContainer;
+- (void)updateToPhoneIcon;
+- (void)updateToPhoneDescContainer;
+- (void)updateToPhoneTitleContainer;
+- (void)updateToPhoneBadge;
+- (void)updateToPhoneTitle;
+- (void)updateToPhoneDesc;
+- (void)updateToPhoneArrow;
+- (void)updateToPhoneLine;
+- (void)updateBottomContainer;
+- (void)updateSetUpButton;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onTapToBank;
+- (void)onTapToPhone;
+- (void)onTapSetUp;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,71 @@
+@class IESLiveInnerFeedContext, IESLiveInnerFeedStore, NSString;
+
+@interface IESLiveInnerFeedEnableScrollController : NSObject <IESLiveInnerFeedDataControlAction, HTSLiveOrientationActions, IESLiveAutoRotateAction, IESLiveSocialInteractAction, IESLiveInteractAction, IESLiveLynxViewActions, IESLivePopupContainerActions, HTSLiveCleanScreenActions, HTSLiveMessageListScrollActions, IESLiveShareActions, IESLiveMediaRoomActions, IESLiveScreenRecordActions, IESLiveVRActions, IESLiveRightScrollPanelActions, IESLiveMessageInteractionModuleCommentAction, IESLiveMultiTabAction, IESLivePopupStatusAction, IESLiveChorusConcertActions>
+
+@property (weak, nonatomic) IESLiveInnerFeedContext *context;
+@property (weak, nonatomic) IESLiveInnerFeedStore *store;
+@property (nonatomic) BOOL roomCountCondition;
+@property (nonatomic) long long orientation;
+@property (nonatomic) BOOL keyboardShow;
+@property (nonatomic) BOOL interactiveConnected;
+@property (nonatomic) BOOL lynxPopupShow;
+@property (nonatomic) BOOL popupViewShow;
+@property (nonatomic) BOOL messageListScrolling;
+@property (nonatomic) BOOL sharePanelShow;
+@property (nonatomic) BOOL mediaIntroduceShow;
+@property (nonatomic) BOOL screenRecording;
+@property (nonatomic) BOOL vrPanoramaModeShow;
+@property (nonatomic) BOOL rightScrollPanelShow;
+@property (nonatomic) BOOL commentPanelShow;
+@property (nonatomic) BOOL vsMultitabOtherTab;
+@property (nonatomic) BOOL refreshLandscapeStatus;
+@property (nonatomic) BOOL chorusConcertJoined;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)willAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)onOrientationTransitionBegin:(long long)a0;
+- (void)interactionModeEndedWithLayout:(id)a0;
+- (void)didJoinChannelWithLayout:(id)a0;
+- (void)didLeaveChannelWithLayout:(id)a0;
+- (void)p_setupObserver;
+- (void)focusOnPopup:(BOOL)a0;
+- (void)innerFeedDidMountObject:(id)a0 atIndex:(long long)a1 lastIndex:(long long)a2;
+- (void)innerFeedDataDidChangeWithType:(unsigned long long)a0 datas:(id)a1 hasMore:(BOOL)a2 success:(BOOL)a3;
+- (void)messageListViewWillBeginDragging:(id)a0;
+- (void)messageListViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)messageListViewDidEndDecelerating:(id)a0;
+- (void)messageListStateReset;
+- (void)receiveTouch;
+- (void)sharePanelWillShow;
+- (void)sharePanelDidDismiss;
+- (void)didShowRecordingView;
+- (void)didHideRecordingView;
+- (void)multiTabViewDidScrollToTab:(long long)a0;
+- (void)mediaIntroduceDidShow;
+- (void)mediaIntroduceDidDismiss;
+- (void)didJoinRTCChannelByAudienceWithScene:(unsigned long long)a0;
+- (void)didLeaveRTCChannelByAudienceWithScene:(unsigned long long)a0;
+- (BOOL)needToDealWithInteractiveScene:(unsigned long long)a0;
+- (void)rightScrollPanelWillShow;
+- (void)rightScrollPanelWillDismiss;
+- (void)openVRPanoramaMode;
+- (void)closeVRPanoramaMode;
+- (void)p_initialCondition;
+- (void)p_updateScrollEnable;
+- (void)lynxPopupViewHasShow:(BOOL)a0;
+- (void)updatePopupStatus:(BOOL)a0;
+- (void)onChorusStateChanged:(long long)a0;
+- (void)didConnected;
+- (void)didDisconnected;
+- (id)initWithContext:(id)a0 innerStore:(id)a1;
+- (void)keyboardDidHide:(id)a0;
+- (void)keyboardWillHide;
+- (void)keyboardWillShow;
+- (void).cxx_destruct;
+- (void)keyboardWillShow:(id)a0;
+
+@end

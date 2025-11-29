@@ -1,0 +1,96 @@
+@class UIView, AWEModernFeedConcreteCollectionViewCell, AWEModernFeedCellModel, AWEModernFeedCellConcreteContext, NSArray, AWEModernFeedSectionMeta, NSString, AWEModernFeedConcreteCell, UITableView, UIViewController, UICollectionView, AWEModernFeedAccessoryCell;
+@protocol AWEModernFeedCellControllerProtocol;
+
+@interface AWEModernFeedSectionController : NSObject {
+    unsigned long long _themeStyle;
+}
+
+@property (retain, nonatomic) AWEModernFeedCellConcreteContext *context;
+@property (retain, nonatomic) UIView *accessoryView;
+@property (retain, nonatomic) AWEModernFeedConcreteCell *concreteCell;
+@property (retain, nonatomic) AWEModernFeedAccessoryCell *accessoryCell;
+@property (nonatomic) BOOL cellHidden;
+@property (nonatomic) BOOL fixSearchLynxUselessLayout;
+@property (nonatomic) BOOL searchImmersiveEnable;
+@property (nonatomic) BOOL searchImmersiveBannerEnable;
+@property (retain, nonatomic) UIViewController<AWEModernFeedCellControllerProtocol> *cellController;
+@property (retain, nonatomic) UIViewController<AWEModernFeedCellControllerProtocol> *attachmentCellController;
+@property (retain, nonatomic) AWEModernFeedConcreteCollectionViewCell *concreteCollectionCell;
+@property (retain, nonatomic) AWEModernFeedCellModel *model;
+@property (retain, nonatomic) NSArray *registedIdentifier;
+@property (copy, nonatomic) id /* block */ cellManagerBlock;
+@property (copy, nonatomic) id /* block */ updateMetaBlock;
+@property (copy, nonatomic) id /* block */ forceBecomeActiveBlock;
+@property (copy, nonatomic) id /* block */ endForceBecomingActiveBlock;
+@property (copy, nonatomic) id /* block */ reloadCurrentSectionBlock;
+@property (copy, nonatomic) id /* block */ deleteAttachmentCardAtCurrentSectionBlock;
+@property (copy, nonatomic) id /* block */ insertAttachmentCardAtCurrentSectionBlock;
+@property (copy, nonatomic) id /* block */ scrollToOffsetY;
+@property (copy, nonatomic) id /* block */ scrollToDisplayItemWithOffset;
+@property (copy, nonatomic) id /* block */ getFeedCardOffset;
+@property (copy, nonatomic) id /* block */ focusCurrentBlock;
+@property (copy, nonatomic) id /* block */ saveScrollingStateBlock;
+@property (copy, nonatomic) id /* block */ queryIsLoadingDataBlock;
+@property (copy, nonatomic) id /* block */ getBindedDataBlock;
+@property (copy, nonatomic) id /* block */ videoPlayerStartPlay;
+@property (copy, nonatomic) id /* block */ restoreSavedScrollingStateBlock;
+@property (copy, nonatomic) id /* block */ singleTapEnterAwemeDetailBlock;
+@property (copy, nonatomic) id /* block */ singleTapEnterAwemeDetailBlockWithPlayer;
+@property (copy, nonatomic) id /* block */ singleTapEnterAwemeDetailWithExtraBlock;
+@property (copy, nonatomic) id /* block */ combinateCardAwemeListBlock;
+@property (copy, nonatomic) id /* block */ recalculateToAutoPlayBlock;
+@property (copy, nonatomic) id /* block */ willEnterFullScreenBlock;
+@property (copy, nonatomic) id /* block */ getSearchCardLocationBlock;
+@property (copy, nonatomic) id /* block */ registAutoPlayDistributeBlock;
+@property (copy, nonatomic) id /* block */ switchToSubTabBlock;
+@property (retain, nonatomic) AWEModernFeedSectionMeta *currentMeta;
+@property (weak, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) UICollectionView *collectionView;
+@property (nonatomic) long long currentSection;
+@property (nonatomic) unsigned long long status;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *adEventName;
+@property (weak, nonatomic) UIViewController *hostVC;
+@property (copy, nonatomic) id /* block */ getSearchLogPassback;
+@property (copy, nonatomic) id /* block */ getSearchType;
+@property (copy, nonatomic) id /* block */ logExtraDictBlock;
+@property (nonatomic) unsigned long long themeStyle;
+@property (copy, nonatomic) id /* block */ videoSinglePlayedBlock;
+@property (copy, nonatomic) id /* block */ setAttachmentDataBlock;
+@property (copy, nonatomic) id /* block */ videoPlayerDidEndBlock;
+@property (copy, nonatomic) id /* block */ videoPlayerDidPlayErrorBlock;
+@property (copy, nonatomic) id /* block */ updateIndexAwemeListBlock;
+@property (copy, nonatomic) id /* block */ showRecommendWords;
+@property (copy, nonatomic) id /* block */ immersivePlayBlock;
+@property (copy, nonatomic) id /* block */ immersiveBannerBlock;
+@property (copy, nonatomic) id /* block */ showPendantBlock;
+@property (copy, nonatomic) id /* block */ immersiveTransToBottomBlock;
+@property (copy, nonatomic) id /* block */ searchChangeBackgroundColorBlock;
+@property (copy, nonatomic) id /* block */ searchOpenImmersiveVideoBlock;
+@property (nonatomic) BOOL hasAttachmentCard;
+
++ (double)heightForFooterInSection:(id)a0;
+
+- (id)cellForItemAtIndex:(long long)a0;
+- (double)getFeedOffset;
+- (id)cellManager;
+- (void)updateCellContentWithModel:(id)a0;
+- (void)scrollToOffsetY:(double)a0;
+- (void)scrollToDisplayItemWithOffset:(double)a0 animated:(BOOL)a1;
+- (void)addAttachmentCard;
+- (BOOL)isGeneralSearchWaterFallLayout;
+- (void)updateCardCorner;
+- (void)updateCellControllerReferString:(id)a0;
+- (void)updateCellControllerAdEventName:(id)a0;
+- (void)updateCellControllerHostVC:(id)a0;
+- (void)updateAttachmentCellControllerReferString:(id)a0;
+- (void)updateAccessoryView:(BOOL)a0;
+- (void)updateHiddenStatus:(BOOL)a0;
+- (void)reloadCurrentSection:(BOOL)a0;
+- (void)updateMetaWithChanges:(id /* block */)a0 animated:(BOOL)a1;
+- (id)collectionViewCellForItemAtIndexPath:(id)a0;
+- (void)updateCellBackgroundModel;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

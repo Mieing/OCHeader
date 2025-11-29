@@ -1,0 +1,12 @@
+@interface HTSLiveStreamUrl_LiveCoreSDKData_PushData_ResolutionParams : IESLivePBBaseMessage
+
+@property (nonatomic) long long width;
+@property (nonatomic) long long height;
+@property (nonatomic) long long defaultBitrate;
+@property (nonatomic) long long minBitrate;
+@property (nonatomic) long long maxBitrate;
+@property (nonatomic) long long fps;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface IESGCPPBAwemeAuthorGameDetail : GPBMessage
+
+@property (nonatomic) long long publishVideoAuthorCount;
+@property (nonatomic) long long publishVideoCount;
+@property (copy, nonatomic) NSString *promotionIntroduction;
+@property (copy, nonatomic) NSString *publishSuggestion;
+@property (nonatomic) long long videoViewCount;
+@property (copy, nonatomic) NSString *currentHighestIncome;
+
++ (id)descriptor;
+
+@end

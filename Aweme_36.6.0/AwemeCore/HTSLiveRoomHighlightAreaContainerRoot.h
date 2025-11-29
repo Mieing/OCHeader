@@ -1,0 +1,3 @@
+@interface HTSLiveRoomHighlightAreaContainerRoot : GPBRootObject
+
+@end

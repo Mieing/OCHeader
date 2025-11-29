@@ -1,0 +1,14 @@
+@class HTSLiveEpisode, HTSLiveMoreHighlight;
+
+@interface EnterRecordVideoResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveEpisode *episode;
+@property (nonatomic) BOOL hasEpisode;
+@property (retain, nonatomic) HTSLiveMoreHighlight *more;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL vidIsValid;
+@property (nonatomic) BOOL notReportPv;
+
++ (id)descriptor;
+
+@end

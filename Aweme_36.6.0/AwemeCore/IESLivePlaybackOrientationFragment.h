@@ -1,0 +1,75 @@
+@class HTSLiveRoomAuthStatus, NSString, UIView, NSDate, UIButton;
+
+@interface IESLivePlaybackOrientationFragment : IESLivePlaybackComponent <IESVSOrientationRouter, IESVSVideoPlayAction, IESLivePlaybackAutoRotateAction, IESLivePlaybackRoomAction, IESLivePlaybackOrientationInnerService, IESLivePlaybackSeekAction, IESLivePlaybackPaywallFreeTrialAction, IESLivePaidStreamActionAdapter>
+
+@property (retain, nonatomic) HTSLiveRoomAuthStatus *roomAuth;
+@property (nonatomic) long long orientation;
+@property (retain, nonatomic) UIButton *fullScreenBtn;
+@property (retain, nonatomic) UIView *blankPlaceHolderBtn;
+@property (retain, nonatomic) NSDate *landscapeDuration;
+@property (nonatomic) BOOL sharePanelShow;
+@property (nonatomic) BOOL isiPhoneAutoRotate;
+@property (nonatomic) BOOL isRotateByUserClick;
+@property (nonatomic) BOOL seriesRotate;
+@property (nonatomic) long long originOrientation;
+@property (nonatomic) BOOL hasTrackLandscapeFullScreen;
+@property (nonatomic) BOOL hasTrackPortraitFullScreen;
+@property (nonatomic) long long tempCurrentOrientation;
+@property (nonatomic) BOOL isSameOrientation;
+@property (nonatomic) BOOL isFirstOrientationEnable;
+@property (nonatomic) BOOL isFirstFullScreenEnable;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentWillAppear;
+- (void)componentDidAppear;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)deviceOrientationDidChange;
+- (void)didAutoRotateToOrientation:(long long)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)componentDidMount;
+- (void)componentWillUnmount;
+- (void)forceUpdateToOrientation:(long long)a0;
+- (void)paidStreamTrialDidStart:(long long)a0;
+- (void)paidStreamTrialDidFinish:(long long)a0 reason:(unsigned long long)a1;
+- (void)paidStreamTrialDidPaid:(long long)a0;
+- (void)paidStreamTrialDidPromised:(long long)a0;
+- (void)addDeviceOrientationChangeNoti;
+- (void)screenWillBeginRotation;
+- (void)screenDidEndRotation;
+- (BOOL)_isAutoOrientationChangeForbidden;
+- (void)setupFullScreenButton;
+- (void)onSeekStart;
+- (void)onSeekEnd;
+- (void)forceUpdateToOrientation:(long long)a0 completion:(id /* block */)a1;
+- (void)forceUpdateToOrientation:(long long)a0 byUserClick:(BOOL)a1;
+- (long long)originOrientationForIpad;
+- (void)recordCurrentOrientationIfNecessary;
+- (BOOL)isAutoOrientationChangeForbidden;
+- (void)fullScreenBtnDidClick;
+- (void)componentWillMount;
+- (void)didUpdatePlaybackEpisode:(id)a0;
+- (void)onVideoFrameChange:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)onDeviceAutoRotate;
+- (void)freeTrialDidStart;
+- (void)freeTrialDidFinish;
+- (void)freeTrialDidPaied;
+- (void)promiseDidSuccess;
+- (void)streamWillChangeWithEpisode:(id)a0;
+- (void)streamChangedWithEpisode:(id)a0;
+- (BOOL)usePadNewStyle;
+- (void)freeTrialDidLeave;
+- (BOOL)p_isVertical;
+- (void)updateVisible;
+- (void)screenWillBeginRotationWithTargetInterfaceOrientation:(long long)a0;
+- (void)safe_makeConstraints:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)p_hideFullBtnInVertical;
+- (void)switchOrientation;
+- (void)p_newStylemakeConstraints:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)trackPadNewFullScreenButtonShow;
+- (void)trackPadNewFullScreenButtonClick;
+- (void).cxx_destruct;
+
+@end

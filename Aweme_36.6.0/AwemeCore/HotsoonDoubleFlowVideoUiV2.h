@@ -1,0 +1,14 @@
+@interface HotsoonDoubleFlowVideoUiV2 : GPBMessage
+
+@property (nonatomic) int horizontalDividerWidth;
+@property (nonatomic) BOOL hasHorizontalDividerWidth;
+@property (nonatomic) int verticalOutsideDividerWidth;
+@property (nonatomic) BOOL hasVerticalOutsideDividerWidth;
+@property (nonatomic) int verticalInsideDividerWidth;
+@property (nonatomic) BOOL hasVerticalInsideDividerWidth;
+@property (nonatomic) int cardCornerRadius;
+@property (nonatomic) BOOL hasCardCornerRadius;
+
++ (id)descriptor;
+
+@end

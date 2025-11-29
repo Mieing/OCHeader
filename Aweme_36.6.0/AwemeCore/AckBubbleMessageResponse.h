@@ -1,0 +1,10 @@
+@class AckBubbleMessageResponse_Data;
+
+@interface AckBubbleMessageResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AckBubbleMessageResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

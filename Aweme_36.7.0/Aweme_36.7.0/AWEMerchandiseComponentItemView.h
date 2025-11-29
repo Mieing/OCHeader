@@ -1,0 +1,78 @@
+@class UIView, NSString, UICollectionViewFlowLayout, AWEDoubleColumnSearchMerchandiseFilterRenderInfoModel, NSMutableDictionary, AWEDoubleColumnSearchMerchandiseFilterManager, NSDictionary, UICollectionView, NSIndexPath;
+@protocol AWEMerchandiseComponentItemViewDelegate;
+
+@interface AWEMerchandiseComponentItemView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, AWEMerchandiseComponentBaseCellDelegate>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *collectionViewLayout;
+@property (retain, nonatomic) AWEDoubleColumnSearchMerchandiseFilterRenderInfoModel *model;
+@property (retain, nonatomic) AWEDoubleColumnSearchMerchandiseFilterManager *filterManager;
+@property (retain, nonatomic) NSMutableDictionary *supportComponentDic;
+@property (nonatomic) double miniSpace;
+@property (nonatomic) BOOL widthNeedAdapter;
+@property (nonatomic) double adapterWidth;
+@property (nonatomic) BOOL didLayoutFirstPage;
+@property (nonatomic) BOOL animatedTransition;
+@property (nonatomic) double animatedTransitionStartTime;
+@property (nonatomic) double animatedTransitionDelayTime;
+@property (retain, nonatomic) NSIndexPath *animationCellIndexPath;
+@property (nonatomic) BOOL finishedTextGradientAnimation;
+@property (nonatomic) BOOL finishedTransitionAnimation;
+@property (nonatomic) BOOL hadPerformTextGradientAnimation;
+@property (retain, nonatomic) NSMutableDictionary *layoutAttrsBeforeTransition;
+@property (retain, nonatomic) UIView *lineView;
+@property (weak, nonatomic) id<AWEMerchandiseComponentItemViewDelegate> delegate;
+@property (copy, nonatomic) NSDictionary *searchInfoDict;
+@property (nonatomic) BOOL isOnlySupportLightMode;
+@property (nonatomic, getter=isCeiling) BOOL ceiling;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)sendRefreshRequestWithSearchQueryParmas:(id)a0;
+- (void)afterLayoutFirstPageRealDataWithContext:(id)a0;
+- (void)configWithModel:(id)a0 filterManager:(id)a1;
+- (void)scrollModelToVisible:(id)a0 animated:(BOOL)a1;
+- (void)resetAnimationTransitionState;
+- (void)calculateMiniSpace;
+- (void)calculateAdapterWidth;
+- (void)resetTextGradientAndTransitionAnimationState;
+- (void)removeAllUnselectedFiltersWithComponent:(id)a0;
+- (void)startTextGradientAnimationIfNeeded;
+- (void)removeModelAtSection:(long long)a0;
+- (void)insertAnimationWithComponent:(id)a0;
+- (id)processComponentModelBeforeInsert:(id)a0;
+- (void)addModels:(id)a0;
+- (void)visibleItemsDampingWithLastSelectedCellSection:(long long)a0;
+- (void)centerCellAtSection:(long long)a0;
+- (double)cellWidthWithModel:(id)a0;
+- (void)trackForDidSelectItemAtIndex:(long long)a0 preSelected:(BOOL)a1;
+- (void)setConfigurationWithCell:(id)a0 atIndexPath:(id)a1;
+- (BOOL)componentBaseCell:(id)a0 isSelectingForItemModel:(id)a1;
+- (void)trackForWillDisplayCellAtIndexPath:(id)a0;
+- (void)startTextGradientAnimation;
+- (void)startTransitionAnimationAtIndexPath:(id)a0;
+- (BOOL)willDisplayCellIsNeedTrackWithModel:(id)a0;
+- (BOOL)didSelectItemIsNeedTrackWithModel:(id)a0 preSelected:(BOOL)a1;
+- (void)trackForClickSelectBoard;
+- (void)trackForClickDropdownWithDefaultSelect;
+- (void)registCollectionViewCells;
+- (void)refreshFilterSectionWithAnimatedTransition:(id)a0;
+- (BOOL)collectionViewScrollDisabled;
+- (void)handleTapSelectBorder;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)addModel:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)setupUI;
+
+@end

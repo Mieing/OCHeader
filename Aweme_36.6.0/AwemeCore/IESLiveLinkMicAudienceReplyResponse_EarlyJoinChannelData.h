@@ -1,0 +1,11 @@
+@class IESLiveLinkMicAudienceJoinChannelResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceReplyResponse_EarlyJoinChannelData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL alreadyJoinChannel;
+@property (retain, nonatomic) IESLiveLinkMicAudienceJoinChannelResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

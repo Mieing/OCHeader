@@ -1,0 +1,10 @@
+@interface AWEPLVChildTeenModeSectionController : AWEPLVConstantSectionController
+
++ (Class)sectionViewModelClass;
+
+- (long long)itemNumWithContainerView:(id)a0;
+- (long long)numberOfItems;
+- (double)minimumLineSpacing;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })inset;
+
+@end

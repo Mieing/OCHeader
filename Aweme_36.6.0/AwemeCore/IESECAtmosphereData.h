@@ -1,0 +1,18 @@
+@class NSString, NSMutableArray;
+
+@interface IESECAtmosphereData : GPBMessage
+
+@property (copy, nonatomic) NSString *img;
+@property (copy, nonatomic) NSString *num;
+@property (copy, nonatomic) NSString *bgColor;
+@property (copy, nonatomic) NSString *borderColor;
+@property (nonatomic) long long leftMargin;
+@property (retain, nonatomic) NSMutableArray *bgColorsArray;
+@property (readonly, nonatomic) unsigned long long bgColorsArray_Count;
+@property (retain, nonatomic) NSMutableArray *borderColorsArray;
+@property (readonly, nonatomic) unsigned long long borderColorsArray_Count;
+@property (copy, nonatomic) NSString *topImg;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface SGLockClassForSecurityMethodBridge : NSObject
+
+@end

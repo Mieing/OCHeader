@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveSendTogether : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+
++ (id)descriptor;
+
+@end

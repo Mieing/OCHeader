@@ -1,0 +1,77 @@
+@class NSString, AWERefreshFooter, AWEUserRecommendRefreshFooter, UITableView;
+@protocol AWEUserRecommendRefreshFooterProtocol, AWEUserRecommendTableSectionProviderProtocol, AWEUserRecommendTableViewManagerDataSource, UITableViewDataSource, UITableViewDelegate;
+
+@interface AWEUserRecommendTableViewManager : NSObject <AWEUserRecommendTableSectionProviderDataSource, UITableViewDataSource, UITableViewDelegate, AWEUserRecommendTableViewManagerProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) id<AWEUserRecommendTableSectionProviderProtocol> sectionProvider;
+@property (nonatomic) long long recommendSection;
+@property (retain, nonatomic) AWEUserRecommendRefreshFooter *footer;
+@property (weak, nonatomic) id<AWEUserRecommendTableViewManagerDataSource> dataSource;
+@property (weak, nonatomic) id<UITableViewDataSource> tableViewDataSource;
+@property (weak, nonatomic) id<UITableViewDelegate> tableViewDelegate;
+@property (readonly, nonatomic) AWERefreshFooter<AWEUserRecommendRefreshFooterProtocol> *managedFooter;
+@property (nonatomic) BOOL managedFooterHidden;
+@property (nonatomic) double managedFooterInsetB;
+@property (nonatomic) double recommendFooterInsetB;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)indexesForVisibleCellsForRecommendSectionProvider:(id)a0;
+- (id)visibleCellsForRecommendSectionProvider:(id)a0;
+- (id)cellForRecommendSectionProvider:(id)a0 atIndex:(long long)a1;
+- (id)headerViewForRecommendSectionProvider:(id)a0;
+- (id)footerViewForRecommendSectionProvider:(id)a0;
+- (id)recommendSectionProvider:(id)a0 dequeueReusableCellWithIdentifier:(id)a1;
+- (id)recommendSectionProvider:(id)a0 dequeueReusableHeaderFooterViewWithIdentifier:(id)a1;
+- (void)recommendSectionProvider:(id)a0 insertRowsAtIndexes:(id)a1 animated:(BOOL)a2;
+- (void)recommendSectionProvider:(id)a0 deleteRowsAtIndexes:(id)a1 animated:(BOOL)a2;
+- (void)recommendSectionProvider:(id)a0 performBatchUpdates:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)reloadRecommendSectionProvider:(id)a0;
+- (void)recommendSectionProviderWillBecomeEmpty:(id)a0;
+- (void)recommendSectionProviderDidBecomeEmpty:(id)a0;
+- (void)recommendSectionProviderDidBecomeNonEmpty:(id)a0;
+- (id)initWithTableView:(id)a0 contextBuilder:(id /* block */)a1;
+- (id)initWithTableView:(id)a0 viewModel:(id)a1;
+- (BOOL)shouldHideManagedFooter;
+- (id)initWithTableView:(id)a0 sectionProvider:(id)a1;
+- (void)p_updateMJFooterIfNeeded;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)tableView:(id)a0 willDisplayHeaderView:(id)a1 forSection:(long long)a2;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)sectionIndexTitlesForTableView:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)tableView:(id)a0 didEndDisplayingCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (long long)tableView:(id)a0 sectionForSectionIndexTitle:(id)a1 atIndex:(long long)a2;
+- (BOOL)tableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 canMoveRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 commitEditingStyle:(long long)a1 forRowAtIndexPath:(id)a2;
+- (void)tableView:(id)a0 moveRowAtIndexPath:(id)a1 toIndexPath:(id)a2;
+- (void)tableView:(id)a0 willDisplayFooterView:(id)a1 forSection:(long long)a2;
+- (void)tableView:(id)a0 didEndDisplayingHeaderView:(id)a1 forSection:(long long)a2;
+- (void)tableView:(id)a0 didEndDisplayingFooterView:(id)a1 forSection:(long long)a2;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)tableView:(id)a0 didDeselectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 editActionsForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 leadingSwipeActionsConfigurationForRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 willBeginEditingRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didEndEditingRowAtIndexPath:(id)a1;
+
+@end

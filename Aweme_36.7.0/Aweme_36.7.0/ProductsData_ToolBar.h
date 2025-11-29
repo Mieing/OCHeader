@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface ProductsData_ToolBar : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *panelJumpURL;
+@property (copy, nonatomic) NSString *sixJumpURL;
+@property (copy, nonatomic) NSString *nineJumpURL;
+
++ (id)descriptor;
+
+@end

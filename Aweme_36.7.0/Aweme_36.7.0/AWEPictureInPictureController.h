@@ -1,0 +1,86 @@
+@class AVPictureInPictureController, NSString, UIView, UIViewController;
+@protocol AWEPictureInPicturePlayerView, AWEPictureInPictureControllerDelegate;
+
+@interface AWEPictureInPictureController : NSObject <AVPictureInPictureControllerDelegate, AWEPictureInPicturePlayerViewDelegate>
+
+@property (retain, nonatomic) AVPictureInPictureController *pipController;
+@property (retain, nonatomic) UIViewController *pipViewController;
+@property (retain, nonatomic) UIView<AWEPictureInPicturePlayerView> *pipPlayerView;
+@property (retain, nonatomic) UIView *realPlayerView;
+@property (nonatomic) unsigned char restoreType;
+@property (nonatomic) BOOL isShowed;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL shouldStopOnActive;
+@property (nonatomic) BOOL started;
+@property (nonatomic) BOOL isForeground;
+@property (nonatomic) BOOL aboutToRestore;
+@property (nonatomic) BOOL readyToPlay;
+@property (nonatomic) BOOL observedSubLayer;
+@property (nonatomic) int startCheckCount;
+@property (copy, nonatomic) id /* block */ finishBlock;
+@property (nonatomic) double duration;
+@property (weak, nonatomic) id<AWEPictureInPictureControllerDelegate> delegate;
+@property (nonatomic) BOOL canStartAutomaticallyFromInline;
+@property (nonatomic) BOOL controlsHidden;
+@property (nonatomic) BOOL canPauseWhenExiting;
+@property (nonatomic) double rate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)currentInstance;
++ (BOOL)isPictureInPictureSupported;
++ (BOOL)isActive;
+
+- (void)setupBindings;
+- (void)preparePictureInPicture;
+- (void)resetVideoDuration:(double)a0 videoSize:(struct CGSize { double x0; double x1; })a1 playerFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2 completion:(id /* block */)a3;
+- (void)stopWithFinishBlock:(id /* block */)a0;
+- (void)preparePlayerLayerIfNeededWithLayer:(id)a0;
+- (void)preparePlayerView;
+- (void)stopPictureInPictureAndRestore:(BOOL)a0;
+- (void)stopAndRestore:(BOOL)a0 finishBlock:(id /* block */)a1;
+- (void)appendFinishBlock:(id /* block */)a0;
+- (void)notifyWillStop;
+- (void)notifyDidStop;
+- (id)readPipViewController;
+- (void)hiddPipOtherSubViews;
+- (void)clearStartedKVO;
+- (void)initPipController;
+- (BOOL)canSyncPlaybackStatus:(BOOL)a0;
+- (void)makePipController;
+- (void)configsControlsHidden;
+- (void)configAutomaticallyStart;
+- (void)configCanPauseWhenExiting;
+- (void)playerViewPreparation;
+- (void)ensureCategory;
+- (void)pictureInPicturePlayerViewReadyToPlay;
+- (void)pictureInPicturePlayerViewFailed:(id)a0;
+- (void)pictureInPicturePlayerViewPlaying:(BOOL)a0;
+- (void)pictureInPicturePlayerViewSeekToTime:(double)a0 completion:(id /* block */)a1;
+- (void)pictureInPictureDidTransToNewSize:(struct { int x0; int x1; })a0;
+- (double)currentTimeOfPictureInPicturePlayerView;
+- (void)pictureInPicturePlayerViewTrackForClickVideoPlay;
+- (void)pictureInPicturePlayerViewTrackForProgressSpeed:(BOOL)a0;
+- (void)stopAndRestore;
+- (void)pictureInPictureControllerDidStopPictureInPicture:(id)a0;
+- (void)pictureInPictureControllerDidStartPictureInPicture:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)clear;
+- (void)stopPictureInPicture;
+- (void)pictureInPictureController:(id)a0 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(id /* block */)a1;
+- (void)pictureInPictureControllerWillStartPictureInPicture:(id)a0;
+- (void)startPictureInPicture;
+- (void)pictureInPictureControllerWillStopPictureInPicture:(id)a0;
+- (void)pictureInPictureController:(id)a0 failedToStartPictureInPictureWithError:(id)a1;
+- (id)init;
+- (void)stopPictureInPictureEvenWhenInBackground;
+- (void)seekToTime:(double)a0;
+- (double)currentPlaybackTime;
+- (void)dealloc;
+- (void)syncProgress;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLivePCInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *firstDisplayBackgroundColorLeft;
+@property (copy, nonatomic) NSString *firstDisplayBackgroundColorMiddle;
+@property (copy, nonatomic) NSString *firstDisplayBackgroundColorRight;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface CameraDirectorDeviceApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,87 @@
+@class AWESearchHomePageInspirationViewController, NSString, UITapGestureRecognizer, AWESearchHomeNewStyleSearchBarController, AWESearchHomePageInspirationManager, UIView;
+@protocol AWESearchResultVerticalBaseViewControllerProtocol, AWESearchServiceManagerProtocol, AWESearchHomePageHybridViewControllerProtocol;
+
+@interface AWESearchHybridInspirationPanelModule : AWESearchBaseContainerService <AWESearchHomePageInspirationProtocol, AWESearchHybridInspirationPanelDataSource, AWESearchHybridHomePageServiceProtocol, AWESearchHybridInspirationPanelDelegate, UIGestureRecognizerDelegate, AWESearchVerticalServiceProtocol>
+
+@property (retain, nonatomic) AWESearchHomePageInspirationManager *inspirationVCManager;
+@property (retain, nonatomic) AWESearchHomePageInspirationManager *sharedVCManager;
+@property (retain, nonatomic) AWESearchHomePageInspirationViewController *inspirationVC;
+@property (weak, nonatomic) AWESearchHomeNewStyleSearchBarController *searchBarController;
+@property (nonatomic) BOOL isInspirationSearch;
+@property (nonatomic) BOOL isFirstInit;
+@property (nonatomic) BOOL isFirstOpenFromSearchResult;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *previousPage;
+@property (copy, nonatomic) NSString *currentSearchId;
+@property (nonatomic) long long viewStatus;
+@property (retain, nonatomic) UIView *tapBlockView;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGes;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWESearchResultVerticalBaseViewControllerProtocol, AWESearchHomePageHybridViewControllerProtocol> container;
+@property (weak, nonatomic) id<AWESearchServiceManagerProtocol> serviceManager;
+@property (copy, nonatomic) NSString *serviceID;
+@property (copy, nonatomic) NSString *serviceName;
+@property (nonatomic) long long priority;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (id)moduleName;
+
+- (void)handleTapGes:(id)a0;
+- (void)searchHybird_aiStreamReceiveFirstDataWithConversationID:(id)a0 isReAnswer:(BOOL)a1 searchID:(id)a2 extra:(id)a3;
+- (void)searchHybird_setupUI;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (void)customFeedWillBeginDragging:(id)a0;
+- (void)voiceInputEntranceLongPressBegan;
+- (void)searchHybrid_searchBarInspirationClick;
+- (void)searchHybrid_searchBarRefreshClick;
+- (void)searchHybrid_handleSearchKeywordDidChangedParams:(id)a0;
+- (void)searchHybrid_fetchCurrentInspirationStatus:(BOOL)a0;
+- (void)searchHybrid_dismissInspirationPanelWithReason:(id)a0;
+- (void)searchHybrid_appWillEnterForeground;
+- (void)searchHybrid_quitSearchMode;
+- (void)searchHybrid_customComponentWillDisplay:(id)a0 withViewModel:(id)a1;
+- (void)searchHybrid_feedDidScrolled:(id)a0;
+- (void)searchHybird_updateInspirationPanelWithEnterFrom:(id)a0 previousPage:(id)a1;
+- (void)searchHybrid_didSetViewStatus:(long long)a0;
+- (void)searchHybrid_didSetIsSearchAndRecommendSwitch:(BOOL)a0;
+- (void)searchHybrid_updateInspirationPanelWithResponse:(id)a0;
+- (void)searchHybrid_sendInspirationPreRequestFromPage:(id)a0;
+- (void)startBlockSingleTap;
+- (void)stopBlockSingleTap;
+- (void)p_requestLoginActionWithCompletion:(id /* block */)a0;
+- (void)dismissInspiration;
+- (void)dismissInspirationWithParams:(id)a0;
+- (void)updateInspirationViewFrame:(struct CGSize { double x0; double x1; })a0;
+- (void)searchBarControllerInspiration;
+- (void)setupInspirationManager;
+- (void)searchWithInspirationParam:(id)a0;
+- (void)updateSearchResultBegin;
+- (void)triggerInspirationAnimationWithShowWay:(id)a0;
+- (void)searchHome_quitSearchWithReason:(long long)a0;
+- (void)searchHome_inspirationInitNotification;
+- (void)startSearch:(id)a0 forceHasSegment:(BOOL)a1;
+- (void)updateInspirationViewWithStatus:(BOOL)a0 closeReason:(id)a1;
+- (void)addNextCharacterWithAnimationWithQuery:(id)a0;
+- (void)allAnimationsCompletedWithQuery:(id)a0;
+- (void)newSearchWithInspirationParam:(id)a0;
+- (void)updateSearchResultEnd;
+- (id)fetchSearchBarController;
+- (void)dismissInspirationPanelWithReason:(id)a0;
+- (void)sendInspirationPreRequestFromPage:(id)a0;
+- (void)configInspirationModule;
+- (void)p_triggerInspirationSearchWithParams:(id)a0;
+- (void)adjustInspirationHierarchyIfNeeded;
+- (id)fetchNaviBar;
+- (void)handleSearchKeywordDidChangedParams:(id)a0;
+- (void)p_clearQueryList;
+- (void)p_triggerInspirationCurrentClarification:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

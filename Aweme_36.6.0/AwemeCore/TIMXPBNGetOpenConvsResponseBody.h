@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetOpenConvsResponseBody : GPBMessage
+
+@property (nonatomic) long long nextOpenconvVersion;
+@property (nonatomic) BOOL hasNextOpenconvVersion;
+@property (nonatomic) BOOL openConvHasMore;
+@property (nonatomic) BOOL hasOpenConvHasMore;
+@property (retain, nonatomic) NSMutableArray *openConvsArray;
+@property (readonly, nonatomic) unsigned long long openConvsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface RoomKickListApiRoot : GPBRootObject
+
+@end

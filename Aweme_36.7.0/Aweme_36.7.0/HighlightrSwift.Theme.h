@@ -1,0 +1,12 @@
+@interface HighlightrSwift.Theme : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ theme;
+    void /* unknown type, empty encoding */ lightTheme;
+    void /* unknown type, empty encoding */ codeFont;
+    void /* unknown type, empty encoding */ boldCodeFont;
+    void /* unknown type, empty encoding */ italicCodeFont;
+    void /* unknown type, empty encoding */ themeDict;
+    void /* unknown type, empty encoding */ strippedTheme;
+    void /* unknown type, empty encoding */ themeBackgroundColor;
+}
+
+@end

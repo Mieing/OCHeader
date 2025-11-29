@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface GetPersonalKaraokeDataResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long sungSongCount;
+@property (copy, nonatomic) NSString *favoriteSongName;
+
++ (id)descriptor;
+
+@end

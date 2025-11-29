@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface HTSLiveImage_NinePatchSetting : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *settingListArray;
+@property (readonly, nonatomic) unsigned long long settingListArray_Count;
+
++ (id)descriptor;
+
+@end

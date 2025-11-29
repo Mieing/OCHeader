@@ -1,0 +1,3 @@
+@interface HTSLiveQuizStartRoot : GPBRootObject
+
+@end

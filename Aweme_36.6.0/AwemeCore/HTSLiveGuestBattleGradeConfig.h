@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveGuestBattleGradeConfig : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveImage *playValueIcon;
+@property (nonatomic) BOOL hasPlayValueIcon;
+@property (retain, nonatomic) HTSLiveImage *linkmicEffect;
+@property (nonatomic) BOOL hasLinkmicEffect;
+@property (copy, nonatomic) NSString *beautyEffectId;
+@property (retain, nonatomic) HTSLiveImage *resultEffect;
+@property (nonatomic) BOOL hasResultEffect;
+@property (copy, nonatomic) NSString *decorationId;
+
++ (id)descriptor;
+
+@end

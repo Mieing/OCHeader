@@ -1,0 +1,88 @@
+@class NSCache, IESEffectCleaner, IESEffectConfig, IESManifestManager, IESEffectResourcePreloader, IESEffectDownloadQueue, NSMutableDictionary;
+
+@interface IESEffectManager : NSObject
+
+@property (readonly, nonatomic) IESManifestManager *manifestManager;
+@property (readonly, nonatomic) IESEffectCleaner *cleaner;
+@property (retain, nonatomic) IESEffectConfig *config;
+@property (retain, nonatomic) IESManifestManager *manifestManager;
+@property (retain, nonatomic) IESEffectDownloadQueue *downloadQueue;
+@property (retain, nonatomic) IESEffectCleaner *cleaner;
+@property (nonatomic) BOOL hasSetUp;
+@property (nonatomic) void /* function */ *davinciFinder;
+@property (retain, nonatomic) IESEffectResourcePreloader *preloader;
+@property (retain, nonatomic) NSMutableDictionary *trackInfoDict;
+@property (retain, nonatomic) NSCache *progressManagerDict;
+
++ (id)manager;
+
+- (void)downloadEffect:(id)a0 progress:(id /* block */)a1 completion:(id /* block */)a2;
+- (void)addAlgorithmRecordFromCK:(id)a0;
+- (void)addEffectRecordFromCK:(id)a0;
+- (void)removeAllCacheFiles;
+- (void)forceRemoveAllCacheFiles;
+- (unsigned long long)getTotalBytes;
+- (void)asyncGetFileDownloadURLWithURIs:(id)a0 completion:(id /* block */)a1;
+- (void)downloadEffect:(id)a0 downloadQueuePriority:(long long)a1 downloadQualityOfService:(long long)a2 progress:(id /* block */)a3 completion:(id /* block */)a4;
+- (void)downloadEffect:(id)a0 configParams:(id)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)syncPauseDownloadIfNeedWithEffect:(id)a0;
+- (void)syncCancelDownloadIfNeedWithEffect:(id)a0;
+- (void)insertFrontDownloadEffect:(id)a0 cancelExistedDownload:(BOOL)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)downloadRequirements:(id)a0 completion:(id /* block */)a1;
+- (void)fetchResourcesWithRequirements:(id)a0 modelNames:(id)a1 completion:(id /* block */)a2;
+- (void)fetchOnlineInfosAndResourcesWithModelNames:(id)a0 extra:(id)a1 completion:(id /* block */)a2;
+- (id)checkoutModelInfosWithRequirements:(id)a0 modelNames:(id)a1;
+- (BOOL)isAlgorithmRequirementsDownloaded:(id)a0;
+- (id)effectPathForEffectMD5:(id)a0;
+- (void)setUpPreloader;
+- (BOOL)isAlgorithmDownloaded:(id)a0;
+- (BOOL)isAlgorithmModelDownloadedWithModelNames:(id)a0;
+- (void)updateLastUseTimeByEffectMD5:(id)a0;
+- (id)updatedModelNameWithModelName:(id)a0;
+- (id)algorithmRecordWithName:(id)a0 version:(id)a1 needCheckSize:(BOOL)a2 traceLog:(id)a3;
+- (BOOL)isSpecificEffectsDownloaded:(id)a0;
+- (long long)effectsAmountWithPanel:(id)a0;
+- (void)downloadEffect:(id)a0 downloadRequirements:(BOOL)a1 downloadQueuePriority:(long long)a2 downloadQualityOfService:(long long)a3 progress:(id /* block */)a4 completion:(id /* block */)a5;
+- (void)asyncGetFileDownloadURLsWithEffect:(id)a0 completion:(id /* block */)a1;
+- (void)serialDownloadEffect:(id)a0 downloadRequirements:(BOOL)a1 downloadQueuePriority:(long long)a2 downloadQualityOfService:(long long)a3 progress:(id /* block */)a4 completion:(id /* block */)a5;
+- (void)fetchResourcesWithRequirements:(id)a0 modelNames:(id)a1 extraParameters:(id)a2 completion:(id /* block */)a3;
+- (BOOL)unpackAssetBundleAt:(id)a0;
+- (id /* block */)makeDownloadCompletionWithEffect:(id)a0 destination:(id)a1 completion:(id /* block */)a2;
+- (void)internalDownloadEffect:(id)a0 configParams:(id)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (id)getAllPreloadedEffectRecords;
+- (id)getAllAlgorithmRecords;
+- (void)fetchResourcesWithAlgorithmModels:(id)a0 extraParameters:(id)a1 completion:(id /* block */)a2;
+- (void)asyncFetchAlgorithmModelsIfNeedWithModelNames:(id)a0 extraParameters:(id)a1 completion:(id /* block */)a2;
+- (id)algorithmPathForAlgorithmName:(id)a0 traceLog:(id)a1;
+- (void)insertFrontAsyncDownloadEffect:(id)a0 cancelExistedDownload:(BOOL)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)insertFrontSyncDownloadEffect:(id)a0 cancelExistedDownload:(BOOL)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (id)algorithmPathForAlgorithmNameNew:(id)a0 version:(id)a1 traceLog:(id)a2;
+- (void)updateLastUseTimeWithModelName:(id)a0;
+- (void)onAppWillTerminate:(id)a0;
+- (void)setThirdPartyResourceFinder:(void /* function */ *)a0;
+- (void)fetchPreloadResourceWithBusinessID:(long long)a0 businessKey:(id)a1 extraParameters:(id)a2;
+- (void)pausePreloadResourceIfNeedWithBusinessID:(long long)a0 businessKey:(id)a1;
+- (void)updatePreloaderWithParameterBlock:(id /* block */)a0;
+- (void)updatePreloaderWithCheckResourceFileExistBlock:(id /* block */)a0;
+- (void)updateUseCountForEffect:(id)a0 byValue:(long long)a1;
+- (void)updateRefCountForEffect:(id)a0 byValue:(long long)a1;
+- (void)removeExistAllowPanelListIfNeed:(id)a0;
+- (void)addAllowPanelListForEffectUnClean:(id)a0;
+- (id)getCurrentAllowPanelList;
+- (unsigned long long)getTotalSizeOfEffectExceptWithNoNeedCleanPart;
+- (unsigned long long)getTotalSizeOfAlgorithmExceptWithNoNeedCleanPart;
+- (void)cleanResourceByDeleteKeysWithPolicyModel:(id)a0 completion:(id /* block */)a1;
+- (void)cleanResourceByLRUWithPolicyModel:(id)a0 completion:(id /* block */)a1;
+- (void)cleanResourceByTimeThresholdWithPolicyModel:(id)a0 completion:(id /* block */)a1;
+- (void)deleteEffectRecord:(id)a0 completion:(id /* block */)a1;
+- (id)effectPathForEffectModel:(id)a0;
+- (id)effectPathWithEffectModel:(id)a0;
+- (void)getEffectDeleteCount:(id)a0 reason:(id)a1 completion:(id /* block */)a2;
+- (void /* function */ *)getResourceFinder;
+- (void)setUp;
+- (void).cxx_destruct;
+- (void)registerNotifications;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+
+@end

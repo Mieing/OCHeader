@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveUser_XiguaParams_UserExtendInfo_RocketSchema : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *rSchema;
+@property (copy, nonatomic) NSString *rToken;
+@property (copy, nonatomic) NSString *downloadURL;
+
++ (id)descriptor;
+
+@end

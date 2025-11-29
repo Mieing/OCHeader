@@ -1,0 +1,70 @@
+@class NSTimer, DUXBottomNotificationUIConfigModel, UITapGestureRecognizer, UIView, UIImage, UIImageView, NSString, NSAttributedString, DUXButton, UILabel;
+
+@interface AWESearchHybridLoginTipsView : UIView <CAAnimationDelegate>
+
+@property (retain, nonatomic) NSTimer *autoHideTimer;
+@property (retain, nonatomic) UIImageView *iconView;
+@property (retain, nonatomic) UILabel *contentLabel;
+@property (retain, nonatomic) UILabel *detailContentLabel;
+@property (retain, nonatomic) DUXButton *containerButton;
+@property (retain, nonatomic) DUXButton *textButton;
+@property (nonatomic) BOOL isDismissing;
+@property (nonatomic) BOOL isShowing;
+@property (weak, nonatomic) UIView *hostView;
+@property (nonatomic) double bottomOffset;
+@property (retain, nonatomic) UITapGestureRecognizer *contentViewTapGesture;
+@property (retain, nonatomic) DUXBottomNotificationUIConfigModel *uiConfig;
+@property (retain, nonatomic) UIImage *icon;
+@property (retain, nonatomic) UIView *leftContentView;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSAttributedString *attributedContent;
+@property (nonatomic) BOOL isTruncatingMiddle;
+@property (copy, nonatomic) NSString *linkText;
+@property (copy, nonatomic) NSString *buttonText;
+@property (nonatomic) double buttonWidth;
+@property (nonatomic) unsigned long long enlargeType;
+@property (nonatomic) BOOL disableAutoDismiss;
+@property (nonatomic) double autoDismissTime;
+@property (nonatomic) BOOL shouldDismissWhenPointOutSide;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } interactionZoneEnlargeInsets;
+@property (copy, nonatomic) id /* block */ buttonAction;
+@property (copy, nonatomic) id /* block */ closeAction;
+@property (copy, nonatomic) id /* block */ linkAction;
+@property (copy, nonatomic) id /* block */ contentViewAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didClickActionButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 enlargeType:(unsigned long long)a1;
+- (void)showOnView:(id)a0;
+- (void)showWithBottomOffset:(double)a0;
+- (id)initWithEnlargeType:(unsigned long long)a0;
+- (struct CGSize { double x0; double x1; })lastLineSizeForAttributeString:(id)a0 constraintSize:(struct CGSize { double x0; double x1; })a1;
+- (void)showOnView:(id)a0 bottomOffset:(double)a1;
+- (void)didClickCloseButton;
+- (void)setShowAnimation;
+- (void)setHideAnimation;
+- (void)didClickLinkButton;
+- (BOOL)canInteractToPoint:(struct CGPoint { double x0; double x1; })a0 onViewRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 withEdgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2;
+- (double)setupRightContentUI;
+- (void)didClickContentView;
+- (void)updateViewConstraintsWithBottomOffset:(double)a0;
+- (double)setupLeftContentUI;
+- (double)notificationHeightWithShowOneLine:(BOOL)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })setupContentUIWithRect:(struct CGSize { double x0; double x1; })a0;
+- (void)duxBreakPointDidUpdateWithBottomOffset:(double)a0;
+- (void)addContentViewTapGestureIfNeeded;
+- (void)showInsertSubview:(id)a0 aboveSubview:(id)a1 bottomOffset:(double)a2;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)show;
+- (void)dismiss:(BOOL)a0;
+- (void)setupUI;
+
+@end

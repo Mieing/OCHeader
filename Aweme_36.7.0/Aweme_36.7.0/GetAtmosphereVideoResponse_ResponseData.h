@@ -1,0 +1,10 @@
+@class IESLiveKtvAtmosphereVideoInfo;
+
+@interface GetAtmosphereVideoResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveKtvAtmosphereVideoInfo *videoInfo;
+@property (nonatomic) BOOL hasVideoInfo;
+
++ (id)descriptor;
+
+@end

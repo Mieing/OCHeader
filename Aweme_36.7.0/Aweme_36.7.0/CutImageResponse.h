@@ -1,0 +1,12 @@
+@class CutImageData, CutImageExtra;
+
+@interface CutImageResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CutImageData *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) CutImageExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

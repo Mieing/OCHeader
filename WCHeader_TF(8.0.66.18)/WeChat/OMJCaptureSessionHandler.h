@@ -1,0 +1,76 @@
+@class NSString, AVCapturePhotoOutput, OMJPhotoCapturer, AVCaptureSession, AVCaptureAudioDataOutput, NSObject, AVCaptureDeviceInput, AVCaptureVideoDataOutput;
+@protocol OS_dispatch_queue;
+
+@interface OMJCaptureSessionHandler : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate, OMJPhotoCapturerDelegate>
+
+@property (retain, nonatomic) OMJPhotoCapturer *photoCapturer;
+@property (retain, nonatomic) AVCaptureSession *captureSession;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *sessionQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (retain, nonatomic) AVCaptureDeviceInput *videoDeviceInput;
+@property (retain, nonatomic) AVCapturePhotoOutput *photoOutput;
+@property (retain, nonatomic) AVCaptureVideoDataOutput *videoOutput;
+@property (retain, nonatomic) AVCaptureSession *audioCaptureSession;
+@property (retain, nonatomic) AVCaptureDeviceInput *audioDeviceInput;
+@property (retain, nonatomic) AVCaptureAudioDataOutput *audioOutput;
+@property (nonatomic) double videoMaxZoomFactor;
+@property (nonatomic) double videoMinZoomFactor;
+@property (nonatomic) long long currentFlashMode;
+@property (nonatomic) int frontCamDimensionLevel;
+@property (nonatomic) struct function<void (AVCapturePhoto *)> { struct __value_func<void (AVCapturePhoto *)> { struct type { unsigned char __lx[24]; } __buf_; void *__f_; } __f_; } didCapturePhotoCallback;
+@property (nonatomic) struct function<void (opaqueCMSampleBuffer *, AVCaptureDevicePosition)> { struct __value_func<void (opaqueCMSampleBuffer *, AVCaptureDevicePosition)> { struct type { unsigned char __lx[24]; } __buf_; void *__f_; } __f_; } didOutputVideoSampleBufferCallback;
+@property (nonatomic) struct function<void (opaqueCMSampleBuffer *)> { struct __value_func<void (opaqueCMSampleBuffer *)> { struct type { unsigned char __lx[24]; } __buf_; void *__f_; } __f_; } didOutputAudioSampleBufferCallback;
+@property (nonatomic) BOOL isCameraSwitching;
+@property (nonatomic) long long targetPositionFlagForSwitchCamera;
+@property (nonatomic) struct function<void ()> { struct __value_func<void ()> { struct type { unsigned char __lx[24]; } __buf_; void *__f_; } __f_; } didFinishSwitchCameraCallbackFunc;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)commonInit;
+- (void)switchCameraIfNeeded:(BOOL)a0;
+- (void)setupCaptureSessionIfNeededWithIsUseFrontCamera:(BOOL)a0 frontCamDimensionLevel:(int)a1 completionHandler:(id /* block */)a2;
+- (void)startRunning:(id /* block */)a0;
+- (void)stopRunning:(id /* block */)a0;
+- (void)startAudioCaptureSessionRunning:(id /* block */)a0;
+- (void)stopAudioCaptureSessionRunning:(id /* block */)a0;
+- (void)captureOutput:(id)a0 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { } *)a1 fromConnection:(id)a2;
+- (void)captureOutput:(id)a0 didDropSampleBuffer:(struct opaqueCMSampleBuffer { } *)a1 fromConnection:(id)a2;
+- (BOOL)supportFlashMode;
+- (long long)flashMode;
+- (void)setFlashMode:(long long)a0;
+- (BOOL)supportTorchMode;
+- (long long)torchMode;
+- (void)setTorchMode:(long long)a0;
+- (float)getDeviceFOV;
+- (void)reverseCamera;
+- (void)switchCameraToPosition:(long long)a0;
+- (void)switchCameraWithDevice:(id)a0 position:(long long)a1;
+- (long long)devicePosition;
+- (double)videoZoomFactor;
+- (void)setVideoZoomFactor:(double)a0;
+- (void)zoomCaptureDeviceWithScale:(double)a0;
+- (void)setFocusPointOfInterest:(struct CGPoint { double x0; double x1; })a0;
+- (void)setExposureISO:(double)a0;
+- (double)exposureISO;
+- (double)maxExposureISO;
+- (double)minExposureISO;
+- (void)resetExposureISO;
+- (void)calculateExposureValue:(struct function<void (float)> { struct __value_func<void (float)> { struct type { unsigned char x0[24]; } x0; void *x1; } x0; })a0;
+- (void)capturePhoto;
+- (id)setUpPhotoSettings;
+- (void)didFinishCapturePhoto:(id)a0 photos:(id)a1;
+- (void)configSessionPresetWithDevicePosition:(long long)a0;
+- (void)configCaptureConnectionMirrorAndOrientationWithDevicePosition:(long long)a0;
+- (void)configVideoMaxAndMinZoomFactor;
+- (id)getFrontCommonCaptureDevice;
+- (id)getFrontTrueDepthCaptureDevice;
+- (id)getBackCommonCaptureDevice;
+- (id)getBackBuiltInWideCaptureDevice;
+- (id)getBackLongerFocusCaptureDevice;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

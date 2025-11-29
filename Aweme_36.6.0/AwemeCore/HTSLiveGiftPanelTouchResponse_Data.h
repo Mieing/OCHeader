@@ -1,0 +1,12 @@
+@class HTSLiveRechargeButtonTouch, NSMutableDictionary;
+
+@interface HTSLiveGiftPanelTouchResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveRechargeButtonTouch *rechargeButtonTouch;
+@property (nonatomic) BOOL hasRechargeButtonTouch;
+@property (retain, nonatomic) NSMutableDictionary *extra;
+@property (readonly, nonatomic) unsigned long long extra_Count;
+
++ (id)descriptor;
+
+@end

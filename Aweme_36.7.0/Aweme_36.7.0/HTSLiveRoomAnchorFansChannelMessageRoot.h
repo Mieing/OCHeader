@@ -1,0 +1,3 @@
+@interface HTSLiveRoomAnchorFansChannelMessageRoot : GPBRootObject
+
+@end

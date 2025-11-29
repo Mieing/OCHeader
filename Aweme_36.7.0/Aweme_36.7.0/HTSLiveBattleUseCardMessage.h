@@ -1,0 +1,13 @@
+@class NSString, HTSLiveCommon, ItemCardInfo;
+
+@interface HTSLiveBattleUseCardMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) ItemCardInfo *info;
+@property (nonatomic) BOOL hasInfo;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

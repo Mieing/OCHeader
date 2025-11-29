@@ -1,0 +1,14 @@
+@class NSString, HTSLiveUser;
+
+@interface GetChannelUserListResponse_UserInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+@property (nonatomic) BOOL isOwner;
+@property (nonatomic) BOOL invitedBy;
+@property (copy, nonatomic) NSString *invitedByNickName;
+@property (nonatomic) BOOL needPermit;
+
++ (id)descriptor;
+
+@end

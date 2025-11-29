@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpCommonCouponCommonApiRoot : GPBRootObject
+
+@end

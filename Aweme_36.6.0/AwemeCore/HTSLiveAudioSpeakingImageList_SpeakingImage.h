@@ -1,0 +1,14 @@
+@class HTSLiveImage;
+
+@interface HTSLiveAudioSpeakingImageList_SpeakingImage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *speakingLowImage;
+@property (nonatomic) BOOL hasSpeakingLowImage;
+@property (retain, nonatomic) HTSLiveImage *speakingDefaultImage;
+@property (nonatomic) BOOL hasSpeakingDefaultImage;
+@property (retain, nonatomic) HTSLiveImage *speakingHighImage;
+@property (nonatomic) BOOL hasSpeakingHighImage;
+
++ (id)descriptor;
+
+@end

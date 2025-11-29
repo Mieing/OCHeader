@@ -1,0 +1,70 @@
+@class NSString, NSSet, NSMutableSet, AFDRadarActivityModel, NSMutableArray, UITableView;
+
+@interface AWERadarNearbyItemListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AWERadarNearbyItemListViewControllerProtocol>
+
+@property (retain, nonatomic) NSMutableArray *nearbyDataSource;
+@property (retain, nonatomic) NSMutableArray *backupDataSource;
+@property (retain, nonatomic) NSMutableArray *neighbourhoodGroupDataSource;
+@property (retain, nonatomic) NSMutableArray *dataSourceType;
+@property (retain, nonatomic) AFDRadarActivityModel *activityModel;
+@property (retain, nonatomic) NSMutableSet *alreadyFoundSet;
+@property (nonatomic) double contentHeight;
+@property (nonatomic) BOOL isNewDataEmpty;
+@property (nonatomic) BOOL isNeedFirstPlaceholder;
+@property (nonatomic) long long neighbourhoodGroupCursor;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) BOOL isShowGroupEntrance;
+@property (nonatomic) long long parentVCType;
+@property (readonly, nonatomic) NSSet *oldItemsSet;
+@property (retain, nonatomic) UITableView *tableView;
+@property (nonatomic) BOOL isNeedClear;
+@property (nonatomic) BOOL isSpringFestivalActive;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)updateWithActivityModel:(id)a0;
+- (void)updateUserList:(id)a0 completion:(id /* block */)a1;
+- (BOOL)p_isShowGroupEntrance:(id)a0;
+- (BOOL)p_isRefreshHistoryFriendsOldDesc:(id)a0 newDesc:(id)a1;
+- (id)addNearbyItems:(id)a0 atIndexes:(id)a1 shouldReplace:(BOOL)a2;
+- (BOOL)checkUserIsNeedUpdate:(id)a0 newItemModel:(id)a1;
+- (BOOL)isShowingNearbyDataSource;
+- (long long)p_getCellPositionWithIndex:(id)a0;
+- (void)listRoundCorner:(id)a0 section:(long long)a1;
+- (id)dataSourceAtIndex:(long long)a0;
+- (id)p_setNewDataSourceWithNearbyItem:(id)a0;
+- (void)p_updateDataSource:(id)a0;
+- (id)p_setNewDataSourceWithNearbyUser:(id)a0;
+- (void)updateNearbyItemList:(id)a0 completion:(id /* block */)a1;
+- (void)p_deletNearbyDataSource;
+- (void)p_insertNearbyDataSource;
+- (void)p_insertBackupDataSource;
+- (void)replaceBackupItems:(id)a0;
+- (BOOL)addBackupItem:(id)a0 atIndex:(unsigned long long)a1;
+- (BOOL)isShowingBacupDataSource;
+- (id)displayModelAtItem:(id)a0;
+- (void)p_trackUserCardShow:(id)a0;
+- (id)uidsFromList:(id)a0;
+- (id)removeDuplicatedBackupDataSourceWithNewNearbyList:(id)a0;
+- (void)updateDataSourceWithState:(unsigned long long)a0 nearbyItemList:(id)a1 completion:(id /* block */)a2;
+- (void)updateBackupDataSource:(id)a0;
+- (void)updateBackupDataSourceWithNearbyItemList:(id)a0 backupItemList:(id)a1;
+- (void)updateBackupWithEmptyDataSource;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setParentVC:(id)a0;
+
+@end

@@ -1,0 +1,86 @@
+@class NSNumber, NSString, NSDictionary;
+@protocol HunterLynxElementStatusDelegate;
+
+@interface HunterLiveElement : LynxUI <HunterLiveViewPlayerDelegate, AWEModernFullscreenTransitionOuterContextProvider, AWEZoomTransitionOuterContextProvider, HunterLynxElementViewProtocol>
+
+@property (retain, nonatomic) NSNumber *modelIndex;
+@property (copy, nonatomic) NSString *cacheKey;
+@property (copy, nonatomic) NSString *sessionID;
+@property (copy, nonatomic) NSString *containerID;
+@property (nonatomic) BOOL muted;
+@property (retain, nonatomic) NSNumber *volume;
+@property (nonatomic) long long fitMode;
+@property (nonatomic) BOOL hasUpdateVideo;
+@property (nonatomic) long long payStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) NSDictionary *zoomTransitionContext;
+@property (weak, nonatomic) id<HunterLynxElementStatusDelegate> statusDelegate;
+
++ (id)__lynx_prop_config__1186;
++ (id)__lynx_prop_config__570;
++ (id)__lynx_prop_config__1317;
++ (id)__lynx_prop_config__691;
++ (id)__lynx_prop_config__822;
++ (id)__lynx_prop_config__933;
++ (id)__lynx_prop_config__1044;
++ (id)__lynx_prop_config__1105;
++ (id)__lynx_prop_config__1398;
++ (id)__lynx_ui_method_config__1499;
++ (id)__lynx_ui_method_config__16010;
++ (id)__lynx_ui_method_config__16711;
++ (id)__lynx_ui_method_config__17412;
++ (id)__lynx_ui_method_config__18113;
++ (id)__lynx_ui_method_config__18814;
+
+- (id)zoomTransitionStartViewForOffset:(long long)a0;
+- (id)liveTransitionContext;
+- (id)modernTransitionContext;
+- (void)didReceiveSEI:(id)a0;
+- (void)play:(id)a0 withResult:(id /* block */)a1;
+- (void)pause:(id)a0 withResult:(id /* block */)a1;
+- (void)stop:(id)a0 withResult:(id /* block */)a1;
+- (void)logExtra:(id)a0 requestReset:(BOOL)a1;
+- (void)poster:(id)a0 requestReset:(BOOL)a1;
+- (void)fitMode:(id)a0 requestReset:(BOOL)a1;
+- (void)didPlayError:(id)a0;
+- (void)didStartStall;
+- (void)modernTransitionUpdateOffset:(long long)a0 isScrolled:(BOOL)a1;
+- (void)resetLivePlayer;
+- (BOOL)isMediaSourceCard;
+- (void)muted:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)volume:(id)a0 requestReset:(BOOL)a1;
+- (void)payTrialTimeChange:(double)a0;
+- (void)payStatusChange:(long long)a0;
+- (void)awemeindex:(id)a0 requestReset:(BOOL)a1;
+- (void)cachekey:(id)a0 requestReset:(BOOL)a1;
+- (void)sessionid:(id)a0 requestReset:(BOOL)a1;
+- (void)containerid:(id)a0 requestReset:(BOOL)a1;
+- (BOOL)shouldEnterFullScreenWithPlayer;
+- (void)didRelease;
+- (void)p_updateModelWithIndex:(id)a0;
+- (void)p_updateMutedIfNeed;
+- (void)p_updateVolumeIfNeed;
+- (void)p_updateFitModeIfNeed;
+- (void)reportLivePlayerLog:(id)a0 reportParams:(id)a1;
+- (void)stopAndRelease:(id)a0 withResult:(id /* block */)a1;
+- (void)openPaidPanel:(id)a0 withResult:(id /* block */)a1;
+- (void)checkRoomEndStatus:(id)a0 withResult:(id /* block */)a1;
+- (id)getLynxElementType;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (id)transitionContext;
+- (void)didEnd;
+- (id)videoView;
+- (void)didResignActive;
+- (void)willEnterFullScreen;
+- (void)didStart;
+- (id)createView;
+- (void)didStop;
+- (void)didResume;
+- (void)didPlay;
+- (id)livePlayer;
+
+@end

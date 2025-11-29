@@ -1,0 +1,70 @@
+@class ACCMusicTrimViewSnapShootModel, AVPlayer, NSDictionary, NSString, UIViewController;
+@protocol ACCMusicCutPanelViewProtocol, ACCMusicModelProtocol;
+
+@interface AWEAudioClipFeatureManager : NSObject <ACCMusicCutPanelViewDelegate, AWEAudioClipFeatureManagerProtocol>
+
+@property (weak, nonatomic) UIViewController *controller;
+@property (retain, nonatomic) AVPlayer *internalPlayer;
+@property (nonatomic) double totalDuration;
+@property (nonatomic) double videoMaxDuration;
+@property (nonatomic) unsigned long long repeatPlayCount;
+@property (nonatomic) double totalPlayTime;
+@property (nonatomic) BOOL canRepeatCountChange;
+@property (nonatomic) BOOL isMusicRangeEdited;
+@property (nonatomic) struct _HTSAudioRange { double location; double length; } previousClipRange;
+@property (nonatomic) BOOL initialUseSuggestStatus;
+@property (nonatomic) BOOL initialMusicLoopStatus;
+@property (nonatomic) BOOL initialUseOriginMusicStatus;
+@property (retain, nonatomic) ACCMusicTrimViewSnapShootModel *initialImageMusicTrimStatusModel;
+@property (nonatomic) long long initialRepeatCount;
+@property (retain, nonatomic) id<ACCMusicCutPanelViewProtocol> musicCutPanelView;
+@property (nonatomic) double cutMusicPanelShowTime;
+@property (copy, nonatomic) id /* block */ audioClipDoneBlock;
+@property (copy, nonatomic) id /* block */ audioClipCancelBlock;
+@property (copy, nonatomic) id /* block */ audioRangeChangeBlock;
+@property (copy, nonatomic) NSDictionary *audioClipCommonTrackDic;
+@property (copy, nonatomic) NSDictionary *audioClipInfoTrackDic;
+@property (nonatomic, getter=isShowingAudioClipView) BOOL showingAudioClipView;
+@property (retain, nonatomic) id<ACCMusicModelProtocol> music;
+@property (nonatomic) BOOL usedForMusicSearch;
+@property (nonatomic) BOOL isImageAlbumMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)resetPanelView;
+- (void)addAudioCLipViewForViewController:(id)a0;
+- (void)showMusicCutPanelViewWithConfigModel:(id)a0 completion:(id /* block */)a1;
+- (BOOL)shouldShowMusicLoopComponent;
+- (BOOL)isMusicLoopOpen;
+- (void)updateAudioClipViewWithTime:(double)a0;
+- (void)userDidFinishPanAudioHandler;
+- (void)userDidFinishScrollAudioWaveView;
+- (void)didCancelClipWithScene:(unsigned long long)a0;
+- (void)didConfirmClipWithScene:(unsigned long long)a0;
+- (void)didClickUseOriginMusicSwitch;
+- (void)didClickSuggestSwitch;
+- (void)didClickLoopSwitch;
+- (void)configPlayerWithMusic:(id)a0;
+- (void)p_resetMusicLoopParameter;
+- (BOOL)shouldShowUseOriginMusicSwitch;
+- (BOOL)shouldShowMusicSuggestViewWithCutDuration:(double)a0 totalDuration:(double)a1;
+- (void)p_replayBarFromRangeLocation;
+- (void)p_updateAudioWaveViewAndPlayerProgress:(double)a0;
+- (id)cutMusicPanelSuperView;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getBarStartLocation;
+- (BOOL)isForbidLoopForLongVideo;
+- (BOOL)isCurrentTimeReachEndOfClipedFragment;
+- (void)p_clearState;
+- (void)trackAfterClickCancelButtonWithScene:(unsigned long long)a0;
+- (void)trackAfterClickConfirmButtonWithScene:(unsigned long long)a0;
+- (void)trackAfterClickMusicLoopSwitch:(BOOL)a0;
+- (void)trackAfterClickUseOriginMusicSwitch:(BOOL)a0;
+- (void)applicationWillResignActive:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)applicationDidBecomeActive:(id)a0;
+- (void)dealloc;
+
+@end

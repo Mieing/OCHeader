@@ -1,0 +1,83 @@
+@class UIView, MMTableView, WCBizPickerView, MMTextView, NSString, NSArray, WCRedEnvelopesMakeRedEnvelopesViewLayout, UIButton, RichTextView, WCUITextField, UILabel;
+@protocol WARedEnvelopesMakeViewControllerDelegate;
+
+@interface WARedEnvelopesMakeViewController : MMUIViewController <UITextFieldDelegate, UITextViewDelegate, ILinkEventExt, UIPickerViewDelegate, UIPickerViewDataSource, WCBizPickerViewDelegate, PBMessageObserverDelegate, WCPayPlathbPayMoneyLogicDelegate> {
+    BOOL m_bCanHandleScrollViewDidChangedEvent;
+    BOOL m_bError;
+    BOOL m_bNomalMoney;
+    BOOL m_bScopeAll;
+    unsigned int m_uiSelectCount;
+    long long m_inputErrorType;
+    NSString *m_appID;
+    NSArray *m_arrScope;
+    NSString *m_defaultWishing;
+    NSString *m_sendID;
+}
+
+@property (retain, nonatomic) WCRedEnvelopesMakeRedEnvelopesViewLayout *m_layout;
+@property (retain, nonatomic) UIView *m_navigationBackgroundView;
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) UIView *moneyView;
+@property (retain, nonatomic) WCUITextField *moneyTextField;
+@property (retain, nonatomic) RichTextView *richTextView;
+@property (retain, nonatomic) UIView *countView;
+@property (retain, nonatomic) WCUITextField *countTextField;
+@property (retain, nonatomic) UIView *visibleView;
+@property (retain, nonatomic) MMTextView *textView;
+@property (retain, nonatomic) UILabel *amountLabel;
+@property (retain, nonatomic) UILabel *unitLabel;
+@property (retain, nonatomic) UIButton *redEnvelopesButton;
+@property (retain, nonatomic) UIView *errorView;
+@property (retain, nonatomic) UILabel *errorLabel;
+@property (retain, nonatomic) WCBizPickerView *pickerView;
+@property (retain, nonatomic) UIButton *scopeBtn;
+@property (weak, nonatomic) id<WARedEnvelopesMakeViewControllerDelegate> m_delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithAppID:(id)a0 arrScope:(id)a1 defaultWishing:(id)a2;
+- (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)dealloc;
+- (void)setColorTitle:(id)a0 TextColor:(id)a1;
+- (void)initNavigationBar;
+- (void)setupUI:(double)a0 IsInit:(BOOL)a1;
+- (void)onLeftBarButtonDone;
+- (void)OnMakeWCRedEnvelopesButtonClick;
+- (void)onScopeBtnClick;
+- (void)startPayMoney:(id)a0;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)plathbPaySucc;
+- (void)plathbPayFail;
+- (long long)numberOfComponentsInPickerView:(id)a0;
+- (long long)pickerView:(id)a0 numberOfRowsInComponent:(long long)a1;
+- (id)pickerView:(id)a0 viewForRow:(long long)a1 forComponent:(long long)a2 reusingView:(id)a3;
+- (void)WCBizPickerViewDidComplete:(id)a0;
+- (BOOL)textFieldShouldBeginEditing:(id)a0;
+- (BOOL)textFieldShouldEndEditing:(id)a0;
+- (void)textFieldDidEndEditing:(id)a0;
+- (void)textFieldDidChanged:(id)a0;
+- (void)resetToCanHandleScrollViewChangedEnvent;
+- (BOOL)textViewShouldBeginEditing:(id)a0;
+- (BOOL)textViewShouldEndEditing:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)textViewDidChange:(id)a0;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)handleTap:(id)a0;
+- (void)hidekeyboard;
+- (void)keyboardWillShow:(id)a0;
+- (void)showErrorView:(id)a0 ErrorType:(long long)a1;
+- (void)hideErrorView;
+- (void)hideErrorViewWithAnimation;
+- (void)adjustTableViewOffestIfHasErrorView;
+- (void)checkDataError;
+- (void)adjustAmountLabel:(double)a0;
+- (unsigned int)totalNum;
+- (long long)perPersonMaxValue;
+- (long long)perMinValue;
+- (long long)totalAmount;
+- (void).cxx_destruct;
+
+@end

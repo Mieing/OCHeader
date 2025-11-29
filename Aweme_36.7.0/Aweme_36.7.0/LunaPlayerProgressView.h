@@ -1,0 +1,71 @@
+@class LunaPlayerProgressSlider, NSString, _TtC21AWEMusicStreamingImpl23BNPlayProgressIndicator, UIView, UIPanGestureRecognizer, UITapGestureRecognizer;
+@protocol LunaPlayerProgressViewDelegate;
+
+@interface LunaPlayerProgressView : UIView <UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) UIView *backLine;
+@property (retain, nonatomic) UIView *lineContainer;
+@property (retain, nonatomic) UIView *cacheLine;
+@property (retain, nonatomic) UIView *playLine;
+@property (nonatomic) double startWidth;
+@property (retain, nonatomic) UIView *previewStartPoint;
+@property (retain, nonatomic) UIView *previewEndPoint;
+@property (retain, nonatomic) UIView *chorusPoint;
+@property (retain, nonatomic) UIView *loadingView;
+@property (retain, nonatomic) UIView *loadingBackView;
+@property (retain, nonatomic) LunaPlayerProgressSlider *slider;
+@property (retain, nonatomic) UIPanGestureRecognizer *gesture;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (nonatomic) double gestureStartPlayLineWidth;
+@property (nonatomic) double cacheProgress;
+@property (nonatomic) double playProgress;
+@property (nonatomic) double previewStartTime;
+@property (nonatomic) double previewDuration;
+@property (nonatomic) double chorusTime;
+@property (nonatomic) BOOL isDragging;
+@property (retain, nonatomic) _TtC21AWEMusicStreamingImpl23BNPlayProgressIndicator *indicator;
+@property (nonatomic) BOOL hasHaptic;
+@property (nonatomic) BOOL isChorus;
+@property (nonatomic) BOOL isPreview;
+@property (nonatomic) int slideDirction;
+@property (nonatomic) double duration;
+@property (weak, nonatomic) UIView *controlView;
+@property (weak, nonatomic) id<LunaPlayerProgressViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)p_feedback;
+- (void)_updatePlayProgress:(double)a0 animation:(BOOL)a1;
+- (double)progressOfGesture:(id)a0;
+- (void)gestureDidEndProgress:(double)a0;
+- (void)panGestureBegin:(id)a0;
+- (void)gestureChanged:(id)a0 isDragging:(BOOL)a1;
+- (void)panGestureDidEnd:(id)a0;
+- (double)progressOfPanGesture:(id)a0;
+- (void)updateCacheProgressTime:(double)a0 animation:(BOOL)a1;
+- (void)updatePlayProgressTime:(double)a0 animation:(BOOL)a1;
+- (void)updatePreviewStartTime:(double)a0 previewDuration:(double)a1;
+- (void)updatecChorusTime:(double)a0;
+- (void)progressIndicatorChangedShowing:(BOOL)a0;
+- (double)previewStartProgress;
+- (double)previewEndProgress;
+- (double)chorusTimeProgress;
+- (void)p_avoidOff:(id)a0 container:(id)a1;
+- (void)gestureDidEndProgress:(double)a0 isAttachToChorus:(BOOL)a1;
+- (double)xOfGesture:(id)a0;
+- (BOOL)isInChorusRange:(struct CGPoint { double x0; double x1; })a0;
+- (void).cxx_destruct;
+- (void)startLoading;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)reset;
+- (void)stopLoading;
+- (void)layoutSubviews;
+- (void)setup;
+- (void)tapGesture:(id)a0;
+- (void)viewDidDisappear;
+- (void)panGesture:(id)a0;
+
+@end

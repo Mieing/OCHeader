@@ -1,0 +1,3 @@
+@interface AWELGECommerceABTestRegister : NSObject
+
+@end

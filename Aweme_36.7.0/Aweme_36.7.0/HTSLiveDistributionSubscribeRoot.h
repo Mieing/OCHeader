@@ -1,0 +1,3 @@
+@interface HTSLiveDistributionSubscribeRoot : GPBRootObject
+
+@end

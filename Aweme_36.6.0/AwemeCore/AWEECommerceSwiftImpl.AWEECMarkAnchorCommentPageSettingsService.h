@@ -1,0 +1,3 @@
+@interface AWEECommerceSwiftImpl.AWEECMarkAnchorCommentPageSettingsService : _TtCs12_SwiftObject
+
+@end

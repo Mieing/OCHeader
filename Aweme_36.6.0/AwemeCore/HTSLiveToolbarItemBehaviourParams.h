@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveToolbarItemBehaviourParams : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (retain, nonatomic) NSMutableArray *paramsArray;
+@property (readonly, nonatomic) unsigned long long paramsArray_Count;
+
++ (id)descriptor;
+
+@end

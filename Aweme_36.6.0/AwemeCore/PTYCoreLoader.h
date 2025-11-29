@@ -1,0 +1,3 @@
+@interface PTYCoreLoader : NSObject
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface BattleLinkerInviteMessageExtra_InviterRivalExtra : IESLivePBBaseMessage
+
+@property (nonatomic) long long textType;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *label;
+
++ (id)descriptor;
+
+@end

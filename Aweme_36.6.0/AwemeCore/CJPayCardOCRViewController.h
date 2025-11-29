@@ -1,0 +1,77 @@
+@class AVCaptureVideoPreviewLayer, NSTimer, NSString, CJPayOCRBPEAData, UIImageView, CJPayAccountInsuranceTipView, AVCaptureSession, NSObject, AVCaptureDevice, CJPayOCRScanWindowView, AVCaptureVideoDataOutput;
+@protocol OS_dispatch_queue, CJPayTrackerProtocol;
+
+@interface CJPayCardOCRViewController : CJPayFullPageBaseViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+
+@property (retain) AVCaptureSession *session;
+@property (retain, nonatomic) AVCaptureDevice *currentCaptureDevice;
+@property (retain, nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+@property (retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic) unsigned long long sampleMehods;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *videoDataOutputQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *sessionControlQueue;
+@property (retain, nonatomic) NSTimer *samplingTimer;
+@property (nonatomic) long long alertLeftTime;
+@property (nonatomic) BOOL haveFinishedCallback;
+@property (nonatomic) BOOL hasShownNotDeterminedAlert;
+@property (nonatomic) BOOL hasShownOCRPage;
+@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *merchantId;
+@property (copy, nonatomic) id /* block */ completionBlock;
+@property (retain, nonatomic) CJPayOCRScanWindowView *ocrScanView;
+@property (retain, nonatomic) UIImageView *flashLightImageView;
+@property (retain, nonatomic) CJPayAccountInsuranceTipView *safeGuardTipView;
+@property (nonatomic) BOOL isCardRecognized;
+@property (nonatomic) BOOL recognizeEnable;
+@property BOOL shouldCaptureImg;
+@property (nonatomic) BOOL enableAutoExpose;
+@property (nonatomic) BOOL enableSampleBufferDetection;
+@property (nonatomic) unsigned long long ocrType;
+@property (retain, nonatomic) NSTimer *alertTimer;
+@property (weak, nonatomic) id<CJPayTrackerProtocol> trackDelegate;
+@property (retain, nonatomic) CJPayOCRBPEAData *BPEAData;
+@property (nonatomic) BOOL useOCRLocalization;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)trackWithEventName:(id)a0 params:(id)a1;
+- (void)p_initConfig;
+- (void)p_turnFlashLight:(BOOL)a0;
+- (void)startSessionAndScan:(BOOL)a0;
+- (void)resetAlertTimer;
+- (void)completionCallBackWithResult:(id)a0;
+- (void)alertTimeOut;
+- (void)switchFlashLight;
+- (void)p_addMask;
+- (BOOL)isInPadMultiWindowState;
+- (void)p_configSession;
+- (void)p_configOrientationListen;
+- (void)p_stopAllTimers;
+- (void)p_handleDeviceOrientationDidChange;
+- (void)p_driveToFocus:(long long)a0;
+- (void)p_runSession;
+- (void)restartAllTimers;
+- (void)p_alertTimerRun;
+- (void)p_sampleTimerRun;
+- (void)superBack;
+- (id)p_localizedString:(id)a0;
+- (void)subjectAreaChange;
+- (void)trackWithEventName:(id)a0 params:(id)a1 specificOCRType:(unsigned long long)a2;
+- (void)backWithResult:(unsigned long long)a0;
+- (long long)videoOrientation;
+- (void).cxx_destruct;
+- (void)stopSession;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)captureOutput:(id)a0 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { } *)a1 fromConnection:(id)a2;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)viewDidLoad;
+- (void)startSession;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)back;
+
+@end

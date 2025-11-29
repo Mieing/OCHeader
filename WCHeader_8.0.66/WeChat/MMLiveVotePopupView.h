@@ -1,0 +1,76 @@
+@class UIView, MMTimer, MMLiveVoteViewModel, MMUIActivityIndicatorView, NSString, MMUIView, MMFinderLiveTaskId, NSMutableArray, UICollectionView, RichTextView, MMUIButton, MMUILabel;
+@protocol MMLiveVotePopupViewDelegate;
+
+@interface MMLiveVotePopupView : MMUIView <MMLiveVoteViewModelObserver, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (retain, nonatomic) MMUIView *contentView;
+@property (retain, nonatomic) MMUILabel *finishedLabel;
+@property (retain, nonatomic) RichTextView *headerView;
+@property (retain, nonatomic) MMUIButton *voteTypeTips;
+@property (retain, nonatomic) MMUILabel *deadlineLabel;
+@property (retain, nonatomic) MMUILabel *headcountLabel;
+@property (retain, nonatomic) UICollectionView *choiceCollectionView;
+@property (retain, nonatomic) UIView *choiceCollectionContainerView;
+@property (weak, nonatomic) MMLiveVoteViewModel *viewModel;
+@property (retain, nonatomic) MMUIButton *exitButton;
+@property (nonatomic) BOOL notUpdate;
+@property (retain, nonatomic) MMTimer *countdownTimer;
+@property (nonatomic) unsigned int remainTime;
+@property (retain, nonatomic) NSMutableArray *displayChoiceList;
+@property (nonatomic) unsigned long long totalCount;
+@property (nonatomic) unsigned long long participateCount;
+@property (nonatomic) BOOL showProgress;
+@property (retain, nonatomic) MMUIActivityIndicatorView *loadingIndicator;
+@property (retain, nonatomic) MMUILabel *loadingLabel;
+@property (nonatomic) unsigned int status;
+@property (retain, nonatomic) NSString *votingId;
+@property (weak, nonatomic) id<MMLiveVotePopupViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0 viewModel:(id)a1;
+- (void)dealloc;
+- (void)showIn:(id)a0;
+- (void)close;
+- (void)updateLayoutIfNeeded;
+- (void)_internalShowIn:(id)a0;
+- (void)_addAnimationForContent;
+- (void)_interalClose;
+- (void)updateShowProgressWithInfo:(id)a0;
+- (BOOL)shouldShowProgressWithInfo:(id)a0;
+- (void)onVotingInfoUpdate:(id)a0 fromMsg:(BOOL)a1;
+- (void)updateWithInfo:(id)a0 animate:(BOOL)a1;
+- (void)updateDisplayPropertiesWith:(id)a0;
+- (void)updateLabelsContentWith:(id)a0;
+- (void)updateViewsHiddenStatus;
+- (void)updateCollectionViewAndListWith:(id)a0 animate:(BOOL)a1;
+- (void)startCountdown;
+- (void)countdownTimerCallBack;
+- (BOOL)enableChangeWithAnimate:(id)a0;
+- (void)updateCollectionViewAnimateWithInfo:(id)a0;
+- (void)layoutSubviews;
+- (void)createOrUpdateContentLayout;
+- (double)collectionViewheight;
+- (BOOL)collectionViewHasMask;
+- (BOOL)isLandscape;
+- (double)getHeaderLineHeight;
+- (id)liveTask;
+- (id)getRemainTimeTextWith:(unsigned int)a0;
+- (void)addMaskLayerForCollectionContainer;
+- (id)genParticipantString;
+- (void)fillHeadCountLabel;
+- (BOOL)needLayoutTypeTipsNewline;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)onPopupTap:(id)a0;
+- (void)onHeadCountLabelTap:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)currentLiveTask;
+- (id)popupViewId;
+- (void).cxx_destruct;
+
+@end

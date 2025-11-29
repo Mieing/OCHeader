@@ -1,0 +1,85 @@
+@class NSString, WCMegaVideoDesc, WCMegaVideoFinderBusiness;
+
+@interface WCMegaVideo : NSObject <WCFinderDataItemExt, WCTColumnCoding, PBCoding>
+
+@property (nonatomic) unsigned long long videoId;
+@property (nonatomic) unsigned long long createTime;
+@property (retain, nonatomic) WCMegaVideoDesc *desc;
+@property (nonatomic) unsigned long long forwardCount;
+@property (nonatomic) unsigned long long likeCount;
+@property (nonatomic) unsigned long long commentCount;
+@property (nonatomic) unsigned long long favCount;
+@property (nonatomic) unsigned long long friendLikeCount;
+@property (nonatomic) unsigned long long spamFlag;
+@property (copy, nonatomic) NSString *videoNonceId;
+@property (nonatomic) BOOL isTest;
+@property (nonatomic) unsigned long long readCount;
+@property (copy, nonatomic) NSString *sessionBuffer;
+@property (nonatomic) unsigned long long favFlag;
+@property (nonatomic) unsigned long long urlValidDuration;
+@property (nonatomic) unsigned long long privateFlag;
+@property (copy, nonatomic) NSString *debugMessage;
+@property (nonatomic) unsigned long long permissionFlag;
+@property (retain, nonatomic) WCMegaVideoFinderBusiness *finder;
+@property (nonatomic) unsigned long long status;
+@property (copy, nonatomic) NSString *spamWording;
+@property (nonatomic) unsigned long long bulletCount;
+@property (nonatomic) unsigned long long likeFlag;
+@property (nonatomic) unsigned long long warnFlag;
+@property (copy, nonatomic) NSString *warnWording;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_videoId;
++ (void)PBArrayAdd_createTime;
++ (void)PBArrayAdd_desc;
++ (void)PBArrayAdd_forwardCount;
++ (void)PBArrayAdd_likeCount;
++ (void)PBArrayAdd_commentCount;
++ (void)PBArrayAdd_favCount;
++ (void)PBArrayAdd_friendLikeCount;
++ (void)PBArrayAdd_spamFlag;
++ (void)PBArrayAdd_videoNonceId;
++ (void)PBArrayAdd_isTest;
++ (void)PBArrayAdd_readCount;
++ (void)PBArrayAdd_sessionBuffer;
++ (void)PBArrayAdd_favFlag;
++ (void)PBArrayAdd_urlValidDuration;
++ (void)PBArrayAdd_privateFlag;
++ (void)PBArrayAdd_debugMessage;
++ (void)PBArrayAdd_permissionFlag;
++ (void)PBArrayAdd_finder;
++ (void)PBArrayAdd_status;
++ (void)PBArrayAdd_spamWording;
++ (void)PBArrayAdd_bulletCount;
++ (void)PBArrayAdd_likeFlag;
++ (void)PBArrayAdd_warnFlag;
++ (void)PBArrayAdd_warnWording;
++ (void)initialize;
++ (id)unarchiveWithWCTValue:(id)a0;
++ (unsigned long long)columnTypeForWCDB;
+
+- (id)getPBPropertyTable;
+- (id)archivedWCTValue;
+- (id)init;
+- (id)initWithMegaVideo:(id)a0;
+- (id)genMegaVideo;
+- (id)videoIdStr;
+- (id)media;
+- (id)title;
+- (void)setCommentOpen:(BOOL)a0;
+- (BOOL)hadLiked;
+- (BOOL)hadFav;
+- (BOOL)isPrivate;
+- (BOOL)canLike;
+- (BOOL)canFav;
+- (BOOL)canComment;
+- (BOOL)isShareIconEnable;
+- (BOOL)isForcePrivate;
+- (BOOL)isDangerous;
+- (id)dangerousText;
+- (void).cxx_destruct;
+
+@end

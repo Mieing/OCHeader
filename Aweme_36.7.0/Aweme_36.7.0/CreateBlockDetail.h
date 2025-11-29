@@ -1,0 +1,14 @@
+@class SchemaInfo, NSMutableDictionary, NSString;
+
+@interface CreateBlockDetail : IESLivePBBaseMessage
+
+@property (nonatomic) int blockType;
+@property (retain, nonatomic) SchemaInfo *schemaInfo;
+@property (nonatomic) BOOL hasSchemaInfo;
+@property (retain, nonatomic) NSMutableDictionary *extra;
+@property (readonly, nonatomic) unsigned long long extra_Count;
+@property (copy, nonatomic) NSString *dialogInfo;
+
++ (id)descriptor;
+
+@end

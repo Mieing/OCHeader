@@ -1,0 +1,3 @@
+@interface StampShelfInfoApiRoot : GPBRootObject
+
+@end

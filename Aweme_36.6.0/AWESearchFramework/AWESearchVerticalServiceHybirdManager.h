@@ -1,0 +1,3 @@
+@interface AWESearchVerticalServiceHybirdManager : AWESearchVerticalServiceManager
+
+@end

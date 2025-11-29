@@ -1,0 +1,3 @@
+@interface AWEPlayInteractionUserAvatarBizConfig : NSObject
+
+@end

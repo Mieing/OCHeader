@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveMysteryUserImage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+@property (nonatomic) long long height;
+@property (nonatomic) long long width;
+
++ (id)descriptor;
+
+@end

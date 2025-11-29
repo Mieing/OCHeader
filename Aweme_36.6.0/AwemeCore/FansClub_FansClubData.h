@@ -1,0 +1,18 @@
+@class NSString, GPBInt64Array, FansClub_FansClubData_UserBadge;
+
+@interface FansClub_FansClubData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *clubName;
+@property (nonatomic) int level;
+@property (nonatomic) int userFansClubStatus;
+@property (retain, nonatomic) FansClub_FansClubData_UserBadge *badge;
+@property (nonatomic) BOOL hasBadge;
+@property (retain, nonatomic) GPBInt64Array *availableGiftIdsArray;
+@property (readonly, nonatomic) unsigned long long availableGiftIdsArray_Count;
+@property (copy, nonatomic) NSString *anchorId;
+
++ (id)descriptor;
+
+- (BOOL)isActive;
+
+@end

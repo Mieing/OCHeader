@@ -1,0 +1,10 @@
+@class TIMXPBNConversationApplyInfo;
+
+@interface TIMXPBNGetConversationApplyResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNConversationApplyInfo *applyInfo;
+@property (nonatomic) BOOL hasApplyInfo;
+
++ (id)descriptor;
+
+@end

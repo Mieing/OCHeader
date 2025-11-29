@@ -1,0 +1,3 @@
+@interface GiftPortalPingApiRoot : GPBRootObject
+
+@end

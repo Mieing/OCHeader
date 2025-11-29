@@ -1,0 +1,19 @@
+@class NSNumber, NSArray, NSString;
+
+@interface IESLiveLongPressConfig : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (retain, nonatomic) NSNumber *style;
+@property (retain, nonatomic) NSArray *longPressPreStreamItemConfig;
+@property (retain, nonatomic) NSArray *longPressInRoomItemConfig;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)configFromSettings;
++ (id)dictFromSettings;
++ (id)JSONKeyPathsByPropertyKey;
++ (id)JSONTransformerForKey:(id)a0;
+
+
+@end

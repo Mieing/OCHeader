@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESGCPPBSubPropItem : GPBMessage
+
+@property (copy, nonatomic) NSString *icon;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *desc;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class InteractThumbupResponse_Data;
+
+@interface InteractThumbupResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) InteractThumbupResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

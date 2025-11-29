@@ -1,0 +1,3 @@
+@interface HTSLiveBubbleRoot : GPBRootObject
+
+@end

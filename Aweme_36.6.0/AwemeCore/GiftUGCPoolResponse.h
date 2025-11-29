@@ -1,0 +1,10 @@
+@class GiftUGCPoolResponse_Data;
+
+@interface GiftUGCPoolResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GiftUGCPoolResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

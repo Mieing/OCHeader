@@ -1,0 +1,9 @@
+@interface HTSLiveInitInfoSetting : IESLivePBBaseMessage
+
+@property (nonatomic) long long scene;
+@property (nonatomic) long long uiLayout;
+@property (nonatomic) long long autoOpen;
+
++ (id)descriptor;
+
+@end

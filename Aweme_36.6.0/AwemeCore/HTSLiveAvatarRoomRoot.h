@@ -1,0 +1,3 @@
+@interface HTSLiveAvatarRoomRoot : GPBRootObject
+
+@end

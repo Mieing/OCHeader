@@ -1,0 +1,3 @@
+@interface BDReaderHighlightView : UIView
+
+@end

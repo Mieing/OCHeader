@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveSendPublicScreenTextMessageParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *color;
+@property (nonatomic) BOOL isFold;
+@property (nonatomic) BOOL isSkipWait;
+
+@end

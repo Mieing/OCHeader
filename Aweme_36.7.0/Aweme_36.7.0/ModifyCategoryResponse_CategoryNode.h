@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface ModifyCategoryResponse_CategoryNode : IESLivePBBaseMessage
+
+@property (nonatomic) long long categoryId;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) int level;
+@property (nonatomic) long long challengeId;
+@property (copy, nonatomic) NSString *challengeName;
+@property (copy, nonatomic) NSString *challengeIdStr;
+
++ (id)descriptor;
+
+@end

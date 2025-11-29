@@ -1,0 +1,12 @@
+@class IESLiveTeamfightEggInfo;
+
+@interface IESLiveLinkmicProfitRoomEggInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int playMode;
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) IESLiveTeamfightEggInfo *teamfightEggInfo;
+@property (nonatomic) long long version;
+
++ (id)descriptor;
+
+@end

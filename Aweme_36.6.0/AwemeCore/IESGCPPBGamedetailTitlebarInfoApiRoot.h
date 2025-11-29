@@ -1,0 +1,3 @@
+@interface IESGCPPBGamedetailTitlebarInfoApiRoot : GPBRootObject
+
+@end

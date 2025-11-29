@@ -1,0 +1,36 @@
+@interface FlowIMX.StreamMessage : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ conversation_id;
+    void /* unknown type, empty encoding */ section_id;
+    void /* unknown type, empty encoding */ message_id;
+    void /* unknown type, empty encoding */ local_message_id;
+    void /* unknown type, empty encoding */ index;
+    void /* unknown type, empty encoding */ sec_sender;
+    void /* unknown type, empty encoding */ reply_id;
+    void /* unknown type, empty encoding */ create_time;
+    void /* unknown type, empty encoding */ update_time;
+    void /* unknown type, empty encoding */ status;
+    void /* unknown type, empty encoding */ message_type;
+    void /* unknown type, empty encoding */ content_type;
+    void /* unknown type, empty encoding */ feedback;
+    void /* unknown type, empty encoding */ applet_payload;
+    void /* unknown type, empty encoding */ withoutMetaInfoContent;
+    void /* unknown type, empty encoding */ withMetaInfoContent;
+    void /* unknown type, empty encoding */ tts_content;
+    void /* unknown type, empty encoding */ local_conversation_id;
+    void /* unknown type, empty encoding */ bot_id;
+    void /* unknown type, empty encoding */ ext;
+    void /* unknown type, empty encoding */ next_connection_type;
+    void /* unknown type, empty encoding */ chunk_seq;
+    void /* unknown type, empty encoding */ meta_infos;
+    void /* unknown type, empty encoding */ is_delta;
+    void /* unknown type, empty encoding */ chunk_status;
+    void /* unknown type, empty encoding */ origin_content;
+    void /* unknown type, empty encoding */ chunkErrorCode;
+    void /* unknown type, empty encoding */ dataSize;
+    void /* unknown type, empty encoding */ receivedDataSize;
+    void /* unknown type, empty encoding */ receivedContentSize;
+    void /* unknown type, empty encoding */ has_more;
+    void /* unknown type, empty encoding */ reference_info;
+}
+
+@end

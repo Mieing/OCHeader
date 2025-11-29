@@ -1,0 +1,70 @@
+@class UIView, ACCAdvanceEditMainTrackDataSource, ACCAdvanceEditSegmentClipView, NLEModel_OC, NSString, NLETrackSlot_OC, ACCAdvanceEditMainTrackFrameView, UILabel, ACCAdvanceEditVideoCursorView;
+@protocol ACCTrimCropSequencePieceServiceProtocol, IESServiceProvider, ACCTCETrimAdjustEditServiceProtocol, ACCTrimCropPieceProtocol;
+
+@interface ACCAdvanceEditVideoClipRangeViewController : UIViewController <UICollectionViewDelegate, ACCAdvanceEditMainTrackFrameUICustomizationDelegate, DVEVideoThumbnailLoaderDataSource, ACCEditPreviewMessageProtocol>
+
+@property (weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (weak, nonatomic) id<ACCTrimCropSequencePieceServiceProtocol> sequencePieceService;
+@property (weak, nonatomic) id<ACCTCETrimAdjustEditServiceProtocol> adjustEditService;
+@property (retain, nonatomic) ACCAdvanceEditMainTrackDataSource *mainTrackDataSource;
+@property (retain, nonatomic) ACCAdvanceEditMainTrackFrameView *mainFrameView;
+@property (retain, nonatomic) ACCAdvanceEditSegmentClipView *clipRangeBorderView;
+@property (retain, nonatomic) ACCAdvanceEditVideoCursorView *cursorView;
+@property (retain, nonatomic) UIView *leftMaskView;
+@property (retain, nonatomic) UIView *rightMaskView;
+@property (retain, nonatomic) UILabel *cancelButton;
+@property (retain, nonatomic) UILabel *saveButton;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *selectHintLabel;
+@property (weak, nonatomic) NLETrackSlot_OC *curEditingSlot;
+@property (retain, nonatomic) NLEModel_OC *cachedModel;
+@property (weak, nonatomic) id<ACCTrimCropPieceProtocol> pieceService;
+@property (nonatomic) BOOL isIPad;
+@property (nonatomic) double curPlayerTime;
+@property (nonatomic) BOOL isScrolling;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } sourceDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)playerCurrentPlayTimeChanged:(double)a0;
+- (void)setupObserver;
+- (id)myFirstAccessibilityElement;
+- (BOOL)enableFrameExtractUseVE;
+- (void)customizeFrameCell:(id)a0 atIndexPath:(id)a1;
+- (double)expandEdgeSpace;
+- (void)panGestureRecognizer:(id)a0;
+- (double)extendEachFrameWidth;
+- (BOOL)checkCursorReachEdge:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (double)timeScaleForSlot:(id)a0;
+- (id)assetForSlot:(id)a0;
+- (id)absolutePathForResourceNode:(id)a0;
+- (id)videoSlots;
+- (void)reloadNLEModel;
+- (double)clipRangeBorderViewWidth;
+- (double)slotFrameWidth;
+- (void)resetCurrentTimeRange;
+- (struct CGSize { double x0; double x1; })frameCellSize;
+- (double)frameEdgeInset;
+- (void)cancelLabelClick:(id)a0;
+- (void)saveLabelClick:(id)a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getCurrentClipStartTime;
+- (void)dismiss;
+- (void)stopScrolling;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (long long)frameCount;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (id)initWithServiceProvider:(id)a0;
+- (void)viewDidLoad;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)viewWillDisappear:(BOOL)a0;
+- (double)cellWidth;
+- (void)setupUI;
+- (void)initData;
+
+@end

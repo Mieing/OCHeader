@@ -1,0 +1,3 @@
+@interface DUXBaseStackView : UIStackView
+
+@end

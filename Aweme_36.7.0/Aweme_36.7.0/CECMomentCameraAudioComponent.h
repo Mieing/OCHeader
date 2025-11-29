@@ -1,0 +1,74 @@
+@class NSObject, CECMomentTextContainerView, CECMomentCameraSubModeViewModel, NSMutableArray, UIView, CECMomentCameraPublishViewModel, CECMomentTextViewModel, NSString, NSTimer, IESMMAudioWaveformRT, CECMomentCameraDeleteViewModel, CECMomentCameraAudioViewModel, CECNotesAudioInputView, UIImageView;
+@protocol CECRecordModeFactory, CECMomentCameraSubModeService, AFDMomentCameraAudioPlayerService, OS_dispatch_group, CECMomentCameraService, CECMomentCameraCaptureService, AFDMomentCameraPerformanceTrackService, CECMomentCameraFlowService;
+
+@interface CECMomentCameraAudioComponent : AFDMomentCameraBaseComponent <CECMomentSegmentedControlDelegate, CECMomentCameraFlowServiceSubscriber, CECNotesAudioRefactorInputViewDelegate, CECNotesAudioInputViewDelegate, CECMomentCameraLifeCircleEvent, CECMomentCameraSubModeSwitchServiceSubscriber>
+
+@property (retain, nonatomic) CECNotesAudioInputView *audioRecordView;
+@property (weak, nonatomic) id<CECMomentCameraFlowService> flowService;
+@property (weak, nonatomic) id<CECMomentCameraCaptureService> captureService;
+@property (weak, nonatomic) id<AFDMomentCameraPerformanceTrackService> trackService;
+@property (weak, nonatomic) id<CECMomentCameraService> cameraService;
+@property (weak, nonatomic) CECMomentCameraSubModeViewModel *subModeViewModel;
+@property (weak, nonatomic) CECMomentCameraPublishViewModel *publishViewModel;
+@property (weak, nonatomic) CECMomentTextViewModel *textViewModel;
+@property (weak, nonatomic) CECMomentCameraDeleteViewModel *deleteViewModel;
+@property (retain, nonatomic) UIImageView *audioIcon;
+@property (retain, nonatomic) UIView *publishAudioPlayerView;
+@property (weak, nonatomic) CECMomentCameraAudioViewModel *viewModel;
+@property (retain, nonatomic) id<CECRecordModeFactory> modeFactory;
+@property (retain, nonatomic) id<CECMomentCameraSubModeService> subModeService;
+@property (retain, nonatomic) id<AFDMomentCameraAudioPlayerService> playerService;
+@property (retain, nonatomic) CECMomentTextContainerView *textContainerView;
+@property (retain, nonatomic) NSTimer *externalInputTimer;
+@property (nonatomic) struct __CVBuffer { } *pixelBuffer;
+@property (nonatomic) double minSecond;
+@property (nonatomic) double limitSecond;
+@property (nonatomic) double thresholdSecondOfNotification;
+@property (nonatomic) double audioStartTime;
+@property (nonatomic) double currentAudioTime;
+@property (retain, nonatomic) NSMutableArray *originAveragePower;
+@property (nonatomic) double currentAveragePower;
+@property (retain, nonatomic) IESMMAudioWaveformRT *waveformRT;
+@property (nonatomic) long long waveformSampleRate;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *dispatchGroup;
+@property (nonatomic) BOOL hasAppeared;
+@property (nonatomic) BOOL hasRefreshCamera;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)showRecorderAnimation;
+- (void)dismissRecorderAnimation;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })currentInputViewRect;
+- (void)audioInputTouchViewTouchDownInside:(id)a0;
+- (void)audioInputTouchViewTouchMoveOutside:(id)a0;
+- (void)audioInputTouchViewTouchMoveInside:(id)a0;
+- (void)audioInputTouchViewTouchUpInside:(id)a0 cancelled:(BOOL)a1;
+- (void)audioInputTouchViewTouchUpOutside:(id)a0 cancelled:(BOOL)a1;
+- (void)bindObserver;
+- (void)notifyRecordVolumeChangeWithValue:(double)a0 currentTime:(double)a1;
+- (void)handleApplicationWillResignActive;
+- (void)flowServiceWillChangeToState:(long long)a0 fromState:(long long)a1;
+- (void)componentDidLoad;
+- (void)subModeServiceWillChangeToMode:(id)a0 fromMode:(id)a1;
+- (void)p_setAudioRecordButtonBackground;
+- (void)setupIncreaseView;
+- (void)p_doAudioLimitCheck:(double)a0;
+- (void)p_stopAudioRecord;
+- (void)p_updateRecordAnimation:(BOOL)a0;
+- (void)p_createWaveArrayString;
+- (void)p_updateRecordInputView:(BOOL)a0;
+- (double)calculateVolumeRateWithSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (void)p_progressAveragePower;
+- (void)p_addAudioPlayer;
+- (void)resetCameraConfigForSwitchToMode:(id)a0 fromMode:(id)a1;
+- (void)p_addCameraVideo;
+- (void)segmentControl:(id)a0 lastIndex:(unsigned long long)a1 didSelectedItemAtIndex:(unsigned long long)a2;
+- (void)componentDidAppear:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)clear;
+- (void)startTimer;
+- (void)setupUI;
+
+@end

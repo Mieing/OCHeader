@@ -1,0 +1,80 @@
+@class IESLiveInteractiveVirtualAvatarPreviewStore, IESLiveMultiKTVAvatarPreviewView, NSString, UIImage, IESLivePrivacyPolicyToken, IESLiveInteractionLocalPreviewCapture;
+@protocol IESLivePhotoLibraryService;
+
+@interface IESLiveInteractiveVirtualAvatarPreviewFragment : IESLiveRoomComponent <IESLiveInteractiveAvatarPreviewRouter, HTSLiveMessageSubscriber, IESLiveInteractionLocalPreviewCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, IESLiveAnchorCameraPermissionHandler, IESLiveAnchorPrivacyPermissionProtocol, IESLivePrivacyContextProvider>
+
+@property (retain, nonatomic) IESLiveInteractiveVirtualAvatarPreviewStore *store;
+@property (retain, nonatomic) id<IESLivePhotoLibraryService> photoService;
+@property (retain, nonatomic) IESLiveInteractionLocalPreviewCapture *previewCapture;
+@property (weak, nonatomic) IESLiveMultiKTVAvatarPreviewView *avatarPreviewView;
+@property (nonatomic) BOOL isScanning;
+@property (copy, nonatomic) NSString *originalImgPath;
+@property (retain, nonatomic) UIImage *originalImage;
+@property (nonatomic) BOOL scanModelLoading;
+@property (copy, nonatomic) NSString *avatarScanModelID;
+@property (copy, nonatomic) NSString *ktvFemaleModelID;
+@property (copy, nonatomic) NSString *ktvMaleModelID;
+@property (copy, nonatomic) NSString *bigPartyFemaleModelID;
+@property (copy, nonatomic) NSString *bigPartyMaleModelID;
+@property (nonatomic) BOOL isResumeRecoding;
+@property (nonatomic) BOOL fixAvatarForReselect;
+@property (retain, nonatomic) IESLivePrivacyPolicyToken *privacyToken;
+@property (nonatomic) long long avatarAuditStatus;
+@property (copy, nonatomic) NSString *avatarCustomConfig;
+@property (nonatomic) BOOL realTimeAvatarEnabled;
+@property (nonatomic) BOOL hasAvatarResultImage;
+@property (retain, nonatomic) UIImage *avatarResultImage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (BOOL)canHandleVideoCapture;
+- (id)providePrivacyContextForKey:(id)a0;
+- (id)needIgnoreProcessGeneralVideoCaptureByResumeType:(long long)a0;
+- (BOOL)supportOpenAvatar;
+- (BOOL)firstChosenAvatarSingMode;
+- (void)startGenerateAvatarWithSource:(id)a0;
+- (void)tryingSwitch2AvatarMode;
+- (void)showAvatarPreview;
+- (id)avatarPreviewBgUrlWithUserGender:(long long)a0;
+- (long long)avatarGenderType;
+- (void)fetchEffectModelWithIdentifier:(id)a0 completion:(id /* block */)a1;
+- (id)getAvatarModelIDWithGender:(long long)a0 andScene:(unsigned long long)a1;
+- (id)avatarModelFilePathWithGender:(long long)a0 andScene:(unsigned long long)a1;
+- (BOOL)localAvatarResultModelExistWithGender:(long long)a0 andScene:(unsigned long long)a1;
+- (void)saveImage:(id)a0 fileName:(id)a1 completion:(id /* block */)a2;
+- (void)loadAvatarResultModelByGender:(long long)a0 scene:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)loadPresetAvatarResultModel:(id /* block */)a0;
+- (BOOL)isInEqualBigParty;
+- (void)p_trackEvent:(id)a0 extraParams:(id)a1;
+- (void)didRecieveEffectMessage:(unsigned long long)a0 param1:(unsigned long long)a1 param2:(unsigned long long)a2 data:(id)a3;
+- (void)p_showAvatarScanOptionsWithSource:(id)a0 takePictureAction:(id /* block */)a1;
+- (void)p_showAvatarPreviewWithAvatarCustomConfig:(id)a0 inPreviewMode:(BOOL)a1 wait4Scan:(BOOL)a2;
+- (long long)p_userGender;
+- (void)p_startScanWithImage:(id)a0;
+- (void)p_notifyEffect2Scan;
+- (void)p_layoutPrivacyTipsButtonWithTableViewCell:(id)a0;
+- (void)p_startAvatarScanAuthorization:(BOOL)a0 completion:(id /* block */)a1;
+- (void)p_remindPhotoAuthorizationWithMessage:(id)a0;
+- (void)p_privacyTipsButtonAction;
+- (void)p_showPopupView:(id)a0 typed:(long long)a1;
+- (id)p_createPreviewCaptureOnce;
+- (id)p_avatarScanModelID;
+- (void)p_applyScanModelAndScan:(id)a0;
+- (id)p_ktvMaleModelID;
+- (id)p_ktvFemaleModelID;
+- (id)p_bigPartyMaleModelID;
+- (id)p_bigPartyFemaleModelID;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)imagePickerControllerDidCancel:(id)a0;
+- (void)imagePickerController:(id)a0 didFinishPickingMediaWithInfo:(id)a1;
+- (void)messageReceived:(id)a0;
+
+@end

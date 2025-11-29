@@ -1,0 +1,85 @@
+@class WAEJPath, WAEJGLProgram2D, WAEJFontDescriptor, WAEJTexture, WAEJFontCache, NSObject, WAEJJavaScriptView, WAEJSharedOpenGLContext;
+@protocol EJFillable;
+
+@interface WAEJCanvasContext2D : WAEJCanvasContext {
+    unsigned int viewFrameBuffer;
+    unsigned int viewRenderBuffer;
+    unsigned int msaaFrameBuffer;
+    unsigned int msaaRenderBuffer;
+    unsigned int stencilBuffer;
+    unsigned int textureFilter;
+    WAEJTexture *currentTexture;
+    WAEJPath *path;
+    struct { struct { float x0; float x1; } x0; struct { float x0; float x1; } x1; union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; } x2; } *vertexBuffer;
+    int vertexBufferSize;
+    int vertexBufferIndex;
+    int stateIndex;
+    struct { struct CGAffineTransform { double a; double b; double c; double d; double tx; double ty; } transform; int globalCompositeOperation; union { struct { unsigned char r; unsigned char g; unsigned char b; unsigned char a; } rgba; unsigned char components[4]; unsigned int hex; } fillColor; NSObject<EJFillable> *fillObject; union { struct { unsigned char r; unsigned char g; unsigned char b; unsigned char a; } rgba; unsigned char components[4]; unsigned int hex; } strokeColor; NSObject<EJFillable> *strokeObject; float globalAlpha; float lineWidth; int lineCap; int lineJoin; float miterLimit; int textAlign; int textBaseline; WAEJFontDescriptor *font; WAEJPath *clipPath; } stateStack[16];
+    BOOL upsideDown;
+    WAEJFontCache *fontCache;
+    WAEJJavaScriptView *scriptView;
+    WAEJGLProgram2D *currentProgram;
+    WAEJSharedOpenGLContext *sharedGLContext;
+}
+
+@property (nonatomic) struct { struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; } x0; int x1; union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; } x2; id x3; union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; } x4; id x5; float x6; float x7; int x8; int x9; float x10; int x11; int x12; id x13; id x14; } *state;
+@property (nonatomic) int globalCompositeOperation;
+@property (nonatomic) int imageSmoothingQuality;
+@property (retain, nonatomic) WAEJFontDescriptor *font;
+@property (retain, nonatomic) NSObject<EJFillable> *fillObject;
+@property (retain, nonatomic) NSObject<EJFillable> *strokeObject;
+@property (nonatomic) BOOL imageSmoothingEnabled;
+@property (nonatomic) unsigned char stencilMask;
+
+- (id)initWithScriptView:(id)a0 width:(short)a1 height:(short)a2 screenGroup:(BOOL)a3;
+- (void)dealloc;
+- (void)create;
+- (void)setStopRender:(BOOL)a0;
+- (void)resizeToWidth:(short)a0 height:(short)a1;
+- (void)resetFramebuffer;
+- (void)createStencilBufferOnce;
+- (void)bindVertexBuffer;
+- (void)prepare;
+- (void)setWidth:(short)a0;
+- (void)setHeight:(short)a0;
+- (void)setTexture:(id)a0;
+- (void)setProgram:(id)a0;
+- (void)pushTriX1:(float)a0 y1:(float)a1 x2:(float)a2 y2:(float)a3 x3:(float)a4 y3:(float)a5 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a6 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a7;
+- (void)pushQuadV1:(struct { float x0; float x1; })a0 v2:(struct { float x0; float x1; })a1 v3:(struct { float x0; float x1; })a2 v4:(struct { float x0; float x1; })a3 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a4 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a5;
+- (void)pushRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a4 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a5;
+- (void)pushFilledRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3 fillable:(id)a4 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a5 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a6;
+- (void)pushGradientRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3 gradient:(id)a4 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a5 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a6;
+- (void)pushPatternedRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3 pattern:(id)a4 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a5 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a6;
+- (void)pushTexturedRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3 tx:(float)a4 ty:(float)a5 tw:(float)a6 th:(float)a7 color:(union { struct { unsigned char x0; unsigned char x1; unsigned char x2; unsigned char x3; } x0; unsigned char x1[4]; unsigned int x2; })a8 withTransform:(struct CGAffineTransform { double x0; double x1; double x2; double x3; double x4; double x5; })a9;
+- (void)flushBuffers;
+- (void)save;
+- (void)restore;
+- (void)rotate:(float)a0;
+- (void)translateX:(float)a0 y:(float)a1;
+- (void)scaleX:(float)a0 y:(float)a1;
+- (void)transformM11:(float)a0 m12:(float)a1 m21:(float)a2 m22:(float)a3 dx:(float)a4 dy:(float)a5;
+- (void)setTransformM11:(float)a0 m12:(float)a1 m21:(float)a2 m22:(float)a3 dx:(float)a4 dy:(float)a5;
+- (void)drawImage:(id)a0 sx:(float)a1 sy:(float)a2 sw:(float)a3 sh:(float)a4 dx:(float)a5 dy:(float)a6 dw:(float)a7 dh:(float)a8;
+- (void)fillRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (void)strokeRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (void)clearRectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (id)getImageDataSx:(short)a0 sy:(short)a1 sw:(short)a2 sh:(short)a3;
+- (void)putImageData:(id)a0 dx:(float)a1 dy:(float)a2;
+- (void)beginPath;
+- (void)closePath;
+- (void)fill:(int)a0;
+- (void)stroke;
+- (void)moveToX:(float)a0 y:(float)a1;
+- (void)lineToX:(float)a0 y:(float)a1;
+- (void)bezierCurveToCpx1:(float)a0 cpy1:(float)a1 cpx2:(float)a2 cpy2:(float)a3 x:(float)a4 y:(float)a5;
+- (void)quadraticCurveToCpx:(float)a0 cpy:(float)a1 x:(float)a2 y:(float)a3;
+- (void)rectX:(float)a0 y:(float)a1 w:(float)a2 h:(float)a3;
+- (void)arcToX1:(float)a0 y1:(float)a1 x2:(float)a2 y2:(float)a3 radius:(float)a4;
+- (void)arcX:(float)a0 y:(float)a1 radius:(float)a2 startAngle:(float)a3 endAngle:(float)a4 antiClockwise:(BOOL)a5;
+- (void)fillText:(id)a0 x:(float)a1 y:(float)a2;
+- (void)strokeText:(id)a0 x:(float)a1 y:(float)a2;
+- (struct { float x0; float x1; float x2; })measureText:(id)a0;
+- (void)clip:(int)a0;
+- (void)resetClip;
+
+@end

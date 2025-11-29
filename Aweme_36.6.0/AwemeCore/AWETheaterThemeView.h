@@ -1,0 +1,3 @@
+@interface AWETheaterThemeView : NSObject
+
+@end

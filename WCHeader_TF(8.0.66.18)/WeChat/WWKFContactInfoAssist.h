@@ -1,0 +1,85 @@
+@class WCFinderContactFinderAssist, NSString, CContact, MMTableViewInfo, ContactRelatedGroupLogic, MMURLHandler;
+@protocol ContactInfoAssistDelegate;
+
+@interface WWKFContactInfoAssist : CBaseContactInfoAssist <MMCPLabelDelegate, IAutoSetRemarkExt, IHDHeadImageViewExt, IOpenImResourceMgrExt, IOpenImContactMgrExt, IWWKFContactMgrExt, WCFinderContactFinderAssistDelegate, SetPermissionsViewControllerDelegate, WWKFContactSettingViewControllerDelegate> {
+    BOOL m_bFirstBecomeFriend;
+    MMTableViewInfo *m_tableViewInfo;
+    CContact *m_chatContact;
+    NSString *m_cpKeyForNickname;
+    NSString *m_cpKeyForChatRoomDisplayName;
+    NSString *m_cpKeyForSignature;
+    NSString *m_cpKeyForOpenIMDesc;
+    BOOL m_isNickNameUnsafe;
+    BOOL m_isChatRoomDisplayNameUnsafe;
+    BOOL m_isSignatureUnsafe;
+    BOOL m_isOpenIMDescUnsafe;
+    ContactRelatedGroupLogic *m_relatedGroupLogic;
+    NSString *m_InviteUserName;
+    MMURLHandler *m_urlHandler;
+    WCFinderContactFinderAssist *m_finderAssist;
+}
+
+@property (weak, nonatomic) id<ContactInfoAssistDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithContact:(id)a0 andChatContact:(id)a1 delegate:(id)a2;
+- (void)onHDHeadImageWillAppear;
+- (void)onHDHeadImageDidDisappear;
+- (void)onGetOpenImResourceDone:(id)a0;
+- (void)onWWKFContactUpdated:(id)a0;
+- (id)GetTableView;
+- (id)currentViewController;
+- (id)navigationBarBackgroundColor;
+- (void)initData;
+- (void)addOpenIMKefuInfoSection:(id)a0;
+- (void)addOpenIMKefuFinderSection:(id)a0;
+- (void)addOpenIMKefuIntroSection;
+- (id)getTagNameList;
+- (void)initTableView;
+- (void)updateNavigationBarRightButton;
+- (void)showContactSetting;
+- (void)onKFContactShareToFriend;
+- (void)tryHandleLink:(id)a0;
+- (void)tryCall:(id)a0;
+- (void)introCellClick;
+- (void)finderAssistDidUpdate;
+- (void)onFinderAssistClickFinder;
+- (id)makeHeadSmallLabel:(id)a0 cpKey:(id)a1 inUnsafe:(BOOL)a2 withPrefixTitle:(id)a3 maxWidth:(double)a4;
+- (id)makeHeadSmallTitleLabel:(id)a0;
+- (void)makeHeadCell:(id)a0 CellInfo:(id)a1;
+- (id)getProfileIntroView;
+- (double)getMaxProfileIntroViewTitleWidthWithMaxLabelWidth:(double)a0;
+- (id)getPermissionIconsView;
+- (id)getPermissionView;
+- (id)getProfileHeadView;
+- (id)cellForRightMakeSel:(SEL)a0 leftTitle:(id)a1 actionSel:(SEL)a2 height:(double)a3 userInfo:(id)a4;
+- (id)cellForRightMakeSel:(SEL)a0 leftTitle:(id)a1 actionSel:(SEL)a2;
+- (id)cellForRightMakeSel:(SEL)a0 leftTitle:(id)a1;
+- (id)cellForRightMakeSel:(SEL)a0 leftTitle:(id)a1 userInfo:(id)a2;
+- (id)cellForRightMakeSel:(SEL)a0 leftTitle:(id)a1 height:(double)a2 userInfo:(id)a3;
+- (void)makeLeftValueCell:(id)a0 CellInfo:(id)a1;
+- (void)makeOpenIMNormalCell:(id)a0 CellInfo:(id)a1;
+- (void)makeOpenIMPhoneCell:(id)a0 CellInfo:(id)a1;
+- (void)makePhoneCell:(id)a0 CellInfo:(id)a1;
+- (void)makePhoneCell:(id)a0 CellInfo:(id)a1 phoneList:(id)a2 autoresizingMask:(unsigned long long)a3;
+- (void)makeDisclosureIndicatorCell:(id)a0 CellInfo:(id)a1;
+- (id)makeKFTalentWindowCell;
+- (id)makeKFShopCell;
+- (void)onTapKFTalentWindowCell;
+- (void)onTapKFShopCell;
+- (id)makeOpenIMInfoSection;
+- (void)reloadTableView;
+- (void)initFooterView;
+- (void)onOpenIMNormalClicked:(id)a0;
+- (void)reportOnOpenIMNormalClicked:(id)a0;
+- (void)onShareToFriend;
+- (void)onShareMyFriendDone:(id)a0;
+- (void)updateCPState;
+- (void)onRestoreCPLabel:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void).cxx_destruct;
+
+@end

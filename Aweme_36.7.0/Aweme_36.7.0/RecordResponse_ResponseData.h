@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray, BattleConsecutiveRecordInfo;
+
+@interface RecordResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) BattleConsecutiveRecordInfo *consecutiveRecord;
+@property (nonatomic) BOOL hasConsecutiveRecord;
+@property (retain, nonatomic) NSMutableArray *recordsArray;
+@property (readonly, nonatomic) unsigned long long recordsArray_Count;
+@property (copy, nonatomic) NSString *noRecordTip;
+@property (nonatomic) long long offset;
+
++ (id)descriptor;
+
+@end

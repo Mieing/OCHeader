@@ -1,0 +1,3 @@
+@interface HTSLiveLinkContributeRoot : GPBRootObject
+
+@end

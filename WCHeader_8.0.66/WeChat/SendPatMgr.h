@@ -1,0 +1,87 @@
+@class NSString, NSMutableDictionary, RevokePatReportObject, SendPatWrap, NSMutableSet, OrderedDictionary, SendPatToastViewController;
+
+@interface SendPatMgr : MMUserService <IMsgExt, IMsgRevokeExt, MMServiceProtocol>
+
+@property (retain, nonatomic) NSMutableDictionary *userNameToPatTimeMap;
+@property (nonatomic) BOOL needRevokeLastPat;
+@property (retain, nonatomic) SendPatWrap *lastSendPatWrap;
+@property (retain, nonatomic) OrderedDictionary *availableSendPatWraps;
+@property (retain, nonatomic) NSMutableDictionary *serverIdToReceivePatWrapMap;
+@property (retain, nonatomic) RevokePatReportObject *revokePatReportObject;
+@property (retain, nonatomic) SendPatToastViewController *toastViewController;
+@property (retain, nonatomic) NSMutableSet *onGoingTimerSet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isValidContact:(id)a0;
++ (BOOL)isValidChatContact:(id)a0;
++ (id)filePathForServerIdToReceivePatWrapMap;
++ (id)decompoundMessageWrapForPatMessage:(id)a0;
++ (id)compoundMessageWrapsForPatMessage:(id)a0;
++ (id)patMessageServerIdSetInChat:(id)a0;
++ (void)fixMessageWrapForPatMessage:(id)a0;
++ (BOOL)isMessageWrapPatMessage:(id)a0;
++ (id)generatePatMessageFromWrap:(id)a0;
++ (void)updateMessageWrap:(id)a0 fromWrap:(id)a1;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (BOOL)canSendPat;
+- (BOOL)canRevokePat;
+- (unsigned long long)getPatMessageShowStyle;
+- (BOOL)sendPatWithMessageWrap:(id)a0;
+- (BOOL)sendPatToUser:(id)a0 scene:(unsigned long long)a1;
+- (BOOL)sendPatToUser:(id)a0 inGroup:(id)a1 scene:(unsigned long long)a2;
+- (BOOL)sendPat:(id)a0;
+- (id)getLastPatWrap;
+- (void)revokePat:(id)a0 fromChat:(id)a1 patMessage:(id)a2 type:(unsigned long long)a3;
+- (void)cancelRevokePat:(id)a0 fromChat:(id)a1 type:(unsigned long long)a2;
+- (void)beforeSendPat;
+- (unsigned int)patSendDelayInterval;
+- (void)delaySendPat:(id)a0;
+- (void)handleSendPat:(id)a0;
+- (BOOL)checkAndShowRevokeGuideForSendPat:(id)a0;
+- (void)modifyPatSuffix;
+- (void)updateModifyPatSuffixTimeAndCount;
+- (BOOL)needShowChangeSuffixRemind;
+- (unsigned int)patSendDoubleTapRevokeInterval;
+- (unsigned int)patSendLongPressRevokeInterval;
+- (id)sendPatForPat:(id)a0 fromChat:(id)a1;
+- (BOOL)needRevokeLastPatForSendPat:(id)a0;
+- (void)revokeSendPat:(id)a0;
+- (void)fastRevokeSendPat:(id)a0;
+- (void)fastRevokePat:(id)a0 fromChat:(id)a1 patMessage:(id)a2;
+- (void)normalRevokeSendPat:(id)a0;
+- (void)normalRevokePat:(id)a0 fromChat:(id)a1 patMessage:(id)a2;
+- (BOOL)normalRevokePatMessageForRevokeOnly:(id)a0 fromChat:(id)a1;
+- (void)onRevokeSendPat:(id)a0 isSuccess:(BOOL)a1 isCancelSending:(BOOL)a2;
+- (void)onRevokePat:(id)a0 fromChat:(id)a1 isSuccess:(BOOL)a2;
+- (void)callRevokePatExtension:(id)a0 fromChat:(id)a1 isSuccess:(BOOL)a2;
+- (unsigned int)receivePatWrapCacheInterval;
+- (void)loadServerIdToReceivePatWrapMap;
+- (void)saveServerIdToReceivePatWrapMap;
+- (BOOL)isServerIdCorrespondToReceivePat:(long long)a0;
+- (BOOL)hitFrequencyLimitForUserName:(id)a0;
+- (void)updatePatTimeForUsername:(id)a0;
+- (unsigned int)getMinFrequencyLimitInterval;
+- (void)showToastForPat:(id)a0 headImageView:(id)a1 scene:(unsigned long long)a2 andCompletionBlock:(id /* block */)a3;
+- (id)messageWrapForPatMessageWithChatUserName:(id)a0 andMessageLocalID:(unsigned int)a1;
+- (unsigned int)addPatWrap:(id)a0 toChat:(id)a1 newXMLMessageWrap:(id)a2 index:(unsigned long long *)a3;
+- (BOOL)deletePatWrap:(id)a0 inMessageWrap:(id)a1;
+- (id)getLastAppPatMessageWrapForChat:(id)a0;
+- (id)getLastAppPatMessageWrapForChat:(id)a0 createTime:(unsigned int)a1;
+- (id)createSendPatTempleteFromPattedUserName:(id)a0 withSuffix:(id)a1 andVersion:(unsigned long long)a2;
+- (unsigned long long)maxNumberOfContinousPats;
+- (unsigned long long)minNumberOfContinousPatsToFold;
+- (unsigned long long)numberOfPatsShowAfterFold;
+- (id)patSuffixWrapForUserName:(id)a0;
+- (void)updatePatSuffixWrap:(id)a0 forUserName:(id)a1;
+- (void)updatePatSuffix:(id)a0 serverId:(long long)a1 forSendPatWrap:(id)a2;
+- (void)OnGetNewXmlMsg:(id)a0 Type:(id)a1 MsgWrap:(id)a2;
+- (void)OnRevokeMsg:(id)a0 MsgWrap:(id)a1 ResultCode:(unsigned int)a2 ResultMsg:(id)a3 EducationMsg:(id)a4;
+- (void)OnMsgRevoked:(id)a0 n64MsgId:(long long)a1;
+- (void).cxx_destruct;
+
+@end

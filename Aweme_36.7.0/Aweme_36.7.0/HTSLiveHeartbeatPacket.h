@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface HTSLiveHeartbeatPacket : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *wrdsKeyVersionsArray;
+@property (readonly, nonatomic) unsigned long long wrdsKeyVersionsArray_Count;
+@property (nonatomic) long long roomId;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class PrivacyFailInfoStructV2;
+
+@interface PrivacyInfoStructV2 : GPBMessage
+
+@property (nonatomic) int level;
+@property (nonatomic) BOOL hasLevel;
+@property (retain, nonatomic) PrivacyFailInfoStructV2 *failInfo;
+@property (nonatomic) BOOL hasFailInfo;
+
++ (id)descriptor;
+
+- (id)failInfo;
+- (int)level;
+
+@end

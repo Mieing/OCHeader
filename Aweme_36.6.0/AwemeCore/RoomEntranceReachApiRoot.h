@@ -1,0 +1,3 @@
+@interface RoomEntranceReachApiRoot : GPBRootObject
+
+@end

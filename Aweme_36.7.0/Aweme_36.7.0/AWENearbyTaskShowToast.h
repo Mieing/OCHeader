@@ -1,0 +1,3 @@
+@interface AWENearbyTaskShowToast : NSObject
+
+@end

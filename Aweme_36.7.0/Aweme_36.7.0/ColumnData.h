@@ -1,0 +1,11 @@
+@class GPBInt32Array;
+
+@interface ColumnData : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (retain, nonatomic) GPBInt32Array *widgetIdsArray;
+@property (readonly, nonatomic) unsigned long long widgetIdsArray_Count;
+
++ (id)descriptor;
+
+@end

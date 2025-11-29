@@ -1,0 +1,7 @@
+@class NSString;
+
+@interface IESLiveGetCurrentCameraIdDataModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *cameraId;
+
+@end

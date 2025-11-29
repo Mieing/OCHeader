@@ -1,0 +1,3 @@
+@interface _TtC7FlowIMXP33_9F48D17848BEF1935977C6746430CEA616CommunicationAPI : _TtCs12_SwiftObject
+
+@end

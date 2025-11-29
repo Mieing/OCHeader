@@ -1,0 +1,73 @@
+@class NSString, IESLiveXPlayAudioStreamHandler, IESLiveXPlayAnchorEntranceHandler, HTSEventContext, IESLiveComponentContext, IESLiveXPlayGameModel, IESLiveXPlayGameViewController;
+@protocol IESLiveAnchorToolsModule, IESLiveRoomService, IESLiveXPlayCommonBusinessStrategy, IESLiveGameOpenPlatformDebugService, IESLiveGameXPlayGameOuterService;
+
+@interface IESLiveXPlayAppManager : NSObject <IESLiveGameXPlayService, IESLiveXPlayGameRouter, IESLiveAnchorRoomStatusChangeEvents, IESLiveXPlayAppManager>
+
+@property (retain, nonatomic) IESLiveXPlayGameViewController *xplayGameContainerVC;
+@property (retain, nonatomic) IESLiveXPlayGameModel *xplayGameModel;
+@property (retain, nonatomic) id currentAlertView;
+@property (copy, nonatomic) id /* block */ launchResultBlock;
+@property (retain, nonatomic) IESLiveXPlayAnchorEntranceHandler *entranceHandler;
+@property (retain, nonatomic) IESLiveXPlayAudioStreamHandler *audioStreamHandler;
+@property (retain, nonatomic) id<IESLiveXPlayCommonBusinessStrategy> businessHandler;
+@property (retain, nonatomic) id<IESLiveGameXPlayGameOuterService> xplayOuterService;
+@property (retain, nonatomic) id<IESLiveGameOpenPlatformDebugService> debugService;
+@property (retain, nonatomic) id<IESLiveAnchorToolsModule> anchorToolService;
+@property (nonatomic) long long currentSceneType;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (retain, nonatomic) HTSEventContext *eventContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (BOOL)isInClearScreen;
+- (void)startPerfSampler;
+- (void)stopPerfSampler;
+- (void)enableAudioFrame:(BOOL)a0;
+- (void)pauseAnchorLiveWithType:(unsigned long long)a0;
+- (void)stopAnchorLive;
+- (void)xPlayGameDidUpdateStatus:(long long)a0 extraInfo:(id)a1;
+- (void)xPlayGameDidUpdateNetworkStatus:(long long)a0 rtt:(long long)a1;
+- (void)xPlayGameDidUpdateOperationDelay:(long long)a0;
+- (void)xPlayGameDidUpdateQualityStats:(id)a0;
+- (void)xPlayGameDidReceivePushCDNFailed:(id)a0;
+- (void)xPlayGameDidReceiveCustomMessage:(id)a0;
+- (void)xPlayGameDidReceiveMergeStreamFailed:(id)a0;
+- (void)xPlayGameDidRemoteVideoStateChangeWithState:(long long)a0 reason:(long long)a1;
+- (void)showAlertWithTitle:(id)a0 description:(id)a1 actionTitle:(id)a2 cancelTitle:(id)a3 actionBlock:(id /* block */)a4 cancelBlock:(id /* block */)a5;
+- (void)sendFrameBufferToAppId:(id)a0 pixelBuffer:(struct __CVBuffer { } *)a1 rotation:(long long)a2 withCMTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a3;
+- (void)sendAudioFrameToAppId:(id)a0 frame:(id)a1 timestamp:(long long)a2;
+- (void)requestAppStart:(id)a0 callback:(id /* block */)a1;
+- (void)requestAppStop:(id)a0 startId:(id)a1;
+- (BOOL)isXplayRunning;
+- (id)currentGameModel;
+- (void)interactWillJoinChannel;
+- (void)switchScene:(long long)a0;
+- (void)updatePictureViewLayoutWithType:(unsigned long long)a0 duration:(double)a1;
+- (void)showMorePanel;
+- (BOOL)isXPlayRtcConnecting;
+- (id)gameCommonInvoke:(id)a0 params:(id)a1 completion:(id /* block */)a2;
+- (BOOL)isXPlayRunningInSceneSingle;
+- (void)showMorePanelWithQuery:(id)a0;
+- (void)updateCameraOpen:(BOOL)a0;
+- (void)updateClearScreenState:(BOOL)a0;
+- (void)loadXplayWithGameModel:(id)a0 xplayExtra:(id)a1 launchResultBlock:(id /* block */)a2;
+- (void)closeXplayGame:(id)a0 completion:(id /* block */)a1;
+- (id)initWithRoom:(id)a0 componentContext:(id)a1 eventContext:(id)a2 attachingDIContext:(id)a3;
+- (long long)getSceneType;
+- (id)readXPlayPerformanceSettingWithSceneType:(long long)a0 gameModel:(id)a1;
+- (id)getExternalRenderInfoWithSceneType:(long long)a0;
+- (id)getVideoSimulcastSettingWithSceneType:(long long)a0;
+- (void)handleAnchorCustomServerStream:(id)a0 gameModel:(id)a1;
+- (BOOL)shouldSupportSwitchCamera;
+- (id)getBusinessStrategyWithSceneType:(long long)a0 model:(id)a1;
+- (void)handleLaunchResultWithStatus:(long long)a0 extraInfo:(id)a1;
+- (id)getMonitorParamsWithGameModel:(id)a0;
+- (void)_setupObserver;
+- (void).cxx_destruct;
+- (void)dismissAlert;
+
+@end

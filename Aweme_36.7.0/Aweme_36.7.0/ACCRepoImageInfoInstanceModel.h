@@ -1,0 +1,86 @@
+@class ACCImageToColorModel, NSString, NSSet, NSMutableSet, UIImage;
+@protocol ACCPublishRepository;
+
+@interface ACCRepoImageInfoInstanceModel : NSObject <ACCRepoDataDiff, ACCRepoRegister, NSCopying, ACCRepositoryContextDeprecated, ACCInstanceRepoImageInfoData>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) NSMutableSet *dynamicStickerSet;
+@property (copy, nonatomic) NSString *imageFilePath;
+@property (copy, nonatomic) NSString *compressedImageFilePath;
+@property (readonly, copy, nonatomic) NSSet *dynamicStickerIds;
+@property (nonatomic) struct CGSize { double width; double height; } imageSize;
+@property (nonatomic) double imageScale;
+@property (nonatomic) long long timeInVideo;
+@property (nonatomic) double imageDuration;
+@property (copy, nonatomic) NSString *phAssetLocalIdentifier;
+@property (nonatomic) BOOL isCoverAdjusted;
+@property (nonatomic) BOOL asyncFetch;
+@property (retain, nonatomic) UIImage *originalPicture;
+@property (retain, nonatomic) UIImage *coverEditImage;
+@property (copy, nonatomic) NSString *coverProjectUUID;
+@property (nonatomic) struct CGSize { double width; double height; } coverEditImageSize;
+@property (copy, nonatomic) NSString *editedImageFilePath;
+@property (nonatomic) struct CGSize { double width; double height; } editedImageSize;
+@property (nonatomic) double editedImageScale;
+@property (nonatomic) BOOL hasTextReader;
+@property (nonatomic) BOOL isParsedTemplateCategory;
+@property (retain, nonatomic) NSString *picTemplateId;
+@property (retain, nonatomic) NSString *picTemplateName;
+@property (retain, nonatomic) NSString *picTemplateCategoryId;
+@property (retain, nonatomic) NSString *picTemplateCategoryName;
+@property (copy, nonatomic) NSString *originAssetCache;
+@property (nonatomic) BOOL useOriginAssetCache;
+@property (retain, nonatomic) ACCImageToColorModel *colorModel;
+@property (copy, nonatomic) NSString *recordStickerId;
+@property (nonatomic) double canvasScaleDiff;
+@property (readonly, nonatomic) BOOL hasCropped;
+@property (nonatomic) BOOL hasErased;
+@property (retain, nonatomic) NSString *aiEraserOriginImagePath;
+@property (nonatomic) BOOL forceNeedSendFrame;
+@property (nonatomic) BOOL hasChangeEditCanvasSizeForNoteCrop;
+@property (nonatomic) BOOL shouldUpdateStickerSafeArea;
+@property (nonatomic) BOOL needAutoCropForNote;
+@property (nonatomic) BOOL hasUserChangeImageRange;
+@property (nonatomic) BOOL hasUserChangeImageRatio;
+@property (copy, nonatomic) NSString *editableImageFilePath;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<ACCPublishRepository> repoDeprecated;
+
++ (double)dynamicEffectClipPlayDuration;
++ (id)repo_dataProtocol;
++ (double)defaultPlayDuration;
+
+- (id)initWithDraft:(id)a0;
+- (void)saveWithDraft:(id)a0;
+- (id)originalRawPicture;
+- (id)editDiffs;
+- (struct CGSize { double x0; double x1; })imageSizeWithCrop;
+- (id)getOriginalImage;
+- (BOOL)hasDynamicEffect;
+- (id)corpInfo;
+- (struct CGSize { double x0; double x1; })imageCropedSize;
+- (void)resetEditedImageInfo;
+- (void)addDynamicStickerID:(long long)a0;
+- (void)removeDynamicStickerID:(long long)a0;
+- (void)clearDynamicSticker;
+- (id)getOriginalCompressedImage;
+- (BOOL)isImageExists;
+- (double)fetchClipPlayDuration;
+- (BOOL)hasEditedImageCache;
+- (void)clearAIEraseData;
+- (void)draftWillBeSavedWithID:(id)a0;
+- (void)modelDidRetrievedFromDraftWithID:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })cropRect;
+- (void).cxx_destruct;
+- (id)init;
+- (void)reset;
+- (BOOL)enabled;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

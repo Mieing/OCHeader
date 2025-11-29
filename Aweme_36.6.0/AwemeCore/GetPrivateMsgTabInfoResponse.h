@@ -1,0 +1,10 @@
+@class GetPrivateMsgTabInfoResponse_Data;
+
+@interface GetPrivateMsgTabInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetPrivateMsgTabInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

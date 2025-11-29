@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface InviteItem : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) long long id_p;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

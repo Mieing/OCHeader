@@ -1,0 +1,5 @@
+@interface AWEKnowledgeRichContentImpl.FullPageRecommendDataFilter : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ itemIdSet;
+}
+
+@end

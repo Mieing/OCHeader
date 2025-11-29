@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveInteractOpenChatMessage_ChatItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *appUserInfoArray;
+@property (readonly, nonatomic) unsigned long long appUserInfoArray_Count;
+@property (copy, nonatomic) NSString *secNickName;
+@property (copy, nonatomic) NSString *secAvatarURL;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) int timestamp;
+
++ (id)descriptor;
+
+@end

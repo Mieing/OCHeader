@@ -1,0 +1,18 @@
+@class GPBInt64Array, NSMutableArray;
+
+@interface AnchorFansInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long onlineFansCount;
+@property (nonatomic) long long onlineFriendCount;
+@property (nonatomic) long long livingFriendCount;
+@property (nonatomic) long long avatarType;
+@property (retain, nonatomic) NSMutableArray *avatarsArray;
+@property (readonly, nonatomic) unsigned long long avatarsArray_Count;
+@property (retain, nonatomic) GPBInt64Array *avatarPickReasonArray;
+@property (readonly, nonatomic) unsigned long long avatarPickReasonArray_Count;
+
++ (id)descriptor;
+
+- (BOOL)hasFriends;
+
+@end

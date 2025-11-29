@@ -1,0 +1,10 @@
+@class InteractEffectStartResponse_InitResult;
+
+@interface InteractEffectStartResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) InteractEffectStartResponse_InitResult *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

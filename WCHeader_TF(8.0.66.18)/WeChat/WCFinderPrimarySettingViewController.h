@@ -1,0 +1,76 @@
+@class DataCenterConfig, NSString, WCFinderContact, FinderNewUserPrepareResponse, WCTableViewManager, WCFinderPersonalSettingParams, ForwardMessageLogicController, WCFinderPrimarySettingViewModel, WCFinderProcessTimeRecorder;
+
+@interface WCFinderPrimarySettingViewController : MMUIViewController <WCFinderContactExt, WCFinderUserPrepareCgiDelegate, ForwardMessageLogicDelegate, WCFinderFeedBaseViewControllerProtocol>
+
+@property (retain, nonatomic) WCFinderPersonalSettingParams *params;
+@property (retain, nonatomic) WCFinderContact *contact;
+@property (retain, nonatomic) WCFinderPrimarySettingViewModel *viewModel;
+@property (retain, nonatomic) DataCenterConfig *dataCenterConfig;
+@property (retain, nonatomic) WCTableViewManager *tableViewManager;
+@property (nonatomic) BOOL hasExposeFinderToBrandSwitch;
+@property (nonatomic) BOOL hasExposeCreatorCenter;
+@property (nonatomic) long long fetchPrepareState;
+@property (retain, nonatomic) WCFinderProcessTimeRecorder *creatorCenterProcessRecorder;
+@property (retain, nonatomic) ForwardMessageLogicController *forwardController;
+@property (retain, nonatomic) FinderNewUserPrepareResponse *prepareResponse;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithContact:(id)a0 params:(id)a1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)reportSettingExpose;
+- (void)fetchUserPrepareForAuthorDataCenter;
+- (void)fetchUserPrepareForUpdateContact;
+- (void)pushDefaultOrAuthorDataCenterMiniAppWithUserName:(id)a0 pagePath:(id)a1;
+- (void)configureTableView;
+- (BOOL)enableShowOriginalEntry;
+- (void)reloadTableView;
+- (void)addCreatorCenterGroupSection:(id)a0;
+- (id)getCreatorCenterCell;
+- (id)getCreateMilestoneCell;
+- (void)reportCreatorCenter:(BOOL)a0;
+- (void)reportCreatorCenterExpose;
+- (void)addShowMusicTabSection:(id)a0;
+- (void)onShowMuiscSwitchChanged:(id)a0;
+- (void)addHeaderSection:(id)a0;
+- (void)addShareSession:(id)a0;
+- (void)addPrivacySession:(id)a0;
+- (void)addChangeContactStatusSection:(id)a0;
+- (id)makeSectionSeparator;
+- (void)makeHeadCell:(id)a0 cellInfo:(id)a1;
+- (void)clickHeadCell;
+- (void)clickNameCard;
+- (id)produceGuideUrl;
+- (void)clickAuthorToolCell;
+- (void)didTapShareAccountCell;
+- (void)clickPrivacy;
+- (void)clickPOI;
+- (void)openAccountSettingVC;
+- (void)finderToBrandSwitchCell:(id)a0 willDisplayAtIndexPath:(id)a1;
+- (void)changeFinderToShowLiveInfoSwitch:(id)a0;
+- (void)changeFinderToBrandAccountSwitch;
+- (void)selectedShowInWXProfileAction;
+- (void)clickCreatorCenter;
+- (void)clickCreateMilestone;
+- (void)onCreatorPageExitTime:(unsigned long long)a0 enterTime:(unsigned long long)a1;
+- (id)currentFinderPrepare;
+- (id)creatorCenterURL:(id *)a0;
+- (id)appendReportArgumentToCreatorCenterUrl:(id)a0 tailWording:(id)a1;
+- (void)onFinderContactUpdate:(id)a0;
+- (void)userPrepareCgi:(id)a0 didGetResponse:(id)a1;
+- (void)userPrepareCgi:(id)a0 didFailWithError:(id)a1;
+- (void)finderRedDotDataChangedWithPathKey:(id)a0;
+- (void)finderRedDotDataRevokedWithPathKey:(id)a0;
+- (void)updateOriginalPlainRedDotWithPathKey:(id)a0;
+- (id)getCurrentViewController;
+- (int)feedViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (void)registerYReportSdk;
+- (void).cxx_destruct;
+
+@end

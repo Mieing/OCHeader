@@ -1,0 +1,3 @@
+@interface HTSLiveKtvChorusSingerRoot : GPBRootObject
+
+@end

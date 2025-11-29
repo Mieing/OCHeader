@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface AWEPadFullPageListAdapter : NSObject <AWEPadFullPageListAdapter>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)weakTargetClass;
+
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionViewInset;
+- (id)weakTarget;
+
+@end

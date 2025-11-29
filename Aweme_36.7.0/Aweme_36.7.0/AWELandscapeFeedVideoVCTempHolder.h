@@ -1,0 +1,84 @@
+@class AWEAwemeModel, UIView, UIImage, UINavigationController, NSString, NSMutableDictionary, AWEBaseListViewController, NSMutableArray, UIViewController;
+@protocol AWELandscapeFeedViewControllerProtocol, AWEAwemeBizPlayVideoProtocol, AWEPlayVideoViewControllerProtocol, AWEAwemePlayVideoViewControllerProtocol, BDByteScreenCastLivePlayerControlViewProtocol;
+
+@interface AWELandscapeFeedVideoVCTempHolder : NSObject <AWELandscapeFeedVideoVCTempHolderProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *fromModel;
+@property (nonatomic) BOOL isSameVideo;
+@property (nonatomic) BOOL unAutoEnterLandScape;
+@property (retain, nonatomic) NSMutableArray *autoEnterArray;
+@property (nonatomic) struct CGPoint { double x; double y; } lastContentOffset;
+@property (nonatomic) BOOL isTransitioning;
+@property (nonatomic) BOOL isEnteringLandscape;
+@property (nonatomic) BOOL hasStartLogin;
+@property (nonatomic) BOOL hasFinishLogin;
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEAwemeBizPlayVideoProtocol, AWEPlayVideoViewControllerProtocol> *playerViewController;
+@property (retain, nonatomic) AWEBaseListViewController<AWELandscapeFeedViewControllerProtocol> *landscapeFeedVC;
+@property (retain, nonatomic) UINavigationController *nav;
+@property (nonatomic) BOOL landscapeShouldPause;
+@property (nonatomic) BOOL recommendFeedShouldPause;
+@property (nonatomic) BOOL screenCastContinue;
+@property (retain, nonatomic) NSMutableArray *trackShowEntryItemIdArray;
+@property (retain, nonatomic) NSMutableArray *trackRotateItemIdArray;
+@property (retain, nonatomic) AWEAwemeModel *currentAwemeModel;
+@property (retain, nonatomic) UIImage *screenShotImage;
+@property (retain, nonatomic) NSMutableDictionary *layerModelsDictionary;
+@property (retain, nonatomic) NSMutableDictionary *layerSelectedModelDictionary;
+@property (retain, nonatomic) NSMutableDictionary *layerScrollOffsetDictionary;
+@property (nonatomic) long long maxIndex;
+@property (retain, nonatomic) NSMutableArray *recordLandscapeData;
+@property (retain, nonatomic) UIView<BDByteScreenCastLivePlayerControlViewProtocol> *screenCastControlView;
+@property (nonatomic) BOOL isRecallClose;
+@property (nonatomic) BOOL isRemoveXiGua;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) unsigned long long enterScene;
+@property (copy, nonatomic) id /* block */ checkAwemeInFeed;
+@property (retain, nonatomic) AWEAwemeModel *recordLandscapeModel;
+@property (nonatomic) BOOL isTrackLandscapeConentOffset;
+@property (copy, nonatomic) NSString *autoRotateLandscapeLastItemID;
+@property (retain, nonatomic) NSMutableDictionary *enteranceMoveVideoDictionary;
+@property (retain, nonatomic) NSMutableDictionary *enteranceTopOffsetDictionary;
+@property (retain, nonatomic) UIViewController<AWEAwemePlayVideoViewControllerProtocol, AWEAwemeBizPlayVideoProtocol, AWEPlayVideoViewControllerProtocol> *insertPlayVideoViewController;
+@property (retain, nonatomic) NSMutableDictionary *reCallDict;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (nonatomic) BOOL hasRecord;
+@property (retain, nonatomic) NSMutableArray *reCallArray;
+@property (nonatomic) double landscapeCurrentSpeed;
+@property (copy, nonatomic) NSString *currentSelectedSpeedItmeId;
+@property (nonatomic) BOOL isQuitFromLandscape;
+@property (nonatomic) BOOL ignoreReset;
+@property (nonatomic) BOOL ignoreTraceEntranceShow;
+@property (nonatomic) BOOL isFromPostList;
+@property (nonatomic) BOOL isFromOthersCanSlide;
+@property (nonatomic) long long interfaceOrientationBeforeExit;
+@property (nonatomic) BOOL isInsertLandScapeDataToVertical;
+@property (retain, nonatomic) AWEAwemeModel *playingAwemeModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPlayInteractionAdapterClass;
++ (id)sharedInstance;
+
+- (double)landscapeMoveUpPercent;
+- (BOOL)isSlideEnable;
+- (void)pausePlayerViewController;
+- (id)aAWEPlayInteractionAdapter;
+- (BOOL)isMixVideoAndSlideEnable;
+- (BOOL)isRelatedVideoAndSlideEnable;
+- (void)generateBackingScreenshotWithModel:(id)a0 playerViewController:(id)a1;
+- (void)clearLayerCache;
+- (void)removePlayerControllerParentVC;
+- (void)generateEnteringScreenshot;
+- (void)enterPortraitFeedWithCompletion:(id /* block */)a0;
+- (BOOL)isMVChannelAndSlideEnable;
+- (BOOL)isPersonalHomepageSlideEnable;
+- (BOOL)landscapeMoveUpAllPage;
+- (BOOL)landscapeShouldPauseWithID:(id)a0;
+- (BOOL)isFirstVideoInLandscapeWithID:(id)a0;
+- (BOOL)isLandscapeMoveUpModel:(id)a0;
+- (void).cxx_destruct;
+- (void)reset;
+
+@end

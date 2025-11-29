@@ -1,0 +1,3 @@
+@interface ReviewReportApiRoot : GPBRootObject
+
+@end

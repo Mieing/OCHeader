@@ -1,0 +1,3 @@
+@interface DDanmakuDefine : NSObject
+
+@end

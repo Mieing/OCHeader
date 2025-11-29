@@ -1,0 +1,12 @@
+@class GPBInt64Array, NSMutableArray;
+
+@interface LiveFragments : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *itemIdsArray;
+@property (readonly, nonatomic) unsigned long long itemIdsArray_Count;
+@property (retain, nonatomic) NSMutableArray *itemIdsStrArray;
+@property (readonly, nonatomic) unsigned long long itemIdsStrArray_Count;
+
++ (id)descriptor;
+
+@end

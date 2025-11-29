@@ -1,0 +1,3 @@
+@interface BDUGLuckyPollingActivityCommon : BDUGLuckyBDModel
+
+@end

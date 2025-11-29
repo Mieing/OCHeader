@@ -1,0 +1,3 @@
+@interface HTSLiveWebcastRealTimeChatLikeMessageRoot : GPBRootObject
+
+@end

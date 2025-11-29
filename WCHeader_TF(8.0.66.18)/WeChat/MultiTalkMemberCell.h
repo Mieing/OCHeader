@@ -1,0 +1,71 @@
+@class UILabel, WCVideoRender, NSObject, ColorGradientView, NSMutableArray, UIView, UIColor, MMUILabel, MultiTalkHDHeadView, NSString, CContact, MultiTalkMuteIconView, MultiTalkSharingScreenTipsView, UIImageView;
+@protocol MultiTalkMemberProtocol, MultiTalkMemberCellDelegate;
+
+@interface MultiTalkMemberCell : UIView <MultiTalkMemberExt, MultiTalkMemberWaittingExt>
+
+@property (retain, nonatomic) UIView *backgroundMaskView;
+@property (retain, nonatomic) UIColor *maskColor;
+@property (retain, nonatomic) MultiTalkHDHeadView *headImageView;
+@property (retain, nonatomic) UIImageView *talkingImageView;
+@property (retain, nonatomic) UIImageView *waittingImageView;
+@property (nonatomic) unsigned long long waittingImageListIndex;
+@property (retain, nonatomic) NSMutableArray *waittingImageList;
+@property (retain, nonatomic) UIImageView *netQualityImageView;
+@property (retain, nonatomic) UILabel *busyLabel;
+@property (retain, nonatomic) MultiTalkMuteIconView *muteIconView;
+@property (retain, nonatomic) MultiTalkSharingScreenTipsView *screenSharingTipsView;
+@property (retain, nonatomic) WCVideoRender *render;
+@property (retain, nonatomic) UIView *renderView;
+@property (retain, nonatomic) CContact *contact;
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL renderDisplayed;
+@property (nonatomic) BOOL screenSharingTipsEnable;
+@property (nonatomic) BOOL isTalking;
+@property (nonatomic) unsigned int talkingQuality;
+@property (retain, nonatomic) UIView *clickView;
+@property (retain, nonatomic) MMUILabel *memberNameLabel;
+@property (retain, nonatomic) MMUILabel *callerMemberNameLabel;
+@property (retain, nonatomic) ColorGradientView *blurView;
+@property (retain, nonatomic) NSObject<MultiTalkMemberProtocol> *member;
+@property (nonatomic) BOOL isSelected;
+@property (nonatomic) BOOL isChanging;
+@property (nonatomic) BOOL muteIconHidden;
+@property (nonatomic) BOOL busyLabelHidden;
+@property (copy, nonatomic) id /* block */ clickActionCallback;
+@property (weak, nonatomic) id<MultiTalkMemberCellDelegate> cellDelegate;
+@property (nonatomic) BOOL isInMinimizeMode;
+@property (nonatomic) BOOL isAudioInterruption;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)layoutBackgroundMaskView;
+- (void)layoutHeadImageView;
+- (void)layoutWaittingImageView;
+- (void)layoutTalkingImageView;
+- (void)layoutNetQualityImageView;
+- (void)layoutBusyLabel;
+- (void)layoutMultiTalkMuteIconView;
+- (void)layoutScreenSharingTipsView;
+- (void)layoutRenderView;
+- (void)layoutClickView;
+- (void)bringClickViewFront;
+- (void)layoutUserNameLabel;
+- (void)updateHighlighted:(BOOL)a0;
+- (BOOL)getRenderDisplayed;
+- (void)updateRenderDisplayed:(BOOL)a0;
+- (void)updateScreenSharingTipsEnable:(BOOL)a0;
+- (void)updateRender:(id)a0;
+- (void)updateContact:(id)a0 member:(id)a1 isSelected:(BOOL)a2;
+- (void)updateMaskColorWithIndex:(unsigned long long)a0 membersCount:(unsigned long long)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)onTapWithSender:(id)a0;
+- (void)onMultiTalkMemberTalking;
+- (void)onMultiTalkMemberSilent;
+- (void)onMultiTalkMemberQualityChange:(unsigned int)a0;
+- (void)onMultiTalkMemberWaittingTimerCheckWithIndex:(unsigned long long)a0;
+- (void).cxx_destruct;
+
+@end

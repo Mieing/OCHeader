@@ -1,0 +1,14 @@
+@class UILabel, NSString;
+
+@interface AWEPreviewListItemCell : UICollectionViewCell
+
+@property (retain, nonatomic) UILabel *itemContentLabel;
+@property (retain, nonatomic) NSString *itemContent;
+
+- (void).cxx_destruct;
+- (void)removeFromSuperview;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)setupSubviews;
+
+@end

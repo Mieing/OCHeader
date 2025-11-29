@@ -1,0 +1,13 @@
+@interface BrandAffDataConverter : NSObject
+
++ (id)convertAffMsgInfoDataToMsgWrap:(id)a0;
++ (id)convertAffMsgInfoToMsgWrap:(struct BizMsgInfo { void /* function */ **x0; int x1; int x2[3]; void *x3; unsigned long long x4; struct BizMsgItemContent *x5; void *x6; unsigned long long x7; unsigned long long x8; unsigned int x9; unsigned int x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; void *x15; void *x16; void *x17; unsigned int x18; void *x19; void *x20; unsigned long long x21; unsigned int x22; unsigned int x23; void *x24; unsigned long long x25; int x26; int x27; void *x28; int x29; BOOL x30; void *x31; struct RepeatedPtrField<biz::BizTripletInfo> { void **x0; int x1; int x2; int x3; } x32; unsigned int x33; BOOL x34; BOOL x35; })a0;
++ (id)convertAffMsgInfoDataListToMsgWrapList:(id)a0;
++ (struct BizMsgInfo { void /* function */ **x0; int x1; int x2[3]; void *x3; unsigned long long x4; struct BizMsgItemContent *x5; void *x6; unsigned long long x7; unsigned long long x8; unsigned int x9; unsigned int x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; void *x15; void *x16; void *x17; unsigned int x18; void *x19; void *x20; unsigned long long x21; unsigned int x22; unsigned int x23; void *x24; unsigned long long x25; int x26; int x27; void *x28; int x29; BOOL x30; void *x31; struct RepeatedPtrField<biz::BizTripletInfo> { void **x0; int x1; int x2; int x3; } x32; unsigned int x33; BOOL x34; BOOL x35; })convertMsgWrapToAffMsgInfo:(id)a0 isNewMsg:(BOOL)a1 isRedDotMsg:(BOOL)a2;
++ (struct BizMsgResortV2Context_SessionBox { void /* function */ **x0; int x1; int x2[3]; void *x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })convertSessionInfoToSessionBox:(id)a0;
++ (id)convertTLResortStartInfo:(id)a0;
++ (id)convertTLResortEndInfo:(id)a0;
++ (struct BizDigestFinderLiveInfo { void /* function */ **x0; int x1; int x2[3]; void *x3; void *x4; void *x5; int x6; })convertTLDigestFinderLiveInfo:(id)a0;
++ (struct BizMsgItem { void /* function */ **x0; int x1; int x2[3]; void *x3; void *x4; void *x5; unsigned long long x6; void *x7; void *x8; void *x9; unsigned int x10; unsigned int x11; void *x12; void *x13; unsigned int x14; BOOL x15; void *x16; unsigned int x17; unsigned int x18; void *x19; void *x20; void *x21; unsigned int x22; struct RepeatedPtrField<std::string> { void **x0; int x1; int x2; int x3; } x23; unsigned int x24; void *x25; BOOL x26; BOOL x27; struct RecFusionReason *x28; unsigned int x29; unsigned int x30; })convertReaderWrapToMsgItem:(id)a0;
+
+@end

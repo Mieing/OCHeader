@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface PaidLiveTicketRecommendResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *recommendTicketDetailsArray;
+@property (readonly, nonatomic) unsigned long long recommendTicketDetailsArray_Count;
+@property (nonatomic) long long needPersonalRecommend;
+
++ (id)descriptor;
+
+@end

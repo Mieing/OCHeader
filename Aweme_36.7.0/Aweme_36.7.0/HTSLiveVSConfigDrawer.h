@@ -1,0 +1,14 @@
+@class HTSLiveMatchDrawer, HTSLiveImage;
+
+@interface HTSLiveVSConfigDrawer : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveMatchDrawer *drawer;
+@property (nonatomic) BOOL hasDrawer;
+@property (retain, nonatomic) HTSLiveImage *drawerLabel;
+@property (nonatomic) BOOL hasDrawerLabel;
+@property (retain, nonatomic) HTSLiveImage *drawerBackground;
+@property (nonatomic) BOOL hasDrawerBackground;
+
++ (id)descriptor;
+
+@end

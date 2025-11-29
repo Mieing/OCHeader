@@ -1,0 +1,13 @@
+@interface FeaturePlatform.ComponentLoader : _TtCs12_SwiftObject <FPUIHolderContainer, FPUIHolderContainer> {
+    void /* unknown type, empty encoding */ componentRegistryList;
+    void /* unknown type, empty encoding */ scopeContext;
+    void /* unknown type, empty encoding */ providerForComponent;
+    void /* unknown type, empty encoding */ stateFlowMap;
+    void /* unknown type, empty encoding */ holderMap;
+    void /* unknown type, empty encoding */ componentMap;
+    void /* unknown type, empty encoding */ componentRegistryMap;
+}
+
+- (id)getUIHolder:(Class)a0;
+
+@end

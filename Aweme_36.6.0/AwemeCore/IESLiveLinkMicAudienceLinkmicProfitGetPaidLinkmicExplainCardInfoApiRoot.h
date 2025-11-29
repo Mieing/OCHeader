@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicProfitGetPaidLinkmicExplainCardInfoApiRoot : GPBRootObject
+
+@end

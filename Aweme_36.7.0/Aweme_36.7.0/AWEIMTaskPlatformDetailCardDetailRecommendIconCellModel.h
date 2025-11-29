@@ -1,0 +1,3 @@
+@interface AWEIMTaskPlatformDetailCardDetailRecommendIconCellModel : AWEIMCellModel
+
+@end

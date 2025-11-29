@@ -1,0 +1,57 @@
+@interface TPThumbPlayerUtils : NSObject
+
++ (int)getNativeCodecIdWithTPCodecType:(long long)a0;
++ (long long)getTPCodecTypeWithNativeCodecId:(int)a0;
++ (long long)getActionResultWithError:(int)a0;
++ (int)getNativeSeekModeWithTPSeekMode:(long long)a0;
++ (int)getNativePropertyIDWithTPPropertyKey:(long long)a0;
++ (int)getNativeInitConfigKeyWithTPOptionalID:(unsigned long long)a0;
++ (int)getNativeOptionalIDWithTPOptionalID:(unsigned long long)a0;
++ (unsigned long long)getPlayerInfoWithPlayerAsyncCallMessage:(int)a0;
++ (unsigned long long)getPlayerInfoWithPlayerLongInfoMessage:(int)a0;
++ (unsigned long long)getPlayerInfoWithPlayerObjectInfoMessage:(int)a0;
++ (int)getNativeDecoderTypeWithPlayerDecoderType:(long long)a0;
++ (long long)getPlayerDecoderTypeWithNativeDecoderType:(int)a0;
++ (long long)getPlayerRendererTypeWithNativeRendererType:(int)a0;
++ (int)getNativeRendererTypeWithPlayerRendererType:(long long)a0;
++ (unsigned long long)getPlayerVideoGravityWithNativeVideoGravity:(int)a0;
++ (int)getNativeVideoGravityWithPlayerVideoGravity:(unsigned long long)a0;
++ (long long)getPlayerSampleFormatWithNativeSampleFormat:(int)a0;
++ (int)getNativeSampleFormatWithPlayerSampleFormat:(long long)a0;
++ (long long)getPlayerPixelFormatWithNativePixelFormat:(int)a0;
++ (int)getNativePixelFormatWithPlayerPixelFormat:(long long)a0;
++ (long long)getPlayerMediaTypeWithNativeMediaType:(int)a0;
++ (long long)getPlayerVideoH264SeiTypeWithNativeSeiType:(int)a0;
++ (long long)getPlayerVideoHevcSeiTypeWithNativeSeiType:(int)a0;
++ (int)getNativeReduceLatencyAction:(long long)a0;
++ (long long)getTPReduceLatencyAction:(int)a0;
++ (int)getNativeDemuxerType:(long long)a0;
++ (long long)getTPDemuxerType:(int)a0;
++ (int)getNativeBufferStrategy:(long long)a0;
++ (long long)getTPBufferStrategy:(int)a0;
++ (struct TPRtcRemoteSdpInfo { BOOL x0; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x1; })getNativeTPRtcRemoteSdpInfo:(id)a0;
++ (id)convertDRMType2InnerWithStringFormat:(long long)a0;
++ (unsigned long long)getNativeSubtitleRenderParamFlagsWithSubtitleRenderParamFlags:(unsigned long long)a0;
++ (unsigned int)getNativeSubtitleFontStyleFlagsWithSubtitleFontStyleOptions:(unsigned int)a0;
++ (struct { int x0; int x1; unsigned long long x2; unsigned long long x3; struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; } x4; float x5; float x6; unsigned int x7; unsigned int x8; float x9; unsigned int x10; float x11; float x12; float x13; float x14; })getNativeSubtitleRenderParamsWithSubtitleRenderModel:(id)a0;
++ (unsigned long long)getPlayerChannelLayoutWithNativeChannelLayout:(unsigned long long)a0;
++ (unsigned long long)getNativeChannelLayoutWithPlayerChannelLayout:(unsigned long long)a0;
++ (long long)getPlayerDetailInfoTypeWithNativeDetailInfoType:(int)a0;
++ (id)getPlayerDetailInfoWithNativeDetailInfo:(const struct TPDetailInfo { int x0; long long x1; long long x2; } *)a0;
++ (int)getNativeSwitchDefModeWithSwitchType:(long long)a0;
++ (struct TPJitterBufferConfigParams { unsigned long long x0; unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; } *)getNativeTPJitterBufferConfigParamsWithTPJitterBufferConfig:(id)a0;
++ (int)getNativeHlsTypeWithTPHlsType:(long long)a0;
++ (long long)getTPHlsTypeWithNativeHlsType:(int)a0;
++ (int)getNativeDrmSecureLevelWithTPDrmSecureLevel:(long long)a0;
++ (long long)getTPDrmSecureLevelWithNativeDrmSecureLevel:(int)a0;
++ (int)getNativeDrmTypeWithTPDrmType:(long long)a0;
++ (long long)getTPDrmTypeWithNativeDrmType:(int)a0;
++ (id)getTPDynamicStatisticParamsWithNativeDynamicStatisticParams:(const struct TPDynamicStatisticParams { long long x0; long long x1; int x2; int x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; int x10; int x11; int x12; } *)a0;
++ (id)getTPGeneralPlayFlowParamsWithNativeGeneralPlayFlowParams:(const void *)a0;
++ (void)fillTPPlayerConfigParams:(id)a0 fromNativePlayerConfigParams:(const struct TPConfigParams { long long x0; long long x1; long long x2; long long x3; long long x4; long long x5; int x6; float x7; int x8; } *)a1;
++ (void)fillTPPlayerBaseMediaParams:(id)a0 fromNativePlayerBaseMediaParams:(const void *)a1;
++ (void)fillTPPlayerGeneralTrackingParams:(id)a0 fromNativePlayerGeneralTrackingParams:(const struct TPGeneralTrackingParams { long long x0; long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; long long x10; long long x11; long long x12; long long x13; } *)a1;
++ (void)fillTPPlayerDrmParams:(id)a0 fromNativePlayerDrmParams:(const void *)a1;
++ (int)getNativeThreadPriorityWithTPThreadPriority:(long long)a0;
+
+@end

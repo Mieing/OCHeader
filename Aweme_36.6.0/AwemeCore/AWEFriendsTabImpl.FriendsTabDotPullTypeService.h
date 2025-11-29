@@ -1,0 +1,3 @@
+@interface AWEFriendsTabImpl.FriendsTabDotPullTypeService : AWEFriendsTabImpl.FriendsTabDotBasicService
+
+@end

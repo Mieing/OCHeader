@@ -1,0 +1,10 @@
+@class NowOfficialChannelData;
+
+@interface NowOfficialChannelResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NowOfficialChannelData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

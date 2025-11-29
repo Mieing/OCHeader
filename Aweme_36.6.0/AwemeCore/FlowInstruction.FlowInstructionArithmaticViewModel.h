@@ -1,0 +1,3 @@
+@interface FlowInstruction.FlowInstructionArithmaticViewModel : FlowInstruction.FlowInstructionBizViewModel
+
+@end

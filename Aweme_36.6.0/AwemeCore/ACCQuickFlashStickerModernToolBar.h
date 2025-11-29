@@ -1,0 +1,41 @@
+@class NSString, ACCQuickFlashEditToolBarModel, NSMutableDictionary, UICollectionView, UIView, UIGestureRecognizer, UIButton;
+@protocol ACCQuickFlashStickerModernToolBarDelegate;
+
+@interface ACCQuickFlashStickerModernToolBar : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) ACCQuickFlashEditToolBarModel *model;
+@property (retain, nonatomic) NSMutableDictionary *hashDicForTitle;
+@property (retain, nonatomic) UIButton *cancelButton;
+@property (retain, nonatomic) UIView *bgMaskView;
+@property (weak, nonatomic) id<ACCQuickFlashStickerModernToolBarDelegate> delegate;
+@property (readonly, nonatomic) UIGestureRecognizer *collectionViewPanGesture;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)defaulBarHeight;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 hasCancel:(BOOL)a1;
+- (void)clearRecommendList;
+- (void)scrollToPreIndex:(id)a0 scrollPosition:(unsigned long long)a1;
+- (void)trackRecommendInfoWithEvent:(id)a0 trackInfo:(id)a1;
+- (void)setupUIWithCancel:(BOOL)a0;
+- (void)dismissWithAnimate;
+- (void)clearRepeatTitles;
+- (long long)minIndexPath:(id)a0;
+- (long long)maxIndexPath:(id)a0;
+- (void)insertRedPackToFirstPlace:(id)a0 type:(long long)a1;
+- (BOOL)hasRedPackTitles;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)reloadData:(id)a0;
+
+@end

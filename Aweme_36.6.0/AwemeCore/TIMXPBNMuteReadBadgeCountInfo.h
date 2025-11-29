@@ -1,0 +1,10 @@
+@interface TIMXPBNMuteReadBadgeCountInfo : GPBMessage
+
+@property (nonatomic) int messageType;
+@property (nonatomic) BOOL hasMessageType;
+@property (nonatomic) int readBadgeCount;
+@property (nonatomic) BOOL hasReadBadgeCount;
+
++ (id)descriptor;
+
+@end

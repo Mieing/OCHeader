@@ -1,0 +1,22 @@
+@class NSString, NSArray, NSDictionary;
+
+@interface IESLivePrivilegeHonorLevelModel : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (nonatomic) BOOL showLevelPanel;
+@property (retain, nonatomic) NSString *advertisement;
+@property (retain, nonatomic) NSString *detailPageUrl;
+@property (retain, nonatomic) NSString *detailText;
+@property (retain, nonatomic) NSArray *notice;
+@property (readonly, copy, nonatomic) NSDictionary *dictionaryValue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)modelFromSetting:(id)a0;
++ (id)noticeJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (id)dictionary;
+
+@end

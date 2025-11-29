@@ -1,0 +1,78 @@
+@class MMBGMChooseFinderFeedListViewTableViewCell, NSString, MMBGMSelectedRecFinderFeedTabViewModel, WCFinderAnimationLoadingView, UITableViewDiffableDataSource, MMBGMPanelPublishContext, UITableView, WCFinderRefreshTableFooterView;
+@protocol MMBGMChooseFinderFeedListViewDelegate;
+
+@interface MMBGMChooseFinderFeedListView : MMUIView <MMBGMSelectedSearchResultViewProtocol, UITableViewDelegate, UITableViewDataSource, MMBGMSelectedRecFinderFeedTabViewModelDelegate, MMBGMChooseFinderFeedListViewTableViewCellDelegate, WCFinderRefreshTableFooterViewDelegate>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) WCFinderRefreshTableFooterView *footerView;
+@property (retain, nonatomic) WCFinderAnimationLoadingView *loadingView;
+@property (retain, nonatomic) MMBGMSelectedRecFinderFeedTabViewModel *viewModel;
+@property (weak, nonatomic) MMBGMChooseFinderFeedListViewTableViewCell *currentFocusCell;
+@property (nonatomic) long long currentFocusIndex;
+@property (copy, nonatomic) NSString *currentSelectedTid;
+@property (retain, nonatomic) UITableViewDiffableDataSource *diffDataSource;
+@property (copy, nonatomic) NSString *currentDownloadingBgmTid;
+@property (retain, nonatomic) MMBGMPanelPublishContext *publishContext;
+@property (weak, nonatomic) id<MMBGMChooseFinderFeedListViewDelegate> delegate;
+@property (nonatomic) unsigned long long listEntryScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)reset;
+- (void)reload;
+- (void)resetCurrentIndex;
+- (long long)currentIndex;
+- (BOOL)startSearchMusicWithKey:(id)a0;
+- (id)currentSelectedmusicData;
+- (id)musicDataAtIndex:(unsigned long long)a0;
+- (void)startFooterViewLoading;
+- (void)stopFooterViewLoading;
+- (void)unSelectedAllItem;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 viewModel:(id)a1;
+- (void)setFeedListViewAppear;
+- (void)setFeedListViewDisAppear;
+- (void)fetchFirstPageData;
+- (void)searchFirstPageDataWithText:(id)a0;
+- (void)fetchData;
+- (void)setAllCellUnSelected;
+- (void)autoStopSelectedCellPlayingState;
+- (void)setup;
+- (void)dealloc;
+- (void)setupViews;
+- (void)setupNotifications;
+- (void)updateFocusCellAndAutoPlay;
+- (void)preloadVideoItemIfNeeded;
+- (BOOL)startPlayCurrentFocusCellIfNeeded;
+- (BOOL)stopPlayCurrentFocusCellIfNeeded;
+- (BOOL)isShowingInView;
+- (void)applyDiffSnapshot;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)onBGMFinderCellClickSelectedButtonWithContentVM:(id)a0;
+- (void)onBGMFinderCellClickEditButtonWithContentVM:(id)a0;
+- (void)onBGMFinderCellStartDownloadBgm:(id)a0 contentVM:(id)a1;
+- (void)onBGMFinderCellStopDownloadBgm:(id)a0 contentVM:(id)a1;
+- (id)bgmFinderCellCheckCurrentDownloadingBgmId;
+- (double)getCellH;
+- (void)onBGMRecFinderTabVMDataChange;
+- (void)onBGMRecFinderTabVMDataReset;
+- (void)_reset;
+- (unsigned long long)recFinderFeedTabVMGetMaterialDuration:(id)a0;
+- (void)applicationWillResignActive:(id)a0;
+- (void)applicationDidBecomeActive:(id)a0;
+- (void)didClickFooterRefreshRetry:(id)a0;
+- (void)finderFooterDidTriggerRefresh:(id)a0;
+- (BOOL)isEnableTriggerRefreshAtScroll:(id)a0;
+- (void)setPublishContext:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface LVVideoMaskDiffer : LVVEBaseDiffer
+
+@end

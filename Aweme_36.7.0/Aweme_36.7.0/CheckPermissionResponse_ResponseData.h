@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CheckPermissionResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL allow;
+@property (copy, nonatomic) NSString *text;
+
++ (id)descriptor;
+
+@end

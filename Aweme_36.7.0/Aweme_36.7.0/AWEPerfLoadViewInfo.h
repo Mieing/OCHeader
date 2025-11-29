@@ -1,0 +1,14 @@
+@class NSString, UIView;
+
+@interface AWEPerfLoadViewInfo : NSObject {
+    UIView *_view;
+    NSString *_kind;
+    double _beginTime;
+    double _endTime;
+    unsigned long long _status;
+}
+
+- (void)perf_isa_didMoveToWindow;
+- (void).cxx_destruct;
+
+@end

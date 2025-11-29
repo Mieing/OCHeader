@@ -1,0 +1,81 @@
+@class CJPayPreTradeInfo, NSDictionary, CJPayUnifyCashierRenderModel, CJPayVoucherRetainV2Model, CJPayOrderConfirmResponse, CJPayBioGuideInfoModel, NSString, CJPayResultShowConfig, CJPayUserInfoPassModel, CJPaySwitchAreaInfoModel, CJPayRecommendPopup, CJPayBalancePromotionModel, CJPayCommonRecommendInfo, CJPayBDTypeInfo, CJPayBindCardPayReConfirmInfo, CJPayCashierPageInfoModel, CJPayAssetInfoModel, CJPayBDTradeInfo, CJPayDoubleConfirmPopInfo, CJPayErrorButtonInfo, CJPayBioOpenAndPayInfo, CJPayProcessInfo, CJPayBDRetainInfoModel, CJPaySkipPwdGuideInfoModel, CJPayLynxShowInfo, CJPayUserInfo, CJPayDoubleConfirmPageInfoModel, CJPayLoadingStyleInfo, CJPayBDDeskConfig, CJPaySecondaryConfirmInfoModel, CJPayInfo, CJPayMerchantInfo, CJPayPayAndXShowInfoModel;
+
+@interface CJPayBDCreateOrderResponse : CJPayBaseResponse
+
+@property (readonly, nonatomic) CJPayPreTradeInfo *preTradeInfoWrapper;
+@property (retain, nonatomic) CJPayBDDeskConfig *deskConfig;
+@property (retain, nonatomic) CJPayResultShowConfig *resultConfig;
+@property (retain, nonatomic) CJPayMerchantInfo *merchant;
+@property (retain, nonatomic) CJPayBDTradeInfo *tradeInfo;
+@property (retain, nonatomic) CJPayBDTypeInfo *payTypeInfo;
+@property (retain, nonatomic) CJPayPreTradeInfo *preTradeInfo;
+@property (retain, nonatomic) CJPayInfo *payInfo;
+@property (copy, nonatomic) NSDictionary *forgetPwdInfo;
+@property (retain, nonatomic) CJPaySkipPwdGuideInfoModel *skipPwdGuideInfoModel;
+@property (retain, nonatomic) CJPayUserInfo *userInfo;
+@property (retain, nonatomic) CJPayBioOpenAndPayInfo *bioOpenAndPayInfo;
+@property (retain, nonatomic) CJPayProcessInfo *processInfo;
+@property (retain, nonatomic) CJPayErrorButtonInfo *buttonInfo;
+@property (retain, nonatomic) CJPayUserInfoPassModel *passModel;
+@property (retain, nonatomic) CJPayRecommendPopup *recommendPopup;
+@property (copy, nonatomic) NSString *customSettingStr;
+@property (nonatomic) BOOL needResignCard;
+@property (nonatomic) BOOL skipNoPwdConfirm;
+@property (nonatomic) long long showNoPwdConfirm;
+@property (nonatomic) long long showNoPwdConfirmPage;
+@property (retain, nonatomic) CJPaySecondaryConfirmInfoModel *secondaryConfirmInfo;
+@property (copy, nonatomic) NSString *showPreValidationHubPage;
+@property (retain, nonatomic) CJPayDoubleConfirmPageInfoModel *preValidationHubPageInfo;
+@property (retain, nonatomic) CJPayDoubleConfirmPopInfo *doubleConfirmPopInfo;
+@property (retain, nonatomic) CJPayBioGuideInfoModel *preBioGuideInfo;
+@property (retain, nonatomic) CJPaySwitchAreaInfoModel *topRightBtnInfo;
+@property (retain, nonatomic) CJPaySwitchAreaInfoModel *backTopRightBtnInfo;
+@property (retain, nonatomic) CJPayCommonRecommendInfo *commonRecommendInfo;
+@property (copy, nonatomic) NSDictionary *tradeConfirmInfo;
+@property (copy, nonatomic) NSDictionary *skippwdConfirmResponseDict;
+@property (retain, nonatomic) CJPayOrderConfirmResponse *confirmResponse;
+@property (copy, nonatomic) NSString *nopwdPreShow;
+@property (copy, nonatomic) NSDictionary *bizParams;
+@property (copy, nonatomic) NSString *intergratedTradeIdentify;
+@property (copy, nonatomic) NSString *cj_merchantID;
+@property (nonatomic) BOOL skipBioConfirmPage;
+@property (retain, nonatomic) CJPayBDRetainInfoModel *retainInfo;
+@property (copy, nonatomic) NSDictionary *retainInfoV2;
+@property (retain, nonatomic) CJPayLoadingStyleInfo *loadingStyleInfo;
+@property (retain, nonatomic) CJPayPayAndXShowInfoModel *payAndXShowInfo;
+@property (copy, nonatomic) NSDictionary *originGetResponse;
+@property (retain, nonatomic) CJPayBalancePromotionModel *balancePromotionModel;
+@property (retain, nonatomic) CJPayLynxShowInfo *lynxShowInfo;
+@property (copy, nonatomic) NSString *bindcardExts;
+@property (retain, nonatomic) CJPayVoucherRetainV2Model *defaultNativeRetainInfo;
+@property (retain, nonatomic) CJPayAssetInfoModel *usedAssetInfoModel;
+@property (retain, nonatomic) CJPayCashierPageInfoModel *cashierPageInfoModel;
+@property (copy, nonatomic) NSDictionary *greyFuncMap;
+@property (copy, nonatomic) NSDictionary *collectedAssetExtMap;
+@property (nonatomic) BOOL enableChangePreCheck;
+@property (retain, nonatomic) CJPayBindCardPayReConfirmInfo *bindCardPayReConfirmInfo;
+@property (copy, nonatomic) NSString *nextPage;
+@property (retain, nonatomic) CJPayUnifyCashierRenderModel *unifyPayModel;
+
++ (id)keyMapper;
++ (BOOL)propertyIsOptional:(id)a0;
++ (id)modelCustomPropertyMapper;
++ (id)keyMapperDict;
+
+- (id)customSetting;
+- (int)closeAfterTime;
+- (BOOL)isMatchUnopenBioPayment;
+- (id)getRecipientDesc;
+- (id)getDefaultConfigByUsedAssetInfo;
+- (id)buildBindCardCommonModel;
+- (BOOL)needSetPwd;
+- (BOOL)needMemberSetPwd;
+- (BOOL)isSkippwdMerged;
+- (BOOL)isAssetStandardProcess;
+- (BOOL)isUnifyHomePage;
+- (BOOL)isFreeLoginPaySceneError;
+- (id)getCardModelBy:(id)a0;
+- (id)getPreTradeBalanceChannelShowConfig;
+- (void).cxx_destruct;
+
+@end

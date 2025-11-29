@@ -1,0 +1,3 @@
+@interface StampPreviewCardApiRoot : GPBRootObject
+
+@end

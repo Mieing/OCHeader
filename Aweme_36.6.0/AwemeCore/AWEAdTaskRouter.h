@@ -1,0 +1,3 @@
+@interface AWEAdTaskRouter : NSObject
+
+@end

@@ -1,0 +1,81 @@
+@class BDARVLiveRomModel, NSString, NSArray, BDARVImageInfosModel, BDARVPayloadData, BDMannorAdDataModel, NSDictionary, BDARVADLabel, BDARMonitorHandleTimeModel, BDARVADVideoInfo, NSNumber;
+@protocol Ignore, Optional;
+
+@interface BDARVADModel : JSONModel
+
+@property (copy, nonatomic) NSString<Optional> *bdarRit;
+@property (retain, nonatomic) NSNumber<Optional> *creativeID;
+@property (retain, nonatomic) NSNumber *adID;
+@property (copy, nonatomic) NSString *log_extra;
+@property (retain, nonatomic) NSNumber<Optional> *adCategory;
+@property (retain, nonatomic) NSNumber<Optional> *groupId;
+@property (retain, nonatomic) NSNumber<Optional> *displayType;
+@property (copy, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString<Optional> *title;
+@property (copy, nonatomic) NSString<Optional> *source;
+@property (retain, nonatomic) BDARVADLabel<Optional> *label;
+@property (retain, nonatomic) NSNumber<Optional> *showClose;
+@property (copy, nonatomic) NSString<Optional> *buttonText;
+@property (copy, nonatomic) NSString<Optional> *avatarURL;
+@property (copy, nonatomic) NSArray<Optional> *trackUrls;
+@property (copy, nonatomic) NSArray<Optional> *clickTrackUrls;
+@property (copy, nonatomic) NSString<Optional> *openURL;
+@property (copy, nonatomic) NSString<Optional> *webURL;
+@property (copy, nonatomic) NSString<Optional> *webTitle;
+@property (copy, nonatomic) NSString<Optional> *downloadURL;
+@property (retain, nonatomic) BDARVImageInfosModel<Optional> *imageInfo;
+@property (retain, nonatomic) NSNumber<Optional> *intercept_flag;
+@property (copy, nonatomic) NSString<Optional> *ad_lp_style;
+@property (retain, nonatomic) NSNumber<Optional> *showMask;
+@property (retain, nonatomic) NSNumber<Optional> *isMute;
+@property (retain, nonatomic) NSString<Optional> *phoneNumber;
+@property (retain, nonatomic) NSNumber<Optional> *displayTime;
+@property (retain, nonatomic) NSNumber<Optional> *formHeight;
+@property (retain, nonatomic) NSNumber<Optional> *formWidth;
+@property (retain, nonatomic) NSString<Optional> *formURL;
+@property (nonatomic) long long formStyle;
+@property (copy, nonatomic) NSDictionary<Optional> *card_data;
+@property (nonatomic) long long webUrlType;
+@property (nonatomic) long long preloadWebUrl;
+@property (copy, nonatomic) NSString<Optional> *quitText;
+@property (copy, nonatomic) NSString<Optional> *appleid;
+@property (copy, nonatomic) NSString<Optional> *package;
+@property (retain, nonatomic) BDARVADVideoInfo<Optional> *videoInfo;
+@property (nonatomic) long long mpPreloadPolicy;
+@property (copy, nonatomic) NSString<Optional> *mp_url;
+@property (copy, nonatomic) NSString<Optional> *des;
+@property (retain, nonatomic) NSNumber<Optional> *adType;
+@property (retain, nonatomic) NSNumber<Optional> *inspireAdType;
+@property (retain, nonatomic) BDARVPayloadData<Ignore> *payloadData;
+@property (copy, nonatomic) NSArray<Optional> *filterWords;
+@property (copy, nonatomic) NSArray<Optional> *dislike;
+@property (retain, nonatomic) NSNumber<Optional> *showDislike;
+@property (retain, nonatomic) NSNumber<Optional> *requestTime;
+@property (copy, nonatomic) NSString<Optional> *skan_parameters;
+@property (copy, nonatomic) NSString<Optional> *requestid;
+@property (copy, nonatomic) NSString<Optional> *timestamp;
+@property (copy, nonatomic) NSString<Optional> *rewardInfo;
+@property (copy, nonatomic) NSString<Optional> *sdkABTestParams;
+@property (copy, nonatomic) NSDictionary<Optional> *sdkABTestParamsDictionary;
+@property (copy, nonatomic) BDARVLiveRomModel<Optional> *liveRoom;
+@property (copy, nonatomic) NSString<Optional> *rawLive;
+@property (copy, nonatomic) NSString<Optional> *liveActionExtra;
+@property (retain, nonatomic) NSNumber<Optional> *useGoodsdetail;
+@property (copy, nonatomic) NSDictionary<Optional> *wcMinAppInfo;
+@property (retain, nonatomic) BDARMonitorHandleTimeModel<Ignore> *monitorTimeModel;
+@property (retain, nonatomic) NSNumber<Optional> *isLocalClueAd;
+@property (retain, nonatomic) NSNumber<Optional> *localAssetType;
+@property (retain, nonatomic) NSNumber<Optional> *imageMode;
+@property (retain, nonatomic) BDMannorAdDataModel<Optional> *mannorModel;
+@property (retain, nonatomic) NSNumber<Optional> *isFallbackAd;
+
++ (id)keyMapper;
++ (BOOL)propertyIsOptional:(id)a0;
+
+- (id)getType:(long long)a0;
+- (id)initWithDictionary:(id)a0 error:(id *)a1;
+- (void).cxx_destruct;
+- (id)toDictionary;
+- (BOOL)hasVideo;
+
+@end

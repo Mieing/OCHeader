@@ -1,0 +1,3 @@
+@interface IESLiveIMLongLinkDecoder : IESLiveIMTransportDecoder
+
+@end

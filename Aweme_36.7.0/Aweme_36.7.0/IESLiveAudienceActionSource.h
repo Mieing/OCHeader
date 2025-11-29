@@ -1,0 +1,9 @@
+@interface IESLiveAudienceActionSource : IESLivePBBaseMessage
+
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (nonatomic) int inviteSource;
+@property (nonatomic) int permitSource;
+
++ (id)descriptor;
+
+@end

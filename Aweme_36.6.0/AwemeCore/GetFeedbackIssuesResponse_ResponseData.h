@@ -1,0 +1,14 @@
+@class NSMutableArray, IssueCategory;
+
+@interface GetFeedbackIssuesResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *issueCategoriesArray;
+@property (readonly, nonatomic) unsigned long long issueCategoriesArray_Count;
+@property (retain, nonatomic) IssueCategory *dislikeRivalIssueCategory;
+@property (nonatomic) BOOL hasDislikeRivalIssueCategory;
+@property (retain, nonatomic) NSMutableArray *issuesArray;
+@property (readonly, nonatomic) unsigned long long issuesArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,14 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetBlockListResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *userInfoArray;
+@property (readonly, nonatomic) unsigned long long userInfoArray_Count;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (nonatomic) long long nextCursor;
+@property (nonatomic) BOOL hasNextCursor;
+
++ (id)descriptor;
+
+@end

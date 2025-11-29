@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GetEmergencyReasonResponse_EmergencyReasonInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *reasonsArray;
+@property (readonly, nonatomic) unsigned long long reasonsArray_Count;
+
++ (id)descriptor;
+
+@end

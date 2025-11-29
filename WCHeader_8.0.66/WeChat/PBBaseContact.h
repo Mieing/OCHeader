@@ -1,0 +1,70 @@
+@class NSString;
+
+@interface PBBaseContact : NSObject <PBCoding>
+
+@property (retain, nonatomic) NSString *userName;
+@property (retain, nonatomic) NSString *aliasName;
+@property (nonatomic) unsigned int conType;
+@property (retain, nonatomic) NSString *nickName;
+@property (retain, nonatomic) NSString *fullPy;
+@property (retain, nonatomic) NSString *remark;
+@property (retain, nonatomic) NSString *remarkPyshort;
+@property (retain, nonatomic) NSString *remarkPyfull;
+@property (nonatomic) unsigned int sex;
+@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long typeExt;
+@property (nonatomic) unsigned int chatState;
+@property (retain, nonatomic) NSString *imgStatus;
+@property (retain, nonatomic) NSString *hdimgStatus;
+@property (retain, nonatomic) NSString *headImgUrl;
+@property (retain, nonatomic) NSString *headHdimgUrl;
+@property (retain, nonatomic) NSString *draft;
+@property (nonatomic) unsigned int qquin;
+@property (retain, nonatomic) NSString *qqnickName;
+@property (retain, nonatomic) NSString *qqremark;
+@property (retain, nonatomic) NSString *mobileIdentify;
+@property (nonatomic) unsigned int friendScene;
+@property (nonatomic) unsigned int imgKey;
+@property (nonatomic) unsigned int extKey;
+@property (nonatomic) unsigned int imgKeyAtLastGet;
+@property (nonatomic) unsigned int extKeyAtLastGet;
+@property (nonatomic) unsigned int draftTime;
+@property (retain, nonatomic) NSString *atUserList;
+@property (nonatomic) unsigned int draftStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)PBArrayAdd_userName;
++ (void)PBArrayAdd_aliasName;
++ (void)PBArrayAdd_conType;
++ (void)PBArrayAdd_nickName;
++ (void)PBArrayAdd_fullPy;
++ (void)PBArrayAdd_remark;
++ (void)PBArrayAdd_remarkPyshort;
++ (void)PBArrayAdd_remarkPyfull;
++ (void)PBArrayAdd_sex;
++ (void)PBArrayAdd_type;
++ (void)PBArrayAdd_chatState;
++ (void)PBArrayAdd_imgStatus;
++ (void)PBArrayAdd_hdimgStatus;
++ (void)PBArrayAdd_headImgUrl;
++ (void)PBArrayAdd_headHdimgUrl;
++ (void)PBArrayAdd_draft;
++ (void)PBArrayAdd_qquin;
++ (void)PBArrayAdd_qqnickName;
++ (void)PBArrayAdd_qqremark;
++ (void)PBArrayAdd_mobileIdentify;
++ (void)PBArrayAdd_friendScene;
++ (void)PBArrayAdd_imgKey;
++ (void)PBArrayAdd_extKey;
++ (void)PBArrayAdd_imgKeyAtLastGet;
++ (void)PBArrayAdd_extKeyAtLastGet;
++ (void)PBArrayAdd_draftTime;
++ (void)PBArrayAdd_atUserList;
++ (void)PBArrayAdd_typeExt;
++ (void)PBArrayAdd_draftStatus;
++ (void)initialize;
+
+@end

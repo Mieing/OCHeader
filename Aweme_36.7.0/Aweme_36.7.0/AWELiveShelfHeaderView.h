@@ -1,0 +1,83 @@
+@class AWELiveShelfCustomButton, UILabel, NSDictionary, AWELiveLifeLynxView, NSMutableArray, UIView, AWELiveShelfHeaderPoiDetailView, NSString, AWELiveShelfMoreOptionViewController, AWELiveShelfHeaderViewModel, UIStackView, AWEPOICubeModel, NSNumber;
+
+@interface AWELiveShelfHeaderView : UIView <AWEPOICubeViewDelegate>
+
+@property (retain, nonatomic) UILabel *headerLabel;
+@property (retain, nonatomic) UILabel *multiShopTitle;
+@property (retain, nonatomic) AWELiveShelfHeaderPoiDetailView *poiDetailView;
+@property (retain, nonatomic) AWELiveShelfCustomButton *orderBtn;
+@property (retain, nonatomic) AWELiveShelfCustomButton *consultBtn;
+@property (retain, nonatomic) AWELiveShelfCustomButton *vipBtn;
+@property (retain, nonatomic) AWELiveShelfCustomButton *moreOPtionBtn;
+@property (retain, nonatomic) AWELiveShelfMoreOptionViewController *moreOPtionController;
+@property (retain, nonatomic) UIStackView *btnContainerView;
+@property (retain, nonatomic) AWELiveShelfHeaderViewModel *viewModel;
+@property (copy, nonatomic) NSString *vipShowedAggCardId;
+@property (retain, nonatomic) AWELiveLifeLynxView *lynxHeaderView;
+@property (retain, nonatomic) NSNumber *lynxViewHeight;
+@property (retain, nonatomic) AWEPOICubeModel *lynxHeaderModel;
+@property (copy, nonatomic) NSDictionary *updateParams;
+@property (nonatomic) BOOL lynxLoadFinished;
+@property (nonatomic) BOOL loadFailed;
+@property (nonatomic) double lynxLoadDuration;
+@property (retain, nonatomic) NSMutableArray *storedTrackers;
+@property (nonatomic) double initBeginTime;
+@property (nonatomic) double initBeginTimeOnPreload;
+@property (copy, nonatomic) id /* block */ ceilingOffsetUpdateBlock;
+@property (copy, nonatomic) id /* block */ poiDetailTapActionBlock;
+@property (copy, nonatomic) id /* block */ poiTitleClickedBlock;
+@property (copy, nonatomic) id /* block */ orderBtnClickedBlock;
+@property (copy, nonatomic) id /* block */ consultBtnClickedBlock;
+@property (copy, nonatomic) id /* block */ vipBtnClickedBlock;
+@property (copy, nonatomic) id /* block */ vipBtnShowedBlock;
+@property (copy, nonatomic) id /* block */ lynxViewHeightUpdateBlock;
+@property (copy, nonatomic) id /* block */ filterCardListBlock;
+@property (copy, nonatomic) id /* block */ requestCardListBlock;
+@property (copy, nonatomic) id /* block */ lynxCloseLiveLifeShelf;
+@property (copy, nonatomic) id /* block */ switchHalfScreenMode;
+@property (weak, nonatomic) UIView *backgroundView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)setButton:(id)a0 size:(struct CGSize { double x0; double x1; })a1 vertical:(BOOL)a2 spacing:(double)a3;
+
+- (void)trackWithEvent:(id)a0 param:(id)a1;
+- (void)configWithModel:(id)a0;
+- (void)trackWithEvent:(id)a0;
+- (void)cubeView:(id)a0 viewDidChangeContentSize:(struct CGSize { double x0; double x1; })a1;
+- (void)cubeViewWillStartLoading:(id)a0;
+- (void)cubeView:(id)a0 didStartFetchResourceWithURL:(id)a1;
+- (void)cubeView:(id)a0 didFetchedResource:(id)a1 error:(id)a2;
+- (void)cubeViewDidFirstScreen:(id)a0;
+- (void)cubeView:(id)a0 didFinishLoadWithURL:(id)a1;
+- (void)cubeView:(id)a0 didLoadFailedWithUrl:(id)a1 error:(id)a2;
+- (void)cubeView:(id)a0 didReceiveError:(id)a1;
+- (BOOL)setupLynxUI;
+- (void)setupNativeUI;
+- (void)filterCardListWithTabId:(long long)a0 showExplainingItem:(BOOL)a1;
+- (void)requestCardListWithExtraParams:(id)a0 forPageType:(id)a1;
+- (void)configRightButtonsWithModel:(id)a0;
+- (void)poiDetailTapGestureAction;
+- (void)orderBtnClicked:(id)a0;
+- (void)consultBtnClicked:(id)a0;
+- (void)vipBtnClicked:(id)a0;
+- (void)moreOptionBtnClicked:(id)a0;
+- (void)moreOptionConsultBtnClicked;
+- (void)moreOptionVipBtnClicked;
+- (void)checkAndTrackerLynxHeight;
+- (BOOL)enableLynxHeightTracker;
+- (double)topbarLynxMinHeight;
+- (BOOL)optionBtnViewIsShowing;
+- (void)dismissOptionBtnView;
+- (void)dealOutsideScrollWithDirection:(unsigned long long)a0 offset:(double)a1 contentHeight:(double)a2 extraParams:(id)a3;
+- (void)viewClosed;
+- (void)viewOpen;
+- (void)sendShelfTopbarResumeEvent;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setupUI;
+- (double)renderDuration;
+
+@end

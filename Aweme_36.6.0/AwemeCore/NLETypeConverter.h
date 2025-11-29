@@ -1,0 +1,10 @@
+@interface NLETypeConverter : NSObject
+
++ (id)covertCPPString:(struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })a0;
++ (struct basic_string<char, std::char_traits<char>, std::allocator<char>> { struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> { struct __rep { union { struct __short { char x0[23]; unsigned char x1[0]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { char *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })covertObjCString:(id)a0;
++ (id)convertCppStringArray:(const void *)a0;
++ (id)convertCppStringMap:(const void *)a0;
++ (struct basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> { struct __compressed_pair<std::basic_string<wchar_t>::__rep, std::allocator<wchar_t>> { struct __rep { union { struct __short { int x0[5]; unsigned char x1[3]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { int *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })covertObjCWString:(id)a0;
++ (id)covertCPPWString:(struct basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> { struct __compressed_pair<std::basic_string<wchar_t>::__rep, std::allocator<wchar_t>> { struct __rep { union { struct __short { int x0[5]; unsigned char x1[3]; unsigned char x2 : 7; unsigned char x3 : 1; } x0; struct __long { int *x0; unsigned long long x1; unsigned long x2 : 63; unsigned char x3 : 1; } x1; struct __raw { unsigned long long x0[3]; } x2; } x0; } x0; } x0; })a0;
+
+@end

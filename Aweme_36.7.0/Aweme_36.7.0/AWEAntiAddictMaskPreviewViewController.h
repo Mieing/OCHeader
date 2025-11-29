@@ -1,0 +1,85 @@
+@class AWEAwemeModel, NSString, NSArray, AWEPageContext, UIView, NSDictionary, AWEUILoadingView, UIButton, AWEAntiAddictMaskConfig, UIViewController, UITextField, UILabel;
+@protocol AWEAntiAddictMaskContextProtocol, AWEAntiAddictMaskViewControllerProtocol;
+
+@interface AWEAntiAddictMaskPreviewViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic) BOOL isLoading;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) UIViewController<AWEAntiAddictMaskViewControllerProtocol> *videoController;
+@property (retain, nonatomic) AWEPageContext<AWEAntiAddictMaskContextProtocol> *context;
+@property (retain, nonatomic) AWEAntiAddictMaskConfig *config;
+@property (copy, nonatomic) NSArray *awemeList;
+@property (copy, nonatomic) NSString *aid;
+@property (nonatomic) BOOL isRestRemind;
+@property (nonatomic) unsigned long long previewVideoType;
+@property (nonatomic) BOOL isEditable;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *videoTag;
+@property (copy, nonatomic) NSString *prePage;
+@property (retain, nonatomic) NSDictionary *logExtra;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) BOOL isAppear;
+@property (nonatomic) BOOL appearOnce;
+@property (retain, nonatomic) UIButton *backButton;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (retain, nonatomic) UIView *inputOutsideView;
+@property (retain, nonatomic) UIView *inputBarView;
+@property (retain, nonatomic) UIView *inputContainerView;
+@property (retain, nonatomic) UITextField *inputTextfield;
+@property (retain, nonatomic) UILabel *inputTintLabel;
+@property (retain, nonatomic) UIButton *inputConfirmButton;
+@property (nonatomic) unsigned long long editingTitleType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (unsigned long long)getPreviewVideoTypeEnum:(id)a0;
++ (id)getPreviewVideoTypeString:(unsigned long long)a0;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)dismissLoadingView;
+- (void)playIfActive;
+- (BOOL)useDefaultTitle;
+- (void)confirmButtonDidClick;
+- (void)p_trackViewDidAppear;
+- (void)playConfrimButtonAnimation;
+- (void)mainEditDidTap;
+- (void)subEditDidTap;
+- (void)updateVideoControllerWithModel:(id)a0;
+- (void)showRequestModelErrorToast;
+- (void)initPreviewTitles;
+- (id)p_getEditingTitleTypeName:(unsigned long long)a0;
+- (void)p_trackClickEditButtonkWithType:(unsigned long long)a0;
+- (id)p_validTextFieldText;
+- (void)p_trackClickInputConfirmButtonWithType:(unsigned long long)a0;
+- (void)p_trackClickConfirmButton;
+- (void)p_trackConfirmFeedbackWithsaveStatus:(id)a0 titleContent:(id)a1;
+- (void)p_updateInputConfirmEnable;
+- (void)p_updateInputTint;
+- (void)inputConfirmDidClick:(id)a0;
+- (void)backButtonDidClick;
+- (void)inputEditingChanged:(id)a0;
+- (void)inputOutsideViewDidClick;
+- (void).cxx_destruct;
+- (BOOL)prefersStatusBarHidden;
+- (long long)preferredStatusBarStyle;
+- (BOOL)textFieldShouldReturn:(id)a0;
+- (id)init;
+- (void)loadModel;
+- (void)textFieldDidBeginEditing:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (BOOL)textField:(id)a0 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementString:(id)a2;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (BOOL)isActive;
+- (id)context;
+- (void)setupUI;
+- (void)keyboardWillHideNotification:(id)a0;
+- (void)setupContext;
+- (void)showLoadingView;
+- (void)setupNotifications;
+- (void)keyboardWillShowNotification:(id)a0;
+
+@end

@@ -1,0 +1,87 @@
+@class NSMutableDictionary, AWELiveXPlayGameUtil, AWELiveXPlayGameAPI, AWELiveXPlayGameInstance, NSObject, NSString;
+@protocol IESLiveGameXPlayService, OS_dispatch_group, AWEBatManAuthServiceTrakerDelegate;
+
+@interface AWELiveXPlayGameManager : NSObject <XPlayItemDelegate, XPlayCloudPlayerDelegate, XPlayItemBusinessDelegate, AWEBatManAuthServiceTrakerDelegate, XPlayCloudMessageDelegate, IESLiveGameXPlayGameOuterService>
+
+@property (retain, nonatomic) AWELiveXPlayGameAPI *xplayApi;
+@property (retain, nonatomic) AWELiveXPlayGameUtil *util;
+@property (retain, nonatomic) id<AWEBatManAuthServiceTrakerDelegate> realNameAuthConnectionService;
+@property (retain, nonatomic) id<IESLiveGameXPlayService> xplayGameService;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> *launchTaskGroup;
+@property (nonatomic) BOOL launchTaskOptimized;
+@property (retain, nonatomic) NSMutableDictionary *openTokenMap;
+@property (nonatomic) BOOL isLaunching;
+@property (nonatomic) double guideStreamDuration;
+@property (nonatomic) BOOL postProcessRunning;
+@property (retain, nonatomic) AWELiveXPlayGameInstance *instance;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedManager;
+
+- (void)playItem:(id)a0 preloadDidFailed:(id)a1;
+- (void)playItem:(id)a0 preloadDidSucceed:(id)a1;
+- (void)playItem:(id)a0 playStatusDidUpdated:(unsigned long long)a1 info:(id)a2;
+- (void)didReceiveRTCCustomMessageWithString:(id)a0;
+- (void)playItem:(id)a0 canJoinQueue:(id)a1 callback:(id /* block */)a2;
+- (void)playItem:(id)a0 didUpdateQueueInfo:(id)a1;
+- (void)playItem:(id)a0 didDequeue:(id)a1;
+- (void)playItem:(id)a0 didFinishQueue:(id)a1;
+- (void)playItem:(id)a0 didExpireQueue:(id)a1;
+- (void)playItem:(id)a0 playQualityStats:(id)a1;
+- (void)playItem:(id)a0 remoteVideoStateChangeWith:(long long)a1 withVideoStateReason:(long long)a2;
+- (void)playItemDidLostConnection:(id)a0;
+- (void)playItem:(id)a0 onDetectOperationDelay:(id)a1;
+- (void)playItemViewWillAppear:(id)a0;
+- (void)playItem:(id)a0 netStatus:(long long)a1 rtt:(long long)a2 needToast:(BOOL)a3 needNotification:(BOOL)a4;
+- (void)playItem:(id)a0 rtcVideoFrame:(id)a1;
+- (void)playItem:(id)a0 rtcAudioFrame:(id)a1;
+- (void)playItem:(id)a0 didReceiveExitRequest:(id /* block */)a1;
+- (void)playItem:(id)a0 didReceivePushCDNFailed:(id)a1;
+- (id)attachingDIContext;
+- (void)preloadScene;
+- (void)enableAudioFrame:(BOOL)a0;
+- (void)item:(id)a0 cloudPlayer:(id)a1 rtcVideoFrame:(id)a2;
+- (void)enableVideoFrame:(BOOL)a0;
+- (void)item:(id)a0 cloudPlayer:(id)a1 playStatusDidUpdated:(unsigned long long)a2 info:(id)a3;
+- (void)switchRemoteSimulcastStreamTypeWithIndex:(long long)a0;
+- (void)disableGestureRecognizer:(BOOL)a0;
+- (void)destroyInstance;
+- (void)setupOnce;
+- (void)startLaunchTasksOptimizeWithGameModel:(id)a0;
+- (void)startLaunchTasksWithGameModel:(id)a0;
+- (void)handleOpenTokenError:(id)a0;
+- (void)requestOpenApiToken:(id)a0 completion:(id /* block */)a1;
+- (void)handleAppStartError:(id)a0;
+- (void)requestAppStart:(id)a0 completion:(id /* block */)a1;
+- (void)handleLoadPlayItemFailWithInfo:(id)a0;
+- (void)loadXPlayGameWithXToken:(id)a0 openApiToken:(id)a1 gameModel:(id)a2 completion:(id /* block */)a3;
+- (void)startLaunchTasksLoadItemAndAppStart:(id)a0 oToken:(id)a1;
+- (void)handleCloudPlayer;
+- (id)openGameWithGameModel:(id)a0;
+- (void)handlePlayerStatusForceStop:(id)a0;
+- (void)startPostProcessIfNeed;
+- (BOOL)canShowAlertOrToast;
+- (void)buildRtcInfoWithData:(id)a0 gameModel:(id)a1;
+- (id)deleteWtnParams:(id)a0;
+- (id)restartGameWithGameModel:(id)a0;
+- (void)closeGame;
+- (void)openXPlayRealNameAuthWithClientKey:(id)a0 realNameAgreementText:(id)a1 realNameAgreementUrl:(id)a2 extraInfo:(id)a3 completion:(id /* block */)a4;
+- (id)getDurationFrom:(id)a0 to:(id)a1;
+- (void)switchToGuideStreamWithDuration:(double)a0;
+- (void)disableInternalRender:(BOOL)a0;
+- (void)item:(id)a0 cloudPlayer:(id)a1 onRemotePodEvent:(unsigned long long)a2 info:(id)a3;
+- (void)hideKeyboard;
+- (void).cxx_destruct;
+- (void)play;
+- (void)showKeyboard;
+- (BOOL)isPlaying;
+- (void)preload;
+- (void)sendMessage:(id)a0 completion:(id /* block */)a1;
+- (void)dequeue;
+- (void)reset;
+- (void)resume;
+
+@end

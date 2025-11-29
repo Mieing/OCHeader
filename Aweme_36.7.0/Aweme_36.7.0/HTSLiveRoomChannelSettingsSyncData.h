@@ -1,0 +1,10 @@
+@interface HTSLiveRoomChannelSettingsSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long channelId;
+@property (nonatomic) BOOL linkMicSwitch;
+@property (nonatomic) BOOL enterApproveSwitch;
+@property (nonatomic) BOOL memberInviteSwitch;
+
++ (id)descriptor;
+
+@end

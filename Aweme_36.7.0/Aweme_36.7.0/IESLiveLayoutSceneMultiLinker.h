@@ -1,0 +1,19 @@
+@class NSString, NSMapTable, UIView;
+
+@interface IESLiveLayoutSceneMultiLinker : NSObject <HTSLiveLayoutSceneProtocol>
+
+@property (weak, nonatomic) NSMapTable *viewTable;
+@property (weak, nonatomic) UIView *containerView;
+@property (nonatomic) BOOL isAnchor;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)layoutPluginIfNeed;
+- (void)layoutFlashSaleIndicator;
+- (void)supportInfoForScene:(id)a0 container:(id)a1 isAnchor:(BOOL)a2;
+- (void).cxx_destruct;
+- (unsigned long long)currentScene;
+
+@end

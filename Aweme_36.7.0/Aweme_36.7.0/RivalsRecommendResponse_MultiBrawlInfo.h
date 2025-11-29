@@ -1,0 +1,11 @@
+@class RivalsRecommendResponse_AutoMatchInfo;
+
+@interface RivalsRecommendResponse_MultiBrawlInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long countdownTimeMs;
+@property (retain, nonatomic) RivalsRecommendResponse_AutoMatchInfo *baseInfo;
+@property (nonatomic) BOOL hasBaseInfo;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,6 @@
+@interface AWEKnowledgeSwiftImpl.HangoutRequestContext : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ totalRequestTimes;
+    void /* unknown type, empty encoding */ loadMoreSuccessTimes;
+}
+
+@end

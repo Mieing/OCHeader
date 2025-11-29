@@ -1,0 +1,75 @@
+@class ACCIntelligentChapterProgressLoadingView, DUXLoadingCircleView, UIImageView, DUXSwitch, UILabel, UIView, UIButton;
+
+@interface AWEIntelligentChapterProgressViewController : UIViewController
+
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIView *closeArea;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *loadingView;
+@property (retain, nonatomic) UILabel *loadingLabel;
+@property (retain, nonatomic) UILabel *loadingDetailLabel;
+@property (retain, nonatomic) DUXLoadingCircleView *loadingToastView;
+@property (retain, nonatomic) UIImageView *asynImageView;
+@property (retain, nonatomic) UIButton *loadingCancelButton;
+@property (retain, nonatomic) UIButton *loadingAsynCancelButton;
+@property (retain, nonatomic) UIView *conservativeLoadingProgressView;
+@property (retain, nonatomic) UILabel *loadingProgressLabel;
+@property (retain, nonatomic) ACCIntelligentChapterProgressLoadingView *radicalLoadingProgressView;
+@property (retain, nonatomic) UIView *errorView;
+@property (retain, nonatomic) UILabel *errorTitleLabel;
+@property (retain, nonatomic) UILabel *errorCaptionLabel;
+@property (retain, nonatomic) UIButton *errorRetryButton;
+@property (retain, nonatomic) UIButton *errorCancelButton;
+@property (retain, nonatomic) UIView *chapterFailedView;
+@property (retain, nonatomic) UILabel *chapterFailedLabel;
+@property (retain, nonatomic) UIButton *addButton;
+@property (retain, nonatomic) UIView *chapterAutoSwitchContainerView;
+@property (retain, nonatomic) UILabel *chapterAutoTitleLabel;
+@property (retain, nonatomic) DUXSwitch *chapterAutoSwitch;
+@property (retain, nonatomic) UIButton *closeBtn;
+@property (retain, nonatomic) UIButton *bottomCancelButton;
+@property (nonatomic) long long status;
+@property (nonatomic) double progress;
+@property (nonatomic) BOOL isChapterPoints;
+@property (nonatomic) BOOL chapterAutoApplySwitchIsOn;
+@property (nonatomic) BOOL isReedit;
+@property (copy, nonatomic) id /* block */ closeBlock;
+@property (copy, nonatomic) id /* block */ stopFlowBlock;
+@property (copy, nonatomic) id /* block */ retryBlock;
+@property (copy, nonatomic) id /* block */ addBlock;
+@property (copy, nonatomic) id /* block */ asynCancelBlock;
+@property (copy, nonatomic) id /* block */ asynKnowBlock;
+@property (copy, nonatomic) id /* block */ backContinueBlock;
+@property (copy, nonatomic) id /* block */ trackAutoApplyShownBlock;
+@property (copy, nonatomic) id /* block */ autoApplySwitchValueChanged;
+
+- (void)showOnVC:(id)a0;
+- (void)p_setupLoadingUI;
+- (void)didClickCloseButton:(id)a0;
+- (void)p_setupErrorUI;
+- (id)p_createButtonWithTitle:(id)a0;
+- (void)retryButtonAction:(id)a0;
+- (BOOL)isAsynIntelligentChapterEnable;
+- (void)closeWithAnimation;
+- (void)updateLoadingProgressStage:(long long)a0;
+- (BOOL)isIntelligentChapterAutoApplyStyle;
+- (BOOL)isIntelligentChapterRegenStyle;
+- (void)setupIntelligentChapterRegenUI;
+- (void)setupIntelligentChapterAutoApplyUI;
+- (BOOL)isIntelligentChapterNonBlockStyle;
+- (void)setupIntelligentChapterNonBlockUI;
+- (void)p_setupLoadingUIForAsyn;
+- (void)p_setupFailedUI;
+- (void)updateNotLoadingState:(long long)a0;
+- (double)intelligentChapterProgressContainerHeight;
+- (void)didClickStopFlowButton:(id)a0;
+- (void)didClickAsynCancelButton:(id)a0;
+- (void)didAddButton:(id)a0;
+- (void)resetSubviews;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (void)resetProgress;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+
+@end

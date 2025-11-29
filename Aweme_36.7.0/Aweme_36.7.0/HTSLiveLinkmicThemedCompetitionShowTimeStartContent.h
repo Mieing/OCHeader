@@ -1,0 +1,11 @@
+@class IESLiveThemedCompetitionInfo;
+
+@interface HTSLiveLinkmicThemedCompetitionShowTimeStartContent : IESLivePBBaseMessage
+
+@property (nonatomic) long long competitionId;
+@property (retain, nonatomic) IESLiveThemedCompetitionInfo *info;
+@property (nonatomic) BOOL hasInfo;
+
++ (id)descriptor;
+
+@end

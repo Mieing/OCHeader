@@ -1,0 +1,14 @@
+@class NSMutableArray, GPBInt64ObjectDictionary;
+
+@interface ShelfTradeData : IESLivePBBaseMessage
+
+@property (nonatomic) long long roomId;
+@property (nonatomic) int topDataType;
+@property (retain, nonatomic) NSMutableArray *topDataArray;
+@property (readonly, nonatomic) unsigned long long topDataArray_Count;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *cardData;
+@property (readonly, nonatomic) unsigned long long cardData_Count;
+
++ (id)descriptor;
+
+@end

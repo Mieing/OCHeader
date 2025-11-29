@@ -1,0 +1,12 @@
+@class HTSLiveCommon, ShelfInfo;
+
+@interface HTSLiveMicroAppShelfMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) ShelfInfo *shelfInfo;
+@property (nonatomic) BOOL hasShelfInfo;
+
++ (id)descriptor;
+
+@end

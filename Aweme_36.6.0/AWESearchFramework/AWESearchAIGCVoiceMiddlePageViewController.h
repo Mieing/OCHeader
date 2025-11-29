@@ -1,0 +1,76 @@
+@class UIView, AWESearchAIGCVoiceMiddlePageTryAskView, NSString, AWESearchAIGCVoiceMiddlePageContext, CAShapeLayer, UIButton, CAGradientLayer, LOTAnimationView, AWESearchAIGCBubbleTextView, AWESearchAIGCVoiceInputEntranceView, UILabel;
+@protocol AWESearchAIGCVoiceMiddlePageViewControllerDelegate;
+
+@interface AWESearchAIGCVoiceMiddlePageViewController : UIViewController <CAAnimationDelegate, AWESearchAIGCVoiceInputEntranceDelegate, DUXToastDelegate>
+
+@property (retain, nonatomic) AWESearchAIGCVoiceMiddlePageContext *context;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIView *backgroundMaskView;
+@property (retain, nonatomic) CAShapeLayer *pathAnimationLayer;
+@property (retain, nonatomic) CAGradientLayer *backgroundGradientLayer;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) AWESearchAIGCBubbleTextView *bubbleLabel;
+@property (retain, nonatomic) CAGradientLayer *bubbleLayer;
+@property (retain, nonatomic) LOTAnimationView *voiceToTextLottieView;
+@property (retain, nonatomic) LOTAnimationView *voiceBackgroundLottieView;
+@property (retain, nonatomic) AWESearchAIGCVoiceInputEntranceView *voiceInputEntranceView;
+@property (retain, nonatomic) UILabel *voiceTipsLabel;
+@property (retain, nonatomic) AWESearchAIGCVoiceMiddlePageTryAskView *askView;
+@property (nonatomic) double maxBubbleHeight;
+@property (nonatomic) double maxLabelHeight;
+@property (nonatomic) BOOL toastShowing;
+@property (nonatomic) BOOL isASRDisconnected;
+@property (nonatomic) BOOL isLongPressing;
+@property (copy, nonatomic) NSString *searchExtra;
+@property (weak, nonatomic) id<AWESearchAIGCVoiceMiddlePageViewControllerDelegate> delegate;
+@property (retain, nonatomic) UIView *bubbleView;
+@property (retain, nonatomic) UIView *outAnimationView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)DUXToastDidShow:(id)a0;
+- (void)DUXToastWillRemoved:(id)a0;
+- (void)closeClick;
+- (void)setupCloseButton;
+- (id)leftIconImage;
+- (void)setupBackgroundLayer;
+- (long long)middlePageType;
+- (void)setupBubbleView;
+- (void)voiceInputEntranceKeyboardButtonTaped;
+- (void)voiceInputEntranceLongPressBegan;
+- (void)voiceInputEntranceLongPressEnd;
+- (void)voiceInputEntrancePanelViewDidShow;
+- (void)voiceInputEntrancePanelViewDidDismiss;
+- (void)voiceInputEntranceProcessInterrupted;
+- (void)voiceInputEntranceASRDisconnected;
+- (void)voiceInputEntranceASRInputTimeoutRemindWithCountdown:(long long)a0;
+- (void)voiceInputEntranceASRFailed;
+- (void)voiceInputEntranceASRTranslate:(id)a0 isInterIM:(BOOL)a1 isSoftFinished:(BOOL)a2 vosDuration:(long long)a3 searchExtra:(id)a4;
+- (void)voiceInputEntranceASRFinished:(id)a0;
+- (void)voiceInputEntranceASRCancel;
+- (struct CGSize { double x0; double x1; })textQuerySizeWithText:(id)a0 width:(double)a1;
+- (id)attributeStringWithText:(id)a0;
+- (void)updateBubbleText:(id)a0 completion:(id /* block */)a1;
+- (id)voiceAsrExtra;
+- (id)getHistoryConfig;
+- (id)getHistoryWordsWithConfig:(id)a0;
+- (long long)historyWordsLimit;
+- (id)historyWordsFormatTransform:(id)a0;
+- (BOOL)p_isDarkMode;
+- (void)p_showToast:(id)a0;
+- (void)handleLongPressFromAITabToVoiceMiddlePage:(id)a0 extraParams:(id)a1;
+- (void)setupVoiceBackground;
+- (void)setupVoiceInputView;
+- (void)setupAskView;
+- (void)checkNetworkConnect;
+- (void)refreshWithAskViewHidden:(BOOL)a0;
+- (void)updateBubbleText:(id)a0;
+- (void)startJumpInAnimation;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (id)initWithContext:(id)a0;
+- (void)viewDidLoad;
+
+@end

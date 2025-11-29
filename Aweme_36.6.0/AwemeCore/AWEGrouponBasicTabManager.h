@@ -1,0 +1,78 @@
+@class NSString, NSDictionary, AWECityModel, AWEGrouponCityAndContext, NSArray;
+
+@interface AWEGrouponBasicTabManager : NSObject <AWENearbyTabManagerProtocol>
+
+@property (nonatomic) long long pageType;
+@property (copy, nonatomic) NSDictionary *forceCityParams;
+@property (nonatomic) BOOL isCityChangeAlertShowing;
+@property (retain, nonatomic) NSString *curTabName;
+@property (retain, nonatomic) AWECityModel *citySelectBubbleCity;
+@property (retain, nonatomic) AWEGrouponCityAndContext *currentCity;
+@property (nonatomic) BOOL hasCancelAlert;
+@property (copy, nonatomic) NSString *fromCityName;
+@property (copy, nonatomic) NSString *fromCityCode;
+@property (copy, nonatomic) NSArray *l2ResidentCityCodeList;
+@property (readonly, nonatomic) BOOL isForceCity;
+@property (nonatomic) BOOL isForceAutoLocated;
+@property (nonatomic) BOOL hasEnterPage;
+@property (retain, nonatomic) AWECityModel *needRefreshNearbyData;
+@property (copy, nonatomic) NSString *forceUpdateTitle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)getDispalyNearbyTitle;
+- (id)initWithPageType:(long long)a0;
+- (void)p_handleCityChangedWithCity:(id)a0;
+- (void)p_handleNotShowCityChangeDialogWithCity:(id)a0 cityChanged:(BOOL)a1 extraParams:(id)a2;
+- (void)p_showCirtSelectBubbleWithCity:(id)a0;
+- (void)p_showOriginAlertWithCity:(id)a0;
+- (BOOL)isInCurrentTab;
+- (void)setAlertControllerWithController:(id)a0 city:(id)a1;
+- (void)p_trackEventName:(id)a0 display:(id)a1 clickMethod:(long long)a2;
+- (void)citySelectBubbleDidShow;
+- (void)alertWillDissmissWithClickedWithConfirm:(BOOL)a0;
+- (void)clearForceCityParams;
+- (void)p_trackCityChangeSuccess:(id)a0;
+- (void)p_nearbySwitchFeedStyle:(BOOL)a0 city:(id)a1;
+- (void)p_trackCitySelectBubbleClick:(id)a0;
+- (void)p_trackCityChangeSuccess:(id)a0 oldCityName:(id)a1;
+- (void)p_handleCitySelectWithCity:(id)a0 isLocated:(BOOL)a1 showL2Only:(BOOL)a2;
+- (void)p_showCityChangeToastWithCity:(id)a0 isLocated:(BOOL)a1 showL2Only:(BOOL)a2;
+- (BOOL)p_isInNearbyTab;
+- (BOOL)p_isInGrouponTab;
+- (BOOL)p_isInGrouponSinglePage;
+- (void)p_cityChangedWithCity:(id)a0 extraParams:(id)a1;
+- (void)p_citySelectBubbleClickConfirm;
+- (void)p_citySelectBubbleClickClose;
+- (void)p_citySelectBubbleCancel;
+- (void)handleNearByCommonDataLoaded:(BOOL)a0;
+- (void)citySelected:(id)a0;
+- (void)p_citySelectBubbleDidShow;
+- (id)defaultTabName;
+- (id)currentCityWhtiDataRsp:(id)a0;
+- (id)updateNearbyTitleWithCityModel:(id)a0;
+- (BOOL)getShouldShowCityNameWithName:(id)a0;
+- (void)cityChangedWithCity:(id)a0 extraParams:(id)a1;
+- (void)L3ChangeReqHandleWithRsp:(id)a0 reqType:(unsigned long long)a1 error:(id)a2;
+- (void)coldStartReqHandleWithRsp:(id)a0 reqType:(unsigned long long)a1 error:(id)a2;
+- (void)tfeReqHandleWithRsp:(id)a0 reqType:(unsigned long long)a1 error:(id)a2;
+- (void)handleLocChangeWhenLogoutWithRsp:(id)a0 reqType:(unsigned long long)a1 error:(id)a2;
+- (BOOL)firstRequestNearbyCommonDataEnable;
+- (void)trackLocationChangeWithModel:(id)a0;
+- (BOOL)changeCurrentSelectCityEnabled;
+- (BOOL)isCityCodeChangeWithResponse:(id)a0;
+- (BOOL)isCityDistrNameChangeWithResponse:(id)a0;
+- (void)handleL3ChangeSucceedWithResonse:(id)a0 type:(unsigned long long)a1;
+- (void)readyUnderTakeWithQueryParams:(id)a0;
+- (id)displayBottomCityName;
+- (void)handlCommonDataRsp:(id)a0 reqType:(unsigned long long)a1 error:(id)a2;
+- (void)citySelectBubbleClickConfirm;
+- (void)citySelectBubbleClickClose;
+- (void)citySelectBubbleCancel;
+- (void).cxx_destruct;
+- (id)displayString;
+- (void)addObserver;
+
+@end

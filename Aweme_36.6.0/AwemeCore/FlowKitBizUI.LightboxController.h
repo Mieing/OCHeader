@@ -1,0 +1,82 @@
+@interface FlowKitBizUI.LightboxController : FlowCommon.FlowBaseViewController <IvyKit.IvyPluginViewLifeCycle, UIScrollViewDelegate> {
+    void /* unknown type, empty encoding */ $__lazy_storage_$_scrollView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_containerView;
+    void /* unknown type, empty encoding */ customFooterView;
+    void /* unknown type, empty encoding */ customHeaderView;
+    void /* unknown type, empty encoding */ headerViewHeight;
+    void /* unknown type, empty encoding */ footerViewHeight;
+    void /* unknown type, empty encoding */ footerHeight;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_headerView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_footerView;
+    void /* unknown type, empty encoding */ lynxFooterView;
+    void /* unknown type, empty encoding */ gotoClick;
+    void /* unknown type, empty encoding */ shareClick;
+    void /* unknown type, empty encoding */ downloadClick;
+    void /* unknown type, empty encoding */ pictureDidEndZoom;
+    void /* unknown type, empty encoding */ pictureDidZoom;
+    void /* unknown type, empty encoding */ leavePictureDetail;
+    void /* unknown type, empty encoding */ shareClickResult;
+    void /* unknown type, empty encoding */ pictureSlide;
+    void /* unknown type, empty encoding */ likeClick;
+    void /* unknown type, empty encoding */ dislikeClick;
+    void /* unknown type, empty encoding */ addToCreationClick;
+    void /* unknown type, empty encoding */ changePrivacyClick;
+    void /* unknown type, empty encoding */ stayBeginDate;
+    void /* unknown type, empty encoding */ pictureStayBeginDate;
+    void /* unknown type, empty encoding */ pictureDuration;
+    void /* unknown type, empty encoding */ isFromClick;
+    void /* unknown type, empty encoding */ currentPage;
+    void /* unknown type, empty encoding */ dynamicBackground;
+    void /* unknown type, empty encoding */ spacing;
+    void /* unknown type, empty encoding */ isZoomed;
+    void /* unknown type, empty encoding */ pageDelegate;
+    void /* unknown type, empty encoding */ dismissalDelegate;
+    void /* unknown type, empty encoding */ imageTouchDelegate;
+    void /* unknown type, empty encoding */ imageTapDelegate;
+    void /* unknown type, empty encoding */ presented;
+    void /* unknown type, empty encoding */ seen;
+    void /* unknown type, empty encoding */ isElementsVisible;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_transitionManager;
+    void /* unknown type, empty encoding */ pageViews;
+    void /* unknown type, empty encoding */ statusBarHidden;
+    void /* unknown type, empty encoding */ logExtra;
+    void /* unknown type, empty encoding */ initialImages;
+    void /* unknown type, empty encoding */ initialPage;
+    void /* unknown type, empty encoding */ originalStatusBarStyle;
+    void /* unknown type, empty encoding */ originalShowFooterView;
+    void /* unknown type, empty encoding */ currentTemplateURL;
+    void /* unknown type, empty encoding */ animationInfo;
+    void /* unknown type, empty encoding */ config;
+}
+
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+
++ (void)imageSaved:(id)a0 didFinishSavingWithError:(id)a1 contextInfo:(void *)a2;
+
+- (id)flow_trackParametersWith:(id)a0;
+- (void)viewDidCreateWithView:(id)a0;
+- (void)viewDidChangeIntrinsicContentSizeWithView:(id)a0 size:(struct CGSize { double x0; double x1; })a1;
+- (void)viewDidFirstScreenWithView:(id)a0;
+- (void)viewDidFinishLoadWithURLWithView:(id)a0 url:(id)a1;
+- (void)viewDidLoadFailedWithURLWithView:(id)a0 url:(id)a1 error:(id)a2;
+- (void)viewDidUpdateWithView:(id)a0;
+- (void)viewWillDeallocWithView:(id)a0;
+- (void)viewDidPageUpdateWithView:(id)a0;
+- (void)viewDidReceiveErrorWithView:(id)a0 error:(id)a1;
+- (void)footerView:(id)a0 didPressSamePromptButton:(id)a1;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(struct CGPoint { double x0; double x1; } *)a2;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (id)initWithCoder:(id)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (id)initWithNibName:(id)a0 bundle:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)didEnterBackground:(id)a0;
+- (void)willEnterForeground:(id)a0;
+
+@end

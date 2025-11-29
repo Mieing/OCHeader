@@ -1,0 +1,72 @@
+@class NSArray, NSString, IESLiveCountTimer, HTSLiveTeamfightRoomBattleContent, HTSLiveLinkmicTeamfightTeamInfo, NSNumber, HTSLiveLinkmicTeamfightInfo;
+@protocol IESLiveTeamFightModelDelegate;
+
+@interface IESLiveTeamFightGameModel : NSObject
+
+@property (nonatomic) BOOL isInRoomBattleMatching;
+@property (retain, nonatomic) NSNumber *rivalRoomID;
+@property (copy, nonatomic) NSString *rivalUserID;
+@property (nonatomic) long long anchorRole;
+@property (nonatomic) long long startType;
+@property (nonatomic) long long inviteListType;
+@property (nonatomic) BOOL prepareToRoomBattle;
+@property (copy, nonatomic) NSString *replyUserId;
+@property (retain, nonatomic) HTSLiveTeamfightRoomBattleContent *roomBattleContent;
+@property (nonatomic) long long oneMoreType;
+@property (weak, nonatomic) id<IESLiveTeamFightModelDelegate> delegate;
+@property (retain, nonatomic) IESLiveCountTimer *teamFightTimer;
+@property (retain, nonatomic) IESLiveCountTimer *punishTimer;
+@property (retain, nonatomic) IESLiveCountTimer *showTimer;
+@property (nonatomic) long long teamFightID;
+@property (nonatomic) long long teamFightType;
+@property (nonatomic) long long status;
+@property (retain, nonatomic) NSString *dressId;
+@property (nonatomic) long long winTeamSign;
+@property (retain, nonatomic) HTSLiveLinkmicTeamfightTeamInfo *redTeamInfo;
+@property (retain, nonatomic) HTSLiveLinkmicTeamfightTeamInfo *blueTeamInfo;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long punishDuration;
+@property (nonatomic) long long punishStartTime;
+@property (nonatomic) long long showDuration;
+@property (nonatomic) long long showStartTime;
+@property (nonatomic) long long backupApiTimeInterval;
+@property (nonatomic) double remainTime;
+@property (nonatomic) double punishRemainTime;
+@property (nonatomic) double showRemainTime;
+@property (nonatomic) long long scoreBarStyle;
+@property (nonatomic) int scoreType;
+@property (retain, nonatomic) HTSLiveLinkmicTeamfightInfo *stashInfo;
+@property (copy, nonatomic) NSArray *gameDurationSetting;
+@property (nonatomic) long long sourceScene;
+@property (copy, nonatomic) NSString *requestPage;
+@property (nonatomic) long long finishReason;
+@property (nonatomic) BOOL isPreload;
+@property (nonatomic) int teamBattleTeamType;
+
+- (id)themeTitle;
+- (int)defaultScoreValue;
+- (void)updateTeamFightInfo:(id)a0;
+- (id)initWithDelegate:(id)a0 teamFightType:(long long)a1 DIContext:(id)a2;
+- (void)updateTeamFightInfo:(id)a0 type:(long long)a1;
+- (long long)defaultGameDuration;
+- (void)cancelTeamFightTimer;
+- (void)cancelPunishTimer;
+- (void)cancelShowResultTimer;
+- (void)updateTeamInfo:(id)a0 isScoreMessage:(BOOL)a1;
+- (void)updateTeamInfo:(id)a0;
+- (void)remakeScore;
+- (void)updateRemainTime;
+- (void)updatePunishRemainTime;
+- (void)updateShowResultRemainTime;
+- (void)realUpdateRemainTimeWithDuration:(long long)a0;
+- (void)realUpdatePunishRemainTimeWithDuration:(long long)a0;
+- (void)realUpdateShowResultRemainTimeWithDuration:(long long)a0;
+- (void)punishTimeOut;
+- (void)showResultTimeOut;
+- (id)gameDurationKey;
+- (void)updateScoreWithMessage:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

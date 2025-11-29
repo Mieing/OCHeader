@@ -1,0 +1,3 @@
+@interface HTSLiveBattleRejectRoot : GPBRootObject
+
+@end

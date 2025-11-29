@@ -1,0 +1,78 @@
+@class NSDictionary, NSString, UIView;
+@protocol TVLPlayerController;
+
+@interface TVLPlayerInternal : NSObject <TVLPlayer>
+
+@property (weak, nonatomic) id<TVLPlayerController> controller;
+@property (readonly, nonatomic) UIView *playerView;
+@property (readonly, nonatomic) BOOL isPlaying;
+@property (readonly, nonatomic) long long playerItemStatus;
+@property (copy, nonatomic) NSDictionary *SEI;
+@property (nonatomic) unsigned long long audioRenderDeviceType;
+@property (readonly, nonatomic) long long playbackState;
+@property (nonatomic, getter=isHardwareDecodeEnabled) BOOL hardwareDecodeEnabled;
+@property (nonatomic) BOOL setupPlayerViewInAdvanceEnabled;
+@property (nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } videoCropAreaFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } normalizeCropArea;
+@property (nonatomic) BOOL useNormalizeCropArea;
+@property (readonly, nonatomic) struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } videoAreaFrame;
+@property (nonatomic) float volume;
+@property (nonatomic) long long playerViewAlignMode;
+@property (nonatomic) long long playerViewScaleMode;
+@property (nonatomic) long long playerViewRotateType;
+@property (readonly, copy, nonatomic) NSDictionary *requestInfo;
+@property (copy, nonatomic) NSString *quicParams;
+@property (copy, nonatomic) NSString *httpxParams;
+@property (copy, nonatomic) NSString *cmafParams;
+@property (nonatomic) float speed;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setImageLayoutType:(unsigned long long)a0;
+- (void)setHardwareDecode:(BOOL)a0;
+- (void)setFloatValue:(float)a0 forKey:(int)a1;
+- (int)getIntValueForKey:(int)a0;
+- (void)setOptionValue:(id)a0 forIdentifier:(id)a1;
+- (float)getFloatValueForKey:(int)a0;
+- (id)getStringValueForKey:(int)a0;
+- (struct __CVBuffer { } *)copyPixelBuffer;
+- (void)setOptionValue:(id)a0 forIdentifier:(id)a1 shouldCache:(BOOL)a2;
+- (struct __CVBuffer { } *)cropCopyPixelBuffer:(float)a0 topLeftY:(float)a1 cropW:(float)a2 cropH:(float)a3;
+- (long long)getInt64ValueForKey:(int)a0;
+- (id)optionForIdentifier:(id)a0;
+- (void)releaze;
+- (int)getIntValueForKeyType:(int)a0 forType:(int)a1;
+- (id)getStringValueForKeyType:(int)a0 forType:(int)a1;
+- (void)setGlobalValue:(id)a0 forKey:(int)a1;
+- (id)getGlobalValue:(int)a0;
+- (id)playerCoreVersion;
+- (void)replaceCurrentURLWithPlayURL:(id)a0 options:(id)a1;
+- (void)setRecordPath:(id)a0;
+- (void)setRtsPreloadState:(int)a0;
+- (void)setViewPreviewSize:(struct CGSize { double x0; double x1; })a0;
+- (id)getPlayerVersion;
+- (void)resetViewPlayer;
+- (long long)numberOfBytesPlayed;
+- (int)getDecibelFromAudioStream;
+- (BOOL)isContainerOfPlayerCore:(id)a0;
+- (void)close;
+- (void)play;
+- (void)pause;
+- (void)setMuted:(BOOL)a0;
+- (void)close:(BOOL)a0;
+- (void)setEffect:(id)a0;
+- (void)stop;
+- (id)versionInfo;
+- (void)reset;
+- (void)setValue:(int)a0 forKey:(int)a1;
+- (void)setDelegate:(id)a0;
+- (int)getCurrentTime;
+- (BOOL)isMuted;
+- (void)prepareToPlay;
+- (long long)numberOfBytesTransferred;
+- (void)takeScreenShot:(id /* block */)a0;
+- (id)getIPAddress;
+
+@end

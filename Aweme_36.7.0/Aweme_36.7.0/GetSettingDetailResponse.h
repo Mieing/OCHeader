@@ -1,0 +1,10 @@
+@class GetSettingDetailResponse_ResponseData;
+
+@interface GetSettingDetailResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetSettingDetailResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

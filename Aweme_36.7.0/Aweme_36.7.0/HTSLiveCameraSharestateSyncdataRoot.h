@@ -1,0 +1,3 @@
+@interface HTSLiveCameraSharestateSyncdataRoot : GPBRootObject
+
+@end

@@ -1,0 +1,12 @@
+@interface IESLiveNormalPaidLinkmicInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long paidCount;
+@property (nonatomic) long long limitedTime;
+@property (nonatomic) int status;
+@property (nonatomic) int addPriceStrategy;
+@property (nonatomic) long long addPriceValue;
+@property (nonatomic) long long addPriceMultiple;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveAnchorColumnRoot : GPBRootObject
+
+@end

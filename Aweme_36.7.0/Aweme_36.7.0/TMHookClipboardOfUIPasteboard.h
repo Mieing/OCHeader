@@ -1,0 +1,12 @@
+@interface TMHookClipboardOfUIPasteboard : TMHook
+
++ (id)stubbedClass;
++ (id)stubbedInstanceAPIs;
++ (Class)pasteboardClass;
++ (void)preload;
++ (id)dataType;
++ (id)pipelineType;
+
+- (BOOL)deferPreload;
+
+@end

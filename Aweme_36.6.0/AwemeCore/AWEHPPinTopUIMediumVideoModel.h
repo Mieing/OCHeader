@@ -1,0 +1,14 @@
+@class NSURL, NSString;
+
+@interface AWEHPPinTopUIMediumVideoModel : NSObject <AWEHPPinTopBusinessUIConfigProtocol>
+
+@property (retain, nonatomic) NSURL *url;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void).cxx_destruct;
+- (BOOL)isValid;
+
+@end

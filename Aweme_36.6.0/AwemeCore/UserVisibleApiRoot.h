@@ -1,0 +1,3 @@
+@interface UserVisibleApiRoot : GPBRootObject
+
+@end

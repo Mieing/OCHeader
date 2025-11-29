@@ -1,0 +1,20 @@
+@class TIMXPBNMemberParam;
+
+@interface TIMXPBNMessageByInitRequestBody : GPBMessage
+
+@property (nonatomic) long long version;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) int page;
+@property (nonatomic) BOOL hasPage;
+@property (nonatomic) int convLimit;
+@property (nonatomic) BOOL hasConvLimit;
+@property (nonatomic) int msgLimit;
+@property (nonatomic) BOOL hasMsgLimit;
+@property (nonatomic) int initSubType;
+@property (nonatomic) BOOL hasInitSubType;
+@property (retain, nonatomic) TIMXPBNMemberParam *memberParam;
+@property (nonatomic) BOOL hasMemberParam;
+
++ (id)descriptor;
+
+@end

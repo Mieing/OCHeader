@@ -1,0 +1,85 @@
+@class NSError, AVAssetReaderVideoCompositionOutput, AVAssetReaderAudioMixOutput, AVAssetWriter, NSURL, NSCondition, TAVSourceExportReader, TAVImageProcessor, NSObject, TAVExportReportData, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor;
+@protocol OS_dispatch_queue;
+
+@interface TAVSourceSoftEncExportSession : TAVSourceExportSession {
+    char *mCameraBuf;
+    struct vector<long long, std::allocator<long long>> { long long *__begin_; long long *__end_; struct __compressed_pair<long long *, std::allocator<long long>> { long long *__value_; } __end_cap_; } pts;
+    struct vector<long long, std::allocator<long long>> { long long *__begin_; long long *__end_; struct __compressed_pair<long long *, std::allocator<long long>> { long long *__value_; } __end_cap_; } dts;
+}
+
+@property (retain, nonatomic) NSError *error;
+@property (nonatomic) float progress;
+@property (retain, nonatomic) TAVSourceExportReader *reader;
+@property (retain, nonatomic) AVAssetReaderVideoCompositionOutput *videoOutput;
+@property (retain, nonatomic) AVAssetReaderAudioMixOutput *audioOutput;
+@property (retain, nonatomic) AVAssetWriter *writer;
+@property (retain, nonatomic) AVAssetWriterInput *videoInput;
+@property (retain, nonatomic) AVAssetWriterInputPixelBufferAdaptor *videoPixelBufferAdaptor;
+@property (retain, nonatomic) AVAssetWriterInput *audioInput;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *inputQueue;
+@property (nonatomic) double duration;
+@property (nonatomic) float encPts;
+@property (nonatomic) float frameTimeInterval;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastVideoTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastAudioTime;
+@property BOOL suspended;
+@property BOOL isReaderReady;
+@property (nonatomic, getter=isCanceled) BOOL canceled;
+@property (nonatomic, getter=isPause) BOOL pause;
+@property (retain, nonatomic) NSCondition *pauseCondition;
+@property (nonatomic) BOOL videoCompleted;
+@property (nonatomic) BOOL videoSoftEncodeError;
+@property (nonatomic) BOOL audioCompleted;
+@property (retain, nonatomic) NSURL *outputAudioTempURL;
+@property (retain, nonatomic) NSURL *outputVideoTempURL;
+@property (nonatomic) struct TAVSourceSoftEncoder { void /* function */ **x0; } *mH265Encoder;
+@property (nonatomic) struct __CVBuffer { } *resamplingBuffer;
+@property (retain, nonatomic) TAVExportReportData *exportReportData;
+@property (nonatomic) double exportStartTime;
+@property (nonatomic) long long backgroundCount;
+@property (retain, nonatomic) TAVImageProcessor *processor;
+
+- (id)init;
+- (void)dealloc;
+- (id)initWithAsset:(id)a0;
+- (id)videoSettings;
+- (id)audioSettings;
+- (void)startExport;
+- (void)pauseExporting;
+- (void)continueExporting;
+- (void)cancelExport;
+- (void)startReadingAndWriting;
+- (void)reStartVideoWriting;
+- (BOOL)encodeReadySamplesFromOutput:(id)a0 toInput:(id)a1;
+- (struct vImage_Buffer { void *x0; unsigned long long x1; unsigned long long x2; unsigned long long x3; })PixelBuffer_GetImageBufferOfPlane:(struct __CVBuffer { } *)a0 planeIndex:(unsigned long long)a1;
+- (struct __CVBuffer { } *)Scale_PixelBufferNV12:(struct __CVBuffer { } *)a0 scaleWidth:(int)a1 scaleHeight:(int)a2;
+- (BOOL)processSampleBufferToYUV420:(struct opaqueCMSampleBuffer { } *)a0;
+- (BOOL)softVideoEncodeControl;
+- (void)softEncodeReadyOneSamplesFromOutput:(id /* block */)a0;
+- (BOOL)softEncodeReadySamplesFromOutput;
+- (void)updateProgressForFrameTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)finishWithError:(id)a0;
+- (void)finishWithCancelled;
+- (void)finishWithSuccess;
+- (void)finish;
+- (void)reset;
+- (BOOL)setupReaderWriterWithError:(id *)a0;
+- (BOOL)imageProcessorSetup;
+- (BOOL)softHEVCEncodingSetup;
+- (id)currentVideoComposition;
+- (id)buildDefaultVideoComposition;
+- (BOOL)setupAudioInputWithError:(id *)a0;
+- (void)setupNotification;
+- (void)removeNotification;
+- (void)applicationWillResignActiveNotification;
+- (void)applicationDidBecomeActiveNotification;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })getReaderRestartTime:(BOOL)a0;
+- (unsigned long long)audioWriteStatusWithSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (struct opaqueCMSampleBuffer { } *)reconstructHalfWrittenAudioSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (void)handleErrorReportWithError:(id)a0;
+- (void)handleSuccessReport;
+- (id)getExportFailStatusInfo;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

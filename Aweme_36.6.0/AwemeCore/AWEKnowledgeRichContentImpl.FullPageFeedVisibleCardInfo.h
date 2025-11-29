@@ -1,0 +1,10 @@
+@interface AWEKnowledgeRichContentImpl.FullPageFeedVisibleCardInfo : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ model;
+    void /* unknown type, empty encoding */ index;
+    void /* unknown type, empty encoding */ richContentContainerVC;
+    void /* unknown type, empty encoding */ audioController;
+    void /* unknown type, empty encoding */ section;
+    void /* unknown type, empty encoding */ startPlayDate;
+}
+
+@end

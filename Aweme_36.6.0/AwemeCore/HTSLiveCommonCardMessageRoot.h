@@ -1,0 +1,3 @@
+@interface HTSLiveCommonCardMessageRoot : GPBRootObject
+
+@end

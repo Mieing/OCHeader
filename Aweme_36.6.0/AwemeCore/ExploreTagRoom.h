@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage, HTSLiveRoom;
+
+@interface ExploreTagRoom : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isRead;
+@property (nonatomic) long long tagId;
+@property (copy, nonatomic) NSString *cardName;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (retain, nonatomic) HTSLiveImage *cover;
+@property (nonatomic) BOOL hasCover;
+@property (retain, nonatomic) HTSLiveRoom *room;
+@property (nonatomic) BOOL hasRoom;
+
++ (id)descriptor;
+
+@end

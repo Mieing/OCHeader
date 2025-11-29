@@ -1,0 +1,82 @@
+@class NSError, NSString, WCPayInterceptWinLogic, JSEvent, WCAtomicRedEnvReceiveWelcomeView, WCRedEnvelopesReceiveHomeView, WCFestivalRedEnvShareView, WCAtomicRedEnvReceiveHomeView, WCFestivalRedEnvFinishView;
+@protocol WCRedEnvWeAppDelegate;
+
+@interface WCRedEnvEnterpriseReceiveControlLogic : WCRedEnvelopesControlLogic <WCRedEnvelopesReceiveHomeViewDelegate, WCRedEnvGetSplitRedCoverCgiDelegate, WCRedEnvGetPacketStoryCgiDelegate, WCAtomicRedEnvReceiveHomeViewDelegate, WCAtomicRedEnvReceiveWelcomeViewDelegate, WCRedEnvelopesRedEnvelopesDetailViewControllerDelegate, WCRedEnvelopesEnterpriseDetailViewControllerDelegate, WCRedEnvelopesSessionSelectViewControllerDelegate, WCRedEnvelopesMultiSelectContactsViewControllerDelegate, WCFestivalRedEnvShareViewDelegate, WCFestivalRedEnvFinishViewDelegate, WCPayLogicMgrExt> {
+    WCRedEnvelopesReceiveHomeView *m_oIntroView;
+    WCAtomicRedEnvReceiveHomeView *m_oAtomicIntroView;
+    WCAtomicRedEnvReceiveWelcomeView *m_oWelcomeView;
+    WCFestivalRedEnvShareView *m_oShareView;
+    WCFestivalRedEnvFinishView *m_oFinishView;
+    BOOL bStopedLogic;
+}
+
+@property (retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic;
+@property (nonatomic) int m_scene;
+@property (retain, nonatomic) JSEvent *m_jsEvent;
+@property (weak, nonatomic) id<WCRedEnvWeAppDelegate> logicDelegate;
+@property (retain, nonatomic) NSError *m_error;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)stopLoading;
+- (void)startGetStoryInfoFromMsgData;
+- (void)onGetRedEnvPacketStoryCgiError:(id)a0 errorCode:(unsigned int)a1;
+- (void)onGetRedEnvPacketStoryCgiRespOK:(id)a0 isFromServer:(BOOL)a1;
+- (void)startDownloadStoryInfoResource:(id)a0 subtypeId:(unsigned int)a1;
+- (void)updateStoryAutoplayConfig:(id)a0 isFromServer:(BOOL)a1;
+- (void)startGetStoryInfoWithPacketId:(id)a0;
+- (void)initHbShowSource;
+- (void)startGetSplitRedCoverFromMsgData;
+- (void)onGetSplitRedCoverCgiResp:(id)a0;
+- (void)startLogic;
+- (void)stopLogic;
+- (void)OnReceiveAtomicEnterpriseRedEnvelopesResponse:(id)a0 Error:(id)a1;
+- (void)introViewEndAnimation;
+- (void)introViewStartReceiveAnimation;
+- (void)introViewStopReceiveAnimation;
+- (void)introViewRemoveView;
+- (void)OnOpenAtomicEnterpriseRedEnvelopesResponse:(id)a0 Error:(id)a1;
+- (void)OnQueryRedEnvelopesDetailRequest:(id)a0 Error:(id)a1;
+- (unsigned int)getStatFromScene;
+- (void)closeFinishViewAndStopLogic;
+- (void)OnSendShareEnterpriseRedEnvelopesResponse:(id)a0 Error:(id)a1;
+- (void)OnReceiveBizEnterpriseRedEnvelopesResponse:(id)a0 Error:(id)a1;
+- (void)OnOpenBizEnterpriseRedEnvelopesResponse:(id)a0 Error:(id)a1;
+- (void)OnCheckBizEnterpriseRedEnvelopesResponse:(id)a0 Error:(id)a1;
+- (void)OnSendShareRedEnvelopesoRequest:(id)a0 Error:(id)a1;
+- (void)WCAtomicRedEnvReceiveHomeViewBack;
+- (void)WCAtomicRedEnvReceiveHomeViewOpenRedEnvelopes:(BOOL)a0;
+- (void)WCRedEnvelopesReceiveHomeViewOpenRedEnvelopes;
+- (void)WCAtomicRedEnvReceiveHomeViewOpenRedEnvelopesInner:(BOOL)a0;
+- (void)WCAtomicRedEnvReceiveHomeViewOpenList;
+- (void)WCAtomicRedEnvReceiveWelcomeViewBack;
+- (void)WCAtomicRedEnvReceiveWelcomeViewShowDetail;
+- (void)WCRedEnvelopesEnterpriseDetailViewControllerBack;
+- (void)WCRedEnvelopesEnterpriseDetailViewControllerContinueSendRedEnvelopes;
+- (void)WCRedEnvelopesRedEnvelopesDetailViewControllerBack;
+- (void)WCRedEnvelopesRedEnvelopesDetailViewControllerContinueSendRedEnvelopes;
+- (BOOL)HasMoreDetailList;
+- (void)OnLoadMoreRedEnvelopesList;
+- (void)OnCommitWCRedEnvelopes:(id)a0;
+- (void)OnGoToBalanceDetail;
+- (void)OnConfirmSendMessageSelectSessionViewController;
+- (void)OnSelectSession:(id)a0 SessionSelectController:(id)a1;
+- (void)OnSelectSessionCancel:(id)a0;
+- (void)OnSelectSessionReturn:(id)a0;
+- (void)OnSelectMutilContactsButton;
+- (void)onMultiSelectContactReturn:(id)a0;
+- (void)WCFestivalRedEnvShareViewBack;
+- (void)WCFestivalRedEnvShareViewToFinish;
+- (void)OnAsyncBizSubcribeResponse:(id)a0 Error:(id)a1;
+- (void)WCFestivalRedEnvFinishViewBack;
+- (void)WCFestivalRedEnvFinishViewToShare;
+- (void)showDetailView;
+- (void)closeAnimationWindowAndShowDetailView:(id)a0;
+- (void)onRealnameActionClick:(id)a0;
+- (void)onErrorAlertViewDismiss:(id)a0;
+- (void)WCRedEnvelopesReceiveHomeViewBack;
+- (void).cxx_destruct;
+
+@end

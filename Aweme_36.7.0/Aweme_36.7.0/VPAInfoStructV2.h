@@ -1,0 +1,10 @@
+@interface VPAInfoStructV2 : GPBMessage
+
+@property (nonatomic) BOOL showOptOutButton;
+@property (nonatomic) BOOL hasShowOptOutButton;
+@property (nonatomic) int showInfoBarType;
+@property (nonatomic) BOOL hasShowInfoBarType;
+
++ (id)descriptor;
+
+@end

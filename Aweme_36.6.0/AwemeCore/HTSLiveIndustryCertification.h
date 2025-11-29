@@ -1,0 +1,12 @@
+@class HTSLiveIndustryCertificationProfile, HTSLiveIndustryCertificationRoom;
+
+@interface HTSLiveIndustryCertification : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveIndustryCertificationProfile *profile;
+@property (nonatomic) BOOL hasProfile;
+@property (retain, nonatomic) HTSLiveIndustryCertificationRoom *room;
+@property (nonatomic) BOOL hasRoom;
+
++ (id)descriptor;
+
+@end

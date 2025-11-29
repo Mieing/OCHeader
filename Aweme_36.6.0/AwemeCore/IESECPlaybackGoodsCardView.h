@@ -1,0 +1,75 @@
+@class UIView, IESECLiveGoodsViewModel, IESECLiveGoodsStatusMaskView, IESECPlaybackCardListDataSource, IESECLiveGoodsModel, UIImageView, IESECLiveGoodsListItemViewModel, IESECGCDTimer, IESECLivePromotionCard, NSString, IESECLiveStateBannerView, UILabel;
+@protocol IESECPlaybackGoodsCardViewDelegate, IESECLivePromotionCardViewProtocol;
+
+@interface IESECPlaybackGoodsCardView : UIView <IESECLivePromotionCardBusinessDelegate, IESECLivePromotionCardBusinessParamsDelegate>
+
+@property (retain, nonatomic) IESECLiveGoodsViewModel *goodsViewModel;
+@property (retain, nonatomic) IESECLiveGoodsListItemViewModel *itemViewModel;
+@property (retain, nonatomic) UIView *largeCardView;
+@property (retain, nonatomic) UIImageView *shrinkImageView;
+@property (retain, nonatomic) UIView *smallCardView;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) UILabel *priceLabel;
+@property (retain, nonatomic) UIView *statusView;
+@property (retain, nonatomic) UILabel *indexLabel;
+@property (retain, nonatomic) IESECGCDTimer *skillTimer;
+@property (retain, nonatomic) IESECLiveStateBannerView *introducingView;
+@property (nonatomic) long long cardIndex;
+@property (retain, nonatomic) IESECLiveGoodsStatusMaskView *statusMaskView;
+@property (retain, nonatomic) IESECLivePromotionCard *promotionCard;
+@property (retain, nonatomic) UIView<IESECLivePromotionCardViewProtocol> *promotionCardView;
+@property (weak, nonatomic) IESECPlaybackCardListDataSource *dataSource;
+@property (weak, nonatomic) id<IESECPlaybackGoodsCardViewDelegate> delegate;
+@property (nonatomic) BOOL hasExpanded;
+@property (nonatomic) BOOL isExpanded;
+@property (nonatomic) BOOL hasTransform;
+@property (retain, nonatomic) IESECLiveGoodsModel *model;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)ecomEntranceForm;
+- (void)shrink;
+- (void)removeTimer;
+- (id)liveContext;
+- (id)promotionCardEcomEntranceForm;
+- (id)promotionCardPanelSize;
+- (id)getSkuFrom;
+- (void)didShowPromotionCardView:(id)a0 areaType:(long long)a1 extraInfo:(id)a2;
+- (void)didClickPromotionCardView:(id)a0 areaType:(long long)a1 extraInfo:(id)a2 completion:(id /* block */)a3;
+- (void)reportEventWithName:(id)a0 params:(id)a1 callback:(id /* block */)a2;
+- (BOOL)useBizCardAction;
+- (id)currentActionTrackModuleInfo;
+- (id)skuCreateInfoWithGoodsModel:(id)a0 sourceBTMToken:(id)a1;
+- (id)p_getCardConfigModel;
+- (void)setupMaskViewIfNeeded:(id)a0;
+- (void)didClickBlankWithExtraInfo:(id)a0;
+- (void)didClickBuyButtonWithExtraInfo:(id)a0;
+- (void)p_jumpWithClickStyle:(long long)a0 btmModel:(id)a1;
+- (void)updateSmallCardInfo;
+- (void)shrinkLayout;
+- (void)expandWithAnimation:(BOOL)a0;
+- (void)skillCountDown:(id)a0;
+- (void)routeToGoodsDetailWithCardStatus:(long long)a0 btmModel:(id)a1;
+- (void)routeToCheckoutWithCardStatus:(long long)a0 btmModel:(id)a1;
+- (void)update:(id)a0 withIndex:(long long)a1;
+- (void)trackSmallCardClick;
+- (id)tinyCardBTM;
+- (id)cardOrBlankBTM;
+- (void)expandLayout;
+- (void)setupGoodsInfoView:(id)a0;
+- (void)refresh:(id)a0 withIndex:(long long)a1;
+- (void)updateGoodsInfoViewStyle;
+- (void)skillCountDown:(id)a0 withIndex:(long long)a1;
+- (id)generateBTMModelWithID:(id)a0;
+- (void)trackClickWithBtmModel:(id)a0 clickArea:(id)a1;
+- (id)buyButtonBTM;
+- (void).cxx_destruct;
+- (void)update:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)setupUI;
+- (void)updateUI;
+
+@end

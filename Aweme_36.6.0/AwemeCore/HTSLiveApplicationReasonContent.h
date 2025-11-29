@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveApplicationReasonContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *applicationReasonExample;
+@property (copy, nonatomic) NSString *defaultApplicationReasonExample;
+
++ (id)descriptor;
+
+@end

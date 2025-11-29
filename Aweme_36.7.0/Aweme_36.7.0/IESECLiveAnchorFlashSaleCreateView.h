@@ -1,0 +1,74 @@
+@class IESECButton, IESECLiveAnchorFlashSaleCreateViewConfig, NSString, IESECLiveApi, UIImageView, IESECLiveAnchorCreateFlashSaleViewModel, UITableView, CAGradientLayer, IESECLiveAnchorFlashSaleCreateLoadingView, IESECLiveAnchorFlashSaleCreateAccessoryInputView, UILabel;
+
+@interface IESECLiveAnchorFlashSaleCreateView : IESECLiveAnchorCommonPopupView <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, IESECLiveAnchorFlashSaleCreateViewExpandMoreCellDelegate, IESECLiveAnchorFlashSaleCreateViewCellDelegate>
+
+@property (retain, nonatomic) IESECLiveAnchorFlashSaleCreateViewConfig *viewConfig;
+@property (retain, nonatomic) IESECLiveAnchorCreateFlashSaleViewModel *viewModel;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) UILabel *noteLimitLabel;
+@property (retain, nonatomic) UILabel *indicatorLabel;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) IESECButton *button;
+@property (retain, nonatomic) CAGradientLayer *buttonBgLayer;
+@property (retain, nonatomic) IESECLiveAnchorFlashSaleCreateLoadingView *loadingIndicator;
+@property (retain, nonatomic) IESECLiveAnchorFlashSaleCreateAccessoryInputView *currentInputView;
+@property (retain, nonatomic) IESECLiveApi *API;
+@property (copy, nonatomic) id /* block */ selectCategoryBlock;
+@property (copy, nonatomic) id /* block */ cachePropertiseBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)buttonDidTapped:(id)a0;
+- (void)showWithConfig:(id)a0;
+- (id)initWithHeight:(double)a0 roomContext:(id)a1;
+- (void)trackInputViewShowWithUserID:(id)a0 itemName:(id)a1 extraInfo:(id)a2;
+- (void)trackPageShowWithUserID:(id)a0;
+- (void)trackPageCloseWithUserID:(id)a0;
+- (void)trackItemOptionClickWithUserID:(id)a0 itemName:(id)a1;
+- (void)trackExpandMoreWithUserID:(id)a0;
+- (void)trackItemOptionShowWithUserID:(id)a0 itemName:(id)a1;
+- (void)trackInputViewShowWithUserID:(id)a0 itemName:(id)a1;
+- (void)trackCreateActionWithUserID:(id)a0;
+- (void)trackCreateActionDurationWithClickTime:(double)a0 userID:(id)a1 privilegeInfoExist:(BOOL)a2 selectedPrivilegeCodeInfos:(id)a3;
+- (void)trackUploadImageWithSuccess:(BOOL)a0 extraInfo:(id)a1;
+- (void)trackOpenListWithSuccess:(BOOL)a0 clickTimestamp:(double)a1 extraInfo:(id)a2;
+- (void)setupHeaderViewGesture;
+- (void)setupDismissConfirmBlock;
+- (void)setupAPI;
+- (void)setupKeyboardNotificationObservers;
+- (void)updateButtonEnabled:(BOOL)a0;
+- (void)refreshSelectedCategory:(id)a0 selectedCategoryCids:(id)a1 completion:(id /* block */)a2;
+- (void)startLoadingAnimationForProperties;
+- (void)shutDownKeyBoard;
+- (void)textFieldTextDidEndEditing:(id)a0;
+- (void)refreshCreateButtonStatus;
+- (void)startLoadingAnimationWithTitle:(id)a0;
+- (void)updateFrameWhenKeyboardShowsForNotification:(id)a0;
+- (void)scrollTableViewToItem:(id)a0;
+- (void)createFlashSaleProductWithCoverURI:(id)a0 completion:(id /* block */)a1;
+- (BOOL)closeKeyBoardBeforeShowingOthers;
+- (void)openCategoryWebView;
+- (void)openOptionViewWithItem:(id)a0;
+- (void)showInputViewWithItem:(id)a0;
+- (void)flashSaleMoreCellExpandButtonDidTapped:(id)a0;
+- (BOOL)flashSaleItemCellTextFieldShouldBeginEditing:(id)a0;
+- (id)titlePrefixWithFlashSaleItemCell:(id)a0;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)reload;
+- (void)keyboardWillShow:(id)a0;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)keyboardWillHide:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)keyboardFrameWillChange:(id)a0;
+- (void)setupUI;
+- (void)startLoadingAnimation;
+- (void)stopLoadingAnimation;
+
+@end

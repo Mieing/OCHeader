@@ -1,0 +1,19 @@
+@interface AWEKnowledgeSwiftImpl.ImageBrowserContentLivePhoto : UIView <PHLivePhotoViewDelegate> {
+    void /* unknown type, empty encoding */ imageModel;
+    void /* unknown type, empty encoding */ contentShow;
+    void /* unknown type, empty encoding */ isShow;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_imageView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_livePhotoView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_livePhotoIconPanel;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_livePhotoIcon;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_livePhotoLabel;
+}
+
+- (void)livePhotoView:(id)a0 didEndPlaybackWithStyle:(long long)a1;
+- (void)livePhotoView:(id)a0 willBeginPlaybackWithStyle:(long long)a1;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface ClearGroupRankListReq : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *roomId;
+
++ (id)descriptor;
+
+@end

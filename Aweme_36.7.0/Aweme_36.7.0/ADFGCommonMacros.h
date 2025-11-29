@@ -1,0 +1,3 @@
+@interface ADFGCommonMacros : NSObject
+
+@end

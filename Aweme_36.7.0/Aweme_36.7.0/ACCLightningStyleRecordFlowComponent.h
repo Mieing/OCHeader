@@ -1,0 +1,73 @@
+@class ACCLightningRecordHandsFreeView, UIBezierPath, ACCLightningRecordAnimationView, RACSubject, NSNumber, NSString;
+@protocol ACCRecordSwitchModeService, ACCRecordFlowConfigProtocol, ACCRecordFlowControlService, ACCRecorderViewContainer, ACCRecordConfigService, ACCRecordPropService, ACCQuickStoryRecorderTipsService, ACCVideoConfigProtocol, ACCRecordFlowService, ACCCameraService, ACCRecordButtonService;
+
+@interface ACCLightningStyleRecordFlowComponent : ACCRecordFlowComponent <ACCRecordConfigDurationHandler, ACCCaptureButtonAnimationViewDelegate, ACCRecordAnimationViewTouchesPlugin, ACCRecordButtonServiceSubscriber>
+
+@property (retain, nonatomic) ACCLightningRecordAnimationView *recordAnimationView;
+@property (retain, nonatomic) ACCLightningRecordHandsFreeView *handsFreeView;
+@property (retain, nonatomic) UIBezierPath *handsFreeHotAera;
+@property (retain, nonatomic) id<ACCVideoConfigProtocol> videoConfig;
+@property (retain, nonatomic) id<ACCRecordFlowService> flowService;
+@property (retain, nonatomic) id<ACCRecordFlowConfigProtocol> flowConfig;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) id<ACCRecordConfigService> configService;
+@property (retain, nonatomic) id<ACCQuickStoryRecorderTipsService> quickStoryTipsService;
+@property (retain, nonatomic) RACSubject *switchModelSubject;
+@property (retain, nonatomic) id<ACCRecordButtonService> recordButtonService;
+@property (retain, nonatomic) id<ACCRecordFlowControlService> recordFlowControlService;
+@property (weak, nonatomic) id<ACCRecorderViewContainer> viewContainer;
+@property (retain, nonatomic) id<ACCRecordPropService> propService;
+@property (nonatomic) BOOL firstFrameHasRendered;
+@property (nonatomic) BOOL hasTakePictureAction;
+@property (copy, nonatomic) NSNumber *originalMaxRecordDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)switchModeServiceDidChangeMode:(id)a0 oldMode:(id)a1;
+- (void)cameraService:(id)a0 stopVideoCaptureWithError:(id)a1;
+- (void)onCameraFirstFrameDidRender:(id)a0;
+- (void)flowServiceStateDidChanged:(unsigned long long)a0 preState:(unsigned long long)a1;
+- (void)flowServiceDidMarkDuration:(double)a0;
+- (void)flowServiceDidRemoveLastSegment:(BOOL)a0;
+- (void)flowServiceDidRemoveAllSegment;
+- (void)flowServiceDurationHasRestored;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)animationViewDidSwitchToHoldSubtype;
+- (void)animationViewDidReceiveTap;
+- (BOOL)canTakePhotoWithTap;
+- (BOOL)needBlockAnimationTouches:(id)a0;
+- (void)animationViewSubtypeDidChange;
+- (void)animationView:(id)a0 touchesBegan:(id)a1 withEvent:(id)a2;
+- (void)animationView:(id)a0 touchesMoved:(id)a1 withEvent:(id)a2;
+- (void)animationView:(id)a0 touchesEnded:(id)a1 withEvent:(id)a2;
+- (void)animationView:(id)a0 touchesCancelled:(id)a1 withEvent:(id)a2;
+- (BOOL)isSupportPressToVideo;
+- (void)updateStandardDurationIndicatorDisplay;
+- (void)updateLightingStyleRecordButtonLightingViewWithMode:(id)a0;
+- (id)lightningProgressView;
+- (void)stopRecordButtonAnimationWithIgnoreProgress:(BOOL)a0;
+- (void)updateProgressAndMarksDisplay;
+- (id)buildCaptureButton;
+- (void)didSetMaxDuration:(double)a0;
+- (BOOL)shouldAnimationViewSwitchToHoldSubtype;
+- (void)executePropPanelRecordBeganTask;
+- (void)updateHandsFreeViewHidden;
+- (void)tryTakePicture;
+- (id)handsFreeTrackModeName;
+- (void)p_updateDurationConfigIfNeeded;
+- (void)showRecordButtonIfNeededWithAnimated:(BOOL)a0;
+- (void)trackPauseButtonClicked:(BOOL)a0;
+- (void)updateAssistantButtonState:(id)a0;
+- (BOOL)disableTouchEvent;
+- (void)animationViewHandsFreeEnd:(id)a0;
+- (id)switchModelSignal;
+- (void)pauseButtonDidClicked;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)updateProgressBar;
+
+@end

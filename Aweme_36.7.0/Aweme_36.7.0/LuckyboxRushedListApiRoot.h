@@ -1,0 +1,3 @@
+@interface LuckyboxRushedListApiRoot : GPBRootObject
+
+@end

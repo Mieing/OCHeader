@@ -1,0 +1,10 @@
+@class AudienceReceiverListResponse_Data;
+
+@interface AudienceReceiverListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AudienceReceiverListResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicProfitLinkmicProfitSelfDisciplineSendSignalApiRoot : GPBRootObject
+
+@end

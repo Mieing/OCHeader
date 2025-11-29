@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface ACCIronManComponent : ACCFeatureComponent <ACCPublishServiceMessage>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentDidMount;
+- (void)componentDidUnmount;
+- (void)publishServiceWillStart;
+
+@end

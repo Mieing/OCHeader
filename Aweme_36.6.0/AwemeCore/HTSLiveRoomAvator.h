@@ -1,0 +1,37 @@
+@class NSMutableArray, NSString, HTSLiveImage, AvatorBorder, GPBInt64Array, HTSLiveAnchorTabLabel;
+
+@interface HTSLiveRoomAvator : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *avatar;
+@property (nonatomic) BOOL hasAvatar;
+@property (retain, nonatomic) HTSLiveImage *authenticationInfo;
+@property (nonatomic) BOOL hasAuthenticationInfo;
+@property (copy, nonatomic) NSString *nickName;
+@property (nonatomic) BOOL hasFansClub;
+@property (nonatomic) long long followStatus;
+@property (nonatomic) BOOL invalidFollowStatus;
+@property (nonatomic) long long followReportScene;
+@property (retain, nonatomic) AvatorBorder *border;
+@property (nonatomic) BOOL hasBorder;
+@property (retain, nonatomic) GPBInt64Array *firstLabelArray;
+@property (readonly, nonatomic) unsigned long long firstLabelArray_Count;
+@property (retain, nonatomic) GPBInt64Array *secondLabelArray;
+@property (readonly, nonatomic) unsigned long long secondLabelArray_Count;
+@property (nonatomic) long long fansClubType;
+@property (nonatomic) long long animationType;
+@property (copy, nonatomic) NSString *uid;
+@property (copy, nonatomic) NSString *secUid;
+@property (nonatomic) long long fanTicket;
+@property (nonatomic) long long likeCount;
+@property (copy, nonatomic) NSString *totalUserStr;
+@property (nonatomic) int secret;
+@property (retain, nonatomic) HTSLiveAnchorTabLabel *firstTabLabel;
+@property (nonatomic) BOOL hasFirstTabLabel;
+@property (retain, nonatomic) HTSLiveAnchorTabLabel *secondTabLabel;
+@property (nonatomic) BOOL hasSecondTabLabel;
+@property (retain, nonatomic) NSMutableArray *profileViewDataArray;
+@property (readonly, nonatomic) unsigned long long profileViewDataArray_Count;
+
++ (id)descriptor;
+
+@end

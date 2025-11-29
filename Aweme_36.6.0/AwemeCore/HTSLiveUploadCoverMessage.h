@@ -1,0 +1,19 @@
+@class NSString, HTSLiveCommon, HTSLiveText;
+
+@interface HTSLiveUploadCoverMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long msgType;
+@property (retain, nonatomic) HTSLiveText *title;
+@property (nonatomic) BOOL hasTitle;
+@property (retain, nonatomic) HTSLiveText *content;
+@property (nonatomic) BOOL hasContent;
+@property (retain, nonatomic) HTSLiveText *tipsTitle;
+@property (nonatomic) BOOL hasTipsTitle;
+@property (copy, nonatomic) NSString *tipsURL;
+@property (nonatomic) long long coverType;
+
++ (id)descriptor;
+
+@end

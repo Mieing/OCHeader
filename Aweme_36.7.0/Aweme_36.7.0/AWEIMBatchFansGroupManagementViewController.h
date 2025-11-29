@@ -1,0 +1,71 @@
+@class UIView, NSString, AWEIMBatchFansGroupManagementViewModel, UIImageView, NSDictionary, UICollectionView, IESIMButton, UILabel, AWEIMFansGroupIntroduceViewController;
+@protocol IESIMLoadingViewProtocol;
+
+@interface AWEIMBatchFansGroupManagementViewController : UIViewController <AWERouterViewControllerProtocol, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWEIMMyFansGroupInfoCardStyleCollectionViewCellDelegate>
+
+@property (retain, nonatomic) AWEIMBatchFansGroupManagementViewModel *viewModel;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UIView<IESIMLoadingViewProtocol> *loadingView;
+@property (retain, nonatomic) IESIMButton *createGroupButton;
+@property (retain, nonatomic) AWEIMFansGroupIntroduceViewController *introduceVC;
+@property (nonatomic) BOOL shouldShowLoadingView;
+@property (nonatomic) BOOL isLoadingViewShowing;
+@property (nonatomic) BOOL isCheckingAction;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (nonatomic) BOOL shouldTrackPageShow;
+@property (nonatomic) BOOL didAutoTransfer;
+@property (copy, nonatomic) NSDictionary *routerParams;
+@property (retain, nonatomic) UIImageView *emptyView;
+@property (retain, nonatomic) UILabel *emptyLabel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })aweui_emptyPageEdgeInsets;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)__setupUI;
+- (void)showEmptyView;
+- (void)__showLoadingView;
+- (void)__backBtnClicked;
+- (void)__hideLoadingView;
+- (void)__fetchData;
+- (void)p_bindVM;
+- (void)__trackFansGroupHelperEntryTransefer;
+- (id)operationBannerCell;
+- (void)__trackFansGroupHelperPageShown;
+- (void)__trackCreateOpenGroupButtonShown;
+- (void)__autoTransfer;
+- (void)__createGroupButtonClicked;
+- (void)__transferToTipsVCWithType:(long long)a0 isAutotransfer:(BOOL)a1;
+- (void)__headerButtonClickedInSection:(long long)a0;
+- (void)__footerButtonClickedInSection:(long long)a0;
+- (void)__showManagementSettingViewAtIndex:(long long)a0;
+- (void)__trackCreateOpenGroupButtonClicked;
+- (void)__trackMsgMoreViewClicked;
+- (void)__pushToFansGroupChatListVC;
+- (void)__trackSendMessageButtonClicked;
+- (void)__showBatchSendMessageViewController;
+- (void)p_performActionWithCheck:(long long)a0 source:(long long)a1 cacheKey:(id)a2 shouldFallback:(BOOL)a3 onAllowance:(id /* block */)a4;
+- (void)cellInviteButtonDidTapped;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)init;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

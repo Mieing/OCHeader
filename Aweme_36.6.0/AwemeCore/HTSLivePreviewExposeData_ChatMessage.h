@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLivePreviewExposeData_ChatMessage : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *nickName;
+@property (copy, nonatomic) NSString *nickNameColor;
+@property (copy, nonatomic) NSString *content;
+
++ (id)descriptor;
+
+@end

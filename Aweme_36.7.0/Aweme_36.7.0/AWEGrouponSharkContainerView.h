@@ -1,0 +1,3 @@
+@interface AWEGrouponSharkContainerView : UIView
+
+@end

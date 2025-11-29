@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface IESGCPPBOnlineUser : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+@property (nonatomic) long long onlineUserCount;
+
++ (id)descriptor;
+
+@end

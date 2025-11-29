@@ -1,0 +1,72 @@
+@class UITableView, NSString, WCMomentsPrivacyParams, NSMutableSet, WCCreateNewGroupDemoViewController;
+@protocol WCMomentsPrivacyViewControllerDelegate;
+
+@interface WCMomentsPrivacyViewController : MMUIViewController <UITableViewDelegate, UITableViewDataSource, WCMomentsContactTagListViewControllerDelegate, MultiSelectContactsViewControllerDelegate, IContactLabelMgrExt, WCCreateNewGroupDemoViewControllerDelegate>
+
+@property (retain, nonatomic) WCMomentsPrivacyParams *params;
+@property (retain, nonatomic) UITableView *tableView;
+@property (nonatomic) BOOL showFastItem;
+@property (retain, nonatomic) WCCreateNewGroupDemoViewController *groupVC;
+@property (retain, nonatomic) NSString *createTagName;
+@property (nonatomic) unsigned int createTagEventId;
+@property (retain, nonatomic) NSMutableSet *undeterminedContactSet;
+@property (retain, nonatomic) NSMutableSet *contactSetImportFromGroup;
+@property (retain, nonatomic) NSMutableSet *contactSetNotImportFromGroup;
+@property (readonly, nonatomic) long long currentPrivacy;
+@property (weak, nonatomic) id<WCMomentsPrivacyViewControllerDelegate> delegate;
+@property (nonatomic) unsigned long long sourceScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onSaveAsNewTag;
+- (void)handleMultiSelectContactReturnForSns:(id)a0;
+- (void)handleMultiSelectContactReturn:(id)a0;
+- (void)handleMultiSelectContactReturn:(id)a0 selectContactFromGroup:(id)a1;
+- (void)handleTagNameEditViewControllerRetWithTagName:(id)a0;
+- (void)handleCreateContactLabel:(id)a0 withRetCode:(int)a1 andEventId:(unsigned int)a2;
+- (id)contactNamesComponentsJoinedByComma:(id)a0;
+- (void)handleCreateToSetContactLabel:(id)a0 withRetCode:(int)a1 andEventId:(unsigned int)a2;
+- (void)reportSaveNewGroupAlertAction:(unsigned long long)a0 count:(unsigned long long)a1;
+- (id)initWithParams:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidBePushOrPresent:(BOOL)a0;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)updateViewModel;
+- (void)initView;
+- (void)initNavBarButton;
+- (void)initTableView;
+- (id)currentItem;
+- (void)updateWithParams:(id)a0;
+- (void)updateWithSelectedContactSet:(id)a0;
+- (void)updateWithSaveAsTag:(id)a0;
+- (void)reloadTableView;
+- (void)resizeTableFooterView;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)onReturn;
+- (void)onDone;
+- (void)showShouldSelectOneLeastAlert;
+- (void)showHasChangeShareScopeAlert;
+- (void)openAddFromTag;
+- (void)openAddFromFriend;
+- (BOOL)canSelectPrivacySetting:(long long)a0;
+- (void)contactTagListViewController:(id)a0 didSelectContactTag:(id)a1;
+- (void)onMultiSelectContactReturn:(id)a0;
+- (void)onMultiSelectContactReturnForSns:(id)a0;
+- (void)onMultiSelectContactReturn:(id)a0 selectContactFromGroup:(id)a1;
+- (void)onMultiSelectContactCancelForSns;
+- (BOOL)onMultiSelectContactCompleted:(id)a0 finished:(BOOL)a1;
+- (void)onTagNameEditViewControllerRetWithTagName:(id)a0;
+- (void)onAddContactLabel:(id)a0 withRetCode:(int)a1 andEventId:(unsigned int)a2;
+- (void)setContactLabel:(id)a0 withRetCode:(int)a1 andEventId:(unsigned int)a2;
+- (void).cxx_destruct;
+
+@end

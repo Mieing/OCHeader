@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface CGPBusinessBackgroundAppPod : GPBMessage
+
+@property (nonatomic) int action;
+@property (nonatomic) int result;
+@property (nonatomic) int foreground;
+@property (copy, nonatomic) NSString *packageName;
+@property (retain, nonatomic) NSMutableArray *appListArray;
+@property (readonly, nonatomic) unsigned long long appListArray_Count;
+
++ (id)descriptor;
+
+@end

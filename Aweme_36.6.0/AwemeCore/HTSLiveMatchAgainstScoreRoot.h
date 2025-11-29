@@ -1,0 +1,3 @@
+@interface HTSLiveMatchAgainstScoreRoot : GPBRootObject
+
+@end

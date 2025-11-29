@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface OpenShareTicketData : IESLivePBBaseMessage
+
+@property (nonatomic) int shareType;
+@property (copy, nonatomic) NSString *recordId;
+@property (copy, nonatomic) NSString *ticketId;
+@property (copy, nonatomic) NSString *skuId;
+@property (nonatomic) int totalShareCount;
+@property (nonatomic) int remainShareCount;
+
++ (id)descriptor;
+
+@end

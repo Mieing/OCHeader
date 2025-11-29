@@ -1,0 +1,3 @@
+@interface HTSLiveHighlightAreaPriorityRoot : GPBRootObject
+
+@end

@@ -1,0 +1,84 @@
+@class NSString;
+
+@interface BDECPigeonBizActionHandler : NSObject <BDECRabbiFlyIActionHandler>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)validateResponse:(id)a0;
++ (id)messageFromResponse:(id)a0;
++ (void)handleClickResultBegin:(id)a0 clickUUID:(id)a1 actionType:(id)a2 params:(id)a3;
++ (void)handleClickResultAppend:(id)a0 clickUUID:(id)a1 actionTypeList:(id)a2;
++ (void)trackTemplateCardBtnTap:(id)a0 actionType:(id)a1 params:(id)a2;
++ (void)secondHandleAction:(id)a0 clickUUID:(id)a1 actionType:(id)a2 params:(id)a3 completion:(id /* block */)a4;
++ (void)handleClickResultEnd:(id)a0 clickUUID:(id)a1 actionType:(id)a2 code:(long long)a3 errMsg:(id)a4;
++ (void)handleInvokeActionGroup:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenWindow:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenMultiSku:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleActionList:(id)a0 clickUUID:(id)a1 actionList:(id)a2 params:(id)a3 completion:(id /* block */)a4;
++ (id)unitBtmIdWithBtmCid:(id)a0 btmDid:(id)a1 btmPageId:(id)a2;
++ (void)openWindowWithWindowUrl:(id)a0 unitBtmId:(id)a1 host:(id)a2 bcm:(id)a3;
++ (id)targetViewWithView:(id)a0 targetProtocol:(id)a1;
++ (void)handleCopyToClipboard:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleCallPhone:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (id)customerActionTypeList;
++ (id)templateCardActionData:(id)a0;
++ (id)dynamicModelWithView:(id)a0;
++ (void)handleAction:(id)a0 actionType:(id)a1 params:(id)a2 from:(id)a3 completion:(id /* block */)a4;
++ (void)firstHandleAction:(id)a0 actionType:(id)a1 params:(id)a2 from:(id)a3 completion:(id /* block */)a4;
++ (BOOL)isActionAvailable:(id)a0;
++ (void)handleOpenToast:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleRequestUrl:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleRequestAndAction:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleReloadDynamicData:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handlePlayVideo:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenSKU:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenDialog:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenModifyAddress:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenModifyExpTime:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenMoreButtonPanel:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleRequestDynamicUrl:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleRequestDynamicUrlAndAction:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleSendEvent:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handlePreviewImage:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleShareData:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleShowAlertDialog:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (void)handleSetLocalData:(id)a0 clickUUID:(id)a1 params:(id)a2 completion:(id /* block */)a3;
++ (BOOL)isAvailableWithKey:(id)a0 versionMap:(id)a1 currentVersion:(long long)a2;
++ (void)handleNextActionList:(id)a0 clickUUID:(id)a1 actionList:(id)a2 params:(id)a3 completion:(id /* block */)a4;
++ (id)btmPageIdWithDynamicModel:(id)a0;
++ (id)msgCellModelWithDynamicModel:(id)a0;
++ (id)currentResponderWithDynamicModel:(id)a0;
++ (void)handleOpenWindow:(id)a0 unitBtmId:(id)a1 msgCellModel:(id)a2 host:(id)a3 completion:(id /* block */)a4;
++ (void)handleOpenToast:(id)a0 templateCardCommonFunctionImp:(id)a1 completion:(id /* block */)a2;
++ (void)handleRequestUrl:(id)a0 templateCardCommonFunctionImp:(id)a1 msgCellModel:(id)a2 completion:(id /* block */)a3;
++ (void)postTemplateCardActionV2WithParams:(id)a0 templateCardCommonFunctionImp:(id)a1 msgCellModel:(id)a2 completion:(id /* block */)a3;
++ (void)handleRequestAndAction:(id)a0 clickUUID:(id)a1 params:(id)a2 templateCardCommonFunctionImp:(id)a3 msgCellModel:(id)a4 completion:(id /* block */)a5;
++ (void)handleReloadDynamicData:(id)a0 completion:(id /* block */)a1;
++ (void)handlePlayVideo:(id)a0 templateCardCommonFunctionImp:(id)a1 completion:(id /* block */)a2;
++ (void)handleOpenSKU:(id)a0 btmPageId:(id)a1 msgCellModel:(id)a2 host:(id)a3 completion:(id /* block */)a4;
++ (void)handleOpenDialog:(id)a0 clickUUID:(id)a1 params:(id)a2 templateCardCommonFunctionImp:(id)a3 completion:(id /* block */)a4;
++ (void)handleCallPhone:(id)a0 templateCardCommonFunctionImp:(id)a1 completion:(id /* block */)a2;
++ (void)handleCopyToClipboard:(id)a0 templateCardCommonFunctionImp:(id)a1 completion:(id /* block */)a2;
++ (void)handleOpenModifyAddress:(id)a0 templateCardCommonFunctionImp:(id)a1 msgCellModel:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenModifyExpTime:(id)a0 templateCardCommonFunctionImp:(id)a1 msgCellModel:(id)a2 completion:(id /* block */)a3;
++ (void)handleOpenMoreButtonPanel:(id)a0 clickUUID:(id)a1 params:(id)a2 templateCardCommonFunctionImp:(id)a3 completion:(id /* block */)a4;
++ (id)generatePropsButtonModelWithData:(id)a0;
++ (void)handleRequestDynamicUrl:(id)a0 templateCardCommonFunctionImp:(id)a1 msgCellModel:(id)a2 completion:(id /* block */)a3;
++ (void)handleRequestDynamicUrlAndAction:(id)a0 clickUUID:(id)a1 params:(id)a2 templateCardCommonFunctionImp:(id)a3 msgCellModel:(id)a4 completion:(id /* block */)a5;
++ (void)handleOpenMultiSku:(id)a0 unitBtmId:(id)a1 msgCellModel:(id)a2 host:(id)a3 completion:(id /* block */)a4;
++ (void)handleSendEvent:(id)a0 msgCellModel:(id)a1 completion:(id /* block */)a2;
++ (void)handlePreviewImage:(id)a0 templateCardCommonFunctionImp:(id)a1 completion:(id /* block */)a2;
++ (void)handleShareData:(id)a0 templateCardCommonFunctionImp:(id)a1 completion:(id /* block */)a2;
++ (void)handleShowAlertDialog:(id)a0 completion:(id /* block */)a1;
++ (void)handleSetLocalData:(id)a0 msgCellModel:(id)a1 completion:(id /* block */)a2;
++ (id)clickResultProviderWithDynamicModel:(id)a0;
++ (id)businessActionTypeList;
++ (id)sharedInstance;
++ (id)dependency;
+
+- (void)handleAction:(id)a0 action:(id)a1 callback:(id /* block */)a2;
+
+@end

@@ -1,0 +1,10 @@
+@interface HTSLiveShowArea : IESLivePBBaseMessage
+
+@property (nonatomic) long long x;
+@property (nonatomic) long long y;
+@property (nonatomic) long long h;
+@property (nonatomic) long long w;
+
++ (id)descriptor;
+
+@end

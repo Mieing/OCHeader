@@ -1,0 +1,78 @@
+@class NSMutableDictionary, HTSLiveAnchorAudioConf, HTSLiveScreenChatSetting, IESLivePrivilegeScreenChatApi, NSMutableArray, NSString, NSHashTable, HTSEventContext, NSArray, IESLiveAudioChatSettingApi, ChatSettingGetResponse_ResponseData, IESLivePublicScreenSettingPanelView, IESLiveAnchorSpeechCommentApi;
+@protocol IESLiveRoomService;
+
+@interface IESLivePublicScreenSettingPanelViewModel : NSObject <IESLiveVocalizationAuthorityProtocol, IESLiveGuideActions, IESLiveComponentLifeCycleNotifier, UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic) unsigned long long liveType;
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (nonatomic) BOOL beforeLiving;
+@property (retain, nonatomic) NSMutableDictionary *registerItems;
+@property (retain, nonatomic) NSArray *sections;
+@property (nonatomic) unsigned long long curFontSizeType;
+@property (retain, nonatomic) NSHashTable *settingSubscribers;
+@property (retain, nonatomic) IESLiveAudioChatSettingApi *audioChatSettingApi;
+@property (retain, nonatomic) ChatSettingGetResponse_ResponseData *audioChatSettingModel;
+@property (retain, nonatomic) ChatSettingGetResponse_ResponseData *audioChatSettingModelForShow;
+@property (retain, nonatomic) HTSLiveScreenChatSetting *screenChatSetting;
+@property (retain, nonatomic) IESLivePrivilegeScreenChatApi *screenChatApi;
+@property (nonatomic) long long anchorSpeechAuth;
+@property (retain, nonatomic) HTSLiveAnchorAudioConf *anchorSpeechSetting;
+@property (retain, nonatomic) IESLiveAnchorSpeechCommentApi *anchorSpeechApi;
+@property (copy, nonatomic) NSString *helpSchema;
+@property (copy, nonatomic) id /* block */ popupBack;
+@property (weak, nonatomic) IESLivePublicScreenSettingPanelView *view;
+@property (retain, nonatomic) NSString *enterFrom;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) NSMutableArray *baseSettingItems;
+@property (retain, nonatomic) NSMutableArray *interactionSettingItems;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (BOOL)hasRedDot;
+- (void)liveTypeDidChange:(unsigned long long)a0;
+- (void)componentCreateDidFinishForLevel:(long long)a0;
+- (void)addPublicScreenSettingChangeSubscriber:(id)a0;
+- (void)panelDismiss;
+- (id)initWithDIContext:(id)a0 liveType:(unsigned long long)a1;
+- (unsigned long long)getPublicScreenHeightType;
+- (void)addHeightFontSettingItem;
+- (void)addCommentAuthSettingItem;
+- (void)addAnchorSpeechSettingItem;
+- (void)reloadAvailItemsFromRegisterItems;
+- (void)setAnchorSpeechItemsSwitchStateWithConfig:(id)a0;
+- (void)uploadAnchorSpeechSettingIfNeed;
+- (unsigned long long)getMessageListFontSizeType;
+- (id)getHeightFontSettingTextWithHeight:(unsigned long long)a0 fontSize:(unsigned long long)a1;
+- (void)showHeightFontSetting;
+- (BOOL)shouldShowHeightFontItem;
+- (void)heightFontSettingViewShow:(BOOL)a0;
+- (void)trackAnchorInteractRightClick;
+- (void)showVocalizationAuthoritySheet;
+- (BOOL)shouldShowCommentAuthItem;
+- (void)trackAnchorInteractRightShow;
+- (void)trackAnchorInteractRightLeave;
+- (void)setVocalizationAuthorityStatusIfNeeded;
+- (id)commonCommentAuthTrackParams;
+- (BOOL)shouldShowAnchorSpeechMainItem;
+- (id)itemInIndexPath:(id)a0;
+- (void)updateShowingAudioChatSettingModel:(id)a0;
+- (long long)availItemCount;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (void)registerItem:(id)a0;
+- (id)initWithRoom:(id)a0;
+- (void)setupConfig;
+- (void)prepareData;
+
+@end

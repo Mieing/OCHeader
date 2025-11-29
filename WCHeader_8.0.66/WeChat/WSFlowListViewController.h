@@ -1,0 +1,77 @@
+@class _TtC6WeChat15WSFlowListLogic, NSArray, NSString, _TtC6WeChat24WSFlowListLiteAppAdapter, UIView, WCFinderFeedListView, _TtC6WeChat21WSFlowListLiteAppCell;
+
+@interface WSFlowListViewController : MMUIViewController <WCFinderFeedListViewDataSource, WCFinderFeedListViewDelegate, WCFinderFeedBaseViewControllerProtocol, WCFinderFeedListViewReportDelegate>
+
+@property (retain, nonatomic) _TtC6WeChat15WSFlowListLogic *flowListLogic;
+@property (retain, nonatomic) _TtC6WeChat24WSFlowListLiteAppAdapter *liteAppAdapter;
+@property (retain, nonatomic) WCFinderFeedListView *feedListView;
+@property (nonatomic) unsigned long long currentShowIndex;
+@property (retain, nonatomic) NSArray *listData;
+@property (copy, nonatomic) NSString *extInfo;
+@property (copy, nonatomic) NSString *reportExtraInfo;
+@property (retain, nonatomic) UIView *retryButton;
+@property (copy, nonatomic) NSString *enterItemId;
+@property (nonatomic) BOOL hasLoadFirstLiteAppCell;
+@property (retain, nonatomic) _TtC6WeChat21WSFlowListLiteAppCell *currentActiveLiteAppCell;
+@property (nonatomic) unsigned long long currentActiveLiteAppCellIndex;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithExtInfo:(id)a0 enterItemId:(id)a1 reportExtraInfo:(id)a2 enterExportId:(id)a3;
+- (void)initView;
+- (void)initRetryButton;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewDidPopOrDismiss:(BOOL)a0;
+- (void)dealloc;
+- (void)configNavigationBar;
+- (void)onNavBarLeftBackButtonClicked:(id)a0;
+- (id)navigationBarBackgroundColor;
+- (BOOL)useTransparentNavibar;
+- (BOOL)useBlackStatusbar;
+- (BOOL)forbidCreateNavHeader;
+- (void)updateFinderReportInfo;
+- (void)initFeedListView;
+- (void)fetchEnterFinderItemIfNeeded;
+- (void)fetchFirstPageData;
+- (void)fetchMoreData:(unsigned int)a0;
+- (id)finderFeedListView:(id)a0 contentVMAtSection:(long long)a1;
+- (long long)finderFeedListView:(id)a0 rowOfCustomViewAtSection:(long long)a1;
+- (BOOL)finderFeedListView:(id)a0 customViewAtSection:(long long)a1;
+- (double)finderFeedListView:(id)a0 heightForCustomRowAtIndexPath:(id)a1;
+- (id)finderFeedListView:(id)a0 customCellForRowAtIndexPath:(id)a1;
+- (void)finderFeedListView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (id)finderFeedListView:(id)a0 contentVMOfTid:(id)a1;
+- (long long)finderFeedListView:(id)a0 sectionOfTid:(id)a1;
+- (long long)numberOfContentVMsInTableView;
+- (BOOL)finderFeedListViewCanPreFetchData:(id)a0;
+- (void)finderFeedListViewFetchMoreData:(id)a0;
+- (BOOL)finderFeedListViewHeaderCanFetchData:(id)a0;
+- (void)finderFeedListViewHeaderFetchMoreData:(id)a0;
+- (id)finderFeedListViewCurrentViewController:(id)a0;
+- (BOOL)finderFeedListViewIsNoMoreData:(id)a0;
+- (void)finderFeedListView:(id)a0 scrollViewDidScroll:(id)a1;
+- (void)onScrollFromLiteAppCell:(id)a0 toLiteAppCell:(id)a1;
+- (void)finderFeedListViewDidEndDecelerating:(id)a0;
+- (void)finderFeedListViewDidEndScrollingAnimation:(id)a0;
+- (void)onScrollEnd:(id)a0;
+- (void)onChangeToNewIndex:(unsigned int)a0;
+- (BOOL)isLiteAppPageAtIndex:(long long)a0;
+- (id)getLiteAppCellAtIndex:(long long)a0;
+- (void)reloadData;
+- (void)updateTableDataWithInsertionFromIndex:(long long)a0 length:(long long)a1;
+- (void)scrollToIndex:(unsigned long long)a0 animate:(BOOL)a1;
+- (int)feedViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (id)currentCellModel;
+- (void)setCellActive:(id)a0 index:(unsigned long long)a1;
+- (void)clearActiveCell;
+- (void).cxx_destruct;
+
+@end

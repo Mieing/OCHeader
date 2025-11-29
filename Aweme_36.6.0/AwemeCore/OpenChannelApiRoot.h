@@ -1,0 +1,3 @@
+@interface OpenChannelApiRoot : GPBRootObject
+
+@end

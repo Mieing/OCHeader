@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface PoiFrontendTypeStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *code;
+@property (nonatomic) BOOL hasCode;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *desc;
+@property (nonatomic) BOOL hasDesc;
+
++ (id)descriptor;
+
+@end

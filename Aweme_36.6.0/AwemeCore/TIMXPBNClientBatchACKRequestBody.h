@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNClientBatchACKRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *ackListArray;
+@property (readonly, nonatomic) unsigned long long ackListArray_Count;
+
++ (id)descriptor;
+
+@end

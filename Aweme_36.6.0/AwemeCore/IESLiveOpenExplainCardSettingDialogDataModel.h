@@ -1,0 +1,9 @@
+@class NSDictionary;
+
+@interface IESLiveOpenExplainCardSettingDialogDataModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSDictionary *info;
+
++ (id)modelCustomPropertyMapper;
+
+@end

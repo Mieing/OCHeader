@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveCustomizedDiamond : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (nonatomic) int priceMin;
+@property (nonatomic) int priceMax;
+@property (nonatomic) float diamondCountRate;
+@property (nonatomic) int givingCount;
+@property (copy, nonatomic) NSString *describe;
+@property (copy, nonatomic) NSString *couponId;
+@property (retain, nonatomic) HTSLiveImage *iconImage;
+@property (nonatomic) BOOL hasIconImage;
+
++ (id)descriptor;
+
+@end

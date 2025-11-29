@@ -1,0 +1,3 @@
+@interface RoomAudiencePingApiRoot : GPBRootObject
+
+@end

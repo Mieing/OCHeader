@@ -1,0 +1,3 @@
+@interface HTSLiveVerifyDecisionMessageRoot : GPBRootObject
+
+@end

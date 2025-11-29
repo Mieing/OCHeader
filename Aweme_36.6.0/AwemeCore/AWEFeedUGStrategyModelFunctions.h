@@ -1,0 +1,3 @@
+@interface AWEFeedUGStrategyModelFunctions : NSObject
+
+@end

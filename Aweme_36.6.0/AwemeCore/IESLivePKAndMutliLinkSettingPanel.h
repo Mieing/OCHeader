@@ -1,0 +1,72 @@
+@class NSArray, HTSLiveInteractiveAPIV2, NSString, HTSLivePKApi, NSMutableArray, UITableView;
+
+@interface IESLivePKAndMutliLinkSettingPanel : IESLiveRevenueInteractPopupViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic) long long settingType;
+@property (retain, nonatomic) NSArray *pkItemInfos;
+@property (retain, nonatomic) NSArray *multiLinkItemInfos;
+@property (retain, nonatomic) UITableView *settingListView;
+@property (retain, nonatomic) HTSLivePKApi *pkApi;
+@property (retain, nonatomic) HTSLiveInteractiveAPIV2 *interactAPI;
+@property (retain, nonatomic) NSMutableArray *pkSettingItems;
+@property (copy, nonatomic) NSArray *multiLinkerSettingItems;
+@property (retain, nonatomic) NSMutableArray *pkInviteSettingChildrenIndexList;
+@property (nonatomic) BOOL linkEnabled;
+@property (nonatomic) BOOL multiLinkEnabled;
+@property (nonatomic) BOOL defaultLargeLayoutEnabled;
+@property (nonatomic) BOOL sendGiftToOthers;
+@property (nonatomic) long long multiLinkerSubItemsCount;
+@property (copy, nonatomic) NSString *inviteRejectTemporaryText;
+@property (nonatomic) BOOL showAiAssistantSetting;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)p_reload;
+- (void)onSetupNavBar:(id)a0;
+- (void)p_buildMultiLinkSettingDataSource;
+- (void)p_builSettingView;
+- (void)setFollowingFollowedLinkEnabled:(BOOL)a0;
+- (void)setHourlyRankLinkEnabled:(BOOL)a0;
+- (void)setPopularityRankLinkEnabled:(BOOL)a0;
+- (void)setSearchLinkEnabled:(BOOL)a0;
+- (id)p_makeSwitchItemWithTitle:(id)a0 initialValue:(BOOL)a1 style:(long long)a2;
+- (void)p_updateSetting:(id)a0 completion:(id /* block */)a1;
+- (id)cellWithIndex:(long long)a0 section:(long long)a1;
+- (BOOL)followingFollowedLinkEnabled;
+- (BOOL)hourlyRankLinkEnabled;
+- (BOOL)popularityRankLinkEnabled;
+- (BOOL)searchLinkEnabled;
+- (void)trackActionWithItem:(id)a0 isOn:(BOOL)a1 partition:(id)a2;
+- (id)initWithSettingType:(long long)a0;
+- (void)p_buildPKSettingDataSource;
+- (void)p_updateBlockListDataSource;
+- (void)setPKSwitchSettingFromSettings:(id)a0 itemInfo:(id)a1;
+- (id)p_pkSettingCellFromItemInfo:(id)a0;
+- (void)p_updateSetting:(id)a0 withValue:(id)a1 completion:(id /* block */)a2;
+- (void)p_showSubPanelWithItem:(id)a0;
+- (BOOL)aiCellularOn;
+- (void)trackDefualtLargeLayoutSettingClicked:(BOOL)a0;
+- (void)setAiCellularOn:(BOOL)a0;
+- (void)p_animationUpdateWithValue:(BOOL)a0 index:(long long)a1;
+- (void)p_showChangeTimeVC;
+- (void)showPKTermDetailView;
+- (void)p_showVolumeUpVC;
+- (void)trackDefualtLargeLayoutSettingShow;
+- (void)p_trackAntionWithItem:(id)a0;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (BOOL)isScreenshot;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+
+@end

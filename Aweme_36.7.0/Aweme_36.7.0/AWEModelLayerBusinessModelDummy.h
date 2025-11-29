@@ -1,0 +1,3 @@
+@interface AWEModelLayerBusinessModelDummy : NSObject
+
+@end

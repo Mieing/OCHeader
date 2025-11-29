@@ -1,0 +1,62 @@
+@interface AWEIMFlexStyle : NSObject
+
+@property (nonatomic) long long direction;
+@property (nonatomic) long long flexDirection;
+@property (nonatomic) long long justifyContent;
+@property (nonatomic) long long alignContent;
+@property (nonatomic) long long alignItems;
+@property (nonatomic) long long alignSelf;
+@property (nonatomic) long long position;
+@property (nonatomic) long long flexWrap;
+@property (nonatomic) long long display;
+@property (nonatomic) double flexGrow;
+@property (nonatomic) double flexShrink;
+@property (nonatomic) double left;
+@property (nonatomic) double top;
+@property (nonatomic) double right;
+@property (nonatomic) double bottom;
+@property (nonatomic) double start;
+@property (nonatomic) double end;
+@property (nonatomic) double marginLeft;
+@property (nonatomic) double marginTop;
+@property (nonatomic) double marginRight;
+@property (nonatomic) double marginBottom;
+@property (nonatomic) double marginStart;
+@property (nonatomic) double marginEnd;
+@property (nonatomic) double marginHorizontal;
+@property (nonatomic) double marginVertical;
+@property (nonatomic) double margin;
+@property (nonatomic) struct AWEIMFlexEdges { double x0; double x1; double x2; double x3; } marginEdges;
+@property (nonatomic) double paddingLeft;
+@property (nonatomic) double paddingTop;
+@property (nonatomic) double paddingRight;
+@property (nonatomic) double paddingBottom;
+@property (nonatomic) double paddingStart;
+@property (nonatomic) double paddingEnd;
+@property (nonatomic) double paddingHorizontal;
+@property (nonatomic) double paddingVertical;
+@property (nonatomic) double padding;
+@property (nonatomic) struct AWEIMFlexEdges { double x0; double x1; double x2; double x3; } paddingEdges;
+@property (nonatomic) double width;
+@property (nonatomic) double widthPercent;
+@property (nonatomic) double height;
+@property (nonatomic) double heightPercent;
+@property (nonatomic) double minWidth;
+@property (nonatomic) double minHeight;
+@property (nonatomic) double maxWidth;
+@property (nonatomic) double maxHeight;
+@property (nonatomic) double aspectRatio;
+
+- (void)setAbsoluteLayoutAndFillContent;
+- (int)ydDirection;
+- (int)ygDisplay;
+- (int)ygJustifyContent;
+- (int)ygAlignContent;
+- (int)ygAlignItems;
+- (int)ygFlexDirection;
+- (int)ygAlignSelf;
+- (int)ygPositionType;
+- (int)ygFlexWrap;
+- (id)init;
+
+@end

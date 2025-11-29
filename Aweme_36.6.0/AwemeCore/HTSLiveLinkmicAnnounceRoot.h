@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicAnnounceRoot : GPBRootObject
+
+@end

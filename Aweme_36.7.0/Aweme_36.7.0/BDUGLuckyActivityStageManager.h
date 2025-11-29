@@ -1,0 +1,88 @@
+@class NSArray, NSMutableDictionary, NSString, NSDate, NSMutableArray;
+
+@interface BDUGLuckyActivityStageManager : NSObject <BDUGLuckyCacheIntercepterProtocol, BDUGLuckyActivityStageProtocol>
+
+@property (retain, nonatomic) NSMutableArray *delegateArray;
+@property (copy, nonatomic) NSArray *entryItems;
+@property (retain, nonatomic) NSMutableArray *allTasks;
+@property (copy, nonatomic) NSArray *allTempTasks;
+@property (retain, nonatomic) NSDate *lastEnterBackgroundDate;
+@property (nonatomic) BOOL needObserveTimeCalibrator;
+@property (nonatomic) BOOL hasSetupEntryItems;
+@property (nonatomic) long long personalSettingStatus;
+@property (retain, nonatomic) NSMutableDictionary *personalSettingsStatusMap;
+@property (copy, nonatomic) NSString *currentDyanmicSettingsHash;
+@property (nonatomic) long long currentDynamicSettingsVersion;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)preStartupUnionSchemaModule;
++ (void)startupActivityStageManager;
++ (id)sharedInstance;
++ (id)serviceProtocol;
+
+- (void)__setupCacheIntercepter;
+- (void)__checkServerTime;
+- (void)__setupCacheSettingsInfo;
+- (void)__setupEntryItemsWithMergeOperation;
+- (void)__setupNotification;
+- (id)registerActivityDelegate:(id)a0 beforeActivityEnterTime:(long long)a1 entryId:(id)a2;
+- (void)unregisterActivityDelegate:(id)a0;
+- (id)isInActivityStage:(id)a0 resourceId:(id)a1 cycleId:(id)a2;
+- (long long)isActivityBlock:(id)a0 resourceId:(id)a1 cycleId:(id)a2;
+- (id)getResourceWithEntryId:(id)a0 resourceId:(id)a1 cycleId:(id)a2;
+- (id)getProcessActivityResourceWithEntryId:(id)a0;
+- (id)getAllResourceWithEntryData:(id)a0;
+- (id)defaultActivityData:(id)a0;
+- (id)getPersonalSettingsStatusWithEntryId:(id)a0;
+- (id)commonTrackingParamsForDynamicSettings;
+- (id)__getResponseModelWithStageType:(unsigned long long)a0 entryId:(id)a1 resourceId:(id)a2 cycleId:(id)a3;
+- (id)__getActivityResourceWithEntryId:(id)a0 resourceId:(id)a1 cycleId:(id)a2;
+- (unsigned long long)__stageForStartTime:(double)a0 endTime:(double)a1;
+- (BOOL)__containsDelegate:(id)a0;
+- (id)__modelForDelegate:(id)a0;
+- (void)trackActivityStageEvent:(id)a0 params:(id)a1;
+- (void)__buildStageTask;
+- (void)__handleOnActivityBlock:(id)a0;
+- (id)__activityBlockKeyWithEntryId:(id)a0 resourceId:(id)a1 cycleId:(id)a2;
+- (id)__processActivityInResourceWithEntryId:(id)a0;
+- (id)__getResponseModelWithResourceItem:(id)a0 entryId:(id)a1 resourceId:(id)a2;
+- (id)__transferResourceItemFrom:(id)a0 entryId:(id)a1;
+- (id)__getAllResourceItemWithEntryId:(id)a0;
+- (BOOL)__needMonitorPersonalSettings;
+- (void)__recordPersonalSettingsStatus:(id)a0;
+- (id)__transferResourceItemArrayFrom:(id)a0 entryId:(id)a1;
+- (id)__getActivityEntranceInfoWithEntryId:(id)a0;
+- (double)__currentServerTime;
+- (void)__staticSettingsDidChanged;
+- (void)__pollingSettingsDidChanged;
+- (void)__personalSettingsDidUpdate:(id)a0;
+- (void)__timeCalibratorDidChanged;
+- (void)__handleResignActive;
+- (void)__handleBecomeActive;
+- (void)__settingsDidUpdate:(id)a0 entryItems:(id)a1;
+- (id)__handlePollingMergeEntryInfo:(id)a0;
+- (id)__handleNormalMergeEntryInfo:(id)a0;
+- (id)__checkEntryItemsIsEqual:(id)a0 newEntryItems:(id)a1;
+- (void)__onActivityDataChanged:(id)a0 changeScene:(id)a1;
+- (void)__handleSendMessageToWeb:(id)a0;
+- (id)__buildTaskFromResourceListWithEntryId:(id)a0 beforeActivityEnterTime:(long long)a1 taskKey:(id)a2;
+- (void)__buildAllTasks;
+- (BOOL)__shouldDisableFinishTriggerForTask:(id)a0;
+- (void)__logAllTask:(id)a0 msg:(id)a1;
+- (void)__onActivityBlockChange:(id)a0 resourceId:(id)a1 cycleId:(id)a2 block:(long long)a3;
+- (id)__getActivityEntranceInfoWithEntryId:(id)a0 entryItems:(id)a1;
+- (id)__getActivityResourceWithEntryId:(id)a0 resourceId:(id)a1 cycleId:(id)a2 entryInfo:(id)a3;
+- (id)__secUserID;
+- (void)__startTriggerWithTask:(id)a0;
+- (void)__finishTriggerWithTask:(id)a0;
+- (void)__sortMergedEntryItems:(id)a0;
+- (id)__versionForResources:(id)a0;
+- (void)didSetString:(id)a0 forKey:(id)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+
+@end

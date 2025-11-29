@@ -1,0 +1,10 @@
+@class MAEntranceInfoResponse_Data;
+
+@interface MAEntranceInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) MAEntranceInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

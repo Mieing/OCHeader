@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface IESLiveUploadLogToSlardarAndGetSlardarURLUploadLogToSlardarAndGetSlardarURLParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *startTime;
+@property (copy, nonatomic) NSString *duration;
+
+@end

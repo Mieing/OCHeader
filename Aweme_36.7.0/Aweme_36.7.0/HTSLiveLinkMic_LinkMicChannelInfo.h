@@ -1,0 +1,9 @@
+@interface HTSLiveLinkMic_LinkMicChannelInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long layout;
+@property (nonatomic) long long vendor;
+@property (nonatomic) long long dimension;
+
++ (id)descriptor;
+
+@end

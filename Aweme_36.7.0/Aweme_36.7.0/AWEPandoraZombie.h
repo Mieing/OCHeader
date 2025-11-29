@@ -1,0 +1,7 @@
+@interface AWEPandoraZombie : NSObject
+
++ (void)_aweLazyRegisterLoad;
++ (BOOL)checkRequirement;
++ (BOOL)checkConfiguration:(struct PandoraZombieConfig { unsigned long long x0; unsigned long long x1; unsigned long long x2; unsigned long long x3; } *)a0;
+
+@end

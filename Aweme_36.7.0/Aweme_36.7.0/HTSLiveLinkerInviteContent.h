@@ -1,0 +1,71 @@
+@class IESLiveMultiChannelInfo, BattleRivalTag, IESLivePreRTCInfo, IESLiveLinkmicInfo, IESLiveUserVersionInfo, NSMutableArray, IESLiveMultiRtcInfo, IESLiveListUser, IESLiveAnchorLayoutInfo, NSString, HTSLiveLinkerInviteContent_InviterInfo, HTSLiveLinkerInviteContent_GameExtra, IESLiveMultiLiveCoreInfo, HTSLiveLinkmicInfo;
+
+@interface HTSLiveLinkerInviteContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *fromUserId;
+@property (nonatomic) long long fromRoomId;
+@property (copy, nonatomic) NSString *toRtcExtInfo;
+@property (nonatomic) BOOL rtcJoinChannel;
+@property (nonatomic) long long vendor;
+@property (copy, nonatomic) NSString *secFromUserId;
+@property (copy, nonatomic) NSString *toLinkmicIdStr;
+@property (nonatomic) BOOL rtcPushStream;
+@property (copy, nonatomic) NSString *signExtra;
+@property (nonatomic) int inviteSource;
+@property (retain, nonatomic) HTSLiveLinkmicInfo *fromUserLinkmicInfo;
+@property (nonatomic) BOOL hasFromUserLinkmicInfo;
+@property (retain, nonatomic) IESLiveMultiRtcInfo *multiRtcInfo;
+@property (nonatomic) BOOL hasMultiRtcInfo;
+@property (retain, nonatomic) IESLiveMultiLiveCoreInfo *multiLiveCoreInfo;
+@property (nonatomic) BOOL hasMultiLiveCoreInfo;
+@property (nonatomic) int multiPkMode;
+@property (nonatomic) BOOL supportMultiPkTeamMode;
+@property (retain, nonatomic) IESLiveLinkmicInfo *toUserLinkmicInfo;
+@property (nonatomic) BOOL hasToUserLinkmicInfo;
+@property (retain, nonatomic) IESLiveMultiChannelInfo *multiChannelInfo;
+@property (nonatomic) BOOL hasMultiChannelInfo;
+@property (copy, nonatomic) NSString *inviteRejectTemporaryText;
+@property (copy, nonatomic) NSString *audienceLinkerDescription;
+@property (nonatomic) BOOL inviterWithAudience;
+@property (retain, nonatomic) NSMutableArray *inviteeFollowedUsersArray;
+@property (readonly, nonatomic) unsigned long long inviteeFollowedUsersArray_Count;
+@property (retain, nonatomic) NSMutableArray *inviterUsersArray;
+@property (readonly, nonatomic) unsigned long long inviterUsersArray_Count;
+@property (copy, nonatomic) NSString *toUserId;
+@property (nonatomic) long long toRoomId;
+@property (retain, nonatomic) IESLiveListUser *appliedUser;
+@property (nonatomic) BOOL hasAppliedUser;
+@property (retain, nonatomic) IESLivePreRTCInfo *preRtcInfo;
+@property (nonatomic) BOOL hasPreRtcInfo;
+@property (nonatomic) BOOL supportMultiInvite;
+@property (nonatomic) long long curInviteNum;
+@property (nonatomic) long long waitSec;
+@property (retain, nonatomic) NSMutableArray *tagsArray;
+@property (readonly, nonatomic) unsigned long long tagsArray_Count;
+@property (retain, nonatomic) IESLiveListUser *inviteUser;
+@property (nonatomic) BOOL hasInviteUser;
+@property (copy, nonatomic) NSString *clientAttachedInfo;
+@property (retain, nonatomic) IESLiveUserVersionInfo *inviterVersionInfo;
+@property (nonatomic) BOOL hasInviterVersionInfo;
+@property (nonatomic) long long toJoinChannelId;
+@property (retain, nonatomic) IESLiveAnchorLayoutInfo *layoutInfo;
+@property (nonatomic) BOOL hasLayoutInfo;
+@property (retain, nonatomic) BattleRivalTag *region;
+@property (nonatomic) BOOL hasRegion;
+@property (copy, nonatomic) NSString *openGameAppId;
+@property (copy, nonatomic) NSString *battleAttachedInfo;
+@property (nonatomic) int bizType;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *eventTrackingInfo;
+@property (copy, nonatomic) NSString *gameName;
+@property (retain, nonatomic) HTSLiveLinkerInviteContent_InviterInfo *inviterInfo;
+@property (nonatomic) BOOL hasInviterInfo;
+@property (copy, nonatomic) NSString *peerDesc;
+@property (retain, nonatomic) HTSLiveLinkerInviteContent_GameExtra *gameExtra;
+@property (nonatomic) BOOL hasGameExtra;
+@property (copy, nonatomic) NSString *bizExtra;
+
++ (id)descriptor;
+
+@end

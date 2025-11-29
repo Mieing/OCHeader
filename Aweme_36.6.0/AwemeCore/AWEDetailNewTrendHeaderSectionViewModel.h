@@ -1,0 +1,3 @@
+@interface AWEDetailNewTrendHeaderSectionViewModel : AWEBaseListSectionViewModel
+
+@end

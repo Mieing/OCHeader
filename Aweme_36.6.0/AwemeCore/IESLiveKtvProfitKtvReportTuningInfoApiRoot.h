@@ -1,0 +1,3 @@
+@interface IESLiveKtvProfitKtvReportTuningInfoApiRoot : GPBRootObject
+
+@end

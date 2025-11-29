@@ -1,0 +1,3 @@
+@interface LVVEChromaDiffer : LVVEBaseDiffer
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveTaskMessageRoot : GPBRootObject
+
+@end

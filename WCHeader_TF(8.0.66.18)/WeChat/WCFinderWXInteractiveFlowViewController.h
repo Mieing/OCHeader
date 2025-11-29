@@ -1,0 +1,82 @@
+@class WCFinderWXInteractivePage, WCFinderInteractiveHeaderView, _TtC6WeChat28FinderFavoriteCollectionList, NSMutableSet, NSString, WCFinderFeedFlowView, WCFinderWXInteractiveFlowViewModel;
+
+@interface WCFinderWXInteractiveFlowViewController : MMUIViewController <WCFinderFeedStaticCoverCollectionViewCellDelegate, WCFinderFeedBaseViewControllerProtocol, WCFinderFeedFlowViewMonitorDelegate, WCFinderFeedFlowViewDataSource, WCFinderFeedFlowViewDelegate, WCFinderFeedFlowViewLayoutDelegate, WCFinderWXInteractiveFlowViewModelDelegate, WCFinderInteractiveHeaderViewDelegate, WeChat.FinderFavoriteCollectionListDelegate, WCFinderWXInteractivePageVC>
+
+@property (retain, nonatomic) WCFinderFeedFlowView *feedFlowView;
+@property (retain, nonatomic) NSMutableSet *exposedTags;
+@property (nonatomic) unsigned long long enterTime;
+@property (nonatomic) unsigned long long favoritePageEnterTime;
+@property (retain, nonatomic) WCFinderWXInteractiveFlowViewModel *flowViewModel;
+@property (retain, nonatomic) WCFinderInteractiveHeaderView *headerView;
+@property (nonatomic) long long initSelectType;
+@property (retain, nonatomic) _TtC6WeChat28FinderFavoriteCollectionList *favoriteCollectionList;
+@property (nonatomic) unsigned long long lastDisplayPageId;
+@property (retain, nonatomic) NSString *lastDisplayPageName;
+@property (nonatomic) long long lastDataType;
+@property (retain, nonatomic) WCFinderWXInteractivePage *interactivePage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)createLimitModeTeenageMenuItem:(id)a0 action:(SEL)a1;
+
+- (id)initWithSelectTabType:(long long)a0;
+- (id)init;
+- (void)viewDidLoad;
+- (void)updateRightBarButtonItems;
+- (void)setupHeaderTap;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (BOOL)useBlackStatusbar;
+- (BOOL)showNavigationBarSepLine;
+- (void)_showDeleteConfirmActionSheetWithItemIndexPath:(id)a0;
+- (void)_removeItemAtIndexPath:(id)a0;
+- (void)setupSubViews;
+- (void)reload;
+- (BOOL)finderFeedFlowView:(id)a0 isCustomSupplementaryViewOfKind:(id)a1 atSection:(long long)a2;
+- (long long)finderFeedFlowView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)finderFeedFlowView:(id)a0 contentVMAtIndexPath:(id)a1;
+- (BOOL)finderFeedFlowView:(id)a0 isCustomCellAtIndexPath:(id)a1;
+- (double)finderFeedFlowView:(id)a0 heightForCustomCellAtIndexPath:(id)a1 itemWidth:(double)a2;
+- (id)finderFeedFlowView:(id)a0 customCellAtIndexPath:(id)a1;
+- (void)finderFeedFlowView:(id)a0 updateCell:(id)a1 atIndexPath:(id)a2;
+- (void)onFinderFeedFlowViewDelete:(id)a0 indexPath:(id)a1;
+- (id)finderFeedFlowViewCurrentViewController:(id)a0;
+- (void)finderFeedFlowView:(id)a0 requestDataWithType:(unsigned long long)a1;
+- (unsigned long long)finderFeedFlowViewState:(id)a0;
+- (void)reloadDataWrap;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })finderFeedFlowView:(id)a0 edgeInsetsAtSection:(unsigned long long)a1;
+- (struct CGSize { double x0; double x1; })finderFeedFlowView:(id)a0 cellSpaceAtSection:(unsigned long long)a1;
+- (void)WCFinderFavFeedListVMfetchDataSucceesful;
+- (void)WCFinderFavFeedListVMfetchDataFailed;
+- (void)onClickCoverContact:(id)a0 contentVM:(id)a1;
+- (void)monitorView:(id)a0 newExposedItems:(id)a1 lastExposedItems:(id)a2;
+- (void)registerYReportSdk;
+- (void)_reportFavoritePageOutWithDataType:(long long)a0;
+- (BOOL)finderFeedFlowView:(id)a0 layout:(id)a1 pinHeaderToVisibleBoundsAtSection:(unsigned long long)a2;
+- (void)finderFeedFlowView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)onDataFetchedForFinderFeedFlowView:(id)a0 didSelectItemAtIndexPath:(id)a1 contentVM:(id)a2;
+- (void)onFlowViewModelFetchSuc;
+- (void)onFlowViewModelLoadFromIndex:(long long)a0 toIndex:(long long)a1;
+- (void)onFlowViewModelDeleteDataItemTid:(id)a0;
+- (void)onFlowViewModelFetchFail;
+- (void)onFlowViewModelFetchBegin;
+- (void)onFlowViewModelTabChanged;
+- (void)onFlowViewModelTabLocalLoaded;
+- (void)onSearchClicked;
+- (void)onLimitedClicked;
+- (int)feedViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (id)getCurMediaListObject;
+- (void)headerView:(id)a0 selectedTab:(id)a1 dataType:(long long)a2;
+- (void)favoriteCollectionList:(id)a0 didDeleteItem:(id)a1;
+- (void)favoriteCollectionList:(id)a0 generatingEvent:(long long)a1;
+- (void).cxx_destruct;
+
+@end

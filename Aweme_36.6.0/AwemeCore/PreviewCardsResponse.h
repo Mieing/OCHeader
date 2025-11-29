@@ -1,0 +1,12 @@
+@class PreviewCardsResponse_Extra, PreviewCardsResponse_PreviewData;
+
+@interface PreviewCardsResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PreviewCardsResponse_PreviewData *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) PreviewCardsResponse_Extra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

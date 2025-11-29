@@ -1,0 +1,8 @@
+@interface HTSLiveRoomReqUserData : IESLivePBBaseMessage
+
+@property (nonatomic) float userShareRoomScore;
+@property (nonatomic) int enterUserDeviceType;
+
++ (id)descriptor;
+
+@end

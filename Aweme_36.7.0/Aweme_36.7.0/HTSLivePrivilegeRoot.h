@@ -1,0 +1,3 @@
+@interface HTSLivePrivilegeRoot : GPBRootObject
+
+@end

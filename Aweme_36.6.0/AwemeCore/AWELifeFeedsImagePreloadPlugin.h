@@ -1,0 +1,10 @@
+@class NSMutableSet;
+
+@interface AWELifeFeedsImagePreloadPlugin : AWELifeFeedsBasePlugin
+
+@property (retain, nonatomic) NSMutableSet *nodeTagSet;
+
+- (void)bindPageViewModel:(id)a0 incrementNodeTags:(id)a1;
+- (void).cxx_destruct;
+
+@end

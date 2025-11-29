@@ -1,0 +1,3 @@
+@interface FlowInstruction.ImageGenInstructionDataHandler : FlowInstruction.FlowInstructionDataHandler
+
+@end

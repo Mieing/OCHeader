@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface RushLuckyBoxResponse_CaijingVoucher : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *voucherGroupArray;
+@property (readonly, nonatomic) unsigned long long voucherGroupArray_Count;
+@property (copy, nonatomic) NSString *voucherName;
+@property (copy, nonatomic) NSString *activityId;
+
++ (id)descriptor;
+
+@end

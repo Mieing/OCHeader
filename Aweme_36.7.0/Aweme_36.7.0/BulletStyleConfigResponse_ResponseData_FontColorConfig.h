@@ -1,0 +1,15 @@
+@class NSString, NSMutableArray, BulletStyleConfigResponse_ResponseData_FontColorConfig_Privilege;
+
+@interface BulletStyleConfigResponse_ResponseData_FontColorConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *colorValueArray;
+@property (readonly, nonatomic) unsigned long long colorValueArray_Count;
+@property (retain, nonatomic) BulletStyleConfigResponse_ResponseData_FontColorConfig_Privilege *privilegeStatus;
+@property (nonatomic) BOOL hasPrivilegeStatus;
+@property (copy, nonatomic) NSString *colorName;
+@property (copy, nonatomic) NSString *levelNameColor;
+@property (copy, nonatomic) NSString *levelNameBgColor;
+
++ (id)descriptor;
+
+@end

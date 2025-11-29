@@ -1,0 +1,23 @@
+@interface FlowKit.GeneratedMusicList : UIView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
+    void /* unknown type, empty encoding */ formerMessage;
+    void /* unknown type, empty encoding */ message;
+    void /* unknown type, empty encoding */ musicList;
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ _settingsProvider;
+    void /* unknown type, empty encoding */ _notifyCenter;
+    void /* unknown type, empty encoding */ _toastProvider;
+    void /* unknown type, empty encoding */ dismissAnimationInfo;
+    void /* unknown type, empty encoding */ shareAction;
+    void /* unknown type, empty encoding */ shareButton;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_collectionView;
+}
+
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+
+@end

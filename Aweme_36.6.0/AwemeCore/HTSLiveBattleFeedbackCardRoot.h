@@ -1,0 +1,3 @@
+@interface HTSLiveBattleFeedbackCardRoot : GPBRootObject
+
+@end

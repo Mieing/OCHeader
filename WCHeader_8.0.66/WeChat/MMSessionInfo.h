@@ -1,0 +1,93 @@
+@class NSString, CContact, CMessageWrap, MMSessionInfoExt;
+
+@interface MMSessionInfo : NSObject <NSCopying> {
+    NSString *m_nsFilePath;
+}
+
+@property (nonatomic) unsigned int ConIntRes2;
+@property (retain, nonatomic) NSString *ConStrRes1;
+@property (retain, nonatomic) NSString *m_nsUserName;
+@property (retain, nonatomic) MMSessionInfoExt *m_extendFields;
+@property (nonatomic) unsigned int m_uUnReadCount;
+@property (nonatomic) BOOL m_bShowUnReadAsRedDot;
+@property (retain, nonatomic) CContact *m_contact;
+@property (retain, nonatomic) CMessageWrap *m_msgWrap;
+@property (nonatomic) unsigned int m_uLastTime;
+@property (nonatomic) BOOL m_bShouldUpdateTimeField;
+@property (nonatomic) BOOL m_bIsTop;
+@property (nonatomic) unsigned int m_uTopTime;
+@property (nonatomic) unsigned int m_uUnTopTime;
+@property (nonatomic) unsigned int sortTime;
+@property (nonatomic) BOOL m_isFolding;
+@property (nonatomic) unsigned int m_uAtAllCount;
+@property (nonatomic) unsigned int m_uAtMeCount;
+@property (nonatomic) unsigned int m_uGreenLabelType;
+@property (retain, nonatomic) NSString *m_draftMsg;
+@property (nonatomic) unsigned int m_draftMsgTime;
+@property (retain, nonatomic) NSString *m_atUserList;
+@property (nonatomic) unsigned int m_draftStatus;
+@property (nonatomic) unsigned int m_uNewInvCount;
+@property (nonatomic) BOOL m_uNewInvApprove;
+@property (nonatomic) BOOL m_bNeedContactVerify;
+@property (nonatomic) unsigned int m_uTransferCount;
+@property (nonatomic) unsigned int m_uAACount;
+@property (nonatomic) unsigned int m_uExclusiveHbCount;
+@property (retain, nonatomic) NSString *m_waUpdatableMsgDigest;
+@property (nonatomic) unsigned int m_waUpdatableMsgType;
+@property (nonatomic) unsigned int m_uNewNotifyMsgCount;
+@property (nonatomic) unsigned int m_uBrandNotifyType;
+@property (copy, nonatomic) NSString *m_nsBrandNotifyPrefixName;
+@property (nonatomic) BOOL m_bBrandNotifyNoPrefixName;
+@property (nonatomic) unsigned long long m_uBrandAffMsgId;
+@property (nonatomic) long long m_referMsgSvrId;
+@property (retain, nonatomic) NSString *referPartXML;
+@property (nonatomic) BOOL m_bGroupUndoneFlag;
+@property (nonatomic) BOOL m_bSpecialAttention;
+@property (nonatomic) unsigned int m_uEcsUnhandledGiftCount;
+@property (nonatomic) unsigned int m_uEcsGiftRedLabelType;
+@property (nonatomic) unsigned int m_uEcsLastHandleGiftTime;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)m_nsUserName;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_m_nsUserName;
++ (const void *)m_uLastTime;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_m_uLastTime;
++ (const void *)m_uUnReadCount;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_m_uUnReadCount;
++ (const void *)m_bShowUnReadAsRedDot;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_m_bShowUnReadAsRedDot;
++ (const void *)ConIntRes2;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_ConIntRes2;
++ (const void *)ConStrRes1;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_ConStrRes1;
++ (const void *)m_extendFields;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_m_extendFields;
++ (void)__wcdb_column_constraint_7:(void *)a0;
+
+- (id)init;
+- (void)copyFrom:(id)a0;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)updateShowUnReadAsRedDotStatus;
+- (void)tryLoadExtInfo;
+- (long long)compare:(id)a0;
+- (id)description;
+- (BOOL)isInChatBox;
+- (BOOL)isInBrandServiceBox;
+- (BOOL)isBrandServiceBoxSession;
+- (BOOL)isBrandEcsMsgHolderSession;
+- (BOOL)isHidden;
+- (BOOL)isSingleChatSession;
+- (BOOL)isChatSession;
+- (void).cxx_destruct;
+
+@end

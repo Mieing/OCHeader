@@ -1,0 +1,9 @@
+@interface CSJVerticalInterstitialCoverView : CSJInterstitialCoverView
+
+- (void)pbu_override_buildView;
+- (void)pbu_override_buildViewData;
+- (void)buildInterstitialVerticalView;
+- (void)buildInterstitialVerticalViewSquar;
+- (void)buildInterstitialVerticalViewRectangle;
+
+@end

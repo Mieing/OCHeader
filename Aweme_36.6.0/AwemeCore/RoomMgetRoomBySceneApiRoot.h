@@ -1,0 +1,3 @@
+@interface RoomMgetRoomBySceneApiRoot : GPBRootObject
+
+@end

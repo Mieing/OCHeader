@@ -1,0 +1,14 @@
+@interface IESIMPublishMessageCellComponentConfig : IESIMBaseMessageCellComponentConfig
+
+- (id)cellViewModelComponents:(id)a0;
+- (id)userMessageTemplateComponents:(id)a0;
+- (id)userMessageQuoteReplyChildComponents:(id)a0;
+- (id)userMessageNameContainerChildComponents:(id)a0;
+- (id)userMessageTemplateLazyComponents:(id)a0;
+- (id)userMessageTailChildComponents:(id)a0;
+- (id)userMessageTemplateMenuComponents:(id)a0;
+- (id)systemMessageTemplateComponents:(id)a0;
+- (id)systemMessageTemplateLazyComponents:(id)a0;
+- (BOOL)p_showMessageName:(id)a0;
+
+@end

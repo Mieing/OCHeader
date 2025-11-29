@@ -1,0 +1,72 @@
+@class UIView, NSString, NSArray, AWEUILoadingView, UITableView, MASConstraint, AWEFavoriteListDataController, UILabel;
+@protocol AWECommentGesProtocol;
+
+@interface AWEFavoriteUserListPanelViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, AWEFavoriteUserListPanelViewControllerProtocol>
+
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) UILabel *errorLabel;
+@property (nonatomic) BOOL isAnimating;
+@property (retain, nonatomic) MASConstraint *baseViewBottom;
+@property (nonatomic) double baseViewBottomOffset;
+@property (retain, nonatomic) MASConstraint *baseViewTop;
+@property (retain, nonatomic) MASConstraint *baseViewHeight;
+@property (nonatomic) BOOL hideTabbarByCommentVC;
+@property (retain, nonatomic) UIView *tabbarSnapshot;
+@property (retain, nonatomic) UILabel *emptyLabel;
+@property (nonatomic) BOOL hasFavoriteVCShow;
+@property (weak, nonatomic) id<AWECommentGesProtocol> gesDelegate;
+@property (nonatomic) BOOL isShowing;
+@property (nonatomic) BOOL fromCommentVC;
+@property (retain, nonatomic) UITableView *tableView;
+@property (nonatomic) BOOL isBGColorWhite;
+@property (nonatomic) BOOL isShowInContainerView;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *accountType;
+@property (nonatomic) BOOL hasRefreshed;
+@property (nonatomic) BOOL isFamiliarItemAwemeModel;
+@property (nonatomic) long long currentAwemeItemUserFollowStatus;
+@property (copy, nonatomic) NSArray *insertFavoriteIDs;
+@property (copy, nonatomic) id /* block */ didDismissBlock;
+@property (retain, nonatomic) AWEFavoriteListDataController *dataController;
+@property (retain, nonatomic) UIView *baseView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dismissWithAnimated:(BOOL)a0;
+- (void)dismissWithAnimated:(BOOL)a0 completion:(id /* block */)a1;
+- (void)trackEnterVideoFavouriteListEnterFrom:(id)a0 favouriteCnt:(id)a1 groupID:(id)a2 authorID:(id)a3;
+- (id)initWithUserList:(id)a0 awemeModel:(id)a1 requestData:(BOOL)a2;
+- (void)onUIThemeChange;
+- (void)showOnView:(id)a0 animated:(BOOL)a1;
+- (id)textConfig;
+- (void)p_loadMoreData;
+- (id)p_labelFont;
+- (void)p_addNotification;
+- (void)setTabbarHiddenIfNeed:(BOOL)a0;
+- (void)p_setupFooter;
+- (void)p_refreshUI;
+- (id)p_labelTextColor;
+- (void)onAwemeDiggChanged:(id)a0;
+- (void)updateTotalCountIfNeeded;
+- (void)p_endRefreshingWithError:(id)a0 isRefresh:(BOOL)a1;
+- (void)p_highlightInsertedUsers;
+- (void)p_endRefreshing;
+- (id)privacyAttributedString:(id)a0 lineHeight:(double)a1;
+- (id)p_indexPathForUserID:(id)a0;
+- (id)cellBusinessModelForUserModel:(id)a0;
+- (void)p_setupUI;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)refreshData;
+
+@end

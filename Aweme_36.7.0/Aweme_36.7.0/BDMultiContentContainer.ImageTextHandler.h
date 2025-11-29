@@ -1,0 +1,8 @@
+@interface BDMultiContentContainer.ImageTextHandler : BDMultiContentContainer.BaseContentHandler {
+    void /* unknown type, empty encoding */ albumSectionViewModel;
+    void /* unknown type, empty encoding */ enableInfinityLoop;
+}
+
+- (void).cxx_destruct;
+
+@end

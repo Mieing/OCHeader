@@ -1,0 +1,3 @@
+@interface RoomAnchorCastScreenApiRoot : GPBRootObject
+
+@end

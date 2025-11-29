@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface WATaskBarFeedClickInfo : NSObject
+
+@property (retain, nonatomic) NSString *sessionId;
+@property (nonatomic) unsigned long long pageType;
+@property (nonatomic) unsigned long long pageFeedIndex;
+@property (retain, nonatomic) NSString *contentId;
+@property (nonatomic) unsigned long long page;
+@property (retain, nonatomic) NSString *iconAppId;
+@property (retain, nonatomic) NSString *extraData;
+@property (nonatomic) unsigned long long isRefresh;
+@property (retain, nonatomic) NSString *userName;
+
+- (void).cxx_destruct;
+
+@end

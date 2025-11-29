@@ -1,0 +1,3 @@
+@interface OpenPrivateMsgTabApiRoot : GPBRootObject
+
+@end

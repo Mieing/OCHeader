@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceApplyStashResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceApplyStashResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceApplyStashResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

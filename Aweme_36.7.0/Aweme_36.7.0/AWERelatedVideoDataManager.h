@@ -1,0 +1,83 @@
+@class NSError, NSString, NSArray, AWERVDetailPageContext, AWEAwemeModel, NSDictionary, NSMutableArray, AWEAwemeResponseModel, NSNumber;
+@protocol AWEHttpTask;
+
+@interface AWERelatedVideoDataManager : AWEListDataController
+
+@property (retain, nonatomic) NSMutableArray *lastUnvisibleModelArray;
+@property (retain, nonatomic) NSMutableArray *modelArray;
+@property (nonatomic) long long requestSuccessNums;
+@property (nonatomic) long long innerflowRequestSuccessNums;
+@property (retain, nonatomic) NSNumber *maxCursor;
+@property (retain, nonatomic) NSNumber *minCursor;
+@property (nonatomic) long long albumType;
+@property (copy, nonatomic) NSString *albumID;
+@property (weak, nonatomic) id<AWEHttpTask> currentTask;
+@property (copy, nonatomic) NSString *relatedExtra;
+@property (nonatomic) BOOL relatedIsDouyin;
+@property (copy, nonatomic) NSString *entranceAwemeId;
+@property (retain, nonatomic) NSNumber *searchOffset;
+@property (retain, nonatomic) AWEAwemeResponseModel *preResponse;
+@property (retain, nonatomic) NSError *preError;
+@property (retain, nonatomic) id<AWEHttpTask> preRefreshTask;
+@property (copy, nonatomic) NSString *preScene;
+@property (copy, nonatomic) id /* block */ preCompletionBlock;
+@property (copy, nonatomic) NSArray *excludeCountTagTypeArray;
+@property (weak, nonatomic) id<AWEHttpTask> hotVideoTask;
+@property (nonatomic) long long dataState;
+@property (weak, nonatomic) AWERVDetailPageContext *pageContext;
+@property (copy, nonatomic) NSDictionary *params;
+@property (weak, nonatomic) id<AWEHttpTask> refreshTask;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (copy, nonatomic) NSString *requestItemID;
+@property (copy, nonatomic) NSString *scene;
+@property (copy, nonatomic) NSString *suggestTagWord;
+@property (nonatomic) long long managerType;
+@property (copy, nonatomic) NSString *preAwemeId;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (void)requestVideoDetailWithId:(id)a0 source:(long long)a1 scene:(id)a2 addSource:(BOOL)a3 completeBlock:(id /* block */)a4;
++ (void)requestVideoDetailWithId:(id)a0 source:(long long)a1 scene:(id)a2 completeBlock:(id /* block */)a3;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (id)sha256hmac:(id)a0 content:(id)a1;
+- (id)aAWEPadModuleAdapter;
+- (void)trackLongVideoShow:(id)a0;
+- (id)refreshRelatedVideoListWithawemeID:(id)a0 scene:(id)a1 params:(id)a2 completion:(id /* block */)a3;
+- (void)loadMoreRelatedVideoListWithawemeID:(id)a0 params:(id)a1 completion:(id /* block */)a2;
+- (void)resetPreRequestParams;
+- (void)refreshWithScene:(id)a0;
+- (void)relatedVideoTypeSearchRequestSuccessWith:(id)a0;
+- (void)processRelatedVideoCache:(id)a0;
+- (void)processDataSource:(id)a0;
+- (void)preloadXiGuaCoverImageIfNeedWithResponse:(id)a0;
+- (void)trackSearchTagListResponseWith:(long long)a0 response:(id)a1 error:(id)a2;
+- (id)fetchRelatedVideoListWithAwemeID:(id)a0 params:(id)a1 completion:(id /* block */)a2 isConcurrencyRequest:(BOOL)a3;
+- (void)shieldXiguaVideoIfNeed;
+- (id)removeAwemeModels:(id)a0 fromAllModels:(id)a1;
+- (id)fetchRelatedVideoSearchListWithAwemeID:(id)a0 params:(id)a1 completion:(id /* block */)a2;
+- (long long)screenType:(id)a0;
+- (id)bizEntrance;
+- (void)trackRelatedWithModel:(id)a0 error:(id)a1;
+- (void)trackListRefreshWithRequestDuration:(double)a0 useLastCache:(BOOL)a1 responseModel:(id)a2 error:(id)a3;
+- (id)videoSearchRequestWithParams:(id)a0 responseBlock:(id /* block */)a1 completionBlock:(id /* block */)a2;
+- (void)addLastUnvisibleModelList;
+- (BOOL)enableRelatedPreloadXiguaCoverImage;
+- (BOOL)shouldCountTagWithLabelType:(id)a0;
+- (id)filteredDuplicateAwemeModels:(id)a0;
+- (id)tryDealWithTagWithAwemeModels:(id)a0;
+- (id)filterCurrentPlayVideoModelIfNeed:(id)a0;
+- (BOOL)enableRelatedInsertXigua;
+- (id)tryDealWithGuideFlowModels:(id)a0 response:(id)a1;
+- (void)trackTagListUseTwoSourceWith:(long long)a0 response:(id)a1;
+- (void)preRequestRelatedVideoListWithawemeID:(id)a0 scene:(id)a1 params:(id)a2;
+- (void)setupWithRelatedPreloadVideos:(id)a0 scene:(id)a1;
+- (id)fetchRelatedVideoHotVideoDataWithAwemeID:(id)a0 params:(id)a1 completion:(id /* block */)a2;
+- (void)refreshWithFirstRequestResponse:(id)a0 requestTime:(double)a1;
+- (void)removeVisibleModel:(id)a0;
+- (void)delayRefreshIfNeedsWithBlock:(id /* block */)a0;
+- (void)trackRelatedVideoTabWithEvent:(id)a0 model:(id)a1 indexPath:(id)a2;
+- (void).cxx_destruct;
+- (void)refreshWithCompletion:(id /* block */)a0;
+- (id)authenticate;
+
+@end

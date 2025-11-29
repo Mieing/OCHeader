@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicChatMatchMessageRoot : GPBRootObject
+
+@end

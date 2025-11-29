@@ -1,0 +1,15 @@
+@class NSMutableArray;
+
+@interface HTSLiveBasicProps : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *titleArray;
+@property (readonly, nonatomic) unsigned long long titleArray_Count;
+@property (retain, nonatomic) NSMutableArray *descArray;
+@property (readonly, nonatomic) unsigned long long descArray_Count;
+@property (retain, nonatomic) NSMutableArray *iconSrcArray;
+@property (readonly, nonatomic) unsigned long long iconSrcArray_Count;
+@property (nonatomic) long long duration;
+
++ (id)descriptor;
+
+@end

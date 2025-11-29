@@ -1,0 +1,5 @@
+@interface RelaxFramework.Url : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ url;
+}
+
+@end

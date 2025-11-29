@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface WindowsPrompt : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *titleText;
+@property (copy, nonatomic) NSString *bodyText;
+@property (retain, nonatomic) NSMutableArray *buttonInfoArray;
+@property (readonly, nonatomic) unsigned long long buttonInfoArray_Count;
+
++ (id)descriptor;
+
+@end

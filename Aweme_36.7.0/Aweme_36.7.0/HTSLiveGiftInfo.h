@@ -1,0 +1,12 @@
+@class HTSLiveImage;
+
+@interface HTSLiveGiftInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long giftId;
+@property (retain, nonatomic) HTSLiveImage *giftIcon;
+@property (nonatomic) BOOL hasGiftIcon;
+@property (nonatomic) long long diamondCount;
+
++ (id)descriptor;
+
+@end

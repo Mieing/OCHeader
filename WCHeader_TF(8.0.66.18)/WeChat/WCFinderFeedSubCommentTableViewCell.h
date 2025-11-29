@@ -1,0 +1,91 @@
+@class NSIndexPath, UIImageView, WCFinderFeedContentTextView, WCFinderInteractionLabelGroupView, UILabel, WCFinderFeedSubCommentCellStyleConfig, WCFinderCommentTranslateView, NSMutableArray, UIButton, UIView, WCFinderCommentLikeView, NSString, WCFinderHeadImageView, MMUIButton;
+@protocol WCFinderFeedDetailCommentCellActionDelegate;
+
+@interface WCFinderFeedSubCommentTableViewCell : WCFinderFeedDetailCommentCell <WCFinderFeedContentTextClickActionDelegate, WCFinderHeadImageViewDelegate, WCFinderContactExt, WCGeneralMonitorCellProtocol, WCFinderPromoteOPLogExt, WCFinderFeedCommentKeywordViewContainer, WCFinderFeedCommentCommonCellAction> {
+    struct multimap<NSString *, CGRect, WCFinderKeywordEqualId, std::allocator<std::pair<NSString *const, CGRect>>> { struct __tree<std::__value_type<NSString *, CGRect>, std::__map_value_compare<NSString *, std::__value_type<NSString *, CGRect>, WCFinderKeywordEqualId>, std::allocator<std::__value_type<NSString *, CGRect>>> { void *__begin_node_; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<NSString *, CGRect>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *__left_; } __value_; } __pair1_; struct __compressed_pair<unsigned long, std::__map_value_compare<NSString *, std::__value_type<NSString *, CGRect>, WCFinderKeywordEqualId>> { unsigned long long __value_; } __pair3_; } __tree_; } _keywordsMap;
+}
+
+@property (retain, nonatomic) WCFinderHeadImageView *avatarImageView;
+@property (retain, nonatomic) UILabel *timeAndIpRegionLabel;
+@property (retain, nonatomic) UILabel *nickNameLabel;
+@property (retain, nonatomic) WCFinderFeedContentTextView *textView;
+@property (retain, nonatomic) UIView *backView;
+@property (retain, nonatomic) UIImageView *finderIconImageView;
+@property (retain, nonatomic) UILabel *additionalInfoLabel;
+@property (retain, nonatomic) WCFinderInteractionLabelGroupView *nicknameTailLabel;
+@property (retain, nonatomic) WCFinderInteractionLabelGroupView *bottomInteractLabel;
+@property (retain, nonatomic) UIView *hightLightView;
+@property (retain, nonatomic) UIButton *failCommentTips;
+@property (nonatomic) BOOL wechatAccountProfileSwitch;
+@property (nonatomic) BOOL isFriendIdentity;
+@property (nonatomic) BOOL isFinderIdentity;
+@property (nonatomic) BOOL enableShowFinder;
+@property (nonatomic) BOOL isCommentClose;
+@property (nonatomic) double timeLabelMinWidth;
+@property (retain, nonatomic) WCFinderCommentLikeView *commentLikeView;
+@property (retain, nonatomic) UILabel *authorLikeLabel;
+@property (retain, nonatomic) MMUIButton *moreActionButton;
+@property (retain, nonatomic) WCFinderFeedSubCommentCellStyleConfig *config;
+@property (retain, nonatomic) NSMutableArray *accessibilityElements;
+@property (retain, nonatomic) WCFinderCommentTranslateView *translateView;
+@property (weak, nonatomic) id<WCFinderFeedDetailCommentCellActionDelegate> delegate;
+@property (retain, nonatomic) NSIndexPath *currentIndexPath;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getContentWithComment:(id)a0;
++ (double)cellHeightWith:(id)a0 width:(double)a1 forceExpand:(BOOL)a2;
++ (double)cellHeightWith:(id)a0 width:(double)a1 forceExpand:(BOOL)a2 config:(id)a3;
++ (double)textViewMaxWidthWithFullWidth:(double)a0 config:(id)a1;
+
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)setupUI;
+- (void *)keywordsMap;
+- (void)prepareForReuse;
+- (void)layoutSubviews;
+- (void)updateWithComment:(id)a0 enableShowFinder:(BOOL)a1 isCommentClose:(BOOL)a2 isAuthor:(BOOL)a3;
+- (void)updateWithComment:(id)a0 enableShowFinder:(BOOL)a1 isCommentClose:(BOOL)a2 isAuthor:(BOOL)a3 config:(id)a4;
+- (void)updateAdditionalInfoLabel;
+- (void)updateVoiceOver;
+- (void)longPress:(id)a0;
+- (void)showCommentMenuView;
+- (id)getRealCustomBackgroundColor;
+- (void)clickReplyAction;
+- (void)clickAvatar;
+- (void)clickNickname;
+- (void)clickRecommendAction;
+- (void)updateRecommendView;
+- (void)recommendViewDataChange;
+- (void)clickRecommendFriendUsername:(id)a0;
+- (void)clickFriendLikeAction;
+- (void)showViewHighLightByRefComment;
+- (void)updateAvatarCornerWithAuthorFlag:(BOOL)a0;
+- (BOOL)isContentTruncated;
+- (void)showRecommendButtonAnimation;
+- (void)onFinderContactUpdate:(id)a0;
+- (void)updateTopTitleLayout;
+- (void)updateInteractionButtonLayout;
+- (void)updateLayout;
+- (void)onClickLikeComment;
+- (void)onClickMoreAction;
+- (void)onFeedContentTextView:(id)a0 clickReadMore:(BOOL)a1;
+- (void)onFeedContentTextView:(id)a0 clickKeywordUrl:(id)a1;
+- (void)onFeedContentTextView:(id)a0 clickMentionUsername:(id)a1 nickname:(id)a2;
+- (void)finderHeadImageViewDidClick:(id)a0;
+- (void)onFeedContentTextView:(id)a0 clickSubComment:(id)a1 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)onFeedContentTextView:(id)a0 clickSubCommentWeChat:(id)a1 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (void)onFeedContentTextView:(id)a0 clickReplyUsername:(id)a1 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (long long)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(long long)a0;
+- (long long)indexOfAccessibilityElement:(id)a0;
+- (id)_totalAccessibilityLabel;
+- (id)findAllExposedKeywordUrls;
+- (id)getGeneralMonitorCellBizId;
+- (void)updateCommentLikeState;
+- (void)onCommentPromotePublicFlagChange:(BOOL)a0;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

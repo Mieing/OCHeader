@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveLinkMicChannelUnSilenceResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *prompts;
+@property (nonatomic) unsigned long long version;
+@property (copy, nonatomic) NSString *ackMessage;
+
++ (id)descriptor;
+
+@end

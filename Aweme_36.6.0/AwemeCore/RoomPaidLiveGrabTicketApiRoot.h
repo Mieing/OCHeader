@@ -1,0 +1,3 @@
+@interface RoomPaidLiveGrabTicketApiRoot : GPBRootObject
+
+@end

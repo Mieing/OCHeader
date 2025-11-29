@@ -1,0 +1,19 @@
+@class NSNumber, NSString, NSDictionary;
+
+@interface IESLiveRedeemModel : IESLiveDynamicMTLModel <MTLJSONSerializing>
+
+@property (retain, nonatomic) NSNumber *diamondId;
+@property (retain, nonatomic) NSNumber *price;
+@property (retain, nonatomic) NSNumber *diamondCount;
+@property (copy, nonatomic) NSString *describe;
+@property (readonly, copy, nonatomic) NSDictionary *dictionaryValue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

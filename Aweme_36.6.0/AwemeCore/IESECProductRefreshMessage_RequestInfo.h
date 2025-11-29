@@ -1,0 +1,12 @@
+@class GPBInt32ObjectDictionary;
+
+@interface IESECProductRefreshMessage_RequestInfo : GPBMessage
+
+@property (retain, nonatomic) GPBInt32ObjectDictionary *list;
+@property (readonly, nonatomic) unsigned long long list_Count;
+@property (retain, nonatomic) GPBInt32ObjectDictionary *pop;
+@property (readonly, nonatomic) unsigned long long pop_Count;
+
++ (id)descriptor;
+
+@end

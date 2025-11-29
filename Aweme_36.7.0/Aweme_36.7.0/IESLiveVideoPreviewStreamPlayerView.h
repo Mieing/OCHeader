@@ -1,0 +1,81 @@
+@class IESLiveWebpLoadingView, NSString, UIView, IESLiveVideoPlayerController, UIImageView, NSDictionary, NSObject, NSNumber;
+@protocol IESLiveVSMessageAdapter, IESPlaybackPaidStreamSearchProvider, IESLiveVideoPreviewPlayerData, IESLiveVideoPreviewStreamPlayerDelegate, IESLiveVideoPreviewStreamPaidDelegate, IESPlaybackVideoPaidProviderAdapter;
+
+@interface IESLiveVideoPreviewStreamPlayerView : UIView <IESLiveVideoPlayerControllerDelegate, IESPlaybackVideoPaidDelegate, IESLivePaidStreamActionAdapter, IESLivePaidStreamSecurityDelegate, IESLivePaidStreamUIDelegate, IESLiveVideoPreviewStreamPlayerProtocol>
+
+@property (retain, nonatomic) IESLiveVideoPlayerController *player;
+@property (retain, nonatomic) id<IESLiveVideoPreviewPlayerData> episode;
+@property (retain, nonatomic) NSNumber *episodeID;
+@property (copy, nonatomic) NSString *playInfo;
+@property (retain, nonatomic) UIView *playerContainerView;
+@property (retain, nonatomic) IESLiveWebpLoadingView *loadingView;
+@property (retain, nonatomic) UIImageView *loadingImageView;
+@property (nonatomic) BOOL isStarted;
+@property (retain, nonatomic) NSObject<IESPlaybackVideoPaidProviderAdapter> *paidProvider;
+@property (retain, nonatomic) id<IESLiveVSMessageAdapter> messageActionCreator;
+@property (retain, nonatomic) id<IESPlaybackPaidStreamSearchProvider> newPaidProvider;
+@property (nonatomic) long long playbackSource;
+@property (nonatomic, getter=isRepeat) BOOL repeat;
+@property (readonly, nonatomic) UIImageView *placeholderImageView;
+@property (nonatomic) double startPosition;
+@property (weak, nonatomic) id<IESLiveVideoPreviewStreamPlayerDelegate> delegate;
+@property (weak, nonatomic) id<IESLiveVideoPreviewStreamPaidDelegate> paidDelegate;
+@property (nonatomic) BOOL mute;
+@property (nonatomic) BOOL enableResolutionAutoDemotion;
+@property (nonatomic) long long playState;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) double volume;
+@property (readonly, nonatomic) BOOL isLoop;
+@property (readonly, nonatomic) double durationTime;
+@property (readonly, nonatomic) double currPlaybackTime;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (nonatomic) double playbackSpeed;
+
++ (BOOL)vsMaskBarrageDelay;
+
+- (void)playerController:(id)a0 currentPlayTime:(double)a1 playableTime:(double)a2 duration:(double)a3;
+- (void)onStalledStart:(id)a0 actionType:(long long)a1 reason:(unsigned long long)a2;
+- (void)onStalledEnd:(id)a0;
+- (id)trialContainerViewForPaidStream:(id)a0;
+- (id)initWithEpisode:(id)a0 andPlaybackSource:(long long)a1;
+- (void)changePlayerContentMode:(long long)a0;
+- (id)originPlayer;
+- (id)trialViewForPaidStream:(id)a0;
+- (BOOL)paidStreamShouldActiveScreenCaptured:(id)a0;
+- (BOOL)paidStreamShouldActiveTakeScreenshot:(id)a0;
+- (void)setStartTime:(double)a0 loopStartTime:(double)a1;
+- (void)videoReadyToDisPlayOfPlayerController:(id)a0;
+- (void)playerController:(id)a0 playbackStateDidChange:(unsigned long long)a1;
+- (void)playerController:(id)a0 playerDidFinishError:(id)a1;
+- (void)playFromHistoryLocation;
+- (void)enableLoop:(BOOL)a0;
+- (void)seekToTime:(double)a0 complete:(id /* block */)a1;
+- (void)recoverContentMode;
+- (void)updateWithEpisode:(id)a0;
+- (double)getHisrotyLocation;
+- (void)setPlayerContainerViewSecureContent:(BOOL)a0;
+- (void)resolutionDemotionIfNeeded;
+- (void)freeTrialDidStart;
+- (void)freeTrialDidFinish;
+- (void)freeTrialDidPaied;
+- (void)willManualPromise;
+- (void)promiseDidSuccess;
+- (void)screenCaptured:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)setStartTime:(double)a0;
+- (void)stop;
+- (BOOL)isShowing;
+- (id)playerView;
+- (void)dealloc;
+- (void)setupUI;
+- (void)resetPlayer;
+- (BOOL)isMute;
+- (id)initWithEpisode:(id)a0;
+- (void)createPlayer;
+
+@end

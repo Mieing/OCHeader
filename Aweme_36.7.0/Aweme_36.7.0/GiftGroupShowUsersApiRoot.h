@@ -1,0 +1,3 @@
+@interface GiftGroupShowUsersApiRoot : GPBRootObject
+
+@end

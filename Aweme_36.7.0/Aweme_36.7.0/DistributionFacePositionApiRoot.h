@@ -1,0 +1,3 @@
+@interface DistributionFacePositionApiRoot : GPBRootObject
+
+@end

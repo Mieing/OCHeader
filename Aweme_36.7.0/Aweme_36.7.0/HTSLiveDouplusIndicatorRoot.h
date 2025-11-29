@@ -1,0 +1,3 @@
+@interface HTSLiveDouplusIndicatorRoot : GPBRootObject
+
+@end

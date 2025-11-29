@@ -1,0 +1,3 @@
+@interface HTSLiveSportsMatchDataRoot : GPBRootObject
+
+@end

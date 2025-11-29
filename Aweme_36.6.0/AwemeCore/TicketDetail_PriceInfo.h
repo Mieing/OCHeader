@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface TicketDetail_PriceInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *amount;
+@property (copy, nonatomic) NSString *currency;
+@property (nonatomic) long long pos;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, NSArray;
+
+@interface IESLiveKTVSearchSectionItem : IESLiveDynamicModel
+
+@property (copy, nonatomic) NSString *headerText;
+@property (nonatomic) struct UIEdgeInsets { double x0; double x1; double x2; double x3; } headerInsets;
+@property (copy, nonatomic) NSArray *dataArray;
+@property (copy, nonatomic) NSString *identifierForCell;
+@property (retain, nonatomic) Class clsForCell;
+
+@end

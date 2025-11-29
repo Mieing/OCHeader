@@ -1,0 +1,3 @@
+@interface IESLiveCloseWebcastAudioMethodParamModel : BDXBridgeModel
+
+@end

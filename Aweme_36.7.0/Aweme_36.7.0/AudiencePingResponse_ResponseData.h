@@ -1,0 +1,9 @@
+@interface AudiencePingResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long roomStatus;
+@property (nonatomic) long long roomId;
+@property (nonatomic) long long nextPing;
+
++ (id)descriptor;
+
+@end

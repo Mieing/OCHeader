@@ -1,0 +1,80 @@
+@class UIView, NSString, AWEUserProfileEventCommonParamsHandler, AWEProfileTipView, AWEUserModel, AWEUILoadingView, UICollectionView, AWEEffectArtistDataController, UILabel;
+@protocol AWEUserProfileTabVCDelegate;
+
+@interface AWEEffectArtistViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWEEffectArtistCellLongPressFunctionDelegate, AWEUserProfileTabBaseMethod>
+
+@property (retain, nonatomic) AWEEffectArtistDataController *dataController;
+@property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *secUserID;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) UILabel *emptyLabel;
+@property (retain, nonatomic) AWEUserModel *targetUser;
+@property (retain, nonatomic) AWEProfileTipView *effectProfileTipView;
+@property (nonatomic) BOOL shouldShowprofileTipView;
+@property (nonatomic) struct CGPoint { double x; double y; } savedContentOffset;
+@property (retain, nonatomic) UIView *topGradientView;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) BOOL isCurrentUser;
+@property (nonatomic) BOOL fromHomePage;
+@property (weak, nonatomic) id<AWEUserProfileTabVCDelegate> userDelegate;
+@property (nonatomic) BOOL hideData;
+@property (retain, nonatomic) AWEUserProfileEventCommonParamsHandler *eventCommonParamsHandler;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
+
+- (void)duxGrid_viewDidChangeBreakPointFrom:(struct { long long x0; long long x1; })a0 toBreakPoint:(struct { long long x0; long long x1; })a1;
+- (id)aAWEPadModuleAdapter;
+- (double)contentOffsetY;
+- (void)adjustContentOffset:(struct CGPoint { double x0; double x1; })a0 animated:(BOOL)a1;
+- (double)contentSizeHeight;
+- (void)loadMoreData;
+- (BOOL)shouldHideNoMoreText;
+- (void)p_refreshData;
+- (void)p_trackTabAppear;
+- (void)p_endRefreshingWithMore:(BOOL)a0 list:(id)a1 error:(id)a2;
+- (void)p_setUpUI;
+- (void)_startTimingForTrack;
+- (void)_trackEventForStayTime;
+- (void)pinToTopCurrentEffectModel:(id)a0;
+- (void)hiddenCurrentEffectModel:(id)a0;
+- (void)removeEffectCoverCurrentEffectModel:(id)a0;
+- (void)p_buildEffectTipViewIfNeeded;
+- (void)p_trackProfileTipViewIsShow:(BOOL)a0;
+- (id)p_getConfigedEffectCellAtIndexPath:(id)a0;
+- (void)p_trackPinToTopActionWithModel:(id)a0;
+- (void)p_trackHiddenActionWithModel:(id)a0;
+- (void)p_closeEffectProfileTipView;
+- (id)initWithUserID:(id)a0 secUserID:(id)a1 targetUser:(id)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (id)contentView;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (void)viewDidLayoutSubviews;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)applicationWillResignActive;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)dealloc;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)refreshData;
+- (double)footerInset;
+
+@end

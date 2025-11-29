@@ -1,0 +1,14 @@
+@class HTSLiveLinkmicTeamfightInfo, IESLiveAdventurePlayModeInfo, HTSLiveGuestBattleInfo;
+
+@interface IESLiveLinkMicAudiencePlaymodeInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGuestBattleInfo *guestBattleInfo;
+@property (nonatomic) BOOL hasGuestBattleInfo;
+@property (retain, nonatomic) HTSLiveLinkmicTeamfightInfo *teamfightInfo;
+@property (nonatomic) BOOL hasTeamfightInfo;
+@property (retain, nonatomic) IESLiveAdventurePlayModeInfo *adventureInfo;
+@property (nonatomic) BOOL hasAdventureInfo;
+
++ (id)descriptor;
+
+@end

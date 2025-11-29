@@ -1,0 +1,83 @@
+@class NSString, AWECodeGenCommonAnchorBasicInfoModel, AWEAwemeModel, UIView, AWEPageContext;
+@protocol AWEAwemePlayInteractionUIDisplayDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEAwemePlayInteractionPanelDelegate, AWEPlayInteractionViewControllerProtocol, AWEAwemePlayInteractionCommerceDelegate, AWEFeedTemplateAnchorViewProtocol, AWEFeedAnchorBaseConfigProtocol, AWEAwemePlayInteractionPresenterMethodDelegate, AWEFeedTemplateAnchorViewPrivateProtocol;
+
+@interface AWEFeedECCartAnchorConfig : AWEFeedTemplateAnchorBaseConfig <AWEECCartAnchorPitayaServiceHandler, AWEFeedECCartAnchorConfigProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL shouldTrackDetailShowWhenAnchorViewShow;
+@property (nonatomic) BOOL twoLineHasAnimated;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (retain, nonatomic) AWECodeGenCommonAnchorBasicInfoModel *templateAnchorInfo;
+@property (readonly, nonatomic) UIView<AWEFeedTemplateAnchorViewProtocol, AWEFeedTemplateAnchorViewPrivateProtocol> *anchorView;
+@property (weak, nonatomic) id<AWEFeedAnchorBaseConfigProtocol> wrapperConfig;
+@property (weak, nonatomic) AWEPageContext *interactionContext;
+@property (weak, nonatomic) id<AWEAwemePlayInteractionPresenterMethodDelegate, AWEAwemePlayInteractionPanelDelegate, AWEAwemePlayInteractionCommerceDelegate, AWEAwemePlayInteractionUIDisplayDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEPlayInteractionViewControllerProtocol> interactionViewController;
+@property (copy, nonatomic) NSString *referString;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)shouldShowAnchor:(id)a0;
++ (BOOL)shouldShowECCartAnchor:(id)a0;
+
+- (void)anchorViewWillShowOnSuperview;
+- (void)handlerTemplateAnchorViewClicked;
+- (void)willShowDoubleLineStyleWithType:(unsigned long long)a0;
+- (void)anchorConfigReset;
+- (void)updateWithAwemeModel:(id)a0 needPerformOnDisplay:(BOOL)a1;
+- (void)didShowDoubleLineStyleAnchor;
+- (id)anchorPitayaServiceHandlerKey;
+- (void)handleShowSecondLineWithAwemeID:(id)a0;
+- (void)trackAdEventWithLabelName:(id)a0;
+- (void)trackAnchorUserEventWithEventName:(id)a0;
+- (id)anchorTrackParamsWithEventName:(id)a0;
+- (void)registerPitayaServiceIfNeeded;
+- (void)triggerAnchorBenefitActionIfNeeded;
+- (BOOL)enableAnchorSecondLineShowByPitaya;
+- (void)ADFetchShortVideoQCPXCoupon;
+- (void)ADTrackAdShowEvent;
+- (void)ADTrackAdClickEvent;
+- (void)ADTrackSearchDouPlushAnchorShoppingCartShowWithAwemeModel:(id)a0;
+- (id)ADStarAtlasParamsWithAwemeModel:(id)a0;
+- (id)getGoodsListInAweme:(id)a0;
+- (void)setPassthroughWithProductIDList:(id)a0;
+- (void)preloadGoodsDetailWithAwemeIfNeeded:(id)a0;
+- (void)configPreloadDataForGoodsFeedWithAwemeIfNeeded:(id)a0;
+- (void)preloadGoodsFeedWithAwemeIfNeeded:(id)a0 playBackTime:(double)a1;
+- (id)getGoodsProductIDListInAweme:(id)a0;
+- (void)handleAnchorViewClickedWithAwemeModel:(id)a0 position:(id)a1;
+- (void)addVideoPlayBackTimeHandler;
+- (void)registerInteractionContextIfNeeded;
+- (BOOL)enableHandlePitayaCallback;
+- (id)interactionContextLogExtra;
+- (id)carrierTypeInLogExtra:(id)a0;
+- (id)BTMParams;
+- (id)passthroughDictWithAwemeModel:(id)a0 goods:(id)a1 logExtra:(id)a2;
+- (id)searchParamsInLogExtra:(id)a0;
+- (id)detailTextTrackerParams;
+- (void)trackAdAnchorEventWithLabel:(id)a0 refer:(id)a1 extraData:(id)a2;
+- (id)templateAnchorTrackerParams;
+- (id)productPromiseInfoWithGoods:(id)a0;
+- (id)searchMethodValueWithReferString:(id)a0;
+- (id)anchorTitleStringWithTemplateAnchorInfo:(id)a0;
+- (id)anchorActionTextWithTemplateAnchorInfo:(id)a0;
+- (id)BTMID;
+- (id)picTypeParamsWithAwemeModel:(id)a0;
+- (id)ecomEntranceFormInLogExtra:(id)a0;
+- (id)BTMString;
+- (unsigned long long)ECCartAnchorSubType;
+- (void)trackProductEntranceShowWithAwemeModel:(id)a0;
+- (void)trackShowProductWithAwemeModel:(id)a0;
+- (void)trackECAnchorBCMWithAwemeModel:(id)a0;
+- (void)trackOtherShowWithSecondText:(id)a0;
+- (void)trackAnchorReset;
+- (void)trackProductEntranceShowDetailWithAwemeModel:(id)a0;
+- (void)configAnchorTagsAndSuffixInfoWithAwemeModel:(id)a0;
+- (id)hostViewController;
+- (void)addObservers;
+
+@end

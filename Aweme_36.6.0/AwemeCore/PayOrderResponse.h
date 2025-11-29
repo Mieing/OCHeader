@@ -1,0 +1,10 @@
+@class PayOrderResponse_Data;
+
+@interface PayOrderResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PayOrderResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

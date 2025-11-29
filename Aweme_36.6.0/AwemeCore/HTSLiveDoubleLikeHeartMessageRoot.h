@@ -1,0 +1,3 @@
+@interface HTSLiveDoubleLikeHeartMessageRoot : GPBRootObject
+
+@end

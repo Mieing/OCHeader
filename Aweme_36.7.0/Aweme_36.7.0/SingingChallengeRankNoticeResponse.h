@@ -1,0 +1,10 @@
+@class SingingChallengeRankNoticeResponse_ResponseData;
+
+@interface SingingChallengeRankNoticeResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SingingChallengeRankNoticeResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

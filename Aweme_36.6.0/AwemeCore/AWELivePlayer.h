@@ -1,0 +1,77 @@
+@class NSString, UIImageView, NSDictionary, UIView, NSURL;
+@protocol IESLivePlayerProtocol, IESLivePlayerControllerDelegate, IESLLLivePlayerControllerDelegate, AWELivePaidLivePlayerDelegate;
+
+@interface AWELivePlayer : NSObject <IESLLLiveStreamPlayer, IESLivePlayerControllerDelegate, AWELiveStreamPlayer>
+
+@property (nonatomic) long long scaleType;
+@property (nonatomic) BOOL muted;
+@property (readonly, nonatomic) BOOL playStarted;
+@property (weak, nonatomic) id<IESLLLivePlayerControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) id<IESLivePlayerProtocol> player;
+@property (retain, nonatomic) UIImageView *cover;
+@property (retain, nonatomic) UIView *wrapper;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) id /* block */ coverTransition;
+@property (nonatomic) BOOL shouldCleanCoverImage;
+@property (nonatomic) BOOL isAutoTransition;
+@property (nonatomic) long long scaleType;
+@property (weak, nonatomic) id<IESLivePlayerControllerDelegate> delegate;
+@property (nonatomic) BOOL muted;
+@property (nonatomic) double volume;
+@property (copy, nonatomic) NSDictionary *logExtraDict;
+@property (readonly, nonatomic) unsigned long long playbackState;
+@property (readonly, nonatomic) NSURL *contentURL;
+@property (readonly, copy, nonatomic) NSString *currentStreamData;
+@property (weak, nonatomic) id<AWELivePaidLivePlayerDelegate> paidLiveDelegate;
+
+- (void)player:(id)a0 loadStateDidChange:(unsigned long long)a1;
+- (void)player:(id)a0 playbackStateDidChange:(unsigned long long)a1;
+- (void)player:(id)a0 mediaSizeDidChange:(struct CGSize { double x0; double x1; })a1;
+- (void)player:(id)a0 didReceiveMetaInfo:(id)a1 processed:(BOOL)a2;
+- (void)player:(id)a0 didReceiveError:(id)a1;
+- (void)playerFrozen:(id)a0;
+- (void)playerResume:(id)a0;
+- (void)playerDidCleared:(id)a0;
+- (void)reloadWithStreamData:(id)a0;
+- (void)showCoverIfNeeded:(BOOL)a0;
+- (void)setCoverImageWithURLArray:(id)a0 placeholder:(id)a1 completion:(id /* block */)a2;
+- (BOOL)isEqualWithStreamData:(id)a0 orStreamURL:(id)a1;
+- (void)reloadStreamData:(id)a0 orStreamURL:(id)a1 sdkParams:(id)a2;
+- (void)setAudioViewSmallMode:(BOOL)a0;
+- (void)setNeedShowAudioView:(BOOL)a0;
+- (void)setBigPartyContentModeWithEqual:(long long)a0 nonOverlapping:(long long)a1;
+- (void)reloadURL:(id)a0 sdkParams:(id)a1;
+- (BOOL)isAudioChatLive;
+- (void)updateBackSticker;
+- (void)willEnterRoom;
+- (id)initWithPlayer:(id)a0 liveSource:(long long)a1;
+- (id)createWrapperView;
+- (id)createCoverView;
+- (void)layoutCoverImageView:(id)a0 playerView:(id)a1 wrapper:(id)a2;
+- (void)setupcoverTransitionWithCover:(id)a0 playerView:(id)a1;
+- (void)doCoverTransition;
+- (void)prepareForShow;
+- (void)clearCompleted;
+- (void)reloadWithStreamData:(id)a0 streamURL:(id)a1;
+- (void)setCoverImageWithURLArray:(id)a0;
+- (void)collectStrategyInfo;
+- (void)reloadWithStreamData:(id)a0 streamURL:(id)a1 sdkParams:(id)a2;
+- (void)setShouldDelayClearPlayerView:(BOOL)a0;
+- (void)removeCoverTransition;
+- (void)close;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)stop;
+- (id)playerView;
+- (id)initWithPlayer:(id)a0;
+- (void)updateWithModel:(id)a0;
+
+@end

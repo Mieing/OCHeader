@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveJoinTeamfightInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long teamId;
+@property (copy, nonatomic) NSString *teamIdStr;
+
++ (id)descriptor;
+
+@end

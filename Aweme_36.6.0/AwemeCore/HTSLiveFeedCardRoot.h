@@ -1,0 +1,3 @@
+@interface HTSLiveFeedCardRoot : GPBRootObject
+
+@end

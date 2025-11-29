@@ -1,0 +1,75 @@
+@class NSString, NSMapTable, NSMutableDictionary, IESLiveAudioCache, IESLiveGCDTimer, NSObject, NSMutableArray;
+@protocol IESLiveAudioDownloaderProvider, IESLiveAudioPlaybackItem, IESLiveRoomRealStreamingServiceAdapter, OS_dispatch_queue, IESLiveAudioPlayerProvider;
+
+@interface IESLiveAudioPlayback : NSObject <IESLiveAudioPlayerDelegate, IESLiveAudioPlaybackProvider>
+
+@property (nonatomic) long long unreadAudioCount;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *playbackQueue;
+@property (retain, nonatomic) NSMutableDictionary *delayTasks;
+@property (retain, nonatomic) NSMapTable *delegates;
+@property (nonatomic) long long maxAudioPlaybackCount;
+@property (retain, nonatomic) NSMutableArray *audioPlaybacks;
+@property (retain, nonatomic) IESLiveAudioCache *audioCache;
+@property (retain, nonatomic) id<IESLiveRoomRealStreamingServiceAdapter> realStreamingService;
+@property (nonatomic) float streamPlayerVolume;
+@property (nonatomic) float musicVolume;
+@property (retain, nonatomic) id<IESLiveAudioPlayerProvider> audioPlayer;
+@property (retain, nonatomic) id<IESLiveAudioPlaybackItem> currentPlayback;
+@property (nonatomic) BOOL isStopByUser;
+@property (retain, nonatomic) IESLiveGCDTimer *finallyCheckTimer;
+@property (retain, nonatomic) IESLiveGCDTimer *overtimeTimer;
+@property (nonatomic) BOOL useLiveCorePlayer;
+@property (nonatomic) BOOL useAEC;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isAnchor;
+@property (nonatomic) BOOL enableAutoPlay;
+@property (retain, nonatomic) id<IESLiveAudioDownloaderProvider> audioDownloader;
+
+- (void)removeAudioItem:(id)a0;
+- (void)playerDidStop:(id)a0;
+- (void)addLocalAudioToCache:(id)a0;
+- (void)addAudioItem:(id)a0;
+- (void)playWithAudioItem:(id)a0;
+- (void)pauseWithAudioItem:(id)a0;
+- (void)processTask:(id /* block */)a0;
+- (long long)calcUnreadAudioCount:(id)a0;
+- (BOOL)shouldPlayWhenAdd;
+- (void)playWithDownloadAudio:(id)a0;
+- (void)startPlayWith:(id)a0 audioId:(id)a1;
+- (void)endAndResume;
+- (void)predownloadWith:(id)a0;
+- (void)playWithDownloadAudioItems:(id)a0;
+- (void)stopWithAudioItem:(id)a0;
+- (void)stopFinallyCheckTimer;
+- (void)checkAudioPlaybackStatus;
+- (void)closeEchoCancellationIfNeeded;
+- (void)stopWithDownloadAudio:(id)a0 error:(id)a1;
+- (void)playerWithError:(id)a0;
+- (void)startLCAudioPlayerWith:(id)a0 audioId:(id)a1;
+- (void)startAVAudioPlayerWith:(id)a0 audioId:(id)a1;
+- (void)startFinallyCheckTimer;
+- (void)openEchoCancellationIfNeeded;
+- (void)duckStreamPlayerVolumeIfNeeded;
+- (void)processTask:(id /* block */)a0 delaySecond:(double)a1;
+- (void)asyncPlayWithCheckAECState:(long long)a0;
+- (BOOL)isHeadsetPluggedIn;
+- (void)resumeStreamPlayerVolumeIfNeeded;
+- (void)cleanOverTimeTimer;
+- (id)playerInputWithPlayer:(id)a0;
+- (void)audioPlayOverTime:(id)a0;
+- (BOOL)shouldPlayWhenFinished;
+- (void)monitorAudioChatPlayWithCode:(long long)a0 msg:(id)a1;
+- (void)playerWillStart:(id)a0;
+- (void)addDelegate:(id)a0;
+- (void)removeDelegate:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)removeAllItems;
+- (void)dealloc;
+- (void)cancel;
+- (void)playerDidStart:(id)a0;
+
+@end

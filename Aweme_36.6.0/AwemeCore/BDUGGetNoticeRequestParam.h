@@ -1,0 +1,3 @@
+@interface BDUGGetNoticeRequestParam : BDUGBaseRequestParam
+
+@end

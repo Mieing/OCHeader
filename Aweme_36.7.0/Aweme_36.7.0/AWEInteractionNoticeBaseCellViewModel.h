@@ -1,0 +1,67 @@
+@interface AWEInteractionNoticeBaseCellViewModel : AWEBaseListCellViewModel <AWEUserMessage> {
+    void /* unknown type, empty encoding */ dataContext;
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_disableEventType;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_disableType;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_isDisableChecked;
+    void /* unknown type, empty encoding */ profileAvatarZoomTransitionOuterContext;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_colorRingDisplayManager;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_colorRingFacade;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_imStreakDisplayManager;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_lightInteractionManager;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_disableInfoManager;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_commentManager;
+    void /* unknown type, empty encoding */ vcdToastText;
+    void /* unknown type, empty encoding */ enumerateCurrentListCellViewModelsBlock;
+    void /* unknown type, empty encoding */ enumerateAllListCellViewModelsBlock;
+    void /* unknown type, empty encoding */ deleteNoticeBlock;
+    void /* unknown type, empty encoding */ removeFansBlock;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_reuseId;
+    void /* unknown type, empty encoding */ _isUnreadUIStatus;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_isVcdAuth;
+    void /* unknown type, empty encoding */ _isOnline;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_isActiveFollowRequest;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_isFollowNotice;
+    void /* unknown type, empty encoding */ disableEditConfig;
+    void /* unknown type, empty encoding */ _disableNoticeToastText;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_cellConfig;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_cellLayout;
+    void /* unknown type, empty encoding */ _titleConfig;
+    void /* unknown type, empty encoding */ fansLabelsArray;
+    void /* unknown type, empty encoding */ relationTagText;
+    void /* unknown type, empty encoding */ relationLabelType;
+    void /* unknown type, empty encoding */ forceShowFollowButtonTitle;
+    void /* unknown type, empty encoding */ _imConsecutiveChatStatusModel;
+    void /* unknown type, empty encoding */ _contentConfig;
+    void /* unknown type, empty encoding */ showViewString;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_formatedTimestampString;
+    void /* unknown type, empty encoding */ subContentViewConfig;
+    void /* unknown type, empty encoding */ bottomInteractionConfigs;
+    void /* unknown type, empty encoding */ bottomActionConfigs;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_avatarConfig;
+    void /* unknown type, empty encoding */ videoCoverConfig;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_videoCoverDeleteImage;
+    void /* unknown type, empty encoding */ stickerViewConfig;
+    void /* unknown type, empty encoding */ lightInteractionConfig;
+    void /* unknown type, empty encoding */ isShowingLightInteraction;
+    void /* unknown type, empty encoding */ lightInteractionButtonOnClickBlock;
+}
+
+- (void)didFinishFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)didFinishUnFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)didFinishBlockUser:(id)a0 status:(long long)a1;
+- (void)didFinishSetRemarkWithUser:(id)a0;
+- (void)setupWithModel:(id)a0;
+- (void)commentLikeActionWithNoti:(id)a0;
+- (void)handleCommentNoMoreNoticeWithNoti:(id)a0;
+- (void)setupEditConfigs;
+- (id)getNotificationInnerMessageTrackerParamsWithAction:(id)a0;
+- (id)getTrackerSlideCellParams;
+- (id)getTrackerDisableNoticeParams;
+- (id)getDiggCommentParams;
+- (id)initWithModel:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
+
+@end

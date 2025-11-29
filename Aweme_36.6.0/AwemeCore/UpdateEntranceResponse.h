@@ -1,0 +1,10 @@
+@class UpdateEntranceResponse_Data;
+
+@interface UpdateEntranceResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateEntranceResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

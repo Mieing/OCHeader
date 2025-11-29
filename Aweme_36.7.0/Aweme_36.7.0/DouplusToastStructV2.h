@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface DouplusToastStructV2 : GPBMessage
+
+@property (nonatomic) int id_p;
+@property (nonatomic) BOOL hasId_p;
+@property (copy, nonatomic) NSString *toast;
+@property (nonatomic) BOOL hasToast;
+
++ (id)descriptor;
+
+@end

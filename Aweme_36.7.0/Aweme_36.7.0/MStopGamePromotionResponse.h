@@ -1,0 +1,10 @@
+@class MStopGamePromotionResponse_Data;
+
+@interface MStopGamePromotionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) MStopGamePromotionResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

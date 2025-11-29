@@ -1,0 +1,3 @@
+@interface HTSLiveGiftInteractiveGiftScoringApiRoot : GPBRootObject
+
+@end

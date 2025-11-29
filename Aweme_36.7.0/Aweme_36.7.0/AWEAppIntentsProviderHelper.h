@@ -1,0 +1,3 @@
+@interface AWEAppIntentsProviderHelper : NSObject
+
+@end

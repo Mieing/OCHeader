@@ -1,0 +1,3 @@
+@interface AWELifeFeedsComponentLifeCyclesManager : NSObject
+
+@end

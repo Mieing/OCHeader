@@ -1,0 +1,3 @@
+@interface AWEWebcastCodeGenEntertainmentPaidVideoCombRelationUpdateResponseDataModel : AWEBaseDataModel
+
+@end

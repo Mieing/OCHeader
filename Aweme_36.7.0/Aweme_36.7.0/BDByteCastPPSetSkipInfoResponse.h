@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetSkipInfoResponse : BDByteCastPPBaseCmdResponse
+
+@end

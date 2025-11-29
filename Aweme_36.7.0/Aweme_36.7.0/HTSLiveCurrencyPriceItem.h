@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveCurrencyPriceItem : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *currency;
+@property (copy, nonatomic) NSString *priceShowForm;
+@property (nonatomic) int price;
+
++ (id)descriptor;
+
+@end

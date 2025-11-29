@@ -1,0 +1,80 @@
+@class UIView, NSString, NSArray, UICollectionViewFlowLayout, ACCMusicUIThemeModel, AWEMusicCollectionData, UIButton, UICollectionView, UILabel;
+@protocol ACCLoadingViewProtocol;
+
+@interface ACCMusicCollectionTableViewCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate, AWESingleMusicViewDelegate, HTSVideoAudioSupplier>
+
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIButton *moreButton;
+@property (retain, nonatomic) UIView<ACCLoadingViewProtocol> *loadingView;
+@property (retain, nonatomic) AWEMusicCollectionData *data;
+@property (copy, nonatomic) NSArray *musicList;
+@property (nonatomic) BOOL useRankIcon;
+@property (nonatomic) long long playMusicIndex;
+@property (nonatomic) unsigned long long playMusicStatus;
+@property (retain, nonatomic) UIView *topLineView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *flowlayout;
+@property (nonatomic) int currentPage;
+@property (nonatomic) double loadingAfterDelay;
+@property (retain, nonatomic) UICollectionView *musicCollectionView;
+@property (copy, nonatomic) id /* block */ selectMusicBlock;
+@property (copy, nonatomic) id /* block */ confirmAudioBlock;
+@property (copy, nonatomic) id /* block */ moreButtonClicked;
+@property (copy, nonatomic) id /* block */ favMusicBlock;
+@property (copy, nonatomic) id /* block */ promotionTagBlock;
+@property (copy, nonatomic) id /* block */ tapWhileLoadingBlock;
+@property (nonatomic) BOOL showMore;
+@property (nonatomic) BOOL showClipButton;
+@property (nonatomic) BOOL disableCutMusic;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *previousPage;
+@property (copy, nonatomic) NSString *contentType;
+@property (copy, nonatomic) NSString *creationID;
+@property (copy, nonatomic) NSString *zipURI;
+@property (nonatomic) long long channelID;
+@property (readonly, nonatomic) double initialContentOffsetX;
+@property (nonatomic) BOOL isCommerce;
+@property (nonatomic) long long recordMode;
+@property (nonatomic) double videoDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) id /* block */ completion;
+@property (copy, nonatomic) id /* block */ enableClipBlock;
+@property (copy, nonatomic) id /* block */ willClipBlock;
+@property (retain, nonatomic) ACCMusicUIThemeModel *themeModel;
+
++ (double)cellHeight;
+
+- (void)hideLoading;
+- (void)singleMusicViewDidTapUse:(id)a0 music:(id)a1;
+- (void)singleMusicViewDidTapMoreButton:(id)a0;
+- (BOOL)singleMusicView:(id)a0 enableClipMusic:(id)a1;
+- (void)singleMusicViewDidTapClip:(id)a0 music:(id)a1;
+- (void)singleMusicViewDidTapFavouriteMusic:(id)a0;
+- (void)singleMusicViewDidTapUseWhileLoading;
+- (void)singleMusicViewDidTapPromotionTag:(id)a0 music:(id)a1;
+- (void)configWithMusicCollectionData:(id)a0 showTopLine:(BOOL)a1 playingIndex:(long long)a2 loadingAfterDelay:(double)a3;
+- (double)musicCollectionViewPageWidth;
+- (id)p_getCategoryName:(id)a0;
+- (void)p_reportPromotionTagInfoWithModel:(id)a0;
+- (void)configWithMusicCollectionData:(id)a0 showTopLine:(BOOL)a1;
+- (void)configWithPlayerStatus:(unsigned long long)a0 forRow:(long long)a1;
+- (BOOL)isAccessibilityElement;
+- (void).cxx_destruct;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (id)accessibilityElements;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)dealloc;
+- (id)categoryName;
+- (id)categoryId;
+- (void)setupUI;
+- (void)moreButtonTapped:(id)a0;
+- (void)showLoading;
+
+@end

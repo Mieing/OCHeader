@@ -1,0 +1,8 @@
+@class NSString;
+
+@interface LSIMCreateOneOneChatModel : LSIMBaseApiModel
+
+@property (readonly, copy, nonatomic) NSString *conversationID;
+@property (readonly, copy, nonatomic) NSString *schema;
+
+@end

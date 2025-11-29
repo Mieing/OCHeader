@@ -1,0 +1,70 @@
+@class NSString, MMTimer, NSHashTable, FavAudioRecorder, WCRedEnvAudioTransLogic;
+
+@interface WCRedEnvAudioResMgr : MMUserService <IRecordPermissionCheckExt, FavAudioRecorderDelegate, IFavAudioPlayerExt, WCRedEnvAudioTransLogicDelegate, MMServiceProtocol>
+
+@property (retain, nonatomic) NSHashTable *delegateHashTable;
+@property (retain, nonatomic) FavAudioRecorder *recorder;
+@property (nonatomic) long long recordStatus;
+@property (retain, nonatomic) NSString *lastFilePath;
+@property (nonatomic) long long startRecordTime;
+@property (nonatomic) long long endRecordTime;
+@property (retain, nonatomic) MMTimer *recordTimer;
+@property (nonatomic) long long stopRecordReason;
+@property (nonatomic) long long recordTimeoutValue;
+@property (nonatomic) long long audioStartPlayTime;
+@property (nonatomic) BOOL isStopHandled;
+@property (nonatomic) BOOL enableTransText;
+@property (retain, nonatomic) WCRedEnvAudioTransLogic *transTextLogic;
+@property (nonatomic) unsigned int transInputId;
+@property (nonatomic) BOOL isDisasterVoiceTrans;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)setResMgrDelegate:(id)a0;
+- (BOOL)startSilkRecordWithDuration:(unsigned long long)a0;
+- (BOOL)stopRecord;
+- (BOOL)endRecord;
+- (long long)getRecordStatus;
+- (BOOL)internalStopRecord;
+- (void)notifyStartRecordOnMainThread:(id)a0;
+- (void)notifyRecordTimeTooShortOnMainThread;
+- (void)notifyFinishRecordOnMainThread:(id)a0;
+- (void)notifyFinishRecordFailOnMainThread;
+- (void)onTimeCount;
+- (void)forceStopRecordAndCallback;
+- (void)stopTime;
+- (BOOL)startPlaySilkAudioWithSenderDataPath:(id)a0 audioID:(id)a1;
+- (BOOL)startPlaySilkAudioWithPayMsgID:(id)a0;
+- (BOOL)stopPlaySilkAudioWithPayMsgID:(id)a0;
+- (void)OnBeginPlay:(id)a0;
+- (void)OnPlayError:(id)a0;
+- (void)OnEndPlay:(id)a0;
+- (void)OnFavBeginRecording:(int)a0;
+- (void)OnFavEndRecording:(id)a0 VoiceFmt:(unsigned int)a1;
+- (void)OnFavFinishRecord:(id)a0 VoiceFmt:(unsigned int)a1;
+- (void)OnFavLevelMeter:(float)a0;
+- (void)OnFavOutputPcmBuffer:(id)a0 VoiceFmt:(unsigned int)a1;
+- (void)OnRecordPermissioned;
+- (void)OnRecordDenied;
+- (void)OnRecordDeniedByWeChat;
+- (BOOL)startUploadAudioData:(id)a0;
+- (void)handleCdnUploadFail:(id)a0;
+- (void)handleCdnUploadSucc:(id)a0 taskInfo:(id)a1;
+- (BOOL)startDownloadAudioData:(id)a0 fileUrl:(id)a1 aesKey:(id)a2;
+- (void)configEnableTransText:(BOOL)a0;
+- (void)startTranslateTextWithVoiceRecording:(int)a0;
+- (void)stopTranslateTextWithState:(BOOL)a0;
+- (void)cleanTranscacheLogic;
+- (void)cleanTransTextData;
+- (void)onGetResultText:(id)a0 InputId:(unsigned int)a1;
+- (void)onGetTransingKeywordList:(id)a0 InputId:(unsigned int)a1;
+- (void)onGetFinalKeywordList:(id)a0 InputId:(unsigned int)a1;
+- (void)onEndVoiceTrans:(unsigned int)a0 VoiceIds:(id)a1;
+- (void)onVoiceTransTimeout:(unsigned int)a0;
+- (void)onVoiceTransDisaster:(unsigned int)a0;
+- (void).cxx_destruct;
+
+@end

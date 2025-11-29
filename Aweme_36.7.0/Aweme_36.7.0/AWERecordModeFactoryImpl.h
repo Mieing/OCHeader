@@ -1,0 +1,82 @@
+@class NSDictionary, NSString, AWEVideoPublishViewModel;
+@protocol ACCRecordFrameRatioService;
+
+@interface AWERecordModeFactoryImpl : NSObject <AWERecordModeFactoryTarget>
+
+@property (copy, nonatomic) NSDictionary *modeMapDictionary;
+@property (copy, nonatomic) NSDictionary *initialTabDictionary;
+@property (weak, nonatomic) AWEVideoPublishViewModel *repository;
+@property (weak, nonatomic) id<ACCRecordFrameRatioService> frameRatioService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aACCMidVideoCreationProtocolClass;
++ (BOOL)preconditionEnableLive:(id)a0;
++ (id)preconditionEnableLiveReason:(id)a0;
++ (Class)aAWERecordModeFactoryDYLiteAdapterClass;
+
+- (id)storyMode;
+- (id)modeWithIdentifier:(long long)a0;
+- (id)displayModesArray;
+- (id)modeWithButtonType:(long long)a0;
+- (id)scanDisplayModesArray;
+- (id)tabConfigWithTitle:(id)a0 forMode:(id)a1;
+- (id)createNewModeWithIdentifier:(long long)a0;
+- (id)themeMode;
+- (BOOL)isClickPlus;
+- (id)aACCMidVideoCreationProtocol;
+- (id)pictureMode;
+- (BOOL)isLiveDuetPhotoSession;
+- (id)pictureAlbumMode;
+- (id)storyCombinedMode;
+- (id)generateStoryCombinedModeSubModeIds;
+- (id)generateStoryCombinedModeSubModesDict:(id)a0;
+- (id)aAWERecordModeFactoryDYLiteAdapter;
+- (id)storyDummyMode;
+- (void)updateSubmodeWithContainerMode:(id)a0;
+- (BOOL)shouldShowCreationAlbum;
+- (id)paramerterizedModeConfig:(id)a0;
+- (void)setInitialFlagForMode:(id)a0;
+- (id)liveMode;
+- (id)MVMode;
+- (id)mixMode;
+- (id)mix15SecondsMode;
+- (id)mixLongVideoMode;
+- (id)combinedMode;
+- (id)mix60SecondsMode;
+- (id)mix3MinutesMode;
+- (id)scanToScanMode;
+- (id)scanToQRCodeMode;
+- (id)scanToQuestionMode;
+- (id)momentCameraMode;
+- (id)storyPhotoMMode;
+- (id)AIGCMode;
+- (id)inspirationMode;
+- (id)jxUploadMode;
+- (long long)transToFrameRationType:(unsigned long long)a0;
+- (id)configMixHoldMode;
+- (BOOL)shouldRequiredMicrophonePermissionForMixMode;
+- (unsigned long long)shootWayDefaultLandigModeIndexWithModeIdArray:(id)a0;
+- (BOOL)imageAlbumSupportsLandingPhotoTab;
+- (long long)getDefaultIndexOfStoryCombinedModeSubModeIds:(id)a0;
+- (long long)indexOfInitialLandingTab;
+- (long long)modeIdOfSegmentInitialLandingTab:(id)a0;
+- (id)collectCurrentTabListModeIdWithModeList:(id)a0;
+- (long long)paramerterizedConvertRecrodModeTypeWithTabName:(id)a0 currentShowModeIdLists:(id)a1;
+- (BOOL)currentIsDraftOrBackup;
+- (void)setInitialFlagForMode:(id)a0 landingTab:(long long)a1 result:(BOOL *)a2;
+- (id)getRecordModeFromModeArray:(id)a0 modeID:(long long)a1;
+- (void)setInitialFlagForStoryMode:(id)a0 combinedMode:(id)a1 momentMode:(id)a2;
+- (BOOL)musicLandingMultiLengthAlways:(id)a0;
+- (BOOL)alwaysLandingStoryTab;
+- (BOOL)isInStoryPages:(id)a0;
+- (id)modeWithInitialIdentifier:(id)a0;
+- (BOOL)isEnableRecordAIGC;
+- (BOOL)canForceLandingMultiLength:(id)a0;
+- (BOOL)shouldShowMVEntrance;
+- (void).cxx_destruct;
+- (id)textMode;
+
+@end

@@ -1,0 +1,78 @@
+@class UIView, IESLiveKTVToneView, UISwitch, IESLiveKTVMixActionControlBar, NSString, UIButton, IESLiveNewKTVVolumeSliderViewDH, IESLiveKTVTuningEffectView, IESLiveKTVTuningStore, UILabel, IESLiveKTVControlStore;
+@protocol IESLiveKTVControlActions, IESLiveKTVTuningActions;
+
+@interface IESLiveKTVMixActionBarTuningView : UIView <IESLiveKTVChorusActions, IESLiveKTVTuningViewProtocol>
+
+@property (retain, nonatomic) IESLiveKTVTuningStore *tuningStore;
+@property (retain, nonatomic) IESLiveKTVControlStore *controlStore;
+@property (retain, nonatomic) UIView *topContainer;
+@property (retain, nonatomic) UIView *bottomContainer;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *navigationLine;
+@property (retain, nonatomic) UILabel *originalLabel;
+@property (retain, nonatomic) UISwitch *originalSwitch;
+@property (retain, nonatomic) UIButton *originalSwitchButton;
+@property (retain, nonatomic) UIView *originalAndEarSeparator;
+@property (retain, nonatomic) UILabel *earLabel;
+@property (retain, nonatomic) UISwitch *earSwitch;
+@property (retain, nonatomic) UIButton *earSwitchButton;
+@property (retain, nonatomic) UILabel *scoreLabel;
+@property (retain, nonatomic) UISwitch *scoreSwitch;
+@property (retain, nonatomic) UIButton *scoreSwitchButton;
+@property (retain, nonatomic) IESLiveNewKTVVolumeSliderViewDH *earMonitorSliderDH;
+@property (retain, nonatomic) IESLiveNewKTVVolumeSliderViewDH *voiceSliderDH;
+@property (retain, nonatomic) IESLiveNewKTVVolumeSliderViewDH *musicSliderDH;
+@property (retain, nonatomic) UILabel *toneLabel;
+@property (retain, nonatomic) IESLiveKTVToneView *toneView;
+@property (retain, nonatomic) IESLiveKTVTuningEffectView *tuningEffectView;
+@property (retain, nonatomic) IESLiveKTVMixActionControlBar *controlBar;
+@property (nonatomic) double lastToastChorusTime;
+@property (nonatomic) float voiceValue;
+@property (nonatomic) float musicValue;
+@property (nonatomic) double toneValue;
+@property (retain, nonatomic) id<IESLiveKTVTuningActions> tuningActionsCreator;
+@property (retain, nonatomic) id<IESLiveKTVControlActions> controlActionsCreator;
+@property (nonatomic) BOOL isGPUOptimze;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) id /* block */ clickedBackAction;
+@property (copy, nonatomic) id /* block */ cutSongAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)p_setupUIs;
+- (void)p_render;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 store:(id)a1;
+- (void)p_setupObservers;
+- (void)didChorusStarted:(id)a0;
+- (void)didChorusEnd:(id)a0;
+- (BOOL)isNewAudioKTV;
+- (void)tr_clickedControlEvent:(id)a0;
+- (id)mixKTVRouter;
+- (id)socialInteractiveRouter;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 tuningStore:(id)a1 controlStore:(id)a2;
+- (void)hidePlayControl:(BOOL)a0;
+- (void)tr_pushKsongTuneValue;
+- (void)didHideTunningView;
+- (BOOL)canSwitchScoreMode;
+- (void)tr_showTuningEvent;
+- (void)p_setUnableInChorus;
+- (id)chorusProvider;
+- (BOOL)isUnableForChorusFollower;
+- (void)p_updateContentContainerCorner;
+- (void)p_setupOriginalAndEarView;
+- (void)p_createSliderDH;
+- (void)makeConstrainForChorusPlayer;
+- (void)makeConstrainMV;
+- (void)makeConstrainDH;
+- (BOOL)p_useGlobalHeadPhoneStatus;
+- (void)setupEarView;
+- (id)p_createHeadLabelWithText:(id)a0;
+- (id)buildSwitch;
+- (void)tr_clickedHeadphonesEvent;
+- (BOOL)isFollowerInChorus;
+- (void)refreshToneValue:(double)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,80 @@
+@class NSObject, NSMutableDictionary, NSArray, NSMutableArray, AWEAssetModel;
+@protocol ACCEditVideoDataProtocol;
+
+@interface AWEVideoSegmentedClipAdapter : NSObject
+
+@property (retain, nonatomic) NSMutableArray *innerSourceAssetModelArray;
+@property (retain, nonatomic) NSMutableArray *addedAssetModelArray;
+@property (retain, nonatomic) NSMutableArray *usedMusicIDs;
+@property (retain, nonatomic) NSMutableArray *sourceAssetModelBackupArray;
+@property (retain, nonatomic) NSMutableDictionary *currentAssetModelDictionary;
+@property (retain, nonatomic) NSMutableDictionary *currentPlayingIndexDictionary;
+@property (retain, nonatomic) NSMutableDictionary *clipedTotalDurationDictionary;
+@property (nonatomic) double durationRate;
+@property (nonatomic) double duration;
+@property (nonatomic) double maxDuration;
+@property (nonatomic) BOOL segmentChanged;
+@property (nonatomic) double segmentTempSpeed;
+@property (nonatomic) double totalSpeed;
+@property (nonatomic) unsigned long long editMode;
+@property (nonatomic) unsigned long long segClipMode;
+@property (nonatomic) unsigned long long currentClipMode;
+@property (readonly, nonatomic) AWEAssetModel *currentAssetModel;
+@property (retain, nonatomic) NSArray *sourceAssetModelArray;
+@property (readonly, nonatomic) NSArray *sourceAssetTimesArray;
+@property (retain, nonatomic) NSMutableArray *singleThumbnailTimeArray;
+@property (retain, nonatomic) NSMutableArray *totalThumbnailTimeArray;
+@property (readonly, nonatomic) BOOL sourceAssetModelArrayBeenModified;
+@property (nonatomic) unsigned long long tempRotateType;
+@property (nonatomic) double preTotalSpeed;
+@property (nonatomic) double preSegmentSpeed;
+@property (nonatomic) struct CGPoint { double x; double y; } preTotalContentOffset;
+@property (nonatomic) double preTotalActualLeft;
+@property (nonatomic) double preTotalActualRight;
+@property (nonatomic) double prePlayIndicatorPosition;
+@property (nonatomic) double preBodyWidth;
+@property (nonatomic) double preFramesContentWidth;
+@property (nonatomic) double speedPreSpeed;
+@property (nonatomic) double speedPreSegmentSpeed;
+@property (nonatomic) double speedPreDuration;
+@property (nonatomic) struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } speedPreClipedRange;
+@property (nonatomic) struct CGPoint { double x; double y; } speedPreTotalContentOffset;
+@property (nonatomic) double speedPreTotalActualLeft;
+@property (nonatomic) double speedPreTotalActualRight;
+@property (nonatomic) double speedPrePlayIndicatorPosition;
+@property (readonly, nonatomic) BOOL preTotalStateBeenModified;
+@property (readonly, nonatomic) NSObject<ACCEditVideoDataProtocol> *currentVideoData;
+
++ (id)degreeOfRotateType:(unsigned long long)a0;
+
+- (id)findOrGenerateAssetModelWithOriginAssetModelArray:(id)a0 withAVAsset:(id)a1 withVideoData:(id)a2 isGenerated:(BOOL *)a3;
+- (id)findAssetModelIn:(id)a0 AVAsset:(id)a1;
+- (double)totalDurationOfSourceAssetModels;
+- (BOOL)haveAssetModelInfoChangedByUserForMusicID:(id)a0;
+- (struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })timeRangeFromVEClipRange:(id)a0 asset:(id)a1;
+- (id)timeRangeValueWithStart:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0 duration:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1;
+- (id)readableTimeStringForTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a0;
+- (id)currentAssetModelForMode:(unsigned long long)a0;
+- (id)timeRangeForAssetModel:(id)a0 isAssetModelGenerated:(BOOL)a1 didSyncLastMusicManualResult:(BOOL *)a2 newAVAsset:(id)a3 inVideoData:(id)a4;
+- (void)formattedDebugPrintForTimeRangeValue:(id)a0 musicID:(id)a1 asset:(id)a2 videoDuration:(double)a3;
+- (void)updateSourceModifiedStateWithNewArray:(id)a0;
+- (double)caculateTotalDurationOfClipedSourceAssetModelsWithMusicID:(id)a0;
+- (id)syncTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a0 toTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a1 videoDuration:(double)a2;
+- (void)reloadWithVideoData:(id)a0;
+- (void)updateVideoDataAssetAtIndex:(long long)a0 rotationType:(unsigned long long)a1;
+- (double)totalDurationOfClipedSourceAssetModelsWithMusicID:(id)a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })startTimeInTotalDurationOfAssetModel:(id)a0 musicID:(id)a1;
+- (long long)currentAssetIndex;
+- (void)setCurrentAssetModel:(id)a0 forMode:(unsigned long long)a1;
+- (void)resetSourceAssetModelArrayBeenModified;
+- (void)appendAssetModelArray:(id)a0;
+- (void)removeAssetModelAtIndex:(unsigned long long)a0;
+- (void)removeAssetModels:(id)a0;
+- (void)moveAssetModelFromIndex:(unsigned long long)a0 toIndex:(unsigned long long)a1;
+- (id)clipRangesForMusicID:(id)a0;
+- (long long)currentPlayingIndexForMode:(unsigned long long)a0;
+- (void)setCurrentPlayingIndex:(long long)a0 forMode:(unsigned long long)a1;
+- (id)initWithModel:(unsigned long long)a0;
+- (void).cxx_destruct;
+
+@end

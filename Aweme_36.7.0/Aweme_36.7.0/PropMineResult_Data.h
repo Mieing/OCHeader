@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface PropMineResult_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *propListsArray;
+@property (readonly, nonatomic) unsigned long long propListsArray_Count;
+
++ (id)descriptor;
+
+@end

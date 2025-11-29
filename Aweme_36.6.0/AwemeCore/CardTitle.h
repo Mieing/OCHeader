@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CardTitle : IESLivePBBaseMessage
+
+@property (nonatomic) int tagType;
+@property (copy, nonatomic) NSString *mainTitle;
+@property (copy, nonatomic) NSString *subTitle;
+
++ (id)descriptor;
+
+@end

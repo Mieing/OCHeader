@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface DiggLottieV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *lottieId;
+@property (nonatomic) BOOL hasLottieId;
+@property (nonatomic) int canBomb;
+@property (nonatomic) BOOL hasCanBomb;
+
++ (id)descriptor;
+
+@end

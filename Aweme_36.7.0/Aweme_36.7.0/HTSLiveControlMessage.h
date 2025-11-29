@@ -1,0 +1,16 @@
+@class NSString, HTSLiveCommon, HTSLiveControlMessage_Extra, HTSLivePublicAreaCommon;
+
+@interface HTSLiveControlMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long action;
+@property (copy, nonatomic) NSString *tips;
+@property (retain, nonatomic) HTSLiveControlMessage_Extra *extra;
+@property (nonatomic) BOOL hasExtra;
+@property (retain, nonatomic) HTSLivePublicAreaCommon *publicAreaCommon;
+@property (nonatomic) BOOL hasPublicAreaCommon;
+
++ (id)descriptor;
+
+@end

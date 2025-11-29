@@ -1,0 +1,78 @@
+@class NSDictionary, NSString, NSTimer, IESECLynxCard, IESECLynxCardModel, IESECMallLynxRenderMonitor, IESECMallMultiTabResp;
+@protocol IESECMallHeaderContainerDelegate;
+
+@interface IESECMallHeaderContainer : UIView <IESECLynxCardDelegate, IESECListCardsContextDelegate, IESECMallLynxRenderMonitorDelegate>
+
+@property (retain, nonatomic) IESECLynxCard *tabHeaderLynxCard;
+@property (nonatomic) BOOL hitTestFlag;
+@property (retain, nonatomic) IESECLynxCardModel *cardModel;
+@property (nonatomic) double contentOffsetX;
+@property (nonatomic) double lastContentOffsetX;
+@property (retain, nonatomic) NSTimer *scrollTimer;
+@property (nonatomic) double dragProgress;
+@property (nonatomic) double lastDragProgress;
+@property (retain, nonatomic) NSTimer *dragTimer;
+@property (nonatomic) BOOL firstScreenDidShow;
+@property (nonatomic) BOOL didAppear;
+@property (nonatomic) unsigned long long lastPageVisibleStatus;
+@property (retain, nonatomic) IESECMallMultiTabResp *tabResponse;
+@property (retain, nonatomic) IESECMallLynxRenderMonitor *lynxRenderMonitor;
+@property (nonatomic) long long refreshState;
+@property (nonatomic) BOOL isInBottomMall;
+@property (weak, nonatomic) id<IESECMallHeaderContainerDelegate> delegate;
+@property (nonatomic) BOOL headerLoadFailed;
+@property (copy, nonatomic) NSDictionary *globalPropsExtra;
+@property (copy, nonatomic) NSDictionary *rootGlobalPropsExtra;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidFirstScreen:(id)a0;
+- (void)didFinishLoginWithUid:(id)a0;
+- (void)didFinishLogin;
+- (void)lynxCard:(id)a0 sizeDidChanged:(struct CGSize { double x0; double x1; })a1;
+- (void)lynxCard:(id)a0 didLoadFail:(id)a1;
+- (void)lynxCard:(id)a0 didFinishLoadWithURL:(id)a1;
+- (void)currentCardsWriteAlogMethodName:(id)a0 paramModel:(id)a1 result:(id)a2 context:(id)a3;
+- (void)lynxCard:(id)a0 didUpdateDataWithLynxViewFromType:(unsigned long long)a1 perfDict:(id)a2;
+- (BOOL)pageDidAppeared;
+- (id)currentListContextIdForCards;
+- (id)currentBridgeCallHanderForCards;
+- (void)updateGlobalProps:(id)a0;
+- (id)xBridgeList;
+- (double)mallScrollTimeInterval;
+- (void)mallLynxRenderReport:(id)a0;
+- (void)handleTabDidChanged:(id)a0 previousTab:(id)a1;
+- (id)hmBid;
+- (void)sendEnterBySchemaEvent:(id)a0;
+- (void)handleTabOnOverScroll:(double)a0;
+- (void)handleCancelRefresh;
+- (void)viewDidAppearWithPageSource:(id)a0;
+- (void)viewDidDisappearWithPageSource:(id)a0;
+- (void)handleStartRefresh:(long long)a0;
+- (void)handleEndRefresh:(long long)a0;
+- (void)handleTabContainerDidScroll:(id)a0;
+- (void)handleTabContainerEndScroll:(id)a0;
+- (void)handleTabContainerStartScroll:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getTabHederFrame;
+- (void)sendTadDidScrollEvent;
+- (void)sendDragRefreshEvent;
+- (id)createLynxCardModel:(id)a0;
+- (void)viewDidAppearWithEvent:(unsigned long long)a0 pageSource:(id)a1;
+- (void)viewDidDisappearWithEvent:(unsigned long long)a0 pageSource:(id)a1;
+- (void)sendPageVisibilityChangeEvent:(unsigned long long)a0 pageSource:(id)a1;
+- (void)appWillEnterForground:(id)a0;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)appDidEnterBackground:(id)a0;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)setupUI;
+- (void)updateWithModel:(id)a0;
+- (void)viewDidDisappear;
+- (void)addNotificationObserver;
+
+@end

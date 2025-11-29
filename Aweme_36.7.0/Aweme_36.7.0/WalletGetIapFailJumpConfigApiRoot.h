@@ -1,0 +1,3 @@
+@interface WalletGetIapFailJumpConfigApiRoot : GPBRootObject
+
+@end

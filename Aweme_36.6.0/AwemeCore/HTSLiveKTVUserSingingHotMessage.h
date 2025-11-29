@@ -1,0 +1,18 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveKTVUserSingingHotMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long hot;
+@property (nonatomic) int hotStatus;
+@property (nonatomic) int hotLevel;
+@property (nonatomic) long long songId;
+@property (nonatomic) long long userId;
+@property (nonatomic) long long level2Threshold;
+@property (nonatomic) long long level3Threshold;
+@property (copy, nonatomic) NSString *openId;
+
++ (id)descriptor;
+
+@end

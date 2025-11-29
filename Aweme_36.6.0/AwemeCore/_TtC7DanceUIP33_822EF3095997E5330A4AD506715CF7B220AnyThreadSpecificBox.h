@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_822EF3095997E5330A4AD506715CF7B220AnyThreadSpecificBox : _TtCs12_SwiftObject
+
+@end

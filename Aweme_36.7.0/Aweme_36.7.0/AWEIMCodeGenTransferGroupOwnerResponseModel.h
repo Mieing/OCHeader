@@ -1,0 +1,3 @@
+@interface AWEIMCodeGenTransferGroupOwnerResponseModel : AWEBaseResponseModel
+
+@end

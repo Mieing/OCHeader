@@ -1,0 +1,13 @@
+@class HTSLiveImage;
+
+@interface HTSLiveSeriesTrayInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long duration;
+@property (retain, nonatomic) HTSLiveImage *staticImg;
+@property (nonatomic) BOOL hasStaticImg;
+@property (retain, nonatomic) HTSLiveImage *dynamicImg;
+@property (nonatomic) BOOL hasDynamicImg;
+
++ (id)descriptor;
+
+@end

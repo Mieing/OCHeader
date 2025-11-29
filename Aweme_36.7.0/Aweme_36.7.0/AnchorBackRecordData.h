@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AnchorBackRecordData : IESLivePBBaseMessage
+
+@property (nonatomic) long long approximateWaitSeconds;
+@property (nonatomic) long long waitTimeoutSeconds;
+@property (copy, nonatomic) NSString *executionId;
+
++ (id)descriptor;
+
+@end

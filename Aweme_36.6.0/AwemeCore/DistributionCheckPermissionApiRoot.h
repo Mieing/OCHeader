@@ -1,0 +1,3 @@
+@interface DistributionCheckPermissionApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface BDECPigeonClientDefine : NSObject
+
+@end

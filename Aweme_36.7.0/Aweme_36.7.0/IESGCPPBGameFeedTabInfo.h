@@ -1,0 +1,15 @@
+@class NSString, NSMutableArray;
+
+@interface IESGCPPBGameFeedTabInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL selected;
+@property (copy, nonatomic) NSString *channelId;
+@property (retain, nonatomic) NSMutableArray *childTabsArray;
+@property (readonly, nonatomic) unsigned long long childTabsArray_Count;
+@property (nonatomic) BOOL hideChildTab;
+
++ (id)descriptor;
+
+@end

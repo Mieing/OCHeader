@@ -1,0 +1,3 @@
+@interface HTSLiveLinkmicProfitEggSyncdataRoot : GPBRootObject
+
+@end

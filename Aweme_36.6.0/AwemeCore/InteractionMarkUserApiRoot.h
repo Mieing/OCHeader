@@ -1,0 +1,3 @@
+@interface InteractionMarkUserApiRoot : GPBRootObject
+
+@end

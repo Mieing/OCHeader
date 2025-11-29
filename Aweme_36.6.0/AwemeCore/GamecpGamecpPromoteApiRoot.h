@@ -1,0 +1,3 @@
+@interface GamecpGamecpPromoteApiRoot : GPBRootObject
+
+@end

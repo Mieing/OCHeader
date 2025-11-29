@@ -1,0 +1,10 @@
+@class AvatarSwitchInteractiveModeResp_Data;
+
+@interface AvatarSwitchInteractiveModeResp : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AvatarSwitchInteractiveModeResp_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

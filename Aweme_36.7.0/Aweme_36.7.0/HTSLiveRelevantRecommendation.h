@@ -1,0 +1,30 @@
+@class NSString, HTSLiveRelevantRecommendation_EcomInfo, HTSLiveImage, HTSLiveRelevantRecommendation_VsInfo, HTSLiveRelevantRecommendation_HighLightInfo, HTSLiveRelevantRecommendation_WhiteCategoryInfo;
+
+@interface HTSLiveRelevantRecommendation : IESLivePBBaseMessage
+
+@property (nonatomic) int relevantType;
+@property (nonatomic) int bottomBarCategory;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *barTextPrefix;
+@property (copy, nonatomic) NSString *barTextPostfix;
+@property (retain, nonatomic) HTSLiveRelevantRecommendation_HighLightInfo *highLightInfo;
+@property (nonatomic) BOOL hasHighLightInfo;
+@property (retain, nonatomic) HTSLiveRelevantRecommendation_EcomInfo *ecomInfo;
+@property (nonatomic) BOOL hasEcomInfo;
+@property (retain, nonatomic) HTSLiveRelevantRecommendation_VsInfo *vsInfo;
+@property (nonatomic) BOOL hasVsInfo;
+@property (retain, nonatomic) HTSLiveRelevantRecommendation_WhiteCategoryInfo *whiteCategoryInfo;
+@property (nonatomic) BOOL hasWhiteCategoryInfo;
+
++ (id)descriptor;
+
+- (BOOL)hasWhiteCategoryInfo;
+- (id)vsInfo;
+- (id)barTextPostfix;
+- (id)barTextPrefix;
+- (id)icon;
+- (int)bottomBarCategory;
+- (int)relevantType;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEKnowledgeSwiftImpl.FollowShootChoosePopupHandlerRegister : _TtCs12_SwiftObject
+
+@end

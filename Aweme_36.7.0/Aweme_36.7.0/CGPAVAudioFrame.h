@@ -1,0 +1,13 @@
+@class CGPAVTS, NSData, CGPAVAudioParams;
+
+@interface CGPAVAudioFrame : GPBMessage
+
+@property (retain, nonatomic) CGPAVAudioParams *params;
+@property (nonatomic) BOOL hasParams;
+@property (retain, nonatomic) CGPAVTS *ts;
+@property (nonatomic) BOOL hasTs;
+@property (copy, nonatomic) NSData *data_p;
+
++ (id)descriptor;
+
+@end

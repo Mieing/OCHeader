@@ -1,0 +1,3 @@
+@interface GamecpPageSetStatusApiRoot : GPBRootObject
+
+@end

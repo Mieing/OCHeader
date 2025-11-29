@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetGroupInfoListRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *groupInfoListArray;
+@property (readonly, nonatomic) unsigned long long groupInfoListArray_Count;
+
++ (id)descriptor;
+
+@end

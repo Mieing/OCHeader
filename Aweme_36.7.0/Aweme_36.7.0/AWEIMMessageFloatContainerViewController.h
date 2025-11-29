@@ -1,0 +1,80 @@
+@class UIView, NSString, UIImageView, NSDictionary, CAShapeLayer, UIPanGestureRecognizer, AWEIMMessageFloatViewController, UIVisualEffectView;
+
+@interface AWEIMMessageFloatContainerViewController : UIViewController <AWEZoomTransitionOuterContextProvider, AWEIMMessageFloatViewControllerDelegate, UIGestureRecognizerDelegate, AWERouterViewControllerProtocol>
+
+@property (readonly, nonatomic) NSDictionary *zoomTransitionContext;
+@property (nonatomic) BOOL shouldOpenInputPanel;
+@property (nonatomic) BOOL hasTransferToFullVC;
+@property (nonatomic) BOOL shouldAutoFullModeOnInput;
+@property (nonatomic) BOOL showLiveFloat;
+@property (nonatomic) double topMaskViewHeight;
+@property (retain, nonatomic) UIImageView *fromViewSnapshotImageView;
+@property (retain, nonatomic) UIImageView *internalSpecifySnapshotImageView;
+@property (retain, nonatomic) UIView *fromViewMaskView;
+@property (retain, nonatomic) CAShapeLayer *floatVCViewLayerMaskLayer;
+@property (retain, nonatomic) UIVisualEffectView *visualEffectView;
+@property (retain, nonatomic) UIView *topMaskTapView;
+@property (nonatomic) unsigned long long slideDirection;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGes;
+@property (retain, nonatomic) AWEIMMessageFloatViewController *messageFloatVC;
+@property (retain, nonatomic) UIView *floatingLiveView;
+@property (copy, nonatomic) NSString *extraData;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (nonatomic) BOOL hasActivateInputVC;
+@property (nonatomic) BOOL isCurrentTopVCRecommendFeed;
+@property (nonatomic) double enterCloseAnimDuration;
+@property (nonatomic) double naviTransformAnimDuration;
+@property (nonatomic) BOOL originNaviGestureEnable;
+@property (nonatomic) BOOL hasChangeNaviGestureEnable;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)dismissMessageFloatContainerViewController;
+
+- (id)zoomTransitionStartViewForOffset:(long long)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })focusViewPlaceholderFrame;
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (BOOL)transition_shouldStartInteractiveTranstionForSlideDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (id)transition_destinatedViewControllerForSlideDirection:(unsigned long long)a0 gestureRecognizer:(id)a1;
+- (unsigned long long)transition_destinatedType;
+- (void)closeFloatMessagePage;
+- (BOOL)isTopVCRecommendFeed;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })liveFloatOnTopInitialFrameForMediaSize:(struct CGSize { double x0; double x1; })a0;
+- (void)didUpdateInputVCFrame;
+- (void)transferToFullVCWithEnterMethod:(id)a0;
+- (void)floatNaviBarPan:(id)a0;
+- (void)p_trackerEnterChat;
+- (void)p_addFullScreenMaskAnimation;
+- (void)p_updateMessageFloatViewHeightWithTopOffset:(double)a0 forceLayout:(BOOL)a1;
+- (void)trackData_imQuickChatExpandWithEnterMethod:(id)a0;
+- (id)floatMessagePagePathWithSize:(struct CGSize { double x0; double x1; })a0 topOffset:(double)a1 cornerRadius:(double)a2;
+- (double)navigationBarTopMaskOffset;
+- (void)removeEmoticonFullScreenAnimationIfNeeded;
+- (void)p_closeFloatWithSpringVelocity:(double)a0;
+- (void)p_changeToFloatModeWithSpringVelocity:(double)a0;
+- (id)trackData_basicData;
+- (double)flaotPageTopMaskHeight;
+- (void)__checkShouldStayWhenTransfer;
+- (BOOL)enableThemOpt;
+- (void)addAdSlideTrackerWithRefer:(id)a0;
+- (void)trackData_imQuickChatCloseWithActionType:(id)a0;
+- (void)showFloatMessagePanel;
+- (void)p_showFloatingLiveView;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })frameOfTopMaskTapView;
+- (void)topMaskTapViewTapped;
+- (void)transferToFloatVC;
+- (void)specifySnapshotImageView:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)loadView;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)updateMask;
+- (void)updateTheme;
+
+@end

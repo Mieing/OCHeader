@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface GetItemSwitchResult_ItemResult : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (nonatomic) BOOL value;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage;
+
+@interface IESLiveBattleUserSettingsList_UserInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *userId;
+@property (copy, nonatomic) NSString *nickName;
+@property (retain, nonatomic) HTSLiveImage *avatarThumb;
+@property (nonatomic) BOOL hasAvatarThumb;
+@property (nonatomic) long long autoRemoveTime;
+@property (nonatomic) int sex;
+@property (nonatomic) long long rivalLivingRoomId;
+
++ (id)descriptor;
+
+@end

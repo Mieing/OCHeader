@@ -1,0 +1,3 @@
+@interface IESGCPSKCombinedNode : NSObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AWENearbyTaskTransformerBubble : NSObject
+
+@end

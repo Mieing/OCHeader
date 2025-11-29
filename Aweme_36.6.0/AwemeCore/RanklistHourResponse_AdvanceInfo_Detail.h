@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface RanklistHourResponse_AdvanceInfo_Detail : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *desc;
+@property (retain, nonatomic) NSMutableArray *toRanksArray;
+@property (readonly, nonatomic) unsigned long long toRanksArray_Count;
+@property (retain, nonatomic) NSMutableArray *fromRanksArray;
+@property (readonly, nonatomic) unsigned long long fromRanksArray_Count;
+
++ (id)descriptor;
+
+@end

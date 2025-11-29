@@ -1,0 +1,3 @@
+@interface GlobalEventEmitter : NSObject
+
+@end

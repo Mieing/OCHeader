@@ -1,0 +1,74 @@
+@class NSArray, UIImageView, AWEAwemeModel, UIView, NSString;
+@protocol AWEBasicModeDisplayViewControllerDelegate, IESVideoPlayerProtocol;
+
+@interface AWEBasicModePlayVideoViewController : UIViewController <AWEBasicModeDisplayViewControllerProtocol, IESVideoPlayerDelegate>
+
+@property (nonatomic) BOOL previousKeepAlive;
+@property (nonatomic) BOOL isPlaybackFailed;
+@property (nonatomic) BOOL isPlayFailedShown;
+@property (nonatomic) BOOL hasShownDisconnectToast;
+@property (copy, nonatomic) NSArray *playURLs;
+@property (copy, nonatomic) id /* block */ playVideo;
+@property (retain, nonatomic) UIView *loadingView;
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) UIImageView *underImageView;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) long long playState;
+@property (weak, nonatomic) id<AWEBasicModeDisplayViewControllerDelegate> interactionDelegate;
+@property (nonatomic) BOOL isFullScreen;
+@property (nonatomic) BOOL isLandscape;
+@property (nonatomic) BOOL copyFromOtherVideoController;
+@property (copy, nonatomic) id /* block */ didChangePlayBackAction;
+@property (nonatomic) BOOL shouldPrepareForDisplay;
+@property (nonatomic) BOOL pauseBySingleClick;
+@property (retain, nonatomic) id<IESVideoPlayerProtocol> playerController;
+@property (nonatomic) BOOL isReady;
+@property (nonatomic) BOOL isSeeking;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)player:(id)a0 playbackFailedWithError:(id)a1;
+- (void)playerDidReadyForDisplay:(id)a0;
+- (void)player:(id)a0 didChangePlaybackStateWithAction:(long long)a1;
+- (void)player:(id)a0 didChangeStallState:(long long)a1 actionType:(long long)a2 reason:(unsigned long long)a3;
+- (void)updatePlayerIfNeeded;
+- (void)updateCoverImage;
+- (void)onApplicationWillEnterForeground;
+- (void)onApplicationDidEnterBackground;
+- (BOOL)p_play;
+- (BOOL)p_pause;
+- (void)p_addVideoLoadingView;
+- (void)p_addAVAudioSessionObservers;
+- (void)p_dismissSystemVolumeViewForPoorDevice;
+- (void)p_recreatePlayer;
+- (void)p_prepareToPlay;
+- (void)p_muteMusicIfNeeded;
+- (long long)p_contentModeForDefaultVideoCover;
+- (void)p_cancelPendingPlayTimeoutCheck;
+- (void)stopLoadingAnimationAction;
+- (unsigned long long)p_getEnablePrivacyDisagreeBasicMode;
+- (void)playLoadingAnimationAction;
+- (long long)p_scaleModeForVideo;
+- (void)p_resumePlayVideo;
+- (void)p_restartPlayVideo;
+- (id)p_playURIString;
+- (void)p_checkPlayTimeout;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)didReceiveMemoryWarning;
+- (id)init;
+- (BOOL)stop;
+- (BOOL)pause:(BOOL)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)reset;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (BOOL)play:(BOOL)a0;
+- (BOOL)isActive;
+- (void)viewWillDisappear:(BOOL)a0;
+
+@end

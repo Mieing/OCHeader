@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface HotsoonDoubleFlowCardInfoPanelV2 : GPBMessage
+
+@property (nonatomic) BOOL showNickname;
+@property (nonatomic) BOOL hasShowNickname;
+@property (nonatomic) int textLine;
+@property (nonatomic) BOOL hasTextLine;
+@property (copy, nonatomic) NSString *textTitle;
+@property (nonatomic) BOOL hasTextTitle;
+@property (nonatomic) BOOL showLiveHead;
+@property (nonatomic) BOOL hasShowLiveHead;
+
++ (id)descriptor;
+
+@end

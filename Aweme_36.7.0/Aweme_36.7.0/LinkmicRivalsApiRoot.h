@@ -1,0 +1,3 @@
+@interface LinkmicRivalsApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface UpdatePrivateMsgTabStatusResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long statusCode;
+@property (copy, nonatomic) NSString *statusMsg;
+
++ (id)descriptor;
+
+@end

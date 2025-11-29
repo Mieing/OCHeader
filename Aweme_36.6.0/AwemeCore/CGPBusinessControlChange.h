@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CGPBusinessControlChange : GPBMessage
+
+@property (nonatomic) int role;
+@property (copy, nonatomic) NSString *userId;
+
++ (id)descriptor;
+
+@end

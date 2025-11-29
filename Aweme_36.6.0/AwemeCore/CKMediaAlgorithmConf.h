@@ -1,0 +1,21 @@
+@interface CKMediaAlgorithmConf : NSObject
+
++ (id)getFaceVerifyConf;
++ (id)getPronClsConf;
++ (id)getAfterEffectConf;
++ (id)getRecogV3Conf;
++ (id)getSimilarityConf;
++ (id)getFaceAttributeConf;
++ (id)getRecogConf;
++ (id)getFaceConf;
++ (id)getRelationRecogConf;
++ (id)getPetMattingConf;
++ (id)getPetDetectConf;
++ (id)getSaliencySegConf;
++ (id)getSkeletonConf;
++ (id)getMattingConf;
++ (id)getC3_300Conf;
++ (id)getFaceClustingConf;
++ (id)getAlgorithmModels;
+
+@end

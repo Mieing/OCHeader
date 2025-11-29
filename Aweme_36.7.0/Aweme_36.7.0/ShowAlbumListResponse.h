@@ -1,0 +1,12 @@
+@class ShowAlbumListExtra, NSMutableArray;
+
+@interface ShowAlbumListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ShowAlbumListExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+
++ (id)descriptor;
+
+@end

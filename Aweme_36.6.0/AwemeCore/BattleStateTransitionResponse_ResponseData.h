@@ -1,0 +1,10 @@
+@class HTSLiveBattleStateSyncMessage;
+
+@interface BattleStateTransitionResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveBattleStateSyncMessage *stateInfo;
+@property (nonatomic) BOOL hasStateInfo;
+
++ (id)descriptor;
+
+@end

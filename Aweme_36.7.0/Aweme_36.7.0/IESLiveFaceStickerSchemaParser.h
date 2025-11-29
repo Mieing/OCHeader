@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface IESLiveFaceStickerSchemaParser : NSObject <IESLiveSchemaParser>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)ieslivekit_register_schema;
+
+- (void)handleSchemeWithModel:(id)a0 fromInside:(BOOL)a1 completion:(id /* block */)a2;
+- (void)p_parserFansGroupWithParamters:(id)a0;
+
+@end

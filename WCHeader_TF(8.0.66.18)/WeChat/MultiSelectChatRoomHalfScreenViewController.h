@@ -1,0 +1,82 @@
+@class NSMutableDictionary, NSDictionary, MMUISearchBar, NSMutableArray, UIView, NSString, NSMutableOrderedSet, OrderedDictionary, MMUIView, MMTableView, NSArray, ContactsDataLogic, MMUIButton;
+@protocol MultiSelectChatRoomHalfScreenViewControllerDelegate;
+
+@interface MultiSelectChatRoomHalfScreenViewController : MMUIHalfScreenViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
+    MMUIView *m_contentView;
+    MMTableView *m_tableView;
+    MMUISearchBar *m_searchBar;
+    UIView *m_lineView;
+    UIView *m_searchBarContainer;
+    BOOL m_isInSearchState;
+    NSMutableArray *m_arrFilterdFriends;
+    NSMutableDictionary *m_dicMatchTips;
+    MMUIButton *m_leftCloseButton;
+    MMUIButton *m_rightMakeSureButton;
+    NSArray *m_arrAllContact;
+    NSMutableOrderedSet *m_setCanSelectContact;
+    NSString *m_tipWord;
+    NSString *m_choiseSessionWord;
+    NSString *m_chatroomSessionWord;
+    NSString *m_rightButtonWord;
+    NSString *m_rightButtonLightColor;
+    NSString *m_rightButtonDarkColor;
+    NSArray *m_selectedUserNameList;
+    unsigned int m_selectMaxCount;
+    NSString *m_countExceedTipWord;
+    BOOL m_forceLightMode;
+    BOOL m_canSelectOpenIM;
+}
+
+@property (retain, nonatomic) OrderedDictionary *m_dicMultiSelect;
+@property (retain, nonatomic) ContactsDataLogic *m_contactsDataLogic;
+@property (retain, nonatomic) NSMutableDictionary *m_dicMultiSelectIndex;
+@property (retain, nonatomic) NSDictionary *m_dicExistContact;
+@property (weak, nonatomic) id<MultiSelectChatRoomHalfScreenViewControllerDelegate> m_delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTipWord:(id)a0 choiseSessionWord:(id)a1 chatroomSessionWord:(id)a2 rightButtonWord:(id)a3 rightButtonLightColor:(id)a4 rightButtonDarkColor:(id)a5 selectedUserNameList:(id)a6 selectMaxCount:(unsigned int)a7 countExceedTipWord:(id)a8 forceLightMode:(BOOL)a9 canSelectOpenIM:(BOOL)a10;
+- (void)viewDidLoad;
+- (void)initData;
+- (long long)overrideUserInterfaceStyle;
+- (void)layoutView;
+- (void)layoutContentView;
+- (void)layoutSearchField;
+- (id)getSearchBarTextField;
+- (void)layoutTableView;
+- (void)layoutTopView;
+- (BOOL)isMultiSelectSessionNumberOfRowsInSection:(long long)a0;
+- (BOOL)isContactSessionNumberOfRowsInSection:(long long)a0;
+- (id)getContactsDataLogic;
+- (id)getContactWithIndexPath:(id)a0;
+- (BOOL)isExisted:(id)a0;
+- (BOOL)isSelected:(id)a0;
+- (id)getRightMakeSureColor;
+- (void)onClickLeftCloseButton;
+- (void)onClickMakeSureButton;
+- (void)updateRightMakeSureButton;
+- (void)didSelectContact:(id)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)makeCell:(id)a0 contact:(id)a1 tableView:(id)a2;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 titleForHeaderInSection:(long long)a1;
+- (id)makeSectionHeaderViewWithText:(id)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (void)searchBarTextDidBeginEditing:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)doSearch:(id)a0;
+- (void)searchBar:(id)a0 textDidChange:(id)a1;
+- (void)traitCollectionDidChange:(id)a0;
+- (void)updateSearchBarColor;
+- (void).cxx_destruct;
+
+@end

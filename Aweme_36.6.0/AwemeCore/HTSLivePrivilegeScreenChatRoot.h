@@ -1,0 +1,3 @@
+@interface HTSLivePrivilegeScreenChatRoot : GPBRootObject
+
+@end

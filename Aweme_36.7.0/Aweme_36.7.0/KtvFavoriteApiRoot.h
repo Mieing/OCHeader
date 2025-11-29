@@ -1,0 +1,3 @@
+@interface KtvFavoriteApiRoot : GPBRootObject
+
+@end

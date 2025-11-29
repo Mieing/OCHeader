@@ -1,0 +1,82 @@
+@class AnnieXServiceHolder;
+
+@interface BDXServiceManager : NSObject
+
+@property (retain, nonatomic) AnnieXServiceHolder *serviceHolder;
+@property (retain, nonatomic) AnnieXServiceHolder *hostServiceHolder;
+
++ (id)__bdxservice_auto_register_serivce__AWESearchEditPageDataProvider130;
++ (Class)getDefaultHostClassWithProtocol:(id)a0;
++ (id)getObjectWithProtocol:(id)a0;
++ (Class)getClassWithProtocol:(id)a0 bizID:(id)a1;
++ (Class)getClassWithProtocol:(id)a0;
++ (void)bindClass:(Class)a0 toProtocol:(id)a1;
++ (id)getObjectWithProtocol:(id)a0 bizID:(id)a1;
++ (id)__bdxservice_auto_register_serivce__BDUGLuckyContainerDataProviderManager220;
++ (void)registerDefaultSercice:(Class)a0;
++ (id)__bdxservice_auto_register_serivce__AnnieXLiveDataProviderManager310;
++ (id)getHostObjectWithProtocol:(id)a0 bizID:(id)a1;
++ (id)__bdxservice_auto_register_serivce__AnnieXCardViewService520;
++ (id)__bdxservice_auto_register_serivce__AnnieXDataProviderManager480;
++ (id)getDefaultHostObjectWithProtocol:(id)a0;
++ (Class)getHostClassWithProtocol:(id)a0 bizID:(id)a1;
++ (id)__bdxservice_auto_register_serivce__AnnieXDefaultUIService591;
++ (id)__bdxservice_auto_register_serivce__AnnieXPredefineImpl420;
++ (id)__bdxservice_auto_register_serivce__AnnieXSSPRequestManager210;
++ (id)__bdxservice_auto_register_serivce__BDXGlobalPropsService340;
++ (id)__bdxservice_auto_register_serivce__BDXLynxKit400;
++ (id)__bdxservice_auto_register_serivce__BDXMonitor150;
++ (id)__bdxservice_auto_register_serivce__BDXPageContainerService260;
++ (id)__bdxservice_auto_register_serivce__BDXPopupContainerService310;
++ (id)__bdxservice_auto_register_serivce__BDXPopupContentService130;
++ (id)getObjectInstanceWithProtocol:(id)a0 bizID:(id)a1;
++ (id)__bdxservice_auto_register_serivce__BDXPreloadImpl430;
++ (id)__bdxservice_auto_register_serivce__BDXResourceLoader160;
++ (id)__bdxservice_auto_register_serivce__BDXRouter540;
++ (id)__bdxservice_auto_register_serivce__BDXSchema480;
++ (void)_autoCollectBDXService;
++ (id)bdxservice_autoRegisteredService;
++ (id)ProtocolTypeMapTable;
++ (id)hostDefaultHolder;
++ (id)serviceHodler;
++ (void)registerHostDefaultService:(Class)a0;
++ (void)bindDefaultHostClass:(Class)a0 toProtocol:(id)a1;
++ (id)__bdxservice_auto_register_serivce__BDXWebKit560;
++ (id)__bdxservice_auto_register_serivce__AWEAnnieXDataProvider900;
++ (id)__bdxservice_auto_register_serivce__AWEAnnieXUIServiceImpl580;
++ (id)__bdxservice_auto_register_serivce__AWEGlobalPropsService150;
++ (id)__bdxservice_auto_register_serivce__AWEAdSifAnnieXDataProvider210;
++ (id)__bdxservice_auto_register_serivce__AWEBDARifleViewPopupOpener940;
++ (id)__bdxservice_auto_register_serivce__AWEECShoppingAIGuideLynxDataProvider210;
++ (id)__bdxservice_auto_register_serivce__AWEEcomSearchSugLynxCellDataProvider270;
++ (id)__bdxservice_auto_register_serivce__AWEEcomAISearchAnnieXDataProvider320;
++ (id)__bdxservice_auto_register_serivce__AWEPlayletSkyLightDataProvider180;
++ (id)__bdxservice_auto_register_serivce__AWEGrouponChannelCacheDataProvider210;
++ (id)__bdxservice_auto_register_serivce__AWEOpenPlatformLynxArgusService160;
++ (id)__bdxservice_auto_register_serivce__AWEPOICubeView1490;
++ (id)__bdxservice_auto_register_serivce__BDASifPageContainerService160;
++ (id)__bdxservice_auto_register_serivce__BDASifPopupContainerService140;
++ (id)__bdxservice_auto_register_serivce__BDASifPopupContentService150;
++ (id)__bdxservice_auto_register_serivce__CJPayAnnieDataProvider110;
++ (id)__bdxservice_auto_register_serivce__CJPayAnniexWebArgusBussiness170;
++ (id)__bdxservice_auto_register_serivce__HunterDefaultDataProvider160;
++ (id)__bdxservice_auto_register_serivce__IESECAnnieXECommerceBusinessImpl180;
++ (id)__bdxservice_auto_register_serivce__IESGCPGameDetailDataAnnieXProvider140;
++ (id)__bdxservice_auto_register_serivce__IESLiveShortTouchDateAnnieXProvider180;
++ (id)__bdxservice_auto_register_serivce__IESLiveRankListDataAnnieXProvider170;
++ (id)__bdxservice_auto_register_serivce__LLCubeView1390;
++ (id)__bdxservice_auto_register_serivce__AnnieXKTX2Impl200;
++ (id)__bdxservice_auto_register_serivce__AnnieXMotionImpl190;
++ (id)__bdxservice_auto_register_serivce__BDECRabbiFlyLynxDataProvider170;
++ (id)__bdxservice_auto_register_serivce__BDPAnnieArgusSecureService120;
++ (id)__bdxservice_auto_register_serivce__BDPAnnieDataProvider180;
++ (id)__bdxservice_auto_register_serivce__BDPLynxArgusSecureService120;
++ (id)__bdxservice_auto_register_serivce__BDPLynxCardDataProvider180;
++ (id)sharedInstance;
+
+- (void)__autoRegisterBDXServiceClass:(Class)a0;
+- (void)bdx_autoRegisterService;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface GetFunctionStatusResponse_ShowCenterFunctionStatus : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL needGuideToAdd;
+@property (copy, nonatomic) NSString *addTip;
+@property (nonatomic) BOOL hitNewVersion;
+
++ (id)descriptor;
+
+@end

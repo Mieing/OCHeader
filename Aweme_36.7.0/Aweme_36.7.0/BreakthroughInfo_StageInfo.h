@@ -1,0 +1,7 @@
+@interface BreakthroughInfo_StageInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long finishTimeDelta;
+
++ (id)descriptor;
+
+@end

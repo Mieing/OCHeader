@@ -1,0 +1,3 @@
+@interface GamecpAnchorSetRoomStatusApiRoot : GPBRootObject
+
+@end

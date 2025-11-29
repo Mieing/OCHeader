@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplayOrderPayApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, EcomAvatar;
+
+@interface EcomBidder : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) EcomAvatar *avatar;
+@property (nonatomic) BOOL hasAvatar;
+
++ (id)descriptor;
+
+@end

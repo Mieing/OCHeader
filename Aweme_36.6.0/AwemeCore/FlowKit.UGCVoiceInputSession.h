@@ -1,0 +1,10 @@
+@interface FlowKit.UGCVoiceInputSession : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ id;
+    void /* unknown type, empty encoding */ recorder;
+    void /* unknown type, empty encoding */ delegate;
+    void /* unknown type, empty encoding */ _settingsProvider;
+    void /* unknown type, empty encoding */ logger;
+    void /* unknown type, empty encoding */ contextValues;
+}
+
+@end

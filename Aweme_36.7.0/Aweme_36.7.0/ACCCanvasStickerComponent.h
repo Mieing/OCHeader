@@ -1,0 +1,75 @@
+@class NSString, ACCCanvasStickerHandler, ACCEditorRecoverServiceImpl, NSDictionary, UIButton;
+@protocol ACCAIExpandServiceProtocol, ACCEditSpecialEffectServiceProtocol, ACCEditPicTemplateServiceProtocol, ACCVideoEditTipsService, ACCGenericTemplateApplierService, ACCRealLivePhotoService, ACCAdvanceEditServiceProtocol, AWEStudioAIMateEditFeaturePublicAPI, ACCEditViewContainer, ACCSequenceEditServiceProtocol, ACCChangeBackGroundService, ACCInfoStickerServiceProtocol, ACCEditServiceProtocol;
+
+@interface ACCCanvasStickerComponent : ACCFeatureComponent <ACCEditSessionLifeCircleEvent, ACCSequenceEditServicePlayerSubscriber, ACCEditPreviewMessageProtocol, ACCEditPicTemplateServiceSubscriber, ACCGenericTemplateApplierSubscriber, ACCRealLivePhotoServiceSubscriber>
+
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceService;
+@property (weak, nonatomic) id<ACCVideoEditTipsService> tipsSerivce;
+@property (weak, nonatomic) id<ACCInfoStickerServiceProtocol> infoStickerService;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCChangeBackGroundService> changeBackGroundService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (weak, nonatomic) id<ACCAIExpandServiceProtocol> aiExpandService;
+@property (weak, nonatomic) id<ACCEditPicTemplateServiceProtocol> picTemplateService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCGenericTemplateApplierService> genericTemplateApplierService;
+@property (retain, nonatomic) ACCEditorRecoverServiceImpl *recoverService;
+@property (weak, nonatomic) id<ACCRealLivePhotoService> realLivePhotoService;
+@property (retain, nonatomic) ACCCanvasStickerHandler *stickerHandler;
+@property (retain, nonatomic) UIButton *updateCanvasAnimatedInfoButton;
+@property (retain, nonatomic) NSDictionary *effectInfo;
+@property (nonatomic) BOOL hasLoaded;
+@property (retain, nonatomic) id<ACCAdvanceEditServiceProtocol> advanceEditService;
+@property (weak, nonatomic) id<AWEStudioAIMateEditFeaturePublicAPI> aiMateService;
+@property (nonatomic) double lastTrackTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)livePhotoDidChangeMode:(unsigned long long)a0;
+- (void)templateApplierDidApplyForUpdateVideoDataWithTemplateModel:(id)a0 scene:(unsigned long long)a1;
+- (void)templateApplierDidApplySeekWithTemplateModel:(id)a0;
+- (void)templateApplierDidRemoveForUpdateVideoDataWithTemplateId:(id)a0;
+- (void)sensorialRenderWithEditService:(id)a0;
+- (void)firstRenderWithEditService:(id)a0;
+- (id)publishModel;
+- (void)componentDidMount;
+- (unsigned long long)preferredLoadPhase;
+- (void)bindViewModel;
+- (id)serviceBindingArray;
+- (id)flowService;
+- (void)resetMediaPreview;
+- (void)bindServices:(id)a0;
+- (id)stickerService;
+- (void)handleShareToStoryEffectMessageNotification:(id)a0;
+- (void)refreshCanvasSticker;
+- (void)syncSequenceStickerStatus:(unsigned long long)a0;
+- (void)updateStickerInfoWithInfo:(id)a0;
+- (void)trackForZoom;
+- (void)p_setDefautBackground;
+- (void)hideUpdateCanvasAnimatedInfoButton;
+- (void)handleShareToStoryPreparationDone:(id)a0;
+- (void)updateOnceTapCallback:(id)a0;
+- (void)showPostScriptGuidePopover;
+- (id)preMVPOperatorWithVideoClipIdentifer:(id)a0;
+- (id)recordPositionBeforeGesture;
+- (id)recordScaleBeforeGesture;
+- (id)recordRotationBeforeGesture;
+- (void)updatePreMVPWithFilterIdentifier:(id)a0 block:(id /* block */)a1;
+- (void)renderPreMVPCanvasStickerWithVideoClipData:(id)a0;
+- (void)updateCanvasAnimatedInfo;
+- (void)setUpCanvasSticker;
+- (void)setupCanvasForTemplatePreMVP;
+- (void)updateSupportGesture;
+- (BOOL)hasShownPostScriptGuidePopover;
+- (double)shareToStoryInteractionHeightRatio;
+- (void)trackUpdateCanvasAnimatedInfo;
+- (void)applySuccessWithTemplate:(id)a0 projectUUID:(id)a1;
+- (void)didRemoveTemplateWith:(id)a0 projectUUID:(id)a1;
+- (id)tipsService;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+
+@end

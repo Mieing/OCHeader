@@ -1,0 +1,3 @@
+@interface IESIMStickerConsts : NSObject
+
+@end

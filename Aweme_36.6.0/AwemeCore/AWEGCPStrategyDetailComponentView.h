@@ -1,0 +1,72 @@
+@class UIStackView, AWEGCPDetailActionPanelView, AWEGCPAwemeModel, UIView, NSString, YYLabel, AWEGCPDetailAuthorInfoView, UIViewController, UILabel, MASConstraint;
+@protocol AWEGCPStrategyDetailComponentViewDelegate, IESGCPNotificationService, AWEGCPPlayVideoViewControllerProtocol, AWEGCPVideoPlayService, IESGCPActionPanelService;
+
+@interface AWEGCPStrategyDetailComponentView : UIView <IESGCPViewExposedAble, AWEGCPAutoPlayCardProtocol>
+
+@property (retain, nonatomic) AWEGCPAwemeModel *gameAwemeModel;
+@property (retain, nonatomic) UIStackView *componentStackView;
+@property (retain, nonatomic) AWEGCPDetailAuthorInfoView *authorInfoView;
+@property (retain, nonatomic) UIView *specificStrategyInfoView;
+@property (retain, nonatomic) YYLabel *contentLabel;
+@property (nonatomic) double textLineHeight;
+@property (retain, nonatomic) UILabel *tagLabel;
+@property (retain, nonatomic) UIView *actionPanelPlaceHolderView;
+@property (retain, nonatomic) AWEGCPDetailActionPanelView *actionPanelView;
+@property (retain, nonatomic) UIStackView *bottomStackView;
+@property (retain, nonatomic) UIView *separatorView;
+@property (retain, nonatomic) id<AWEGCPVideoPlayService> videoPlayService;
+@property (retain, nonatomic) id<IESGCPActionPanelService> actionPanelService;
+@property (retain, nonatomic) id<IESGCPNotificationService> notificationService;
+@property (retain, nonatomic) UIViewController<AWEGCPPlayVideoViewControllerProtocol> *playVideoViewController;
+@property (retain, nonatomic) MASConstraint *playerControllerSizeConstraint;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } contentInsets;
+@property (nonatomic) BOOL showSeparator;
+@property (copy, nonatomic) id /* block */ exposedHandler;
+@property (copy, nonatomic) id /* block */ speakerButtonDidClicked;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) id /* block */ onTapSeeMoreButton;
+@property (copy, nonatomic) id /* block */ playViewDidClick;
+@property (weak, nonatomic) id<AWEGCPStrategyDetailComponentViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isActive;
+
+- (id)initWithDIContext:(id)a0;
+- (void)showSeparatorView:(BOOL)a0;
+- (id)fromContextProvider;
+- (void)updateViewLayout;
+- (void)didEndShowing;
+- (void)onCommentTotalCountNotification:(id)a0;
+- (void)playViewDidClick:(id)a0;
+- (void)configWithGameAwemeModel:(id)a0 isMute:(BOOL)a1 maxWidth:(double)a2 enterFrom:(id)a3;
+- (void)didBecomeActiveWithForceNotMute:(BOOL)a0;
+- (void)viewExposed;
+- (void)addGameAwemeObservers;
+- (void)updateLayoutWithViewStyle:(long long)a0;
+- (void)onDiggNotification:(id)a0;
+- (void)onFavoriteNotification:(id)a0;
+- (void)diggClickAction;
+- (void)requireLoginWithCompletion:(id /* block */)a0;
+- (void)enterFlow;
+- (void)favoriteClickActionWithButton:(id)a0;
+- (void)updateActionPanelButtonSpacingWithMaxWidth:(double)a0;
+- (id)outerFlowTrackParamsWithModel:(id)a0 EnterFrom:(id)a1;
+- (void)updateActionPanelWithGameAwemeModel:(id)a0 maxWidth:(double)a1;
+- (void)updateContentLabelWithContent:(id)a0 lineHeight:(double)a1;
+- (void)addSeeMoreButton;
+- (void)onAuthorInfoAction;
+- (void)logWithDigg;
+- (void)logWithFavorite:(id)a0;
+- (void)commentClickAction;
+- (void)shareClickAction;
+- (void).cxx_destruct;
+- (id)videoView;
+- (void)didResignActive;
+- (void)layoutView;
+- (void)dealloc;
+- (void)setMute:(BOOL)a0;
+- (void)setupView;
+
+@end

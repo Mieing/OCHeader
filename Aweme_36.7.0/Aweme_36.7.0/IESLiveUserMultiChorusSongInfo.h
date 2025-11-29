@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface IESLiveUserMultiChorusSongInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *songsArray;
+@property (readonly, nonatomic) unsigned long long songsArray_Count;
+@property (nonatomic) long long totalCount;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEStudioConfigRegister : NSObject
+
+@end

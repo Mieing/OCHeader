@@ -1,0 +1,7 @@
+@interface HTSLivePreviewControlSyncData : IESLivePBBaseMessage
+
+@property (nonatomic) long long action;
+
++ (id)descriptor;
+
+@end

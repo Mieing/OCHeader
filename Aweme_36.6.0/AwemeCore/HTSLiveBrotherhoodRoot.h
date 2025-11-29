@@ -1,0 +1,3 @@
+@interface HTSLiveBrotherhoodRoot : GPBRootObject
+
+@end

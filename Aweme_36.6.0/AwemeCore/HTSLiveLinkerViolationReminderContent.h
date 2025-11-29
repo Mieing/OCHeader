@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveLinkerViolationReminderContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+
++ (id)descriptor;
+
+@end

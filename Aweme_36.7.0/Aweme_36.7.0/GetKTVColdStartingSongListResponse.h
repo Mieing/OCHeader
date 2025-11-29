@@ -1,0 +1,10 @@
+@class GetKTVColdStartingSongListResponse_ResponseData;
+
+@interface GetKTVColdStartingSongListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetKTVColdStartingSongListResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

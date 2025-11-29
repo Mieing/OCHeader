@@ -1,0 +1,3 @@
+@interface DitoGroupAgent : DitoComponentAgent
+
+@end

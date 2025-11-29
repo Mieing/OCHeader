@@ -1,0 +1,76 @@
+@class NSString;
+
+@interface IESIMMessageInjectedService : HTSService <IESIMMessageInjectedService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sharedIntance;
+
+- (double)preferredMaxBubbleWidth;
+- (id)userWithId:(id)a0 readScene:(long long)a1;
+- (id)oneToOneChatPeerIDOfSessionID:(id)a0;
+- (BOOL)isHitChatThemeEntrance;
+- (id)emoticonYYTextMapper;
+- (BOOL)shouldUpdateMessageSyncExtImmediatelyWithMessageType:(long long)a0;
+- (BOOL)aweim_isLiveFansGroupOrContentCreatorFansGroup:(id)a0;
+- (BOOL)aweim_isNewDefinedSocialGroupWithCreateType:(id)a0;
+- (BOOL)isLongConnectionConnected;
+- (BOOL)fixReadStatusRefreshDelay;
+- (id)im_multi_choose_msg_type_not_support;
+- (BOOL)shouldShowNicknameWithMessage:(id)a0;
+- (BOOL)shouldShowQuoteReplyMessageWithMessage:(id)a0;
+- (void)pushAWEIMAddGroupAdminViewController:(id)a0;
+- (BOOL)businessUnavailableFlagForMessage:(id)a0;
+- (void)setBusinessUnavailableFlagForMessage:(id)a0 unavailable:(BOOL)a1;
+- (BOOL)enableAudioEmojiMsg;
+- (BOOL)enableSKIIMsgCard;
+- (id)attachmentConvertFileStringIntoDicitonary:(id)a0;
+- (BOOL)shouldDisableMenuItemWithMessage:(id)a0;
+- (BOOL)quotedContentIsAvailableWithOriginMsg:(id)a0;
+- (id)quotedInvisibleStringWithOriginMsg:(id)a0;
+- (BOOL)hideHistoricalQuoteMessageIfNeededWithMessage:(id)a0;
+- (id)textMessageWithContentDict:(id)a0;
+- (BOOL)isHTSAdapterExist;
+- (id)shieldCloseFriendMomentMessageInMsgConventorIfNeeded:(id)a0;
+- (void)assignMentionMaskForMessage:(id)a0 fromTIMOMessage:(id)a1;
+- (void)configMsg:(id)a0 withTTMsg:(id)a1;
+- (BOOL)enableFansCouponMessageBySetting;
+- (id)combineShareTextWithMessage:(id)a0;
+- (BOOL)isSupportCombineShareWithMessage:(id)a0;
+- (id)incentiveMsgStatusMap;
+- (void)setIncentiveMsgStatusMap:(id)a0;
+- (id)messageStorageKeyWithID:(id)a0 relationID:(id)a1;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })bubbleContentPaddingInsets;
+- (double)textMessageMaxWidthWithContext:(id)a0;
+- (BOOL)isNegativeMessage:(id)a0;
+- (BOOL)needFoldForMessage:(id)a0 context:(id)a1;
+- (id)atachmentFileKeyWithType:(int)a0 subType:(id)a1;
+- (BOOL)supportMessageUIFromProjectXMessage:(id)a0;
+- (id)awe_userStoryVideo:(id)a0;
+- (id)im_localInviteJoinFansGroupMessageWithCid:(id)a0;
+- (void)im_setLocalInviteJoinFansGroupMessageWithCid:(id)a0 msgDict:(id)a1;
+- (BOOL)shouldHideLocalInviteJoinFansGroupCard;
+- (BOOL)isMixVideoMessageUnAvailable:(id)a0;
+- (id)quoteAttributedContentWithText:(id)a0 message:(id)a1 templateArray:(id)a2 richTextInfoArray:(id)a3;
+- (id)richTextInfoModelArrayWithOriginInfoArray:(id)a0;
+- (id)externalRefQuoteTitleForMessage:(id)a0;
+- (id)momentTextForExtraDict:(id)a0;
+- (void)removeMinVersionConfigForExternalRefMessage:(id)a0;
+- (BOOL)enableCellComponentExperiment:(long long)a0;
+- (BOOL)canShowImageIronManAnchorWithMessage:(id)a0;
+- (struct CGSize { double x0; double x1; })cardMessageSize;
+- (struct CGSize { double x0; double x1; })cardMessageHorizontalSize;
+- (long long)audioPowerCountWithAudioDuration:(double)a0;
+- (double)giphyMessageBubbleRadius;
+- (BOOL)unavailableFlagWithMessage:(id)a0;
+- (void)configMsg:(id)a0 withSMsg:(id)a1 contentDict:(id)a2 extDict:(id)a3;
+- (BOOL)isStrangerMessageFromProjectX:(id)a0;
+- (id)combineShareTextWithContentMessage:(id)a0 subMessage:(id)a1 listContent:(id)a2;
+- (id)pendantViewModelWithMessage:(id)a0;
+- (id)momentTextForMessage:(id)a0;
+- (BOOL)isExchangeFinishWithMessage:(id)a0;
+
+@end

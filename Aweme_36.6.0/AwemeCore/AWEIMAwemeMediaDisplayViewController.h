@@ -1,0 +1,83 @@
+@class AWEIMAwemeMediaDisplayInteractionView, AWEAwemeModel, UIView, AWEIMMessageAttachmentDownloadViewModel, UITapGestureRecognizer, AWEIMMessage, NSDictionary, AWEIMLongPressIMAwemeManager, NSString, UIViewController, AWEIMMessageEmojiAnimator;
+@protocol AWEAwemeLongPressModalViewControllerProtocol, AWEIMFeedVideoQuickReplayProtocol;
+
+@interface AWEIMAwemeMediaDisplayViewController : UIViewController <AWEIMAwemeMediaDisplayInteractionViewDelegate, AWEIMAwemeMediaDisplayControllerProtocol>
+
+@property (retain, nonatomic) UIViewController<AWEAwemeLongPressModalViewControllerProtocol> *longPressVC;
+@property (retain, nonatomic) AWEIMMessageAttachmentDownloadViewModel *downloadVM;
+@property (retain, nonatomic) id<AWEIMFeedVideoQuickReplayProtocol> imBottomInputbar;
+@property (retain, nonatomic) AWEIMLongPressIMAwemeManager *imLongPressManager;
+@property (retain, nonatomic) AWEIMMessageEmojiAnimator *animator;
+@property (retain, nonatomic) id<AWEIMFeedVideoQuickReplayProtocol> imBottomInputbarForClick;
+@property (retain, nonatomic) UIView *imBottomInputbarView;
+@property (retain, nonatomic) UIView *bottomGradientView;
+@property (retain, nonatomic) AWEIMAwemeMediaDisplayInteractionView *interactionView;
+@property (copy, nonatomic) id /* block */ pureModeBlock;
+@property (copy, nonatomic) id /* block */ innerScrollViewEndDecelerating;
+@property (copy, nonatomic) id /* block */ innerScrollViewDidSingleTap;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) AWEIMMessage *message;
+@property (retain, nonatomic) UITapGestureRecognizer *doubleTapGesture;
+@property (copy, nonatomic) NSDictionary *extraParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)p_trackAddEmoji;
+
+- (void)cellDidEndDisplay:(id)a0;
+- (id)transitionEndView;
+- (BOOL)transitionEndViewAvailable;
+- (void)onPressDownLoad;
+- (void)showLongPressPanelWithExtraParams:(id)a0;
+- (BOOL)longPressModuleViewEnable;
+- (BOOL)isShowingPublishDailyStoryGuide;
+- (id)albumImagePickerViewController;
+- (void)__addGroupChatScreenShootBubbleView;
+- (id)initWithExtraParams:(id)a0;
+- (void)clickQuoteBtn;
+- (void)clickShareBtn;
+- (void)clickDownloadBtn;
+- (void)clickGroupAlbumBtn;
+- (void)clickShootSameBtn;
+- (void)clickPublishBtn;
+- (void)__addInteractionView;
+- (void)__addIronManAnchorView;
+- (void)p_MediaDisplayDoubleClick:(id)a0;
+- (void)p_willTriggerLongPress:(id)a0;
+- (id)imageResourceDownloadModel;
+- (id)largeImageResourceDownloadModel;
+- (void)downloadImageResourceWithImageResource:(id)a0 start:(id /* block */)a1 progress:(id /* block */)a2 finish:(id /* block */)a3;
+- (BOOL)p_shouldShowQuoteBtn;
+- (BOOL)p_shouldShowShareBtn;
+- (BOOL)p_shouldShowDownloadBtn;
+- (BOOL)p_shouldShowPublishBtn;
+- (void)addFunctionViewToInteractionView:(id)a0;
+- (BOOL)doubleTapLikeEnabled;
+- (void)p_longPressPanelWillShow;
+- (id)p_longPressContextWithExtraParams:(id)a0;
+- (void)p_longPressPanelWillDismiss;
+- (void)onPressAddToCustom;
+- (void)p_onPressShareModel:(id)a0;
+- (BOOL)p_checkUserSendMessagePrivilegeWithShareModel:(id)a0;
+- (void)showPublishDailyStoryGuideIfNeeded;
+- (void)addDoubleClickGestureOn:(id)a0;
+- (void)addLongPressGestureOn:(id)a0;
+- (void)addSliderViewToTopContainerView:(id)a0;
+- (void)cancelDownloadOriginImage;
+- (void)downloadLargeImageResourceStart:(id /* block */)a0 progress:(id /* block */)a1 finish:(id /* block */)a2;
+- (void)downloadImageResourceStart:(id /* block */)a0 progress:(id /* block */)a1 finish:(id /* block */)a2;
+- (void)__impact;
+- (void)p_addDownloadIn:(id)a0;
+- (void)p_addAddToCustom:(id)a0;
+- (void)p_addFirendsListWith:(id)a0 inModels:(id)a1;
+- (void)p_addMoreFirendIn:(id)a0;
+- (void)p_addPageIdentifierForTranspondIMShareModels:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)prepareWithCompletion:(id /* block */)a0;
+
+@end

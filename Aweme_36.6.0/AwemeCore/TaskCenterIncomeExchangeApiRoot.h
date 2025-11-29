@@ -1,0 +1,3 @@
+@interface TaskCenterIncomeExchangeApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEPublishAdvanceSettingPaymentViewHolder : AWEBaseListViewHolder
+
+@end

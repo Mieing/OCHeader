@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface IESGCPPBGameGiftInfoList : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+@property (nonatomic) long long totalCount;
+@property (retain, nonatomic) NSMutableArray *giftPackagesArray;
+@property (readonly, nonatomic) unsigned long long giftPackagesArray_Count;
+
++ (id)descriptor;
+
+@end

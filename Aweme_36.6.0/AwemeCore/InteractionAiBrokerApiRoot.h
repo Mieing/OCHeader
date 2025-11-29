@@ -1,0 +1,3 @@
+@interface InteractionAiBrokerApiRoot : GPBRootObject
+
+@end

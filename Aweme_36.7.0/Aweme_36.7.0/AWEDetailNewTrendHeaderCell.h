@@ -1,0 +1,3 @@
+@interface AWEDetailNewTrendHeaderCell : UICollectionViewCell
+
+@end

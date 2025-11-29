@@ -1,0 +1,12 @@
+@class HTSLiveVSItemBar;
+
+@interface HTSLiveVSBar : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveVSItemBar *itemComment;
+@property (nonatomic) BOOL hasItemComment;
+@property (retain, nonatomic) HTSLiveVSItemBar *itemBar;
+@property (nonatomic) BOOL hasItemBar;
+
++ (id)descriptor;
+
+@end

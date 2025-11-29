@@ -1,0 +1,3 @@
+@interface ShowScreenApiRoot : GPBRootObject
+
+@end

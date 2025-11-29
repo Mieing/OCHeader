@@ -1,0 +1,85 @@
+@class RACSubject, ACCSideslipPanelApplyContainer, IESMMCanvasConfig, CKGenericTemplateModel, NSString, ACCSideslipPanelGenericTemplateApplyHandler, ACCSideslipCanvasStyleUpdater, AWEVideoPublishViewModel, ACCSideslipPropPanelApplyTrackerHelper, ACCSideslipPanelLegacyEffectApplyHandler, AWEBinding, IESMMCanvasSource, ACCSideslipPropPanelPropTryTrackerHelper, RACSignal;
+@protocol ACCEditServiceProtocol, ACCSideslipGenericTemplateService, ACCSequenceEditServiceProtocol, ACCStickerServiceProtocol, IESServiceProvider, ACCEditSpecialEffectServiceProtocol, ACCQuickFlashStickerServiceProtocol, ACCEditMusicServiceProtocol, ACCEditCutMusicServiceProtocol;
+
+@interface ACCLivePhotoEditViewModel : NSObject <ACCEditBuildListener, ACCLivePhotoEditServiceProtocol>
+
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCQuickFlashStickerServiceProtocol> quickFlashStickerService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (retain, nonatomic) RACSubject *willUpdateLivePhotoModeSubject;
+@property (retain, nonatomic) RACSubject *updateLivePhotoModeSubject;
+@property (retain, nonatomic) RACSubject *updateLivePhotoDataSubject;
+@property (retain, nonatomic) AWEBinding *willUpdateLivePhotoModeBindSignal;
+@property (retain, nonatomic) AWEBinding *updateLivePhotoModeBindSignal;
+@property (weak, nonatomic) id<ACCEditMusicServiceProtocol> musicService;
+@property (weak, nonatomic) id<ACCEditCutMusicServiceProtocol> cutMusicService;
+@property (weak, nonatomic) id<ACCStickerServiceProtocol> stickerService;
+@property (nonatomic) double videoAssetMaxDuration;
+@property (retain, nonatomic) IESMMCanvasConfig *config;
+@property (retain, nonatomic) IESMMCanvasSource *source;
+@property (retain, nonatomic) AWEVideoPublishViewModel *repository;
+@property (retain, nonatomic) ACCSideslipPanelApplyContainer *applyContainer;
+@property (retain, nonatomic) ACCSideslipPanelLegacyEffectApplyHandler *legacyEffectApplyHandler;
+@property (retain, nonatomic) ACCSideslipPanelGenericTemplateApplyHandler *genericTemplateApplyHandler;
+@property (retain, nonatomic) ACCSideslipCanvasStyleUpdater *canvasStyleUpdater;
+@property (retain, nonatomic) ACCSideslipPropPanelApplyTrackerHelper *applyTrackerHelper;
+@property (retain, nonatomic) ACCSideslipPropPanelPropTryTrackerHelper *propTryTrackHelper;
+@property (weak, nonatomic) id<ACCSideslipGenericTemplateService> genericTemplateService;
+@property (weak, nonatomic) CKGenericTemplateModel *lastTemplateModel;
+@property (weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) RACSignal *willUpdateLivePhotoModeSignal;
+@property (readonly, nonatomic) RACSignal *updateLivePhotoModeSignal;
+@property (readonly, nonatomic) RACSignal *updateLivePhotoDataSignal;
+
++ (BOOL)verifyLivePhotoMediaFileExistWithVideoUrl:(id)a0 imageUrl:(id)a1;
++ (unsigned long long)nextModeForMode:(unsigned long long)a0 modeArray:(id)a1;
++ (unsigned long long)cacheOriginLivePhotoMode;
+
+- (void)onEditSessionInit:(id)a0;
+- (void)setupPublishViewModel:(id)a0;
+- (BOOL)hasAppliedTemplate;
+- (void)setEditSessionProvider:(id)a0;
+- (BOOL)isImageAlbumEdit;
+- (void)bindViewModel;
+- (void)updateVideoDuration;
+- (double)livePhotoImageDuration;
+- (BOOL)enableChangeLivePhotoMode;
+- (BOOL)enableStaticLivePhotoMode;
+- (double)effectDurationWithVideoAsset:(id)a0;
+- (void)updateVideoDurationWithMusic:(id)a0;
+- (BOOL)verifyLivePhotoMediaFileExist;
+- (void)changeLivePhotoModeWithParams:(id)a0;
+- (void)changeLivePhotoModeInStaticAndScene;
+- (void)updateCurrentLivePhotoWithMusic:(id)a0;
+- (void)saveLocalSourceToDraft;
+- (id)livePhotoFeatureConfig;
+- (void)updateCurrentLivePhotoModeWith:(unsigned long long)a0 music:(id)a1;
+- (void)configCanvasSourceAndConfig;
+- (BOOL)enableAIGCLive;
+- (void)updateCurrentLivePhotoModeWith:(unsigned long long)a0 music:(id)a1 triggedByUserClick:(BOOL)a2;
+- (id)descWithMode:(unsigned long long)a0;
+- (void)configLoopSceneWithAsset:(id)a0 videoData:(id)a1 maximunDuration:(double)a2 minimumDuration:(double)a3;
+- (void)configSingleSceneWithAsset:(id)a0 videoData:(id)a1 time:(double)a2;
+- (void)configMainTrackVideoVolume;
+- (void)handleLivePhotoModeSceneWithMusic:(id)a0;
+- (void)switchToRepoVideoInfoInstance;
+- (id)addVideoAsset:(id)a0 toVideoData:(id)a1;
+- (void)switchToRepoImageInfoInstance;
+- (id)getSlotFlagWithTargetMode:(unsigned long long)a0;
+- (id)appliedTemplateModel;
+- (void)handleLivePhotoModeSceneAtHotRefreshSceneWithMusic:(id)a0;
+- (void)setSlotFlagWithTargetMode:(unsigned long long)a0 recomendId:(id)a1;
+- (void)handleLivePhotoModeLoopWithMusic:(id)a0;
+- (void)handleLivePhotoModeStaticAtHotRefreshSceneByUserClick:(BOOL)a0;
+- (void)handleLivePhotoModeStatic;
+- (void)saveLivePhotoMode:(unsigned long long)a0;
+- (void)swithRepoContextInfo;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

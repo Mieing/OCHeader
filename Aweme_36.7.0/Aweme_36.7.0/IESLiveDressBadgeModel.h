@@ -1,0 +1,3 @@
+@interface IESLiveDressBadgeModel : NSObject
+
+@end

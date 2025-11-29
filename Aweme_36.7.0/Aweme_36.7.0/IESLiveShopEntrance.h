@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveShopEntrance : IESLivePBBaseMessage
+
+@property (nonatomic) int entranceType;
+@property (copy, nonatomic) NSString *shopURL;
+@property (copy, nonatomic) NSString *windowURL;
+
++ (id)descriptor;
+
+@end

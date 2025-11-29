@@ -1,0 +1,85 @@
+@class MMTableViewInfo, NSString, MMProgressView, UILabel, NSMutableArray, MMPickerView;
+@protocol MMLogViewControllerDelegate;
+
+@interface MMLogViewController : MMUIViewController <MMPickerViewDelegate, ILogReportExt> {
+    MMProgressView *m_progressView;
+    UILabel *m_labelProgress;
+    UILabel *m_sizeProgressLabel;
+    MMTableViewInfo *m_tableViewInfo;
+    long long m_curDateIndex;
+    int m_curBeginHourIndex;
+    int m_curEndHourIndex;
+    unsigned long long m_uploadStatus;
+    unsigned long long m_lastTotalUploadSize;
+}
+
+@property (copy, nonatomic) NSString *dateStr;
+@property (retain, nonatomic) MMPickerView *pickView;
+@property (retain, nonatomic) NSMutableArray *dateList;
+@property (retain, nonatomic) MMPickerView *beginHourPickView;
+@property (retain, nonatomic) NSMutableArray *beginHourList;
+@property (retain, nonatomic) MMPickerView *endHourPickView;
+@property (retain, nonatomic) NSMutableArray *endHourList;
+@property (nonatomic) BOOL isFromCustomer;
+@property (nonatomic) unsigned long long lastUpdateProgressTime;
+@property (nonatomic) unsigned long long lastUpdateProgressUploadSize;
+@property (retain, nonatomic) NSString *lastSpeedInfoText;
+@property (weak, nonatomic) id<MMLogViewControllerDelegate> delegate;
+@property (nonatomic) BOOL bUseAirDrop;
+@property (nonatomic) BOOL bDirectFinishWhenUploadSuc;
+@property (nonatomic) BOOL bForceUseNonLogin;
+@property (nonatomic) int uploadThreadCount;
+@property (nonatomic) int uploadBlockSize;
+@property (nonatomic) BOOL showSpeedInfo;
+@property (retain, nonatomic) NSString *countryCode;
+@property (retain, nonatomic) NSString *phoneNumber;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)viewDidLayoutSubviews;
+- (void)dealloc;
+- (id)init;
+- (id)initWithDateString:(id)a0;
+- (void)configUploadSpeedSetting;
+- (BOOL)setUploadDateOfDay:(id)a0;
+- (void)initLists;
+- (void)initDates;
+- (void)initHours;
+- (void)onShowLog;
+- (void)initView;
+- (id)getHeaderView;
+- (void)reloadTableViewData;
+- (id)getFooterView;
+- (void)onSwitchValueChange:(id)a0;
+- (void)MMPickerView:(id)a0 didChooseRow:(long long)a1 atSession:(long long)a2;
+- (void)MMPickerViewDidCancel;
+- (void)onDatePicker:(id)a0;
+- (void)onBeginHourPicker:(id)a0;
+- (void)onEndHourPicker:(id)a0;
+- (void)setProgress:(id)a0;
+- (void)setUploadFail;
+- (void)setUploadSuc;
+- (void)onAirDropLog;
+- (void)onReportLog;
+- (void)onCancelReportLog;
+- (void)onRealCancelReportLog;
+- (void)onReportLastOneHour;
+- (void)onFinish;
+- (void)onBack;
+- (void)onQuitWithTotalSize:(unsigned long long)a0;
+- (void)OnResponse:(id)a0;
+- (void)updateProgressLabelWithUploadSize:(unsigned long long)a0 totalSize:(unsigned long long)a1;
+- (void)UploadFail;
+- (void)UploadSuccess;
+- (void)onShowSpeedySetting;
+- (void)uploadDump;
+- (void)uploadExtensionLog;
+- (void)uploadWatchLog;
+- (void).cxx_destruct;
+
+@end

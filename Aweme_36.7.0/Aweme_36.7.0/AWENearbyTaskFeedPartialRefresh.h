@@ -1,0 +1,14 @@
+@class AWENearbyTaskFeedPartialRefreshModel;
+
+@interface AWENearbyTaskFeedPartialRefresh : NSObject
+
+@property (copy, nonatomic) id /* block */ block;
+@property (retain, nonatomic) AWENearbyTaskFeedPartialRefreshModel *refreshModel;
+
+- (id)initWithRefreshModel:(id)a0 executor:(id /* block */)a1;
+- (BOOL)mergeAndUpdateDataList:(id)a0 updateInfo:(id)a1;
+- (void)updateLynxCardDataWithAweme:(id)a0 data:(id)a1;
+- (void)updateAweme:(id)a0 data:(id)a1;
+- (void).cxx_destruct;
+
+@end

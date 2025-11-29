@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GetPropsBGResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *bgListArray;
+@property (readonly, nonatomic) unsigned long long bgListArray_Count;
+
++ (id)descriptor;
+
+@end

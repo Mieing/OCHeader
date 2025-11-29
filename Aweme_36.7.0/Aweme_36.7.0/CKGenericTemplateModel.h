@@ -1,0 +1,85 @@
+@class NSString, NSArray, AWEGenericTemplateModelMixinInfo, ACCGenericEffectPanelCategoryModel, CKGenericTemplateAuthor, CKGenericTemplateFile, NSDictionary, CKGenericTemplateVideo, CKGenericTemplateCover, NSNumber;
+
+@interface CKGenericTemplateModel : CKBaseResponseModel <ACCEditToolMusicEffectModelProtocol>
+
+@property (nonatomic) BOOL acc_isDownloaded;
+@property (nonatomic) BOOL acc_isDownloading;
+@property (readonly, nonatomic) BOOL acc_isDownloadable;
+@property (nonatomic) double acc_handlePickedTime;
+@property (nonatomic) double acc_preloadStartTime;
+@property (nonatomic) double acc_preloadEndTime;
+@property (nonatomic) BOOL acc_isPrefetch;
+@property (nonatomic) BOOL acc_hasCache;
+@property (retain, nonatomic) NSDictionary *acc_downloadExtraInfo;
+@property (retain, nonatomic) NSNumber *acc_currentIndex;
+@property (retain, nonatomic) NSString *acc_applyScene;
+@property (readonly, nonatomic) BOOL notRecommendMusic;
+@property (readonly, copy, nonatomic) NSArray *useMusicIds;
+@property (readonly, copy, nonatomic) NSArray *useLocalAudios;
+@property (readonly, nonatomic) BOOL excludeMusic;
+@property (readonly, nonatomic) BOOL hasEffectMusic;
+@property (readonly, copy, nonatomic) NSString *effectResourcePath;
+@property (readonly, nonatomic) double volume;
+@property (copy, nonatomic) NSString *acc_filePath;
+@property (readonly, copy, nonatomic) NSString *sdkExtra;
+@property (nonatomic) BOOL acc_isFromSearch;
+@property (weak, nonatomic) ACCGenericEffectPanelCategoryModel *acc_category;
+@property (readonly, nonatomic) AWEGenericTemplateModelMixinInfo *awe_mixin;
+@property (readonly, copy, nonatomic) NSArray *useMusicIds;
+@property (readonly, copy, nonatomic) NSArray *useLocalAudios;
+@property (readonly, nonatomic) BOOL excludeMusic;
+@property (readonly, nonatomic) BOOL hasEffectMusic;
+@property (readonly, nonatomic) double volume;
+@property (readonly, copy, nonatomic) NSString *effectResourcePath;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) CKGenericTemplateFile *file;
+@property (retain, nonatomic) CKGenericTemplateCover *cover;
+@property (retain, nonatomic) CKGenericTemplateAuthor *author;
+@property (retain, nonatomic) CKGenericTemplateVideo *video;
+@property (retain, nonatomic) CKGenericTemplateCover *dynamicCover;
+@property (retain, nonatomic) CKGenericTemplateCover *icon;
+@property (nonatomic) long long lokiId;
+@property (nonatomic) BOOL isCollected;
+@property (nonatomic) long long usageAmount;
+@property (nonatomic) long long fragmentCount;
+@property (copy, nonatomic) NSString *musicID;
+@property (copy, nonatomic) NSArray *challenge;
+@property (copy, nonatomic) NSArray *challengeList;
+@property (copy, nonatomic) NSString *segmentInfo;
+@property (copy, nonatomic) NSNumber *isCollectedNumber;
+@property (nonatomic) BOOL isContainCommonRes;
+@property (copy, nonatomic) NSString *sourceId;
+@property (readonly, copy, nonatomic) NSString *templateId;
+@property (readonly, copy, nonatomic) NSString *regionKey;
+@property (readonly, nonatomic) unsigned long long type;
+@property (readonly, nonatomic) unsigned long long subType;
+@property (readonly, copy, nonatomic) NSString *mediaId;
+@property (readonly, copy, nonatomic) NSString *title;
+@property (readonly, copy, nonatomic) NSString *desc;
+@property (readonly, copy, nonatomic) NSArray *tags;
+@property (readonly, copy, nonatomic) NSString *extra;
+@property (copy, nonatomic) NSString *recId;
+@property (readonly, copy, nonatomic) NSDictionary *businessData;
+@property (nonatomic, getter=isCollected) BOOL collected;
+@property (readonly, nonatomic) long long fromType;
+@property (copy, nonatomic) NSString *bizExtra;
+
++ (id)JSONKeyPathsByPropertyKey;
+
+- (BOOL)acc_isTemplate;
+- (BOOL)acc_isEffect;
+- (void)updateSegemntInfo:(id)a0;
+- (void)updateTemplateSummary:(id)a0;
+- (double)assignCoverTime;
+- (id)toolMusic;
+- (id)p_analyzeSDKExtra;
+- (id)p_analyzeBusinessExtra;
+- (id)p_analyzeExtra;
+- (BOOL)acc_isTemplateOrMusicEffect;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

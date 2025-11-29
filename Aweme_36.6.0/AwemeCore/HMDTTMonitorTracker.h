@@ -1,0 +1,92 @@
+@class NSLock, NSString, NSArray, HMDGCDTimer, HMDMonitorDataManager, HMDReportLimitSizeTool, HMDTTMonitorCounter, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface HMDTTMonitorTracker : NSObject <HMDPerformanceReporterDataSource, HMDTTMonitorOfflineCheckPointProtocol, HMDTTMonitorTraceProtocol, HMDTTMonitorTracker> {
+    double _startTimestamp;
+}
+
+@property (nonatomic) long long hmdCountLimit;
+@property (retain) NSArray *normalCondition;
+@property (nonatomic) struct HMDRecordLocalIDRange { unsigned long long x0; unsigned long long x1; } uploadingRange;
+@property (retain, nonatomic) HMDMonitorDataManager *dataManager;
+@property (retain, nonatomic) NSMutableArray *trackersArray;
+@property (retain, nonatomic) NSMutableArray *metricsArray;
+@property (retain, nonatomic) NSMutableArray *trackersCacheArray;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic) struct HMDRecordLocalIDRange { unsigned long long minLocalID; unsigned long long maxLocalID; } uploadingRange;
+@property (nonatomic) struct HMDRecordLocalIDRange { unsigned long long minLocalID; unsigned long long maxLocalID; } metricCountRange;
+@property (nonatomic) struct HMDRecordLocalIDRange { unsigned long long minLocalID; unsigned long long maxLocalID; } metricTimerRange;
+@property (nonatomic) long long hmdCountLimit;
+@property (retain) NSArray *normalCondition;
+@property (retain) NSArray *metricCountCondition;
+@property (retain) NSArray *metricTimerCondition;
+@property (retain, nonatomic) HMDReportLimitSizeTool *sizeLimitTool;
+@property (retain, nonatomic) NSMutableArray *recordCache;
+@property (readonly, nonatomic) HMDTTMonitorCounter *counterNullable;
+@property (nonatomic) BOOL counterFlag;
+@property (retain, nonatomic) HMDGCDTimer *GCDTimer;
+@property (nonatomic) BOOL needStopRepeating;
+@property (nonatomic) BOOL needDeleteRecordsFromDB;
+@property (nonatomic) unsigned long long uploadingCountFromMemory;
+@property (nonatomic) unsigned long long insertIndex;
+@property (nonatomic) BOOL hasNewData;
+@property (retain, nonatomic) NSLock *lock;
+@property (retain, nonatomic) HMDMonitorDataManager *dataManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL ignoreLogType;
+
++ (id)globalSyncQueue;
+
+- (id)customConfig;
+- (BOOL)performanceDataSource;
+- (void)cleanupWithConfig:(id)a0;
+- (void)performanceDataSaveImmediately;
+- (void)setupWithHeimdallrReportSizeLimit:(id)a0;
+- (id)initMonitorWithAppID:(id)a0 injectedInfo:(id)a1;
+- (BOOL)logTypeEnabled:(id)a0;
+- (BOOL)serviceTypeEnabled:(id)a0;
+- (void)dropAllDataForServerState;
+- (unsigned long long)reporterPriority;
+- (id)performanceDataWithCountLimit:(long long)a0;
+- (id)metricCountPerformanceData;
+- (id)metricTimerPerformanceData;
+- (id)debugRealPerformanceDataWithConfig:(id)a0;
+- (void)cleanupPerformanceDataWithConfig:(id)a0;
+- (void)performanceDataDidReportSuccess:(BOOL)a0;
+- (id)performanceCacheDataImmediatelyUpload;
+- (id)performanceDataWithLimitSize:(unsigned long long)a0 limitCount:(long long)a1 currentSize:(unsigned long long *)a2;
+- (void)performanceSizeLimitedDataDidReportSuccess:(BOOL)a0;
+- (void)saveEventDataToDiskWhenEnterBackground;
+- (void)dropAllDataForServerStateWithAid:(id)a0;
+- (void)cleanupNotUploadAndReportedPerformanceData;
+- (void)trackDataWithParamOnSerailQueue:(id)a0;
+- (void)insertRecordCacheIntoTrackersArrayIfNeeded;
+- (void)tracksCountChangedWithSyncWrite:(BOOL)a0;
+- (void)setMovingLineAndNeedUploadForRecord:(id)a0;
+- (void)cleanupTrackersArrayToThreshold;
+- (void)hmd_uploadMonitorDataImmediatelyWithRetryCount:(long long)a0;
+- (id)getTracksDataWithRecords:(id)a0;
+- (void)recordSavedCheckPointWithRecords:(id)a0 success:(BOOL)a1 memoryDB:(BOOL)a2 appID:(id)a3;
+- (BOOL)needUploadWithLogTypeStr:(id)a0 serviceType:(id)a1 data:(id)a2;
+- (void)recordFetchedCheckPointWithRecords:(id)a0 appID:(id)a1;
+- (Class)metricStoreClass;
+- (id)getMetricDataWithRecords:(id)a0;
+- (Class)trackerStoreClass;
+- (BOOL)cleanupRecords:(struct HMDRecordLocalIDRange { unsigned long long x0; unsigned long long x1; })a0 andConditions:(id)a1 storeClass:(Class)a2;
+- (id)fetchTTMonitorRecordsStartTime:(double)a0 endTime:(double)a1 limitCount:(long long)a2;
+- (void)removebjects:(id)a0 WithAid:(id)a1;
+- (void)recordGeneratedCheckPointWithlogType:(id)a0 serviceType:(id)a1 appID:(id)a2 actionType:(unsigned long long)a3 uniqueCode:(long long)a4;
+- (void)countEvent:(id)a0 label:(id)a1 value:(float)a2 needAggregate:(BOOL)a3 appID:(id)a4;
+- (void)timerEvent:(id)a0 label:(id)a1 value:(float)a2 needAggregate:(BOOL)a3 appID:(id)a4;
+- (BOOL)needUploadWithlogTypeStr:(id)a0 serviceType:(id)a1;
+- (BOOL)needUploadWithParam:(id)a0;
+- (BOOL)isHighPriorityWithLogType:(id)a0 serviceType:(id)a1;
+- (BOOL)ttmonitorConfigurationAvailable;
+- (void).cxx_destruct;
+- (void)willResignActive:(id)a0;
+- (void)dealloc;
+
+@end

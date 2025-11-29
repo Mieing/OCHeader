@@ -1,0 +1,3 @@
+@interface OpenScanIntent : INIntent
+
+@end

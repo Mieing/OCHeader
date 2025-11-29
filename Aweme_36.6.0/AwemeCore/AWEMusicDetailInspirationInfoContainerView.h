@@ -1,0 +1,72 @@
+@class AWEMusicDetailHeaderDataHelper, UIView, AWEMusicDetailHeaderLayoutInspirationLayoutManager, AWEMusicDetailMusicCardViewConfig, UIStackView, UIImageView, UIButton, AWEMusicDetailHeaderTitleLabel, NSString, UILabel, AWEMusicDetailLeaderboardEntryView;
+@protocol AWEMusicDetailInfoContainerViewDelegate;
+
+@interface AWEMusicDetailInspirationInfoContainerView : UIView <AWEMusicDetailLeaderboardEntryViewDelegate>
+
+@property (weak, nonatomic) AWEMusicDetailHeaderDataHelper *dataHelper;
+@property (retain, nonatomic) AWEMusicDetailMusicCardViewConfig *cardConfig;
+@property (retain, nonatomic) AWEMusicDetailHeaderLayoutInspirationLayoutManager *layoutManager;
+@property (retain, nonatomic) UILabel *userCountLabel;
+@property (retain, nonatomic) UIImageView *authorNameArrow;
+@property (retain, nonatomic) UILabel *authorNameLabel;
+@property (retain, nonatomic) AWEMusicDetailLeaderboardEntryView *leaderboardButton;
+@property (retain, nonatomic) AWEMusicDetailHeaderTitleLabel *titleLabel;
+@property (retain, nonatomic) UIButton *editTitleNewButton;
+@property (retain, nonatomic) UIView *splitView;
+@property (retain, nonatomic) UIView *titleArrowIconContainerView;
+@property (retain, nonatomic) UIImageView *titleArrowIcon;
+@property (retain, nonatomic) UIImageView *headerContainerArrowIcon;
+@property (nonatomic) long long headerType;
+@property (retain, nonatomic) UIImageView *decorateTagView;
+@property (retain, nonatomic) UIStackView *subtitleStackView;
+@property (copy, nonatomic) NSString *titleName;
+@property (weak, nonatomic) id<AWEMusicDetailInfoContainerViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)awe_themeDidChange:(long long)a0;
+- (double)titleLabelHeight;
+- (double)rightLabelsHeight;
+- (void)weakBindDataHelper:(id)a0;
+- (void)didTapOnLeaderboardEntryView:(id)a0;
+- (id)arrowImgeView;
+- (void)editTitleClick;
+- (void)updateDummyHeaderView;
+- (void)updateDetailInfoView;
+- (void)updateDetailInfoViewConstraint;
+- (id)initWithConfig:(id)a0 layoutManager:(id)a1;
+- (void)didTapAuthorLabel;
+- (void)p_configureLunaSongTitle:(id)a0 hasArrow:(BOOL)a1;
+- (id)p_combineUnEditedTitleWithOriginTitle:(id)a0;
+- (void)p_updateTitleLabelInfoWithTitle:(id)a0 isOriginal:(BOOL)a1;
+- (BOOL)p_isOrignalAbove;
+- (void)p_updateUseCount;
+- (void)p_updateTitle;
+- (void)p_updateAuthorLabel;
+- (void)p_updateSplitView;
+- (void)p_updateLeaderboardInfo;
+- (void)p_updateTitleConstraint;
+- (void)p_updateLargeSubtitleConstraint;
+- (void)p_updateSmallSubtitleConstraint;
+- (double)userCountWidth;
+- (void)p_updateSubtitleStackViewMutexShow;
+- (void)p_updateSubtitleStackViewSeparator;
+- (id)subtitleElementViewWithType:(unsigned long long)a0;
+- (void)didTapWholeInfoArea;
+- (void)setupTitleUI;
+- (void)setupLargeSubtitleUI;
+- (void)setupVinylPlayerSubtitleUI;
+- (void)setupVinylSubtitleUI;
+- (void)setupSmallSubtitleUI;
+- (void)didTapTitleArrow;
+- (void)didTapTitle;
+- (id)linkTextAttributes;
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)setupUI;
+- (void)updateTitle:(id)a0;
+
+@end

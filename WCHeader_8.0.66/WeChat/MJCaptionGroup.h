@@ -1,0 +1,14 @@
+@class MJCaptionEntry, NSArray;
+
+@interface MJCaptionGroup : NSObject
+
+@property (readonly, nonatomic) struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } timeRange;
+@property (readonly, nonatomic) MJCaptionEntry *originalCaptionEntry;
+@property (readonly, nonatomic) NSArray *translatedCaptionEntries;
+
+- (id)initWithTimeRange:(struct { struct { long long x0; int x1; unsigned int x2; long long x3; } x0; struct { long long x0; int x1; unsigned int x2; long long x3; } x1; })a0 originalCaptionEntry:(id)a1 translatedCaptionEntries:(id)a2;
+- (id)copyWithSpeedRatio:(double)a0;
+- (id)description;
+- (void).cxx_destruct;
+
+@end

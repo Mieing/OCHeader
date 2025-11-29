@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface RoundStopResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *rankListDataArray;
+@property (readonly, nonatomic) unsigned long long rankListDataArray_Count;
+@property (retain, nonatomic) NSMutableArray *metaDataArray;
+@property (readonly, nonatomic) unsigned long long metaDataArray_Count;
+
++ (id)descriptor;
+
+@end

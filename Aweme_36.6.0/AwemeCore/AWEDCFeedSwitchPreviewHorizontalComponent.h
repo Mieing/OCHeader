@@ -1,0 +1,86 @@
+@class UIView, NSString, UIImageView, AWEFeedSwitchPreviewStackedFlowLayout, UICollectionView, UIViewController, UILabel, UIScrollView;
+
+@interface AWEDCFeedSwitchPreviewHorizontalComponent : AWEDCFeedSwitchPreviewBaseComponent <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
+
+@property (retain, nonatomic) UIView *c2View;
+@property (retain, nonatomic) UIView *c2SuperView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } c2Frame;
+@property (nonatomic) unsigned long long c2IndexOfSuperView;
+@property (retain, nonatomic) UIView *c2UnselectView;
+@property (retain, nonatomic) UIView *c2BorderView;
+@property (retain, nonatomic) UIView *c2ContainerView;
+@property (retain, nonatomic) UIView *c2WrapperView;
+@property (retain, nonatomic) UIView *c2UnderWhiteView;
+@property (retain, nonatomic) UIViewController *c2VCParentVC;
+@property (retain, nonatomic) UIView *feedTableView;
+@property (retain, nonatomic) UIView *feedTableSuperView;
+@property (retain, nonatomic) UIView *feedTableUnselectView;
+@property (retain, nonatomic) UIView *feedTableContainerView;
+@property (retain, nonatomic) UIView *feedTableWrapperView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } feedTableFrame;
+@property (nonatomic) unsigned long long feedTableIndexOfSuperView;
+@property (retain, nonatomic) UIViewController *feedTableParentVC;
+@property (retain, nonatomic) UIScrollView *absorbScrollView;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) AWEFeedSwitchPreviewStackedFlowLayout *customLayout;
+@property (retain, nonatomic) UIView *refreshView;
+@property (retain, nonatomic) UIImageView *refreshImageView;
+@property (retain, nonatomic) UILabel *refreshLabel;
+@property (retain, nonatomic) UIView *bottomSettingView;
+@property (retain, nonatomic) UIImageView *bottomSettingImageView;
+@property (retain, nonatomic) UIView *topSettingView;
+@property (retain, nonatomic) UIImageView *topSettingImageView;
+@property (retain, nonatomic) UILabel *topSettingLabel;
+@property (nonatomic) BOOL isCancel;
+@property (nonatomic) double beginTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)previewConfigDict;
+
+- (void)refreshAction;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })collectionViewFrame;
+- (void)quitWithSelectIndex:(long long)a0 animated:(BOOL)a1;
+- (void)swipeAction;
+- (void)trackEnterAnimationBegin;
+- (void)trackEnterAnimationEnd;
+- (void)optiViewAnimated:(id)a0 containerView1:(id)a1 borderView1:(id)a2 toIndex1:(id)a3 wrapperView2:(id)a4 containerView2:(id)a5 borderView2:(id)a6 toIndex2:(id)a7 completion:(id /* block */)a8;
+- (void)optiViewAnimated:(id)a0 containerView:(id)a1 borderView:(id)a2 toIndex:(id)a3 completion:(id /* block */)a4;
+- (void)viewAnimated:(id)a0 containerView1:(id)a1 borderView1:(id)a2 toIndex1:(id)a3 wrapperView2:(id)a4 containerView2:(id)a5 borderView2:(id)a6 toIndex2:(id)a7 completion:(id /* block */)a8;
+- (void)viewAnimated:(id)a0 containerView:(id)a1 borderView:(id)a2 toIndex:(id)a3 completion:(id /* block */)a4;
+- (void)quitWithSelectCell:(id)a0 outCell:(id)a1 animated:(BOOL)a2;
+- (void)setupAbsorbScrollView;
+- (void)setupRefreshViewAndSettingView;
+- (void)prepareCollectionViewContent;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })absorbScrollViewFrame;
+- (double)collectionViewUpMargin;
+- (void)prepareC2RelatedViews;
+- (void)prepareFeedTableRelatedViews;
+- (void)addViewShadow:(id)a0;
+- (void)removeViewShadow:(id)a0;
+- (id)c2UnderWhiteViewWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)quitWithAnimationCancel;
+- (void)optiMoveViewOutFromCell:(id)a0 animated:(BOOL)a1;
+- (void)optiMoveViewToFullScreenFromCell:(id)a0 animated:(BOOL)a1;
+- (void)moveViewOutFromCell:(id)a0 animated:(BOOL)a1;
+- (void)moveViewToFullScreenFromCell:(id)a0 animated:(BOOL)a1;
+- (double)getEnterAnimationDuration;
+- (double)moveOutDuration;
+- (void)updateCellTitleLabelAlphaWithContentOffsetX:(double)a0;
+- (void)settingAction;
+- (void)viewDidAppear;
+- (void).cxx_destruct;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)viewWillAppear;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)setupCollectionView;
+- (void)setupUI;
+- (void)viewDidDisappear;
+- (void)viewWillDisappear;
+
+@end

@@ -1,0 +1,3 @@
+@interface ShowAwemeInfoApiRoot : GPBRootObject
+
+@end

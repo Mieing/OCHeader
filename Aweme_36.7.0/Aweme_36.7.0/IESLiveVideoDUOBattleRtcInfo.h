@@ -1,0 +1,10 @@
+@class GPBInt64ObjectDictionary;
+
+@interface IESLiveVideoDUOBattleRtcInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64ObjectDictionary *rtcInfoMap;
+@property (readonly, nonatomic) unsigned long long rtcInfoMap_Count;
+
++ (id)descriptor;
+
+@end

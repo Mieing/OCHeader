@@ -1,0 +1,27 @@
+@class TTHttpResponse, NSString, NSError, UIViewController;
+
+@interface AWEPerfLoadRequest : AWEPerfLoadObject {
+    id predicate;
+    unsigned long long matchType;
+    NSString *matchedURLString;
+    UIViewController *vc;
+    double _aweBeginTime;
+    double _aweCallbackBeginTime;
+    double _aweCallbackEndTime;
+    double _aweJSONBeginTime;
+    double _aweJSONEndTime;
+    Class _aweJSONClass;
+    NSError *_aweJSONError;
+    double _ttBeginTime;
+    double _ttCallbackBeginTime;
+    double _ttCallbackEndTime;
+    NSError *_ttError;
+    TTHttpResponse *_ttResponse;
+    id /* block */ _statusChangeCallback;
+}
+
++ (void)initialize;
+
+- (void).cxx_destruct;
+
+@end

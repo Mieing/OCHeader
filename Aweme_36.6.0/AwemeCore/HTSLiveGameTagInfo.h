@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface HTSLiveGameTagInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int isGame;
+@property (nonatomic) long long gameTagId;
+@property (copy, nonatomic) NSString *gameTagName;
+
++ (id)descriptor;
+
+@end

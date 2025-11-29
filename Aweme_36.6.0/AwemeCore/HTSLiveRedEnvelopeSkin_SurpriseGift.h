@@ -1,0 +1,16 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLiveRedEnvelopeSkin_SurpriseGift : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subtitle;
+@property (retain, nonatomic) HTSLiveImage *effect;
+@property (nonatomic) BOOL hasEffect;
+@property (retain, nonatomic) HTSLiveImage *fortuneLabel;
+@property (nonatomic) BOOL hasFortuneLabel;
+@property (retain, nonatomic) HTSLiveImage *exclusiveGiftIcon;
+@property (nonatomic) BOOL hasExclusiveGiftIcon;
+
++ (id)descriptor;
+
+@end

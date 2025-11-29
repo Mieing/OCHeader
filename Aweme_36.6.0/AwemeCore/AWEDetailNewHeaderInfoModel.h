@@ -1,0 +1,3 @@
+@interface AWEDetailNewHeaderInfoModel : AWEDetailHeaderInfoModel
+
+@end

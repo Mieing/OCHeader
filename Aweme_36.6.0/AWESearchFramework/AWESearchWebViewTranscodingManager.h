@@ -1,0 +1,84 @@
+@class AWESearchWebNoticeViewKit, DUXAlertDialog, NSDictionary, NSString, BDXWebView;
+
+@interface AWESearchWebViewTranscodingManager : NSObject
+
+@property (retain, nonatomic) DUXAlertDialog *dialog;
+@property (nonatomic) BOOL dialogIsShowing;
+@property (retain, nonatomic) NSDictionary *params;
+@property (retain, nonatomic) AWESearchWebNoticeViewKit *webNoticeViewKit;
+@property (weak, nonatomic) BDXWebView *webView;
+@property (nonatomic) BOOL needShowTranscodingSwitch;
+@property (nonatomic) BOOL transcodingEnabled;
+@property (nonatomic) BOOL needShowCloseCurrentReadMode;
+@property (copy, nonatomic) id /* block */ turnOnBlock;
+@property (copy, nonatomic) id /* block */ turnOffCurrentBlock;
+@property (copy, nonatomic) id /* block */ turnOffGlobalBlock;
+@property (copy, nonatomic) id /* block */ refreshActionBlock;
+@property (copy, nonatomic) id /* block */ moreActionBlock;
+@property (copy, nonatomic) id /* block */ feedbackActionBlock;
+@property (copy, nonatomic) id /* block */ copyActionBlock;
+@property (copy, nonatomic) id /* block */ backActionBlock;
+@property (copy, nonatomic) id /* block */ searchBarActionBlock;
+@property (copy, nonatomic) id /* block */ searchParamsBlock;
+@property (copy, nonatomic) NSString *originUrl;
+@property (nonatomic) BOOL isSupportCloseTranscodeNewPanel;
+@property (nonatomic) BOOL customModeSwitchEnable;
+
++ (BOOL)enableOldSearchBarForVideoWebsites:(id)a0;
++ (BOOL)enableTranscodingForVideoWebsites:(id)a0;
++ (BOOL)enableTranscodingForNovelWebsites:(id)a0;
++ (BOOL)enableTranscodingOptimize;
++ (BOOL)checkIfClosedWebURLByUser:(id)a0;
++ (BOOL)transcodingCanOpen;
++ (BOOL)isNeedToShowDialog;
++ (BOOL)checkAlarscIfAvoidLoading:(id)a0;
++ (BOOL)checkUrlIfAvoidLoading:(id)a0;
++ (double)webLoadingTimeoutLimit;
++ (void)storageServerBlockURL:(id)a0;
++ (void)fetchVideoTranscodingScriptWithCompletion:(id /* block */)a0;
++ (BOOL)transcodingCanSkipDialog;
++ (BOOL)checkIfServerBlockURL:(id)a0;
++ (void)showTransCodeSuccessHint;
++ (id)getfetchUrlCallBackJavaScript:(id)a0;
++ (void)searchTranscodeFetchUrl:(id)a0 completionHandler:(id /* block */)a1;
++ (id)getAbTestFieldsCallBackJavaScript:(id)a0;
++ (void)searchGetAbTestFieldsWithComplete:(id /* block */)a0;
++ (id)novelTranscodingScript;
++ (id)transcodingScript;
++ (void)fetchTranscodingScriptWithCompletion:(id /* block */)a0;
++ (void)fetchNovelTranscodingScriptWithCompletion:(id /* block */)a0;
++ (void)removeClosedWebURLByUser:(id)a0;
++ (void)storageClosedWebURLByUser:(id)a0;
++ (void)removeServerBlockURL:(id)a0;
++ (long long)getGeckoVersionForVideoSite;
++ (void)fetchVideoRenderScriptWithCompletion:(id /* block */)a0;
++ (void)appendDialogShownCount;
++ (BOOL)enableTranscodingScriptUseForest;
++ (id)transcodingCommonScriptSurlConfig;
++ (id)transcodingNovelScriptSurlConfig;
++ (id)getSearchTranscodeGeckoForVideoSite;
++ (id)getSearchTranscodeRenderGeckoForVideoSite;
++ (id)dialogShownKey;
++ (id)dialogTimeKey;
++ (id)dialogShownCount;
++ (id)closedWebURLsByUserKey;
++ (id)searchTranscodeFetchUrlSettingsConfig;
++ (id)searchTranscodeFeAbTestFields;
++ (BOOL)enableTranscodingForVideoWebsitesSetting;
++ (BOOL)checkUrlMatchPatternWithUrl:(id)a0;
+
+- (void)showTranscodingSwitch:(BOOL)a0;
+- (void)bindNavBarAction;
+- (void)fetchWithUrl:(id)a0 alasrc:(id)a1 complection:(id /* block */)a2;
+- (void)showTranscodingDialogWithParams:(id)a0 complection:(id /* block */)a1;
+- (void)storagetTranscodingIsOpen:(BOOL)a0;
+- (void)showTranscodingToast;
+- (void)enableShowCloseCurrentReadMode:(BOOL)a0;
+- (void)showTransCodeSuccessBottomNotification;
+- (void)showTransCodeSuccessBottomNotificationWithVideoTranscode;
+- (void)trackTranscodingClose:(BOOL)a0;
+- (void)storageDialogTime;
+- (void)trackTranscodingShow;
+- (void).cxx_destruct;
+
+@end

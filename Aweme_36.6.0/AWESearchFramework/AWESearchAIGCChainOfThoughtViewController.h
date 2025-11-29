@@ -1,0 +1,82 @@
+@class AWESearchEasterEggView, NSDictionary, AWESearchCachalotDataController, AWESearchCachalotWebPipeline, NSObject, UIView, AWESearchResultRefreshHeader, NSString, AWESearchAIGCLynxPipeline, AWESearchResultViewController, AWESearchAIGCService, AWESearchCachalotResultContext, AWETrackerContext, AWESearchTabConfig, AWESearchSchemaModel, AWESearchFloatingBackgroundView, AWESearchLoadMoreFooter;
+@protocol AWESearchActionListenerProtocol, AWESearchFeelGoodManagerProtocol, AWESearchChildViewControllerResultFilterProtocol, SearchCachalotViewInterface, AWESearchAIGCChainOfThoughtDelegate;
+
+@interface AWESearchAIGCChainOfThoughtViewController : AWESearchResultVerticalBaseViewController <AWESearchAIGCServiceDelegate, AWERouterViewControllerProtocol, AWESearchAIGCPanelContentProtocol>
+
+@property (retain, nonatomic) NSDictionary *searchAIGCEmptyTemplateConfig;
+@property (retain, nonatomic) AWESearchAIGCLynxPipeline *lynxPipeline;
+@property (retain, nonatomic) AWESearchCachalotWebPipeline *webPipeline;
+@property (retain, nonatomic) AWESearchAIGCService *aigcService;
+@property (retain, nonatomic) NSString *cardID;
+@property (weak, nonatomic) id<AWESearchAIGCChainOfThoughtDelegate> chainOfThoughtDelegate;
+@property (retain, nonatomic) AWESearchSchemaModel *routerModel;
+@property (retain, nonatomic) UIView *view;
+@property (readonly, nonatomic) UIView<SearchCachalotViewInterface> *cachalotView;
+@property (readonly, nonatomic) AWESearchCachalotDataController *dataController;
+@property (weak, nonatomic) AWESearchResultViewController *searchResultViewController;
+@property (readonly, nonatomic) AWESearchResultRefreshHeader *refreshHeaderView;
+@property (readonly, nonatomic) AWESearchLoadMoreFooter *footerView;
+@property (readonly, nonatomic) AWESearchCachalotResultContext *cachalotContext;
+@property (nonatomic) BOOL isSearchLoading;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) AWESearchTabConfig *tabConfig;
+@property (weak, nonatomic) id<AWESearchChildViewControllerResultFilterProtocol> delegate;
+@property (weak, nonatomic) id<AWESearchActionListenerProtocol> listener;
+@property (retain, nonatomic) AWETrackerContext *trackerContext;
+@property (copy, nonatomic) id /* block */ searchTabsUpdateBlock;
+@property (nonatomic) BOOL isFilterSearch;
+@property (nonatomic) unsigned long long publishTime;
+@property (nonatomic) unsigned long long sortType;
+@property (nonatomic) unsigned long long refreshType;
+@property (retain, nonatomic) NSString *refer;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (nonatomic) BOOL dismissTabBottomLine;
+@property (retain, nonatomic) AWESearchFloatingBackgroundView *floatingBackgroundView;
+@property (retain, nonatomic) AWESearchEasterEggView *easterEggView;
+@property (nonatomic) long long searchTabFeedType;
+@property (copy, nonatomic) NSString *personalSearchChannel;
+@property (copy, nonatomic) NSString *personalTrackTabType;
+@property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *tokenType;
+@property (copy, nonatomic) NSString *clickMoreMethod;
+@property (nonatomic) long long searchQueryInputTime;
+@property (nonatomic) long long searchButtonPressDuration;
+@property (nonatomic) long long searchButtonClickPositionX;
+@property (nonatomic) long long searchButtonClickPositionY;
+@property (copy, nonatomic) id /* block */ isShowingMiddlePageBlock;
+@property (copy, nonatomic) id /* block */ sugSessionIDBlock;
+@property (retain, nonatomic) NSObject<AWESearchFeelGoodManagerProtocol> *surveyManager;
+@property (copy, nonatomic) id /* block */ panel_closeBlock;
+@property (copy, nonatomic) id /* block */ panel_closeBlockVertical;
+@property (copy, nonatomic) id /* block */ panel_playVideoBlock;
+@property (copy, nonatomic) id /* block */ panel_pauseVideoBlock;
+
++ (void)preprocessModel:(id)a0;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (id)enterFrom;
+- (BOOL)sendEvent:(id)a0 params:(id)a1;
+- (id)searchKeyword;
+- (void)setupNotification;
+- (id)customContainerConfig;
+- (BOOL)customShouldTurnOnAutoPreloadMoreWhenEndRefreshingCompleted;
+- (double)getContainerWidthWithViewModel:(id)a0;
+- (void)handleCopilotAppend:(id)a0;
+- (void)handleShouldClosePanel:(id)a0;
+- (void)insertResultWithViewModels:(id)a0 targetVM:(id)a1 completionBlock:(id /* block */)a2;
+- (id)aigcServiceConfig;
+- (BOOL)splitPanelVerticalSlideBack;
+- (double)searchAIGCPanel_navBarHeight;
+- (id)searchAIGCPanel_contentScrollView;
+- (void).cxx_destruct;
+- (id)init;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)loadData;
+- (void)clearNotification;
+- (void)createUI;
+
+@end

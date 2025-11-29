@@ -1,0 +1,10 @@
+@interface PaidLiveConfig_UserRight : IESLivePBBaseMessage
+
+@property (nonatomic) int viewRight;
+@property (nonatomic) long long duration;
+@property (nonatomic) int delivery;
+@property (nonatomic) BOOL needDeliveryNotice;
+
++ (id)descriptor;
+
+@end

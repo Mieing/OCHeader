@@ -1,0 +1,88 @@
+@class NSIndexPath, MMUIButton, UICollectionView, WCStoryMultiContactPreviewCell, WAAppDismissAnimateTransition, NSMutableArray, WCStoryPreviewReportObj, UIView, NSString, UICollectionViewFlowLayout, UIScreenEdgePanGestureRecognizer, WCStoryDismissInteractiveTransition, NSMutableSet, CContact, WCStoryPreviewContactIndicatorView, WCStoryPreivewPageCollectionController, UIImageView;
+
+@interface WCStoryMultiContactPreviewViewController : MMUIViewController <UICollectionViewDataSource, WCStoryPreviewContactIndicatorViewDataSource, WCStoryPreviewContactIndicatorViewDelegate, WCStoryDismissInteractiveTransitionDelegate, WCStoryMultiContactPreviewCellDelegate, WCStoryFacadeExt, UIViewControllerTransitioningDelegate, UICollectionViewDelegate> {
+    UIView *m_contentView;
+    UICollectionView *m_collectionView;
+    UICollectionViewFlowLayout *m_collectionLayout;
+    WCStoryPreviewContactIndicatorView *m_contactIndicator;
+    MMUIButton *m_closeBtn;
+    UIImageView *m_topShadowView;
+    NSIndexPath *m_startIndexPath;
+    WCStoryPreivewPageCollectionController *m_playingPageCollectionController;
+    UIScreenEdgePanGestureRecognizer *m_popBackInteractivePopGesture;
+    WCStoryDismissInteractiveTransition *m_dimissInteractiveTransition;
+    WAAppDismissAnimateTransition *m_dismissAnimateTransition;
+    BOOL m_handingDragDownToClose;
+    BOOL m_needShowScrollUpTips;
+    NSMutableSet *m_dataFetchingUnitIds;
+    NSMutableSet *m_dataHasFetchedUnitIds;
+}
+
+@property (weak, nonatomic) MMUIButton *moreActionBtn;
+@property (weak, nonatomic) WCStoryMultiContactPreviewCell *currentPlayCell;
+@property (retain, nonatomic) WCStoryPreviewReportObj *previewReportObj;
+@property (retain, nonatomic) CContact *chatRoomContact;
+@property (retain, nonatomic) NSMutableArray *dataUnitArray;
+@property (nonatomic) BOOL bAddTopShadowView;
+@property (nonatomic) unsigned long long previewScene;
+@property (nonatomic) unsigned long long statusChangePreviewType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (void)viewDidLoad;
+- (BOOL)useTransparentNavibar;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillPush:(BOOL)a0;
+- (BOOL)DismissMyselfAnimated:(BOOL)a0;
+- (void)configTopBtn;
+- (void)configTopShadowView;
+- (void)configCollectionView;
+- (void)scrollToIndex:(unsigned long long)a0;
+- (void)scrollToIndexPath:(id)a0;
+- (void)configContactIndicator;
+- (void)showScrollUpTipsViewWithBottomHeight:(double)a0;
+- (void)showTipsWithText:(id)a0;
+- (void)reloadCollectionView;
+- (void)tilePages;
+- (void)changeToPlayingPreviewCell:(id)a0;
+- (void)preloadDataWithCurrentIndex:(unsigned long long)a0;
+- (void)setDataUnitFetchingData:(id)a0;
+- (void)clearDataUnitFetchingData:(id)a0;
+- (BOOL)isFetchingDataForDataUnit:(id)a0;
+- (void)setDataUnitHasFetchedData:(id)a0;
+- (BOOL)hasFetchedDataForDataUnit:(id)a0;
+- (void)fetchNewestStoryDataUnit:(id)a0;
+- (void)fetchHistoryDataUnitDetail:(id)a0;
+- (void)onDataUnitUpdatedWithIdentifier:(id)a0 logIdentifier:(id)a1 retCode:(int)a2 dataItems:(id)a3;
+- (void)softReloadSingeIndex:(id)a0 dataUnit:(id)a1;
+- (void)reloadSingleIndex:(id)a0;
+- (void)didDragScrollView:(id)a0;
+- (void)showScrollUpTips;
+- (void)addPopBackInteractivePopGesture;
+- (void)onDismissInteractiveTransitionBegin:(id)a0;
+- (id)animationControllerForDismissedController:(id)a0;
+- (id)interactionControllerForDismissal:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)onStoryMultiContactCellChangePage:(id)a0;
+- (void)onLongPressStoryMultiContactCellToDelete:(id)a0;
+- (void)onLongPressStoryMultiContactCellToHideDataItem:(id)a0;
+- (void)onStoryMultiContactCellCommentListShow:(BOOL)a0;
+- (void)onMultiContactCellShouldHideUIElement:(BOOL)a0;
+- (void)reportChangeFeaturedOrHiddenStatusWithTid:(id)a0 videoType:(unsigned long long)a1;
+- (id)storyContactIndicatorView:(id)a0 dataUnitForIndex:(unsigned long long)a1;
+- (unsigned long long)numberOfDataUnitInStoryContactIndicatorView:(id)a0;
+- (void)storyContactIndicatorView:(id)a0 didSelectItemAtIndex:(unsigned long long)a1;
+- (void)onStoryDeleteSuccessWithDataTid:(id)a0;
+- (void)clickMoreAction;
+- (void).cxx_destruct;
+
+@end

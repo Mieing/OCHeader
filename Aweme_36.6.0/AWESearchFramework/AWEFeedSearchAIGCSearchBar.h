@@ -1,0 +1,77 @@
+@class AWESearchAIGCDeepThinkView, UIView, AWEFeedSearchAIGCSearchBarContext, UIMenuItem, NSString, UITextView, UIButton, NSDate, AWESearchAIGCVoiceInputEntranceView, UILabel;
+
+@interface AWEFeedSearchAIGCSearchBar : UIView <UITextViewDelegate, AWESearchAIGCDeepThinkViewDelegate, DUXToastDelegate, AWESearchAIGCVoiceInputEntranceDelegate>
+
+@property (retain, nonatomic) AWEFeedSearchAIGCSearchBarContext *context;
+@property (retain, nonatomic) UIView *inputContainer;
+@property (retain, nonatomic) UITextView *textView;
+@property (retain, nonatomic) UIButton *sendButton;
+@property (retain, nonatomic) UIButton *voiceInputButton;
+@property (retain, nonatomic) UIButton *textInputButton;
+@property (retain, nonatomic) UILabel *voiceLongPressLabel;
+@property (retain, nonatomic) AWESearchAIGCDeepThinkView *deepThinkView;
+@property (retain, nonatomic) AWESearchAIGCVoiceInputEntranceView *voiceInputRecorderView;
+@property (retain, nonatomic) UIMenuItem *lineFeedItem;
+@property (nonatomic) unsigned long long keyBoardState;
+@property (nonatomic) BOOL toastShowing;
+@property (nonatomic) long long vosDuration;
+@property (copy, nonatomic) NSString *voiceId;
+@property (copy, nonatomic) NSString *searchExtra;
+@property (retain, nonatomic) NSDate *voiceInputPanelShowTime;
+@property (nonatomic) BOOL isVoiceRecorderInterrupted;
+@property (copy, nonatomic) id /* block */ searchBarHeightChangedCallback;
+@property (copy, nonatomic) id /* block */ startKeyboardInput;
+@property (copy, nonatomic) id /* block */ endKeyboardInput;
+@property (copy, nonatomic) id /* block */ startVoiceInput;
+@property (copy, nonatomic) id /* block */ endVoiceInput;
+@property (copy, nonatomic) id /* block */ sendQueryCallback;
+@property (nonatomic) BOOL observerKeyboardNotification;
+@property (readonly, nonatomic) unsigned long long currentInputMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)DUXToastDidShow:(id)a0;
+- (void)DUXToastWillRemoved:(id)a0;
+- (void)sendButtonAction;
+- (void)bindActions;
+- (void)textViewTextDidChange:(id)a0;
+- (void)showToast:(id)a0;
+- (void)trackVoiceInputEvent:(id)a0 buttonType:(id)a1;
+- (void)trackVoiceRecorderWithEvent:(id)a0 params:(id)a1;
+- (void)voiceInputButtonAction;
+- (void)textInputButtonAction;
+- (void)voiceLongPressAction:(id)a0;
+- (void)sendQueryText:(id)a0 source:(id)a1 extraLogParams:(id)a2;
+- (void)switchInputMode:(unsigned long long)a0;
+- (void)trackDeepThinkEvent:(id)a0 buttonType:(id)a1 subButtonType:(id)a2;
+- (void)lineFeedItemAction;
+- (void)keyboardShowAction:(id)a0;
+- (void)keyboardHideAction:(id)a0;
+- (void)deepThinkView:(id)a0 sizeChanged:(struct CGSize { double x0; double x1; })a1;
+- (void)deepThinkView:(id)a0 showItemViewType:(unsigned long long)a1 isFirstShow:(BOOL)a2;
+- (void)deepThinkView:(id)a0 clickItemViewType:(unsigned long long)a1;
+- (void)voiceInputEntranceLongPressBegan;
+- (void)voiceInputEntranceWillSetupHandlerWithVosId:(id)a0;
+- (void)voiceInputEntrancePanelViewDidShow;
+- (void)voiceInputEntrancePanelViewDidDismiss;
+- (void)voiceInputEntranceProcessInterrupted;
+- (void)voiceInputEntranceASRDisconnected;
+- (void)voiceInputEntranceASRInputTimeoutRemindWithCountdown:(long long)a0;
+- (void)voiceInputEntranceASRInputTimeout;
+- (void)voiceInputEntranceASRFailed;
+- (void)voiceInputEntranceASRTranslate:(id)a0 isInterIM:(BOOL)a1 isSoftFinished:(BOOL)a2 vosDuration:(long long)a3 searchExtra:(id)a4;
+- (void)voiceInputEntranceASRFinished:(id)a0;
+- (void)voiceInputEntranceASRCancel;
+- (void)endInputEdit;
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 context:(id)a1;
+- (void)textViewDidBeginEditing:(id)a0;
+- (void)textViewDidEndEditing:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)updateSubviews;
+
+@end

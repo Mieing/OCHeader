@@ -1,0 +1,7 @@
+@interface CheckAnchorLinkersResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) long long sleepSecond;
+
++ (id)descriptor;
+
+@end

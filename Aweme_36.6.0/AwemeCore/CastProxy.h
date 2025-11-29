@@ -1,0 +1,80 @@
+@class HMDTTMonitor, NSString, BDCastGCDWebServer, CastProxyConfiguration, BDCastProxyDataRequest, BDCastProxyRequestManager, NSDictionary;
+
+@interface CastProxy : NSObject <BDCastGCDWebServerDelegate>
+
+@property (copy, nonatomic) NSString *appState;
+@property (retain, nonatomic) HMDTTMonitor *monitor;
+@property (nonatomic) unsigned long long castProxyType;
+@property (retain, nonatomic) BDCastGCDWebServer *webServer;
+@property (retain, nonatomic) CastProxyConfiguration *configuration;
+@property (retain, nonatomic) BDCastProxyRequestManager *requestManager;
+@property (weak, nonatomic) BDCastProxyDataRequest *currentFLVRequest;
+@property (copy, nonatomic) NSDictionary *bizABTParameters;
+@property (copy, nonatomic) id /* block */ commonParametersGetterBlock;
+@property (copy, nonatomic) id /* block */ asyncCommonParametersGetterBlock;
+@property (copy, nonatomic) id /* block */ abtParametersGetterBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)eventMap;
++ (id)proxyUrl:(id)a0 andToken:(id)a1;
++ (id)proxyUrl:(id)a0 andToken:(id)a1 mediaType:(id)a2 outputResolution:(id)a3;
++ (BOOL)isCastProxyURL:(id)a0;
++ (void)getResolutionDimensions:(id)a0 targetWidth:(long long *)a1 targetHeight:(long long *)a2;
++ (id)proxyUrl:(id)a0 andToken:(id)a1 mediaType:(id)a2;
++ (void)setCastProxyType:(unsigned long long)a0;
++ (void)getConnectionsCountWithCompletionHandler:(id /* block */)a0;
++ (id)abtBizParamsKeys;
++ (void)mergeBizParams:(id)a0 with:(id)a1;
++ (id)commonBizParamsKeys;
++ (id)generateRandomKey;
++ (id)hmacForData:(id)a0 withKey:(id)a1;
++ (id)decryptText:(id)a0;
++ (id)encryptText:(id)a0;
++ (void)enableGCDWebServerLog:(BOOL)a0;
++ (BOOL)isRunning;
++ (id)stringFromDate:(id)a0;
++ (id)version;
++ (void)stop;
++ (id)sharedInstance;
++ (void)startWithConfiguration:(id)a0;
+
+- (void)trackEvent:(id)a0 params:(id)a1;
+- (id)proxyUrl:(id)a0 andToken:(id)a1 mediaType:(id)a2 outputResolution:(id)a3;
+- (id /* block */)asyncProcessBlock;
+- (void)webServerDidStart:(id)a0;
+- (void)webServerDidConnect:(id)a0;
+- (void)webServerDidDisconnect:(id)a0;
+- (void)webServerDidStop:(id)a0;
+- (id)getLocalWlanIp;
+- (BOOL)ipv4Valid:(id)a0;
+- (void)trackEvent:(id)a0 params:(id)a1 trackReqManagerState:(BOOL)a2;
+- (id)extractURLInfo:(id)a0 error:(id *)a1;
+- (id)encryptType:(id)a0;
+- (void)responseWithAbnormalRequest:(id)a0 stopCategory:(id)a1 statusCode:(long long)a2 additionalHeaders:(id)a3 completionBlock:(id /* block */)a4 error:(id)a5;
+- (void)etReceiveUrl:(id)a0 costTime:(long long)a1 error:(id)a2;
+- (void)etResponseEnd:(id)a0 stopCategory:(id)a1 error:(id)a2 serviceTime:(long long)a3 remuxEndResult:(id)a4;
+- (id)getBizParams;
+- (id)buildInfoPlist;
+- (id)errorWhenProcessing:(id)a0 errMsg:(id)a1;
+- (void)createMonitor;
+- (void)updateBizABTParameters;
+- (void)enableGCDWebServerLog:(BOOL)a0;
+- (id)getMediaType:(id)a0 url:(id)a1;
+- (id)getContentTypeWithMediaType:(id)a0;
+- (void)responseWithRequest:(id)a0 originalUrl:(id)a1 completionBlock:(id /* block */)a2 defaultContentType:(id)a3;
+- (void)responseFLVWithRequest:(id)a0 originalUrl:(id)a1 completionBlock:(id /* block */)a2 hexDecryptionKey:(id)a3;
+- (void)etResponse:(id)a0 requestId:(id)a1 responseHeaders:(id)a2 costTime:(long long)a3 error:(id)a4;
+- (long long)responseCodeForRequest:(id)a0;
+- (void)applicationWillEnterForeground:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)stop;
+- (void)applicationDidEnterBackground:(id)a0;
+- (void)applicationWillTerminate:(id)a0;
+- (void)startWithConfiguration:(id)a0;
+- (id)buildInfo;
+
+@end

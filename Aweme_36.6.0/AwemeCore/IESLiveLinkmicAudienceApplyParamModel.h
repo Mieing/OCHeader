@@ -1,0 +1,11 @@
+@class NSNumber, NSString;
+
+@interface IESLiveLinkmicAudienceApplyParamModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) NSNumber *paidCount;
+@property (retain, nonatomic) NSNumber *limitTime;
+@property (copy, nonatomic) NSString *reason;
+
++ (id)modelCustomPropertyMapper;
+
+@end

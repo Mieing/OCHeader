@@ -1,0 +1,6 @@
+@interface CreationKitAlbum.MediaTransProvider : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ cachedTransResultDict;
+    void /* unknown type, empty encoding */ semaphore;
+}
+
+@end

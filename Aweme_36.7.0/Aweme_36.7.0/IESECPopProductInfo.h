@@ -1,0 +1,9 @@
+@interface IESECPopProductInfo : GPBMessage
+
+@property (nonatomic) long long promotionId;
+@property (nonatomic) long long productId;
+@property (nonatomic) long long explainTime;
+
++ (id)descriptor;
+
+@end

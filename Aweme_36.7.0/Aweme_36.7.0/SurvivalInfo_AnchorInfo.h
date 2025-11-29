@@ -1,0 +1,8 @@
+@interface SurvivalInfo_AnchorInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) long long outStage;
+
++ (id)descriptor;
+
+@end

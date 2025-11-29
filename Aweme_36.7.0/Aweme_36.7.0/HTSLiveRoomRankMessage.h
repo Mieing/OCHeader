@@ -1,0 +1,12 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveRoomRankMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *ranksArray;
+@property (readonly, nonatomic) unsigned long long ranksArray_Count;
+
++ (id)descriptor;
+
+@end

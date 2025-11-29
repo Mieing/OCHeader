@@ -1,0 +1,10 @@
+@class FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions, FinderLiveEcGetLiveConfigResponse_ShowAnimation_ShoppingBagOptions;
+
+@interface FinderLiveEcGetLiveConfigResponse_ShowAnimation : WXPBGeneratedMessage
+
+@property (retain, nonatomic) FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions *hotSellingOptions;
+@property (retain, nonatomic) FinderLiveEcGetLiveConfigResponse_ShowAnimation_ShoppingBagOptions *shoppingBagOptions;
+
++ (void)initialize;
+
+@end

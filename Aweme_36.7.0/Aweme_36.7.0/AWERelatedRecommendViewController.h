@@ -1,0 +1,87 @@
+@class AWERelatedRecommendGradientConfig, _TtC23AWERelatedRecommendImpl31RelatedRecommendDCDataProcessor, UINavigationController, UIViewController, _TtC23AWERelatedRecommendImpl25RelatedRecommendItemModel, UIView, _TtC23AWERelatedRecommendImpl36RelatedRecommendTopAreaContainerView, AWEListDataController, _TtC23AWERelatedRecommendImpl39RelatedRecommendCellVisibleCheckHandler, NSString, _TtC23AWERelatedRecommendImpl30VideoDeconstructGuessWordModel, AWEPageContext, AWEAwemeModel;
+@protocol AWERelatedRecommendPanelCustomHeaderProtocol, AWEDCFeedListViewControllerProtocol, AWERelatedRecommendListBaseDataControllerProtocol, AWEPlayInteractionContextProtocol;
+
+@interface AWERelatedRecommendViewController : UIViewController <AWEDCFeedTopAreaDelegate, AWEFeedContainerSearchExtraParamsProtocol, AWEDCFeedListViewControllerDelegate, AWERelatedRecommendImpl.RelatedRecommendPanelContainerProtocol, AWERelatedRecommendTopElementDelegate, AWERelatedRecommendViewControllerProtocol> {
+    void /* unknown type, empty encoding */ innerDataController;
+    void /* unknown type, empty encoding */ markTopAreaViewIntoBottom;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_dispatcher;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_feedConfig;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_topAreaView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_dcViewController;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_dataProcessor;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_cellVisibleCheckHandler;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_cellIndexPathMap;
+    void /* unknown type, empty encoding */ validHasShownItems;
+    void /* unknown type, empty encoding */ willShownItems;
+    void /* function */ customReferString;
+    void /* function */ customEnterMethod;
+}
+
+@property (nonatomic, readonly) BOOL topViewShow;
+@property (nonatomic, readonly) double topViewHeight;
+@property (nonatomic, readonly) BOOL enableTrackVaildShow;
+@property (nonatomic, readonly) BOOL panelHasExpanded;
+@property (nonatomic, readonly) double panelOriginHeight;
+@property (nonatomic, readonly) BOOL panelIsShowing;
+@property (nonatomic, retain) _TtC23AWERelatedRecommendImpl36RelatedRecommendTopAreaContainerView *topAreaView;
+@property (nonatomic, retain) UIView<AWERelatedRecommendPanelCustomHeaderProtocol> *customTopAreaView;
+@property (nonatomic) BOOL shouldHoldTopAreaView;
+@property (nonatomic, retain) UIViewController<AWEDCFeedListViewControllerProtocol> *dcViewController;
+@property (nonatomic, retain) _TtC23AWERelatedRecommendImpl31RelatedRecommendDCDataProcessor *dataProcessor;
+@property (nonatomic, retain) _TtC23AWERelatedRecommendImpl39RelatedRecommendCellVisibleCheckHandler *cellVisibleCheckHandler;
+@property (nonatomic, retain) id cellIndexPathMap;
+@property (nonatomic, readonly) BOOL enableChunk;
+@property (nonatomic, readonly) AWEListDataController<AWERelatedRecommendListBaseDataControllerProtocol> *outerDataController;
+@property (nonatomic, readonly) UINavigationController *navigationViewController;
+@property (nonatomic, readonly) AWEPageContext<AWEPlayInteractionContextProtocol> *context;
+@property (nonatomic, readonly) AWEAwemeModel *currentModel;
+@property (nonatomic, readonly) BOOL shouldShowTopView;
+@property (nonatomic, weak) void /* function */ container;
+@property (nonatomic, weak) void /* function */ delegate;
+@property (nonatomic, retain) _TtC23AWERelatedRecommendImpl30VideoDeconstructGuessWordModel *videoDeconstructGuessWordModel;
+@property (nonatomic, retain) AWERelatedRecommendGradientConfig *gradientConfig;
+@property (nonatomic) BOOL disableContentTopInset;
+@property (nonatomic) unsigned long long entrancePageType;
+@property (nonatomic) BOOL enableKeepDark;
+@property (nonatomic, copy) NSString *customReferString;
+@property (nonatomic, copy) NSString *customEnterMethod;
+@property (nonatomic) BOOL fullScreenState;
+@property (nonatomic, retain) _TtC23AWERelatedRecommendImpl25RelatedRecommendItemModel *tabItemModel;
+@property (nonatomic) BOOL shouldEnableCustomFetchData;
+
+- (id)getTopAreaView;
+- (id)getRecentClickAndShowItems;
+- (id)getCustomSearchExtraDict;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })dcFeed:(id)a0 frameForCollectionView:(id)a1;
+- (BOOL)dcFeed:(id)a0 handleRouterEventWithType:(unsigned long long)a1 awemeModel:(id)a2;
+- (BOOL)dcFeed:(id)a0 shouldDisableCellClickWithAwemeModel:(id)a1;
+- (void)dcFeed:(id)a0 onFetchListDataEndWith:(unsigned long long)a1 response:(id)a2 error:(id)a3;
+- (id)dux_sheetShouldRecognizeAsynchronousWithGestures;
+- (void)sheetDidChangeFrame;
+- (void)setPanelIsExpandWithIsExpand:(BOOL)a0;
+- (void)setPanelFullScreenStateWithIsExpand:(BOOL)a0;
+- (void)trackEnterDC;
+- (void)trackExitDCWithCloseMethod:(id)a0;
+- (void)showEvent;
+- (void)dismissEventWith:(id)a0;
+- (void)elementDidChangeHeightWith:(id)a0;
+- (double)currentOffsetY;
+- (void)scrollToOffset:(double)a0;
+- (void)hiddenTabIfNeed;
+- (double)elementTopHeightWith:(long long)a0;
+- (void)scrollToOffset:(double)a0 animated:(BOOL)a1;
+- (double)scrollMaxOffsetY;
+- (double)panelOffsetY;
+- (BOOL)hasSegmentedControl;
+- (id)initWithOuterDataController:(id)a0 navigationViewController:(id)a1 context:(id)a2 container:(id)a3 currentModel:(id)a4 videoDeconstructGuessWordModel:(id)a5 delegate:(id)a6 shouldShowTopView:(BOOL)a7;
+- (id)initWithNavigationViewController:(id)a0 currentModel:(id)a1 delegate:(id)a2 shouldShowTopView:(BOOL)a3 extraParams:(id)a4;
+- (id)initWithContainer:(id)a0 extraParams:(id)a1 delegate:(id)a2;
+- (void)initialFetchDataAndReload;
+- (void).cxx_destruct;
+- (id)initWithCoder:(id)a0;
+- (id)initWithNibName:(id)a0 bundle:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+
+@end

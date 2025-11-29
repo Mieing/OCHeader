@@ -1,0 +1,10 @@
+@class IsIntermediateIndividualPlayerResponse_Data;
+
+@interface IsIntermediateIndividualPlayerResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IsIntermediateIndividualPlayerResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

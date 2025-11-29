@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveGuestBattleGradeItem : IESLivePBBaseMessage
+
+@property (nonatomic) long long level;
+@property (copy, nonatomic) NSString *levelStr;
+@property (nonatomic) long long score;
+@property (copy, nonatomic) NSString *scoreStr;
+@property (nonatomic) BOOL isFullLevel;
+
++ (id)descriptor;
+
+@end

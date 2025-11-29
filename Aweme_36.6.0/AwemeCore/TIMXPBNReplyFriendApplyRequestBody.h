@@ -1,0 +1,16 @@
+@class GPBInt64Array, NSMutableDictionary;
+
+@interface TIMXPBNReplyFriendApplyRequestBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *userIdArray;
+@property (readonly, nonatomic) unsigned long long userIdArray_Count;
+@property (nonatomic) int attitude;
+@property (nonatomic) BOOL hasAttitude;
+@property (retain, nonatomic) NSMutableDictionary *ext;
+@property (readonly, nonatomic) unsigned long long ext_Count;
+@property (retain, nonatomic) GPBInt64Array *fromUserIdsArray;
+@property (readonly, nonatomic) unsigned long long fromUserIdsArray_Count;
+
++ (id)descriptor;
+
+@end

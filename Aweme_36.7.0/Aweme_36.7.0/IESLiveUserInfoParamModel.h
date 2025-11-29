@@ -1,0 +1,3 @@
+@interface IESLiveUserInfoParamModel : IESLiveBridgeModel
+
+@end

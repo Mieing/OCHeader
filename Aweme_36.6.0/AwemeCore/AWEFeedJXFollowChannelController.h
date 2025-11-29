@@ -1,0 +1,83 @@
+@class NSString, UIViewController, AWEAwemeModel;
+@protocol AWEMVChannelViewControllerProtocol, AWEFeedTabItemViewControllerProtocol, AWEHPChannelControllerConfigProtocol;
+
+@interface AWEFeedJXFollowChannelController : NSObject <AWENearbyTabForwardAblityProtocol, AWEDigitalWellbeingMessage, AWEConcernYellowDotBusinessControllerDelegate, AWEUGSceneDesktopChannelGuideEvadeProtocol, AWEHPChannelControllerProtocol>
+
+@property (retain, nonatomic) UIViewController<AWEFeedTabItemViewControllerProtocol, AWEMVChannelViewControllerProtocol> *contentVC;
+@property (nonatomic) double lastLeaveChannelTime;
+@property (nonatomic) long long enterType;
+@property (nonatomic) BOOL viewDidAppear;
+@property (nonatomic) long long firstEnterType;
+@property (nonatomic) long long firstLeaveType;
+@property (nonatomic) double enterTime;
+@property (nonatomic) double stayDuration;
+@property (nonatomic) double returnChannelDuration;
+@property (nonatomic) BOOL shouldRefreshCausedByTeenModeChange;
+@property (nonatomic) BOOL didFetchNextLandingData;
+@property (nonatomic) BOOL appResignActive;
+@property (nonatomic) BOOL isBubbleDemote;
+@property (copy, nonatomic) AWEAwemeModel *enterAwemeModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWEHPChannelControllerConfigProtocol> config;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (Class)aAWEPadBizUIAdapterClass;
+
+- (void)teenModeDidChange:(BOOL)a0 isLogout:(BOOL)a1;
+- (BOOL)shouldDesktopChannelGuideEvadeWithScene:(id)a0 enterFrom:(id)a1;
+- (void)showDesktopChannelGuide:(id)a0 config:(id)a1 guideType:(id)a2;
+- (id)aAWEPadModuleAdapter;
+- (BOOL)verticalPanGestureRecognizerShouldBegin:(id)a0;
+- (BOOL)channelRefreshWithModel:(id)a0 completion:(id /* block */)a1;
+- (void)channelEnterWithModel:(id)a0;
+- (void)channelLeaveWithModel:(id)a0;
+- (void)channelTopTabContainerDidAppear;
+- (id)aAWEPadBizUIAdapter;
+- (void)innerNotificationWillDisplay:(id)a0;
+- (void)innerNotificationDidDisplay:(id)a0;
+- (void)hiddenYellowDot:(id /* block */)a0;
+- (id)liveAvatarsBubbleContentConfigWith:(id)a0;
+- (void)showPointYellowDotWithComponentID:(id)a0 completion:(id /* block */)a1;
+- (void)showTextYellowDotWithComponentID:(id)a0 text:(id)a1 completion:(id /* block */)a2;
+- (void)showNumberYellowDotWithComponentID:(id)a0 count:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)showFollowBubbleWithConfig:(id)a0;
+- (void)hideFollowBubbleWithConfig:(id)a0;
+- (BOOL)currentFollowFeedAwemeIsAntiAddict;
+- (id)getCustomTrackParamsWithTrackInfo:(id)a0;
+- (id)singleAvatarBubbleContentConfigWith:(id)a0;
+- (double)channelBubbleShowingDurationWithConfig:(id)a0;
+- (id)getNetworkQualityParams;
+- (void)trackYellowDot;
+- (void)trackEnterHomepageFollowWithModel:(id)a0;
+- (BOOL)channelTopTabShouldRepeatedClickTab;
+- (void)channelDidLoadWithType:(unsigned long long)a0;
+- (void)channelLandingTabWithModel:(id)a0;
+- (BOOL)showTopTabRefreshAnimationWithModel:(id)a0;
+- (unsigned long long)channelRefreshGestureRecognizerDirection:(id)a0;
+- (void)channelAppWillResignActive;
+- (void)channelDidBecomeActive;
+- (void)channelWillEnterForeground;
+- (void)channelDidEnterBackground;
+- (BOOL)channelReleaseContentViewController:(id)a0;
+- (id)getContentViewController;
+- (id)doubleAvatarsBubbleContentConfigWith:(id)a0;
+- (void)generateContentVCIfNeed;
+- (void)recordStayDuration;
+- (void)recordEnterTime;
+- (BOOL)shouldExecuteAutoRefresh;
+- (void)executeAutoRefreshWithCompletion:(id /* block */)a0;
+- (void)executeRefreshWithType:(long long)a0 completion:(id /* block */)a1;
+- (BOOL)shouldRefreshForYellowDot;
+- (void)recordLeaveTime;
+- (BOOL)isExistUnconsumedColdLaunchInsertJson;
+- (void)onLeaveJXDebarPage:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+- (id)sceneType;
+- (id)tabID;
+
+@end

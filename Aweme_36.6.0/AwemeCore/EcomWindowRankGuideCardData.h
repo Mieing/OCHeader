@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface EcomWindowRankGuideCardData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *cardText;
+@property (retain, nonatomic) NSMutableArray *rankItemsArray;
+@property (readonly, nonatomic) unsigned long long rankItemsArray_Count;
+@property (copy, nonatomic) NSString *jumpTipText;
+@property (copy, nonatomic) NSString *cardJumpURL;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface ActivityButtonStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *label;
+@property (nonatomic) BOOL hasLabel;
+@property (copy, nonatomic) NSString *color;
+@property (nonatomic) BOOL hasColor;
+
++ (id)descriptor;
+
+@end

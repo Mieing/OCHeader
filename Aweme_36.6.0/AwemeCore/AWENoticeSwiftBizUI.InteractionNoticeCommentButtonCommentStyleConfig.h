@@ -1,0 +1,3 @@
+@interface AWENoticeSwiftBizUI.InteractionNoticeCommentButtonCommentStyleConfig : AWENoticeSwiftBizUI.InteractionNoticeBottomButtonConfig
+
+@end

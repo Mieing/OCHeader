@@ -1,0 +1,76 @@
+@class HTSEventContext, NSString, NSArray, IESLiveComponentContext, IESLiveSelfDisciplineApi, NSDictionary;
+@protocol IESLiveRoomService, IESLiveInteractiveUserService, IESLiveUserService;
+
+@interface IESLiveSelfDisciplineStore : NSObject <HTSLiveMessageSubscriber, HTSLiveRoomRemoteActions, IESLiveSocialInteractAction, IESLiveRoomIntroductionViewActions, HTSLiveAudienceActions, HTSLiveStreamPlayerAction, IESLiveBigPartyActions, IESLiveSelfDisciplineEventTracker, IESLiveSelfDisciplineService>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (nonatomic) BOOL isInSelfDiscipline;
+@property (copy, nonatomic) NSString *currentDisciplineTarget;
+@property (copy, nonatomic) NSArray *selfDisciplineTargetArray;
+@property (retain, nonatomic) id<IESLiveUserService> userService;
+@property (retain, nonatomic) id<IESLiveInteractiveUserService> interactiveUserService;
+@property (retain, nonatomic) IESLiveSelfDisciplineApi *api;
+@property (nonatomic) BOOL hasJoinChannel;
+@property (nonatomic) double selfDisciplineModeStartTime;
+@property (nonatomic) double audienceWatchStartTime;
+@property (nonatomic) double audienceLinkStartTime;
+@property (copy, nonatomic) NSString *roomIntroduction;
+@property (nonatomic) long long currentDuration;
+@property (copy, nonatomic) NSArray *durationList;
+@property (nonatomic) double userPunchStartTime;
+@property (nonatomic) int userPunchStatus;
+@property (copy, nonatomic) NSString *source;
+@property (copy, nonatomic) NSDictionary *extra;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (void)liveDidEnterBackground;
+- (void)liveWillEnterForground;
+- (void)liveDidCloseAllRoom;
+- (void)liveWillFinished;
+- (void)didUpdateRoom:(id)a0 timeStamp:(id)a1;
+- (void)interactionModeStartedWithLayout:(id)a0;
+- (void)interactionModeEndedWithLayout:(id)a0;
+- (void)didJoinChannelWithLayout:(id)a0;
+- (void)didLeaveChannelWithLayout:(id)a0;
+- (void)playerWillPlayInSmallWindow;
+- (void)playerDidEndplayInSmallWindow;
+- (id)initWithRoom:(id)a0 trackContext:(id)a1 componentContext:(id)a2;
+- (void)selfDisciplineInfoWithRoomId:(id)a0 completion:(id /* block */)a1;
+- (void)selfDisciplineSettingInfoWithRoomId:(id)a0 secUserID:(id)a1 completion:(id /* block */)a2;
+- (long long)selfDisciplineStartTimeWithUserId:(id)a0;
+- (void)changeSelfDisciplineConfig:(id)a0 completion:(id /* block */)a1;
+- (void)startSelfDisciplineWithConfig:(id)a0 completion:(id /* block */)a1;
+- (void)fetchSelfDisciplineSettingInfo;
+- (id)selfDisciplineTrackDic;
+- (int)currentUserPunchStatus;
+- (void)roomIntroductionDidSave:(id)a0;
+- (BOOL)p_isSelfAnchor;
+- (void)tr_trackAudienceRoomLinkDuration;
+- (void)tr_trackEndSelfDiscipline;
+- (void)tr_trackStartSelfDiscipline;
+- (void)tr_trackRoomInfoSave:(id)a0;
+- (void)tr_trackAudienceRoomLink;
+- (void)p_fetchSelfDisciplineSettingInfo;
+- (void)tr_audiencePunchDuration;
+- (void)p_autoStartSelfDisciplineIfNeed;
+- (id)formatDurationStr:(long long)a0;
+- (BOOL)isDurationValid:(long long)a0;
+- (void)sortTopicArray:(id)a0;
+- (BOOL)p_isFromSchema;
+- (BOOL)isPunching;
+- (void)willLeaveChannelWithScene:(unsigned long long)a0;
+- (BOOL)p_isSelfAdminHavePlaymodePrivilege;
+- (BOOL)didPunchSuccess;
+- (void).cxx_destruct;
+- (id)currentConfig;
+- (void)finishWithCompletion:(id /* block */)a0;
+- (void)messageReceived:(id)a0;
+- (void)updateDuration:(long long)a0;
+
+@end

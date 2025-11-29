@@ -1,0 +1,87 @@
+@class NSNumber, NSString, NSObject, AWEMusicFeedViewModel;
+@protocol MusicService;
+
+@interface AWEMusicPlayEventService : HTSService <AWEMusicServiceDelegate, AWEMusicStreamingPlayEventService>
+
+@property (nonatomic) double eventSingleDuration;
+@property (nonatomic) double eventTotalDuration;
+@property (nonatomic) double eventStarTime;
+@property (nonatomic) double musicChangeTime;
+@property (nonatomic) double playStartTime;
+@property (nonatomic) double videoPlayStartTime;
+@property (nonatomic) double playQualityStartTime;
+@property (nonatomic) double fstFrameDuration;
+@property (nonatomic) BOOL eventProgressBarMove;
+@property (nonatomic) BOOL eventBackgroundPlay;
+@property (nonatomic) BOOL eventIsLyricMove;
+@property (retain, nonatomic) AWEMusicFeedViewModel *currentModel;
+@property (weak, nonatomic) NSObject<MusicService> *service;
+@property (nonatomic) double playStallStartTime;
+@property (nonatomic) BOOL progressBarMoved;
+@property (nonatomic) BOOL prepareToPlay;
+@property (nonatomic) int playActionTime;
+@property (copy, nonatomic) NSString *lastModelKey;
+@property (nonatomic) BOOL canReportVideoEvent;
+@property (nonatomic) BOOL haveCalledMusicChanged;
+@property (nonatomic) BOOL isFirstMusic;
+@property (nonatomic) BOOL isMusicPlayComplete;
+@property (nonatomic) double background_dur;
+@property (nonatomic) double background_dur_start;
+@property (nonatomic) long long cacheSize;
+@property (retain, nonatomic) NSNumber *volumeHandlerID;
+@property (nonatomic) double volumeChangedInterval;
+@property (nonatomic) double volumeStart;
+@property (nonatomic) double volumeMin;
+@property (nonatomic) double volumeMax;
+@property (nonatomic) BOOL isPlayStarted;
+@property (nonatomic) long long stallAction;
+@property (copy, nonatomic) NSString *page;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) NSString *previousPage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)markLyricsMoved;
++ (void)enterMusicScene;
++ (id)playEventServiceWithMusicService:(id)a0;
+
+- (void)musicService:(id)a0 playStatusChanged:(long long)a1;
+- (void)musicService:(id)a0 didFinishedWithError:(id)a1;
+- (void)musicServiceReadyToDisPlay:(id)a0;
+- (void)musicServiceReadyToPlay:(id)a0;
+- (void)musicServiceDidPause:(id)a0 pauseType:(long long)a1;
+- (void)musicServiceDidStop:(id)a0;
+- (void)musicServiceDidSeek:(id)a0;
+- (void)musicServiceMusicChanged:(id)a0;
+- (void)musicService:(id)a0 didChangeStallState:(long long)a1 actionType:(long long)a2 reason:(unsigned long long)a3;
+- (void)musicServiceWillGoPrevFromRemote:(id)a0;
+- (void)musicServiceWillGoNextFromRemote:(id)a0;
+- (void)reportVideoPlay;
+- (void)reportVideoPlayFinish;
+- (id)initWithMusicService:(id)a0;
+- (void)videoPlayStart;
+- (void)videoPlayEnd;
+- (id)backup_event_params;
+- (void)restore_event_params:(id)a0;
+- (void)receiveNotes:(id)a0;
+- (id)enterMethod:(id)a0;
+- (void)calculateSingleDuration:(BOOL)a0;
+- (void)audioOver:(long long)a0;
+- (void)eventClear;
+- (void)updateCurrentVolume:(double)a0;
+- (void)audioFinishWithType:(id)a0;
+- (id)copyrightTypeOfModel:(id)a0;
+- (id)premiumType;
+- (void)trackParamsAddExtra:(id)a0;
+- (void)trackEvent:(id)a0 params:(id)a1 model:(id)a2;
+- (double)getCurrentSystemVolum;
+- (void)reportAudioPlay;
+- (void)reportVideoPlayTime:(BOOL)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setupNotifications;
+
+@end

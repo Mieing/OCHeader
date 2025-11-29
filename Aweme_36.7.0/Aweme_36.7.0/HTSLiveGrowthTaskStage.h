@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface HTSLiveGrowthTaskStage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *conditionListArray;
+@property (readonly, nonatomic) unsigned long long conditionListArray_Count;
+@property (retain, nonatomic) NSMutableArray *rewardListArray;
+@property (readonly, nonatomic) unsigned long long rewardListArray_Count;
+@property (nonatomic) long long completedTime;
+
++ (id)descriptor;
+
+@end

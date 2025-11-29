@@ -1,0 +1,3 @@
+@interface AWEKnowledgeABTestRegister : NSObject
+
+@end

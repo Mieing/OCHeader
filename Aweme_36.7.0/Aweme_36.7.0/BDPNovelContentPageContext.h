@@ -1,0 +1,75 @@
+@class NSTimer, NSString, NSArray, TTTextLayoutPage, BDPNovelComponentModel, BDPNovelContentPageViewController, BDPNovelControllerContext, BDPNovelContentMeta;
+@protocol BDPNovelContainerDelegate;
+
+@interface BDPNovelContentPageContext : NSObject
+
+@property (retain, nonatomic) NSTimer *timer;
+@property (copy, nonatomic) NSString *pageElementJsonStr;
+@property (nonatomic) BOOL isBlocking;
+@property (nonatomic) BOOL canAddNextContentMeta;
+@property (nonatomic) long long freeWordsPageNo;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } freeWordRect;
+@property (nonatomic) long long titleLength;
+@property (retain, nonatomic) BDPNovelContentMeta *contentMeta;
+@property (weak, nonatomic) BDPNovelComponentModel *model;
+@property (weak, nonatomic) BDPNovelControllerContext *novelControllerContext;
+@property (nonatomic) unsigned long long viewType;
+@property (nonatomic) long long pageIndex;
+@property (nonatomic) long long totalPages;
+@property (nonatomic) long long targetPageIndex;
+@property (nonatomic) long long targetOffset;
+@property (nonatomic) unsigned long long targetType;
+@property (nonatomic) double containerHeight;
+@property (retain, nonatomic) TTTextLayoutPage *page;
+@property (nonatomic) unsigned long long state;
+@property (weak, nonatomic) BDPNovelContentPageViewController *controller;
+@property (weak, nonatomic) id<BDPNovelContainerDelegate> containerDelegate;
+@property (nonatomic) double endingTopOffset;
+@property (nonatomic) double endingBottomOffset;
+@property (copy, nonatomic) NSString *endingText;
+@property (nonatomic) BOOL isLastContentPage;
+@property (nonatomic) BOOL isDisplayHorizontalEnd;
+@property (nonatomic) BOOL isDisplayFreeWordLockInSamePage;
+@property (nonatomic) BOOL onScreen;
+@property (nonatomic) BOOL reRender;
+@property (nonatomic) long long innerDyamicPageIndex;
+@property (retain, nonatomic) NSArray *insertPages;
+@property (nonatomic) long long insertIndex;
+@property (retain, nonatomic) BDPNovelContentPageContext *originContext;
+@property (nonatomic) long long originContextDirection;
+
+- (void)viewDisappear;
+- (long long)pageTurnMode;
+- (double)unlockMaskHeight;
+- (id)unlockMaskText;
+- (id)unlockMaskIcon;
+- (double)freeWordsContentHeight;
+- (void)layoutUpdateNotice:(id)a0 pageLayout:(id)a1 data:(id)a2;
+- (void)noticeReformPositionIfNeeded;
+- (BOOL)isCurrentPageContainsFreeWords;
+- (void)unBlockScroll:(id)a0;
+- (id)unlockMaskColor;
+- (id)unlockMaskFontColor;
+- (double)unlockMaskBottomOffset;
+- (double)freeWordUnlockMaskMinHeight;
+- (id)freeWordUnlockMaskBlurImage;
+- (id)freeWordUnlockMaskText;
+- (id)freeWordUnlockMaskIcon;
+- (void)messageNoticeWithEvent:(id)a0 andParam:(id)a1;
+- (BOOL)isAbleToGetNextPageInSameContentID:(long long)a0;
+- (BOOL)isAbleToGetNextPageForNextMeta;
+- (long long)upperPageNo;
+- (id)traceViewTypeStr;
+- (id)traceStateStr;
+- (long long)traceOffset;
+- (BOOL)isFlowAD;
+- (void)viewAppear:(long long)a0;
+- (void)startFlowAdPlayIfNeeded;
+- (id)pageElementJsonString;
+- (id)generalElementJsonString;
+- (double)contentHeight;
+- (void).cxx_destruct;
+- (id)description;
+- (id)pageElement;
+
+@end

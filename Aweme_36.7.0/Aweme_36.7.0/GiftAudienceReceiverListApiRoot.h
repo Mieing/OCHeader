@@ -1,0 +1,3 @@
+@interface GiftAudienceReceiverListApiRoot : GPBRootObject
+
+@end

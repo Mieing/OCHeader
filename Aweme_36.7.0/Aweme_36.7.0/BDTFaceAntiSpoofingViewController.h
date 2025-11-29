@@ -1,0 +1,95 @@
+@class NSDate, AVCaptureVideoPreviewLayer, BDTuringSettings, NSMutableArray, CALayer, UIView, BDTuringLiveDetectModel, NSString, CAGradientLayer, BDTuringLiveDetect, AVCaptureVideoDataOutput, CAShapeLayer, AVCaptureSession, AVCaptureDepthDataOutput, AVCaptureDataOutputSynchronizer;
+
+@interface BDTFaceAntiSpoofingViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureDepthDataOutputDelegate, AVCaptureDataOutputSynchronizerDelegate> {
+    AVCaptureSession *captureSession;
+    AVCaptureVideoPreviewLayer *previewLayer;
+}
+
+@property (copy, nonatomic) NSString *detail;
+@property (copy, nonatomic) NSString *ticket;
+@property (copy, nonatomic) NSString *salt;
+@property (copy, nonatomic) NSString *helpUrl;
+@property (retain) NSMutableArray *resultsArray;
+@property (copy, nonatomic) NSString *runTaskErrorMsg;
+@property (retain, nonatomic) BDTuringLiveDetect *bdTuringLiveDetect;
+@property (retain, nonatomic) BDTuringSettings *settings;
+@property BOOL hasFace;
+@property BOOL hasValidFace;
+@property BOOL didVerifyCallback;
+@property BOOL isTrueDepthCamera;
+@property (retain) NSDate *lastTipsUpdatedTime;
+@property (retain, nonatomic) UIView *circleView;
+@property (retain, nonatomic) CAShapeLayer *circleLayer;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (nonatomic) double originalBrightness;
+@property (retain, nonatomic) BDTuringLiveDetectModel *verifyModel;
+@property (retain, nonatomic) AVCaptureDataOutputSynchronizer *synchronizer;
+@property (retain, nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+@property (retain, nonatomic) AVCaptureDepthDataOutput *depthDataOutput;
+@property (retain, nonatomic) CALayer *overlayLayer;
+@property (retain, nonatomic) AVCaptureSession *session;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)restoreOrientation;
+
+- (void)closeViewController;
+- (id)imageFromSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0;
+- (void)configureSettingsWithAid:(id)a0;
+- (void)refreshDetectingFlag;
+- (void)checkPitayaReadyAndContinue;
+- (void)bdturing_startRunning;
+- (void)bdturing_stopRunning;
+- (void)setUpCloseAlertTaskInner;
+- (void)setUpBrightness;
+- (void)getVerifyInfoAndContinue;
+- (void)startCameraAfterApplicationBecomeActive;
+- (void)ensureStopCamera;
+- (void)verifyCallback;
+- (id)getFrontCamera;
+- (id)getBestFormatForDevice:(id)a0 desiredSize:(struct CGSize { double x0; double x1; })a1;
+- (void)adjustOverlayAlpha;
+- (void)showRemindLabel;
+- (void)handleVideoSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0 depthData:(id)a1;
+- (void)updateTipsWithCode:(long long)a0;
+- (void)updateModelFaceBoolWithCode:(long long)a0;
+- (id)restoreOriginalCoordinates:(id)a0;
+- (id)calculate3DWorldKeypointsFrom:(id)a0 withDepthData:(id)a1 error:(id *)a2;
+- (void)handleVerifyResponse:(id)a0;
+- (void)handleVerifySuccess;
+- (void)updateCircleView;
+- (void)verifySuccessCallback;
+- (void)closeAlertView;
+- (void)closeHelpViewIfNeeded;
+- (void)revertBrightness;
+- (void)updateLayoutForSize:(struct CGSize { double x0; double x1; })a0;
+- (void)hideRemindLabel;
+- (id)rotateImage:(id)a0 clockwise:(double)a1;
+- (id)mirrorImage:(id)a0;
+- (id)convertBGRAtoRGBA:(id)a0;
+- (void)setUpTipsAlertTask;
+- (void)setUpCloseAlertTask;
+- (void)addGradientCircleView;
+- (id)initWithVerifyModel:(id)a0;
+- (id)rotateAndScaleImage:(id)a0 withRotationAngle:(double)a1 andScale:(double)a2;
+- (struct opaqueCMSampleBuffer { } *)rotateSampleBuffer:(struct opaqueCMSampleBuffer { } *)a0 withVideoOrientation:(long long)a1;
+- (void).cxx_destruct;
+- (void)stopAnimation;
+- (void)applicationDidBecomeActive;
+- (void)applicationWillResignActive;
+- (BOOL)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)captureOutput:(id)a0 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { } *)a1 fromConnection:(id)a2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)dataOutputSynchronizer:(id)a0 didOutputSynchronizedDataCollection:(id)a1;
+- (void)restartAnimation;
+- (void)setupCaptureSession;
+
+@end

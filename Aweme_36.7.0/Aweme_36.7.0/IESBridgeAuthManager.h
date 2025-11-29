@@ -1,0 +1,97 @@
+@class NSLock, NSString, NSRecursiveLock, NSArray, NSMutableDictionary, NSDictionary, IESBridgeAuthPackage, NSMutableSet, BDXBridgeAuthConfigPackage;
+@protocol IESBridgeAuthManagerDelegate;
+
+@interface IESBridgeAuthManager : NSObject
+
+@property (class, nonatomic) BOOL enableDebug;
+@property (class, readonly, copy, nonatomic) NSString *boeHostSuffix;
+
+@property (copy, nonatomic) NSString *namespace;
+@property (copy, nonatomic) BDXBridgeAuthConfigPackage *authConfigPackage;
+@property (copy, nonatomic) NSDictionary *authRules;
+@property (retain, nonatomic) NSMutableSet *privateDomains;
+@property (nonatomic) struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } privateDomainsLock;
+@property (retain, nonatomic) NSLock *methodSetLock;
+@property (retain, nonatomic) NSMutableSet *publicMethods;
+@property (retain, nonatomic) NSMutableSet *protectedMethods;
+@property (retain, nonatomic) NSMutableSet *privateMethods;
+@property (retain, nonatomic) NSMutableSet *secureMethods;
+@property (retain, nonatomic) NSMutableDictionary *methodAuths;
+@property (retain, nonatomic) NSRecursiveLock *methodAuthsLock;
+@property (retain, nonatomic) IESBridgeAuthPackage *authPackage;
+@property (nonatomic) struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } authPackageLock;
+@property (nonatomic, getter=hasFetchedAuthInfos) BOOL fetchedAuthInfos;
+@property (nonatomic, getter=isFetchingAuthInfos) BOOL fetchingAuthInfos;
+@property (nonatomic, getter=hasUsedAuthInfosBeforeConfiguring) BOOL usedAuthInfosBeforeConfiguring;
+@property (copy, nonatomic) id /* block */ monitorHybridBlock;
+@property (nonatomic, getter=isBypassJSBAuthEnabled) BOOL bypassJSBAuthEnabled;
+@property (nonatomic, getter=isBuiltinAuthInfosEnabled) BOOL builtinAuthInfosEnabled;
+@property (readonly, nonatomic) BOOL hasCachedAuthInfos;
+@property (weak, nonatomic) id<IESBridgeAuthManagerDelegate> delegate;
+@property (copy, nonatomic) NSArray *innerDomains;
+
++ (id)sharedManagerWithNamesapce:(id)a0;
++ (id)boeHostSuffix;
++ (void)configBoeUrlString:(id)a0;
++ (void)updateAuthPackagesWithJsonObjects:(id)a0;
++ (BOOL)isAuthorizedWithBridgeAuthInfo:(id)a0;
++ (void)removeInfoFromThread;
++ (id)getAuthFeIdWithWebView:(id)a0 invokeUrl:(id)a1;
++ (long long)authTypeFromString:(id)a0;
++ (BOOL)isSafeUrl:(id)a0 inUrs:(id)a1;
++ (id)authTypeString:(long long)a0;
++ (id)defaultPrivateDomains;
++ (void)writeInfoIntoThreadWithContinerType:(id)a0 methodName:(id)a1 callerUrl:(id)a2 feId:(id)a3 methodAuthType:(id)a4;
++ (id)secondLevelDomainForURL:(id)a0;
++ (void)p_updateAuthManagerWithPackages:(id)a0;
++ (void)addPrivateDomains:(id)a0 inNamespace:(id)a1;
++ (id)parseAuthInfosWithJSON:(id)a0 accessKey:(id)a1;
++ (id)getRequestParamsWithAccessKey:(id)a0 commonParams:(id)a1 extraChannels:(id)a2;
++ (void)configureWithAuthDomain:(id)a0 accessKey:(id)a1 afterDelay:(double)a2 commonParams:(id /* block */)a3;
++ (void)configureWithAccessKey:(id)a0 commonParams:(id /* block */)a1;
++ (BOOL)isAuthorizedForNamespace:(id)a0 webView:(id)a1 appID:(id)a2 method:(id)a3 invokeUrl:(id)a4 messageUUID:(id)a5 fromSource:(id)a6;
++ (BOOL)isAuthorizedForNamespace:(id)a0 webView:(id)a1 appID:(id)a2 method:(id)a3 invokeUrl:(id)a4 messageUUID:(id)a5 fromSource:(id)a6 frameURL:(id)a7 isMainFrame:(BOOL)a8;
++ (id)internalAuthorizedResultForInput:(id)a0;
++ (id)strippedBoeHostURLForOriginURL:(id)a0;
++ (id)internalAuthorizedWithAppID:(id)a0 method:(id)a1 invokeUrl:(id)a2 forType:(long long)a3 inAuthPackage:(id)a4 inNamespace:(id)a5;
++ (id)urlStringForPatterMatchedWithURL:(id)a0;
++ (long long)authTypeForMethodName:(id)a0 inNamespace:(id)a1;
++ (id)getCacheControManagerWithWebView:(id)a0 invokeUrl:(id)a1;
++ (void)updateAuthConfigCacheWithWebView:(id)a0 invokeUrl:(id)a1 newControlManager:(id)a2;
++ (id)internalAuthorizedResultForNamespace:(id)a0 webView:(id)a1 appID:(id)a2 method:(id)a3 invokeUrl:(id)a4 messageUUID:(id)a5 fromSource:(id)a6 isMainFrame:(BOOL)a7 frameURL:(id)a8;
++ (BOOL)shouldBlockWithBridgeAuthInfo:(id)a0;
++ (void)configureWithAuthDomain:(id)a0 accessKey:(id)a1 afterDelay:(double)a2 commonParams:(id /* block */)a3 extraChannels:(id)a4;
++ (void)configureWithAuthDomain:(id)a0 accessKey:(id)a1 boeHostSuffix:(id)a2 afterDelay:(double)a3 commonParams:(id /* block */)a4 extraChannels:(id)a5;
++ (void)configureWithAuthDomain:(id)a0 accessKey:(id)a1 commonParams:(id /* block */)a2;
++ (BOOL)enableDebug;
++ (id)sharedManager;
++ (void)setEnableDebug:(BOOL)a0;
+
+- (void)registerMethod:(id)a0 withAuthType:(unsigned long long)a1;
+- (BOOL)isAuthorizedWithBridgeAuthInfo:(id)a0;
+- (void)addPrivateDomains:(id)a0;
+- (void)endMonitorEvent:(id)a0;
+- (id)strippedURL:(id)a0;
+- (void)updateAuthGroup:(unsigned long long *)a0 includedMethods:(id)a1 excludedMethods:(id)a2 forURL:(id)a3;
+- (id)secondLevelDomainForURL:(id)a0;
+- (void)updateAuthRules;
+- (void)updateMethodAuthTypes;
+- (unsigned long long)authGroupForURL:(id)a0;
+- (BOOL)isAuthorizedMethod:(id)a0 forURL:(id)a1 fromSource:(id)a2 fromEngineView:(id)a3;
+- (id)webViewAuthorizedVersionSelectWithInput:(id)a0;
+- (id)internalStandardWebAuthorizedWithInput:(id)a0;
+- (id)internalAuthorizedUrlWithMethod:(id)a0 invokeUrl:(id)a1 needCompatible:(BOOL)a2;
+- (BOOL)isInDomainsWithURL:(id)a0;
+- (id)getAuthorizedControlManager:(id)a0 invokeUrl:(id)a1 appID:(id)a2;
+- (id)getFeAuthConfig:(id)a0 appID:(id)a1;
+- (BOOL)isInPrivateDomainsWithURL:(id)a0 url:(id)a1;
+- (BOOL)isAuthorizedForWebView:(id)a0 appID:(id)a1 method:(id)a2 invokeUrl:(id)a3 messageUUID:(id)a4 fromSource:(id)a5;
+- (BOOL)isAuthorizedForWebView:(id)a0 appID:(id)a1 method:(id)a2 invokeUrl:(id)a3 messageUUID:(id)a4 fromSource:(id)a5 frameURL:(id)a6 isMainFrame:(BOOL)a7;
+- (id)internalAuthorizedWebView:(id)a0 appID:(id)a1 method:(id)a2 invokeUrl:(id)a3 messageUUID:(id)a4;
+- (id)internalAuthorizedAppIDWithWebView:(id)a0 appID:(id)a1 method:(id)a2 invokeUrl:(id)a3;
+- (id)internalStandardWebAuthorizedWithWebView:(id)a0 method:(id)a1 invokeUrl:(id)a2 appID:(id)a3;
+- (BOOL)isAuthorizedMethod:(id)a0 forURL:(id)a1 fromEngineView:(id)a2;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

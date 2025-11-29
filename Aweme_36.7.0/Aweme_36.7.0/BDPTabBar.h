@@ -1,0 +1,3 @@
+@interface BDPTabBar : UITabBar
+
+@end

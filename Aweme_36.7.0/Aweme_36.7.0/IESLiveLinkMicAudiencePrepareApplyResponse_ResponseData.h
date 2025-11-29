@@ -1,0 +1,10 @@
+@class HTSLiveText;
+
+@interface IESLiveLinkMicAudiencePrepareApplyResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveText *displayText;
+@property (nonatomic) BOOL hasDisplayText;
+
++ (id)descriptor;
+
+@end

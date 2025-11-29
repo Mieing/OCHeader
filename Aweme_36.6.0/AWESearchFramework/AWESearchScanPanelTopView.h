@@ -1,0 +1,84 @@
+@class UIView, NSString, UIImage, NSArray, UIImageView, UIButton, AWESearchScanDataContext, CAGradientLayer, UICollectionView, AWESearchScanSearchTabViewModel, NSMutableArray, UITextField;
+@protocol AWESearchScanPanelTopViewDelegate;
+
+@interface AWESearchScanPanelTopView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, AWESearchInlayScrollPanelTopViewProtocol>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UIButton *returnButton;
+@property (retain, nonatomic) UIButton *searchButton;
+@property (retain, nonatomic) CAGradientLayer *gradientLayer;
+@property (retain, nonatomic) CAGradientLayer *collectionViewGradientLayer;
+@property (retain, nonatomic) CAGradientLayer *collectionViewLeftGradientLayer;
+@property (retain, nonatomic) CAGradientLayer *collectionViewRightGradientLayer;
+@property (retain, nonatomic) UIView *collectionGradientView;
+@property (nonatomic) double collectionViewWidth;
+@property (retain, nonatomic) NSMutableArray *dataList;
+@property (retain, nonatomic) AWESearchScanSearchTabViewModel *selectedModel;
+@property (nonatomic) long long visibleImageItemCount;
+@property (nonatomic) BOOL isScanQuestionMode;
+@property (retain, nonatomic) AWESearchScanDataContext *dataContext;
+@property (retain, nonatomic) UIView *searchBackground;
+@property (retain, nonatomic) UIImageView *searchImageView;
+@property (retain, nonatomic) UITextField *searchTextField;
+@property (retain, nonatomic) UIImage *currentBoxImage;
+@property (nonatomic) double currentProgress;
+@property (nonatomic) unsigned long long fixedDetectionListCount;
+@property (nonatomic) unsigned long long selectedIndex;
+@property (copy, nonatomic) id /* block */ closeButtonClickedBlock;
+@property (weak, nonatomic) id<AWESearchScanPanelTopViewDelegate> delegate;
+@property (retain, nonatomic) UIImage *sourceImage;
+@property (retain, nonatomic) NSArray *fixedDetectionList;
+@property (nonatomic) BOOL currentSelectedTabIsScanQuestion;
+@property (nonatomic) BOOL currentSelectedIsUserDraw;
+@property (copy, nonatomic) NSString *currentTabType;
+@property (copy, nonatomic) NSString *userTextQuery;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (double)topViewHeightWithDataContext:(id)a0;
+
+- (void)setupUI:(BOOL)a0;
+- (double)inlayScrollPanelTopViewHeight;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (void)clickSearchButton;
+- (void)clickReturnButton;
+- (void)updateCollectionViewFrame;
+- (id)cropImage:(id)a0 toRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (BOOL)getImageTextEnable;
+- (double)returnButtonSize;
+- (double)getSearchButtonWidth;
+- (BOOL)needAdaptVisibleCount;
+- (BOOL)isOCRSearch;
+- (void)setupImageTextField;
+- (BOOL)collectionViewBoxLeftStyle;
+- (BOOL)isSearchImageTextStatus;
+- (void)updateSearchBarUIWithProgress:(double)a0;
+- (void)cancelSearchBarStyle;
+- (void)setupSearchBarStyle;
+- (id)getAWESearchTextFieldDefaultPlaceholder;
+- (void)showEmptyQueryAlert;
+- (BOOL)cancelBoxLimitEnable;
+- (double)longestCollectionViewWidth;
+- (double)dataListWidth;
+- (id)initWithDataContext:(id)a0 isQuestionMode:(BOOL)a1 currentSelectedTabIsScanQuestion:(BOOL)a2;
+- (void)updateSearchBarWithProgress:(double)a0;
+- (void)panelContentDidSelectTab:(id)a0;
+- (id)getSearchIconStyle;
+- (void)clickSearchBoxSearchButton;
+- (void)updateSuggestQueryPlaceholder:(id)a0;
+- (void)updateTopData:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (id)collectionViewLayout;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)layoutSubviews;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)selectItemAtIndex:(long long)a0;
+
+@end

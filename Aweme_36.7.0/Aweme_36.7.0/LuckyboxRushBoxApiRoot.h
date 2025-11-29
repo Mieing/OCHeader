@@ -1,0 +1,3 @@
+@interface LuckyboxRushBoxApiRoot : GPBRootObject
+
+@end

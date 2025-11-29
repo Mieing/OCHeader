@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceReplyResponse_Data;
+
+@interface IESLiveLinkMicAudienceReplyResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceReplyResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

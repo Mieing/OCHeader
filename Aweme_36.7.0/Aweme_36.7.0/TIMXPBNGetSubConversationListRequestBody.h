@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetSubConversationListRequestBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *subConvListReqParamsArray;
+@property (readonly, nonatomic) unsigned long long subConvListReqParamsArray_Count;
+@property (nonatomic) BOOL includeParticipants;
+@property (nonatomic) BOOL hasIncludeParticipants;
+
++ (id)descriptor;
+
+@end

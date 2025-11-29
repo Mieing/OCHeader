@@ -1,0 +1,10 @@
+@class LoginResponse_Data;
+
+@interface LoginResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) LoginResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

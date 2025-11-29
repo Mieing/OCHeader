@@ -1,0 +1,13 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveInRoomBannerRedPoint : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long count;
+@property (nonatomic) long long bannerId;
+@property (nonatomic) long long showType;
+
++ (id)descriptor;
+
+@end

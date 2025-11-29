@@ -1,0 +1,3 @@
+@interface AWEStudioRecordImpl.LMSettingsInspirationAutoTakeDelayViewConfig : _TtCs12_SwiftObject
+
+@end

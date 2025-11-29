@@ -1,0 +1,16 @@
+@protocol AWEDPlayerProgressContainerViewDelegate;
+
+@interface AWEDPlayerProgressContainer : UIView
+
+@property (nonatomic) double totalTime;
+@property (nonatomic) double playedTime;
+@property (weak, nonatomic) id<AWEDPlayerProgressContainerViewDelegate> delegate;
+
+- (BOOL)isAccessibilityElement;
+- (void).cxx_destruct;
+- (unsigned long long)accessibilityTraits;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (id)accessibilityValue;
+
+@end

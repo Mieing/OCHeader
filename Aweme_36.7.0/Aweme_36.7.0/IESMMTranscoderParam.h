@@ -1,0 +1,74 @@
+@class NSData, NSString, NSArray;
+
+@interface IESMMTranscoderParam : NSObject <NSCopying>
+
+@property (nonatomic) struct CGSize { double width; double height; } videoSize;
+@property (nonatomic) struct CGSize { double width; double height; } targetVideoSize;
+@property (nonatomic) double frameRate;
+@property (nonatomic) int bitrate;
+@property (nonatomic) BOOL useUserBitrate;
+@property (nonatomic) BOOL useBitrateLog;
+@property (nonatomic) int audioBitrate;
+@property (nonatomic) int audioChannels;
+@property (nonatomic) double audioSampleRate;
+@property (nonatomic) int audioFormatID;
+@property (retain, nonatomic) NSData *audioChannelLayout;
+@property (nonatomic) double maxKeyFrameDuration;
+@property (nonatomic) BOOL allowFrameReordering;
+@property (nonatomic) BOOL forceAllIFrame;
+@property (nonatomic) BOOL isReverseTrans;
+@property (nonatomic) BOOL allowRealTime;
+@property (retain, nonatomic) NSString *videoEntropyMode;
+@property (retain, nonatomic) NSString *videoProfileLevel;
+@property (nonatomic) int recorderEffectiveBitrate;
+@property (nonatomic) BOOL forceReencode;
+@property (nonatomic) BOOL forceRemux;
+@property (nonatomic) BOOL adjustBitrateWithResolution;
+@property (nonatomic) BOOL adjustBitrateWithEffectFilter;
+@property (nonatomic) BOOL adjustBitrateWithVideoRate;
+@property (nonatomic) BOOL adjustBitrateAndKeyFrameIntervalWithAccelerateInfo;
+@property (retain, nonatomic) NSArray *splitTimePoints;
+@property (nonatomic) int maxEncodeFrameCache;
+@property (nonatomic) int minEncodeFrameCache;
+@property (nonatomic) BOOL useVideoDataOutputSize;
+@property (nonatomic) BOOL useVideoDataOutputSizeForReencode;
+@property (nonatomic) BOOL useOutputSizeLimited;
+@property (nonatomic) long long transType;
+@property (nonatomic) long long testID;
+@property (retain, nonatomic) NSString *sceneKey;
+@property (nonatomic) struct CGAffineTransform { double a; double b; double c; double d; double tx; double ty; } transform;
+@property (retain, nonatomic) NSString *bitrateSetting;
+@property (nonatomic) int remuxBitrateLimit;
+@property (retain, nonatomic) NSString *remuxBitrateLimitJson;
+@property (nonatomic) BOOL useUserRemuxResolutionLimit;
+@property (nonatomic) int remuxResolutionLimit;
+@property (nonatomic) long long writerType;
+@property (nonatomic) BOOL enableBYTEVC1EncodeInRecorder;
+@property (nonatomic) BOOL enableBYTEVC1EncodeInEditor;
+@property (nonatomic) BOOL forceH264EncodeInEditor;
+@property (nonatomic) BOOL enableHlgBytevcMain10;
+@property (nonatomic) BOOL enableAVInterLeaving;
+@property (nonatomic) unsigned int codecType;
+@property (retain, nonatomic) NSString *colorPrimaries;
+@property (retain, nonatomic) NSString *transferFunction;
+@property (retain, nonatomic) NSString *yCbCrMatrix;
+@property (nonatomic) double imageQuality;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long endTime;
+@property (nonatomic) BOOL isRecorderResolutionDegraded;
+@property (nonatomic) BOOL isCompileOriginalFrame;
+
+- (void)resetParamWithID:(long long)a0;
+- (int)writerBitrateByType:(long long)a0 size:(unsigned long long)a1 fps:(float)a2 effectNeedHighBitrate:(BOOL)a3 workReport:(id)a4 hasRecorderEffect:(BOOL)a5;
+- (float)getEncodeGopByType:(long long)a0 workReport:(id)a1;
+- (int)getEncodeFpsByType:(long long)a0;
+- (int)writerAudioBitrateByType:(long long)a0 workReport:(id)a1;
+- (float)getLensHDRBitrateRatioByType:(long long)a0 workReport:(id)a1;
+- (BOOL)isTargetSizeNeedChanged;
+- (BOOL)isRecorderBitrateChangeEnabled;
+- (id)acc_transcoderParamDict;
+- (void).cxx_destruct;
+- (id)init;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

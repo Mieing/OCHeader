@@ -1,0 +1,11 @@
+@interface IESLiveLinkmicProfitEggRewardInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long rewardBuffMultiple;
+@property (nonatomic) long long rewardDuration;
+@property (nonatomic) long long rewardBeginRelativeBattleEndTime;
+@property (nonatomic) long long rewardStartTime;
+@property (nonatomic) long long totalRewardScore;
+
++ (id)descriptor;
+
+@end

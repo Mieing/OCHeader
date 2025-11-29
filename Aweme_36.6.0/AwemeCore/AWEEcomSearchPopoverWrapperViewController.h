@@ -1,0 +1,72 @@
+@class UIView, NSString, CALayer, NSDictionary, AWEEcomSearchStateStore, UIPanGestureRecognizer, MASConstraint, UIViewController, AWEEcomSearchViewModel;
+@protocol AWEEcomSearchPopoverWrapperViewControllerDelegate;
+
+@interface AWEEcomSearchPopoverWrapperViewController : UIViewController <UIGestureRecognizerDelegate, CAAnimationDelegate, AWERouterViewControllerProtocol>
+
+@property (retain, nonatomic) UIView *backGroudView;
+@property (retain, nonatomic) UIView *slideView;
+@property (copy, nonatomic) NSDictionary *params;
+@property (retain, nonatomic) UIView *container;
+@property (copy, nonatomic) NSString *url;
+@property (nonatomic) struct CGPoint { double x; double y; } startPoint;
+@property (retain, nonatomic) UIPanGestureRecognizer *pan;
+@property (nonatomic) BOOL isLiveGoodsSearch;
+@property (nonatomic) BOOL isFirstAppear;
+@property (nonatomic) BOOL isFirstFullPage;
+@property (nonatomic) double mulripleScreen;
+@property (retain, nonatomic) MASConstraint *bottomConstraint;
+@property (retain, nonatomic) AWEEcomSearchViewModel *viewModel;
+@property (retain, nonatomic) CALayer *cartAddanimationLayer;
+@property (retain, nonatomic) AWEEcomSearchStateStore *stateStore;
+@property (retain, nonatomic) UIViewController *warperViewController;
+@property (copy, nonatomic) id /* block */ closeViewController;
+@property (weak, nonatomic) id<AWEEcomSearchPopoverWrapperViewControllerDelegate> delegate;
+@property (weak, nonatomic) UIViewController *fromVC;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)configWithRouterParamDict:(id)a0;
+- (void)addPanGR;
+- (void)hostInjectionViewWillDisappear;
+- (void)hostInjectionDidOpenPage;
+- (void)panGestureRecognizerAction;
+- (void)layoutUIIfNeeded;
+- (void)hostInjectionWillClosePage;
+- (void)hostInjectionWillOpenNextPage;
+- (void)hostInjectionPageWillAppearAgain;
+- (void)feedVideoPlay:(BOOL)a0;
+- (void)p_subscriberNoti;
+- (void)subscribeAddToCartEvent;
+- (double)p_halfHeight;
+- (void)clickDismissPopover;
+- (void)updateFullSearchUI;
+- (void)clickBGViewTap;
+- (void)p_publishLynxEvent:(id)a0;
+- (void)setSenvenPageBgConfig;
+- (void)setupSlideViewUI;
+- (void)panGestureRecognizerActionInFullPage:(id)a0;
+- (void)addToCartAnimationWithStartPoint:(struct CGPoint { double x0; double x1; })a0 EndPoint:(struct CGPoint { double x0; double x1; })a1;
+- (void)handleLiveAddToCartNotification:(id)a0;
+- (void)dismissPopoverLiveViewController;
+- (void)dismissPopoverOtherViewController;
+- (BOOL)shouldPanGestureBeRequiredToFailByGestureRecognizer:(id)a0;
+- (id)initLiveWithViewModel:(id)a0;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (id)initWithViewModel:(id)a0;
+- (long long)preferredStatusBarStyle;
+- (void)panGestureRecognizerAction:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)viewWillAppear:(BOOL)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldBeRequiredToFailByGestureRecognizer:(id)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)dismissViewController;
+- (void)setupUI;
+- (id)initWithSchema:(id)a0;
+
+@end

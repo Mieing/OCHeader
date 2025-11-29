@@ -1,0 +1,15 @@
+@class NSString, HTSLiveFlexImageStruct;
+
+@interface HTSLiveGeneralCarnivalMessage_CarnivalDanmakuItem : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *contentColor;
+@property (retain, nonatomic) HTSLiveFlexImageStruct *background;
+@property (nonatomic) BOOL hasBackground;
+@property (nonatomic) long long backgroundHight;
+@property (nonatomic) long long backgroundWidth;
+@property (nonatomic) long long useRate;
+@property (nonatomic) long long fontSize;
+
++ (id)descriptor;
+
+@end

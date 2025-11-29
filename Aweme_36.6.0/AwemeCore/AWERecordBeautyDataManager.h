@@ -1,0 +1,83 @@
+@class AWERecordBeautyDownloaderConfig, NSHashTable, NSString, CKDDManager, NSMutableSet, AWERecordBeautyDataFilterConfig, NSMutableArray, IESEffectPlatformResponseModel;
+@protocol AWERecordBeautyDownloaderProtocol;
+
+@interface AWERecordBeautyDataManager : NSObject <AWERecordBeautyDefaultDownloaderSubscriberProtocol, CKDDSubscriber>
+
+@property (retain, nonatomic) CKDDManager *ddManager;
+@property (retain, nonatomic) id<AWERecordBeautyDownloaderProtocol> downloader;
+@property (retain, nonatomic) NSHashTable *subscribers;
+@property (retain, nonatomic) AWERecordBeautyDataFilterConfig *dataFilterConfig;
+@property (retain, nonatomic) NSMutableSet *notInDefaultStateSet;
+@property (retain, nonatomic) IESEffectPlatformResponseModel *lastResponse;
+@property (retain, nonatomic) IESEffectPlatformResponseModel *preloadResponseCache;
+@property (nonatomic) BOOL didUsePreloadResponseCache;
+@property (retain, nonatomic) NSMutableArray *observers;
+@property (retain, nonatomic) AWERecordBeautyDownloaderConfig *downloaderConfig;
+@property (nonatomic) BOOL isMultipersonStatus;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)p_fillIconURLsForTree:(id)a0 urlPrefixes:(id)a1;
+
+- (id)selectedCategory;
+- (void)reloadBeautyInCamera;
+- (void)removeBeautyFromCamera;
+- (BOOL)isUsingBeauty;
+- (void)turnOnBeauty;
+- (void)turnOffBeauty;
+- (BOOL)isBeautyOn;
+- (id)nodeWithNodeId:(id)a0;
+- (id)appliedItems;
+- (BOOL)isEnableRecordBeautyAddStyleEffectSwitchStatus;
+- (id)allItemModels;
+- (void)resetItemApplyStatusWithNodeIds:(id)a0;
+- (void)applyItemStatuaWithNodeIds:(id)a0;
+- (void)resetItemSelectStatusWithNodeIds:(id)a0;
+- (id)nodeWithResourceId:(id)a0;
+- (id)statusModeOfItem:(id)a0;
+- (void)p_setupDDManager;
+- (void)updateRootNodeWithResponse:(id)a0 dataFilterConfig:(id)a1 didGenerateTreeCallback:(id /* block */)a2 didFinishDownloadAllItemsCallback:(id /* block */)a3;
+- (void)downloadEffectList:(id /* block */)a0 downloadOption:(id)a1;
+- (void)updateRootNode:(id)a0;
+- (void)resetAllBeauty;
+- (void)updateBeautyAvailabilities:(id)a0;
+- (void)p_downloadAllBeautyEffects:(id /* block */)a0;
+- (void)generateTreeFromResponse:(id)a0 dataFilterConfig:(id)a1 completion:(id /* block */)a2;
+- (void)trackerBeautyFetchEffectListWithRootNode:(id)a0 isSucceededStatus:(BOOL)a1 errorMsg:(id)a2;
+- (id)effectIdsWithRootNode:(id)a0;
+- (id)effectNamesWithRootNode:(id)a0;
+- (BOOL)p_isItemInDefaultState:(id)a0;
+- (BOOL)isAllInDefaultState;
+- (void)didDownloadEffects:(id)a0;
+- (void)didRecieve:(id)a0;
+- (id)initWithDownloaderConfig:(id)a0;
+- (void)downloadAndUpdateSourceDataWithConfig:(id)a0 downloadOption:(id)a1 didGenerateTreeCallback:(id /* block */)a2 didUpdateResponseCallback:(id /* block */)a3 didFinishDownloadAllItemsCallback:(id /* block */)a4;
+- (void)updateRootNodeUsingCachedResponseWithDataFilterConfig:(id)a0 didGenerateTreeCallback:(id /* block */)a1 didFinishDownloadAllItemsCallback:(id /* block */)a2;
+- (void)updateRootNodeUsingExistedResponseWithDataFilterConfig:(id)a0 didGenerateTreeCallback:(id /* block */)a1 didFinishDownloadAllItemsCallback:(id /* block */)a2;
+- (void)restoreFromCache:(id)a0;
+- (void)asyncFetchCachedResponse;
+- (id)itemStatusModesOfCategory:(id)a0;
+- (void)selectItem:(id)a0 exposeChildItemNodeIds:(id)a1 isNeedRenderStatus:(BOOL)a2;
+- (void)selectItems:(id)a0 exposeChildItemNodeIds:(id)a1 isNeedRenderStatus:(BOOL)a2;
+- (void)resetNode:(id)a0;
+- (id)performanceTrackInfo;
+- (void)preloadUpdateAllDownloadCompletion;
+- (void)updateItem:(id)a0 Value:(long long)a1;
+- (void)updateItemsWithNotRender:(id)a0;
+- (void)checkDownloadBeautyEffects:(id /* block */)a0;
+- (id)categories;
+- (void).cxx_destruct;
+- (id)init;
+- (id)currentState;
+- (void)removeItems:(id)a0;
+- (id)rootNode;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+- (void)selectItem:(id)a0;
+- (void)selectCollection:(id)a0;
+- (void)updateItems:(id)a0;
+- (void)p_addObservers;
+
+@end

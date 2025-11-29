@@ -1,0 +1,3 @@
+@interface IESLiveGroupLivePlaceHolderView : UIView
+
+@end

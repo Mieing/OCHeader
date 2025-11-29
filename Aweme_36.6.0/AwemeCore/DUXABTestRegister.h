@@ -1,0 +1,3 @@
+@interface DUXABTestRegister : NSObject
+
+@end

@@ -1,0 +1,3 @@
+@interface DUXBaseToolbar : UIToolbar
+
+@end

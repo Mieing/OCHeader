@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface IESLiveTopicModel : IESLiveDynamicModel
+
+@property (copy, nonatomic) NSString *challengeID;
+@property (copy, nonatomic) NSString *challengeName;
+@property (nonatomic) BOOL isCommerce;
+@property (nonatomic) long long source;
+@property (copy, nonatomic) NSString *verticalTagSource;
+
++ (id)traceForSource:(long long)a0;
+
+- (id)sourceForTrace;
+
+@end

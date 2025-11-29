@@ -1,0 +1,3 @@
+@interface AWESearchArticleCommentListViewModel : AWEBaseListViewModel
+
+@end

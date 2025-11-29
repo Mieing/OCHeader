@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface AWEAccountPrivacyTrackManagerAdapter : NSObject <AWEAccountPrivacyTrackManagerAdapter>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)weakTargetClass;
+
+- (BOOL)checkIsDOUYIN;
+- (id)weakTarget;
+
+@end

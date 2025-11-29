@@ -1,0 +1,3 @@
+@interface FlowInstruction.DeepResearchInstructionDataHandler : FlowInstruction.FlowInstructionDataHandler
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface CGPBusinessForwardState : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *stateArray;
+@property (readonly, nonatomic) unsigned long long stateArray_Count;
+
++ (id)descriptor;
+
+@end

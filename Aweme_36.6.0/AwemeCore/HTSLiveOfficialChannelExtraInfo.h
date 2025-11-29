@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveOfficialChannelExtraInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long showStartTs;
+@property (copy, nonatomic) NSString *showlistSchema;
+@property (nonatomic) long long showlistId;
+@property (copy, nonatomic) NSString *showlistName;
+
++ (id)descriptor;
+
+@end

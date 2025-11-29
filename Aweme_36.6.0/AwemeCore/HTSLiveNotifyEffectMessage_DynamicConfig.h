@@ -1,0 +1,9 @@
+@interface HTSLiveNotifyEffectMessage_DynamicConfig : IESLivePBBaseMessage
+
+@property (nonatomic) int stayTime;
+@property (nonatomic) int maxStayTime;
+@property (nonatomic) int displayEffectType;
+
++ (id)descriptor;
+
+@end

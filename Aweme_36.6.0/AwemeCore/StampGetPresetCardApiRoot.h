@@ -1,0 +1,3 @@
+@interface StampGetPresetCardApiRoot : GPBRootObject
+
+@end

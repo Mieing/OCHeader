@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface CGPBusinessAppCrossDisplays : GPBMessage
+
+@property (copy, nonatomic) NSString *packageName;
+@property (copy, nonatomic) NSString *uidFrom;
+@property (copy, nonatomic) NSString *uidTo;
+
++ (id)descriptor;
+
+@end

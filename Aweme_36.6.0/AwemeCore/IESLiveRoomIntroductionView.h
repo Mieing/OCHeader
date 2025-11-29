@@ -1,0 +1,81 @@
+@class UISwitch, IESLiveRoomIntroductionViewModel, UICollectionView, RoomPOISettingView, UILabel, UIViewController, UIButton, UIView, IESLiveRoomIntroFunctionEntryView, NSString, RoomLabelPickerView, UITextView, IESLivePickerView, IESLiveActionSheetPresentViewController, UIImageView;
+@protocol IESLiveTextCorrection, IESLivePOIProtocol;
+
+@interface IESLiveRoomIntroductionView : UIView <UICollectionViewDelegate, UITextViewDelegate, IESLivePickerSheetViewDelegate>
+
+@property (retain, nonatomic) IESLiveRoomIntroductionViewModel *viewModel;
+@property (weak, nonatomic) UIView *contentView;
+@property (weak, nonatomic) UILabel *titleLabel;
+@property (weak, nonatomic) UIView *settingBackgroundView;
+@property (weak, nonatomic) UIImageView *iconImageView;
+@property (weak, nonatomic) UICollectionView *labelCollectionView;
+@property (weak, nonatomic) UITextView *introductionTextView;
+@property (weak, nonatomic) UIButton *saveButton;
+@property (weak, nonatomic) UIView *switchBackgroundView;
+@property (weak, nonatomic) UILabel *switchTitleLabel;
+@property (weak, nonatomic) UISwitch *roomIntroductionSwitch;
+@property (weak, nonatomic) UIView *separatorView;
+@property (weak, nonatomic) UIView *roomIntroductionGuideView;
+@property (weak, nonatomic) UILabel *guideLabel;
+@property (weak, nonatomic) UIImageView *guideImageView;
+@property (weak, nonatomic) IESLivePickerView *pickerView;
+@property (weak, nonatomic) RoomLabelPickerView *labelPickerView;
+@property (weak, nonatomic) UIButton *poiSettingButton;
+@property (weak, nonatomic) RoomPOISettingView *poiSettingView;
+@property (retain, nonatomic) IESLiveRoomIntroFunctionEntryView *announcementEntryView;
+@property (retain, nonatomic) id<IESLiveTextCorrection> textCorrection;
+@property (retain, nonatomic) UIView *poiContainer;
+@property (retain, nonatomic) id<IESLivePOIProtocol> livePOI;
+@property (retain, nonatomic) IESLiveActionSheetPresentViewController *actionPresentor;
+@property (retain, nonatomic) UIViewController *selectLocationVC;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (nonatomic) BOOL dismissFromTap;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)presentWithViewModel:(id)a0 hostVC:(id)a1;
++ (id)presentPopupView:(id)a0 hostVC:(id)a1;
+
+- (void)handleKeyboardHide:(id)a0;
+- (void)saveButtonClick:(id)a0;
+- (void)setupBaseView;
+- (void)setupPickerView;
+- (void)setupGuideView;
+- (void)deleteAction:(id)a0;
+- (void)onPickerViewConfirm:(id)a0;
+- (void)handleKeyboardShow:(id)a0;
+- (void)handleSwitchClick:(id)a0;
+- (void)setupSettingView;
+- (void)setupGuideImage;
+- (void)appendGuideText:(id)a0;
+- (void)renderPOISettingView;
+- (void)trackAnnouncementWithEvent:(id)a0 extra:(id)a1;
+- (void)showAnnouncementSettingView;
+- (void)didClickPOIDetail;
+- (void)updatePOISettingView;
+- (void)labelPickerBackAction:(id)a0;
+- (void)showPOISettingView;
+- (void)showPOIDetailSelectView;
+- (void)poiSettingBackAction:(id)a0;
+- (void)guideImageRequest:(id)a0;
+- (void)switchTaggled:(id)a0;
+- (void)textViewSetAttributedString:(id)a0;
+- (void)uploadShouldToastSuccess:(BOOL)a0;
+- (BOOL)resignFirstResponderIfLegal:(id)a0;
+- (void)showLabelPickerView;
+- (void)hudMaxTextLength;
+- (void).cxx_destruct;
+- (BOOL)textView:(id)a0 shouldInteractWithURL:(id)a1 inRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2 interaction:(long long)a3;
+- (id)initWithViewModel:(id)a0;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)addObserver;
+- (void)submit;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)updateWith:(id)a0;
+
+@end

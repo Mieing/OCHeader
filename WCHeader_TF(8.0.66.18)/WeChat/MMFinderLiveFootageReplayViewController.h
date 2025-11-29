@@ -1,0 +1,70 @@
+@class MMFinderLiveFootageReplayOperationView, NSString, UINavigationController, MMFinderLiveReplayView, NSDictionary, MMFinderLiveTaskId, UIImageView, MMFinderLiveFootageReplayModel, MMUIButton, MMFinderLiveFootageReplayReporter;
+@protocol MMLiveViewControllerDelegate;
+
+@interface MMFinderLiveFootageReplayViewController : MMCPUIViewController <MMFinderLiveReplayOperationViewDelegate, MMLiveTaskMgrExt, MMFinderLiveFootageReplayOperationViewDelegate>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (nonatomic) long long currOrientation;
+@property (retain, nonatomic) MMFinderLiveReplayView *replayView;
+@property (retain, nonatomic) MMFinderLiveFootageReplayOperationView *operationView;
+@property (retain, nonatomic) MMUIButton *backBarButton;
+@property (nonatomic) unsigned int viewStartTime;
+@property (retain, nonatomic) MMFinderLiveFootageReplayModel *footageReplayModel;
+@property (nonatomic) long long lastOrientation;
+@property (copy, nonatomic) id /* block */ waitingPortraitBlock;
+@property (retain, nonatomic) MMFinderLiveFootageReplayReporter *footageReplayReporter;
+@property (nonatomic) unsigned long long seekFromMediaTimeInMilliseconds;
+@property (nonatomic) BOOL replayStartReported;
+@property (weak, nonatomic) id<MMLiveViewControllerDelegate> delegate;
+@property (weak, nonatomic) UINavigationController *navControl;
+@property (retain, nonatomic) NSDictionary *reportExtraInfo;
+@property (retain, nonatomic) UIImageView *blurView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0 footageReplayModel:(id)a1;
+- (void)registerExtension;
+- (void)unRegisterExtension;
+- (void)enterLive;
+- (void)viewWillAppear:(BOOL)a0;
+- (BOOL)useBlackStatusbar;
+- (long long)preferredStatusBarStyle;
+- (BOOL)shouldInteractivePop;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillBePushed:(BOOL)a0;
+- (void)viewWillBePoped:(BOOL)a0;
+- (void)viewDidBePoped:(BOOL)a0;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)layoutUI;
+- (void)layoutOperationView;
+- (void)updateReplayOperationViewFrame;
+- (void)layoutBackBarButton;
+- (void)layoutReplayView;
+- (void)layoutBlurView;
+- (void)initData;
+- (void)exitAndClearLive;
+- (void)checkScreenCaptureState;
+- (void)performBlockAfterOrientationPortrait:(id /* block */)a0;
+- (void)performBlockAfterPortrait;
+- (void)clearCurrentBlock;
+- (void)checkAndHandleUIOrientationChange;
+- (void)onMMLiveFullScreenTaped;
+- (void)onMMLiveReplayVideoSizeChange:(struct CGSize { double x0; double x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })onFootageReplayVideoFrameRequested;
+- (void)onFootageReplayOrientationButtonTapped;
+- (void)onFootageReplayPaused;
+- (void)onFootageReplaySeekBegan;
+- (void)onFootageReplaySeekEndAtMediaTime:(double)a0;
+- (void)onFootageReplayGetVideoSize:(struct CGSize { double x0; double x1; })a0;
+- (void)onFootageReplayReportCommentWithSequenceId:(unsigned long long)a0 frameId:(id)a1;
+- (void)close;
+- (id)liveTask;
+- (void)onDoneButtonClicked;
+- (void)didChangeScreenCapture:(id)a0;
+- (void)onBecomeActive;
+- (void).cxx_destruct;
+
+@end

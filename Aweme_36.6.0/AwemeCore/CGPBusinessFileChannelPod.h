@@ -1,0 +1,11 @@
+@class CGPBusinessFileChannelPod_Carries;
+
+@interface CGPBusinessFileChannelPod : GPBMessage
+
+@property (nonatomic) int action;
+@property (retain, nonatomic) CGPBusinessFileChannelPod_Carries *carries;
+@property (nonatomic) BOOL hasCarries;
+
++ (id)descriptor;
+
+@end

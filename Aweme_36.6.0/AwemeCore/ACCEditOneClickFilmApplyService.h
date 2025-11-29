@@ -1,0 +1,72 @@
+@class UIView, NSString, ACCEditOneClickFilmApplyTask, ACCCameraSubscription, AWEVideoPublishViewModel, NSMutableDictionary, AWEBinding, NSMutableArray, ACCRepoEditorOneClickFilmingModel;
+@protocol ACCEditOneClickFilmTrackService, ACCEditOneClickFilmPanelServiceProtocol, IESServiceProvider, ACCLoadingViewProtocol, ACCEditorOneClickFilmingViewModelProtocol, ACCEditOneClickFilmDownLoadService, ACCEditorRecoverServiceProtocol, ACCEditorOneClickFilmingApplyDiffService, ACCEditorOneClickFilmService, AWEStudioEditMusicFeaturePublicAPI, ACCEditClipV1ServiceProtocol, ACCSequenceEditServiceProtocol, ACCEditMusicComponentServiceProtocol, ACCEditServiceProtocol;
+
+@interface ACCEditOneClickFilmApplyService : NSObject <ACCEditOneClickFilmApplyTaskDelegation, ACCEditOneClickFilmDownLoadServiceSubscriber, ACCEditOneClickFilmApplyServiceProtocol>
+
+@property (weak, nonatomic) id<IESServiceProvider> serviceProvider;
+@property (weak, nonatomic) AWEVideoPublishViewModel *repository;
+@property (weak, nonatomic) id<ACCEditOneClickFilmDownLoadService> oneDownloadService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmService> oneClickFilmService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmingViewModelProtocol> oneClickViewModel;
+@property (weak, nonatomic) id<ACCEditOneClickFilmTrackService> trackService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCEditorOneClickFilmingApplyDiffService> oneClickFilmingApplyDiffService;
+@property (weak, nonatomic) id<ACCEditorRecoverServiceProtocol> recoverService;
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<AWEStudioEditMusicFeaturePublicAPI> musicFeatureAPI;
+@property (weak, nonatomic) id<ACCEditMusicComponentServiceProtocol> musicComponent;
+@property (weak, nonatomic) id<ACCEditClipV1ServiceProtocol> clipService;
+@property (weak, nonatomic) id<ACCEditOneClickFilmPanelServiceProtocol> oneClickFilmPanelService;
+@property (readonly, nonatomic) ACCRepoEditorOneClickFilmingModel *repoOneClickFilmModel;
+@property (retain, nonatomic) UIView<ACCLoadingViewProtocol> *loadingView;
+@property (retain, nonatomic) ACCCameraSubscription *subscription;
+@property (retain, nonatomic) NSMutableArray *tasks;
+@property (retain, nonatomic) ACCEditOneClickFilmApplyTask *latestTask;
+@property (retain, nonatomic) NSMutableDictionary *downloadStartDictionary;
+@property (retain, nonatomic) NSMutableDictionary *downloadEndDictionary;
+@property (retain, nonatomic) NSMutableDictionary *preloadStartDictionary;
+@property (retain, nonatomic) NSMutableDictionary *preloadEndDictionary;
+@property (nonatomic) BOOL hasAppeared;
+@property (copy, nonatomic) NSString *lastCalledAppliedTemplateId;
+@property (retain, nonatomic) AWEBinding *userSelectNoneSignal;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL disableShowAIGCLoadingView;
+
+- (void)downloadService:(id)a0 didBeginDownloadDataModel:(id)a1;
+- (void)downloadService:(id)a0 dataModel:(id)a1 downloadProgressChange:(double)a2;
+- (void)downloadService:(id)a0 didFinishDownloadDataModel:(id)a1;
+- (void)downloadService:(id)a0 didFailDownloadDataModel:(id)a1 withError:(id)a2;
+- (id)initWithServiceProvider:(id)a0 repository:(id)a1;
+- (void)handleRemoveAppliedTemplateIfNeededWithSource:(unsigned long long)a0;
+- (void)removeTemplateAndCommit:(id)a0 shouldRender:(BOOL)a1 needDistribution:(BOOL)a2 isPureRemoveScene:(BOOL)a3;
+- (id)generateTaskWithTemplate:(id)a0;
+- (void)appendPredownloadTaskIfNeeded:(id)a0;
+- (void)appendApplyTemplateTask:(id)a0;
+- (void)injectViewModel:(id)a0;
+- (void)updateCanvasWithPublishModel:(id)a0 shouldDoStickersRecover:(BOOL)a1 shouldRemoveEmbeddedSticker:(BOOL)a2;
+- (void)updateCanvasStickerForTemplateEditSlot;
+- (void)willRecoverTemplateWhenCancel:(id)a0;
+- (void)trackRemoveTemplateModel:(id)a0;
+- (void)trackerWillBeginApplyTemplate;
+- (void)monitorFluencyForApplyEffectWithParams:(id)a0 lastTemplateID:(id)a1;
+- (id)p_getCurrentTemplateModel;
+- (void)startTrack:(id)a0;
+- (void)handleTask:(id)a0 progress:(unsigned long long)a1;
+- (void)trackerAddTimestampForDidBeginDownload;
+- (void)trackerAddTimestampForDidFinishDownload:(id)a0;
+- (void)realApplyTemplate:(id)a0 forbidPlay:(BOOL)a1 completion:(id /* block */)a2;
+- (void)trackerApplyFailure:(id)a0 errorCode:(long long)a1 errorDesc:(id)a2;
+- (void)task:(id)a0 progress:(unsigned long long)a1;
+- (void)task:(id)a0 completion:(unsigned long long)a1 error:(id)a2;
+- (void)trackDownLoadFailedModel:(id)a0 withError:(id)a1;
+- (void)trackerApplySuccess:(id)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)addSubscriber:(id)a0;
+- (void)removeSubscriber:(id)a0;
+- (void)cancelAllTasks;
+
+@end

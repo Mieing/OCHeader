@@ -1,0 +1,85 @@
+@class NSString, UIImageView, UILabel, UIView, AWEIMComponentManager;
+@protocol AWEIMMessageVisibleCellInterface, AWEIMTopAnchorHeightOffsetProvider, IESIMThreadUnreadTipsInterface, AWEIMMessageTableViewInterface, AWEIMTopUnReadTipsInterface, IESIMBadgeProtocol, AWEIMMessageListDataInterface, AWEIMMessageReadIndexInterface, AWEIMAirBorneTipInterface, IESIMMultiTopFloatingTipsService, AWEIMImportantMsgTipsInterface;
+
+@interface AWEIMTopAnchorComponent : AWEIMComponentBase <AWEIMComponentContainer, AWEIMComponentManagerDependency, AWEIMMessageTableViewAction, AWEIMMessageListDataAction, AWEIMTopAnchorInterface, AWEIMTopUnReadTipsAction, AWEIMImportantMsgTipsAction, AWEIMAirBorneTipAction, AWEIMMessageBaseVCLayoutAction, IESIMThreadUnreadTipsAction, IESIMConversationCleanAllMessageAction, IESIMMultiTopFloatingTipsStateAction>
+
+@property (nonatomic) long long anchorType;
+@property (nonatomic) double containerRightPadding;
+@property (nonatomic) double multiTopFloatingCollectionViewHeight;
+@property (retain, nonatomic) UIImageView *iconImageView;
+@property (retain, nonatomic) UILabel *tipsLabel;
+@property (retain, nonatomic) UIView *tipsContainer;
+@property (retain, nonatomic) UIImageView *detailImageView;
+@property (retain, nonatomic) UIView<IESIMBadgeProtocol> *redDot;
+@property (nonatomic) BOOL isFinishedInitialize;
+@property (nonatomic) BOOL isHiddingTips;
+@property (nonatomic) BOOL hasOnceTappedTips;
+@property (nonatomic) BOOL didCloseTips;
+@property (nonatomic) long long unreadCountInitial;
+@property (weak, nonatomic) id<AWEIMMessageListDataInterface> messageListData;
+@property (weak, nonatomic) id<AWEIMMessageTableViewInterface> tableViewService;
+@property (weak, nonatomic) id<AWEIMAirBorneTipInterface> airbornTips;
+@property (weak, nonatomic) id<AWEIMImportantMsgTipsInterface> importantMsgTips;
+@property (weak, nonatomic) id<AWEIMMessageVisibleCellInterface> visibleCellService;
+@property (weak, nonatomic) id<AWEIMTopUnReadTipsInterface> topUnReadTips;
+@property (weak, nonatomic) id<AWEIMMessageReadIndexInterface> readIndexService;
+@property (weak, nonatomic) id<AWEIMTopAnchorHeightOffsetProvider> offsetProvider;
+@property (weak, nonatomic) id<IESIMThreadUnreadTipsInterface> threadUnreadTips;
+@property (weak, nonatomic) id<IESIMMultiTopFloatingTipsService> topFloatingTips;
+@property (retain, nonatomic) AWEIMComponentManager *componentManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)componentWithContext:(id)a0;
++ (BOOL)canCreateComponentWithContext:(id)a0;
+
+- (id)componentContext;
+- (id)componentsNameArrayWithContext:(id)a0;
+- (void)afterFirstScreenDataInitialize;
+- (void)afterInitialComponentAllResolved:(id)a0;
+- (void)componentDidMounted:(id)a0;
+- (void)viewWillAnimateAlongsideTransitionToSizeWith:(struct CGSize { double x0; double x1; })a0;
+- (void)IMMessageBaseViewControllerDidUpdateLayout;
+- (void)tableViewAllDidEndScroll:(id)a0;
+- (void)updateMultiTopFloatingExpandingState;
+- (void)updateMultiTopFloatingFoldingState;
+- (void)updateMultiTopFloatingCollectionViewHeight:(id)a0;
+- (void)updateTitleText:(id)a0;
+- (void)showTips;
+- (void)hideTips;
+- (void)updateIconImageView:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 rotationAngle:(double)a2;
+- (void)updateDetailImageView:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)updateUnreadDot:(long long)a0;
+- (BOOL)isDisplayingBubble;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })topAnchorFrame;
+- (void)selectTipsToShow;
+- (void)registerAnchorHeightOffsetProvider:(id)a0;
+- (void)unregisterAnchorHeightOffsetProvider:(id)a0;
+- (void)willShowThreadWithTitle;
+- (void)willThreadTipsHide;
+- (void)historyUnReadMessageDidFinishReading;
+- (void)unReadTipsDidUpdate:(id)a0 unreadCount:(long long)a1;
+- (void)willShowImportMsgTips:(id)a0 unReadCount:(long long)a1;
+- (void)willHideImportMsgTipsWithBeforeMessageCount:(long long)a0;
+- (void)willHideAndResetImportMsgTips;
+- (void)closeImportMsgTipsWithoutAnimation;
+- (void)willShowAirBorneWithTitle:(id)a0;
+- (void)didCleanAllMessages;
+- (void)layoutTip;
+- (void)layoutTipsContainer;
+- (void)track_tipShow;
+- (void)didFinishInitializeMessages;
+- (void)track_tipClickWithDuration:(double)a0 success:(BOOL)a1 ext:(id)a2;
+- (void)updateTipsHeight;
+- (void)p_layoutTipsContainerByTopFloatingTips;
+- (double)p_getContainerWidth;
+- (double)__bubbleYOrigin;
+- (void)p_handleTipsHide;
+- (void)tapOnTips:(id)a0;
+- (id)track_tipShowParams;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+
+@end

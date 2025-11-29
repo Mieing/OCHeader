@@ -1,0 +1,12 @@
+@interface HTSLiveBasketBallGoalStageDetail : IESLivePBBaseMessage
+
+@property (nonatomic) int firstPeriod;
+@property (nonatomic) int secondPeriod;
+@property (nonatomic) int thirdPeriod;
+@property (nonatomic) int forthPeriod;
+@property (nonatomic) int overtime;
+@property (nonatomic) int total;
+
++ (id)descriptor;
+
+@end

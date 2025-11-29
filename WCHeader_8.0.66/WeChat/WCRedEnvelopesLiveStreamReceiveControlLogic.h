@@ -1,0 +1,82 @@
+@class EmojiInfoObj, WCPayInterceptWinLogic, UIView, NSString, InterceptWin, WCPayJumpRemindControlLogic, WCPayComplianceHalfPage, WCRedEnvelopesReceiveHomeView, WCRedEnvelopesAtmospherePagView;
+@protocol WCRedEnvelopesLiveStreamReceiveControlLogicDelegate;
+
+@interface WCRedEnvelopesLiveStreamReceiveControlLogic : WCRedEnvelopesControlLogic <IStoreEmotionSingleDownloadMgrExt, WCRedEnvGetPacketStoryCgiDelegate, WCRedEnvGetSplitRedCoverCgiDelegate, WCBaseControlLogicDeleagte, WCBaseControlMgrExt, WCRedEnvelopesReceiveHomeViewDelegate, WCRedEnvelopesRedEnvelopesDetailViewControllerDelegate> {
+    int m_scene;
+}
+
+@property (retain, nonatomic) WCRedEnvelopesReceiveHomeView *introView;
+@property (retain, nonatomic) WCPayJumpRemindControlLogic *m_jumpRemindControlLogic;
+@property (retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic;
+@property (nonatomic) BOOL bHasStartDownloadEmoticon;
+@property (retain, nonatomic) EmojiInfoObj *emojiInfoObj;
+@property (retain, nonatomic) InterceptWin *intercept_win_after;
+@property (nonatomic) BOOL m_bIsOpening;
+@property (nonatomic) WCPayComplianceHalfPage *complianceHalfPage;
+@property (retain, nonatomic) WCRedEnvelopesAtmospherePagView *atmospherePagView;
+@property (retain, nonatomic) UIView *redEnvelopesDetailView;
+@property (nonatomic) BOOL isDetailPagHasPlay;
+@property (weak, nonatomic) id<WCRedEnvelopesLiveStreamReceiveControlLogicDelegate> m_delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)openWxHbRequestForRetry;
+- (void)setOpenWxHbRequestForRetry:(id)a0;
+- (id)initWithData:(id)a0 Scene:(int)a1;
+- (void)startLogic;
+- (BOOL)shouldShowAtmospherePagView:(id)a0;
+- (BOOL)shouldShowAtmospherePagView;
+- (BOOL)shouldShowAtmospherePagViewAtDetailView;
+- (void)startGetSplitRedCoverFromMsgData;
+- (void)onGetSplitRedCoverCgiResp:(id)a0;
+- (void)startGetStoryInfoFromMsgData;
+- (void)startGetStoryInfoWithPacketId:(id)a0;
+- (void)onGetRedEnvPacketStoryCgiRespOK:(id)a0 isFromServer:(BOOL)a1;
+- (void)updateStoryAutoplayConfig:(id)a0 isFromServer:(BOOL)a1;
+- (void)onGetRedEnvPacketStoryCgiError:(id)a0 errorCode:(unsigned int)a1;
+- (void)startDownloadStoryInfoResource:(id)a0 subtypeId:(unsigned int)a1;
+- (void)startLoading;
+- (void)QueryRedEnvelopesDetailRequest:(id)a0;
+- (void)ReceiverQueryRedEnvelopesRequest:(id)a0;
+- (void)WCRedEnvelopesReceiveHomeViewBack;
+- (void)WCRedEnvelopesReceiveHomeViewOpenRedEnvelopes;
+- (void)WCRedEnvelopesReceiveHomeViewOpenRedEnvelopes:(id)a0;
+- (void)retryOpenRedEnvelopesRequest;
+- (void)OpenRedEnvelopesRequest:(id)a0;
+- (void)reportReceiveHomeViewEmoticon;
+- (void)startDownloadEmoticonFromMsgData;
+- (void)startDownloadEmoticonWithEmoticonMd5:(id)a0;
+- (void)onSingleEmotionDownloadOkWithWrap:(id)a0 imageData:(id)a1;
+- (void)onSingleEmotionDownloadFailedWithMd5:(id)a0;
+- (void)onErrorAlertViewDismiss:(id)a0;
+- (unsigned int)openRetryCount;
+- (void)setOpenRetryCount:(unsigned int)a0;
+- (void)OnOpenRedEnvelopesRequest:(id)a0 Error:(id)a1;
+- (void)OnContinueOpenRedEnvelopesRequest:(id)a0;
+- (void)playDetailPag;
+- (void)showDetailView;
+- (void)closeAnimationWindowAndShowDetailView:(id)a0;
+- (void)OnReceiverQueryRedEnvelopesRequest:(id)a0 Error:(id)a1;
+- (BOOL)isRedEnvelopesReallyTimeOut:(unsigned long long)a0 messageWrap:(id)a1;
+- (void)OnQueryRedEnvelopesDetailRequest:(id)a0 Error:(id)a1;
+- (BOOL)WCRedEnvelopesRedEnvelopesDetailViewControllerBackBlock;
+- (void)WCRedEnvelopesRedEnvelopesDetailViewControllerBack;
+- (BOOL)HasMoreDetailList;
+- (void)OnLoadMoreRedEnvelopesList;
+- (void)OnCommitWCRedEnvelopes:(id)a0;
+- (void)OnGoToBalanceDetail;
+- (void)OnGoToLqtDetail;
+- (void)OnGoToLqtDetail:(id)a0;
+- (void)OnGotoLqtSave:(id)a0 operateId:(id)a1;
+- (void)onRealnameActionClick:(id)a0;
+- (void)WCRedEnvelopesReceiveHomeViewOpenList;
+- (void)WCRedEnvelopesRedEnvelopesDetailViewControllerBeginDragging;
+- (void)WCRedEnvelopesRedEnvelopesDetailViewControllerViewWillBePop;
+- (id)getBizDisplayWindow;
+- (void)closeIntroView;
+- (void)WCRedEnvelopesRedEnvelopesDetailViewControllerCheckShowAtmospherePagView;
+- (void).cxx_destruct;
+
+@end

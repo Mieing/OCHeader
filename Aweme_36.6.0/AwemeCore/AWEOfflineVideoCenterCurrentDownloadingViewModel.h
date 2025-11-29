@@ -1,0 +1,3 @@
+@interface AWEOfflineVideoCenterCurrentDownloadingViewModel : AWEBaseListViewModel
+
+@end

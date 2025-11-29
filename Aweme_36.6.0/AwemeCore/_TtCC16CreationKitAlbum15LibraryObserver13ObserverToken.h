@@ -1,0 +1,6 @@
+@interface _TtCC16CreationKitAlbum15LibraryObserver13ObserverToken : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ observer;
+    void /* unknown type, empty encoding */ library;
+}
+
+@end

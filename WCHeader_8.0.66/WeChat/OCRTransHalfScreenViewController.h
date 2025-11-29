@@ -1,0 +1,85 @@
+@class MMUIButton, NSString, UIView, UIImage, UIImageView, OCRTransPanGestureAnimationElement, WSTemplateLogicController, WSWebViewPluginScheduler, OCRTransJSHandler, UILabel, OCRTransZoomableScrollView;
+@protocol OCRTransHalfScreenViewControllerDelegate;
+
+@interface OCRTransHalfScreenViewController : MMUIHalfScreenViewController <ZoomingScrollViewDelegate, UIGestureRecognizerDelegate, IMMImageDetectOCRServiceExt, WSWebViewPluginableProtocol> {
+    WSTemplateLogicController *m_logicController;
+    OCRTransJSHandler *m_jsHandler;
+    BOOL _hasAddObservers;
+    BOOL _isBeDismissed;
+    BOOL _bInNodifyViewTopChanging;
+    unsigned int _notifyViewTopChangeCount;
+}
+
+@property (nonatomic) unsigned long long contextSessionID;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } imageViewMaximizedFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } imageViewMinimizedFrame;
+@property (retain, nonatomic) OCRTransZoomableScrollView *scrollView;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) MMUIButton *crossCloseBtn;
+@property (retain, nonatomic) NSString *titleBeforeLabelShow;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIView *dividingView;
+@property (retain, nonatomic) MMUIButton *zoomButton;
+@property (retain, nonatomic) NSString *reqKey;
+@property (nonatomic) long long ocrResultType;
+@property (nonatomic) unsigned int reportZoomType;
+@property (retain, nonatomic) OCRTransPanGestureAnimationElement *animationElement;
+@property (weak, nonatomic) id<OCRTransHalfScreenViewControllerDelegate> delegate;
+@property (retain, nonatomic) UIImage *sourceImage;
+@property (retain, nonatomic) NSString *senderUserName;
+@property (nonatomic) double safeAreaInsetBottom;
+@property (nonatomic) BOOL shouldShowScrollView;
+@property (nonatomic) unsigned int svrScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) WSWebViewPluginScheduler *pluginScheduler;
+
+- (id)init;
+- (void)dealloc;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (BOOL)shouldHideNavigationBar;
+- (void)layoutTopViewSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x0; double x1; })a0 withTransitionCoordinator:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewDidBePresented:(BOOL)a0;
+- (void)viewWillBeDismissed:(BOOL)a0;
+- (void)viewDidBeDismissed:(BOOL)a0;
+- (id)pathForTestTemplate;
+- (void)startImageUploadAndDetect:(id)a0;
+- (void)cancelImageUploadAndDetect;
+- (void)initView;
+- (void)handlePanGesture:(id)a0;
+- (void)resumeBeforePanGesture:(double)a0;
+- (void)disableWebViewLongPressGesture;
+- (BOOL)hidesStatusBar;
+- (void)handleTopViewTapGesture:(id)a0;
+- (void)onCrossCloseBtnClicked;
+- (void)onSwipClose;
+- (void)setHalfScreenTitle:(id)a0;
+- (void)updateZoomButton;
+- (void)doImageOCRZoomTypeReport;
+- (void)onZoomButtonClicked;
+- (void)onZoomingScrollViewDoubleTap;
+- (void)onZoomingScrollViewZoomChanged;
+- (void)setupAnimateTransitionBlocks;
+- (void)notifyContentViewTopChangeEventStartY:(double)a0 endY:(double)a1 timeOnce:(double)a2 repeatCount:(unsigned int)a3;
+- (BOOL)needCloseOnOrientationChanged;
+- (void)setScrollViewAndImageViewMaximizedFrame;
+- (void)setScrollViewAndImageViewMinimizedFrame;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (id)viewForZoomingInScrollView:(id)a0;
+- (void)scrollViewDidZoom:(id)a0;
+- (void)onLongPressGesture:(id)a0;
+- (void)onImageDetectUploadFinish:(unsigned int)a0 context:(id)a1 detectMediaInfo:(id)a2;
+- (void)onImageDetectOCRFinish:(id)a0 resultType:(unsigned int)a1 jsonStr:(id)a2 reqKey:(id)a3 ocrResultType:(long long)a4;
+- (id)getCurViewController;
+- (id)getLocalJSLogic;
+- (unsigned long long)localJSBizType;
+- (void)setHalfScreenHeight:(double)a0;
+- (void).cxx_destruct;
+
+@end

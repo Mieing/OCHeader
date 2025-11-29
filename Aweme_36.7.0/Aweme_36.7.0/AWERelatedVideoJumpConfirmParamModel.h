@@ -1,0 +1,25 @@
+@class NSString, AWEURLModel;
+
+@interface AWERelatedVideoJumpConfirmParamModel : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+@property (copy, nonatomic) NSString *checkBoxTitle;
+@property (copy, nonatomic) NSString *stayButtonTitle;
+@property (copy, nonatomic) NSString *jumpButtonTitle;
+@property (nonatomic) long long enableReplayCount;
+@property (nonatomic) long long showFrequentDay;
+@property (retain, nonatomic) AWEURLModel *videoPicture;
+@property (retain, nonatomic) AWEURLModel *groundPicture;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)videoPictureJSONTransformer;
++ (id)groundPictureJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

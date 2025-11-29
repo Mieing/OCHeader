@@ -1,0 +1,96 @@
+@class NSString, NSDictionary, BDXVideoPlayerVideoModel, NSMutableArray, NSNumber;
+
+@interface BDXLynxVideoView : LynxUI <BDXVideoPlayerDelegate>
+
+@property (class, copy, nonatomic) Class videoCorePlayerClazz;
+@property (class, copy, nonatomic) Class videoModelConverterClz;
+@property (class, copy, nonatomic) Class fullScreenPlayerClz;
+
+@property (retain, nonatomic) NSDictionary *paramsDict;
+@property (retain, nonatomic) BDXVideoPlayerVideoModel *videoModel;
+@property (retain, nonatomic) NSMutableArray *childrenView;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic) double seekTime;
+@property (nonatomic) BOOL needReplay;
+@property (nonatomic) BOOL autoPlay;
+@property (nonatomic) BOOL mute;
+@property (nonatomic) BOOL isLoop;
+@property (nonatomic) BOOL useSinglePlayer;
+@property (nonatomic) BOOL needPreload;
+@property (nonatomic) BOOL autoLifecycle;
+@property (nonatomic) BOOL listenDeviceChange;
+@property (retain, nonatomic) NSNumber *startTime;
+@property (retain, nonatomic) NSNumber *volume;
+@property (retain, nonatomic) NSNumber *rate;
+@property (copy, nonatomic) NSString *posterURL;
+@property (copy, nonatomic) NSString *fitMode;
+@property (copy, nonatomic) NSString *control;
+@property (copy, nonatomic) NSDictionary *logExtraDict;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)lynxLazyLoad;
++ (id)__lynx_prop_config__1051;
++ (id)__lynx_prop_config__1634;
++ (id)__lynx_prop_config__1212;
++ (id)__lynx_prop_config__1573;
++ (id)__lynx_prop_config__1695;
++ (id)__lynx_prop_config__1756;
++ (id)__lynx_prop_config__1817;
++ (id)__lynx_prop_config__1878;
++ (id)__lynx_prop_config__1989;
++ (id)__lynx_prop_config__20410;
++ (id)__lynx_prop_config__21011;
++ (id)__lynx_prop_config__21812;
++ (id)__lynx_prop_config__22413;
++ (id)__lynx_prop_config__23014;
++ (id)__lynx_prop_config__23515;
++ (id)__lynx_ui_method_config__24416;
+
+- (void)layoutDidFinished;
+- (void)onListCellDisappear:(id)a0 exist:(BOOL)a1 withList:(id)a2;
+- (void)fitMode:(id)a0 requestReset:(BOOL)a1;
+- (void)setRepeat:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)onListCellPrepareForReuse:(id)a0 withList:(id)a1;
+- (void)onListCellAppear:(id)a0 withList:(id)a1;
+- (void)didError:(id)a0;
+- (void)didTimeUpdate:(id)a0;
+- (void)didFullscreenChange:(id)a0;
+- (void)didBufferChange;
+- (void)didBufferChangeWithInfo:(id)a0;
+- (void)didDeviceChange:(id)a0;
+- (void)didSeek:(double)a0;
+- (void)didStateChange:(id)a0;
+- (void)fetchByResourceManager:(id)a0 completionHandler:(id /* block */)a1;
+- (void)volume:(id)a0 requestReset:(BOOL)a1;
+- (void)mute:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)posterURL:(id)a0 requestReset:(BOOL)a1;
+- (void)autoPlay:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)__setupVideoModel:(id)a0;
+- (id)__resolveSrcAsJSON:(id)a0;
+- (id)__resolveSrcAsSchema:(id)a0;
+- (void)__controlPlayerWithCommand:(id)a0;
+- (void)preload:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)rate:(id)a0 requestReset:(BOOL)a1;
+- (void)getDuration:(id)a0 withResult:(id /* block */)a1;
+- (void)schema:(id)a0 requestReset:(BOOL)a1;
+- (id)__resolveSrcAsUrl:(id)a0;
+- (id)formatLogExtraDict:(id)a0;
+- (void)logExtraDict:(id)a0 requestReset:(BOOL)a1;
+- (void)startTime:(id)a0 requestReset:(BOOL)a1;
+- (void)autoLifecycle:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)useSinglePlayer:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)listenDeviceChange:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)control:(id)a0 requestReset:(BOOL)a1;
+- (void).cxx_destruct;
+- (id)init;
+- (void)didEnd;
+- (void)didError;
+- (id)createView;
+- (BOOL)hasCustomLayout;
+- (void)didPause;
+- (void)didPlay;
+
+@end

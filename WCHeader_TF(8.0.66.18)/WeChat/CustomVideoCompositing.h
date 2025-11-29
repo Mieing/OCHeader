@@ -1,0 +1,70 @@
+@class AVVideoCompositionRenderContext, CIContext, MMContext, WCPIPVideoFrame, CADisplayLink, NSDictionary, NSString, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface CustomVideoCompositing : NSObject <AVVideoCompositing>
+
+@property (retain, nonatomic) MMContext *context;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *renderingQueue;
+@property (nonatomic) BOOL shouldCancelAllRequests;
+@property (nonatomic) BOOL isRenderContextChanged;
+@property (retain, nonatomic) AVVideoCompositionRenderContext *renderContext;
+@property (retain, nonatomic) CIContext *ciContext;
+@property (retain, nonatomic) WCPIPVideoFrame *emptyVideoFrame;
+@property (retain, nonatomic) NSMutableArray *compositionRequestList;
+@property (nonatomic) BOOL isInAutoRefreshMode;
+@property (retain, nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) BOOL isDefaultPixelTimeToRefresh;
+@property (nonatomic) unsigned long long lastPIPRenderTime;
+@property (retain, nonatomic) NSDictionary *sourcePixelBufferAttributes;
+@property (retain, nonatomic) NSDictionary *requiredPixelBufferAttributesForRenderContext;
+@property (readonly, nonatomic) BOOL supportsWideColorSourceFrames;
+@property (readonly, nonatomic) BOOL supportsHDRSourceFrames;
+@property (readonly, nonatomic) BOOL canConformColorOfSourceFrames;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)registerExtension;
+- (void)initNotifications;
+- (void)renderContextChanged:(id)a0;
+- (void)startVideoCompositionRequest:(id)a0;
+- (void)cancelAllPendingVideoCompositionRequests;
+- (void)defaultHandleVideoCompositionRequest:(id)a0;
+- (void)handleVideoCompositionRequest:(id)a0;
+- (void)finishVideoCompositionRequest:(id)a0 withPixelBuffer:(struct __CVBuffer { } *)a1;
+- (struct __CVBuffer { } *)applyPixelBuffer:(struct __CVBuffer { } *)a0 renderContext:(id)a1;
+- (id)createFitFrameImageWithRenderSize:(struct CGSize { double x0; double x1; })a0;
+- (id)createRenderImageWithVideoFrame:(id)a0 attachRender:(id)a1 renderSize:(struct CGSize { double x0; double x1; })a2;
+- (id)createRenderImageWithAttachWidget:(id)a0 renderSize:(struct CGSize { double x0; double x1; })a1;
+- (id)getAspectedImage:(id)a0 withRenderObj:(id)a1 renderSize:(struct CGSize { double x0; double x1; })a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getDisplayRectWithNormalizedFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 renderSize:(struct CGSize { double x0; double x1; })a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })transferNormalizedFrameFromCGModeToCIMode:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)getAspectedBackImage:(struct CGSize { double x0; double x1; })a0;
+- (id)getAspectedMaskImage:(id)a0 renderSize:(struct CGSize { double x0; double x1; })a1;
+- (id)getBlendedImageWithInputImage:(id)a0 inputBackgroundImage:(id)a1 maskImage:(id)a2;
+- (struct __CVBuffer { } *)newRenderdPixelBufferForRequest:(id)a0;
+- (void)onCustomPixelBufferRenderCompleted;
+- (struct __CVBuffer { } *)createEmptyPixelBuffer;
+- (void)clearEmptyVideoFrame;
+- (void)startAutoRefreshPixelBuffer;
+- (void)startAutoRefreshDisplayLink;
+- (void)stopAutoRefreshPixelBuffer;
+- (void)stopAutoRefreshDisplayLink;
+- (id)createCIContext;
+- (BOOL)checkEnableHandleCompositionRequest;
+- (void)onNewPixelBufferRefresh;
+- (void)onAttachWidgetsChange;
+- (void)finishVideoCompositionRequest;
+- (void)onStartCustomPixelTransferChange;
+- (void)directlyHandleCurrentVideoCompositionRequest;
+- (void)onEnableDisplayVideoSrcChange:(BOOL)a0;
+- (void)refreshWithDisplayLink:(id)a0;
+- (void)willEnterForeground:(id)a0;
+- (void)didEnterBackground:(id)a0;
+- (void)logForLastPIPRenderTime:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

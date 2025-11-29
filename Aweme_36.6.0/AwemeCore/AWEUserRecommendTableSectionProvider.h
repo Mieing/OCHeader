@@ -1,0 +1,74 @@
+@class NSString, NSSet;
+@protocol AWEUserRecommendTableSectionProviderDataSource, AWEUserRecommendTableViewModelProtocol;
+
+@interface AWEUserRecommendTableSectionProvider : NSObject <AWEUserRecommendTableViewModelDelegate, CAAnimationDelegate, AWEUserRecommendTableSectionProviderProtocol>
+
+@property (retain, nonatomic) id<AWEUserRecommendTableViewModelProtocol> viewModel;
+@property (nonatomic) BOOL viewControllerVisible;
+@property (nonatomic) long long dataState;
+@property (nonatomic) BOOL isEmpty;
+@property (weak, nonatomic) id<AWEUserRecommendTableSectionProviderDataSource> dataSource;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL showsHeader;
+@property (nonatomic) BOOL showsFooterWhenEmpty;
+@property (copy, nonatomic) NSSet *userIDsToFilter;
+
+- (void)loadMoreWithCompletion:(id /* block */)a0;
+- (void)didEndDisplayingCell:(id)a0;
+- (void)setUserIDsToFilter:(id)a0 filterExisting:(BOOL)a1;
+- (void)trackListStartRefreshing;
+- (void)trackListStartLoadingMore;
+- (void)trackListFinishRefreshing;
+- (void)trackListFinishLoadingMore;
+- (void)trackListDismissedBeforeAppear;
+- (void)trackListLoadingViewAppear;
+- (void)didScrollWithVelocity:(double)a0;
+- (void)willBeginDragging;
+- (void)setInsertedTopUIDs:(id)a0;
+- (void)unhighlightNewUsers;
+- (void)updateCountToPermanentlyClose:(long long)a0 daysToReappearAfterClosed:(long long)a1;
+- (void)viewModelDidRefresh:(id)a0;
+- (void)viewModelDidLoadMore:(id)a0 indexes:(id)a1;
+- (void)viewModel:(id)a0 didRemoveModelsAtIndexes:(id)a1;
+- (void)viewModel:(id)a0 didInsertModelsAtIndexes:(id)a1;
+- (void)viewModel:(id)a0 didUpdateModelsAtIndexes:(id)a1;
+- (void)viewModel:(id)a0 willRemoveModelsAtIndexes:(id)a1;
+- (id)initWithContextBuilder:(id /* block */)a0;
+- (void)viewControllerDidAppear;
+- (void)viewControllerWillDisappear;
+- (double)heightForCellAtIndex:(long long)a0;
+- (id)viewForHeader;
+- (id)viewForFooter;
+- (void)didSelectCell:(id)a0 atIndex:(long long)a1;
+- (void)willDisplayCell:(id)a0 atIndex:(long long)a1;
+- (BOOL)isRecommendCell:(id)a0;
+- (BOOL)isRecommendHeaderView:(id)a0;
+- (void)willDisplayHeaderView:(id)a0;
+- (void)didEndDisplayingHeaderView:(id)a0;
+- (BOOL)isRecommendFooterView:(id)a0;
+- (void)willDisplayFooterView:(id)a0;
+- (void)didEndDisplayingFooterView:(id)a0;
+- (BOOL)wasClosed;
+- (BOOL)shouldShowRecommendSection;
+- (void)applyDataSourceSnapshot:(id)a0;
+- (BOOL)shouldShowFooter;
+- (id)p_modelAtIndex:(long long)a0;
+- (BOOL)shouldShowHeader;
+- (void).cxx_destruct;
+- (id)initWithViewModel:(id)a0;
+- (id)dataSourceSnapshot;
+- (void)viewControllerWillAppear;
+- (void)viewControllerDidDisappear;
+- (BOOL)hasMore;
+- (long long)numberOfCells;
+- (void)refreshWithCompletion:(id /* block */)a0;
+- (BOOL)displayingPlaceholder;
+- (double)heightForHeader;
+- (double)heightForFooter;
+- (id)cellAtIndex:(long long)a0;
+- (void)didEndDragging;
+
+@end

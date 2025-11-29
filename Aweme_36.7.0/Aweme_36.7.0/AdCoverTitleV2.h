@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface AdCoverTitleV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) BOOL hasTitle;
+@property (copy, nonatomic) NSString *webURL;
+@property (nonatomic) BOOL hasWebURL;
+
++ (id)descriptor;
+
+@end

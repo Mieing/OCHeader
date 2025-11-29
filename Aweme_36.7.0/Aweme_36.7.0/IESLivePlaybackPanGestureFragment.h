@@ -1,0 +1,78 @@
+@class MPVolumeView, NSString, IESLivePlaybackPanGestureStore, UISlider, UIPanGestureRecognizer, IESLivePlaybackBrightnessVolumnView;
+@protocol IESLivePlaybackBrightnessVolumeActions;
+
+@interface IESLivePlaybackPanGestureFragment : IESLivePlaybackComponent <UIGestureRecognizerDelegate, IESLiveAudienceBrightnessVolumeRouter, IESLivePlaybackBrightnessVolumReaction, IESLivePlaybackLandscapeLockAction, IESLivePlaybackCustomAutoHideAnimService, IESLivePlaybackLandscapePictureScaleRouter, IESLivePlaybackComponentLifeCycle>
+
+@property (retain, nonatomic) IESLivePlaybackPanGestureStore *store;
+@property (nonatomic) long long orientation;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (retain, nonatomic) UISlider *volumeSlider;
+@property (retain, nonatomic) MPVolumeView *mpVolumnView;
+@property (nonatomic) struct CGPoint { double x; double y; } currentGestureLoc;
+@property (nonatomic) double originBrightness;
+@property (nonatomic) double adjustedBrightness;
+@property (nonatomic) double lastVolValue;
+@property (nonatomic) BOOL isGestureHandling;
+@property (nonatomic) BOOL isSeeking;
+@property (nonatomic) BOOL isAutoHidden;
+@property (retain, nonatomic) IESLivePlaybackBrightnessVolumnView *brightnessVolumnView;
+@property (nonatomic) double originValue;
+@property (retain, nonatomic) id<IESLivePlaybackBrightnessVolumeActions> brightnessVolumeActionsDispatcher;
+@property (nonatomic) BOOL enableBrightnessAdjust;
+@property (nonatomic) double brightnessGap;
+@property (nonatomic) BOOL isHideBeforeSeekForPlayerControl;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL disableCustomVolume;
+
+- (void)trackEvent:(id)a0 params:(id)a1;
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentWillAppear;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)componentDidMount;
+- (void)componentDidUnmount;
+- (void)handleKeyboardShowNoti:(id)a0;
+- (void)handleKeyboardHideNoti:(id)a0;
+- (BOOL)isAdjusting;
+- (void)landscapeViewsTransformToHidden:(BOOL)a0;
+- (void)portraitViewsTransformToHidden:(BOOL)a0;
+- (void)beginAdjusting:(long long)a0;
+- (void)endAdjusting;
+- (void)handleSystemBrightnessDidChanged:(id)a0;
+- (void)beginAdjustingInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)adjustingInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)endAdjustingInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (BOOL)isAdjustable;
+- (void)volumeDidChange:(double)a0;
+- (void)setSystemVolumeViewHidden:(BOOL)a0;
+- (void)layoutBrightnessVolumnViewIfNeeded;
+- (void)beginSeekInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)endSeekInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)seekingInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (double)_calculateValue:(double)a0 addition:(double)a1;
+- (void)setBrightnessVolumnValue:(double)a0 type:(long long)a1;
+- (void)resetBrightnessVolumnViewWithAdjustingType:(long long)a0;
+- (void)seekValueInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (id)userInteractionEnableView;
+- (long long)adjustingTypeInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (double)adjustingValueInLocation:(struct CGPoint { double x0; double x1; })a0;
+- (void)setBrightnessVolumnViewValue:(double)a0 type:(long long)a1;
+- (void)brightnessVolumnDidBeginAdjusting:(id)a0;
+- (void)brightnessVolumnDidEndAdjusting:(id)a0;
+- (void)brightnessVolumn:(id)a0 didUpdateValue:(double)a1;
+- (void)lockStatusChange:(BOOL)a0;
+- (BOOL)usePadNewStyle;
+- (void)changeIconWithAdjustingType:(long long)a0 value:(double)a1;
+- (void)addPanGesture;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)addObserver;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)dealloc;
+- (void)updateValue:(double)a0;
+- (void)handlePanGesture:(id)a0;
+
+@end

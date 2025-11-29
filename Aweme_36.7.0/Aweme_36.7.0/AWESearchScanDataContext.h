@@ -1,0 +1,73 @@
+@class NSString, UIImage, AWECodeGenProductGenreInfoModel, AWESearchImageCompressorResult, AWESearchScanEmptySearchTrackModel, NSDictionary, NSArray, NSObject, NSMutableArray, AWESearchScanAIV2StyleConfig, AWESearchScanOCRContext;
+@protocol OS_dispatch_semaphore;
+
+@interface AWESearchScanDataContext : NSObject
+
+@property (retain, nonatomic) NSMutableArray *detectionList;
+@property (retain, nonatomic) NSMutableArray *labelArray;
+@property (copy, nonatomic) NSDictionary *initialParmas;
+@property (retain, nonatomic) UIImage *image;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } imageFrameInWindow;
+@property (nonatomic) long long imageContentMode;
+@property (copy, nonatomic) NSString *scanData;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *searchFrom;
+@property (copy, nonatomic) NSString *searchFromSecond;
+@property (copy, nonatomic) NSString *searchTagFrom;
+@property (nonatomic) BOOL showSelector;
+@property (copy, nonatomic) NSString *timestamp;
+@property (copy, nonatomic) NSString *scanID;
+@property (copy, nonatomic) NSString *openSearchPage;
+@property (copy, nonatomic) NSString *authorID;
+@property (copy, nonatomic) NSString *groupID;
+@property (copy, nonatomic) NSString *mmobjectTag;
+@property (copy, nonatomic) NSString *tagUID;
+@property (copy, nonatomic) NSString *realityTagName;
+@property (nonatomic) long long itemPlayTime;
+@property (copy, nonatomic) NSString *picID;
+@property (copy, nonatomic) NSString *scanBalanceStatus;
+@property (copy, nonatomic) NSString *federationInfo;
+@property (nonatomic) BOOL isPicInflow;
+@property (copy, nonatomic) NSDictionary *lastTrackParams;
+@property (copy, nonatomic) NSDictionary *lastSearchTrackParams;
+@property (retain, nonatomic) AWECodeGenProductGenreInfoModel *productGenreInfo;
+@property (copy, nonatomic) NSString *pageType;
+@property (nonatomic) double pageRatio;
+@property (nonatomic) BOOL showBG;
+@property (nonatomic) BOOL forbidLoadView;
+@property (nonatomic) long long scanType;
+@property (copy, nonatomic) NSString *scanTypeStr;
+@property (nonatomic) long long scanFromTab;
+@property (copy, nonatomic) NSString *tosURL;
+@property (copy, nonatomic) NSDictionary *logExtraDic;
+@property (nonatomic) BOOL shouldCancleSearch;
+@property (nonatomic) BOOL generalTabShown;
+@property (retain, nonatomic) AWESearchImageCompressorResult *imageCompressorResult;
+@property (retain, nonatomic) NSObject<OS_dispatch_semaphore> *imageCompressSemaphore;
+@property (retain, nonatomic) AWESearchScanEmptySearchTrackModel *emptySearchTrackModel;
+@property (copy, nonatomic) NSArray *currentSuggestWords;
+@property (copy, nonatomic) NSString *userTextQuery;
+@property (copy, nonatomic) NSArray *cropArray;
+@property (copy, nonatomic) NSDictionary *searchDetectionDic;
+@property (copy, nonatomic) NSDictionary *searchLabel;
+@property (copy, nonatomic) NSString *entranceTagName;
+@property (nonatomic) BOOL isAiStyle;
+@property (nonatomic) BOOL isAiV2p5;
+@property (retain, nonatomic) AWESearchScanAIV2StyleConfig *aiV2StyleConfig;
+@property (nonatomic) BOOL isFromCircleDrawPage;
+@property (copy, nonatomic) NSString *circleDrawPageEnterMethod;
+@property (copy, nonatomic) NSString *circleDrawPageQueryEnterMethod;
+@property (nonatomic) BOOL isCircleEditPageShownGuide;
+@property (nonatomic) BOOL isRequireFullBox;
+@property (retain, nonatomic) AWESearchScanOCRContext *OCRContext;
+@property (retain, nonatomic) UIImage *circleEditViewScreenShot;
+@property (copy, nonatomic) NSString *circleEditPicID;
+@property (copy, nonatomic) NSArray *ocrInfoList;
+
+- (double)visualResultPanelDefaultState;
+- (BOOL)isSearchTagFrom;
+- (BOOL)shouldSetFillMode;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

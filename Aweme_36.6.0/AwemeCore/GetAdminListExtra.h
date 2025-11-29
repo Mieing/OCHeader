@@ -1,0 +1,15 @@
+@class GPBInt64Int32Dictionary, GPBInt64ObjectDictionary;
+
+@interface GetAdminListExtra : IESLivePBBaseMessage
+
+@property (nonatomic) int adminMaxCount;
+@property (nonatomic) int promptMaxCount;
+@property (nonatomic) int promptCurrCount;
+@property (retain, nonatomic) GPBInt64Int32Dictionary *privilegeMaxCount;
+@property (readonly, nonatomic) unsigned long long privilegeMaxCount_Count;
+@property (retain, nonatomic) GPBInt64ObjectDictionary *privilegeExtraInfo;
+@property (readonly, nonatomic) unsigned long long privilegeExtraInfo_Count;
+
++ (id)descriptor;
+
+@end

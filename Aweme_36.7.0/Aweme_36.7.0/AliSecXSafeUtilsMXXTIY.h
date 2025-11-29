@@ -1,0 +1,7 @@
+@interface AliSecXSafeUtilsMXXTIY : NSObject
+
++ (struct _utils { void /* function */ *x0; } *)sharedUtils;
+
+- (id)descriptor;
+
+@end

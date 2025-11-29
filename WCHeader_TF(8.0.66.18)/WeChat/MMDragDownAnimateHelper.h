@@ -1,0 +1,73 @@
+@class UIPanGestureRecognizer, MMDragDisplayLinkContext, CADisplayLink, NSString, NSDate, UIView, UITableView;
+
+@interface MMDragDownAnimateHelper : NSObject <UIGestureRecognizerDelegate>
+
+@property (nonatomic) double frontViewTop;
+@property (weak, nonatomic) UIView *frontContainerView;
+@property (weak, nonatomic) UITableView *frontTableView;
+@property (retain, nonatomic) NSDate *dragStartTime;
+@property (nonatomic) double lastMovement;
+@property (nonatomic) double beginTouchPosY;
+@property (nonatomic) double lastTouchPosY;
+@property (nonatomic) double frontViewY;
+@property (nonatomic) BOOL hasTriggerDragShock;
+@property (nonatomic) double currentDragProgress;
+@property (nonatomic) double currentAlpha;
+@property (retain, nonatomic) UIPanGestureRecognizer *dragPanGesture;
+@property (copy, nonatomic) id /* block */ enterHoverAnimation;
+@property (copy, nonatomic) id /* block */ enterHoverCompletion;
+@property (copy, nonatomic) id /* block */ exitHoverPreparation;
+@property (copy, nonatomic) id /* block */ exitHoverAnimation;
+@property (copy, nonatomic) id /* block */ exitHoverCompletion;
+@property (retain, nonatomic) CADisplayLink *dragAnimationLink;
+@property (retain, nonatomic) MMDragDisplayLinkContext *dragAnimationContext;
+@property (nonatomic) unsigned long long animationType;
+@property (nonatomic) double timestamp;
+@property (nonatomic) double animationCurrentTime;
+@property (nonatomic) BOOL disableDragDown;
+@property (nonatomic) double hoverTargetOffset;
+@property (nonatomic) BOOL isAtDragDownState;
+@property (nonatomic) double expandedHeight;
+@property (readonly, nonatomic) double currentDragDownProgress;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrontContainerView:(id)a0 frontInitialTop:(double)a1 frontTableView:(id)a2;
+- (void)requireGestureRecognizerToFail:(id)a0;
+- (void)setupUI;
+- (void)setDisableHover:(BOOL)a0;
+- (void)setEnterDragDownAnimation:(id /* block */)a0 completion:(id /* block */)a1;
+- (void)setExitDragDownAnimation:(id /* block */)a0 completion:(id /* block */)a1;
+- (void)setExitDragDownPreparation:(id /* block */)a0;
+- (void)onBeginDragging;
+- (void)onDragDownProgressChange:(double)a0;
+- (void)onInitUI;
+- (void)onWillEnterDragDownState;
+- (void)onDidEnterDragDownState;
+- (void)onWillExitDragDownState;
+- (void)onDidExitDragDownState;
+- (void)processFrontViewGesture:(id)a0;
+- (void)handlePanGestureAtHoverEnable:(id)a0;
+- (void)handlePanGestureAtHoverDisable:(id)a0;
+- (void)handleAlphaAnimateWithFrontViewTopOffset:(double)a0;
+- (void)resetFrontViewOffsetAnimated:(BOOL)a0;
+- (double)progressForCurrentOffset:(double)a0;
+- (BOOL)canTrigerAtPositionY:(double)a0;
+- (void)enterDragDownState:(BOOL)a0;
+- (void)exitDragDownState:(BOOL)a0;
+- (void)lightShock;
+- (void)invaliateDragAnimation:(unsigned long long)a0;
+- (void)handleDragDownAnimation;
+- (void)enterDragTransition:(double)a0;
+- (void)enterDragCompletion;
+- (void)exitDragTransition:(double)a0;
+- (void)exitDragCompletion;
+- (void)resetDragTransition:(double)a0;
+- (void)resetDragCompletion;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,83 @@
+@class NSString, UIImageView, AWEDCFeedCellImageElementGenreResource, UIView, AWEDCFeedCellImageElementResourceReusePool;
+@protocol AWEDCFeedCellImageElementResourceViewProtocol, AWEDCFeedCellImageElementVideoViewProtocol;
+
+@interface AWEDCFeedCellImageElement : AWEDCFeedBaseCellElement <AWEDCFeedCellImageElementVideoViewPlayerProtocol>
+
+@property (retain, nonatomic) UIImageView *coverImageView;
+@property (retain, nonatomic) UIImageView *failedImageView;
+@property (retain, nonatomic) UIView *playerView;
+@property (retain, nonatomic) UIView *maskView;
+@property (retain, nonatomic) UIView *maskViewHolderView;
+@property (retain, nonatomic) UIView<AWEDCFeedCellImageElementResourceViewProtocol> *resourceViewLeftTop;
+@property (retain, nonatomic) UIView<AWEDCFeedCellImageElementResourceViewProtocol> *resourceViewRightTop;
+@property (retain, nonatomic) UIView<AWEDCFeedCellImageElementResourceViewProtocol> *resourceViewLeftBottom;
+@property (retain, nonatomic) UIView<AWEDCFeedCellImageElementResourceViewProtocol> *resourceViewRightBottom;
+@property (retain, nonatomic) UIView *resourceContainerView;
+@property (retain, nonatomic) UIView<AWEDCFeedCellImageElementVideoViewProtocol> *videoView;
+@property (retain, nonatomic) AWEDCFeedCellImageElementGenreResource *genreResource;
+@property (retain, nonatomic) AWEDCFeedCellImageElementResourceReusePool *resourceReusePool;
+@property (nonatomic) double whiteImageShowTimeStamp;
+@property (nonatomic) BOOL isHitImageCache;
+@property (copy, nonatomic) id /* block */ imageShownBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)canShowWithAwemeModel:(id)a0 context:(id)a1;
++ (double)heightWithCellWidth:(double)a0 awemeModel:(id)a1 context:(id)a2;
++ (long long)elementStyle;
++ (double)imageDisplayRatioWithSize:(struct CGSize { double x0; double x1; })a0 cutType:(long long)a1;
+
+- (void)cellWillDisplay;
+- (void)player:(id)a0 didChangePlaybackToAction:(long long)a1;
+- (void)configWithModel:(id)a0 context:(id)a1;
+- (void)cellDidEndDisplaying;
+- (void)themeDidChange:(long long)a0;
+- (void)setupGesture;
+- (double)currentPlayBackTime;
+- (long long)currentPlayBackIndex;
+- (id)classNameWithReferString;
+- (void)updateElementLayoutWithCellWidth:(double)a0 height:(double)a1 context:(id)a2;
+- (id)cellImageBackgroundColor;
+- (id)currentModelImageView;
+- (void)setupNoti;
+- (void)imageElementClicked;
+- (void)showResourceView;
+- (void)resetVideoPlayView;
+- (void)resetResourceView;
+- (BOOL)enableCoverShowAnimation;
+- (id)beginImageLoadMonitor;
+- (void)trackImageLoadSuccess:(id)a0 url:(id)a1 image:(id)a2;
+- (void)trackMonitorFMPIfNeededWithAweme:(id)a0;
+- (void)trackImageLoadError:(id)a0 url:(id)a1 image:(id)a2;
+- (id)smartColorImage;
+- (id)beginPreviewMonitor;
+- (void)addCommonParamsForPreviewMonitor:(id)a0 type:(long long)a1;
+- (void)updateResourceViewWithPosition:(long long)a0 model:(id)a1 context:(id)a2;
+- (void)addResourceViewIfNeededWithConfig:(id)a0 position:(long long)a1 awemeModel:(id)a2 context:(id)a3;
+- (id)resourceViewFromPosition:(long long)a0;
+- (void)setResourceView:(id)a0 position:(long long)a1;
+- (void)setResourceLayout:(id)a0 position:(long long)a1 resourceView:(id)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })frameWithPosition:(long long)a0 horizontalMargin:(double)a1 verticalMargin:(double)a2 width:(double)a3 height:(double)a4;
+- (void)loadCoverImageView;
+- (void)addMaskViewIfNeededWithModel:(id)a0 context:(id)a1;
+- (void)addResourceViewIfNeededWithModel:(id)a0 context:(id)a1;
+- (void)setupVideoView;
+- (void)showVideoPlayView;
+- (void)hideOtherViewAndShowVideoView;
+- (void)hideResourceView;
+- (BOOL)useSR;
+- (BOOL)useSharp;
+- (id)getCoverDataSourceStringWithResultFrom:(long long)a0;
+- (void)setupSubViews;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (id)initWithContext:(id)a0;
+- (void)resignActive;
+- (void)reset;
+- (id)activeView;
+- (id)imageCacheKey;
+
+@end

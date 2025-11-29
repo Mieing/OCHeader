@@ -1,0 +1,3 @@
+@interface AnchorAnchorVirtualAnchorApiRoot : GPBRootObject
+
+@end

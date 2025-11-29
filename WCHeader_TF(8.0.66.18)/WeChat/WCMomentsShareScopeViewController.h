@@ -1,0 +1,76 @@
+@class UILabel, NSString, UICollectionView, WCMomentsShareScopeBottomView, WCMomentsShareScopeDataSource, WCMomentsShareScopeViewModel, WCTextStatusShareScopeBottomView;
+@protocol WCMomentsShareScopeViewControllerDelegate;
+
+@interface WCMomentsShareScopeViewController : MMPageSheetBaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, WCMomentsShareScopeSectionFooterDelegate, WCGroupTagViewControllerDelegate>
+
+@property (retain, nonatomic) WCMomentsShareScopeViewModel *shareScopeVM;
+@property (retain, nonatomic) WCMomentsShareScopeDataSource *cellVMData;
+@property (nonatomic) BOOL hasLoadMoreForTagClicked;
+@property (nonatomic) BOOL hasLoadMoreForContactClicked;
+@property (nonatomic) BOOL hasModifyShareScopeClicked;
+@property (retain, nonatomic) UICollectionView *contactCollectionView;
+@property (retain, nonatomic) WCMomentsShareScopeBottomView *shareScopeBottomView;
+@property (retain, nonatomic) WCTextStatusShareScopeBottomView *statusScopeBottomTip;
+@property (retain, nonatomic) UILabel *noShareScopeDataTips;
+@property (weak, nonatomic) id<WCMomentsShareScopeViewControllerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithViewModel:(id)a0;
+- (id)init;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidTransitionToNewSize;
+- (void)viewSafeAreaInsetsDidChange;
+- (void)pageSheetWillDisappear;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumLineSpacingForSectionAtIndex:(long long)a2;
+- (double)collectionView:(id)a0 layout:(id)a1 minimumInteritemSpacingForSectionAtIndex:(long long)a2;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })collectionView:(id)a0 layout:(id)a1 insetForSectionAtIndex:(long long)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (BOOL)collectionView:(id)a0 shouldSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didDeselectItemAtIndexPath:(id)a1;
+- (BOOL)collectionView:(id)a0 shouldHighlightItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didHighlightItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 didUnhighlightItemAtIndexPath:(id)a1;
+- (void)onClickedAtModifyScopeButton;
+- (BOOL)canSelectPrivacySetting:(long long)a0;
+- (void)privacySettingChanged:(long long)a0 label:(id)a1 contacts:(id)a2;
+- (void)GroupTagViewControllerWillDissappear;
+- (void)_resetDataSource;
+- (void)_reloadTagDataIntoDataSource;
+- (void)_reloadContactDataIntoDataSource;
+- (void)_onCellViewAtIndex:(id)a0 changeSelectedTo:(BOOL)a1;
+- (void)_openContactInfo:(id)a0;
+- (void)_reloadShareScope;
+- (void)_updateTitle;
+- (id)_getSectionHeaderViewAtIndexPath:(id)a0;
+- (id)_getSectionFooterViewAtIndexPath:(id)a0;
+- (double)_getSectionHeaderViewHeightInSection:(long long)a0;
+- (double)_getCellWidthInsideCollectionView;
+- (BOOL)_shouldShowHeaderForSection:(long long)a0;
+- (BOOL)_shouldShowModifyScopeFooterForSection:(long long)a0;
+- (double)_detailViewHeight;
+- (void)_initStyle;
+- (void)_initView;
+- (void)_initDetailView;
+- (void)_initContactCollectionView;
+- (void)_initShareScopeBottomView;
+- (void)_initStatusScopeBottomView;
+- (void)_initNoShareScopeDataTips;
+- (void)_layoutContentView;
+- (void)_updateContentView;
+- (BOOL)disableScrollViewBottomInsetAdjustment;
+- (void)doModifyShareScopeExposureReport;
+- (void).cxx_destruct;
+
+@end

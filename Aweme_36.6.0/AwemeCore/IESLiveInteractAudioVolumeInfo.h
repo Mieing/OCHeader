@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveInteractAudioVolumeInfo : IESLiveDynamicModel
+
+@property (nonatomic) unsigned long long volume;
+@property (retain, nonatomic) NSString *strUID;
+
+- (id)description;
+
+@end

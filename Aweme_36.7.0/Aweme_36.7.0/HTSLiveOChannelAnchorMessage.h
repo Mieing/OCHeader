@@ -1,0 +1,16 @@
+@class NSString, HTSLiveCommon, HTSLiveUser;
+
+@interface HTSLiveOChannelAnchorMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long startTimestamp;
+@property (nonatomic) long long endTimestamp;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) long long roomId;
+@property (retain, nonatomic) HTSLiveUser *channelUser;
+@property (nonatomic) BOOL hasChannelUser;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class AnnieSetContainerPageUIModel, AnnieSetContainerPageInteractionModel, AnnieSetContainerPopupInteractionModel, AnnieSetContainerCommonInteractionModel;
+
+@interface AnnieSetContainerParamModel : IESLiveBridgeModel
+
+@property (retain, nonatomic) AnnieSetContainerPageUIModel *pageUI;
+@property (retain, nonatomic) AnnieSetContainerCommonInteractionModel *commonInteraction;
+@property (retain, nonatomic) AnnieSetContainerPageInteractionModel *pageInteraction;
+@property (retain, nonatomic) AnnieSetContainerPopupInteractionModel *popupInteraction;
+
+@end

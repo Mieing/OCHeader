@@ -1,0 +1,3 @@
+@interface AWEKnowledgeSwiftBasic.DataBuilderJsonArrStrNode : AWEKnowledgeSwiftBasic.DataBuilderBaseNode
+
+@end

@@ -1,0 +1,74 @@
+@class LLDitoPageInfo, NSString, NSDictionary, NSArray, LLDitoLayoutExecutor, LLDitoPageContext, LLDitoComponentAgentCenter;
+
+@interface LLDitoPageModel : NSObject <LLDitoScrollPulseReceiver, LLDitoLayoutExecutorDataSource, LLDitoPageViewDataSource, LLDitoScrollDelegate>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) NSDictionary *viewModelMap;
+@property (copy, nonatomic) NSArray *lynxNodeList;
+@property (retain, nonatomic) LLDitoLayoutExecutor *layoutExecutor;
+@property (nonatomic) double dito_animationDuration;
+@property (copy, nonatomic) NSDictionary *preComponentTagListMap;
+@property (copy, nonatomic) NSArray *groupNodeList;
+@property (nonatomic) long long decorationLayerZPositionTag;
+@property (weak, nonatomic) LLDitoPageContext *context;
+@property (copy, nonatomic) NSString *root;
+@property (retain, nonatomic) LLDitoPageInfo *pageInfo;
+@property (copy, nonatomic) NSDictionary *nodeMap;
+@property (copy, nonatomic) NSDictionary *containerNodeMap;
+@property (weak, nonatomic) LLDitoComponentAgentCenter *agentCenter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (long long)pageView:(id)a0 numberOfComponentInContainer:(id)a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })pageView:(id)a0 containerType:(id)a1 componentFrameAtIndex:(long long)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })pageView:(id)a0 layoutContainer:(id)a1;
+- (void)pageView:(id)a0 didScroll:(id)a1;
+- (void)pageView:(id)a0 scrollViewWillBeginDragging:(id)a1;
+- (void)pageView:(id)a0 scrollViewWillBeginDecelerating:(id)a1;
+- (void)pageView:(id)a0 scrollViewDidEndDragging:(id)a1 willDecelerate:(BOOL)a2;
+- (void)pageView:(id)a0 scrollViewWillEndDragging:(id)a1 withVelocity:(struct CGPoint { double x0; double x1; })a2 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a3;
+- (void)pageView:(id)a0 scrollViewDidEndDecelerating:(id)a1;
+- (void)componentView:(id)a0 willUpdateViewModel:(id)a1;
+- (void)componentView:(id)a0 didUpdateViewModel:(id)a1;
+- (id)nodeByTag:(id)a0;
+- (id)superNode:(id)a0;
+- (long long)nodeIndexAtSuper:(id)a0;
+- (id)componentNodeByTag:(id)a0;
+- (void)pageView:(id)a0 scrollViewDidEndScrollingAnimation:(id)a1;
+- (id)componentNodeInContainer:(id)a0 atIndex:(long long)a1;
+- (id)siblingNodeList:(id)a0;
+- (id)leftSiblingNode:(id)a0;
+- (id)rightSiblingNode:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })nodeFrameInContainer:(id)a0;
+- (id)initWithRoot:(id)a0 nodeMap:(id)a1 containerNodeMap:(id)a2 viewModelMap:(id)a3 lynxNodeList:(id)a4;
+- (id)stickManger;
+- (BOOL)ditoEnableMoveFloatNode;
+- (id)layoutForNode:(id)a0 withContainerType:(id)a1;
+- (id)fetchComponentNodeAtIndex:(unsigned long long)a0 inContainer:(id)a1;
+- (id)fetchComponentViewModelAtIndex:(unsigned long long)a0 inContainer:(id)a1;
+- (id)emptyComponentView;
+- (void)fetchInheritStyleWithNode:(id)a0;
+- (BOOL)isInValidFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })pruningGroupDecorationFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 style:(id)a1;
+- (void)findGroupNode:(id)a0 addTo:(id)a1;
+- (id)pageView:(id)a0 registerReuseIdentifierAtIndex:(unsigned long long)a1 inContainer:(id)a2;
+- (id)pageView:(id)a0 componentViewAtIndex:(unsigned long long)a1 inContainer:(id)a2 reuseComponentView:(id)a3 nodeView:(id)a4;
+- (long long)pageView:(id)a0 containerType:(id)a1 componentIndexAtTag:(id)a2;
+- (void)pageView:(id)a0 containerType:(id)a1 removeComponentAtTag:(id)a2;
+- (id)layoutDecorationViews:(id)a0;
+- (id)findSuperNode:(id)a0;
+- (id)pageView:(id)a0 containerType:(id)a1 componentStyleAtIndex:(long long)a2;
+- (void)receiveScrollPulseEvent:(id)a0;
+- (void)nodeWillShow:(id)a0;
+- (void)nodeDidCompleteShow:(id)a0;
+- (void)nodeWillEndShow:(id)a0;
+- (void)nodeDidEndShow:(id)a0;
+- (void).cxx_destruct;
+- (id)extensionManager;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESECSlicePDPMarqueeView : IESECSkuMarqueeView
+
+@end

@@ -1,0 +1,86 @@
+@class NSThread, NSString, NSNumber, NSObject;
+@protocol RTVMonitor, RxInjector, RTVXREngine, OS_dispatch_semaphore, OS_dispatch_queue, RTVSettingsManager;
+
+@interface __RTVXREngineAudioMixer : NSObject <RTVXREngineDelegate, RTVXREngineAudioMixerInterface> {
+    struct unique_ptr<avframework::FFmpegAudioResampler, std::default_delete<avframework::FFmpegAudioResampler>> { struct FFmpegAudioResampler *__ptr_; } _audioResampler;
+    struct Mutex { int _type; union { struct mutex { struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } __m_; } _plain; struct recursive_mutex { struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } __m_; } _recursive; } ; } _lock;
+}
+
+@property (nonatomic) long long audioSampleRate;
+@property (nonatomic) long long audioChannelNum;
+@property (retain, nonatomic) NSThread *thread;
+@property (readonly, weak, nonatomic) id<RTVXREngine> XREngine;
+@property (nonatomic) BOOL playoutMixConfiged;
+@property (readonly, nonatomic) id<RTVSettingsManager> settingManager;
+@property (retain, nonatomic) id<RTVMonitor> rtvMonitor;
+@property (nonatomic) BOOL isPaused;
+@property (nonatomic) double audioVolumeGain;
+@property (nonatomic) double pushTimeInterval;
+@property (nonatomic) BOOL resumeAudioMix;
+@property (copy, nonatomic) NSString *currentOperatorID;
+@property (nonatomic) unsigned long long currentCreateIndex;
+@property (nonatomic) BOOL fixPauseAudioMix;
+@property (retain, nonatomic) NSNumber *mixPauseStateBeforeResignActive;
+@property (nonatomic) BOOL applicationActive;
+@property (nonatomic) BOOL skipAudioPush;
+@property (readonly, nonatomic) NSObject<OS_dispatch_semaphore> *signal;
+@property (nonatomic) BOOL hasPausePushThread;
+@property (nonatomic) BOOL optimizeAudioMixWhenPause;
+@property (nonatomic) int sampleFormat;
+@property (nonatomic) BOOL sampleFormatChanged;
+@property (nonatomic) BOOL enableFixAudioWrite;
+@property (nonatomic) long long audioWriteFrameNumLimit;
+@property (nonatomic) struct _opaque_pthread_rwlock_t { long long __sig; char __opaque[192]; } audioLock;
+@property BOOL fixMixerCrash;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly, weak, nonatomic) id<RxInjector> injector;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (struct AFDEngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *)audioWrapper;
+- (void)rxAwakeFromPropertyInjection;
+- (id)audioWrapperV2;
+- (int)playerAudioOpen:(struct TTAudioMediaInfo { int x0; int x1; int x2; int x3; int x4; int x5; long long x6; } *)a0;
+- (int)playerAudioWrite:(struct TTAudioFrameInfo { char **x0; int x1; int x2; long long x3; } *)a0;
+- (void)playerAudioPause;
+- (void)playerAudioResume;
+- (void)playerAudioFlush;
+- (void)playerAudioClose;
+- (int)playerAudioGetLatency;
+- (void)renderXREngine:(id)a0;
+- (void)__log:(id)a0;
+- (BOOL)useAudioWrapperV2;
+- (id)mixerQueue;
+- (BOOL)releaseWithOperatorID:(id)a0;
+- (BOOL)tryObtainWithOperatorID:(id)a0;
+- (void)resumePushAudioMixingStream;
+- (void)pausePushAudioMixingStream:(BOOL)a0;
+- (void)changeCachedMixPauseStateWhenResignActive:(BOOL)a0;
+- (void)configAudioPushTimeInterval:(double)a0;
+- (void)adjustAudioVolumeGain:(double)a0;
+- (void)updateAudioFrameFormat:(long long)a0;
+- (BOOL)startAudioPlayoutMixStreamWithSampleRate:(long long)a0 channelNum:(long long)a1;
+- (BOOL)startAudioPlayoutMixStreamIfNeed;
+- (BOOL)stopAudioPlayoutMixStream;
+- (BOOL)pushAudioMixingStreamData:(float **)a0 frameNum:(long long)a1;
+- (BOOL)pushAudioMixingNewStreamData:(char **)a0 frameNum:(long long)a1;
+- (void)xrEngineWillBeginSetupInteractConfig:(id)a0;
+- (void)xrEngineDidFinishSetupInteractConfig:(id)a0;
+- (void)xrEngine:(id)a0 didLeaveRoom:(id)a1;
+- (void)__appDidBecomeActive;
+- (void)__appWillResignActive;
+- (int)__sampleFormat;
+- (BOOL)__useRTCNewAudioMixing;
+- (void)__initialAudioStreamProcessor:(long long)a0 chaneNum:(long long)a1;
+- (BOOL)p_internal_pushAudioMixingStreamData:(float **)a0 frameNum:(long long)a1;
+- (BOOL)__isAudioMixing;
+- (BOOL)enableAudioMixingInbackground;
+- (int)p_internal_playerAudioOpen:(struct TTAudioMediaInfo { int x0; int x1; int x2; int x3; int x4; int x5; long long x6; } *)a0;
+- (int)p_internal_playerAudioWrite:(struct TTAudioFrameInfo { char **x0; int x1; int x2; long long x3; } *)a0;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+- (void)dealloc;
+
+@end

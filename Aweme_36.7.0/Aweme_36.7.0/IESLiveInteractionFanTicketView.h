@@ -1,0 +1,88 @@
+@class IESLiveGCDTimer, IESLiveRichTextLabel, IESLiveInteractionFanTicketViewModel, IESLiveCountTimer, UILabel, IESLiveInteractionFanticketProgressView, RACDisposable, UIButton, UIColor, NSString, IESLiveInteractionFanTicketNode, IESLiveGradientView, IESLiveImageView, UIImageView;
+
+@interface IESLiveInteractionFanTicketView : UIView <IESLiveInteractionFanTicketDelegate, CAAnimationDelegate, IESLiveGuestBattleScoreView>
+
+@property (nonatomic) double scale;
+@property (retain, nonatomic) UIButton *fanticketBGView;
+@property (retain, nonatomic) UIImageView *fanTicketIconView;
+@property (nonatomic) BOOL fanTicketIconNeedResume;
+@property (retain, nonatomic) UILabel *fanTicketLabel;
+@property (retain, nonatomic) IESLiveRichTextLabel *fanTicketRichTextLabel;
+@property (retain, nonatomic) UIImageView *avatarView;
+@property (retain, nonatomic) IESLiveInteractionFanticketProgressView *progressView;
+@property (retain, nonatomic) IESLiveImageView *goldenMicIcon;
+@property (retain, nonatomic) UILabel *goldenMicCountLabel;
+@property (retain, nonatomic) IESLiveGradientView *goldenMicBgView;
+@property (retain, nonatomic) UIColor *currentBackgroundColor;
+@property (retain, nonatomic) UIColor *animateBGColor;
+@property (nonatomic) int teamFightRole;
+@property (nonatomic) long long teamSign;
+@property (retain, nonatomic) RACDisposable *btnDisposable;
+@property (nonatomic) int styleType;
+@property (nonatomic) long long type;
+@property (nonatomic) int iconType;
+@property (retain, nonatomic) IESLiveInteractionFanTicketViewModel *viewModel;
+@property (retain, nonatomic) IESLiveInteractionFanTicketNode *animatingNode;
+@property (retain, nonatomic) IESLiveInteractionFanTicketNode *thankAnimatingNode;
+@property (retain, nonatomic) IESLiveInteractionFanTicketViewModel *goldenMicViewModel;
+@property (retain, nonatomic) IESLiveInteractionFanTicketNode *goldenMicAnimatingNode;
+@property (nonatomic) BOOL isThankShowing;
+@property (retain, nonatomic) IESLiveCountTimer *thankTimer;
+@property (nonatomic) long long progressTarget;
+@property (retain, nonatomic) IESLiveGCDTimer *fanTicketLabelDelayUpdateTimer;
+@property (nonatomic) BOOL outOfRightBound;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)defaultFanTicketIconURL;
+
+- (void)createProgressView;
+- (void)onClicked:(id /* block */)a0;
+- (void)updateBGColor:(id)a0;
+- (void)updateFanTicketText:(id)a0 animation:(id)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 scale:(double)a1 type:(long long)a2 diContext:(id)a3;
+- (void)onGuestBattleFinish;
+- (void)updateFanTicketAlpha:(double)a0;
+- (void)onGuestBattleStart;
+- (void)onGuestBattleSettle;
+- (void)updateGoldenMicText:(id)a0 animation:(BOOL)a1;
+- (void)updateFanTicketIconWithImage:(id)a0;
+- (void)updateGoldenMicModel:(id)a0;
+- (void)updateAnimateBGColor:(id)a0;
+- (void)updateFanTicketStyleType:(int)a0;
+- (void)clearAllUpdateAnimation;
+- (void)updateFanTicketViewIconType:(int)a0;
+- (void)p_updateBattleRoleBgColor:(id)a0;
+- (void)updateFanTicketStyleType:(int)a0 enlargeAvatarType:(int)a1;
+- (id)currentTextFont;
+- (void)clearGoldenMicView;
+- (void)createGoldenMicView;
+- (double)p_getFanticketNumberValue:(id)a0;
+- (void)clearAllUpdateAnimation:(BOOL)a0;
+- (void)stopThankTimerIfNeeded;
+- (void)doFanticketAnimationWithNode:(id)a0;
+- (void)doGoldenMicAnimationWithNode:(id)a0;
+- (void)stopBackgroundAnimation:(double)a0 completion:(id /* block */)a1;
+- (void)doQuickInteractThankAnimation:(id)a0;
+- (void)doFlashAnimation:(id)a0;
+- (void)doAnimationAfterQuickInteractThank:(id)a0;
+- (void)hideGoldenMicView;
+- (void)resumeGoldenMicView;
+- (void)doFanticketAnimationWithNode:(id)a0 animationType:(long long)a1;
+- (void)stopQuickInteractThankAnimation:(id)a0;
+- (void)updateBattleRoleIconAlpha:(double)a0;
+- (void)updateBattleRoleIconAlphaAnimated:(double)a0 duraton:(double)a1 delay:(double)a2 completion:(id /* block */)a3;
+- (void)stopAllBattleAnimationIfNeeded;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })iconViewFrame;
+- (void)updateStarWishTarget:(long long)a0;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)setup;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (struct CGSize { double x0; double x1; })intrinsicContentSize;
+
+@end

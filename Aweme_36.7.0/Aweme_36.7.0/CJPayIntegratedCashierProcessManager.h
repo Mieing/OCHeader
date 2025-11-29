@@ -1,0 +1,70 @@
+@class CJPayDefaultChannelShowConfig, NSString, CJPayHalfPageBaseViewController, CJPayCreateOrderResponse, NSDictionary, CJPayOrderResultResponse, UIViewController, NSMutableArray;
+@protocol CJPayIntegratedCashierHomeVCProtocol, CJPayBizDYPayPluginV2, CJPayAPIDelegate;
+
+@interface CJPayIntegratedCashierProcessManager : NSObject <CJPayQRCodeChannelProtocol, CJPayAPIDelegate>
+
+@property (retain, nonatomic) CJPayOrderResultResponse *resResponse;
+@property (copy, nonatomic) NSDictionary *createOrderParams;
+@property (retain, nonatomic) NSMutableArray *v2Controllers;
+@property (retain, nonatomic) CJPayDefaultChannelShowConfig *curSelectConfig;
+@property (nonatomic) long long queryTimes;
+@property (nonatomic) BOOL isUpdatingCreateOrder;
+@property (nonatomic) BOOL isBindCardIndependently;
+@property (retain, nonatomic) id<CJPayBizDYPayPluginV2> dypayControllerV2;
+@property (weak, nonatomic) CJPayHalfPageBaseViewController<CJPayIntegratedCashierHomeVCProtocol> *homeVC;
+@property (weak, nonatomic) UIViewController *backVC;
+@property (retain, nonatomic) CJPayCreateOrderResponse *orderResponse;
+@property (copy, nonatomic) id /* block */ completionBlock;
+@property (copy, nonatomic) NSDictionary *lynxRetainTrackerParams;
+@property (nonatomic) BOOL orderIsInvalid;
+@property (nonatomic) BOOL isPaymentForOuterApp;
+@property (copy, nonatomic) NSString *bizPayOuterAppId;
+@property (copy, nonatomic) NSString *combineType;
+@property (weak, nonatomic) id<CJPayAPIDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)p_trackerParams;
+- (void)onResponse:(id)a0;
+- (void)trackWithName:(id)a0 params:(id)a1;
+- (void)requestQueryOrderResultWithTradeNo:(id)a0 processInfo:(id)a1 completion:(id /* block */)a2;
+- (id)initWith:(id)a0 bizParams:(id)a1;
+- (void)confirmPayWithConfig:(id)a0;
+- (void)bindcardIndependentlyWithJumpInfo:(id)a0;
+- (id)buildCommonTrackDic:(id)a0;
+- (void)updateCreateOrderResponseWithCompletionBlock:(id /* block */)a0;
+- (void)updateCreateOrderResponseWithExtParams:(id)a0 completionBlock:(id /* block */)a1;
+- (void)bindcardIndependentlyWithConfig:(id)a0;
+- (void)p_updateCreateOrderResponse;
+- (void)updateCreateOrderResponseWithBizParams:(id)a0 completionBlock:(id /* block */)a1;
+- (void)requestCreateOrderWithBizParams:(id)a0 completion:(id /* block */)a1;
+- (BOOL)p_checkNoNetwrok:(id)a0;
+- (void)p_submitConfirmRequest;
+- (id)p_createBindcardParamWithConfig:(id)a0;
+- (id)p_buildConfirmRequestParams;
+- (void)p_setLoadingStyleInfoWithConfig:(id)a0;
+- (void)p_delayEnableConfirmButton;
+- (BOOL)p_buttonInfoHandler:(id)a0;
+- (BOOL)p_needInvokeLoginAndReturn:(id)a0;
+- (void)handleComfirmResponse:(id)a0;
+- (void)p_payWithChannel:(id)a0 response:(id)a1;
+- (void)p_dypayWithResponse:(id)a0 defaultShowConfig:(id)a1;
+- (void)p_transferPayWithResponse:(id)a0;
+- (id)p_buildAssetConfirmRequestParams;
+- (void)p_callCompletionBlock:(id)a0 orderStatus:(unsigned long long)a1;
+- (void)p_queryOrderResult:(unsigned long long)a0;
+- (unsigned long long)p_getChannelWith:(id)a0 tradeType:(id)a1;
+- (id)QRCodeParams:(id)a0;
+- (void)p_handleChannelResult:(unsigned long long)a0 resultType:(unsigned long long)a1;
+- (BOOL)p_checkOrderValidation;
+- (void)p_handleUnistallCase:(unsigned long long)a0;
+- (void)handleQueryResult:(id)a0;
+- (void)p_queryResult:(long long)a0 withResultType:(unsigned long long)a1 completion:(id /* block */)a2;
+- (void)queryQROrderResult:(id /* block */)a0;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)pushViewController:(id)a0;
+
+@end

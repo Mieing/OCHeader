@@ -1,0 +1,13 @@
+@class HTSLiveImage;
+
+@interface HTSLiveBurstInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long burstTimeRemainSeconds;
+@property (nonatomic) long long multiple;
+@property (nonatomic) long long propertyDefinitionId;
+@property (retain, nonatomic) HTSLiveImage *propertyIcon;
+@property (nonatomic) BOOL hasPropertyIcon;
+
++ (id)descriptor;
+
+@end

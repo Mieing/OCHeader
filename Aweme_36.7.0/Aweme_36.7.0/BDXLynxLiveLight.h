@@ -1,0 +1,88 @@
+@class IESLivePlayerControllerConfig, NSDictionary, NSString, IESLivePlayerLynxController;
+
+@interface BDXLynxLiveLight : LynxUI <BDLynxLiveLightContainerDelegate, IESLivePlayerControllerDelegate>
+
+@property (retain, nonatomic) IESLivePlayerLynxController *innerPlayer;
+@property (retain, nonatomic) IESLivePlayerControllerConfig *liveConfig;
+@property (nonatomic) BOOL hiddenInList;
+@property (nonatomic) BOOL inListOpt;
+@property (retain, nonatomic) NSDictionary *logExtra;
+@property (retain, nonatomic) NSString *lastPlayedUrl;
+@property (retain, nonatomic) NSString *exitRoomId;
+@property (retain, nonatomic) NSString *scene;
+@property (nonatomic) BOOL playerIsSharedToTheLiveRoom;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)lynxLazyLoad;
++ (id)__lynx_ui_method_config__34916;
++ (id)__lynx_prop_config__1513;
++ (id)__lynx_prop_config__25711;
++ (id)__lynx_prop_config__1231;
++ (id)__lynx_prop_config__1382;
++ (id)__lynx_prop_config__1724;
++ (id)__lynx_prop_config__1865;
++ (id)__lynx_prop_config__1976;
++ (id)__lynx_prop_config__2087;
++ (id)__lynx_prop_config__2198;
++ (id)__lynx_prop_config__2309;
++ (id)__lynx_prop_config__24110;
++ (id)__lynx_ui_method_config__27312;
++ (id)__lynx_ui_method_config__31213;
++ (id)__lynx_ui_method_config__32514;
++ (id)__lynx_ui_method_config__33715;
++ (id)__lynx_ui_method_config__36917;
++ (id)__lynx_ui_method_config__39718;
++ (id)__lynx_ui_method_config__41719;
++ (id)__lynx_props_group_config__66720;
++ (id)__lynx_ui_method_config__68721;
+
+- (void)play:(id)a0 withResult:(id /* block */)a1;
+- (void)pause:(id)a0 withResult:(id /* block */)a1;
+- (void)stop:(id)a0 withResult:(id /* block */)a1;
+- (void)onListCellDisappear:(id)a0 exist:(BOOL)a1 withList:(id)a2;
+- (void)fitMode:(id)a0 requestReset:(BOOL)a1;
+- (void)onListCellPrepareForReuse:(id)a0 withList:(id)a1;
+- (void)onNodeRemoved;
+- (void)onListCellAppear:(id)a0 withList:(id)a1;
+- (void)player:(id)a0 loadStateDidChange:(unsigned long long)a1;
+- (void)player:(id)a0 playbackStateDidChange:(unsigned long long)a1;
+- (void)reportLog:(id)a0 params:(id)a1;
+- (void)player:(id)a0 didReceiveMetaInfo:(id)a1 processed:(BOOL)a2;
+- (void)player:(id)a0 didReceiveError:(id)a1;
+- (void)playerFrozen:(id)a0;
+- (void)playerResume:(id)a0;
+- (void)setLogExtra:(id)a0 requestReset:(BOOL)a1;
+- (void)volume:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)qualities:(id)a0 requestReset:(BOOL)a1;
+- (void)enterLiveRoom:(id)a0 withResult:(id /* block */)a1;
+- (void)setPlayMode:(id)a0 withResult:(id /* block */)a1;
+- (void)didExitRoom:(id)a0;
+- (BOOL)blockUIMethodIfSharedLivePlayerToRoom:(id /* block */)a0;
+- (void)destroyInnerPlayer;
+- (void)sendEvent:(id)a0 detail:(id)a1;
+- (void)stream_data:(id)a0 requestReset:(BOOL)a1;
+- (void)scene:(id)a0 requestReset:(BOOL)a1;
+- (void)roomID:(id)a0 requestReset:(BOOL)a1;
+- (void)bizDomain:(id)a0 requestReset:(BOOL)a1;
+- (void)page:(id)a0 requestReset:(BOOL)a1;
+- (void)block:(id)a0 requestReset:(BOOL)a1;
+- (void)index:(id)a0 requestReset:(BOOL)a1;
+- (void)inList:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)stopAudioRendering:(id)a0 withResult:(id /* block */)a1;
+- (void)startAudioRendering:(id)a0 withResult:(id /* block */)a1;
+- (void)iosShare:(id)a0 withResult:(id /* block */)a1;
+- (void)requireOwnership:(id)a0 withResult:(id /* block */)a1;
+- (void)setCustomPlayer:(BOOL)a0 requestReset:(BOOL)a1;
+- (void).cxx_destruct;
+- (BOOL)isPlaying;
+- (id)init;
+- (id)player;
+- (void)dealloc;
+- (id)createView;
+- (id)getConfig;
+- (id)innerView;
+
+@end

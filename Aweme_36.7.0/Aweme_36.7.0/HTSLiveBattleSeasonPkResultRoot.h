@@ -1,0 +1,3 @@
+@interface HTSLiveBattleSeasonPkResultRoot : GPBRootObject
+
+@end

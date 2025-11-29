@@ -1,0 +1,10 @@
+@class TIMXPBNSubConversation;
+
+@interface TIMXPBNGetSubConversationResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNSubConversation *subConversation;
+@property (nonatomic) BOOL hasSubConversation;
+
++ (id)descriptor;
+
+@end

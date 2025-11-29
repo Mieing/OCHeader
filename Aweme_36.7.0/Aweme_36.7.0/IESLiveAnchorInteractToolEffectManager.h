@@ -1,0 +1,73 @@
+@class HTSEventContext, NSString, NSArray, IESLiveAnchorInteractiveGameItem, IESLiveInteractPluginRequestApi, NSMutableDictionary, IESLiveFaceEffectViewModel, IESEffectModel, IESLiveComponentContext;
+@protocol IESLiveRoomService, IESLiveInteractGameMusicDataProtocol;
+
+@interface IESLiveAnchorInteractToolEffectManager : NSObject <IESLiveAnchorInteractEffectService, IESLiveInteractionModuleMixKTVInterfaceAction, IESLiveEffectMessageSubscriber, IESLiveAnchorRoomStatusChangeEvents>
+
+@property (retain, nonatomic) id<IESLiveRoomService> room;
+@property (retain, nonatomic) IESLiveComponentContext *componentContext;
+@property (retain, nonatomic) HTSEventContext *eventContext;
+@property (retain, nonatomic) IESLiveInteractPluginRequestApi *requestApi;
+@property (retain, nonatomic) NSArray *effectItems;
+@property (retain, nonatomic) NSMutableDictionary *effectDict;
+@property (nonatomic) double startUseTime;
+@property (retain, nonatomic) IESLiveFaceEffectViewModel *faceEffectService;
+@property (retain, nonatomic) id<IESLiveInteractGameMusicDataProtocol> songData;
+@property (retain, nonatomic) IESEffectModel *currentInteractEffect;
+@property (copy, nonatomic) NSString *downloadingId;
+@property (retain, nonatomic) IESLiveAnchorInteractiveGameItem *clickedItem;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)willStopAnchorLive;
+- (void)didReceiveEffectMessage:(unsigned long long)a0 arg1:(unsigned long long)a1 arg2:(unsigned long long)a2 data:(id)a3;
+- (void)removeAllDetectHandler;
+- (id)initWithRoom:(id)a0 componentContext:(id)a1 eventContext:(id)a2 faceEffectService:(id)a3;
+- (void)processInteractEffect:(id)a0 isApply:(BOOL)a1 needQuitConfirm:(BOOL)a2 forceReplaceOther:(BOOL)a3 completion:(id /* block */)a4;
+- (id)getGameItemWithEffectId:(id)a0;
+- (id)currentInteractToolEffectId;
+- (BOOL)musicInteractEffectIsApplying;
+- (void)unApplyMusicInteractEffectWithCompletion:(id /* block */)a0;
+- (void)processMusicInteractEffectForApply:(BOOL)a0;
+- (void)openMusicInteractEffectKTVPanel;
+- (void)recordToolUsageWith:(id)a0 use:(BOOL)a1;
+- (void)addFaceDetectHandlerIfNeeded:(id)a0;
+- (id)currentInteractEffectItem;
+- (void)trackAnchorInteractiveExtensionUse:(id)a0;
+- (void)trackAnchorInteractiveExtensionOver:(id)a0;
+- (BOOL)isPreviewDebugEffectWithItem:(id)a0;
+- (void)interactGameMusicPanelDidStartIsSuccess:(BOOL)a0 songData:(id)a1;
+- (void)interactGameMusicPanelDidShow;
+- (void)interactGameMusicPanelDidDismiss;
+- (void)handleInteractEffectWhenResumeLive;
+- (void)handleMusicInteractEffectMsg:(id)a0;
+- (void)handleScoreInteractEffectMsg:(id)a0;
+- (void)trackAnchorInteractiveExtensionQuitPopup:(id)a0 clickBtnType:(id)a1 actionType:(id)a2;
+- (void)updateInteractToolEffect:(id)a0 uploadID:(id)a1 isApplied:(BOOL)a2 completion:(id /* block */)a3;
+- (BOOL)getConflictStatusWithItem:(id)a0;
+- (void)trackConflictPopup;
+- (void)quitOtherEffect;
+- (void)processInteractToolItem:(id)a0 isApplied:(BOOL)a1 completion:(id /* block */)a2;
+- (void)updateCurrentInteractEffectItem:(id)a0;
+- (void)doRemoveInteractToolEffect;
+- (void)openMusicInteractEffectItem:(id)a0;
+- (void)updateItem:(id)a0 downloadingID:(id)a1;
+- (void)doApplyMusicInteractEffectWithItem:(id)a0;
+- (void)doSelectInteractToolEffect:(id)a0;
+- (void)prepareMusicInteractEffectData:(id)a0 songData:(id)a1 completion:(id /* block */)a2;
+- (void)downLoadEffectWithEffectID:(id)a0 completion:(id /* block */)a1;
+- (void)assemblyMusicInteractEffectData:(id)a0 songData:(id)a1 coverFilePath:(id)a2 beatsInfoDict:(id)a3 completion:(id /* block */)a4;
+- (BOOL)isNormalEffectRunning;
+- (BOOL)isInteractToolRunning:(id)a0;
+- (void)handleUseResultWithEffect:(id)a0 isApplied:(BOOL)a1 error:(id)a2 completion:(id /* block */)a3;
+- (void)handleUnApplyMusicEffectIfNeeded:(id)a0;
+- (void)applyInteractToolEffect:(id)a0;
+- (void)handleApplyMusicEffectIfNeeded:(id)a0;
+- (void)updateInteractEffectUseState:(id)a0;
+- (void)trackMusicInteractEffectUseSuccess:(id)a0;
+- (id)createItemWith:(id)a0;
+- (void).cxx_destruct;
+- (void)setup;
+
+@end

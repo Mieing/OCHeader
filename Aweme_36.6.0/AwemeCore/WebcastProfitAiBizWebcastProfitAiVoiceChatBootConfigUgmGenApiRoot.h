@@ -1,0 +1,3 @@
+@interface WebcastProfitAiBizWebcastProfitAiVoiceChatBootConfigUgmGenApiRoot : GPBRootObject
+
+@end

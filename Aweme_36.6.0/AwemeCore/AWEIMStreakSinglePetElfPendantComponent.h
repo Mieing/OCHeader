@@ -1,0 +1,80 @@
+@class NSString, UIView, AWEIMStreakPendantView;
+
+@interface AWEIMStreakSinglePetElfPendantComponent : AWEIMComponentBase <AWEIMMessageListLayotAction, AWEIMMessageListDataAction, AWEIMStreakPendantViewDelegate, AWEIMStreakPendantInterface, AWEIMInputVIewControllerAction, AWEIMStreakDataCenterMessage, AWEIMMultiSelectedAction>
+
+@property (retain, nonatomic) AWEIMStreakPendantView *petElfContainView;
+@property (retain, nonatomic) NSString *curColor;
+@property (nonatomic) long long curStage;
+@property (nonatomic) long long curPetId;
+@property (nonatomic) BOOL hostVCDidAppear;
+@property (nonatomic) BOOL hostVCFirstRenderDidAppear;
+@property (nonatomic) BOOL hasGetAchievePageData;
+@property (nonatomic) BOOL needTryShowInHostVCDidAppear;
+@property (nonatomic) unsigned long long curFlamePetElfPendantStatus;
+@property (nonatomic) BOOL isInStatusChange;
+@property (nonatomic) BOOL isFirstShow;
+@property (nonatomic) unsigned long long trackStatus;
+@property (nonatomic) BOOL shouldTrackShowPendantTimeCost;
+@property (nonatomic) double enterConversationTime;
+@property (nonatomic) double initPendantContainerTime;
+@property (nonatomic) double frontSendInitReadyTime;
+@property (nonatomic) double sendUpdateEventTime;
+@property (nonatomic) BOOL hasTrackFlamePetElfPendantShow;
+@property (nonatomic) long long petElfMsgCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) UIView *petElfView;
+
++ (BOOL)canCreateComponentWithContext:(id)a0;
+
+- (id)componentContext;
+- (void)onConversationDidUpdateWithConversation:(id)a0;
+- (void)componentDidMounted:(id)a0;
+- (void)hostVC_viewDidAppear;
+- (void)hostVC_viewDidAppearAndRender;
+- (void)didReceiveNewMessage:(id)a0 reason:(long long)a1;
+- (void)hostVC_afterFirstRender;
+- (void)imStreakDataDidUpdateWithConversation:(id)a0;
+- (void)inputViewTypeDidChange:(long long)a0 oldInputViewType:(long long)a1;
+- (void)multiSelectedStateDidChanged:(BOOL)a0;
+- (void)afterGetServerDataTryShowPendantWithRequestInfo:(id)a0;
+- (void)p_viewDidAppear;
+- (void)pageLayoutCoordinateAnimationWithAnimated:(BOOL)a0 fromLayout:(id)a1 toLayot:(id)a2;
+- (id)getIMMessageConversation;
+- (id)getCurrentMessageListPageLayoutInfo;
+- (id)bizClientData;
+- (id)bizServerData;
+- (void)petElfPendantHasSendUpdateEvent;
+- (void)trackLongPress;
+- (void)trackLongPressWithParams:(id)a0;
+- (void)petElfPendantHasGetFrontHideFinishSignal;
+- (void)petElfPendantHasGetFrontSwitchOverSignal;
+- (void)petElfPendantSaveCurrentPositionWithDict:(id)a0;
+- (void)petElfPendantHasGetFrontReadySignal;
+- (void)petElfPendantHasShowSuccessSignal;
+- (void)doubleTapPetElfView:(id)a0;
+- (void)atPetElf;
+- (void)gotoPetElfChatSettings;
+- (void)trackClickTipsToHideWidget;
+- (void)logWithExecutePhase:(id)a0 eventName:(id)a1 extra:(id)a2;
+- (id)getConversation;
+- (id)currentConversationCon;
+- (BOOL)p_canShowFlamePetElfPendant;
+- (void)p_trackPetElfShowWithUserSetHidePendant:(BOOL)a0;
+- (void)checkPendantStatusWithConversation:(id)a0 requestSource:(id)a1;
+- (void)sendUpdatePetStyleEventWithRequestInfo:(id)a0;
+- (long long)getStreakStatusForTrackingWithConversation:(id)a0;
+- (id)getStreakPetCommonParamsForTracking;
+- (id)getConversationShortID;
+- (id)getConversationID;
+- (id)getPetInfoDict;
+- (id)getConversationExt;
+- (void)tryShowFlamePetElfPendant;
+- (void)p_gotoAchievePage;
+- (id)getConversationPeerUserID;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

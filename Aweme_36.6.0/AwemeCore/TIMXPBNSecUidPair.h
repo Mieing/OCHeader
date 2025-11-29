@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface TIMXPBNSecUidPair : GPBMessage
+
+@property (nonatomic) long long uid;
+@property (nonatomic) BOOL hasUid;
+@property (copy, nonatomic) NSString *secUid;
+@property (nonatomic) BOOL hasSecUid;
+
++ (id)descriptor;
+
+@end

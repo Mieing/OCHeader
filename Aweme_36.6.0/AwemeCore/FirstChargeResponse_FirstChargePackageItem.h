@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface FirstChargeResponse_FirstChargePackageItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *img;
+@property (nonatomic) BOOL hasImg;
+@property (copy, nonatomic) NSString *desc;
+@property (copy, nonatomic) NSString *elideDesc;
+
++ (id)descriptor;
+
+@end

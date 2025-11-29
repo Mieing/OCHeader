@@ -1,0 +1,93 @@
+@class WCBusyThreadHandler, NSString, WCMainThreadHandler, NSThread, WCFilterStackHandler, WCCPUHandler, NSObject, WCBlockMonitorConfigHandler, WCPowerConsumeStackCollector;
+@protocol OS_dispatch_queue, WCBlockMonitorDelegate;
+
+@interface WCBlockMonitorMgr : NSObject <WCPowerConsumeStackCollectorDelegate> {
+    NSThread *m_monitorThread;
+    BOOL m_bStop;
+    long long m_currentState;
+    unsigned long long m_nIntervalTime;
+    unsigned long long m_nLastTimeInterval;
+    struct MatrixStackInfo { unsigned int m_fcount; unsigned long long m_stackHash; unsigned long long m_frames[100]; } m_lastMainThreadCallStack;
+    unsigned long long m_blockDiffTime;
+    unsigned int m_firstSleepTime;
+    NSString *m_potenHandledLagFile;
+    WCMainThreadHandler *m_pointMainThreadHandler;
+    struct __CFRunLoopObserver { } *m_runLoopBeginObserver;
+    struct __CFRunLoopObserver { } *m_runLoopEndObserver;
+    struct __CFRunLoopObserver { } *m_initializationBeginRunloopObserver;
+    struct __CFRunLoopObserver { } *m_initializationEndRunloopObserver;
+    NSObject<OS_dispatch_queue> *m_asyncDumpQueue;
+    WCCPUHandler *m_cpuHandler;
+    BOOL m_bTrackCPU;
+    WCFilterStackHandler *m_stackHandler;
+    WCPowerConsumeStackCollector *m_powerConsumeStackCollector;
+    unsigned int m_memoryMonitorTickTock;
+    unsigned int m_printMemoryTickTok;
+    unsigned int m_printCPUFrequencyTickTok;
+    BOOL m_suspendAllThreads;
+    BOOL m_enableSnapshot;
+    BOOL m_moreThreadInfo;
+    struct timeval { long long tv_sec; int tv_usec; } m_recordStackTime;
+    BOOL m_memoryExceeded;
+    BOOL m_busyThreadProfile;
+    unsigned int m_busyThreadProfileDuration;
+    unsigned int m_busyThreadProfileInterval;
+    WCBusyThreadHandler *m_busyThreadHandler;
+}
+
+@property (retain, nonatomic) WCBlockMonitorConfigHandler *monitorConfigHandler;
+@property (weak, nonatomic) id<WCBlockMonitorDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)shareInstance;
++ (void)checkRunloopDuration;
++ (unsigned long long)diffTime:(struct timeval { long long x0; int x1; } *)a0 endTime:(struct timeval { long long x0; int x1; } *)a1;
+
+- (void)resetConfiguration:(id)a0;
+- (id)init;
+- (void)dealloc;
+- (void)freeCpuHighThreadArray;
+- (void)start;
+- (void)stop;
+- (void)handleBackgroundLaunch;
+- (void)handleSuspend;
+- (id)getUserInfoForCurrentDumpForDumpType:(unsigned long long)a0;
+- (void)willTerminate;
+- (void)didBecomeActive;
+- (void)didEnterBackground;
+- (void)willResignActive;
+- (void)thermalStateDidChange;
+- (void)setCPUUsagePercent:(float)a0;
+- (void)setPerStackInterval:(unsigned int)a0;
+- (void)addMonitorThread;
+- (void)threadProc;
+- (void)recordCurrentStack;
+- (unsigned long long)check;
+- (unsigned long long)needFilter;
+- (void)resetStatus;
+- (void)addRunLoopObserver;
+- (void)removeRunLoopObserver;
+- (id)dumpFileWithType:(unsigned long long)a0;
+- (void)clearLaunchLagRecord;
+- (void)clearDumpInBackgroundLaunch;
+- (void)startTrackCPU;
+- (void)stopTrackCPU;
+- (BOOL)isBackgroundCPUTooSmall;
+- (BOOL)lowerCPUUsage;
+- (BOOL)recoverCPUUsage;
+- (BOOL)lowerRunloopThreshold;
+- (BOOL)recoverRunloopThreshold;
+- (BOOL)setRunloopThreshold:(unsigned int)a0;
+- (BOOL)setRunloopThreshold:(unsigned int)a0 isFirstTime:(BOOL)a1;
+- (void)setShouldSuspendAllThreads:(BOOL)a0;
+- (id)generateLiveReportWithDumpType:(unsigned long long)a0 withReason:(id)a1 selfDefinedPath:(BOOL)a2;
+- (void)powerConsumeStackCollectorConclude:(id)a0;
+- (void)makeThreadProfile;
+- (void)makeLockTrace;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

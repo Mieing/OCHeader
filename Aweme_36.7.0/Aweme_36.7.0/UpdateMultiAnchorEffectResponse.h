@@ -1,0 +1,10 @@
+@class UpdateMultiAnchorEffectResponse_Data;
+
+@interface UpdateMultiAnchorEffectResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateMultiAnchorEffectResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

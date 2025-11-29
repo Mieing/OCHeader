@@ -1,0 +1,73 @@
+@class AWEMusicDetailDataContext, AWEDummyMusicDetailModel, AWEMusicLeaderboardInfoModel, AWEMusicDetailMusicCardViewConfig, AWEMusicDetailPromotionModel, NSString, AWEMusicDetailMusicModel, NSDictionary, AWEAwemeModel, AWEMusicModel;
+
+@interface AWEMusicDetailHeaderDataHelper : NSObject
+
+@property (retain, nonatomic) AWEMusicDetailMusicCardViewConfig *cardConfig;
+@property (retain, nonatomic) AWEMusicDetailMusicModel *musicModel;
+@property (retain, nonatomic) AWEDummyMusicDetailModel *dummyMusicModel;
+@property (retain, nonatomic) AWEMusicDetailDataContext *dataContext;
+@property (retain, nonatomic) AWEMusicLeaderboardInfoModel *leaderboardInfo;
+@property (retain, nonatomic) AWEMusicDetailPromotionModel *promotionModel;
+@property (retain, nonatomic) NSString *enterFromPageString;
+@property (retain, nonatomic) NSString *processID;
+@property (retain, nonatomic) NSString *fromGroupID;
+@property (retain, nonatomic) NSString *promoTickerIconType;
+@property (copy, nonatomic) NSDictionary *searchParams;
+@property (copy, nonatomic) NSDictionary *trackerParams;
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (nonatomic) long long failType;
+@property (readonly, nonatomic) AWEMusicModel *model;
+@property (readonly, nonatomic) long long cardIndex;
+
+- (void)setupMusicDetailFailType:(long long)a0;
+- (void)updateTrackerParams:(id)a0;
+- (long long)diversionMediaType;
+- (id)diversionInfo;
+- (long long)lunaButtonType;
+- (BOOL)hasMatchedLunaSong;
+- (BOOL)canShowAppendPlaylistWhenLunaInstalled;
+- (BOOL)isLunaSongAbove;
+- (BOOL)matchedLunaSongisSame;
+- (long long)headerViewRevisionType;
+- (BOOL)canShowMatchedLunaSongInHeader;
+- (BOOL)isLunaMV;
+- (id)songIdForLunaUg;
+- (id)lunaPopUpCoverURL;
+- (long long)numberOfVerifiedUser;
+- (void)updateDataContext:(id)a0;
+- (void)updateAwemeModel:(id)a0;
+- (void)updateSearchParams:(id)a0;
+- (void)updatePromoTickerIconType:(id)a0;
+- (void)updateFromGroupID:(id)a0;
+- (void)updateEnterFromPageString:(id)a0;
+- (id)ugButtonTitle;
+- (BOOL)shouldShowMatchedPGCInfoView;
+- (BOOL)hasLeaderboardInfo;
+- (BOOL)isOrignalAbove;
+- (BOOL)shouldShowHighFollowPromotionIcon;
+- (unsigned long long)titleArrowType;
+- (BOOL)shouldShowTitleArrow;
+- (long long)numberOfVerifiedUserForDummyView;
+- (BOOL)shouldShowUGCTitle;
+- (BOOL)shouldShowMatchedPGCInfoViewForDummyView;
+- (void)updateMusicModel:(id)a0;
+- (void)updateDummyMusicModel:(id)a0;
+- (void)updatePromotionModel:(id)a0;
+- (void)updateLeaderboardInfo:(id)a0;
+- (void)updateProcessID:(id)a0;
+- (BOOL)shouldShowSimilarTips;
+- (BOOL)enableMiniLuna:(BOOL)a0;
+- (BOOL)shouldShowCoverLunaIcon;
+- (unsigned long long)coverLeftBottomCornerType;
+- (BOOL)shouldShowAuthorArrow;
+- (BOOL)shouldShowEditTitleButton;
+- (unsigned long long)barViewType;
+- (BOOL)completeMusicEnvironmentCheckPassed:(BOOL)a0;
+- (BOOL)shouldShowMatchedPGC;
+- (BOOL)shouldShowPlayControlBar;
+- (BOOL)shouldShowMatchedLunaSong;
+- (id)decorateTagURLInTheme:(BOOL)a0;
+- (void).cxx_destruct;
+- (id)initWithConfig:(id)a0;
+
+@end

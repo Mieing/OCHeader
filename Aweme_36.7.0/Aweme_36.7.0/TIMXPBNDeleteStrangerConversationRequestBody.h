@@ -1,0 +1,8 @@
+@interface TIMXPBNDeleteStrangerConversationRequestBody : GPBMessage
+
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+
++ (id)descriptor;
+
+@end

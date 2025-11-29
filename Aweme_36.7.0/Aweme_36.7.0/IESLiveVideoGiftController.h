@@ -1,0 +1,77 @@
+@class UIView, NSError, CHHapticEngine, IESLiveVideoGiftResourceModel, NSString, IESLiveVideoGiftMetalView, IESLiveAssetReaderOutput, IESLiveVideoGiftMetalConfiguration, NSObject;
+@protocol OS_dispatch_queue, IESLiveVideoGiftControllerDelegate, IESLiveVideoGiftAudioPlayerProtocol;
+
+@interface IESLiveVideoGiftController : NSObject <IESLiveVideoGiftAudioPlayerDelegate>
+
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue;
+@property (retain, nonatomic) IESLiveVideoGiftMetalView *videoGiftMetalView;
+@property (retain, nonatomic) NSError *renderError;
+@property (retain, nonatomic) IESLiveAssetReaderOutput *readerOutput;
+@property (retain, nonatomic) IESLiveVideoGiftMetalConfiguration *configuration;
+@property (retain, nonatomic) id<IESLiveVideoGiftAudioPlayerProtocol> audioPlayer;
+@property (retain, nonatomic) CHHapticEngine *hapticEngine;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *audioPlaybackQueue;
+@property (readonly, nonatomic) UIView *view;
+@property (weak, nonatomic) id<IESLiveVideoGiftControllerDelegate> delegate;
+@property (retain) IESLiveVideoGiftResourceModel *model;
+@property (nonatomic) unsigned long long contentMode;
+@property unsigned long long state;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } liveRenderSuperViewFame;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)totalDurationOfPlayingEffect;
+- (void)playWithConfiguration:(id)a0;
+- (struct CGSize { double x0; double x1; })originVideoSizeOfRGBChannels;
+- (void)pr_addNotification;
+- (void)reportVibrateSceneError:(id)a0;
+- (void)destroyHapticEngine;
+- (void)startPlayAudioResources;
+- (void)stopWithFinishPlayingCallback;
+- (void)didApplicationDidBecomeActive:(id)a0;
+- (void)audioPlayer:(id)a0 prepareWithSampleRate:(double)a1 channels:(unsigned int)a2;
+- (void)audioPlayer:(id)a0 processAudioFrameWithRawData:(float **)a1 samples:(int)a2 timestamp:(long long)a3;
+- (void)audioPlayer:(id)a0 didOccurError:(id)a1;
+- (void)playWithResourceDirectory:(id)a0 orientation:(unsigned long long)a1 loop:(BOOL)a2 maskResourceDic:(id)a3;
+- (void)pr_play:(BOOL)a0;
+- (void)playWithResourceDirectory:(id)a0 orientation:(unsigned long long)a1 loop:(BOOL)a2;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })pr_updateMetalViewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 error:(id *)a1;
+- (void)renderCompletion;
+- (void)pr_updateMetalViewFrame:(id *)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })_realDisplayFrameOnScreen:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })_getMetalViewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 displayFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void /* unknown type, empty encoding */)_getRenderPositionMultiFactor:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 displayFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)pr_playOnMetalWithLoop:(BOOL)a0;
+- (void)runSyncSafeOnAudioPlaybackQueue:(id /* block */)a0;
+- (void)playWithResourceDirectory:(id)a0 orientation:(unsigned long long)a1;
+- (void)createAudioPlayBackQueueIfNeeded;
+- (void)pr_configRenderViewContentModeFromModel;
+- (void)pauseAudioPlayerIfNeeded;
+- (void)resumeAudioPlayerIfNeeded;
+- (void)_startPlayAudioResources;
+- (void)seekAudioPlayerToTimeIfNeeded:(double)a0;
+- (void)stopAudioPlayerIfNeeded;
+- (void)startPlayAudioPlayerFromBeginning;
+- (void)pr_didFinishPlayingWithError:(id)a0;
+- (void)reportAt:(unsigned long long)a0 sceneError:(id)a1;
+- (void)pr_playingWithNonFatalError:(id)a0;
+- (void)close;
+- (void)flush;
+- (void).cxx_destruct;
+- (BOOL)pause;
+- (BOOL)isPlaying;
+- (id)init;
+- (void)stop;
+- (id)initWithDelegate:(id)a0;
+- (double)currentTime;
+- (id)view;
+- (void)setContentMode:(unsigned long long)a0;
+- (void)seekToTime:(double)a0;
+- (void)willResignActive:(id)a0;
+- (BOOL)resume;
+- (void)dealloc;
+- (unsigned long long)contentMode;
+
+@end

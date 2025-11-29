@@ -1,0 +1,12 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNCreateConversationRequestBody : GPBMessage
+
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+@property (retain, nonatomic) GPBInt64Array *participantsArray;
+@property (readonly, nonatomic) unsigned long long participantsArray_Count;
+
++ (id)descriptor;
+
+@end

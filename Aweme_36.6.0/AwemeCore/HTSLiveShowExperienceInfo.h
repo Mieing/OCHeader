@@ -1,0 +1,13 @@
+@class HTSLivePlayerProgressBarSkin;
+
+@interface HTSLiveShowExperienceInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLivePlayerProgressBarSkin *playerProgressBarSkin;
+@property (nonatomic) BOOL hasPlayerProgressBarSkin;
+@property (nonatomic) long long xiguaTvCastConfig;
+@property (nonatomic) int vsCommentStyle;
+@property (nonatomic) BOOL vsCommentSwitcher;
+
++ (id)descriptor;
+
+@end

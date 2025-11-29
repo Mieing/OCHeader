@@ -1,0 +1,3 @@
+@interface HTSLiveBattleReserveReplyRoot : GPBRootObject
+
+@end

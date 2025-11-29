@@ -1,0 +1,3 @@
+@interface LinkmicKickOutApiRoot : GPBRootObject
+
+@end

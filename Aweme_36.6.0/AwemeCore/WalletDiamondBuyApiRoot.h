@@ -1,0 +1,3 @@
+@interface WalletDiamondBuyApiRoot : GPBRootObject
+
+@end

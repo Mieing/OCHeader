@@ -1,0 +1,80 @@
+@class UIView, NSString, AttributeLabel, MMUISearchBar, UIImageView, UIButton, NSMutableArray, MMTableView, WCTimeLineFooterView;
+@protocol EnterpriseContactSearchViewDelegate;
+
+@interface EnterpriseContactSearchView : MMUIView <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, MMRefreshTableFooterDelegate> {
+    NSString *_brandUserName;
+    MMUISearchBar *_superSearchBar;
+    UIImageView *_searchBarWrap;
+    MMUISearchBar *_searchBar;
+    UIButton *_backButton;
+    MMTableView *_tableView;
+    WCTimeLineFooterView *_footerView;
+    UIImageView *_bottomViewShadow;
+    AttributeLabel *_tipLabel;
+    double _moveStartOffset;
+    double _moveCurOffset;
+    double _moveContentOffsetY;
+    NSString *_searchText;
+    NSString *_searchedText;
+    BOOL _isLoading;
+    BOOL _isError;
+    BOOL _hasMore;
+    BOOL _hasMoving;
+    double _searchTextFieldNormalWidth;
+    NSMutableArray *_aryResult;
+    unsigned int _scene;
+    id<EnterpriseContactSearchViewDelegate> _delegate;
+}
+
+@property (retain, nonatomic) UIView *bottomView;
+@property (retain, nonatomic) NSString *emptyTipSuffix;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithSuperSearchBar:(id)a0 scene:(unsigned int)a1 delegate:(id)a2;
+- (void)dealloc;
+- (void)initView;
+- (void)initData;
+- (void)show;
+- (void)pop:(BOOL)a0;
+- (void)onBackButtonClicked:(id)a0;
+- (void)onPopCompleted;
+- (void)handleRotateEvent;
+- (void)enableSearchBarButton:(id)a0;
+- (BOOL)shouldProcessRemoteSearchResp:(id)a0 range:(unsigned int)a1;
+- (void)onRemoteSearchMoreCompleted:(id)a0 range:(unsigned int)a1 result:(id)a2;
+- (void)onRemoteSearchError;
+- (void)cancelMoveSearchBar;
+- (void)updateSearchBarPosition;
+- (void)handlePanGesture:(id)a0;
+- (void)handleTextChangedDelay:(id)a0;
+- (void)handleTextChanged:(id)a0;
+- (void)searchBar:(id)a0 textDidChange:(id)a1;
+- (void)searchBarSearchButtonClicked:(id)a0;
+- (void)searchBarCancelButtonClicked:(id)a0;
+- (void)reloadData;
+- (void)onLoadMore;
+- (void)MMRefreshTableFooterDidTriggerRefresh:(id)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (long long)tableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (id)makeContactCell:(id)a0 tableView:(id)a1;
+- (id)makeTitleCell:(id)a0 indexPath:(id)a1 tableView:(id)a2;
+- (id)getMMSearchBar;
+- (id)getViewController;
+- (id)getDataController;
+- (id)getSearchTextField;
+- (unsigned int)getTipType;
+- (double)getSearchTextFieldWidth;
+- (void).cxx_destruct;
+
+@end

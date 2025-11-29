@@ -1,0 +1,11 @@
+@class NSString, IESGCPPBGameDetailMiniGameMeta;
+
+@interface IESGCPPBGameDetailMiniGameLaunchButton : GPBMessage
+
+@property (copy, nonatomic) NSString *status;
+@property (retain, nonatomic) IESGCPPBGameDetailMiniGameMeta *miniGameMeta;
+@property (nonatomic) BOOL hasMiniGameMeta;
+
++ (id)descriptor;
+
+@end

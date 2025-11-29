@@ -1,0 +1,77 @@
+@class UIView, NSString, IESLiveAudiencePauseTipView, IESLiveMultiLinkerApi, HTSLiveGradientBackgroundView, IESLiveIntercomCommentEntranceView, HTSLiveInteractiveAPIV2, IESLiveAnchorMultiLinkerLoadingView;
+@protocol IESLiveInteractUserModel, IESLiveMultiLinkerProvider;
+
+@interface IESLiveMultiLinkerInfoView : UIView <IESLiveMultiLinkerAnchorActionPanelDelegate, IESLiveMultiLinkerGridViewProtocol>
+
+@property (weak, nonatomic) id<IESLiveMultiLinkerProvider> provider;
+@property (retain, nonatomic) id<IESLiveInteractUserModel> user;
+@property (nonatomic) BOOL didUpdateUser;
+@property (retain, nonatomic) HTSLiveInteractiveAPIV2 *interactionAPI;
+@property (retain, nonatomic) IESLiveMultiLinkerApi *api;
+@property (nonatomic) BOOL isMute;
+@property (nonatomic) BOOL hasBannedToast;
+@property (nonatomic) BOOL needShowLastResult;
+@property (nonatomic) unsigned long long layoutType;
+@property (nonatomic) double closeMicDeltaOffset;
+@property (retain, nonatomic) IESLiveAudiencePauseTipView *tipView;
+@property (retain, nonatomic) HTSLiveGradientBackgroundView *tipBackgroundView;
+@property (nonatomic) BOOL hasRegisterFollowStatus;
+@property (retain, nonatomic) IESLiveIntercomCommentEntranceView *intercomCommentView;
+@property (nonatomic) long long followStatus;
+@property (nonatomic) BOOL shouldSkipConfirm;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL didUpdate;
+@property (weak, nonatomic) UIView *tipViewSuperview;
+@property (retain, nonatomic) IESLiveAnchorMultiLinkerLoadingView *loadingView;
+
+- (id)initWithDIContext:(id)a0;
+- (void)bindAction;
+- (void)sendMultiLinkerEvent:(unsigned long long)a0 withParams:(id)a1;
+- (void)updateLoadingStatus:(BOOL)a0;
+- (void)updateActive:(BOOL)a0;
+- (void)kickoutUser:(id)a0;
+- (void)openUserCard:(id)a0;
+- (void)muteUser:(BOOL)a0 uid:(id)a1;
+- (void)followUser:(BOOL)a0 uid:(id)a1;
+- (void)onCloseMicButtonClicked;
+- (void)loadIntercomCommentView;
+- (double)viewPadBottomOffset;
+- (void)fetchFollowStatusIfNeeded;
+- (id)p_makeGradientViewFromPoint:(struct CGPoint { double x0; double x1; })a0 toPoint:(struct CGPoint { double x0; double x1; })a1 fromColor:(id)a2 toColor:(id)a3;
+- (void)showCloseMicPanel;
+- (void)onReceivedClearNotification:(BOOL)a0;
+- (void)showUserProfilePanel:(id)a0;
+- (void)onFollowClicked:(id)a0;
+- (void)onUnfollowClicked;
+- (void)updateLayoutWithType:(unsigned long long)a0;
+- (void)refreshTipViewIfNeeded;
+- (void)specialLayoutInAll:(BOOL)a0 uid:(id)a1 layoutType:(long long)a2;
+- (void)clickIntercomComment;
+- (void)muteAllUser:(BOOL)a0;
+- (void)openTransferPage;
+- (void)onInfoViewClicked;
+- (void)showOrHideTipView:(BOOL)a0;
+- (void)fetchUserInfoWithUser:(id)a0;
+- (void)trackCloseMicButtonClicked;
+- (void)handleCloseMicInChorusState;
+- (void)monitorClickCloseMicButton:(BOOL)a0;
+- (void)p_sendMuteRTCMessage:(BOOL)a0 linkmic:(id)a1;
+- (id)followTrackParams:(id)a0;
+- (BOOL)isOppositeScreenshotLinker;
+- (void)doMuteAllUser:(BOOL)a0;
+- (void)trackKickOutConfirmClicked:(id)a0;
+- (void)showMuteAllPanel;
+- (void)onMuteStatusChanged;
+- (void)monitorClickMuteAllButton:(BOOL)a0;
+- (double)viewPadTopOffset;
+- (void).cxx_destruct;
+- (id)connectionType;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)dealloc;
+- (void)setupUI;
+- (void)updateUser:(id)a0;
+
+@end

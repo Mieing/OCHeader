@@ -1,0 +1,13 @@
+@class IESLiveAnchorLayoutInfo, JoinChannelResponse_MultiAnchorLinkmicRtcLiveCoreData;
+
+@interface JoinChannelResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) JoinChannelResponse_MultiAnchorLinkmicRtcLiveCoreData *rtcLiveCoreData;
+@property (nonatomic) BOOL hasRtcLiveCoreData;
+@property (nonatomic) int anchorUiLayout;
+@property (retain, nonatomic) IESLiveAnchorLayoutInfo *layoutInfo;
+@property (nonatomic) BOOL hasLayoutInfo;
+
++ (id)descriptor;
+
+@end

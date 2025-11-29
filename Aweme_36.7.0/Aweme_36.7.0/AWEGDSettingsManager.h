@@ -1,0 +1,55 @@
+@interface AWEGDSettingsManager : NSObject
+
++ (id)renderCacheBlackFilterDoorRule;
++ (id)tradeSettings;
++ (int)offlineRenderValidTime;
++ (id)offlineRenderRouterKeys;
++ (id)offlineRenderComponentsArr;
++ (BOOL)offlineRenderDoor;
++ (BOOL)preRequestDoor;
++ (BOOL)shouldDisableOneStepConfirmAbility;
++ (BOOL)refreshBizTypeAdvanceEnabled;
++ (BOOL)goodsDetailNativeCheckAgreementDisable;
++ (BOOL)goodsDetailNoActionActionEnabled;
++ (id)backEventUniqueTagWhiteList;
++ (BOOL)goodsForceShutDownSwitchLayout;
++ (BOOL)fullScreenLeftSlideInterceptEnabled;
++ (BOOL)goodsDetailPageOperationTrackEnabled;
++ (BOOL)skipBizCodeAfterDitoResponse;
++ (BOOL)disableInjectInitTime;
++ (int)renderCacheValidTime;
++ (id)renderCacheCheckRouterKeys;
++ (id)renderCacheAllowCacheComponentsArray;
++ (BOOL)renderCacheFoodDoor;
++ (BOOL)renderCachePreRequestDoor;
++ (int)renderCacheDeliverValidTime;
++ (id)renderCacheDeliverCheckRouterKeys;
++ (id)renderCacheDeliverAllowCacheComponentsArray;
++ (BOOL)renderCacheDeliverDoor;
++ (BOOL)renderCachePreRequestDeliverDoor;
++ (id)renderCacheDeliverBlackFilterDoorRule;
++ (BOOL)shouldMuteLiveAfterClose;
++ (BOOL)delayHideDisasterDegradeLoadingView;
++ (int)renderCacheCapacity;
++ (id)preRequestPath;
++ (id)navBarIconCollected;
++ (id)navBarIconUncollect;
++ (id)navBarIconShare;
++ (id)navBarIconSearch;
++ (id)navBarIconClose;
++ (id)navBarIconBack;
++ (BOOL)fixSearchProductId;
++ (BOOL)fallbackControlSearchSchema;
++ (id)renderCacheDeliverOptions;
++ (BOOL)fixComponentShowEvent;
++ (BOOL)userHttpHeader;
++ (id)secondaryPageHeaderUrl;
++ (id)secondaryPageBodyUrl;
++ (BOOL)fixHalfScreenLayerColor;
++ (BOOL)fixModuleExposeBug;
++ (BOOL)goodsDetailSkeletonOpen;
++ (id)goodsDetailSkeletonRemoveWatchNode;
++ (BOOL)useSafeLocationInGCJLocationBridge;
++ (int)couponBubbleDelayShowTime;
+
+@end

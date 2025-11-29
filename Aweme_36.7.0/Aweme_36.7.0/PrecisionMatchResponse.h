@@ -1,0 +1,10 @@
+@class PrecisionMatchResponse_ResponseData;
+
+@interface PrecisionMatchResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PrecisionMatchResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

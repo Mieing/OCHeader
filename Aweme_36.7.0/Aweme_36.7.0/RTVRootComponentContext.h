@@ -1,0 +1,3 @@
+@interface RTVRootComponentContext : AWEIMComponentContext
+
+@end

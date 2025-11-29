@@ -1,0 +1,74 @@
+@class UIPanGestureRecognizer, UILabel, IESLiveAdminScreenRecordApi, UITapGestureRecognizer, HTSLiveAdminRecordMessage, UIButton, UIView, NSString, IESLiveVideoPlayerController, HTSLiveAdminRecordPublishTextView, NSArray, UISlider, UIImageView;
+@protocol IESLiveRoomService;
+
+@interface IESLiveAnchorPreviewView : UIView <IESLiveVideoPlayerControllerDelegate, UIGestureRecognizerDelegate, UITextViewDelegate>
+
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UIButton *cancelBtn;
+@property (retain, nonatomic) UIView *lineView;
+@property (retain, nonatomic) id<IESLiveRoomService> roomModel;
+@property (retain, nonatomic) UIView *videoPreviewContainerView;
+@property (retain, nonatomic) UIImageView *videoViewBackgroundImageView;
+@property (retain, nonatomic) UIImageView *pasueImageView;
+@property (retain, nonatomic) NSArray *coverUrlsList;
+@property (retain, nonatomic) UIView *playerView;
+@property (retain, nonatomic) UILabel *durationLabel;
+@property (retain, nonatomic) UISlider *progressSlider;
+@property (retain, nonatomic) IESLiveVideoPlayerController *player;
+@property (retain, nonatomic) UIPanGestureRecognizer *progressDrag;
+@property (nonatomic) struct CGPoint { double x; double y; } touchBeginPoint;
+@property (retain, nonatomic) UITapGestureRecognizer *progressPause;
+@property (retain, nonatomic) UILabel *adminNameLabel;
+@property (retain, nonatomic) HTSLiveAdminRecordPublishTextView *videoTitleTextView;
+@property (retain, nonatomic) UIButton *editBtn;
+@property (retain, nonatomic) UILabel *riskReminderLabel;
+@property (retain, nonatomic) UIButton *rightBottomButton;
+@property (retain, nonatomic) HTSLiveAdminRecordMessage *videoPublishViewModel;
+@property (retain, nonatomic) NSString *playurl;
+@property (retain, nonatomic) IESLiveAdminScreenRecordApi *adminScreenRecordApi;
+@property (nonatomic) long long replaceLocation;
+@property (nonatomic) BOOL continuousTextViewShouldChange;
+@property (nonatomic) long long titleLength;
+@property (nonatomic) long long maxTitleLength;
+@property (nonatomic) BOOL enableShareButton;
+@property (copy, nonatomic) id /* block */ hideAction;
+@property (copy, nonatomic) id /* block */ popMessageFromQueue;
+@property (copy, nonatomic) id /* block */ editBlock;
+@property (copy, nonatomic) id /* block */ shareAction;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)releasePlayer;
+- (void)addGestures;
+- (void)cancelBtnAction;
+- (void)tapGestureAction:(id)a0;
+- (void)panGestureAction:(id)a0;
+- (void)playerController:(id)a0 updateProgress:(double)a1 duration:(double)a2;
+- (void)setupPlayer:(id)a0;
+- (void)setupConstrants;
+- (id)attributedNameText;
+- (id)titleJoint;
+- (void)setupPublishButton:(id)a0;
+- (void)rightBottomBtnAction;
+- (id)redCornerImage;
+- (void)actionSliderBegan;
+- (void)actionSliderChanged;
+- (void)actionSliderEnded;
+- (void)actionGestureRecognizerStateBegan:(struct CGPoint { double x0; double x1; })a0;
+- (void)actionGestureRecognizerStateChanged:(struct CGPoint { double x0; double x1; })a0;
+- (void)actionGestureRecognizerStateEnded:(struct CGPoint { double x0; double x1; })a0;
+- (void)progressSyncDurationWithProgress:(double)a0 duration:(double)a1;
+- (BOOL)deleteJudge:(long long)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)quickDelet:(long long)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (BOOL)addJudge:(long long)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 publishViewModel:(id)a1 playUrl:(id)a2 roomModel:(id)a3 enableShareButton:(BOOL)a4;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)editAction;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)setupUI;
+
+@end

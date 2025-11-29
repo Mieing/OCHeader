@@ -1,0 +1,15 @@
+@class NSString;
+
+@interface RealtimeStatusCenterResp_Tab : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *key;
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) int schemaType;
+@property (copy, nonatomic) NSString *schemaURL;
+@property (copy, nonatomic) NSString *bizSchemaURL;
+@property (copy, nonatomic) NSString *bizData;
+@property (copy, nonatomic) NSString *bizMessage;
+
++ (id)descriptor;
+
+@end

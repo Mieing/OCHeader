@@ -1,0 +1,12 @@
+@class HTSLiveCommon, HTSLiveAdminPrivilegeStruct;
+
+@interface HTSLiveAdminPrivilegeMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveAdminPrivilegeStruct *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

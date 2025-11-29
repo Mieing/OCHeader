@@ -1,0 +1,7 @@
+@interface AWEClassroomImpl.ClassroomVideoWatermarkViewPart : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ watermarkView;
+    void /* unknown type, empty encoding */ player;
+    void /* unknown type, empty encoding */ model;
+}
+
+@end

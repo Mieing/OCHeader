@@ -1,0 +1,3 @@
+@interface AWESearchResultMarkView : UIView
+
+@end

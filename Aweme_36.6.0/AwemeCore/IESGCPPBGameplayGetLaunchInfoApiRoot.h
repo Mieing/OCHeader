@@ -1,0 +1,3 @@
+@interface IESGCPPBGameplayGetLaunchInfoApiRoot : GPBRootObject
+
+@end

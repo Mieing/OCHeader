@@ -1,0 +1,10 @@
+@class ShowPrivateMsgEntranceResponse_Data;
+
+@interface ShowPrivateMsgEntranceResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ShowPrivateMsgEntranceResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

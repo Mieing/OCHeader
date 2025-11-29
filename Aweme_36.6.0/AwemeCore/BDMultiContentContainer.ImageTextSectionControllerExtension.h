@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.ImageTextSectionControllerExtension : BDMultiContentContainer.SectionControllerExtension
+
+@end

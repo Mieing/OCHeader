@@ -1,0 +1,71 @@
+@class MMLoadingView, NSMutableDictionary, WCOutChargeLogic, NSString, WCOutProductInfo, MMUIView, MMTableView;
+
+@interface WCOutRechargeViewController : MMUIViewController <WCOutChargeLogicDelegate, UITableViewDataSource, UITableViewDelegate, MMTipsViewControllerDelegate, ILinkEventExt>
+
+@property (retain, nonatomic) MMTableView *tableView;
+@property (retain, nonatomic) NSMutableDictionary *productinfoDict;
+@property (retain, nonatomic) MMLoadingView *loadingView;
+@property (retain, nonatomic) WCOutChargeLogic *chargeLogic;
+@property (retain, nonatomic) NSString *hotCoutryName;
+@property (retain, nonatomic) WCOutProductInfo *selProd;
+@property (nonatomic) BOOL canChangeCurrency;
+@property (retain, nonatomic) NSString *serverCurrency;
+@property (nonatomic) BOOL needCheckCurrency;
+@property (retain, nonatomic) NSString *appleCurrency;
+@property (nonatomic) BOOL needBuySelProd;
+@property (nonatomic) BOOL getSKProductFailed;
+@property (retain, nonatomic) MMUIView *chargeView;
+@property (nonatomic) BOOL hasShowWebPayAlert;
+@property (retain, nonatomic) NSString *webPayAlertTitle;
+@property (retain, nonatomic) NSString *webPayAlertDesc;
+@property (retain, nonatomic) NSString *enterTs;
+@property (retain, nonatomic) NSString *outTs;
+@property (nonatomic) unsigned int productBtnCount;
+@property (retain, nonatomic) NSString *productListTs;
+@property (nonatomic) unsigned int productListRet;
+@property (retain, nonatomic) NSString *productDetailTs;
+@property (nonatomic) BOOL needShowLoadingWhenActive;
+@property (retain, nonatomic) NSString *buyClickTs;
+@property (retain, nonatomic) NSString *buyFinishedTs;
+@property (retain, nonatomic) NSString *buyProductId;
+@property (retain, nonatomic) NSString *orderCurrencyType;
+@property (retain, nonatomic) NSString *payCurrencyType;
+@property (nonatomic) unsigned int purchaseRet;
+@property (nonatomic) unsigned int verifyRet;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)applicationDidBecomeActiveNotification:(id)a0;
+- (void)applicationWillResignActiveNotification:(id)a0;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)viewDidBePushed:(BOOL)a0;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)startLoading;
+- (void)stopLoading:(BOOL)a0 err:(id)a1;
+- (void)configModel:(id)a0;
+- (void)configTableWithoutData;
+- (void)configTableView;
+- (id)getWCOutProductInfoByButtonTag:(long long)a0;
+- (void)onClickBuy:(id)a0;
+- (void)onCheckFeeClicked;
+- (void)loadDataFailed;
+- (void)didReceiveGetProductListResponse:(BOOL)a0 Respone:(id)a1;
+- (void)updateListFromAppleResponse:(BOOL)a0 successSKProductList:(id)a1;
+- (BOOL)checkCurrencyType;
+- (void)onPurchaseSuccessForProduct:(id)a0 ErrCode:(unsigned int)a1;
+- (void)onPurchaseFailForProduct:(id)a0 Err:(id)a1;
+- (void)onPurchaseCancelForProduct:(id)a0;
+- (id)getWCOutProductInfoByCellSectionIndex:(long long)a0;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 tipTag:(long long)a2;
+- (void).cxx_destruct;
+
+@end

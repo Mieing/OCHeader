@@ -1,0 +1,10 @@
+@class BattleStatsResult_ResponseData;
+
+@interface BattleStatsResult : IESLivePBBaseMessage
+
+@property (retain, nonatomic) BattleStatsResult_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

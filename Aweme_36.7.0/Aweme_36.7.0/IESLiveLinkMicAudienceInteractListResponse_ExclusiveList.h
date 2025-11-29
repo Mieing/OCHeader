@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface IESLiveLinkMicAudienceInteractListResponse_ExclusiveList : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GPBInt64Array *playmodesArray;
+@property (readonly, nonatomic) unsigned long long playmodesArray_Count;
+
++ (id)descriptor;
+
+@end

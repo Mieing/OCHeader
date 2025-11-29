@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface SeriesStatusStructV2 : GPBMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (copy, nonatomic) NSString *statusDesc;
+@property (nonatomic) BOOL hasStatusDesc;
+@property (nonatomic) int isCollected;
+@property (nonatomic) BOOL hasIsCollected;
+
++ (id)descriptor;
+
+@end

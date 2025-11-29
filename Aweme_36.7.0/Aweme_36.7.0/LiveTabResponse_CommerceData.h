@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface LiveTabResponse_CommerceData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *commerceText;
+@property (nonatomic) BOOL isCommerce;
+@property (nonatomic) long long firstExplainStartTime;
+
++ (id)descriptor;
+
+@end

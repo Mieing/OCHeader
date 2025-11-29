@@ -1,0 +1,3 @@
+@interface AWEPostWorkStatusCollectionViewCell : UICollectionViewCell
+
+@end

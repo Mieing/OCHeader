@@ -1,0 +1,44 @@
+@class NSArray;
+
+@interface AWEKnowledgeRichContentImpl.FullPageContext : AFDRichAwemeFullPageContext {
+    void /* unknown type, empty encoding */ _commentListHasPrepared;
+    void /* unknown type, empty encoding */ _commentAudioIsPlaying;
+    void /* unknown type, empty encoding */ _commentInputFullscreen;
+    void /* unknown type, empty encoding */ isPausedByCommentAudio;
+    void /* unknown type, empty encoding */ highlightID;
+    void /* unknown type, empty encoding */ insertIDs;
+    void /* unknown type, empty encoding */ verticalScrollDueToHorizontalScroll;
+    void /* unknown type, empty encoding */ isRelatedSug;
+    void /* unknown type, empty encoding */ _relatedSugEnterMethod;
+    void /* unknown type, empty encoding */ nestedLevel;
+    void /* unknown type, empty encoding */ recommentItemsCount;
+    void /* unknown type, empty encoding */ commentHasMore;
+    void /* unknown type, empty encoding */ enablePureModePage;
+    void /* unknown type, empty encoding */ preferSinkingTransition;
+    void /* unknown type, empty encoding */ isInFullPageTransition;
+    void /* unknown type, empty encoding */ backToSchema;
+    void /* unknown type, empty encoding */ recommendWasClicked;
+    void /* unknown type, empty encoding */ recommendNestedBackToContextProvider;
+    void /* unknown type, empty encoding */ nestedChainContainRecommendList;
+    void /* unknown type, empty encoding */ _recommendModuleState;
+    void /* unknown type, empty encoding */ tailRecommendModuleState;
+    void /* function */ tailRecommendSectionViewModelArray;
+    void /* unknown type, empty encoding */ _tailRecommendExistCard;
+    void /* unknown type, empty encoding */ recommendModuleHasMore;
+    void /* unknown type, empty encoding */ _albumDetailTransitionDidEnd;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_dataFilter;
+    void /* unknown type, empty encoding */ commentTabSelectEnterMethod;
+    void /* unknown type, empty encoding */ isSelectTabByTap;
+    void /* unknown type, empty encoding */ commentNumberText;
+    void /* unknown type, empty encoding */ commentExtraParams;
+    void /* unknown type, empty encoding */ openComment;
+    void /* unknown type, empty encoding */ enterSlidesOriginFromHangout;
+    void /* unknown type, empty encoding */ gidList;
+}
+
+@property (nonatomic, copy) NSArray *tailRecommendSectionViewModelArray;
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

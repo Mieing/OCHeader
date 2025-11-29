@@ -1,0 +1,3 @@
+@interface HTSLiveImageRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class TIMXPBNMessageInfo;
+
+@interface TIMXPBNGetMessageByIdResponseBody : GPBMessage
+
+@property (retain, nonatomic) TIMXPBNMessageInfo *msgInfo;
+@property (nonatomic) BOOL hasMsgInfo;
+
++ (id)descriptor;
+
+@end

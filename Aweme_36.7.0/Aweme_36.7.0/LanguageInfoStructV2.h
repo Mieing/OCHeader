@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface LanguageInfoStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *albumId;
+@property (nonatomic) BOOL hasAlbumId;
+@property (copy, nonatomic) NSString *language;
+@property (nonatomic) BOOL hasLanguage;
+
++ (id)descriptor;
+
+@end

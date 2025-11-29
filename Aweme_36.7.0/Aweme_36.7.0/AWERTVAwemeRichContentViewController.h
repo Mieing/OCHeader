@@ -1,0 +1,72 @@
+@class NSString, AWEAwemeModel, AFDPlayRemoteFeedContext, UIViewController;
+@protocol AWEPlayInteractionViewControllerNewProtocol, AWERTVFeedContentControllers, AFDRichContentContainerViewControllerProtocol, AWEPlayInteractionViewControllerProtocol;
+
+@interface AWERTVAwemeRichContentViewController : UIViewController <AFDRichContentContainerDelegate, AWEAwemePlayVideoBaseContainer, AWERTVAwemeContentViewController>
+
+@property (retain, nonatomic) UIViewController<AFDRichContentContainerViewControllerProtocol> *videoController;
+@property (weak, nonatomic) UIViewController<AFDRichContentContainerViewControllerProtocol> *activeVideoController;
+@property (retain, nonatomic) AFDPlayRemoteFeedContext *context;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (nonatomic) BOOL playing;
+@property (nonatomic) BOOL isFullPageShowing;
+@property (nonatomic) long long lastIndex;
+@property (weak, nonatomic) UIViewController<AWEPlayInteractionViewControllerProtocol, AWEPlayInteractionViewControllerNewProtocol> *interactionController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) struct EngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *audioWrapper;
+@property (nonatomic) long long pureMode;
+@property (retain, nonatomic) id<AWERTVFeedContentControllers> rtvFeedContentControllers;
+
+- (void)pauseWithAnimation;
+- (void)playWithAnimation;
+- (BOOL)pauseBySingleClick;
+- (void)updateCurrentAwemeModel:(id)a0;
+- (void)didChangeAlbumIndex:(long long)a0 animated:(BOOL)a1;
+- (void)didChangeAlbumPreviewIndex:(long long)a0;
+- (void)willBackFromAlbumDetail;
+- (void)didCancelBackFromAlbumDetail;
+- (void)didBackFromAlbumDetail;
+- (BOOL)shouldStartProgressTimer;
+- (void)videoWillLoopTimes:(long long)a0;
+- (void)container:(id)a0 didPlayOrPause:(BOOL)a1;
+- (BOOL)shouldNotifyAudioListenersWhenStartPlay;
+- (BOOL)shouldPauseWhenPlayerStartPlay:(id)a0;
+- (void)seekToProgress:(long long)a0;
+- (BOOL)playerUseAudioMix;
+- (void)updatePlaySpeed:(id)a0;
+- (id)p_cellOperator;
+- (long long)playingProgress;
+- (void)configWithAwemeModel:(id)a0 context:(id)a1;
+- (void)seekToAwemeProgress:(id)a0;
+- (id)awemePlayingProgress;
+- (void)hidePauseView:(BOOL)a0;
+- (void)pauseWithIcon:(BOOL)a0;
+- (void)__silentUpdate;
+- (void)initRichContent;
+- (void)__configRichContentContainer;
+- (void)p_updateWithPureMode:(long long)a0 canPlay:(BOOL)a1;
+- (BOOL)__isValidIndex:(long long)a0;
+- (void)prepareForDisplay;
+- (double)videoDuration;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (long long)mediaType;
+- (BOOL)isPlaying;
+- (void)stop;
+- (void)setVolume:(float)a0;
+- (void)reset;
+- (void)resume;
+- (void)viewDidLoad;
+- (double)currentPlaybackTime;
+- (void)dealloc;
+- (void)setMute:(BOOL)a0;
+- (void)setupUI;
+- (long long)playState;
+- (void)willDisplay;
+- (void)doubleTapped:(id)a0;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

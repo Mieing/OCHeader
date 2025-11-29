@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface VideoSearchResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) int cursor;
+@property (nonatomic) BOOL hasMore;
+@property (retain, nonatomic) NSMutableArray *videoListArray;
+@property (readonly, nonatomic) unsigned long long videoListArray_Count;
+@property (copy, nonatomic) NSString *logId;
+
++ (id)descriptor;
+
+@end

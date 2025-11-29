@@ -1,0 +1,76 @@
+@class UIView, IESLiveRightTopManager, NSArray, IESLiveRoomLayoutCommonContainer, IESLiveCombineSubject, NSString, IESLiveRightBottomManager, NSMapTable;
+@protocol IESLiveLayoutSceneActions, IESLiveRouteTrackService, HTSLiveLayoutSceneProtocol, IESLiveContainerKitAdapter;
+
+@interface HTSLivePluginLayoutMachine : NSObject <IESLiveLayoutViewProvider, HTSLivePluginLayoutMachineProvider>
+
+@property (retain, nonatomic) NSArray *subScenes;
+@property (retain, nonatomic) NSMapTable *viewTable;
+@property (weak, nonatomic) UIView *containerView;
+@property (nonatomic) BOOL isAnchor;
+@property (nonatomic) BOOL isGiftPanelShow;
+@property (nonatomic) BOOL neededLayout;
+@property (retain, nonatomic) IESLiveRoomLayoutCommonContainer *commonContainer;
+@property (retain, nonatomic) IESLiveRightBottomManager *rightBottomManager;
+@property (retain, nonatomic) IESLiveCombineSubject *rightBottomItemSubject;
+@property (retain, nonatomic) id<HTSLiveLayoutSceneProtocol> layoutScene;
+@property (retain, nonatomic) id<IESLiveLayoutSceneActions> sceneActions;
+@property (retain, nonatomic) id<IESLiveRouteTrackService> routeTracker;
+@property (retain, nonatomic) IESLiveRightTopManager *rightTopManager;
+@property (retain, nonatomic) id<IESLiveContainerKitAdapter> containerKitAdapter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didSetAttachingDIContext;
+- (id)initWithContainer:(id)a0 isAnchor:(BOOL)a1 diContext:(id)a2;
+- (void)addView:(id)a0 withLayoutType:(id)a1;
+- (id)viewOfType:(id)a0;
+- (id)visibleViewsOfTypes:(id)a0;
+- (void)layoutPluginIfNeed;
+- (void)layoutMessageListToTop:(double)a0;
+- (void)setGiftPanelShow:(BOOL)a0;
+- (BOOL)getGiftPanelShow;
+- (double)roomContainerBottomOffset;
+- (void)removeSubScene:(unsigned long long)a0;
+- (BOOL)containSubScene:(unsigned long long)a0;
+- (void)removeContainers;
+- (void)registerContainers;
+- (void)updateContainerLayoutRule:(id)a0;
+- (void)didForceUpdateToOrientation:(long long)a0;
+- (void)didAutoRoateToOrientation:(long long)a0;
+- (void)animationRotateToSize:(struct CGSize { double x0; double x1; })a0;
+- (void)showRightBottomViewWithItem:(id)a0 processResult:(id /* block */)a1;
+- (void)hideRightBottomViewWithItem:(id)a0 processResult:(id /* block */)a1;
+- (id)currentRightBottomItem;
+- (BOOL)isExplainCardShowing;
+- (void)showComponentsIfNeed;
+- (void)hideComponentsIfNeed;
+- (id)currentRightBottomCombineSubject;
+- (void)showNextRightBottomItemInQueue;
+- (void)hideCurrentRightBottomItem;
+- (void)showRightBottomComponents;
+- (void)hideRightBottomComponents;
+- (void)switchToSideMode;
+- (void)switchToNormalMode;
+- (void)updateBottomContainerStatus:(BOOL)a0 animDuration:(double)a1;
+- (void)showRightTopViewWithItem:(id)a0 processResult:(id /* block */)a1;
+- (void)closeRightTopViewWithItem:(id)a0 processResult:(id /* block */)a1;
+- (id)currentRightTopItem;
+- (void)checkUpdateRotateContainerIdPad;
+- (void)addSubScene:(id)a0;
+- (void)insertShadowStackManager:(id)a0;
+- (void)removeShadowStackManager:(id)a0;
+- (void)registerBottomItemSubject;
+- (void)registerRunloopObserver;
+- (BOOL)enableSetNeedsLayout;
+- (void)trackRightCartWithItem:(id)a0 isShow:(BOOL)a1;
+- (void)setScene:(id)a0;
+- (void).cxx_destruct;
+- (void)layoutIfNeeded;
+- (void)setNeedsLayout;
+- (void)removeView:(id)a0;
+- (void)addView:(id)a0;
+- (unsigned long long)getScene;
+
+@end

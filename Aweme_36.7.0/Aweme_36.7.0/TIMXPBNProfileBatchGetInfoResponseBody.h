@@ -1,0 +1,12 @@
+@class GPBInt64Array, NSMutableArray;
+
+@interface TIMXPBNProfileBatchGetInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *profilesArray;
+@property (readonly, nonatomic) unsigned long long profilesArray_Count;
+@property (retain, nonatomic) GPBInt64Array *failedUidsArray;
+@property (readonly, nonatomic) unsigned long long failedUidsArray_Count;
+
++ (id)descriptor;
+
+@end

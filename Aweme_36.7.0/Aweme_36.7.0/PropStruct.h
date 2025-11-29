@@ -1,0 +1,8 @@
+@interface PropStruct : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (nonatomic) long long num;
+
++ (id)descriptor;
+
+@end

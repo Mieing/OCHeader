@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface AnnouncementRandomContentResponse_Data : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *randomContent;
+
++ (id)descriptor;
+
+@end

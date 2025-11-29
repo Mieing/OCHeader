@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.AwemeLivePhotoPreloader : BDMultiContentContainer.DefaultLivePhotoPreloader
+
+@end

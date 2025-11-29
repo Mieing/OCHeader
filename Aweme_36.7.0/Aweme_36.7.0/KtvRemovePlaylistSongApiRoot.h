@@ -1,0 +1,3 @@
+@interface KtvRemovePlaylistSongApiRoot : GPBRootObject
+
+@end

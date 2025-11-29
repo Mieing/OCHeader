@@ -1,0 +1,84 @@
+@class PreTransform, NSString, NSArray, SceneCut, GroupFeature, ASCSharpenFilter, FeatureGLCMGPU, VFMetalContext;
+@protocol MTLTexture, MTLDevice;
+
+@interface SmartCodecIOSInterface : NSObject {
+    struct { float width; float height; float fps; } totalstatics;
+    void *model;
+    struct vector<CodecFeatureZipID, std::allocator<CodecFeatureZipID>> { struct *__begin_; struct *__end_; struct __compressed_pair<CodecFeatureZipID *, std::allocator<CodecFeatureZipID>> { struct *__value_; } __end_cap_; } Cfzip;
+    struct vector<VideoFeatureZipID, std::allocator<VideoFeatureZipID>> { struct *__begin_; struct *__end_; struct __compressed_pair<VideoFeatureZipID *, std::allocator<VideoFeatureZipID>> { struct *__value_; } __end_cap_; } Vfzip;
+    struct vector<SceneCutZipID, std::allocator<SceneCutZipID>> { struct *__begin_; struct *__end_; struct __compressed_pair<SceneCutZipID *, std::allocator<SceneCutZipID>> { struct *__value_; } __end_cap_; } Szip;
+    struct vector<PtsTimeZipID, std::allocator<PtsTimeZipID>> { struct *__begin_; struct *__end_; struct __compressed_pair<PtsTimeZipID *, std::allocator<PtsTimeZipID>> { struct *__value_; } __end_cap_; } Ptszip;
+    struct vector<BitrateZipID, std::allocator<BitrateZipID>> { struct *__begin_; struct *__end_; struct __compressed_pair<BitrateZipID *, std::allocator<BitrateZipID>> { struct *__value_; } __end_cap_; } Ratezip;
+    int lastscenecut;
+    int lastcodecframe;
+    int lastvideoframe;
+    float data[20];
+    struct __CVBuffer { } *lastframe;
+    id<MTLTexture> lastframe_text;
+    id<MTLTexture> curframe_text;
+    struct { float bitRate; float quality; BOOL useI; float averageComplexity; float maxComplexity; float minComplexity; } lastparm;
+    unsigned int pixelformat;
+    int originalbitrate;
+    float m_moving_bitrate;
+    struct __CVMetalTextureCache { } *textureCache;
+    struct __CVBuffer { } *y_texture;
+    int RType;
+    NSString *defaultSettings;
+    struct { float target_vmaf; NSArray *support_resolution; float ratelimit_low; float ratelimit_high; int frame_skip_video; int predict_interval; NSArray *need_adjustrate; float adjustratio; int useFilter; float enhRatio; int enable_adjust; float pre_adjust_threshold; float pre_adjust_factor; int pre_adjust_framenum; int glcm_advanceframe; } configParm;
+    float internal_accComplexity;
+    float internal_maxComplexity;
+    float internal_minComplexity;
+    NSArray *feature_glcm_cache;
+    struct ASCSharpen_CPU { float x0; int x1; int x2; char *x3; char *x4; char *x5; short *x6; int *x7; short *x8; int *x9; char *x10[8]; } *sharpenFilter_cpu;
+    int mQueryFrameIdx;
+}
+
+@property (retain, nonatomic) FeatureGLCMGPU *GLCM;
+@property (retain, nonatomic) GroupFeature *Group;
+@property (retain, nonatomic) VFMetalContext *context;
+@property (retain, nonatomic) SceneCut *Scene;
+@property (retain, nonatomic) PreTransform *TRANS;
+@property (retain, nonatomic) id<MTLDevice> device;
+@property (retain, nonatomic) ASCSharpenFilter *sharpenFilter;
+@property (nonatomic) BOOL bFilterCPU;
+@property (nonatomic) BOOL bFilterProcessYUV;
+
+- (id)createTexWithWidth:(int)a0 andHeight:(int)a1 withPixelFormat:(unsigned long long)a2 storageMode:(unsigned long long)a3;
+- (id)createTexWithWidth:(int)a0 andHeight:(int)a1 withPixelFormat:(unsigned long long)a2;
+- (void)Release;
+- (void)InitVariables;
+- (void)ParseResolution:(int)a0 height:(int)a1;
+- (void)ParseSettingsFromString:(id)a0;
+- (BOOL)isResolutionSupport;
+- (void)ResetCodecFeature;
+- (void)ResetVideoFeature;
+- (void)ResetBitrateVector;
+- (struct { float x0; float x1; BOOL x2; float x3; float x4; float x5; })InitCodecParm:(int)a0;
+- (void)GetDefaultSettings;
+- (BOOL)NeedAdjustFirstFrameRate;
+- (BOOL)Buffer2Texture_Prefilter:(struct __CVBuffer { } *)a0 lastFrame:(struct __CVBuffer { } *)a1;
+- (id)Transfrom:(struct __CVBuffer { } *)a0 source:(id)a1;
+- (struct __CVBuffer { } *)SharpenFrameRGBALastBuffer:(struct __CVBuffer { } *)a0 currBuffer:(struct __CVBuffer { } *)a1;
+- (struct __CVBuffer { } *)SharpenFrameYUVLastBuffer:(struct __CVBuffer { } *)a0 currBuffer:(struct __CVBuffer { } *)a1;
+- (struct { float x0; float x1; BOOL x2; float x3; float x4; float x5; })InternalPredictCodecParam:(unsigned int)a0;
+- (void)AdjustPrevParam;
+- (float)GetCachedBitrate;
+- (struct { float x0; float x1; BOOL x2; float x3; float x4; float x5; })UpdateInternalStatics:(struct { float x0; float x1; BOOL x2; float x3; float x4; float x5; })a0 unboundBitrate:(float)a1 frameid:(unsigned int)a2;
+- (struct { struct { float x0[1]; float x1[4]; } x0; struct { float x0[1]; float x1[1]; float x2[5]; } x1; })ComputeAverageVideoFeature:(unsigned int)a0;
+- (float)ComputeFps:(unsigned int)a0;
+- (struct { struct { float x0[1]; float x1[4]; } x0; struct { float x0[1]; float x1[1]; float x2[5]; } x1; })ComputeNearestVideoFeature:(unsigned int)a0;
+- (void)FlattenStruct:(struct { struct { float x0; float x1; float x2; } x0; float x1; struct { float x0[3]; float x1[3]; float x2[3]; } x2; struct { struct { float x0[1]; float x1[4]; } x0; struct { float x0[1]; float x1[1]; float x2[5]; } x1; } x3; struct { struct { float x0[1]; float x1[4]; } x0; struct { float x0[1]; float x1[1]; float x2[5]; } x1; } x4; })a0;
+- (void)adjustVideoSize;
+- (id)Buffer2Texture:(struct __CVBuffer { } *)a0 source:(id)a1;
+- (id)Initwithparm:(struct { int x0; int x1; int x2; int x3; char *x4; char *x5; BOOL x6; } *)a0 withError:(int *)a1;
+- (void)GetVideoFeature:(unsigned int)a0 buffers:(struct __CVBuffer { } *)a1;
+- (float)get_average_runingtime:(int)a0 block:(id /* block */)a1;
+- (void)GetCodecFeature:(unsigned int)a0 feature:(struct { int x0; int x1; float x2; })a1;
+- (void)ComputeCodecParam:(unsigned int)a0;
+- (struct { float x0; float x1; BOOL x2; float x3; float x4; float x5; })GetFinalParam;
+- (void)ResetSceneCut;
+- (struct { float x0[3]; float x1[3]; float x2[3]; })ComputeCodecFeature:(unsigned int)a0;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+
+@end

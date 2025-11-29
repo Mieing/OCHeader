@@ -1,0 +1,3 @@
+@interface AWESearchArticleCommentListViewHolder : AWEBaseListViewHolder
+
+@end

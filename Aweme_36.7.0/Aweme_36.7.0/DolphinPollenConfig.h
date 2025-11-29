@@ -1,0 +1,3 @@
+@interface DolphinPollenConfig : NSObject
+
+@end

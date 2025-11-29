@@ -1,0 +1,88 @@
+@class NSString, UILabel, UIView, UITapGestureRecognizer;
+@protocol AWEBubbleAnchor;
+
+@interface AWEBubble : UIView <IESIMBubble, AWEProfileBubbleProtocol, AWEBubbleAnchor>
+
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (nonatomic) BOOL tapToDismiss;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long priority;
+@property (copy, nonatomic) id /* block */ showBlock;
+@property (copy, nonatomic) id /* block */ popBlock;
+@property (copy, nonatomic) id /* block */ hideBlock;
+@property (copy, nonatomic) id /* block */ updateBlock;
+@property (retain, nonatomic) UILabel *textLabel;
+@property (retain, nonatomic) UIView<AWEBubbleAnchor> *bubbleView;
+@property (nonatomic) unsigned long long direction;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } edgeInsets;
+@property (nonatomic) BOOL attributedBubble;
+@property (nonatomic) struct CGSize { double width; double height; } fixedSize;
+@property (nonatomic) struct CGPoint { double x; double y; } contentOffset;
+@property (nonatomic) BOOL needFixedWidth;
+@property (retain, nonatomic) UIView *iconView;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } iconViewEdgeInsets;
+@property (nonatomic) BOOL useContainerToAdjustBodyFrame;
+@property (nonatomic) BOOL useContainerContentSize;
+@property (retain, nonatomic) UIView *anchorView;
+@property (nonatomic) struct CGPoint { double x; double y; } anchorPoint;
+@property (nonatomic) BOOL useAdjustmentAsOffset;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)bubbleWithCustomView:(id)a0 direction:(unsigned long long)a1 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 anchorAdjustment:(struct CGPoint { double x0; double x1; })a3 cornerAdjustment:(struct CGPoint { double x0; double x1; })a4 isDarkBackGround:(BOOL)a5;
++ (id)bubbleWithContent:(id)a0 direction:(unsigned long long)a1 isDarkBackGround:(BOOL)a2;
++ (id)bubbleWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 isDarkBackGround:(BOOL)a3;
++ (id)bubbleWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 useContainerContentSize:(BOOL)a3 isDarkBackGround:(BOOL)a4;
++ (id)bubbleWithContent:(id)a0 withIconView:(id)a1 iconViewInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 direction:(unsigned long long)a3 anchorAdjustment:(struct CGPoint { double x0; double x1; })a4 cornerAdjustment:(struct CGPoint { double x0; double x1; })a5 fixedSize:(struct CGSize { double x0; double x1; })a6 isDarkBackGround:(BOOL)a7;
++ (id)bubbleWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 cornerAdjustment:(struct CGPoint { double x0; double x1; })a3 fixedSize:(struct CGSize { double x0; double x1; })a4 isDarkBackGround:(BOOL)a5;
++ (id)bubbleWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 bubbleImage:(id)a3 image9ScaleInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a4 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a5 font:(id)a6 color:(id)a7 fixedSize:(struct CGSize { double x0; double x1; })a8;
++ (id)bubbleWithAttributedContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 bubbleImage:(id)a3 image9ScaleInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a4 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a5 fixedSize:(struct CGSize { double x0; double x1; })a6 needFixedWidth:(BOOL)a7;
++ (id)bubbleWithCustomView:(id)a0 direction:(unsigned long long)a1 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 anchorAdjustment:(struct CGPoint { double x0; double x1; })a3 isDarkBackGround:(BOOL)a4;
+
+- (id /* block */)showBlock;
+- (void)setShowBlock:(id /* block */)a0;
+- (void)initWithContent:(id)a0 direction:(unsigned long long)a1 isDarkBackGround:(BOOL)a2;
+- (void)initWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 useContainerContentSize:(BOOL)a3 isDarkBackGround:(BOOL)a4;
+- (void)initWithContent:(id)a0 withIconView:(id)a1 iconViewInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 direction:(unsigned long long)a3 anchorAdjustment:(struct CGPoint { double x0; double x1; })a4 cornerAdjustment:(struct CGPoint { double x0; double x1; })a5 fixedSize:(struct CGSize { double x0; double x1; })a6 isDarkBackGround:(BOOL)a7;
+- (void)initWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 cornerAdjustment:(struct CGPoint { double x0; double x1; })a3 fixedSize:(struct CGSize { double x0; double x1; })a4 isDarkBackGround:(BOOL)a5;
+- (void)initWithContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 bubbleImage:(id)a3 image9ScaleInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a4 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a5 font:(id)a6 color:(id)a7 fixedSize:(struct CGSize { double x0; double x1; })a8;
+- (void)initWithAttributedContent:(id)a0 direction:(unsigned long long)a1 anchorAdjustment:(struct CGPoint { double x0; double x1; })a2 bubbleImage:(id)a3 image9ScaleInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a4 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a5 fixedSize:(struct CGSize { double x0; double x1; })a6 needFixedWidth:(BOOL)a7;
+- (void)initWithCustomView:(id)a0 direction:(unsigned long long)a1 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 anchorAdjustment:(struct CGPoint { double x0; double x1; })a3 cornerAdjustment:(struct CGPoint { double x0; double x1; })a4 isDarkBackGround:(BOOL)a5;
+- (void)adjustBodyFrame;
+- (void)initWithContent:(id)a0 direction:(unsigned long long)a1 bubbleView:(id)a2 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a3 font:(id)a4 color:(id)a5 fixedSize:(struct CGSize { double x0; double x1; })a6 useContainerContentSize:(BOOL)a7;
+- (void)initWithLabel:(id)a0 direction:(unsigned long long)a1 bubbleView:(id)a2 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a3 fixedSize:(struct CGSize { double x0; double x1; })a4 needFixedWidth:(BOOL)a5 useContainerContentSize:(BOOL)a6;
+- (struct CGSize { double x0; double x1; })currentTextSize;
+- (struct CGPoint { double x0; double x1; })anchorPositionRelatedToLeftTop;
+- (double)bubbleAnimationAnchorOffset;
+- (void)syncStatusWithAnchor;
+- (void)redoLayout;
+- (void)redrawStrokeIfNeeded;
+- (void)drawStrokeIfNeeded;
+- (void)initWithCustomView:(id)a0 direction:(unsigned long long)a1 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 anchorAdjustment:(struct CGPoint { double x0; double x1; })a3 isDarkBackGround:(BOOL)a4;
+- (void)setBackgroundTransparent;
+- (void)runDefaultDismissAnimationWithCompletion:(id /* block */)a0;
+- (void)tapToDismissAction;
+- (id /* block */)popBlock;
+- (void)setPopBlock:(id /* block */)a0;
+- (id /* block */)hideBlock;
+- (void)setHideBlock:(id /* block */)a0;
+- (void).cxx_destruct;
+- (void)setTextAlignment:(long long)a0;
+- (void)setUpdateBlock:(id /* block */)a0;
+- (id /* block */)updateBlock;
+- (void)setNumberOfLines:(long long)a0;
+- (struct CGSize { double x0; double x1; })sizeThatFits:(struct CGSize { double x0; double x1; })a0;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)didShow;
+- (id)bubbleImageView;
+- (BOOL)updateModel:(id)a0;
+- (void)didPop;
+
+@end

@@ -1,0 +1,97 @@
+@class NSIndexPath, MMTableViewChainModel, MMTableViewIndexView, UIView, MMTableViewGestureHelper, UIPanGestureRecognizer, _TtC7WCUIKit21AnimateProgressRunner, GradientMaskBottomView, UIColor;
+@protocol MMTableViewDelegate;
+
+@interface MMTableView : UITableView {
+    id<MMTableViewDelegate> m_delegateProxy;
+    UIView *_footerView;
+    UIView *_footerViewBackground;
+    BOOL m_dontDrawFooterLine;
+    struct CGPoint { double x; double y; } m_lastSetContentOffset;
+    MMTableViewGestureHelper *_gestureHelper;
+    UIPanGestureRecognizer *_dragGesture;
+    BOOL _bTriggerRecEnabled;
+    struct CGPoint { double x; double y; } _beginRecOffset;
+}
+
+@property (readonly, copy, nonatomic) MMTableViewChainModel *zz_setup;
+@property (retain, nonatomic) GradientMaskBottomView *maskedBottomView;
+@property (retain, nonatomic) _TtC7WCUIKit21AnimateProgressRunner *progressRunner;
+@property (retain, nonatomic) MMTableViewIndexView *indexView;
+@property (nonatomic) BOOL isHideExtraFooterLine;
+@property (retain, nonatomic) UIColor *tailColor;
+@property (weak, nonatomic) id<MMTableViewDelegate> m_delegate;
+@property (nonatomic) BOOL cancelButtonTouchsTrack;
+@property (nonatomic) Class cancelTouchsTrackClass;
+@property (nonatomic) BOOL isMainView;
+@property (nonatomic) BOOL bForceContentInsetAdjustAutomatic;
+@property (nonatomic) BOOL enableContentInsetForAdjustAutomatic;
+@property (nonatomic) double topInsetUnderContentViewY;
+@property (readonly, nonatomic) BOOL isReloadingData;
+@property (nonatomic) double dragNotifyOffset;
+@property (retain, nonatomic) UIView *tailView;
+@property (nonatomic) BOOL forbidFixSearchBarHeaderView;
+@property (nonatomic) BOOL enableCustomCellSelectedStatus;
+@property (retain, nonatomic) NSIndexPath *singleSelectedIndexPath;
+@property (nonatomic) BOOL shouldSelectedCellRecoverAnimated;
+
++ (id /* block */)zz_createWithStyle;
++ (id /* block */)zz_create;
++ (double)topPaddingForPlainTableSectionHeaderView;
++ (double)heightForPlainTableSectionHeaderView;
++ (id)genPlainTableSectionHeaderView:(double)a0 title:(id)a1;
++ (id)genPlainTableSectionHeaderView:(double)a0 title:(id)a1 backgroundColor:(id)a2;
++ (id)genNoPaddingPlainTableSectionHeaderView:(double)a0 title:(id)a1;
+
+- (void)touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)touchesMoved:(id)a0 withEvent:(id)a1;
+- (void)touchesEnded:(id)a0 withEvent:(id)a1;
+- (void)touchesCancelled:(id)a0 withEvent:(id)a1;
+- (BOOL)touchesShouldCancelInContentView:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)reloadData;
+- (void)reloadTailColor;
+- (void)reloadIndexView;
+- (void)reloadTailView;
+- (long long)firstSectionIndex;
+- (void)setContentSize:(struct CGSize { double x0; double x1; })a0;
+- (void)reloadDataAnimated;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 style:(long long)a1;
+- (void)fitVisionOSTransparentBackground;
+- (void)removeDragGesture;
+- (void)initDragGesture;
+- (void)handleDragGesture:(id)a0;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)dealloc;
+- (void)setContentInsetTop:(double)a0 andBottom:(double)a1;
+- (void)setContentInset:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })contentInset;
+- (void)setScrollIndicatorInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a0;
+- (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })scrollIndicatorInsets;
+- (void)drawFooterLine:(BOOL)a0;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setContentOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)setContentOffset:(struct CGPoint { double x0; double x1; })a0 animated:(BOOL)a1;
+- (void)addSubview:(id)a0;
+- (void)setTableHeaderView:(id)a0;
+- (void)setTableFooterView:(id)a0;
+- (void)reloadRowsAtIndexPaths:(id)a0 withRowAnimation:(long long)a1;
+- (void)deleteRowsAtIndexPaths:(id)a0 withRowAnimation:(long long)a1;
+- (void)deleteSections:(id)a0 withRowAnimation:(long long)a1;
+- (void)useMMTableViewIndexViewWithDelegate:(id)a0;
+- (void)layoutSubviews;
+- (BOOL)isAccessibilityElement;
+- (BOOL)accessibilityScroll:(long long)a0;
+- (void)didMoveToSuperview;
+- (void)removeFromSuperview;
+- (double)tableAreaHeight;
+- (void)safeAreaInsetsDidChange;
+- (void)showGradientBottomMaskWithContent:(id)a0;
+- (void)showGradientBottomMaskWithContent:(id)a0 topPadding:(double)a1 bottomPadding:(double)a2;
+- (BOOL)hasSearchBarHeader;
+- (id)indexPathForSelectedRow;
+- (void)deselectRowAtIndexPath:(id)a0 animated:(BOOL)a1;
+- (void)setDelegate:(id)a0;
+- (void)selectRowAtIndexPath:(id)a0 animated:(BOOL)a1 scrollPosition:(long long)a2;
+- (void).cxx_destruct;
+
+@end

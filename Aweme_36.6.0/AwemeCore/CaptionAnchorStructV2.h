@@ -1,0 +1,14 @@
+@class NSString, UrlStructV2;
+
+@interface CaptionAnchorStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *keyword;
+@property (nonatomic) BOOL hasKeyword;
+@property (copy, nonatomic) NSString *link;
+@property (nonatomic) BOOL hasLink;
+@property (retain, nonatomic) UrlStructV2 *icon;
+@property (nonatomic) BOOL hasIcon;
+
++ (id)descriptor;
+
+@end

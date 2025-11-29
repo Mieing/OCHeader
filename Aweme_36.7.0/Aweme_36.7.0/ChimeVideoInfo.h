@@ -1,0 +1,14 @@
+@class AwemeStructV2;
+
+@interface ChimeVideoInfo : GPBMessage
+
+@property (nonatomic) int chimePlayTime;
+@property (nonatomic) BOOL hasChimePlayTime;
+@property (retain, nonatomic) AwemeStructV2 *video;
+@property (nonatomic) BOOL hasVideo;
+@property (nonatomic) int resultCode;
+@property (nonatomic) BOOL hasResultCode;
+
++ (id)descriptor;
+
+@end

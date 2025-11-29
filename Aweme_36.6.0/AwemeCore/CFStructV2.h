@@ -1,0 +1,10 @@
+@class AwemeStructV2;
+
+@interface CFStructV2 : GPBMessage
+
+@property (retain, nonatomic) AwemeStructV2 *cf;
+@property (nonatomic) BOOL hasCf;
+
++ (id)descriptor;
+
+@end

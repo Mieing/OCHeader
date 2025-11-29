@@ -1,0 +1,23 @@
+@class NSNumber;
+
+@interface TRTCVideoEncParam : NSObject
+
+@property (nonatomic) int rcMethod;
+@property (retain, nonatomic) NSNumber *gop;
+@property (retain, nonatomic) NSNumber *minQP;
+@property (retain, nonatomic) NSNumber *maxQP;
+@property (retain, nonatomic) NSNumber *codecType;
+@property (nonatomic) long long videoResolution;
+@property (nonatomic) long long resMode;
+@property (nonatomic) int videoFps;
+@property (nonatomic) int videoBitrate;
+@property (nonatomic) int minVideoBitrate;
+@property (nonatomic) BOOL enableAdjustRes;
+
+- (struct EncodeParams { struct Optional<int> { struct OptionalStorage<int, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x0; struct Optional<int> { struct OptionalStorage<int, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x1; struct Optional<int> { struct OptionalStorage<int, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x2; struct Optional<int> { struct OptionalStorage<int, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x3; struct Optional<liteav::video::ResolutionMode> { struct OptionalStorage<liteav::video::ResolutionMode, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x4; struct Optional<unsigned int> { struct OptionalStorage<unsigned int, true, true> { BOOL x0; union { char x0; unsigned int x1; } x1; } x0; } x5; struct Optional<unsigned int> { struct OptionalStorage<unsigned int, true, true> { BOOL x0; union { char x0; unsigned int x1; } x1; } x0; } x6; struct Optional<unsigned int> { struct OptionalStorage<unsigned int, true, true> { BOOL x0; union { char x0; unsigned int x1; } x1; } x0; } x7; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x8; struct Optional<liteav::video::VideoProfile> { struct OptionalStorage<liteav::video::VideoProfile, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x9; struct Optional<liteav::video::RcMethod> { struct OptionalStorage<liteav::video::RcMethod, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x10; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x11; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x12; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x13; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x14; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x15; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x16; struct Optional<liteav::video::ReferenceStrategy> { struct OptionalStorage<liteav::video::ReferenceStrategy, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x17; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x18; struct Optional<unsigned long long> { struct OptionalStorage<unsigned long long, true, true> { BOOL x0; union { char x0; unsigned long long x1; } x1; } x0; } x19; struct Optional<unsigned long long> { struct OptionalStorage<unsigned long long, true, true> { BOOL x0; union { char x0; unsigned long long x1; } x1; } x0; } x20; struct Optional<unsigned int> { struct OptionalStorage<unsigned int, true, true> { BOOL x0; union { char x0; unsigned int x1; } x1; } x0; } x21; struct Optional<liteav::video::EncoderComplexity> { struct OptionalStorage<liteav::video::EncoderComplexity, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x22; struct Optional<bool> { struct OptionalStorage<bool, true, true> { BOOL x0; union { char x0; BOOL x1; } x1; } x0; } x23; struct Optional<liteav::video::EncoderStrategy> { struct OptionalStorage<liteav::video::EncoderStrategy, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x24; struct Optional<unsigned int> { struct OptionalStorage<unsigned int, true, true> { BOOL x0; union { char x0; unsigned int x1; } x1; } x0; } x25; struct Optional<unsigned int> { struct OptionalStorage<unsigned int, true, true> { BOOL x0; union { char x0; unsigned int x1; } x1; } x0; } x26; struct Optional<int> { struct OptionalStorage<int, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x27; struct Optional<liteav::video::EncodeScene> { struct OptionalStorage<liteav::video::EncodeScene, true, true> { BOOL x0; union { char x0; int x1; } x1; } x0; } x28; })convertToCppParams;
+- (struct CGSize { double x0; double x1; })resolution;
+- (id)init;
+- (id)description;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,13 @@
+@class IESLiveDressVisitorInfo_VisitorStatistic, NSString;
+
+@interface IESLiveDressVisitorInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int buttonStatus;
+@property (retain, nonatomic) IESLiveDressVisitorInfo_VisitorStatistic *statistic;
+@property (nonatomic) BOOL hasStatistic;
+@property (nonatomic) int achievementType;
+@property (copy, nonatomic) NSString *jumpSchema;
+
++ (id)descriptor;
+
+@end

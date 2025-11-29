@@ -1,0 +1,75 @@
+@class IESLiveMultiAudioKTVAnchorSeatView, HTSEventContext, UIView, NSString, IESLiveMultiAudioKTVGuestListController, HTSEventForwardingView, IESLiveAudienceInteractiveRootPanelViewModel, IESLiveInteractSeatAnimationManager, MASConstraint, IESLiveInteractionLayout, NSNumber, IESLiveComponentContext;
+@protocol IESLiveInteractionLinkerService, IESLiveMultiKTVStageViewProtocol, IESLiveMultiKTVStageLayoutHandlerDelegate, IESLiveRoomService, IESLivePerfSampler;
+
+@interface IESLiveMultiKTVStageLayoutHandler : NSObject <IESLiveInteractSeatAnimationManagerDelegate, IESLiveMessageInteractionModuleCommentAction, IESLiveLinkmicPreloadPushActions, IESLiveMultiKTVAudioStageVideoPreviewViewAction, IESLiveInteractionLinkerServiceAction, IESLiveKTVActions, IESLiveInteractionGiftActions>
+
+@property (weak, nonatomic) id<IESLiveRoomService> room;
+@property (weak, nonatomic) HTSEventContext *trackContext;
+@property (weak, nonatomic) IESLiveComponentContext *componentContext;
+@property (weak, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (weak, nonatomic) id<IESLiveInteractionLinkerService> linker;
+@property (nonatomic) BOOL singing;
+@property (retain, nonatomic) UIView *seatContainerView;
+@property (retain, nonatomic) MASConstraint *seatBottomConstraint;
+@property (retain, nonatomic) HTSEventForwardingView *anchorSeatPointView;
+@property (retain, nonatomic) IESLiveMultiAudioKTVAnchorSeatView *anchorSeatView;
+@property (retain, nonatomic) IESLiveMultiAudioKTVGuestListController *guestListView;
+@property (retain, nonatomic) UIView<IESLiveMultiKTVStageViewProtocol> *ktvMainStage;
+@property (weak, nonatomic) IESLiveAudienceInteractiveRootPanelViewModel *rootPanelViewModel;
+@property (retain, nonatomic) IESLiveInteractSeatAnimationManager *seatAnimationManager;
+@property (nonatomic) long long startTime;
+@property (retain, nonatomic) NSNumber *ktvStageOffsetForIpadLandscape;
+@property (weak, nonatomic) UIView *containerView;
+@property (retain, nonatomic) IESLiveInteractionLayout *layout;
+@property (nonatomic) BOOL hasTrackEnter;
+@property (nonatomic) BOOL isCPUOptimize;
+@property (nonatomic) BOOL isGuestListMoveup;
+@property (weak, nonatomic) id<IESLiveMultiKTVStageLayoutHandlerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (struct CGSize { double x0; double x1; })pluginLayoutContentSize;
+- (id)allSeatProviderViews;
+- (id)emojiContainerForUserID:(id)a0 isInteractiveEmoji:(BOOL)a1;
+- (void)updateGuestListWithAppData:(id)a0;
+- (void)willLoad;
+- (void)updateAnchorInfo:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })frameOfSlotView;
+- (void)receiveLinkmicPreloadInfo:(unsigned long long)a0 playModes:(id)a1 userLists:(id)a2;
+- (id)userModelWrapperConfig;
+- (id)emojiContainerForUserID:(id)a0;
+- (void)willStartPlayMusicWithMusicID:(id)a0 afterTime:(long long)a1;
+- (void)didStopPlayMusicWithMusicID:(id)a0 finished:(BOOL)a1;
+- (void)didKTVOrderListChanged;
+- (void)didKTVIMOrderListChanged;
+- (void)didUpdateKTVStageState:(unsigned long long)a0;
+- (void)willUnLoad;
+- (void)triggerInvitationGuideAnimation;
+- (void)updateGuestList:(id)a0;
+- (void)updateRootPanelViewModel:(id)a0;
+- (void)didClickTopRightBtn;
+- (void)guestCanAcceptGiftAuthorityDidChange:(BOOL)a0;
+- (BOOL)hasEmptySeat;
+- (void)interactGiftAnimationDidFinish;
+- (void)preloadGuestList;
+- (BOOL)hasActivedList;
+- (void)updateGuestLitSingStatus;
+- (void)ktvStageWillLoad;
+- (void)ktvStageWillUnload;
+- (id)initWithDelegate:(id)a0 room:(id)a1 compoentContext:(id)a2 trackContext:(id)a3;
+- (void)ktvStageInit;
+- (void)userListWithAnchorDidChange:(id)a0;
+- (void)trackKTVStart;
+- (void)updateAnchorSingStatus;
+- (void)didClickUser:(id)a0;
+- (void)trackKTVShow;
+- (void)keyboardWillHide;
+- (void)setupConstraints;
+- (void)keyboardWillShow;
+- (void).cxx_destruct;
+- (void)setupManager;
+- (void)setupViews;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESIMServiceChatDefines : NSObject
+
+@end

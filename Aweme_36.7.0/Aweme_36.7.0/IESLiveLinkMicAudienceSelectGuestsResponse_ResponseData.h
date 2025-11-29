@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveLinkMicAudienceSelectGuestsResponse_ResponseData : IESLivePBBaseMessage
+
+@property (nonatomic) long long durationSec;
+@property (copy, nonatomic) NSString *toast;
+
++ (id)descriptor;
+
+@end

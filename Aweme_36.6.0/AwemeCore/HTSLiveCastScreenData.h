@@ -1,0 +1,15 @@
+@class NSString, GPBInt64Array, HTSLiveCastOttPermission;
+
+@interface HTSLiveCastScreenData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *showText;
+@property (retain, nonatomic) GPBInt64Array *allowListArray;
+@property (readonly, nonatomic) unsigned long long allowListArray_Count;
+@property (nonatomic) int sdkVersion;
+@property (retain, nonatomic) HTSLiveCastOttPermission *permission;
+@property (nonatomic) BOOL hasPermission;
+@property (nonatomic) int forceCastOnly;
+
++ (id)descriptor;
+
+@end

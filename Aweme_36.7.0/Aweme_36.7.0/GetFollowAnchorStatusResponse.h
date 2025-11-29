@@ -1,0 +1,10 @@
+@class GetFollowAnchorStatusResponse_Data;
+
+@interface GetFollowAnchorStatusResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetFollowAnchorStatusResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveKtvSingerHotRankPosRoot : GPBRootObject
+
+@end

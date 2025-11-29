@@ -1,0 +1,56 @@
+@interface QQApiMessageAndUrlConverter : NSObject
+
++ (id)messageWithUrl:(id)a0;
++ (id)urlWithMessage:(id)a0;
++ (id)urlWithTextObject:(id)a0 type:(int)a1 arkObj:(id)a2;
++ (id)urlWithExtendObject:(id)a0 type:(int)a1 arkObj:(id)a2;
++ (id)urlWithImageObject:(id)a0 type:(int)a1 arkObj:(id)a2;
++ (id)urlWithImageObjectForAvatar:(id)a0 type:(int)a1;
++ (id)urlWithVideoObjectForAvatar:(id)a0 type:(int)a1;
++ (id)urlWithAuthObject:(id)a0 type:(int)a1;
++ (id)urlWithCreateGroupProObject:(id)a0 type:(int)a1;
++ (id)urlWithJoinGroupProObject:(id)a0 type:(int)a1;
++ (id)urlWithImageObjectForFaceCollection:(id)a0 type:(int)a1;
++ (id)urlWithImageArrayForQZoneObject:(id)a0 type:(int)a1;
++ (id)urlWithVideoForQZoneObject:(id)a0 type:(int)a1;
++ (id)urlWithWebImageObject:(id)a0 type:(int)a1;
++ (id)urlWithURLObject:(id)a0 type:(int)a1 arkObj:(id)a2;
++ (id)urlWithCommonContentObject:(id)a0 type:(int)a1 arkObj:(id)a2;
++ (id)urlWithExtraServiceObject:(id)a0 type:(int)a1;
++ (id)urlWithCommonServiceObject:(id)a0 type:(int)a1;
++ (id)urlWithFileObject:(id)a0 type:(int)a1 arkObj:(id)a2;
++ (id)urlWithApiThirdAppBindGroupObject:(id)a0 type:(int)a1;
++ (id)urlWithApiThirdAppJoinGroupObject:(id)a0 type:(int)a1;
++ (id)urlWithApiLaunchMiniProgramObject:(id)a0 type:(int)a1;
++ (id)messageWithUrlNoClipboard:(id)a0;
++ (id)messageWithRequestFromQQ:(id)a0;
++ (id)messageWithResponseFromQQ:(id)a0;
++ (id)messageWithLaunchFromQQMiniApp:(id)a0;
++ (id)getObjectByUrl:(id)a0;
++ (void)setTitle:(id)a0 description:(id)a1 appName:(id)a2 toQueryItem:(id)a3;
++ (void)setPasteBoardPrevImageData:(id)a0 filedata:(id)a1 dataArray:(id)a2 arkData:(id)a3;
++ (id)urlWithQueryItem:(id)a0 type:(int)a1 shareDestType:(unsigned long long)a2;
++ (id)urlWithQueryItemForAvatar:(id)a0 type:(int)a1 shareDestType:(unsigned long long)a2 path:(id)a3;
++ (id)urlWithQueryItemForAuth:(id)a0 type:(int)a1 shareDestType:(unsigned long long)a2 path:(id)a3;
++ (id)urlWithQueryItemForGroupPro:(id)a0 type:(int)a1 shareType:(unsigned long long)a2 path:(id)a3 sig:(id)a4;
++ (id)urlWithQueryItemForFaceCollection:(id)a0 type:(int)a1 shareDestType:(unsigned long long)a2;
++ (void)setURL:(id)a0 forKey:(id)a1 toQueryItem:(id)a2;
++ (void)setLargeDataWith:(id)a0 filedata:(id)a1 dataArray:(id)a2 arkData:(id)a3 toDic:(id)a4;
++ (id)urlWithQueryItemForExtraService:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)urlWithQueryItemForCommonService:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)urlWithQueryItemForThirdAppBindGroup:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)urlWithQueryItemForThirdAppJoinBroup:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)urlWithQueryItemForLaunchMiniProgram:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)setupDataWith:(id)a0 filedata:(id)a1 dataArray:(id)a2 arkData:(id)a3;
++ (void)updateQueryItemInfo:(id)a0 type:(int)a1 shareDestType:(unsigned long long)a2;
++ (id)appendSigURLWith:(id)a0 andPath:(id)a1 sig:(id)a2;
++ (id)messageWithUrlUsedClipboard:(id)a0;
++ (void)setTitle:(id)a0 description:(id)a1 toQueryItem:(id)a2;
++ (void)setPreviewImageData:(id)a0 toQueryItem:(id)a1;
++ (void)setString:(id)a0 forKey:(id)a1 toQueryItem:(id)a2;
++ (id)urlWithQueryItemForAddFriend:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)urlWithQueryItemForGameBindingGroup:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)urlWithQueryItemForJoinBroup:(id)a0 type:(int)a1 shareType:(unsigned long long)a2;
++ (id)smartURLString:(id)a0;
+
+@end

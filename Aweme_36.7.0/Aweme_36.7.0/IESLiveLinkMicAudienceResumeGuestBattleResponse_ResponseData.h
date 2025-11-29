@@ -1,0 +1,10 @@
+@class HTSLiveGuestBattleInfo;
+
+@interface IESLiveLinkMicAudienceResumeGuestBattleResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveGuestBattleInfo *guestBattleInfo;
+@property (nonatomic) BOOL hasGuestBattleInfo;
+
++ (id)descriptor;
+
+@end

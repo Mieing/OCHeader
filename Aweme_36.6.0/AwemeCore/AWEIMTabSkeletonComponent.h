@@ -1,0 +1,80 @@
+@class AWEIMComponentManager, NSArray, NSString, NSNumber, AWEIMTabSkeletonViewController;
+@protocol AWEIMChatListHeaderInterface, AWEIMMessageTabIndexInterface, AWEIMMessageTabModeInterface;
+
+@interface AWEIMTabSkeletonComponent : AWEIMComponentBase <AWEIMComponentContainer, AWEIMComponentManagerDependency, AWEIMTabSkeletonViewDataSource, AWEIMTabSkeletonInterface, AWEIMTabSkeletonViewDelegate, AWEIMListTabWrapperAction, AWEUserMessage, AWEIMMessageTabBarAction, AWEIMMessageTabModeEnterpriseModeEvent> {
+    NSNumber *_defaultLandingValue;
+}
+
+@property (retain, nonatomic) AWEIMTabSkeletonViewController *skeleton;
+@property (retain, nonatomic) NSArray *viewControllerComponents;
+@property (retain, nonatomic) NSArray *enableComponents;
+@property (nonatomic) double pinHeaderHeight;
+@property (weak, nonatomic) id<AWEIMChatListHeaderInterface> headerService;
+@property (weak, nonatomic) id<AWEIMMessageTabIndexInterface> tabIndexService;
+@property (weak, nonatomic) id<AWEIMMessageTabModeInterface> messageTabModeService;
+@property (nonatomic) long long defaltLandingStrategy;
+@property (retain, nonatomic) AWEIMComponentManager *componentManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)didFinishLoginWithUid:(id)a0;
+- (id)componentContext;
+- (id)componentsNameArrayWithContext:(id)a0;
+- (void)app_willEnterForeground;
+- (void)hostVC_viewDidDisappear;
+- (void)hostVC_viewWillAppear;
+- (void)afterInitialComponentAllResolved:(id)a0;
+- (void)hostVC_viewDidLoad;
+- (void)componentDidMounted:(id)a0;
+- (void)hostVC_viewDidAppear;
+- (id)currentScrollView;
+- (void)p_setupViews;
+- (void)__didChangeMessageTabMode:(id)a0;
+- (id)tabSkeletonView;
+- (id)horizontalPageCollectionView;
+- (void)reloadCurrentEnableComponents;
+- (void)reloadHeaderViewWithAnimation:(BOOL)a0;
+- (void)reloadHeaderViewWithAnimation:(BOOL)a0 keepOffset:(BOOL)a1;
+- (void)changeSelectedIndex:(long long)a0 animated:(BOOL)a1;
+- (void)changeLandingIndex:(long long)a0 isCold:(BOOL)a1;
+- (void)changSelected:(long long)a0 animated:(BOOL)a1;
+- (id)tabIndicatorModelList;
+- (long long)defaultLandingIndex;
+- (id)currentScrollViewController;
+- (id)currentChildComponent;
+- (void)reLandingToCurrentPreferTab;
+- (void)listViewControllerDidAppear:(long long)a0;
+- (void)messageTabModeDidChangeToEnterpriseModeWithoutChangingAccounts;
+- (void)tabBarItemViewControllerDidClick;
+- (void)updateEnableComponents;
+- (void)p_setupDefaultLandingByDefaltLandingStrategy;
+- (void)p_layoutWithNaviBar;
+- (void)p_updateVoiceOver;
+- (void)p_reCreateEnableComponentsAfterChangeAccount;
+- (id)p_shouldRemoveComponentsAfterUpdate;
+- (void)p_removeDisableComponents:(id)a0;
+- (BOOL)p_shouldUpdateHeader:(id)a0 current:(id)a1;
+- (void)p_reloadAfterDataChanged;
+- (void)p_landingDefaultIndexByDefaltLandingStrategy;
+- (void)changeSelectedToChatList;
+- (BOOL)skeleton:(id)a0 canAddHeaderViewAtIndex:(long long)a1;
+- (id)pinHeaderViewInSkeletion:(id)a0;
+- (long long)numberOfItemsInSkeletion:(id)a0;
+- (id)skeleton:(id)a0 childVCForItemAtIndex:(long long)a1;
+- (id)skeleton:(id)a0 viewControllerIdentifyAtIndex:(long long)a1;
+- (id)headerViewInSkeletion:(id)a0;
+- (BOOL)skeleton:(id)a0 canHeaderFixedTopWhenDragging:(long long)a1;
+- (double)minBottomInsetForSkeleton:(id)a0;
+- (void)skeleton:(id)a0 didScrollOffset:(double)a1 progress:(double)a2;
+- (void)skeleton:(id)a0 didChangeSelectedIndex:(long long)a1;
+- (void)skeleton:(id)a0 isChangingCurrentIndex:(long long)a1;
+- (void)skeleton:(id)a0 didLoadChildViewController:(id)a1 index:(long long)a2;
+- (void)skeleton:(id)a0 didEndScrollingAnimationWithCurrentIndex:(long long)a1;
+- (BOOL)canAddHeaderInWillDisplayViewController;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)headerContainer;
+
+@end

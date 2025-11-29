@@ -1,0 +1,3 @@
+@interface BDMultiContentContainer.DefaultVideoHandlerExtension : BDMultiContentContainer.HandlerExtension
+
+@end

@@ -1,0 +1,70 @@
+@class UIView, UIColor, NSArray, NSString, CAShapeLayer, UIButton, MinimizeTaskData, MMUIButton, UILabel;
+@protocol MinimizeDraggableTaskViewDelegate;
+
+@interface MinimizeDraggableTaskView : UIView <MMWebImageViewDelegate, MinimizeDetailTaskListViewInterface, MoveWithTouchAlgorithmDelegate>
+
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } frameBeforeMove;
+@property (retain, nonatomic) UIView *taskIcon;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *subTitleLabel;
+@property (retain, nonatomic) UILabel *titleTailLabel;
+@property (retain, nonatomic) UILabel *subTitleTailLabel;
+@property (nonatomic) double titleMaxWidthWithCurrentState;
+@property (nonatomic) unsigned long long positionType;
+@property (retain, nonatomic) UIView *shadowLayerView;
+@property (retain, nonatomic) UIView *shadowSubLayerView;
+@property (retain, nonatomic) UIButton *closeBtn;
+@property (retain, nonatomic) MMUIButton *controlBtn;
+@property (retain, nonatomic) UIView *whiteBackgroundView;
+@property (retain, nonatomic) NSArray *passiveStateIconList;
+@property (retain, nonatomic) CAShapeLayer *outterBorderLayer;
+@property (retain, nonatomic) CAShapeLayer *innerBorderLayer;
+@property (weak, nonatomic) id<MinimizeDraggableTaskViewDelegate> m_delegate;
+@property (retain, nonatomic) MinimizeTaskData *taskData;
+@property (retain, nonatomic) UIButton *containerView;
+@property (retain, nonatomic) UIColor *gradientBackgroundColor;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } edgeInset;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)updatePositionType:(unsigned long long)a0;
+- (unsigned long long)getPositionType:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)getDefaultClipPath:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 positionType:(unsigned long long)a1;
+- (void)hideSubviewsWhenMaximizeBegin;
+- (void)showSubviewsWhenMaximizeEnd;
+- (void)hideShadow;
+- (void)showShadow;
+- (void)hideBackgroundColor;
+- (void)showBackgroundColor;
+- (void)hideIcon;
+- (void)showIcon;
+- (void)updateShadow:(BOOL)a0 Duration:(double)a1;
+- (void)updateMask:(BOOL)a0 Duration:(double)a1;
+- (void)updateMask:(BOOL)a0 View:(id)a1 Duration:(double)a2;
+- (void)onBtnClicked:(id)a0;
+- (void)setAlpha:(double)a0;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)updateTask:(id)a0 Subtitle:(id)a1 titleTail:(id)a2 subTitleTail:(id)a3;
+- (void)updateUI:(id)a0 Subtitle:(id)a1 titleTail:(id)a2 subTitleTail:(id)a3;
+- (double)closeBtnRightMargin;
+- (double)taskIconLeftMargin;
+- (void)resetAllView;
+- (void)removeShadowAndAddBorder;
+- (void)resetBorderLayer;
+- (void)resetBorderLayerWhenTraitCollectionDidChange;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })calcFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 withInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a1;
+- (void)updateBorderLayer:(id)a0 VisibleFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 PositionType:(unsigned long long)a2 BorderColor:(id)a3 BorderWidth:(double)a4;
+- (void)onCloseBtnClicked:(id)a0;
+- (void)setCloseBtnVisible:(BOOL)a0;
+- (BOOL)isEqualToTaskKey:(id)a0;
+- (BOOL)isSupportLongPress;
+- (BOOL)shouldHighlightForLongPressWithPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)setHighlightForLongPress:(BOOL)a0 scale:(double)a1;
+- (void)longPressed;
+- (void).cxx_destruct;
+
+@end

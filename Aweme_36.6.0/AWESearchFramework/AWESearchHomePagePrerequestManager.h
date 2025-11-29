@@ -1,0 +1,3 @@
+@interface AWESearchHomePagePrerequestManager : NSObject
+
+@end

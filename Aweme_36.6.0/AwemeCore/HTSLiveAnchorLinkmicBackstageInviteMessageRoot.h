@@ -1,0 +1,3 @@
+@interface HTSLiveAnchorLinkmicBackstageInviteMessageRoot : GPBRootObject
+
+@end

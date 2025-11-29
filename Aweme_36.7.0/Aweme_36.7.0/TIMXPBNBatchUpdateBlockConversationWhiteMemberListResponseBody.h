@@ -1,0 +1,10 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNBatchUpdateBlockConversationWhiteMemberListResponseBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *failedMembersArray;
+@property (readonly, nonatomic) unsigned long long failedMembersArray_Count;
+
++ (id)descriptor;
+
+@end

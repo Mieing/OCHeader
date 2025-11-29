@@ -1,0 +1,78 @@
+@class WCDownloadArgsWrap, WCPlayerPlayArgs, WCPlayerPlaybackInfo, NSRecursiveLock, NSMutableDictionary, WCBaseScheduler, WCPlayerDownloader, M3U8Parser, WCPlayerLoadingRequestTaskInfo, WCAssetDataLoaderProxy, WCPlayerReporter, NSString;
+@protocol WCPlayerResourceLoaderDelegate;
+
+@interface WCPlayerResourceLoader : WCPlayerObject <WCPlayerDownloaderDelegate, WCAssetDataLoaderProxyDelegate>
+
+@property (retain, nonatomic) M3U8Parser *m3u8Parser;
+@property (retain, nonatomic) WCAssetDataLoaderProxy *loaderProxy;
+@property (retain, nonatomic) NSMutableDictionary *dicDownloader;
+@property (retain, nonatomic) WCBaseScheduler *scheduler;
+@property (retain, nonatomic) WCPlayerReporter *reporter;
+@property (retain, nonatomic) WCPlayerPlayArgs *playerArgs;
+@property (retain, nonatomic) WCPlayerDownloader *downloader;
+@property (retain, nonatomic) WCPlayerPlaybackInfo *playbackInfo;
+@property (nonatomic) long long resourceType;
+@property (retain, nonatomic) WCDownloadArgsWrap *downloadArgsWrap;
+@property (weak, nonatomic) id<WCPlayerResourceLoaderDelegate> delegate;
+@property (retain, nonatomic) WCPlayerLoadingRequestTaskInfo *currentTask;
+@property (nonatomic) unsigned int taskSeq;
+@property (retain, nonatomic) NSRecursiveLock *lock;
+@property (nonatomic) unsigned long long playerScene;
+@property (nonatomic) long long requestSecondsAfterSeek;
+@property (nonatomic) BOOL bDataSourceSwitching;
+@property (nonatomic) BOOL isWaitingNewLoadingRequestAfterSeek;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onPlayerTimeChanged:(double)a0;
+- (void)onPlayerEnterBuffering;
+- (void)onPlayerLeaveBuffering;
+- (id)initWithPlayerArgs:(id)a0 playbackInfo:(id)a1 downloadArgsWrap:(id)a2 reporter:(id)a3;
+- (void)dealloc;
+- (id)generateLogTag:(id)a0;
+- (id)getDownloadArgsWrap;
+- (id)generateScheduler;
+- (id)generateDownloaderWithDownloadArgs:(id)a0;
+- (id)getLoaderProxy;
+- (int)loadingRequestSeq;
+- (BOOL)isRecentRecallCdnData;
+- (void)start;
+- (void)internalStart;
+- (void)stopVideoDownload;
+- (void)resumeDownload;
+- (void)startDataPreload;
+- (void)cancelAllDataRequest;
+- (void)removeDownloaderWithLoadingRequest:(id)a0;
+- (void)finishCurrentTask;
+- (BOOL)isHadRecievedAllData;
+- (void)checkStateWhenBufferingStart;
+- (double)getNextSliceTime;
+- (unsigned long long)checkBufferTask:(unsigned long long)a0;
+- (void)checkToFetchAllData;
+- (void)onPlayerSeekStart;
+- (void)onPlayerSeekComplete;
+- (BOOL)isDownloadingData;
+- (void)cancelAllPendingLoadingRequests;
+- (void)requestVideoDataWithSec:(float)a0;
+- (id)generateNextRequestTask:(id)a0 loadingRequest:(id)a1 requestSec:(float)a2;
+- (void)onDataDownloadSuccess:(id)a0;
+- (void)onDownloader:(id)a0 switchDataSource:(id)a1;
+- (void)onUpdateNetwordSpeed:(unsigned int)a0;
+- (void)onDataAvailable:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)onVideoSourceChanged;
+- (void)onDataDownloadFail:(id)a0 retcode:(int)a1;
+- (void)onM3u8Ready;
+- (void)onMoovReady:(id)a0;
+- (void)onDownloader:(id)a0 progressChange:(unsigned long long)a1 total:(unsigned long long)a2;
+- (void)onRemoveLoadingRequest:(id)a0;
+- (void)onNoAnyLoadingRequest;
+- (id)downloader:(id)a0;
+- (unsigned long long)getAvaibleLength:(id)a0;
+- (id)getVideoData:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (unsigned long long)fileLength:(id)a0;
+- (void)onRecieveNewLoadingRequest:(id)a0;
+- (void).cxx_destruct;
+
+@end

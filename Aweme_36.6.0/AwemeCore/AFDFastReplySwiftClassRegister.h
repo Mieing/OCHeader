@@ -1,0 +1,3 @@
+@interface AFDFastReplySwiftClassRegister : NSObject
+
+@end

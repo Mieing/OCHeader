@@ -1,0 +1,7 @@
+@interface IESLiveExternalLiveABManager : NSObject
+
++ (id)livePartnerGuideTip;
++ (id)liveObsPreviewTip;
++ (id)liveGuideRuleDetailText;
+
+@end

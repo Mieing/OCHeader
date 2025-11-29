@@ -1,0 +1,3 @@
+@interface AWEFriendsTabImpl.FriendsTabDotPreloadService : AWEFriendsTabImpl.FriendsTabDotBasicService
+
+@end

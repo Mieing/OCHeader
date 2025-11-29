@@ -1,0 +1,11 @@
+@interface TempoiOS.TempoForNode : TempoiOS.TempoNode {
+    void /* unknown type, empty encoding */ forAttribute;
+    void /* unknown type, empty encoding */ forItemData;
+    void /* unknown type, empty encoding */ forIndexData;
+    void /* unknown type, empty encoding */ bodyPostOrderIDList;
+    void /* unknown type, empty encoding */ bodyNodeID;
+}
+
+- (void).cxx_destruct;
+
+@end

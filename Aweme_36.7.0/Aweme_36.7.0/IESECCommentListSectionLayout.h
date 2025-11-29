@@ -1,0 +1,3 @@
+@interface IESECCommentListSectionLayout : IESECCollectionViewSectionWaterfallLayout
+
+@end

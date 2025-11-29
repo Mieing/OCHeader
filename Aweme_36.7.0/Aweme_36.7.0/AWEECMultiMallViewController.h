@@ -1,0 +1,72 @@
+@class NSString, AWEECMultiMallContainerController;
+@protocol AWEECMultiMallViewControllerAdapter;
+
+@interface AWEECMultiMallViewController : AWEECMallRootBaseViewController <AWEECMallContainerOptSceneProtocol, AWEECMultiMallViewControllerContext, AWEECMultiMallContainerDelegate, AWEECMultiCombinedMallChannelProtocol, AWETabBarItemViewControllerProtocol>
+
+@property (retain, nonatomic) AWEECMultiMallContainerController *contentVC;
+@property (copy, nonatomic) NSString *openTime;
+@property (copy, nonatomic) NSString *pageTheme;
+@property (nonatomic) BOOL isInMallTab;
+@property (retain, nonatomic) id<AWEECMultiMallViewControllerAdapter> adapter;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)referString;
+- (id)aweui_emptyPageConfigForState:(unsigned long long)a0;
+- (void)aweui_emptyPagePrimaryButtonTapped:(id)a0;
+- (BOOL)mallIsVisible;
+- (void)mallGetCardPosition:(id)a0 completion:(id /* block */)a1;
+- (id)mallPageName;
+- (id)mallEnterFrom;
+- (id)mallEnvIdentifier;
+- (void)appBecomeActive;
+- (void)didReceiveMemoryWarningNotification;
+- (id)currentTabReferString;
+- (BOOL)enableMemoryOptimizeWithNunki;
+- (void)didReceiveMemeoryDangerLevelTopNotification;
+- (void)updateTheme:(id)a0;
+- (double)currentMemory;
+- (void)configWithRouterParams:(id)a0;
+- (void)requestClientAiPrefetchApis:(double)a0 message:(id)a1 completion:(id /* block */)a2;
+- (void)configWithRouterParamsForAiPrefetch:(id)a0;
+- (void)endLandingTab;
+- (id)homepageTrackerParams:(id)a0;
+- (void)mallChannelInnerTheme:(id)a0;
+- (void)mallChannelTransInfo:(id)a0;
+- (id)currentSplicingEnterFrom;
+- (BOOL)refreshIfNeededComplete:(id /* block */)a0;
+- (void)tabBarItemDidSelectByTap:(BOOL)a0;
+- (void)tabBarItemDidUnSelectByTap:(BOOL)a0;
+- (void)enterMallWithParams:(id)a0;
+- (void)syncPreloadAddressModel;
+- (void)reloadMall;
+- (void)refreshFirstScreen;
+- (id)defaultEnterFrom;
+- (BOOL)isMallCategoryTab;
+- (BOOL)isHostScreenClear;
+- (id)currentTabViewController;
+- (id)BTMAB;
+- (void)didReceiveMemoryDangerLevelSecondaryNotification;
+- (void)clearMemoryIfNeeded;
+- (void)forceSwitchToRecommendTab;
+- (BOOL)shouldSlidingVCBeginDragging:(id)a0;
+- (BOOL)shouldCategoryInteractive:(id)a0;
+- (void)removeChildVc;
+- (void).cxx_destruct;
+- (long long)preferredStatusBarStyle;
+- (id)init;
+- (void)addObserver;
+- (void)viewWillAppear:(BOOL)a0;
+- (id)viewController;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)setupUI;
+- (void)appWillResignActive;
+- (id)pageName;
+
+@end

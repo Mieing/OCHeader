@@ -1,0 +1,3 @@
+@interface HTSLiveAiBootMessageRoot : GPBRootObject
+
+@end

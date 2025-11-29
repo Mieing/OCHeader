@@ -1,0 +1,73 @@
+@class UIView, CECMomentCameraAlbumViewModel, HTSVideoData, CECMomentCameraScaleViewModel, UIImage, CECMomentCameraMultiCameraViewModel, CECMomentCameraTextViewModel, CECMomentCameraAudioViewModel, NSString, CECMomentCameraSwitchModeViewModel;
+@protocol AFDMomentCameraPerformanceTrackService, CECMomentCameraCaptureService, CECMomentCameraSwitchTabService, CECMomentCameraFlowService, CECMomentCameraSubModeService, CECMomentCameraService, AFDMomentContextService;
+
+@interface CECMomentCameraPreviewViewModel : AFDMomentCameraBaseViewModel <CECMomentCameraLifeCircleEvent, CECMomentCameraFlowServiceSubscriber, CECMomentCameraPreviewInterface>
+
+@property (retain, nonatomic) HTSVideoData *videoData;
+@property (nonatomic) BOOL shouldShowBlurView;
+@property (nonatomic) BOOL shouldShowBlurViewWithoutAnimation;
+@property (nonatomic) BOOL shouldShowResultImagePreview;
+@property (nonatomic) BOOL shouldShowResultVideoPreview;
+@property (nonatomic) BOOL isPreviewing;
+@property (nonatomic) BOOL isDisabled;
+@property (nonatomic) BOOL haveCameraAuth;
+@property (retain, nonatomic) id<CECMomentCameraSwitchTabService> switchTabService;
+@property (nonatomic) BOOL haveMicAuth;
+@property (weak, nonatomic) id<CECMomentCameraService> cameraService;
+@property (retain, nonatomic) id<CECMomentCameraFlowService> flowService;
+@property (retain, nonatomic) id<AFDMomentCameraPerformanceTrackService> trackService;
+@property (retain, nonatomic) id<CECMomentCameraSubModeService> subModeService;
+@property (readonly, weak, nonatomic) CECMomentCameraScaleViewModel *scaleViewModel;
+@property (weak, nonatomic) CECMomentCameraSwitchModeViewModel *switchModeViewModel;
+@property (weak, nonatomic) CECMomentCameraAlbumViewModel *albumViewModel;
+@property (weak, nonatomic) CECMomentCameraTextViewModel *textViewModel;
+@property (weak, nonatomic) CECMomentCameraAudioViewModel *audioViewModel;
+@property (weak, nonatomic) CECMomentCameraMultiCameraViewModel *secondPreviewViewModel;
+@property (retain, nonatomic) UIImage *resultPreviewImageForUpload;
+@property (nonatomic) BOOL shouldShowUploadResultPreview;
+@property (nonatomic) BOOL shouldShowUploadResultPreviewGuide;
+@property (nonatomic) struct CGSize { double width; double height; } uploadImageVisibleSize;
+@property (nonatomic) BOOL shouldDelayDismissUploadResultPreview;
+@property (retain, nonatomic) id<AFDMomentContextService> contextService;
+@property (retain, nonatomic) id<CECMomentCameraCaptureService> captureService;
+@property (nonatomic) BOOL shouldShowLivePhotoTagView;
+@property (retain, nonatomic) UIImage *blurredImage;
+@property (weak, nonatomic) UIView *preview;
+@property (weak, nonatomic) UIView *secondPreview;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setupViewModel;
+- (void)onCameraFirstFrameDidRender:(id)a0;
+- (void)cameraService:(id)a0 didTakeAction:(long long)a1 error:(id)a2 data:(id)a3;
+- (void)bindObserver;
+- (void)flowServiceDidChangeToState:(long long)a0 fromState:(long long)a1;
+- (void)trackPermissionLayerState:(BOOL)a0;
+- (void)injectService;
+- (void)onMultiCameraFirstFrameDidRender:(id)a0;
+- (id)applyGaussianBlur:(id)a0 radius:(long long)a1;
+- (void)showBlurViewAnimated:(BOOL)a0;
+- (void)hideBlurViewAnimated:(BOOL)a0;
+- (void)trackPermissionToastShow:(id)a0;
+- (void)trackPermissionToastClick:(id)a0 clickPosition:(id)a1 clickType:(id)a2;
+- (void)stopVideoCaptureWithStateCheck;
+- (void)didTapCameraAuthorizeButton;
+- (void)didTapMicAuthorizeButton;
+- (void)startVideoCaptureWithStateCheck;
+- (void)updateUploadImageVisibleSize:(struct CGSize { double x0; double x1; })a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getCurrentDisplayRect;
+- (void)hiddenUploadResultPreviewGuide;
+- (void)updateUploadPreviewDisplayRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)trackPermissionStatus;
+- (void)onReceivedOpenedScanCamera:(id)a0;
+- (void)permissionToastResult:(id)a0 result:(id)a1;
+- (void)previewSaveBlurImage:(id)a0;
+- (void)p_showCropViewGuideIfNeed;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)startVideoCapture;
+- (void)stopVideoCapture;
+
+@end

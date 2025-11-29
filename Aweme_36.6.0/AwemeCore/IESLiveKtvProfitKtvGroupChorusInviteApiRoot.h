@@ -1,0 +1,3 @@
+@interface IESLiveKtvProfitKtvGroupChorusInviteApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveLinkmicBadge : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *dressId;
+@property (nonatomic) int showType;
+
++ (id)descriptor;
+
+@end

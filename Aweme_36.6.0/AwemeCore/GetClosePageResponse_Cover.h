@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface GetClosePageResponse_Cover : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *URL;
+@property (retain, nonatomic) NSMutableArray *URLListArray;
+@property (readonly, nonatomic) unsigned long long URLListArray_Count;
+
++ (id)descriptor;
+
+@end

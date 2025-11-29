@@ -1,0 +1,72 @@
+@class UIView, NSDictionary, UITapGestureRecognizer, NSArray, NSString, UIButton, UITableView, AWEMusicModel, UIPanGestureRecognizer, AWEMusicStreamingQueueHandler, AWEMusicDSPEventModel, AWEMusicQueueHeaderView;
+@protocol MusicService;
+
+@interface AWEMusicQueueViewController : UIViewController <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, AWEMusicQueueListCellDelegate, AWEMusicQueueHeaderViewDelegate, AWEMusicServiceDelegate, AWEMusicStreamingQueueHandlerDelegate, AWEMusicPlayerQueueDelegate>
+
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIView *bottomView;
+@property (retain, nonatomic) UIView *maskView;
+@property (retain, nonatomic) UIButton *cancleButton;
+@property (retain, nonatomic) AWEMusicQueueHeaderView *headerView;
+@property (retain, nonatomic) UITableView *listView;
+@property (retain, nonatomic) UIView *effectView;
+@property (retain, nonatomic) AWEMusicModel *musicModel;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGes;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGes;
+@property (nonatomic) double containerViewBottomOffsetY;
+@property (nonatomic) double actionSheetHeight;
+@property (copy, nonatomic) NSArray *queueList;
+@property (nonatomic) unsigned long long currentIndex;
+@property (nonatomic) BOOL isInLoadMore;
+@property (retain, nonatomic) NSArray *sectionModelArray;
+@property (nonatomic) BOOL isPanedInListView;
+@property (nonatomic) BOOL isPlaying;
+@property (readonly, nonatomic) AWEMusicStreamingQueueHandler *queueHandler;
+@property (copy, nonatomic) id /* block */ didCloseBlock;
+@property (retain, nonatomic) id<MusicService> musicService;
+@property (retain, nonatomic) AWEMusicDSPEventModel *eventModel;
+@property (retain, nonatomic) NSDictionary *headerModelConfigMap;
+@property (nonatomic) BOOL disableChangeMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)musicService:(id)a0 playStatusChanged:(long long)a1;
+- (void)musicServiceMusicChanged:(id)a0;
+- (void)awe_themeReload;
+- (void)configSubviews;
+- (void)queueDidUpdatePlayList:(id)a0;
+- (void)queue:(id)a0 didChangeLoopModeFromLoopMode:(unsigned long long)a1;
+- (void)selfPanned:(id)a0;
+- (void)selfTapped:(id)a0;
+- (void)playWithIndex:(long long)a0;
+- (void)hideWithAnimated:(BOOL)a0 completion:(id /* block */)a1;
+- (void)queueHandler:(id)a0 changedOf:(id)a1 scene:(unsigned long long)a2;
+- (void)queueHandler:(id)a0 appendedModelList:(id)a1 forQueue:(id)a2;
+- (void)didTapQueueModeButton:(unsigned long long)a0;
+- (void)queueListCell:(id)a0 deleteModel:(id)a1;
+- (void)setTheme;
+- (id)convertModels:(id)a0;
+- (void)tellDelegateDidCloseVC:(BOOL)a0;
+- (void)closeActionSheet;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)updateCount;
+
+@end

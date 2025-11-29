@@ -1,0 +1,3 @@
+@interface PaidLivePaidLivePingApiRoot : GPBRootObject
+
+@end

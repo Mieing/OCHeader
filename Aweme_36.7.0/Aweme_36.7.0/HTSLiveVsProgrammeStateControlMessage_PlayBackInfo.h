@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveVsProgrammeStateControlMessage_PlayBackInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *pId;
+@property (copy, nonatomic) NSString *startTime;
+
++ (id)descriptor;
+
+@end

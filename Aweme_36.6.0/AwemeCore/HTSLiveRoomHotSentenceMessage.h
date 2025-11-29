@@ -1,0 +1,11 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveRoomHotSentenceMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *hotSentenceInfo;
+
++ (id)descriptor;
+
+@end

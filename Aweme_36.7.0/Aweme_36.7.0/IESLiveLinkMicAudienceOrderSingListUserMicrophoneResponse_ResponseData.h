@@ -1,0 +1,17 @@
+@class NSString, NSMutableArray, GPBInt64Array;
+
+@interface IESLiveLinkMicAudienceOrderSingListUserMicrophoneResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *userMicrophoneListArray;
+@property (readonly, nonatomic) unsigned long long userMicrophoneListArray_Count;
+@property (nonatomic) long long giftId;
+@property (nonatomic) BOOL autoEnlarge;
+@property (copy, nonatomic) NSString *currentSingItem;
+@property (retain, nonatomic) GPBInt64Array *giftIdsArray;
+@property (readonly, nonatomic) unsigned long long giftIdsArray_Count;
+@property (retain, nonatomic) GPBInt64Array *auditionGiftIdsArray;
+@property (readonly, nonatomic) unsigned long long auditionGiftIdsArray_Count;
+
++ (id)descriptor;
+
+@end

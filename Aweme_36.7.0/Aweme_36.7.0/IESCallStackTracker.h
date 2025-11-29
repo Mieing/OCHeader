@@ -1,0 +1,12 @@
+@class IESCallStackTrackerImageInfo;
+
+@interface IESCallStackTracker : NSObject
+
+@property (class, readonly, nonatomic) IESCallStackTrackerImageInfo *imageInfo;
+
++ (id)p_getCallStack;
++ (int)maxDeptchForCallStackerTracker;
++ (id)getCallStack;
++ (BOOL)isCallStackTrackerEnable;
+
+@end

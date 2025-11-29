@@ -1,0 +1,12 @@
+@class NSMutableDictionary;
+
+@interface ILAMomentTag : NSObject
+
+@property (retain, nonatomic) NSMutableDictionary *includeTags;
+@property (retain, nonatomic) NSMutableDictionary *excludeTags;
+
+- (struct MomentTagItem { struct map<int, std::vector<std::string>, std::less<int>, std::allocator<std::pair<const int, std::vector<std::string>>>> { struct __tree<std::__value_type<int, std::vector<std::string>>, std::__map_value_compare<int, std::__value_type<int, std::vector<std::string>>, std::less<int>, true>, std::allocator<std::__value_type<int, std::vector<std::string>>>> { void *x0; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<int, std::vector<std::string>>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *x0; } x0; } x1; struct __compressed_pair<unsigned long, std::__map_value_compare<int, std::__value_type<int, std::vector<std::string>>, std::less<int>, true>> { unsigned long long x0; } x2; } x0; } x0; struct map<int, std::vector<std::string>, std::less<int>, std::allocator<std::pair<const int, std::vector<std::string>>>> { struct __tree<std::__value_type<int, std::vector<std::string>>, std::__map_value_compare<int, std::__value_type<int, std::vector<std::string>>, std::less<int>, true>, std::allocator<std::__value_type<int, std::vector<std::string>>>> { void *x0; struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<int, std::vector<std::string>>, void *>>> { struct __tree_end_node<std::__tree_node_base<void *> *> { void *x0; } x0; } x1; struct __compressed_pair<unsigned long, std::__map_value_compare<int, std::__value_type<int, std::vector<std::string>>, std::less<int>, true>> { unsigned long long x0; } x2; } x0; } x1; })getTargetTag;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

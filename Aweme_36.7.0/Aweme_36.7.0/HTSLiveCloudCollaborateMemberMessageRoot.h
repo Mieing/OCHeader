@@ -1,0 +1,3 @@
+@interface HTSLiveCloudCollaborateMemberMessageRoot : GPBRootObject
+
+@end

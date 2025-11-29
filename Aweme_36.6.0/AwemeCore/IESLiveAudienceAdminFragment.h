@@ -1,0 +1,72 @@
+@class IESLiveAdminManagerNewVC, NSString, UINavigationController, HTSLiveToolbarItem, IESLiveSensitiveStore, IESLivePresentNavController, UIViewController, IESLiveAdministerSettingApi;
+@protocol IESLiveUserService;
+
+@interface IESLiveAudienceAdminFragment : IESLiveRoomComponent <HTSLiveMessageSubscriber, IESLiveAdministerPrivilegeServiceRouter>
+
+@property (retain, nonatomic) IESLivePresentNavController *managerNav;
+@property (retain, nonatomic) IESLiveAdminManagerNewVC *managerVc;
+@property (retain, nonatomic) HTSLiveToolbarItem *settingToolbarItem;
+@property (retain, nonatomic) HTSLiveToolbarItem *landscapeSettingToolbarItem;
+@property (retain, nonatomic) HTSLiveToolbarItem *promptToolbarItem;
+@property (retain, nonatomic) IESLivePresentNavController *promptNav;
+@property (retain, nonatomic) UIViewController *promptVc;
+@property (retain, nonatomic) HTSLiveToolbarItem *giftVoteToolbarItem;
+@property (retain, nonatomic) HTSLiveToolbarItem *wishListToolbarItem;
+@property (retain, nonatomic) IESLiveSensitiveStore *sensitiveStore;
+@property (retain, nonatomic) UINavigationController *audienceAdminNavigationController;
+@property (retain, nonatomic) IESLiveAdministerSettingApi *administerSettingApi;
+@property (retain, nonatomic) id<IESLiveUserService> userService;
+@property (nonatomic) BOOL diSettingEnable;
+@property (nonatomic) long long fixAdminDataLevel;
+@property (nonatomic) double fetchFelayTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentDestroy;
+- (void)componentOrientationChanged:(long long)a0;
+- (BOOL)isAdminNewStyle;
+- (BOOL)isHavePrivilegeWithUser:(id)a0 privilegeType:(int)a1;
+- (BOOL)isHavePrivilegeWithPrivilegeType:(int)a0;
+- (void)showAdministrateSettingWithUser:(id)a0;
+- (void)showAdministrateSheet;
+- (void)changePrivilege:(int)a0 isAdd:(BOOL)a1;
+- (void)pushAdminSetting;
+- (id)p_createUnflodListViewControllerWithtype:(long long)a0;
+- (void)p_pushOperateContainer:(id)a0;
+- (void)refreshAdminSetting:(long long)a0;
+- (BOOL)enableAdminOptV3;
+- (void)insertPromptItem;
+- (void)insertWishListItem;
+- (void)insertGiftVoteItem;
+- (BOOL)isShowSettingIcon;
+- (void)insertSettingItem:(BOOL)a0;
+- (void)showAddAdminPrivilegeGuideTipIfNeededWithStyle:(BOOL)a0;
+- (void)trackAudiencePromptInfo:(BOOL)a0 isAdmin:(BOOL)a1;
+- (void)trackPorpterBubbleShow;
+- (void)loadLandscapeInMoreTool;
+- (void)showAdminItemBubbleIfNeedWithText:(id)a0 itemType:(int)a1 delayTime:(double)a2;
+- (void)removeSettingItem;
+- (void)removePromptItem;
+- (void)removeGiftVoteItem;
+- (void)removeWishListItem;
+- (void)handleMemberMessage:(id)a0;
+- (void)handleAdminPrivilege:(id)a0;
+- (void)changeDanmakuStatus;
+- (void)removeAllPrivilegeItem;
+- (void)trackAddPrompterPrivilegeMessageShow;
+- (void)trackDelPrompterPrivilegeMessageShow;
+- (int)toolbarComponentTypeHasBubbleWithPrivilegeType:(int)a0;
+- (void)handleAdminPrivilegeType:(int)a0 isAdd:(BOOL)a1;
+- (void)showNewStyleSettingWithLandScape:(BOOL)a0;
+- (void)adminPanelClickTrack;
+- (void)trackPromptButtonWithAction:(id)a0;
+- (void)showPromptSheet;
+- (void)adminPanelShowTrack;
+- (void).cxx_destruct;
+- (void)messageReceived:(id)a0;
+
+@end

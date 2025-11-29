@@ -1,0 +1,81 @@
+@class UIViewController, NSString, NSTimer, NSNumber, UIView, AWEAlertManager, UITapGestureRecognizer;
+@protocol AFDSnackBarLifeCycleDelegate, AFDSnackBarViewDelegate;
+
+@interface AFDSnackBar : UIView <AWEAlertProtocol, CAAnimationDelegate>
+
+@property (nonatomic) BOOL replaceExistingSnackbars;
+@property (copy, nonatomic) NSString *alertID;
+@property (nonatomic) long long alertType;
+@property (weak, nonatomic) AWEAlertManager *alertManager;
+@property (copy, nonatomic) id /* block */ didShowBlock;
+@property (copy, nonatomic) id /* block */ canShowBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) NSTimer *dismissalTimer;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGes;
+@property (nonatomic) BOOL showing;
+@property (nonatomic) BOOL hasSetIsFirstLevelPage;
+@property (retain, nonatomic) id<AFDSnackBarLifeCycleDelegate> delegate;
+@property (retain, nonatomic) id<AFDSnackBarViewDelegate> viewDelegate;
+@property (copy, nonatomic) id /* block */ dismissBlock;
+@property (copy, nonatomic) id /* block */ tapBarBlock;
+@property (nonatomic) double displayDuration;
+@property (weak, nonatomic) UIViewController *containerVC;
+@property (nonatomic) BOOL dismissWhenTopVCDisappears;
+@property (nonatomic) BOOL aboveNaviBar;
+@property (nonatomic) BOOL dismissWhenWillResignActive;
+@property (nonatomic) BOOL dismissWhenTimeOut;
+@property (nonatomic) BOOL dismissWhenPointOutside;
+@property (nonatomic) BOOL isFirstLevelPage;
+@property (retain, nonatomic) NSNumber *customBottomPadding;
+@property (retain, nonatomic) NSNumber *customLeftPadding;
+@property (nonatomic) BOOL enabledTapGes;
+@property (nonatomic) BOOL enabledLayoutForContainer;
+@property (retain, nonatomic) UIView *bodyView;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)_aweLazyRegisterLoad_AWEAlert;
++ (void)cleanExistSnackBar;
+
+- (id)alertIDForEvent:(id)a0;
+- (long long)alertPriorityForEvent:(id)a0;
+- (BOOL)canShowWithContext:(id)a0;
+- (void)showWithContext:(id)a0 onClose:(id /* block */)a1;
+- (void)prepareWithContext:(id)a0 onCompletion:(id /* block */)a1;
+- (void)showWithContext:(id /* block */)a0;
+- (void)p_reset;
+- (void)showWithBodyView:(id)a0;
+- (void)aweAlert_dismissAnimated:(BOOL)a0;
+- (id /* block */)alertManagerCompletionCallback;
+- (void)setAlertManagerCompletionCallback:(id /* block */)a0;
+- (void)p_handleAppWillResignActiveNotification;
+- (void)p_invalidateTimer;
+- (BOOL)p_optimizeReplaceAnimation;
+- (double)snackBarBottomPadding:(BOOL)a0;
+- (double)snackBarLeftPadding;
+- (void)showSnackBarAfterDismissOnView;
+- (void)showSnackBarAnimation;
+- (void)p_createTimer;
+- (void)hideSnackBarAnimation:(BOOL)a0;
+- (void)replaceSnackBarAnimation;
+- (id)p_getAnimationWithKeyPath:(id)a0 fromValue:(id)a1 toValue:(id)a2 duration:(double)a3 timingFunction:(id)a4;
+- (id)p_getAnimationGroup:(id)a0 duration:(double)a1;
+- (void)p_timeoutForDismissal;
+- (void)didClickedSnackBar;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (void)dismissAnimated:(BOOL)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)willMoveToSuperview:(id)a0;
+- (void)dealloc;
+- (void)show;
+
+@end

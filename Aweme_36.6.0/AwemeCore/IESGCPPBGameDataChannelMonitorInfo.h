@@ -1,0 +1,14 @@
+@class NSString, IESGCPPBDataChannelTrackInfo;
+
+@interface IESGCPPBGameDataChannelMonitorInfo : GPBMessage
+
+@property (copy, nonatomic) NSString *gameId;
+@property (copy, nonatomic) NSString *androidMonitorURL;
+@property (copy, nonatomic) NSString *iosMonitorURL;
+@property (retain, nonatomic) IESGCPPBDataChannelTrackInfo *trackInfo;
+@property (nonatomic) BOOL hasTrackInfo;
+@property (nonatomic) BOOL allowPersonalDeviceInfo;
+
++ (id)descriptor;
+
+@end

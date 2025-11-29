@@ -1,0 +1,15 @@
+@class AWECommentEvaluationRatingElementEventDataContainer, AWECommentEvaluationContentElementEventDataContainer, AWECommentEvaluationPreViewElementEventDataContainer, AWECommentEvaluationPageEventDataContainer, AWECommentEvaluationTitleElementEventDataContainer, AWECommentEvaluationExpansionEventDataContainer, AWECommentEvaluationSendElementEventDataContainer;
+
+@interface AWECommentEvaluationEventDataContainer : NSObject
+
+@property (retain, nonatomic) AWECommentEvaluationSendElementEventDataContainer *sendElementEventData;
+@property (retain, nonatomic) AWECommentEvaluationTitleElementEventDataContainer *titleElementEventData;
+@property (retain, nonatomic) AWECommentEvaluationRatingElementEventDataContainer *ratingElementEventData;
+@property (retain, nonatomic) AWECommentEvaluationContentElementEventDataContainer *contentElementEventData;
+@property (retain, nonatomic) AWECommentEvaluationPreViewElementEventDataContainer *previewElementEventData;
+@property (retain, nonatomic) AWECommentEvaluationPageEventDataContainer *pageEventData;
+@property (retain, nonatomic) AWECommentEvaluationExpansionEventDataContainer *expansionEventData;
+
+- (void).cxx_destruct;
+
+@end

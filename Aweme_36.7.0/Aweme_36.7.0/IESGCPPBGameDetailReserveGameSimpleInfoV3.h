@@ -1,0 +1,15 @@
+@class NSMutableArray, IESGCPPBGameDetailOfficialAccountInfo;
+
+@interface IESGCPPBGameDetailReserveGameSimpleInfoV3 : GPBMessage
+
+@property (nonatomic) long long reservedTotalByGame;
+@property (nonatomic) BOOL showReservedTotal;
+@property (nonatomic) long long supportPlatforms;
+@property (retain, nonatomic) NSMutableArray *noticeListArray;
+@property (readonly, nonatomic) unsigned long long noticeListArray_Count;
+@property (retain, nonatomic) IESGCPPBGameDetailOfficialAccountInfo *officialAccountInfo;
+@property (nonatomic) BOOL hasOfficialAccountInfo;
+
++ (id)descriptor;
+
+@end

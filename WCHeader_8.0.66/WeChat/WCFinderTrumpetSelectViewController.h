@@ -1,0 +1,72 @@
+@class GameRankSwitchInfo, NSString, WCFinderLiveAudienceRoleReporter, MMFinderLiveTaskId, WCTableViewManager, NSNumber;
+@protocol WCFinderTrumpetSelectViewControllerDelegate;
+
+@interface WCFinderTrumpetSelectViewController : MMUIViewController <WCFinderSwitchExt, WCActionSheetDelegate, ILinkEventExt, IUpdateProfileMgrExt>
+
+@property (retain, nonatomic) WCTableViewManager *tableViewManager;
+@property (retain, nonatomic) WCFinderLiveAudienceRoleReporter *reporter;
+@property (retain, nonatomic) GameRankSwitchInfo *switchInfo;
+@property (retain, nonatomic) NSNumber *selectedAccountType;
+@property (retain, nonatomic) NSNumber *selectedPrivacyType;
+@property (retain, nonatomic) NSNumber *isPrivateMsgVisiableInfoSwitchOn;
+@property (weak, nonatomic) id<WCFinderTrumpetSelectViewControllerDelegate> delegate;
+@property (retain, nonatomic) MMFinderLiveTaskId *liveTaskId;
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) BOOL selectRoleOnlyMode;
+@property (nonatomic) BOOL autoDismissAfterChanged;
+@property (nonatomic) BOOL showOKToastAfterChanged;
+@property (nonatomic) BOOL showPersonalizedLiveRecommendationSetting;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidBePopedOrDismissed:(BOOL)a0;
+- (void)configureTableView;
+- (void)reloadTableView;
+- (void)addIdentityPrivacySection;
+- (void)addNewIdentityPrivacySection;
+- (void)onClickIdentityPrivacyOptionCell:(id)a0;
+- (void)onClickPrivateMsgVisiableInfoSwitchCell:(id)a0;
+- (void)onClickIdentityPrivacyH5;
+- (BOOL)showRecommendSection;
+- (void)changePersonalizedRecommendationLive;
+- (BOOL)getCurrentSwitchFlagWithScene:(int)a0;
+- (void)cancelAlertAction;
+- (void)clickCloseRecommendLive;
+- (void)changeRecommendSceneValue:(int)a0;
+- (BOOL)enableGloryShowSwitch;
+- (void)addAccountSection;
+- (void)tryAddLiveAdditionPropertiesSection;
+- (void)addRecommendSectionIfNeeded;
+- (void)addGloryShowSwitchSectionIfNeed;
+- (void)tryAddGameLiveRankSection;
+- (void)onGloryShowSwitchClick:(id)a0;
+- (void)reportGloryOpen:(BOOL)a0 isClick:(BOOL)a1;
+- (void)onClickLiveShowGameLv;
+- (void)onGameLiveRankSwitched:(id)a0 cellInfo:(id)a1;
+- (void)createTrumpetAccount;
+- (void)deleteTrumpetAccount;
+- (void)editTrumpetAccount;
+- (id)makeSectionSeparator;
+- (void)onDidChangeToRoleType:(long long)a0;
+- (void)willDisplayCell:(id)a0 indexPath:(id)a1;
+- (void)onProfileChange;
+- (id)joinliveVisibleInfo;
+- (BOOL)showDoneButton;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)onTapDone;
+- (void)selectedLiveIdentity:(id)a0;
+- (void)finderLiveIdentityChange;
+- (void)finderLiveIdentityPrivacySettingChange;
+- (void)finderLiveUpdateIdentity;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)onNewSyncModUserInfoExt:(id)a0;
+- (id)audienceLogReporter;
+- (void).cxx_destruct;
+
+@end

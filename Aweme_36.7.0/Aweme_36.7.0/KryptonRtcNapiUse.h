@@ -1,0 +1,3 @@
+@interface KryptonRtcNapiUse : NSObject
+
+@end

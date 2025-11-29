@@ -1,0 +1,10 @@
+@interface IESLiveJAccreditInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int jAccreditBasic;
+@property (nonatomic) int jAccreditAdvance;
+@property (nonatomic) int jAccreditContent;
+@property (nonatomic) int jAccreditLive;
+
++ (id)descriptor;
+
+@end

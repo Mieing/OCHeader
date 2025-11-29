@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveSubscribeGiftPackInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long relatedGiftId;
+@property (nonatomic) long long offlineTimeSecond;
+@property (nonatomic) int leftScores;
+@property (copy, nonatomic) NSString *entranceSchemeURL;
+@property (copy, nonatomic) NSString *entranceSchemeURLQueryParams;
+
++ (id)descriptor;
+
+@end

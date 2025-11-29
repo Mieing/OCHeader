@@ -1,0 +1,9 @@
+@interface HTSLiveEmojiCustomizedRandomResource : IESLivePBBaseMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) long long randomNum;
+@property (nonatomic) int status;
+
++ (id)descriptor;
+
+@end

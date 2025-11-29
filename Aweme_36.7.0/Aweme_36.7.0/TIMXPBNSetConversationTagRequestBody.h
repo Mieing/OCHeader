@@ -1,0 +1,16 @@
+@class GPBInt64Array;
+
+@interface TIMXPBNSetConversationTagRequestBody : GPBMessage
+
+@property (retain, nonatomic) GPBInt64Array *tagIdsArray;
+@property (readonly, nonatomic) unsigned long long tagIdsArray_Count;
+@property (retain, nonatomic) GPBInt64Array *convShortIdsArray;
+@property (readonly, nonatomic) unsigned long long convShortIdsArray_Count;
+@property (nonatomic) BOOL isUnset;
+@property (nonatomic) BOOL hasIsUnset;
+@property (retain, nonatomic) GPBInt64Array *userCustomTagIdsArray;
+@property (readonly, nonatomic) unsigned long long userCustomTagIdsArray_Count;
+
++ (id)descriptor;
+
+@end

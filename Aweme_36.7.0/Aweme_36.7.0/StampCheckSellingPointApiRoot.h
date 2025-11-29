@@ -1,0 +1,3 @@
+@interface StampCheckSellingPointApiRoot : GPBRootObject
+
+@end

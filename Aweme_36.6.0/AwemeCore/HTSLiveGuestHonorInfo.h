@@ -1,0 +1,13 @@
+@class HTSLiveHonorIconContent;
+
+@interface HTSLiveGuestHonorInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int guestHonorType;
+@property (nonatomic) long long level;
+@property (nonatomic) long long subLevel;
+@property (retain, nonatomic) HTSLiveHonorIconContent *iconList;
+@property (nonatomic) BOOL hasIconList;
+
++ (id)descriptor;
+
+@end

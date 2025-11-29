@@ -1,0 +1,88 @@
+@class WCDataItem, NSString, MMUIImageView, MMUIView, UIButton, NSMutableArray, MMUILabel;
+
+@interface WCAdvertiseFeedbackNewView : WCAdvertiseFeedbackBaseView <CAAnimationDelegate>
+
+@property (retain, nonatomic) WCDataItem *dataItem;
+@property (retain, nonatomic) NSString *feedbackTitle;
+@property (nonatomic) struct CGPoint { double x; double y; } clickPoint;
+@property (nonatomic) double adButtonWidth;
+@property (nonatomic) double panelMarginHorizontal;
+@property (nonatomic) double panelMaxWidth;
+@property (nonatomic) double panelMinWidth;
+@property (nonatomic) double panelWidth;
+@property (nonatomic) double reasonButtonMaxWidth;
+@property (nonatomic) double reasonButtonMinWidth;
+@property (nonatomic) double reasonButtonWidth;
+@property (nonatomic) double reasonButtonHeight;
+@property (nonatomic) double titleMaxWidth;
+@property (nonatomic) double confirmButtonMaxWidth;
+@property (retain, nonatomic) MMUIView *bgView;
+@property (retain, nonatomic) MMUIView *containerView;
+@property (retain, nonatomic) MMUIView *panelView;
+@property (retain, nonatomic) MMUIImageView *indicatorView;
+@property (retain, nonatomic) MMUIView *reasonBtnContainerView;
+@property (retain, nonatomic) MMUILabel *titleView;
+@property (retain, nonatomic) MMUILabel *descView;
+@property (retain, nonatomic) UIButton *confirmBtn;
+@property (retain, nonatomic) MMUIView *cutOffLine;
+@property (retain, nonatomic) UIButton *complainBtn;
+@property (retain, nonatomic) NSMutableArray *reasonBtnArray;
+@property (retain, nonatomic) UIButton *guideAdManageBtn;
+@property (retain, nonatomic) NSString *titleText;
+@property (retain, nonatomic) NSString *descText;
+@property (retain, nonatomic) NSString *toastTitleOnHide;
+@property (nonatomic) BOOL onAnimation;
+@property (nonatomic) BOOL isIndicatorBeRotate;
+@property (nonatomic) BOOL isSpecialAd;
+@property (retain, nonatomic) NSString *specialAdWording;
+@property (nonatomic) BOOL showGuideAdManage;
+@property (retain, nonatomic) NSString *adManageUrl;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)getMaxFontRatio;
+
+- (id)initWithDataItem:(id)a0 clickPoint:(struct CGPoint { double x0; double x1; })a1 adButtonWidth:(double)a2;
+- (void)show;
+- (void)hide;
+- (void)dealloc;
+- (void)calculateViewSize;
+- (void)calculateTitleAndConfirmButtonWidth;
+- (void)initRootViewController;
+- (void)initFeedBackData;
+- (void)initSubview;
+- (void)initSpecialAdView;
+- (void)hideInner;
+- (void)hideInnerWithToast:(id)a0;
+- (void)showWithAnimation;
+- (void)hideWithAnimation;
+- (void)animationDidStop:(id)a0 finished:(BOOL)a1;
+- (void)initReasonButtons;
+- (id)genReasonBtnWithReason:(id)a0 iconSVG:(id)a1;
+- (void)initGuideAdManageButton;
+- (void)onTapBackground;
+- (void)onClickConfirmBtn;
+- (void)onClickComplainBtn;
+- (void)onClickGuideAdManageBtn:(id)a0;
+- (void)onClickReasonBtn:(id)a0;
+- (void)checkAndSetConfirmButtonState;
+- (void)updateConfirmButtonTitle:(id)a0 weakStyle:(BOOL)a1;
+- (id)fetchSelectedReasonButtonList;
+- (void)layoutPanelView;
+- (void)layoutSpecialAdPanelView;
+- (void)layoutReasonBtn:(id)a0 andOffsetY:(double)a1;
+- (void)layoutGuideAdManageButtonWithOffsetY:(double)a0;
+- (void)setupComplainView:(id)a0;
+- (void)checkAndSetContainerFrame;
+- (void)setContainerFrame:(BOOL)a0;
+- (void)addCornersToPanelView;
+- (void)notifyFeedbackViewDisappear:(id)a0;
+- (void)setTitleAndDesc;
+- (BOOL)needShowGuideAdManage;
+- (double)fetchLabelHeight:(id)a0 maxWidth:(double)a1 font:(id)a2 lineHeight:(double)a3;
+- (double)fetchConfirmButtonMaxHeight;
+- (void).cxx_destruct;
+
+@end

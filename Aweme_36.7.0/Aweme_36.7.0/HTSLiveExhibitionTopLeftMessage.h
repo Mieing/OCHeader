@@ -1,0 +1,16 @@
+@class HTSLiveText, NSString, HTSLiveCommon, HTSLiveImage;
+
+@interface HTSLiveExhibitionTopLeftMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveText *displayText;
+@property (nonatomic) BOOL hasDisplayText;
+@property (copy, nonatomic) NSString *topTitle;
+@property (retain, nonatomic) HTSLiveImage *giftIcon;
+@property (nonatomic) BOOL hasGiftIcon;
+@property (copy, nonatomic) NSString *exhibitionEntranceURL;
+
++ (id)descriptor;
+
+@end

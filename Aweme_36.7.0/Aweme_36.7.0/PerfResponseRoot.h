@@ -1,0 +1,3 @@
+@interface PerfResponseRoot : GPBRootObject
+
+@end

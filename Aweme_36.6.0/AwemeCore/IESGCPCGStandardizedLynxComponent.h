@@ -1,0 +1,81 @@
+@class NSMutableDictionary, NSMapTable, BDXBridgeEventSubscriber, NSString;
+
+@interface IESGCPCGStandardizedLynxComponent : IESGCPCGInstanceBaseComponent <IESGCPCGStandardizedLynxRouter, IESGCPCGInstanceActions, IESGCPCGContainerActions, IESGCPCGLaunchProcessActions, IESGCPCGInstanceQueueActions, IESGCPCGQueueActions, IESGCPCGADRewardActions, IESGCPCGStandardizedLynxViewDelegate, IESGCPCGStandardizedLynxViewDelegate, IESGCPCGRotationActions, IESGCPCGLynxGenericAlertActions>
+
+@property (class, readonly, nonatomic) NSMutableDictionary *lynxContainerList;
+
+@property (retain, nonatomic) NSMapTable *strongCachePool;
+@property (retain, nonatomic) NSMapTable *weakCachePool;
+@property (retain, nonatomic) NSMutableDictionary *eventQueue;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *lynxViewReadySubscriber;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentDestroy;
+- (void)containerDidAppear;
+- (void)containerDidDisappear;
+- (void)didSetGameCPDIContext;
+- (void)playInstance:(id)a0 playStatusDidUpdated:(long long)a1 info:(id)a2;
+- (void)playInstance:(id)a0 remoteVideoStateChangeWith:(long long)a1 withVideoStateReason:(long long)a2;
+- (void)playInstanceOnFirstFrameReceived:(id)a0 info:(id)a1;
+- (void)playInstance:(id)a0 preloadResult:(BOOL)a1 info:(id)a2;
+- (void)playInstance:(id)a0 didReceivePlayStats:(id)a1;
+- (void)playInstance:(id)a0 didNetStatusUpdate:(long long)a1 rtt:(long long)a2;
+- (void)playInstanceDidLostConnection:(id)a0;
+- (void)playInstanceDidReceiveExitRequest:(id)a0;
+- (void)playInstance:(id)a0 didReceiveCustomMessage:(id)a1;
+- (void)playInstance:(id)a0 didReceiveRTCCustomMessage:(id)a1;
+- (void)playInstance:(id)a0 didReceiveServerPushedCustomNotice:(id)a1;
+- (void)onInitFinishedWithResult:(BOOL)a0 code:(long long)a1 msg:(id)a2 info:(id)a3;
+- (void)onExciteVideoStartReq;
+- (void)onExciteVideoLoadSuccess;
+- (void)onExciteVideoOpenFailureWithErrorCode:(id)a0 errorMsg:(id)a1;
+- (void)onExciteVideoCloseWithType:(long long)a0;
+- (void)onExciteVideoCountDownEnd;
+- (void)componentDidAttached;
+- (void)containerDidChangeToOrientation:(long long)a0 direction:(unsigned long long)a1;
+- (void)containerDidBindInstance:(id)a0;
+- (void)containerDidUnbindInstance:(id)a0;
+- (void)openXPlayStandardizedLynxPageWithParams:(id)a0 completion:(id /* block */)a1;
+- (void)openXPlayStandardizedLynxPageWithParams:(id)a0 bizQueryItems:(id)a1 completion:(id /* block */)a2;
+- (BOOL)setPageVisible:(BOOL)a0 withPageID:(id)a1 layoutParams:(id)a2;
+- (void)destroyPage:(id)a0;
+- (BOOL)getPageVisibility:(id)a0;
+- (void)dispatchEvent:(id)a0 withData:(id)a1;
+- (void)onLynxGenericDisplayWithTitle:(id)a0 description:(id)a1 actionTitle:(id)a2 cancelTitle:(id)a3;
+- (void)onQueueStartWithStatus:(id)a0;
+- (void)onQueueProgressUpdate:(id)a0;
+- (void)onQueueFinish;
+- (void)onQueueExpire;
+- (void)onQueueAccelerationWithRes:(long long)a0;
+- (void)onDeQueue;
+- (void)onQueueContinue;
+- (void)loadManagerPage;
+- (void)registerLynxEventSubscriber;
+- (void)clearAllLynxPages;
+- (void)unregisterLynxEventSubscriber;
+- (id)commonLynxParams;
+- (void)trackStartLoadPageWithConfig:(id)a0;
+- (BOOL)showLynxPage:(id)a0 layoutParams:(id)a1;
+- (void)sendEventToLynxView:(id)a0 withEventName:(id)a1 params:(id)a2;
+- (id)lynxViewFromCachePool:(id)a0;
+- (void)hideLynxView:(id)a0 withCompletion:(id /* block */)a1;
+- (void)removeLynxViewFromCachePool:(id)a0;
+- (void)handleLynxPageLoadFailed:(id)a0;
+- (id)encodingBusinessParams;
+- (long long)forceStopReasonFromXPlayItemFailedReason:(long long)a0;
+- (id)perfEnabledPages;
+- (void)handleLynxViewReadyEvent:(id)a0;
+- (void)dispatchEventsWhenPageReady:(id)a0;
+- (BOOL)showLynxPageOnViewController:(id)a0;
+- (BOOL)showLynxPageOnLayerView:(id)a0 layoutParams:(id)a1;
+- (id)layerViewWithLynxContainerLevel:(long long)a0;
+- (void)onLynxView:(id)a0 loadFinished:(BOOL)a1 error:(id)a2;
+- (void)didClickCloseButtonOnErrorPage:(id)a0;
+- (void)didClickRetryButtonOnErrorPage:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

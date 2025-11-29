@@ -1,0 +1,76 @@
+@class ACCSequencePerformanceService, NSString, ACCSequenceAlbumHandler, ACCSequencePlayControlServiceImpl;
+@protocol ACCEditServiceProtocol, ACCEditViewContainer, ACCSequenceEditServiceProtocol, ACCStickerServiceProtocol, ACCStickerPanelServiceProtocol, ACCSlidesBeatsServiceProtocol, ACCVideoEditFlowControlService, ACCBrushEditServiceProtocol, ACCEditPreviewProtocol, ACCAdvanceEditorRouterServiceProtocol;
+
+@interface ACCSequenceControlComponent : ACCFeatureComponent <ACCEditSessionLifeCircleEvent, ACCSequenceEditServicePlayerSubscriber, ACCEditPreviewMessageProtocolD, ACCVideoEditFlowControlSubscriber, ACCSequencePlayControlServiceSubscriber, ACCSequenceAlbumHandlerDelegateProtocol, ACCEditBeatsServiceSubscriber>
+
+@property (weak, nonatomic) id<ACCSequenceEditServiceProtocol> sequenceEditService;
+@property (weak, nonatomic) id<ACCStickerServiceProtocol> stickerService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCEditPreviewProtocol> previewService;
+@property (weak, nonatomic) id<ACCStickerPanelServiceProtocol> stickerPannelService;
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCVideoEditFlowControlService> editFlowService;
+@property (weak, nonatomic) id<ACCBrushEditServiceProtocol> brushEditService;
+@property (weak, nonatomic) id<ACCSlidesBeatsServiceProtocol> slidesBeatsService;
+@property (weak, nonatomic) id<ACCAdvanceEditorRouterServiceProtocol> advanceEditorRouterService;
+@property (nonatomic) long long preCount;
+@property (nonatomic) BOOL lastHandlerBubbleVisibleFlag;
+@property (retain, nonatomic) ACCSequenceAlbumHandler *albumHandler;
+@property (retain, nonatomic) ACCSequencePlayControlServiceImpl *playControlService;
+@property (retain, nonatomic) ACCSequencePerformanceService *performanceService;
+@property (nonatomic) BOOL viewHasAppeared;
+@property (nonatomic) BOOL editorWillDisappear;
+@property (nonatomic) BOOL firstRendered;
+@property (nonatomic) BOOL isPauseWhenDisAppear;
+@property (copy, nonatomic) NSString *autoOpenAdvanceEditorProjectUUID;
+@property (nonatomic) long long openAdvanceEditorType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)deActiveForcedIndex:(long long)a0;
+- (void)componentWillAppear;
+- (void)componentDidAppear;
+- (void)componentWillDisappear;
+- (void)componentDidDisappear;
+- (void)sequenceEditService:(id)a0 changedWithAddedIndexSet:(id)a1 deletedIndexSet:(id)a2;
+- (void)sequenceEditService:(id)a0 willTransferToIndex:(long long)a1 editMode:(unsigned long long)a2 isAutoTransfer:(BOOL)a3;
+- (void)sequenceEditService:(id)a0 didTransferToIndexAndNotDragScrolling:(long long)a1 editMode:(unsigned long long)a2 isAutoTransfer:(BOOL)a3;
+- (void)sequenceEditService:(id)a0 didSelectIndicatorIdx:(long long)a1;
+- (void)sequenceEditServiceDidClickAddItem:(id)a0;
+- (BOOL)sequencePlayControlService:(id)a0 shouldForbidPlayWhenAppear:(id)a1;
+- (void)willGoBackToRecordPageWithEditFlowService:(id)a0;
+- (void)onEnterPublishWithEditFlowService:(id)a0;
+- (void)notifyEditPageExitWithType:(long long)a0;
+- (void)willExitEditModeWithService:(id)a0;
+- (void)playerCurrentPlayTimeChanged:(double)a0;
+- (void)sensorialRenderWithEditService:(id)a0;
+- (void)firstRenderWithEditService:(id)a0;
+- (void)firstRenderComplete;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)componentDidReceiveMemoryWarning:(unsigned long long)a0;
+- (unsigned long long)preferredLoadPhase;
+- (void)bindViewModel;
+- (id)serviceBinding;
+- (void)willEnterSingleMode:(BOOL)a0;
+- (void)didExitSingleMode;
+- (void)bindServices:(id)a0;
+- (BOOL)isInfini;
+- (void)didClickToAdjustSlidesVideoDurationWithProjectUUID:(id)a0;
+- (void)slidesMusicBeatsStateDidChanged:(BOOL)a0;
+- (void)addCoverImageForPlayerIfNeeded;
+- (void)adaptImageAlbumUpgradeIfNeed;
+- (void)setupAutoplay;
+- (void)observeLongVideoClipNotification;
+- (void)_onEditStickerBubbleVisableDidChangedNotify:(id)a0;
+- (void)clipLongVideoNotify:(id)a0;
+- (void)prepareAndOpenAdvanceEditorWithProjectUUID:(id)a0;
+- (BOOL)shouldEnterSingleMode;
+- (void)openAdvanceEditor;
+- (void)trackOpenAlbumViewController;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

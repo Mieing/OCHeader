@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface IESGCPPBGameDetailNavBarV3 : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *tabListArray;
+@property (readonly, nonatomic) unsigned long long tabListArray_Count;
+
++ (id)descriptor;
+
+@end

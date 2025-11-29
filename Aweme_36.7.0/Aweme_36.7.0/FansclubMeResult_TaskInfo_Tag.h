@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface FansclubMeResult_TaskInfo_Tag : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *content;
+
++ (id)descriptor;
+
+@end

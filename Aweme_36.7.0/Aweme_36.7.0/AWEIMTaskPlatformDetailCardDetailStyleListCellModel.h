@@ -1,0 +1,3 @@
+@interface AWEIMTaskPlatformDetailCardDetailStyleListCellModel : AWEIMCellModel
+
+@end

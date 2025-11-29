@@ -1,0 +1,11 @@
+@class HTSLiveRoom;
+
+@interface NextOfficialChannelData : IESLivePBBaseMessage
+
+@property (nonatomic) long long roomId;
+@property (retain, nonatomic) HTSLiveRoom *nextRoom;
+@property (nonatomic) BOOL hasNextRoom;
+
++ (id)descriptor;
+
+@end

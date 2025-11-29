@@ -1,0 +1,10 @@
+@class SearchSongResponse_ResponseData;
+
+@interface SearchSongResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) SearchSongResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,72 @@
+@class WCTDatabase, WCTTable;
+
+@interface EmoticonDataDB : NSObject
+
+@property (retain) WCTDatabase *m_emoticonDB;
+@property (retain) WCTTable *m_tableEmoticon;
+@property (retain) WCTTable *m_tableEmoticonPackage;
+@property (retain) WCTTable *tableEmoticonSetInfo;
+
+- (BOOL)addSetInfoWith:(id)a0 title:(id)a1 desc:(id)a2 iconUrl:(id)a3 panelUrl:(id)a4;
+- (BOOL)update:(id)a0 title:(id)a1;
+- (BOOL)update:(id)a0 desc:(id)a1;
+- (BOOL)update:(id)a0 iconUrl:(id)a1;
+- (BOOL)update:(id)a0 panelUrl:(id)a1;
+- (id)getSetInfoFor:(id)a0;
+- (id)getAllSetInfo;
+- (BOOL)delAllSetInfo;
+- (BOOL)delSetInfoFor:(id)a0;
+- (void)fillEmoticonSetInfoQueryProperty:(void *)a0;
+- (BOOL)addEmoticonPackage:(id)a0 name:(id)a1 iconUrl:(id)a2 payStatus:(unsigned int)a3 downloadStatus:(unsigned int)a4;
+- (BOOL)update:(id)a0 payStatus:(unsigned int)a1;
+- (BOOL)update:(id)a0 downloadStatus:(unsigned int)a1;
+- (BOOL)update:(id)a0 count:(unsigned int)a1;
+- (BOOL)update:(id)a0 designerUin:(id)a1;
+- (BOOL)update:(id)a0 designerIPSetKey:(id)a1;
+- (id)getEmoticonPackageByPid:(id)a0;
+- (id)getEmoticonPackageList;
+- (id)getDistinctDesignerUin;
+- (id)getNeedUpdateDesignerPids;
+- (id)getDesignerPids:(id)a0;
+- (id)getDesignerUin:(id)a0;
+- (id)getDesignerIPSetKey:(id)a0;
+- (BOOL)deleteEmoticonPackageByPid:(id)a0;
+- (BOOL)isEmoticonPackageExist:(id)a0;
+- (BOOL)isEmoticonPackagePurchased:(id)a0;
+- (BOOL)isEmoticonPackageDownLoaded:(id)a0;
+- (BOOL)clearAllData;
+- (BOOL)addPackageList:(id)a0;
+- (void)fillEmoticonPackageQueryProperty:(void *)a0;
+- (void)fillEmoticonListQueryPropery:(void *)a0 isFullField:(BOOL)a1;
+- (void)convertEmotcion:(id)a0 fromDBObject:(id)a1 isFullField:(BOOL)a2;
+- (id)convertEmoticonsFromDBObjects:(id)a0 isFullField:(BOOL)a1;
+- (id)GetEmoticonList;
+- (BOOL)AddEmoticon:(id)a0 Type:(unsigned int)a1;
+- (BOOL)AddEmoticon:(id)a0 Type:(unsigned int)a1 ProductId:(id)a2 ExtInfo:(id)a3 ExtFlag:(unsigned int)a4 IndexInPack:(id)a5;
+- (BOOL)insertEmoticonWithMD5:(id)a0 type:(unsigned int)a1 productId:(id)a2 extInfo:(id)a3 extFlag:(unsigned int)a4 indexInPack:(id)a5;
+- (BOOL)updateEmoticon:(id)a0 productId:(id)a1 extInfo:(id)a2 extFlag:(id)a3 indexInPack:(id)a4;
+- (BOOL)updateEmoticon:(id)a0 usedTime:(unsigned int)a1;
+- (BOOL)updateEmoticon:(id)a0 packageId:(id)a1;
+- (BOOL)updateEmoticon:(id)a0 extFlag:(unsigned int)a1 needOverWrite:(BOOL)a2;
+- (id)getSelfEmoticonList;
+- (id)getCameraEmoticonList;
+- (id)getEmoticonWrapByMd5:(id)a0;
+- (id)getEmoticonListByPackageId:(id)a0;
+- (id)getRecentUsedEmoticonList:(unsigned int)a0;
+- (id)deleteEmoticonByPid:(id)a0;
+- (BOOL)DeleteEmoticonByMD5:(id)a0;
+- (BOOL)IsEmoticonExist:(id)a0;
+- (BOOL)IsEmoticonExistInCustomListByMd5:(id)a0;
+- (BOOL)IsEmoticonExistInCameraListByMd5:(id)a0;
+- (id)lastestSentMd5InMd5list:(id)a0;
+- (id)FilterNotInDBList:(id)a0;
+- (id)GetEmoticonsOnProperty:(const void *)a0 Where:(const void *)a1 orders:(const void *)a2 limit:(int)a3;
+- (id)DeleteEmoticonByPackageId:(id)a0 WithoutExtFlag:(unsigned int)a1;
+- (void)reloadWithDBPath:(id)a0 mmdbPath:(id)a1;
+- (void)dealloc;
+- (void)close;
+- (void)enableMigrate;
+- (id)internalCreateEmoticonTable:(id)a0 tableClass:(Class)a1;
+- (void).cxx_destruct;
+
+@end

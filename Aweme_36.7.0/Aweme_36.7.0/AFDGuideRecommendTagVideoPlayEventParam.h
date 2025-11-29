@@ -1,0 +1,3 @@
+@interface AFDGuideRecommendTagVideoPlayEventParam : AFDGuideRecommendTagEventParam
+
+@end

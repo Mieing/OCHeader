@@ -1,0 +1,9 @@
+@interface HTSLiveStatsParam : IESLivePBBaseMessage
+
+@property (nonatomic) long long epId;
+@property (nonatomic) long long secId;
+@property (nonatomic) long long rId;
+
++ (id)descriptor;
+
+@end

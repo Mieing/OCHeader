@@ -1,0 +1,14 @@
+@class HTSLiveImage;
+
+@interface RoomFullVideoBTN : IESLivePBBaseMessage
+
+@property (nonatomic) long long show;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (retain, nonatomic) HTSLiveImage *disableIcon;
+@property (nonatomic) BOOL hasDisableIcon;
+@property (nonatomic) long long showType;
+
++ (id)descriptor;
+
+@end

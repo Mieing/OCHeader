@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface HTSLiveTextFormat : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *color;
+@property (nonatomic) BOOL bold;
+@property (nonatomic) BOOL italic;
+@property (nonatomic) int weight;
+@property (nonatomic) int italicAngle;
+@property (nonatomic) int fontSize;
+@property (nonatomic) BOOL useHeighLightColor;
+@property (nonatomic) BOOL useRemoteClor;
+@property (nonatomic) BOOL ignoreColorMapping;
+
++ (id)descriptor;
+
+@end

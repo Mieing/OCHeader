@@ -1,0 +1,84 @@
+@class NSString, AWEAwemeModel, UIView, AWEStoryPlayerViewController, UIViewController;
+@protocol AWEVideoInteractiveDelegate, AWEVideoInteractiveProtocol, AWEVideoInteractiveModernDelegatorProtocol, AWEStoryGradientColorViewProtocol;
+
+@interface AWEStoryCollectionViewCell : UICollectionViewCell <AWEStoryPlayerViewControllerDelegate, AWEStoryCollectionViewCellProtocol, AFDStory25CellProtocol> {
+    BOOL _didResetForReusable;
+    long long _indexPath;
+    UIViewController *_parentVC;
+    NSString *_referString;
+    UIView *_feedTableViewCellMaskView;
+    AWEAwemeModel *_registerElementModel;
+    long long _cellDisplayState;
+    long long _cellPageAppearState;
+    id /* block */ _currentCellPageAppearStateBlock;
+}
+
+@property (retain, nonatomic) UIView<AWEStoryGradientColorViewProtocol> *gradientColorView;
+@property (retain, nonatomic) AWEStoryPlayerViewController *viewController;
+@property (retain, nonatomic) id<AWEVideoInteractiveModernDelegatorProtocol> stickerManagerDelegate;
+@property (retain, nonatomic) UIView *blockMaskView;
+@property (retain, nonatomic) id<AWEVideoInteractiveProtocol> stickerManager;
+@property (nonatomic) BOOL stickerInteractionEnabled;
+@property (weak, nonatomic) id<AWEVideoInteractiveDelegate> pureModeStickerController;
+@property (nonatomic) unsigned long long contentScene;
+@property (copy, nonatomic) id /* block */ didLayoutSubviewBlock;
+@property (nonatomic) struct EngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *audioWrapper;
+@property (nonatomic) struct EngineVideoWrapper { void /* function */ *x0; void /* function */ *x1; void *x2; } *videoWrapper;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long indexPath;
+@property (weak, nonatomic) UIViewController *parentVC;
+
+- (id)referString;
+- (void)setReferString:(id)a0;
+- (BOOL)isScrolledAutomatically;
+- (void)setIsScrolledAutomatically:(BOOL)a0;
+- (void)cellWillDisplay;
+- (id)currentAweme;
+- (BOOL)stickersDidTap:(struct CGPoint { double x0; double x1; })a0;
+- (void)showGradientLayer;
+- (void)hideGradientLayer;
+- (id)registerElementModel;
+- (void)setRegisterElementModel:(id)a0;
+- (void)configWithModel:(id)a0;
+- (long long)cellDisplayState;
+- (void)setCellDisplayState:(long long)a0;
+- (long long)cellPageAppearState;
+- (void)setCellPageAppearState:(long long)a0;
+- (id /* block */)currentCellPageAppearStateBlock;
+- (void)setCurrentCellPageAppearStateBlock:(id /* block */)a0;
+- (BOOL)didResetForReusable;
+- (void)setDidResetForReusable:(BOOL)a0;
+- (id)feedTableViewCellMaskView;
+- (void)setFeedTableViewCellMaskView:(id)a0;
+- (void)resetRefreshFlag;
+- (void)addFeedTableViewCellMaskView:(id)a0;
+- (long long)currentVideoScaleMode;
+- (void)configStickerManagerWithModel:(id)a0 withView:(id)a1;
+- (void)cellWillDisappear;
+- (void)updateInteractionViewController:(id)a0;
+- (BOOL)stickersDidLongPress:(struct CGPoint { double x0; double x1; })a0;
+- (void)_removeChildVC;
+- (void)_addChildVC;
+- (id)configInteractiveContainerVideoInfoDict;
+- (id)configInteractiveContainerTrackContext;
+- (void)didReceiveStoryMaskViewStatusNotification:(id)a0;
+- (void)configGradientColorWithModel:(id)a0;
+- (void)configMaskView:(id)a0;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)viewDidLayoutSubviews;
+- (void)stop;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)reset;
+- (void)layoutSubviews;
+- (double)currentPlaybackTime;
+- (void)dealloc;
+- (BOOL)handleTap:(id)a0;
+- (void)configureWithModel:(id)a0;
+
+@end

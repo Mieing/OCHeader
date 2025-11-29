@@ -1,0 +1,83 @@
+@class ACCToastWithCancelView, RACDisposable, AWEVideoEditClipViewModel, ACCEditAutoLoadMusicHandler, UIView, NSString, ACCVideoEditClipTask;
+@protocol ACCEditSpecialEffectServiceProtocol, ACCEditVoiceChangerServiceProtocol, ACCEditCutMusicServiceProtocol, ACCVideoFriendsEditCropService, ACCAdvanceEditServiceProtocol, ACCEditMusicServiceProtocol, ACCVideoEditFlowControlService, ACCMusicVolumeViewModelProtocol, ACCEditVideoFilterServiceProtocol, ACCEditViewContainer, AWEStudioEditMusicFeaturePublicAPI, ACCEditFrameExtractServiceProtocol, ACCEditServiceProtocol;
+
+@interface ACCVideoEditClipComponentV1 : ACCFeatureComponent <ACCVideoEditFlowControlSubscriber, ACCEditFrameExtractSubscriber, ACCVideoEditAIMusicClipService, ACCDraftResourceRecoverProtocol>
+
+@property (weak, nonatomic) id<ACCEditViewContainer> viewContainer;
+@property (weak, nonatomic) id<ACCVideoEditFlowControlService> flowService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<ACCEditMusicServiceProtocol> musicService;
+@property (weak, nonatomic) id<ACCEditCutMusicServiceProtocol> cutMusicService;
+@property (weak, nonatomic) id<ACCAdvanceEditServiceProtocol> advanceEditService;
+@property (weak, nonatomic) id<ACCMusicVolumeViewModelProtocol> musicVolumeService;
+@property (weak, nonatomic) id<ACCEditSpecialEffectServiceProtocol> specialEffectService;
+@property (weak, nonatomic) id<AWEStudioEditMusicFeaturePublicAPI> musicFeatureAPI;
+@property (weak, nonatomic) id<ACCEditFrameExtractServiceProtocol> frameExtractService;
+@property (retain, nonatomic) AWEVideoEditClipViewModel *viewModel;
+@property (retain, nonatomic) UIView *bubbleForSingleClipped;
+@property (nonatomic) BOOL hasReloadData;
+@property (nonatomic) BOOL hasSubscribePanelBeatsStatus;
+@property (nonatomic) struct _HTSAudioRange { double location; double length; } backupAudioRange;
+@property (weak, nonatomic) id<ACCEditVideoFilterServiceProtocol> filterService;
+@property (weak, nonatomic) id<ACCEditVoiceChangerServiceProtocol> voiceChangerService;
+@property (retain, nonatomic) ACCEditAutoLoadMusicHandler *autoLoadMusicHandler;
+@property (retain, nonatomic) ACCToastWithCancelView *cancelToast;
+@property (retain, nonatomic) ACCToastWithCancelView *loadingToast;
+@property (retain, nonatomic) ACCToastWithCancelView *adjustToast;
+@property (retain, nonatomic) ACCVideoEditClipTask *clipTask;
+@property (retain, nonatomic) RACDisposable *panelBeatsDisposable;
+@property (retain, nonatomic) RACDisposable *advanceBeatsDisposable;
+@property (weak, nonatomic) id<ACCVideoFriendsEditCropService> friendsEditCrop;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)requirementsToDownloadForPublishViewModel:(id)a0;
+
+- (void)componentDidAppear;
+- (void)dataClearForBackup:(id)a0;
+- (id)publishModel;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (unsigned long long)preferredLoadPhase;
+- (id)serviceBindingArray;
+- (id)rootVC;
+- (void)p_bindViewModel;
+- (void)bindServices:(id)a0;
+- (id)stickerService;
+- (void)saveDraftIfNeeded;
+- (void)removeVideoClipEdits;
+- (void)cancelWhenCliping;
+- (struct _HTSAudioRange { double x0; double x1; })p_getDefaultClipRange;
+- (void)didFinishFrameExtract:(id)a0;
+- (void)removeAllEdits;
+- (void)subscribePanelBeatsStatus;
+- (void)createAIClipVideoForThemeVideoWithCompletion:(id /* block */)a0;
+- (void)createNormalVideoForThemeVideoWithCompletion:(id /* block */)a0;
+- (void)startAutoAIMusicClipFromMemories;
+- (void)p_reportOriginalAssetInfo;
+- (void)p_updateVideoDataWithPrepareAIVideoClipPrerequisite;
+- (void)p_updateVideoData;
+- (void)cancelAIClipForMusic:(BOOL)a0 showToast:(BOOL)a1 completion:(id /* block */)a2;
+- (BOOL)ignoreMusicChanged;
+- (BOOL)enableModernBeats;
+- (BOOL)enableCancelNewStyle;
+- (void)showLoadingToastAfter:(double)a0;
+- (void)p_updateVideoData:(id)a0 shouldAutoPlay:(BOOL)a1 completion:(id /* block */)a2;
+- (void)dismissToastAfater:(double)a0;
+- (void)p_showModernToast:(BOOL)a0 needCancel:(BOOL)a1;
+- (void)cleanTimeMachineReverseEffectIfNeeded;
+- (id)p_storyCameraToastTrackExtraParams;
+- (BOOL)cancelRecoveryDefaultTip;
+- (void)addAiClipWhenAddMusic:(BOOL)a0 showToast:(BOOL)a1 completion:(id /* block */)a2;
+- (BOOL)hasTimeMachineReverseEffect;
+- (void)removeTimeMachineReverseEffect;
+- (void)updateClipEndState;
+- (void)p_updateStickerInfoForAutoBeatFrom:(id)a0 to:(id)a1;
+- (id)p_prepareAIVideoClipPrerequisite:(BOOL)a0 completion:(id /* block */)a1;
+- (void)p_updateVoiceChangeContext;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

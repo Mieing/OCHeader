@@ -1,0 +1,3 @@
+@interface AWENearbyTaskHighlightFeedCard : NSObject
+
+@end

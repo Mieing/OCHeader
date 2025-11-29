@@ -1,0 +1,70 @@
+@class NSString, BDPModelExtension, BDPSandbox, BDPUniqueID, NSMutableDictionary, NSDictionary, BDPModel, BDPCommonBridge, BDPTimorLaunchParam, BDPSchema;
+@protocol BDPFileHandleProtocol;
+
+@interface BDPCommon : NSObject <BDPBridgeInstanceProtocol>
+
+@property (copy) NSString *lastQuery;
+@property (copy) NSString *lastPath;
+@property (copy) NSDictionary *appInfoCache;
+@property (copy) NSDictionary *systemInfoCache;
+@property (readonly, nonatomic) BDPCommonBridge *commBridge;
+@property (readonly, nonatomic) long long type;
+@property (retain, nonatomic) BDPModel *model;
+@property (retain, nonatomic) BDPModelExtension *modelExtension;
+@property (retain, nonatomic) BDPSandbox *sandbox;
+@property (retain, nonatomic) BDPUniqueID *uniqueID;
+@property (retain, nonatomic) BDPTimorLaunchParam *launchParam;
+@property (copy, nonatomic) NSString *sdkVersion;
+@property (copy, nonatomic) NSString *sdkUpdateVersion;
+@property (copy, nonatomic) NSString *engineName;
+@property (copy, nonatomic) BDPSchema *schema;
+@property (copy, nonatomic) BDPSchema *coldBootSchema;
+@property (nonatomic) BOOL isReady;
+@property (nonatomic) BOOL isTTIReady;
+@property (nonatomic) BOOL isDestroyed;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isForeground;
+@property (nonatomic) BOOL isCreateFromPreload;
+@property (nonatomic) BOOL isIdle;
+@property (nonatomic) BOOL isCanvasIdle;
+@property (nonatomic) BOOL isFeedGame;
+@property (nonatomic, getter=isReaderOff) BOOL readerOff;
+@property (retain, nonatomic) id<BDPFileHandleProtocol> reader;
+@property (copy, nonatomic) NSString *configMpUserID;
+@property (nonatomic) long long networkEngineType;
+@property (retain, nonatomic) NSMutableDictionary *preProcessingInfo;
+@property (nonatomic) BOOL isWarmLaunchForLasted;
+@property (nonatomic) BOOL isShowed;
+@property (nonatomic) BOOL hasAnniePage;
+@property (nonatomic) BOOL isShowedEasterEggAlert;
+@property (nonatomic) BOOL didLineUpFulfilled;
+@property (nonatomic) BOOL hasAliveInteractionPluginCanvas;
+@property (nonatomic) BOOL isXplayGame;
+@property (nonatomic) BOOL isXplayMixEngine;
+@property (retain, nonatomic) NSDictionary *cloudMixEngineOpenParams;
+@property (nonatomic) BOOL isShowMixEngineCloudGame;
+@property (nonatomic) long long variableOrientation;
+@property (nonatomic) BOOL starkNewUserPath;
+@property (nonatomic) BOOL hasRejectLocationPermission;
+@property (copy, nonatomic) NSDictionary *leftSideBarInfo;
+@property (nonatomic) long long playTime;
+@property (nonatomic) BOOL inCustomLoading;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithModel:(id)a0 schema:(id)a1;
+- (BOOL)isInteractionPlugin;
+- (void)updateWithModel:(id)a0 schema:(id)a1;
+- (BOOL)needCacheApiData:(id)a0;
+- (BOOL)checkNeedUpdateAppInfoSchemaWithLastPath:(id)a0 lastQuery:(id)a1;
+- (void)setUpPreProcessInfo;
+- (void)updateWithoutChangeStateWithModel:(id)a0 schema:(id)a1;
+- (BOOL)enableOffsetViewWhenKeyboardShow;
+- (void).cxx_destruct;
+- (void)clearCache;
+- (void)dealloc;
+- (id)initWithUniqueID:(id)a0;
+
+@end

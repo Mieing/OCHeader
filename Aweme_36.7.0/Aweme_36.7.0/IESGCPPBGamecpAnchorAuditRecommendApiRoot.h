@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpAnchorAuditRecommendApiRoot : GPBRootObject
+
+@end

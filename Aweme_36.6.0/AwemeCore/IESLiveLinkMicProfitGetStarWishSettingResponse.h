@@ -1,0 +1,10 @@
+@class IESLiveLinkMicProfitGetStarWishSettingResponse_ResponseData;
+
+@interface IESLiveLinkMicProfitGetStarWishSettingResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicProfitGetStarWishSettingResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

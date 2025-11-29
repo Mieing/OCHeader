@@ -1,0 +1,18 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveCommentConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *commentColorsArray;
+@property (readonly, nonatomic) unsigned long long commentColorsArray_Count;
+@property (retain, nonatomic) NSMutableArray *commentRolesArray;
+@property (readonly, nonatomic) unsigned long long commentRolesArray_Count;
+@property (copy, nonatomic) NSString *roleSuffix;
+@property (copy, nonatomic) NSString *roleTitle;
+@property (copy, nonatomic) NSString *unlockRoleTip;
+@property (retain, nonatomic) NSMutableArray *commentMedalsArray;
+@property (readonly, nonatomic) unsigned long long commentMedalsArray_Count;
+@property (copy, nonatomic) NSString *medalTitle;
+
++ (id)descriptor;
+
+@end

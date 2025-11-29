@@ -1,0 +1,5 @@
+@interface IESLiveCloseLiveRoomMethodImpl : IESLiveCloseLiveRoomMethod
+
+- (void)callWithParamModel:(id)a0 completionHandler:(id /* block */)a1;
+
+@end

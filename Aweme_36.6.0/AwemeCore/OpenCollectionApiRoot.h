@@ -1,0 +1,3 @@
+@interface OpenCollectionApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,71 @@
+@class UIImageView, NSString, AWERequestVidFeatureModel;
+
+@interface AWEVideoRouterStickerService : NSObject <ACCCreativePathMessage, AWEStudioStickerService, AWEStudioStickerUtilService>
+
+@property (weak, nonatomic) UIImageView *screenSnapshotImageView;
+@property (retain, nonatomic) AWERequestVidFeatureModel *featureModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)startVideoWithVideoComment:(id)a0 trackInfo:(id)a1;
+- (id)startVideoWithStickerID:(id)a0 referString:(id)a1 extraInfo:(id)a2 missionModel:(id)a3 commercialAnchorModel:(id)a4 prioritized:(BOOL)a5 filterBusiness:(BOOL)a6;
+- (void)setupNotification;
+- (void)startCreationTaskWithStickerIDArray:(id)a0 effectModel:(id)a1 musicModel:(id)a2 referString:(id)a3 trackInfo:(id)a4 presetTrackParamsForEventsString:(id)a5 info:(id)a6 completion:(id /* block */)a7;
+- (id)createAIStickerPanelVideoWithEffectId:(id)a0 musicModel:(id)a1 referString:(id)a2 trackInfo:(id)a3 info:(id)a4;
+- (id)createLoraUGCCustomCreateKeyWordPageWith:(id)a0 effectId:(id)a1 referString:(id)a2 trackInfo:(id)a3 info:(id)a4;
+- (id)generateAIGCUGCFusionParamWithAweme:(id)a0 effect:(id)a1 stickerDetail:(id)a2 isCustomPath:(BOOL)a3 enterFrom:(id)a4;
+- (void)configVidFeatureModel:(id)a0;
+- (id)createStickerVideoWithStickerIDArray:(id)a0 effectModel:(id)a1 musicModel:(id)a2 referString:(id)a3 trackInfo:(id)a4 strictlyApplyFirst:(BOOL)a5 info:(id)a6;
+- (id)startQuickFlashWithModel:(id)a0 awemeModel:(id)a1 referString:(id)a2 trackInfo:(id)a3;
+- (id)createStickerVideoWithAweme:(id)a0 withInfo:(id)a1;
+- (id)createStickerVideoWithStickerIDArray:(id)a0 musicModel:(id)a1 referString:(id)a2 trackInfo:(id)a3 strictlyApplyFirst:(BOOL)a4 info:(id)a5;
+- (void)cacheFavoriteStickerWithAweme:(id)a0;
+- (void)cacheCancelFavoriteStickerWithAweme:(id)a0;
+- (id)startQuickFlashWithModel:(id)a0 awemeModel:(id)a1 trackInfo:(id)a2;
+- (void)cacheCancelLikedStickerWithAweme:(id)a0;
+- (void)cacheLikedStickerWithAweme:(id)a0;
+- (id)startVideoWithVideoReply:(id)a0 shouldHidePublishProgressView:(BOOL)a1 trackInfo:(id)a2;
+- (BOOL)enableStudioComment;
+- (void)creativePathPageDidAppear:(unsigned long long)a0;
+- (id)cameraCustomCellConfigWithClickAction:(id /* block */)a0;
+- (id)createAIStickerVideoWithEffectModel:(id)a0 musicModel:(id)a1 referString:(id)a2 trackInfo:(id)a3 keywords:(id)a4 info:(id)a5;
+- (id)createStickerVideoWithStickerIDArray:(id)a0 musicModel:(id)a1 referString:(id)a2 trackInfo:(id)a3 presetTrackParamsForEventsString:(id)a4 strictlyApplyFirst:(BOOL)a5 info:(id)a6;
+- (id)createStickerVideoWithStickerIDArray:(id)a0 effectModel:(id)a1 musicModel:(id)a2 referString:(id)a3 trackInfo:(id)a4 presetTrackParamsForEventsString:(id)a5 strictlyApplyFirst:(BOOL)a6 info:(id)a7;
+- (id)startVideoWithStickerID:(id)a0 publishViewModel:(id)a1 prioritized:(BOOL)a2 filterBusiness:(BOOL)a3;
+- (id)startVideoWithVideoReply:(id)a0 trackInfo:(id)a1 didEditBlock:(id /* block */)a2;
+- (id)createVideoWithShootSameStickerInfo:(id)a0 trackInfo:(id)a1;
+- (id)startQuickFlashWithTitle:(id)a0 awemeModel:(id)a1 trackInfo:(id)a2;
+- (id)startQuickFlashWithModel:(id)a0 awemeModel:(id)a1 referString:(id)a2 trackInfo:(id)a3 trackService:(id /* block */)a4;
+- (BOOL)shouldStudioCommentIncludeText;
+- (BOOL)shouldImageCommentUseStudioPreview;
+- (BOOL)enableFlashMobOpenAlbum:(id)a0;
+- (id)cameraCustomCellConfig:(id)a0 clickAction:(id /* block */)a1;
+- (id)bizDataWithInfo:(id)a0 referString:(id)a1 trackInfo:(id)a2;
+- (void)preloadRecordResourceWithStickerIDArray:(id)a0 effectModel:(id)a1 musicModel:(id)a2 trackInfo:(id)a3 info:(id)a4;
+- (void)configureCameraComposerWithComposerModel:(id)a0 stickerIDArray:(id)a1 effectModel:(id)a2 musicModel:(id)a3 trackInfo:(id)a4 info:(id)a5;
+- (void)configureTrackingWithComposerModel:(id)a0 stickerIDArray:(id)a1 effectModel:(id)a2 musicModel:(id)a3 referString:(id)a4 trackInfo:(id)a5 info:(id)a6;
+- (id)activityMobJsonWithInfo:(id)a0 trackInfo:(id)a1;
+- (void)configureStickerWithComposerModel:(id)a0 stickerIDArray:(id)a1 effectModel:(id)a2 trackInfo:(id)a3 info:(id)a4;
+- (void)configureAIGCStickerInfoWithComposerModel:(id)a0 stickerIDArray:(id)a1 effectModel:(id)a2 trackInfo:(id)a3 info:(id)a4;
+- (void)configureImageAlbumInfoWithComposerModel:(id)a0 effectModel:(id)a1 info:(id)a2;
+- (void)configureCustomStickerWithComposerModel:(id)a0 stickerIDArray:(id)a1 effectModel:(id)a2 trackInfo:(id)a3 info:(id)a4;
+- (void)configureFlashInfoWithComposerModel:(id)a0 stickerIDArray:(id)a1 trackInfo:(id)a2 info:(id)a3 extra:(id)a4;
+- (id)p_composerModelWithStickerIDArray:(id)a0 effectModel:(id)a1 musicModel:(id)a2 referString:(id)a3 trackInfo:(id)a4 info:(id)a5;
+- (void)p_injectPublishViewModelWithInjectionHandler:(id)a0 StickerIDArray:(id)a1 musicModel:(id)a2 referString:(id)a3 trackInfo:(id)a4 info:(id)a5;
+- (void)cacheLookedStickerWithFeedNotification:(id)a0;
+- (void)cacheStickerWithAweme:(id)a0 cacheKey:(id)a1;
+- (void)cacheCancelStickerWithAweme:(id)a0 cacheKey:(id)a1;
+- (BOOL)isStickerInCacheWithAweme:(id)a0 cacheKey:(id)a1;
+- (id)createStickerVideoWithAweme:(id)a0 effectModel:(id)a1 withInfo:(id)a2;
+- (void)insertAIGCStickerInfo:(id)a0 effect:(id)a1 withInfo:(id)a2;
+- (void)configImageStickerInfo:(id)a0 effect:(id)a1;
+- (void)createUGCLoraSuiteWith:(id)a0 publishModel:(id)a1 referString:(id)a2 trackInfo:(id)a3 info:(id)a4 completion:(id /* block */)a5;
+- (id)startVideoWithStickerID:(id)a0 effectModel:(id)a1 referString:(id)a2 extraInfo:(id)a3 missionModel:(id)a4 commercialAnchorModel:(id)a5 prioritized:(BOOL)a6 filterBusiness:(BOOL)a7;
+- (id)startVideoWithStickerID:(id)a0 effectModel:(id)a1 publishViewModel:(id)a2 prioritized:(BOOL)a3 filterBusiness:(BOOL)a4;
+- (BOOL)flashMobOpenAlbumEnableMusic:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

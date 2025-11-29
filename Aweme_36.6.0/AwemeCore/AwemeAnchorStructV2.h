@@ -1,0 +1,54 @@
+@class UrlStructV2, NSString, AwemeAnchorCustomizedDisplayV2, AnchorStyleInfoV2;
+
+@interface AwemeAnchorStructV2 : GPBMessage
+
+@property (nonatomic) int type;
+@property (nonatomic) BOOL hasType;
+@property (copy, nonatomic) NSString *id_p;
+@property (nonatomic) BOOL hasId_p;
+@property (retain, nonatomic) UrlStructV2 *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) BOOL hasTitle;
+@property (copy, nonatomic) NSString *openURL;
+@property (nonatomic) BOOL hasOpenURL;
+@property (copy, nonatomic) NSString *webURL;
+@property (nonatomic) BOOL hasWebURL;
+@property (copy, nonatomic) NSString *mpURL;
+@property (nonatomic) BOOL hasMpURL;
+@property (copy, nonatomic) NSString *titleTag;
+@property (nonatomic) BOOL hasTitleTag;
+@property (retain, nonatomic) AwemeAnchorCustomizedDisplayV2 *displayInfo;
+@property (nonatomic) BOOL hasDisplayInfo;
+@property (copy, nonatomic) NSString *content;
+@property (nonatomic) BOOL hasContent;
+@property (retain, nonatomic) AnchorStyleInfoV2 *styleInfo;
+@property (nonatomic) BOOL hasStyleInfo;
+@property (nonatomic) int subType;
+@property (nonatomic) BOOL hasSubType;
+@property (copy, nonatomic) NSString *scene;
+@property (nonatomic) BOOL hasScene;
+@property (copy, nonatomic) NSString *extra;
+@property (nonatomic) BOOL hasExtra;
+@property (copy, nonatomic) NSString *logExtra;
+@property (nonatomic) BOOL hasLogExtra;
+
++ (id)descriptor;
+
+- (id)scene;
+- (int)subType;
+- (id)logExtra;
+- (id)extra;
+- (id)styleInfo;
+- (id)content;
+- (id)displayInfo;
+- (id)titleTag;
+- (id)mpURL;
+- (id)webURL;
+- (id)openURL;
+- (id)title;
+- (id)icon;
+- (id)id_p;
+- (int)type;
+
+@end

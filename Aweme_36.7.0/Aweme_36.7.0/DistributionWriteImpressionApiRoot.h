@@ -1,0 +1,3 @@
+@interface DistributionWriteImpressionApiRoot : GPBRootObject
+
+@end

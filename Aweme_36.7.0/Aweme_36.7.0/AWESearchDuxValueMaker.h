@@ -1,0 +1,3 @@
+@interface AWESearchDuxValueMaker : NSObject
+
+@end

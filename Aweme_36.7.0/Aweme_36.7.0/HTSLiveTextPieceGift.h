@@ -1,0 +1,11 @@
+@class HTSLivePatternRef;
+
+@interface HTSLiveTextPieceGift : IESLivePBBaseMessage
+
+@property (nonatomic) long long giftId;
+@property (retain, nonatomic) HTSLivePatternRef *nameRef;
+@property (nonatomic) BOOL hasNameRef;
+
++ (id)descriptor;
+
+@end

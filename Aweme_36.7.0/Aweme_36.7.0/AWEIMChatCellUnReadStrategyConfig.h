@@ -1,0 +1,3 @@
+@interface AWEIMChatCellUnReadStrategyConfig : NSObject
+
+@end

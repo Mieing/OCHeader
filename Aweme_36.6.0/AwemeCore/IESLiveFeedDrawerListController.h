@@ -1,0 +1,84 @@
+@class UICollectionView, NSDate, IESLiveFeedDrawerListOpenLiveButton, IESLiveFeedDrawerViewControllerContext, IGListAdapter, MJRefreshHeader, MJRefreshFooter, NSString, TabResponse, HTSEventContext, NSNumber, IESLiveFeedDrawerListViewModel, IESLiveFeedDrawerListControllerMonitor;
+@protocol IESLiveDislikeService, HTSKVStore, IESLiveFeedViewControllerDelegate;
+
+@interface IESLiveFeedDrawerListController : UIViewController <IESLiveFeedDrawerListViewModelDelegate, UIScrollViewDelegate, UICollectionViewDelegate, IESLiveDislikeServiceDelegate, IESLiveFeedDrawerListOpenLiveButtonDelegate, IESLiveDrawerFeedControllerProtocol>
+
+@property (retain, nonatomic) IGListAdapter *adapter;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) TabResponse *tabModel;
+@property (retain, nonatomic) IESLiveFeedDrawerListViewModel *viewModel;
+@property (retain, nonatomic) MJRefreshHeader *refreshHeader;
+@property (retain, nonatomic) MJRefreshFooter *refreshFooter;
+@property (retain, nonatomic) IESLiveFeedDrawerListControllerMonitor *monitor;
+@property (nonatomic) BOOL needReloadLivePodcast;
+@property (retain, nonatomic) NSDate *viewDisappearDate;
+@property (retain, nonatomic) id<IESLiveDislikeService> dislikeService;
+@property (nonatomic) BOOL isAppear;
+@property (nonatomic) unsigned long long previewType;
+@property (nonatomic) BOOL optimizeSearchDrawer;
+@property (retain, nonatomic) IESLiveFeedDrawerListOpenLiveButton *liveButton;
+@property (nonatomic) BOOL liveButtonShouldHidden;
+@property (nonatomic) BOOL didClickOpenButton;
+@property (nonatomic) BOOL openLiveDisplaying;
+@property (nonatomic) BOOL openLiveButtonExperiment;
+@property (nonatomic) BOOL disableHM;
+@property (retain, nonatomic) id<HTSKVStore> kvStore;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) NSNumber *appearRefreshInterval;
+@property (weak, nonatomic) id<IESLiveFeedViewControllerDelegate> delegate;
+@property (retain, nonatomic) HTSEventContext *trackContext;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } contentInsets;
+@property (nonatomic) BOOL disableRefresh;
+@property (retain, nonatomic) IESLiveFeedDrawerViewControllerContext *context;
+
++ (id)viewControllerForTab:(id)a0;
+
+- (void)didSetAttachingDIContext;
+- (void)refreshLayout:(BOOL)a0;
+- (void)showDebugInfo;
+- (id)loadMoreFooter;
+- (void)scrollViewDidEndScroll;
+- (void)trackAppear;
+- (BOOL)dislikeService:(id)a0 canDislikeAt:(id)a1;
+- (id)dislikeService:(id)a0 dislikeInfoAt:(id)a1;
+- (void)dislikeService:(id)a0 didDeleteIndexPath:(id)a1;
+- (BOOL)canHideWithGesture;
+- (id)initWithTabModel:(id)a0;
+- (void)sendDidSelectedSection;
+- (void)updateCurrentVerticalInfo:(id)a0 roomId:(id)a1;
+- (void)sendDidUnSelectedSection;
+- (void)didClickOpenLiveButton;
+- (void)refreshByClickedTab;
+- (void)setupHeaderFooter;
+- (void)_addDislikeService;
+- (void)recordMonitor;
+- (void)stopPreviewIfNeeded;
+- (void)checkAndRefreshIfNeeded;
+- (void)updatePreviewStatus;
+- (void)viewModel:(id)a0 dataDidChange:(unsigned long long)a1 hasMore:(BOOL)a2;
+- (BOOL)hasPreviewing;
+- (void)scrollViewDidScrollToTop:(id)a0;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (BOOL)shouldAutorotate;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (void)viewDidDisappear:(BOOL)a0;
+- (BOOL)isRefreshing;
+- (BOOL)hasData;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)buildCollectionView;
+- (void)initData;
+- (void)reloadWithCompletion:(id /* block */)a0;
+
+@end

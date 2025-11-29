@@ -1,0 +1,80 @@
+@class IESLiveCarnivalDanmakuEngine, NSString, IESLiveCarnivalDanmakuNodeFactory, IESLiveEmojiTextParser, IESLiveContourDetectConfig, NSObject, IESLiveCarnivalStore;
+@protocol OS_dispatch_queue, IESLiveStreamContourInfoService, IESLiveRealStreamingProvider;
+
+@interface IESLiveCarnivalFragment : IESLiveRoomComponent <IESLiveCarnivalInterface, IESLiveCarnivalRouter, IESLiveAnchorRoomStatusChangeEvents, IESLiveSEIListener, IESLiveAutoRotateAction, IESLiveFIFAPlayerScaleAction, IESLiveMessageInteractionModuleDanmakuAction, IESLiveMessageInteractionModuleCommentAction, HTSLiveStreamPlayerAction, IESLiveRevenueInteractAction, HTSLiveHideComponentAction>
+
+@property (retain, nonatomic) IESLiveCarnivalStore *store;
+@property (nonatomic) long long orientation;
+@property (nonatomic) BOOL mattingModelPrepared;
+@property (nonatomic) BOOL contourDetecting;
+@property (nonatomic) BOOL hideCarnivalDanmakuArea;
+@property (retain, nonatomic) IESLiveContourDetectConfig *contourDetectConfig;
+@property (nonatomic) BOOL thermalStateDidBecomeBad;
+@property (nonatomic) BOOL cameraReset;
+@property (retain, nonatomic) id<IESLiveRealStreamingProvider> streamProvider;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *danmakuProcessQueue;
+@property (retain, nonatomic) IESLiveCarnivalDanmakuEngine *carnivalEngine;
+@property (retain, nonatomic) IESLiveCarnivalDanmakuNodeFactory *nodeFactory;
+@property (retain, nonatomic) IESLiveEmojiTextParser *emoticonParser;
+@property (retain, nonatomic) id<IESLiveStreamContourInfoService> streamContourInfoService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)componentShouldActive:(id)a0;
++ (BOOL)isMixed;
+
+- (void)componentBindService;
+- (void)componentCreate;
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)componentOrientationTransitionBegin:(long long)a0;
+- (void)componentOrientationChanged:(long long)a0;
+- (void)animationForAutoRotateToOrientation:(long long)a0 duration:(double)a1 size:(struct CGSize { double x0; double x1; })a2;
+- (void)hideAllComponent;
+- (void)showAllComponent;
+- (void)startRevenueInteractWithScene:(unsigned long long)a0;
+- (void)endRevenueInteractWithScene:(unsigned long long)a0;
+- (unsigned long long)supportSeiTypes;
+- (void)onParseredWithSEIResult:(id)a0;
+- (void)startAnchorLiveWithRoom:(id)a0;
+- (void)playerDidResume;
+- (void)onCameraWillChangeTo:(id)a0 source:(long long)a1;
+- (void)onCameraDidChangeTo:(id)a0 source:(long long)a1;
+- (void)onFIFAPannelSatusChange:(long long)a0;
+- (unsigned long long)currentCarnivalType;
+- (BOOL)carnivalDanmakuIsRunning;
+- (BOOL)streamStyleWillBeChanged:(id)a0;
+- (void)prepareForStartCarnivalMomentWith:(id)a0;
+- (void)startCarnivalMoment;
+- (void)stopCarnivalMoment;
+- (void)hideCarnivalDanmaku;
+- (void)showCarnivalDanmaku;
+- (void)anchorContourDetectConfigChange:(id)a0;
+- (void)generalCarnivalWillAppear:(BOOL)a0 withMsg:(id)a1;
+- (void)generalCarnivalSpecialContentShow:(BOOL)a0;
+- (void)addCarnivalDanmakuNodeWithMessage:(id)a0;
+- (void)fontSizeTypeDidChanged:(long long)a0;
+- (void)alphaPercentValueDidChanged:(long long)a0;
+- (void)areaTypeDidChanged:(long long)a0;
+- (void)carnivalDanmuSwitchDidChanged:(BOOL)a0;
+- (void)baseDanmakuSwitchDidChanged:(BOOL)a0;
+- (void)liveThermalStateBadNotification:(id)a0;
+- (void)resetCarnivalSetting;
+- (BOOL)canAddCarnivalDanmakuMessage:(long long)a0;
+- (void)startCarnivalDanmakuMommentWithMessage:(id)a0;
+- (BOOL)canOpenContour:(id)a0;
+- (void)p_effectBachAlgorithmStart:(BOOL)a0;
+- (void)p_addCarnivalDanmakuWithMessage:(id)a0;
+- (void)resetCarnivalDanmakuMomment;
+- (id)getCarnivalDanmakuSettingsWithMessage:(id)a0;
+- (BOOL)canAddGeneralCarnivalMessage:(id)a0;
+- (void)safeAyncOnDanmakuQueue:(id /* block */)a0;
+- (void)resetCarnivalDanmaku;
+- (void)cleanAllCarnivalDanmaku;
+- (void)keyboardWillHide;
+- (void)keyboardWillShow;
+- (void).cxx_destruct;
+
+@end

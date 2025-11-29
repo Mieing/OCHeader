@@ -1,0 +1,15 @@
+@class IESLiveMultiChannelInfo, IESLivePreRTCInfo;
+
+@interface GetCrossRoomRTCInfoResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveMultiChannelInfo *multiChannelInfo;
+@property (nonatomic) BOOL hasMultiChannelInfo;
+@property (retain, nonatomic) IESLiveMultiChannelInfo *backupMultiChannelInfo;
+@property (nonatomic) BOOL hasBackupMultiChannelInfo;
+@property (retain, nonatomic) IESLivePreRTCInfo *preRtcInfo;
+@property (nonatomic) BOOL hasPreRtcInfo;
+@property (nonatomic) long long preRtcVersion;
+
++ (id)descriptor;
+
+@end

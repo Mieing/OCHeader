@@ -1,0 +1,82 @@
+@class MMWebImageView, UIImageView, UILabel, WCFinderNotifyAttachDisplayView, WCFinderRichTextView, WCFinderMentionTitleView, UIView, NSLayoutConstraint, NSString, RichTextView, WCFinderHeadImageView, WCFinderWechatMentionCellViewModel, MMUIButton;
+@protocol WCFinderWechatMentionCellDelegate;
+
+@interface WCFinderWechatMentionCell : UITableViewCell <WCFinderHeadImageViewDelegate, WCFinderContactExt, WCFinderWechatMentionCellViewModelDelegate, WCFinderMentionTitleViewDelegate>
+
+@property (retain, nonatomic) UIView *highlightAnimBg;
+@property (weak, nonatomic) WCFinderHeadImageView *headImageView;
+@property (weak, nonatomic) MMWebImageView *thumbImageView;
+@property (retain, nonatomic) UIImageView *ignoreIcon;
+@property (retain, nonatomic) WCFinderMentionTitleView *titleView;
+@property (weak, nonatomic) WCFinderRichTextView *contentTextView;
+@property (weak, nonatomic) RichTextView *refContentTextView;
+@property (weak, nonatomic) UIImageView *interactImageView;
+@property (weak, nonatomic) UIView *lineView;
+@property (weak, nonatomic) UIView *refContentView;
+@property (retain, nonatomic) NSLayoutConstraint *titleWidthConstraint;
+@property (weak, nonatomic) UIView *refContentLineView;
+@property (retain, nonatomic) WCFinderWechatMentionCellViewModel *viewModel;
+@property (weak, nonatomic) UIView *mulityHeadImageView;
+@property (weak, nonatomic) WCFinderHeadImageView *frontHeadImageView;
+@property (weak, nonatomic) WCFinderHeadImageView *backHeadImageView;
+@property (weak, nonatomic) UILabel *firstLikeLabel;
+@property (retain, nonatomic) MMUIButton *commentDeleteLabel;
+@property (retain, nonatomic) UIView *operateBtnContainer;
+@property (retain, nonatomic) WCFinderNotifyAttachDisplayView *displayAttachmentView;
+@property (retain, nonatomic) MMUIButton *commentReplyBtn;
+@property (retain, nonatomic) MMUIButton *commentLikeBtn;
+@property (retain, nonatomic) MMUIButton *aggregatedExpandBtn;
+@property (nonatomic) BOOL needUpdateCellSize;
+@property (weak, nonatomic) id<WCFinderWechatMentionCellDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)calucateCellHeightWithViewModel:(id)a0 width:(double)a1;
++ (double)getRefContentHeightWithVM:(id)a0 width:(double)a1;
++ (BOOL)hasOverLineNumLimitWithContent:(id)a0 vm:(id)a1 width:(double)a2;
++ (double)cellBottomMargin;
++ (double)mentionInteractionBtnHeight;
++ (struct CGSize { double x0; double x1; })mentionInteractionIconSize;
++ (id)mentionInteractionBtnFont;
++ (double)mentionInteractionBtnTopMarginWithVM:(id)a0;
++ (id)mentionInteractionBtnBgColor;
++ (double)aggregatedExpandHeight;
++ (double)titleMarginWithVM:(id)a0;
+
+- (void)prepareForReuse;
+- (void)setHighlighted:(BOOL)a0 animated:(BOOL)a1;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)dealloc;
+- (void)setNeedsUpdateCellSize;
+- (void)updateNofiyCenterCellWithViewModel:(id)a0 width:(double)a1;
+- (void)layoutUIWithViewModel:(id)a0 width:(double)a1;
+- (void)layoutOperateBtnContainer;
+- (void)setUpUI;
+- (void)setUpAttachmentView;
+- (void)setupOperateBtnContainer;
+- (void)setUpMulityImageView;
+- (void)setupRefContentView;
+- (void)setUpViewLayout;
+- (void)updateSeperatorFull:(BOOL)a0;
+- (void)showHighlightAnimation;
+- (void)cancelHighlightAnimation;
+- (id)accessibilityLabel;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getThankMagicAnimIconFrame;
+- (void)clickCommentReplyButton;
+- (void)clickCommentLikeButton;
+- (void)clickAggregatedExpandButton;
+- (void)onMentionTitleViewClickFollowButton:(id)a0;
+- (void)onMentionTitleViewClickNickName:(id)a0;
+- (void)onMentionTitleViewClickUserRelationshipTag:(id)a0;
+- (void)onFinderContactFollowStatusUpdate:(id)a0;
+- (void)onWechatMentionCellViewModelCommentLikeStateChanged;
+- (void)onWechatMentionCellViewModelCommentInvalidStateChanged;
+- (void)onWechatMentionCellViewModelCellHeightChanged:(id)a0;
+- (void)onWechatMentionSilentStateChanged;
+- (void)finderHeadImageViewDidClick:(id)a0;
+- (void)didClickMulityHeadImageView;
+- (void).cxx_destruct;
+
+@end

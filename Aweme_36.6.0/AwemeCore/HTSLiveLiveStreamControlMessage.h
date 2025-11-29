@@ -1,0 +1,11 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveLiveStreamControlMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *controlParams;
+
++ (id)descriptor;
+
+@end

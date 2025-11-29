@@ -1,0 +1,10 @@
+@interface FlowKit.AppSettingItem : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ type;
+    void /* unknown type, empty encoding */ visiable;
+    void /* unknown type, empty encoding */ version;
+    void /* unknown type, empty encoding */ value;
+    void /* unknown type, empty encoding */ defaultValue;
+    void /* unknown type, empty encoding */ needInitRemote;
+}
+
+@end

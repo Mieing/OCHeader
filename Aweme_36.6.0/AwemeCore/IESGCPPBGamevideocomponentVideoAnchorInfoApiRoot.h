@@ -1,0 +1,3 @@
+@interface IESGCPPBGamevideocomponentVideoAnchorInfoApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,11 @@
+@class HTSLiveImage;
+
+@interface HTSLiveEmojiTemplateGetResponse_Bubble : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (retain, nonatomic) HTSLiveImage *demoImg;
+@property (nonatomic) BOOL hasDemoImg;
+
++ (id)descriptor;
+
+@end

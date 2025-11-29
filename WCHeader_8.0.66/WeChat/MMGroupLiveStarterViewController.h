@@ -1,0 +1,70 @@
+@class UILabel, UIView, NSString, MMGrowTextView, NSMutableDictionary, UIButton, NSDictionary, MMLiveTaskId, MMUIButton, MMTimer;
+@protocol MMLiveStarterViewControllerDelegate;
+
+@interface MMGroupLiveStarterViewController : MMLiveStarterViewController <MMGrowTextViewDelegate>
+
+@property (retain, nonatomic) UIView *cancelEditMask;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) MMGrowTextView *textView;
+@property (retain, nonatomic) UIView *bottomLine;
+@property (retain, nonatomic) UIButton *startLiveButton;
+@property (retain, nonatomic) UIButton *cancelLiveButton;
+@property (retain, nonatomic) UILabel *wordCountTips;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) MMUIButton *switchCameraButton;
+@property (retain, nonatomic) MMTimer *coundownTimer;
+@property (retain, nonatomic) UILabel *coundownTips;
+@property (nonatomic) long long timerCountdown;
+@property (nonatomic) double keyboardHeight;
+@property (nonatomic) BOOL isEditing;
+@property (nonatomic) BOOL isEdited;
+@property (nonatomic) BOOL isFrontCamera;
+@property (retain, nonatomic) NSMutableDictionary *extraInfo;
+@property (retain, nonatomic) NSString *roomId;
+@property (retain, nonatomic) UILabel *startTipLabel;
+@property (weak, nonatomic) id<MMLiveStarterViewControllerDelegate> delegate;
+@property (readonly, nonatomic) NSDictionary *startExtraInfo;
+@property (retain, nonatomic) MMLiveTaskId *liveTaskId;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithLiveTask:(id)a0;
+- (BOOL)useBlackStatusbar;
+- (long long)preferredStatusBarStyle;
+- (void)viewDidLoad;
+- (void)initNotifications;
+- (void)viewDidLayoutSubviews;
+- (void)addSubWidget:(id)a0;
+- (double)getStartLiveButtonBottomMargin;
+- (double)getGrowTextViewLeftRightMargin;
+- (void)layoutStartTipLabel;
+- (void)layoutUI;
+- (void)dealloc;
+- (void)stopLiveTimer;
+- (void)onCloseButtonClicked;
+- (void)onSwitchCameraButtonClick;
+- (void)onClickStartLiveAction:(id)a0;
+- (void)onCancelLiveActionClicked:(id)a0;
+- (void)onCancelEditMaskTouched:(id)a0;
+- (void)cancelEdit;
+- (void)realStartLive;
+- (unsigned long long)systemCapabilityAuthScene;
+- (void)keyboardWillShow:(double)a0;
+- (void)keyboardWillHide:(BOOL)a0;
+- (void)TextDidChanged:(id)a0 selectedRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)TextViewDidEnter:(id)a0;
+- (void)updateWordCountTipsLabel:(int)a0;
+- (void)showCountdownView;
+- (void)hideCountdownView;
+- (void)startCountdownTimer;
+- (void)stopCountdownTimer;
+- (void)updateCountTimer;
+- (id)getDefaultText;
+- (id)updateText:(id)a0 withMaxLimit:(long long)a1;
+- (void)handleUIOrientationChanged:(id)a0;
+- (void)updateWriteStatusWith:(id)a0;
+- (void).cxx_destruct;
+
+@end

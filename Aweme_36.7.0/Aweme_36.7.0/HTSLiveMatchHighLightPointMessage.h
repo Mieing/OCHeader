@@ -1,0 +1,12 @@
+@class HTSLiveCommon, NSMutableArray;
+
+@interface HTSLiveMatchHighLightPointMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) NSMutableArray *pointsArray;
+@property (readonly, nonatomic) unsigned long long pointsArray_Count;
+
++ (id)descriptor;
+
+@end

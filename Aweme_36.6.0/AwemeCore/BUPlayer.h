@@ -1,0 +1,81 @@
+@class NSString, BU_ZFPlayerView, NSURL, UIView, BUPlayerItem;
+@protocol BUVideoPlayerDelegate, BUVideoPlayerTimeDelegate, BUPlayerControlViewProtocol;
+
+@interface BUPlayer : NSObject <BU_ZFPlayerDelegate, BU_ZFPlayerTimeDelegate, BUPlayerSettingsProtocol>
+
+@property (retain, nonatomic) NSString *startTimestamp;
+@property (retain, nonatomic) NSString *endTimestamp;
+@property (retain, nonatomic) UIView *view;
+@property (retain, nonatomic) BUPlayerItem *currentPlayerItem;
+@property (nonatomic) long long state;
+@property (nonatomic) unsigned long long decodeMode;
+@property (retain, nonatomic) BU_ZFPlayerView *playerView;
+@property (weak, nonatomic) id<BUVideoPlayerDelegate> delegate;
+@property (weak, nonatomic) id<BUVideoPlayerTimeDelegate> timeDelegate;
+@property (readonly, nonatomic) double duration;
+@property (readonly, nonatomic) double playableDuration;
+@property (readonly, nonatomic) double watchedDuration;
+@property (readonly, nonatomic) double currentPlayTime;
+@property (readonly, nonatomic) NSURL *currentPlayURL;
+@property (readonly, nonatomic) UIView<BUPlayerControlViewProtocol> *controlContainer;
+@property (nonatomic) long long playerLayerGravity;
+@property (nonatomic) long long option;
+@property (nonatomic) BOOL mute;
+@property (readonly, nonatomic) BOOL isFullScreen;
+@property (retain, nonatomic) UIView *controlView;
+@property (nonatomic) BOOL shouldAutoRotate;
+@property (nonatomic) BOOL isJSBPauseVideo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)videoCachePath;
++ (id)playerResourceBundle;
++ (id)playerControlViewImages;
++ (id)playerControlLocalizedString;
++ (void)audioSessionSetting;
++ (id)playerWithPlayerItem:(id)a0;
+
+- (BOOL)isEnterBackground;
+- (void)bindObserver;
+- (id)playerModelWithItem:(id)a0;
+- (void)removePlayerBoundaryTime;
+- (void)zf_playerView:(id)a0 second:(double)a1;
+- (void)zf_playerViewReadyToPlay:(id)a0;
+- (void)zf_playerViewDidPlayFinish:(id)a0 error:(id)a1;
+- (void)zf_playerViewReadyToPlayWhenApplicationEnterBackground:(id)a0;
+- (void)zf_playerView:(id)a0 recognizeTapGesture:(id)a1;
+- (void)zf_playerView:(id)a0 stateDidChanged:(long long)a1;
+- (void)zf_playerBackAction;
+- (void)zf_playerControlViewWillShow:(id)a0 isFullscreen:(BOOL)a1;
+- (void)zf_playerControlViewWillHidden:(id)a0 isFullscreen:(BOOL)a1;
+- (void)zf_playerViewTouchesBegan:(id)a0;
+- (void)zf_playerBoundaryTimeReached:(id)a0;
+- (void)zf_playerView:(id)a0 videoDidReachProgressTime:(double)a1 duration:(double)a2;
+- (void)insertGaosiMohuWithLayer:(id)a0;
+- (void)changeOrientationScreen;
+- (void)setPlayerBoundaryTime:(long long)a0;
+- (BOOL)hasAudioSessionInterruption;
+- (void)showCoverImage:(BOOL)a0;
+- (BOOL)canPlaying;
+- (void)seekToTime:(double)a0 autoPlay:(BOOL)a1 completion:(id /* block */)a2;
+- (void)insertGaosiMohuWithView:(id)a0;
+- (void)setupConstraints;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (id)init;
+- (void)stop;
+- (id)initWithPlayerItem:(id)a0;
+- (void)replay;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)dealloc;
+- (void)replaceCurrentItemWithPlayerItem:(id)a0;
+- (id)addPeriodicTimeObserverForInterval:(double)a0 queue:(id)a1 usingBlock:(id /* block */)a2;
+- (void)removeTimeObserver:(id)a0;
+- (void)resetPlayer;
+- (void)setupContent;
+- (void)seekToTime:(double)a0 completion:(id /* block */)a1;
+
+@end

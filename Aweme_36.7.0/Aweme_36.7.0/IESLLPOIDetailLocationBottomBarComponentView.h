@@ -1,0 +1,3 @@
+@interface IESLLPOIDetailLocationBottomBarComponentView : LLDitoComponentView
+
+@end

@@ -1,0 +1,77 @@
+@class AWELeftSideBarTimeManager, MMKV, AWELeftSideBarListCellDataModel, NSTimer, UIView, NSMutableSet, AWELeftSideBarListCellDynamicDataModel;
+@protocol AWELeftSideBarStencilViewProtocol;
+
+@interface AWELeftSideBarListCellPresenter : AWELeftSideBarBasePresenter
+
+@property (retain, nonatomic) AWELeftSideBarListCellDynamicDataModel *leftSideBarDynamicDataModel;
+@property (retain, nonatomic) UIView<AWELeftSideBarStencilViewProtocol> *listView;
+@property (retain, nonatomic) AWELeftSideBarListCellDataModel *cellDataModel;
+@property (retain, nonatomic) AWELeftSideBarTimeManager *timeManager;
+@property (retain, nonatomic) MMKV *mmkv;
+@property (retain, nonatomic) NSTimer *redDotTimer;
+@property (retain, nonatomic) NSTimer *subTitleTimer;
+@property (retain, nonatomic) NSTimer *entranceTimer;
+@property (nonatomic) BOOL needForceRefresh;
+@property (nonatomic) BOOL hasCheckRedDotForStart;
+@property (nonatomic) long long badgeStatus;
+@property (retain, nonatomic) NSMutableSet *showSubEntranceBadgeTypeSet;
+
+- (void)leftSideBarViewDynamicModuleRequestDataComplete:(id)a0 isCacheData:(BOOL)a1;
+- (id)initWithContext:(id)a0 extraData:(id)a1;
+- (void)leftSideBarPresenterOnReloadWithContext:(id)a0 extraData:(id)a1;
+- (id)onCreateCellView;
+- (double)cellViewHeight;
+- (double)cellViewWidth;
+- (id)bussinessTrackInfo;
+- (void)leftSideBarThemeDidChange:(long long)a0;
+- (void)leftSideBarCellClick;
+- (void)onLeftSideBarOpen;
+- (void)leftSideBarViewWillAppear;
+- (void)leftSideBarPresenterOnCreate;
+- (void)leftSideBarEntranceViewOnCreateWithAmbienceIdentification:(id)a0;
+- (void)leftSideBarViewDynamicModuleForceRequestDataComplete:(id)a0;
+- (void)updateSubTitle;
+- (void)hideRedDot;
+- (void)p_tryConsumeSubEntranceBadge;
+- (void)updateRedDotAndSubTitle;
+- (void)checkRedDotWhetherTheCurrentTimeNeedMonitorWithStartTime:(double)a0 endTime:(double)a1;
+- (void)stopRedDotTimer;
+- (void)checkSubTitleWhetherTheCurrentTimeNeedMonitorWithStartTime:(double)a0 endTime:(double)a1;
+- (void)stopSubTitleTimer;
+- (id)redDotVersionKey;
+- (id)subTitleVersionKey;
+- (void)hideSubTitle;
+- (void)checkRedDotForStart;
+- (void)stopEntranceTimer;
+- (BOOL)p_canShowRedDot;
+- (void)p_tryShowSubEntranceBadgeWithBadgeType:(long long)a0;
+- (void)updateRedDot;
+- (BOOL)isRedDotDisplayed;
+- (BOOL)isSubTitleDisplayed;
+- (BOOL)isEntranceRedDotDisplayed;
+- (id)entranceRedDotVersionKey;
+- (void)startEntranceRemoveRedDotTimer;
+- (void)p_tryHideSubEntranceBadgeWithBadgeType:(long long)a0;
+- (BOOL)p_canShowSubEntranceBadgeWithBadgeType:(long long)a0;
+- (void)p_tryConsumeSubEntranceBadgeWithBadgeType:(long long)a0;
+- (id)p_subEntranceBadgeVersionKeyWithType:(long long)a0;
+- (id)p_serverBadgeVersionWithBadgeType:(long long)a0;
+- (id)p_clientBadgeVersionWithBadgeType:(long long)a0;
+- (void)startCellRedDotTimer:(double)a0 withStart:(BOOL)a1;
+- (void)startCellSubTitleTimer:(double)a0 withStart:(BOOL)a1;
+- (void)updateRedDotWithTimeForStart:(BOOL)a0;
+- (void)updateSubTitleWithTimeForStart:(BOOL)a0;
+- (id)leftSideBarListCellDataModel:(id)a0;
+- (void)hideDynamicRedDot;
+- (id)dynamicRedDotVersionKey;
+- (BOOL)isShowDynamicRedDot;
+- (void)updateDynamicData:(id)a0 isCacheData:(BOOL)a1;
+- (void)updateDynamicRedDot;
+- (id)leftSideBarListCellDynamicDataModel:(id)a0;
+- (void)showDynamicRedDot;
+- (void)showRedDot;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)showSubTitle;
+
+@end

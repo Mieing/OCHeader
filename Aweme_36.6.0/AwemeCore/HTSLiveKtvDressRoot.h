@@ -1,0 +1,3 @@
+@interface HTSLiveKtvDressRoot : GPBRootObject
+
+@end

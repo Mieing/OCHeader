@@ -1,0 +1,76 @@
+@class NSError, NSString, VECurveTransUtils, VEFFmpegReaderUnit, NSCondition, VEVideoPlayAsyncQueue, NSObject, VECompileVTDecoderUnit, VEVideoConfig;
+@protocol OS_dispatch_queue;
+
+@interface VEVideoFFmpeg : VEVideoReader <VEAppStatusProtocol>
+
+@property (retain, nonatomic) NSError *error;
+@property (retain, nonatomic) VEFFmpegReaderUnit *readerUnit;
+@property (retain, nonatomic) VECompileVTDecoderUnit *decodeUnit;
+@property (nonatomic) unsigned long long asyncThreadStatus;
+@property (retain, nonatomic) VEVideoPlayAsyncQueue *videoAyncQue;
+@property (nonatomic) struct __CVBuffer { } *lastPixelBuffer;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastTime;
+@property (nonatomic) long long lastBufferSrcPts;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastReturnVideoTime;
+@property (nonatomic) double lastSysTemTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastDuration;
+@property (retain, nonatomic) VEVideoConfig *config;
+@property BOOL seekReq;
+@property (nonatomic) BOOL isPreSeek;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } seekTime;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastSeekTime;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *decodeQueue;
+@property (nonatomic) long long seekReqCount;
+@property (nonatomic) long long seekCacheCount;
+@property (nonatomic) long long maxCacheCount;
+@property (retain, nonatomic) NSCondition *condition;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastRequestTime;
+@property (nonatomic) struct opaqueCMFormatDescription { } *vtDesc;
+@property (nonatomic) BOOL isFastSeeking;
+@property (nonatomic) double lastSeekTimestamp;
+@property (retain, nonatomic) VECurveTransUtils *curveTransUtils;
+@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) BOOL needForceSeek;
+@property (nonatomic) BOOL enableSeekOpt;
+@property (nonatomic) BOOL enableSeekOpt2;
+@property (nonatomic) BOOL isAppActive;
+@property (nonatomic) BOOL enableDecoderPreReleaseOpt;
+@property (nonatomic) BOOL isPrepared;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)startThread;
+- (void)processTask;
+- (void)updateSampleDataPts:(id)a0;
+- (void)unPrepare;
+- (BOOL)needSeekFlush;
+- (BOOL)isHitCache:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)seekToTimeProcess:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })p_convertTimeLineToVideoTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (struct { long long x0; int x1; unsigned int x2; long long x3; })p_convertVideoTimeToTimeLine:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)p_updateLastPixelBuffer:(id)a0 atTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a1;
+- (void)p_updateVideoBufferWithLast:(id)a0;
+- (void)p_releaseVtDesc;
+- (void)p_setVtDesc:(struct opaqueCMFormatDescription { } *)a0;
+- (id)getAllIFrameTimeStamp;
+- (double)getAvgFrameRate;
+- (void)becomeActive;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)enterBackground;
+- (void)resignActive;
+- (void)stop;
+- (void)prepare;
+- (void)seekToTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+- (void)enterForeground;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+- (void)stopThread;
+- (void)updateVideoConfig:(id)a0;
+- (void)memoryWarning;
+- (id)copySampleBufferAtTime:(struct { long long x0; int x1; unsigned int x2; long long x3; })a0;
+
+@end

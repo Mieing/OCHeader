@@ -1,0 +1,80 @@
+@class NSString;
+
+@interface FTS5IntelligentFaceClusterItem : NSObject <WCTTableCoding>
+
+@property (nonatomic) long long faceLabelId;
+@property (nonatomic) float zScore;
+@property (retain, nonatomic) NSString *faceFeatureStr;
+@property (retain, nonatomic) NSString *imgKey;
+@property (nonatomic) int faceIndex;
+@property (retain, nonatomic) NSString *partConfidenceStr;
+@property (nonatomic) double faceRectX;
+@property (nonatomic) double faceRectY;
+@property (nonatomic) double faceRectWidth;
+@property (nonatomic) double faceRectHeight;
+@property (retain, nonatomic) NSString *faceClusterFilePathId;
+@property (nonatomic) double faceImageWidth;
+@property (nonatomic) double faceImageHeight;
+@property (retain, nonatomic) NSString *facePointStr;
+@property (retain, nonatomic) NSString *l2NormFaceFeatureStr;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)faceLabelId;
++ (const void *)__wcdb_synthesize_146:(void *)a0;
++ (id)swift_faceLabelId;
++ (const void *)zScore;
++ (const void *)__wcdb_synthesize_147:(void *)a0;
++ (id)swift_zScore;
++ (const void *)faceFeatureStr;
++ (const void *)__wcdb_synthesize_148:(void *)a0;
++ (id)swift_faceFeatureStr;
++ (const void *)imgKey;
++ (const void *)__wcdb_synthesize_149:(void *)a0;
++ (id)swift_imgKey;
++ (const void *)faceIndex;
++ (const void *)__wcdb_synthesize_150:(void *)a0;
++ (id)swift_faceIndex;
++ (const void *)partConfidenceStr;
++ (const void *)__wcdb_synthesize_151:(void *)a0;
++ (id)swift_partConfidenceStr;
++ (const void *)faceRectX;
++ (const void *)__wcdb_synthesize_152:(void *)a0;
++ (id)swift_faceRectX;
++ (const void *)faceRectY;
++ (const void *)__wcdb_synthesize_153:(void *)a0;
++ (id)swift_faceRectY;
++ (const void *)faceRectWidth;
++ (const void *)__wcdb_synthesize_154:(void *)a0;
++ (id)swift_faceRectWidth;
++ (const void *)faceRectHeight;
++ (const void *)__wcdb_synthesize_155:(void *)a0;
++ (id)swift_faceRectHeight;
++ (const void *)faceClusterFilePathId;
++ (const void *)__wcdb_synthesize_156:(void *)a0;
++ (id)swift_faceClusterFilePathId;
++ (const void *)faceImageWidth;
++ (const void *)__wcdb_synthesize_157:(void *)a0;
++ (id)swift_faceImageWidth;
++ (const void *)faceImageHeight;
++ (const void *)__wcdb_synthesize_158:(void *)a0;
++ (id)swift_faceImageHeight;
++ (const void *)facePointStr;
++ (const void *)__wcdb_synthesize_159:(void *)a0;
++ (id)swift_facePointStr;
++ (const void *)l2NormFaceFeatureStr;
++ (const void *)__wcdb_synthesize_160:(void *)a0;
++ (id)swift_l2NormFaceFeatureStr;
++ (void)__wcdb_column_constraint_161:(void *)a0;
+
+- (void).cxx_destruct;
+
+@end

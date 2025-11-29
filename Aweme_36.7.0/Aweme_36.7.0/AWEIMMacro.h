@@ -1,0 +1,3 @@
+@interface AWEIMMacro : NSObject
+
+@end

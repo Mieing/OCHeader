@@ -1,0 +1,13 @@
+@class NSMutableArray;
+
+@interface BattleBuffCardInfo : IESLivePBBaseMessage
+
+@property (nonatomic) int battleBuffCardType;
+@property (retain, nonatomic) NSMutableArray *effectiveBuffCardsArray;
+@property (readonly, nonatomic) unsigned long long effectiveBuffCardsArray_Count;
+@property (nonatomic) long long waitingBuffCardsCount;
+@property (nonatomic) long long bonusScore;
+
++ (id)descriptor;
+
+@end

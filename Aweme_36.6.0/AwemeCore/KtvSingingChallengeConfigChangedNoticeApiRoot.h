@@ -1,0 +1,3 @@
+@interface KtvSingingChallengeConfigChangedNoticeApiRoot : GPBRootObject
+
+@end

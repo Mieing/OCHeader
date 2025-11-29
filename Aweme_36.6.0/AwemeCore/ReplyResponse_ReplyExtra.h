@@ -1,0 +1,10 @@
+@class ReplyResponse_ReplyExtra_LogPb;
+
+@interface ReplyResponse_ReplyExtra : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ReplyResponse_ReplyExtra_LogPb *logPb;
+@property (nonatomic) BOOL hasLogPb;
+
++ (id)descriptor;
+
+@end

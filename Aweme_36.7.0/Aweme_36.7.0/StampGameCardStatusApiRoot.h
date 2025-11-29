@@ -1,0 +1,3 @@
+@interface StampGameCardStatusApiRoot : GPBRootObject
+
+@end

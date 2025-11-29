@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface IESGCPPBEvaluationVideoList : GPBMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (retain, nonatomic) NSMutableArray *evaluationVideosArray;
+@property (readonly, nonatomic) unsigned long long evaluationVideosArray_Count;
+@property (nonatomic) long long totalCount;
+
++ (id)descriptor;
+
+@end

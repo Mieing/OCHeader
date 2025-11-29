@@ -1,0 +1,12 @@
+@class NSMutableArray, HTSLiveImage;
+
+@interface InterestExploreCard : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+@property (retain, nonatomic) HTSLiveImage *bgm;
+@property (nonatomic) BOOL hasBgm;
+
++ (id)descriptor;
+
+@end

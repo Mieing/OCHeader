@@ -1,0 +1,85 @@
+@class NSString, NSMutableDictionary, MMListenSyncResponse, TingRedDotItem, MMLRUCache, NSMutableArray, TingTaskSnapshot;
+@protocol TingRedDotServiceListener, TingRecentServiceListener;
+
+@interface TingPlayCenterMgr : NSObject <ITingBizExt, IOplogExt, TingRedDotServiceListener, TingRecentServiceListener, TingAudioTabDataManagerExt, ITingRouterExt, WeChat.ICarPlayUIExt, TingPlayerManagerNotification>
+
+@property (retain, nonatomic) TingTaskSnapshot *tapeInfo;
+@property (nonatomic) long long taskBarControl;
+@property (retain, nonatomic) MMListenSyncResponse *taskBarSyncInfo;
+@property (retain, nonatomic) NSMutableDictionary *dictCallbacks;
+@property (retain, nonatomic) NSMutableArray *opLogTasks;
+@property (nonatomic) int taskBarSyncVersion;
+@property (retain, nonatomic) TingRedDotItem *taskBarRedDotItem;
+@property (retain, nonatomic) MMLRUCache *notifyUUIDCache;
+@property (retain, nonatomic) id<TingRedDotServiceListener, TingRecentServiceListener> weakProxy;
+@property (nonatomic) unsigned long long lastCloseTime;
+@property (nonatomic) BOOL hasEnterTing;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)platformMMKVId;
++ (id)generateTapeInfoWithPlayer:(id)a0;
++ (BOOL)isTingPlayerModuleActive;
++ (BOOL)isTingPlayerModuleActiveOrInterrupt;
+
+- (id)init;
+- (void)registerObserver;
+- (void)unregiesterObserver;
+- (void)dealloc;
+- (void)onMgrClearData;
+- (void)applicationWillEnterForeground;
+- (void)applicationDidEnterBackground;
+- (void)onCarPlayDisconnected;
+- (void)updatePlayingInfoWithPlayer:(id)a0;
+- (id)lastestTapeTaskInfo;
+- (id)lastestPlayingInfo;
+- (void)clearLastestPlayedTapeInfo;
+- (void)doAsyncLoadKvTapeInfos;
+- (id)loadLastPlayedTapeInfo;
+- (void)flowPlayer:(id)a0 tingItem:(id)a1 onStatusChanged:(int)a2;
+- (void)handlePlayerEventComing:(id)a0;
+- (void)onActivePlayerChanged:(id)a0;
+- (void)onStop;
+- (void)onPlayWithControl:(unsigned int)a0;
+- (void)onPause;
+- (void)saveSyncInfoInPlatformKV:(id)a0;
+- (id)taskBarSyncInfoVersionKey;
+- (id)taskBarSyncTimestampVersionKey;
+- (BOOL)isTaskBarRedDotEnable;
+- (BOOL)hadCacheNotifyUUID:(id)a0;
+- (void)cacheNotifyUUID:(id)a0;
+- (void)tingSyncFromBypNotifyWithData:(id)a0 uuid:(id)a1;
+- (id)validListenSyncItemTypes;
+- (BOOL)isTaskBarSyncItemTypeValid:(int)a0;
+- (void)loadTaskBarSyncItem;
+- (BOOL)__innerSetTaskBarSyncItemFromData:(id)a0 scene:(long long)a1;
+- (void)clearTaskBarSyncItem;
+- (void)onCenterRedDotItemUpdate:(id)a0;
+- (void)onCenterRedDotItemClear;
+- (void)onRedDotItemUpdate:(int)a0 item:(id)a1;
+- (void)onTingRedDotItemClear:(int)a0;
+- (void)callTaskBarExposed;
+- (void)loadSyncTaskBarInfo;
+- (void)removeLocalSyncTaskBarInfo;
+- (void)clearLocalSyncTaskBarRecommendDesc;
+- (void)preRefreshDiscoverItemWhenJumpCategoryDetail:(id)a0;
+- (id)taskBarSyncItem;
+- (id)discoverSessionBuffer;
+- (id)currentFlowPlayer;
+- (id)currentPlayer;
+- (BOOL)enableTaskBarControl;
+- (BOOL)getTingTaskBarHideConfigState;
+- (void)setTaskBarShowingOn:(BOOL)a0;
+- (void)oplogRet:(int)a0 errMsg:(id)a1 eventID:(unsigned int)a2 cgiWrap:(id)a3;
+- (long long)calTaskBarControl;
+- (int)calTaskBarSyncVersion;
+- (BOOL)isInTaskBarControlBlack;
+- (void)onTingAppBePresentedFromScene:(int)a0;
+- (void)willAddListenLaterWithItem:(id)a0;
+- (id)listenLaterTapeItem;
+- (void)resetRefreshControl;
+- (void).cxx_destruct;
+
+@end

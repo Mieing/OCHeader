@@ -1,0 +1,85 @@
+@class MMUIButton, WCPaySelectBankItem, NSDictionary, WCBizInfoGroup, UIButton, NSString, WCPayTransferDelayOptionView, WCPayNavigationView, WCBaseKeyboardToolBar, WCPaySelectArriveTimeItem, WCPaySelectNameItem, WCPayT2BCCandidateSugBar, WCPayNoticeItemView, WCPayBankCardNumberItem;
+@protocol WCPayTransferToBankCardFillInfoViewControllerDelegate;
+
+@interface WCPayTransferToBankCardFillInfoViewController : WCPayBaseViewController <WCBaseInfoItemDelegate, WCPaySelectBankItemDelegate, WCPaySelectArriveTimeItemDelegate, WCPayTransferToBankCardCandidateViewDelegate, WCActionSheetDelegate, WCPayNoticeBannerDelegate, WCPayTransferDelayOptionViewDelegate, WCPayTransferDelayOptionViewDelegate, WCPayT2BCCandidateSugBarDelegate> {
+    WCBaseKeyboardToolBar *m_keyboardBar;
+    id<WCPayTransferToBankCardFillInfoViewControllerDelegate> m_delegate;
+    WCBizInfoGroup *m_infoGroup;
+}
+
+@property (retain, nonatomic) WCPayT2BCCandidateSugBar *m_receiverCandidateView;
+@property (retain, nonatomic) WCPaySelectNameItem *m_selectNameItem;
+@property (retain, nonatomic) WCPayBankCardNumberItem *m_cardNumberItem;
+@property (retain, nonatomic) WCPaySelectBankItem *m_selectBankItem;
+@property (retain, nonatomic) WCPaySelectArriveTimeItem *m_selectArriveTimeItem;
+@property (nonatomic) double m_minItemLeft;
+@property (retain, nonatomic) MMUIButton *m_selectNameButton;
+@property (retain, nonatomic) UIButton *m_footerButton;
+@property (nonatomic) BOOL m_bHasSelectReceiver;
+@property (nonatomic) BOOL m_bBankCardNumChange;
+@property (nonatomic) BOOL m_bBankCardAutoFilling;
+@property (retain, nonatomic) WCPayNoticeItemView *m_noticeBanner;
+@property (retain, nonatomic) NSDictionary *m_dictBanners;
+@property (retain, nonatomic) NSString *m_enterBankCardNumber;
+@property (nonatomic) BOOL noAutoShowKeyBoard;
+@property (retain) WCPayNavigationView *navigationView;
+@property (retain) WCPayTransferDelayOptionView *delayOption;
+@property (nonatomic) double cellTitleMaxWidth;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setHasSelectReceiver:(BOOL)a0;
+- (void)setEnterBankCardNumber:(id)a0;
+- (void)dealloc;
+- (void)clearBankElem;
+- (void)setDelegate:(id)a0;
+- (void)viewDidLoad;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardDidShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (void)selectNameItemBecomFirstResponder;
+- (id)getBannerView;
+- (void)banner:(id)a0 clickWithUrl:(id)a1;
+- (void)viewDidLayoutSubviews;
+- (void)initView;
+- (void)onBack;
+- (void)onRightBarButtonClick;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)refreshViewWithData:(id)a0;
+- (void)initHeaderView;
+- (void)updateTableView;
+- (void)initCandidateView;
+- (id)getHeaderView;
+- (void)initNavigationBar;
+- (void)initFooterView;
+- (void)reloadTableView;
+- (void)makeInfoCell:(id)a0 cellInfo:(id)a1;
+- (double)getMaxTitleLabelWidth:(id)a0;
+- (void)selectTransToBankReceiver;
+- (void)autoFillBankItem;
+- (void)setAutoFillBankDone;
+- (void)clickInfoCell:(id)a0 index:(id)a1;
+- (void)WCBaseInfoItemPressReturnKey:(id)a0;
+- (void)WCBaseInfoItemEditChanged:(id)a0;
+- (id)navigationBarBackgroundColor;
+- (void)WCBaseInfoItemEndEdit:(id)a0;
+- (void)showReceiverCandidateView:(id)a0;
+- (void)onNext;
+- (void)OnClickWCPayTransferToBankCardCandidate:(id)a0;
+- (void)OnWCPaySelectBankItemDidChoseBank:(id)a0;
+- (void)OnWCPaySelectArriveTimeItemDidSelectArriveTime:(unsigned long long)a0;
+- (void)scrollViewDidScroll;
+- (void)resignAllResponder;
+- (void)OnWCPaySelectArriveTimeItemShouldShowDelayView:(id)a0;
+- (id)convertDelayOptionsFromEnterTimeItem:(id)a0;
+- (void)onSpaceTap;
+- (void)viewDidTransitionToNewSize;
+- (void)onWCPayTransferDelayOptionViewCancel;
+- (void)onWCPayTransferDelayOptionViewConfirm:(unsigned int)a0;
+- (double)onWCPayTransferDelayOptionViewSafeBottom;
+- (void)OnClickWCPayT2BCCandidate:(id)a0;
+- (void).cxx_destruct;
+
+@end

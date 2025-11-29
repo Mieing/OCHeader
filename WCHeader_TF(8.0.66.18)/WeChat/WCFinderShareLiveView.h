@@ -1,0 +1,81 @@
+@class UILabel, NSDate, MMFinderLiveLimitModeLiveInfoEnsurer, MMFinderLiveActivityView, UIView, WCFinderLiveNowView, NSString, RichTextView, WCDataItem, MMLiveCDNPlayerView, WCFinderLiveShareCellFullStatusView, WCFinderLiveShareCardExposeReportAdapter, UIImageView;
+@protocol WCFinderShareLiveViewDelegate;
+
+@interface WCFinderShareLiveView : WCContentItemBaseView <WCFinderLiveExt, MMWebImageViewDelegate, MMLiveTaskMgrExt, WCMomentsFullScreenTransitionProtocol, MMLiveCDNPlayerViewDelegate>
+
+@property (retain, nonatomic) WCDataItem *oWCDataItem;
+@property (retain, nonatomic) MMLiveCDNPlayerView *playerView;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) WCFinderLiveNowView *logoView;
+@property (retain, nonatomic) UIView *liveMaskView;
+@property (retain, nonatomic) WCFinderLiveShareCellFullStatusView *liveMaskTipsView;
+@property (retain, nonatomic) UILabel *coverEffectLabel;
+@property (nonatomic) BOOL canShowLiveActivityView;
+@property (retain, nonatomic) MMFinderLiveActivityView *liveActivityView;
+@property (retain, nonatomic) NSString *logoViewLabel;
+@property (nonatomic) BOOL isAutoPlayingPeriod;
+@property (retain, nonatomic) MMFinderLiveLimitModeLiveInfoEnsurer *liveInfoEnsurer;
+@property (retain, nonatomic) RichTextView *mediaTitleTextView;
+@property (retain, nonatomic) UIImageView *bottomGradientView;
+@property (retain, nonatomic) NSDate *startAutoPlay;
+@property (retain, nonatomic) WCFinderLiveShareCardExposeReportAdapter *exposeReportAdapter;
+@property (weak, nonatomic) id<WCFinderShareLiveViewDelegate> itemViewDelegate;
+@property (readonly, nonatomic) BOOL isLiveAutoPlayEnabled;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (struct CGSize { double x0; double x1; })sizeForContentItem:(id)a0;
++ (double)heightForMedia:(id)a0 showDetail:(BOOL)a1;
+
+- (void)initViewsWithWCDataItem:(id)a0;
+- (void)initViewsWithWCContentItem:(id)a0;
+- (void)preLoad:(id)a0;
+- (void)changeLiveNowViewType:(long long)a0;
+- (void)layoutDefaultV2:(id)a0;
+- (id)spliceFinderLiveStatusVoiceOverStrWithStatus:(id)a0 andNickname:(id)a1 andFinderLiveStatusFormat:(id)a2;
+- (BOOL)isLiveEnded:(id)a0;
+- (BOOL)isLiveReplay:(id)a0;
+- (BOOL)isLiveReplayGenerating:(id)a0;
+- (BOOL)isPaidLive:(id)a0;
+- (void)onVoiceOverClick;
+- (id)getVoiceOverStrForTimeline;
+- (void)throwUrlMessage;
+- (void)reportEcsData:(id)a0 dataItem:(id)a1;
+- (void)_doJumpToLive;
+- (void)prepareForMorphTransition;
+- (void)refreshLiveMaskEffect;
+- (void)layoutLiveActivityView;
+- (void)contentItemWillDisplay;
+- (void)contentItemDidEndDisplaying;
+- (id)getMainContentView;
+- (void)autoPlayWithoutSound;
+- (void)autoPauseWithoutSound;
+- (void)hideComponentIfNeededWithTask:(id)a0;
+- (void)showViewIfNeededWithTask:(id)a0;
+- (void)showImageView;
+- (BOOL)isCurrentDataItemOpenedLiveTask:(id)a0;
+- (void)startPlayLiveStream;
+- (void)stopPlay;
+- (void)updatePlayerViewHidden:(BOOL)a0;
+- (void)updatePlayerViewAlpha:(double)a0;
+- (void)updateImageViewAlpha;
+- (void)onFinderLiveShareViewUpdateLiveInfo:(id)a0;
+- (void)onFinderLiveShareViewReplayStatusUpdated:(id)a0 liveInfo:(id)a1;
+- (void)onFinderLiveCloseWithTid:(id)a0;
+- (void)onFinderLiveReplayStatusUpdated:(id)a0 replayStatus:(unsigned int)a1;
+- (void)onFinderLiveReplaySettingUpdated:(id)a0 replayEnabled:(BOOL)a1;
+- (void)onFinderLiveFeedCoverInfoUpdate:(unsigned long long)a0 coverInfo:(id)a1;
+- (void)onPlayBegin;
+- (void)onLoadImageOK:(id)a0;
+- (void)onExtendAnimationDidEndWithLiveTask:(id)a0;
+- (void)onMinimizeInteractiveDidEnd:(id)a0;
+- (void)onCollapseAnimationDidEnd:(id)a0;
+- (void)onExitLiveSuccessWithLiveTaskId:(id)a0;
+- (void)showViewWhenCloseFullScreenAnimationEnd;
+- (void)hideViewWhenShowFullScreenAnimationEnd;
+- (void)exposeExtStatsReportWhenDisappearFrom:(id)a0;
+- (void).cxx_destruct;
+
+@end

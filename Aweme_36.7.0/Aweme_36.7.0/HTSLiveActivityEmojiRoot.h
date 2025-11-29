@@ -1,0 +1,3 @@
+@interface HTSLiveActivityEmojiRoot : GPBRootObject
+
+@end

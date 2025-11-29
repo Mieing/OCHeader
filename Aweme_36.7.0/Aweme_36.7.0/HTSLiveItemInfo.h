@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface HTSLiveItemInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long itemId;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *tagType;
+@property (nonatomic) int lastest;
+@property (nonatomic) int total;
+@property (copy, nonatomic) NSString *playCounts;
+@property (nonatomic) long long viewRight;
+@property (copy, nonatomic) NSString *itemIdStr;
+@property (nonatomic) int duration;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,15 @@
+@class UILabel, UIImageView;
+
+@interface AWERelatedRecomendDetailBottomView : UIView
+
+@property (retain, nonatomic) UILabel *label;
+@property (retain, nonatomic) UIImageView *arrowImageView;
+@property (retain, nonatomic) UIImageView *iconImageView;
+
+- (void)configureUI;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)layoutSubviews;
+- (void)updateTitle:(id)a0;
+
+@end

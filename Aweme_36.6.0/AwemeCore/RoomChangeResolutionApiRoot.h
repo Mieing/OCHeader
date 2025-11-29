@@ -1,0 +1,3 @@
+@interface RoomChangeResolutionApiRoot : GPBRootObject
+
+@end

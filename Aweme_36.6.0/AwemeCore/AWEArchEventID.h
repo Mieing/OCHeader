@@ -1,0 +1,3 @@
+@interface AWEArchEventID : AWEArchUniqueID
+
+@end

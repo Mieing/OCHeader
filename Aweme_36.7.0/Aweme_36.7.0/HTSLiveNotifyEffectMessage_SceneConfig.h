@@ -1,0 +1,16 @@
+@class NSString, HTSLiveText;
+
+@interface HTSLiveNotifyEffectMessage_SceneConfig : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *scene;
+@property (nonatomic) long long priority;
+@property (nonatomic) BOOL needAggregate;
+@property (nonatomic) long long aggregateNum;
+@property (retain, nonatomic) HTSLiveText *aggregateText;
+@property (nonatomic) BOOL hasAggregateText;
+@property (copy, nonatomic) NSString *subScene;
+@property (nonatomic) long long maxWaitTime;
+
++ (id)descriptor;
+
+@end

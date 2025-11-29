@@ -1,0 +1,12 @@
+@interface CGPAVAudioParams : GPBMessage
+
+@property (nonatomic) int format;
+@property (nonatomic) int rate;
+@property (nonatomic) int channels;
+@property (nonatomic) int channelLayout;
+@property (nonatomic) int samples;
+@property (nonatomic) int bitrate;
+
++ (id)descriptor;
+
+@end

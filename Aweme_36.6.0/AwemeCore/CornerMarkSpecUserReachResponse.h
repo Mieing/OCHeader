@@ -1,0 +1,10 @@
+@class CornerMarkSpecUserReachResponse_Data;
+
+@interface CornerMarkSpecUserReachResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CornerMarkSpecUserReachResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

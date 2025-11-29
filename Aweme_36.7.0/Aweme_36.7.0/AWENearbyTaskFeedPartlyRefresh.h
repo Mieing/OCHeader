@@ -1,0 +1,3 @@
+@interface AWENearbyTaskFeedPartlyRefresh : NSObject
+
+@end

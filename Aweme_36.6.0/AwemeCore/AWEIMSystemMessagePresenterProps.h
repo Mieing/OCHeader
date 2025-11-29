@@ -1,0 +1,3 @@
+@interface AWEIMSystemMessagePresenterProps : AWEIMGestureUIViewPresenterProps
+
+@end

@@ -1,0 +1,61 @@
+@interface AWEECLogTagEnum : NSObject
+
+@property (retain, nonatomic) AWEECLogTagEnum *Network;
+@property (retain, nonatomic) AWEECLogTagEnum *Image;
+@property (retain, nonatomic) AWEECLogTagEnum *Message;
+@property (retain, nonatomic) AWEECLogTagEnum *Click;
+@property (retain, nonatomic) AWEECLogTagEnum *Appear;
+@property (retain, nonatomic) AWEECLogTagEnum *Disappear;
+@property (retain, nonatomic) AWEECLogTagEnum *IESEC;
+@property (retain, nonatomic) AWEECLogTagEnum *Detail;
+@property (retain, nonatomic) AWEECLogTagEnum *Cart;
+@property (retain, nonatomic) AWEECLogTagEnum *Yata;
+@property (retain, nonatomic) AWEECLogTagEnum *Recommend;
+@property (retain, nonatomic) AWEECLogTagEnum *Order;
+@property (retain, nonatomic) AWEECLogTagEnum *NewDetail;
+@property (retain, nonatomic) AWEECLogTagEnum *BuyNow;
+@property (retain, nonatomic) AWEECLogTagEnum *Comment;
+@property (retain, nonatomic) AWEECLogTagEnum *Relation;
+@property (retain, nonatomic) AWEECLogTagEnum *Shop;
+@property (retain, nonatomic) AWEECLogTagEnum *Window;
+@property (retain, nonatomic) AWEECLogTagEnum *Sku;
+@property (retain, nonatomic) AWEECLogTagEnum *ImagePreview;
+@property (retain, nonatomic) AWEECLogTagEnum *NetTracker;
+@property (retain, nonatomic) AWEECLogTagEnum *Lynx;
+@property (retain, nonatomic) AWEECLogTagEnum *Replay;
+@property (retain, nonatomic) AWEECLogTagEnum *GeckoResource;
+@property (retain, nonatomic) AWEECLogTagEnum *ABSetting;
+@property (retain, nonatomic) AWEECLogTagEnum *ProductFeed;
+@property (retain, nonatomic) AWEECLogTagEnum *MixedFeed;
+@property (retain, nonatomic) AWEECLogTagEnum *Mall;
+@property (retain, nonatomic) AWEECLogTagEnum *Privacy;
+@property (retain, nonatomic) AWEECLogTagEnum *SameGoods;
+@property (retain, nonatomic) AWEECLogTagEnum *ISV;
+@property (retain, nonatomic) AWEECLogTagEnum *DI;
+@property (retain, nonatomic) AWEECLogTagEnum *TabKit;
+@property (retain, nonatomic) AWEECLogTagEnum *ECMarketing;
+@property (retain, nonatomic) AWEECLogTagEnum *Live;
+@property (retain, nonatomic) AWEECLogTagEnum *Card;
+@property (retain, nonatomic) AWEECLogTagEnum *List;
+@property (retain, nonatomic) AWEECLogTagEnum *RedPackage;
+@property (retain, nonatomic) AWEECLogTagEnum *Anchor;
+@property (retain, nonatomic) AWEECLogTagEnum *Audience;
+@property (retain, nonatomic) AWEECLogTagEnum *Foundation;
+@property (retain, nonatomic) AWEECLogTagEnum *Marketing;
+@property (retain, nonatomic) AWEECLogTagEnum *DIProxy;
+@property (retain, nonatomic) AWEECLogTagEnum *MiniWindow;
+@property (retain, nonatomic) AWEECLogTagEnum *Playback;
+@property (retain, nonatomic) AWEECLogTagEnum *enterRoomParams;
+@property (retain, nonatomic) AWEECLogTagEnum *Player;
+@property (retain, nonatomic) AWEECLogTagEnum *Verify;
+@property (retain, nonatomic) AWEECLogTagEnum *JSVerify;
+@property (retain, nonatomic) AWEECLogTagEnum *Effect;
+@property (retain, nonatomic) AWEECLogTagEnum *Archive;
+@property (retain, nonatomic) AWEECLogTagEnum *Quality;
+@property (retain, nonatomic) AWEECLogTagEnum *Smart;
+@property (retain, nonatomic) AWEECLogTagEnum *EZTF;
+@property (retain, nonatomic) AWEECLogTagEnum *EntranceInfo;
+
+- (void).cxx_destruct;
+
+@end

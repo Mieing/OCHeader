@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface IESLiveProfileSetting : IESLivePBBaseMessage
+
+@property (nonatomic) long long showSetting;
+@property (retain, nonatomic) NSMutableArray *styleTemplateArray;
+@property (readonly, nonatomic) unsigned long long styleTemplateArray_Count;
+
++ (id)descriptor;
+
+@end

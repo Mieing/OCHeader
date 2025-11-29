@@ -1,0 +1,83 @@
+@class IESLLLiveCardDrawTicketModel, IESLLLiveLotteryModel, IESLLLiveMinusSaleModel, NSDictionary, IESLLLiveCardNearStoreModel, IESLLLiveChannelSaleModel, IESLLLiveURLModel, IESLLLiveFlashSaleModel, NSString, IESLLLiveActivityConfig, IESLLLiveMemberInfo, NSArray, NSNumber, IESLLLiveDisplayControl, IESLLLiveAtmosphereModel, IESLLLiveProductRewardTaskInfoModel;
+
+@interface IESLLLiveCardRawDataModel : MTLModel <MTLJSONSerializing>
+
+@property (nonatomic) long long styleType;
+@property (copy, nonatomic) IESLLLiveURLModel *imageUrl;
+@property (copy, nonatomic) NSString *webUrl;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *buttonText;
+@property (copy, nonatomic) NSString *buttonImageUrl;
+@property (nonatomic) double priceBtnMaxWidth;
+@property (copy, nonatomic) NSString *cecPoiInfo;
+@property (copy, nonatomic) NSString *whiteButtonBackgroundColor;
+@property (copy, nonatomic) NSString *price;
+@property (copy, nonatomic) NSNumber *consumptionTimes;
+@property (copy, nonatomic) NSString *cardTypeName;
+@property (nonatomic) float originPrice;
+@property (nonatomic) float discountPrice;
+@property (nonatomic) float showRatio;
+@property (copy, nonatomic) NSString *cardId;
+@property (copy, nonatomic) NSString *couponId;
+@property (copy, nonatomic) NSString *topText;
+@property (copy, nonatomic) NSString *tipsImageUrl;
+@property (copy, nonatomic) NSString *LynxUrl;
+@property (copy, nonatomic) NSString *grouponId;
+@property (nonatomic) long long stock;
+@property (copy, nonatomic) NSString *source;
+@property (nonatomic) long long liveCardType;
+@property (copy, nonatomic) NSString *placeOrderUrl;
+@property (retain, nonatomic) IESLLLiveFlashSaleModel *flashSaleInfo;
+@property (retain, nonatomic) IESLLLiveMinusSaleModel *minusSaleInfo;
+@property (retain, nonatomic) IESLLLiveChannelSaleModel *channelSaleInfo;
+@property (retain, nonatomic) NSArray *ticket;
+@property (retain, nonatomic) IESLLLiveCardDrawTicketModel *drawTicketParams;
+@property (retain, nonatomic) NSNumber *soldEndTime;
+@property (retain, nonatomic) NSNumber *soldStartTime;
+@property (retain, nonatomic) NSNumber *serverTime;
+@property (retain, nonatomic) NSString *aggCardId;
+@property (retain, nonatomic) IESLLLiveCardNearStoreModel *nearStore;
+@property (nonatomic) long long productType;
+@property (nonatomic) long long productBizLine;
+@property (copy, nonatomic) NSString *mpId;
+@property (copy, nonatomic) NSDictionary *liveRoomInfo;
+@property (nonatomic) double requestDuration;
+@property (nonatomic) double requestEndTimeStamp;
+@property (nonatomic) double enterRoomTimeStamp;
+@property (retain, nonatomic) IESLLLiveDisplayControl *displayControl;
+@property (retain, nonatomic) IESLLLiveActivityConfig *activityConfig;
+@property (retain, nonatomic) IESLLLiveLotteryModel *lotteryInfo;
+@property (retain, nonatomic) IESLLLiveAtmosphereModel *cardAtmosphere;
+@property (retain, nonatomic) IESLLLiveMemberInfo *memberInfo;
+@property (copy, nonatomic) NSString *tagImageUrl;
+@property (copy, nonatomic) NSNumber *enterType;
+@property (copy, nonatomic) NSNumber *authType;
+@property (copy, nonatomic) NSNumber *accountId;
+@property (nonatomic) long long fetchScene;
+@property (retain, nonatomic) id adInfo;
+@property (copy, nonatomic) NSDictionary *commonSession;
+@property (copy, nonatomic) NSDictionary *trackServerParams;
+@property (retain, nonatomic) NSArray *bizAttributes;
+@property (copy, nonatomic) NSDictionary *perfLog;
+@property (retain, nonatomic) IESLLLiveProductRewardTaskInfoModel *productRewardTaskInfo;
+@property (copy, nonatomic) NSDictionary *lynxLogParams;
+@property (copy, nonatomic) NSDictionary *lynxSessionParams;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)imageUrlJSONTransformer;
++ (id)productRewardTaskInfoJSONTransformer;
++ (id)flashSaleInfoJSONTransformer;
++ (id)minusSaleInfoJSONTransformer;
++ (id)ticketJSONTransformer;
++ (id)nearStoreJSONTransformer;
++ (id)lotteryInfoJSONTransformer;
++ (id)atmosphereInfoJSONTransformer;
++ (id)bizAttributesJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (void).cxx_destruct;
+
+@end

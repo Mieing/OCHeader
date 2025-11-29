@@ -1,0 +1,10 @@
+@interface WCDBSwift.HandlePool : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ handles;
+    void /* unknown type, empty encoding */ tag;
+    void /* unknown type, empty encoding */ path;
+    void /* unknown type, empty encoding */ rwlock;
+    void /* unknown type, empty encoding */ aliveHandleCount;
+    void /* unknown type, empty encoding */ configs;
+}
+
+@end

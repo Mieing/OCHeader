@@ -1,0 +1,3 @@
+@interface IESLiveEnterAudienceRoomDefine : NSObject
+
+@end

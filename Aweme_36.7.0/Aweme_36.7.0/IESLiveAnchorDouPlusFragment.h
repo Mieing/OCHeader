@@ -1,0 +1,72 @@
+@class NSString, HTSLiveToolbarItem, NSTimer, UIView, AWELiveDouPlusDataController;
+@protocol AWEHttpTask, IESLiveDouPlusService, IESLiveCompoundSubscription, IESLiveTracker, IESLivePerfSampler, IESLiveBubbleGuide;
+
+@interface IESLiveAnchorDouPlusFragment : IESLiveRoomComponent <HTSLiveToolbarActions, HTSLiveAudienceListActions, IESLiveAudienceListActions, IESLiveAnchorECommerceActions, IESLiveAnchorMoreToolsAction>
+
+@property (weak, nonatomic) HTSLiveToolbarItem *pickerItem;
+@property (retain, nonatomic) AWELiveDouPlusDataController *dataController;
+@property (retain, nonatomic) id<IESLiveDouPlusService> douPlusService;
+@property (retain, nonatomic) id<IESLiveTracker> tracker;
+@property (retain, nonatomic) id<IESLivePerfSampler> perfSampler;
+@property (retain, nonatomic) id<IESLiveCompoundSubscription> disposable;
+@property (retain, nonatomic) UIView<IESLiveBubbleGuide> *tipView;
+@property (retain, nonatomic) UIView<IESLiveBubbleGuide> *couponTipView;
+@property (retain, nonatomic) NSTimer *couponTimer;
+@property (nonatomic) BOOL moreBtnHasBeenClicked;
+@property (nonatomic) BOOL isTipViewShowed;
+@property (nonatomic) BOOL hasGoodsInHistory;
+@property (nonatomic) BOOL hasReportAnchorDouPlusFragment;
+@property (weak, nonatomic) id<AWEHttpTask> douPlusUniqueEntranceRequest;
+@property (nonatomic) BOOL enableShowLocalPromotion;
+@property (nonatomic) double lastClickTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentMount;
+- (void)componentUnmount;
+- (void)onToolbar:(id)a0 sizeChanged:(struct CGSize { double x0; double x1; })a1;
+- (void)onExpandGroupShow:(BOOL)a0;
+- (void)onClickDouPlusIndicator:(id)a0;
+- (void)onShowDouPlusIndicator;
+- (void)p_onClickDouPlusIndicator:(id)a0;
+- (void)checkIfLiveRoomHasGoodsInHistory;
+- (void)updateShowLocalPromotionStatusIfNeed;
+- (id)fetchLocalPromotionTrackParams;
+- (void)updateLocalPromotionItemIfNeed;
+- (id)getLiveDouPlusParams;
+- (void)trackOpenLiveDouPlus:(double)a0;
+- (void)requestDouECP:(id)a0 clickTime:(id)a1;
+- (void)openDouECPWithSettingsURL;
+- (id)getCommonLiveDouPlusParams:(id)a0;
+- (id)getXiaoDianUTMParams;
+- (void)handleECPRequestError:(id)a0;
+- (id)_getCurrentSecUid;
+- (void)_loadDouPlusPickerItem;
+- (void)showCouponToastIfNeeded;
+- (void)checkShowDouPlusPrompts;
+- (void)invalidateCouponTimer;
+- (void)_trackDouPlusEntryShow;
+- (void)updatePickerItem;
+- (void)_setupActions;
+- (BOOL)shouldShowXiaoDianEntrance;
+- (BOOL)enableToolbarNewStyle;
+- (void)_clickDouPlusPicker;
+- (void)douplusItemClicik;
+- (void)didUpdateEcommerceGoods:(BOOL)a0;
+- (id)_currentUserId;
+- (void)_openLiveDouPlusWithFinalURL:(id)a0 useStackBlock:(BOOL)a1;
+- (BOOL)isAllowShowDouPlusBubble;
+- (void)showDouPlusPrompts:(id)a0;
+- (id)douPlusBubbleNotFirstKey;
+- (id)kCreateRoomBefore;
+- (id)kCouponBubbleDidShow;
+- (id)kCouponBubbleShowTime;
+- (BOOL)isAllowToShowCouponToast;
+- (long long)delayMinitesToShowCouponToast;
+- (void)checkToShowCouponBubble;
+- (id)allowShowDouPlusBubbleKey;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface IESLiveAioLinkContainerRoot : GPBRootObject
+
+@end

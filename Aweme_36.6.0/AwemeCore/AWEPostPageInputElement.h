@@ -1,0 +1,80 @@
+@class NSString, AWEPublishTitleInputController;
+@protocol AWEPostPageElementCenter, AWENewVideoCoverAIRecommendManagerProtocol, ACCVideoEditFlowControlService, AWEPostPageFeatureConfigService, ACCEditServiceProtocol;
+
+@interface AWEPostPageInputElement : AWEPostPageCellElement <AWEPublishTitleInputDelegate>
+
+@property (retain, nonatomic) AWEPublishTitleInputController *titleInputController;
+@property (weak, nonatomic) id<AWEPostPageElementCenter> elementCenter;
+@property (weak, nonatomic) id<ACCVideoEditFlowControlService> flowService;
+@property (weak, nonatomic) id<ACCEditServiceProtocol> editService;
+@property (weak, nonatomic) id<AWEPostPageFeatureConfigService> featureConfigService;
+@property (retain, nonatomic) id<AWENewVideoCoverAIRecommendManagerProtocol> aiCoverRecommendManager;
+@property (nonatomic) BOOL isViewAppear;
+@property (nonatomic) BOOL isViewWillAppear;
+@property (nonatomic) BOOL needReloadUI;
+@property (nonatomic) BOOL requestAIRecommendedCoverLaunched;
+@property (copy, nonatomic) id /* block */ configRightNavItemBlock;
+@property (copy, nonatomic) id /* block */ configTableViewTopBlock;
+@property (copy, nonatomic) id /* block */ titleTextHeightChangedBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEStudioPublishAwemeAdapterClass;
++ (Class)aACCMidVideoCreationProtocolClass;
++ (void)_aweLazyRegisterPostPage;
++ (Class)featureConfigClass:(id)a0;
++ (id)type;
+
+- (id)coverImageView;
+- (id)listService;
+- (id)reedit;
+- (id)poiService;
+- (id)aAWEStudioPublishAwemeAdapter;
+- (void)elementAppear;
+- (id)navigationBarService;
+- (void)bindServices:(id)a0;
+- (BOOL)enableNewVideoCoverAIRecommend;
+- (id)aACCMidVideoCreationProtocol;
+- (void)setupThirdPartCoverIfNeeded;
+- (id)gameCPService;
+- (id)tagRecommendService;
+- (void)automaticallyHashTagIfNeeded;
+- (id)titleTemplateService;
+- (void)enqueueVideoCoverRecommendEditServiceIfNeeded;
+- (void)requestAIRecommendedCover;
+- (BOOL)shouldDelayRecommendCoverToCoverLoad;
+- (void)stopAIRecommendedCover;
+- (id)videoCoverService;
+- (void)reloadPublishConfigTitle;
+- (void)asyncRequestAIRecommendedCover;
+- (void)syncRequestAIRecommendedCover;
+- (BOOL)shouldDelayRecommendCoverToPreuploadFinish;
+- (long long)delayRecommendCoverSeconds;
+- (id)hashTagPlaceholder;
+- (long long)delayRecommendCoverVideoDuration;
+- (id)slidesTableViewCell;
+- (void)previewVideo:(id)a0;
+- (void)chooseCover:(id)a0;
+- (id)extensionPlaceHolder:(id)a0;
+- (void)inputController:(id)a0 navigationButtonState:(BOOL)a1;
+- (id)inputCellIndexPath;
+- (void)startTransitionAnimation;
+- (void).cxx_destruct;
+- (void)viewDidLayoutSubviews;
+- (void)keyboardWillHide:(id)a0;
+- (id)service;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (void)viewWillDisappear:(BOOL)a0;
+- (id)cell;
+- (id)footerViewController;
+- (void)addObservers;
+- (id)challengeService;
+- (void)addCommonObservers;
+
+@end

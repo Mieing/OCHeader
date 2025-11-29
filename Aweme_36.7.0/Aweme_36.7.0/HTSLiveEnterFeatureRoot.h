@@ -1,0 +1,3 @@
+@interface HTSLiveEnterFeatureRoot : GPBRootObject
+
+@end

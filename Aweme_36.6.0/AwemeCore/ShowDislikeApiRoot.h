@@ -1,0 +1,3 @@
+@interface ShowDislikeApiRoot : GPBRootObject
+
+@end

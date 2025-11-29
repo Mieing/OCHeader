@@ -1,0 +1,83 @@
+@class ACCStickerGeometryModel, NSArray, NSString, ACCStickerTimeRangeModel, NSValue, NSNumber;
+
+@interface ACCStickerConfig : MTLModel
+
+@property (class, readonly, nonatomic) Class bubbleClass;
+
+@property (copy, nonatomic) id /* block */ externalHandlePanGestureAction;
+@property (copy, nonatomic) id /* block */ externalHandlePinchGestureeAction;
+@property (copy, nonatomic) id /* block */ externalHandleRotationGestureAction;
+@property (copy, nonatomic) id /* block */ externalEndGestureAction;
+@property (copy, nonatomic) id /* block */ externalInterceptGestureAction;
+@property (copy, nonatomic) id /* block */ externalMirrorAction;
+@property (copy, nonatomic) id /* block */ externalCopyAction;
+@property (copy, nonatomic) id /* block */ externalEditAction;
+@property (copy, nonatomic) id /* block */ externalHandlePanGestureAction;
+@property (copy, nonatomic) id /* block */ externalHandlePinchGestureeAction;
+@property (copy, nonatomic) id /* block */ externalHandleRotationGestureAction;
+@property (copy, nonatomic) id /* block */ externalEndGestureAction;
+@property (copy, nonatomic) id /* block */ externalInterceptGestureAction;
+@property (copy, nonatomic) id /* block */ externalMirrorAction;
+@property (copy, nonatomic) id /* block */ externalCopyAction;
+@property (copy, nonatomic) id /* block */ externalEditAction;
+@property (retain, nonatomic) id typeId;
+@property (retain, nonatomic) id hierarchyId;
+@property (retain, nonatomic) NSNumber *groupId;
+@property (nonatomic) BOOL disableUserInteraction;
+@property (copy, nonatomic) id /* block */ supportGesture;
+@property (nonatomic) double minimumScale;
+@property (nonatomic) double maximumScale;
+@property (retain, nonatomic) ACCStickerGeometryModel *geometryModel;
+@property (retain, nonatomic) ACCStickerTimeRangeModel *timeRangeModel;
+@property (copy, nonatomic) id /* block */ secondTapCallback;
+@property (copy, nonatomic) id /* block */ onceTapCallback;
+@property (copy, nonatomic) id /* block */ disableResponderCallback;
+@property (copy, nonatomic) id /* block */ gestureCanStartCallback;
+@property (copy, nonatomic) id /* block */ gestureEndCallback;
+@property (copy, nonatomic) id /* block */ locationDidChangedCallback;
+@property (copy, nonatomic) NSArray *bubbleActionList;
+@property (copy, nonatomic) id /* block */ willDeleteCallback;
+@property (copy, nonatomic) id /* block */ dragDeleteCallback;
+@property (copy, nonatomic) id /* block */ didDeleteCallback;
+@property (copy, nonatomic) id /* block */ didDeSelectAllCallback;
+@property (copy, nonatomic) id /* block */ didSelectCallback;
+@property (copy, nonatomic) id /* block */ didDeSelectCallback;
+@property (nonatomic) BOOL showSelectedHint;
+@property (nonatomic) BOOL hasCancel;
+@property (nonatomic) BOOL hasEdit;
+@property (nonatomic) BOOL hasMirror;
+@property (nonatomic) BOOL enableCopy;
+@property (nonatomic) BOOL hasRotate;
+@property (nonatomic) BOOL autoSizeContentForGeoModel;
+@property (nonatomic) BOOL stayPlayWhileSelect;
+@property (nonatomic) BOOL hasBorderView;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } borderViewEdgeInsets;
+@property (nonatomic) BOOL showSelectViewWhenPan;
+@property (nonatomic) BOOL showSelectViewWhenPinch;
+@property (nonatomic) long long disabledGestureWhenUnselected;
+@property (nonatomic) BOOL deselectWhenEdit;
+@property (copy, nonatomic) id /* block */ deleteAction;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } boxPadding;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } boxMargin;
+@property (nonatomic) BOOL changeAnchorForRotateAndScale;
+@property (copy, nonatomic) id /* block */ didChangedTimeRange;
+@property (copy, nonatomic) id /* block */ showSelectedViewWhenPan;
+@property (copy, nonatomic) id /* block */ hiddenEditBtnInSelectedView;
+@property (copy, nonatomic) id /* block */ canShowBubbleBlock;
+@property (retain, nonatomic) NSValue *alignPoint;
+@property (retain, nonatomic) NSValue *alignPosition;
+@property (nonatomic) BOOL activeOnTouch;
+@property (nonatomic) BOOL alwaysShowForTimeline;
+@property (nonatomic) BOOL displayControlIgnoreSelect;
+@property (nonatomic) struct UIEdgeInsets { double top; double left; double bottom; double right; } actionButtonResponseEdgeInsets;
+@property (copy, nonatomic) NSString *borderText;
+@property (copy, nonatomic) NSString *borderaccessibilityText;
+@property (copy, nonatomic) id /* block */ selectStateDidChange;
+@property (copy, nonatomic) id /* block */ willTapSelectedView;
+@property (copy, nonatomic) id /* block */ extraSelectViewHiddenBlock;
+
+- (void).cxx_destruct;
+- (id)init;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

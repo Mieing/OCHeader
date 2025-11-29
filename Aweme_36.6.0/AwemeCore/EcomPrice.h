@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface EcomPrice : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *prefix;
+@property (copy, nonatomic) NSString *suffix;
+@property (nonatomic) long long byCent;
+@property (copy, nonatomic) NSString *formatPrice;
+
++ (id)descriptor;
+
+@end

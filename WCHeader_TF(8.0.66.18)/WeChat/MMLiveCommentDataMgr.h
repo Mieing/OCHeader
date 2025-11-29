@@ -1,0 +1,72 @@
+@class SafeMutableDictionary, MMTimer, NSString;
+
+@interface MMLiveCommentDataMgr : MMUserService <MMLiveTaskMgrExt, WCFinderLiveExt, MMServiceProtocol>
+
+@property (retain, nonatomic) SafeMutableDictionary *commentDataDict;
+@property (retain, nonatomic) SafeMutableDictionary *commentDataCacheDict;
+@property (retain, nonatomic) SafeMutableDictionary *liveBoxIdRecordDict;
+@property (retain, nonatomic) MMTimer *cacheTimer;
+@property (nonatomic) unsigned long long maxCacheCommentCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)onServiceInit;
+- (void)onServiceClearData;
+- (void)updateMaxCacheCommentCount;
+- (void)initData;
+- (void)clearCacheTimer;
+- (void)onPurgeCommentDataCache;
+- (id)getMMLiveCommentDataWithTaskId:(id)a0 boxId:(id)a1;
+- (void)appendLiveCommentWithFrequenceControl:(id)a0 forTaskId:(id)a1;
+- (void)appendLiveCommentWithFrequenceControl:(id)a0 forTaskId:(id)a1 isHistoryMsg:(BOOL)a2;
+- (void)appendLiveCommentWithFrequenceControl:(id)a0 forTaskId:(id)a1 isHistoryMsg:(BOOL)a2 boxId:(id)a3;
+- (void)appendLiveCommentImmediately:(id)a0 forTaskId:(id)a1;
+- (void)appendLiveCommentImmediately:(id)a0 forTaskId:(id)a1 boxId:(id)a2;
+- (BOOL)insertLiveCommentImmediately:(id)a0 atIndex:(unsigned long long)a1 forTaskId:(id)a2 boxId:(id)a3;
+- (void)insertPreLiveComments:(id)a0 filterSelfCommit:(BOOL)a1 forTaskId:(id)a2 boxId:(id)a3;
+- (void)notifyDataLoadedForTaskId:(id)a0 boxId:(id)a1;
+- (void)notifyLocalDataLoadedForTaskId:(id)a0 boxId:(id)a1;
+- (void)synchronizeCommentFromCacheImmediatelyForTaskId:(id)a0 boxId:(id)a1;
+- (void)reSetLiveComment:(id)a0 forTaskId:(id)a1 boxId:(id)a2;
+- (void)reSetLiveComment:(id)a0 forTaskId:(id)a1 boxId:(id)a2 reLoaded:(BOOL)a3;
+- (void)logForCommentsUpdate:(id)a0 taskId:(id)a1 boxId:(id)a2 reset:(BOOL)a3;
+- (BOOL)appendSelfCommitLiveComment:(id)a0 forTaskId:(id)a1 cacheSelfUnCompleted:(BOOL)a2;
+- (BOOL)appendSelfCommitLiveComment:(id)a0 forTaskId:(id)a1 cacheSelfUnCompleted:(BOOL)a2 boxId:(id)a3;
+- (void)appendSelfInvokeAppMsgComment:(id)a0 forTaskId:(id)a1;
+- (void)deleteComment:(double)a0 taskId:(id)a1;
+- (void)deleteComment:(double)a0 taskId:(id)a1 boxId:(id)a2;
+- (void)deleteCommentByLocalClientMsgId:(id)a0 taskId:(id)a1 boxId:(id)a2;
+- (void)innerProcessDeletedCommentDataItem:(id)a0 taskId:(id)a1 boxId:(id)a2;
+- (void)downgradeBigEmoticonCommentByConditionBlock:(id /* block */)a0 taskId:(id)a1 boxId:(id)a2 replaceContent:(id)a3;
+- (id)getLastComment:(double)a0 taskId:(id)a1 boxId:(id)a2;
+- (BOOL)checkNeedFilterSelf:(id)a0 boxId:(id)a1;
+- (void)updateSelfHasCommitComment:(BOOL)a0 forTaskId:(id)a1;
+- (unsigned long long)getRemainCommentCntInLimitForTaskId:(id)a0 boxId:(id)a1;
+- (void)checkSpecificMsgFromAppendedComments:(id)a0 forTaskId:(id)a1;
+- (void)checkBanCommentNotifyMsgFromAppendedComments:(id)a0 forTaskId:(id)a1;
+- (id)getCommentDataWithTaskId:(id)a0;
+- (void)createCommentDataIfNeed:(id)a0 boxId:(id)a1;
+- (BOOL)hasPreloadCachedCommentData:(id)a0;
+- (void)clearCommentData:(id)a0 boxId:(id)a1;
+- (id)getCommentDataWithTaskId:(id)a0 boxId:(id)a1;
+- (id)getCommentDataWithoutCreatedWithTaskId:(id)a0 boxId:(id)a1;
+- (unsigned long long)maxCommentCount:(id)a0;
+- (unsigned long long)maxCommentTempCacheCountForTaskId:(id)a0 boxId:(id)a1;
+- (id)createUniqueIdWithTaskId:(id)a0 boxId:(id)a1;
+- (void)appendBoxId:(id)a0 forTaskId:(id)a1;
+- (id)getNeedKeepDisplayCommentTypeArray;
+- (void)checkNeedKeepDisplayCommentWithNewAppendedComments:(id)a0 forTaskId:(id)a1;
+- (long long)maxCachedLiveCommentDataCount;
+- (void)onExitLiveSuccessWithLiveTaskId:(id)a0;
+- (void)resetDatasForCacheAfterExitLive:(id)a0;
+- (BOOL)isCommentItemCacheNeedDelete:(id)a0;
+- (void)onPostFinderLiveAppMessageSuccess:(id)a0 boxId:(id)a1 serverMsgId:(unsigned long long)a2 localClientMsgId:(id)a3 userInfo:(id)a4;
+- (void)onPostFinderLiveAppMessageFail:(id)a0 boxId:(id)a1 localClientMsgId:(id)a2 userInfo:(id)a3 errorType:(int)a4;
+- (void)onMMFinderGroupLiveChatBackFillsMessage:(id)a0 clientMsgId:(id)a1 backFillSeq:(unsigned long long)a2 boxId:(id)a3;
+- (void)updateCommentWithLikeList:(id)a0 taskId:(id)a1 boxId:(id)a2;
+- (void)updaeCommentWithModel:(id)a0 taskId:(id)a1 boxId:(id)a2;
+- (void).cxx_destruct;
+
+@end

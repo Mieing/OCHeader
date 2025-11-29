@@ -1,0 +1,7 @@
+@interface AnnieRequestPinWidgetMethod : AnnieBridgeMethod
+
+- (Class)paramModelClass;
+- (unsigned long long)authType;
+- (id)methodName;
+
+@end

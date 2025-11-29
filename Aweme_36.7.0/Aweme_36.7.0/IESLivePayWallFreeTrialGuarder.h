@@ -1,0 +1,18 @@
+@class NSString;
+
+@interface IESLivePayWallFreeTrialGuarder : NSObject <IESLivePayWallFreeTrialProvider>
+
+@property (readonly, nonatomic) BOOL isInFreeTrialMode;
+@property (readonly, nonatomic) BOOL isInTrialFinisheMode;
+@property (readonly, nonatomic) BOOL isInPaiedMode;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)guarder;
+
+- (BOOL)disableReportLivePlay;
+- (BOOL)paidStreamInTrialFinish:(long long)a0;
+
+@end

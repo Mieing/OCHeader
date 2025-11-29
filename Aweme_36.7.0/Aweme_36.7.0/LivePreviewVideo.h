@@ -1,0 +1,12 @@
+@class NSString, HTSLiveImage;
+
+@interface LivePreviewVideo : IESLivePBBaseMessage
+
+@property (nonatomic) long long hasPreviewVide;
+@property (retain, nonatomic) HTSLiveImage *videoCover;
+@property (nonatomic) BOOL hasVideoCover;
+@property (copy, nonatomic) NSString *itemId;
+
++ (id)descriptor;
+
+@end

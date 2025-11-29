@@ -1,0 +1,22 @@
+@class NSString, HTSLiveImage, NSMutableArray;
+
+@interface HTSLiveParentProductSimpleData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *productId;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subTitle;
+@property (retain, nonatomic) HTSLiveImage *cover;
+@property (nonatomic) BOOL hasCover;
+@property (nonatomic) int status;
+@property (nonatomic) long long viewRight;
+@property (nonatomic) int bindSubProductCount;
+@property (retain, nonatomic) NSMutableArray *dataArray;
+@property (readonly, nonatomic) unsigned long long dataArray_Count;
+@property (copy, nonatomic) NSString *subTitleTag;
+@property (nonatomic) int currentShowNum;
+@property (nonatomic) int remainSubTicketsCount;
+@property (nonatomic) long long latestFinishTime;
+
++ (id)descriptor;
+
+@end

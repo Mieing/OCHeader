@@ -1,0 +1,10 @@
+@class IESLiveToolBarComponentSwitchResponseData;
+
+@interface IESLiveToolBarComponentSwitchResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveToolBarComponentSwitchResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

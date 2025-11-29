@@ -1,0 +1,17 @@
+@class MJTransitionItem, MMUIActivityIndicatorView, UILabel, MMWebImageView;
+
+@interface MJTransitionInspectorCell : UICollectionViewCell
+
+@property (retain, nonatomic) MMWebImageView *iconImageView;
+@property (retain, nonatomic) MMUIActivityIndicatorView *loadingView;
+@property (readonly, nonatomic) UILabel *titleLabel;
+@property (readonly, nonatomic) MJTransitionItem *item;
+@property (nonatomic) BOOL isCellSelected;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)prepareForReuse;
+- (void)setupWithItem:(id)a0;
+- (void)syncWithStatus;
+- (void).cxx_destruct;
+
+@end

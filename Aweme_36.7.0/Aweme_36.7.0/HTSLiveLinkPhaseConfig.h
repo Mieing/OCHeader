@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface HTSLiveLinkPhaseConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *phasesArray;
+@property (readonly, nonatomic) unsigned long long phasesArray_Count;
+@property (nonatomic) int easterEggCartoonSeconds;
+
++ (id)descriptor;
+
+@end

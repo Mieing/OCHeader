@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface CGPInputImeComposition : GPBMessage
+
+@property (nonatomic) int type;
+@property (copy, nonatomic) NSString *str;
+
++ (id)descriptor;
+
+@end

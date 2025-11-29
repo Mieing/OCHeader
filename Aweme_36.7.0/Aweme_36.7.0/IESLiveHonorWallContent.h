@@ -1,0 +1,14 @@
+@class IESLiveText, IESLiveHonorWallBg;
+
+@interface IESLiveHonorWallContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveHonorWallBg *honorWallBg;
+@property (nonatomic) BOOL hasHonorWallBg;
+@property (retain, nonatomic) IESLiveText *honorWallTopDisplay;
+@property (nonatomic) BOOL hasHonorWallTopDisplay;
+@property (retain, nonatomic) IESLiveText *honorWallBottomDisplay;
+@property (nonatomic) BOOL hasHonorWallBottomDisplay;
+
++ (id)descriptor;
+
+@end

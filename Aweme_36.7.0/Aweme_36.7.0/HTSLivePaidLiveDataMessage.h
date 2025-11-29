@@ -1,0 +1,12 @@
+@class HTSLivePaidBusinessData, HTSLiveCommon;
+
+@interface HTSLivePaidLiveDataMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLivePaidBusinessData *paidBusinessData;
+@property (nonatomic) BOOL hasPaidBusinessData;
+
++ (id)descriptor;
+
+@end

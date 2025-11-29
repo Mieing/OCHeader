@@ -1,0 +1,80 @@
+@class NSDictionary, NSString, UITableViewCell, AWEAwemeModel, AWEAwemeDetailBottomBarCoordinator, AWEUserModel, UIView;
+@protocol AWEAwemePlayInteractionPlayDelegate, AWEAwemePlayInteractionUIDisplayDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEAwemePlayInteractionPanelDelegate, AWEPlayInteractionViewControllerProtocol, AWEGrootBottomViewProtocol, AWEAwemePlayInteractionCommerceDelegate, AWEFeedTableViewCellControllerPlayerDelegate, AWEFeedTableViewCellProtocol;
+
+@interface AWEAwemeDetailBaseViewController : AWEAwemeBaseViewController <UIGestureRecognizerDelegate, AWEFeedRecordSpeciesTipViewProtocol, AWEFeedTableViewCellViewControllerProtocol>
+
+@property (nonatomic) BOOL canShowBottomBarInListCell;
+@property (retain, nonatomic) AWEAwemeDetailBottomBarCoordinator *bottomBarCoordinator;
+@property (retain, nonatomic) UIView<AWEGrootBottomViewProtocol> *grootSpeciesShootTipView;
+@property (retain, nonatomic) AWEUserModel *homepageUser;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWEFeedTableViewCellControllerPlayerDelegate> playerDelegate;
+@property (nonatomic) long long indexPath;
+@property (retain, nonatomic) AWEAwemeModel *model;
+@property (copy, nonatomic) NSString *referString;
+@property (nonatomic) long long type;
+@property (readonly, nonatomic) id<AWEAwemePlayInteractionPlayDelegate, AWEAwemePlayInteractionPanelDelegate, AWEAwemePlayInteractionCommerceDelegate, AWEAwemePlayInteractionUpdateDelegate, AWEAwemePlayInteractionUIDisplayDelegate, AWEPlayInteractionViewControllerProtocol> interactionController;
+@property (weak, nonatomic) UITableViewCell<AWEFeedTableViewCellProtocol> *superCell;
+@property (copy, nonatomic) NSDictionary *extTrackLog;
+
++ (Class)aAWECommerceModuleServiceDOUYINHTSAdapterClass;
++ (Class)aAWEDetailFeedViewControllerAdapterClass;
+
+- (id)awemeModel;
+- (void)updateBottomBarWithAweme:(id)a0 updateTiming:(long long)a1;
+- (void)addInteract;
+- (void)updateCurrentAwemeModel:(id)a0;
+- (void)didDisplay;
+- (void)cellWillDisplay:(id)a0 forRowAtIndexPath:(id)a1 tableView:(id)a2;
+- (BOOL)needDelayInteractionController;
+- (void)setBottomBarHidden:(BOOL)a0;
+- (BOOL)isFromGeneralSearchOrVideoSearch;
+- (BOOL)isFromChat;
+- (void)didEndDisplayingBeforeReset;
+- (BOOL)canHandleGestureInCell:(id)a0;
+- (id)aAWECommerceModuleServiceDOUYINHTSAdapter;
+- (void)bringBottomViewToFront;
+- (id)currentBottomBarCoordinator;
+- (void)trackAdModelShow;
+- (BOOL)isListCell;
+- (BOOL)rootViewTapGestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (BOOL)shouldFixDbInnerFlowAdShow;
+- (BOOL)getCanShowBottomBarInListCell;
+- (void)updateByExchangeNotification:(id)a0;
+- (void)videoPrivacyChanged:(id)a0;
+- (void)setupTabNameFromUserProfile;
+- (void)adTrackShowWithMonitorData:(id)a0;
+- (BOOL)enableXiGuaVideoInHotSpot;
+- (BOOL)isFromPlaylet;
+- (BOOL)isFromSearchOrder;
+- (id)createBottomBarCommonContext;
+- (id /* block */)createCommentInputViewContextBlock;
+- (id /* block */)createFeedViewedViewContextBlock;
+- (id /* block */)createPoiEmphraseCollectViewContextBlock;
+- (id /* block */)createAWEECommerceBuyButtonViewBarContextBlock;
+- (id /* block */)createAWEProgressSectionViewContextBlock;
+- (id /* block */)createInterestDiscoverBottomBarContext;
+- (id)aAWEDetailFeedViewControllerAdapter;
+- (id /* block */)createHostAppBottomBarContextBlock;
+- (id /* block */)createDouYinSelectDailyRankContext;
+- (void)addAndUpdateGrootRecordTopViewIfNeed:(id)a0 model:(id)a1;
+- (void)addAndUpdateGrootRecordTopViewIfNeed:(id)a0 model:(id)a1 before:(id /* block */)a2 complete:(id /* block */)a3;
+- (void)viewDidClickedWithActionType:(unsigned long long)a0;
+- (void)prepareForDisplay;
+- (void).cxx_destruct;
+- (void)viewSafeAreaInsetsDidChange;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)reset;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)configureWithModel:(id)a0;
+- (void)didEndDisplaying;
+- (void)willDisplay;
+- (void)layoutSubViews;
+
+@end

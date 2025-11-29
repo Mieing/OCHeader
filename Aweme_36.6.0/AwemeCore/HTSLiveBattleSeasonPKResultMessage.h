@@ -1,0 +1,16 @@
+@class HTSLiveBattleSeasonPKResultMessage_UpgradeResult, HTSLiveCommon, HTSLiveBattleSeasonPKResultMessage_GetGradeInfo, HTSLiveBattleSeasonPKResultMessage_PKResult;
+
+@interface HTSLiveBattleSeasonPKResultMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveBattleSeasonPKResultMessage_PKResult *pkResult;
+@property (nonatomic) BOOL hasPkResult;
+@property (retain, nonatomic) HTSLiveBattleSeasonPKResultMessage_UpgradeResult *upgradeResult;
+@property (nonatomic) BOOL hasUpgradeResult;
+@property (retain, nonatomic) HTSLiveBattleSeasonPKResultMessage_GetGradeInfo *getGradeInfo;
+@property (nonatomic) BOOL hasGetGradeInfo;
+
++ (id)descriptor;
+
+@end

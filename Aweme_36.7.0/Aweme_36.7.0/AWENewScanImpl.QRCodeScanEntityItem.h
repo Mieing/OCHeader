@@ -1,0 +1,13 @@
+@interface AWENewScanImpl.QRCodeScanEntityItem : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ scanGuideModel;
+    void /* unknown type, empty encoding */ stickerModelDic;
+    void /* unknown type, empty encoding */ entrancePath;
+    void /* unknown type, empty encoding */ entranceEffect;
+    void /* unknown type, empty encoding */ effectLoadingView;
+    void /* unknown type, empty encoding */ stickerIsRendering;
+    void /* unknown type, empty encoding */ currentEffectPath;
+    void /* unknown type, empty encoding */ currentEffect;
+    void /* unknown type, empty encoding */ gesturesForSDK;
+}
+
+@end

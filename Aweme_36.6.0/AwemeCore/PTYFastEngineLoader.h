@@ -1,0 +1,5 @@
+@interface PTYFastEngineLoader : NSObject
+
++ (void)setup:(id)a0;
+
+@end

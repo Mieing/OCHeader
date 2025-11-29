@@ -1,0 +1,13 @@
+@class HTSLiveCommon, HTSLiveBannerData;
+
+@interface HTSLiveInRoomBannerEvent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int position;
+@property (retain, nonatomic) HTSLiveBannerData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface HTSLiveKTVShortVideoCreatedMessage_ShortVideoStruct : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *shortVideoURL;
+
++ (id)descriptor;
+
+@end

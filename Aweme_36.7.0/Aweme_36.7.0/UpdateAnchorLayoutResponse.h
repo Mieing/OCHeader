@@ -1,0 +1,10 @@
+@class UpdateAnchorLayoutResponse_ResponseData;
+
+@interface UpdateAnchorLayoutResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) UpdateAnchorLayoutResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface ProductTagInteractionStickerStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *productId;
+@property (nonatomic) BOOL hasProductId;
+@property (copy, nonatomic) NSString *schema;
+@property (nonatomic) BOOL hasSchema;
+
++ (id)descriptor;
+
+@end

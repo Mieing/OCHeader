@@ -1,0 +1,84 @@
+@class UIView, NSString, UITapGestureRecognizer, UIImageView, AWEGradientView, AWEModernFeedCellBackgroundModel, AWESearchAutoPlayHandler, UIViewController;
+@protocol CachalotRenderPipelineComponentViewModel, AWEModernFeedCellControllerProtocol;
+
+@interface AWESearchCachalotGeneralCardContainerView : UIView <UIGestureRecognizerDelegate, AWESearchAutoPlayCardProtocol>
+
+@property (retain, nonatomic) UIView *cardView;
+@property (retain, nonatomic) UIView *injectFooterView;
+@property (retain, nonatomic) UIView *injectHeaderView;
+@property (retain, nonatomic) UIView *waterfallRecommendwordsView;
+@property (retain, nonatomic) AWEGradientView *backgroundGradientView;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (copy, nonatomic) id /* block */ tapBlock;
+@property (nonatomic) BOOL needIgnoreNotTriggerArea;
+@property (retain, nonatomic) UIImageView *qualityStyleBackgroundView;
+@property (nonatomic) double contrainerWidth;
+@property (nonatomic) double contrainerHeight;
+@property (nonatomic) double totalInjectViewHeight;
+@property (nonatomic) double totalInjectHeaderVeiwHeight;
+@property (nonatomic) double totalInjectFooterVeiwHeight;
+@property (nonatomic) double cardHeight;
+@property (retain, nonatomic) id<CachalotRenderPipelineComponentViewModel> viewModel;
+@property (retain, nonatomic) AWEModernFeedCellBackgroundModel *cellBackgroundModel;
+@property (weak, nonatomic) UIViewController<AWEModernFeedCellControllerProtocol> *cellController;
+@property (nonatomic) long long currentIndex;
+@property (nonatomic) BOOL isQualityCardStyle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL isActive;
+@property (weak, nonatomic) AWESearchAutoPlayHandler *autoPlayHandler;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (BOOL)doubleColumnExperienceOptimize;
++ (BOOL)drawCardCornerOpt;
++ (BOOL)fixCardInBackground;
++ (BOOL)useRightMargin;
++ (BOOL)fixCardCornerSeparatorSwitch;
+
+- (void)themeDidChange:(id)a0;
+- (BOOL)shouldNotActive;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (void)setScrollViewContentOffset:(struct CGPoint { double x0; double x1; })a0;
+- (void)resetShouldActiveStatus;
+- (void)onTapGestureAction:(id)a0;
+- (void)qualityStyleBackground;
+- (void)rectangleBackground;
+- (BOOL)p_cellControllerCanCallSetAutoPlayHandler;
+- (BOOL)p_cellControllerCanCallDidBecomeActive;
+- (BOOL)p_cellControllerCanCallDidResignActive;
+- (BOOL)p_cellControllerCanCallActiveView;
+- (BOOL)p_cellControllerCanCallShouldNotActive;
+- (BOOL)p_cellControllerCanCallHasVideo;
+- (void)createUIWithViewDelegate:(id)a0 viewModel:(id)a1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 viewDelegate:(id)a1 viewModel:(id)a2;
+- (id)tapNotTriggerArea;
+- (void)registerTapBlock:(id /* block */)a0 needIgnoreNotTriggerArea:(BOOL)a1;
+- (void)handleInjectViewWithViewModel:(id)a0;
+- (void)clearInjectView;
+- (void)spliteArrayAndAddInjectViewWithSiteType:(unsigned long long)a0 viewModel:(id)a1;
+- (void)addInjectViewWithSortArray:(id)a0 siteType:(unsigned long long)a1;
+- (BOOL)isDualLayoutCard:(id)a0;
+- (id)fetchRecomModelWithViewModel:(id)a0;
+- (BOOL)isVisbleInjectView:(id)a0;
+- (double)fetchInjectViewHeightWithSiteType:(unsigned long long)a0 viewModel:(id)a1;
+- (void)fullPageSearchCardUIConfig;
+- (void)cardForceUIConfig;
+- (void)updateInjectView:(id)a0;
+- (void)showCardInfoWithGeneralModel:(id)a0;
+- (double)recommendwordsheight;
+- (void)cornerRadiusWithView:(id)a0 rect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (void)cornerRadiusWithView:(id)a0 maskPath:(id)a1 rect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a2;
+- (BOOL)isAiCard;
+- (BOOL)isHotspotFusionAI;
+- (BOOL)p_cellControllerCanCallResetShouldActiveStatus;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (BOOL)hasVideo;
+- (void)didResignActive;
+- (void)layoutSubviews;
+- (id)activeView;
+
+@end

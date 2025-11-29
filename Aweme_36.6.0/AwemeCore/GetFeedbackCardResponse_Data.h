@@ -1,0 +1,10 @@
+@class HTSLiveFeedbackCard;
+
+@interface GetFeedbackCardResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveFeedbackCard *feedbackCard;
+@property (nonatomic) BOOL hasFeedbackCard;
+
++ (id)descriptor;
+
+@end

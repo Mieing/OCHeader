@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface TraceMetaRequest : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *datasArray;
+@property (readonly, nonatomic) unsigned long long datasArray_Count;
+@property (nonatomic) unsigned long long buildTime;
+@property (nonatomic) BOOL hasBuildTime;
+
++ (id)descriptor;
+
+@end

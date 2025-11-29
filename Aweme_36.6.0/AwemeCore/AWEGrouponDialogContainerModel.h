@@ -1,0 +1,3 @@
+@interface AWEGrouponDialogContainerModel : AWEBaseViewModel
+
+@end

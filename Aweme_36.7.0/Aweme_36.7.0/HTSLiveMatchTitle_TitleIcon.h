@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveMatchTitle_TitleIcon : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *URL;
+@property (nonatomic) int sizeType;
+
++ (id)descriptor;
+
+@end

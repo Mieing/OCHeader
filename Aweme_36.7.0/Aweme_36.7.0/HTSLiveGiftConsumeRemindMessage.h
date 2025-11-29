@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon, HTSLiveLynxParam;
+
+@interface HTSLiveGiftConsumeRemindMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *lynxSchema;
+@property (retain, nonatomic) HTSLiveLynxParam *lynxParam;
+@property (nonatomic) BOOL hasLynxParam;
+@property (nonatomic) int remindType;
+
++ (id)descriptor;
+
+@end

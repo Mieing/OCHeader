@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveInteractiveScreenCastInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *itemAppId;
+@property (nonatomic) int itemType;
+
++ (id)descriptor;
+
+@end

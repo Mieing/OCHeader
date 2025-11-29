@@ -1,0 +1,80 @@
+@class UIView, NSString, NSArray, MMTitleView, EnterpriseBrandContactHelper, EnterpriseOpenWeworkBottomBar, WCDataSearcher, NSObject, CContact, MMTableView;
+
+@interface EnterpriseConvergeSessionListViewController : MMUIViewController <IEnterpriseConvergeSessionMgrExt, IEnterpriseGroupMgrExt, IMMNewSessionMgrExt, IEnterpriseBrandContactMgrExt, IEnterpriseBizTransferExt, EnterpriseConvergeSessionSearchControllerDelegate, EnterpriseBrandContactHelperDelegate, EnterpriseBrandSearchControllerDelegate, MMWebViewDelegate, UITableViewDelegate, UITableViewDataSource> {
+    unsigned int _fromScene;
+    MMTableView *_tableView;
+    MMTitleView *_titleView;
+    WCDataSearcher *_searcher;
+    NSObject *_searchController;
+    UIView *_footerView;
+    UIView *_footerViewBackground;
+    UIView *_emptyView;
+    BOOL _isEntering;
+    unsigned int _wwEntryType;
+    EnterpriseBrandContactHelper *_helper;
+    NSArray *_convergeSessionList;
+    EnterpriseOpenWeworkBottomBar *_openWeworkBottomBar;
+}
+
+@property (retain, nonatomic) CContact *mainBrandContact;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithMainBrandContact:(id)a0 fromScene:(unsigned int)a1;
+- (void)initData;
+- (void)initView;
+- (void)initTableView;
+- (void)initSearchBar;
+- (void)hideSearchBar;
+- (void)resetBannerTips;
+- (void)initFooterView;
+- (void)initWeworkEntry;
+- (void)updateLeftBarItem;
+- (void)updateTitleView;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)willAppear;
+- (void)willDisappear;
+- (void)didRotateFromInterfaceOrientation:(long long)a0;
+- (void)updateChatBrandContactData;
+- (void)updateMainBrandContactData;
+- (id)getChatBrandContact;
+- (void)reportSubBrandClick:(id)a0 SubType:(int)a1 unreadCount:(int)a2;
+- (void)report;
+- (void)showRightTopMenuBtn:(id)a0;
+- (void)menuItemClick:(id)a0;
+- (void)openChatBrandInfo:(id)a0;
+- (void)openCreateChat:(id)a0;
+- (void)openFavSessionListView:(id)a0;
+- (void)openInviteColleages:(id)a0;
+- (void)openWework:(id)a0;
+- (void)reportExposeWeWorkBanner:(unsigned int)a0;
+- (void)createSingleChat:(id)a0;
+- (void)createChatroom:(id)a0;
+- (void)updateMemberToLocal:(id)a0;
+- (void)enterChat:(id)a0;
+- (void)reloadTable;
+- (id)getMMSearchBar;
+- (BOOL)shouldInteractivePop;
+- (id)getViewController;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (BOOL)tableView:(id)a0 canEditRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 commitEditingStyle:(long long)a1 forRowAtIndexPath:(id)a2;
+- (BOOL)reloadWeworkEntryData:(id)a0;
+- (id)makeCell:(id)a0;
+- (void)onEnterpriseBrandAttrChanged:(id)a0;
+- (void)onEnterpriseConvergeSessionChanged:(id)a0;
+- (void)onQuitEnterpriseGroup:(id)a0 errorCode:(int)a1;
+- (void)onCreateEnterpriseGroup:(id)a0 errorCode:(int)a1 extDic:(id)a2;
+- (void)onSessionTotalUnreadCountChange:(unsigned int)a0;
+- (void)onWebViewWillClose:(id)a0;
+- (void)onBizShareInfoResult:(int)a0 errorMsg:(id)a1 shareInfo:(id)a2 mainBrandUserName:(id)a3;
+- (void).cxx_destruct;
+
+@end

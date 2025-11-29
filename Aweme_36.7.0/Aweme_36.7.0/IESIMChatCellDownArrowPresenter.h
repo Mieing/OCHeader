@@ -1,0 +1,12 @@
+@class UIColor;
+
+@interface IESIMChatCellDownArrowPresenter : AWEIMCellPresenterBase
+
+@property (copy, nonatomic) UIColor *arrowColor;
+
+- (long long)componentViewPosition;
+- (id)createViewInCell:(id)a0;
+- (void)updateView:(id)a0;
+- (void).cxx_destruct;
+
+@end

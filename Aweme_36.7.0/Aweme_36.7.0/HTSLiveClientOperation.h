@@ -1,0 +1,13 @@
+@class NSString, HTSLivePopBoxContent;
+
+@interface HTSLiveClientOperation : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *appId;
+@property (nonatomic) int operationType;
+@property (retain, nonatomic) HTSLivePopBoxContent *popBoxContent;
+@property (nonatomic) BOOL hasPopBoxContent;
+@property (nonatomic) int showTime;
+
++ (id)descriptor;
+
+@end

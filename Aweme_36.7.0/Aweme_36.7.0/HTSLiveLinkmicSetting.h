@@ -1,0 +1,12 @@
+@class HTSLiveSettingContent;
+
+@interface HTSLiveLinkmicSetting : IESLivePBBaseMessage
+
+@property (nonatomic) int key;
+@property (nonatomic) int value;
+@property (retain, nonatomic) HTSLiveSettingContent *content;
+@property (nonatomic) BOOL hasContent;
+
++ (id)descriptor;
+
+@end

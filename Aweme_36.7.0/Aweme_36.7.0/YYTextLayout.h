@@ -1,0 +1,80 @@
+@class NSArray, YYTextContainer, YYTextLine, NSSet, NSAttributedString;
+
+@interface YYTextLayout : NSObject <NSCoding>
+
+@property (retain, nonatomic) YYTextContainer *container;
+@property (retain, nonatomic) NSAttributedString *text;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } range;
+@property (nonatomic) struct __CTFramesetter { } *frameSetter;
+@property (nonatomic) struct __CTFrame { } *frame;
+@property (retain, nonatomic) NSArray *lines;
+@property (retain, nonatomic) YYTextLine *truncatedLine;
+@property (retain, nonatomic) NSArray *attachments;
+@property (retain, nonatomic) NSArray *attachmentRanges;
+@property (retain, nonatomic) NSArray *attachmentRects;
+@property (retain, nonatomic) NSSet *attachmentContentsSet;
+@property (nonatomic) unsigned long long rowCount;
+@property (nonatomic) struct _NSRange { unsigned long long location; unsigned long long length; } visibleRange;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } textBoundingRect;
+@property (nonatomic) struct CGSize { double width; double height; } textBoundingSize;
+@property (nonatomic) BOOL containsHighlight;
+@property (nonatomic) BOOL needDrawBlockBorder;
+@property (nonatomic) BOOL needDrawBackgroundBorder;
+@property (nonatomic) BOOL needDrawShadow;
+@property (nonatomic) BOOL needDrawUnderline;
+@property (nonatomic) BOOL needDrawText;
+@property (nonatomic) BOOL needDrawAttachment;
+@property (nonatomic) BOOL needDrawInnerShadow;
+@property (nonatomic) BOOL needDrawStrikethrough;
+@property (nonatomic) BOOL needDrawBorder;
+@property (nonatomic) unsigned long long *lineRowsIndex;
+@property (nonatomic) struct { double x0; double x1; } *lineRowsEdge;
+
++ (id)layoutWithContainer:(id)a0 text:(id)a1;
++ (id)layoutWithContainerSize:(struct CGSize { double x0; double x1; })a0 text:(id)a1;
++ (id)layoutWithContainer:(id)a0 text:(id)a1 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2;
++ (id)layoutWithContainers:(id)a0 text:(id)a1 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2;
++ (id)layoutWithContainers:(id)a0 text:(id)a1;
++ (id)awe_layoutWithContainer:(id)a0 text:(id)a1 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2;
++ (void)_aweLazyRegisterLoad_Tweak;
+
+- (id)selectionRectsWithoutStartAndEndForRange:(id)a0;
+- (unsigned long long)closestLineIndexForPoint:(struct CGPoint { double x0; double x1; })a0;
+- (unsigned long long)lineIndexForPosition:(id)a0;
+- (double)offsetForTextPosition:(unsigned long long)a0 lineIndex:(unsigned long long)a1;
+- (unsigned long long)lineIndexForPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)drawInContext:(struct CGContext { } *)a0 size:(struct CGSize { double x0; double x1; })a1 point:(struct CGPoint { double x0; double x1; })a2 view:(id)a3 layer:(id)a4 debug:(id)a5 cancel:(id /* block */)a6;
+- (unsigned long long)_rowIndexForEdge:(double)a0;
+- (unsigned long long)_closestRowIndexForEdge:(double)a0;
+- (unsigned long long)textPositionForPoint:(struct CGPoint { double x0; double x1; })a0 lineIndex:(unsigned long long)a1;
+- (BOOL)_insideComposedCharacterSequences:(id)a0 position:(unsigned long long)a1 block:(id /* block */)a2;
+- (BOOL)_insideEmoji:(id)a0 position:(unsigned long long)a1 block:(id /* block */)a2;
+- (BOOL)_isRightToLeftInLine:(id)a0 atPoint:(struct CGPoint { double x0; double x1; })a1;
+- (unsigned long long)lineIndexForRow:(unsigned long long)a0;
+- (unsigned long long)lineCountForRow:(unsigned long long)a0;
+- (id)_correctedRangeWithEdge:(id)a0;
+- (struct __CTRun { } *)_runForLine:(id)a0 position:(id)a1;
+- (unsigned long long)rowIndexForLine:(unsigned long long)a0;
+- (void)addAttachmentToView:(id)a0 layer:(id)a1;
+- (void)removeAttachmentFromViewAndLayer;
+- (id)selectionRectsWithOnlyStartAndEndForRange:(id)a0;
+- (void)drawInContext:(struct CGContext { } *)a0 size:(struct CGSize { double x0; double x1; })a1 debug:(id)a2;
+- (id)positionForPoint:(struct CGPoint { double x0; double x1; })a0 oldPosition:(id)a1 otherPosition:(id)a2;
+- (struct CGPoint { double x0; double x1; })linePositionForPosition:(id)a0;
+- (id)textRangeByExtendingPosition:(id)a0 inDirection:(long long)a1 offset:(long long)a2;
+- (id)textRangeByExtendingPosition:(id)a0;
+- (id)closestTextRangeAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (id)closestPositionToPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })caretRectForPosition:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })firstRectForRange:(id)a0;
+- (id)selectionRectsForRange:(id)a0;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+- (id)_init;
+- (id)textRangeAtPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })rectForRange:(id)a0;
+
+@end

@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureEditorFilter : MTLModel
+
+@end

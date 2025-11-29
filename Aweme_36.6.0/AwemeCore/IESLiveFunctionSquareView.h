@@ -1,0 +1,75 @@
+@class UIView, IESLiveFunctionSquareCategoryTableViewCell, IESLiveFunctionSquareSearchView, NSString, UIButton, IESLiveFunctionSquareCategorySectionView, IESLiveAnchorGameFuncPaneTableFooterView, IESLiveFunctionSquareViewModel, UILabel, IESLiveFunctionSquareTableView;
+@protocol IESLiveFunctionSquareViewDelegate;
+
+@interface IESLiveFunctionSquareView : UIView <UITableViewDelegate, UITableViewDataSource, IESLiveFunctionSquareCategorySectionViewDelegate, IESLiveFunctionSquareCategoryTableViewCellDelegate, IESLiveFunctionSquareRecentlyUsedContentViewDelegate>
+
+@property (retain, nonatomic) IESLiveFunctionSquareTableView *tableView;
+@property (retain, nonatomic) UIButton *searchButton;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) IESLiveFunctionSquareCategorySectionView *tabSectionView;
+@property (retain, nonatomic) IESLiveFunctionSquareCategoryTableViewCell *tabContentView;
+@property (retain, nonatomic) IESLiveAnchorGameFuncPaneTableFooterView *tableFooterView;
+@property (nonatomic) BOOL canScroll;
+@property (nonatomic) long long tabContentSectionIndex;
+@property (nonatomic) BOOL containTabContent;
+@property (nonatomic) double tabContentViewHeight;
+@property (nonatomic) double descContentViewHeight;
+@property (nonatomic) BOOL hasLayout;
+@property (nonatomic) BOOL isLoadingData;
+@property (retain, nonatomic) UIView *tableHeaderView;
+@property (retain, nonatomic) IESLiveFunctionSquareSearchView *searchView;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIButton *refreshButton;
+@property (retain, nonatomic) UIView *emptyView;
+@property (copy, nonatomic) id /* block */ closeHandler;
+@property (weak, nonatomic) id<IESLiveFunctionSquareViewDelegate> delegate;
+@property (retain, nonatomic) IESLiveFunctionSquareViewModel *viewModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)contentCellDidSelectItem:(id)a0 fromButton:(BOOL)a1;
+- (void)contentCellWillShowRowNode:(id)a0;
+- (void)contentCellDidEndShowRowNode:(id)a0;
+- (void)contentCellDidSelectDebugButton:(id)a0;
+- (void)contentCellDidScrollToIndex:(long long)a0;
+- (void)contentCellDidScrollWithContentOffset:(double)a0;
+- (id)getCurrentContentViewVisibleRowNodesNotFirstLoadWithSelectedIndex:(long long)a0;
+- (void)updateTabSelectedIndex:(long long)a0;
+- (void)sectionView:(id)a0 didClickSelector:(id)a1 tabNode:(id)a2;
+- (void)sectionViewDidClickLink:(id)a0;
+- (void)sectionView:(id)a0 didSelectItemAtIndex:(long long)a1 rowNode:(id)a2;
+- (id)getCurrentTabName;
+- (void)recentlyUsedContentViewDidClickCellWithRowNode:(id)a0 sectionType:(long long)a1;
+- (void)recentlyUsedContentViewWillShowRowNode:(id)a0;
+- (void)recentlyUsedContentViewDidEndShowRowNode:(id)a0;
+- (void)updateSearchPlaceholder:(id)a0;
+- (void)refreshButtonDidClick:(id)a0;
+- (void)calculateTabContentViewHeight;
+- (void)p_updateContainTabContent;
+- (double)getTableViewShowCellContentHeight;
+- (void)changeScrollStatus;
+- (long long)sectionIndexForSectionType:(long long)a0;
+- (void)searchButtonDidClicked;
+- (id)initWithDIContent:(id)a0 viewModel:(id)a1;
+- (void)showNetWorkErrorView;
+- (void)hideNetWorkErrorView;
+- (void)searchCellDidClickf;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (id)tableView:(id)a0 viewForHeaderInSection:(long long)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (double)tableView:(id)a0 heightForHeaderInSection:(long long)a1;
+- (void)dealloc;
+- (double)tableView:(id)a0 heightForFooterInSection:(long long)a1;
+- (id)tableView:(id)a0 viewForFooterInSection:(long long)a1;
+- (void)setupUI;
+- (void)updateUI;
+- (void)setupData;
+
+@end

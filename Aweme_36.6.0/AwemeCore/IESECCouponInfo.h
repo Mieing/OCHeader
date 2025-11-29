@@ -1,0 +1,18 @@
+@class NSString, IESECCouponActivityInfoMessage, IESECCouponMetaInfoMessage;
+
+@interface IESECCouponInfo : GPBMessage
+
+@property (nonatomic) long long metaId;
+@property (nonatomic) long long serverTime;
+@property (nonatomic) long long countdown;
+@property (copy, nonatomic) NSString *activityJsonStr;
+@property (nonatomic) int couponType;
+@property (retain, nonatomic) IESECCouponActivityInfoMessage *activityInfo;
+@property (nonatomic) BOOL hasActivityInfo;
+@property (retain, nonatomic) IESECCouponMetaInfoMessage *couponMeta;
+@property (nonatomic) BOOL hasCouponMeta;
+@property (copy, nonatomic) NSString *metaIdStr;
+
++ (id)descriptor;
+
+@end

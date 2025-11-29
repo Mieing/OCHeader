@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface ATSUtils : NSObject <ATSComplianceUtilProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)digitCountryCode;
++ (BOOL)limitCollectGPS;
++ (id)topWebViewUrl;
++ (id)topAdWebViewCreativeId;
++ (id)encryptedString:(id)a0;
+
+
+@end

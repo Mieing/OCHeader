@@ -1,0 +1,17 @@
+@class NSString;
+
+@interface IESECFeedPlayerControlImpl : NSObject <IESECFeedPlayerControl>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (BOOL)isCurrentPlayerPlaying;
++ (BOOL)isPlayerPlayingWithPlayer:(id)a0;
++ (void)play;
++ (void)pause;
++ (id)currentPlayer;
+
+
+@end

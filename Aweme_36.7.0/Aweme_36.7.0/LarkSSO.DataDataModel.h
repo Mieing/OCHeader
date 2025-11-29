@@ -1,0 +1,14 @@
+@interface LarkSSO.DataDataModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ message;
+    void /* unknown type, empty encoding */ target;
+    void /* unknown type, empty encoding */ time;
+    void /* unknown type, empty encoding */ module_path;
+    void /* unknown type, empty encoding */ module;
+    void /* unknown type, empty encoding */ pid;
+    void /* unknown type, empty encoding */ thread;
+    void /* unknown type, empty encoding */ file;
+    void /* unknown type, empty encoding */ level;
+    void /* unknown type, empty encoding */ line;
+}
+
+@end

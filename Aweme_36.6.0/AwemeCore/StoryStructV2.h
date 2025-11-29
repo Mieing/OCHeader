@@ -1,0 +1,12 @@
+@class AwemeStructV2;
+
+@interface StoryStructV2 : GPBMessage
+
+@property (retain, nonatomic) AwemeStructV2 *story;
+@property (nonatomic) BOOL hasStory;
+@property (nonatomic) BOOL unread;
+@property (nonatomic) BOOL hasUnread;
+
++ (id)descriptor;
+
+@end

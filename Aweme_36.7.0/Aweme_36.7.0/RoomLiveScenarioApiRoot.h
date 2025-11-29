@@ -1,0 +1,3 @@
+@interface RoomLiveScenarioApiRoot : GPBRootObject
+
+@end

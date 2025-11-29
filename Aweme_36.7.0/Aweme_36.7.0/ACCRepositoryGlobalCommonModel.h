@@ -1,0 +1,19 @@
+@class NSString;
+
+@interface ACCRepositoryGlobalCommonModel : ACCRepositoryGlobalModel <ACCRepositoryRequestParamsDeprecated, ACCRepositoryTrackContextDeprecated>
+
+@property (weak, nonatomic) id instanceRepoModel;
+@property (nonatomic) BOOL initialized;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)acc_publishRequestParams:(id)a0;
+- (id)acc_publishRequestParamsForKeyPath:(id)a0;
+- (void)acc_precheckRequestParameters:(id)a0;
+- (id)acc_referExtraParams;
+- (id)acc_publishTrackEventParams:(id)a0;
+- (void).cxx_destruct;
+
+@end

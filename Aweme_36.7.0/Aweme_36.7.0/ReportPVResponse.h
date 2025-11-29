@@ -1,0 +1,10 @@
+@class ReportPVResponse_ResponseData;
+
+@interface ReportPVResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) ReportPVResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

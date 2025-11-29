@@ -1,0 +1,93 @@
+@class BDPMapViewModel, NSString, UITapGestureRecognizer, NSMutableDictionary, NSMutableArray, BDPMKMapView, NSObject, NSMapTable, BDPMapKitMapUserAnnotationView;
+@protocol BDPMapViewDelegate, OS_dispatch_semaphore;
+
+@interface BDPMapKitMapView : UIView <MKMapViewDelegate, UIGestureRecognizerDelegate, BDPMapKitAnnotationViewCallbackProtocol, BDPMapViewProtocol> {
+    NSObject<OS_dispatch_semaphore> *_updateHeadingLock;
+    id _updateHeadingToken;
+}
+
+@property (retain, nonatomic) BDPMapViewModel *mapViewModel;
+@property (weak, nonatomic) BDPMKMapView *mapView;
+@property (retain, nonatomic) BDPMapKitMapUserAnnotationView *userAnnotationView;
+@property (retain, nonatomic) NSString *locMarkerIconPath;
+@property (nonatomic) BOOL isResizingZoomLevel;
+@property (retain, nonatomic) UITapGestureRecognizer *tapGestureClick;
+@property (retain, nonatomic) UITapGestureRecognizer *doubleGestureClick;
+@property (retain, nonatomic) UITapGestureRecognizer *userAnnotationTapGestureClick;
+@property (retain, nonatomic) NSMutableArray *allMarkers;
+@property (retain, nonatomic) NSMutableArray *allCircles;
+@property (retain, nonatomic) NSMutableArray *allPolylines;
+@property (retain, nonatomic) NSMutableArray *allPolygons;
+@property (retain, nonatomic) NSMutableDictionary *groundOverlayList;
+@property (retain, nonatomic) NSMutableArray *pendingTranslateMarkerList;
+@property (retain, nonatomic) NSMutableArray *pendingMoveAlongList;
+@property (nonatomic) BOOL isDoingTranslateMarker;
+@property (nonatomic) BOOL isDoingMoveAlong;
+@property (nonatomic) BOOL isMapCanRender;
+@property (nonatomic) BOOL isMapHasRendered;
+@property (retain, nonatomic) NSMapTable *annotaionToMarkerList;
+@property (retain, nonatomic) NSMapTable *customCalloutMarkerDict;
+@property (weak, nonatomic) id<BDPMapViewDelegate> delegate;
+@property (copy, nonatomic) NSString *componentID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)p_tangentRadiansFromPoint:(struct CGPoint { double x0; double x1; })a0 toPoint:(struct CGPoint { double x0; double x1; })a1;
++ (double)p_radiansFromPoint:(struct CGPoint { double x0; double x1; })a0 toPoint:(struct CGPoint { double x0; double x1; })a1;
+
+- (void)enterBackground:(id)a0;
+- (void)enterForeground:(id)a0;
+- (void)tapClick:(id)a0;
+- (void)appEnterForeground;
+- (BOOL)isGestureHandling;
+- (struct CLLocationCoordinate2D { double x0; double x1; })bdp_getCenterLocation;
+- (id)bdp_getMapRegion;
+- (double)bdp_getMapScale;
+- (BOOL)bdp_updateMapLocation:(id)a0;
+- (void)bdp_setIncludePoints:(id)a0;
+- (double)bdp_getMapRotate;
+- (double)bdp_getMapSkew;
+- (void)bdp_translateMarker:(id)a0;
+- (void)bdp_moveAlong:(id)a0;
+- (struct CGPoint { double x0; double x1; })bdp_mapToScreen:(struct CLLocationCoordinate2D { double x0; double x1; })a0;
+- (struct CLLocationCoordinate2D { double x0; double x1; })bdp_screenToMap:(struct CGPoint { double x0; double x1; })a0;
+- (void)bdp_setLocMarkerIcon:(id)a0 complection:(id /* block */)a1;
+- (void)bdp_addGroundOverlay:(id)a0 complection:(id /* block */)a1;
+- (void)bdp_updateGroundOverlay:(id)a0 complection:(id /* block */)a1;
+- (void)bdp_removeGroundOverlay:(id)a0 complection:(id /* block */)a1;
+- (BOOL)bdp_updateMapWithModelParam:(id)a0;
+- (void)bdp_tapCustomCalloutWithMarkerId:(id)a0;
+- (void)bdp_mapImplSetCustomCalloutActive:(BOOL)a0 annotation:(id)a1;
+- (void)bdp_mapImplMarkerDidClicked:(id)a0;
+- (void)bdp_mapImplCalloutViewDidClicked:(id)a0;
+- (void)bdp_mapImplLabelViewDidClicked:(id)a0;
+- (void)drawPolyLine:(BOOL)a0;
+- (void)drawArrowPolyLine;
+- (void)p_setCenterCoordinate:(struct CLLocationCoordinate2D { double x0; double x1; })a0 zoomLevel:(double)a1 animated:(BOOL)a2 heading:(double)a3 pitch:(double)a4;
+- (void)parseModelMarkers:(id)a0;
+- (void)p_translateMarker:(id)a0;
+- (void)bdp_mapImplMarkerAnimationEnded:(id)a0 type:(unsigned long long)a1 callbackId:(id)a2;
+- (void)p_moveAlongAnimationWithPathIndex:(long long)a0 pathList:(id)a1 rotateRadiansList:(id)a2 durationList:(id)a3 annotationList:(id)a4 annotationViewList:(id)a5 moveAlongModel:(id)a6;
+- (void)p_insertGroundOverlayByZIndexOrder:(id)a0;
+- (void)p_subscribeMarkerCustomCalloutLocation;
+- (void)userAnnotationViewClicked:(id)a0;
+- (id)initWithMapViewModel:(id)a0 componentID:(id)a1 delegate:(id)a2;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)mapView:(id)a0 regionWillChangeAnimated:(BOOL)a1;
+- (void)mapView:(id)a0 regionDidChangeAnimated:(BOOL)a1;
+- (void)mapViewWillStartRenderingMap:(id)a0;
+- (void)mapViewDidFinishRenderingMap:(id)a0 fullyRendered:(BOOL)a1;
+- (void)mapViewDidChangeVisibleRegion:(id)a0;
+- (void)mapView:(id)a0 didAddAnnotationViews:(id)a1;
+- (id)mapView:(id)a0 viewForAnnotation:(id)a1;
+- (void)mapView:(id)a0 didSelectAnnotationView:(id)a1;
+- (void)mapView:(id)a0 didSelectAnnotation:(id)a1;
+- (void)mapView:(id)a0 didDeselectAnnotationView:(id)a1;
+- (void)mapView:(id)a0 didDeselectAnnotation:(id)a1;
+- (id)mapView:(id)a0 rendererForOverlay:(id)a1;
+- (void)mapView:(id)a0 didAddOverlayRenderers:(id)a1;
+
+@end

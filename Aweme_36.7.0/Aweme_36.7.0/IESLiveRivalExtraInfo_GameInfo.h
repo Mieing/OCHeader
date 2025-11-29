@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveRivalExtraInfo_GameInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *gameText;
+@property (copy, nonatomic) NSString *gameName;
+
++ (id)descriptor;
+
+@end

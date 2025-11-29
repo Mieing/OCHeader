@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface SelfSetData : IESLivePBBaseMessage
+
+@property (nonatomic) long long rateType;
+@property (nonatomic) long long rate;
+@property (nonatomic) BOOL rateDirectionPositive;
+@property (copy, nonatomic) NSString *setDataDes;
+
++ (id)descriptor;
+
+@end

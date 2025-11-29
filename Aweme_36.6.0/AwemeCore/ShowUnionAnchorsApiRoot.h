@@ -1,0 +1,3 @@
+@interface ShowUnionAnchorsApiRoot : GPBRootObject
+
+@end

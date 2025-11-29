@@ -1,0 +1,10 @@
+@interface TIMXPBNProfileGetInfoRequestBody : GPBMessage
+
+@property (nonatomic) long long userid;
+@property (nonatomic) BOOL hasUserid;
+@property (nonatomic) BOOL fromSource;
+@property (nonatomic) BOOL hasFromSource;
+
++ (id)descriptor;
+
+@end

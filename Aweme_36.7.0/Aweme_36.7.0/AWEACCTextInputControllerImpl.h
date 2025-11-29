@@ -1,0 +1,71 @@
+@class UITextView, NSString, UIFont, UIColor, NSDictionary, NSMutableArray, UIView;
+@protocol ACCUserPickerConfigProtocol, ACCTextInputControllerDelegate, AWETextInputControllerProtocol;
+
+@interface AWEACCTextInputControllerImpl : NSObject <AWETextInputControllerDelegate, ACCTextInputControllerProtocol>
+
+@property (retain, nonatomic) id<AWETextInputControllerProtocol> textViewController;
+@property (retain, nonatomic) UITextView *textInput;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long long maxLength;
+@property (nonatomic) unsigned long long maxUserCount;
+@property (weak, nonatomic) id<ACCTextInputControllerDelegate> delegate;
+@property (retain, nonatomic) NSMutableArray *extraInfo;
+@property (retain, nonatomic) NSString *searchString;
+@property (retain, nonatomic) UIFont *font;
+@property (retain, nonatomic) UIColor *textColor;
+@property (retain, nonatomic) UIColor *extraColor;
+@property (retain, nonatomic) NSString *itemID;
+@property (retain, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (nonatomic) BOOL enableHashTagDetection;
+@property (copy, nonatomic) id /* block */ risingInputViewBlock;
+@property (copy, nonatomic) id /* block */ showUserPickerCallback;
+@property (copy, nonatomic) id /* block */ plainTextBlock;
+@property (copy, nonatomic) id /* block */ encodeEmoticonBlock;
+@property (copy, nonatomic) NSDictionary *hashtagRecommendParam;
+@property (nonatomic) BOOL enableSelectionHashTag;
+@property (nonatomic) BOOL enableLineSpacing;
+@property (retain, nonatomic) id<ACCUserPickerConfigProtocol> pickerConfig;
+@property (retain, nonatomic) UIView *expediteMentionContainerView;
+@property (nonatomic) BOOL mentionListLoadMoreAtTracking;
+@property (copy, nonatomic) NSDictionary *mentionListCommomTrackParams;
+@property (nonatomic) BOOL cutFlag;
+@property (nonatomic) BOOL disableAt;
+
+- (void)addExtraAtEnd:(id)a0;
+- (void)textInputDismissCompletion;
+- (void)textInputValueChanged:(id)a0;
+- (void)textInputDidAddUser:(id)a0;
+- (void)textInputDidDeleteDuetChain:(id)a0;
+- (void)textInputDidExceedMaxLength:(id)a0;
+- (void)textInputDidDeleteCommentChain:(id)a0;
+- (void)textInputDidExceedMaxUserCount:(id)a0;
+- (void)textInputDidNeedClosingSuggestion:(id)a0;
+- (void)textInputDidStartLoadingSuggestions:(id)a0;
+- (void)textInput:(id)a0 didReplaceTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 withText:(id)a2;
+- (void)textInput:(id)a0 didRequestSuggestion:(id)a1 hitBlockList:(BOOL)a2;
+- (BOOL)textInputNoNeedSuggestionWhenOnlyHash:(id)a0;
+- (BOOL)textInput:(id)a0 shouldDeleteTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void)addSelectedHashTag:(id)a0;
+- (void)showUserPicker:(id)a0;
+- (void)showUserPicker:(id)a0 enterMethod:(id)a1;
+- (void)trimCharactersInSet:(id)a0;
+- (void)textInputValueChanged;
+- (void)textInput:(id)a0 didSelectSuggestion:(id)a1 withTextBeforeSelection:(id)a2;
+- (id)resolveHashTags;
+- (void)didSelectSearchUser:(id)a0 searchRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 trackInfo:(id)a2;
+- (id)attributeStringFromString:(id)a0 extraInfo:(id)a1;
+- (void)updateDisplay;
+- (void)clearInputData;
+- (BOOL)textInput:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (id)updateExtraInfo:(id)a0 withRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (long long)plainTextAndAttributeDiff:(id)a0 range:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1;
+- (void).cxx_destruct;
+- (void)textInputDidChangeSelection:(id)a0;
+- (id)initWithTextInput:(id)a0;
+- (void)appendCharacter:(id)a0;
+
+@end

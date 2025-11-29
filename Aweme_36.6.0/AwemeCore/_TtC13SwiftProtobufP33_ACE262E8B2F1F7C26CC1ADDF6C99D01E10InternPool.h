@@ -1,0 +1,5 @@
+@interface _TtC13SwiftProtobufP33_ACE262E8B2F1F7C26CC1ADDF6C99D01E10InternPool : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ interned;
+}
+
+@end

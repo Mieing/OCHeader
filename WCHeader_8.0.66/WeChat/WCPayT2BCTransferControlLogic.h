@@ -1,0 +1,86 @@
+@class WCPayT2BCPayReportCgi, TransToBankCardPayRes, OperationResp, CheckBankBindRes, AppointBankRes, GetBankInfoRes, WCPayT2BCModifyRemarkCgi, WCPayT2BCGetBankInfoCgi, WCPayT2BCPayRequestCgi, WCPayT2BCBusinessCallBackCgi, WCPayT2BCGetTransHistroyCgi, WCPayT2BCOperationCgi, QueryTransferListRes, NSString, WCPayPayMoneyLogic, WCPayT2BCAppointBankCgi, WCPayT2BCDeleteRecordCgi, WCPayT2BCCheckBankBindCgi, WCPayTransferToBankCardFillInfoViewController;
+@protocol WCPayT2BCTransferControlLogicDelegate;
+
+@interface WCPayT2BCTransferControlLogic : WCPayControlLogic <WCPayT2BCDetailControlLogicDelegate, WCPayPayMoneyLogicDelegate, WCPayT2BCGetTransHistroyCgiDelegate, WCPayT2BCAppointBankCgiDelegate, WCPayT2BCCheckBankBindCgiDelegate, WCPayT2BCPayRequestCgiDelegate, WCPayT2BCGetBankInfoCgiDelegate, WCPayT2BCModifyRemarkCgiDelegate, WCPayT2BCDeleteRecordCgiDelegate, WCPayT2BCBusinessCallBackCgiDelegate, WCPayT2BCOperationCgiDelegate, WCPaySelectReceiverViewControllerDelegate, MMTipsViewControllerDelegate, WCPayT2BCPayReportCgiDelegate, WCPayTransferToBankCardFillInfoViewControllerDelegate, WCPayTransferToBankCardViewControllerDelegate, MMUseCaseCallback> {
+    id<WCPayT2BCTransferControlLogicDelegate> _t2bcTransferLogicDelgate;
+    unsigned long long m_uiT2BCTransferLogicStatus;
+}
+
+@property (retain, nonatomic) WCPayT2BCGetTransHistroyCgi *m_getTransferToBankHistoryCgi;
+@property (retain, nonatomic) WCPayT2BCAppointBankCgi *m_appointBankCgi;
+@property (retain, nonatomic) QueryTransferListRes *m_transferListRes;
+@property (retain, nonatomic) AppointBankRes *m_appointBankRes;
+@property (retain, nonatomic) WCPayT2BCCheckBankBindCgi *m_checkBankBindCgi;
+@property (retain, nonatomic) CheckBankBindRes *m_checkBankBindRes;
+@property (retain, nonatomic) WCPayT2BCPayRequestCgi *m_transToBankCardPayReqCgi;
+@property (retain, nonatomic) TransToBankCardPayRes *m_transToBankCardPayRes;
+@property (retain, nonatomic) WCPayT2BCGetBankInfoCgi *m_getBankInfoCgi;
+@property (retain, nonatomic) GetBankInfoRes *m_getBankInfoRes;
+@property (retain, nonatomic) WCPayT2BCModifyRemarkCgi *m_modifyRemarkCgi;
+@property (retain, nonatomic) WCPayT2BCDeleteRecordCgi *m_deleteRecordCgi;
+@property (retain, nonatomic) WCPayT2BCBusinessCallBackCgi *m_businessCallBackCgi;
+@property (retain, nonatomic) WCPayT2BCPayReportCgi *m_reportTsbcCgi;
+@property (retain, nonatomic) WCPayT2BCOperationCgi *m_operationCgi;
+@property (retain, nonatomic) OperationResp *m_operationResp;
+@property (retain, nonatomic) WCPayPayMoneyLogic *m_payMoneyLogic;
+@property (nonatomic) long long lastUnpayReason;
+@property (retain, nonatomic) NSString *bankCardNumber;
+@property (retain, nonatomic) WCPayTransferToBankCardFillInfoViewController *m_fillInfoVC;
+@property (nonatomic) int entryScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setTransferScene:(int)a0;
+- (void)setTransferBankCardNumer:(id)a0;
+- (void)setT2BCTransferControlLogicDelegate:(id)a0;
+- (id)initWithData:(id)a0;
+- (void)dealloc;
+- (void)startLogic;
+- (void)OnGetTransToBankHistory:(id)a0 myHistory:(id)a1 response:(id)a2;
+- (id)processBankCardNumber:(id)a0;
+- (void)OnGetTransToBankHistoryError:(id)a0 errorCode:(long long)a1;
+- (void)OnWCPayT2BCOperationCgiResponseOK:(id)a0;
+- (void)OnWCPayT2BCOperationCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnGetApponitBankResonseOK:(id)a0;
+- (void)OnGetApponitBankResonseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnWCPayT2BCCheckBankBindCgiResponseOK:(id)a0;
+- (void)OnWCPayT2BCCheckBankBindCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnWCPayT2BCPayRequestCgiResponseOK:(id)a0;
+- (void)startPayMoneyLogic:(BOOL)a0;
+- (void)call:(id)a0;
+- (void)onPayMoneyLogicDidStop;
+- (void)sendBusinessCallbackRequest;
+- (void)sendBusinessCallbackRequest:(id)a0;
+- (void)OnWCPayT2BCPayRequestCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnWCPayT2BCPayRequestCgiResponseError:(id)a0 errorCode:(unsigned int)a1 response:(id)a2;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 withText:(id)a2 withTipsVC:(id)a3;
+- (void)OnWCPayT2BCGetBankInfoCgiResponseOK:(id)a0;
+- (void)OnWCPayT2BCGetBankInfoCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnWCPayT2BCModifyRemarkCgiResponseOK:(id)a0;
+- (void)OnWCPayT2BCModifyRemarkCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnWCPayT2BCDeleteRecordCgiResponseOK:(id)a0;
+- (void)OnWCPayT2BCDeleteRecordCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)OnWCPayT2BCBusinessCallBackCgiResponseOK:(id)a0;
+- (void)OnWCPayT2BCBusinessCallBackCgiResponseError:(id)a0 errorCode:(unsigned int)a1;
+- (void)FillTransferToBankCardInfoCancel;
+- (void)stopLogic;
+- (void)FillTransferToBankCardInfoOnNext:(id)a0;
+- (void)OnWCPayTransferToBankCardPaidSuccessViewControllerBack;
+- (void)OnWCPayTransferToBankCardFillInfoViewControllerSelectReceiver:(id)a0;
+- (void)OnWCPayTransferToBankCardFillInfoViewControllerFillBankCardNum:(id)a0;
+- (void)WCPayTransferToBankCardViewControllerCancel;
+- (void)WCPayTransferToBankCardViewControllerOnNext:(id)a0;
+- (void)OnWCPayTransferToBankCardFillInfoViewControllerClickHistoryReceiver;
+- (void)OnWCPaySelectReceiverViewControllerCancel;
+- (void)OnWCPaySelectReceiverViewControllerDidSelectReceiver:(id)a0;
+- (void)OnWCPaySelectReceiverViewControllerModifyRemark:(id)a0 remark:(id)a1;
+- (void)OnWCPaySelectReceiverViewControllerDeleteRecord:(id)a0;
+- (void)OnWCPayTransferToBankCardFillInfoViewControllerClickHistoryRecord;
+- (BOOL)gotoViewController:(id)a0;
+- (void)OnWCPayT2BCDetailControlLogicFinish;
+- (void)stopLogicAndCallFinish;
+- (void).cxx_destruct;
+
+@end

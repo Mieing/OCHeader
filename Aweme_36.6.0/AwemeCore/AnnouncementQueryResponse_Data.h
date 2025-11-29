@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface AnnouncementQueryResponse_Data : IESLivePBBaseMessage
+
+@property (nonatomic) int hasData;
+@property (copy, nonatomic) NSString *liveTimeText;
+@property (nonatomic) BOOL hasSubscribed;
+
++ (id)descriptor;
+
+@end

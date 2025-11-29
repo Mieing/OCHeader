@@ -1,0 +1,10 @@
+@class PaidLiveProjectionResponse_ProjectionData;
+
+@interface PaidLiveProjectionResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PaidLiveProjectionResponse_ProjectionData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

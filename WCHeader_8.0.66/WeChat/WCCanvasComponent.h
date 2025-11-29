@@ -1,0 +1,86 @@
+@class WCCanvasMusicMgr, WCCanvasComponentItem, UIButton, WCAdvertiseInfo, NSIndexPath, WCCanvasReportMgr;
+@protocol WCCanvasComponentDelegate;
+
+@interface WCCanvasComponent : MMUIView
+
+@property (nonatomic) int type;
+@property (retain, nonatomic) WCCanvasComponentItem *componentItem;
+@property (retain, nonatomic) WCAdvertiseInfo *advertiseInfo;
+@property (nonatomic) long long orientation;
+@property (retain, nonatomic) NSIndexPath *indexPath;
+@property (weak, nonatomic) id<WCCanvasComponentDelegate> delegate;
+@property (readonly, nonatomic) WCCanvasReportMgr *reportMgr;
+@property (readonly, nonatomic) unsigned int downloadScene;
+@property (readonly, nonatomic) BOOL shouldUseSnsCdnDownload;
+@property (readonly, nonatomic) WCCanvasMusicMgr *musicMgr;
+@property (retain, nonatomic) UIButton *bgButton;
+
++ (id)componentWithItemInfo:(id)a0;
++ (struct CGSize { double x0; double x1; })calcSizeForCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
++ (double)calcHeightForCanvasItem:(id)a0 withMaxWidth:(double)a1 advertiseInfo:(id)a2 orientation:(long long)a3;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)configureWithCanvasItem:(id)a0 advertiseInfo:(id)a1 orientation:(long long)a2;
+- (struct CGSize { double x0; double x1; })calcCurrentSize;
+- (BOOL)isCanvasVisible;
+- (BOOL)shouldForbidDelegateShowArrowDown;
+- (BOOL)shouldForbidDelegateShowFloatActionBtn;
+- (id)fetchFirstComponentForType:(int)a0;
+- (void)componentUpdateCardViewsWithPendingState;
+- (void)componentCleanCardViewsForce;
+- (BOOL)encoreShakeShouldForbidShakeSpecialView;
+- (void)encoreShakeResetSpecialView;
+- (id)encoreShakeFetchRedEnvelopStatusInfo;
+- (void)randomPickResetRandomPickCardStatus;
+- (void)randomPickShowImpressiveAnimation;
+- (void)randomPickSetCardViewsForTransitionBeginning:(BOOL)a0 isToVC:(BOOL)a1;
+- (void)randomPickCardTitleResetComponent;
+- (BOOL)shouldAllowBottomSwipeAction;
+- (void)didBottomSwipeActionComplete;
+- (BOOL)shouldShowScrollDownArea;
+- (double)fetchScrollDownAreaDelayTime;
+- (double)getPreloadWebViewBottomInScrollGroupComponent;
+- (BOOL)hasPreloadWebViewInScrollGroupComponent;
+- (double)calcAppearFactor;
+- (void)willRotateToOrientation:(long long)a0 duration:(double)a1;
+- (void)componentWillAppearInMainScreen:(BOOL)a0;
+- (void)componentDidFullyAppearInMainScreen:(BOOL)a0;
+- (void)componentAppearFactorChagneInMainScreen;
+- (void)componentWillDisappearInMainScreen:(BOOL)a0;
+- (void)componentWillResumeState:(BOOL)a0;
+- (void)componentWillStopState:(BOOL)a0;
+- (void)componentDidEnterBackground;
+- (void)componentWillEnterForeground;
+- (void)componentReportAddExposureCount;
+- (void)resetSightViewAudioState:(BOOL)a0;
+- (void)tryToSetVideoPlayingState:(BOOL)a0;
+- (BOOL)shouldVideoComponentTryToPlay;
+- (BOOL)isBgMoreBlack;
+- (void)onClickComponentTouchButton:(id)a0 forEvent:(id)a1;
+- (void)tryToFireComponentClickEventWithSource:(unsigned long long)a0;
+- (void)updatebgButton;
+- (id)fetchSphereOriginSnapshotAndNewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } *)a0;
+- (id)fetchSphereCurrentSnapshotAndNewFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; } *)a0;
+- (void)shareComponentDidBeClickedWithType:(long long)a0;
+- (BOOL)isComponentLastCellInSection;
+- (BOOL)isInHomeIndicatorArea;
+- (BOOL)isCanvasInHalfScreenMode;
+- (void)setComponentContentViewScrollEnabled:(BOOL)a0;
+- (BOOL)isComponentContentViewScrolledToTop;
+- (BOOL)isComponentDisplayMoreThanHalf;
+- (BOOL)isComponentDisplayed;
+- (BOOL)checkAndTriggerToShowFloatView:(double)a0;
+- (unsigned long long)fetchComponentInitAnimationStage;
+- (void)showComponentInitAnimation;
+- (void)getComponentStyleWithBackgroundColor:(id *)a0 textColor:(id *)a1;
+- (void)setComponentStyleWithBackgroundColor:(id)a0 textColor:(id)a1 contentSize:(struct CGSize { double x0; double x1; })a2;
+- (void)setButtonComponentTitleColor:(id)a0 withDuration:(double)a1;
+- (void)setButtonComponentTitleFont:(id)a0;
+- (void)setLayoutComponentBorder;
+- (BOOL)hasFloatComponentInfo;
+- (void)notifyToShowFloatComponent;
+- (void)canvasCloseBtnClick;
+- (id)description;
+- (void).cxx_destruct;
+
+@end

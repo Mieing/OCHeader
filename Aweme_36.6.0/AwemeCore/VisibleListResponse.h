@@ -1,0 +1,10 @@
+@class VisibleListData;
+
+@interface VisibleListResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) VisibleListData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

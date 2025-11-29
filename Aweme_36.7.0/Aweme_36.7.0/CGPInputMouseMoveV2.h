@@ -1,0 +1,10 @@
+@interface CGPInputMouseMoveV2 : GPBMessage
+
+@property (nonatomic) int absX;
+@property (nonatomic) int absY;
+@property (nonatomic) int deltaX;
+@property (nonatomic) int deltaY;
+
++ (id)descriptor;
+
+@end

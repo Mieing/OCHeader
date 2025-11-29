@@ -1,0 +1,3 @@
+@interface FlowInstruction.FlowInstructionPhotoSearchViewModel : FlowInstruction.FlowInstructionBizViewModel
+
+@end

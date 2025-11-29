@@ -1,0 +1,3 @@
+@interface AWEStudioComposerRepoData : NSObject
+
+@end

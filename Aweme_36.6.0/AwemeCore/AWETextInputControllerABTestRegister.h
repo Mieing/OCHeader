@@ -1,0 +1,3 @@
+@interface AWETextInputControllerABTestRegister : NSObject
+
+@end

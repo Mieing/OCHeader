@@ -1,0 +1,28 @@
+@class NSString, AWEIMMessageConversation, AWEIMResponseToWhoSeeMyStoryMessage;
+
+@interface AWEIMResponseToWhoSeeMyStoryMessageComponent : AWEIMFlexComponent <AWEIMMessageContentInterface>
+
+@property (retain, nonatomic) AWEIMResponseToWhoSeeMyStoryMessage *message;
+@property (retain, nonatomic) AWEIMMessageConversation *conversation;
+@property (nonatomic) long long scene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)didTapQuotedMessage:(id)a0 context:(id)a1;
+
+- (void)needUpdateDisplayWithContextOptions:(unsigned long long)a0;
+- (void)componentDidMounted:(id)a0;
+- (void)cellWillDisplay:(unsigned long long)a0;
+- (void)p_createPresenterIfNeed;
+- (void)p_initProps;
+- (id)_defaultVideoImage;
+- (void)p_trackVideoUnavaliableShow;
+- (void)storyCoverTapped:(id)a0;
+- (id)storyReplayAttr;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })contentSize;
+- (id)displayMessage;
+
+@end

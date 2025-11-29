@@ -1,0 +1,14 @@
+@class NSString, HTSLiveInteractionAvatar;
+
+@interface HTSLiveInteractionElement : IESLivePBBaseMessage
+
+@property (nonatomic) int elementType;
+@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic) NSString *textColor;
+@property (retain, nonatomic) HTSLiveInteractionAvatar *avatars;
+@property (nonatomic) BOOL hasAvatars;
+@property (nonatomic) int blankWidth;
+
++ (id)descriptor;
+
+@end

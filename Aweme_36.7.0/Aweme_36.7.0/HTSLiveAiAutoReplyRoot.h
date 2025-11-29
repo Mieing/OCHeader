@@ -1,0 +1,3 @@
+@interface HTSLiveAiAutoReplyRoot : GPBRootObject
+
+@end

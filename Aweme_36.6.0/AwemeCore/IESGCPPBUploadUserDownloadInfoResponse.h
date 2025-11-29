@@ -1,0 +1,10 @@
+@class IESGCPPBUploadUserDownloadInfoResponse_Data;
+
+@interface IESGCPPBUploadUserDownloadInfoResponse : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBUploadUserDownloadInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

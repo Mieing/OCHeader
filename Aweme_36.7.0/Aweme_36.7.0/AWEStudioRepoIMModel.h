@@ -1,0 +1,80 @@
+@class NSString, NSArray, UIImage, NSDictionary, AWEIMSocialParamsRequestModel, AWEIMRecorderImageRecognizeModel, UIViewController, NSNumber, AWEStudioIMAIEmojiDataModel;
+@protocol IESIMMessageExternalRefContextProvider;
+
+@interface AWEStudioRepoIMModel : NSObject <ACCRepoIMModelProtocol, ACCRepositoryClipContextProtocol, ACCRepositoryPublishContextProtocol, ACCRepositorySelectPhotoContextProtocol, ACCRepoRegister, NSCopying>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) NSString *toConversationID;
+@property (copy, nonatomic) NSString *shortConversationID;
+@property (copy, nonatomic) NSString *toUserID;
+@property (nonatomic) BOOL isEnableMusicComponent;
+@property (nonatomic) BOOL isMangoPlaySticker;
+@property (copy, nonatomic) NSArray *shootSameEnterStickerIDs;
+@property (nonatomic) BOOL isFromIMAigcAsyncNotice;
+@property (nonatomic) long long conversationType;
+@property (copy, nonatomic) NSString *chatGameType;
+@property (copy, nonatomic) id /* block */ reportIMAigcAsyncBlock;
+@property (copy, nonatomic) NSString *quoteReplyMessageID;
+@property (retain, nonatomic) id<IESIMMessageExternalRefContextProvider> externalRefContextProvider;
+@property (copy, nonatomic) NSString *chatType;
+@property (copy, nonatomic) NSString *chatAvatarURL;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (retain, nonatomic) UIImage *originImageFromAlbum;
+@property (copy, nonatomic) NSString *displayNickname;
+@property (copy, nonatomic) NSString *sendButtonTitle;
+@property (nonatomic) BOOL hideSendButtonIcon;
+@property (nonatomic) BOOL shouldInitFriendTabIfNeeded;
+@property (nonatomic) BOOL isInEditMode;
+@property (nonatomic) BOOL isSupportExchangeImage;
+@property (nonatomic) BOOL enableUneditSend;
+@property (nonatomic) BOOL disableWatchOnce;
+@property (copy, nonatomic) NSDictionary *imTrackInfo;
+@property (weak, nonatomic) UIViewController *presentedViewController;
+@property (nonatomic) BOOL isPublishAtMention;
+@property (copy, nonatomic) id /* block */ editModeFinished;
+@property (copy, nonatomic) id /* block */ mixPhotoFaceChecker;
+@property (copy, nonatomic) id /* block */ submitAction;
+@property (copy, nonatomic) id /* block */ completion;
+@property (copy, nonatomic) id /* block */ publishCompletion;
+@property (copy, nonatomic) id /* block */ dismissCompletion;
+@property (nonatomic) unsigned long long cameraPosition;
+@property (nonatomic) unsigned long long imPublishType;
+@property (nonatomic) unsigned long long imShootEnterType;
+@property (nonatomic) BOOL isIMBirthdayPost;
+@property (nonatomic) BOOL expandEffectPanel;
+@property (nonatomic) BOOL onlyDisplayCurrentEffetInPanel;
+@property (nonatomic) BOOL dontChangeToTextModeWhenPublish;
+@property (nonatomic) BOOL autoOpenSlipPropPanel;
+@property (copy, nonatomic) NSString *imStoryGuidePlusIconType;
+@property (copy, nonatomic) NSString *shootTips;
+@property (nonatomic) BOOL shouldBlockVideo;
+@property (nonatomic) BOOL isFromIMShootSameAIGC;
+@property (retain, nonatomic) NSNumber *shotPhotoPassedFaceCheck;
+@property (retain, nonatomic) NSDictionary *dynamicDocs;
+@property (weak) UIViewController *prevViewController;
+@property (nonatomic) BOOL disableLivePhoto;
+@property (retain, nonatomic) AWEIMRecorderImageRecognizeModel *recognizeResultModel;
+@property (retain, nonatomic) AWEStudioIMAIEmojiDataModel *aiEmojiModel;
+@property (retain, nonatomic) AWEIMSocialParamsRequestModel *socialRequestModel;
+@property (nonatomic) BOOL disableRecordFlowControlRefactor;
+@property (nonatomic) BOOL disableProp;
+
++ (id)repo_dataProtocol;
+
+- (BOOL)isSupportAIGCAsync;
+- (id)acc_referExtraParams;
+- (BOOL)isSendGift;
+- (void)trackGiftVideoShootClickWithBtm:(id)a0 clickedView:(id)a1 enterNewPage:(BOOL)a2 buttonName:(id)a3;
+- (BOOL)disableTimeline;
+- (id)acc_publishTrackEventParams:(id)a0;
+- (void)willEnterEditPageFromClipPage:(id)a0 originalPublishModel:(id)a1;
+- (void)storyPhotoDidClickedNextWithImage:(id)a0 publishViewModel:(id)a1 originalPublishModel:(id)a2;
+- (id)IMPublishTaskFinishedParamsWithIsPhotoTask:(BOOL)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+
+@end

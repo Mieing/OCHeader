@@ -1,0 +1,73 @@
+@class UIImageView, AWEUILoadingView, UILabel, UITableView, UITapGestureRecognizer, UIButton, UIView, NSString, AWEAwemeModel, AWELandscapeFeedViewModel, LOTAnimationView, AWELandscapePageContext, NSIndexPath;
+@protocol AWELandscapeSplitScreenContainerDelegate;
+
+@interface AWELandscapeAuthorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) UIView *container;
+@property (retain, nonatomic) UIView *effectView;
+@property (retain, nonatomic) UIView *userContainerView;
+@property (retain, nonatomic) UIView *userBackgroundView;
+@property (retain, nonatomic) UIImageView *avatarImageView;
+@property (retain, nonatomic) UILabel *authorNameLabel;
+@property (retain, nonatomic) UIButton *followPromptButton;
+@property (retain, nonatomic) LOTAnimationView *followAnimationView;
+@property (retain, nonatomic) UIImageView *xiguaIcon;
+@property (retain, nonatomic) UIView *topLine;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UIButton *errorCloseButton;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) UITapGestureRecognizer *tap;
+@property (retain, nonatomic) UIView *loadingContainer;
+@property (retain, nonatomic) UIView *loadingEffectView;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (retain, nonatomic) UIView *networkErrorPage;
+@property (retain, nonatomic) UIView *networkErrorEffectView;
+@property (retain, nonatomic) UIImageView *networkErrorImageView;
+@property (retain, nonatomic) UILabel *networkErrorLabel;
+@property (retain, nonatomic) AWEAwemeModel *currentModel;
+@property (retain, nonatomic) AWELandscapePageContext *pageContext;
+@property (retain, nonatomic) AWELandscapeFeedViewModel *viewModel;
+@property (retain, nonatomic) NSIndexPath *selectedIndexPath;
+@property (retain, nonatomic) UIButton *followContainerButton;
+@property (retain, nonatomic) UILabel *followTitleLabel;
+@property (retain, nonatomic) UIImageView *followSuccessImageView;
+@property (weak, nonatomic) id<AWELandscapeSplitScreenContainerDelegate> delegate;
+@property (copy, nonatomic) id /* block */ refreshBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)loadMore;
+- (void)loadPrevious;
+- (void)dismissLoadingView;
+- (void)playFollowAnimation;
+- (id)createContainerView;
+- (id)initWithPageContext:(id)a0;
+- (void)scrollToLocatedCell;
+- (BOOL)canFollow;
+- (void)playFollowButtonAnimation;
+- (void)updateFooterState;
+- (void)dismissNetworkErrorPage;
+- (void)setupRefreshBlock;
+- (void)updateUserContainerLayout;
+- (void)setupTableViewFooter;
+- (void)scrollToCurrentCell:(long long)a0;
+- (BOOL)showNetworkErrorPage:(id)a0;
+- (id)createEffectView;
+- (void)handleClickAuthor:(id)a0;
+- (void)handleClickFollow:(id)a0;
+- (void)updateWithViewModel:(id)a0 currentModel:(id)a1;
+- (void).cxx_destruct;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void)reloadDataIfNeeded;
+- (void)setupUI;
+- (void)showLoadingView;
+- (void)setupTableViewHeader;
+
+@end

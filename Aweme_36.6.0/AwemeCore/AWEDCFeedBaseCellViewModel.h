@@ -1,0 +1,3 @@
+@interface AWEDCFeedBaseCellViewModel : NSObject
+
+@end

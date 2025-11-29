@@ -1,0 +1,13 @@
+@class NSString, HTSLiveImage;
+
+@interface Category_Class : IESLivePBBaseMessage
+
+@property (nonatomic) long long id_p;
+@property (retain, nonatomic) HTSLiveImage *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *URL;
+@property (copy, nonatomic) NSString *name;
+
++ (id)descriptor;
+
+@end

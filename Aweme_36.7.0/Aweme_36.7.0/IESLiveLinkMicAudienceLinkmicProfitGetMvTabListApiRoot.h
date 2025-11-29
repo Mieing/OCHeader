@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceLinkmicProfitGetMvTabListApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,11 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveRoomChannelDisbandMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (copy, nonatomic) NSString *toast;
+
++ (id)descriptor;
+
+@end

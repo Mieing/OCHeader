@@ -1,0 +1,80 @@
+@class NSString, RxScheduler, NSArray, NSNumber;
+@protocol AWEIMChatListFirstFrameTrackerDelegate;
+
+@interface AWEIMChatListFirstFrameTracker : HTSService <AWEIMChatListFirstFrameTracker> {
+    struct mutex { struct _opaque_pthread_mutex_t { long long __sig; char __opaque[56]; } __m_; } p_lock;
+}
+
+@property (nonatomic) BOOL hasReport;
+@property (nonatomic) BOOL hasReceiveFirstDidLoad;
+@property (nonatomic) BOOL hasNotifyFrontFirstFrame;
+@property (nonatomic) double willFetchChatDataTime;
+@property (nonatomic) double chatDataReadyTime;
+@property (nonatomic) double willInitDataSourceTime;
+@property (nonatomic) double willEnterPageTime;
+@property (nonatomic) double willReloadListWithRealData;
+@property (nonatomic) double didReloadListWithRealData;
+@property (nonatomic) double touchUpTime;
+@property (nonatomic) double touchUpTime_diagnosis;
+@property (nonatomic) double pageUIStartWaitTime;
+@property (nonatomic) double pageUIReadyTime;
+@property (copy) NSString *entrance;
+@property (copy) NSString *prevTab;
+@property (readonly, nonatomic) BOOL reportOnce;
+@property (nonatomic) BOOL fetchExtraDataFromDelegate;
+@property (readonly, nonatomic) RxScheduler *sharedScheduler;
+@property (weak) NSArray *currentShowingDatas;
+@property (nonatomic) BOOL isFromPush;
+@property (nonatomic) BOOL isNewUser;
+@property (retain) NSNumber *lastUserFingerEventDuration;
+@property (nonatomic) double latestTouchDownTimestamp;
+@property (nonatomic) double latestTouchDownEventInterval;
+@property (nonatomic) double latestTouchResponseDuration;
+@property (nonatomic) double preloadViewDuration;
+@property (weak, nonatomic) id<AWEIMChatListFirstFrameTrackerDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)p_duration;
+- (void)willLoadChatData;
+- (void)onChatDataReady;
+- (void)onChatDataReadyWithTimestamp:(double)a0;
+- (void)willInitDataSource;
+- (void)willEnterChatListFrom:(id)a0;
+- (void)touchUpOfMessageTab:(double)a0;
+- (id /* block */)onReloadCalled;
+- (unsigned long long)msgTabClickedSituation;
+- (BOOL)p_shouldTrack;
+- (void)p_track;
+- (void)p_addObserverForNotifications;
+- (void)p_recordPageUIReadyTimeAndTrackIfNecessary;
+- (BOOL)p_chatListHasRealChat;
+- (void)p_trackIfNecessary;
+- (void)p_onTabChanged:(id)a0;
+- (void)p_onTabDidAppear:(id)a0;
+- (void)p_notifyFrontFirstFrame;
+- (void)p_waitAndNotifyNromalFirstFrame;
+- (double)p_experienceDuration;
+- (double)p_dealDataDuration;
+- (double)p_realDuration;
+- (double)p_imReadyDuration;
+- (double)p_touchUpExpDuration;
+- (double)p_touchUpExpDuration_diagnosis;
+- (id)p_entrance;
+- (double)p_durationFromLaunch;
+- (double)p_launchToFirstReload;
+- (BOOL)p_fromColdLaunch;
+- (id)p_imMode;
+- (id)p_fromTab;
+- (BOOL)p_fromOtherUserPush;
+- (double)p_cpuUsage;
+- (double)p_memoryUsage;
+- (double)p_expFromColdLaunchWhenPush;
+- (void).cxx_destruct;
+- (void)clear;
+- (id)init;
+- (id).cxx_construct;
+
+@end

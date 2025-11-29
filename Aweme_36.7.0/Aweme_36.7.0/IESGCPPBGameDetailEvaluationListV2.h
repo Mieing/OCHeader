@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface IESGCPPBGameDetailEvaluationListV2 : GPBMessage
+
+@property (nonatomic) long long total;
+@property (nonatomic) BOOL evaluationEntrance;
+@property (retain, nonatomic) NSMutableArray *evaluationInfoArray;
+@property (readonly, nonatomic) unsigned long long evaluationInfoArray_Count;
+
++ (id)descriptor;
+
+@end

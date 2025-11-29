@@ -1,0 +1,3 @@
+@interface BDUGTwiceVerifyDefine : NSObject
+
+@end

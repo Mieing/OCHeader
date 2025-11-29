@@ -1,0 +1,3 @@
+@interface KtvPriorSongGiftBoardApiRoot : GPBRootObject
+
+@end

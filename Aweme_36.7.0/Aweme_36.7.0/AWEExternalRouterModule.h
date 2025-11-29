@@ -1,0 +1,88 @@
+@class NSDictionary, NSString;
+
+@interface AWEExternalRouterModule : NSObject <HTSAppLifeCycle, BDFlowMonitorProtocol>
+
+@property (copy, nonatomic) NSDictionary *launchOptions;
+@property (nonatomic) BOOL materialContinueAlreadyBegin;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)_aweLazyRegisterLoad;
++ (Class)aAWEExternalRouterModuleServiceDOUYINLiteAdaperClass;
++ (Class)aAWESiriSearchCommonAdapterClass;
++ (Class)aAWEAppShortcutCommonAdapterClass;
++ (Class)aAWEPushTokenRegisterCommonAdapterClass;
++ (unsigned long long)priority;
+
+- (void)onAppDidBecomeActive;
+- (void)onHandleAppShortcutAction;
+- (BOOL)onHandleAppOpenUrl;
+- (BOOL)onHandleAppContinueUserActivity;
+- (id)flowMonitorProductDiversionConfig;
+- (long long)authCertTimeWindow:(id)a0;
+- (id)flowMonitorSettingsDict;
+- (id)customsAuthParams:(id)a0;
+- (void)alertWithCertID:(id)a0 title:(id)a1 content:(id)a2 confirmText:(id)a3 cancelText:(id)a4 confirmAction:(id /* block */)a5 cancelAction:(id /* block */)a6;
+- (void)authBlockToast:(id)a0;
+- (void)blockPopupWithWithCertID:(id)a0 confirmAction:(id /* block */)a1 cancelAction:(id /* block */)a2;
+- (id)flowMonitorTopViewController;
+- (void)flowMonitorCustomReportOutWithSession:(id)a0 time:(double)a1;
+- (void)flowMonitorCustomReportBack:(BOOL)a0;
+- (id)hostParamsInjection;
+- (id)businessParamsInjection;
+- (void)reportOutWithType:(unsigned long long)a0 resultMessage:(id)a1 extraInfo:(id)a2;
+- (double)flowMonitorAppLaunchTs;
+- (void)flowMonitorCustomReportWithError:(id)a0 openURL:(id)a1 isFromOutsideRoute:(BOOL)a2 routeParams:(id)a3;
+- (BOOL)enableHostMonitorReport;
+- (id)flowMonitorOutURLWithSessionIfNeeded:(id)a0;
+- (BOOL)authEnable;
+- (id)buildOutPageList:(id)a0 timeStamp:(long long)a1;
+- (void)stopLiveNotificationHandler;
+- (void)update3DTouchMenu;
+- (void)privacyPolicyAgreed;
+- (void)materialContinue;
+- (void)setupLaunchTrackInfo;
+- (id)_getLaunchUrl;
+- (id)aAWEPushTokenRegisterCommonAdapter;
+- (void)uploadDeviceTokenIfNeeded:(unsigned long long)a0;
+- (BOOL)insertVideosWhenColdLaunchWithLaunchURL;
+- (void)dealWithNotification:(id)a0 didFinishLaunchingWithOptions:(id)a1;
+- (void)trackAppLaunchWithOptions:(id)a0;
+- (id)loadHandlingPushData;
+- (BOOL)_handleApplication:(id)a0 continueUserActivity:(id)a1 restorationHandler:(id /* block */)a2;
+- (void)logOpenEventWithString:(id)a0 fromScene:(id)a1 isColdLaunch:(BOOL)a2;
+- (BOOL)handleSiriSuggestWithOldLogic:(id)a0 isColdLaunch:(BOOL)a1 linkSession:(id)a2;
+- (BOOL)handleSiriSuggestWithNewLogic:(id)a0 isColdLaunch:(BOOL)a1 linkSession:(id)a2;
+- (id)aAWESiriSearchCommonAdapter;
+- (BOOL)new_handleApplication:(id)a0 session:(id)a1 continueUserActivity:(id)a2 restorationHandler:(id /* block */)a3;
+- (BOOL)enableVirtualNode;
+- (void)trackAppLaunchWithScheme:(id)a0 isInBackground:(BOOL)a1;
+- (BOOL)_application:(id)a0 sourceApplication:(id)a1 url:(id)a2 annotation:(id)a3;
+- (void)_handleApplication:(id)a0 performActionForShortcutItem:(id)a1 completionHandler:(id /* block */)a2;
+- (void)new_handleApplication:(id)a0 performActionForShortcutItem:(id)a1 blockManager:(id)a2 linkSession:(id)a3 completionHandler:(id /* block */)a4;
+- (void)handleShortcutWithManager:(id)a0 completionHandler:(id /* block */)a1 linkSession:(id)a2 shortcutItem:(id)a3;
+- (void)alertAccessAlertManagerWithCertID:(id)a0 title:(id)a1 content:(id)a2 confirmText:(id)a3 cancelText:(id)a4 confirmAction:(id /* block */)a5 cancelAction:(id /* block */)a6;
+- (void)blockPopupAccessAlertManagerWithWithCertID:(id)a0 confirmAction:(id /* block */)a1 cancelAction:(id /* block */)a2;
+- (BOOL)isAppIntentURL:(id)a0;
+- (void)p_trackWidgetsAction:(id)a0;
+- (void)deeplinkSuccessCompletion:(id)a0;
+- (BOOL)canContentSyncManagerOpenURL:(id)a0 application:(id)a1;
+- (BOOL)isOpenSDKURL:(id)a0;
+- (void)trackSearchWidget:(id)a0 actionType:(id)a1;
+- (void)trackTrendingWords:(id)a0 actionType:(id)a1;
+- (id)referStringFromScheme:(id)a0;
+- (void)setupLaunchTrackInfoWithOldLogic:(id)a0;
+- (void)setupLaunchTrackInfoWithNewLogic:(id)a0;
+- (id)aAWEExternalRouterModuleServiceDOUYINLiteAdaper;
+- (id)aAWEAppShortcutCommonAdapter;
+- (void)_onAppDidFinishLaunch;
+- (void)_onAppRootWindowVisiable;
+- (void)_onAppRootViewDidAppear;
+- (id)flowMonitorCustomAddTrackerExtrasWithOpenURL:(id)a0 isFromOutsideRoute:(BOOL)a1;
+- (BOOL)shouldStopInAntiAddictMaskShowing:(id)a0 context:(id)a1 linkSession:(id)a2;
+- (void).cxx_destruct;
+- (void)dealloc;
+
+@end

@@ -1,0 +1,82 @@
+@class MMFinderLiveKTVEndContentView, MMFinderLiveKTVEmptyContentView, NSString, WCFinderLiveAnchorLogReporter, MMFinderLiveTask, MMFinderLiveKTVBeginContentView, MMFinderLiveKTVSingingContentView, MMLiveKtvUserView;
+
+@interface MMFinderLiveKTVMusicContainerView : MMFinderLiveKTVBaseView <MMFinderLiveKTVStateExt, MMLiveKtvUserViewDelegate, MMFinderLiveKTVLogicExt, MMFinderLiveKTVBoxExt, MMLiveTaskMgrExt>
+
+@property (nonatomic) unsigned long long scene;
+@property (nonatomic) unsigned long long currState;
+@property (retain, nonatomic) MMFinderLiveKTVBeginContentView *beginContentView;
+@property (retain, nonatomic) MMFinderLiveKTVSingingContentView *singingContentView;
+@property (retain, nonatomic) MMFinderLiveKTVEndContentView *endContentView;
+@property (retain, nonatomic) MMFinderLiveKTVBeginContentView *nextAdvanceContentView;
+@property (retain, nonatomic) MMFinderLiveKTVEmptyContentView *emptyContentView;
+@property (retain, nonatomic) MMLiveKtvUserView *userView;
+@property (nonatomic) BOOL isUserViewAnimating;
+@property (nonatomic) BOOL isStateVisivilityChangeAnimating;
+@property (retain, nonatomic) WCFinderLiveAnchorLogReporter *anchorReporter;
+@property (readonly, nonatomic) MMFinderLiveTask *finderLiveTask;
+@property (copy, nonatomic) id /* block */ userTappedBlock;
+@property (copy, nonatomic) id /* block */ userMicMutedBtnTappedBlock;
+@property (copy, nonatomic) id /* block */ userContactUpdateBlock;
+@property (copy, nonatomic) id /* block */ userHeadMovedCallback;
+@property (copy, nonatomic) id /* block */ singingFrameUpdateBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (double)preferHeight;
++ (unsigned long long)transferSingStateToUIState:(long long)a0 lastUIState:(unsigned long long)a1;
+
+- (id)initWithTaskId:(id)a0;
+- (void)dealloc;
+- (void)registerExtensions;
+- (void)unRegisterExtensions;
+- (void)initDefaultDatas;
+- (void)checkKTVState:(id)a0 changeUpdate:(BOOL)a1;
+- (void)clearStates;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)layoutBeginContentView;
+- (void)layoutSingingContentView;
+- (void)layoutEndContentView;
+- (void)layoutNextAdvanceContentView;
+- (void)layoutEmptyContentView;
+- (void)layoutUserView;
+- (id)getSingerPlayerUIDesc;
+- (id)getSingerHeaderUIDesc;
+- (void)onEnterLive;
+- (void)updateMainWidgetsColor:(id)a0;
+- (id)ktvUserView;
+- (BOOL)isCurrSingerRectLargeStyle;
+- (void)updateUIStateWithSingState:(long long)a0;
+- (void)refreshUIWithSingState:(long long)a0 forUniqueIdChanged:(id)a1;
+- (void)refreshCurrStateVisivilityFromLastState:(unsigned long long)a0;
+- (void)onCurrStateChangedFromLastState:(unsigned long long)a0;
+- (void)refreshCurrStateUIFromLastState:(unsigned long long)a0;
+- (void)refreshCurrStateUIForUniqueIdChanged:(id)a0;
+- (void)layoutUIForStateChanged;
+- (void)startUserViewPrepareToBeginAnimation;
+- (void)reportStatus;
+- (id)finderTaskId;
+- (id)getAnchorReporter;
+- (void)onLiveKTVModeChanged:(BOOL)a0 taskId:(id)a1;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 singStateChanged:(long long)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 uniqueIdChanged:(id)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 songItemBasicInfoUpdated:(id)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 onlySingSegment:(BOOL)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 songNameUpdated:(id)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 nextSongNameUpdated:(id)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 nextSongUniqueIdUpdated:(id)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 singerContactUpdated:(id)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 singerVoicingChanged:(BOOL)a2;
+- (void)onLiveTaskId:(id)a0 ktvState:(id)a1 singerUserIdChanged:(id)a2;
+- (void)updateSingerUserView:(id)a0;
+- (void)onLiveTask:(id)a0 micUsersInfoChanged:(id)a1;
+- (void)onUniqueTaskId:(id)a0 micUsersInfoChanged:(id)a1;
+- (void)onLiveKtvUserViewAvatarTapped:(id)a0 highlightingView:(id)a1;
+- (void)onLiveKTVUserView:(id)a0 micMutedButtonTappedWithUserInfo:(id)a1;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)onLiveKTVUserView:(id)a0 contactUpdate:(id)a1;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,16 @@
+@interface AWEShareAsStoryStyleFrameModel : NSObject
+
+@property (nonatomic) double x;
+@property (nonatomic) double y;
+@property (nonatomic) double width;
+@property (nonatomic) double height;
+@property (nonatomic) double originalWidth;
+@property (nonatomic) double originalHeight;
+@property (nonatomic) BOOL enableCornerRadius;
+@property (nonatomic) double cornerRadiusValue;
+
++ (id)modelWithRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+
+- (id)initWithRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+
+@end

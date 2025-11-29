@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface IESLiveLinkMicAudienceEnlargeGuestReplyResponse_ResponseData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *prompts;
+
++ (id)descriptor;
+
+@end

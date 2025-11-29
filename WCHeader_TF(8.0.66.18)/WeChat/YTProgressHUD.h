@@ -1,0 +1,90 @@
+@class UIColor, NSString, NSTimer, UIFont, NSDate, UIView, UILabel;
+@protocol YTProgressHUDDelegate;
+
+@interface YTProgressHUD : UIView {
+    BOOL useAnimation;
+    SEL methodForExecution;
+    id targetForExecution;
+    id objectForExecution;
+    UILabel *label;
+    UILabel *detailsLabel;
+    BOOL isFinished;
+    struct CGAffineTransform { double a; double b; double c; double d; double tx; double ty; } rotationTransform;
+}
+
+@property (retain) UIView *indicator;
+@property (retain) NSTimer *graceTimer;
+@property (retain) NSTimer *minShowTimer;
+@property (retain) NSDate *showStarted;
+@property (copy) id /* block */ completionBlock;
+@property long long mode;
+@property long long animationType;
+@property (retain) UIView *customView;
+@property (weak) id<YTProgressHUDDelegate> delegate;
+@property (copy) NSString *labelText;
+@property (copy) NSString *detailsLabelText;
+@property float opacity;
+@property (retain) UIColor *color;
+@property float xOffset;
+@property float yOffset;
+@property float margin;
+@property float cornerRadius;
+@property BOOL dimBackground;
+@property float graceTime;
+@property float minShowTime;
+@property BOOL taskInProgress;
+@property BOOL removeFromSuperViewOnHide;
+@property (retain) UIFont *labelFont;
+@property (retain) UIColor *labelColor;
+@property (retain) UIFont *detailsLabelFont;
+@property (retain) UIColor *detailsLabelColor;
+@property (retain) UIColor *activityIndicatorColor;
+@property float progress;
+@property struct CGSize { double width; double height; } minSize;
+@property (readonly) struct CGSize { double width; double height; } size;
+@property (getter=isSquare) BOOL square;
+
++ (id)showHUDAddedTo:(id)a0 animated:(BOOL)a1;
++ (BOOL)hideHUDForView:(id)a0 animated:(BOOL)a1;
++ (unsigned long long)hideAllHUDsForView:(id)a0 animated:(BOOL)a1;
++ (id)HUDForView:(id)a0;
++ (id)allHUDsForView:(id)a0;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithView:(id)a0;
+- (id)initWithWindow:(id)a0;
+- (void)dealloc;
+- (void)show:(BOOL)a0;
+- (void)hide:(BOOL)a0;
+- (void)hide:(BOOL)a0 afterDelay:(double)a1;
+- (void)hideDelayed:(id)a0;
+- (void)handleGraceTimer:(id)a0;
+- (void)handleMinShowTimer:(id)a0;
+- (void)didMoveToSuperview;
+- (void)showUsingAnimation:(BOOL)a0;
+- (void)hideUsingAnimation:(BOOL)a0;
+- (void)animationFinished:(id)a0 finished:(BOOL)a1 context:(void *)a2;
+- (void)done;
+- (void)showWhileExecuting:(SEL)a0 onTarget:(id)a1 withObject:(id)a2 animated:(BOOL)a3;
+- (void)showAnimated:(BOOL)a0 whileExecutingBlock:(id /* block */)a1;
+- (void)showAnimated:(BOOL)a0 whileExecutingBlock:(id /* block */)a1 completionBlock:(id /* block */)a2;
+- (void)showAnimated:(BOOL)a0 whileExecutingBlock:(id /* block */)a1 onQueue:(id)a2;
+- (void)showAnimated:(BOOL)a0 whileExecutingBlock:(id /* block */)a1 onQueue:(id)a2 completionBlock:(id /* block */)a3;
+- (void)launchExecution;
+- (void)cleanUp;
+- (void)setupLabels;
+- (void)updateIndicators;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)registerForKVO;
+- (void)unregisterFromKVO;
+- (id)observableKeypaths;
+- (void)observeValueForKeyPath:(id)a0 ofObject:(id)a1 change:(id)a2 context:(void *)a3;
+- (void)updateUIForKeypath:(id)a0;
+- (void)registerForNotifications;
+- (void)unregisterFromNotifications;
+- (void)statusBarOrientationDidChange:(id)a0;
+- (void)updateForCurrentOrientationAnimated:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveTaskTodoStep : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *conditionsArray;
+@property (readonly, nonatomic) unsigned long long conditionsArray_Count;
+
++ (id)descriptor;
+
+@end

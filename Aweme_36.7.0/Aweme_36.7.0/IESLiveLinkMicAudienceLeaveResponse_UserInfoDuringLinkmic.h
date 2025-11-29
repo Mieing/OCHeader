@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface IESLiveLinkMicAudienceLeaveResponse_UserInfoDuringLinkmic : IESLivePBBaseMessage
+
+@property (nonatomic) long long addFollowersCount;
+@property (copy, nonatomic) NSString *addFanTicketStr;
+@property (nonatomic) long long scoreMoreThan;
+
++ (id)descriptor;
+
+@end

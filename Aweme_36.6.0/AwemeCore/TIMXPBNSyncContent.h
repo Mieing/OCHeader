@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TIMXPBNSyncContent : GPBMessage
+
+@property (nonatomic) int status;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) long long targetMessageId;
+@property (nonatomic) BOOL hasTargetMessageId;
+@property (copy, nonatomic) NSString *targetClientMessageId;
+@property (nonatomic) BOOL hasTargetClientMessageId;
+
++ (id)descriptor;
+
+@end

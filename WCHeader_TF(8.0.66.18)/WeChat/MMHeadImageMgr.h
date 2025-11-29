@@ -1,0 +1,96 @@
+@class NSString, CUploadHDHeadImg, MMHeadImageCacher, MMHeadImageDownloader;
+
+@interface MMHeadImageMgr : MMUserService <HeadImgDelegate, IContactMgrExt, IStrangerContactMgrExt, IStrangerBrandContactHeadImageExt, WAContactMgrExtension, IWWKFContactMgrExt, INewSyncExt, MMServiceProtocol> {
+    MMHeadImageCacher *_headImgCacher;
+    MMHeadImageDownloader *_headImgDownloader;
+    CUploadHDHeadImg *_headImgUploader;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)getHeadImgPathForOldVersion:(id)a0 isHD:(BOOL)a1;
++ (id)getHeadImgPathForNewVersion:(id)a0 forCategory:(unsigned char)a1 isHD:(BOOL)a2;
++ (id)getHeadImgPathForNewVersionForLoadImage:(id)a0 forCategory:(unsigned char)a1 isHD:(BOOL)a2;
++ (id)getHeadImgPathForNewVersionForLoadImage:(id)a0 forCategory:(unsigned char)a1 isHD:(BOOL)a2 forLogin:(BOOL)a3;
++ (id)getHeadImgDirectoryPath:(unsigned char)a0;
++ (id)getHeadImgRootDirectoryPath;
++ (id)getOldHeadImgPathForLoginUsr:(id)a0 isHD:(BOOL)a1;
++ (id)getRoundImgDirectoryPath;
++ (id)getDefaultHeadImage:(id)a0;
++ (id)getBrandContactPluginDefaultImage:(long long)a0 length:(double)a1;
++ (id)getBrandContactPluginImage:(long long)a0 length:(double)a1;
++ (id)getPluginImage:(id)a0;
++ (id)amendHeadImgIfNeed:(id)a0;
++ (BOOL)isMobileName:(id)a0;
++ (BOOL)isGoogleName:(id)a0;
++ (BOOL)isKFName:(id)a0;
++ (id)resizeImage:(id)a0;
++ (id)tryGenHQImage:(id)a0;
++ (BOOL)isDownloadHeadImageUsingWxpc;
++ (id)getUsrHeadImgForLogin:(id)a0;
++ (void)saveHeadImgData:(id)a0 forLoginUser:(id)a1;
+
+- (id)VoIPHDHeadImageWithContact:(id)a0;
+- (void)onServiceInit;
+- (void)onServiceMemoryWarning;
+- (void)onServiceClearData;
+- (id)getHeadImage:(id)a0 withCategory:(unsigned char)a1;
+- (id)getHeadImageWithUseScene:(id)a0 withScene:(unsigned char)a1 withCategory:(unsigned char)a2;
+- (id)getHeadImageWithUseScene:(id)a0 withScene:(unsigned char)a1 withCategory:(unsigned char)a2 retHeadImgIsExistedLocal:(BOOL *)a3;
+- (id)getOriginalHeadImage:(id)a0 withCategory:(unsigned char)a1;
+- (id)getRoundImage:(id)a0 size:(struct CGSize { double x0; double x1; })a1 withCategory:(unsigned char)a2;
+- (id)getRoundImage:(id)a0 size:(struct CGSize { double x0; double x1; })a1 cornerSize:(unsigned int)a2 withCategory:(unsigned char)a3;
+- (BOOL)isHeadImgExistInLocal:(id)a0;
+- (BOOL)isHeadImgExistInLocal:(id)a0 isHD:(BOOL)a1;
+- (id)getOriginalHDHeadImg:(id)a0 withCategory:(unsigned char)a1;
+- (void)updateUsrHeadImg:(id)a0 forCategory:(unsigned char)a1;
+- (void)updateUsrHeadImg:(id)a0 withUrl:(id)a1 forCategory:(unsigned char)a2;
+- (void)updateUsrHeadImg:(id)a0 forCategory:(unsigned char)a1 isHeadImgExistedInLocal:(BOOL)a2;
+- (void)updateUsrHeadImg:(id)a0 withUrl:(id)a1 forCategory:(unsigned char)a2 isHeadImgExistedInLocal:(BOOL)a3;
+- (void)forceUpdatrUsrHeadImg:(id)a0 forCategory:(unsigned char)a1 isHeadImgExistedInLocal:(BOOL)a2;
+- (void)forceUpdatrUsrHeadImg:(id)a0 withUrl:(id)a1 forCategory:(unsigned char)a2 isHeadImgExistedInLocal:(BOOL)a3;
+- (BOOL)saveUsrImgToLocal:(id)a0 withFile:(id)a1 forCategory:(unsigned char)a2 isHD:(BOOL)a3;
+- (BOOL)saveUsrImgToLocal:(id)a0 withData:(id)a1 forCategory:(unsigned char)a2 isHD:(BOOL)a3;
+- (BOOL)saveUsrImgToLocal:(id)a0 withData:(id)a1 forCategory:(unsigned char)a2 isHD:(BOOL)a3 forceReload:(BOOL)a4;
+- (BOOL)saveUsrImgToLocal:(id)a0 withData:(id)a1 forCategory:(unsigned char)a2 isHD:(BOOL)a3 forceReload:(BOOL)a4 saveAsTemp:(BOOL)a5;
+- (BOOL)createEmptyUsrImgInLocal:(id)a0;
+- (void)cancelDownloadRequest:(id)a0;
+- (void)fixSelfHeadImgByLocalImg;
+- (unsigned int)downloadHDHeadImg:(id)a0 forCategory:(unsigned char)a1;
+- (unsigned int)downloadHDHeadImg:(id)a0 url:(id)a1 forCategory:(unsigned char)a2;
+- (unsigned int)uploadHDHeadImg:(id)a0;
+- (unsigned int)uploadHDHeadImg:(id)a0 qualityType:(unsigned int)a1;
+- (BOOL)isUploadIngHeadImg;
+- (BOOL)isNeedGetHDImg:(id)a0;
+- (void)deleteHeadImageForBrand:(id)a0;
+- (void)setDownloadFastMode;
+- (void)setDownloadCommonMode;
+- (BOOL)isNeedAutoUpdateHeadImgForUsr:(id)a0;
+- (void)deleteUsrHeadImg:(id)a0;
+- (void)notifyHeadImageChange:(id)a0;
+- (void)onGetUsrImage:(id)a0 Status:(id)a1 Image:(id)a2 Category:(unsigned char)a3;
+- (void)onModifyContactHeadImage:(id)a0;
+- (void)onBrandContactHeadImageURLChange:(id)a0;
+- (void)onDeleteContact:(id)a0;
+- (void)onDeleteWeAppContact:(id)a0;
+- (void)onWWKFContactDeleted:(id)a0;
+- (void)onWWKFContactHeadImageURLChangeed:(id)a0;
+- (void)onStrangerContactUpdated:(id)a0 Contact:(id)a1;
+- (void)onStrangerContactUpdateForbidden:(id)a0;
+- (void)onStrangerBrandHeadImageURLChange:(id)a0;
+- (void)onNewSyncModUserImage:(id)a0;
+- (void)handleModUserImg:(id)a0;
+- (BOOL)checkIsNeedUpdate:(id)a0 category:(unsigned char)a1 isHeadImgExistedInLocal:(BOOL)a2;
+- (BOOL)isMobileName:(id)a0;
+- (BOOL)checkIsNeedUpdateHeadImg:(id)a0 isHeadImgExistedInLocal:(BOOL)a1;
+- (BOOL)checkIsNeedUpdateEnterpriseHeadImg:(id)a0 isHeadImgExistedInLocal:(BOOL)a1;
+- (BOOL)checkIsNeedUpdateKFBrandHeadImg:(id)a0 isHeadImgExistedInLocal:(BOOL)a1;
+- (BOOL)checkIsNeedUpdateBrandIcon:(id)a0 isHeadImgExistedInLocal:(BOOL)a1;
+- (void)internalUpdateUsrHeadImg:(id)a0 forCategory:(unsigned char)a1;
+- (void)internalUpdateUsrHeadImg:(id)a0 withUrl:(id)a1 forCategory:(unsigned char)a2;
+- (void).cxx_destruct;
+
+@end

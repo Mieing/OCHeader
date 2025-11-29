@@ -1,0 +1,3 @@
+@interface FeedCommonRoot : GPBRootObject
+
+@end

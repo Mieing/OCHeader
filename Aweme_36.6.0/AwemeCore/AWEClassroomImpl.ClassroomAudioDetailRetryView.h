@@ -1,0 +1,12 @@
+@interface AWEClassroomImpl.ClassroomAudioDetailRetryView : UIView {
+    void /* unknown type, empty encoding */ refreshBlock;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_containerView;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_hintLabel;
+    void /* unknown type, empty encoding */ $__lazy_storage_$_refreshButton;
+}
+
+- (void)refreshButtonClicked:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+
+@end

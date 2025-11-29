@@ -1,0 +1,80 @@
+@class NSString, AWEIMMessageBaseViewController, AWEUserModel;
+@protocol AWEIMMessageAddLocalMessageInteractorInterface;
+
+@interface AWEIMMessageCommerceInteractor : AWEIMComponentBase <AWEIMChatMessageTransferUtilityMessage, AWEIMMessageListDataAction, AWEIMInputVIewControllerAction, AWEIMMessageListNaviBarTitleUserRoleTagAction, AWEIMMessageListUserInfoAction, AWEIMMessageCommerceInteractorInterface>
+
+@property (nonatomic) long long personalInfoResponseCount;
+@property (nonatomic) BOOL needDealPersonalInfoResponse;
+@property (weak, nonatomic) id<AWEIMMessageAddLocalMessageInteractorInterface> addLocalMsgInteractor;
+@property (copy, nonatomic) NSString *logExtra;
+@property (copy, nonatomic) NSString *creativeId;
+@property (nonatomic) BOOL hasSentAnchorCommandParams;
+@property (readonly, nonatomic) AWEIMMessageBaseViewController *vcParent;
+@property (nonatomic) double startTime;
+@property (nonatomic) BOOL hasCheckedFirstChat;
+@property (nonatomic) BOOL hasSendActionPermission;
+@property (nonatomic) BOOL hasReceicedConversationUpdate;
+@property (nonatomic) BOOL hasReceivedFullDetail;
+@property (nonatomic) BOOL firstFrameOpt;
+@property (nonatomic) BOOL enableTrackEnterBackground;
+@property (retain, nonatomic) AWEUserModel *fullDetailUser;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)transferToEnterpriseCertificationPageWithConversation:(id)a0 uid:(id)a1;
++ (BOOL)canCreateComponentWithContext:(id)a0;
+
+- (void)messageDataControllerDidModified;
+- (void)didUpdatedConversation:(id)a0 messageId:(id)a1 error:(id)a2;
+- (void)app_didEnterBackground;
+- (void)hostVC_viewDidDisappear;
+- (void)hostVC_viewDidLoad;
+- (void)componentDidMounted:(id)a0;
+- (void)hostVC_viewDidAppear;
+- (void)didReceiveNewMessage:(id)a0 reason:(long long)a1;
+- (void)beforeAsync_didFetchMsgWithMessageGroupArray:(id)a0 hasMore:(BOOL)a1 direction:(unsigned long long)a2 shouldAutoLoadMore:(BOOL)a3 isFirstLoad:(BOOL)a4;
+- (void)didFetchFullDetailUser:(id)a0 fullDetailUser:(id)a1;
+- (void)willSendTextMessageWithContent:(id)a0 userInfo:(id)a1;
+- (void)didSendTextMessage:(id)a0 userInfo:(id)a1;
+- (void)appDidEnterBackgroundNotification:(id)a0;
+- (void)transferToAlreadyExistingChatPageWithCid:(id)a0 params:(id)a1;
+- (void)didShowTitleViewComponentWithType:(unsigned long long)a0 extraParams:(id)a1;
+- (void)didClickTitleViewComponentWithType:(unsigned long long)a0 extraParams:(id)a1;
+- (BOOL)shouldSendUserActionWithModel:(id)a0;
+- (id)historyCustomizedParamsFromModel:(id)a0;
+- (void)didSendUserActionWithModel:(id)a0;
+- (void)inputMenuDidTapped;
+- (void)beforeSendTextMessage:(id)a0 userInfo:(id)a1;
+- (void)doSendTextMessage:(id)a0 userInfo:(id)a1;
+- (void)updatePersonalInfoResponseCountIfNeededWithMessageGroupArray:(id)a0;
+- (void)didFetchFullDetailUser:(id)a0 addLocalMessageInteractor:(id)a1;
+- (void)try_addWarmPromptMsg;
+- (void)reportRequestBackWithEvent:(id)a0;
+- (void)didReceiveNewMessage:(id)a0;
+- (void)p_messageDataControllerDidModified;
+- (void)createCompanyAutoReplyGuideWithMessageGroupArray:(id)a0;
+- (void)didShowNaviBarTitleUserRoleTag:(id)a0;
+- (void)didClickNaviBarTitleUserRoleTag:(id)a0;
+- (void)addAdStayTimeTracker;
+- (void)addAdSendMessageTracker;
+- (BOOL)disableInsertWarmTipWithPeerUser:(id)a0 currentUser:(id)a1;
+- (void)addArray:(id)a0 toDict:(id)a1 withKey:(id)a2;
+- (id)p_getCommerceSceneV2InfoWithRouterParams:(id)a0;
+- (BOOL)isEnterConFirstTimeWithModel:(id)a0;
+- (BOOL)isValidSendUserActionTypeWithModel:(id)a0;
+- (id)extraTrackingInfoWithUsingExt:(BOOL)a0 model:(id)a1;
+- (id)extraTrackingInfoWithUsingExt:(BOOL)a0 routerParams:(id)a1 conversation:(id)a2 fullDetailUser:(id)a3 ext:(id)a4;
+- (id)p_recordNoticeInfoWithMessageGroupArray:(id)a0;
+- (void)p_reportConversationWithNoticeInfoDict:(id)a0;
+- (void)p_recordChatToLocalExt;
+- (void)__titleViewComponenTrackEvent:(id)a0 labelStyle:(id)a1;
+- (void)__titleViewComponenShowWithLabelStyle:(id)a0;
+- (void)__titleViewComponenClickWithLabelStyle:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (id)conversation;
+- (void)dealloc;
+
+@end

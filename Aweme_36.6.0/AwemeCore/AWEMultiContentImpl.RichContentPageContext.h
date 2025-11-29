@@ -1,0 +1,86 @@
+@class NSString, NSDictionary, AWEAwemeModel, NSNumber;
+@protocol AFDFeedPreloadControllerProtocol, AFDBroadcastContextProtocol, AFDAlbumPageContextProtocol, AWEAwemeBizPlayVideoProtocol, AWEAwemePlayVideoViewControllerProtocol;
+
+@interface AWEMultiContentImpl.RichContentPageContext : AWERichContentAdapterBasic.RichContentBasePageContext <BDChainLogNodeHostProtocol, AFDRichContentPageContextProtocol, AWEKnowledgeStatePageContextProtocol> {
+    void /* unknown type, empty encoding */ cardToken;
+    void /* function */ referString;
+    void /* function */ previousPage;
+    void /* function */ enterFrom;
+    void /* function */ logExtraDict;
+    void /* function */ context;
+    void /* function */ originEntryEnterMethod;
+    void /* unknown type, empty encoding */ shouldAdaptFullScreenThree;
+    void /* function */ reactID;
+    void /* function */ adEventName;
+    void /* function */ ruleId;
+    void /* function */ pageType;
+    void /* function */ cityInfoString;
+    void /* unknown type, empty encoding */ _overlayInteractionEnabled;
+    void /* function */ fromPage;
+    void /* unknown type, empty encoding */ playCellWillDisplay;
+    void /* unknown type, empty encoding */ isDisplayed;
+    void /* unknown type, empty encoding */ progressBarGestureTriggerLoopVideo;
+    void /* unknown type, empty encoding */ currentSectionIndex;
+    void /* unknown type, empty encoding */ hasLastSectionInheritSpeed;
+    void /* unknown type, empty encoding */ isShowingAlbumPreview;
+}
+
+@property (nonatomic, readonly) id<AFDAlbumPageContextProtocol> albumContext;
+@property (nonatomic, retain) id<AFDBroadcastContextProtocol> broadcastContext;
+@property (nonatomic) unsigned long long contentListPlayState;
+@property (nonatomic, retain) AWEAwemeModel *model;
+@property (nonatomic) struct EngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *audioWrapper;
+@property (nonatomic) struct EngineVideoWrapper { void /* function */ *x0; void /* function */ *x1; void *x2; } *videoWrapper;
+@property (nonatomic, retain) NSNumber *clickEnter;
+@property (nonatomic, retain) NSNumber *slideType;
+@property (nonatomic, retain) NSNumber *detailSlide;
+@property (nonatomic) BOOL hasReportClickEnter;
+@property (nonatomic, copy) NSString *referString;
+@property (nonatomic, copy) NSString *previousPage;
+@property (nonatomic, copy) NSString *enterFrom;
+@property (nonatomic) BOOL isFullScreen;
+@property (nonatomic, copy) NSDictionary *logExtraDict;
+@property (nonatomic, copy) NSDictionary *context;
+@property (nonatomic, copy) NSString *originEntryEnterMethod;
+@property (nonatomic, copy) NSString *reactID;
+@property (nonatomic, copy) NSString *adEventName;
+@property (nonatomic, copy) NSString *ruleId;
+@property (nonatomic, retain) AWEAwemeModel *fromModel;
+@property (nonatomic, copy) NSString *pageType;
+@property (nonatomic, copy) NSString *cityInfoString;
+@property (nonatomic, retain) NSNumber *usingLogExtraDictEnterMethod;
+@property (nonatomic) BOOL isInLongPressFastSpeed;
+@property (nonatomic) unsigned long long forceBouncesType;
+@property (nonatomic) BOOL shouldHideTopGradientView;
+@property (nonatomic) BOOL shouldHideBottomGradientView;
+@property (nonatomic) BOOL skipVideoFinish;
+@property (nonatomic, copy) NSString *fromPage;
+@property (nonatomic, weak) void /* function */ playerDelegate;
+@property (nonatomic, weak) void /* function */ videoPlayerDelegate;
+@property (nonatomic, weak) void /* function */ storyDelegate;
+@property (nonatomic, weak) void /* function */ mutiModelDataSource;
+@property (nonatomic, weak) void /* function */ containerDelegate;
+@property (nonatomic, weak) void /* function */ container;
+@property (nonatomic, weak) void /* function */ baseContainerDelegate;
+@property (nonatomic, weak) void /* function */ musicBeatsDelegate;
+@property (nonatomic, weak) void /* function */ containerViewController;
+@property (nonatomic, retain) id<AFDFeedPreloadControllerProtocol> preloadController;
+@property (nonatomic, weak) void /* function */ richContentContainer;
+@property (nonatomic, weak) void /* function */ interactionController;
+@property (nonatomic, weak) void /* function */ interactionNewController;
+@property (nonatomic, weak) void /* function */ pureModePageInteractionDelegate;
+@property (nonatomic, weak) void /* function */ pureModelStickerController;
+@property (nonatomic, retain) id<AWEAwemeBizPlayVideoProtocol, AWEAwemePlayVideoViewControllerProtocol> videoControllerInPreview;
+@property (nonatomic) long long indexInFeed;
+@property (nonatomic) BOOL shouldHidenPauseIcon;
+@property (nonatomic) unsigned long long contentScene;
+@property (nonatomic) BOOL isPureModeFromAlbumDetail;
+
+- (id)chainLogNodeParams;
+- (BOOL)isChainLogGatewayNode;
+- (id)getCardToken;
+- (void)updateNewCardToken:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+
+@end

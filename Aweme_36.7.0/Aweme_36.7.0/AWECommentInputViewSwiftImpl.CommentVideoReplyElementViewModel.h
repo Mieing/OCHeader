@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentVideoReplyElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

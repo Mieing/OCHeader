@@ -1,0 +1,3 @@
+@interface HMDAppExitReasonConfig : NSObject
+
+@end

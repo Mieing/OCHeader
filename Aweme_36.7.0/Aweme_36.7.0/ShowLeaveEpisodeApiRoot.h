@@ -1,0 +1,3 @@
+@interface ShowLeaveEpisodeApiRoot : GPBRootObject
+
+@end

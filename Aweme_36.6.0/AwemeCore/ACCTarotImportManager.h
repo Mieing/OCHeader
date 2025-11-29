@@ -1,0 +1,85 @@
+@class ACCTarotImportVideoCropContext, NSString, AWESelectTemplateDataExporter, NSObject, AWESelectTemplateDataProvider, UIView, AWETranslationTransitionController;
+@protocol ACCMVTemplateManagerProtocol, AWEStudioMusicModelProtocol, ACCProcessViewProtcol, OS_dispatch_queue;
+
+@interface ACCTarotImportManager : NSObject
+
+@property (retain, nonatomic) AWETranslationTransitionController *nextTranslationTransitionDelegate;
+@property (retain, nonatomic) NSString *convertTaskId;
+@property (retain, nonatomic) id<ACCMVTemplateManagerProtocol> mvTemplateManager;
+@property (retain, nonatomic) AWESelectTemplateDataProvider *dataProvider;
+@property (retain, nonatomic) AWESelectTemplateDataExporter *dataExporter;
+@property (retain, nonatomic) UIView<ACCProcessViewProtcol> *progressIndicator;
+@property (nonatomic) BOOL hasBeenCanceled;
+@property (retain, nonatomic) ACCTarotImportVideoCropContext *videoCropInstance;
+@property (retain, nonatomic) id<AWEStudioMusicModelProtocol> defaultMusicForSoundSync;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *getFirstFrameQueue;
+
++ (id)createPreloadTasksWithAssets:(id)a0 taskID:(id)a1;
++ (id)createOnlineResourceTasksWithAssets:(id)a0 taskID:(id)a1;
++ (id)livePhotoAssetWithImportTask:(id)a0;
++ (void)configInfiniGeneralSettingsIfNeed:(id)a0 firstFrameImage:(id)a1;
++ (BOOL)videoArrayIsValid:(id)a0;
++ (BOOL)shouldFetchAssetLocation:(id)a0;
++ (void)configInfiniGeneralSettingsIfNeed:(id)a0 firstFrameImage:(id)a1 imageQualityMap:(id)a2;
++ (id)videoAssetInvalidReasonIfNotValid:(id)a0;
++ (void)p_trackError:(id)a0 key:(id)a1 extraInfo:(id)a2;
++ (BOOL)videoAssetIsValid:(id)a0;
++ (BOOL)shouldShowProgressView:(id)a0;
++ (id)shareInstance;
+
+- (id)addPreloadAsset:(id)a0 taskID:(id)a1 progressHandler:(id /* block */)a2;
+- (void)cancelAllPreloadTask;
+- (id)p_getLivePhotoRequestOptions;
+- (void)importAssets:(id)a0 repoContainer:(id)a1 withMode:(unsigned long long)a2 progressHandler:(id /* block */)a3 params:(id)a4 complete:(id /* block */)a5;
+- (void)present:(id)a0 animated:(BOOL)a1;
+- (id)fetchLocationInfosWithAssetArray:(id)a0;
+- (void)cancelCachedTasks;
+- (BOOL)hasFinishedOrExecutingTaskWithID:(id)a0;
+- (id)getTaskWithID:(id)a0 ofClass:(Class)a1;
+- (void)cancelPreloadTaskWithID:(id)a0;
+- (id)getTaskWithID:(id)a0 ofClass:(Class)a1 needtrack:(BOOL)a2;
+- (BOOL)taskFetchAssetIsFinished:(id)a0;
+- (void)searchTaskWithID:(id)a0 withCompletion:(id /* block */)a1;
+- (void)handlePicTemplateTask:(id)a0 targetProject:(id)a1 completion:(id /* block */)a2;
+- (void)handlePicTemplateProject:(id)a0 workspace:(id)a1 completion:(id /* block */)a2;
+- (void)fetchTasksWithAssets:(id)a0 taskId:(id)a1 taskProgressBlock:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)handleLivePhotoResultWithAssetModel:(id)a0 outputInfo:(id)a1 workspace:(id)a2 project:(id)a3;
+- (void)initRepoLivePhotoInfoInstanceWithProject:(id)a0 outputInfo:(id)a1 phAssetLocalIdentifier:(id)a2;
+- (void)setAssetResolutionWithProject:(id)a0 originalSize:(struct CGSize { double x0; double x1; })a1 outputSize:(struct CGSize { double x0; double x1; })a2;
+- (void)handleLivePhotoProjectConfig:(id)a0 workspace:(id)a1 config:(id)a2 completion:(id /* block */)a3;
+- (void)handlePhotoProjectConfig:(id)a0 workspace:(id)a1 config:(id)a2 completion:(id /* block */)a3;
+- (void)handleVideoProjectConfig:(id)a0 workspace:(id)a1 importTask:(id)a2 config:(id)a3 completion:(id /* block */)a4;
+- (void)handleLivePhotoSlidesTask:(id)a0 workspace:(id)a1 targetProject:(id)a2 progressHandler:(id /* block */)a3 config:(id)a4 completion:(id /* block */)a5;
+- (void)handlePhotoSlidesTask:(id)a0 workspace:(id)a1 targetProject:(id)a2 progressHandler:(id /* block */)a3 config:(id)a4 completion:(id /* block */)a5;
+- (void)handleVideoSlidesTask:(id)a0 workspace:(id)a1 progressHandler:(id /* block */)a2 config:(id)a3 completion:(id /* block */)a4;
+- (void)fetchImage:(id)a0 forProject:(id)a1 progress:(id /* block */)a2 completion:(id /* block */)a3;
+- (void)logImportAssetsInfoWithAssets:(id)a0 publishModel:(id)a1;
+- (void)enterAIClipHandler:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterImageAlbumHandler:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterLivePhotoHandler:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterPhotoToVideoHandler:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterLivePhotoToVideoHandler:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterVideosImportisInfini:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterOneClickFilming:(id)a0 repoContainer:(id)a1 params:(id)a2 progressHandler:(id /* block */)a3 complete:(id /* block */)a4;
+- (void)enterSlidesWithAssets:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)dismissProgressIndicator;
+- (void)trackTaskSearchHitRatio:(id)a0;
+- (void)resetProgressIndicator;
+- (void)showProgressIndicatorIfNeeded:(id)a0;
+- (void)singlePhotoImport:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (BOOL)forbidEnterPhotoesImportWithInfini:(id)a0 repoContainer:(id)a1;
+- (void)enterPhotoesImport:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (void)enterPhotoToVideo:(id)a0 repoContainer:(id)a1 params:(id)a2 complete:(id /* block */)a3;
+- (long long)calculateAIClipLivephotoCountWithAssetArray:(id)a0;
+- (void)trackCacheStatusWithID:(id)a0;
+- (id)cachedVideoAssetWithAssetModel:(id)a0;
+- (void)videosImportUseMultiEditor:(id)a0 repoContainer:(id)a1 params:(id)a2 taskID:(id)a3 createID:(id)a4 convertID:(id)a5 complete:(id /* block */)a6;
+- (BOOL)isSlidesAllLivePhotosWithAssetArray:(id)a0;
+- (void)updateMusicClipRangeWithRepoContainer:(id)a0 finalAssets:(id)a1;
+- (void)cancelImportWithMode:(unsigned long long)a0;
+- (void)resetLivePhotoStatusIfNeeded:(id)a0;
+- (void)requestVideoForAsset:(id)a0 completion:(id /* block */)a1;
+- (void).cxx_destruct;
+- (void)updateProgressIndicator:(id)a0;
+
+@end

@@ -1,0 +1,12 @@
+@class IESGCPPBGradeInfo, IESGCPPBCommentEntranceInfo;
+
+@interface IESGCPPBGameDetailFastEvaluateV2 : GPBMessage
+
+@property (retain, nonatomic) IESGCPPBCommentEntranceInfo *commentEntrance;
+@property (nonatomic) BOOL hasCommentEntrance;
+@property (retain, nonatomic) IESGCPPBGradeInfo *gradeInfo;
+@property (nonatomic) BOOL hasGradeInfo;
+
++ (id)descriptor;
+
+@end

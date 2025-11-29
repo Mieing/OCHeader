@@ -1,0 +1,14 @@
+@class NSString, HTSLiveCommon;
+
+@interface HTSLiveShowDouPlusNotifyMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int eventType;
+@property (nonatomic) long long orderId;
+@property (copy, nonatomic) NSString *orderWishWord;
+@property (nonatomic) long long enterCount;
+
++ (id)descriptor;
+
+@end

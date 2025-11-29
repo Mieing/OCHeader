@@ -1,0 +1,85 @@
+@class UIView, NSString, UIImage, AFDButton, UIImageView, AWEUserModel, AWEUILoadingView, UILabel, AWEProfileToggleView;
+@protocol AFDModalViewHelperProtocol;
+
+@interface AFDPrivacyUserBlockPanelViewController : UIViewController <AWEPanelTransitionWithBackground>
+
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *contentLabel;
+@property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) UIImageView *lockImageView;
+@property (retain, nonatomic) AFDButton *cancelButton;
+@property (retain, nonatomic) UIView *toggleContainerView;
+@property (retain, nonatomic) AWEProfileToggleView *mainToggleView;
+@property (retain, nonatomic) UIView *toggleBottomContainerView;
+@property (retain, nonatomic) AWEProfileToggleView *awemeToggleView;
+@property (retain, nonatomic) UIView *awemeToggleBottomLine;
+@property (retain, nonatomic) AWEProfileToggleView *storyToggleView;
+@property (retain, nonatomic) UIImage *lockImage;
+@property (retain, nonatomic) NSString *titleLabelText;
+@property (retain, nonatomic) NSString *toggleTitleText;
+@property (nonatomic) unsigned long long type;
+@property (retain, nonatomic) AWEUserModel *user;
+@property (retain, nonatomic) id<AFDModalViewHelperProtocol> helper;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (nonatomic) BOOL dismissing;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEPadModuleAdapterClass;
++ (id)notShowTextWithUser:(id)a0;
++ (id)notSeeTitleTextWithUser:(id)a0;
++ (id)notSeeContentTextWithUser:(id)a0;
++ (id)notShowTitleTextWithUser:(id)a0;
++ (id)notShowContentTextWithUser:(id)a0;
++ (void)showMainToggleToastForSuccessWithIsOn:(BOOL)a0 user:(id)a1 type:(unsigned long long)a2;
++ (void)changeStoryStatusWithUser:(id)a0 type:(unsigned long long)a1 needSuccessToast:(BOOL)a2 completion:(id /* block */)a3;
++ (void)changeAwemeStatusWithUser:(id)a0 type:(unsigned long long)a1 needSuccessToast:(BOOL)a2 completion:(id /* block */)a3;
++ (void)hideHerPostBtnClickedWithUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)hideMyPostBtnClickedWithUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)p_unhideMyPostToUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)p_hideMyPostFromUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)p_unhideHerPostUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)p_hideHerPostUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)notSee24StoryBtnClickedWithUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
++ (void)notShow24StoryBtnClickedWithUser:(id)a0 needSuccessToast:(BOOL)a1 completion:(id /* block */)a2;
+
+- (BOOL)wantsDimmingTransitionBackground;
+- (void)transitionBackgroundViewTapped:(id)a0;
+- (id)aAWEPadModuleAdapter;
+- (void)dismissLoadingView;
+- (void)showLockImageView;
+- (void)showToggle;
+- (void)refreshLockImage:(BOOL)a0;
+- (void)showBottomToggle;
+- (BOOL)anyEnable;
+- (BOOL)shouldShowBottom;
+- (void)updateUserInteractionEnabled:(BOOL)a0;
+- (BOOL)awemeEnable;
+- (BOOL)storyEnable;
+- (BOOL)shouldShowStory;
+- (void)updateToggleState;
+- (void)trackAwemeToggleViewSwitch:(BOOL)a0;
+- (void)trackMainToggleViewSwitch:(BOOL)a0;
+- (void)trackEvent:(id)a0 trackParams:(id)a1;
+- (void)mainToggleViewSwitch:(BOOL)a0;
+- (void)awemeToggleViewSwitch:(BOOL)a0;
+- (void)storyToggleViewSwitch:(BOOL)a0;
+- (void)configWithUser:(id)a0 type:(unsigned long long)a1;
+- (void)setupContainerView;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)dismissViewControllerAnimated:(BOOL)a0 completion:(id /* block */)a1;
+- (void)trackEvent:(id)a0;
+- (void)viewDidLoad;
+- (void)show;
+- (void)setupUI;
+- (void)cancelButtonTapped;
+- (void)showLoadingView;
+- (double)containerHeight;
+
+@end

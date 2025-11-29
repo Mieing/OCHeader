@@ -1,0 +1,12 @@
+@class HTSLiveCommon;
+
+@interface HTSLiveLiveBindMicroAppMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long roomId;
+@property (nonatomic) BOOL canBind;
+
++ (id)descriptor;
+
+@end

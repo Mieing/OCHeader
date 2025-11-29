@@ -1,0 +1,3 @@
+@interface KtvCloseChorusApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,71 @@
+@class NSString, NSDictionary, NSDate, NSNumber, BDECPigeonReferMessageInfo;
+
+@interface BDECPigeonGroupMessage : BDECPigeonMessageV2 <BDECPigeonGroupMessageInterface>
+
+@property (readonly, nonatomic) long long status;
+@property (copy) id /* block */ statusChangedBlock;
+@property (readonly, nonatomic) long long roleType;
+@property (readonly, copy, nonatomic) NSString *footDescInfo;
+@property (readonly, copy) NSString *pigeonBizType;
+@property (readonly, copy, nonatomic) NSString *hideUpgrade;
+@property (readonly, copy, nonatomic) NSString *hintContentCustomer;
+@property (readonly, nonatomic) long long sharkState;
+@property (readonly, nonatomic) NSNumber *indexInConversation;
+@property (readonly, nonatomic) long long indexInConversationV2;
+@property (readonly, nonatomic) NSNumber *orderInConversation;
+@property (readonly, copy, nonatomic) NSString *identifier;
+@property (readonly, copy, nonatomic) NSString *serverMessageID;
+@property (readonly, copy, nonatomic) NSString *clientMessageIDInExt;
+@property (readonly, copy, nonatomic) NSString *belongingConversationIdentifier;
+@property (readonly, copy, nonatomic) NSString *belongingBizConversationIdentifier;
+@property (readonly, copy, nonatomic) NSString *sender;
+@property (readonly, nonatomic) BOOL isSelf;
+@property (readonly, copy, nonatomic) NSString *content;
+@property (readonly, copy, nonatomic) NSString *receiverSpecialContent;
+@property (readonly, copy, nonatomic) NSString *sharkSpecialContent;
+@property (readonly, nonatomic) long long messageType;
+@property (readonly, copy, nonatomic) NSString *pigeonMessageType;
+@property (readonly, copy, nonatomic) NSString *bizRole;
+@property (readonly) NSDate *createdAt;
+@property (readonly, nonatomic) BOOL hideAndShowUpgrade;
+@property (readonly, copy, nonatomic) NSString *hintContent;
+@property (readonly, nonatomic) BOOL isRiskControlled;
+@property (readonly, copy, nonatomic) NSString *riskControlledContent;
+@property (readonly, copy, nonatomic) NSString *noticeType;
+@property (readonly, copy, nonatomic) NSString *strongRiskControlledContent;
+@property (readonly, copy, nonatomic) NSString *riskTopMsgInfoContent;
+@property (readonly, copy, nonatomic) NSString *source;
+@property (readonly, copy, nonatomic) NSString *src;
+@property (readonly, copy, nonatomic) NSString *visibilityType;
+@property (readonly, copy, nonatomic) NSString *csSpecialContent;
+@property (readonly, copy, nonatomic) NSString *srcUserId;
+@property (readonly, copy, nonatomic) NSString *talkId;
+@property (readonly, copy, nonatomic) NSString *createTime;
+@property (readonly, copy, nonatomic) NSString *srcCreateTime;
+@property (readonly, copy, nonatomic) NSString *wsCreateTime;
+@property (readonly, nonatomic) BOOL isRecalled;
+@property (readonly, copy, nonatomic) NSString *recalledTime;
+@property (readonly, nonatomic) BOOL robotAutoAnswer;
+@property (readonly, nonatomic) BOOL frontendNeedHidden;
+@property (readonly, nonatomic) NSDictionary *localExt;
+@property (readonly, copy, nonatomic) NSDictionary *originExt;
+@property (readonly, copy, nonatomic) NSDictionary *bizExt;
+@property (readonly, copy, nonatomic) NSString *removeTips;
+@property (readonly, nonatomic) NSString *customerHint;
+@property (readonly, nonatomic) BOOL isWelcomeSystemMessage;
+@property (readonly, nonatomic) BOOL isCustomerServiceAccessMessage;
+@property (readonly, nonatomic) BOOL isOffLineStartMessage;
+@property (readonly, copy, nonatomic) NSString *serviceAttitude;
+@property (readonly, copy, nonatomic) NSString *serviceAttitudeAsynAlertContent;
+@property (readonly) NSDictionary *syncedExt;
+@property (readonly) NSDictionary *syncedExtInternal;
+@property (nonatomic) long long selfUserId;
+@property (readonly, nonatomic) BDECPigeonReferMessageInfo *referMessageInfo;
+@property (readonly, copy, nonatomic) NSString *markdownMessage;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+
+@end

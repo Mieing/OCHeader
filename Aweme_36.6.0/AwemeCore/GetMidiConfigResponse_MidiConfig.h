@@ -1,0 +1,12 @@
+@class NSMutableDictionary;
+
+@interface GetMidiConfigResponse_MidiConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long scoreReportingDurationThreshold;
+@property (retain, nonatomic) NSMutableDictionary *rateFeedback;
+@property (readonly, nonatomic) unsigned long long rateFeedback_Count;
+@property (nonatomic) long long scoreReportingThresholdSungPercent;
+
++ (id)descriptor;
+
+@end

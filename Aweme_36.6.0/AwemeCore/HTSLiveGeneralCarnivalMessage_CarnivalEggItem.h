@@ -1,0 +1,15 @@
+@class HTSLiveImage;
+
+@interface HTSLiveGeneralCarnivalMessage_CarnivalEggItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *background;
+@property (nonatomic) BOOL hasBackground;
+@property (nonatomic) long long backgroundHight;
+@property (nonatomic) long long backgroundWidth;
+@property (nonatomic) long long useRate;
+@property (nonatomic) long long isDynamicEgg;
+@property (nonatomic) BOOL showAlone;
+
++ (id)descriptor;
+
+@end

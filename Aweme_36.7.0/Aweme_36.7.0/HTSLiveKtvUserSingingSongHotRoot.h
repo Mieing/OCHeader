@@ -1,0 +1,3 @@
+@interface HTSLiveKtvUserSingingSongHotRoot : GPBRootObject
+
+@end

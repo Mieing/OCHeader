@@ -1,0 +1,3 @@
+@interface ReviewPunishEducationApiRoot : GPBRootObject
+
+@end

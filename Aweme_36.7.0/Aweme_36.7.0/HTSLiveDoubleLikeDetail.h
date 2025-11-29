@@ -1,0 +1,10 @@
+@interface HTSLiveDoubleLikeDetail : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL doubleFlag;
+@property (nonatomic) int seqId;
+@property (nonatomic) int renewalsNum;
+@property (nonatomic) int triggersNum;
+
++ (id)descriptor;
+
+@end

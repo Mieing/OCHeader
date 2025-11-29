@@ -1,0 +1,72 @@
+@class UIView, AWEOpenPlatformHalfAuthHeaderView, NSArray, NSString, UIImageView, UIControl, UIButton, AWEOpenPlatformAuthFlowManager, DUXButton, UITableView, UILabel, DUXCheckBox;
+
+@interface AWEOpenPlatformHalfAuthIdentityViewController : UIViewController <AWEOpenPlatformAuthFlowManagerDelegate, UITableViewDataSource, UITableViewDelegate, AWEOpenPlatformScopeDelegate>
+
+@property (retain, nonatomic) AWEOpenPlatformAuthFlowManager *flowManager;
+@property (copy, nonatomic) NSArray *normalScopeItems;
+@property (retain, nonatomic) UIView *containerView;
+@property (retain, nonatomic) UIControl *blankControl;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) UILabel *applyLabel;
+@property (retain, nonatomic) DUXButton *authButton;
+@property (retain, nonatomic) UIButton *closeButton;
+@property (retain, nonatomic) UIButton *descButton;
+@property (retain, nonatomic) UIImageView *thirdAppImageView;
+@property (retain, nonatomic) UITableView *scopeTableView;
+@property (retain, nonatomic) UILabel *identityLabel;
+@property (retain, nonatomic) UILabel *reminderLabel;
+@property (retain, nonatomic) UIView *reminderView;
+@property (retain, nonatomic) UIImageView *reminderImageView;
+@property (retain, nonatomic) DUXButton *declineButton;
+@property (retain, nonatomic) DUXCheckBox *followCheckBox;
+@property (retain, nonatomic) UILabel *followDescLabel;
+@property (copy, nonatomic) NSArray *scopeItems;
+@property (nonatomic) unsigned long long scopeType;
+@property (retain, nonatomic) AWEOpenPlatformHalfAuthHeaderView *headerView;
+@property (nonatomic) BOOL hasEnterBack;
+@property (nonatomic) BOOL containsUserInfo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)showContainerView;
+- (id)trackerManager;
+- (void)configUI;
+- (void)updateRealNameVerifyStatus:(id)a0;
+- (id)choosedScopes;
+- (void)authNextStep:(unsigned long long)a0;
+- (void)authorizeComplated:(id)a0 error:(id)a1;
+- (void)cancelAuthorizeError:(id)a0;
+- (void)fetchAuthUserInfoCompleted:(id)a0;
+- (void)addNotifySubmitTracker:(unsigned long long)a0 refuseType:(id)a1;
+- (void)addOrRemoveEnterBackgroundNotification:(BOOL)a0;
+- (void)followCheckBoxTapped;
+- (void)authButtonTapped;
+- (void)tapScopeQuestionMarkEvent:(id)a0;
+- (void)tapHalfViewScopeQuestionMark;
+- (void)configureWithAuthInfo:(id)a0;
+- (double)marginBottomOfAuthButton;
+- (void)descButtonTapped;
+- (id)authNavigationController;
+- (void)updateAuthButtonState;
+- (double)halfAuthViewHeight;
+- (id)headerTitle:(id)a0;
+- (id)singleScopeDesc;
+- (void)hideContainerView;
+- (void)p_setupUI;
+- (void).cxx_destruct;
+- (void)didEnterBackground;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)initWithConfiguration:(id)a0;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)declineButtonTapped;
+- (void)closeButtonTapped;
+
+@end

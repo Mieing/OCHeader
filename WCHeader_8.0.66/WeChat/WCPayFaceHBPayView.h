@@ -1,0 +1,86 @@
+@class WCPayFaceHBQRCodeView, MMTipsViewController, NSMutableArray, UIButton, UIView, WCPayFaceReceiverView, NSString, WCPayFaceRedEnvelopesReceiverInfo, MMUIActivityIndicatorView, MMTimer, WCPayFaceHBFaceView, WCPayFaceHBQRCodeInfo, CMMotionManager, WCPayGoldenStatusView, UIImageView;
+@protocol MMUIViewControllerDelegate, WCPayFaceHBPayViewDelegate;
+
+@interface WCPayFaceHBPayView : UIView <ShakeCheckerDelegate, WCPayFaceHBFaceViewDelegate, WCPayFaceReceiverViewDelegate, WCActionSheetDelegate, MMTipsViewControllerDelegate> {
+    id<WCPayFaceHBPayViewDelegate> m_delegate;
+    id<MMUIViewControllerDelegate> m_vcDelegate;
+    WCPayFaceHBQRCodeInfo *m_qrInfo;
+    double _oldBrightness;
+    UIView *_whiteView;
+    UIView *_hbsView;
+    UIImageView *_hbFirstView;
+    UIButton *_payBtn;
+    WCPayGoldenStatusView *_scanFanTip;
+    WCPayGoldenStatusView *_scanTip;
+    WCPayGoldenStatusView *_countTip;
+    WCPayFaceHBFaceView *_hbOnePersonView;
+    WCPayFaceHBQRCodeView *_imageQRCodeView;
+    MMUIActivityIndicatorView *_activityIndicatorView;
+    WCPayFaceReceiverView *_receiverView;
+    UIView *_bottomSafeAreaView;
+    int m_lastTouchViewIndex;
+    int m_lastPanViewIndex;
+    int m_lastSelectViewIndex;
+    int m_lastTouchBeginIndex;
+    NSMutableArray *m_boPlays;
+    int m_boPlayIndex;
+    NSMutableArray *m_selectPlays;
+    int m_selectPlayIndex;
+    NSMutableArray *m_musicPlays;
+    BOOL m_bShowTipAlert;
+    CMMotionManager *m_cmManager;
+    BOOL m_bStartManager;
+    BOOL m_bHasMotion;
+    MMTimer *m_motionTimer;
+    WCPayFaceRedEnvelopesReceiverInfo *_lastReceiverInfo;
+}
+
+@property (retain, nonatomic) MMTipsViewController *tipsViewController;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 delegate:(id)a1;
+- (void)dealloc;
+- (void)deviceMotion:(BOOL)a0;
+- (void)setNoMotion;
+- (void)fadeAnimate;
+- (void)onIKnow;
+- (void)userDidTakeScreenshot:(id)a0;
+- (void)userDidChangeScreenCapture:(id)a0;
+- (BOOL)hasValidQrCodeInfo;
+- (void)handleUserStartScreenCapture;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 withText:(id)a2 withTipsVC:(id)a3;
+- (void)makeHBViews;
+- (void)touchesBegan:(id)a0 withEvent:(id)a1;
+- (void)touchesEnded:(id)a0 withEvent:(id)a1;
+- (void)handlePanGes:(id)a0;
+- (void)handleChangeTouch:(int)a0 Select:(int)a1 Pan:(int)a2 TouchBegin:(BOOL)a3;
+- (int)changeToTouchPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)layoutSubviews;
+- (void)OnFaceHBViewDetail;
+- (void)OnLoadMoreRedEnvelopesList;
+- (void)layoutHBsView;
+- (void)onCancel;
+- (void)closeView;
+- (void)onManage;
+- (void)onMore;
+- (void)actionSheet:(id)a0 clickedButtonAtIndex:(long long)a1;
+- (void)setViewController:(id)a0;
+- (void)showLoading;
+- (void)hideLoading;
+- (void)showDeleteHBTips:(id)a0;
+- (void)OnBangAnimateStop;
+- (void)giveHBAnimate:(id)a0;
+- (void)checkQRCode;
+- (void)updateQRCode:(id)a0;
+- (void)setReceiverViewHidden:(BOOL)a0 Animate:(BOOL)a1;
+- (void)hasOpenHBFor:(id)a0;
+- (void)clearReceiverView;
+- (void)batchSetReceiverInfos:(id)a0 balanceNum:(long long)a1;
+- (id)getReceiverInfos;
+- (void)setDelegate:(id)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,14 @@
+@class GPBInt64Array, NSMutableArray;
+
+@interface TIMXPBNManageTagMetaInfoResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *addResultsArray;
+@property (readonly, nonatomic) unsigned long long addResultsArray_Count;
+@property (retain, nonatomic) GPBInt64Array *deleteFailedTagIdsArray;
+@property (readonly, nonatomic) unsigned long long deleteFailedTagIdsArray_Count;
+@property (retain, nonatomic) GPBInt64Array *updateFailedTagIdsArray;
+@property (readonly, nonatomic) unsigned long long updateFailedTagIdsArray_Count;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,3 @@
+@interface BattleBattleEndPunishApiRoot : GPBRootObject
+
+@end

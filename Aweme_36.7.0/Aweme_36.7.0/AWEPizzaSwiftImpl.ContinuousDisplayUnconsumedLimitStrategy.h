@@ -1,0 +1,3 @@
+@interface AWEPizzaSwiftImpl.ContinuousDisplayUnconsumedLimitStrategy : AWEPizzaSwiftImpl.ContinuousDisplayUnconsumedTimingStrategy
+
+@end

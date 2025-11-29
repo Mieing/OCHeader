@@ -1,0 +1,78 @@
+@class NSString, NSMutableDictionary;
+
+@interface AWEAwemePriorityAvoidModel : NSObject <AWEAwemePriorityAvoidModelProtocol>
+
+@property (retain, nonatomic) NSMutableDictionary *track_optional_params;
+@property (nonatomic) long long track_is_avoid;
+@property (nonatomic) long long track_component_height;
+@property (nonatomic) double track_component_height_percent;
+@property (nonatomic) double track_title_height_percent;
+@property (nonatomic) long long text_row_num;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)trackFullScreenAppear;
+- (BOOL)enableComponentMetricsOpt;
+- (id)platformComponentList;
+- (void)updateCoCreatorInfo;
+- (void)updateLabelAppearInfo;
+- (long long)numOfAppearComponent;
+- (long long)numOfAppearPlatformComponent;
+- (void)resetTrackOptionalParamsWithString:(id)a0;
+- (void)resetTrackOptionalParams;
+- (BOOL)isTopPendantAppear;
+- (void)trackTopPendantAppear;
+- (BOOL)isInformationPendantAppear;
+- (void)trackInformationPendantAppear;
+- (void)trackTagAppearWithLabelType:(id)a0 labelTag:(id)a1;
+- (void)trackOldLabelAppear;
+- (void)resetOldLabelTrackParams;
+- (void)trackNewLabelAppear;
+- (void)resetNewLabelTrackParams;
+- (BOOL)isThemeTagAppear;
+- (void)trackThemeTagAppear;
+- (void)trackChapterTagAppear;
+- (BOOL)isAnchorElementAppear;
+- (void)trackAnchorAppearWithParams:(id)a0;
+- (void)resetAnchorTrackParams;
+- (BOOL)isDescriptionElementAppear;
+- (void)trackDescriptionElementAppear;
+- (BOOL)isInnerLabelTagAppear;
+- (void)trackContentDuetAppear;
+- (void)trackContentCommentAppear;
+- (void)trackContentLiveAppear;
+- (BOOL)isBottomBarAppear;
+- (void)trackBottomBarAppear;
+- (BOOL)isInteractedButtonAppear;
+- (void)trackInteractedButtonAppear;
+- (void)trackOGCButtonAppear;
+- (void)resetInteractedButton;
+- (void)resetInteractionButtonPlatform;
+- (void)resetOGCButton;
+- (BOOL)isMusicExtensionAppear;
+- (void)trackMusicExtensionAppear;
+- (void)trackRiskNoticeAppear;
+- (BOOL)isLiveHeadAppear;
+- (void)trackLiveHeadAppear;
+- (BOOL)isADXAppear;
+- (void)trackADXApear;
+- (BOOL)isBulletsApear;
+- (void)trackBulletsApear;
+- (void)trackCoCreativeApear;
+- (BOOL)isShopLabelAppear;
+- (void)trackShopLabelAppear;
+- (void)trackTimeAxisAppear;
+- (void)trackStickerAppear;
+- (void)trackMarkAppear;
+- (id)awe_feedElementPriorityAvoidExtraTrack;
+- (void)trackECTagAppear;
+- (void)trackInteractionButtonPlatformAppear;
+- (void)trackCoCreatorTagAppear;
+- (void)trackCoCreatorAvatarAppear;
+- (void).cxx_destruct;
+- (id)init;
+- (id)componentList;
+
+@end

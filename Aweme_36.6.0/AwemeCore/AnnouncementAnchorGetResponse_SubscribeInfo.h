@@ -1,0 +1,11 @@
+@class NSMutableArray;
+
+@interface AnnouncementAnchorGetResponse_SubscribeInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long subscribeCount;
+@property (retain, nonatomic) NSMutableArray *subscribeUserAvatarArray;
+@property (readonly, nonatomic) unsigned long long subscribeUserAvatarArray_Count;
+
++ (id)descriptor;
+
+@end

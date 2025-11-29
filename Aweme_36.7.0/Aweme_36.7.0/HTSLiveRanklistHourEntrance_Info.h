@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface HTSLiveRanklistHourEntrance_Info : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *detailsArray;
+@property (readonly, nonatomic) unsigned long long detailsArray_Count;
+
++ (id)descriptor;
+
+@end

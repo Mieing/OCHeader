@@ -1,0 +1,77 @@
+@class UILongPressGestureRecognizer, NSString, GCCollectionViewSectionModel, NSMutableDictionary, UIRefreshControl, NSMutableArray, UICollectionView, GCCollectionViewManagerConfig, MMUIActivityIndicatorView;
+@protocol GCClvManagerProtocol;
+
+@interface GCCollectionViewManager : NSObject <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) GCCollectionViewManagerConfig *config;
+@property (retain, nonatomic) UIRefreshControl *refreshControl;
+@property (retain, nonatomic) NSMutableArray *sectionArray;
+@property (retain, nonatomic) NSMutableDictionary *reuseIdentifierDict;
+@property (retain, nonatomic) NSMutableDictionary *reuseIdentifierForSupplementaryElementDict;
+@property (retain, nonatomic) MMUIActivityIndicatorView *activityView;
+@property (nonatomic) BOOL isLoadingMorePreviousData;
+@property (nonatomic) BOOL hasInitEnd;
+@property (nonatomic) double activityHeight;
+@property (nonatomic) BOOL showHeaderView;
+@property (readonly, nonatomic) GCCollectionViewSectionModel *singleSectionModel;
+@property (copy, nonatomic) id /* block */ loadMoreBlock;
+@property (weak, nonatomic) id<GCClvManagerProtocol> managerDelegate;
+@property (nonatomic) BOOL disableChildViewEvent;
+@property (retain, nonatomic) UILongPressGestureRecognizer *longPressGesture;
+@property (nonatomic) double trigerPreloadRefreshDistance;
+@property (nonatomic) struct CGPoint { double x; double y; } previousContentOffset;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithCollectionView:(id)a0;
+- (id)initWithManagerConfig:(id)a0;
+- (void)handleLongPress:(id)a0;
+- (void)refreshControlDidRefresh;
+- (void)reloadCollectionView;
+- (void)onCollectionViewDataChange;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)endRefreshWithPreviousModelArray:(id)a0 hasMoreMessage:(BOOL)a1;
+- (void)configureShowHeaderView:(BOOL)a0;
+- (void)setModelArrayOnly1Section:(id)a0;
+- (void)setSectionModelArray:(id)a0;
+- (id)getSectionModelForIndex:(long long)a0;
+- (void)appendModelArray:(id)a0 toSection:(id)a1;
+- (void)appendModelArray:(id)a0 toSection:(id)a1 completion:(id /* block */)a2;
+- (void)insertModelArray:(id)a0 toSection:(id)a1 atIndex:(unsigned long long)a2 completion:(id /* block */)a3;
+- (void)performBatchUpdates:(id /* block */)a0 completion:(id /* block */)a1;
+- (id)indexPathForCellModel:(id)a0;
+- (void)reloadCellModel:(id)a0;
+- (void)replaceCellModel:(id)a0 withNewModel:(id)a1;
+- (id)indexPathOfCellModelPassingTest:(id /* block */)a0;
+- (id)layoutAttributeForCellModel:(id)a0;
+- (void)forceScrollToBottom:(BOOL)a0;
+- (void)didLoadMorePreviousModelArray:(id)a0;
+- (id)collectionViewFlowLayout;
+- (id)bindCollectionView;
+- (id)indexPathForLastItem;
+- (BOOL)isIndexPathVisible:(id)a0;
+- (void)reloadSection:(id)a0;
+- (void)appendSection:(id)a0;
+- (void)insertSection:(id)a0 beforeSectionModel:(id)a1;
+- (void)insertSection:(id)a0 afterSectionModel:(id)a1;
+- (void)insertSection:(id)a0 withSectionModel:(id)a1 offset:(long long)a2;
+- (void)insertSection:(id)a0 atIndex:(long long)a1;
+- (id)cellModelForIndexPath:(id)a0;
+- (void)invalidAllCellModelLayout;
+- (struct CGSize { double x0; double x1; })realContentSize;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)collectionView:(id)a0 didEndDisplayingCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (id)collectionView:(id)a0 viewForSupplementaryElementOfKind:(id)a1 atIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (void).cxx_destruct;
+
+@end

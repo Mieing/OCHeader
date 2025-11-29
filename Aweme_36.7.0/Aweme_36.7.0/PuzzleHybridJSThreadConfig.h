@@ -1,0 +1,3 @@
+@interface PuzzleHybridJSThreadConfig : PuzzleHybridAPMBaseConfig
+
+@end

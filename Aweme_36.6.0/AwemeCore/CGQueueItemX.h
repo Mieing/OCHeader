@@ -1,0 +1,78 @@
+@class UIView, NSString, NSArray, XPlayQueueConfiguration, XPlayQualityStatsModel, NSMutableDictionary, XPlayCloudMessage, XPlayTimeRecorder, XPlayTrackHelper, UIViewController;
+@protocol XPlayUserInfoProtocol, XPlayItemDelegate, XPlayGamePadProtocol, XPlayItemBusinessDelegate, XPlayCloudFileTransferProtocol, XPlayRenderProtocol, XPlayStreamService, XPlayMuxingService, XPlayMouseProtocol, XPlayDelayMonitor, XPlayScreenRecordProtocol, XPlayVirtualControlsProtocol, XPlayCloudPlayerProtocol, XPlayKeyboardProtocol, XPlayLocationProtocol, XPlayPermissionDelegate, XPlayItemProtocol, XPlayAlbumProtocol, XPlayCameraProtocol;
+
+@interface CGQueueItemX : NSProxy <CGFrontierManagerDelegate, XPlayItemProtocol>
+
+@property (retain, nonatomic) id<XPlayItemProtocol> proxyItem;
+@property (retain, nonatomic) XPlayCloudMessage *cloudMessage;
+@property (retain, nonatomic) NSMutableDictionary *seqToCallbackDic;
+@property (retain, nonatomic) XPlayQueueConfiguration *configuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<XPlayItemDelegate> delegate;
+@property (weak, nonatomic) id<XPlayItemBusinessDelegate> businessDelegate;
+@property (weak, nonatomic) id<XPlayPermissionDelegate> permissionDelegate;
+@property (readonly, copy, nonatomic) NSString *core;
+@property (readonly, copy, nonatomic) NSString *itemId;
+@property (retain, nonatomic) id<XPlayUserInfoProtocol> userSession;
+@property (retain, nonatomic) XPlayTrackHelper *trackHelper;
+@property (retain, nonatomic) XPlayTimeRecorder *recorder;
+@property (nonatomic) unsigned long long status;
+@property (retain, nonatomic) id<XPlayScreenRecordProtocol> screenRecorder;
+@property (retain, nonatomic) id<XPlayKeyboardProtocol> keyboard;
+@property (readonly, nonatomic) id<XPlayGamePadProtocol> gamePad;
+@property (readonly, nonatomic) id<XPlayMouseProtocol> mouse;
+@property (readonly, nonatomic) id<XPlayVirtualControlsProtocol> virtualControls;
+@property (retain, nonatomic) id<XPlayRenderProtocol> render;
+@property (readonly, nonatomic) NSArray *cloudPlayers;
+@property (readonly, nonatomic) id<XPlayCloudFileTransferProtocol> fileTransfer;
+@property (retain, nonatomic) NSMutableDictionary *pluggins;
+@property (readonly, nonatomic) id<XPlayLocationProtocol> location;
+@property (readonly, nonatomic) id<XPlayAlbumProtocol> album;
+@property (readonly, nonatomic) id<XPlayCameraProtocol> camera;
+@property (readonly, nonatomic) id<XPlayStreamService> streamService;
+@property (readonly, nonatomic) id<XPlayMuxingService> muxingService;
+@property (readonly, nonatomic) id<XPlayDelayMonitor> delayMonitor;
+@property (retain, nonatomic) UIViewController *controller;
+@property (retain, nonatomic) UIView *view;
+@property (retain, nonatomic) id<XPlayCloudPlayerProtocol> cloudPlayer;
+@property (copy, nonatomic) XPlayQualityStatsModel *qualityStats;
+@property (readonly, nonatomic) BOOL useCustomKbps;
+
+- (void)fastQueue;
+- (void)acceleratedQueue;
+- (void)_innerPreload:(BOOL)a0;
+- (void)_callbackPreloadDidFailedWithInfo:(id)a0;
+- (void)_innerPlay;
+- (void)_endQueue;
+- (void)_callbackDequeue;
+- (id)_sendInstWithType:(long long)a0 callback:(id /* block */)a1;
+- (void)_handleReceiveAckInstruction:(id)a0;
+- (void)_handleReceiveMessageInstruction:(id)a0;
+- (void)_callbackUpdateQueueInfo;
+- (void)_callbackFinishQueue;
+- (BOOL)_callbackCheckIsShowing;
+- (void)_callbackDidExpireQueue;
+- (id)_buildAckInst:(id)a0;
+- (void)didReceiveInstruction:(id)a0;
+- (void)_callbackDidAcceleratedQueue:(long long)a0;
+- (void)_callbackStatusFailWithInfo:(id)a0;
+- (id)_generateUniqueId;
+- (void)_triggerTimeout:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (id)initWithConfiguration:(id)a0;
+- (void)stop;
+- (void)preload;
+- (id)methodSignatureForSelector:(SEL)a0;
+- (BOOL)isMemberOfClass:(Class)a0;
+- (void)dequeue;
+- (BOOL)isKindOfClass:(Class)a0;
+- (BOOL)isProxy;
+- (BOOL)respondsToSelector:(SEL)a0;
+- (BOOL)conformsToProtocol:(id)a0;
+- (void)forwardInvocation:(id)a0;
+
+@end

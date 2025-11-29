@@ -1,0 +1,3 @@
+@interface IESLiveSoloKTVMVListViewFooter : UICollectionReusableView
+
+@end

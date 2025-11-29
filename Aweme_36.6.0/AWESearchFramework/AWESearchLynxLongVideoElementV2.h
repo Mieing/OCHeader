@@ -1,0 +1,88 @@
+@class NSString, NSTimer, AWEAwemeModel, SearchModelIndex, NSDate;
+@protocol SearchDynamicElementStatusDelegate;
+
+@interface AWESearchLynxLongVideoElementV2 : LynxUI <AWESearchLynxElementPlayerDelegate, AWESearchLynxElementViewProtocol, SearchDynamicElementProtocol>
+
+@property (retain, nonatomic) AWEAwemeModel *awemeModel;
+@property (retain, nonatomic) SearchModelIndex *awemeModelIndex;
+@property (copy, nonatomic) NSString *containerID;
+@property (nonatomic) BOOL isAutoPlay;
+@property (copy, nonatomic) id /* block */ playbackTimeBlock;
+@property (retain, nonatomic) NSTimer *playbackTimeTimer;
+@property (nonatomic) double playbackTime;
+@property (retain, nonatomic) NSDate *startTimerDate;
+@property (retain, nonatomic) NSDate *pauseTimerDate;
+@property (nonatomic) long long prePlayState;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<SearchDynamicElementStatusDelegate> statusDelegate;
+@property (nonatomic) long long transitionIndex;
+
++ (id)__lynx_ui_method_config__14611;
++ (id)__lynx_ui_method_config__15012;
++ (id)__lynx_prop_config__570;
++ (id)__lynx_prop_config__661;
++ (id)__lynx_prop_config__823;
++ (id)__lynx_prop_config__722;
++ (id)__lynx_prop_config__874;
++ (id)__lynx_prop_config__955;
++ (id)__lynx_prop_config__1046;
++ (id)__lynx_prop_config__1137;
++ (id)__lynx_prop_config__1238;
++ (id)__lynx_ui_method_config__1329;
++ (id)__lynx_ui_method_config__14010;
+
+- (void)play:(id)a0 withResult:(id /* block */)a1;
+- (void)pause:(id)a0 withResult:(id /* block */)a1;
+- (void)stop:(id)a0 withResult:(id /* block */)a1;
+- (void)playerPlayTime:(double)a0 canPlayTime:(double)a1 totalTime:(double)a2;
+- (void)logExtra:(id)a0 requestReset:(BOOL)a1;
+- (void)fitMode:(id)a0 requestReset:(BOOL)a1;
+- (void)didPlayError:(id)a0;
+- (void)didStartStall;
+- (void)startposition:(id)a0 requestReset:(BOOL)a1;
+- (void)updateAwemeList:(id)a0;
+- (void)seek:(id)a0 withResult:(id /* block */)a1;
+- (void)updateAwemeModel:(id)a0;
+- (void)didStartShowing;
+- (BOOL)isMediaSourceCard;
+- (void)repeat:(BOOL)a0 requestReset:(BOOL)a1;
+- (void)didSeekEnd:(BOOL)a0;
+- (void)didRecallResource;
+- (void)didPaymentVideoPreviewEnd;
+- (void)didPaymentVideoPaid;
+- (void)updateModelWithIndex:(id)a0;
+- (void)awemeindex:(id)a0 requestReset:(BOOL)a1;
+- (void)sessionid:(id)a0 requestReset:(BOOL)a1;
+- (void)sendLoadingEvent;
+- (void)viewWillDisAppear;
+- (BOOL)shouldRVDTransitionUpdatePlayerControllerWithFromContext:(id)a0;
+- (void)elementDidFinishBind;
+- (void)btm_info:(id)a0 requestReset:(BOOL)a1;
+- (void)registerCallback:(id /* block */)a0 forReachingPlaybackTime:(double)a1;
+- (BOOL)needUpdateAwemeListOnPaymentChange;
+- (id)getLynxElementType;
+- (void)stopPlaybackTimeTimer;
+- (void)startPlaybackTimeTimer;
+- (void)onTimerAction;
+- (BOOL)openAutoPlayMonitor;
+- (void)isautoplay:(BOOL)a0 requestReset:(BOOL)a1;
+- (BOOL)canResumePlaybackTimeTimer;
+- (void)resumePlaybackTimeTimer;
+- (void)pausePlaybackTimeTimer;
+- (void)playbackRate:(id)a0 requestReset:(BOOL)a1;
+- (void)viewDidAppear;
+- (void)didBecomeActive;
+- (void).cxx_destruct;
+- (id)transitionContext;
+- (void)didEnd;
+- (id)videoView;
+- (void)didResignActive;
+- (void)didStart;
+- (id)createView;
+- (void)didStop;
+- (void)didPause;
+
+@end

@@ -1,0 +1,3 @@
+@interface AUCDTOFeatureEditorAutoCaption : MTLModel
+
+@end

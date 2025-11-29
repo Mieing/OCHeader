@@ -1,0 +1,70 @@
+@class MMImageActionOpenWeAppListItem, MMImageActionGameCircle, MMImageActionCircleToSearchItem, MMImageActionSaveItem, MMImageActionCropItem, NSMutableArray, NSString, UIImage, MMImageActionTranslateItem, MMImageActionForwardItem, MMImageActionRecentForwardItem, WCImageTranslateLogic, MMImageActionFavoriateItem, MMImageActionOpenDeviceItem, MMImageActionQRCodeItem, MMImageOpenWeAppLogic, MMImageActionBizShareItem, MMImageActionEditItem, MMImageActionSnsShareItem, MMImageActionFindTextItem, MMUIViewController, MMImageActionSearchItem;
+@protocol MMImageActionSheetDelegate;
+
+@interface MMImageActionSheet : MMScrollActionSheet <MMImageOpenWeAppDelegate, MMScrollActionSheetDelegate, WCImageTranslateDelegate, RecentForwardScrollViewDelegate>
+
+@property (retain, nonatomic) MMImageActionRecentForwardItem *recentForward;
+@property (retain, nonatomic) MMImageActionForwardItem *forward;
+@property (retain, nonatomic) MMImageActionSnsShareItem *snsShare;
+@property (retain, nonatomic) MMImageActionBizShareItem *bizShare;
+@property (retain, nonatomic) MMImageActionFavoriateItem *fav;
+@property (retain, nonatomic) MMImageActionSearchItem *search;
+@property (retain, nonatomic) MMImageActionOpenWeAppListItem *openWeAppList;
+@property (retain, nonatomic) NSMutableArray *openWeAppItemList;
+@property (retain, nonatomic) MMImageActionOpenDeviceItem *openDevice;
+@property (retain, nonatomic) MMImageActionSaveItem *save;
+@property (retain, nonatomic) MMImageActionEditItem *edit;
+@property (retain, nonatomic) MMImageActionTranslateItem *translate;
+@property (retain, nonatomic) MMImageActionFindTextItem *findText;
+@property (retain, nonatomic) MMImageActionQRCodeItem *qrCode;
+@property (retain, nonatomic) MMImageActionCircleToSearchItem *circleToSearch;
+@property (retain, nonatomic) MMImageActionCropItem *crop;
+@property (retain, nonatomic) MMImageActionGameCircle *gameCircle;
+@property (retain, nonatomic) MMImageOpenWeAppLogic *openWeAppLogic;
+@property (retain, nonatomic) WCImageTranslateLogic *imgTranslateLogic;
+@property (retain, nonatomic) NSString *imagePath;
+@property (retain, nonatomic) UIImage *image;
+@property (retain, nonatomic) NSString *watermarkImagePath;
+@property (retain, nonatomic) UIImage *watermarkImage;
+@property (nonatomic) unsigned long long actionSheetLastShowTimeStamp;
+@property (weak, nonatomic) MMUIViewController *curViewController;
+@property (weak, nonatomic) id<MMImageActionSheetDelegate> imageDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)setupImageSheetItems;
+- (void)setupImageSheetFooter;
+- (void)imageActionSheetDidAppear;
+- (void)imageActionSheetDidChangeImage;
+- (id)getItemImagePath:(id)a0;
+- (id)getItemImage:(id)a0;
+- (void)detectWording;
+- (void)showInView:(id)a0;
+- (void)scrollActionSheet:(id)a0 didSelecteItem:(id)a1;
+- (void)scrollActionSheetDidCancel:(id)a0;
+- (void)scrollActionSheetInShowAnimation:(id)a0;
+- (void)scrollActionSheetInDismissAnimation:(id)a0;
+- (void)scrollActionSheetDidDismiss:(id)a0;
+- (void)updateImage:(id)a0 imagePath:(id)a1;
+- (void)updateImageWithData:(id)a0 watermarkImageData:(id)a1;
+- (void)doTranslateImageDirectly;
+- (unsigned long long)actionSheetExposedDuration;
+- (void)onStopLoading;
+- (void)clickRFItemCallBack:(id)a0;
+- (void)relayoutScrollSheet;
+- (void)onAppendQRCodeMultiView:(id)a0;
+- (void)onQRCodeRowViewTapped;
+- (void)onQRCodeRowViewBanned;
+- (void)onQRCodeScansFinished;
+- (void)onOpenWeAppButtonsUpdated:(id)a0 itemList:(id)a1;
+- (void)onGetA8KeyResultType:(unsigned int)a0;
+- (id)getTranslateImgIdentifier:(id)a0;
+- (void)onShowTranslateImage:(id)a0;
+- (void)getTranslateImgInfo:(id)a0 fileId:(id *)a1 aesKey:(id *)a2;
+- (void)onPreDetectWordSuccess:(id)a0;
+- (void).cxx_destruct;
+
+@end

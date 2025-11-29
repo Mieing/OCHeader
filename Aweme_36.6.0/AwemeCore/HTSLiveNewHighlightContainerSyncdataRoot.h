@@ -1,0 +1,3 @@
+@interface HTSLiveNewHighlightContainerSyncdataRoot : GPBRootObject
+
+@end

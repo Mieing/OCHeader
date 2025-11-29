@@ -1,0 +1,20 @@
+@class NSString, HTSLiveImage, HTSLiveText;
+
+@interface HTSLiveOpenAssetConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *borderImage;
+@property (retain, nonatomic) NSString *script;
+@property (nonatomic) long long assetId;
+@property (nonatomic) long long price;
+@property (nonatomic) long long textWidth;
+@property (nonatomic) long long textHeight;
+@property (nonatomic) int textAlignType;
+@property (copy, nonatomic) NSString *extra;
+@property (copy, nonatomic) NSString *linkAvatarBorderId;
+@property (retain, nonatomic) HTSLiveText *templateText;
+@property (nonatomic) BOOL hasTemplateText;
+@property (copy, nonatomic) NSString *schema;
+
++ (id)descriptor;
+
+@end

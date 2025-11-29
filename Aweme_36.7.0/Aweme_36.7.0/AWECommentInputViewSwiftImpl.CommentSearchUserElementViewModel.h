@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentSearchUserElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

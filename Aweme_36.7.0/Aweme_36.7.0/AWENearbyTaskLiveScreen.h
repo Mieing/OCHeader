@@ -1,0 +1,3 @@
+@interface AWENearbyTaskLiveScreen : NSObject
+
+@end

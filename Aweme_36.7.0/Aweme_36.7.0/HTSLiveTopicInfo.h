@@ -1,0 +1,19 @@
+@class NSString, HTSLiveImage, HTSLiveTimePoint;
+
+@interface HTSLiveTopicInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long challengeId;
+@property (copy, nonatomic) NSString *challengeName;
+@property (nonatomic) BOOL isCommerce;
+@property (nonatomic) long long playCount;
+@property (retain, nonatomic) HTSLiveImage *cover;
+@property (nonatomic) BOOL hasCover;
+@property (retain, nonatomic) HTSLiveTimePoint *seeTime;
+@property (nonatomic) BOOL hasSeeTime;
+@property (copy, nonatomic) NSString *challengeDesc;
+@property (nonatomic) long long subType;
+@property (copy, nonatomic) NSString *highlightTime;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,85 @@
+@class IESECWinFeedFlowLayout, NSString, IESECWinFeedBaseResponseView, IESECWinContext, IESECWinDataController, IESECWinFeedFlowLayoutInSplit, IESECBubbleView, IGListAdapter, UICollectionView, FBKVOController, IESECListKitBFFViewController, IESECServiceProxy;
+@protocol IESECWinSplitService, IESECWinLiveService, IESECWinTabViewControllerManager, IESECWinDataStatusService, IESECWinDataService, IESECWinBackService, IESECWinTabLayoutService, IESECWinLynxCardService, IESECWinTabService, IESECWinFeedService, IESECWinLynxPreloadService, IESECWinMainScrollService, IESECWinCategoryService, IESECWinFeedLinkedService;
+
+@interface IESECWinFeedVC : UIViewController <IGListAdapterDataSource, UIScrollViewDelegate, IESECListKitLynxCardLifeCycle, IESECListKitBFFViewControllerDelegate, IESECWinContextProtocol> {
+    IESECWinContext *_context;
+    unsigned long long _mainScrollDirection;
+    double _oldOffsetY;
+    BOOL _UIAnimationOnce;
+    IESECWinFeedBaseResponseView *_responseView;
+    IESECBubbleView *_normalGuideBubbleView;
+}
+
+@property (retain, nonatomic) IGListAdapter *adapter;
+@property (retain, nonatomic) FBKVOController *kvoCtrl;
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) IESECWinFeedFlowLayout *flowLayout;
+@property (retain, nonatomic) IESECListKitBFFViewController *listVC;
+@property (retain, nonatomic) IESECWinDataController *dataController;
+@property (retain, nonatomic) IESECWinFeedFlowLayoutInSplit *flowLayoutInSplit;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinTabService> *tabService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinLiveService> *liveService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinDataService> *dataService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinBackService> *backService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinSplitService> *splitService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinLynxCardService> *lynxCardService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinMainScrollService> *scrollService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinFeedLinkedService> *linkedService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinLynxPreloadService> *preloadService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinDataStatusService> *dataStatusService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinTabViewControllerManager> *tabVCManager;
+@property (retain, nonatomic) IESECBubbleView *guideBubbleView;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinCategoryService> *categoryService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinFeedService> *feedService;
+@property (retain, nonatomic) IESECServiceProxy<IESECWinTabLayoutService> *tabLayoutService;
+@property (nonatomic) double lastCollectionWidth;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)objectsForListAdapter:(id)a0;
+- (id)listAdapter:(id)a0 sectionControllerForObject:(id)a1;
+- (id)emptyViewForListAdapter:(id)a0;
+- (id)listKitEnvIdentifier;
+- (void)lynxCardModelDidCreate:(id)a0 itemModel:(id)a1 itemConfig:(id)a2 index:(long long)a3;
+- (void)lynxCardModel:(id)a0 didReceiveRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 edgeInsets:(struct UIEdgeInsets { double x0; double x1; double x2; double x3; })a2 itemModel:(id)a3 index:(long long)a4 updateRectBlock:(id /* block */)a5;
+- (void)cellDidConfig:(id)a0 cell:(id)a1 section:(long long)a2 index:(long long)a3 isFirstShow:(BOOL)a4 lynxUrl:(id)a5;
+- (void)cellWillDisplay:(id)a0 source:(unsigned long long)a1 section:(long long)a2 index:(long long)a3 isFirstShow:(BOOL)a4 lynxUrl:(id)a5;
+- (void)didFinishLayoutSubviews;
+- (void)lynxCard:(id)a0 updatePerf:(id)a1 resource:(id)a2 itemModel:(id)a3 isPreloader:(BOOL)a4;
+- (void)lynxCard:(id)a0 setupPerf:(id)a1 resource:(id)a2 itemModel:(id)a3 isPreloader:(BOOL)a4;
+- (void)lynxCardView:(id)a0 lynxUrl:(id)a1 didUpdateDataWithLynxViewFromType:(unsigned long long)a2 resource:(id)a3 itemModel:(id)a4 perfDict:(id)a5;
+- (void)needReloadSectionLayout:(unsigned long long)a0;
+- (void)removeGuideBubbleView;
+- (void)removeNormalGuideBubbleView;
+- (void)registerHybridList;
+- (void)reloadHybridListVC;
+- (void)reloadViewControllerWithCompletion:(id /* block */)a0;
+- (void)updateHybridListVC;
+- (void)UIAnimation;
+- (void)changeModeToNormal;
+- (void)showGuideBubbleView;
+- (void)showFilterGuideBubbleView;
+- (void)updateFeedStatusCard;
+- (void)configBenefitPanelAlphaWithOffset:(double)a0;
+- (void)scrollToNormal;
+- (void)scrollToStatic;
+- (id)ecExtraGlobalProps:(id)a0 index:(long long)a1;
+- (void)checkPreloadNextPage;
+- (void)loadingScroll;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (void)viewDidLayoutSubviews;
+- (void)scrollViewWillBeginDecelerating:(id)a0;
+- (id)initWithContext:(id)a0;
+- (void)_addObserver;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)viewDidLoad;
+- (void)scrollViewDidEndDragging:(id)a0 willDecelerate:(BOOL)a1;
+- (double)bottomInset;
+- (void)loadView;
+- (void)scrollViewDidEndScrollingAnimation:(id)a0;
+
+@end

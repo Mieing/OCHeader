@@ -1,0 +1,83 @@
+@class FinderPoiBasicInfoResponse_RecommendDishesComponent, NSString, NSArray, WCFinderPoiLineComponetArray;
+
+@interface WCFinderPoiBasicInfo : NSObject <PBCoding, WCTTableCoding>
+
+@property (copy, nonatomic) NSString *poiId;
+@property (nonatomic) unsigned long long cacheTime;
+@property (nonatomic) int scene;
+@property (nonatomic) int fromScene;
+@property (copy, nonatomic) NSString *poiName;
+@property (retain, nonatomic) WCFinderPoiLineComponetArray *lineComponentList;
+@property (copy, nonatomic) NSString *poiAddress;
+@property (retain, nonatomic) FinderPoiBasicInfoResponse_RecommendDishesComponent *recommendDishesComponent;
+@property (copy, nonatomic) NSString *groupBuyTitle;
+@property (retain, nonatomic) NSArray *groupBuyArray;
+@property (copy, nonatomic) NSString *groupFooterTitle;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) BOOL isAutoIncrement;
+
++ (void)PBArrayAdd_poiId;
++ (void)PBArrayAdd_cacheTime;
++ (void)PBArrayAdd_scene;
++ (void)PBArrayAdd_fromScene;
++ (void)PBArrayAdd_poiName;
++ (void)PBArrayAdd_lineComponentList;
++ (void)PBArrayAdd_poiAddress;
++ (void)PBArrayAdd_recommendDishesComponent;
++ (void)PBArrayAdd_groupBuyTitle;
++ (void)PBArrayAdd_groupBuyArray;
++ (void)PBArrayAdd_groupFooterTitle;
++ (void)initialize;
++ (const void *)objectRelationalMapping;
++ (const void *)allProperties;
++ (id)allBridgeProperties;
++ (id)__wcdbtyper;
++ (const void *)poiId;
++ (const void *)__wcdb_synthesize_0:(void *)a0;
++ (id)swift_poiId;
++ (const void *)cacheTime;
++ (const void *)__wcdb_synthesize_1:(void *)a0;
++ (id)swift_cacheTime;
++ (const void *)scene;
++ (const void *)__wcdb_synthesize_2:(void *)a0;
++ (id)swift_scene;
++ (const void *)fromScene;
++ (const void *)__wcdb_synthesize_3:(void *)a0;
++ (id)swift_fromScene;
++ (const void *)poiName;
++ (const void *)__wcdb_synthesize_4:(void *)a0;
++ (id)swift_poiName;
++ (const void *)lineComponentList;
++ (const void *)__wcdb_synthesize_5:(void *)a0;
++ (id)swift_lineComponentList;
++ (const void *)poiAddress;
++ (const void *)__wcdb_synthesize_6:(void *)a0;
++ (id)swift_poiAddress;
++ (const void *)recommendDishesComponent;
++ (const void *)__wcdb_synthesize_7:(void *)a0;
++ (id)swift_recommendDishesComponent;
++ (const void *)groupBuyTitle;
++ (const void *)__wcdb_synthesize_8:(void *)a0;
++ (id)swift_groupBuyTitle;
++ (const void *)groupBuyArray;
++ (const void *)__wcdb_synthesize_9:(void *)a0;
++ (id)swift_groupBuyArray;
++ (const void *)groupFooterTitle;
++ (const void *)__wcdb_synthesize_10:(void *)a0;
++ (id)swift_groupFooterTitle;
++ (void)__wcdb_table_constraint_11:(void *)a0;
++ (void)__wcdb_table_constraint_12:(void *)a0;
++ (void)__wcdb_index_13:(void *)a0;
++ (id)unarchiveWithWCTValue:(id)a0;
++ (unsigned long long)columnTypeForWCDB;
+
+- (id)getPBPropertyTable;
+- (id)archivedWCTValue;
+- (id)toPBPoiBasicInfo;
+- (void).cxx_destruct;
+
+@end

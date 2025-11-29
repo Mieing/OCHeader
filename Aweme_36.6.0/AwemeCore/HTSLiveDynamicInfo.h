@@ -1,0 +1,12 @@
+@class NSMutableArray;
+
+@interface HTSLiveDynamicInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long showAfterTimeMs;
+@property (retain, nonatomic) NSMutableArray *textArray;
+@property (readonly, nonatomic) unsigned long long textArray_Count;
+@property (nonatomic) long long durationMs;
+
++ (id)descriptor;
+
+@end

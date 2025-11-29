@@ -1,0 +1,12 @@
+@interface TSPKIPOfIfAddrsPipeline : TSPKDetectPipeline
+
++ (id)stubbedClass;
++ (BOOL)isEntryDefaultEnable;
++ (id)stubbedCAPIs;
++ (void)preload;
++ (id)dataType;
++ (id)pipelineType;
+
+- (BOOL)deferPreload;
+
+@end

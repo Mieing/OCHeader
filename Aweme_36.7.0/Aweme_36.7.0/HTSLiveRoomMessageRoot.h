@@ -1,0 +1,3 @@
+@interface HTSLiveRoomMessageRoot : GPBRootObject
+
+@end

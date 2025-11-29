@@ -1,0 +1,76 @@
+@class AWEBubble, NSString, NSArray, UICollectionView, AWEPostWorkViewController, AWEPostWorkViewControllerV2;
+
+@interface AWEPostworkDetailComponent : AWEUserDetailBaseComponent <AWEPublishTaskMessage, AWEProfileTabListProviderProtocol, AWEPostworkDetailComponentProtocol>
+
+@property (weak, nonatomic) AWEBubble *scrollToTopBubble;
+@property (retain, nonatomic) AWEPostWorkViewController *postVC;
+@property (retain, nonatomic) AWEPostWorkViewControllerV2 *postVCV2;
+@property (nonatomic) BOOL postWorkDirty;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL hasShownPopover;
+@property (readonly, nonatomic) BOOL locateModeUI;
+@property (readonly, nonatomic) NSArray *dataSource;
+@property (copy, nonatomic) NSString *followGuideSession;
+@property (readonly, nonatomic) UICollectionView *collectionView;
+
+- (void)task:(id)a0 didEndWithResult:(long long)a1 error:(id)a2;
+- (BOOL)isPostworkTab;
+- (BOOL)isPostworkTabUsingWaterfallLayout;
+- (void)didDeleteAweme:(id)a0;
+- (BOOL)isThemeStyleLight;
+- (void)scrollTopIfNeeded;
+- (void)reloadEmptyPage;
+- (id)profileHeaderVC;
+- (void)setBackgroundColorWith:(id)a0;
+- (void)onRefreshHeaderView:(id)a0 shouldRefreshTabView:(BOOL)a1;
+- (void)onDidSelectTabListIndex:(long long)a0 actionType:(unsigned long long)a1 hasRedDotWhenSwitched:(BOOL)a2 needTrack:(BOOL)a3;
+- (id)supportTabTypes;
+- (id)tabViewControllerForType:(long long)a0;
+- (id)tabNameForLogWithType:(long long)a0;
+- (id)profileTabModelForType:(long long)a0;
+- (BOOL)shouldShowForType:(long long)a0;
+- (void)onResetUI;
+- (void)onUpdateHeaderHeight;
+- (void)onWillRefreshWithUser:(id)a0;
+- (void)updateUserWith:(id)a0;
+- (void)updatePostWorkTabIcon:(BOOL)a0;
+- (void)dismissFollowGuideMaskView;
+- (void)showSortGuideBubbleIfNeeded;
+- (void)setFollowGuideMaskViewStatusNO;
+- (void)setNeedHideJustWatchedWith:(BOOL)a0;
+- (void)retryPostWorkRefreshIfNeed;
+- (void)updatedSegmentItems;
+- (void)ttlStoryCountChangedNotification:(id)a0;
+- (id)customExtAccessibilityText;
+- (void)refreshPostWorkAfterNextAppear:(id)a0;
+- (void)p_refreshPostWorkNeedDelay:(BOOL)a0 completion:(id /* block */)a1;
+- (id)postWorkTabModel;
+- (void)p_deleteQuickShareAweme:(id)a0;
+- (void)p_deletePostAweme:(id)a0;
+- (void)p_refreshPostWorkNeedDelay:(BOOL)a0;
+- (BOOL)shouldTrackFollowFromCardWith:(id)a0 recommendReason:(id)a1;
+- (BOOL)profilePostWorkUserWorkOpt;
+- (void)configCommonLogExtraDict;
+- (id)scrollTopItemController;
+- (void)showScrollToTopBubbleIfNeeded;
+- (BOOL)onlyPostTabInSegment;
+- (id)secUserID;
+- (void)viewDidAppear;
+- (id)userID;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (void)removeAll;
+- (id)user;
+- (void)viewWillAppear;
+- (id)title;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)originalTitle;
+- (void)viewDidDisappear;
+- (void)refreshData;
+- (void)onInit;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWEAIGCBaseBusinessCustomModel : NSObject
+
+@end

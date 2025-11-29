@@ -1,0 +1,13 @@
+@class HTSLiveEpisodePaidInfo;
+
+@interface HasRightResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveEpisodePaidInfo *paidInfo;
+@property (nonatomic) BOOL hasPaidInfo;
+@property (nonatomic) long long refreshTime;
+@property (nonatomic) long long noPermissionOp;
+@property (nonatomic) long long hasPermissionOp;
+
++ (id)descriptor;
+
+@end

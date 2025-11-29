@@ -1,0 +1,84 @@
+@class NSString, NSNumber, AWEVideoPublishViewModel;
+
+@interface AWEVideoRecordOutputParameter : NSObject
+
+@property (nonatomic) BOOL enableRecordMultiSegmentVideoSize;
+@property (nonatomic) BOOL enableImportMultiSegmentVideoSize;
+@property (retain, nonatomic) NSString *maximumRecordWriteSizeString;
+@property (nonatomic) struct CGSize { double width; double height; } maximumRecordWriteSize;
+@property (retain, nonatomic) NSNumber *recordWriteBitrateNumber;
+@property (nonatomic) unsigned long long recordWriteBitrate;
+@property (retain, nonatomic) NSString *maximumImportCompositionSizeString;
+@property (nonatomic) struct CGSize { double width; double height; } maximumImportCompositionSize;
+@property (retain, nonatomic) NSNumber *importCompositionBitrateNumber;
+@property (nonatomic) unsigned long long importCompositionBitrate;
+@property (retain, nonatomic) NSString *assetExportPreset;
+@property (retain, nonatomic) NSString *dynamicBitrateJsonString;
+@property (copy, nonatomic) NSString *dynamicHDBitrateJsonString;
+@property (copy, nonatomic) NSString *maximumImportPreviewSizeSting;
+@property (nonatomic) struct CGSize { double width; double height; } maximumImportPreviewSize;
+@property (copy, nonatomic) NSString *maximumRecordEditSizeString;
+@property (copy, nonatomic) NSString *maximumImportEditSizeSting;
+@property (nonatomic) struct CGSize { double width; double height; } maximumRecordEditSize;
+@property (nonatomic) struct CGSize { double width; double height; } maximumImportEditSize;
+@property (copy, nonatomic) NSString *maximumRecordExportSizeString;
+@property (copy, nonatomic) NSString *maximumImportExportSizeString;
+@property (nonatomic) struct CGSize { double width; double height; } maximumRecordExportSize;
+@property (nonatomic) struct CGSize { double width; double height; } maximumImportExportSize;
+@property (copy, nonatomic) NSString *maximumRecordWaterMarkSizeString;
+@property (copy, nonatomic) NSString *maximumImportWaterMarkSizeString;
+@property (nonatomic) struct CGSize { double width; double height; } maximumRecordWaterMarkSize;
+@property (nonatomic) struct CGSize { double width; double height; } maximumImportWaterMarkSize;
+@property (nonatomic) unsigned long long editVideoMaximumFrameRate;
+@property (nonatomic) unsigned long long editVideoDefaultFrameRate;
+@property (weak, nonatomic) AWEVideoPublishViewModel *context;
+
++ (void)configPublishViewModelOutputParametersWith:(id)a0;
++ (id)remuxBitrateLimitJson;
++ (struct CGSize { double x0; double x1; })getSizeWithSourceSize:(struct CGSize { double x0; double x1; })a0 targetSize:(struct CGSize { double x0; double x1; })a1;
++ (BOOL)issourceSize:(struct CGSize { double x0; double x1; })a0 exceedLimitWithTargetSize:(struct CGSize { double x0; double x1; })a1;
++ (struct CGSize { double x0; double x1; })maximumImportCompositionSize;
++ (struct CGSize { double x0; double x1; })currentMaxEditSize;
++ (struct CGSize { double x0; double x1; })currentMaxExportSize;
++ (void)executeWithContext:(id)a0 block:(id /* block */)a1;
++ (struct CGSize { double x0; double x1; })maximumRecordWriteSize;
++ (id)currentDynamicBitrateJsonStringWithVideoSource:(long long)a0;
++ (struct CGSize { double x0; double x1; })maximumRecordEditSize;
++ (unsigned long long)editVideoMaximumFrameRate;
++ (struct CGSize { double x0; double x1; })maximumRecordExportSize;
++ (struct CGSize { double x0; double x1; })maximumRecordWaterMarkSize;
++ (id)sharedParameter;
++ (struct CGSize { double x0; double x1; })maximumImportEditSize;
++ (struct CGSize { double x0; double x1; })maximumImportExportSize;
++ (struct CGSize { double x0; double x1; })maximumImportWaterMarkSize;
++ (unsigned long long)editVideoDefaultFrameRate;
++ (struct CGSize { double x0; double x1; })currentMaxWaterMarkSize;
++ (id)assetExportPreset;
++ (id)assetExportPresetWithSize:(struct CGSize { double x0; double x1; })a0;
++ (BOOL)enable1080pCapturePreview;
++ (id)selectVideoResolutionWithSizeArray:(id)a0 index:(unsigned long long)a1;
++ (id)currentSpeedSetting;
++ (id)validHDSettings;
++ (struct CGSize { double x0; double x1; })targetRecordVideoSizeForPublishModel:(id)a0;
++ (unsigned long long)recordWriteBitrate;
++ (struct CGSize { double x0; double x1; })maximumImportPreviewSize;
++ (unsigned long long)importCompositionBitrate;
++ (void)renewRecordResolutionIfNeed:(id)a0;
++ (struct CGSize { double x0; double x1; })expectedMaxRecordWriteSizeForPublishModel:(id)a0;
++ (id)normalHDBitrateSettings;
++ (void)updatePublishViewModelOutputParametersWith:(id)a0;
++ (void)configImportingMaximumPreviewResolutionLimit;
+
+- (struct CGSize { double x0; double x1; })currentMaxExportSize;
+- (struct CGSize { double x0; double x1; })currentMaxWaterMarkSize;
+- (id)assetExportPresetWithSize:(struct CGSize { double x0; double x1; })a0;
+- (id)initWithRecordBitrateCategory:(unsigned long long)a0 recordSizeArray:(id)a1 recordBitrateArray:(id)a2 uploadSizeCategory:(unsigned long long)a3 uploadBitrateCategory:(unsigned long long)a4 uploadSizeArray:(id)a5 uploadBitrateArray:(id)a6 editVideoMaximumFrameRate:(id)a7 recordEditVideoSizeCategory:(unsigned long long)a8 recordExportVideSizeCategory:(unsigned long long)a9 recordWatermarkVideoSizeCategory:(unsigned long long)a10 uploadEditVideoSizeCategory:(unsigned long long)a11 uploadExportVideSizeCategory:(unsigned long long)a12 uploadWatermarkVideoSizeCategory:(unsigned long long)a13 uploadPreviewVideoSizeCategory:(unsigned long long)a14;
+- (id)initWithMaximumRecordWriteSizeString:(id)a0 recordWriteBitrateNumber:(id)a1 maximumImportCompositionSizeString:(id)a2 importCompositionBitrateNumber:(id)a3 editVideoMaximumFrameRate:(id)a4 maximumRecordEditSizeString:(id)a5 maximumRecordExportSizeString:(id)a6 maximumRecordWaterMarkSizeString:(id)a7 maximumImportEditSizeSting:(id)a8 maximumImportExportSizeString:(id)a9 maximumImportWaterMarkSizeString:(id)a10 maximumImportPreviewSizeSting:(id)a11 enableRecordMultiSegmentVideoSize:(BOOL)a12 enableImportMultiSegmentVideoSize:(BOOL)a13 dynamicBitrateJsonString:(id)a14;
+- (struct CGSize { double x0; double x1; })videoSizeConversionWithString:(id)a0;
+- (struct CGSize { double x0; double x1; })conversionToTargetVideoSizeWith:(id)a0 defaultVideoSizeString:(id)a1 enableMultiSegmentVideoSize:(BOOL)a2;
+- (BOOL)enableHDPublishSettingOn;
+- (struct CGSize { double x0; double x1; })getImportHDSizeWithSpeedSettings:(id)a0;
+- (id)newPublishBitrateJson;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,3 @@
+@interface BattleBattleReserveInviteApiRoot : GPBRootObject
+
+@end

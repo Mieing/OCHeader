@@ -1,0 +1,3 @@
+@interface AWECommentInputViewSwiftImpl.CommentImageElementViewModel : AWECommentInputViewSwiftImpl.CommentInputViewBaseElementViewModel
+
+@end

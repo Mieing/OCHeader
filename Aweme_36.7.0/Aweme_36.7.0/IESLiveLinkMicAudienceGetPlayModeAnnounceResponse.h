@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceGetPlayModeAnnounceResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceGetPlayModeAnnounceResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceGetPlayModeAnnounceResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

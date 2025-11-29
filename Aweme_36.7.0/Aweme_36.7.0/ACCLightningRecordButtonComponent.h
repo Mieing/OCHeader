@@ -1,0 +1,72 @@
+@class ACCLightningRecordButton, ACCNewCaptureAnimationView, ACCRecordMode, AWERecordFlowResultContext, NSString, UIButton;
+@protocol ACCRecorderViewContainer, AWERecordFlowSourceService, ACCCameraService, ACCRecordFlowService, AWEStudioBusinessCameraFlowControlProtocol, AWERedPackThemeService, ACCRecordPropService, ACCRecordFlowControlService, ACCDuetSessionSwtichService, ACCRecordSystemLivePhotoService, ACCRecordSwitchModeService, ACCShootSourceService, ACCVideoConfigProtocol, ACCRecordButtonService;
+
+@interface ACCLightningRecordButtonComponent : ACCFeatureComponent <ACCNewCaptureAnimationViewDelegate, ACCRecordButtonServiceSubscriber, ACCRecordFlowServiceSubscriber, ACCRecordConfigDurationHandler, ACCRecordSwitchModeServiceSubscriber, AWERedPackThemeServiceSubscriber, ACCRecordSystemLivePhotoServiceSubscriber, AWEStudioBusinessCameraBasicActionProtocol, ACCRecorderViewContainerItemsHideShowObserver, AWERecordFlowSourceEventService>
+
+@property (retain, nonatomic) UIButton *placeHoldRecordButton;
+@property (retain, nonatomic) ACCNewCaptureAnimationView *recordAnimationView;
+@property (retain, nonatomic) ACCLightningRecordButton *recordButton;
+@property (retain, nonatomic) ACCRecordMode *recordMode;
+@property (retain, nonatomic) id<ACCRecordButtonService> recordButtonService;
+@property (retain, nonatomic) id<ACCRecorderViewContainer> viewContainer;
+@property (retain, nonatomic) id<ACCShootSourceService> shootSourceService;
+@property (retain, nonatomic) id<ACCRecordSwitchModeService> switchModeService;
+@property (retain, nonatomic) id<ACCRecordButtonService> buttonService;
+@property (retain, nonatomic) id<ACCRecordFlowService> flowService;
+@property (retain, nonatomic) id<ACCVideoConfigProtocol> videoConfig;
+@property (retain, nonatomic) id<ACCCameraService> cameraService;
+@property (retain, nonatomic) id<ACCRecordFlowControlService> flowControlService;
+@property (retain, nonatomic) id<ACCRecordPropService> propService;
+@property (retain, nonatomic) id<ACCDuetSessionSwtichService> duetSessionSwtichService;
+@property (retain, nonatomic) id<AWERedPackThemeService> redPackThemeService;
+@property (retain, nonatomic) id<ACCRecordSystemLivePhotoService> systemLivePhotoService;
+@property (weak, nonatomic) id<AWERecordFlowSourceService> flowSource;
+@property (retain, nonatomic) AWERecordFlowResultContext *resultContext;
+@property (retain, nonatomic) id<AWEStudioBusinessCameraFlowControlProtocol> cameraServiceFlowContext;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)componentDidDisappear;
+- (void)switchModeServiceWillChangeToMode:(id)a0 oldMode:(id)a1;
+- (void)shouldItemsShow:(BOOL)a0 animated:(BOOL)a1;
+- (void)flowServiceDidUpdateDuration:(double)a0;
+- (void)flowServiceDidMarkDuration:(double)a0;
+- (void)flowServiceDidRemoveLastSegment:(BOOL)a0;
+- (void)flowServiceDidRemoveAllSegment;
+- (void)flowServiceDurationHasRestored;
+- (void)viewContainerDidLayout;
+- (void)cameraFlowActionCompletion:(BOOL)a0;
+- (void)cameraFlowActionStepChangedWith:(unsigned long long)a0 currentStep:(unsigned long long)a1;
+- (void)recordSystemLivePhotoStart:(double)a0;
+- (void)recordSystemLivePhotoFinish;
+- (void)recordSystemLivePhotoCancel;
+- (void)recordSystemLivePhotoEnableStateChanged:(BOOL)a0 preState:(BOOL)a1;
+- (void)loadComponentView;
+- (void)componentDidMount;
+- (void)componentDidChangeStatusBarOrientation;
+- (unsigned long long)preferredLoadPhase;
+- (BOOL)needBlockAnimationTouches:(id)a0;
+- (BOOL)recordModeIsStandVideo:(id)a0;
+- (BOOL)recordModeIsLongVideo:(id)a0;
+- (BOOL)isSwitchVideoLengthOnly:(id)a0;
+- (void)bindServices:(id)a0;
+- (void)updateProgressAndMarksDisplay;
+- (void)didSetMaxDuration:(double)a0;
+- (void)updateButtonState;
+- (void)captureAnimationViewTouchBegan:(id)a0;
+- (void)captureAnimationViewTouchMoved:(id)a0;
+- (void)captureAnimationViewTouchEnd:(id)a0;
+- (void)updateLivePhotoProgressViewAlpha;
+- (void)handleComponentMountCompleted;
+- (void)trackerReset;
+- (void)trackerCreativeInteractionStartRecord;
+- (void)trackerCreativeInteractionStartRecordEndNodeWithErrorMsg:(id)a0;
+- (void)recordButtonStateInitial;
+- (void)recordButtonServiceStateDidChange;
+- (void)redPackThemeServiceApplySticker:(id)a0;
+- (void).cxx_destruct;
+- (void)updateProgressBar;
+
+@end

@@ -1,0 +1,71 @@
+@class UIView, ACCPanelHandlebarView, NSArray, NSString, AWEStickerPickerStickerBaseCell, UICollectionView, AWEStickerPickerCategoryTabView, AWEStickerPickerSearchCollectionViewCell;
+@protocol AWEStickerPickerViewDelegate, AWEStickerPickerUIConfigurationProtocol, ACCGenericEffectPanelViewModel, ACCGenericEffectPanelSearchService;
+
+@interface AWEStickerPickerView : UIView <ACCPanelHandlebarViewDelegate, AWEStickerPickerCategoryTabViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate, AWEStickerPickerCollectionViewCellDelegate, AWEStickerPickerViewProtocol>
+
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) ACCPanelHandlebarView *handlebarView;
+@property (retain, nonatomic) AWEStickerPickerCategoryTabView *tabView;
+@property (retain, nonatomic) UICollectionView *stickerCollectionView;
+@property (retain, nonatomic) id<AWEStickerPickerUIConfigurationProtocol> UIConfig;
+@property (copy, nonatomic) NSArray *categoryModels;
+@property (retain, nonatomic) AWEStickerPickerStickerBaseCell *currentSelectedCell;
+@property (weak, nonatomic) id<AWEStickerPickerViewDelegate> delegate;
+@property (retain, nonatomic) id<ACCGenericEffectPanelViewModel> model;
+@property (retain, nonatomic) id<ACCGenericEffectPanelSearchService> searchModel;
+@property (nonatomic) long long defaultSelectedIndex;
+@property (nonatomic) BOOL isOnRecordingPage;
+@property (retain, nonatomic) AWEStickerPickerSearchCollectionViewCell *searchTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)tabScrollView;
+- (id)initWithUIConfig:(id)a0;
+- (id)currentContentScrollView;
+- (void)updateSelectedIndex:(long long)a0;
+- (BOOL)supportSearchSuggestWords;
+- (BOOL)shouldSupportSearchFeature;
+- (void)scrollWithoutAnimatedToIndexOfTab:(unsigned long long)a0 indexOfSection:(unsigned long long)a1 indexOfCell:(unsigned long long)a2;
+- (void)updateLoadingWithTabIndex:(long long)a0;
+- (void)updateFetchFinishWithTabIndex:(long long)a0;
+- (void)updateFetchErrorWithTabIndex:(long long)a0;
+- (void)updateSelectedStatusWithSticker:(id)a0;
+- (void)reloadSelectedCategoryListIfNeeded;
+- (void)executeFavoriteAnimationForIndex:(id)a0;
+- (void)scrollToIndexOfSection:(unsigned long long)a0 indexOfCell:(unsigned long long)a1 offset:(double)a2 animated:(BOOL)a3;
+- (BOOL)stickerPickerCollectionViewCell:(id)a0 isStickerSelected:(id)a1;
+- (void)stickerPickerCollectionViewCell:(id)a0 didSelectSticker:(id)a1 category:(id)a2 indexPath:(id)a3;
+- (void)stickerPickerCollectionViewCell:(id)a0 willDisplaySticker:(id)a1 indexPath:(id)a2;
+- (void)categoryTabView:(id)a0 didSelectItemAtIndex:(long long)a1 animated:(BOOL)a2;
+- (void)updateSelectedStickerForId:(id)a0;
+- (void)clearStickerApplyButtonClicked:(id)a0;
+- (void)setupStickerCollectionView;
+- (void)setupTabViewWithUIConfig:(id)a0;
+- (void)notifySelectedTabIndex:(long long)a0;
+- (void)selectTabForEffectId:(id)a0 animated:(BOOL)a1;
+- (void)selectTabWithCategory:(id)a0;
+- (void)handlebar:(id)a0 handlePanGesture:(id)a1;
+- (void)stickerPickerCollectionViewCell:(id)a0 didShowFirstScreenStickerIconsDuration:(long long)a1 averageDuration:(long long)a2 isFirstScreen:(BOOL)a3 forStickerCategory:(id)a4;
+- (void)setupHandlebarView;
+- (BOOL)shouldUpdateFailStatus:(id)a0;
+- (void)notifySearchViewToShowKeyboard;
+- (void)reloadData;
+- (void).cxx_destruct;
+- (void)scrollViewDidEndDecelerating:(id)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)scrollViewWillEndDragging:(id)a0 withVelocity:(struct CGPoint { double x0; double x1; })a1 targetContentOffset:(inout struct CGPoint { double x0; double x1; } *)a2;
+- (void)updateSubviewsAlpha:(double)a0;
+- (void)collectionView:(id)a0 willDisplayCell:(id)a1 forItemAtIndexPath:(id)a2;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)handlePanGesture:(id)a0;
+- (void)updateCategory:(id)a0;
+- (void)setupBackgroundView;
+
+@end

@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface IESECBenefitLabel : GPBMessage
+
+@property (copy, nonatomic) NSString *leftText;
+@property (copy, nonatomic) NSString *rightText;
+@property (nonatomic) int textStyle;
+@property (nonatomic) int colorStyle;
+@property (nonatomic) int divLine;
+
++ (id)descriptor;
+
+@end

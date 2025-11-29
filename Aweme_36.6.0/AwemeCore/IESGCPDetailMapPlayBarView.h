@@ -1,0 +1,3 @@
+@interface IESGCPDetailMapPlayBarView : IESGCPDetailInteractionBarView
+
+@end

@@ -1,0 +1,9 @@
+@interface IESLiveComponentCoreABManager : NSObject
+
++ (BOOL)liveAnchorAudioSetupFallBack;
++ (BOOL)liveStreamLogEnabled;
++ (BOOL)liveInteractAudienceVpassEnabled;
++ (BOOL)liveAnchorAudioCaptureBecomeActiveOptimize;
++ (long long)liveAnchorOutstreamFps;
+
+@end

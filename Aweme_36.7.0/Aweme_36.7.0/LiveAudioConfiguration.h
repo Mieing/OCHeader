@@ -1,0 +1,78 @@
+@class NSDictionary, NSString;
+
+@interface LiveAudioConfiguration : NSObject
+
+@property (copy, nonatomic) NSDictionary *sdkParams;
+@property (nonatomic) unsigned long long audioChannelCount;
+@property (nonatomic) unsigned long long audioSampleRate;
+@property (nonatomic) BOOL enableAEC;
+@property (nonatomic) BOOL enableInEarMonitoring;
+@property (nonatomic) BOOL enableNoiseSuppression;
+@property (nonatomic) BOOL enableOneChannelNS;
+@property (nonatomic) float noiseSuppressionParam;
+@property (nonatomic) BOOL enableAudioLoudNorm;
+@property (nonatomic) float audioLoudNormParam;
+@property (nonatomic) BOOL enableOneChannelLN;
+@property (nonatomic) BOOL enableAecOnHeadsetMode;
+@property (nonatomic) BOOL enableSoftAec;
+@property (nonatomic) BOOL enableMediaVolOnSWAec;
+@property (nonatomic) int admAecType;
+@property (nonatomic) float admAecCoeff;
+@property (nonatomic) BOOL enableCheckAudioModeInSetup;
+@property (nonatomic) BOOL enableAudioLowLatency;
+@property (nonatomic) float audioIOBufferDuration;
+@property (nonatomic) BOOL enableClearAudioBuffer;
+@property (nonatomic) int clearBufferSize;
+@property (nonatomic) BOOL enableFakeThreadNew;
+@property (nonatomic) BOOL enableBlueToothRouteChangeFix;
+@property (nonatomic) BOOL enableSingleChorusTwoVoicesFix;
+@property (nonatomic) BOOL enableBAStartAudioCaptureInBackgroundFix;
+@property (nonatomic) int audioCaptureInBackgroundCompensationGapMs;
+@property (nonatomic) double checkAudioIOPipelineTimerInterval;
+@property (nonatomic) BOOL checkAudioIOPipelineInBackground;
+@property (nonatomic) BOOL switchToFakeAudioProcessAutomaticallyDuringCheckTimer;
+@property (nonatomic) BOOL enableAudioCaptureInterruptedAfterBackgroundInterruption;
+@property (nonatomic) BOOL enableNewCheckAudioIOPipelineType;
+@property (nonatomic) BOOL enableSpeedUpCheckAudioIOPipelineAsSessionInterrupted;
+@property (nonatomic) BOOL enableDiagnosis;
+@property (copy, nonatomic) NSString *audioDiagnosisParams;
+@property (copy, nonatomic) NSString *audioDiagnosisthresholds;
+@property (copy, nonatomic) NSString *audioDiagnosisSwitch;
+@property (nonatomic) BOOL enableIndependentSoftEarMonitorVolume;
+@property (nonatomic) double speedUpCheckAudioIOPipelineInterval;
+@property (nonatomic) BOOL enableCheckAudioIOPipelineEarlyStop;
+@property (nonatomic) BOOL setRouteToSpeakerStatusAfterCategoryChange;
+@property (nonatomic) BOOL enableSkipMemsetMonitoringDataIfBgmPaused;
+@property (nonatomic) unsigned long long admType;
+@property (nonatomic) BOOL useByteAudioKit;
+@property (copy, nonatomic) NSDictionary *admServerConfig;
+@property (nonatomic) BOOL enableEarMonitorRoute;
+@property (nonatomic) BOOL disableAudioLog;
+@property (nonatomic) BOOL stopAudioLogBeforeRelease;
+@property (nonatomic) BOOL enableDeviceEventReport;
+@property (nonatomic) BOOL enableVocalLoundNormOnWired;
+@property (nonatomic) BOOL enableVocalDeNoiseOnWired;
+@property (nonatomic) int debug_admType;
+@property (nonatomic) NSString *debug_baServerCfgJsonStr;
+@property (nonatomic) int debug_aecType;
+@property (nonatomic) BOOL disableCommonRenderSink;
+@property (nonatomic) BOOL disableSinkLockWhenStopAndPull;
+@property (nonatomic) BOOL enableAudioCoderSinkPathV2;
+@property (nonatomic) int timestampSynMode;
+@property (nonatomic) BOOL beaTimespaceOpt;
+@property (nonatomic) BOOL enableAudioTimestampAscend;
+@property (nonatomic) BOOL stopBaePushStreamWhenServerMix;
+@property (nonatomic) BOOL enableSamiMemLeakFix;
+@property (nonatomic) BOOL enableCoreByteAudio;
+@property (nonatomic) BOOL enableAudioConsumeAsync;
+@property (nonatomic) BOOL enableSendExtraLoundessInfo;
+@property (copy, nonatomic) NSString *abConfig;
+@property (nonatomic) BOOL enableAuxReport;
+@property (nonatomic) BOOL enableADMStatsReport;
+@property (nonatomic) BOOL enableAudioKitPlayback;
+@property (nonatomic) int enableSendDenoiseSEIInfo;
+
+- (void).cxx_destruct;
+- (id)init;
+
+@end

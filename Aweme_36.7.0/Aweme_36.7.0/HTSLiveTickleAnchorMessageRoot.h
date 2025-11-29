@@ -1,0 +1,3 @@
+@interface HTSLiveTickleAnchorMessageRoot : GPBRootObject
+
+@end

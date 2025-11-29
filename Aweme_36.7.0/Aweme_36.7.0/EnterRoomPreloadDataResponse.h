@@ -1,0 +1,12 @@
+@class EnterRoomPreloadDataResponse_EnterRoomExtra, HTSLiveRoom;
+
+@interface EnterRoomPreloadDataResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveRoom *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) EnterRoomPreloadDataResponse_EnterRoomExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+@end

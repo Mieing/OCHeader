@@ -1,0 +1,10 @@
+@class AddUserFilterKeywordResponse_ResponseData;
+
+@interface AddUserFilterKeywordResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AddUserFilterKeywordResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

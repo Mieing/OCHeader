@@ -1,0 +1,3 @@
+@interface WebcastAnchorManagerWebcastAnchorGenCreateRoomTopicUgmGenApiRoot : GPBRootObject
+
+@end

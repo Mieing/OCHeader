@@ -1,0 +1,10 @@
+@class PlayFilterResponse_Data;
+
+@interface PlayFilterResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PlayFilterResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

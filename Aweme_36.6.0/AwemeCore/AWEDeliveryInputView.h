@@ -1,0 +1,81 @@
+@class UIView, NSString, AWEDeliveryTextView, AWEDeliveryInputViewBiz, AWEDeliveryMoreView, YYLabel, UIButton, UILabel;
+
+@interface AWEDeliveryInputView : UIView <UITextViewDelegate>
+
+@property (retain, nonatomic) UIButton *telephoneButton;
+@property (retain, nonatomic) UIButton *moreButton;
+@property (retain, nonatomic) UIView *moreButtonRedPoint;
+@property (retain, nonatomic) AWEDeliveryMoreView *moreView;
+@property (retain, nonatomic) YYLabel *disableLabel;
+@property (retain, nonatomic) AWEDeliveryInputViewBiz *biz;
+@property (retain, nonatomic) UILabel *placeholderLabel;
+@property (retain, nonatomic) UIView *accessibilityTextView;
+@property (nonatomic) double selectAreaViewHeight;
+@property (copy, nonatomic) id /* block */ onPositionChange;
+@property (copy, nonatomic) id /* block */ onSendText;
+@property (copy, nonatomic) id /* block */ onSendPhotos;
+@property (copy, nonatomic) id /* block */ onTakePhoto;
+@property (copy, nonatomic) id /* block */ onClickInput;
+@property (copy, nonatomic) id /* block */ onClickCallTelephone;
+@property (copy, nonatomic) id /* block */ textChangedBlock;
+@property (copy, nonatomic) id /* block */ fetchPageTrackEventCommonParamsBlock;
+@property (readonly, nonatomic) BOOL isExpanded;
+@property (readonly, nonatomic) NSString *plainText;
+@property (readonly, nonatomic) unsigned long long inputShowState;
+@property (nonatomic) BOOL duringPanBack;
+@property (weak, nonatomic) UIView *inputSuperView;
+@property (copy, nonatomic) NSString *placeHolderText;
+@property (retain, nonatomic) AWEDeliveryTextView *textView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)inputViewTextFont;
++ (id)inputViewTextColor;
++ (struct UIEdgeInsets { double x0; double x1; double x2; double x3; })inputViewTextContentInset;
++ (double)textMaxHeight;
++ (double)singleLineHeight;
+
+- (double)itemSpace;
+- (double)topInputHeightWithText:(id)a0;
+- (void)inputViewShowingState:(unsigned long long)a0;
+- (BOOL)textViewIsFirstResponder;
+- (void)appendTextAtEndOfInputView:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 requestCommonParams:(id)a1;
+- (void)setupBizWithRequestCommonParams:(id)a0;
+- (void)addKeyboardObserve;
+- (void)setInputViewCurrentTotalHeight;
+- (void)removeKeyboardObserve;
+- (double)getKeyBoardHeightChanged:(id)a0;
+- (void)handleInputViewState:(unsigned long long)a0 keyBoardHeight:(double)a1;
+- (void)announceAccessibilityMsg:(id)a0;
+- (double)itemMargin;
+- (double)iconSide;
+- (void)handleMoreItemViewClickEvent:(id)a0;
+- (void)updatePlaceholder;
+- (void)handleTextViewText;
+- (void)onClickTelephone;
+- (void)showMoreView;
+- (void)onClickMoreItemView:(id)a0;
+- (void)containerVCWillAppear;
+- (void)containerVCWillDisAppear;
+- (void)clearInputText;
+- (void)showNetworkErrorAlert;
+- (void)dismiss;
+- (void).cxx_destruct;
+- (void)updateOptions:(id)a0;
+- (void)keyboardWillShow:(id)a0;
+- (void)keyboardWillHide:(id)a0;
+- (double)defaultHeight;
+- (BOOL)textView:(id)a0 shouldInteractWithTextAttachment:(id)a1 inRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a2 interaction:(long long)a3;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (long long)editingInteractionConfiguration;
+- (void)setInputText:(id)a0;
+- (void)textViewDidChange:(id)a0;
+- (BOOL)textView:(id)a0 shouldChangeTextInRange:(struct _NSRange { unsigned long long x0; unsigned long long x1; })a1 replacementText:(id)a2;
+- (void)loadData;
+- (void)sendText:(id)a0;
+
+@end

@@ -1,0 +1,72 @@
+@class WCMktCouponHomePageCgi, NSString, WCMktGetCardPkgMchInfoCgi, GetCouponHomePageResponse, NSMutableArray;
+@protocol WCMktCouponHomeLogicControllerDelegate;
+
+@interface WCMktCouponHomeLogicController : NSObject <WCMktCouponHomePageCgiDelegate, IWCCardPkgExt, WCMktGetCardPkgMchInfoCgiDelegate>
+
+@property (weak, nonatomic) id<WCMktCouponHomeLogicControllerDelegate> delegate;
+@property (retain, nonatomic) GetCouponHomePageResponse *couponHomePageResponse;
+@property (nonatomic) BOOL bHasSendHomePageRequest;
+@property (retain, nonatomic) WCMktCouponHomePageCgi *homePageCgi;
+@property (nonatomic) unsigned int svrRetChangeRule;
+@property (retain, nonatomic) WCMktGetCardPkgMchInfoCgi *getMchInfoCgi;
+@property (retain, nonatomic) NSMutableArray *expandMerchatIDList;
+@property (nonatomic) BOOL bNeedUpdateMchInfoAfterViewControllerAppear;
+@property (retain, nonatomic) NSString *currentOpenMchID;
+@property (retain, nonatomic) NSString *deletingCardID;
+@property (retain, nonatomic) NSString *deletingMchID;
+@property (nonatomic) BOOL bHasHandleLocation;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (id)initLogicControllerWithDelegate:(id)a0;
+- (void)setupData;
+- (void)loadCouponHomePageCacheDataAndRefreshFromSvr;
+- (void)saveHomePageDataToFile;
+- (BOOL)isSvrReturnSortRule:(unsigned int)a0;
+- (unsigned int)getSortRuleReqNum:(unsigned int)a0;
+- (BOOL)isDenyLocationAccess;
+- (unsigned int)getCouponListSortRule;
+- (id)getCouponElemListData;
+- (id)getCouponItemIndexPathWithMchID:(id)a0;
+- (id)getCouponElementWithMchID:(id)a0;
+- (BOOL)isCouponDataAllLoad;
+- (BOOL)hasCouponData;
+- (BOOL)shouldShowSortTypeEntry;
+- (long long)getTableViewRowCount;
+- (id)getUserCouponSortInfo;
+- (id)getSortListWording;
+- (id)getCouponItemWithIndexPath:(id)a0;
+- (id)historyEntryWording;
+- (unsigned int)getSortRuleFromSortWording:(id)a0;
+- (id)getLastItemIndexPath;
+- (BOOL)isLastCouponItemWithIndexPath:(id)a0;
+- (void)forceUseSortByAcceptTime;
+- (void)handleRefreshHomePageAfterSelectSortRuleWording:(id)a0;
+- (BOOL)isMerchantCardListExpandWithID:(id)a0;
+- (void)handleClickExpandOrCollapseBtnWithID:(id)a0;
+- (void)handleMerchantItemCellClickTagBtnToOpenTinyApp:(id)a0 merchantID:(id)a1;
+- (void)handleMerchantItemCellClickCardItemTagBtnToOpenTinyApp:(id)a0 merchantID:(id)a1;
+- (void)updateMerchantInfoWithMchID:(id)a0;
+- (void)updateMerchantInfoAfterViewControllerWillAppearIfNeed;
+- (void)deleteCardWithCardData:(id)a0 mchID:(id)a1;
+- (void)onDeleteCardIDList:(id)a0 ErrCode:(int)a1;
+- (void)handleClickMerchantAreaWithMerchantID:(id)a0;
+- (void)handleClickElemData:(id)a0;
+- (void)handleH5OpenWithUrl:(id)a0 needUpdateMchInfo:(BOOL)a1;
+- (void)handleTinyAppOpenWithAppInfo:(id)a0 needUpdateMchInfo:(BOOL)a1;
+- (void)changeSortruleAndRefreshHomePage;
+- (void)handleEnterHistoryEntry;
+- (void)getHomePageDataFromSvr;
+- (void)refreshHomePageDataFromSvr;
+- (void)handleHomePageDataLoadingMore;
+- (void)getHomePageDataFromSvrWithOffset:(unsigned int)a0;
+- (void)onRetrieveLocation:(int)a0;
+- (void)onGetMktCouponHomePageResp:(id)a0;
+- (void)sendGetMchInfoRequest:(id)a0;
+- (void)onGetCardPkgMchInfoCgiResp:(id)a0;
+- (void).cxx_destruct;
+
+@end

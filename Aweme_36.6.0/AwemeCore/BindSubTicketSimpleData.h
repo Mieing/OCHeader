@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface BindSubTicketSimpleData : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *ticketId;
+@property (copy, nonatomic) NSString *parentTicketId;
+@property (copy, nonatomic) NSString *title;
+@property (nonatomic) int ticketStatus;
+@property (copy, nonatomic) NSString *detail;
+@property (nonatomic) long long expectedLiveTime;
+
++ (id)descriptor;
+
+@end

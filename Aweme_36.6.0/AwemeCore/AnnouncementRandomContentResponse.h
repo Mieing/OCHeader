@@ -1,0 +1,10 @@
+@class AnnouncementRandomContentResponse_Data;
+
+@interface AnnouncementRandomContentResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) AnnouncementRandomContentResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

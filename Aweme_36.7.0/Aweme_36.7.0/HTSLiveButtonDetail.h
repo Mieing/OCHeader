@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveButtonDetail : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *buttonText;
+@property (copy, nonatomic) NSString *buttonSchema;
+
++ (id)descriptor;
+
+@end

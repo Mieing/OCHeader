@@ -1,0 +1,20 @@
+@class NSString, HTSLiveImage;
+
+@interface SimpleUserInfo : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *id_p;
+@property (copy, nonatomic) NSString *shortId;
+@property (copy, nonatomic) NSString *displayId;
+@property (copy, nonatomic) NSString *nickname;
+@property (retain, nonatomic) HTSLiveImage *avatarThumb;
+@property (nonatomic) BOOL hasAvatarThumb;
+@property (retain, nonatomic) HTSLiveImage *avatarMedium;
+@property (nonatomic) BOOL hasAvatarMedium;
+@property (retain, nonatomic) HTSLiveImage *avatarLarge;
+@property (nonatomic) BOOL hasAvatarLarge;
+@property (copy, nonatomic) NSString *secUid;
+@property (copy, nonatomic) NSString *openId;
+
++ (id)descriptor;
+
+@end

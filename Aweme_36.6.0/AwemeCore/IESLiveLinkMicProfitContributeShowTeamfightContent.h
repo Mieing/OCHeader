@@ -1,0 +1,10 @@
+@class IESLiveLinkMicProfitBannerInfo;
+
+@interface IESLiveLinkMicProfitContributeShowTeamfightContent : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicProfitBannerInfo *bannerInfo;
+@property (nonatomic) BOOL hasBannerInfo;
+
++ (id)descriptor;
+
+@end

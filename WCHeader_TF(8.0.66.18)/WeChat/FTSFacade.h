@@ -1,0 +1,88 @@
+@class FTSFavMgr, LocalSearchDynamicConfig, FTSMessageMgr, FTSIntelligentMessageMgr, FTSFinderLocalSearchMgr, FTSMinimizeTaskLocalSearchMgr, NSString, NSMutableSet, FTSReportMgr, WebSearchRedotMgr, FTSWebSearchMgr, FTSWeShopMgr, FTSMemorySearchMgr, FTSContactMgr, MCSBrandContactMgr, FTSTopHitMgr, FTSIndexEngine, FTSDB, FTSGlobalStat, WCSearchGroupTrainingMgr, FTSKFContactLocalSearchMgr, WALocalSearchMgr;
+
+@interface FTSFacade : MMUserService <IMsgExt, IContactMgrExt, MMServiceProtocol, MMKernelExt> {
+    FTSDB *_ftsDB;
+    BOOL _isPositioning;
+    BOOL _bHasActiveSearch;
+    NSMutableSet *_imageCacheUrlSet;
+    BOOL _isOpenWeAppSearch;
+    BOOL _isOpenWeShopSearch;
+}
+
+@property (retain, nonatomic) FTSContactMgr *ftsContactMgr;
+@property (retain, nonatomic) FTSMessageMgr *ftsMessageMgr;
+@property (retain, nonatomic) FTSIntelligentMessageMgr *ftsIntelligentMessageMgr;
+@property (retain, nonatomic) FTSFavMgr *ftsFavMgr;
+@property (retain, nonatomic) FTSMemorySearchMgr *ftsMemorySearchMgr;
+@property (retain, nonatomic) FTSWebSearchMgr *ftsWebSearchMgr;
+@property (retain, nonatomic) FTSTopHitMgr *ftsTopHitMgr;
+@property (retain, nonatomic) MCSBrandContactMgr *mcsBrdContactMgr;
+@property (retain, nonatomic) WALocalSearchMgr *weAppSearchMgr;
+@property (retain, nonatomic) FTSFinderLocalSearchMgr *finderLocalSearchMgr;
+@property (retain, nonatomic) WebSearchRedotMgr *webSearchRedotMgr;
+@property (retain, nonatomic) FTSGlobalStat *ftsStat;
+@property (retain, nonatomic) WCSearchGroupTrainingMgr *groupTrainMgr;
+@property (retain, nonatomic) FTSKFContactLocalSearchMgr *kfContactLocalSearchMgr;
+@property (retain, nonatomic) FTSMinimizeTaskLocalSearchMgr *minimizeTaskLocalSearchMgr;
+@property (retain, nonatomic) FTSWeShopMgr *ftsWeShopMgr;
+@property (retain, nonatomic) FTSIndexEngine *ftsIndexEngine;
+@property (retain, nonatomic) FTSReportMgr *ftsReportMgr;
+@property (readonly, nonatomic) NSString *localSearchId;
+@property (readonly, nonatomic) long long i64LocalSessionId;
+@property (readonly, nonatomic) long long i64LocalSearchId;
+@property (readonly, nonatomic) long long i64LocalDetailSearchId;
+@property (readonly, nonatomic) long long i64LocalSubSearchId;
+@property (retain, nonatomic) LocalSearchDynamicConfig *dynConfig;
+@property (nonatomic) BOOL hasReportNoRedotExposeForSearch;
+@property (nonatomic) BOOL useAPITestLocalH5;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (void)enableForegroundTask;
+- (void)forbidForegroundTask;
+- (void)preloadResource;
+- (void)doInitWorker;
+- (void)onBeginSearch;
+- (void)resetSearchStatus;
+- (void)updateNewestHomePageSearchText:(id)a0;
+- (void)startSearchForHomePage:(id)a0;
+- (void)cancelSearchForHomePage;
+- (void)updateNewLocalSearchId:(id)a0;
+- (void)updateDetailNewLocalSearchId;
+- (void)updateSubSearchId:(id)a0;
+- (void)logBeginSearch:(unsigned long long)a0;
+- (void)onServiceInit;
+- (void)startIndexingTask;
+- (void)onEnterBackground;
+- (void)onServiceEnterBackground;
+- (void)onServiceEnterForeground;
+- (void)onServiceTerminate;
+- (void)onServiceClearData;
+- (void)onServiceMemoryWarning;
+- (void)onServicePauseBackgroundTask:(unsigned long long)a0;
+- (void)onServiceResumeBackgroundTask:(unsigned long long)a0;
+- (BOOL)isOpenWeAppSearch;
+- (void)doInitWeAppSearchMgrIfNeeded;
+- (BOOL)isOpenWeShopSearch;
+- (void)OnDelMsg:(id)a0 DelAll:(BOOL)a1;
+- (void)onRecoverFTSDB;
+- (void)onRecoverMsgDB;
+- (void)onRecoverFavDB;
+- (void)onRecoverContactDB;
+- (void)onRecoverWeShopDB;
+- (void)onViewPop;
+- (void)onEndFtsSearch;
+- (void)updateFTSStat;
+- (void)onContactListUpdate:(unsigned int)a0;
+- (BOOL)recoverGroupTrainDB;
+- (void)onServiceInitIndexEngine;
+- (void)registerFTSIndexingEngine;
+- (id)getSharedFTSMessageDB;
+- (id)getSharedFTSIntelligentMessageDB;
+- (void).cxx_destruct;
+
+@end

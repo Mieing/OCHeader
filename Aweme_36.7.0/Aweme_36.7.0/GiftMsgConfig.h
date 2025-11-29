@@ -1,0 +1,10 @@
+@class NSMutableArray;
+
+@interface GiftMsgConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *giftMoneyDataArray;
+@property (readonly, nonatomic) unsigned long long giftMoneyDataArray_Count;
+
++ (id)descriptor;
+
+@end

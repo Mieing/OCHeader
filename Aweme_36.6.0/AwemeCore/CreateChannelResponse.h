@@ -1,0 +1,10 @@
+@class CreateChannelResponse_ResponseData;
+
+@interface CreateChannelResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) CreateChannelResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

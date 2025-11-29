@@ -1,0 +1,83 @@
+@class NSString, NSArray, AWESearchSugManager, NSDictionary, UIPanGestureRecognizer, UITableView;
+@protocol AWESearchHomeNewStyleInputViewProtocol;
+
+@interface AWESearchReverseSugViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, AWESearchReverseSugTableCellDelegate>
+
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) AWESearchSugManager *manager;
+@property (copy, nonatomic) NSString *sessionID;
+@property (nonatomic) BOOL firstSugInCurrentSession;
+@property (nonatomic) double disappearTime;
+@property (nonatomic) double gapTime;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+@property (copy, nonatomic) NSArray *preCreateSugCellsList;
+@property (nonatomic) BOOL isPauseSug;
+@property (copy, nonatomic) id /* block */ sugTapBlock;
+@property (copy, nonatomic) id /* block */ richSugTapBlock;
+@property (copy, nonatomic) id /* block */ touchBeganMiss;
+@property (copy, nonatomic) id /* block */ touchBeganBlock;
+@property (copy, nonatomic) id /* block */ clearSugViewBlock;
+@property (copy, nonatomic) id /* block */ clickComplementBlock;
+@property (copy, nonatomic) id /* block */ clearKeyWordBlock;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (copy, nonatomic) NSString *enterFromSecond;
+@property (copy, nonatomic) NSString *previousPage;
+@property (copy, nonatomic) NSString *enterGroupID;
+@property (copy, nonatomic) NSString *searchEntranceStyle;
+@property (copy, nonatomic) NSDictionary *sugExtra;
+@property (copy, nonatomic) NSString *selectedWordID;
+@property (copy, nonatomic) NSString *isSearchButton;
+@property (copy, nonatomic) NSString *preSearchWord;
+@property (nonatomic) BOOL darkStyle;
+@property (weak, nonatomic) id<AWESearchHomeNewStyleInputViewProtocol> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (id)getQueryTypeForSearchSugModel:(id)a0;
++ (BOOL)canDisplayRichSug:(id)a0;
++ (id)sugTypeWithModel:(id)a0;
+
+- (void)configureUI;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (void)searchSugTableViewCell:(id)a0 didClickComplement:(id)a1;
+- (void)searchSugViewWillShow;
+- (void)changeSessionID;
+- (void)hideSearchSugView;
+- (void)trackTrendingWordsClick:(id)a0 index:(long long)a1 actionType:(id)a2;
+- (void)updateIsPauseSug:(BOOL)a0;
+- (void)clearSearchSugQuery;
+- (void)fetchSugWithQuery:(id)a0 textFieldParams:(id)a1 completion:(id /* block */)a2;
+- (BOOL)enableSearchPressPreRequest;
+- (void)searchSugTableViewCellTouchBegan:(id)a0;
+- (void)searchSugTableViewCellTouchCancel:(id)a0;
+- (void)clearSearchSug;
+- (void)searchSugDidUpdateData;
+- (void)trackTrendingShowEvent;
+- (void)preCreateSugCells;
+- (BOOL)enableSugPredictFetch;
+- (id)createExtraParamsWithModel:(id)a0;
+- (id)getTagTypeTrackDictWithModel:(id)a0;
+- (void)searchSugViewWillDisappear;
+- (void).cxx_destruct;
+- (id)currentQuery;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (id)init;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (void)applicationWillResignActive;
+- (void)tableView:(id)a0 willDisplayCell:(id)a1 forRowAtIndexPath:(id)a2;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)a0;
+- (id)getSessionID;
+- (void)addObservers;
+- (void)didPan:(id)a0;
+
+@end

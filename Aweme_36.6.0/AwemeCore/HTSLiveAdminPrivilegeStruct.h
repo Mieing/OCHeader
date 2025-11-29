@@ -1,0 +1,12 @@
+@class GPBEnumArray;
+
+@interface HTSLiveAdminPrivilegeStruct : IESLivePBBaseMessage
+
+@property (nonatomic) int privilege;
+@property (nonatomic) long long op;
+@property (retain, nonatomic) GPBEnumArray *currentPrivilegesArray;
+@property (readonly, nonatomic) unsigned long long currentPrivilegesArray_Count;
+
++ (id)descriptor;
+
+@end

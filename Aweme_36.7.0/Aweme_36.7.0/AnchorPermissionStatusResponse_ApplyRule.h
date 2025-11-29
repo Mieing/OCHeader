@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface AnchorPermissionStatusResponse_ApplyRule : IESLivePBBaseMessage
+
+@property (nonatomic) int ruleId;
+@property (nonatomic) int status;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *extra;
+
++ (id)descriptor;
+
+@end

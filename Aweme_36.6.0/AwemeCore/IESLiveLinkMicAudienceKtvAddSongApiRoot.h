@@ -1,0 +1,3 @@
+@interface IESLiveLinkMicAudienceKtvAddSongApiRoot : GPBRootObject
+
+@end

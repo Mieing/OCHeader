@@ -1,0 +1,3 @@
+@interface HTSLivePreviewBlockRoot : GPBRootObject
+
+@end

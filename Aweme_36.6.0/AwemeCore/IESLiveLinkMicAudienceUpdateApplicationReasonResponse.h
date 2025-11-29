@@ -1,0 +1,10 @@
+@class IESLiveLinkMicAudienceUpdateApplicationReasonResponse_ResponseData;
+
+@interface IESLiveLinkMicAudienceUpdateApplicationReasonResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkMicAudienceUpdateApplicationReasonResponse_ResponseData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

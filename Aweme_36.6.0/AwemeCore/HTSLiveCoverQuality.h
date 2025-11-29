@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface HTSLiveCoverQuality : IESLivePBBaseMessage
+
+@property (nonatomic) long long level;
+@property (copy, nonatomic) NSString *bubbleTip;
+@property (copy, nonatomic) NSString *popTip;
+@property (copy, nonatomic) NSString *uri;
+
++ (id)descriptor;
+
+@end

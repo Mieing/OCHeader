@@ -1,0 +1,75 @@
+@class AFDFamiliarFeedHomepageBubbleManager, UIViewController, NSString;
+@protocol AWEIMSettingManagerProtocol, AWEFeedTabItemViewControllerProtocol, AFDFamiliarFeedInHomepageManagerProtocol, AWEHPChannelControllerConfigProtocol, AWEFriendsYellowDotManagerProtocol;
+
+@interface AWEFamiliarFeedChannelController : NSObject <AWEUserMessage, AFDFamiliarHomePageDelegate, AFDContainerViewControllerDelegate, AWEHPChannelControllerProtocol>
+
+@property (retain, nonatomic) UIViewController<AWEFeedTabItemViewControllerProtocol> *contentVC;
+@property (retain, nonatomic) id<AWEFriendsYellowDotManagerProtocol> yellowDotManager;
+@property (retain, nonatomic) id<AWEIMSettingManagerProtocol> settingManager;
+@property (retain, nonatomic) id<AFDFamiliarFeedInHomepageManagerProtocol> homepageManager;
+@property (retain, nonatomic) AFDFamiliarFeedHomepageBubbleManager *bubbleManager;
+@property (nonatomic) BOOL hasChannelDidLoad;
+@property (nonatomic) BOOL hasInitFetch;
+@property (nonatomic) BOOL isViewLoaded;
+@property (nonatomic) BOOL isViewAppearing;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) long long refreshState;
+@property (nonatomic) double lastLeaveTabTimeStamp;
+@property (nonatomic) BOOL isTryShowBubble;
+@property (retain, nonatomic) NSString *preivousTab;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (weak, nonatomic) id<AWEHPChannelControllerConfigProtocol> config;
+
+- (void)setPureMode:(BOOL)a0;
+- (void)didFinishLogoutWithUid:(id)a0;
+- (void)hideAvatarWithAnimation:(BOOL)a0 completion:(id /* block */)a1;
+- (void)channelLandingTabWithParams:(id)a0;
+- (void)channelTopTabDidSelect;
+- (BOOL)isSelectFamiliarOnTop;
+- (void)hideAvatarWithCompletion:(id /* block */)a0;
+- (void)updateTopTabEntranceWithTitle:(id)a0 completion:(id /* block */)a1;
+- (void)showAvatarOnTopTabWithImage:(id)a0 completion:(id /* block */)a1;
+- (void)hideUnreadBadgeWithCompletion:(id /* block */)a0;
+- (void)showUnreadBadgeWithText:(id)a0 withComponentID:(id)a1 showCallBack:(id /* block */)a2 hideCallBack:(id /* block */)a3 downgradeCallBack:(id /* block */)a4;
+- (void)hideBubbleWithCompletion:(id /* block */)a0;
+- (void)showBubbleWithModel:(id)a0 showCallBack:(id /* block */)a1 clickCallback:(id /* block */)a2 dismissCallback:(id /* block */)a3;
+- (void)showUnreadBadgeWithCount:(long long)a0 withComponentID:(id)a1 entranceAnimationType:(unsigned long long)a2 showCallBack:(id /* block */)a3 hideCallBack:(id /* block */)a4 downgradeCallBack:(id /* block */)a5;
+- (void)showUnreadBadgeDefaultWithComponentID:(id)a0 showCallBack:(id /* block */)a1 hideCallBack:(id /* block */)a2 downgradeCallBack:(id /* block */)a3;
+- (void)animateRefreshOnTopTabWithCompletion:(id /* block */)a0;
+- (void)channelEnterWithModel:(id)a0;
+- (void)channelLeaveWithModel:(id)a0;
+- (void)channelTrackEntranceShowWithModel:(id)a0;
+- (void)channelTrackContentVCStayTimeWithModel:(id)a0;
+- (void)channelTopTabContainerDidAppear;
+- (void)channelTopTabContainerDidDisappear;
+- (void)channelTopTabDidUnSelect;
+- (id)getCustomTrackParamsWithTrackInfo:(id)a0;
+- (void)channelTopTabItemTapGestureRecognizerShouldReceiveTouchWithParams:(id)a0;
+- (void)channelDidLoadWithType:(unsigned long long)a0;
+- (void)channelDidReload;
+- (void)channelDidUnloadWithType:(unsigned long long)a0;
+- (BOOL)channelCanLandingTabWithParams:(id)a0;
+- (void)channelTrackRefreshWithModel:(id)a0;
+- (double)interactionRightContainerHeight;
+- (double)nextInteractionRightContainerHeight;
+- (BOOL)channelReleaseContentViewController:(id)a0;
+- (void)channel:(id)a0 startPreload:(unsigned long long)a1 completion:(id /* block */)a2;
+- (id)getContentViewController;
+- (BOOL)shouldRefresh;
+- (void)tryShowBubbleWithType:(unsigned long long)a0;
+- (void)p_refreshVC;
+- (id)channelTopBarEntranceTitle;
+- (void)tryShowBubbleTip;
+- (void)p_judgeIfEnteredByBubble;
+- (BOOL)shouldRefreshWithTimeStamp;
+- (void)refreshVC;
+- (void)clearPreloadCacheOrFrequency;
+- (void).cxx_destruct;
+- (id)initWithConfig:(id)a0;
+- (void)dealloc;
+- (id)pageContext;
+
+@end

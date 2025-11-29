@@ -1,0 +1,10 @@
+@class IESLiveLinkmicProfitRoomEggInfo;
+
+@interface HTSLiveRoomLinkMicProfitEggSyncData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) IESLiveLinkmicProfitRoomEggInfo *roomEggInfo;
+@property (nonatomic) BOOL hasRoomEggInfo;
+
++ (id)descriptor;
+
+@end

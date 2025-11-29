@@ -1,0 +1,3 @@
+@interface AWEMultiContentImpl.AWEImagePreloadHandlerExtension : BDMultiContentContainer.HandlerExtension
+
+@end

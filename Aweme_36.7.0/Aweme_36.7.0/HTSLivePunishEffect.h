@@ -1,0 +1,17 @@
+@class NSString, HTSLiveImage;
+
+@interface HTSLivePunishEffect : IESLivePBBaseMessage
+
+@property (nonatomic) long long effectId;
+@property (copy, nonatomic) NSString *effectName;
+@property (retain, nonatomic) HTSLiveImage *effectImage;
+@property (nonatomic) BOOL hasEffectImage;
+@property (nonatomic) long long lowestScore;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long needMedicineCount;
+@property (nonatomic) BOOL usable;
+@property (nonatomic) int level;
+
++ (id)descriptor;
+
+@end

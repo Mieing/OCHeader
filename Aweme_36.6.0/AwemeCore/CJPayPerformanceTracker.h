@@ -1,0 +1,95 @@
+@class NSString, NSMutableDictionary, CJPayPerformanceMonitorModel, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface CJPayPerformanceTracker : NSObject <CJPayPerformanceTrackerService, CJPayPerformanceDelegate>
+
+@property (class, nonatomic) BOOL trackAllStages;
+
+@property (copy, nonatomic) NSString *sdkProcessID;
+@property (copy, nonatomic) NSString *curSceneKey;
+@property (retain, nonatomic) NSMutableArray *sceneKeyStack;
+@property (nonatomic) double startTime0;
+@property (retain, nonatomic) NSMutableArray *globalStageList;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue;
+@property (copy, nonatomic) NSString *processNodesStr;
+@property (copy, nonatomic) NSString *pageNodesStr;
+@property (retain, nonatomic) NSMutableDictionary *sceneParamsDict;
+@property (retain, nonatomic) CJPayPerformanceMonitorModel *monitorModel;
+@property (retain, nonatomic) NSMutableArray *payStartSceneKeyStack;
+@property (retain, nonatomic) NSMutableArray *pageNodesList;
+@property (retain, nonatomic) NSMutableArray *clickNodesList;
+@property (retain, nonatomic) NSMutableArray *backgroundNodesList;
+@property (retain, nonatomic) NSMutableArray *processNodesList;
+@property (retain, nonatomic) NSMutableArray *verifyNodesArray;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)registerComponents;
++ (BOOL)shouldDegradePerformanceTracker;
++ (void)setTrackAllStages:(BOOL)a0;
++ (BOOL)trackAllStages;
++ (id)shared;
+
+- (void)trackWithEventName:(id)a0 params:(id)a1;
+- (double)p_getCurrentTime;
+- (BOOL)i_trackPerformanceWithEventList:(id)a0;
+- (void)recordCommonParams:(id)a0;
+- (void)trackCellActionWithTableViewCell:(id)a0 extra:(id)a1;
+- (void)trackVerifyWithVerifyTypeName:(id)a0;
+- (void)trackPageInitWithVC:(id)a0 extra:(id)a1;
+- (void)trackBackgroundAction;
+- (void)trackPageAppearWithVC:(id)a0 extra:(id)a1;
+- (void)trackPageDisappearWithVC:(id)a0 extra:(id)a1;
+- (void)trackPageDeallocWithVC:(id)a0 extra:(id)a1;
+- (void)trackCustomNodeProcessWithNodeName:(id)a0 extra:(id)a1;
+- (void)trackAPIStartWithAPIScene:(id)a0 extra:(id)a1;
+- (void)trackAPIEndWithAPIScene:(id)a0 extra:(id)a1;
+- (void)trackPageFinishRenderWithVC:(id)a0 name:(id)a1 extra:(id)a2;
+- (void)trackBtnActionWithBtn:(id)a0 target:(id)a1 clickedPoint:(struct CGPoint { double x0; double x1; })a2 extra:(id)a3;
+- (void)trackPayStartWithAPIScene:(id)a0 extra:(id)a1;
+- (void)trackPayEndWithAPIScene:(id)a0 extra:(id)a1;
+- (void)p_cleanContext;
+- (BOOL)p_isCanNestedWithSceneKey:(id)a0;
+- (void)p_monitorException:(id)a0;
+- (id)p_getNodesStrWithStageList:(id)a0;
+- (void)p_collectParamsWithSceneKey:(id)a0;
+- (void)p_uploadEventList;
+- (double)p_getCurrentTimeStamp;
+- (void)p_requestStart:(id)a0;
+- (void)p_requestFinish:(id)a0;
+- (void)trackRequestStartWithAPIPath:(id)a0 extra:(id)a1;
+- (void)trackRequestEndWithAPIPath:(id)a0 extra:(id)a1;
+- (id)p_requestNameWithPath:(id)a0;
+- (id)p_trackNameWithOriginName:(id)a0 tailDesc:(id)a1;
+- (BOOL)p_appendPageNodeWithStage:(id)a0 customName:(id)a1;
+- (BOOL)p_appendProcessNodeWithStage:(id)a0 customName:(id)a1;
+- (BOOL)p_appendProcessNodeWithStage:(id)a0;
+- (id)p_v2GetNodesStrWithStageList:(id)a0;
+- (id)p_trackNameWithStage:(id)a0;
+- (void)p_trackPayStartWithAPIScene:(id)a0 timestamp:(double)a1 nodeDesc:(id)a2 extra:(id)a3;
+- (void)p_addSceneKey:(id)a0 withStageType:(unsigned long long)a1;
+- (id)p_buildStage;
+- (void)p_syncStageToList:(id)a0;
+- (void)p_trackPayEndWithAPIScene:(id)a0 timestamp:(double)a1 nodeDesc:(id)a2 extra:(id)a3;
+- (void)p_popSceneKey:(id)a0 withStageType:(unsigned long long)a1;
+- (BOOL)p_appendPageNodeWithStage:(id)a0;
+- (void)p_trackRequestStartWithAPIPath:(id)a0 timestamp:(double)a1 nodeDesc:(id)a2 extra:(id)a3;
+- (void)p_trackRequestEndWithAPIPath:(id)a0 timestamp:(double)a1 nodeDesc:(id)a2 extra:(id)a3;
+- (BOOL)p_appendClickNodeWithStage:(id)a0;
+- (BOOL)p_appendBackgroundNodeWithStage:(id)a0;
+- (void)trackCustomNodeProcessWithNodeName:(id)a0 timestamp:(double)a1 extra:(id)a2;
+- (void)p_trackCustomNodeProcessWithNodeName:(id)a0 timestamp:(double)a1 nodeDesc:(id)a2 extra:(id)a3;
+- (id)eventTrackerList;
+- (void)p_trackEventWithDict:(id)a0;
+- (unsigned long long)p_curTypeWithTypeStr:(id)a0;
+- (void)p_trackPageShowWithPageName:(id)a0 timestamp:(double)a1 nodeDesc:(id)a2 extra:(id)a3;
+- (void)trackGestureActionWithGesture:(id)a0 extra:(id)a1;
+- (id)currentRulesSplitToTypeAndNodeMap;
+- (void)p_asyncUpload:(id)a0;
+- (void)debug_notifyProcessSucess:(id)a0 rules:(id)a1;
+- (void).cxx_destruct;
+- (id)currentRules;
+
+@end

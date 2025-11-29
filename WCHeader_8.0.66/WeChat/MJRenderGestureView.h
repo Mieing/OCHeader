@@ -1,0 +1,3 @@
+@interface MJRenderGestureView : OMJPlaybackOverlayView
+
+@end

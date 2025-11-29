@@ -1,0 +1,3 @@
+@interface StampGetMicroappOpenInfoApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface TIMXPBNProfileSearchInfoRequestBody : GPBMessage
+
+@property (copy, nonatomic) NSString *searchKey;
+@property (nonatomic) BOOL hasSearchKey;
+
++ (id)descriptor;
+
+@end

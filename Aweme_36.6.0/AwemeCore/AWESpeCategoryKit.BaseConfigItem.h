@@ -1,0 +1,11 @@
+@interface AWESpeCategoryKit.BaseConfigItem : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ on;
+    void /* unknown type, empty encoding */ eventName;
+    void /* unknown type, empty encoding */ repeatTracker;
+    void /* unknown type, empty encoding */ needScene;
+    void /* unknown type, empty encoding */ scene;
+    void /* unknown type, empty encoding */ itemExtraDict;
+    void /* unknown type, empty encoding */ tracked;
+}
+
+@end

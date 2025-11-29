@@ -1,0 +1,3 @@
+@interface ProfitOpenGameCenterEntranceApiRoot : GPBRootObject
+
+@end

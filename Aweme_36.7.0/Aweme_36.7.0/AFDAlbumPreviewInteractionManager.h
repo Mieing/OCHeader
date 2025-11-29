@@ -1,0 +1,72 @@
+@class AFDAlbumPreviewInteractionView, NSArray, NSTimer, NSString, AWEStoryProgressContainerView;
+@protocol AFDProgressPreviewImageModelProtocol, AFDAlbumPreviewInteractionManagerDelegate;
+
+@interface AFDAlbumPreviewInteractionManager : NSObject <AFDAlbumPreviewInteractionViewDelegate, AFDAlbumPreviewInteractionManagerProtocol>
+
+@property (retain, nonatomic) AFDAlbumPreviewInteractionView *albumPreviewInteractionView;
+@property (retain, nonatomic) AWEStoryProgressContainerView *progressContainerView;
+@property (nonatomic) struct CGPoint { double x; double y; } initialPoint;
+@property (retain, nonatomic) NSTimer *delayDismissTimer;
+@property (copy, nonatomic) NSArray *imageModelsArray;
+@property (nonatomic) BOOL shouldPlay;
+@property (retain, nonatomic) id<AFDProgressPreviewImageModelProtocol> lastModelScrolled;
+@property (retain, nonatomic) NSTimer *videoPlayTimer;
+@property (retain, nonatomic) id<AFDProgressPreviewImageModelProtocol> currentPlayingModel;
+@property (nonatomic) BOOL isPadPress;
+@property (nonatomic) struct CGPoint { double x; double y; } mockPoint;
+@property (nonatomic) BOOL isOnLeft;
+@property (weak, nonatomic) id<AFDAlbumPreviewInteractionManagerDelegate> delegate;
+@property (nonatomic) BOOL showForPadImageText;
+@property (nonatomic) double speed;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL needSyncPlayerAdapter;
+@property (nonatomic) BOOL livePhotoUseOldPlayMode;
+@property (nonatomic) unsigned long long livePhotoPlayMode;
+@property (nonatomic) BOOL isClipMuted;
+@property (nonatomic) BOOL isPanStillGuideViewHidden;
+
+- (void)scrollToIndex:(long long)a0;
+- (void)progressContainerViewTouchEnded;
+- (id)placeholderImageForAlbumAtIndex:(long long)a0;
+- (id)previewBackgroundColor:(id)a0;
+- (void)previewCurrentIndexDidChange:(long long)a0;
+- (void)previewDidEndLoadImage:(id)a0 imageModel:(id)a1;
+- (long long)previewCurrentIndex;
+- (void)addCustomBackgroundView:(id)a0;
+- (void)progressContainerViewValueChanged;
+- (void)updateWithProgressContainerView:(id)a0 model:(id)a1;
+- (void)updateAlbumPreviewInteractionViewImageBackgroundColor:(id)a0;
+- (void)progressContainerViewTouchBeganWithSuperview:(id)a0 shouldPlay:(BOOL)a1 playerAdapter:(id)a2 livePhotoPlayerAdapter:(id)a3;
+- (long long)progressBarThumbnailCount;
+- (BOOL)isPreviewDismissing;
+- (void)clearProgressBarDisplayedIndexes;
+- (void)resetAndDismissViewsIfAnimated:(BOOL)a0;
+- (void)reloadWithModel:(id)a0;
+- (double)videoPlayStartTime;
+- (void)updateContentOffsetIfNeeded;
+- (void)handlePreviewScrolledFromIndex:(long long)a0;
+- (struct CGPoint { double x0; double x1; })pointFromProgressView;
+- (BOOL)isInHotZone;
+- (void)playVideoIfNeeded;
+- (void)setUpVideoController;
+- (void)createVideoControllerIfNeeded;
+- (BOOL)cancelActionIfMovedOutHotZone;
+- (void)cancelActionTrack;
+- (void)dismissViewsAnimated:(BOOL)a0;
+- (void)updateIndexAndDismissViewsWithDelay:(BOOL)a0;
+- (void)updateCollectionViewByCurrentIndexPathIfNeeded;
+- (void)dismissPreviewInteractionView;
+- (void)previewInteractionViewBeginInteracting;
+- (void)previewInteractionViewDidEndInteracting;
+- (long long)currentIndex;
+- (void).cxx_destruct;
+- (id)modelAtIndex:(long long)a0;
+- (id)videoController;
+- (id)currentModel;
+- (struct CGPoint { double x0; double x1; })touchPoint;
+- (void)updateCollectionView;
+
+@end

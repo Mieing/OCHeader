@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface IESGCPImageGainService_Douyin : NSObject <IESGCPImageGainService>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)getAwemeImage:(id)a0;
+
+@end

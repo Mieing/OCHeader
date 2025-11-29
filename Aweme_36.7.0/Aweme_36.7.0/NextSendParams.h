@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface NextSendParams : IESLivePBBaseMessage
+
+@property (nonatomic) long long validMask;
+@property (copy, nonatomic) NSString *pluginInfo;
+@property (copy, nonatomic) NSString *cardName;
+@property (nonatomic) int buffLevel;
+
++ (id)descriptor;
+
+@end

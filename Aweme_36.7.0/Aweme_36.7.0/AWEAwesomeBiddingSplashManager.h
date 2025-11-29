@@ -1,0 +1,80 @@
+@class NSString, UITableViewCell, UIView;
+@protocol AWESplashFakeLaunchScreenView, AWEAwesomeSplashFeedCellProtocol, AWEFeedTableViewCellProtocol;
+
+@interface AWEAwesomeBiddingSplashManager : AWEAwesomeSplashBaseManager <AWEAwesomeBiddingSplashManagerProtocol>
+
+@property (retain, nonatomic) UIView<AWESplashFakeLaunchScreenView> *fakeLaunchScreenView;
+@property (nonatomic) long long showType;
+@property (nonatomic) double fakeLaunchTimestamp;
+@property (nonatomic) double hotEnterBGTimestamp;
+@property (copy, nonatomic) NSString *cacheBidUri;
+@property (nonatomic) BOOL isPreloadTimeout;
+@property (nonatomic) BOOL isInsert;
+@property (nonatomic) long long count;
+@property (nonatomic) double lastHotStartTime;
+@property (nonatomic) BOOL shouldShowBiddingSplash;
+@property (nonatomic) BOOL isBiddingSplashShowing;
+@property (nonatomic) BOOL hasShownBiddingSplash;
+@property (nonatomic) BOOL shouldShowTopLiveWithCellRoom;
+@property (weak, nonatomic) UITableViewCell<AWEFeedTableViewCellProtocol, AWEAwesomeSplashFeedCellProtocol> *splashCell;
+@property (nonatomic) BOOL isTimeOut;
+@property (nonatomic) BOOL isBiddingSplashFirstDisappear;
+@property (nonatomic) BOOL isRealtimeBidSplash;
+@property (nonatomic) struct CGPoint { double x0; double x1; } clickPoint;
+@property (readonly, nonatomic) BOOL isBackground;
+@property (readonly, nonatomic) long long feedModeType;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEMainModuleDOUYINLiteAdapterClass;
+
+- (id)transferAwemeModelForLive:(id)a0 isFirstColdLaunch:(BOOL)a1;
+- (void)skipAwesomeSplash:(id)a0;
+- (void)clickAwesomeSplash:(id)a0;
+- (void)awesomeSplashDisappeared;
+- (void)showGlobalWidget:(BOOL)a0;
+- (void)showAwesomeSplash;
+- (id)feedTableViewControllerView;
+- (void)showAwesomeSplash:(id)a0;
+- (void)fakeShowLaunchScreenInView:(id)a0;
+- (void)fakeShowLaunchScreenInView:(id)a0 isTop:(BOOL)a1;
+- (void)removeFakeLaunchView;
+- (BOOL)isFakeLaunchScreenShow;
+- (id)generateBiddingSplashRequestParam;
+- (BOOL)shouldRequestBiddingSplash;
+- (void)clickAwesomeSplash:(id)a0 isExtraSize:(BOOL)a1 adExtraDict:(id)a2;
+- (void)bidSplashPeriodSpecialEnterLive:(id)a0;
+- (BOOL)shouldBiddingSplashUseTTPlayer;
+- (void)showBiddingSplashFromSDKWithArray:(id)a0;
+- (id)generateBiddingControlParamWithShowType:(long long)a0;
+- (void)recordBiddingSplashResult:(BOOL)a0 isWarm:(BOOL)a1;
+- (void)prepareToShowCachedBiddingSplash;
+- (void)checkLiveStatusWithModel:(id)a0 trackLabel:(id)a1;
+- (id)aAWEMainModuleDOUYINLiteAdapter;
+- (long long)shouldRequestBiddingSplashWithReason;
+- (void)showBiddingSplashSuccessWith:(id)a0;
+- (void)trackTopliveWithModel:(id)a0 label:(id)a1 adExtraData:(id)a2;
+- (void)trackTopliveFirstViewWithModel:(id)a0;
+- (void)showBiddingSplashFail;
+- (void)checkBiddingSplashTopLiveState:(id)a0 completion:(id /* block */)a1;
+- (void)resetRootVCStateWithModel:(id)a0;
+- (void)preloadSplashStyleResourceIfNeeded;
+- (BOOL)canCurrentFeedVCShowBiddingSplash;
+- (void)resetFeedStatusWhenShowBiddingFailed;
+- (BOOL)checkSoftAdWithModel:(id)a0;
+- (void)showNativeBiddingAdWithModel:(id)a0;
+- (void)showBiddingSplashWithModel:(id)a0;
+- (void)applicationDidBecomeActiveOptimize;
+- (void)tryPreloadBidSplashVideoWithModel:(id)a0 size:(double)a1 complete:(id /* block */)a2;
+- (void)trackRealtimeBidPreloadStatusWithStatus:(unsigned long long)a0 startTime:(double)a1;
+- (void).cxx_destruct;
+- (void)applicationDidBecomeActive;
+- (void)applicationDidEnterBackground;
+- (id)init;
+- (void)reset;
+- (double)currentPlaybackTime;
+- (void)dealloc;
+
+@end

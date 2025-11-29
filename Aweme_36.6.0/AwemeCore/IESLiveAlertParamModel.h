@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESLiveAlertParamModel : IESLiveBridgeModel
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *message;
+@property (copy, nonatomic) NSString *actionButton;
+@property (copy, nonatomic) NSString *cancelButton;
+
+@end

@@ -1,0 +1,3 @@
+@interface HTSLiveRoomChannelCipherMessageRoot : GPBRootObject
+
+@end

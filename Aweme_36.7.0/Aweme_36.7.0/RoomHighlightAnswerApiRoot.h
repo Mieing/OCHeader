@@ -1,0 +1,3 @@
+@interface RoomHighlightAnswerApiRoot : GPBRootObject
+
+@end

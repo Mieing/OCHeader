@@ -1,0 +1,74 @@
+@class NSString, AFDDebouncer, UIView, NSMutableArray;
+@protocol AWELiveUserAvatarPreviewProtocol;
+
+@interface AWEProfileHeaderAvatarSectionController : AWEBaseListSectionController <AWEProfileHeaderAvatarCollectionViewCellDelegate>
+
+@property (nonatomic) BOOL isEnteringLive;
+@property (nonatomic) BOOL isLiveBlocked;
+@property (retain, nonatomic) NSMutableArray *binds;
+@property (retain, nonatomic) id<AWELiveUserAvatarPreviewProtocol> livePreviewManager;
+@property (nonatomic) long long livePreviewState;
+@property (nonatomic) BOOL trackedPreviewPlayEvent;
+@property (weak, nonatomic) UIView *currentAvatarView;
+@property (nonatomic) BOOL enableAppearLiveShow;
+@property (nonatomic) BOOL isViewControllerAppeared;
+@property (retain, nonatomic) AFDDebouncer *colorRingShowDebouncer;
+@property (nonatomic) BOOL storyRingActualShowTracked;
+@property (nonatomic) BOOL storyRingHasTrackShow;
+@property (weak, nonatomic) id delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)sectionWillDisplayCell:(id)a0 index:(long long)a1 model:(id)a2;
+- (struct CGSize { double x0; double x1; })sizeForHeaderWithCollectionViewSize:(struct CGSize { double x0; double x1; })a0;
+- (void)viewControllerDidAppear:(BOOL)a0;
+- (void)viewControllerWillDisappear:(BOOL)a0 isBeingDismissed:(BOOL)a1 isMovingFromParentViewController:(BOOL)a2;
+- (void)viewControllerDidDisappear:(BOOL)a0;
+- (struct CGSize { double x0; double x1; })sizeForFooterWithCollectionViewSize:(struct CGSize { double x0; double x1; })a0;
+- (void)didSelectItemAtIndex:(long long)a0 model:(id)a1;
+- (void)viewControllerWillAppear:(BOOL)a0 isBeingPresented:(BOOL)a1 isMovingToParentViewController:(BOOL)a2;
+- (void)enterLiveRoom;
+- (void)tabBarDidChangeNotification:(id)a0;
+- (void)updateCompletionInfoIfNeed:(id)a0 avatarURL:(id)a1;
+- (void)changeAvatar:(id)a0;
+- (void)showProfileImagePreviewView;
+- (void)showImagePreviewView:(id)a0 type:(long long)a1;
+- (void)avatarTapedWithAvatarEditView:(id)a0 andDecorationHidden:(BOOL)a1;
+- (void)avatarLongPressedWithDecorationHidden:(BOOL)a0;
+- (void)avatarLiveDidShowAndTrackEvent;
+- (void)avatarDecorationDidShowAndTrackEvent;
+- (void)avatarDecorationWillShowAndTrackEvent;
+- (id)getStory25ColorRingFacade;
+- (void)onStory25PublishButtonClicked;
+- (void)colorRingMonitor_ActualShow;
+- (void)liveBlockAudienceNotication:(id)a0;
+- (void)setupColorRingDebouncer;
+- (void)debouncedStartOnboardingAnimation;
+- (void)debouncedTrackColorRingShow;
+- (BOOL)enableFixStory25Status;
+- (void)fetchLivePreviewStreamInCell:(id)a0;
+- (void)reportFormatShowEvent;
+- (void)reportLiveShowEvent;
+- (void)updateAvatarTipsInfoWithOperationKey:(id)a0;
+- (void)debouncedPreloadColorRingAweme;
+- (void)avatarTappedWithDecorationHidden:(BOOL)a0 isFromLongpress:(BOOL)a1;
+- (void)enterAdLiveRoom;
+- (void)enterFormat;
+- (void)showNewStyleProfileAvatarPreview;
+- (void)checkNeedTrackLivePreviewPlayEvent:(long long)a0;
+- (void)livePreviewStreamPlayerSecondsControl:(long long)a0;
+- (void)stopLivePreviewStream;
+- (void)enterFormatRoom;
+- (void)enterFormatInteractiveRoom;
+- (void)showGuestVirtualAvatarSpace;
+- (void)configCell:(id)a0 index:(long long)a1 model:(id)a2;
+- (struct CGSize { double x0; double x1; })sizeForItemAtIndex:(long long)a0 model:(id)a1 collectionViewSize:(struct CGSize { double x0; double x1; })a2;
+- (void).cxx_destruct;
+- (id)init;
+- (BOOL)showSeparator;
+- (void)dealloc;
+- (Class)cellClass;
+
+@end

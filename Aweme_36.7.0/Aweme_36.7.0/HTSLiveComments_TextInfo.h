@@ -1,0 +1,15 @@
+@class NSString, HTSLiveComments_TextInfo_UserInfo;
+
+@interface HTSLiveComments_TextInfo : IESLivePBBaseMessage
+
+@property (nonatomic) long long commentId;
+@property (retain, nonatomic) HTSLiveComments_TextInfo_UserInfo *userInfo;
+@property (nonatomic) BOOL hasUserInfo;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) int diggCount;
+@property (nonatomic) long long createTimeStamp;
+@property (copy, nonatomic) NSString *commentIdStr;
+
++ (id)descriptor;
+
+@end

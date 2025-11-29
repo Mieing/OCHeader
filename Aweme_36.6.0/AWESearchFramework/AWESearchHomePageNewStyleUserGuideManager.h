@@ -1,0 +1,80 @@
+@class NSString, CADisplayLink, NSDictionary, AWESearchCachalotCardViewHomePageNewUserGuideLoadingView;
+@protocol AWESearchHomePageNewStyleUserGuideManagerDelegate;
+
+@interface AWESearchHomePageNewStyleUserGuideManager : NSObject <AWEBasicModeMessage>
+
+@property (nonatomic) BOOL isColdStartVideoFinished;
+@property (nonatomic) BOOL isCardDataFinished;
+@property (retain, nonatomic) AWESearchCachalotCardViewHomePageNewUserGuideLoadingView *loadingView;
+@property (retain, nonatomic) CADisplayLink *changeLink;
+@property (nonatomic) double animateTime;
+@property (nonatomic) double startTime;
+@property (nonatomic) BOOL isEnterAnimate;
+@property (nonatomic) double currentScrollContentOffsetY;
+@property (nonatomic) BOOL haveDealRequestData;
+@property (copy, nonatomic) NSString *guideSource;
+@property (copy, nonatomic) NSDictionary *userGuideReference;
+@property (nonatomic) BOOL isPreHideBars;
+@property (nonatomic) BOOL isLeaveBasicMode;
+@property (weak, nonatomic) id<AWESearchHomePageNewStyleUserGuideManagerDelegate> delegate;
+@property (nonatomic) BOOL isGuideShow;
+@property (nonatomic) BOOL shouldRefreshWhenZlink;
+@property (nonatomic) BOOL didSendSearchRequest;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWEFeedModuleServiceDOUYINSSAdapterClass;
++ (Class)aAWESearchSSNewUserVideoGuideDOUYINSSAdapterClass;
++ (BOOL)disableGuideCard;
++ (void)homepage_buildDefaultGuideParams:(id)a0;
++ (id)param_getUserStatus;
++ (BOOL)disableGuideCardPreHideBars;
++ (void)clearLocalData;
+
+- (void)basicModeDidChange:(BOOL)a0;
+- (void)showEnterAnimationIfNeed;
+- (void)removeLoading;
+- (id)aAWEFeedModuleServiceDOUYINSSAdapter;
+- (void)updateCardHeight:(id)a0;
+- (void)startEnterAnimation;
+- (void)updateShowStatus;
+- (id)aAWESearchSSNewUserVideoGuideDOUYINSSAdapter;
+- (void)homepage_viewDidLoad;
+- (id)homepage_getCard;
+- (void)homepage_endPullRefreshWithReason:(long long)a0;
+- (BOOL)haveUserGuideReference;
+- (void)homepage_loginChange:(BOOL)a0;
+- (void)homepage_dealCardMessage:(id)a0 data:(id)a1 callback:(id /* block */)a2;
+- (void)homepage_buildGuideParams:(id)a0 reason:(long long)a1;
+- (void)addGuideLoadingView;
+- (void)removeGuideLoadingViewWithReason:(long long)a0;
+- (void)parePareEnterAnimation;
+- (id)getCard;
+- (void)homepage_basicModeDidChange:(BOOL)a0;
+- (void)log_cardQueryClick:(id)a0 index:(long long)a1 wordFrom:(id)a2;
+- (void)didSelectQuery;
+- (void)videoGuideDidEndPlay;
+- (void)onColdStartDidParseParams;
+- (void)onZlinkDidParseParams:(id)a0;
+- (void)homepage_videoDidFinish;
+- (void)updateUserGuideReference:(id)a0 source:(id)a1;
+- (void)finishEnterAnimate;
+- (void)log_cardShow;
+- (void)resetBarsWhenDataLoad;
+- (id)log_getQueryList:(id)a0;
+- (id)log_getTitle:(id)a0;
+- (id)log_getUserType;
+- (id)log_getQueryKeywordsFrom:(id)a0;
+- (id)log_getClickQueryTriggerType:(id)a0 index:(long long)a1;
+- (void)hideBarsWhenDidLoad;
+- (void)stopTimer;
+- (void).cxx_destruct;
+- (void)startTimer;
+- (id)init;
+- (void)updateTimer:(id)a0;
+- (void)dealloc;
+- (void)addObservers;
+
+@end

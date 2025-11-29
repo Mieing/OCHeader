@@ -1,0 +1,42 @@
+@class NSString;
+
+@interface AWEMusicDetailHeaderLayoutManager : NSObject <AWEMusicDetailHeaderLayoutProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)musicHeaderCoverHeight;
+- (double)musicHeaderCoverTopMargin;
+- (id)titleFontForSingleLine;
+- (id)titleFontForMultipleLines;
+- (double)musicHeaderTitleCoverSpacing;
+- (double)authorLabelTopMargin;
+- (double)authorLabelHeight;
+- (double)userCountLabelHeight;
+- (double)musicHeaderActionsTopMargin;
+- (double)musicHeaderActionsHeight;
+- (double)musicHeaderActionsBottomMargin;
+- (double)leaderboardHeight;
+- (double)userCountLabelTopMargin;
+- (id)userCountLabelFont;
+- (id)authorLabelFont;
+- (double)musicHeaderActionElementsSpacing;
+- (double)musicCornerHeaderCoverPadding;
+- (id)leaderboardFont;
+- (double)musicHeaderMatchedPGCHeight;
+- (id)musicHeaderMatchedPGCLabelFont;
+- (double)collectBtnWidthWhileEnhance;
+- (double)musicHeaderContainerTopMargin;
+- (double)musicHeaderContainerBottomMargin;
+- (double)topTipsContainerHeight;
+- (double)pendentViewTopMargin;
+- (double)pendentViewLeftRightMargin;
+- (double)promotionTopMargin;
+- (double)promotionHeight;
+- (double)leaderboardTopMargin;
+- (double)musicHeaderMatchedPGCTopMargin;
+- (id)titleFont;
+
+@end

@@ -1,0 +1,11 @@
+@class NSString;
+
+@interface OfficialRoomInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL isShowMoreAnchor;
+@property (nonatomic) BOOL isUseServerSubtitle;
+@property (copy, nonatomic) NSString *serverSubtitle;
+
++ (id)descriptor;
+
+@end

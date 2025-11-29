@@ -1,0 +1,81 @@
+@class UIView, NSString, UIViewPropertyAnimator, WCFinderFullDoubleLikeEduView, CAGradientLayer, TextStateSectionView, RichTextView, UIScrollView;
+
+@interface TextStateFullScreenCardContentView : TextStateBaseCardContentView <UIScrollViewDelegate>
+
+@property (retain, nonatomic) UIScrollView *noopScrollView;
+@property (retain, nonatomic) UIScrollView *contentContainerView;
+@property (nonatomic, getter=isScrollingToTop) BOOL scrollingToTop;
+@property (retain, nonatomic) CAGradientLayer *gradientMaskLayer;
+@property (retain, nonatomic) RichTextView *expandTextView;
+@property (nonatomic, getter=isExpanding) BOOL expanding;
+@property (retain, nonatomic) UIViewPropertyAnimator *shrinkAnimator;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) TextStateSectionView *footerView;
+@property (retain, nonatomic) UIView *iconSourceSeparator;
+@property (retain, nonatomic) UIView *defaultHeadImageSourceSeparator;
+@property (retain, nonatomic) WCFinderFullDoubleLikeEduView *doubleTapFavoriteGuideView;
+@property (nonatomic) BOOL needsCreateOrUpdateLayout;
+@property (nonatomic) BOOL needsLayoutText;
+@property (nonatomic) BOOL showSameFriendDescription;
+@property (nonatomic) unsigned int footerComponents;
+@property (nonatomic) double topPadding;
+@property (nonatomic) double bottomPadding;
+@property (nonatomic) double horizonPadding;
+@property (nonatomic, getter=isExpandContent) BOOL expandContent;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)verticalSeparator;
+
+- (void)showDoubleTapFavoriteGuideIfNeeded;
+- (id)getDoubleTapFavoriteGuideView;
+- (void)showDoubleTapFavoriteGuide;
+- (void)hideDoubleTapFavoriteGuideIfNeeded;
+- (void)dealloc;
+- (void)initSubviews;
+- (void)initBackgroundView;
+- (void)initContentContainerView;
+- (void)initFooterView;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)setShowResendWhenPublishFailed:(BOOL)a0;
+- (BOOL)enableExpandContent;
+- (void)toggleExpandContent;
+- (void)setExpandContent:(BOOL)a0 animated:(BOOL)a1;
+- (void)expandContentCoordinateWithDragDown;
+- (void)setExpandContent:(BOOL)a0 animated:(BOOL)a1 coordinatingDragDown:(BOOL)a2;
+- (BOOL)trySetExpandContent:(BOOL)a0;
+- (void)expandContentAnimated:(BOOL)a0 coordinatingDragDown:(BOOL)a1;
+- (void)resetExpand;
+- (void)shrinkContentAnimated:(BOOL)a0;
+- (double)expandAnimationDuration;
+- (void)resetShrinkAnimator;
+- (id)foldString;
+- (double)contentContainerTopInsetForExpandContent:(BOOL)a0;
+- (void)updateContentContainerInset;
+- (void)updateContentContainerSize;
+- (BOOL)shouldHideDefaultSourceView;
+- (BOOL)shouldStartDoubleTapFavorite;
+- (unsigned long long)maxLineNumberForFold;
+- (void)onContentUpdate;
+- (void)shouldUpdateLayout;
+- (void)setNeedsLayoutText;
+- (void)setNeedsCreateOrUpdateLayout;
+- (void)createOrUpdateLayoutIfNeeded;
+- (void)updateFooterViewAndLayout;
+- (void)updateTextLayout;
+- (void)updateGradientLayer;
+- (void)createOrUpdateLayout;
+- (void)updateSeparator;
+- (void)updateDescriptionTextView;
+- (BOOL)handleTapView:(id)a0 point:(struct CGPoint { double x0; double x1; })a1;
+- (BOOL)scrollViewShouldScrollToTop:(id)a0;
+- (void)scrollViewDidScrollToTop:(id)a0;
+- (void)scrollViewWillBeginDragging:(id)a0;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)onLinkClicked:(id)a0 withRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (id)doubleTapFavoriteGuideView;
+- (void).cxx_destruct;
+
+@end

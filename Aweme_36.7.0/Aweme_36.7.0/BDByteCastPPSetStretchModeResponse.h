@@ -1,0 +1,3 @@
+@interface BDByteCastPPSetStretchModeResponse : BDByteCastPPBaseCmdResponse
+
+@end

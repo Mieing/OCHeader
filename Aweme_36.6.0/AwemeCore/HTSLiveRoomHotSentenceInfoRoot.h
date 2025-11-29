@@ -1,0 +1,3 @@
+@interface HTSLiveRoomHotSentenceInfoRoot : GPBRootObject
+
+@end

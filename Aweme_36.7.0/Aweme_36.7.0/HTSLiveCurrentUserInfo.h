@@ -1,0 +1,12 @@
+@class HTSLiveImg, NSString;
+
+@interface HTSLiveCurrentUserInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImg *userPic;
+@property (nonatomic) BOOL hasUserPic;
+@property (copy, nonatomic) NSString *userName;
+@property (nonatomic) long long userId;
+
++ (id)descriptor;
+
+@end

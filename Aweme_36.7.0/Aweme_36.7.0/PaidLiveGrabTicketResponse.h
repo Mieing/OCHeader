@@ -1,0 +1,10 @@
+@class PaidLiveGrabTicketResponse_PaidLiveGrabTicketData;
+
+@interface PaidLiveGrabTicketResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) PaidLiveGrabTicketResponse_PaidLiveGrabTicketData *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

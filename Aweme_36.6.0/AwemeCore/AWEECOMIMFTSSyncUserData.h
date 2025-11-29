@@ -1,0 +1,15 @@
+@class NSString, NSArray, AWEECOMIMFTSChatModel;
+
+@interface AWEECOMIMFTSSyncUserData : NSObject <AWEECOMIMFTSSyncDataProtocol>
+
+@property (nonatomic) long long optionType;
+@property (copy, nonatomic) NSString *uid;
+@property (copy, nonatomic) NSString *convId;
+@property (copy, nonatomic) NSArray *convIds;
+@property (retain, nonatomic) AWEECOMIMFTSChatModel *chatModel;
+
+- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+
+@end

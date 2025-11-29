@@ -1,0 +1,15 @@
+@class HTSLiveDressPageItemCommon, HTSLiveImage;
+
+@interface HTSLiveMidiSkinDressPageItem : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveDressPageItemCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (retain, nonatomic) HTSLiveImage *thumbnail;
+@property (nonatomic) BOOL hasThumbnail;
+@property (retain, nonatomic) HTSLiveImage *topRightImage;
+@property (nonatomic) BOOL hasTopRightImage;
+@property (nonatomic) int ownerDegree;
+
++ (id)descriptor;
+
+@end

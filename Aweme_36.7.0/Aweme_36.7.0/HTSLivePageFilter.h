@@ -1,0 +1,9 @@
+@class NSString;
+
+@interface HTSLivePageFilter : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *highlightGroupName;
+
++ (id)descriptor;
+
+@end

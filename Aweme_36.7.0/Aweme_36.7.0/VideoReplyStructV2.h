@@ -1,0 +1,18 @@
+@interface VideoReplyStructV2 : GPBMessage
+
+@property (nonatomic) long long awemeId;
+@property (nonatomic) BOOL hasAwemeId;
+@property (nonatomic) long long commentId;
+@property (nonatomic) BOOL hasCommentId;
+@property (nonatomic) long long aliasCommentId;
+@property (nonatomic) BOOL hasAliasCommentId;
+@property (nonatomic) int replyType;
+@property (nonatomic) BOOL hasReplyType;
+@property (nonatomic) long long replyUserId;
+@property (nonatomic) BOOL hasReplyUserId;
+@property (nonatomic) int replyAwemeVersion;
+@property (nonatomic) BOOL hasReplyAwemeVersion;
+
++ (id)descriptor;
+
+@end

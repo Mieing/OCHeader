@@ -1,0 +1,3 @@
+@interface IESLLTempoOpenNodeTask : NSObject
+
+@end

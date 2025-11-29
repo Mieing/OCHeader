@@ -1,0 +1,3 @@
+@interface HTSLiveShowDouplusRoot : GPBRootObject
+
+@end

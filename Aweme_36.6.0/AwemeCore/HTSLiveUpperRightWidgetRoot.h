@@ -1,0 +1,3 @@
+@interface HTSLiveUpperRightWidgetRoot : GPBRootObject
+
+@end

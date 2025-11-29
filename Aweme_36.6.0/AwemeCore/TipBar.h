@@ -1,0 +1,13 @@
+@class NSString, TipBar_Action;
+
+@interface TipBar : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *infoContentTpl;
+@property (nonatomic) long long countdown;
+@property (retain, nonatomic) TipBar_Action *action;
+@property (nonatomic) BOOL hasAction;
+@property (copy, nonatomic) NSString *schemeURL;
+
++ (id)descriptor;
+
+@end

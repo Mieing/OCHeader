@@ -1,0 +1,74 @@
+@class HTSLiveLinkMicPKMessageHandler, IESLiveRevenueInteractSEIMonitor, HTSLivePKApi, NSString, HTSLiveLinkMessage, IESLiveLinkMicSEIParserResult, IESLiveCountTimer, IESLiveRevenueInteractLinkerModel, IESLiveInteractiveLinkService, HTSLiveInteractiveAPIV2, NSNumber;
+@protocol IESLiveRevenueInteractLinkerProvider, IESLiveRevenueInteractPlayModel, IESLiveRoomService;
+
+@interface IESLiveRevenueInteractLinkerAudienceBuilder : NSObject <HTSLiveMessageSubscriber, HTSLinkMicPKControlProtocol, IESLiveSEIListener, IESLiveDataSyncDelegate, IESLiveInteractiveLinkServiceDelegate>
+
+@property (nonatomic) BOOL isInMultiLinkerSEILayout;
+@property (nonatomic) BOOL hasHideFullScreenButton;
+@property (nonatomic) BOOL hasDisableVR;
+@property (retain, nonatomic) IESLiveLinkMicSEIParserResult *lastMultiLinkerSEI;
+@property (retain, nonatomic) IESLiveLinkMicSEIParserResult *lastSEI;
+@property (retain, nonatomic) IESLiveRevenueInteractSEIMonitor *seiMonitor;
+@property (retain, nonatomic) HTSLiveLinkMessage *enterMessageBeforeSEI;
+@property (retain, nonatomic) HTSLivePKApi *pkApi;
+@property (retain, nonatomic) HTSLiveInteractiveAPIV2 *interactApi;
+@property (retain, nonatomic) HTSLiveLinkMicPKMessageHandler *messageHandler;
+@property (retain, nonatomic) IESLiveInteractiveLinkService *linkService;
+@property (retain, nonatomic) NSNumber *currentChannelID;
+@property (retain, nonatomic) IESLiveCountTimer *timeoutTimer;
+@property (nonatomic) BOOL realSEIInteractMode;
+@property (nonatomic) BOOL isCountingDown;
+@property (nonatomic) BOOL isFirstSEI;
+@property (nonatomic) BOOL fetchPKDataSuccess;
+@property (nonatomic) float backupCountdownInterval;
+@property (nonatomic) long long requestMaxCount;
+@property (retain, nonatomic) IESLiveLinkMicSEIParserResult *seiResult;
+@property (nonatomic) BOOL hasComponentUnmount;
+@property (weak, nonatomic) id<IESLiveRevenueInteractLinkerProvider> provider;
+@property (retain, nonatomic) IESLiveRevenueInteractLinkerModel *linkerModel;
+@property (retain, nonatomic) id<IESLiveRevenueInteractPlayModel> playModel;
+@property (retain, nonatomic) id<IESLiveRoomService> roomModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)subscribedSyncDataWithValue:(id)a0 version:(long long)a1;
+- (void)subscribedSyncDataUpdatedWithValue:(id)a0 oldVersion:(long long)a1 newVersion:(long long)a2;
+- (void)didSetAttachingDIContext;
+- (unsigned long long)supportSeiTypes;
+- (void)onParseredWithSEIResult:(id)a0;
+- (unsigned long long)typeToCheckIfLaterThanWhenReuseSEI;
+- (void)bindAction;
+- (void)didUpdateRoom:(id)a0 timeStamp:(id)a1;
+- (void)onDestoryPK;
+- (BOOL)isSubOrientationVerticalRoom;
+- (void)onReceivePKSetting:(id)a0;
+- (BOOL)isInMultiGameSEILayout;
+- (void)trackLayoutLandscapeDisplay;
+- (void)getReadyToMultiLinker;
+- (void)setupInPCMultiLinker;
+- (BOOL)isMultiLinkerSEI:(id)a0;
+- (void)startListenSEI;
+- (BOOL)isCropLiveStreaming;
+- (void)onReceivedRevenueInteractEnabledMessage:(id)a0;
+- (void)receivePKDataFromMessage:(id)a0;
+- (void)cancelBackupTimer;
+- (BOOL)isPKSEI;
+- (BOOL)isSearchPreStream;
+- (void)transfromNormalToPK:(id)a0;
+- (void)endLinkMicExternalSceneHandle;
+- (void)transfromPKToNormal;
+- (void)transfromBigPartyToPK;
+- (void)onComponentUnmount;
+- (void)updateLinkerLayout;
+- (BOOL)isLinkerSEI:(id)a0;
+- (void)changeRotationIfNeeded;
+- (void)startMultiLinkerInteracting;
+- (void)trackConnectionWatchDuration:(id)a0 isReset:(BOOL)a1;
+- (BOOL)isPKSEI:(id)a0;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)a0;
+- (void)messageReceived:(id)a0;
+
+@end

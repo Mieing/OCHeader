@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface OpenPlatformStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *name;
+@property (nonatomic) BOOL hasName;
+@property (copy, nonatomic) NSString *icon;
+@property (nonatomic) BOOL hasIcon;
+@property (copy, nonatomic) NSString *link;
+@property (nonatomic) BOOL hasLink;
+@property (copy, nonatomic) NSString *rawData;
+@property (nonatomic) BOOL hasRawData;
+
++ (id)descriptor;
+
+@end

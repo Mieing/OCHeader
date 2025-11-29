@@ -1,0 +1,3 @@
+@interface KtvGetMultiChorusWaitingListApiRoot : GPBRootObject
+
+@end

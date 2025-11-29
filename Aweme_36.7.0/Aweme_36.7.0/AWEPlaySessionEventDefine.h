@@ -1,0 +1,3 @@
+@interface AWEPlaySessionEventDefine : NSObject
+
+@end

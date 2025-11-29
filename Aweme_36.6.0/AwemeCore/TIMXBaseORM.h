@@ -1,0 +1,3 @@
+@interface TIMXBaseORM : MTLModel
+
+@end

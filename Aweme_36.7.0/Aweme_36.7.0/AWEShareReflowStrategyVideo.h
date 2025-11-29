@@ -1,0 +1,36 @@
+@class NSString, AWEShareTokenHandlerResponseModel;
+
+@interface AWEShareReflowStrategyVideo : NSObject <AWEShareReflowStrategy>
+
+@property (nonatomic) unsigned long long schemaType;
+@property (retain, nonatomic) AWEShareTokenHandlerResponseModel *model;
+@property (copy, nonatomic) NSString *longURL;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (Class)aAWESearchModuleServiceDOUYINSSAdaperClass;
++ (Class)aAWELiteShareFissionInnerFeedDOUYINLiteAdapterClass;
++ (Class)aAWELiteUGSocialModuleAdapterClass;
++ (Class)aAWEShareReflowStrategyAdapterClass;
+
+- (void)showReflowCardView:(id)a0;
+- (id)initWithModel:(id)a0 longURL:(id)a1;
+- (BOOL)shouldAvoidSamePageWithModel:(id)a0;
+- (BOOL)enableTransferDirectly;
+- (BOOL)shouldDelayTokenFind;
+- (void)transferWithModel:(id)a0 params:(id)a1 longURL:(id)a2 tokenFromType:(long long)a3;
+- (void)configReflowCardWithModel:(id)a0 tokenFromType:(long long)a1 trackParams:(id)a2 reportParams:(id)a3 turnToShareBlock:(id /* block */)a4 reshowCardViewBlock:(id /* block */)a5 completion:(id /* block */)a6;
+- (id)aAWESearchModuleServiceDOUYINSSAdaper;
+- (id)aAWELiteShareFissionInnerFeedDOUYINLiteAdapter;
+- (id)aAWELiteUGSocialModuleAdapter;
+- (id)configReflowCardWithModel:(id)a0 tokenFromType:(long long)a1 trackParams:(id)a2 reportParams:(id)a3 sharer:(id)a4 turnToShareBlock:(id /* block */)a5;
+- (id)aAWEShareReflowStrategyAdapter;
+- (void)transferToVideoOrChatWithModel:(id)a0 tokenFromType:(long long)a1 sharer:(id)a2 canSendMsg:(BOOL)a3;
+- (void)sendShareNoticeMessageWithToUserId:(id)a0 videoModel:(id)a1 jumpLogic:(id /* block */)a2;
+- (void).cxx_destruct;
+- (id)descriptionText;
+- (id)tokenType;
+
+@end

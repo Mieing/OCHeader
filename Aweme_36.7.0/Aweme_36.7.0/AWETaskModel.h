@@ -1,0 +1,88 @@
+@class AWETaskLinkModel, NSString, NSArray, AWETaskAnchorModel, AWEAdChallengeTaskButtonModel, AWELiveRecordMissionModel, AWETaskRewardSharingInfo, AWETaskLiveAppointModel;
+
+@interface AWETaskModel : AWEBaseApiModel <ACCTaskModelProtocol>
+
+@property (retain, nonatomic) AWETaskLinkModel *linkModel;
+@property (copy, nonatomic) NSString *ID;
+@property (copy, nonatomic) NSArray *challengs;
+@property (copy, nonatomic) NSArray *usersShouldBeMentioned;
+@property (nonatomic) BOOL isLiveRecord;
+@property (copy, nonatomic) NSString *stickerText;
+@property (copy, nonatomic) NSArray *musics;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy, nonatomic) NSString *ID;
+@property (copy, nonatomic) NSString *taskID;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *descriptionString;
+@property (copy, nonatomic) NSArray *examples;
+@property (retain, nonatomic) NSString *categoryName;
+@property (copy, nonatomic) NSArray *musics;
+@property (copy, nonatomic) NSArray *stickerIDs;
+@property (copy, nonatomic) NSArray *MVIDs;
+@property (copy, nonatomic) NSArray *challengeIDs;
+@property (copy, nonatomic) NSArray *challengeNames;
+@property (copy, nonatomic) NSString *detailSchema;
+@property (nonatomic) long long rewardType;
+@property (retain, nonatomic) AWETaskRewardSharingInfo *rewardSharingInfo;
+@property (copy, nonatomic) NSArray *challengs;
+@property (retain, nonatomic) AWETaskAnchorModel *anchorModel;
+@property (nonatomic) unsigned long long goodsSource;
+@property (nonatomic) BOOL hasShoppingCartPermission;
+@property (nonatomic) BOOL isShoppingCartOverused;
+@property (copy, nonatomic) NSArray *usersShouldBeMentioned;
+@property (nonatomic) unsigned long long numberOfTimesParticipatedBefore;
+@property (nonatomic) long long earliestNextParticipationTime;
+@property (nonatomic) BOOL hasReviewingPublishment;
+@property (nonatomic) long long maxAllowedTimesOfParticipation;
+@property (nonatomic) unsigned long long detailedStatus;
+@property (readonly, nonatomic) long long status;
+@property (copy, nonatomic) NSArray *prizeDescriptions;
+@property (copy, nonatomic) NSArray *rawOptionalConditions;
+@property (nonatomic) unsigned long long optionalConditions;
+@property (copy, nonatomic) NSArray *rawDuetAwemes;
+@property (copy, nonatomic) NSArray *duetAwemes;
+@property (retain, nonatomic) AWETaskLiveAppointModel *liveAppointModel;
+@property (nonatomic) long long taskType;
+@property (retain, nonatomic) AWELiveRecordMissionModel *liveRecordModel;
+@property (nonatomic) BOOL isLiveRecord;
+@property (copy, nonatomic) NSString *stickerText;
+@property (nonatomic) long long mvType;
+@property (copy, nonatomic) NSString *flashID;
+@property (nonatomic) BOOL isCommerceCamera;
+@property (copy, nonatomic) NSString *dynamicCameraSchema;
+@property (copy, nonatomic) NSString *dynamicActivityInfo;
+@property (copy, nonatomic) NSString *limitCount;
+@property (copy, nonatomic) NSString *maxRewardMoney;
+@property (copy, nonatomic) NSString *rewardDesc;
+@property (nonatomic) BOOL schemaType;
+@property (copy, nonatomic) NSString *productName;
+@property (copy, nonatomic) NSString *productDesc;
+@property (retain, nonatomic) NSArray *productAdvantages;
+@property (copy, nonatomic) NSString *productPicture;
+@property (nonatomic) BOOL hasLotteryGift;
+@property (copy, nonatomic) NSString *lotteryLogo;
+@property (copy, nonatomic) NSString *lotteryLogoHide;
+@property (copy, nonatomic) NSString *lotteryGiftSchema;
+@property (copy, nonatomic) NSString *lotterySchema;
+@property (copy, nonatomic) NSString *reportSchema;
+@property (copy, nonatomic) NSString *guidenceSchema;
+@property (nonatomic) long long interactionPlayMode;
+@property (retain, nonatomic) AWEAdChallengeTaskButtonModel *challengeTaskButton;
+
++ (id)rawDuetAwemesJSONTransformer;
++ (id)examplesJSONTransformer;
++ (id)musicsJSONTransformer;
++ (id)usersShouldBeMentionedJSONTransformer;
++ (id)liveAppointModelJSONTransformer;
++ (id)liveRecordModelJSONTransformer;
++ (id)aweCommerce_subModelPropertyKey;
++ (id)linkModelJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+
+- (id)convertToAnchorModel;
+- (void).cxx_destruct;
+
+@end

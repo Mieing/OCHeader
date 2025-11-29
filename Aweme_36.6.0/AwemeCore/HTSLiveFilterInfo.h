@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface HTSLiveFilterInfo : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL canShow;
+@property (copy, nonatomic) NSString *filterReason;
+
++ (id)descriptor;
+
+@end

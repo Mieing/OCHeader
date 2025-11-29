@@ -1,0 +1,70 @@
+@class UIView, IESLivePayWallPingAPI, NSString, IESLiveGCDTimer, IESPlaybackVideoFreeTrialView, NSMutableArray, NSDictionary, UIVisualEffectView;
+@protocol IESLiveVideoPreviewPlayerData, IESLiveSubscription, IESPlaybackVideoPaidDelegate;
+
+@interface IESPlaybackVideoPaidProvider : NSObject <IESPlaybackVideoPaidProviderAdapter>
+
+@property (retain, nonatomic) id<IESLiveVideoPreviewPlayerData> episode;
+@property (retain, nonatomic) IESLiveGCDTimer *pingTimer;
+@property (retain, nonatomic) IESLivePayWallPingAPI *api;
+@property (retain, nonatomic) NSMutableArray *subscriberList;
+@property (weak, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIVisualEffectView *bgEffectView;
+@property (retain, nonatomic) IESPlaybackVideoFreeTrialView *trialView;
+@property (retain, nonatomic) UIVisualEffectView *promptEffectView;
+@property (retain, nonatomic) IESPlaybackVideoFreeTrialView *promptView;
+@property (nonatomic) long long paidState;
+@property (retain, nonatomic) id<IESLiveSubscription> screenCaptureDispose;
+@property (weak, nonatomic) id<IESPlaybackVideoPaidDelegate> delegate;
+@property (copy, nonatomic) NSDictionary *logExtra;
+@property (readonly, nonatomic, getter=isInFreeTrialFinish) BOOL inFreeTrialFinish;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)commonParameters;
+- (void)userDidTakeScreenshotNotification:(id)a0;
+- (void)updatePlayTime:(double)a0;
+- (void)unsubscribeEvent;
+- (BOOL)isScreenCaptured;
+- (void)freeTrialDidStart;
+- (void)freeTrialDidFinish;
+- (void)freeTrialDidPaied;
+- (void)gotoPromise:(BOOL)a0;
+- (BOOL)checkFreeTrialTime:(double)a0;
+- (void)doScreenCaptureEventIfNeeded;
+- (BOOL)checkPaidLiveScreenCaptured;
+- (void)startHeartBeat:(id /* block */)a0;
+- (void)installGuassBG;
+- (void)installTrialViewWithType:(long long)a0;
+- (void)installPromptGuass;
+- (void)installPromptView;
+- (void)userPromiseAction:(id /* block */)a0;
+- (void)unInstallTrial;
+- (void)unInstallPrompt;
+- (void)unInstallTrialView;
+- (void)uninstallGuassBG;
+- (void)unInstallPromptGuass;
+- (void)unInstallPromptView;
+- (void)removeAddScreenCapturedObserver;
+- (void)subscribEvent;
+- (void)addScreenCapturedObserver;
+- (void)tryFreeTrialStart:(double)a0;
+- (BOOL)inFreeTrialRange:(double)a0;
+- (id)ticketURLParameters;
+- (void)trackSearchResultClick;
+- (void)trackBuyTicketModuleClick;
+- (void)gotoPayWall;
+- (void)trackBuyTicketModuleShow;
+- (id)getFromContentType;
+- (void)setupEpisode:(id)a0 contentView:(id)a1;
+- (void)trackSearchResultShow;
+- (void)start:(double)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (void)stop;
+- (void)dealloc;
+- (void)clearViews;
+- (void)stopHeartBeat;
+
+@end

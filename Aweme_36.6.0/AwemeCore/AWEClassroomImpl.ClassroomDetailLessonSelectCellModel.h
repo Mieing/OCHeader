@@ -1,0 +1,7 @@
+@interface AWEClassroomImpl.ClassroomDetailLessonSelectCellModel : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ courseInfo;
+    void /* unknown type, empty encoding */ lessonInfoManager;
+    void /* unknown type, empty encoding */ type;
+}
+
+@end

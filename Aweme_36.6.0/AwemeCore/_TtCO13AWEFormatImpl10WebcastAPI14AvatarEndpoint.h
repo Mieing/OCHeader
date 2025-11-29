@@ -1,0 +1,3 @@
+@interface _TtCO13AWEFormatImpl10WebcastAPI14AvatarEndpoint : _TtCO13AWEFormatImpl10WebcastAPI8Endpoint
+
+@end

@@ -1,0 +1,9 @@
+@interface IESECLLVerticalGroupBuilder : IESECLLContainerBuilder {
+    unsigned long long _alignment;
+}
+
+@property (readonly, copy, nonatomic) id /* block */ alignment;
+
+- (struct shared_ptr<ll::linear_layoutable> { struct linear_layoutable *x0; struct __shared_weak_count *x1; })cxxObject;
+
+@end

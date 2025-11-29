@@ -1,0 +1,75 @@
+@class LCAudioScore, LCAudioKTVEffect, RACSubject, RACReplaySubject, NSArray, LiveCore, NSString;
+@protocol IESLiveSEISenderService;
+
+@interface HTSLiveKTVImp_Douyin : NSObject <IESLiveKTVStreaming>
+
+@property (retain, nonatomic) LCAudioScore *audioScore;
+@property (retain, nonatomic) LCAudioKTVEffect *audioEffect;
+@property (retain, nonatomic) LCAudioKTVEffect *earMonitorEffect;
+@property (retain, nonatomic) RACSubject *rtcSEISubject;
+@property (retain, nonatomic) RACReplaySubject *bgmPlayStateSubject;
+@property (copy, nonatomic) NSArray *headphonesMonitoringOperationRecords;
+@property (copy, nonatomic) id /* block */ videoFirstFrameCallback;
+@property (copy, nonatomic) id /* block */ videoFinishCallback;
+@property (nonatomic) double captureVoiceVolume;
+@property (weak, nonatomic) id<IESLiveSEISenderService> seiSendService;
+@property (retain, nonatomic) LiveCore *livecore;
+@property (nonatomic) float musicVolume;
+@property (nonatomic) float voiceVolume;
+@property (nonatomic) double toneVolume;
+@property (nonatomic) float musicPlayVolume;
+@property (nonatomic) float musicPushVolume;
+@property (nonatomic) float voiceVolumeV2;
+@property (nonatomic) float earMonitorVolume;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (double)musicDuration;
+- (double)currentPlayTime;
+- (void)setEnableAudioPitchShifter:(BOOL)a0;
+- (BOOL)isEnableAudioPitchShifter;
+- (void)setReverberationEnabled:(BOOL)a0;
+- (BOOL)isEnableLoudNorm;
+- (BOOL)ktvAllowed;
+- (void)stopBgMusic;
+- (void)playBgMusicWithConfig:(id)a0 createPlayerCompletion:(id /* block */)a1 completionBlock:(id /* block */)a2;
+- (void)setEnablePulseGeneratorFilter:(BOOL)a0;
+- (void)setLyricInfoDidReceiveCallback:(id /* block */)a0;
+- (void)playBgMusicWithURL:(id)a0 loop:(BOOL)a1 volume:(float)a2 createPlayerCompletion:(id /* block */)a3 completionBlock:(id /* block */)a4;
+- (void)setEnableKTVAccurateProgress:(BOOL)a0;
+- (void)setEnableAudioScoreWhenLocalPlay:(BOOL)a0;
+- (void)pauseBgMusic;
+- (void)resumeBgMusic;
+- (BOOL)musicIsPlaying;
+- (void)setEnableLoudNorm:(BOOL)a0;
+- (void)setLoudNormParams:(id)a0;
+- (void)forceMediaMode:(BOOL)a0;
+- (BOOL)reverberationEnabled;
+- (void)setEnableExternalSoundCard:(BOOL)a0;
+- (BOOL)isEnableExternalSoundCard;
+- (void)setHeadphonesMonitoringEnabled:(BOOL)a0;
+- (void)startScore;
+- (void)stopScore;
+- (void)sendLyricLInfo:(id)a0 withKey:(id)a1 diContext:(id)a2;
+- (id)transferIESKTVConfig:(id)a0;
+- (unsigned long long)convertLiveMusicType:(unsigned long long)a0;
+- (unsigned long long)convertLiveMusicPlayType:(unsigned long long)a0;
+- (BOOL)headphonesMonitoringEnabled;
+- (id)rtcSEIInfo;
+- (void)setSingScoreWithMidiFilePath:(id)a0 lyricFilePath:(id)a1;
+- (id)getMidiDataArray;
+- (id)getScoreRealtimeInfo;
+- (void)switchKtvEffectWithSourcePath:(id)a0 enableEarMonitor:(BOOL)a1;
+- (void)startEffectWithEarMonitorEnable:(BOOL)a0;
+- (void)stopEffectWithEarMonitorEnable:(BOOL)a0;
+- (void)exitKTVMode;
+- (void)enablePipelineKTVCamera:(BOOL)a0;
+- (id)getBgmStateSignal;
+- (void).cxx_destruct;
+- (void)seekToTime:(double)a0;
+- (void)dealloc;
+- (void)seek:(double)a0;
+
+@end

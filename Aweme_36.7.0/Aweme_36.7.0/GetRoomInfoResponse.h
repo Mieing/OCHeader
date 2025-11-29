@@ -1,0 +1,10 @@
+@class GetRoomInfoResponse_Data;
+
+@interface GetRoomInfoResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetRoomInfoResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

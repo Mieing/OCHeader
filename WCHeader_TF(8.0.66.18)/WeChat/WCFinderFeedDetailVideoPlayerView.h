@@ -1,0 +1,71 @@
+@class UIView, NSString, WCFinderFeedContentVM, WCFinderAnimationLoadingView, WCFinderSimplePlayerView, WCFinderFeedDetailVideoProgressView, WCFinderGradientView, WCFinderPanMaskView;
+@protocol WCFinderFeedDetailVideoPlayerViewDelegate;
+
+@interface WCFinderFeedDetailVideoPlayerView : UIView <WCFinderFeedDetailVideoProgressViewDelegate, WCFinderFeedContentMediaActionProtocol, UIGestureRecognizerDelegate>
+
+@property (retain, nonatomic) WCFinderSimplePlayerView *playerView;
+@property (retain, nonatomic) WCFinderAnimationLoadingView *loadingView;
+@property (retain, nonatomic) WCFinderFeedDetailVideoProgressView *progressView;
+@property (retain, nonatomic) UIView *progressTintBarBG;
+@property (retain, nonatomic) UIView *progressTintBar;
+@property (retain, nonatomic) WCFinderPanMaskView *panMaskView;
+@property (retain, nonatomic) WCFinderGradientView *gradientView;
+@property (nonatomic) struct CGSize { double width; double height; } mediaSize;
+@property (nonatomic) double totalTime;
+@property (nonatomic) double panStartPosX;
+@property (nonatomic) double panStartVideoTime;
+@property (nonatomic) unsigned long long panningDirection;
+@property (nonatomic) BOOL fullScreenState;
+@property (retain, nonatomic) WCFinderFeedContentVM *contentVM;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } layoutBounds;
+@property (weak, nonatomic) id<WCFinderFeedDetailVideoPlayerViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (id)initWithCoder:(id)a0;
+- (void)setup;
+- (void)setupViews;
+- (void)setupGestures;
+- (id)gradientColorsWithHiddenState:(BOOL)a0;
+- (void)layoutViews;
+- (void)layoutSubviews;
+- (BOOL)currentSceneLandscape;
+- (void)updateWithContentVM:(id)a0;
+- (void)updateFullScreenState:(BOOL)a0;
+- (id)getPlayerView;
+- (void)playVideoWithStartTime:(double)a0;
+- (void)seekToTime:(double)a0;
+- (void)setPlayRate:(double)a0;
+- (void)stopVideo;
+- (void)pauseVideoWithPauseButton:(BOOL)a0;
+- (void)resumeVideo;
+- (BOOL)isPlayingVideo;
+- (void)updateBulletState;
+- (void)setProgressHidden:(BOOL)a0 autoHide:(BOOL)a1;
+- (void)showProgressPanelIfNeeded;
+- (BOOL)pointAtPanableArea:(struct CGPoint { double x0; double x1; })a0;
+- (void)onTapInProgressView;
+- (void)onPanInProgressView:(id)a0;
+- (void)resumeVideoIfNeededAfterPan;
+- (void)updateProgressWithCurrentTime:(double)a0 totalTime:(double)a1 withAnimation:(BOOL)a2;
+- (void)onVideoShowBufferingView;
+- (void)onVideoHiddenBufferingView;
+- (void)onVideoUpdatePosition:(double)a0 videoDuration:(double)a1 maxPlayVideoTime:(double)a2;
+- (void)contentMediaDidEndPlay:(id)a0;
+- (void)onFinderDetailProgressViewClickPlayRateButton;
+- (void)onFinderDetailProgressViewClickPauseBtn:(BOOL)a0;
+- (void)onFinderDetailProgressViewClickFullScreenBtn;
+- (void)onFinderDetailProgressViewClickBulletBtn;
+- (void)onFinderDetailProgressViewClickBulletInputBtn;
+- (void)onFinderDetailProgressViewClickBulletSwitchBtn:(BOOL)a0;
+- (void)onFinderDetailProgressViewExitIPhoneLandscape;
+- (void)onFinderDetailProgressViewExitFullScreen;
+- (void)onFinderDetailProgressViewHiddenStateChange:(BOOL)a0;
+- (BOOL)gestureRecognizer:(id)a0 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)a1;
+- (BOOL)gestureRecognizer:(id)a0 shouldReceiveTouch:(id)a1;
+- (void).cxx_destruct;
+
+@end

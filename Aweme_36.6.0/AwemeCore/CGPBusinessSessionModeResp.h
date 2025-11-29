@@ -1,0 +1,8 @@
+@interface CGPBusinessSessionModeResp : GPBMessage
+
+@property (nonatomic) int sessionMode;
+@property (nonatomic) BOOL result;
+
++ (id)descriptor;
+
+@end

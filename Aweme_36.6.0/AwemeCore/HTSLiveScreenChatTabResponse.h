@@ -1,0 +1,10 @@
+@class HTSLiveScreenChatTabResponse_Data;
+
+@interface HTSLiveScreenChatTabResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveScreenChatTabResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

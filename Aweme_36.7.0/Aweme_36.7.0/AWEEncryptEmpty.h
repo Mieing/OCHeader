@@ -1,0 +1,3 @@
+@interface AWEEncryptEmpty : NSObject
+
+@end

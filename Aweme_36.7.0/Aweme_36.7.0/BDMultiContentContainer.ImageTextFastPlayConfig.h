@@ -1,0 +1,6 @@
+@interface BDMultiContentContainer.ImageTextFastPlayConfig : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ scrollSpeed;
+    void /* unknown type, empty encoding */ musicSpeed;
+}
+
+@end

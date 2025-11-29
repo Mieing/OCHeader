@@ -1,0 +1,29 @@
+@class NSString, EAGLContext, GLKTextureInfo;
+
+@interface NewEffectPreview : GLKView <BDCTCaptureRenderProtocol> {
+    EAGLContext *_context;
+    struct OpenglOffscreenRender { unsigned int x0; unsigned int x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7[16]; BOOL x8[16]; int x9[8]; int x10[128]; int x11[128]; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; char *x17[16]; char *x18[8]; char *x19[128]; float *x20[8]; void *x21[128]; } *_render;
+    struct vector<float, std::allocator<float>> { float *__begin_; float *__end_; struct __compressed_pair<float *, std::allocator<float>> { float *__value_; } __end_cap_; } _vertPoints;
+    struct vector<float, std::allocator<float>> { float *__begin_; float *__end_; struct __compressed_pair<float *, std::allocator<float>> { float *__value_; } __end_cap_; } _textPoints;
+    BOOL _openglInit;
+    int _beautyIntensity;
+    GLKTextureInfo *_brushTex;
+}
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)setupGL;
+- (void)setBeautuyIntensity:(int)a0;
+- (void)tearDownGL;
+- (void).cxx_destruct;
+- (id)init;
+- (void)update:(struct __CVBuffer { } *)a0;
+- (id).cxx_construct;
+- (void)dealloc;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)render;
+
+@end

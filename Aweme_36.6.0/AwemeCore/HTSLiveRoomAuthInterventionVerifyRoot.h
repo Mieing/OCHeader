@@ -1,0 +1,3 @@
+@interface HTSLiveRoomAuthInterventionVerifyRoot : GPBRootObject
+
+@end

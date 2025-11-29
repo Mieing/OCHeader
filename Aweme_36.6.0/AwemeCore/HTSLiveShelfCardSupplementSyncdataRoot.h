@@ -1,0 +1,3 @@
+@interface HTSLiveShelfCardSupplementSyncdataRoot : GPBRootObject
+
+@end

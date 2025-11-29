@@ -1,0 +1,9 @@
+@interface LotteryFansLevelConfig : IESLivePBBaseMessage
+
+@property (nonatomic) long long level;
+@property (nonatomic) long long dailyLimit;
+@property (nonatomic) long long dailySendNum;
+
++ (id)descriptor;
+
+@end

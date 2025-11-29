@@ -1,0 +1,9 @@
+@interface CGPInputKeyboardV2 : GPBMessage
+
+@property (nonatomic) int key;
+@property (nonatomic) BOOL state;
+@property (nonatomic) BOOL processed;
+
++ (id)descriptor;
+
+@end

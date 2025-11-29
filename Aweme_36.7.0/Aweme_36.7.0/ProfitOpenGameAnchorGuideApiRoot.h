@@ -1,0 +1,3 @@
+@interface ProfitOpenGameAnchorGuideApiRoot : GPBRootObject
+
+@end

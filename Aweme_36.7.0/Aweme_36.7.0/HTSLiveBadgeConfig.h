@@ -1,0 +1,15 @@
+@class NSString, HTSLiveImage, HTSLiveBgColor;
+
+@interface HTSLiveBadgeConfig : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveImage *badgeImage;
+@property (nonatomic) BOOL hasBadgeImage;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) HTSLiveBgColor *bgColor;
+@property (nonatomic) BOOL hasBgColor;
+@property (retain, nonatomic) HTSLiveImage *bgIcon;
+@property (nonatomic) BOOL hasBgIcon;
+
++ (id)descriptor;
+
+@end

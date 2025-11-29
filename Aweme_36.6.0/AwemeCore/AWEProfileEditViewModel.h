@@ -1,0 +1,78 @@
+@class AWEUserProfileWeightModel, NSString, NSArray, UIImage, NSDate, AWEUserHometownModel, NSDictionary, AWECodeGenLandingSwitchEditInfoModel, AWEUserAvatarDecotationModel, AWECooperationItemModel;
+
+@interface AWEProfileEditViewModel : NSObject <AWEProfileEditViewModelProtocol>
+
+@property (retain, nonatomic) NSString *userID;
+@property (retain, nonatomic) UIImage *avatarImage;
+@property (retain, nonatomic) NSArray *avatarURL;
+@property (retain, nonatomic) UIImage *videoIconImage;
+@property (retain, nonatomic) NSArray *videoIconURL;
+@property (retain, nonatomic) NSArray *videoMp4IconURL;
+@property (retain, nonatomic) NSString *nickname;
+@property (retain, nonatomic) NSString *alias;
+@property (retain, nonatomic) NSString *uniqueID;
+@property (retain, nonatomic) NSDate *uniqueIdModifyTime;
+@property (retain, nonatomic) NSString *gender;
+@property (nonatomic) unsigned long long showGenderStrategy;
+@property (retain, nonatomic) NSString *birthDate;
+@property (retain, nonatomic) NSString *signature;
+@property (copy, nonatomic) NSString *profileSignature;
+@property (copy, nonatomic) NSString *liveTimeNoticeText;
+@property (retain, nonatomic) NSString *avatarURI;
+@property (retain, nonatomic) NSString *videoIconURI;
+@property (nonatomic) long long genderType;
+@property (nonatomic) BOOL ifDefaultID;
+@property (retain, nonatomic) NSString *countryCode;
+@property (retain, nonatomic) NSString *country;
+@property (retain, nonatomic) NSString *province;
+@property (retain, nonatomic) NSString *city;
+@property (retain, nonatomic) NSString *district;
+@property (copy, nonatomic) NSString *locationDisplayText;
+@property (copy, nonatomic) NSString *schoolName;
+@property (copy, nonatomic) NSString *schoolPoiId;
+@property (copy, nonatomic) NSString *jobName;
+@property (copy, nonatomic) NSString *collegeName;
+@property (copy, nonatomic) NSString *enrollYear;
+@property (nonatomic) unsigned long long educationType;
+@property (nonatomic) unsigned long long schoolVisibleType;
+@property (copy, nonatomic) NSString *twitterNameToShow;
+@property (copy, nonatomic) NSString *insId;
+@property (copy, nonatomic) NSString *youtubeChannelTitle;
+@property (copy, nonatomic) NSString *youtubeChannelId;
+@property (copy, nonatomic) NSString *googleAccount;
+@property (copy, nonatomic) NSString *youtubeRefreshToken;
+@property (retain, nonatomic) AWEUserAvatarDecotationModel *decorationModel;
+@property (nonatomic) BOOL hideLocation;
+@property (nonatomic) long long birthdayHideLevel;
+@property (nonatomic) BOOL useDefaultAvatar;
+@property (nonatomic) BOOL useDefaultNickname;
+@property (nonatomic) float completionPercent;
+@property (copy, nonatomic) NSString *enterpriseVerifyInfo;
+@property (copy, nonatomic) NSString *enterpriseBrand;
+@property (copy, nonatomic) NSString *companyIosDownladLink;
+@property (copy, nonatomic) NSString *companyAndroidDownladLink;
+@property (retain, nonatomic) AWEUserHometownModel *hometown;
+@property (nonatomic) BOOL hometownInvisible;
+@property (copy, nonatomic) NSString *hometownDisplayText;
+@property (retain, nonatomic) AWEUserProfileWeightModel *userProfileWeight;
+@property (retain, nonatomic) NSArray *coverList;
+@property (retain, nonatomic) NSDictionary *tipLabelDict;
+@property (retain, nonatomic) NSString *avatarButtonChangeLabelText;
+@property (retain, nonatomic) AWECooperationItemModel *cooperationModel;
+@property (nonatomic) long long headPictCertStatus;
+@property (nonatomic) BOOL isUserLongVideoOfficialType;
+@property (nonatomic) BOOL forbidCompanyEdit;
+@property (retain, nonatomic) AWECodeGenLandingSwitchEditInfoModel *landingSwitchModel;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)refreshWithUser:(id)a0;
+- (void)getEnterpriseBrand:(id /* block */)a0;
+- (void)refreshLocationDisplayText;
+- (void)refreshHometownDisplayText;
+- (id)getCoverListFromUser:(id)a0;
+- (void).cxx_destruct;
+
+@end

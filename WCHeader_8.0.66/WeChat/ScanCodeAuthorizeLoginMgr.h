@@ -1,0 +1,77 @@
+@class NSString, QRConnectAuthorizeResp, NSMutableDictionary, ScanCodeAuthorizeBaseViewController, MMWebViewController, NSMutableArray, OauthScopeInfo, GetUserGrantInfoBuffer, SetUserGrantInfoBuffer;
+
+@interface ScanCodeAuthorizeLoginMgr : MMUserService <MMAuthorizeViewControllerDelegate, PBMessageObserverDelegate, MMTipsViewControllerDelegate, OpenSDKAuthNeedFaceDetectViewControllerDelegate, MMServiceProtocol>
+
+@property (copy, nonatomic) NSString *scanUrl;
+@property (copy, nonatomic) NSString *fullUrl;
+@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *scope;
+@property (copy, nonatomic) NSString *state;
+@property (copy, nonatomic) NSString *appName;
+@property (copy, nonatomic) NSString *iconUrl;
+@property (retain, nonatomic) NSMutableArray *avatarList;
+@property (nonatomic) unsigned int avatarLimit;
+@property (nonatomic) unsigned int defaultAvatarId;
+@property (nonatomic) BOOL isBanModifyAvatar;
+@property (copy, nonatomic) NSString *defaultAvatarImgUrl;
+@property (copy, nonatomic) NSString *defaultAvatarImgFileId;
+@property (retain, nonatomic) QRConnectAuthorizeResp *resp;
+@property (retain, nonatomic) ScanCodeAuthorizeBaseViewController *baseVC;
+@property (retain, nonatomic) OauthScopeInfo *userInfoScope;
+@property (retain, nonatomic) OauthScopeInfo *friendsInfoScope;
+@property (retain, nonatomic) NSMutableArray *arrOtherScopeInfo;
+@property (retain, nonatomic) NSMutableArray *arrComfirmScopeInfo;
+@property (nonatomic) unsigned long long curStep;
+@property (retain, nonatomic) NSMutableDictionary *extraInfo;
+@property (retain, nonatomic) MMWebViewController *webVC;
+@property (nonatomic) unsigned int selectedAvatarId;
+@property (nonatomic) int errCode;
+@property (copy, nonatomic) NSString *errMsg;
+@property (retain, nonatomic) GetUserGrantInfoBuffer *getUserGrantInfoBuffer;
+@property (nonatomic) BOOL isHaveGamecenterPage;
+@property (retain, nonatomic) SetUserGrantInfoBuffer *setUserGrantInfoBuffer;
+@property (nonatomic) unsigned int sessionID;
+@property (nonatomic) unsigned int stayStartTime;
+@property (nonatomic) unsigned long long stepStartTime;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)dealloc;
+- (void)resetData;
+- (void)handleScanUrl:(id)a0 fullUrl:(id)a1 extraInfo:(id)a2;
+- (void)openWebviewAuthorize;
+- (void)initDataWithResp:(id)a0;
+- (void)initScopeInfo:(id)a0;
+- (void)startWorkFlow;
+- (BOOL)jumpToNextStepByComfirm:(BOOL)a0 interrupt:(BOOL *)a1 animated:(BOOL)a2;
+- (void)startUserInfoAuthorizeWithAnimated:(BOOL)a0;
+- (void)startFriendsAuthorizeWithAnimated:(BOOL)a0;
+- (void)startOtherScopeAuthorizeWithAnimated:(BOOL)a0;
+- (void)startOverseasAuthorizeWithAnimated:(BOOL)a0;
+- (void)requestAuthorizeDataWithRequest:(id)a0;
+- (void)sendCancelOprationToSvr;
+- (void)sendDenyOperationToSvr;
+- (void)sendConfirmOprationToSvrWithScopes:(id)a0;
+- (void)doOAuthComfirm:(id)a0 fromVC:(id)a1;
+- (void)sendAuthorizeComfirmCGI:(id)a0;
+- (void)MessageReturn:(id)a0 Event:(unsigned int)a1;
+- (void)handleOauthResponse:(id)a0;
+- (void)handleConfirmResp:(id)a0;
+- (void)onScopeViewControllerConfirm:(id)a0;
+- (void)onScopeViewControllerDeny:(id)a0;
+- (void)onScopeViewControllerClose:(id)a0;
+- (void)showErrCode:(int)a0 errMsg:(id)a1 isInitErr:(BOOL)a2;
+- (void)reportAuthOperate:(unsigned long long)a0 step:(unsigned long long)a1 isShowAuthView:(BOOL)a2 errCode:(int)a3;
+- (void)reportAuthCostTime:(unsigned int)a0 errCode:(int)a1;
+- (void)onClickTipsBtn:(id)a0 Index:(long long)a1 tipTag:(long long)a2;
+- (void)dismissAuthView:(int)a0;
+- (BOOL)shouldShowGameInfoAuthorizePage;
+- (void)startGameInfoAuthorizeWithAnimated:(BOOL)a0;
+- (void)onCancelFaceDetect;
+- (void)onFaceRecogFinish:(unsigned int)a0;
+- (void)safeCheckViewIsClickedConfirm:(BOOL)a0;
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,6 @@
+@interface FlutterSemanticsObject : SemanticsObject
+
+- (id)initWithBridge:(struct WeakPtr<flutter::AccessibilityBridgeIos> { struct AccessibilityBridgeIos *x0; struct RefPtr<fml::internal::WeakPtrFlag> { struct WeakPtrFlag *x0; } x1; struct DebugThreadChecker { } x2; })a0 uid:(int)a1;
+- (unsigned long long)accessibilityTraits;
+
+@end

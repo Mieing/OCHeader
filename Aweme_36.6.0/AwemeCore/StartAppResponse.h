@@ -1,0 +1,10 @@
+@class StartAppResponse_Data;
+
+@interface StartAppResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) StartAppResponse_Data *data_p;
+@property (nonatomic) BOOL hasData_p;
+
++ (id)descriptor;
+
+@end

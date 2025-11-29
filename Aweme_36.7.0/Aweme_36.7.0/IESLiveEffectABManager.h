@@ -1,0 +1,50 @@
+@interface IESLiveEffectABManager : NSObject
+
++ (BOOL)liveAnchorGestureStickerEnableEventReport;
++ (long long)effectAnchorHonorPlayLimitTimesToday;
++ (long long)effectAnchorHonorPlayLimitTimesOneMinute;
++ (unsigned long long)liveAnchorCameraMovementABGroup;
++ (BOOL)liveDisallowUsingOtherSticker;
++ (BOOL)liveAnchorEffectPanelSecondaryClassification;
++ (BOOL)enableLiveStickerOriginFrameCheck;
++ (BOOL)enableLiveFaceEffectTurbo;
++ (BOOL)enableFaceEffectAllTurboAllowed;
++ (BOOL)enableOpenEffectPanelOpt;
++ (BOOL)liveAnchorGiftMenuEnableEffectSecondaryClassification;
++ (unsigned long long)liveAnchorBeautyABGroup;
++ (BOOL)liveAnchorBeautyBizCacheRender;
++ (BOOL)liveAnchorBeautyLoadOnDemand;
++ (BOOL)liveAnchorBeautyFetchRenderApart;
++ (unsigned long long)liveAnchorBodyABGroup;
++ (unsigned long long)liveAnchorMakeupABGroup;
++ (unsigned long long)liveAnchorFilterABGroup;
++ (BOOL)liveAnchorFetcherDownloadOpt;
++ (id)liveEffectBeautyFeedbackConfig;
++ (id)liveStickerOriginFrameCompressRate;
++ (id)liveStickerOriginFrameReportInterval;
++ (BOOL)enableLiveEffectCostStatistics;
++ (int)faceEffectTabLoadCount;
++ (int)faceEffectPageCount;
++ (BOOL)enableAudienceFaceEffect;
++ (BOOL)liveAnchorFilterSliderEnable;
++ (BOOL)enableLiveBodyEffect;
++ (int)liveBodyEffectTabPosition;
++ (unsigned long long)liveAnchorClassifyBeautyABGroup;
++ (unsigned long long)liveAnchorCameraAdjustAbGroup;
++ (unsigned long long)liveAnchorVideoAdjustABGroup;
++ (BOOL)liveEnableGuideBeautyLoadTrack;
++ (BOOL)liveAnchorOptVideoAdjustPerformance;
++ (BOOL)liveAnchorEffectEpRepeatFetch;
++ (BOOL)liveEffectBeautyFeedbackEnable;
++ (double)liveEffectBeautyFeedbackShowDuration;
++ (double)liveEffectBeautyFeedbackHideDuration;
++ (id)liveEffectBeautyFeedbackURL;
++ (BOOL)liveEnableStickercloudrender;
++ (long long)liveStickerGiftEffectPlayInterval;
++ (id)liveCommodityNoFilterConfig;
++ (BOOL)liveCloseFixFilterCrash;
++ (id)liveEffectPanelDownloadMonitorAllowList;
++ (id)liveAnchorEffectPreviewConfig;
++ (id)liveIconRecommendTypeMock;
+
+@end

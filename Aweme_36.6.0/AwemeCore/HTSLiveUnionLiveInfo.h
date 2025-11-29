@@ -1,0 +1,14 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveUnionLiveInfo : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *guestAnchorsArray;
+@property (readonly, nonatomic) unsigned long long guestAnchorsArray_Count;
+@property (copy, nonatomic) NSString *avatarDescription;
+@property (nonatomic) BOOL fixedSort;
+@property (copy, nonatomic) NSString *tag;
+@property (nonatomic) int type;
+
++ (id)descriptor;
+
+@end

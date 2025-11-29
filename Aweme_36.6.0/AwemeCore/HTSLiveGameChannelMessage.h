@@ -1,0 +1,15 @@
+@class NSString, HTSLiveCommon, HTSLiveUser;
+
+@interface HTSLiveGameChannelMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) long long gameId;
+@property (nonatomic) long long messageType;
+@property (copy, nonatomic) NSString *extra;
+@property (retain, nonatomic) HTSLiveUser *user;
+@property (nonatomic) BOOL hasUser;
+
++ (id)descriptor;
+
+@end

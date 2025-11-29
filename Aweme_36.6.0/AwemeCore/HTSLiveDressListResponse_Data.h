@@ -1,0 +1,11 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveDressListResponse_Data : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *dressListArray;
+@property (readonly, nonatomic) unsigned long long dressListArray_Count;
+@property (copy, nonatomic) NSString *version;
+
++ (id)descriptor;
+
+@end

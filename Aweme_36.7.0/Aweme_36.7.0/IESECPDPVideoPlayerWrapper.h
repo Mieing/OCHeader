@@ -1,0 +1,71 @@
+@class IESECPDPVideoPlayerBizContext, NSString, IESECPDPVideoPlayerState, NSHashTable, UIView, IESECVideoPlayerConfig, NSMutableArray;
+@protocol IESECPDPVideoOnFloatManagerProtocol, IESECPDPVideoPlayerInteractionViewProtocol, IESECPDPVideoPlayStateManagerProtocol, IESECPDPVideoPlayerEngineProtocol;
+
+@interface IESECPDPVideoPlayerWrapper : UIView <IESECPDPVideoPlayerEngineLifeCycleProtocol, IESECPDPVideoPlayerInteractionViewDelegate, IESECPDPVideoPlayerViewProtocol, IESECPDPStateControlledVideoPlayerProtocol>
+
+@property (retain, nonatomic) id<IESECPDPVideoPlayerEngineProtocol> engine;
+@property (retain, nonatomic) UIView<IESECPDPVideoPlayerInteractionViewProtocol> *interactionView;
+@property (retain, nonatomic) NSHashTable *delegatesArray;
+@property (retain, nonatomic) IESECVideoPlayerConfig *oldConfig;
+@property (nonatomic) double prePlayTime;
+@property (nonatomic) BOOL didInitializedEngine;
+@property (retain, nonatomic) NSMutableArray *actionsAfterEngineInitialized;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, nonatomic) BOOL isPlayOver;
+@property (readonly, nonatomic) IESECVideoPlayerConfig *playerConfig;
+@property (retain, nonatomic) IESECPDPVideoPlayerBizContext *bizContext;
+@property (readonly, nonatomic) unsigned long long currentPlayState;
+@property (copy, nonatomic) NSString *playerTag;
+@property (copy, nonatomic) NSString *playerSubTag;
+@property (readonly, nonatomic) double currentPlayTime;
+@property (readonly, nonatomic) double totalDuration;
+@property (readonly, nonatomic) double oncePlayTime;
+@property (readonly, nonatomic) BOOL mute;
+@property (weak, nonatomic) id<IESECPDPVideoPlayStateManagerProtocol> pdp_stateManager;
+@property (weak, nonatomic) id<IESECPDPVideoOnFloatManagerProtocol> pdp_floatManager;
+@property (readonly, nonatomic) NSString *pdp_playerScene;
+@property (retain, nonatomic) IESECPDPVideoPlayerState *pdp_audioState;
+@property (retain, nonatomic) IESECPDPVideoPlayerState *pdp_videoState;
+
+- (void)initEngine;
+- (void)mutePlayer:(BOOL)a0;
+- (id)initWithPlayerConfig:(id)a0;
+- (void)seekToPlaybackTime:(double)a0 complete:(id /* block */)a1;
+- (void)removeAllDelegate;
+- (void)didShowOnScreen;
+- (void)updateWithPlayerConfig:(id)a0;
+- (void)changeVideoPlayerHiddenStatusTo:(BOOL)a0;
+- (void)updateContentFillMode:(unsigned long long)a0;
+- (void)initPlayerEngine;
+- (void)pdp_play;
+- (void)pdp_pause;
+- (void)pdp_mute:(BOOL)a0;
+- (void)playerEngine:(id)a0 didChangeStateTo:(unsigned long long)a1 preState:(unsigned long long)a2;
+- (void)playerEngine:(id)a0 didChangePlayTimeTo:(double)a1 totalTime:(double)a2;
+- (void)playerEngine:(id)a0 didChangeMuteStateTo:(BOOL)a1;
+- (void)interactionViewDidTapPlay:(id)a0;
+- (void)interactionViewDidTapMute:(id)a0;
+- (void)interactionView:(id)a0 didSeekProgressTo:(double)a1;
+- (void)interactionView:(id)a0 didChangeControlElementHiddenStatusTo:(BOOL)a1;
+- (void)interactionView:(id)a0 didChangePlaceholderImageHiddenStatusTo:(BOOL)a1;
+- (void)interactionView:(id)a0 didLoadCoverImage:(id)a1 isPlaceHolder:(BOOL)a2;
+- (void)interactionView:(id)a0 didChangeProgressSlidingStatusTo:(BOOL)a1;
+- (void)initInteractionView;
+- (void)handleEngineDidLoad;
+- (void)handleEngineAction:(id /* block */)a0;
+- (void)callDelegateMethodWithBlock:(id /* block */)a0;
+- (void)appendActionAfterEngineInitialized:(id /* block */)a0;
+- (void)changeVideoPlayerInteractionViewHiddenStatusTo:(BOOL)a0;
+- (void)addDelegate:(id)a0;
+- (void)removeDelegate:(id)a0;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (void)removeFromSuperview;
+- (void)stop;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+
+@end

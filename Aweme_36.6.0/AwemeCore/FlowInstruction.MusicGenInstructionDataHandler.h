@@ -1,0 +1,3 @@
+@interface FlowInstruction.MusicGenInstructionDataHandler : FlowInstruction.FlowInstructionDataHandler
+
+@end

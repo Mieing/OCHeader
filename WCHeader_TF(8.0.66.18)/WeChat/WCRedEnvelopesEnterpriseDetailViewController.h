@@ -1,0 +1,82 @@
+@class UIView, NSString, WCRedEnvelopesCommentInputToolView, UIImageView, UIButton, ContactUpdateHelper, WCUITextField, MMTableView;
+@protocol WCRedEnvelopesEnterpriseDetailViewControllerDelegate;
+
+@interface WCRedEnvelopesEnterpriseDetailViewController : WCRedEnvelopesBaseViewController <WebAddContactDelegate, IZCWScrollNumViewDelegate, UITableViewDelegate, UITableViewDataSource, WCRedEnvelopesCommentInputToolViewDelegate> {
+    id<WCRedEnvelopesEnterpriseDetailViewControllerDelegate> m_delegate;
+    BOOL m_loadingMoreOrderList;
+    MMTableView *m_tableView;
+    BOOL m_bDidBack;
+    WCUITextField *m_oWishingTextField;
+    UIView *m_oHeaderView;
+    WCRedEnvelopesCommentInputToolView *oWCRedEnvelopesCommentInputToolView;
+    UIView *oMsgAnimationView;
+    UIView *oMoneyAnimationView;
+    UIView *oTableAnimationView;
+    UIView *oTopHeaderView;
+    UIView *oNavigationBarView;
+    UIImageView *commentImageView;
+    UIButton *commentButton;
+}
+
+@property (retain, nonatomic) ContactUpdateHelper *m_senderNickNameHelper;
+@property (nonatomic) int enWCRedEnvelopesEnterpriseDetailViewControllerScene;
+@property (nonatomic) BOOL m_bEnterpriseRedEnvelopes;
+@property (nonatomic) unsigned int m_uiStatFromScene;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)init;
+- (void)dealloc;
+- (BOOL)showSmallShareButton;
+- (void)initNavigationBar;
+- (BOOL)useTransparentNavibar;
+- (void)OnLeftBarButtonDone;
+- (void)OnLeftBarButtonDoneLogic;
+- (void)OnRealnameVerfitySuccess:(id)a0;
+- (void)viewDidBePoped:(BOOL)a0;
+- (void)loadMoreOrderList;
+- (void)viewDidLayoutSubviews;
+- (void)initContainerView;
+- (id)genNumView;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })getFinalBoundsForDetailView;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)viewDidLoad;
+- (void)statExpourseOperation;
+- (id)getBottomView;
+- (id)getNoMoreBottomView;
+- (void)initTableView;
+- (id)getAnimationView:(id)a0;
+- (id)GetNavigationBarViewHeader:(id)a0;
+- (id)GetViewHeader:(id)a0;
+- (id)GetHeaderView:(id)a0;
+- (void)refreshViewWithData:(id)a0;
+- (void)commentRedEnvelopes;
+- (void)gotoBalanceDetail;
+- (void)gotoUrl;
+- (void)reportChangeLinkClick:(unsigned int)a0 Url:(id)a1;
+- (void)handleRedEnvelopesOperation:(id)a0;
+- (void)handleTailOperation;
+- (void)watchMyRedEnvelopesList;
+- (void)setDelegate:(id)a0;
+- (id)tableView:(id)a0 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)a1;
+- (long long)numberOfSectionsInTableView:(id)a0;
+- (long long)tableView:(id)a0 numberOfRowsInSection:(long long)a1;
+- (void)makeCell:(id)a0 cell:(id)a1 row:(unsigned long long)a2;
+- (id)tableView:(id)a0 cellForRowAtIndexPath:(id)a1;
+- (double)tableView:(id)a0 heightForRowAtIndexPath:(id)a1;
+- (void)tableView:(id)a0 didSelectRowAtIndexPath:(id)a1;
+- (long long)tableView:(id)a0 editingStyleForRowAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)SendTextMessageToolView:(id)a0;
+- (void)OnToolViewDissmiss;
+- (void)startOpenAnimation;
+- (void)animationForLabel;
+- (void)setLeftCloseBarButton;
+- (void)OnWebAddContact:(int)a0 Msg:(id)a1 CallBack:(id)a2;
+- (void)OnWebAddContactReturn;
+- (id)currentViewController;
+- (void).cxx_destruct;
+
+@end

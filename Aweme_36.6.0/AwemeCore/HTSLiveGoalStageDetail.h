@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveGoalStageDetail : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *firstHalfGoal;
+@property (copy, nonatomic) NSString *secondHalfGoal;
+@property (copy, nonatomic) NSString *overtime;
+@property (copy, nonatomic) NSString *shots;
+@property (copy, nonatomic) NSString *total;
+
++ (id)descriptor;
+
+@end

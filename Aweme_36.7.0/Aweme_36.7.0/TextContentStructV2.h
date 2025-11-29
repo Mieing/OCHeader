@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TextContentStructV2 : GPBMessage
+
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+@property (copy, nonatomic) NSString *color;
+@property (nonatomic) BOOL hasColor;
+@property (copy, nonatomic) NSString *size;
+@property (nonatomic) BOOL hasSize;
+
++ (id)descriptor;
+
+@end

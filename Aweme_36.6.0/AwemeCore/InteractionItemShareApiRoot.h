@@ -1,0 +1,3 @@
+@interface InteractionItemShareApiRoot : GPBRootObject
+
+@end

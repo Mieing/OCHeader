@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpAcquireBetaTestQualificationApiRoot : GPBRootObject
+
+@end

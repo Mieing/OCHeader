@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface PreAggregationStructV2 : GPBMessage
+
+@property (nonatomic) int preAggregationType;
+@property (nonatomic) BOOL hasPreAggregationType;
+@property (nonatomic) int preAggregationCount;
+@property (nonatomic) BOOL hasPreAggregationCount;
+@property (copy, nonatomic) NSString *preAggregationResourceId;
+@property (nonatomic) BOOL hasPreAggregationResourceId;
+
++ (id)descriptor;
+
+@end

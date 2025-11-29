@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface TIMXPBNGetConversationParticipantsMinIndexV3RequestBody : GPBMessage
+
+@property (nonatomic) long long conversationShortId;
+@property (nonatomic) BOOL hasConversationShortId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+@property (copy, nonatomic) NSString *conversationId;
+@property (nonatomic) BOOL hasConversationId;
+
++ (id)descriptor;
+
+@end

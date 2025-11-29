@@ -1,0 +1,71 @@
+@class NSString, NSDictionary;
+
+@interface IESLLPOIDetailConstData : NSObject
+
+@property (copy, nonatomic) NSString *bizCode;
+@property (copy, nonatomic) NSDictionary *configParams;
+@property (nonatomic) unsigned long long scene;
+@property (copy, nonatomic) NSString *pageKey;
+@property (copy, nonatomic) NSString *poiID;
+@property (copy, nonatomic) NSString *groupID;
+@property (copy, nonatomic) NSString *authorID;
+@property (nonatomic) BOOL isAds;
+@property (copy, nonatomic) NSString *adLogExtra;
+@property (copy, nonatomic) NSString *adExtraData;
+@property (copy, nonatomic) NSString *adCreativeID;
+@property (copy, nonatomic) NSString *adIsOtherChannel;
+@property (copy, nonatomic) NSString *adGroupID;
+@property (copy, nonatomic) NSString *adType;
+@property (copy, nonatomic) NSDictionary *searchLogPassback;
+@property (copy, nonatomic) NSDictionary *searchParams;
+@property (copy, nonatomic) NSDictionary *carryExtraParams;
+@property (nonatomic) BOOL isPreview;
+@property (copy, nonatomic) NSString *spuProductID;
+@property (copy, nonatomic) NSString *spuPlatformSources;
+@property (copy, nonatomic) NSString *grouponModalUrl;
+@property (copy, nonatomic) NSString *replyCommentId;
+@property (copy, nonatomic) NSString *stickerId;
+@property (copy, nonatomic) NSString *challengeId;
+@property (nonatomic) BOOL hasCouponActivity;
+@property (copy, nonatomic) NSString *referString;
+@property (copy, nonatomic) NSString *previousReferString;
+@property (copy, nonatomic) NSString *previousEnterMethod;
+@property (copy, nonatomic) NSDictionary *anchorContent;
+@property (nonatomic) BOOL tagShow;
+@property (copy, nonatomic) NSString *roomID;
+@property (copy, nonatomic) NSString *anchorID;
+@property (copy, nonatomic) NSString *grouponID;
+@property (copy, nonatomic) NSString *serviceType;
+@property (copy, nonatomic) NSString *enterSource;
+@property (copy, nonatomic) NSString *enterMethod;
+@property (copy, nonatomic) NSString *lifeExtraInfo;
+@property (copy, nonatomic) NSDictionary *lifeInitialInfo;
+@property (copy, nonatomic) NSString *poiEnterID;
+@property (copy, nonatomic) NSString *prePoiEnterID;
+@property (copy, nonatomic) NSString *sortID;
+@property (copy, nonatomic) NSString *backendType;
+@property (nonatomic) long long poiDeviceSamecity;
+@property (copy, nonatomic) NSString *awemeRequestID;
+@property (copy, nonatomic) NSDictionary *forwardParams;
+@property (copy, nonatomic) NSString *saleChannel;
+@property (copy, nonatomic) NSDictionary *firstFeedLogParams;
+@property (copy, nonatomic) NSDictionary *coiParams;
+@property (nonatomic) BOOL isBottomBarVisiable;
+@property (retain, nonatomic) NSString *initialModalViewRatio;
+@property (copy, nonatomic) NSString *scrollToComponent;
+@property (copy, nonatomic) NSString *scrollToSubview;
+@property (nonatomic) double anchoredOffset;
+@property (copy, nonatomic) NSString *homepageHotScene;
+@property (nonatomic) long long alwaysHalfScreen;
+
++ (id)p_searchDictFromString:(id)a0 needRemovingPercentEncoding:(BOOL)a1;
++ (void)mergeLifeShareExtFromUserDetail:(id)a0;
++ (id)constDataForURLParams:(id)a0;
+
+- (BOOL)isInTheSameCity:(id)a0;
+- (BOOL)isUgcBottomBarVisiable;
+- (void)updateBizCode:(id)a0;
+- (id)poiDetailRequestParams;
+- (void).cxx_destruct;
+
+@end

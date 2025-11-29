@@ -1,0 +1,13 @@
+@class NSString, NSMutableArray;
+
+@interface HTSLiveLinkmicProfitBidPaidLinkmicStartContent : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *startToast;
+@property (retain, nonatomic) NSMutableArray *positionsArray;
+@property (readonly, nonatomic) unsigned long long positionsArray_Count;
+@property (nonatomic) BOOL waitingUserNeedLeave;
+@property (copy, nonatomic) NSString *waitingUserToast;
+
++ (id)descriptor;
+
+@end

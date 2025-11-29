@@ -1,0 +1,7 @@
+@interface CreateInfoResponse_SettingPrompt : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL replayProductExposition;
+
++ (id)descriptor;
+
+@end

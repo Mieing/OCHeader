@@ -1,0 +1,3 @@
+@interface HTSLiveLinkMicFriendOnlineMessageRoot : GPBRootObject
+
+@end

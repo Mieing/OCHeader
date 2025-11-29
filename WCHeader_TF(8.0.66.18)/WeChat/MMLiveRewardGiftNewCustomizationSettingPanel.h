@@ -1,0 +1,70 @@
+@class UIView, MMLiveRewardGiftNewCustomizationPriceDisplayView, MMFinderLiveRewardGiftItem, MMFinderLiveGiftNewCustomizationModel, MMLiveTaskId, MMLiveRewardGiftNewCustomizationEditLogic, MMLiveRewardGiftNewCustomizationStyleSelectView, MMLiveRewardGiftNewCustomizationInputToolView, NSString, MMUIButton, MMLiveRewardGiftNewCustomizationEffectPreviewView;
+
+@interface MMLiveRewardGiftNewCustomizationSettingPanel : MMPageSheetBaseView <MMLiveRewardGiftNewCustomizationStyleNameSelectDelegate>
+
+@property (retain, nonatomic) MMLiveTaskId *taskId;
+@property (retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem;
+@property (retain, nonatomic) MMLiveRewardGiftNewCustomizationEditLogic *customizationEditLogic;
+@property (readonly, nonatomic) MMFinderLiveGiftNewCustomizationModel *customizationModel;
+@property (retain, nonatomic) UIView *panelView;
+@property (retain, nonatomic) MMUIButton *closeButton;
+@property (retain, nonatomic) MMUIButton *cancelButton;
+@property (retain, nonatomic) MMUIButton *doneButton;
+@property (retain, nonatomic) MMLiveRewardGiftNewCustomizationEffectPreviewView *effectPreviewView;
+@property (retain, nonatomic) MMLiveRewardGiftNewCustomizationPriceDisplayView *priceDisplayView;
+@property (retain, nonatomic) MMLiveRewardGiftNewCustomizationStyleSelectView *styleSelectView;
+@property (weak, nonatomic) MMLiveRewardGiftNewCustomizationInputToolView *nameEditInputTool;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } nameEditInputToolRectForUnActive;
+@property (copy, nonatomic) id /* block */ inputToolStateListener;
+@property (nonatomic) double keyboardHeight;
+@property (nonatomic) BOOL isKeyboardShow;
+@property (nonatomic) BOOL isCloseWithModified;
+@property (copy, nonatomic) id /* block */ giftCustomizationSettingModifiedCallback;
+@property (copy, nonatomic) id /* block */ giftCustomizationSettingClosedCallback;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0 giftItem:(id)a1;
+- (void)createCustomizationEditLogic:(id)a0;
+- (void)initNotifications;
+- (void)setupPageSheetConfig;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)layoutPanelView;
+- (double)contentWidth;
+- (double)contentHeight;
+- (double)normalModeContentHeight;
+- (double)inputModeContentHeight;
+- (double)stayEditingModeContentHeight;
+- (void)layoutEffectPreviewView;
+- (void)updateEffectPreviewViewFrame;
+- (double)effectPreviewViewHeight;
+- (double)normalModePreviewViewHeight;
+- (double)inputModePreviewViewHeight;
+- (double)stayEditingModePreviewViewHeight;
+- (void)layoutPriceDisplayView;
+- (void)layoutStyleSelectView;
+- (void)layoutCancelButton;
+- (void)onCancelButtonClick;
+- (void)layoutDoneButton;
+- (void)onDoneButtonClick;
+- (void)updateNameEditInputToolFrame;
+- (void)layoutCloseButton;
+- (void)onCloseButtonClick;
+- (void)insertEditInputToolToHierarchy:(id)a0 frame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1 fromView:(id)a2;
+- (void)removeEditInputToolFromHierarchy:(id)a0;
+- (void)onKeyboardShowing:(id)a0;
+- (void)onKeyboardHiding:(id)a0;
+- (void)updateUIForKeyboardShowChanged:(id)a0;
+- (void)updateWidgetsAlphaForInputToolAndKeyBoardStateChanged;
+- (double)getKeyboardAnimationDuration:(id)a0;
+- (unsigned long long)getKeyboardAnimationOptions:(id)a0;
+- (void)handleUIOrientationWillChange:(id)a0;
+- (void)pageSheetDidAppear;
+- (void)pageSheetDidDisappear;
+- (void)pageSheetDidCloseWithType:(long long)a0;
+- (void).cxx_destruct;
+
+@end

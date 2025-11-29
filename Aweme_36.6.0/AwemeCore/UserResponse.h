@@ -1,0 +1,15 @@
+@class UserExtra, HTSLiveUser;
+
+@interface UserResponse : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveUser *data_p;
+@property (nonatomic) BOOL hasData_p;
+@property (retain, nonatomic) UserExtra *extra;
+@property (nonatomic) BOOL hasExtra;
+
++ (id)descriptor;
+
+- (id)extra;
+- (id)data_p;
+
+@end

@@ -1,0 +1,3 @@
+@interface AWENearbyTaskInnerPush : NSObject
+
+@end

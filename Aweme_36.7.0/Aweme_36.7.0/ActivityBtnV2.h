@@ -1,0 +1,14 @@
+@class NSString;
+
+@interface ActivityBtnV2 : GPBMessage
+
+@property (nonatomic) int userState;
+@property (nonatomic) BOOL hasUserState;
+@property (copy, nonatomic) NSString *text;
+@property (nonatomic) BOOL hasText;
+@property (copy, nonatomic) NSString *iconURL;
+@property (nonatomic) BOOL hasIconURL;
+
++ (id)descriptor;
+
+@end

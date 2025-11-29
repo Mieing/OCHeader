@@ -1,0 +1,3 @@
+@interface HTSLiveMoreLiveEntranceRoot : GPBRootObject
+
+@end

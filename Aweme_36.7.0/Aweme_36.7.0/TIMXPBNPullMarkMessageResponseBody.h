@@ -1,0 +1,16 @@
+@class NSMutableArray;
+
+@interface TIMXPBNPullMarkMessageResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *messagesArray;
+@property (readonly, nonatomic) unsigned long long messagesArray_Count;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (nonatomic) long long nextCursor;
+@property (nonatomic) BOOL hasNextCursor;
+@property (retain, nonatomic) NSMutableArray *msgExtrasArray;
+@property (readonly, nonatomic) unsigned long long msgExtrasArray_Count;
+
++ (id)descriptor;
+
+@end

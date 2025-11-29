@@ -1,0 +1,16 @@
+@class NSMutableArray, HTSLiveMultiChorusSongListItem;
+
+@interface IESLiveLinkMicAudienceGetOrderedSongListResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *listInfoArray;
+@property (readonly, nonatomic) unsigned long long listInfoArray_Count;
+@property (nonatomic) long long wantSingCount;
+@property (nonatomic) long long wantSingSongThreshold;
+@property (nonatomic) long long displayChallengeCardThreshold;
+@property (nonatomic) long long sungSongCount;
+@property (retain, nonatomic) HTSLiveMultiChorusSongListItem *multiChorusSongListItem;
+@property (nonatomic) BOOL hasMultiChorusSongListItem;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,10 @@
+@class GetMidiConfigResponse_MidiConfig;
+
+@interface GetMidiConfigResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) GetMidiConfigResponse_MidiConfig *ktvMidiConfig;
+@property (nonatomic) BOOL hasKtvMidiConfig;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,55 @@
+@interface FlowCommon.FeatureConfigDict : _TtCs12_SwiftObject {
+    void /* unknown type, empty encoding */ botInfoBotEdit;
+    void /* unknown type, empty encoding */ botInfoLlmShow;
+    void /* unknown type, empty encoding */ settingDebug;
+    void /* unknown type, empty encoding */ switchAsrModel;
+    void /* unknown type, empty encoding */ namedEntityHighlight;
+    void /* unknown type, empty encoding */ voiceCall;
+    void /* unknown type, empty encoding */ answerWithVideo;
+    void /* unknown type, empty encoding */ messageDebug;
+    void /* unknown type, empty encoding */ answerWithSuggest;
+    void /* unknown type, empty encoding */ sendImageMessage;
+    void /* unknown type, empty encoding */ profile;
+    void /* unknown type, empty encoding */ profileJump;
+    void /* unknown type, empty encoding */ botHeat;
+    void /* unknown type, empty encoding */ botRecommendSearch;
+    void /* unknown type, empty encoding */ bio;
+    void /* unknown type, empty encoding */ ugcVoice;
+    void /* unknown type, empty encoding */ discoverCategory;
+    void /* unknown type, empty encoding */ personalizedRecommend;
+    void /* unknown type, empty encoding */ darkMode;
+    void /* unknown type, empty encoding */ filterAddedConversationInRecommend;
+    void /* unknown type, empty encoding */ showTopBotRecommend;
+    void /* unknown type, empty encoding */ saveChatHistory;
+    void /* unknown type, empty encoding */ showMessagePush;
+    void /* unknown type, empty encoding */ mainShowSwitch;
+    void /* unknown type, empty encoding */ exclusiveVoice;
+    void /* unknown type, empty encoding */ supportBotSearchWebAndPicGenSwitch;
+    void /* unknown type, empty encoding */ supportBotSearchWebSwitch;
+    void /* unknown type, empty encoding */ supportBotPicGenSwitch;
+    void /* unknown type, empty encoding */ sendFileMessage;
+    void /* unknown type, empty encoding */ settingExpert;
+    void /* unknown type, empty encoding */ actionbarExpert;
+    void /* unknown type, empty encoding */ actionbarConfigurable;
+    void /* unknown type, empty encoding */ expertCardAutoCollapse;
+    void /* unknown type, empty encoding */ activeVoiceConfig;
+    void /* unknown type, empty encoding */ botCreateEnable;
+    void /* unknown type, empty encoding */ sendVLMImageMessage;
+    void /* unknown type, empty encoding */ sendMultiImageMessage;
+    void /* unknown type, empty encoding */ sendMultiFileImageMessage;
+    void /* unknown type, empty encoding */ mailbox;
+    void /* unknown type, empty encoding */ sendAudioMessage;
+    void /* unknown type, empty encoding */ textToImageReverse;
+    void /* unknown type, empty encoding */ appletThirdAuthSetting;
+    void /* unknown type, empty encoding */ attachFile;
+    void /* unknown type, empty encoding */ attachImgAlbum;
+    void /* unknown type, empty encoding */ attachImgCamera;
+    void /* unknown type, empty encoding */ attachSug;
+    void /* unknown type, empty encoding */ previewSug;
+    void /* unknown type, empty encoding */ previewImgCamera;
+    void /* unknown type, empty encoding */ showBotLike;
+    void /* unknown type, empty encoding */ showBotComment;
+    void /* unknown type, empty encoding */ relatedVideos;
+}
+
+@end

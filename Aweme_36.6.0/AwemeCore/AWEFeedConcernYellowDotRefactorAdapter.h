@@ -1,0 +1,16 @@
+@class NSString;
+
+@interface AWEFeedConcernYellowDotRefactorAdapter : NSObject <AWEFeedConcernYellowDotRefactorAdapterProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)shared;
+
+- (id)feedStorage;
+- (id)feedContainerViewController;
+- (id)followRedDotTrackString;
+
+@end

@@ -1,0 +1,76 @@
+@class UIView, IESLiveSoloKTVHomeModel, NSArray, NSString, IESLiveKTVOrderPanelCollectionView, IESLiveSoloKTVOrderPanelModel, IESLiveSegmentedControl, IESLiveSoloKTVRecordControllerV2, UILabel, IESLiveInteractionKTVMusicFeedbackView;
+
+@interface IESLiveSoloKTVHomeController : UIViewController <IESSoloKTVGlobalLiveCircleDelegate>
+
+@property (retain, nonatomic) UIView *topBar;
+@property (retain, nonatomic) IESLiveSegmentedControl *segControl;
+@property (retain, nonatomic) IESLiveSoloKTVHomeModel *homeModel;
+@property (retain, nonatomic) IESLiveInteractionKTVMusicFeedbackView *musicFeedbackView;
+@property (retain, nonatomic) UIView *musicFeedbackViewEmptyClickedView;
+@property (retain, nonatomic) UILabel *firstCornerLabel;
+@property (retain, nonatomic) UILabel *secondCornerLabel;
+@property (weak, nonatomic) IESLiveSoloKTVRecordControllerV2 *recordVC;
+@property (retain, nonatomic) IESLiveKTVOrderPanelCollectionView *orderPanel;
+@property (retain, nonatomic) IESLiveSoloKTVOrderPanelModel *panelModel;
+@property (retain, nonatomic) NSArray *viewModels;
+@property (nonatomic) double searchHeight;
+@property (nonatomic) BOOL forbidResumeRoomStatue;
+@property (nonatomic) BOOL canRemoveSmallWindow;
+@property (copy, nonatomic) NSString *pageFrom;
+@property (copy, nonatomic) NSString *enterSource;
+@property (nonatomic) BOOL isFirstAppear;
+@property (nonatomic) struct { long long value; int timescale; unsigned int flags; long long epoch; } lastVideoPlayTime;
+@property (nonatomic) double soloKTVJoiningDuration;
+@property (nonatomic) double lastJoinInterval;
+@property (nonatomic) long long scaleRatio;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)removeBannerSection;
+- (void)didClickBack;
+- (void)didClickShare;
+- (void)requestPermission:(id /* block */)a0;
+- (id)getPanelModel;
+- (void)setupUIV2;
+- (void)interactPrepareWillReady:(id)a0;
+- (void)willLoadSoloKTVRoom;
+- (void)openMySungView;
+- (void)requestAddSongWithMusicModel:(id)a0;
+- (void)showMusicListFeedbackInHomePanelViewWithSongName:(id)a0 singerName:(id)a1;
+- (id)soloKTVEnterService;
+- (void)p_hideMusicListFeedbackView;
+- (void)trackReturnClick;
+- (void)removeSmallWindowIfNeed;
+- (BOOL)enableShowPersonalEntranceDialog;
+- (BOOL)needShowSmallWindowRemoveHint;
+- (void)addJoiningDuration;
+- (void)trackSoloKTVJoinDuraion;
+- (void)didClickAddSongWithCompletion:(id /* block */)a0;
+- (id)generateActivityLabel;
+- (void)setupOrderPanel;
+- (id)getPanelModelsV2;
+- (void)dismissSoloKTVRoomByForce;
+- (void)openRecordVC:(id)a0;
+- (long long)currendSoloKTVShareCardType;
+- (int)currendSelectFirstLevelTab;
+- (BOOL)enableShowPersonalEntranceInfoPanel;
+- (void)dismissWithInfoPanel;
+- (void)dismissWithPersonalEntranceDialog;
+- (void)dismissSoloKTVRoom;
+- (void)askBackRoomForLinkMic;
+- (id)initWithHomeModel:(id)a0 diContext:(id)a1;
+- (void)turnToRoomCreatPage;
+- (void)trackAlertContrimWithType:(id)a0 sureType:(id)a1;
+- (void).cxx_destruct;
+- (long long)preferredStatusBarStyle;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)a0;
+- (void)dealloc;
+- (void)setupData;
+- (void)addObservers;
+- (void)didTapView;
+
+@end

@@ -1,0 +1,9 @@
+@interface SwiftRegisterableBase : NSObject
+
++ (BOOL)canEvaluateForModule:(id)a0 key:(id)a1;
++ (void)evaluateForModule:(id)a0 key:(id)a1;
++ (void)evaluateAllFrom:(id)a0;
++ (void)evaluateAllService;
++ (void)evaluateAllJSB;
+
+@end

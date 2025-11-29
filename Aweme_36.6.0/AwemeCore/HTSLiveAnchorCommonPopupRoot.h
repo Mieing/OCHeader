@@ -1,0 +1,3 @@
+@interface HTSLiveAnchorCommonPopupRoot : GPBRootObject
+
+@end

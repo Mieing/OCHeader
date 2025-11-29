@@ -1,0 +1,72 @@
+@class MMFinderLiveTask, UICollectionView, MMFinderLiveTaskId, MMFinderLiveSharePubbleTipView, FinderLiveGiftWallInfo, NSMutableArray, UIView, UIScrollView, NSString, MMUILabel, UICollectionViewFlowLayout, MMLiveHalfScreenTitleBarView, MMUIButton;
+@protocol MMFinderLiveWishListDetailForAudiencePanelDelegate;
+
+@interface MMFinderLiveWishListDetailForAudiencePanel : MMPageSheetBaseView <MMLiveHalfScreenTitleBarViewDelegate, MMFinderLiveRewardWishSendingViewDelegate, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+
+@property (retain, nonatomic) MMFinderLiveTaskId *taskId;
+@property (readonly, nonatomic) MMFinderLiveTask *liveTask;
+@property (retain, nonatomic) UIView *contentView;
+@property (retain, nonatomic) UIScrollView *scrollContentView;
+@property (retain, nonatomic) MMUILabel *titleLabel;
+@property (retain, nonatomic) MMLiveHalfScreenTitleBarView *titleBarView;
+@property (retain, nonatomic) MMUILabel *targetGiftTitleLabel;
+@property (retain, nonatomic) NSMutableArray *targetGiftViews;
+@property (retain, nonatomic) UICollectionView *giftWallCollectionView;
+@property (retain, nonatomic) UICollectionViewFlowLayout *giftWallCollectionLayout;
+@property (nonatomic) double lastCollectionViewWidth;
+@property (retain, nonatomic) MMUILabel *giftWallTitleLabel;
+@property (retain, nonatomic) MMUIButton *helpButton;
+@property (retain, nonatomic) MMFinderLiveSharePubbleTipView *tipsPubbleView;
+@property (retain, nonatomic) FinderLiveGiftWallInfo *giftWallInfo;
+@property (nonatomic) long long balance;
+@property (nonatomic) BOOL wecoinBalanceUpdated;
+@property (weak, nonatomic) id<MMFinderLiveWishListDetailForAudiencePanelDelegate> operationDelegate;
+@property (copy, nonatomic) id /* block */ giftWallBoardClickButtonCallBlock;
+@property (copy, nonatomic) id /* block */ giftWallHeadImgeSettingGuideClickCallBlock;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (id)initWithTaskId:(id)a0;
+- (void)innerInit;
+- (void)dealloc;
+- (void)registerExtension;
+- (void)unResgisterExtension;
+- (void)setupPageSheetConfig;
+- (void)initViews;
+- (void)showWithAnimated:(BOOL)a0;
+- (void)pageSheetWillAppear;
+- (void)pageSheetDidAppear;
+- (void)pageSheetDidDisappear;
+- (void)pageSheetWillClose:(BOOL)a0;
+- (void)updateWithWishes:(id)a0 totalTargetCount:(unsigned long long)a1 totalCurCount:(unsigned long long)a2 isAchieved:(BOOL)a3 isActive:(BOOL)a4;
+- (void)fetchWecoinBalance;
+- (void)layoutSubviews;
+- (void)layoutUI;
+- (void)layoutContentView;
+- (void)layoutTitleBarView;
+- (double)contentWidth;
+- (double)contentHeight;
+- (void)updateCollectionLayout;
+- (void)reloadData;
+- (void)updateGiftWallHeaderInfo;
+- (void)showPubbleTipsView;
+- (void)updateTipsPubbleViewLocation;
+- (void)hidePubbleTipsView;
+- (long long)numberOfSectionsInCollectionView:(id)a0;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForHeaderInSection:(long long)a2;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 referenceSizeForFooterInSection:(long long)a2;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)scrollViewDidScroll:(id)a0;
+- (void)onMMLiveHalfScreenTitleBarLeftButtonClicked:(id)a0;
+- (void)onHelpButtonClick;
+- (void)onTapContentView:(id)a0;
+- (void)onSendAnchorWishGiftWithGiftItem:(id)a0;
+- (BOOL)isGiftWallEnable;
+- (id)audienceLogReporter;
+- (void).cxx_destruct;
+
+@end

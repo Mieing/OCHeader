@@ -1,0 +1,10 @@
+@class NSString;
+
+@interface IESGCPPBEntryLimitDetail : GPBMessage
+
+@property (nonatomic) BOOL meet;
+@property (copy, nonatomic) NSString *entryLimitSingle;
+
++ (id)descriptor;
+
+@end

@@ -1,0 +1,13 @@
+@class HTSLiveScreenBarConfigure, HTSLiveBarrageConfigure;
+
+@interface HTSLiveResourceConfigure : IESLivePBBaseMessage
+
+@property (nonatomic) long long resourceId;
+@property (retain, nonatomic) HTSLiveBarrageConfigure *barrageConf;
+@property (nonatomic) BOOL hasBarrageConf;
+@property (retain, nonatomic) HTSLiveScreenBarConfigure *screenBarConf;
+@property (nonatomic) BOOL hasScreenBarConf;
+
++ (id)descriptor;
+
+@end

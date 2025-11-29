@@ -1,0 +1,14 @@
+@class NSString, TIMXPBNAudioRecognitionResponseInfo;
+
+@interface TIMXPBNAudioRecognitionResponseBody : GPBMessage
+
+@property (nonatomic) long long checkCode;
+@property (nonatomic) BOOL hasCheckCode;
+@property (copy, nonatomic) NSString *checkMessage;
+@property (nonatomic) BOOL hasCheckMessage;
+@property (retain, nonatomic) TIMXPBNAudioRecognitionResponseInfo *audio;
+@property (nonatomic) BOOL hasAudio;
+
++ (id)descriptor;
+
+@end

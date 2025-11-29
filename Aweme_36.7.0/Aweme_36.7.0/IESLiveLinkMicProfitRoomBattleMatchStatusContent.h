@@ -1,0 +1,10 @@
+@class IESLiveLinkMicProfitRoomBattleRandomMatchNoExTimeLeftContent;
+
+@interface IESLiveLinkMicProfitRoomBattleMatchStatusContent : IESLivePBBaseMessage
+
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) IESLiveLinkMicProfitRoomBattleRandomMatchNoExTimeLeftContent *noExpectedTimeLeftContent;
+
++ (id)descriptor;
+
+@end

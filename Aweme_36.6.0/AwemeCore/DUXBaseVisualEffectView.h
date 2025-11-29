@@ -1,0 +1,3 @@
+@interface DUXBaseVisualEffectView : UIVisualEffectView
+
+@end

@@ -1,0 +1,12 @@
+@class GPBInt32Array;
+
+@interface AnimationConfigV2 : GPBMessage
+
+@property (retain, nonatomic) GPBInt32Array *playMillisecondArray;
+@property (readonly, nonatomic) unsigned long long playMillisecondArray_Count;
+@property (nonatomic) int animationType;
+@property (nonatomic) BOOL hasAnimationType;
+
++ (id)descriptor;
+
+@end

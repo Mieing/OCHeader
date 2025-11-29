@@ -1,0 +1,3 @@
+@interface HTSLiveImDeleteRoot : GPBRootObject
+
+@end

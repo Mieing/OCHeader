@@ -1,0 +1,17 @@
+@class HTSLiveLinkmicEnlargeGuestChangeUserContent, HTSLiveCommon, HTSLiveLinkmicEnlargeGuestTurnOnContent, GPBEnumArray, HTSLiveLinkmicEnlargeGuestTurnOffContent;
+
+@interface HTSLiveLinkmicEnlargeGuestMessage : IESLivePBBaseMessage
+
+@property (retain, nonatomic) HTSLiveCommon *common;
+@property (nonatomic) BOOL hasCommon;
+@property (nonatomic) int msgType;
+@property (retain, nonatomic) GPBEnumArray *playModesArray;
+@property (readonly, nonatomic) unsigned long long playModesArray_Count;
+@property (readonly, nonatomic) int contentOneOfCase;
+@property (retain, nonatomic) HTSLiveLinkmicEnlargeGuestTurnOnContent *turnOnContent;
+@property (retain, nonatomic) HTSLiveLinkmicEnlargeGuestTurnOffContent *turnOffContent;
+@property (retain, nonatomic) HTSLiveLinkmicEnlargeGuestChangeUserContent *changeUserContent;
+
++ (id)descriptor;
+
+@end

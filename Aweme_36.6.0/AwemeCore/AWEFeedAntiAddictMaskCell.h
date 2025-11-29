@@ -1,0 +1,78 @@
+@class AWEAwemeModel, NSString, UIView, AWEFeedCellViewController, UIImageView, AWEUILoadingView, AWEFeedAntiAddictClearView, UIViewController;
+@protocol UIScrollViewDelegate;
+
+@interface AWEFeedAntiAddictMaskCell : UITableViewCell <AWEFeedAntiAddictClearViewDisplayProtocol, AWEFeedTableViewCellProtocol>
+
+@property (retain, nonatomic) AWEFeedCellViewController *viewController;
+@property (retain, nonatomic) AWEFeedAntiAddictClearView *clearView;
+@property (retain, nonatomic) UIImageView *blurCoverImageView;
+@property (nonatomic) BOOL isMaskShowing;
+@property (retain, nonatomic) AWEUILoadingView *loadingView;
+@property (nonatomic) BOOL originalClipsToBounds;
+@property (nonatomic) double originalBorderWidth;
+@property (nonatomic) double originalCornerRadius;
+@property (nonatomic) BOOL isPlayStarted;
+@property (nonatomic) BOOL needShowLoading;
+@property (nonatomic) BOOL needAvoidLoopLoading;
+@property (nonatomic) double startDisplayTime;
+@property (nonatomic) BOOL didTrackStayTime;
+@property (nonatomic) BOOL played;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long indexPath;
+@property (weak, nonatomic) UIViewController *parentVC;
+@property (copy, nonatomic) NSString *referString;
+@property (retain, nonatomic) AWEAwemeModel *registerElementModel;
+@property (nonatomic) long long cellDisplayState;
+@property (nonatomic) long long cellPageAppearState;
+@property (copy, nonatomic) id /* block */ currentCellPageAppearStateBlock;
+@property (nonatomic) struct EngineAudioWrapper { void /* function */ *x0; void /* function */ *x1; void /* function */ *x2; void /* function */ *x3; void *x4; } *audioWrapper;
+@property (nonatomic) struct EngineVideoWrapper { void /* function */ *x0; void /* function */ *x1; void *x2; } *videoWrapper;
+@property (nonatomic) BOOL didResetForReusable;
+@property (retain, nonatomic) UIView *feedTableViewCellMaskView;
+@property (readonly, weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+@property (nonatomic) BOOL hadPrepareToDisplay;
+
+- (void)playLoadingAnimation;
+- (void)configWithModel:(id)a0;
+- (void)removeCellChildVCForMemoryOpt;
+- (void)onApplicationDidChangeStatusBarOrientation:(id)a0;
+- (void)trackStayTime;
+- (void)_removeChildVC;
+- (void)_addChildVC;
+- (id)playVideoView;
+- (id)antiAddictClearViewTitle;
+- (id)antiAddictClearViewSubTitle;
+- (id)antiAddictClearViewConfirmBtnTitle;
+- (void)actionBtnClickedWithType:(long long)a0;
+- (BOOL)shouldResponsePlayerClick;
+- (void)handleWillLoop:(id)a0;
+- (void)_configViews;
+- (void)updateStartDisplayTime;
+- (long long)currentAddictType;
+- (void)addInteractionProgressMonitor;
+- (void)_updateClearViewInfo;
+- (void)_updateBlurCover;
+- (void)_updatePlayerScaleMode;
+- (void)prepareForDisplay;
+- (void)updateLayout;
+- (void).cxx_destruct;
+- (void)play;
+- (void)pause;
+- (id)initWithStyle:(long long)a0 reuseIdentifier:(id)a1;
+- (void)prepareForReuse;
+- (void)stop;
+- (void)applicationWillTerminate;
+- (void)reset;
+- (double)currentPlaybackTime;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)configureWithModel:(id)a0;
+- (void)didEndDisplaying;
+- (void)stopLoadingAnimation;
+- (id)currentModel;
+- (void)willDisplay;
+
+@end

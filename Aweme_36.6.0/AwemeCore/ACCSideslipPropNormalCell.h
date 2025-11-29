@@ -1,0 +1,3 @@
+@interface ACCSideslipPropNormalCell : ACCSideslipPropBaseCell
+
+@end

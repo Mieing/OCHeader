@@ -1,0 +1,12 @@
+@class HotsoonDoubleFlowCardInfoPanelV2;
+
+@interface HotsoonDoubleFlowCardUiV2 : GPBMessage
+
+@property (retain, nonatomic) HotsoonDoubleFlowCardInfoPanelV2 *cardInfoPanel;
+@property (nonatomic) BOOL hasCardInfoPanel;
+@property (nonatomic) double coverAspectRatio;
+@property (nonatomic) BOOL hasCoverAspectRatio;
+
++ (id)descriptor;
+
+@end

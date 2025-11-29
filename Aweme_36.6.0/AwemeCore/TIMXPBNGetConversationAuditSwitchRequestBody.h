@@ -1,0 +1,10 @@
+@interface TIMXPBNGetConversationAuditSwitchRequestBody : GPBMessage
+
+@property (nonatomic) long long convShortId;
+@property (nonatomic) BOOL hasConvShortId;
+@property (nonatomic) int conversationType;
+@property (nonatomic) BOOL hasConversationType;
+
++ (id)descriptor;
+
+@end

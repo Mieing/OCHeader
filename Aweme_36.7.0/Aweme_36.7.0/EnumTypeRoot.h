@@ -1,0 +1,3 @@
+@interface EnumTypeRoot : GPBRootObject
+
+@end

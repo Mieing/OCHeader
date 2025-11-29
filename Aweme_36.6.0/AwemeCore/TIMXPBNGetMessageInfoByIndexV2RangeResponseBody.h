@@ -1,0 +1,16 @@
+@class NSMutableArray;
+
+@interface TIMXPBNGetMessageInfoByIndexV2RangeResponseBody : GPBMessage
+
+@property (retain, nonatomic) NSMutableArray *infosArray;
+@property (readonly, nonatomic) unsigned long long infosArray_Count;
+@property (nonatomic) long long nextIndexInConversationV2;
+@property (nonatomic) BOOL hasNextIndexInConversationV2;
+@property (nonatomic) BOOL hasMore;
+@property (nonatomic) BOOL hasHasMore;
+@property (retain, nonatomic) NSMutableArray *threadMessagesArray;
+@property (readonly, nonatomic) unsigned long long threadMessagesArray_Count;
+
++ (id)descriptor;
+
+@end

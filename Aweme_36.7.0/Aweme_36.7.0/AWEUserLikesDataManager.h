@@ -1,0 +1,75 @@
+@class AWEProfileTabPerfMonitor, NSString, NSArray, AWEAwemeModel, NSMutableDictionary, NSNumber, NSMutableArray;
+@protocol AWEProfileQualityIssueUserSyncService;
+
+@interface AWEUserLikesDataManager : AWEListDataController <AWEUserMessage, AWEProfileBatchChooseWorkDataControllerProtocol, AWEUserLikesDataManagerProtocol, AWEListModelSliceProtocol>
+
+@property (copy, nonatomic) NSNumber *count;
+@property (copy, nonatomic) NSNumber *minCursor;
+@property (copy, nonatomic) NSNumber *maxCursor;
+@property (retain, nonatomic) AWEAwemeModel *justRemovedModel;
+@property (retain, nonatomic) NSNumber *justRemovedIndex;
+@property (nonatomic) long long invalidItemCount;
+@property (nonatomic) BOOL isHidingInvalidItem;
+@property (retain, nonatomic) NSString *invalidItemText;
+@property (nonatomic) BOOL canClearInvalidItem;
+@property (copy, nonatomic) NSArray *invalidItemIDArray;
+@property (nonatomic) long long willLoadMoreForwardState;
+@property (nonatomic) BOOL hasRefreshParseDone;
+@property (nonatomic) BOOL isLoadingMore;
+@property (nonatomic) BOOL isCurrentUser;
+@property (copy, nonatomic) NSString *userID;
+@property (nonatomic) long long pageSize;
+@property (nonatomic) BOOL filterDeleteItems;
+@property (copy, nonatomic) NSString *hotsoonText;
+@property (nonatomic) long long hotsoonFilterCount;
+@property (nonatomic) long long hotsoonHasMore;
+@property (nonatomic) BOOL needLongVideo;
+@property (copy, nonatomic) id /* block */ sliceDoneBlock;
+@property (copy, nonatomic) id /* block */ loadMoreForwardBlock;
+@property (copy, nonatomic) id /* block */ visibleAwemesCountBlock;
+@property (retain, nonatomic) NSMutableDictionary *perfExtraParams;
+@property (weak, nonatomic) AWEProfileTabPerfMonitor *tabPerfMonitor;
+@property (weak, nonatomic) id<AWEProfileQualityIssueUserSyncService> profileUserSyncService;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) NSMutableArray *dataSource;
+
+- (void)didFinishFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)didFinishUnFollowUser:(id)a0 status:(long long)a1 error:(id)a2;
+- (void)initFetchWithCompletion:(id /* block */)a0;
+- (void)loadMoreWithFilteredCompletion:(id /* block */)a0;
+- (long long)sliceCount;
+- (id)initWithUserID:(id)a0;
+- (id)paramsIsRefresh:(BOOL)a0;
+- (void)loadMore:(id /* block */)a0;
+- (BOOL)canLoadMore;
+- (void)removeWithItemID:(id)a0;
+- (id)constructDataSourceWithResponseModel:(id)a0 isRefresh:(BOOL)a1;
+- (BOOL)containAwemeWithItemID:(id)a0;
+- (BOOL)addAwemeWithItemID:(id)a0;
+- (void)changeVideFavoritedStatus:(BOOL)a0 itemID:(id)a1;
+- (void)requestClearInvalidItems:(id /* block */)a0;
+- (void)removeItemsAtIndexPaths:(id)a0 completion:(id /* block */)a1;
+- (void)changeVideoUserSelfRecommendToFriendStatusWithNoti:(id)a0;
+- (void)changeVideoDiggedStatus:(BOOL)a0 videoID:(id)a1;
+- (id)likeRequestURL;
+- (void)checkUserSyncIfNeed:(id)a0;
+- (void)sliceModelWithJsonDictionary:(id)a0 frontParseComplete:(id /* block */)a1 sliceDoneComplete:(id /* block */)a2;
+- (void)forwardLoadMoreRequestIfNeeded:(id)a0 fromRefresh:(BOOL)a1;
+- (void)collectRefreshPerfInfo:(id)a0;
+- (id)checkLoadMoreAfterRefreshCompleted:(id)a0;
+- (long long)refreshCountFromVisibleAwemes;
+- (BOOL)needAppLanguageParame;
+- (void)logWithAwemes:(id)a0 startIndex:(long long)a1;
+- (BOOL)enableLoadMoreRequest;
+- (void).cxx_destruct;
+- (void)removeAll;
+- (BOOL)hasMore;
+- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { } *)a0;
+- (void)refreshWithCompletion:(id /* block */)a0;
+- (void)refresh:(id /* block */)a0;
+
+@end

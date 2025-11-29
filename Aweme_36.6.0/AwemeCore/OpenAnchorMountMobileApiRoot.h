@@ -1,0 +1,3 @@
+@interface OpenAnchorMountMobileApiRoot : GPBRootObject
+
+@end

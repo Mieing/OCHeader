@@ -1,0 +1,3 @@
+@interface _TtC7DanceUIP33_7D5FC50DC78CD9E70C36468CC406C1CD36AnyAccessibilityActionHandlerBoxBase : _TtCs12_SwiftObject
+
+@end

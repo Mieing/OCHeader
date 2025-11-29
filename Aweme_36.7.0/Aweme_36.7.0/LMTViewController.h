@@ -1,0 +1,81 @@
+@class UIView, NSString, NSArray, BDXBridgeEventSubscriber, LMTPageStructureModel, NSMutableDictionary, AWEPOIFeedPlayerManager, LMTContext, LMTHalfScreenExtension, LMTExtensionManager, LMTWebView, UIScrollView;
+@protocol AWENearbyBigCardListCellShrinkProtocol;
+
+@interface LMTViewController : UIViewController <UIGestureRecognizerDelegate, LMTWebViewDelegate, LMTAnnieViewDelegate, BDXContainerLifecycleProtocol>
+
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain, nonatomic) LMTWebView *anchorView;
+@property (retain, nonatomic) NSMutableDictionary *broadcastProps;
+@property (retain, nonatomic) LMTContext *context;
+@property (retain, nonatomic) LMTExtensionManager *extensionManager;
+@property (weak, nonatomic) LMTHalfScreenExtension *halfScreenExtension;
+@property (retain, nonatomic) AWEPOIFeedPlayerManager *feedManager;
+@property (weak, nonatomic) id<AWENearbyBigCardListCellShrinkProtocol> nearbyBigCardShrinkController;
+@property (nonatomic) long long routerEnterMode;
+@property (weak, nonatomic) UIView *errorView;
+@property (nonatomic) struct CGPoint { double x; double y; } panStartPoint;
+@property (nonatomic) struct CGRect { struct CGPoint { double x; double y; } origin; struct CGSize { double width; double height; } size; } panStartContentFrame;
+@property (retain, nonatomic) UIView *containerView;
+@property (nonatomic) BOOL willSwitchCalled;
+@property (nonatomic) BOOL notFirstTime;
+@property (nonatomic) BOOL isClosing;
+@property (nonatomic) BOOL isArriving;
+@property (nonatomic) BOOL noSupportPan;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) BOOL onlyTopCornerClips;
+@property (retain, nonatomic) UIView *maskView;
+@property (nonatomic) BOOL isFullScreen;
+@property (nonatomic) long long currentIndex;
+@property (copy, nonatomic) NSString *currentTag;
+@property (retain, nonatomic) UIView *bodyView;
+@property (retain, nonatomic) NSArray *pageArr;
+@property (retain, nonatomic) LMTWebView *footerView;
+@property (retain, nonatomic) UIScrollView *scrollView;
+@property (retain, nonatomic) LMTPageStructureModel *pageStructureModel;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *visibleFooterTabSubscriber;
+@property (retain, nonatomic) BDXBridgeEventSubscriber *closeContainerSubscriber;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (void)transferToWebViewController:(id)a0 transitionInfo:(id)a1;
++ (void)openVCWithTransition:(id)a0;
++ (id)topViewController;
+
+- (void)tryPlayFeedPlayer;
+- (void)tryPauseFeedPlay;
+- (void)registerEvent;
+- (id)getNowTimestamp;
+- (id)generateGlobalProps;
+- (void)enablePopupGesture:(BOOL)a0;
+- (void)enterFullScreenAnimation:(BOOL)a0 completion:(id /* block */)a1;
+- (void)enterHalfScreenAnimation:(BOOL)a0 completion:(id /* block */)a1;
+- (void)layoutWithModel:(id)a0;
+- (void)setupContextWithQueryModel:(id)a0;
+- (void)setupExtension;
+- (void)setupAnchorView;
+- (void)broadcastAllWebViewWithKey:(id)a0 stringValue:(id)a1;
+- (void)switchFooterVisible:(id)a0;
+- (void)webview:(id)a0 didFinishLoadWithURL:(id)a1;
+- (id)historyBroadcastProps;
+- (id)initWithQueryModel:(id)a0;
+- (void)loadAnchorUI;
+- (id)loadBodyViewWithModel:(id)a0;
+- (id)loadFooterViewWithModel:(id)a0;
+- (void)finishRequestWithDataDict:(id)a0 error:(id)a1;
+- (void)loadErrorView;
+- (void)presentOnViewController:(id)a0;
+- (void).cxx_destruct;
+- (void)sendRequest;
+- (void)viewWillAppear:(BOOL)a0;
+- (void)closeContainer;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)viewWillDisappear:(BOOL)a0;
+- (void)unregisterEvent;
+
+@end

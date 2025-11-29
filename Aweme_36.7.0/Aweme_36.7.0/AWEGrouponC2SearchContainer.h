@@ -1,0 +1,77 @@
+@class UIView, NSString, NSArray, AWEGrouponResourceMarginConfig, AWEGrouponC2SearchGapConfig, UIImageView, UIButton, AWEGrouponCitySelectView, DUXPopover, AWEGrouponPageContext;
+@protocol AWESearchNearbyEntranceViewProtocol;
+
+@interface AWEGrouponC2SearchContainer : UIView <DUXPopoverDelegate, AWESearchNearbyEntranceViewLifeCycleProtocol, AWENearbyContainerEventMessage, AWEGrouponFeedEventMessage>
+
+@property (retain, nonatomic) AWEGrouponPageContext *pageContext;
+@property (retain, nonatomic) UIView<AWESearchNearbyEntranceViewProtocol> *searchView;
+@property (retain, nonatomic) AWEGrouponCitySelectView *citySelectView;
+@property (nonatomic) BOOL enableToolArea;
+@property (nonatomic) BOOL hasLeaveGrouponTabOnce;
+@property (retain, nonatomic) NSArray *toolIconViews;
+@property (nonatomic) long long toolIconCount;
+@property (copy, nonatomic) NSString *currentImageMode;
+@property (retain, nonatomic) UIButton *backBtn;
+@property (retain, nonatomic) UIImageView *backBtnImageView;
+@property (nonatomic) BOOL hasActivityEntrance;
+@property (retain, nonatomic) UIView *activityEntranceView;
+@property (retain, nonatomic) AWEGrouponResourceMarginConfig *entranceMargin;
+@property (nonatomic) struct CGSize { double width; double height; } entranceSize;
+@property (retain, nonatomic) AWEGrouponC2SearchGapConfig *searchGapConfig;
+@property (weak, nonatomic) DUXPopover *popover;
+@property (weak, nonatomic) DUXPopover *citySelectPopover;
+@property (retain, nonatomic) UIView *content;
+@property (copy, nonatomic) NSString *firstShowCityBarText;
+@property (copy, nonatomic) id /* block */ bubbleBlk;
+@property (copy, nonatomic) id /* block */ closeBlk;
+@property (nonatomic) long long searchContainerReloadTimes;
+@property (copy, nonatomic) id /* block */ bubbleDidShow;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)applicationEnterBackground;
+- (void)__createSearchView;
+- (void)nearbyContainerWillDisappear;
+- (void)dismissSwitchBtnGuideBubble;
+- (void)nearbyC2FeedScrollViewWillBeginDraggingWithContext:(id)a0;
+- (void)updateToolEntranceInfo:(id)a0;
+- (id)findViewWithShowName:(id)a0;
+- (void)updateCitySelectText:(id)a0;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0 gapConfig:(id)a1 pageContext:(id)a2 closeBlk:(id /* block */)a3;
+- (void)updateSearchBackgroudStyle:(unsigned long long)a0;
+- (void)updatehasHeadAreaImage:(BOOL)a0;
+- (void)showBubbleOnSearchContainer:(id)a0;
+- (void)enterGrouponTab;
+- (void)leaveGrouponTab;
+- (void)showCitySelectBubble:(id)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustBackBtnFrame;
+- (BOOL)isCitySelectViewInnerStyle;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustCitySelectViewFrame;
+- (void)trackCityBubbtonClick;
+- (void)createSearchView;
+- (BOOL)isDouyinEcommerce;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustSearchViewFrame;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustToolIconViewFrameWithIndex:(long long)a0;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustEntranceViewFrame;
+- (void)resetLatyout;
+- (id)getIconViewWithShowName:(id)a0;
+- (void)trackHeaderToolsFmpWithToolEntranceInfo:(id)a0;
+- (void)cancelCitySelectBubbleView;
+- (void)realSugWordDidShow;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustSwitchBtnFrame;
+- (void)configActivityEntranceView:(id)a0 margin:(id)a1 size:(struct CGSize { double x0; double x1; })a2;
+- (id)addQueryWithClickArea:(unsigned long long)a0;
+- (void)clickSearch:(unsigned long long)a0 isRealSugWord:(BOOL)a1;
+- (void)close;
+- (void).cxx_destruct;
+- (void)refresh;
+- (void)setHidden:(BOOL)a0;
+- (BOOL)pointInside:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x0; double x1; })a0 withEvent:(id)a1;
+- (void)setupUI;
+- (void)tap;
+
+@end

@@ -1,0 +1,74 @@
+@class NSDictionary, NSArray, NSString, NSError, SECHybridPageTrace, SECRouteEventFlowDetector;
+
+@interface SECRouteTrace : NSObject <NSCoding>
+
+@property (retain, nonatomic) NSArray *sceneStack;
+@property (copy, nonatomic) NSString *traceId;
+@property (retain, nonatomic) SECRouteTrace *prev;
+@property (weak, nonatomic) SECRouteTrace *head;
+@property (nonatomic) BOOL externalSelf;
+@property (nonatomic) BOOL virtualSelf;
+@property (copy, nonatomic) NSString *bizToken;
+@property (copy, nonatomic) NSString *checkinTraffic;
+@property (retain, nonatomic) NSError *checkinInterrupt;
+@property (copy, nonatomic) NSString *checkinSafeTraffic;
+@property (copy, nonatomic) NSString *checkinPolicyName;
+@property (copy, nonatomic) NSString *checkinPolicyAction;
+@property (nonatomic) double checkinCost;
+@property (copy) NSString *checkoutTraffic;
+@property (retain, nonatomic) NSError *checkoutInterrupt;
+@property (copy, nonatomic) NSString *checkoutSafeTraffic;
+@property (copy, nonatomic) NSString *checkoutPolicyName;
+@property (copy, nonatomic) NSString *checkoutPolicyAction;
+@property (nonatomic) long long risk;
+@property (nonatomic) double checkoutCost;
+@property (copy, nonatomic) NSString *fromPage;
+@property (copy) NSString *toPage;
+@property (copy, nonatomic) NSString *headFromPage;
+@property (nonatomic) BOOL externalLandingPage;
+@property (nonatomic) BOOL terminatedWithFailure;
+@property (copy, nonatomic) NSString *checkinType;
+@property (nonatomic) BOOL fromWebViewNavigation;
+@property (nonatomic) double checkinTimestamp;
+@property (nonatomic) double checkoutTimestamp;
+@property (retain) SECHybridPageTrace *hybridTrace;
+@property BOOL hybridSeclinkNewlyInstalled;
+@property (copy) NSString *hybridAction;
+@property (copy) NSString *hybridStrategy;
+@property (copy) NSString *hybridSeclinkScene;
+@property (copy) NSString *hybridSeclinkInstallResult;
+@property (nonatomic) double hybridActionCost;
+@property (retain, nonatomic) SECRouteTrace *latestSceneTrace;
+@property (retain, nonatomic) SECRouteEventFlowDetector *eventFlowDetectAllDetector;
+@property (readonly, nonatomic) BOOL sceneSelf;
+@property (retain, nonatomic) NSArray *sceneResultList;
+@property (copy, nonatomic) NSArray *pickedParams;
+@property (copy) NSDictionary *detailMetrics;
+@property (copy, nonatomic) NSString *matchedFeatures;
+
+- (id)paramsForRuler;
+- (void)updateMatchedFeatures:(id)a0;
+- (void)updateScenePolicy:(id)a0;
+- (void)updateCheckinPolicy:(id)a0;
+- (void)updateCheckinResult:(id)a0;
+- (void)updateCheckoutPolicy:(id)a0;
+- (void)updateCheckoutResult:(id)a0;
+- (void)updateMetrics:(id)a0;
+- (id)currentSceneItemList;
+- (id)historySceneStack;
+- (id)sceneStackForConsume;
+- (void)updateMetrics:(id)a0 withPrefixKey:(id)a1;
+- (id)buildURLToDict:(id)a0 withPrefixKey:(id)a1;
+- (long long)hybridHasResponse;
+- (id)paramsForReport;
+- (void)encodeHybridTrace:(id)a0 withCoder:(id)a1;
+- (void)decodeHybridTraceWithCoder:(id)a0;
+- (id)hybridTraces;
+- (void).cxx_destruct;
+- (id)allNodes;
+- (id)URL;
+- (id)init;
+- (void)encodeWithCoder:(id)a0;
+- (id)initWithCoder:(id)a0;
+
+@end

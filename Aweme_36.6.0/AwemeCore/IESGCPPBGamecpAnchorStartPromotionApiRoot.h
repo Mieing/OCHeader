@@ -1,0 +1,3 @@
+@interface IESGCPPBGamecpAnchorStartPromotionApiRoot : GPBRootObject
+
+@end

@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveHotVideoCard : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *coverURL;
+@property (copy, nonatomic) NSString *schema;
+@property (copy, nonatomic) NSString *cardId;
+@property (copy, nonatomic) NSString *subTitle;
+
++ (id)descriptor;
+
+@end

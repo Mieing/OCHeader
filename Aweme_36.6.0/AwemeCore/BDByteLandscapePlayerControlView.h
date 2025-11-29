@@ -1,0 +1,74 @@
+@class UIImageView, UIPanGestureRecognizer, BDSCSliderView, BDByteScreenCastControlViewConfig, UILabel, BDSCImageView, BDSCLoadingView, UIView, UISelectionFeedbackGenerator, NSString, BDSCHudProgressView, BDSCControlButton, UIImage;
+@protocol BDSCControlViewDelegate;
+
+@interface BDByteLandscapePlayerControlView : UIView <UIGestureRecognizerDelegate, BDSCControlView>
+
+@property (nonatomic) long long duration;
+@property (nonatomic) long long currentTime;
+@property (nonatomic) BOOL isPanSeeking;
+@property (nonatomic) unsigned long long seekPanStartTime;
+@property (nonatomic) unsigned long long playStatus;
+@property (nonatomic) unsigned long long castStatus;
+@property (retain, nonatomic) BDByteScreenCastControlViewConfig *controlViewConfig;
+@property (retain, nonatomic) UIImage *pauseImage;
+@property (retain, nonatomic) BDSCImageView *bgImageView;
+@property (retain, nonatomic) UIView *topView;
+@property (retain, nonatomic) UILabel *titleLabel;
+@property (retain, nonatomic) BDSCControlButton *backButton;
+@property (retain, nonatomic) UILabel *deviceNameLabel;
+@property (retain, nonatomic) BDSCControlButton *changeDeviceButton;
+@property (retain, nonatomic) BDSCImageView *changeDeviceImageView;
+@property (retain, nonatomic) UIView *actionButtonContainer;
+@property (retain, nonatomic) BDSCControlButton *closeCastButton;
+@property (retain, nonatomic) UIImageView *closeCastButtonImageView;
+@property (retain, nonatomic) BDSCControlButton *changeClarityButton;
+@property (retain, nonatomic) BDSCControlButton *unfoldedControlButton;
+@property (retain, nonatomic) UILabel *errorNotifyLabel;
+@property (retain, nonatomic) UIView *seekView;
+@property (retain, nonatomic) BDSCControlButton *playButton;
+@property (retain, nonatomic) BDSCLoadingView *loadingView;
+@property (retain, nonatomic) BDSCSliderView *slider;
+@property (retain, nonatomic) UILabel *totalTimeLabel;
+@property (retain, nonatomic) UILabel *currentTimeLabel;
+@property (retain, nonatomic) BDSCHudProgressView *sliderHUD;
+@property (retain, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (nonatomic) double progressBeforeDragging;
+@property (retain, nonatomic) UISelectionFeedbackGenerator *selectionFeedback;
+@property (nonatomic) double lastHapticTime;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *deviceName;
+@property (nonatomic) BOOL isConnected;
+@property (weak, nonatomic) id<BDSCControlViewDelegate> delegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (void)closeButtonDidClick:(id)a0;
+- (void)updateProgressInfo:(id)a0;
+- (void)updateProgressInfo:(id)a0 force:(BOOL)a1;
+- (void)updateControlViewConfig:(id)a0;
+- (void)updateCastStatus:(unsigned long long)a0;
+- (void)updatePlayStatus:(unsigned long long)a0 clarity:(id)a1 infoModel:(id)a2;
+- (void)updateCastClarity:(id)a0 showTitle:(id)a1 infoModel:(id)a2;
+- (void)showControlViewWithStatus:(unsigned long long)a0 animated:(BOOL)a1;
+- (void)showControlViewFromFloatBall;
+- (void)dismissControlViewWithAnimated:(BOOL)a0;
+- (unsigned long long)showingStyle;
+- (void)buildSubviews;
+- (void)updateCustomConstraints;
+- (void)updateErrorNotifyLabel;
+- (void)updateToFailStatusIfNeed:(BOOL)a0;
+- (void)updateToFinishedStatus:(BOOL)a0;
+- (void)updateSeekViewHiddenState:(BOOL)a0;
+- (void)reBuildCloseCastInTextTitle;
+- (void)changeClarityHandler:(id)a0;
+- (void)setupSliderAction;
+- (void)performHaptic;
+- (void)changeClarityTapGestureCliked:(id)a0;
+- (void).cxx_destruct;
+- (id)init;
+- (BOOL)gestureRecognizerShouldBegin:(id)a0;
+- (void)pan:(id)a0;
+
+@end

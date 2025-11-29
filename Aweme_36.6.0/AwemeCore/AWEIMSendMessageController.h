@@ -1,0 +1,86 @@
+@class NSMutableDictionary, NSString, NSHashTable, NSMutableSet, NSLock;
+@protocol IESIMSendMessageResponseInterface;
+
+@interface AWEIMSendMessageController : NSObject <IESIMMessageSenderDelegate, IESIMLoginManagerMessage, IESIMMessageSenderSingleInteractionDelegate>
+
+@property (retain, nonatomic) id<IESIMSendMessageResponseInterface> sendMessageResponseService;
+@property (retain, nonatomic) NSMutableDictionary *sessions;
+@property (retain, nonatomic) NSMutableSet *needShowToastMessages;
+@property (retain, nonatomic) NSMutableDictionary *customToastDict;
+@property (retain, nonatomic) NSMutableDictionary *messageShareContextDict;
+@property (retain, nonatomic) NSMutableDictionary *messageDidSendCallbackDict;
+@property (retain, nonatomic) NSMutableDictionary *messageTypeDidSendCallbackDict;
+@property (retain, nonatomic) NSHashTable *delegates;
+@property (retain, nonatomic) NSLock *delegateLock;
+@property (retain, nonatomic) NSMutableDictionary *trackResponseMap;
+@property (retain, nonatomic) NSMutableDictionary *trackConvMap;
+@property (nonatomic) BOOL isAdsFromFeed;
+@property (copy, nonatomic) NSString *itemIDFromFeed;
+@property BOOL sendHealthOpt;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
++ (id)sendSerialQueue;
++ (id)sharedInstance;
+
+- (void)iesim_didReceiveSendMessageResponse:(id)a0;
+- (void)iesim_didReceiveAsyncSendMessageResponse:(id)a0;
+- (void)iesim_sendMessageRequestBlockedByInvalidIdentityToken:(id)a0 inConversation:(id)a1;
+- (void)registerHandlingSendingResultCallbackWithMessageID:(id)a0 callback:(id /* block */)a1;
+- (id)enterFromValueWithProcessId:(id)a0;
+- (void)sendBatchMessages:(id)a0 forwardMessage:(BOOL)a1 completion:(id /* block */)a2;
+- (void)iesim_didFinishLogin;
+- (void)iesim_didFinishLogout;
+- (id)addFakeMessage:(id)a0 conversationID:(id)a1;
+- (id)addFakeMessage:(id)a0 conversation:(id)a1;
+- (void)handleDidEnterBackgroundNotification;
+- (id)sendMessage:(id)a0 conversation:(id)a1 forwardMessage:(BOOL)a2 mentionUsers:(id)a3;
+- (id)sendMessage:(id)a0 conversation:(id)a1 forwardMessage:(BOOL)a2 mentionUsers:(id)a3 enterFrom:(id)a4;
+- (void)customToastWithMessageID:(id)a0 successToast:(id)a1;
+- (id)addFakeMessage:(id)a0 status:(long long)a1 conversationID:(id)a2;
+- (void)registerHandlingSendingResultCallbackWithMessageType:(long long)a0 callback:(id /* block */)a1;
+- (void)unregisterHandlingSendingResultCallbackWithMessageType:(long long)a0;
+- (void)sendMessages:(id)a0 forwardMessage:(BOOL)a1 completion:(id /* block */)a2;
+- (void)handleItemIDFromFeed:(id)a0;
+- (void)asyncSendMessage:(id)a0 completion:(id /* block */)a1;
+- (id)p_getEnterFromWithAweType:(long long)a0;
+- (id)consumeCachedConvBeforeSendMsgWithMsgID:(id)a0;
+- (void)resendMessage:(id)a0 toCon:(id)a1 completion:(id /* block */)a2;
+- (void)sender_resendMessage:(id)a0 completion:(id /* block */)a1;
+- (void)sender_resendMessage:(id)a0 conversation:(id)a1;
+- (id)aiExtParamsAddTosendMessageFromDelegate;
+- (void)addHiHiMessageExtIfNeeded:(id)a0 peerUserID:(id)a1;
+- (id)getSendMessageClientExtWithSendModel:(id)a0;
+- (id)extraParamsForSendMessageFromDelegateWithCid:(id)a0;
+- (void)p_cacheConvBeforeSendMsg:(id)a0 forMsgID:(id)a1;
+- (id)socialRelationTrackFlagForUid:(id)a0;
+- (void)p_trackResendMessage:(id)a0;
+- (id)addFakeMessage:(id)a0 status:(long long)a1 conversation:(id)a2;
+- (id)p_dealShareVideoTaskWithContainers:(id)a0;
+- (BOOL)isAllContainerFinished:(id)a0;
+- (void)p_dealShareVideoTaskSendMessageGroup:(id)a0;
+- (void)p_sendMessage:(id)a0 toConversation:(id)a1 forwardMessage:(BOOL)a2 completion:(id /* block */)a3;
+- (id)p_degradeMessageIfNeeded:(id)a0 targetConverSation:(id)a1;
+- (void)identityVerificationTrackWithEvent:(id)a0 conversation:(id)a1 extra:(id)a2;
+- (void)setCheckMsg:(id)a0 msg:(id)a1;
+- (void)showUpdatedIdentifyVerifyIfNeedWithConversation:(id)a0 response:(id)a1;
+- (id)__secneWithStatusCode:(long long)a0;
+- (void)handleSendMessageResponseExtraInfo:(id)a0;
+- (BOOL)p_isResponseValid:(id)a0;
+- (id)extraParamsForResponseFromDelegateWithCid:(id)a0;
+- (void)p_handleSendMessageResponse:(id)a0;
+- (void)p_trackWithResponse:(id)a0 isTimeout:(BOOL)a1;
+- (void)p_reportIMShareWithMessage:(id)a0 inConversation:(id)a1 enterFrom:(id)a2;
+- (BOOL)messageSender:(id)a0 shouldContainAiContextWithMsgId:(id)a1 msgSyncedExt:(id)a2 conversationId:(id)a3 conversationShortId:(long long)a4;
+- (id)messageSender:(id)a0 aiContextWithConversationId:(id)a1;
+- (void)addDelegate:(id)a0;
+- (id)sendMessage:(id)a0;
+- (void)removeDelegate:(id)a0;
+- (void).cxx_destruct;
+- (id)sender;
+- (id)init;
+- (void)dealloc;
+
+@end

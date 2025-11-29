@@ -1,0 +1,3 @@
+@interface OpenGamePropApiRoot : GPBRootObject
+
+@end

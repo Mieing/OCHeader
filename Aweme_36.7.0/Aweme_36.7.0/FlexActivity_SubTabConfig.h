@@ -1,0 +1,12 @@
+@class NSString;
+
+@interface FlexActivity_SubTabConfig : IESLivePBBaseMessage
+
+@property (copy, nonatomic) NSString *selectedBgURL;
+@property (copy, nonatomic) NSString *unselectedBgURL;
+@property (copy, nonatomic) NSString *textColor;
+@property (copy, nonatomic) NSString *borderColor;
+
++ (id)descriptor;
+
+@end

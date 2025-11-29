@@ -1,0 +1,13 @@
+@class NSString;
+
+@interface HTSLiveAuthorizationNotifyMessage_ContentBlock : IESLivePBBaseMessage
+
+@property (nonatomic) BOOL show;
+@property (nonatomic) BOOL isAuthorized;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *detail;
+
++ (id)descriptor;
+
+@end

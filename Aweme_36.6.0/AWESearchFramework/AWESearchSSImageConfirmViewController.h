@@ -1,0 +1,74 @@
+@class UIView, NSString, NSArray, UIImage, AWESearchAIGCImageUploadManager, UIImageView, UIButton, AWESearchAIGCSSScanCircleSearchView, AWESearchHomeNewStyleInputViewController, UICollectionView, LOTAnimationView, UILabel;
+@protocol AWESearchSSImageConfirmViewControllerDelegate;
+
+@interface AWESearchSSImageConfirmViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, AWESearchAIGCSSScanCircleSearchViewDelegate, AWESearchHomeNewStyleInputViewControllerDelegate>
+
+@property (retain, nonatomic) UICollectionView *collectionView;
+@property (retain, nonatomic) UIView *backgroundView;
+@property (retain, nonatomic) UIImageView *pickedImageView;
+@property (retain, nonatomic) UIButton *confirmButton;
+@property (retain, nonatomic) UIButton *cancelButton;
+@property (retain, nonatomic) UILabel *cancelLabel;
+@property (retain, nonatomic) Class scanGeometryCalculator;
+@property (copy, nonatomic) NSArray *queryList;
+@property (nonatomic) BOOL shouldShowKeywords;
+@property (retain, nonatomic) AWESearchAIGCSSScanCircleSearchView *circleSearchView;
+@property (retain, nonatomic) UIView *bottomTipsView;
+@property (retain, nonatomic) UIImageView *bottomTipsIcon;
+@property (retain, nonatomic) UILabel *bottomTipsLabel;
+@property (retain, nonatomic) UIImage *cropImage;
+@property (retain, nonatomic) AWESearchAIGCImageUploadManager *imageUploadManager;
+@property (nonatomic) BOOL isImageUploading;
+@property (retain, nonatomic) AWESearchHomeNewStyleInputViewController *inputViewController;
+@property (retain, nonatomic) UIButton *keyboardButton;
+@property (retain, nonatomic) UIView *keyboardBackgroundView;
+@property (retain, nonatomic) LOTAnimationView *uploadLottieView;
+@property (copy, nonatomic) id /* block */ dismissCompletion;
+@property (copy, nonatomic) id /* block */ cropImageCompletion;
+@property (weak, nonatomic) id<AWESearchSSImageConfirmViewControllerDelegate> delegate;
+@property (nonatomic) BOOL isPickFromCamera;
+@property (copy, nonatomic) NSString *enterFrom;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *debugDescription;
+
+- (BOOL)btm_autoManaged;
+- (id)btm_pageIdentifier;
+- (void)addNotification;
+- (void)cancelButtonClick;
+- (void)confirmButtonClick;
+- (void)dismissVC:(id /* block */)a0;
+- (void)setContentModeBasedOnImageAspectRatio:(id)a0;
+- (id)initWithImage:(id)a0 keywordsDisplay:(BOOL)a1;
+- (void)gestureDidBegin:(id)a0;
+- (void)tapGestureDidHandle:(id)a0;
+- (void)touchDidBegin:(id)a0;
+- (void)touchDidEndWithOCR:(id)a0;
+- (void)touchDidEnd:(id)a0;
+- (void)dragGestureDidEnd:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a0;
+- (void)searchOCRText:(id)a0 source:(unsigned long long)a1;
+- (void)directSearchWithText:(id)a0 enterMethod:(id)a1;
+- (void)expandInputViewControllerWithImage:(id)a0 textQuery:(id)a1 userGuideInfo:(id)a2 openDeepThink:(BOOL)a3 placeholder:(id)a4 disableSug:(BOOL)a5 buttonType:(unsigned long long)a6 completion:(id /* block */)a7;
+- (void)startImageUploadLoading;
+- (void)updateBottomTipsView:(id)a0 hasIcon:(BOOL)a1 iconName:(id)a2;
+- (void)endImageUploadLoading;
+- (void)setupInputViewContext:(id)a0;
+- (id)cropImage:(id)a0 toRect:(struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })a1;
+- (struct CGRect { struct CGPoint { double x0; double x1; } x0; struct CGSize { double x0; double x1; } x1; })adjustTapPoint:(struct CGPoint { double x0; double x1; })a0;
+- (void)keyboardButtonClick;
+- (void)keyboardBackgroundViewDidTap:(id)a0;
+- (void)inputViewSendQuery:(id)a0;
+- (id)passThroughView;
+- (void)didClickImageContainerDelete;
+- (void)keyboardDidHide:(id)a0;
+- (void).cxx_destruct;
+- (struct CGSize { double x0; double x1; })collectionView:(id)a0 layout:(id)a1 sizeForItemAtIndexPath:(id)a2;
+- (id)collectionView:(id)a0 cellForItemAtIndexPath:(id)a1;
+- (long long)collectionView:(id)a0 numberOfItemsInSection:(long long)a1;
+- (void)collectionView:(id)a0 didSelectItemAtIndexPath:(id)a1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (void)setupUI;
+
+@end

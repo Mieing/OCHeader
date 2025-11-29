@@ -1,0 +1,12 @@
+@class NSString, NSMutableArray;
+
+@interface IESLiveLinkMicAudienceListEmojisResponse_ResponseData : IESLivePBBaseMessage
+
+@property (retain, nonatomic) NSMutableArray *emojiArray;
+@property (readonly, nonatomic) unsigned long long emojiArray_Count;
+@property (nonatomic) long long millisecondLevelTimeControl;
+@property (copy, nonatomic) NSString *timeControlText;
+
++ (id)descriptor;
+
+@end
